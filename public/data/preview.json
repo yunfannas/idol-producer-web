@@ -1,0 +1,205 @@
+{
+  "bundle_version": 1,
+  "preset": "test0",
+  "scenario_number": 6,
+  "opening_date": "2025-07-20",
+  "group": {
+    "uid": "44Ki44Kt44K344OWcHJvamVjdA",
+    "name": "アキシブproject",
+    "name_romanji": "Akishibu project",
+    "nickname": "アキシブ",
+    "formed_date": "2012-10-05",
+    "popularity": 19,
+    "fans": 5166,
+    "description": "January 2025 Information Also Known As akishibu (アキシブ) Origin Akihabara, Japan Genre J-Pop Years 2012–Present Label akishibuproject (2021) King Records (2018-2019) OTODAMA RECORDS (2017) Force Music (2016) TP IDOL (2015-2016) Agency LIVE PLANET (2012-Present) Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction CAL&RES Ill i-COL Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY chuLa paradeeq Nanakorobi Yaoki MEGAFON HE…",
+    "member_uids": [
+      "3dfb8264-e501-45a7-a373-b3255445674e",
+      "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
+      "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+      "45484495-8792-48db-bab0-560ee4107464",
+      "814c40ad-bcde-4f1a-af3b-f5154e98d601",
+      "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+      "c9703d21-784d-4818-ba13-eb66993e5b12"
+    ],
+    "member_names": [
+      "古賀みれい",
+      "如月なな",
+      "平沢かえ",
+      "水琴まなみ",
+      "清見るん",
+      "美山ひな",
+      "茉井良菜",
+      "葵ふう"
+    ],
+    "pictures": [
+      "picture/Akishibu_project_photo_14.webp",
+      "picture/Akishibu_project_photo_15.webp",
+      "picture/Akishibu_project_photo.webp",
+      "picture/Akishibu_project_photo_4.webp"
+    ],
+    "discography": [
+      {
+        "uid": "8857fca1-c8d5-4c6e-891f-a95c16938247",
+        "title": "AKISHIBU THE BEST",
+        "title_romanji": "",
+        "disc_type": "Best Album",
+        "release_date": "2019-05-15",
+        "publisher": "King Records",
+        "track_list": [
+          "アキシブウェイ",
+          "Candid Love",
+          "New World",
+          "Restart",
+          "Summer☆Summer",
+          "セツナツリ",
+          "アバンチュっ!",
+          "ナツラブ"
+        ]
+      },
+      {
+        "uid": "53154494-a8e0-4a6f-b6f7-b607c77a33d0",
+        "title": "乱れ髪ファイティングガール",
+        "title_romanji": "Midaregami Fighting Girl",
+        "disc_type": "Mini Album",
+        "release_date": "2015-04-14",
+        "publisher": "TP IDOL",
+        "track_list": []
+      }
+    ]
+  },
+  "idols": [
+    {
+      "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+      "name": "古賀みれい",
+      "romaji": "Koga Mirei",
+      "birthday": "2004-08-14",
+      "age": 20,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\古賀みれい_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "古賀みれい",
+          "member_color": "White",
+          "start_date": "2022-11-20"
+        }
+      ]
+    },
+    {
+      "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
+      "name": "如月なな",
+      "romaji": "Kisaragi Nana",
+      "birthday": "2006-02-17",
+      "age": 19,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\如月なな_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "如月なな",
+          "member_color": "Red",
+          "start_date": "2022-11-20"
+        }
+      ]
+    },
+    {
+      "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "name": "平沢かえ",
+      "romaji": "Hirasawa Kae",
+      "birthday": "2004-07-20",
+      "age": 21,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\平沢かえ_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "平沢かえ",
+          "member_color": "Yellow",
+          "start_date": "2023-12-28"
+        }
+      ]
+    },
+    {
+      "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+      "name": "水琴まなみ",
+      "romaji": "Mikoto Manami",
+      "birthday": "2004-08-17",
+      "age": 20,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\水琴まなみ_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "水琴まなみ",
+          "member_color": "Light Blue",
+          "start_date": "2024-12-13"
+        }
+      ]
+    },
+    {
+      "uid": "45484495-8792-48db-bab0-560ee4107464",
+      "name": "清見るん",
+      "romaji": "Kiyomi Run",
+      "birthday": "2002-01-08",
+      "age": 23,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\清見るん_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "清見るん",
+          "member_color": "Orange",
+          "start_date": "2023-12-27"
+        }
+      ]
+    },
+    {
+      "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
+      "name": "美山ひな",
+      "romaji": "Miyama Hina",
+      "birthday": "2007-04-17",
+      "age": 18,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\美山ひな_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "美山ひな",
+          "member_color": "Pink",
+          "start_date": "2024-12-16"
+        }
+      ]
+    },
+    {
+      "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+      "name": "茉井良菜",
+      "romaji": "Matsui Rana",
+      "birthday": "1999-01-13",
+      "age": 26,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\茉井良菜_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "茉井良菜",
+          "member_color": "Mint Green",
+          "start_date": "2023-12-29"
+        }
+      ]
+    },
+    {
+      "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
+      "name": "葵ふう",
+      "romaji": "Aoi Fuu",
+      "birthday": "2003-11-18",
+      "age": 21,
+      "portrait_photo_path": "fetcher\\database\\picture_fandom\\葵ふう_portrait.jpg",
+      "group_history_in_group": [
+        {
+          "group_name": "アキシブproject",
+          "member_name": "葵ふう",
+          "member_color": "Blue",
+          "start_date": "2022-11-20"
+        }
+      ]
+    }
+  ],
+  "export_notes": {
+    "missing_idol_rows": [],
+    "idol_count": 8
+  }
+}
