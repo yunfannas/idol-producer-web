@@ -1,0 +1,564 @@
+{
+  "title": "Idol Ranking 2025",
+  "database": "main",
+  "source_file": "c:\\Users\\Admin\\Downloads\\Idol Ranking 2025.docx",
+  "coverage_notes": {
+    "rank_d": "Rank D is a non-exhaustive list from the source document.",
+    "rank_e": "Rank E is not listed in the source document.",
+    "rank_f": "Rank F is not listed in the source document.",
+    "unlisted_groups": "Do not infer rank E or rank F from absence in this file."
+  },
+  "mapping_notes": {
+    "mapped_group_database": "database/groups.json",
+    "matched_count": 50,
+    "unresolved_count": 0,
+    "ambiguous_count": 0,
+    "manual_mappings": {
+      "position_2": "Simplified Sakurazaka46 source name -> canonical Sakurazaka46 group / 5qu75Z2CNDY",
+      "position_9": "Morning Musume '25 line-up alias -> canonical Morning Musume group / 44Oi44O844OL44Oz44Kw5aiY44CC",
+      "position_19": "Not Equal Me source name -> exact group UID 4omgTUU",
+      "position_50": "Ill display alias -> canonical Ill group / SWxs"
+    }
+  },
+  "rankings": [
+    {
+      "rank": "S",
+      "is_exhaustive": true,
+      "groups": [
+        {
+          "position": 1,
+          "rank": "S",
+          "source_name": "乃木坂46",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "5LmD5pyo5Z2CNDY",
+          "group_name": "乃木坂46",
+          "group_name_romanji": "Nogizaka46"
+        },
+        {
+          "position": 2,
+          "rank": "S",
+          "source_name": "樱坂46",
+          "match_status": "matched",
+          "match_method": "manual_position_uid",
+          "group_uid": "5qu75Z2CNDY",
+          "group_name": "櫻坂46",
+          "group_name_romanji": "Sakurazaka46",
+          "note": "Source uses simplified Sakurazaka46 name; mapped to canonical Sakurazaka46 group."
+        },
+        {
+          "position": 3,
+          "rank": "S",
+          "source_name": "日向坂46",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "5pel5ZCR5Z2CNDY",
+          "group_name": "日向坂46",
+          "group_name_romanji": "Hinatazaka46"
+        },
+        {
+          "position": 4,
+          "rank": "S",
+          "source_name": "Babymetal",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "QkFCWU1FVEFM",
+          "group_name": "BABYMETAL",
+          "group_name_romanji": "BABYMETAL"
+        },
+        {
+          "position": 5,
+          "rank": "S",
+          "source_name": "LE SSERAFIM",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "TEUgU1NFUkFGSU0",
+          "group_name": "LE SSERAFIM",
+          "group_name_romanji": "LE_SSERAFIM"
+        }
+      ]
+    },
+    {
+      "rank": "A",
+      "is_exhaustive": true,
+      "groups": [
+        {
+          "position": 6,
+          "rank": "A",
+          "source_name": "Perfume",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "UGVyZnVtZQ",
+          "group_name": "Perfume",
+          "group_name_romanji": "Perfume"
+        },
+        {
+          "position": 7,
+          "rank": "A",
+          "source_name": "Fruits Zipper",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "RlJVSVRTIFpJUFBFUg",
+          "group_name": "FRUITS ZIPPER",
+          "group_name_romanji": "FRUITS_ZIPPER"
+        },
+        {
+          "position": 8,
+          "rank": "A",
+          "source_name": "=LOVE",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "PUxPVkU",
+          "group_name": "=LOVE",
+          "group_name_romanji": "=LOVE"
+        },
+        {
+          "position": 9,
+          "rank": "A",
+          "source_name": "モーニング娘。'25",
+          "match_status": "matched",
+          "match_method": "manual_position_uid",
+          "group_uid": "44Oi44O844OL44Oz44Kw5aiY44CC",
+          "group_name": "モーニング娘。",
+          "group_name_romanji": "Morning Musume",
+          "note": "2025 line-up alias mapped to canonical Morning Musume group."
+        },
+        {
+          "position": 10,
+          "rank": "A",
+          "source_name": "AKB48",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "QUtCNDg",
+          "group_name": "AKB48",
+          "group_name_romanji": "AKB48"
+        }
+      ]
+    },
+    {
+      "rank": "B",
+      "is_exhaustive": true,
+      "groups": [
+        {
+          "position": 11,
+          "rank": "B",
+          "source_name": "HANA",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "SEFOQQ",
+          "group_name": "HANA",
+          "group_name_romanji": "HANA"
+        },
+        {
+          "position": 12,
+          "rank": "B",
+          "source_name": "SKE48",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "U0tFNDg",
+          "group_name": "SKE48",
+          "group_name_romanji": "SKE48"
+        },
+        {
+          "position": 13,
+          "rank": "B",
+          "source_name": "Cutie Street",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "Q1VUSUUgU1RSRUVU",
+          "group_name": "CUTIE STREET",
+          "group_name_romanji": "CUTIE_STREET"
+        },
+        {
+          "position": 14,
+          "rank": "B",
+          "source_name": "ももいろクローバーZ",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg",
+          "group_name": "ももいろクローバーZ",
+          "group_name_romanji": "Momoiro Clover Z"
+        },
+        {
+          "position": 15,
+          "rank": "B",
+          "source_name": "HKT48",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "SEtUNDg",
+          "group_name": "HKT48",
+          "group_name_romanji": "HKT48"
+        },
+        {
+          "position": 16,
+          "rank": "B",
+          "source_name": "私立恵比寿中学",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
+          "group_name": "私立恵比寿中学",
+          "group_name_romanji": "Shiritsu_Ebisu_Chugaku"
+        },
+        {
+          "position": 17,
+          "rank": "B",
+          "source_name": "iLife!",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "aUxpRkUh",
+          "group_name": "iLife!",
+          "group_name_romanji": "ILiFE!"
+        },
+        {
+          "position": 18,
+          "rank": "B",
+          "source_name": "NMB48",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "Tk1CNDg",
+          "group_name": "NMB48",
+          "group_name_romanji": "NMB48"
+        },
+        {
+          "position": 19,
+          "rank": "B",
+          "source_name": "≠ME",
+          "match_status": "matched",
+          "match_method": "manual_position_uid",
+          "group_uid": "4omgTUU",
+          "group_name": "≠ME",
+          "group_name_romanji": "≠ME",
+          "note": "Manual disambiguation to the exact Not Equal Me group row."
+        },
+        {
+          "position": 20,
+          "rank": "B",
+          "source_name": "Candy Tune",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "Q0FORFkgVFVORQ",
+          "group_name": "CANDY TUNE",
+          "group_name_romanji": "CANDY_TUNE"
+        }
+      ]
+    },
+    {
+      "rank": "C",
+      "is_exhaustive": true,
+      "groups": [
+        {
+          "position": 21,
+          "rank": "C",
+          "source_name": "NGT48",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "TkdUNDg",
+          "group_name": "NGT48",
+          "group_name_romanji": "NGT48"
+        },
+        {
+          "position": 22,
+          "rank": "C",
+          "source_name": "STU48",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "U1RVNDg",
+          "group_name": "STU48",
+          "group_name_romanji": "STU48"
+        },
+        {
+          "position": 23,
+          "rank": "C",
+          "source_name": "Juice=Juice",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "SnVpY2U9SnVpY2U",
+          "group_name": "Juice=Juice",
+          "group_name_romanji": "Juice=Juice"
+        },
+        {
+          "position": 24,
+          "rank": "C",
+          "source_name": "きゅるりんってしてみて",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
+          "group_name": "きゅるりんってしてみて",
+          "group_name_romanji": null
+        },
+        {
+          "position": 25,
+          "rank": "C",
+          "source_name": "豆柴の大群",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "6LGG5p-044Gu5aSn576k",
+          "group_name": "豆柴の大群",
+          "group_name_romanji": "MAMESHiBA_NO_TAiGUN"
+        },
+        {
+          "position": 26,
+          "rank": "C",
+          "source_name": "アンジュルム",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44Ki44Oz44K444Ol44Or44Og",
+          "group_name": "アンジュルム",
+          "group_name_romanji": "ANGERME"
+        },
+        {
+          "position": 27,
+          "rank": "C",
+          "source_name": "BEYOOOOONDS",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "QkVZT09PT09ORFM",
+          "group_name": "BEYOOOOONDS",
+          "group_name_romanji": "BEYOOOOONDS"
+        },
+        {
+          "position": 28,
+          "rank": "C",
+          "source_name": "超ときめき♡宣伝部",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo",
+          "group_name": "超ときめき♡宣伝部",
+          "group_name_romanji": "Cho_Tokimeki♡Sendenbu"
+        },
+        {
+          "position": 29,
+          "rank": "C",
+          "source_name": "i☆Ris",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "aeKYhlJpcw",
+          "group_name": "i☆Ris",
+          "group_name_romanji": "I☆Ris"
+        },
+        {
+          "position": 30,
+          "rank": "C",
+          "source_name": "つばきファクトリー",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44Gk44Gw44GN44OV44Kh44Kv44OI44Oq44O8",
+          "group_name": "つばきファクトリー",
+          "group_name_romanji": "Tsubaki Factory"
+        },
+        {
+          "position": 31,
+          "rank": "C",
+          "source_name": "Sweet Steady",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "U1dFRVQgU1RFQURZ",
+          "group_name": "SWEET STEADY",
+          "group_name_romanji": "SWEET_STEADY"
+        },
+        {
+          "position": 32,
+          "rank": "C",
+          "source_name": "≒JOY",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "4omSSk9Z",
+          "group_name": "≒JOY",
+          "group_name_romanji": "≒JOY"
+        },
+        {
+          "position": 33,
+          "rank": "C",
+          "source_name": "高嶺のなでしこ",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+          "group_name": "高嶺のなでしこ",
+          "group_name_romanji": "Takane_no_Nadeshiko"
+        },
+        {
+          "position": 34,
+          "rank": "C",
+          "source_name": "femme fatale",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "ZmVtbWUgZmF0YWxl",
+          "group_name": "femme fatale",
+          "group_name_romanji": "Femme_fatale"
+        },
+        {
+          "position": 35,
+          "rank": "C",
+          "source_name": "22/7",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "MjIvNw",
+          "group_name": "22/7",
+          "group_name_romanji": "22/7"
+        },
+        {
+          "position": 36,
+          "rank": "C",
+          "source_name": "夢みるアドレセンス",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
+          "group_name": "夢みるアドレセンス",
+          "group_name_romanji": null
+        },
+        {
+          "position": 37,
+          "rank": "C",
+          "source_name": "僕が見たかった青空",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "Qm9rdSBnYSBNaXRha2F0dGEgQW96b3Jh",
+          "group_name": "僕が見たかった青空",
+          "group_name_romanji": "Boku_ga_Mitakatta_Aozora"
+        },
+        {
+          "position": 38,
+          "rank": "C",
+          "source_name": "虹のコンキスタドール",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
+          "group_name": "虹のコンキスタドール",
+          "group_name_romanji": "Niji no Conquistador"
+        },
+        {
+          "position": 39,
+          "rank": "C",
+          "source_name": "ZOCX",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "Wk9DWA",
+          "group_name": "ZOCX",
+          "group_name_romanji": "ZOCX"
+        },
+        {
+          "position": 40,
+          "rank": "C",
+          "source_name": "ファントムシータ",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44OV44Kh44Oz44OI44Og44K344O844K_",
+          "group_name": "ファントムシータ",
+          "group_name_romanji": null
+        },
+        {
+          "position": 41,
+          "rank": "C",
+          "source_name": "いぎなり東北産",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44GE44GO44Gq44KK5p2x5YyX55Sj",
+          "group_name": "いぎなり東北産",
+          "group_name_romanji": "Iginari_Tohokusan"
+        },
+        {
+          "position": 42,
+          "rank": "C",
+          "source_name": "Jams Collection",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "SmFtc0NvbGxlY3Rpb24",
+          "group_name": "JamsCollection",
+          "group_name_romanji": "Jams_Collection"
+        }
+      ]
+    },
+    {
+      "rank": "D",
+      "is_exhaustive": false,
+      "groups": [
+        {
+          "position": 43,
+          "rank": "D",
+          "source_name": "のんふぃく！",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44Gu44KT44G144GD44GP77yB",
+          "group_name": "のんふぃく！",
+          "group_name_romanji": "Non¬Fiction"
+        },
+        {
+          "position": 44,
+          "rank": "D",
+          "source_name": "OCHA NORMA",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "T0NIQSBOT1JNQQ",
+          "group_name": "OCHA NORMA",
+          "group_name_romanji": "OCHA NORMA"
+        },
+        {
+          "position": 45,
+          "rank": "D",
+          "source_name": "夜光性アミューズ",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+          "group_name": "夜光性アミューズ",
+          "group_name_romanji": "Yakousei_Amuse"
+        },
+        {
+          "position": 46,
+          "rank": "D",
+          "source_name": "バンドじゃないもん！MAXX NAKAYOSHI",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
+          "group_name": "バンドじゃないもん！MAXX NAKAYOSHI",
+          "group_name_romanji": null
+        },
+        {
+          "position": 47,
+          "rank": "D",
+          "source_name": "まねきケチャ",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "44G-44Gt44GN44Kx44OB44Oj",
+          "group_name": "まねきケチャ",
+          "group_name_romanji": null
+        },
+        {
+          "position": 48,
+          "rank": "D",
+          "source_name": "#ババババンビ",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "I-ODkOODkOODkOODkOODs-ODkw",
+          "group_name": "#ババババンビ",
+          "group_name_romanji": null
+        },
+        {
+          "position": 49,
+          "rank": "D",
+          "source_name": "Girls²",
+          "match_status": "matched",
+          "match_method": "exact_or_alias",
+          "group_uid": "R2lybHPCsg",
+          "group_name": "Girls²",
+          "group_name_romanji": "Girls²"
+        },
+        {
+          "position": 50,
+          "rank": "D",
+          "source_name": "Ill【イル】",
+          "match_status": "matched",
+          "match_method": "manual_position_uid",
+          "group_uid": "SWxs",
+          "group_name": "Ill",
+          "group_name_romanji": "Ill",
+          "note": "Source display name Ill alias mapped to canonical Ill group row."
+        }
+      ]
+    }
+  ],
+  "unresolved_groups": [],
+  "unlisted_ranks": [
+    "E",
+    "F"
+  ]
+}

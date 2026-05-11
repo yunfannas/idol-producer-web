@@ -1,0 +1,4 @@
+{
+  "presets": ["test0"],
+  "defaultPreset": "test0"
+}

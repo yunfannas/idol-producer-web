@@ -1,0 +1,92 @@
+{
+  "version": "2026-04-30",
+  "scale": {
+    "max": 5.0,
+    "min_ranked": 1.5,
+    "step": 0.5
+  },
+  "allocation_method": "largest_remainder_by_ranked_song_count",
+  "ranking_application_rule": "Apply percentage buckets to the count of chart-ranked local songs for the group, ordered by platform rank after skipping unmatched external-only songs. Local songs with no matched chart rank keep that tier's unranked default.",
+  "tier_rules": {
+    "S": {
+      "default_unranked": 3.0,
+      "bucket_percentages": {
+        "5.0": 0.10,
+        "4.5": 0.15,
+        "4.0": 0.25,
+        "3.5": 0.25,
+        "3.0": 0.15,
+        "2.5": 0.10
+      },
+      "notes": "Top 10% of ranked songs can reach 5.0."
+    },
+    "A": {
+      "default_unranked": 3.0,
+      "bucket_percentages": {
+        "5.0": 0.05,
+        "4.5": 0.15,
+        "4.0": 0.25,
+        "3.5": 0.25,
+        "3.0": 0.20,
+        "2.5": 0.10
+      },
+      "notes": "Top 5% of ranked songs can reach 5.0."
+    },
+    "B": {
+      "default_unranked": 2.5,
+      "bucket_percentages": {
+        "4.5": 0.10,
+        "4.0": 0.20,
+        "3.5": 0.25,
+        "3.0": 0.25,
+        "2.5": 0.15,
+        "1.5": 0.05
+      },
+      "notes": "Interpolated between tier A and tier D, with the lowest ranked bucket allowed to reach 1.5."
+    },
+    "C": {
+      "default_unranked": 2.5,
+      "bucket_percentages": {
+        "4.5": 0.05,
+        "4.0": 0.15,
+        "3.5": 0.20,
+        "3.0": 0.30,
+        "2.5": 0.20,
+        "1.5": 0.10
+      },
+      "notes": "Interpolated between tier B and tier D, with the lowest ranked bucket allowed to reach 1.5."
+    },
+    "D": {
+      "default_unranked": 2.0,
+      "bucket_percentages": {
+        "4.0": 0.10,
+        "3.5": 0.15,
+        "3.0": 0.30,
+        "2.5": 0.30,
+        "2.0": 0.15
+      },
+      "notes": "Baseline tier-D distribution requested for Akishibu sample, with the lowest ranked bucket at 2.0."
+    },
+    "E": {
+      "default_unranked": 1.5,
+      "bucket_percentages": {
+        "4.0": 0.05,
+        "3.5": 0.10,
+        "3.0": 0.25,
+        "2.5": 0.30,
+        "1.5": 0.30
+      },
+      "notes": "Interpolated downward from tier D, with the lowest ranked bucket allowed to reach 1.5."
+    },
+    "F": {
+      "default_unranked": 1.5,
+      "bucket_percentages": {
+        "3.5": 0.05,
+        "3.0": 0.20,
+        "2.5": 0.30,
+        "1.5": 0.45
+      },
+      "notes": "Interpolated downward from tier E, with the lowest ranked bucket allowed to reach 1.5."
+    }
+  }
+}

@@ -1,0 +1,150 @@
+[
+  {
+    "uid": "SURPUklTRSEhIEZFU1RJVkFM",
+    "name": "IDORISE!! FESTIVAL",
+    "name_romanji": "IDORISE!! FESTIVAL",
+    "short_name": "IDORISE",
+    "inaugural_year": 2019,
+    "official_history_source": "https://idorisefes.jp/",
+    "notes": "Yearly official pages recorded from the current IDORISE!! FESTIVAL site archive section. Earlier 2019-2022 history summaries are sourced from official About pages on the 2023-2026 sites.",
+    "year_pages": [
+      {
+        "year": 2019,
+        "official_url": null,
+        "status": "held",
+        "summary": "First IDORISE!! FESTIVAL. Official history says the day program used 6 venues, sold out at about 3,000 attendees, and also held a 2-venue night circuit.",
+        "source_urls": [
+          "https://ameblo.jp/jewelciel-aj/image-12441546286-14362816913.html"
+        ]
+      },
+      {
+        "year": 2020,
+        "official_url": null,
+        "status": "canceled",
+        "summary": "Canceled 10 days before the event due to COVID-19, according to the official history section."
+      },
+      {
+        "year": 2021,
+        "official_url": null,
+        "status": "held",
+        "summary": "Official history says 5 venues, 2 days, and 20 total day-and-night performances.",
+        "source_urls": [
+          "https://banmon.jp/contents/408152",
+          "https://www.memetokyo.com/contents/408356"
+        ]
+      },
+      {
+        "year": 2022,
+        "official_url": null,
+        "status": "held",
+        "summary": "Official history says the 6-venue circuit format returned. The 2023 about page further summarizes 130 groups, 203 stages, and more than 5,000 attendees.",
+        "source_urls": [
+          "https://shibuya-o.com/nest/schedule/idorise-festival-2022-2/"
+        ]
+      },
+      {
+        "year": 2023,
+        "official_url": "https://2023.idorisefes.jp/",
+        "status": "held",
+        "summary": "Official about page presents the 5th year of IDORISE!! FESTIVAL as an 8-venue, 2-day edition.",
+        "source_urls": []
+      },
+      {
+        "year": 2024,
+        "official_url": "https://2024.idorisefes.jp/",
+        "status": "held",
+        "summary": "Official about page presents the 6th year of IDORISE!! FESTIVAL as a 9-venue, 2-day edition.",
+        "source_urls": []
+      },
+      {
+        "year": 2025,
+        "official_url": "https://2025.idorisefes.jp/",
+        "status": "held",
+        "summary": "Official history notes the festival expanded again in 2025 and reached record attendance.",
+        "source_urls": []
+      },
+      {
+        "year": 2026,
+        "official_url": "https://idorisefes.jp/",
+        "status": "held",
+        "summary": "Official about page presents the 8th year of IDORISE!! FESTIVAL as a 9-venue, 2-day edition in Shibuya.",
+        "source_urls": []
+      }
+    ]
+  },
+  {
+    "uid": "VE9LWU8gSURPTCBGRVNUSVZBTA",
+    "name": "TOKYO IDOL FESTIVAL",
+    "name_romanji": "TOKYO IDOL FESTIVAL",
+    "short_name": "TIF",
+    "inaugural_year": 2010,
+    "official_history_source": "https://official.idolfes.com/s/tif2025/page/about?ima=0000",
+    "notes": "Yearly official pages recorded from the official TIF 2025 history section. 2010-2020 use the historical idolfes.com annual pages; 2021 onward use official.idolfes.com.",
+    "year_pages": [
+      {
+        "year": 2010,
+        "official_url": "http://www.idolfes.com/2010/"
+      },
+      {
+        "year": 2011,
+        "official_url": "http://www.idolfes.com/2011/"
+      },
+      {
+        "year": 2012,
+        "official_url": "http://www.idolfes.com/2012/"
+      },
+      {
+        "year": 2013,
+        "official_url": "http://www.idolfes.com/2013/"
+      },
+      {
+        "year": 2014,
+        "official_url": "http://www.idolfes.com/2014/"
+      },
+      {
+        "year": 2015,
+        "official_url": "http://www.idolfes.com/2015/"
+      },
+      {
+        "year": 2016,
+        "official_url": "http://www.idolfes.com/2016/"
+      },
+      {
+        "year": 2017,
+        "official_url": "http://www.idolfes.com/2017/"
+      },
+      {
+        "year": 2018,
+        "official_url": "http://www.idolfes.com/2018/"
+      },
+      {
+        "year": 2019,
+        "official_url": "http://www.idolfes.com/2019/"
+      },
+      {
+        "year": 2020,
+        "official_url": "http://www.idolfes.com/2020/"
+      },
+      {
+        "year": 2021,
+        "official_url": "https://official.idolfes.com/s/tif2021/"
+      },
+      {
+        "year": 2022,
+        "official_url": "https://official.idolfes.com/s/tif2022/"
+      },
+      {
+        "year": 2023,
+        "official_url": "https://official.idolfes.com/s/tif2023/"
+      },
+      {
+        "year": 2024,
+        "official_url": "https://official.idolfes.com/s/tif2024/"
+      },
+      {
+        "year": 2025,
+        "official_url": "https://official.idolfes.com/s/tif2025/"
+      }
+    ]
+  }
+]

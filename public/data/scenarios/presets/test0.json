@@ -1,0 +1,9 @@
+{
+  "id": "test0",
+  "name": "Akishibu Scenario 6 Test",
+  "scenario_number": 6,
+  "opening_date": "2025-07-20",
+  "data_subdir": "scenario_6_2025-07-20",
+  "startup_view": "Groups",
+  "startup_group": "Akishibu project"
+}

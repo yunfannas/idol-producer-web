@@ -1,0 +1,36 @@
+{
+  "version": "2026-05-10",
+  "title": "Group letter-tier assignment policy",
+  "authoritative_sources": {
+    "rankings_path": "database/idol_group_rankings_2025_mapped.json",
+    "groups_path": "database/groups.json"
+  },
+  "policy": {
+    "authoritative_only_tiers": [
+      "S",
+      "A",
+      "B",
+      "C"
+    ],
+    "listed_d_is_authoritative": true,
+    "inferred_max_tier": "D",
+    "inferred_allowed_tiers": [
+      "D",
+      "E",
+      "F"
+    ],
+    "notes": [
+      "S through C must come from the curated Idol Ranking 2025 mapping file, not from interpolation.",
+      "Groups absent from the curated ranking file may only be inferred into D, E, or F.",
+      "B and C are only assigned manually, not from interpolation.",
+      "Popularity and fans from idolsdiagram.com are valid inference inputs, but they are not sufficient to promote a group into S through C."
+    ]
+  },
+  "inference": {
+    "effective_score_formula": "fans + popularity*2000",
+    "missing_fans_imputation": "max(500, popularity*500)",
+    "d_floor_source": "minimum effective_score among authoritative listed D groups after calibration exclusions",
+    "e_floor_fraction_of_d_floor": 0.25,
+    "f_floor_minimum": 1
+  }
+}
