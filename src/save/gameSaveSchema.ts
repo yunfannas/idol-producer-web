@@ -10,6 +10,7 @@ import {
   defaultFinances,
   normalizeFinances,
   inferLetterTier,
+  normalizeGroupLetterTier,
   resolveGroupLetterTier,
 } from "../engine/financeSystem";
 import type { Finances, LetterTier } from "../engine/types";
@@ -94,7 +95,11 @@ export function createGameSaveFromLoadedScenario(
 
   const popularity = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
   const fans = typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
-  const tier = inferLetterTier(popularity, fans, 0);
+  const staticT = loaded.group_tiers?.find((r) => String(r.uid ?? "") === String(g.uid ?? ""));
+  const tier =
+    staticT && typeof staticT.letter_tier === "string" && /^[SABCDEF]$/i.test(staticT.letter_tier.trim())
+      ? normalizeGroupLetterTier(staticT.letter_tier)
+      : inferLetterTier(popularity, fans, 0);
   g.letter_tier = tier;
   g.web_scenario_number = loaded.preset.scenario_number;
 
@@ -129,6 +134,81 @@ export function createGameSaveFromLoadedScenario(
   save.turn_number = 0;
   save.finances = defaultFinances(cash);
   save.inbox.notifications = [];
+  const gid = String(g.uid);
+
+  const memberLines = memberUids
+    .map((uid) => {
+      const row = snap.idols.find((i) => String(i.uid ?? "") === uid) as Record<string, unknown> | undefined;
+      const ja = row && typeof row.name === "string" ? row.name : uid.slice(0, 8);
+      const ro =
+        row && typeof row.romaji === "string" && String(row.romaji).trim()
+          ? ` · ${String(row.romaji).trim()}`
+          : "";
+      return `· ${ja}${ro}`;
+    })
+    .join("\n");
+
+  addNotification(save, {
+    title: "Welcome to your managed roster",
+    body: `You are producing ${String(g.name_romanji ?? g.name ?? "this group")}.\n\nCurrent lineup:\n${memberLines || "· (no members resolved)"}`,
+    sender: "Assistant",
+    category: "guidance",
+    level: "high",
+    isoDate: opening,
+    createdTime: "09:01:00",
+    unread: true,
+    dedupeKey: `startup-roster|${gid}|${opening}`,
+  });
+
+  addNotification(save, {
+    title: "Training defaults need review",
+    body:
+      "Autopilot training sliders start at a balanced mix (sing / dance / physical / target). Open Training to tune load per member before the first heavy live stretch.",
+    sender: "Assistant",
+    category: "guidance",
+    level: "high",
+    isoDate: opening,
+    createdTime: "09:02:00",
+    unread: true,
+    dedupeKey: `startup-training|${gid}|${opening}`,
+  });
+
+  addNotification(save, {
+    title: "Upcoming lives (autopilot)",
+    body:
+      "Routine one-man lives are inserted on the web schedule when calendar offset from opening satisfies offset mod 7 === 3 (same rule as NEXT DAY). You will get a blocking Today's live schedule inbox item on those mornings — confirm with Live Start before advancing again.",
+    sender: "Assistant",
+    category: "guidance",
+    level: "high",
+    isoDate: opening,
+    createdTime: "09:03:00",
+    unread: true,
+    dedupeKey: `startup-lives|${gid}|${opening}`,
+  });
+
+  addNotification(save, {
+    title: "Morning atmosphere in the room",
+    body: `The practice room feels tense but hopeful this morning. ${String(g.name ?? g.name_romanji ?? "The group")} are waiting for direction, and the early mood suggests they want a plan they can trust.`,
+    sender: "News",
+    category: "background",
+    level: "normal",
+    isoDate: opening,
+    createdTime: "09:04:00",
+    unread: true,
+    dedupeKey: `startup-room|${gid}|${opening}`,
+  });
+
+  addNotification(save, {
+    title: "Staff briefing before opening week",
+    body: "Staff note: focus the first week on stability, punctual rehearsals, and visible small wins. If the members feel the routine is clear, morale should settle before the first heavy stretch of lives.",
+    sender: "Assistant",
+    category: "background",
+    level: "normal",
+    isoDate: opening,
+    createdTime: "09:05:00",
+    unread: true,
+    dedupeKey: `startup-staff|${gid}|${opening}`,
+  });
 
   addNotification(save, {
     title: "Production started",
@@ -136,7 +216,9 @@ export function createGameSaveFromLoadedScenario(
     sender: "Assistant",
     category: "general",
     isoDate: opening,
-    unread: false,
+    createdTime: "09:06:00",
+    unread: true,
+    dedupeKey: `production-started|${gid}|${opening}`,
   });
 
   return normalizeGameSavePayload(save);

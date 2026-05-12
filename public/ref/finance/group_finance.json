@@ -1,0 +1,279 @@
+{
+  "title": "Shared group finance assumptions (letter-tier-agnostic)",
+  "currency": "JPY",
+  "documentation": {
+    "exemplar": "アキシブproject-style slice: seven members for salary and tokutenkai math (not necessarily full roster in database/groups.json).",
+    "live_type_reference": "database/idol_group_rank_table.md — types 4 (taiban), 5 (2-man), 6 (one-man), 7 (routine), S-on-7 (birthday).",
+    "venue_reference": "database/finance/venue_reference.json",
+    "legacy_typical_tier_d_filename": "typical_regular_live.json → typical_tier_d_group.json (was typical_rank_d_group.json; scenario title is Typical Tier D group)",
+    "scenario_filenames": "Letter-tier examples: typical_tier_b_group.json, typical_tier_c_group.json (Typical Tier C), typical_tier_d_group.json (Typical Tier D).",
+    "monthly_live_counts_matrix": "Editable grid: `database/finance/monthly_live_counts_by_letter_tier_template.csv` — rows **letter tiers S–F**, columns **type_1 … type_7** (average monthly occurrences) plus **`type_6_venue_rank`** (venue **rank** letter for type **6** one-mans in that tier row, for `venue_reference.json`). **Type S** overlay cadence is roster-derived, not a column; see `type_S_overlay_monthly_rule`.",
+    "type_S_overlay_monthly_rule": "Live **type S** is a **special overlay** on a **host** type (4 / 6 / 7 / …), not its own venue cadence. **Average monthly S occurrences** = `member_count × S_events_per_member_per_year ÷ 12` (e.g. one birthday live per member per year on the host format → divide by 12 for a monthly rate). `derived_monthly_event_counts` in `typical_tier_*_group.json` may expose this as `type_S_on_6_birthday`, `type_S_on_7_birthday`, etc.; host choice is tier/scenario-specific.",
+    "commercial_income_guess_s_through_b": "Rough **monthly** CM / endorsement **gross** and **group-net strip** after agencies keep the bulk: `commercial_income_guess_letter_tier_s_through_b` (tiers **S, A, B** only).",
+    "cd_sales_model": "**Physical CD** net per unit and bundled **online signing** labor; **digital sales** and **MV / streaming watch income** are out of scope for that block—see `cd_sales_model` root key.",
+    "member_compensation_by_letter_tier": "Base salary multiplier and tokutenkai sales bonus rate by letter tier (S..F), including E part-time (1/3 base) and F no-base + 10% tokutenkai bonus; tier-F also has no hair/make budget; see root `member_compensation_by_letter_tier`."
+  },
+  "venue_assumptions_by_live_type": {
+    "type_4_taiban": "venue rank B / hall_large",
+    "type_5_two_man": "venue rank C / hall_medium",
+    "type_6_one_man": "venue rank C / hall_medium",
+    "type_7_routine_live": "Baseline follows **group letter tier**: tier D → livehouse_club; tier C → hall_medium; larger tiers per venue_reference.json (venue **rank** letters are room-scale and separate).",
+    "type_S_on_7_birthday": "Often hosted on type 7 (inherits host venue tier); tier-C touring template may host **S on type 6** instead—see `typical_tier_c_group.json`."
+  },
+  "schedule": {
+    "type_4_taiban_per_calendar_week": 2,
+    "type_5_two_man_lives_per_month": 1,
+    "type_6_one_man_lives_every_months": 4,
+    "type_S_on_7_member_birthday_per_member_per_year": 1,
+    "type_7_routine_live_every_months": 1
+  },
+  "derived_monthly_event_counts": {
+    "_formulas": {
+      "type_4_taiban": "2 events/week × 52 weeks / 12 months",
+      "type_6_one_man": "1 event every N months → 12/N events per year ÷ 12",
+      "type_S_on_7_birthday": "member_count × 1 birthday (S on host type 7) per year ÷ 12; member_count taken from type_7_routine_live_single_show.member_count in the tier-specific scenario file"
+    }
+  },
+  "staff_count_by_group_letter_tier": {
+    "_note": "Touring / live-ops **staff headcount** (not on-stage members) vs **member_number** `n`. Code: `FinanceSystem.staff_count_for_group_letter_tier(n, letter_tier)`. For **n > 20**, only **S, A, B** use the second formula set; **C–F** keep the **n ≤ 20** expressions evaluated at the actual `n`.",
+    "member_count_symbol": "n",
+    "small_roster_n_max_inclusive": 20,
+    "when_n_lte_small_roster_max": {
+      "S": "3 + n",
+      "A": "n",
+      "B": "round(n * 0.8) to nearest integer",
+      "C": "floor(n / 2) i.e. integer n // 2",
+      "D": "max(3, floor(n / 3)) i.e. max(3, n // 3)",
+      "E": "max(2, floor(n / 4)) i.e. max(2, n // 4)",
+      "F": "max(2, floor(n / 5)) i.e. max(2, n // 5) — not in the original six-formula prose; tapered floor; fork if you change F."
+    },
+    "when_n_gt_small_roster_max": {
+      "applies_to_letter_tiers": [
+        "S",
+        "A",
+        "B"
+      ],
+      "S": "round(10 + n * 0.2)",
+      "A": "round(8 + n * 0.2)",
+      "B": "round(4 + n * 0.2)"
+    }
+  },
+  "commercial_income_guess_letter_tier_s_through_b": {
+    "_note": "**Illustrative guess** — national / major CM, brand tie-ins, and similar **commercial** flows **per calendar month** (smooth average; real deals are lumpy). In practice **most gross is retained by each member’s agency** (and holding companies); the **group operating budget** often only sees **pooled unit deals, management fees, or thin pass-through**—modeled here as a **small share of gross**.",
+    "group_share_of_commercial_gross": {
+      "S": 0.14,
+      "A": 0.11,
+      "B": 0.09
+    },
+    "estimated_commercial_gross_yen_per_month": {
+      "S": 35714286,
+      "A": 25386364,
+      "B": 6500000
+    },
+    "estimated_group_net_commercial_yen_per_month": {
+      "_formula": "round(gross × group_share_of_commercial_gross[tier])",
+      "S": 5000000,
+      "A": 2792500,
+      "B": 585000
+    }
+  },
+  "cd_sales_model": {
+    "_note": "**Physical CD** unit economics to the **group** after manufacturing / distribution / channel cuts—**average net ¥1,500 per CD sold**. Each CD is bundled with an **online signing** obligation: **one allocating member spends 30 wall-clock seconds per CD** (serial meet load). **Digital sales** and **MV / streaming watch revenue** are **not** modeled here (intentionally ignored for this block). Helpers: `FinanceSystem.cd_sales_net_income_yen`, `FinanceSystem.cd_online_signing_member_seconds`.",
+    "average_net_income_yen_per_cd_sold": 1500,
+    "online_signing_event": {
+      "seconds_per_cd_allocating_member": 30,
+      "_note": "Per **sold CD**, the member handling that unit’s lane owes **30 s** of online signing time (not split across the whole group unless you fork the data model)."
+    },
+    "out_of_scope": [
+      "digital_download_sales",
+      "mv_streaming_or_watch_revenue"
+    ]
+  },
+  "member_compensation_by_letter_tier": {
+    "_note": "Compensation policy by group letter tier. Base salary uses `base_salary_multiplier_vs_default_monthly_base_salary` against the default anchor (`default_financial_constants` / scenario anchor). C through S receive higher base salary plus sales bonus; E is part-time at 1/3 base; F has no base salary, tokutenkai bonus is fixed at 10%, and hair/make budget is disabled.",
+    "base_salary_multiplier_vs_default_monthly_base_salary": {
+      "S": 1.6,
+      "A": 1.45,
+      "B": 1.3,
+      "C": 1.15,
+      "D": 1.0,
+      "E": 0.3333333333,
+      "F": 0.0
+    },
+    "tokutenkai_sales_bonus_rate_by_group_letter_tier": {
+      "S": 0.12,
+      "A": 0.12,
+      "B": 0.11,
+      "C": 0.11,
+      "D": 0.1,
+      "E": 0.1,
+      "F": 0.1
+    },
+    "makeup_hairstyle_policy_by_group_letter_tier": {
+      "F": {
+        "enabled": false,
+        "makeup_hairstyle_per_member_per_live_yen": 0,
+        "_note": "Tier F does not budget hair&make for lives in this model."
+      }
+    },
+    "_policy_note": "F tier overrides tokutenkai bonus to 0.1, base salary to 0, and makeup/hair to disabled. E tier base salary is part-time (1/3)."
+  },
+  "default_financial_constants": {
+    "_note": "Defaults used by finance helpers unless overridden in a tier scenario file.",
+    "tokutenkai_idol_share_rate": 0.1,
+    "small_venue_capacity_threshold": 300,
+    "small_venue_event_fee_yen": 1200000,
+    "small_venue_event_fee_weekday_yen": 352000,
+    "small_venue_event_fee_weekend_holiday_yen": 462000
+  },
+  "type_4_taiban_tokutenkai": {
+    "_note": "Lane model for **type 4 (taiban)** post-live meet; aligned with `ui/main_ui.py` Taiban preset and `database/idol_group_rank_table.md` type 4. Type-7 routine templates live in `typical_tier_*_group.json` scenario files.",
+    "duration_minutes": 60,
+    "tier_primary": { "ticket_price_yen": 2000, "slot_seconds": 15 },
+    "tier_secondary": { "ticket_price_yen": 3000, "slot_seconds": 20 },
+    "sales_split_primary_share": 0.5,
+    "blended_effective_ticket_price_yen": 2500,
+    "blended_effective_slot_seconds": 17.5,
+    "_blended_slot_note": "At 50/50 ticket counts, mean time per ticket is (15+20)/2 = 17.5s (capacity uses n×15 + n×20 ≤ window per member)."
+  },
+  "live_goods_model": {
+    "_note": "In-show / venue goods table (where offered): gross ≈ floor(effective_buyers × average_price_yen × average_buying_pieces). **Host types 4 (taiban), 5 (multi-man), and 7 (routine) do not offer goods** in this model—gross is always 0 for those hosts (including **S on 7**). Types **1, 2, 3, 6** (and **S on 6** etc.) may sell goods; **type S** overlay adds `type_S_buying_pieces_add` to pieces when the **host** type is goods-eligible. **Letter tiers** S..F set price and piece ladder. Implementations: `database/finance/finance_system.py` → `FinanceSystem.estimate_live_goods_gross_yen` / `live_goods_effective_buyers`.",
+    "no_goods_host_live_types": [
+      "4",
+      "5",
+      "7"
+    ],
+    "type_S_buying_pieces_add": 1,
+    "average_price_yen_by_group_letter_tier": {
+      "S": 3000,
+      "A": 3000,
+      "B": 2500,
+      "C": 2000,
+      "D": 1500,
+      "E": 1500,
+      "F": 1500
+    },
+    "average_buying_pieces_by_group_letter_tier": {
+      "S": 2,
+      "A": 2,
+      "B": 1.5,
+      "C": 1,
+      "D": 0.6,
+      "E": 0.4,
+      "F": 0.4
+    },
+    "effective_buyers_formula_by_host_live_type": {
+      "_legend": "Only **1, 2, 3, 6** use `group_fans` as effective buyers here. Types **4, 5, 7** are listed as **no goods**—see `no_goods_host_live_types`.",
+      "1": "group_fans",
+      "2": "group_fans",
+      "3": "group_fans",
+      "4": "no_goods",
+      "5": "no_goods",
+      "6": "group_fans",
+      "7": "no_goods"
+    }
+  },
+  "per_live_financial_table_template_note": "Income/expense rows for each live type; per-occurrence nets align to event_net_per_occurrence_estimate_yen in typical_tier_*_group.json.",
+  "additional_cost_assumptions": {
+    "staff_salary": {
+      "producer_player_monthly_salary_yen": 0,
+      "manager_headcount": 2,
+      "manager_monthly_salary_yen_each": 300000,
+      "monthly_staff_salary_total_yen": 600000,
+      "note": "Producer is modeled as player-owner (no fixed salary in this baseline); two managers are paid monthly salary."
+    },
+    "costume_refresh_per_quarter_per_member_by_tier_yen": {
+      "S": 60000,
+      "A": 50000,
+      "B": 40000,
+      "C": 30000,
+      "D": 20000,
+      "E": 15000,
+      "F": 10000
+    },
+    "costume_refresh_inference_note": "Given tier D = ¥20,000 and tier B = ¥40,000 per member per quarter, inferred ladder is S 60k, A 50k, C 30k, E 15k, F 10k (B fixed at 40k).",
+    "makeup_hairstyle": {
+      "applies_to_live_types": [
+        "1",
+        "2",
+        "6"
+      ],
+      "birthday_special_case": "For birthday live (type_S_on_7 in this model), apply styling to 1 member only.",
+      "makeup_hairstyle_per_member_per_live_yen": 12000,
+      "non_applicable_live_types_in_this_model": [
+        "4",
+        "5",
+        "7"
+      ],
+      "_note": "Baseline block matches **letter tier D** (`typical_tier_d_group.json`). Letter **tier C and above** use `makeup_hairstyle_letter_tier_c_and_above` instead."
+    },
+    "makeup_hairstyle_letter_tier_c_and_above": {
+      "applies_to_group_letter_tiers": [
+        "C",
+        "B",
+        "A",
+        "S"
+      ],
+      "all_members_every_live": true,
+      "applies_to_live_types": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "S"
+      ],
+      "makeup_hairstyle_per_member_per_live_yen": 12000,
+      "full_group_makeup_per_live_yen": "member_count × makeup_hairstyle_per_member_per_live_yen",
+      "_note": "Budget hair/makeup for **every member** on **every** modeled live in types 3–7 and type S overlays. Scenario files `typical_tier_c_group.json` / `typical_tier_b_group.json` apply this to their live tables."
+    },
+    "major_label_mv_cycle_letter_tier_c_and_above": {
+      "applies_to_group_letter_tiers": [
+        "C",
+        "B",
+        "A",
+        "S"
+      ],
+      "new_songs_per_calendar_year": 4,
+      "per_release_major_publisher_anchor_yen": 1000000,
+      "annual_production_and_publish_budget_yen": 4000000,
+      "monthly_amortized_yen": 333333,
+      "_note": "Four **major-publisher**, MV-grade drops per year; per-release anchor matches `publishing_costs_yen.major_publisher` (¥1M) unless a scenario forks it.",
+      "publishing_anchor_ref": "publishing_costs_yen.major_publisher"
+    },
+    "song_and_music_production": {
+      "new_song_total_package_yen": 1000000,
+      "music_production_cost_range_yen": [
+        100000,
+        1000000
+      ],
+      "note": "Use lower end for simple arrangements/indie production and upper end for full studio package with richer arrangement and recording sessions."
+    },
+    "publishing_costs_yen": {
+      "major_publisher": 1000000,
+      "minor_publisher": 100000,
+      "note": "Publishing/distribution onboarding and related release-side cost anchor."
+    },
+    "monthly_admin_training_costs_per_tier_yen": {
+      "admin": {
+        "S": 300000,
+        "A": 250000,
+        "B": 200000,
+        "C": 150000,
+        "D": 100000,
+        "E": 70000,
+        "F": 50000
+      },
+      "training": {
+        "S": 600000,
+        "A": 500000,
+        "B": 400000,
+        "C": 300000,
+        "D": 200000,
+        "E": 140000,
+        "F": 100000
+      },
+      "inference_note": "Anchored at letter tier D = admin ¥100,000 and training ¥200,000 per month; other letter tiers use the same multipliers as before (S3.0 / A2.5 / B2.0 / C1.5 / E0.7 / F0.5)."
+    }
+  }
+}

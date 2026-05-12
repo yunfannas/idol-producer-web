@@ -10,15 +10,20 @@ This document aligns the **Vite + TypeScript** web game (`idol-producer-web`) wi
 
 ## Desktop references (local paths)
 
-| Topic | Primary location |
-|--------|------------------|
-| Save schema, version | `idol_producer/game_save.py` |
-| Finance / daily close | `idol_producer/database/finance/finance_system.py` |
-| Finance data | `idol_producer/database/finance/group_finance.json` (copied into web: `src/engine/data/group_finance.json`) |
-| Live results | `idol_producer/live_performance_system.py` (`resolve_group_live_result`, `apply_live_result_to_group`) |
-| Training / status | `idol_producer/idol_status_system.py` |
-| UI (reference only — not portable) | `idol_producer/ui/main_ui.py` |
-| Web preview export | `idol_producer/scripts/export_web_preview_bundle.py` |
+Selected modules are also mirrored under **`public/ref/`** for in-repo reading while porting; treat **`idol_producer/`** as canonical if the copies drift.
+
+| Topic | Primary location (`idol_producer/`) | Mirror in repo (`public/ref/`) |
+|--------|--------------------------------------|--------------------------------|
+| Save schema, version | `game_save.py` | `game_save.py` |
+| Idol attribute buckets (port of visible/hidden stats) | `idol_attributes.py` | `idol_attributes.py` |
+| Scenario future events | `scenario_runtime.py` | `scenario_runtime.py` |
+| Scout desk (save `scout` block) | `scout_system.py` | `scout_system.py` |
+| Finance / daily close | `database/finance/finance_system.py` | `finance/finance_system.py` |
+| Finance data | `database/finance/group_finance.json` (TS copy: `src/engine/data/group_finance.json`) | `finance/group_finance.json` |
+| Live results | `live_performance_system.py` (`resolve_group_live_result`, `apply_live_result_to_group`) | `live_performance_system.py` |
+| Training / status | `idol_status_system.py` | `idol_status_system.py` |
+| UI (reference only — not portable) | `ui/main_ui.py` | `main_ui.py` |
+| Web preview export | `scripts/export_web_preview_bundle.py` | `scripts/export_web_preview_bundle.py` |
 
 ## Phased delivery
 

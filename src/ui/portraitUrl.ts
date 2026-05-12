@@ -107,7 +107,7 @@ export function idolPortraitPublicSrc(row: Record<string, unknown>): string | un
 
 /** After shell paint: swap broken portrait URLs to `data-fallback` (SVG initial). */
 export function wirePortraitFallbacks(root: ParentNode): void {
-  root.querySelectorAll<HTMLImageElement>("img.idol-detail-portrait, img.idol-thumb").forEach((img) => {
+  root.querySelectorAll<HTMLImageElement>("img.idol-detail-portrait, img.idol-thumb, img.group-detail-hero, img.group-detail-logo").forEach((img) => {
     const fb = img.dataset.fallback;
     if (!fb) return;
     img.addEventListener(

@@ -13,7 +13,11 @@ import {
   normalizePersistedAttributes,
 } from "../engine/idolAttributes";
 import { resolveGroupLetterTier, sortGroupsForDirectory, addCalendarDays } from "../engine/financeSystem";
-import { AUTOPILOT_LIVE_WEEKDAY_INDEX } from "../engine/gameEngine";
+import {
+  AUTOPILOT_LIVE_WEEKDAY_INDEX,
+  getBlockingNotificationForSave,
+} from "../engine/gameEngine";
+import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
@@ -25,6 +29,7 @@ import {
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
+import { notificationRequiresAck } from "../save/inbox";
 import { renderGroupDetailPage } from "./groupDetailPage";
 import {
   isSongHiddenFromDisplay,
@@ -50,6 +55,138 @@ function calendarDaysBetween(earlierIso: string, laterIso: string): number {
   const b = new Date(`${laterIso}T12:00:00Z`).getTime();
   return Math.round((b - a) / 86400000);
 }
+
+function startOfUtcMonthIso(isoYmd: string): string {
+  const s = String(isoYmd).split("T")[0].trim();
+  const m = /^(\d{4})-(\d{2})/.exec(s);
+  if (!m) return "2000-01-01";
+  return `${m[1]}-${m[2]}-01`;
+}
+
+function daysInUtcMonth(year: number, month1to12: number): number {
+  return new Date(Date.UTC(year, month1to12, 0)).getUTCDate();
+}
+
+function formatMonthYearTitleUtc(firstOfMonthIso: string): string {
+  const y = parseInt(firstOfMonthIso.slice(0, 4), 10);
+  const m1 = parseInt(firstOfMonthIso.slice(5, 7), 10);
+  if (!Number.isFinite(y) || !Number.isFinite(m1)) return firstOfMonthIso;
+  const d = new Date(Date.UTC(y, m1 - 1, 1));
+  return d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+
+function buildScheduleMonthCalendarHtml(
+  firstOfMonthIso: string,
+  ctx: {
+    gameStart: string;
+    cur: string;
+    nextIso: string;
+    schedules: Record<string, unknown>[];
+    results: Record<string, unknown>[];
+  },
+): string {
+  const y = parseInt(firstOfMonthIso.slice(0, 4), 10);
+  const m1 = parseInt(firstOfMonthIso.slice(5, 7), 10);
+  if (!Number.isFinite(y) || !Number.isFinite(m1) || m1 < 1 || m1 > 12) {
+    return `<p class="content-muted">Invalid month.</p>`;
+  }
+  const dim = daysInUtcMonth(y, m1);
+  const firstDow = new Date(Date.UTC(y, m1 - 1, 1)).getUTCDay();
+
+  const scheduleByDate = new Map<string, Record<string, unknown>[]>();
+  for (const s of ctx.schedules) {
+    const d = String(s.start_date ?? "").split("T")[0];
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
+    if (!scheduleByDate.has(d)) scheduleByDate.set(d, []);
+    scheduleByDate.get(d)!.push(s);
+  }
+  const resultDates = new Set<string>();
+  for (const r of ctx.results) {
+    const d = String(r.date ?? r.start_date ?? "").split("T")[0];
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d)) resultDates.add(d);
+  }
+
+  const gs = /^\d{4}-\d{2}-\d{2}$/.test(ctx.gameStart) ? ctx.gameStart : "2020-01-01";
+  const dowLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const head = dowLabels.map((lab) => `<div class="schedule-cal-dow">${htmlEsc(lab)}</div>`).join("");
+
+  const cells: string[] = [];
+  for (let i = 0; i < firstDow; i++) {
+    cells.push(`<div class="schedule-cal-cell schedule-cal-cell--pad" aria-hidden="true"></div>`);
+  }
+  for (let day = 1; day <= dim; day++) {
+    const iso = `${String(y).padStart(4, "0")}-${String(m1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    const offset = calendarDaysBetween(gs, iso);
+    const autop = offset >= 0 && offset % 7 === AUTOPILOT_LIVE_WEEKDAY_INDEX;
+    const booked = scheduleByDate.has(iso);
+    const played = resultDates.has(iso);
+    const isNext = iso === ctx.nextIso;
+    const isClosed = iso <= ctx.cur;
+    const cls = [
+      "schedule-cal-cell",
+      isClosed ? "is-past" : "",
+      isNext ? "is-next-day" : "",
+      autop ? "has-autopilot" : "",
+      booked ? "has-booking" : "",
+      played ? "has-result" : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    const extras = scheduleByDate.get(iso) ?? [];
+    const tip: string[] = [];
+    if (isClosed) tip.push("Day closed in save");
+    if (isNext) tip.push("Next simulation day");
+    if (autop) tip.push("Autopilot live weekday");
+    if (booked) {
+      for (const ex of extras.slice(0, 2)) {
+        const vn = String((ex as Record<string, unknown>).venue ?? "").trim();
+        const tt = String((ex as Record<string, unknown>).title ?? (ex as Record<string, unknown>).live_type ?? "Live");
+        tip.push(vn ? `${tt} @ ${vn}` : tt);
+      }
+      if (extras.length > 2) tip.push(`+${extras.length - 2} more`);
+    }
+    if (played) tip.push("Has played live result");
+    const title = tip.join(" · ") || iso;
+
+    cells.push(`<div class="${cls}" title="${htmlEsc(title)}">
+      <span class="schedule-cal-daynum">${day}</span>
+      <span class="schedule-cal-dots" aria-hidden="true">
+        ${autop ? `<span class="schedule-cal-dot schedule-cal-dot--auto"></span>` : ""}
+        ${booked ? `<span class="schedule-cal-dot schedule-cal-dot--book"></span>` : ""}
+        ${played ? `<span class="schedule-cal-dot schedule-cal-dot--done"></span>` : ""}
+      </span>
+    </div>`);
+  }
+
+  const padTail = (7 - ((firstDow + dim) % 7)) % 7;
+  for (let i = 0; i < padTail; i++) {
+    cells.push(`<div class="schedule-cal-cell schedule-cal-cell--pad" aria-hidden="true"></div>`);
+  }
+
+  const legend = `<ul class="schedule-cal-legend">
+    <li><span class="schedule-cal-dot schedule-cal-dot--auto"></span> ${htmlEsc("Autopilot live day (offset % 7)")}</li>
+    <li><span class="schedule-cal-dot schedule-cal-dot--book"></span> ${htmlEsc("Booked live in save")}</li>
+    <li><span class="schedule-cal-dot schedule-cal-dot--done"></span> ${htmlEsc("Played result logged")}</li>
+    <li class="schedule-cal-legend-outline">${htmlEsc("Outline = next simulation day")}</li>
+  </ul>`;
+
+  const monthTitle = formatMonthYearTitleUtc(firstOfMonthIso);
+
+  return `<div class="schedule-cal" data-sched-cal-root="${htmlEsc(firstOfMonthIso)}">
+    <div class="schedule-cal-toolbar">
+      <button type="button" class="fm-btn" data-sched-cal-delta="-1" aria-label="Previous month">${htmlEsc("←")}</button>
+      <h3 class="schedule-cal-month-title content-h3">${htmlEsc(monthTitle)}</h3>
+      <button type="button" class="fm-btn" data-sched-cal-delta="1" aria-label="Next month">${htmlEsc("→")}</button>
+      <button type="button" class="fm-btn fm-btn-accent schedule-cal-today" data-sched-cal-today="1">${htmlEsc("This month")}</button>
+    </div>
+    <div class="schedule-cal-grid" role="grid" aria-label="Month calendar">${head}${cells.join("")}</div>
+    ${legend}
+  </div>`;
+}
+
+/** Primary Songs workspace tabs (matches `public/ref/main_ui.py` show_songs_view). */
+export type SongsWorkspaceTab = "group_songs" | "disc";
 
 /** Full management nav (browse mode restricts to Idol / Groups / Songs like desktop `_browse_mode`). */
 export const MANAGEMENT_NAV_ITEMS = [
@@ -574,6 +711,8 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
   const sel = selectedUid && rows.some((r) => r.uid === selectedUid) ? selectedUid : null;
   const selected = sel ? rows.find((r) => r.uid === sel) ?? null : null;
 
+  const markAllDisabled = rows.every((r) => r.read || notificationRequiresAck(r));
+
   const list = rows
     .map((n) => {
       const unread = !n.read ? `<span class="badge-unread" aria-hidden="true">●</span> ` : "";
@@ -586,7 +725,14 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
     .join("");
 
   const detail = selected
-    ? `<article class="fm-card inbox-detail-card" aria-label="Message detail">
+    ? (() => {
+        const isLiveSchedule =
+          selected.title === "Today's live schedule" ||
+          String(selected.dedupe_key ?? "").startsWith("daily-lives|");
+        const primaryBtn = isLiveSchedule
+          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}" ${selected.read ? "disabled" : ""}>${htmlEsc("Live Start")}</button>`
+          : `<button type="button" class="fm-btn fm-btn-accent" data-inbox-mark-read="${htmlEsc(selected.uid)}" ${selected.read ? "disabled" : ""}>${htmlEsc("Mark read")}</button>`;
+        return `<article class="fm-card inbox-detail-card" aria-label="Message detail">
         <header class="fm-card-head">
           <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}</h3>
           <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.date)}">${htmlEsc(selected.date)}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
@@ -594,19 +740,20 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
         <div class="inbox-detail-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
         ${
           selected.requires_confirmation
-            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> (desktop parity: choices not wired yet).</p>`
+            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> — ${isLiveSchedule ? "Use Live Start to run the live and clear this blocker." : "Acknowledge when you have decided (full choice parity is still in progress)."}</p>`
             : ""
         }
         <div class="inbox-detail-actions">
-          <button type="button" class="fm-btn fm-btn-accent" data-inbox-mark-read="${htmlEsc(selected.uid)}" ${selected.read ? "disabled" : ""}>${htmlEsc("Mark read")}</button>
+          ${primaryBtn}
         </div>
-      </article>`
+      </article>`;
+      })()
     : `<p class="content-muted">Select a message.</p>`;
 
   return `<section class="content-panel inbox-view">
     <div class="inbox-toolbar">
       <h2 class="content-h2 inbox-h2">Inbox</h2>
-      <button type="button" class="fm-btn" id="btn-inbox-mark-all" ${rows.every((r) => r.read) ? "disabled" : ""}>${htmlEsc("Mark all read")}</button>
+      <button type="button" class="fm-btn" id="btn-inbox-mark-all" ${markAllDisabled ? "disabled" : ""}>${htmlEsc("Mark all read")}</button>
     </div>
     <div class="inbox-split">
       <div class="inbox-list-col fm-card" role="navigation" aria-label="Messages">${list}</div>
@@ -617,12 +764,46 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
 
 function renderTraining(save: GameSavePayload): string {
   const grp = getPrimaryGroup(save);
-  const memberUids = Array.isArray(grp?.member_uids)
+  const memberUidsRaw = Array.isArray(grp?.member_uids)
     ? (grp!.member_uids as unknown[]).map((x) => String(x))
     : [...save.shortlist];
   const idols = save.database_snapshot.idols;
   const ref =
     save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? undefined;
+
+  const groupUidStr = String(grp?.uid ?? "").trim();
+  const groupNames = new Set(
+    [String(grp?.name ?? "").trim(), String(grp?.name_romanji ?? "").trim()].filter(Boolean),
+  );
+
+  /** Sort key: membership `start_date` in this group (earlier join first). */
+  const joinDateMsInGroup = (row: Record<string, unknown>): number => {
+    const hist = row.group_history;
+    if (!Array.isArray(hist)) return Number.POSITIVE_INFINITY;
+    for (const raw of hist) {
+      if (!raw || typeof raw !== "object") continue;
+      const e = raw as Record<string, unknown>;
+      const uid = String(e.group_uid ?? "").trim();
+      const gn = String(e.group_name ?? "").trim();
+      if (uid === groupUidStr || (gn && groupNames.has(gn))) {
+        const sd = typeof e.start_date === "string" ? e.start_date.trim().split("T")[0] : "";
+        if (/^\d{4}-\d{2}-\d{2}$/.test(sd)) return new Date(`${sd}T12:00:00Z`).getTime();
+        return Number.POSITIVE_INFINITY;
+      }
+    }
+    return Number.POSITIVE_INFINITY;
+  };
+
+  const memberUids = [...memberUidsRaw].sort((a, b) => {
+    const ra = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === a) as Record<string, unknown> | undefined;
+    const rb = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === b) as Record<string, unknown> | undefined;
+    if (!ra) return 1;
+    if (!rb) return -1;
+    const da = joinDateMsInGroup(ra);
+    const db = joinDateMsInGroup(rb);
+    if (da !== db) return da - db;
+    return a.localeCompare(b);
+  });
 
   const cards = memberUids
     .map((uid) => {
@@ -658,11 +839,14 @@ function renderTraining(save: GameSavePayload): string {
       const cond = typeof r.condition === "number" ? r.condition : Number(r.condition ?? 0) || 0;
       const mor = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 0) || 0;
 
+      const nameLine = romaji
+        ? `<h3 class="content-h3 training-member-title"><span class="training-name-ja">${htmlEsc(name)}</span><span class="training-name-ro">${htmlEsc(romaji)}</span></h3>`
+        : `<h3 class="content-h3 training-member-title"><span class="training-name-ja">${htmlEsc(name)}</span></h3>`;
+
       return `<article class="fm-card training-member-card" data-training-card="${htmlEsc(uid)}">
         <header class="training-member-head">
-          <div>
-            <h3 class="content-h3">${htmlEsc(name)}</h3>
-            ${romaji ? `<p class="content-muted">${htmlEsc(romaji)}</p>` : ""}
+          <div class="training-member-nameblock">
+            ${nameLine}
           </div>
           <div class="training-member-stats">
             <span title="Condition">C ${htmlEsc(String(cond))}</span>
@@ -675,10 +859,12 @@ function renderTraining(save: GameSavePayload): string {
           ${slider("dance", "Dance")}
           ${slider("physical", "Physical")}
           ${slider("target", "Target / misc")}
+          <label class="training-slider training-focus-slider-row">
+            <span class="training-slider-l">${htmlEsc("Special focus")}</span>
+            <select class="fm-select training-focus-select" data-training-focus data-idol-uid="${htmlEsc(uid)}" aria-label="${htmlEsc("Special focus (weekly bonus track)")}">${focusOpts}</select>
+            <span class="training-slider-v" aria-hidden="true"> </span>
+          </label>
         </div>
-        <label class="training-focus-row">${htmlEsc("Special focus (weekly bonus track)")}
-          <select class="fm-select training-focus-select" data-training-focus data-idol-uid="${htmlEsc(uid)}" aria-label="Focus skill">${focusOpts}</select>
-        </label>
       </article>`;
     })
     .filter(Boolean)
@@ -927,6 +1113,22 @@ function renderSongsGroupDropdown(groups: Record<string, unknown>[], selectedUid
   </div>`;
 }
 
+/** Making view: managed group only (no picker). */
+function renderMakingManagedGroupBar(groups: Record<string, unknown>[], managedUid: string): string {
+  const sorted = sortGroupsForDirectory(groups);
+  const row = sorted.find((g) => String((g as { uid?: unknown }).uid ?? "").trim() === managedUid);
+  const name = row
+    ? String((row as { name?: unknown }).name ?? (row as { name_romanji?: unknown }).name_romanji ?? managedUid)
+    : managedUid;
+  const rj = row ? String((row as { name_romanji?: unknown }).name_romanji ?? "").trim() : "";
+  const label = rj && rj !== name ? `${name} (${rj})` : name;
+  return `<div class="songs-toolbar fm-card-inline songs-making-managed-bar" role="group" aria-label="${htmlEsc("Managed group (Making)")}">
+    <span class="songs-toolbar-label"><span class="songs-toolbar-text">${htmlEsc("Group")}</span>
+    <strong class="songs-making-managed-name">${htmlEsc(label)}</strong>
+    <span class="content-muted songs-making-managed-note">${htmlEsc("managed")}</span></span>
+  </div>`;
+}
+
 function renderSongsWorkspaceTabs(active: SongsWorkspaceTab): string {
   const songsAct = active === "group_songs" ? " is-active" : "";
   const discAct = active === "disc" ? " is-active" : "";
@@ -1015,20 +1217,31 @@ interface SongsRenderOpts {
    * `making` = main Making nav (workshop table: no release/pop; disc text field; Arrange / Release).
    */
   trackSplitSurface?: "songs" | "making";
+  /** When `trackSplitSurface` is `making`, lock catalog to this group (managed production). */
+  managedGroupUid?: string | null;
 }
 
 /** Songs workspace: group picker, Songs | Discography tabs (desktop `main_ui.py`), tables. */
 function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRenderOpts): string {
   const surface = opts?.trackSplitSurface ?? "songs";
   const pageTitle = surface === "making" ? "Making" : "Songs";
+  const managedUid = opts?.managedGroupUid?.trim() ?? "";
 
   if (!allSongs.length) return renderPlaceholder(pageTitle, "No songs in <code>songs.json</code>.");
-  if (!opts?.groups?.length || !String(opts.selectedGroupUid ?? "").trim()) {
+  if (!opts?.groups?.length) {
+    return renderPlaceholder(pageTitle, "No groups in snapshot for song directory.");
+  }
+  if (surface === "making" && !managedUid) {
+    return renderPlaceholder(pageTitle, "No managed group on this save.");
+  }
+
+  const effectiveGid = surface === "making" && managedUid ? managedUid : String(opts.selectedGroupUid ?? "").trim();
+  if (!effectiveGid) {
     return renderPlaceholder(pageTitle, "No groups in snapshot for song directory.");
   }
 
   const ordered = songsForDisplaySorted(allSongs);
-  const gid = String(opts.selectedGroupUid).trim();
+  const gid = effectiveGid;
   const teamSongs = ordered.filter((row) => String(row.group_uid ?? "") === gid);
   const { released: releasedTeam, making: makingTeam } = splitSongsReleasedVsMaking(
     teamSongs,
@@ -1043,7 +1256,10 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
   const catalogSplitsFuture = hasRef && makingTeam.length > 0;
 
   const sub = opts.subtitle ? `<p class="content-muted">${htmlEsc(opts.subtitle)}</p>` : "";
-  const toolbar = renderSongsGroupDropdown(opts.groups, gid);
+  const toolbar =
+    surface === "making" && managedUid
+      ? renderMakingManagedGroupBar(opts.groups, managedUid)
+      : renderSongsGroupDropdown(opts.groups, gid);
 
   if (surface === "making") {
     const workshopRows = hasRef ? makingTeam : teamSongs;
@@ -1259,7 +1475,7 @@ function renderBrowseGroups(data: LoadedScenario): string {
   );
 }
 
-function renderSchedule(save: GameSavePayload | null): string {
+function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart: string | null): string {
   if (!save) {
     return `<section class="content-panel schedule-view"><p class="content-muted">No save loaded.</p></section>`;
   }
@@ -1267,6 +1483,22 @@ function renderSchedule(save: GameSavePayload | null): string {
   const cur = save.current_date ?? gameStart;
   const turn = typeof save.turn_number === "number" ? save.turn_number : 0;
   const nextIso = addCalendarDays(cur, 1);
+
+  const schedulesList = (save.lives?.schedules ?? []).filter(
+    (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
+  );
+  const resultsList = (save.lives?.results ?? []).filter(
+    (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
+  );
+  const gs = typeof gameStart === "string" && /^\d{4}-\d{2}-\d{2}$/.test(gameStart) ? gameStart : "2020-01-01";
+  const anchor = scheduleCalendarMonthStart ?? startOfUtcMonthIso(nextIso);
+  const calHtml = buildScheduleMonthCalendarHtml(anchor, {
+    gameStart: gs,
+    cur: String(cur).split("T")[0],
+    nextIso,
+    schedules: schedulesList,
+    results: resultsList,
+  });
 
   const weekDays = 7;
   const cells: string[] = [];
@@ -1289,7 +1521,9 @@ function renderSchedule(save: GameSavePayload | null): string {
         ? extra
             .map((s) => {
               const o = s as Record<string, unknown>;
-              return String(o.live_type ?? o.event_type ?? "Event");
+              const typ = String(o.live_type ?? o.event_type ?? "Event");
+              const vn = String(o.venue ?? "").trim();
+              return vn ? `${typ} @ ${vn}` : typ;
             })
             .join(", ")
         : "";
@@ -1311,8 +1545,10 @@ function renderSchedule(save: GameSavePayload | null): string {
       const r = raw as Record<string, unknown>;
       const d = String(r.date ?? "").split("T")[0];
       const perf = r.performance_score != null ? String(r.performance_score) : "—";
+      const aud = r.audience_satisfaction != null ? String(r.audience_satisfaction) : "—";
       const fans = r.fan_gain != null ? String(r.fan_gain) : "—";
-      return `<tr><td>${htmlEsc(d)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(fans)}</td></tr>`;
+      const att = r.attendance != null ? String(r.attendance) : "—";
+      return `<tr><td>${htmlEsc(d)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(aud)}</td><td class="num">${htmlEsc(fans)}</td><td class="num">${htmlEsc(att)}</td></tr>`;
     })
     .filter(Boolean)
     .join("");
@@ -1321,6 +1557,11 @@ function renderSchedule(save: GameSavePayload | null): string {
     <section class="content-panel schedule-view">
       <h2 class="content-h2">Schedule</h2>
       <p class="content-lead">Last closed day: <strong>${htmlEsc(String(cur))}</strong> · Next simulation day: <strong>${htmlEsc(nextIso)}</strong> · Turn <strong>${htmlEsc(String(turn))}</strong></p>
+      <section class="fm-card schedule-calendar-card">
+        <h3 class="content-h3">Calendar</h3>
+        <p class="content-muted">${htmlEsc("UTC month grid. Use arrows to change month; This month jumps to the month of your next simulation day.")}</p>
+        ${calHtml}
+      </section>
       <section class="fm-card schedule-teaser">
         <h3 class="content-h3">Upcoming week (from next day)</h3>
         <p class="content-muted">Routine lives run when the day offset from <code>game_start_date</code> satisfies <code>offset % 7 === ${AUTOPILOT_LIVE_WEEKDAY_INDEX}</code> (same rule as <code>advanceOneDay</code> in the web engine). Use <strong>NEXT DAY</strong> in the top bar to progress.</p>
@@ -1330,12 +1571,81 @@ function renderSchedule(save: GameSavePayload | null): string {
         <h3 class="content-h3">Recent live results</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Performance</th><th>Fan Δ</th></tr></thead>
-            <tbody>${resRows || `<tr><td colspan="3" class="content-muted">No results yet.</td></tr>`}</tbody>
+            <thead><tr><th>Date</th><th>Performance</th><th>Audience</th><th>Fan Δ</th><th>Attendance</th></tr></thead>
+            <tbody>${resRows || `<tr><td colspan="5" class="content-muted">No results yet.</td></tr>`}</tbody>
           </table>
         </div>
       </section>
     </section>`;
+}
+
+function renderLivesView(save: GameSavePayload): string {
+  const schedules = (save.lives?.schedules ?? []).filter(
+    (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
+  );
+  const results = (save.lives?.results ?? []).filter(
+    (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
+  );
+
+  const byDate = (a: Record<string, unknown>, b: Record<string, unknown>) => {
+    const da = String(a.start_date ?? a.date ?? "").split("T")[0];
+    const db = String(b.start_date ?? b.date ?? "").split("T")[0];
+    return da.localeCompare(db);
+  };
+  const upcoming = [...schedules].sort(byDate);
+
+  const upcomingRows = upcoming
+    .map((live) => {
+      const d = String(live.start_date ?? "").split("T")[0];
+      const title = String(live.title ?? live.live_type ?? "—");
+      const venue = String(live.venue ?? "—");
+      const loc = String(live.location ?? "").trim();
+      const cap = live.capacity != null ? String(live.capacity) : "—";
+      const slot = formatLiveSlotLine(live);
+      const typ = String(live.live_type ?? live.event_type ?? "");
+      const where = loc ? `${venue} · ${loc}` : venue;
+      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
+    })
+    .join("");
+
+  const recent = [...results].sort(byDate).reverse().slice(0, 30);
+  const resultRows = recent
+    .map((live) => {
+      const d = String(live.date ?? live.start_date ?? "").split("T")[0];
+      const venue = String(live.venue ?? "—");
+      const perf = live.performance_score != null ? String(live.performance_score) : "—";
+      const title = String(live.title ?? live.live_type ?? "—");
+      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(venue)}</td><td class="num">${htmlEsc(perf)}</td></tr>`;
+    })
+    .join("");
+
+  const grp = getPrimaryGroup(save);
+  const label = String(grp?.name_romanji ?? grp?.name ?? save.managing_group ?? "Managed group");
+
+  return `<section class="content-panel lives-view">
+    <h2 class="content-h2">Lives</h2>
+    <p class="content-muted">${htmlEsc(
+      `Managed group: ${label}. Venues match desktop booking: closest hall capacity to a fan-scale target, from the same venues.json bundled with the web build.`,
+    )}</p>
+    <section class="fm-card">
+      <h3 class="content-h3">Scheduled</h3>
+      <div class="table-scroll">
+        <table class="fm-table">
+          <thead><tr><th>Date</th><th>Slot</th><th>Title</th><th>Type</th><th>Venue</th><th>Cap.</th></tr></thead>
+          <tbody>${upcomingRows || `<tr><td colspan="6" class="content-muted">No scheduled lives in save.</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>
+    <section class="fm-card">
+      <h3 class="content-h3">Recent results (last 30)</h3>
+      <div class="table-scroll">
+        <table class="fm-table">
+          <thead><tr><th>Date</th><th>Title</th><th>Venue</th><th>Perf.</th></tr></thead>
+          <tbody>${resultRows || `<tr><td colspan="4" class="content-muted">No played lives yet.</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>
+  </section>`;
 }
 
 export function renderMainContent(
@@ -1351,6 +1661,8 @@ export function renderMainContent(
     songsWorkspaceTab: SongsWorkspaceTab;
     songsDiscographyKey: string | null;
     inboxSelectedUid: string | null;
+    /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
+    scheduleCalendarMonthStart: string | null;
   },
 ): string {
   const {
@@ -1365,6 +1677,7 @@ export function renderMainContent(
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid,
+    scheduleCalendarMonthStart,
   } = ctx;
 
   if (browseMode && browseData) {
@@ -1480,7 +1793,9 @@ export function renderMainContent(
       return renderGroupsManaged(save);
     }
     case "Schedule":
-      return renderSchedule(save);
+      return renderSchedule(save, scheduleCalendarMonthStart);
+    case "Lives":
+      return renderLivesView(save);
     case "Training":
       return renderTraining(save);
     case "Making":
@@ -1495,6 +1810,7 @@ export function renderMainContent(
         catalogReferenceIso:
           save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
         trackSplitSurface: "making",
+        managedGroupUid: save.managing_group_uid ?? null,
       });
     case "Songs":
       return renderSongsList(save.database_snapshot.songs, {
@@ -1534,6 +1850,8 @@ export interface DesktopShellProps {
   songsDiscographyKey: string | null;
   /** Selected inbox notification uid (management mode). */
   inboxSelectedUid: string | null;
+  /** Selected month for Schedule calendar (`YYYY-MM-01`); null follows next simulation day. */
+  scheduleCalendarMonthStart: string | null;
   slot: number;
   occupiedSlots: number[];
 }
@@ -1552,6 +1870,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid,
+    scheduleCalendarMonthStart,
     slot,
     occupiedSlots,
   } = p;
@@ -1599,15 +1918,19 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid: inboxSelectedUid ?? null,
+    scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
   });
 
   const cashPill = finances
     ? `<div class="fm-cash-pill" title="Cash on hand"><span class="fm-cash-label">¥</span>${finances.cash_yen.toLocaleString("ja-JP")}</div>`
     : `<div class="fm-cash-pill content-muted" title="Browse">Browse</div>`;
 
+  const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
+  const nextHint = inboxBlock ? `Inbox: ${inboxBlock.title}` : "Advance one simulated day";
+
   const nextDayBtn = browseMode
     ? `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="Not in browse mode">${htmlEsc("NEXT DAY")}</button>`
-    : `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day">${htmlEsc("NEXT DAY")}</button>`;
+    : `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" title="${htmlEsc(nextHint)}">${htmlEsc("NEXT DAY")}</button>`;
 
   const ver = save ? String(save.version ?? "—") : browseData ? "browse" : "—";
 

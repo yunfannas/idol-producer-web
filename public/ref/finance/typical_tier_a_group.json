@@ -1,0 +1,52 @@
+{
+  "name": "Typical Tier A group (reconstructed)",
+  "shared_reference": "database/finance/group_finance.json",
+  "currency": "JPY",
+  "model_context": {
+    "idol_group_letter_tier": "A",
+    "reconstruction_basis": "monthly_live_counts_by_letter_tier_template.csv + shared ladders/policies in group_finance.json",
+    "type_6_venue_rank": "B"
+  },
+  "derived_monthly_event_counts": {
+    "type_1": 0.16666666666666666,
+    "type_2": 1.0,
+    "type_3": 0.25,
+    "type_4": 0.0,
+    "type_5": 0.0,
+    "type_6": 2.0,
+    "type_7": 0.0,
+    "type_S_on_7_birthday": 0.0
+  },
+  "event_net_per_occurrence_estimate_yen": {
+    "type_1": 11063429,
+    "type_2": 4978468,
+    "type_3": 553171,
+    "type_4": 243395,
+    "type_5": 995709,
+    "type_6": 1991417,
+    "type_7": 1327611,
+    "type_S_on_7_birthday": 1526753
+  },
+  "average_monthly_base_salary_yen": 348000,
+  "monthly_financial_table_yen": {
+    "totals": {
+      "monthly_live_net_yen": 10943500,
+      "monthly_commercial_income_to_group_yen": 2792500,
+      "monthly_member_salary_total_yen": 2436000,
+      "monthly_staff_salary_total_yen": 600000,
+      "monthly_costume_refresh_amortized_yen": 116667,
+      "monthly_major_label_mv_publish_amortized_yen": 333333,
+      "monthly_admin_training_total_yen": 750000,
+      "monthly_net_after_member_salaries_yen": 8507500,
+      "monthly_net_after_member_and_staff_salaries_yen": 7907500,
+      "monthly_net_after_member_staff_and_costume_refresh_yen": 7790833,
+      "monthly_net_after_member_staff_costume_and_mv_publish_yen": 7457500,
+      "monthly_net_after_all_modeled_costs_and_commercial_yen": 9500000
+    }
+  },
+  "survival_assessment": {
+    "survives_under_current_assumptions": true,
+    "final_monthly_balance_yen": 9500000,
+    "assessment_note": "Positive means modeled monthly cash generation before taxes/debt/capex; negative implies subsidy needed."
+  }
+}

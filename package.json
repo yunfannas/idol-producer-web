@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
+    "data:group-tiers": "node scripts/build-scenario6-group-tiers.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {

@@ -3,7 +3,8 @@
  */
 
 import type { LoadedScenario, ScenarioPreset } from "../data/scenarioTypes";
-import { browseGroupRank, playableGroups } from "../data/scenarioBrowse";
+import { playableGroups } from "../data/scenarioBrowse";
+import { groupTierRowMap, sortGroupsForStartupPick } from "../data/startupGroupPicker";
 import { inferLetterTier } from "../engine/financeSystem";
 import { htmlEsc } from "./htmlEsc";
 
@@ -63,10 +64,10 @@ export interface NewGameRow {
   popularity: string;
 }
 
-/** Playable groups for the new-game picker (same ordering as browse Groups). */
+/** Playable groups for the new-game picker (tier `sort_key` when `group_tiers.json` shipped). */
 export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
-  const raw = playableGroups(loaded.groups);
-  raw.sort((a, b) => browseGroupRank(a) - browseGroupRank(b));
+  const tierMap = groupTierRowMap(loaded.group_tiers);
+  const raw = sortGroupsForStartupPick(playableGroups(loaded.groups), tierMap);
   return raw.map((g) => {
     const uid = String(g.uid ?? "");
     const name = String(g.name ?? g.name_romanji ?? "—");
@@ -75,10 +76,13 @@ export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
     const formed = typeof g.formed_date === "string" ? g.formed_date : "—";
     const popNum = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
     const fansNum = typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
+    const staticT = uid ? tierMap.get(uid) : undefined;
     const tier =
-      typeof g.letter_tier === "string" && g.letter_tier.trim()
-        ? String(g.letter_tier)
-        : inferLetterTier(popNum, fansNum, 0);
+      staticT && typeof staticT.letter_tier === "string" && /^[SABCDEF]$/i.test(staticT.letter_tier.trim())
+        ? String(staticT.letter_tier).trim().toUpperCase()
+        : typeof g.letter_tier === "string" && g.letter_tier.trim()
+          ? String(g.letter_tier)
+          : inferLetterTier(popNum, fansNum, 0);
     return {
       uid,
       name,

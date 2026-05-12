@@ -1,0 +1,53 @@
+{
+  "document": "WEB_PORT_PLAN.md — scenario catalog for UX and future routing. Only scenario 6 ships full JSON under public/data/scenarios/.",
+  "scenarios": [
+    {
+      "scenario_number": 1,
+      "name": "Rise of AKB",
+      "opening_date": "2008-12-08",
+      "data_subdir": null,
+      "data_available": false,
+      "design_ref": "docs/project/ROADMAP.md — Scenario 1; database/game_scenarios/scenario_definitions.json"
+    },
+    {
+      "scenario_number": 2,
+      "name": "Idol Wars",
+      "opening_date": "2013-04-01",
+      "data_subdir": null,
+      "data_available": false,
+      "design_ref": "ROADMAP.md — Scenario 2"
+    },
+    {
+      "scenario_number": 3,
+      "name": "Sashihara's Ambition",
+      "opening_date": "2017-01-01",
+      "data_subdir": null,
+      "data_available": false,
+      "design_ref": "ROADMAP.md — Scenario 3"
+    },
+    {
+      "scenario_number": 4,
+      "name": "COVID Challenge",
+      "opening_date": "2020-02-01",
+      "data_subdir": null,
+      "data_available": false,
+      "design_ref": "ROADMAP.md — Scenario 4"
+    },
+    {
+      "scenario_number": 5,
+      "name": "Kawaii Lab",
+      "opening_date": "2022-03-01",
+      "data_subdir": null,
+      "data_available": false,
+      "design_ref": "ROADMAP.md — Scenario 5"
+    },
+    {
+      "scenario_number": 6,
+      "name": "Latest snapshot",
+      "opening_date": "2025-07-20",
+      "data_subdir": "scenario_6_2025-07-20",
+      "data_available": true,
+      "design_ref": "ROADMAP.md — Scenario 6; docs/scenario6_available_groups.txt; database/game_scenarios/test0.json"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "number": 1,
+    "name": "Rise of AKB",
+    "opening_date": "2008-12-08"
+  },
+  {
+    "number": 2,
+    "name": "Idol Wars",
+    "opening_date": "2013-04-01"
+  },
+  {
+    "number": 3,
+    "name": "Sashihara's Ambition",
+    "opening_date": "2017-01-01"
+  },
+  {
+    "number": 4,
+    "name": "COVID Challenge",
+    "opening_date": "2020-02-01"
+  },
+  {
+    "number": 5,
+    "name": "Kawaii Lab",
+    "opening_date": "2022-03-01"
+  },
+  {
+    "number": 6,
+    "name": "Latest Snapshot",
+    "opening_date": "2025-07-20"
+  }
+]

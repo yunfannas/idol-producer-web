@@ -1,7 +1,12 @@
 import "./style.css";
 import { loadDefaultScenario } from "./data/loadScenario";
 import type { LoadedScenario } from "./data/scenarioTypes";
-import { advanceOneDay, createNewGameSaveFromScenario } from "./engine/gameEngine";
+import {
+  advanceOneDay,
+  acknowledgeInboxNotification,
+  createNewGameSaveFromScenario,
+  getBlockingNotificationForSave,
+} from "./engine/gameEngine";
 import { sortGroupsForDirectory } from "./engine/financeSystem";
 import type { GameSavePayload } from "./save/gameSaveSchema";
 import {
@@ -14,6 +19,7 @@ import {
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
 import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
+import { notificationRequiresAck } from "./save/inbox";
 import { songsForDisplaySorted, buildDiscBuckets } from "./data/songDisplayPolicy";
 import {
   type OpeningScreen,
@@ -30,6 +36,16 @@ if (!appRootElt) {
   throw new Error("#app missing");
 }
 const appRoot: HTMLDivElement = appRootElt;
+
+function addScheduleCalendarMonths(firstOfMonthIso: string, delta: number): string {
+  const s = firstOfMonthIso.split("T")[0];
+  const [y0, mo0] = s.split("-").map((x) => parseInt(x, 10));
+  if (!Number.isFinite(y0) || !Number.isFinite(mo0)) return "2000-01-01";
+  const idx = (y0 - 1970) * 12 + (mo0 - 1) + delta;
+  const y = 1970 + Math.floor(idx / 12);
+  const mo = (idx % 12) + 1;
+  return `${String(y).padStart(4, "0")}-${String(mo).padStart(2, "0")}-01`;
+}
 
 let loadedScenario: LoadedScenario | null = null;
 let save: GameSavePayload | null = null;
@@ -51,6 +67,8 @@ let songsDiscographyKey: string | null = null;
 
 /** Inbox message selection (management mode). */
 let inboxSelectedUid: string | null = null;
+/** Schedule: visible month (`YYYY-MM-01`); null = month of next simulation day. */
+let scheduleCalendarMonthStart: string | null = null;
 let trainingRepaintTimer: ReturnType<typeof setTimeout> | null = null;
 
 const IDOL_LIST_LAYOUT_KEY = "idol-producer-idol-list-layout";
@@ -165,6 +183,7 @@ function paintOpening(): void {
       const loaded = loadFromSlot(slot);
       if (loaded && assertHydratedSave(loaded)) {
         save = loaded;
+        scheduleCalendarMonthStart = null;
         if (loadedScenario) {
           hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
         }
@@ -224,6 +243,7 @@ function paintOpening(): void {
           managedGroupLabel: label,
           managedGroupUid: selectedNewGameGroupUid,
         });
+        scheduleCalendarMonthStart = null;
         browseMode = false;
         openingScreen = "home";
         selectedNewGameGroupUid = null;
@@ -254,6 +274,10 @@ function paintGame(): void {
 
   ensureSongsGroupUid();
   ensureSongsDiscographyKey();
+  if (!browseMode && save && currentView === "Making") {
+    const m = save.managing_group_uid?.trim();
+    if (m) songsGroupUid = m;
+  }
 
   if (!browseMode && save && currentView === "Inbox" && save.inbox.notifications.length) {
     const rev = [...save.inbox.notifications].reverse();
@@ -277,6 +301,7 @@ function paintGame(): void {
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid,
+    scheduleCalendarMonthStart,
     slot,
     occupiedSlots: listOccupiedSlots(),
   });
@@ -285,9 +310,37 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("click", (ev) => {
     const t = ev.target as HTMLElement;
-    if (t.id === "btn-inbox-mark-all" && save && !browseMode) {
-      for (const n of save.inbox.notifications) n.read = true;
+    const calNav = t.closest<HTMLElement>("[data-sched-cal-delta]");
+    if (calNav && save && !browseMode && currentView === "Schedule") {
+      const root = appRoot.querySelector("[data-sched-cal-root]");
+      const curMonth = root?.getAttribute("data-sched-cal-root") ?? "2000-01-01";
+      const d = Number(calNav.getAttribute("data-sched-cal-delta"));
+      if (Number.isFinite(d)) {
+        scheduleCalendarMonthStart = addScheduleCalendarMonths(curMonth, d);
+        paintGame();
+      }
+      return;
+    }
+    const calToday = t.closest<HTMLElement>("[data-sched-cal-today]");
+    if (calToday && save && !browseMode && currentView === "Schedule") {
+      scheduleCalendarMonthStart = null;
       paintGame();
+      return;
+    }
+    if (t.id === "btn-inbox-mark-all" && save && !browseMode) {
+      for (const n of save.inbox.notifications) {
+        if (!notificationRequiresAck(n)) n.read = true;
+      }
+      paintGame();
+      return;
+    }
+    const liveStartBtn = t.closest<HTMLElement>("[data-inbox-live-start]");
+    if (liveStartBtn && save && !browseMode) {
+      const uid = liveStartBtn.getAttribute("data-inbox-live-start");
+      if (uid) {
+        save = acknowledgeInboxNotification(save, uid);
+        paintGame();
+      }
       return;
     }
     const markReadBtn = t.closest<HTMLElement>("[data-inbox-mark-read]");
@@ -303,8 +356,6 @@ function paintGame(): void {
       const u = inboxPick.getAttribute("data-inbox-uid");
       if (u) {
         inboxSelectedUid = u;
-        const row = save.inbox.notifications.find((n) => n.uid === u);
-        if (row) row.read = true;
         paintGame();
       }
       return;
@@ -433,7 +484,7 @@ function paintGame(): void {
       return;
     }
     const sel = ev.target as HTMLSelectElement;
-    if (sel.id !== "songs-group-select" || (currentView !== "Songs" && currentView !== "Making")) return;
+    if (sel.id !== "songs-group-select" || currentView !== "Songs") return;
     const v = sel.value;
     try {
       songsGroupUid = decodeURIComponent(v);
@@ -451,6 +502,9 @@ function paintGame(): void {
       if (!v || !isDesktopNavId(v)) return;
       if (browseMode && !isBrowseNav(v)) return;
       if (!browseMode && save && !isManagementNav(v)) return;
+      if (currentView === "Schedule" && v !== "Schedule") {
+        scheduleCalendarMonthStart = null;
+      }
       idolDetailUid = null;
       groupDetailUid = null;
       if (v !== "Inbox") inboxSelectedUid = null;
@@ -461,6 +515,13 @@ function paintGame(): void {
 
   document.getElementById("btn-next-day")?.addEventListener("click", () => {
     if (!save || browseMode) return;
+    const blocker = getBlockingNotificationForSave(save);
+    if (blocker) {
+      currentView = "Inbox";
+      inboxSelectedUid = blocker.uid;
+      paintGame();
+      return;
+    }
     save = advanceOneDay(save);
     paintGame();
   });
@@ -474,6 +535,7 @@ function paintGame(): void {
     const loaded = loadFromSlot(slot);
     if (loaded && assertHydratedSave(loaded)) {
       save = loaded;
+      scheduleCalendarMonthStart = null;
       if (loadedScenario) {
         hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
       }
@@ -491,6 +553,7 @@ function paintGame(): void {
   });
   document.getElementById("btn-clear")?.addEventListener("click", () => {
     clearSlot(slot);
+    scheduleCalendarMonthStart = null;
     paintGame();
   });
   document.getElementById("slot-select")?.addEventListener("change", (ev) => {

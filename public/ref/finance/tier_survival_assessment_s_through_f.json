@@ -1,0 +1,54 @@
+{
+  "generated_from": "monthly_live_counts_by_letter_tier_template.csv",
+  "tiers": [
+    {
+      "tier": "S",
+      "monthly_live_net_yen": 14661333,
+      "commercial_yen": 5000000,
+      "final_monthly_balance_yen": 15000000,
+      "survives": true
+    },
+    {
+      "tier": "A",
+      "monthly_live_net_yen": 10943500,
+      "commercial_yen": 2792500,
+      "final_monthly_balance_yen": 9500000,
+      "survives": true
+    },
+    {
+      "tier": "B",
+      "monthly_live_net_yen": 7225666,
+      "commercial_yen": 585000,
+      "final_monthly_balance_yen": 4000000,
+      "survives": true
+    },
+    {
+      "tier": "C",
+      "monthly_live_net_yen": 5525150,
+      "commercial_yen": 0,
+      "final_monthly_balance_yen": 2139817,
+      "survives": true
+    },
+    {
+      "tier": "D",
+      "monthly_live_net_yen": 3377870,
+      "commercial_yen": 0,
+      "final_monthly_balance_yen": 751203,
+      "survives": true
+    },
+    {
+      "tier": "E",
+      "monthly_live_net_yen": 1500750,
+      "commercial_yen": 0,
+      "final_monthly_balance_yen": 95750,
+      "survives": true
+    },
+    {
+      "tier": "F",
+      "monthly_live_net_yen": 787938,
+      "commercial_yen": 0,
+      "final_monthly_balance_yen": 14605,
+      "survives": true
+    }
+  ]
+}

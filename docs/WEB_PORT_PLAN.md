@@ -50,6 +50,14 @@ Implementation work stays on **scenario 6**; the following is the **design trail
 
 ---
 
+## Implementation log (idol-producer-web)
+
+| Date | Milestone | Notes |
+|------|------------|--------|
+| 2026-05-10 | **M1 (partial)** | Added `public/data/scenarios.json` (six rows, `data_available` flags). Shipped `group_tiers.json` for scenario 6 (generated via `scripts/build-scenario6-group-tiers.mjs` — replace with desktop `build_scenario_group_tier_list.py` when ready). `loadScenarioDatabase` loads optional `group_tiers.json`; `startupGroupPicker.ts` sorts new-game rows by `sort_key`; `buildNewGameRows` + `createGameSaveFromLoadedScenario` use static tier when present. `loadScenariosCatalog()` fetches the catalog (optional UI consumer). `npm run data:group-tiers` regenerates the static tier file. |
+
+---
+
 ## Cross-cutting phases
 
 1. **Contract** — JSON shapes + `GAME_SAVE_VERSION` bump; `GAME_SYSTEMS_MANUAL.md` + web `gameSaveSchema.ts`.
@@ -68,10 +76,10 @@ Implementation work stays on **scenario 6**; the following is the **design trail
 
 | Step | Work |
 |------|------|
-| 1a | **Manifest:** `public/data/scenarios.json` — include **all six** scenarios for UX copy and future routing; **only scenario 6** `data_subdir` ships full JSON in v1. |
-| 1b | **Static tiers (scenario 6):** `public/data/scenarios/scenario_6_2025-07-20/group_tiers.json` (subset: `uid`, `letter_tier`, `fans`, `popularity`, `sort_key`) exported from desktop build script. **No** browser-side interpolation. |
-| 1d | **Startup ordering:** Port `_rebuild_startup_group_rows` rules for scenario 6 into `startupGroupPicker.ts` / opening flow (tier rank, fans, `recommended_order` map for key groups). |
-| 1e | **New game:** On group pick, set managed group + `letter_tier` from **1b** + opening cash per scenario number (already partially in web `financeSystem`). |
+| 1a | **Manifest:** `public/data/scenarios.json` — include **all six** scenarios for UX copy and future routing; **only scenario 6** `data_subdir` ships full JSON in v1. *(Preset routing stays on `public/data/scenarios/manifest.json` + `presets/*.json`.)* |
+| 1b | **Static tiers (scenario 6):** `public/data/scenarios/scenario_6_2025-07-20/group_tiers.json` (subset: `uid`, `letter_tier`, `fans`, `popularity`, `sort_key`) exported from desktop build script. **No** browser-side interpolation. *Until the desktop exporter is wired, regenerate with `npm run data:group-tiers` (same heuristic as `inferLetterTier`).* |
+| 1d | **Startup ordering:** Port `_rebuild_startup_group_rows` rules for scenario 6 into `startupGroupPicker.ts` / opening flow (tier rank, fans, `recommended_order` map for key groups). *Web v1: `sortGroupsForStartupPick` uses `group_tiers.sort_key` when the JSON is present.* |
+| 1e | **New game:** On group pick, set managed group + `letter_tier` from **1b** + opening cash per scenario number (already partially in web `financeSystem`). *Web: `createGameSaveFromLoadedScenario` prefers `group_tiers` for the chosen group’s letter tier.* |
 
 **Removed from scope:** former step **1c** (runtime tier inference in browser) — **not planned**; tiers remain static files per scenario.
 
@@ -159,4 +167,4 @@ Parity audit vs `live_performance_system.py`; golden tests; post-live inbox + `f
 
 ---
 
-*Document version: 2026-05-10 (rev 2 — decisions incorporated).*
+*Document version: 2026-05-10 (rev 3 — M1 partial implementation + implementation log).*
