@@ -12,7 +12,8 @@ import {
   getWorkbookRadarDimensions,
   normalizePersistedAttributes,
 } from "../engine/idolAttributes";
-import { resolveGroupLetterTier, sortGroupsForDirectory } from "../engine/financeSystem";
+import { resolveGroupLetterTier, sortGroupsForDirectory, addCalendarDays } from "../engine/financeSystem";
+import { AUTOPILOT_LIVE_WEEKDAY_INDEX } from "../engine/gameEngine";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
@@ -24,6 +25,31 @@ import {
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
+import { renderGroupDetailPage } from "./groupDetailPage";
+import {
+  isSongHiddenFromDisplay,
+  songPopularityNum,
+  songsForDisplaySorted,
+  buildDiscBuckets,
+  primaryDiscLabel,
+  splitSongsReleasedVsMaking,
+  type DiscBucket,
+} from "../data/songDisplayPolicy";
+import {
+  defaultAutopilotTrainingIntensity,
+  safeTrainingRow,
+  trainingLoadFromRow,
+  trainingBearIndex,
+} from "../engine/idolStatusSystem";
+
+const FOCUS_SKILL_OPTIONS = ["", "talking", "host", "variety", "acting", "make-up", "model"] as const;
+
+function calendarDaysBetween(earlierIso: string, laterIso: string): number {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(earlierIso) || !/^\d{4}-\d{2}-\d{2}$/.test(laterIso)) return 0;
+  const a = new Date(`${earlierIso}T12:00:00Z`).getTime();
+  const b = new Date(`${laterIso}T12:00:00Z`).getTime();
+  return Math.round((b - a) / 86400000);
+}
 
 /** Full management nav (browse mode restricts to Idol / Groups / Songs like desktop `_browse_mode`). */
 export const MANAGEMENT_NAV_ITEMS = [
@@ -57,7 +83,6 @@ export function isDesktopNavId(s: string): s is DesktopNavId {
 }
 
 /** Browse / expandable catalog caps (scenario JSON can list tens of thousands of songs). */
-const SONG_BROWSE_PRIMARY_LIMIT = 400;
 const SONG_EXPAND_ALL_LIMIT = 500;
 
 function xFollowersNum(row: Record<string, unknown>): number {
@@ -90,23 +115,12 @@ function buildSongCountByGroupUid(songs: Record<string, unknown>[] | undefined):
   const m = new Map<string, number>();
   if (!Array.isArray(songs)) return m;
   for (const s of songs) {
+    if (isSongHiddenFromDisplay(s as Record<string, unknown>)) continue;
     const g = String((s as { group_uid?: unknown }).group_uid ?? "").trim();
     if (!g) continue;
     m.set(g, (m.get(g) ?? 0) + 1);
   }
   return m;
-}
-
-function songReleaseTime(row: Record<string, unknown>): number {
-  const d = row.release_date;
-  if (typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d)) {
-    return new Date(`${d}T12:00:00Z`).getTime();
-  }
-  return 0;
-}
-
-function sortSongsReleaseDesc(rows: Record<string, unknown>[]): Record<string, unknown>[] {
-  return [...rows].sort((a, b) => songReleaseTime(b) - songReleaseTime(a));
 }
 
 function formatLongDate(iso: string | undefined): string {
@@ -367,47 +381,6 @@ function renderRadarSvg(a: PersistedIdolAttributes): string {
 </figure>`;
 }
 
-function renderGroupDetailPage(g: Record<string, unknown>, contextLabel: string): string {
-  const name = String(g.name ?? g.name_romanji ?? "—");
-  const romanji = String(g.name_romanji ?? "");
-  const tier = resolveGroupLetterTier(g);
-  const fans = groupFansNum(g);
-  const pop = groupPopNum(g);
-  const formed = typeof g.formed_date === "string" ? g.formed_date : "—";
-  const mc = Array.isArray(g.member_uids) ? g.member_uids.length : 0;
-  const wikiUrl =
-    typeof g.wiki_url === "string" && g.wiki_url.trim().startsWith("http") ? g.wiki_url.trim() : "";
-  const wikiBlock = wikiUrl
-    ? `<p class="content-muted"><a href="${attrQuotedUrl(wikiUrl)}" target="_blank" rel="noopener noreferrer">${htmlEsc("Wiki")}</a></p>`
-    : "";
-  const rawDesc = typeof g.description === "string" ? g.description.trim() : "";
-  const desc =
-    rawDesc.length > 0
-      ? `<p class="group-detail-desc">${htmlEsc(rawDesc.slice(0, 480))}${rawDesc.length > 480 ? "…" : ""}</p>`
-      : "";
-
-  return `
-<section class="content-panel group-detail-view" aria-label="${htmlEsc(name)}">
-  <header class="idol-detail-toolbar">
-    <button type="button" class="fm-btn fm-btn-accent" id="btn-group-detail-back">${htmlEsc("← Groups")}</button>
-    <span class="content-muted idol-detail-ref">${htmlEsc(contextLabel)}</span>
-  </header>
-  <div class="fm-card group-detail-head">
-    <h2 class="content-h2">${htmlEsc(name)}</h2>
-    ${romanji ? `<p class="content-muted">${htmlEsc(romanji)}</p>` : ""}
-    <dl class="basic-dl group-detail-dl">
-      <div><dt>${htmlEsc("Tier")}</dt><dd>${htmlEsc(tier)}</dd></div>
-      <div><dt>${htmlEsc("Fans")}</dt><dd>${fans.toLocaleString("ja-JP")}</dd></div>
-      <div><dt>${htmlEsc("Popularity")}</dt><dd>${String(pop)}</dd></div>
-      <div><dt>${htmlEsc("Members")}</dt><dd>${mc}</dd></div>
-      <div><dt>${htmlEsc("Formed")}</dt><dd>${htmlEsc(formed)}</dd></div>
-    </dl>
-    ${wikiBlock}
-    ${desc}
-  </div>
-</section>`;
-}
-
 function renderGroupHistoryTable(
   row: Record<string, unknown>,
   uidToName: Map<string, string>,
@@ -593,26 +566,129 @@ function renderIdolDetailPage(
 </section>`;
 }
 
-function renderInbox(save: GameSavePayload): string {
+function renderInbox(save: GameSavePayload, selectedUid: string | null): string {
   const rows = [...save.inbox.notifications].reverse();
   if (!rows.length) {
     return `<section class="content-panel"><p class="content-muted">No messages in inbox.</p></section>`;
   }
-  const cards = rows
+  const sel = selectedUid && rows.some((r) => r.uid === selectedUid) ? selectedUid : null;
+  const selected = sel ? rows.find((r) => r.uid === sel) ?? null : null;
+
+  const list = rows
     .map((n) => {
       const unread = !n.read ? `<span class="badge-unread" aria-hidden="true">●</span> ` : "";
-      const snippet = htmlEsc(n.body.length > 420 ? `${n.body.slice(0, 420)}…` : n.body);
-      return `
-      <article class="fm-card inbox-card ${n.read ? "is-read" : "is-unread"}" role="article">
-        <header class="fm-card-head">
-          ${unread}<span class="inbox-title">${htmlEsc(n.title)}</span>
-          <time class="inbox-meta" datetime="${htmlEsc(n.date)}">${htmlEsc(n.date)} · ${htmlEsc(n.sender)}</time>
-        </header>
-        <div class="inbox-body">${snippet.replaceAll("\n", "<br />")}</div>
-      </article>`;
+      const active = n.uid === sel ? " is-active" : "";
+      return `<button type="button" class="inbox-row-btn fm-card${active}" data-inbox-uid="${htmlEsc(n.uid)}">
+        <span class="inbox-row-title">${unread}<span>${htmlEsc(n.title)}</span></span>
+        <span class="inbox-row-meta">${htmlEsc(n.date)} · ${htmlEsc(n.sender)}</span>
+      </button>`;
     })
     .join("");
-  return `<section class="content-panel inbox-view"><h2 class="content-h2">Inbox</h2><div class="card-stack">${cards}</div></section>`;
+
+  const detail = selected
+    ? `<article class="fm-card inbox-detail-card" aria-label="Message detail">
+        <header class="fm-card-head">
+          <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}</h3>
+          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.date)}">${htmlEsc(selected.date)}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
+        </header>
+        <div class="inbox-detail-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+        ${
+          selected.requires_confirmation
+            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> (desktop parity: choices not wired yet).</p>`
+            : ""
+        }
+        <div class="inbox-detail-actions">
+          <button type="button" class="fm-btn fm-btn-accent" data-inbox-mark-read="${htmlEsc(selected.uid)}" ${selected.read ? "disabled" : ""}>${htmlEsc("Mark read")}</button>
+        </div>
+      </article>`
+    : `<p class="content-muted">Select a message.</p>`;
+
+  return `<section class="content-panel inbox-view">
+    <div class="inbox-toolbar">
+      <h2 class="content-h2 inbox-h2">Inbox</h2>
+      <button type="button" class="fm-btn" id="btn-inbox-mark-all" ${rows.every((r) => r.read) ? "disabled" : ""}>${htmlEsc("Mark all read")}</button>
+    </div>
+    <div class="inbox-split">
+      <div class="inbox-list-col fm-card" role="navigation" aria-label="Messages">${list}</div>
+      <div class="inbox-detail-col">${detail}</div>
+    </div>
+  </section>`;
+}
+
+function renderTraining(save: GameSavePayload): string {
+  const grp = getPrimaryGroup(save);
+  const memberUids = Array.isArray(grp?.member_uids)
+    ? (grp!.member_uids as unknown[]).map((x) => String(x))
+    : [...save.shortlist];
+  const idols = save.database_snapshot.idols;
+  const ref =
+    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? undefined;
+
+  const cards = memberUids
+    .map((uid) => {
+      const row = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uid);
+      if (!row || typeof row !== "object") return "";
+      const r = row as Record<string, unknown>;
+      const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
+      const romaji = romajiFromRow(r);
+      if (!save.training_intensity[uid]) {
+        save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
+      }
+      if (save.training_focus_skill[uid] == null || save.training_focus_skill[uid] === undefined) {
+        save.training_focus_skill[uid] = "talking";
+      }
+      const intensity = safeTrainingRow(save.training_intensity[uid]);
+      const load = trainingLoadFromRow(intensity);
+      const bear = trainingBearIndex(r);
+      const over = Math.max(0, load - bear);
+      const focus = String(save.training_focus_skill[uid] ?? "");
+
+      const slider = (field: keyof typeof intensity, label: string) => {
+        const v = intensity[field];
+        return `<label class="training-slider"><span class="training-slider-l">${htmlEsc(label)}</span>
+          <input type="range" min="0" max="5" step="1" value="${v}" data-training-slider data-idol-uid="${htmlEsc(uid)}" data-field="${field}" aria-valuemin="0" aria-valuemax="5" />
+          <span class="training-slider-v" data-training-val="${htmlEsc(uid)}-${field}">${v}</span></label>`;
+      };
+
+      const focusOpts = FOCUS_SKILL_OPTIONS.map((opt) => {
+        const lab = opt === "" ? "— (none)" : opt;
+        return `<option value="${htmlEsc(opt)}" ${focus === opt ? "selected" : ""}>${htmlEsc(lab)}</option>`;
+      }).join("");
+
+      const cond = typeof r.condition === "number" ? r.condition : Number(r.condition ?? 0) || 0;
+      const mor = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 0) || 0;
+
+      return `<article class="fm-card training-member-card" data-training-card="${htmlEsc(uid)}">
+        <header class="training-member-head">
+          <div>
+            <h3 class="content-h3">${htmlEsc(name)}</h3>
+            ${romaji ? `<p class="content-muted">${htmlEsc(romaji)}</p>` : ""}
+          </div>
+          <div class="training-member-stats">
+            <span title="Condition">C ${htmlEsc(String(cond))}</span>
+            <span title="Morale">M ${htmlEsc(String(mor))}</span>
+          </div>
+        </header>
+        <p class="content-muted training-bear-line" data-training-bear="${htmlEsc(uid)}">${htmlEsc(`Training load ${load}/20 · bear index ${bear}`)}${over > 0 ? htmlEsc(` · overwork +${over} vs bear`) : ""}</p>
+        <div class="training-sliders">
+          ${slider("sing", "Sing")}
+          ${slider("dance", "Dance")}
+          ${slider("physical", "Physical")}
+          ${slider("target", "Target / misc")}
+        </div>
+        <label class="training-focus-row">${htmlEsc("Special focus (weekly bonus track)")}
+          <select class="fm-select training-focus-select" data-training-focus data-idol-uid="${htmlEsc(uid)}" aria-label="Focus skill">${focusOpts}</select>
+        </label>
+      </article>`;
+    })
+    .filter(Boolean)
+    .join("");
+
+  return `<section class="content-panel training-view">
+    <h2 class="content-h2">Training</h2>
+    <p class="content-muted">Daily sliders (0–5 each) for <strong>${htmlEsc(String(grp?.name_romanji ?? grp?.name ?? "group"))}</strong>. Sum caps at 20 and feeds <code>advanceOneDay</code> with the same condition/morale rules as the desktop save loop. Reference date: ${htmlEsc(String(ref ?? "—"))}.</p>
+    <div class="training-grid">${cards || `<p class="content-muted">No roster members.</p>`}</div>
+  </section>`;
 }
 
 function renderFinances(save: GameSavePayload): string {
@@ -759,102 +835,333 @@ function renderIdolsList(
     </section>`;
 }
 
-function songRowsHtml(rows: Record<string, unknown>[], cols: "pair" | "full"): string {
+/** Making workshop: Title, Romanji, Type, empty disc text field, Arrange / Release (no release or pop columns). */
+function makingWorkshopRowsHtml(rows: Record<string, unknown>[]): string {
   return rows
     .map((row) => {
       const title = typeof row.title === "string" ? row.title : String(row.uid ?? "—");
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
-      const rel = typeof row.release_date === "string" ? row.release_date : "—";
-      const gname = typeof row.group_name === "string" ? row.group_name : "";
-      const dtype = typeof row.disc_type === "string" ? row.disc_type : "";
-      if (cols === "pair") {
-        return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td>${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td></tr>`;
-      }
-      return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td>${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td><td>${htmlEsc(gname)}</td></tr>`;
+      const dtype = typeof row.disc_type === "string" && row.disc_type.trim() ? String(row.disc_type) : "—";
+      const uid = String(row.uid ?? "").trim();
+      const uidAttr = uid ? encodeURIComponent(uid) : "";
+      const uidData = uidAttr ? ` data-song-uid="${uidAttr}"` : "";
+      const discInput = `<input type="text" class="fm-input making-disc-input" autocomplete="off" value="" data-making-disc-input${uidData} aria-label="${htmlEsc(`Disc · ${title}`.slice(0, 120))}" />`;
+      const actions = `<div class="making-track-actions">
+        <button type="button" class="fm-btn making-arrange-btn" data-making-arrange${uidData}>${htmlEsc("Arrange")}</button>
+        <button type="button" class="fm-btn fm-btn-accent making-release-btn" data-making-release${uidData}>${htmlEsc("Release")}</button>
+      </div>`;
+      return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td>${htmlEsc(dtype)}</td><td class="making-disc-cell">${discInput}</td><td class="making-actions-cell">${actions}</td></tr>`;
     })
     .join("");
 }
 
-interface SongsRenderOpts {
-  subtitle?: string;
-  managedGroupUid?: string | null;
-  managedGroupLabel?: string;
+function songRowsHtml(
+  rows: Record<string, unknown>[],
+  cols: "pair" | "full",
+  rowKind: "released" | "making" = "released",
+): string {
+  const hideCatalogFields = rowKind === "making";
+  return rows
+    .map((row) => {
+      const title = typeof row.title === "string" ? row.title : String(row.uid ?? "—");
+      const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
+      const rel = hideCatalogFields ? "—" : typeof row.release_date === "string" ? row.release_date : "—";
+      const gname = typeof row.group_name === "string" ? row.group_name : "";
+      const dtype = typeof row.disc_type === "string" ? row.disc_type : "";
+      const disc = primaryDiscLabel(row);
+      const popCell = hideCatalogFields
+        ? `<td class="num songs-making-na">${htmlEsc("—")}</td>`
+        : `<td class="num">${htmlEsc(String(songPopularityNum(row)))}</td>`;
+      const relCellClass = hideCatalogFields ? " songs-making-na" : "";
+      const discCell = `<td class="songs-disc-cell">${htmlEsc(disc)}</td>`;
+      if (cols === "pair") {
+        return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td class="num${relCellClass}">${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td>${discCell}${popCell}</tr>`;
+      }
+      return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td class="num${relCellClass}">${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td>${discCell}<td>${htmlEsc(gname)}</td>${popCell}</tr>`;
+    })
+    .join("");
 }
 
-/** Management: default tracks for `group_uid` only; expandable full catalog capped. Browse: chronological slice of all songs capped. */
-function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRenderOpts): string {
-  if (!allSongs.length) return renderPlaceholder("Songs", "No songs in <code>songs.json</code>.");
+/** Released rows first; optional second `tbody` for future / undated tracks (desktop Making). */
+function renderSongsTrackTableBodies(
+  released: Record<string, unknown>[],
+  making: Record<string, unknown>[],
+  asOfIso: string | null,
+  cols: "pair" | "full",
+  emptyReleasedMsg: string,
+): string {
+  const ncol = cols === "pair" ? 6 : 7;
+  const refShort = asOfIso ? String(asOfIso).trim().split("T")[0] : "";
+  const refPretty =
+    refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort) ? formatLongDate(refShort) : refShort || "—";
+  const releasedRows = songRowsHtml(released, cols, "released");
+  const makingRows = songRowsHtml(making, cols, "making");
+  const showMaking = making.length > 0;
+  const tbReleased =
+    released.length > 0
+      ? releasedRows
+      : `<tr><td colspan="${ncol}" class="content-muted">${htmlEsc(emptyReleasedMsg)}</td></tr>`;
+  const makingHeader = `<tr class="songs-making-divider"><td colspan="${ncol}" class="songs-making-label"><span class="songs-making-title">${htmlEsc("Songs")}</span><span class="songs-making-sub">${htmlEsc(
+    `${making.length.toLocaleString()} track(s) with no release date or scheduled after ${refPretty}`,
+  )}</span></td></tr>`;
+  const tbMaking = showMaking ? `${makingHeader}${makingRows}` : "";
+  return `<tbody class="songs-released-tbody">${tbReleased}</tbody>${showMaking ? `<tbody class="songs-making-tbody">${tbMaking}</tbody>` : ""}`;
+}
 
-  const chronological = sortSongsReleaseDesc(allSongs);
+function renderSongsGroupDropdown(groups: Record<string, unknown>[], selectedUid: string): string {
+  const sorted = sortGroupsForDirectory(groups);
+  const opts = sorted
+    .map((g) => {
+      const uid = String((g as { uid?: unknown }).uid ?? "").trim();
+      if (!uid) return "";
+      const name = String((g as { name?: unknown }).name ?? (g as { name_romanji?: unknown }).name_romanji ?? uid.slice(0, 10));
+      const sel = uid === selectedUid ? " selected" : "";
+      return `<option value="${encodeURIComponent(uid)}"${sel}>${htmlEsc(name)}</option>`;
+    })
+    .filter(Boolean)
+    .join("");
+  return `<div class="songs-toolbar fm-card-inline">
+    <label class="songs-toolbar-label"><span class="songs-toolbar-text">${htmlEsc("Group")}</span>
+      <select id="songs-group-select" class="fm-select songs-group-select" aria-label="Current group for songs">${opts}</select>
+    </label>
+  </div>`;
+}
 
-  const managedUid =
-    opts?.managedGroupUid && String(opts.managedGroupUid).trim() ? String(opts.managedGroupUid).trim() : null;
-  const sub = opts?.subtitle ? `<p class="content-muted">${htmlEsc(opts.subtitle)}</p>` : "";
+function renderSongsWorkspaceTabs(active: SongsWorkspaceTab): string {
+  const songsAct = active === "group_songs" ? " is-active" : "";
+  const discAct = active === "disc" ? " is-active" : "";
+  const b1 = `<button type="button" class="songs-workspace-tab${songsAct}" data-songs-workspace-tab="group_songs" role="tab">${htmlEsc("Songs")}</button>`;
+  const b2 = `<button type="button" class="songs-workspace-tab${discAct}" data-songs-workspace-tab="disc" role="tab">${htmlEsc("Discography")}</button>`;
+  return `<div class="songs-workspace-tabs" role="tablist">${b1}${b2}</div>`;
+}
 
-  if (managedUid) {
-    const teamSongs = chronological.filter((row) => String(row.group_uid ?? "") === managedUid);
-    const teamRows = songRowsHtml(teamSongs, "pair");
-    const label = opts?.managedGroupLabel?.trim()
-      ? opts.managedGroupLabel.trim()
-      : `managed group (${managedUid.slice(0, 8)}…)`;
-    const expl = `<p class="content-muted">${htmlEsc(
-      `Showing ${teamSongs.length.toLocaleString()} release row(s) for ${label} by \`group_uid\`.`,
-    )}</p>`;
+function bucketEarliestRelease(songs: Record<string, unknown>[]): string {
+  const dates = songs
+    .map((s) => String(s.release_date ?? "").trim())
+    .filter((d) => /^\d{4}-\d{2}-\d{2}/.test(d));
+  if (!dates.length) return "—";
+  dates.sort();
+  return dates[0] ?? "—";
+}
 
-    const expSlice = chronological.slice(0, SONG_EXPAND_ALL_LIMIT);
-    const expRows = songRowsHtml(expSlice, "full");
-    const truncated =
-      chronological.length > SONG_EXPAND_ALL_LIMIT
-        ? `<p class="content-muted">${htmlEsc(
-            `Catalog preview limited to ${SONG_EXPAND_ALL_LIMIT} newest rows (of ${chronological.length.toLocaleString()}).`,
-          )}</p>`
-        : "";
+function bucketRepresentativeDiscType(songs: Record<string, unknown>[]): string {
+  const t = songs.map((s) => String(s.disc_type ?? "").trim()).find(Boolean);
+  return t || "—";
+}
 
-    return `
-    <section class="content-panel songs-view">
-      <h2 class="content-h2">Songs</h2>
-      ${sub}
-      ${expl}
-      <div class="table-scroll">
-        <table class="fm-table">
-          <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th></tr></thead>
-          <tbody>${teamRows || `<tr><td colspan="4" class="content-muted">No rows with this group UID in snapshot.</td></tr>`}</tbody>
-        </table>
-      </div>
-      <details class="fm-card songs-expand">
-        <summary class="content-h3 songs-expand-sum">Full song catalog (${chronological.length.toLocaleString()})</summary>
-        ${truncated}
+function resolveDiscographyBucketKey(buckets: DiscBucket[], selected: string | null): string {
+  if (!buckets.length) return "";
+  if (selected && buckets.some((b) => b.key === selected)) return selected;
+  return buckets[0]!.key;
+}
+
+function renderDiscographyPanel(buckets: DiscBucket[], selectedKey: string | null): string {
+  if (!buckets.length) {
+    return `<p class="content-muted">${htmlEsc("No releases inferred from song rows for this group yet.")}</p>`;
+  }
+  const eff = resolveDiscographyBucketKey(buckets, selectedKey);
+  const bucket = buckets.find((b) => b.key === eff) ?? buckets[0]!;
+  const discRows = buckets
+    .map((b) => {
+      const sel = b.key === eff ? " is-selected" : "";
+      const rel = bucketEarliestRelease(b.songs);
+      const typ = bucketRepresentativeDiscType(b.songs);
+      return `<tr class="songs-discography-row${sel}" data-songs-discography-key="${encodeURIComponent(b.key)}" tabindex="0" role="button">
+        <td>${htmlEsc(b.label)}</td><td class="num">${htmlEsc(rel)}</td><td>${htmlEsc(typ)}</td><td class="num">${b.songs.length.toLocaleString("ja-JP")}</td>
+      </tr>`;
+    })
+    .join("");
+  const tracks = songRowsHtml(bucket.songs, "pair");
+  const rel0 = bucketEarliestRelease(bucket.songs);
+  const typ0 = bucketRepresentativeDiscType(bucket.songs);
+  const meta = `<p class="content-muted songs-discography-meta">${htmlEsc(
+    `Release: ${rel0} · Type: ${typ0} · ${bucket.songs.length.toLocaleString()} track(s)`,
+  )}</p>`;
+  return `
+    <div class="songs-discography-layout">
+      <div class="fm-card songs-discography-list">
+        <h3 class="content-h3">${htmlEsc("Discography")}</h3>
+        <p class="content-muted">${htmlEsc("Singles and albums from the catalog. Select a release to see tracks.")}</p>
         <div class="table-scroll">
-          <table class="fm-table">
-            <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th><th>Group</th></tr></thead>
-            <tbody>${expRows || `<tr><td colspan="5" class="content-muted">—</td></tr>`}</tbody>
+          <table class="fm-table songs-discography-table">
+            <thead><tr><th>Title</th><th>Release</th><th>Type</th><th>Tracks</th></tr></thead>
+            <tbody>${discRows}</tbody>
           </table>
         </div>
-      </details>
+      </div>
+      <div class="fm-card songs-discography-tracks">
+        <h3 class="content-h3">${htmlEsc(bucket.label)}</h3>
+        ${meta}
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th><th>Disc</th><th>Pop</th></tr></thead>
+            <tbody>${tracks || `<tr><td colspan="6" class="content-muted">—</td></tr>`}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>`;
+}
+
+interface SongsRenderOpts {
+  subtitle?: string;
+  groups: Record<string, unknown>[];
+  selectedGroupUid: string;
+  selectedWorkspaceTab: SongsWorkspaceTab;
+  selectedDiscographyKey: string | null;
+  /** Game / browse “today” for released vs future / undated (`YYYY-MM-DD`). */
+  catalogReferenceIso: string | null;
+  /**
+   * `songs` = main Songs nav (released-only when catalog splits; in-production list under Making).
+   * `making` = main Making nav (workshop table: no release/pop; disc text field; Arrange / Release).
+   */
+  trackSplitSurface?: "songs" | "making";
+}
+
+/** Songs workspace: group picker, Songs | Discography tabs (desktop `main_ui.py`), tables. */
+function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRenderOpts): string {
+  const surface = opts?.trackSplitSurface ?? "songs";
+  const pageTitle = surface === "making" ? "Making" : "Songs";
+
+  if (!allSongs.length) return renderPlaceholder(pageTitle, "No songs in <code>songs.json</code>.");
+  if (!opts?.groups?.length || !String(opts.selectedGroupUid ?? "").trim()) {
+    return renderPlaceholder(pageTitle, "No groups in snapshot for song directory.");
+  }
+
+  const ordered = songsForDisplaySorted(allSongs);
+  const gid = String(opts.selectedGroupUid).trim();
+  const teamSongs = ordered.filter((row) => String(row.group_uid ?? "") === gid);
+  const { released: releasedTeam, making: makingTeam } = splitSongsReleasedVsMaking(
+    teamSongs,
+    opts.catalogReferenceIso,
+  );
+  const buckets = buildDiscBuckets(teamSongs);
+  const ws: SongsWorkspaceTab =
+    surface === "making" ? "group_songs" : opts.selectedWorkspaceTab === "disc" ? "disc" : "group_songs";
+
+  const refShort = opts.catalogReferenceIso ? String(opts.catalogReferenceIso).trim().split("T")[0] : "";
+  const hasRef = Boolean(refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort));
+  const catalogSplitsFuture = hasRef && makingTeam.length > 0;
+
+  const sub = opts.subtitle ? `<p class="content-muted">${htmlEsc(opts.subtitle)}</p>` : "";
+  const toolbar = renderSongsGroupDropdown(opts.groups, gid);
+
+  if (surface === "making") {
+    const workshopRows = hasRef ? makingTeam : teamSongs;
+    let workshopTbody: string;
+    if (!teamSongs.length) {
+      workshopTbody = `<tr><td colspan="5" class="content-muted">${htmlEsc("No tracks for this group in snapshot.")}</td></tr>`;
+    } else if (hasRef && makingTeam.length === 0) {
+      workshopTbody = `<tr><td colspan="5" class="content-muted">${htmlEsc(`No future or undated tracks as of ${refShort} — everything is released in the catalog for this date. Use Songs in the sidebar for the released list.`)}</td></tr>`;
+    } else {
+      workshopTbody = makingWorkshopRowsHtml(workshopRows);
+    }
+
+    const explMaking = `<p class="content-muted">${htmlEsc(
+      !teamSongs.length
+        ? "No tracks for this group in snapshot."
+        : hasRef
+          ? makingTeam.length > 0
+            ? `${makingTeam.length.toLocaleString()} in-production track(s) (no release date or after ${refShort}) · set Disc per row, then Arrange or Release.`
+            : `Reference ${refShort}: no in-production bucket for this group.`
+          : `${teamSongs.length.toLocaleString()} track(s) — no reference date on save yet; showing full group list in the workshop layout.`,
+    )}</p>`;
+
+    const songsPanel = `
+      ${explMaking}
+      <div class="table-scroll">
+        <table class="fm-table songs-making-workshop-table">
+          <thead><tr><th>${htmlEsc("Title")}</th><th>${htmlEsc("Romanji")}</th><th>${htmlEsc("Type")}</th><th>${htmlEsc("Disc")}</th><th>${htmlEsc("Actions")}</th></tr></thead>
+          <tbody>${workshopTbody}</tbody>
+        </table>
+      </div>`;
+
+    return `
+    <section class="content-panel songs-view making-track-view">
+      <h2 class="content-h2">${htmlEsc(pageTitle)}</h2>
+      ${sub}
+      ${toolbar}
+      ${songsPanel}
     </section>`;
   }
 
-  const slice = chronological.slice(0, SONG_BROWSE_PRIMARY_LIMIT);
-  const browseRows = songRowsHtml(slice, "full");
-  const more =
-    chronological.length > SONG_BROWSE_PRIMARY_LIMIT
+  let mainTrackBodies: string;
+  if (!teamSongs.length) {
+    mainTrackBodies = `<tbody><tr><td colspan="6" class="content-muted">${htmlEsc("No tracks for this group in snapshot.")}</td></tr></tbody>`;
+  } else if (!catalogSplitsFuture) {
+    mainTrackBodies = `<tbody>${songRowsHtml(teamSongs, "pair", "released")}</tbody>`;
+  } else {
+    const inner =
+      releasedTeam.length > 0
+        ? songRowsHtml(releasedTeam, "pair", "released")
+        : `<tr><td colspan="6" class="content-muted">${htmlEsc("No tracks released as of this date — open Making in the sidebar (between Songs and Publish) for in-production tracks.")}</td></tr>`;
+    mainTrackBodies = `<tbody>${inner}</tbody>`;
+  }
+
+  const workspaceTabs = renderSongsWorkspaceTabs(ws);
+
+  const explSongs = `<p class="content-muted">${htmlEsc(
+    !teamSongs.length
+      ? "No tracks for this group in snapshot."
+      : catalogSplitsFuture
+        ? `${releasedTeam.length.toLocaleString()} released (as of ${refShort}). ${makingTeam.length.toLocaleString()} in production — open Making in the sidebar (between Songs and Publish).`
+        : hasRef
+          ? `${releasedTeam.length.toLocaleString()} released (as of ${refShort}) — no in-production entries.`
+          : `${teamSongs.length.toLocaleString()} track(s) · popularity high → low (set a reference date to split catalog by release date).`,
+  )}</p>`;
+  const explDisc = `<p class="content-muted">${htmlEsc(
+    `${buckets.length.toLocaleString()} release bucket(s) · derived from song rows.`,
+  )}</p>`;
+
+  const budget = SONG_EXPAND_ALL_LIMIT;
+  const expReleased = releasedTeam.slice(0, budget);
+  const expMaking = makingTeam.slice(0, Math.max(0, budget - expReleased.length));
+  const expBodies =
+    teamSongs.length === 0
+      ? `<tbody><tr><td colspan="7" class="content-muted">—</td></tr></tbody>`
+      : renderSongsTrackTableBodies(
+          expReleased,
+          expMaking,
+          opts.catalogReferenceIso,
+          "full",
+          "No released rows in this preview window.",
+        );
+  const truncated =
+    releasedTeam.length > expReleased.length || makingTeam.length > expMaking.length
       ? `<p class="content-muted">${htmlEsc(
-          `Showing ${SONG_BROWSE_PRIMARY_LIMIT} newest of ${chronological.length.toLocaleString()} rows.`,
+          `Preview capped at ${SONG_EXPAND_ALL_LIMIT} rows (released first, then Songs / future). Full group has ${teamSongs.length.toLocaleString()} track(s).`,
         )}</p>`
       : "";
 
-  return `
-    <section class="content-panel songs-view">
-      <h2 class="content-h2">Songs</h2>
-      ${sub}
-      <p class="content-muted">${htmlEsc(`Sorted newest release first · ${slice.length.toLocaleString()} rows shown.`)}</p>
+  const songsPanel = `
+      ${explSongs}
       <div class="table-scroll">
-        <table class="fm-table">
-          <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th><th>Group</th></tr></thead>
-          <tbody>${browseRows}</tbody>
+        <table class="fm-table songs-main-table">
+          <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th><th>Disc</th><th>Pop</th></tr></thead>
+          ${mainTrackBodies}
         </table>
       </div>
-      ${more}
+      <details class="fm-card songs-expand">
+        <summary class="content-h3 songs-expand-sum">This group — all tracks (${teamSongs.length.toLocaleString()})</summary>
+        ${truncated}
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th><th>Disc</th><th>Group</th><th>Pop</th></tr></thead>
+            ${expBodies}
+          </table>
+        </div>
+      </details>`;
+
+  const discPanel = `${explDisc}${renderDiscographyPanel(buckets, opts.selectedDiscographyKey)}`;
+
+  const body = ws === "disc" ? discPanel : songsPanel;
+
+  return `
+    <section class="content-panel songs-view">
+      <h2 class="content-h2">${htmlEsc(pageTitle)}</h2>
+      ${sub}
+      ${toolbar}
+      ${workspaceTabs}
+      ${body}
     </section>`;
 }
 
@@ -921,7 +1228,7 @@ function renderGroupsFullTable(
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <p class="content-muted">${htmlEsc("Songs = rows in snapshot songs.json with matching group_uid. Tier inferred when letter_tier missing.")}</p>
+      <p class="content-muted">${htmlEsc("Songs = per-track rows from data/songs.json (filtered to scenario groups), by group_uid; display excludes hidden titles and sorts by popularity. Tier inferred when letter_tier missing.")}</p>
     </section>`;
 }
 
@@ -953,15 +1260,80 @@ function renderBrowseGroups(data: LoadedScenario): string {
 }
 
 function renderSchedule(save: GameSavePayload | null): string {
-  const d =
-    save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? "—";
+  if (!save) {
+    return `<section class="content-panel schedule-view"><p class="content-muted">No save loaded.</p></section>`;
+  }
+  const gameStart = save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
+  const cur = save.current_date ?? gameStart;
+  const turn = typeof save.turn_number === "number" ? save.turn_number : 0;
+  const nextIso = addCalendarDays(cur, 1);
+
+  const weekDays = 7;
+  const cells: string[] = [];
+  for (let i = 0; i < weekDays; i++) {
+    const iso = addCalendarDays(nextIso, i);
+    const dow = new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" });
+    const offset = calendarDaysBetween(typeof gameStart === "string" ? gameStart : "2020-01-01", iso);
+    const autopilotLive = offset >= 0 && offset % 7 === AUTOPILOT_LIVE_WEEKDAY_INDEX;
+    const isTodayish = iso === nextIso;
+    const schedules = save.lives?.schedules;
+    const extra = Array.isArray(schedules)
+      ? schedules.filter((s) => {
+          if (!s || typeof s !== "object") return false;
+          const sd = String((s as { start_date?: unknown }).start_date ?? "").split("T")[0];
+          return sd === iso;
+        })
+      : [];
+    const extraLbl =
+      extra.length > 0
+        ? extra
+            .map((s) => {
+              const o = s as Record<string, unknown>;
+              return String(o.live_type ?? o.event_type ?? "Event");
+            })
+            .join(", ")
+        : "";
+
+    cells.push(`<div class="schedule-cell ${isTodayish ? "is-next" : ""}${autopilotLive ? " has-live" : ""}">
+      <div class="schedule-cell-dow">${htmlEsc(dow)}</div>
+      <div class="schedule-cell-date">${htmlEsc(iso)}</div>
+      <div class="schedule-cell-body">
+        ${autopilotLive ? `<span class="schedule-pill schedule-pill-live">${htmlEsc("Routine live (autopilot)")}</span>` : `<span class="schedule-pill">${htmlEsc("—")}</span>`}
+        ${extraLbl ? `<div class="schedule-extra">${htmlEsc(extraLbl)}</div>` : ""}
+      </div>
+    </div>`);
+  }
+
+  const recentResults = [...(save.lives?.results ?? [])].slice(-5).reverse();
+  const resRows = recentResults
+    .map((raw) => {
+      if (!raw || typeof raw !== "object") return "";
+      const r = raw as Record<string, unknown>;
+      const d = String(r.date ?? "").split("T")[0];
+      const perf = r.performance_score != null ? String(r.performance_score) : "—";
+      const fans = r.fan_gain != null ? String(r.fan_gain) : "—";
+      return `<tr><td>${htmlEsc(d)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(fans)}</td></tr>`;
+    })
+    .filter(Boolean)
+    .join("");
+
   return `
     <section class="content-panel schedule-view">
       <h2 class="content-h2">Schedule</h2>
-      <p class="content-lead">Calendar date cursor: <strong>${htmlEsc(String(d))}</strong>.</p>
+      <p class="content-lead">Last closed day: <strong>${htmlEsc(String(cur))}</strong> · Next simulation day: <strong>${htmlEsc(nextIso)}</strong> · Turn <strong>${htmlEsc(String(turn))}</strong></p>
       <section class="fm-card schedule-teaser">
-        <h3 class="content-h3">Time model</h3>
-        <p class="content-muted">Progress with <strong>NEXT DAY</strong> in the top bar. Each day runs one <code>build_daily_breakdown</code> close; autopilot routine live on rolling day index 3 (mod 7).</p>
+        <h3 class="content-h3">Upcoming week (from next day)</h3>
+        <p class="content-muted">Routine lives run when the day offset from <code>game_start_date</code> satisfies <code>offset % 7 === ${AUTOPILOT_LIVE_WEEKDAY_INDEX}</code> (same rule as <code>advanceOneDay</code> in the web engine). Use <strong>NEXT DAY</strong> in the top bar to progress.</p>
+        <div class="schedule-week">${cells.join("")}</div>
+      </section>
+      <section class="fm-card">
+        <h3 class="content-h3">Recent live results</h3>
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Date</th><th>Performance</th><th>Fan Δ</th></tr></thead>
+            <tbody>${resRows || `<tr><td colspan="3" class="content-muted">No results yet.</td></tr>`}</tbody>
+          </table>
+        </div>
       </section>
     </section>`;
 }
@@ -975,9 +1347,25 @@ export function renderMainContent(
     idolDetailUid: string | null;
     groupDetailUid: string | null;
     idolListLayout: "cards" | "list";
+    songsGroupUid: string | null;
+    songsWorkspaceTab: SongsWorkspaceTab;
+    songsDiscographyKey: string | null;
+    inboxSelectedUid: string | null;
   },
 ): string {
-  const { browseMode, browseData, save, view, idolDetailUid, groupDetailUid, idolListLayout } = ctx;
+  const {
+    browseMode,
+    browseData,
+    save,
+    view,
+    idolDetailUid,
+    groupDetailUid,
+    idolListLayout,
+    songsGroupUid,
+    songsWorkspaceTab,
+    songsDiscographyKey,
+    inboxSelectedUid,
+  } = ctx;
 
   if (browseMode && browseData) {
     const refIso = displayReferenceIso(null, browseData.preset?.opening_date);
@@ -1009,6 +1397,13 @@ export function renderMainContent(
             return renderGroupDetailPage(
               grow,
               browseData.preset?.name ? `Browse · ${browseData.preset.name}` : "Browse",
+              {
+                idols: browseData.idols,
+                songs: browseData.songs,
+                groups: browseData.groups,
+                lives: browseData.lives ?? null,
+                referenceIso: browseData.preset.opening_date ?? null,
+              },
             );
           return `
             <section class="content-panel">
@@ -1021,6 +1416,12 @@ export function renderMainContent(
       case "Songs":
         return renderSongsList(browseData.songs, {
           subtitle: browseData.preset?.name ?? undefined,
+          groups: browseData.groups,
+          selectedGroupUid: songsGroupUid ?? "",
+          selectedWorkspaceTab: songsWorkspaceTab,
+          selectedDiscographyKey: songsDiscographyKey,
+          catalogReferenceIso: browseData.preset?.opening_date ?? null,
+          trackSplitSurface: "songs",
         });
       default:
         return renderPlaceholder(String(view));
@@ -1031,7 +1432,7 @@ export function renderMainContent(
 
   switch (view) {
     case "Inbox":
-      return renderInbox(save);
+      return renderInbox(save, inboxSelectedUid);
     case "Finances":
       return renderFinances(save);
     case "Idols": {
@@ -1058,7 +1459,18 @@ export function renderMainContent(
       const gUid = groupDetailUid?.trim() ?? "";
       if (gUid) {
         const grow = save.database_snapshot.groups.find((r) => String((r as { uid?: unknown }).uid ?? "") === gUid);
-        if (grow) return renderGroupDetailPage(grow, "Management roster");
+        if (grow) return renderGroupDetailPage(grow, "Management roster", {
+          idols: save.database_snapshot.idols,
+          songs: save.database_snapshot.songs,
+          groups: save.database_snapshot.groups,
+          lives: browseData?.lives ?? null,
+          referenceIso:
+            save.current_date ??
+            save.game_start_date ??
+            save.scenario_context?.startup_date ??
+            browseData?.preset.opening_date ??
+            null,
+        });
         return `
             <section class="content-panel">
               <p class="content-muted">${htmlEsc(`Group '${gUid}' not in save snapshot.`)}</p>
@@ -1069,22 +1481,34 @@ export function renderMainContent(
     }
     case "Schedule":
       return renderSchedule(save);
-    case "Songs": {
-      const grp = getPrimaryGroup(save);
-      const gLabel =
-        typeof grp?.name_romanji === "string"
-          ? grp.name_romanji
-          : typeof grp?.name === "string"
-            ? grp.name
-            : undefined;
+    case "Training":
+      return renderTraining(save);
+    case "Making":
       return renderSongsList(save.database_snapshot.songs, {
         subtitle: save.scenario_context?.startup_date
           ? `Opening ${save.scenario_context.startup_date}`
           : undefined,
-        managedGroupUid: save.managing_group_uid,
-        managedGroupLabel: gLabel,
+        groups: save.database_snapshot.groups,
+        selectedGroupUid: songsGroupUid ?? "",
+        selectedWorkspaceTab: "group_songs",
+        selectedDiscographyKey: null,
+        catalogReferenceIso:
+          save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
+        trackSplitSurface: "making",
       });
-    }
+    case "Songs":
+      return renderSongsList(save.database_snapshot.songs, {
+        subtitle: save.scenario_context?.startup_date
+          ? `Opening ${save.scenario_context.startup_date}`
+          : undefined,
+        groups: save.database_snapshot.groups,
+        selectedGroupUid: songsGroupUid ?? "",
+        selectedWorkspaceTab: songsWorkspaceTab,
+        selectedDiscographyKey: songsDiscographyKey,
+        catalogReferenceIso:
+          save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
+        trackSplitSurface: "songs",
+      });
     default:
       return renderPlaceholder(view);
   }
@@ -1102,6 +1526,14 @@ export interface DesktopShellProps {
   groupDetailUid?: string | null;
   /** Idols directory layout (cards vs table). */
   idolListLayout: "cards" | "list";
+  /** Songs screen: selected group UID (snapshot). */
+  songsGroupUid: string | null;
+  /** Songs screen: `group_songs` (track list) or `disc` (discography), like desktop `main_ui.py`. */
+  songsWorkspaceTab: SongsWorkspaceTab;
+  /** Songs Discography tab: selected release bucket key. */
+  songsDiscographyKey: string | null;
+  /** Selected inbox notification uid (management mode). */
+  inboxSelectedUid: string | null;
   slot: number;
   occupiedSlots: number[];
 }
@@ -1116,6 +1548,10 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     idolDetailUid,
     groupDetailUid,
     idolListLayout,
+    songsGroupUid,
+    songsWorkspaceTab,
+    songsDiscographyKey,
+    inboxSelectedUid,
     slot,
     occupiedSlots,
   } = p;
@@ -1159,6 +1595,10 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     idolDetailUid: idolDetailUid ?? null,
     groupDetailUid: groupDetailUid ?? null,
     idolListLayout,
+    songsGroupUid: songsGroupUid ?? null,
+    songsWorkspaceTab,
+    songsDiscographyKey,
+    inboxSelectedUid: inboxSelectedUid ?? null,
   });
 
   const cashPill = finances

@@ -14,6 +14,11 @@ import {
 } from "../engine/financeSystem";
 import type { Finances, LetterTier } from "../engine/types";
 import { applyAttributesToAllIdols } from "../engine/idolAttributes";
+import {
+  defaultAutopilotTrainingIntensity,
+  ensureIdolSimulationDefaults,
+  normalizeTrainingWeekLog,
+} from "../engine/idolStatusSystem";
 import { addNotification, type NotificationRow } from "./inbox";
 
 export const GAME_SAVE_VERSION = 11 as const;
@@ -97,6 +102,11 @@ export function createGameSaveFromLoadedScenario(
   const subdir = loaded.preset.data_subdir;
   const cash = scenarioStartingCash(loaded.preset.scenario_number);
 
+  for (const uid of memberUids) {
+    const row = snap.idols.find((i) => String(i.uid ?? "") === uid);
+    if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
+  }
+
   const save = defaultGameSavePayload();
   save.player_name = opts.playerName.trim();
   save.managing_group = String(g.name_romanji ?? g.name ?? "");
@@ -110,6 +120,10 @@ export function createGameSaveFromLoadedScenario(
   };
   save.database_snapshot = snap;
   save.shortlist = [...memberUids];
+  for (const uid of memberUids) {
+    save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
+    save.training_focus_skill[uid] = "talking";
+  }
   save.game_start_date = opening;
   save.current_date = opening;
   save.turn_number = 0;
@@ -312,7 +326,7 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   }
 
   if (p.training_week_log && typeof p.training_week_log === "object") {
-    out.training_week_log = deepCopy(p.training_week_log as Record<string, unknown>);
+    out.training_week_log = normalizeTrainingWeekLog(p.training_week_log) as unknown as Record<string, unknown>;
   }
   if (p.training_focus_skill && typeof p.training_focus_skill === "object") {
     out.training_focus_skill = deepCopy(p.training_focus_skill as Record<string, string>);
@@ -320,6 +334,34 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
 
   out.version = GAME_SAVE_VERSION;
   return out;
+}
+
+/**
+ * Replace save snapshot songs with the in-memory scenario catalog when the save still
+ * has the old disc-only `songs.json` (few rows per group) but catalog has per-track rows.
+ */
+export function hydrateSnapshotSongsFromScenario(
+  save: GameSavePayload,
+  catalog: Record<string, unknown>[] | null | undefined,
+  scenarioDataSubdir?: string | null,
+): boolean {
+  if (!catalog?.length) return false;
+  if (scenarioDataSubdir) {
+    const hint = `${save.scenario_context?.songs_path ?? ""}${save.scenario_context?.groups_path ?? ""}`;
+    if (!hint.includes(scenarioDataSubdir)) return false;
+  }
+  const groupUids = new Set(
+    save.database_snapshot.groups
+      .map((g) => String((g as { uid?: unknown }).uid ?? "").trim())
+      .filter((u) => u.length > 0),
+  );
+  if (!groupUids.size) return false;
+  const merged = catalog.filter((s) =>
+    groupUids.has(String((s as { group_uid?: unknown }).group_uid ?? "").trim()),
+  );
+  if (merged.length <= save.database_snapshot.songs.length) return false;
+  save.database_snapshot.songs = merged;
+  return true;
 }
 
 export function getPrimaryGroup(save: GameSavePayload): Record<string, unknown> | null {
@@ -378,6 +420,13 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.database_snapshot.idols = bundle.idols.map((i) => ({ ...(i as object) }));
   save.database_snapshot.songs = [];
   save.shortlist = [...(g.member_uids?.map(String) ?? [])];
+  applyAttributesToAllIdols(save.database_snapshot.idols, save.database_snapshot.groups, opening);
+  for (const uid of save.shortlist) {
+    save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
+    save.training_focus_skill[uid] = "talking";
+    const row = save.database_snapshot.idols.find((r) => String(r.uid ?? "") === uid);
+    if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
+  }
   save.game_start_date = opening;
   save.current_date = opening;
   save.turn_number = 0;

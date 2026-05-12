@@ -2,6 +2,7 @@ import "./style.css";
 import { loadDefaultScenario } from "./data/loadScenario";
 import type { LoadedScenario } from "./data/scenarioTypes";
 import { advanceOneDay, createNewGameSaveFromScenario } from "./engine/gameEngine";
+import { sortGroupsForDirectory } from "./engine/financeSystem";
 import type { GameSavePayload } from "./save/gameSaveSchema";
 import {
   renderDesktopShell,
@@ -9,8 +10,11 @@ import {
   isManagementNav,
   isBrowseNav,
   type DesktopNavId,
+  type SongsWorkspaceTab,
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
+import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
+import { songsForDisplaySorted, buildDiscBuckets } from "./data/songDisplayPolicy";
 import {
   type OpeningScreen,
   renderOpeningHome,
@@ -38,6 +42,16 @@ let openingStatus = "";
 let currentView: DesktopNavId = "Inbox";
 let idolDetailUid: string | null = null;
 let groupDetailUid: string | null = null;
+/** Songs view: selected `group_uid` from snapshot (browse or save). */
+let songsGroupUid: string | null = null;
+/** Songs view: `group_songs` = track list, `disc` = discography (desktop `main_ui.py`). */
+let songsWorkspaceTab: SongsWorkspaceTab = "group_songs";
+/** Selected release bucket in Discography tab; invalid keys cleared in `ensureSongsDiscographyKey`. */
+let songsDiscographyKey: string | null = null;
+
+/** Inbox message selection (management mode). */
+let inboxSelectedUid: string | null = null;
+let trainingRepaintTimer: ReturnType<typeof setTimeout> | null = null;
 
 const IDOL_LIST_LAYOUT_KEY = "idol-producer-idol-list-layout";
 
@@ -65,6 +79,54 @@ function coerceNavForMode(): void {
     if (!isBrowseNav(currentView)) currentView = BROWSE_NAV_ITEMS[0];
   } else if (save && !isManagementNav(currentView)) {
     currentView = "Inbox";
+  }
+}
+
+function groupsForSongsPicker(): Record<string, unknown>[] | null {
+  if (browseMode && loadedScenario?.groups) return loadedScenario.groups;
+  if (save?.database_snapshot?.groups) return save.database_snapshot.groups;
+  return null;
+}
+
+/** Keep `songsGroupUid` valid for the current snapshot (managed group preferred in play mode). */
+function ensureSongsGroupUid(): void {
+  const groups = groupsForSongsPicker();
+  if (!groups?.length) {
+    songsGroupUid = null;
+    return;
+  }
+  const validUids = new Set(
+    groups.map((g) => String((g as { uid?: unknown }).uid ?? "").trim()).filter(Boolean),
+  );
+  if (songsGroupUid && validUids.has(songsGroupUid)) return;
+  const mg = save?.managing_group_uid?.trim();
+  if (mg && validUids.has(mg)) {
+    songsGroupUid = mg;
+    return;
+  }
+  const sorted = sortGroupsForDirectory(groups);
+  const first = sorted[0];
+  songsGroupUid = String((first as { uid?: unknown }).uid ?? "").trim() || null;
+}
+
+function songsListForDiscographyCheck(): Record<string, unknown>[] | null {
+  if (browseMode && loadedScenario?.songs) return loadedScenario.songs;
+  if (save?.database_snapshot?.songs) return save.database_snapshot.songs;
+  return null;
+}
+
+/** Drop stale discography selection when bucket keys change (group / data). */
+function ensureSongsDiscographyKey(): void {
+  const songs = songsListForDiscographyCheck();
+  const gid = songsGroupUid?.trim();
+  if (!songs?.length || !gid) {
+    songsDiscographyKey = null;
+    return;
+  }
+  const team = songsForDisplaySorted(songs).filter((row) => String(row.group_uid ?? "") === gid);
+  const buckets = buildDiscBuckets(team);
+  if (songsDiscographyKey && !buckets.some((b) => b.key === songsDiscographyKey)) {
+    songsDiscographyKey = null;
   }
 }
 
@@ -103,6 +165,9 @@ function paintOpening(): void {
       const loaded = loadFromSlot(slot);
       if (loaded && assertHydratedSave(loaded)) {
         save = loaded;
+        if (loadedScenario) {
+          hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
+        }
         browseMode = false;
         openingScreen = "home";
         currentView = "Inbox";
@@ -187,6 +252,18 @@ function paintGame(): void {
     return;
   }
 
+  ensureSongsGroupUid();
+  ensureSongsDiscographyKey();
+
+  if (!browseMode && save && currentView === "Inbox" && save.inbox.notifications.length) {
+    const rev = [...save.inbox.notifications].reverse();
+    if (!inboxSelectedUid || !rev.some((r) => r.uid === inboxSelectedUid)) {
+      inboxSelectedUid = rev[rev.length - 1]?.uid ?? null;
+    }
+  } else if (currentView !== "Inbox") {
+    inboxSelectedUid = null;
+  }
+
   appRoot.innerHTML = renderDesktopShell({
     browseMode,
     browseData: loadedScenario,
@@ -196,6 +273,10 @@ function paintGame(): void {
     idolDetailUid,
     groupDetailUid,
     idolListLayout: readIdolListLayout(),
+    songsGroupUid,
+    songsWorkspaceTab,
+    songsDiscographyKey,
+    inboxSelectedUid,
     slot,
     occupiedSlots: listOccupiedSlots(),
   });
@@ -204,6 +285,78 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("click", (ev) => {
     const t = ev.target as HTMLElement;
+    if (t.id === "btn-inbox-mark-all" && save && !browseMode) {
+      for (const n of save.inbox.notifications) n.read = true;
+      paintGame();
+      return;
+    }
+    const markReadBtn = t.closest<HTMLElement>("[data-inbox-mark-read]");
+    if (markReadBtn && save && !browseMode) {
+      const uid = markReadBtn.getAttribute("data-inbox-mark-read");
+      const row = uid ? save.inbox.notifications.find((n) => n.uid === uid) : undefined;
+      if (row) row.read = true;
+      paintGame();
+      return;
+    }
+    const inboxPick = t.closest<HTMLButtonElement>(".inbox-row-btn");
+    if (inboxPick && save && !browseMode && currentView === "Inbox") {
+      const u = inboxPick.getAttribute("data-inbox-uid");
+      if (u) {
+        inboxSelectedUid = u;
+        const row = save.inbox.notifications.find((n) => n.uid === u);
+        if (row) row.read = true;
+        paintGame();
+      }
+      return;
+    }
+    const openSongs = t.closest<HTMLElement>("[data-open-songs-for-group]");
+    if (openSongs) {
+      const enc = openSongs.getAttribute("data-open-songs-for-group");
+      if (enc != null && enc.length) {
+        try {
+          songsGroupUid = decodeURIComponent(enc);
+        } catch {
+          songsGroupUid = enc;
+        }
+        groupDetailUid = null;
+        idolDetailUid = null;
+        currentView = "Songs";
+        songsWorkspaceTab = "group_songs";
+        songsDiscographyKey = null;
+        paintGame();
+      }
+      return;
+    }
+    if (t.closest("[data-making-arrange]") && currentView === "Making") {
+      ev.preventDefault();
+      return;
+    }
+    if (t.closest("[data-making-release]") && currentView === "Making") {
+      ev.preventDefault();
+      return;
+    }
+    const workspacePick = t.closest<HTMLElement>("[data-songs-workspace-tab]");
+    if (workspacePick && currentView === "Songs") {
+      const tab = workspacePick.getAttribute("data-songs-workspace-tab");
+      if (tab === "group_songs" || tab === "disc") {
+        songsWorkspaceTab = tab;
+        paintGame();
+      }
+      return;
+    }
+    const discRow = t.closest<HTMLElement>("[data-songs-discography-key]");
+    if (discRow && currentView === "Songs" && songsWorkspaceTab === "disc") {
+      const raw = discRow.getAttribute("data-songs-discography-key");
+      if (raw != null && raw.length) {
+        try {
+          songsDiscographyKey = decodeURIComponent(raw);
+        } catch {
+          songsDiscographyKey = raw;
+        }
+        paintGame();
+      }
+      return;
+    }
     const layoutPick = t.closest<HTMLElement>("[data-idol-layout]");
     if (layoutPick && currentView === "Idols" && !idolDetailUid) {
       const mode = layoutPick.dataset.idolLayout;
@@ -248,6 +401,50 @@ function paintGame(): void {
     }
   });
 
+  document.getElementById("main-content")?.addEventListener("input", (ev) => {
+    const t = ev.target as HTMLElement;
+    const sl = t.closest<HTMLInputElement>("[data-training-slider]");
+    if (!sl || !save || browseMode || currentView !== "Training") return;
+    const uid = sl.getAttribute("data-idol-uid");
+    const field = sl.getAttribute("data-field");
+    if (!uid || !field) return;
+    if (!["sing", "dance", "physical", "target"].includes(field)) return;
+    const v = Math.max(0, Math.min(5, Number(sl.value) || 0));
+    if (!save.training_intensity[uid]) {
+      save.training_intensity[uid] = { sing: 0, dance: 0, physical: 0, target: 0 };
+    }
+    (save.training_intensity[uid] as Record<string, number>)[field] = v;
+    if (trainingRepaintTimer) clearTimeout(trainingRepaintTimer);
+    trainingRepaintTimer = window.setTimeout(() => {
+      trainingRepaintTimer = null;
+      paintGame();
+    }, 140);
+  });
+
+  document.getElementById("main-content")?.addEventListener("change", (ev) => {
+    const t = ev.target as HTMLElement;
+    const focusSel = t.closest<HTMLSelectElement>("[data-training-focus]");
+    if (focusSel && save && !browseMode && currentView === "Training") {
+      const uid = focusSel.getAttribute("data-idol-uid");
+      if (uid) {
+        save.training_focus_skill[uid] = focusSel.value;
+        paintGame();
+      }
+      return;
+    }
+    const sel = ev.target as HTMLSelectElement;
+    if (sel.id !== "songs-group-select" || (currentView !== "Songs" && currentView !== "Making")) return;
+    const v = sel.value;
+    try {
+      songsGroupUid = decodeURIComponent(v);
+    } catch {
+      songsGroupUid = v;
+    }
+    songsDiscographyKey = null;
+    songsWorkspaceTab = "group_songs";
+    paintGame();
+  });
+
   appRoot.querySelectorAll<HTMLButtonElement>("[data-nav]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const v = btn.dataset.nav;
@@ -256,6 +453,7 @@ function paintGame(): void {
       if (!browseMode && save && !isManagementNav(v)) return;
       idolDetailUid = null;
       groupDetailUid = null;
+      if (v !== "Inbox") inboxSelectedUid = null;
       currentView = v;
       paintGame();
     });
@@ -274,7 +472,12 @@ function paintGame(): void {
   document.getElementById("btn-load")?.addEventListener("click", () => {
     if (browseMode) return;
     const loaded = loadFromSlot(slot);
-    if (loaded && assertHydratedSave(loaded)) save = loaded;
+    if (loaded && assertHydratedSave(loaded)) {
+      save = loaded;
+      if (loadedScenario) {
+        hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
+      }
+    }
     paintGame();
   });
   document.getElementById("btn-new")?.addEventListener("click", () => {
@@ -308,7 +511,7 @@ appRoot.innerHTML = `<p class="fm-loading">Loading scenario…</p>`;
 loadDefaultScenario()
   .then((ls) => {
     loadedScenario = ls;
-    openingStatus = `Loaded ${ls.preset.data_subdir} (${ls.idols.length} idols).`;
+    openingStatus = `Loaded ${ls.preset.data_subdir} (${ls.idols.length} idols, ${ls.songs.length.toLocaleString()} song rows).`;
     openingScreen = "home";
     paintOpening();
   })
