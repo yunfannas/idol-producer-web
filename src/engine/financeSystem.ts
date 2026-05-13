@@ -123,7 +123,7 @@ export function tierOrdinal(t: LetterTier): number {
   return LETTER_TIER_ORDER[t];
 }
 
-/** Best letter tier first, then descending fan count. */
+/** Best letter tier first, then descending fans, then descending popularity (stable uid tiebreak). */
 export function compareGroupsTierBestFansDesc(
   a: Record<string, unknown>,
   b: Record<string, unknown>,
@@ -133,7 +133,13 @@ export function compareGroupsTierBestFansDesc(
   if (da !== db) return da - db;
   const fa = typeof a.fans === "number" ? a.fans : Number(a.fans ?? 0) || 0;
   const fb = typeof b.fans === "number" ? b.fans : Number(b.fans ?? 0) || 0;
-  return fb - fa;
+  if (fa !== fb) return fb - fa;
+  const pa = typeof a.popularity === "number" ? a.popularity : Number(a.popularity ?? 0) || 0;
+  const pb = typeof b.popularity === "number" ? b.popularity : Number(b.popularity ?? 0) || 0;
+  if (pa !== pb) return pb - pa;
+  const ua = String(a.uid ?? "").trim();
+  const ub = String(b.uid ?? "").trim();
+  return ua.localeCompare(ub);
 }
 
 export function sortGroupsForDirectory(groups: Record<string, unknown>[]): Record<string, unknown>[] {

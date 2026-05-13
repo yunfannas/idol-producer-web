@@ -20,6 +20,8 @@ import {
   ensureIdolSimulationDefaults,
   normalizeTrainingWeekLog,
 } from "../engine/idolStatusSystem";
+import { buildFilteredSnapshotWithFutureEvents } from "../engine/scenarioRuntimeWeb";
+import { buildDefaultScoutCompanies } from "../engine/scoutWeb";
 import { addNotification, type NotificationRow } from "./inbox";
 
 export const GAME_SAVE_VERSION = 11 as const;
@@ -74,11 +76,12 @@ export function createGameSaveFromLoadedScenario(
   loaded: LoadedScenario,
   opts: { playerName: string; managedGroupLabel: string; managedGroupUid?: string | null },
 ): GameSavePayload {
-  const snap = deepSnapshot(loaded.idols, loaded.groups, loaded.songs);
   const opening =
     loaded.preset.opening_date && /^\d{4}-\d{2}-\d{2}$/.test(loaded.preset.opening_date)
       ? loaded.preset.opening_date
       : "2020-01-01";
+  const filtered = buildFilteredSnapshotWithFutureEvents(loaded.idols, loaded.groups, opening);
+  const snap = deepSnapshot(filtered.idols, filtered.groups, loaded.songs);
   applyAttributesToAllIdols(snap.idols, snap.groups, opening);
 
   const g =
@@ -91,6 +94,17 @@ export function createGameSaveFromLoadedScenario(
 
   if (!g || !g.uid) {
     throw new Error(`Could not resolve managed group for label ${opts.managedGroupLabel}`);
+  }
+
+  const allowNames = loaded.startup_allowlist?.names_in_order;
+  if (allowNames?.length) {
+    const allowed = new Set(allowNames.map((n) => String(n ?? "").trim()).filter((n) => n.length > 0));
+    const resolvedJa = String(g.name ?? "").trim();
+    if (!allowed.has(resolvedJa)) {
+      throw new Error(
+        `Managed group "${resolvedJa}" is not in this scenario's curated new-game allowlist (startup_allowlist.json / docs/scenario6_available_groups.txt).`,
+      );
+    }
   }
 
   const popularity = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
@@ -124,6 +138,7 @@ export function createGameSaveFromLoadedScenario(
     songs_path: `web://scenarios/${subdir}/songs.json`,
   };
   save.database_snapshot = snap;
+  save.scenario_runtime.future_events = filtered.futureEvents;
   save.shortlist = [...memberUids];
   for (const uid of memberUids) {
     save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
@@ -134,6 +149,7 @@ export function createGameSaveFromLoadedScenario(
   save.turn_number = 0;
   save.finances = defaultFinances(cash);
   save.inbox.notifications = [];
+  save.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
   const gid = String(g.uid);
 
   const memberLines = memberUids
@@ -516,6 +532,7 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.inbox.notifications = [];
 
   save.scenario_runtime = { future_events: [] };
+  save.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
 
   addNotification(save, {
     title: "Production started",

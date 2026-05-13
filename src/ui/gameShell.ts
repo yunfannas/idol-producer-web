@@ -17,7 +17,19 @@ import {
   AUTOPILOT_LIVE_WEEKDAY_INDEX,
   getBlockingNotificationForSave,
 } from "../engine/gameEngine";
-import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
+import {
+  addMinutesToHHMM,
+  formatLiveSlotLine,
+  getVenuesCatalog,
+  LIVE_TYPE_PRESETS,
+} from "../engine/liveScheduleWeb";
+import {
+  buildAuditionStorageKey,
+  buildDefaultScoutCompanies,
+  recommendScoutLeads,
+  type ScoutAuditionRow,
+} from "../engine/scoutWeb";
+import { festivalPerformancesForManagedGroup, normalizeFestivalCatalog } from "../engine/festivalWeb";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
@@ -40,6 +52,7 @@ import {
   splitSongsReleasedVsMaking,
   type DiscBucket,
 } from "../data/songDisplayPolicy";
+import { groupsForDirectoryListing } from "../data/scenarioBrowse";
 import {
   defaultAutopilotTrainingIntensity,
   safeTrainingRow,
@@ -187,6 +200,30 @@ function buildScheduleMonthCalendarHtml(
 
 /** Primary Songs workspace tabs (matches `public/ref/main_ui.py` show_songs_view). */
 export type SongsWorkspaceTab = "group_songs" | "disc";
+export type LivesTab = "new" | "scheduled" | "past" | "festival";
+export type ScoutTab = "freelancer" | "transfer" | "audition";
+
+export interface NewLiveFormState {
+  liveType: "Routine" | "Concert" | "Taiban" | "Festival";
+  title: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  rehearsalStart: string;
+  rehearsalEnd: string;
+  venueName: string;
+  setlist: string[];
+  tokutenkaiEnabled: boolean;
+  tokutenkaiStart: string;
+  tokutenkaiEnd: string;
+  tokutenkaiTicketPrice: number;
+  tokutenkaiSlotSeconds: number;
+  tokutenkaiExpectedTickets: number;
+  goodsEnabled: boolean;
+  goodsLine: string;
+  goodsExpectedRevenueYen: number;
+  ticketPriceYen: number;
+}
 
 /** Full management nav (browse mode restricts to Idol / Groups / Songs like desktop `_browse_mode`). */
 export const MANAGEMENT_NAV_ITEMS = [
@@ -221,6 +258,12 @@ export function isDesktopNavId(s: string): s is DesktopNavId {
 
 /** Browse / expandable catalog caps (scenario JSON can list tens of thousands of songs). */
 const SONG_EXPAND_ALL_LIMIT = 500;
+
+function num(value: unknown, fallback = 0): number {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  if (typeof value === "string" && value.trim() !== "" && Number.isFinite(Number(value))) return Number(value);
+  return fallback;
+}
 
 function xFollowersNum(row: Record<string, unknown>): number {
   const v = row.x_followers;
@@ -877,6 +920,221 @@ function renderTraining(save: GameSavePayload): string {
   </section>`;
 }
 
+function firstOfMonthIso(isoDate: string): string {
+  const s = String(isoDate ?? "").split("T")[0].trim();
+  const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(s);
+  if (!m) return "2000-01-01";
+  return `${m[1]}-${m[2]}-01`;
+}
+
+function addCalendarMonths(firstOfMonthIsoDate: string, deltaMonths: number): string {
+  const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(String(firstOfMonthIsoDate ?? "").trim());
+  if (!m) return "2000-01-01";
+  const dt = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1 + deltaMonths, 1));
+  return dt.toISOString().slice(0, 10);
+}
+
+function formatMonthTick(isoDate: string): string {
+  const s = String(isoDate ?? "").split("T")[0].trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  const dt = new Date(`${s}T12:00:00Z`);
+  return dt.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+}
+
+function financeMoneyShort(value: number): string {
+  const rounded = Math.round(value);
+  const abs = Math.abs(rounded);
+  if (abs >= 1_000_000_000) return `Â¥${(rounded / 1_000_000_000).toFixed(1)}B`;
+  if (abs >= 1_000_000) return `Â¥${(rounded / 1_000_000).toFixed(1)}M`;
+  if (abs >= 1_000) return `Â¥${(rounded / 1_000).toFixed(0)}K`;
+  return `Â¥${rounded.toLocaleString("ja-JP")}`;
+}
+
+interface FinanceMonthPoint {
+  monthIso: string;
+  income: number;
+  expense: number;
+  net: number;
+  closingBalance: number;
+  projected: boolean;
+}
+
+const TIER_REFERENCE_MONTHLY_NET: Record<string, number> = {
+  S: 15_000_000,
+  A: 9_500_000,
+  B: 4_000_000,
+  C: 2_139_817,
+  D: 751_203,
+  E: 95_750,
+  F: 14_605,
+};
+
+function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[] {
+  const finances = getActiveFinances(save);
+  const tier = resolveGroupLetterTier(getPrimaryGroup(save));
+  const tierReferenceNet = TIER_REFERENCE_MONTHLY_NET[tier] ?? 0;
+  const ledger = [...finances.ledger]
+    .filter((row) => typeof row?.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(row.date))
+    .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const currentMonthIso = firstOfMonthIso(
+    save.current_date ?? finances.last_processed_date ?? save.game_start_date ?? "2000-01-01",
+  );
+
+  if (!ledger.length) {
+    return Array.from({ length: 24 }, (_, index) => ({
+      monthIso: addCalendarMonths(currentMonthIso, index),
+      income: 0,
+      expense: 0,
+      net: tierReferenceNet,
+      closingBalance: finances.cash_yen + tierReferenceNet * index,
+      projected: index > 0,
+    }));
+  }
+
+  const monthly = new Map<string, FinanceMonthPoint>();
+  const totalNet = ledger.reduce((sum, row) => sum + num(row.net_total), 0);
+  let runningBalance = finances.cash_yen - totalNet;
+  for (const row of ledger) {
+    runningBalance += num(row.net_total);
+    const monthIso = firstOfMonthIso(row.date);
+    const current = monthly.get(monthIso) ?? {
+      monthIso,
+      income: 0,
+      expense: 0,
+      net: 0,
+      closingBalance: runningBalance,
+      projected: false,
+    };
+    current.income += num(row.income_total);
+    current.expense += num(row.expense_total);
+    current.net += num(row.net_total);
+    current.closingBalance = runningBalance;
+    monthly.set(monthIso, current);
+  }
+
+  const actualMonths = [...monthly.values()].sort((a, b) => a.monthIso.localeCompare(b.monthIso));
+  const recentTemplate = actualMonths.slice(-Math.min(6, actualMonths.length));
+  const blendedTemplateDenom = Math.max(3, recentTemplate.length);
+  const fallbackIncome =
+    recentTemplate.reduce((sum, row) => sum + row.income, 0) / Math.max(1, recentTemplate.length);
+  const fallbackExpense =
+    recentTemplate.reduce((sum, row) => sum + row.expense, 0) / Math.max(1, recentTemplate.length);
+  const fallbackNet = Math.round(
+    (recentTemplate.reduce((sum, row) => sum + row.net, 0) + tierReferenceNet * Math.max(0, blendedTemplateDenom - recentTemplate.length)) /
+      blendedTemplateDenom,
+  );
+
+  const currentIndex = actualMonths.findIndex((row) => row.monthIso === currentMonthIso);
+  const points = (currentIndex >= 0 ? actualMonths.slice(currentIndex) : [actualMonths[actualMonths.length - 1]])
+    .slice(0, 24)
+    .map((row) => ({ ...row, projected: false }));
+
+  let balance = points.length
+    ? points[points.length - 1].closingBalance
+    : actualMonths[actualMonths.length - 1]?.closingBalance ?? finances.cash_yen;
+  let anchorMonth = points.length
+    ? points[points.length - 1].monthIso
+    : actualMonths[actualMonths.length - 1]?.monthIso ?? currentMonthIso;
+
+  while (points.length < 24) {
+    const index = points.length - (currentIndex >= 0 ? currentIndex : Math.max(0, actualMonths.length - 1));
+    const template = recentTemplate.length ? recentTemplate[Math.abs(index) % recentTemplate.length] : null;
+    const income = template ? template.income : fallbackIncome;
+    const expense = template ? template.expense : fallbackExpense;
+    const net = template ? template.net : fallbackNet;
+    anchorMonth = addCalendarMonths(anchorMonth, 1);
+    balance += net;
+    points.push({
+      monthIso: anchorMonth,
+      income,
+      expense,
+      net,
+      closingBalance: balance,
+      projected: true,
+    });
+  }
+
+  return points.sort((a, b) => a.monthIso.localeCompare(b.monthIso)).slice(0, 24);
+}
+
+function renderFinanceProjectionSvg(points: FinanceMonthPoint[]): string {
+  const width = 1080;
+  const height = 280;
+  const padTop = 22;
+  const padRight = 18;
+  const padBottom = 42;
+  const padLeft = 72;
+  const innerW = width - padLeft - padRight;
+  const innerH = height - padTop - padBottom;
+  const values = points.map((row) => row.closingBalance);
+  const minVal = Math.min(...values, 0);
+  const maxVal = Math.max(...values, 0);
+  const span = Math.max(1, maxVal - minVal);
+  const paddedMin = minVal - span * 0.08;
+  const paddedMax = maxVal + span * 0.08;
+  const xFor = (index: number) => (points.length <= 1 ? padLeft : padLeft + (index / (points.length - 1)) * innerW);
+  const yFor = (value: number) => {
+    const ratio = (value - paddedMin) / Math.max(1, paddedMax - paddedMin);
+    return padTop + innerH - ratio * innerH;
+  };
+
+  const linePoints = points.map((row, index) => `${xFor(index).toFixed(2)},${yFor(row.closingBalance).toFixed(2)}`);
+  const areaPoints = [
+    `${padLeft},${padTop + innerH}`,
+    ...linePoints,
+    `${xFor(points.length - 1).toFixed(2)},${padTop + innerH}`,
+  ].join(" ");
+  const firstProjectedIndex = points.findIndex((row) => row.projected);
+
+  const yTicks = Array.from({ length: 5 }, (_, index) => paddedMin + ((paddedMax - paddedMin) * index) / 4)
+    .map((value) => {
+      const y = yFor(value);
+      return `<g><line x1="${padLeft}" y1="${y.toFixed(2)}" x2="${width - padRight}" y2="${y.toFixed(2)}" class="finance-projection-grid" /><text x="${padLeft - 10}" y="${(y + 4).toFixed(2)}" class="finance-projection-y">${htmlEsc(financeMoneyShort(value))}</text></g>`;
+    })
+    .join("");
+
+  const xTicks = points
+    .map((row, index) => ({ row, index }))
+    .filter(({ index }) => index === 0 || index === points.length - 1 || index % 3 === 0)
+    .map(({ row, index }) => {
+      const x = xFor(index);
+      return `<g><line x1="${x.toFixed(2)}" y1="${padTop}" x2="${x.toFixed(2)}" y2="${padTop + innerH}" class="finance-projection-grid finance-projection-grid-x" /><text x="${x.toFixed(2)}" y="${height - 14}" text-anchor="middle" class="finance-projection-x">${htmlEsc(formatMonthTick(row.monthIso))}</text></g>`;
+    })
+    .join("");
+
+  const futureBand =
+    firstProjectedIndex > 0
+      ? `<rect x="${xFor(firstProjectedIndex).toFixed(2)}" y="${padTop}" width="${(width - padRight - xFor(firstProjectedIndex)).toFixed(2)}" height="${innerH}" class="finance-projection-future-band" />`
+      : "";
+  const divider =
+    firstProjectedIndex > 0
+      ? `<line x1="${xFor(firstProjectedIndex).toFixed(2)}" y1="${padTop}" x2="${xFor(firstProjectedIndex).toFixed(2)}" y2="${padTop + innerH}" class="finance-projection-divider" />`
+      : "";
+  const markers = points
+    .map((row, index) => {
+      const x = xFor(index);
+      const y = yFor(row.closingBalance);
+      return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${row.projected ? 2.7 : 3.2}" class="finance-projection-dot ${row.projected ? "is-projected" : "is-actual"}" />`;
+    })
+    .join("");
+
+  return `<svg class="finance-projection-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="24 month balance projection">
+    <defs>
+      <linearGradient id="financeProjectionFill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgb(255 100 164 / 0.88)" />
+        <stop offset="100%" stop-color="rgb(255 100 164 / 0.18)" />
+      </linearGradient>
+    </defs>
+    ${futureBand}
+    ${yTicks}
+    ${xTicks}
+    ${divider}
+    <polygon points="${areaPoints}" class="finance-projection-area" fill="url(#financeProjectionFill)" />
+    <polyline points="${linePoints.join(" ")}" class="finance-projection-line" />
+    ${markers}
+  </svg>`;
+}
+
 function renderFinances(save: GameSavePayload): string {
   const f = getActiveFinances(save);
   const ledger = [...f.ledger].slice(-20).reverse();
@@ -908,6 +1166,62 @@ function renderFinances(save: GameSavePayload): string {
 }
 
 /** All idols · portrait · age / romaji / X / groups on reference date · open detail on click. */
+function renderFinancesProjectionView(save: GameSavePayload): string {
+  const f = getActiveFinances(save);
+  const ledger = [...f.ledger].slice(-20).reverse();
+  const projectionPoints = buildFinanceProjectionPoints(save);
+  const projectedLast = projectionPoints[projectionPoints.length - 1] ?? null;
+  const actualWindow = projectionPoints.filter((row) => !row.projected).slice(-6);
+  const avgMonthlyNet =
+    actualWindow.reduce((sum, row) => sum + row.net, 0) / Math.max(1, actualWindow.length);
+  const head = `
+    <div class="stat-row" role="group" aria-label="Cash">
+      <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">Â¥${f.cash_yen.toLocaleString("ja-JP")}</span></div>
+      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "â€”")}</span></div>
+    </div>`;
+  const tableRows = ledger
+    .map(
+      (row) =>
+        `<tr><td>${htmlEsc(row.date)}</td><td class="num">${row.net_total.toLocaleString("ja-JP")}</td><td>${htmlEsc(row.tier)}</td><td class="num muted">${row.income_total.toLocaleString("ja-JP")}</td><td class="num muted">${row.expense_total.toLocaleString("ja-JP")}</td></tr>`,
+    )
+    .join("");
+  return `
+    <section class="content-panel finances-view">
+      <h2 class="content-h2">Finances</h2>
+      ${head}
+      <section class="fm-card finance-projection-card" aria-label="24 month projection">
+        <div class="finance-projection-head">
+          <div>
+            <h3 class="content-h3 finance-projection-title">Overall Balance Projection</h3>
+            <p class="content-muted finance-projection-copy">24-month axis using recent monthly cash-flow patterns from the current ledger.</p>
+          </div>
+          <div class="finance-projection-kpis">
+            <div class="finance-projection-kpi">
+              <span class="finance-projection-kpi-label">Projected 24M close</span>
+              <strong class="finance-projection-kpi-value">${htmlEsc(financeMoneyShort(projectedLast?.closingBalance ?? f.cash_yen))}</strong>
+            </div>
+            <div class="finance-projection-kpi">
+              <span class="finance-projection-kpi-label">Avg monthly net</span>
+              <strong class="finance-projection-kpi-value ${avgMonthlyNet >= 0 ? "is-positive" : "is-negative"}">${htmlEsc(financeMoneyShort(avgMonthlyNet))}</strong>
+            </div>
+          </div>
+        </div>
+        ${renderFinanceProjectionSvg(projectionPoints)}
+      </section>
+      <div class="table-panel">
+        <h3 class="content-h3">Daily ledger (recent)</h3>
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Date</th><th>Net Â¥</th><th>Tier</th><th>Income</th><th>Expense</th></tr></thead>
+            <tbody>${tableRows || `<tr><td colspan="5" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
+          </table>
+        </div>
+      </div>
+    </section>`;
+}
+
+void renderFinances;
+
 function renderIdolsList(
   idols: Record<string, unknown>[],
   referenceIso: string | undefined,
@@ -1095,7 +1409,7 @@ function renderSongsTrackTableBodies(
 }
 
 function renderSongsGroupDropdown(groups: Record<string, unknown>[], selectedUid: string): string {
-  const sorted = sortGroupsForDirectory(groups);
+  const sorted = sortGroupsForDirectory(groupsForDirectoryListing(groups));
   const opts = sorted
     .map((g) => {
       const uid = String((g as { uid?: unknown }).uid ?? "").trim();
@@ -1396,10 +1710,16 @@ function renderGroupsFullTable(
   highlightUid?: string | null,
   songs?: Record<string, unknown>[] | null,
 ): string {
-  if (!groups.length) return renderPlaceholder("Groups", "No groups in database snapshot.");
+  const listed = groupsForDirectoryListing(groups);
+  if (!listed.length) {
+    return renderPlaceholder(
+      "Groups",
+      "No groups in this list after filters (directory hides history-only slugs and groups with 0–1 current members). Full data remains in the snapshot for idol history.",
+    );
+  }
 
   const songCount = buildSongCountByGroupUid(songs ?? undefined);
-  const sorted = sortGroupsForDirectory(groups);
+  const sorted = sortGroupsForDirectory(listed);
   const rows = sorted
     .map((g) => {
       const name = String(g.name ?? g.name_romanji ?? "—");
@@ -1579,7 +1899,42 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
     </section>`;
 }
 
-function renderLivesView(save: GameSavePayload): string {
+function renderLiveTabs(active: LivesTab): string {
+  const tabs: Array<[LivesTab, string]> = [
+    ["new", "New Live"],
+    ["scheduled", "Scheduled"],
+    ["past", "Past"],
+    ["festival", "Festival"],
+  ];
+  return `<div class="workspace-tabs lives-tabs">${tabs
+    .map(
+      ([key, label]) =>
+        `<button type="button" class="workspace-tab ${active === key ? "is-active" : ""}" data-lives-tab="${htmlEsc(key)}">${htmlEsc(label)}</button>`,
+    )
+    .join("")}</div>`;
+}
+
+function renderScoutTabs(active: ScoutTab): string {
+  const tabs: Array<[ScoutTab, string]> = [
+    ["freelancer", "Freelancers"],
+    ["transfer", "Transfer Targets"],
+    ["audition", "Auditions"],
+  ];
+  return `<div class="workspace-tabs scout-tabs">${tabs
+    .map(
+      ([key, label]) =>
+        `<button type="button" class="workspace-tab ${active === key ? "is-active" : ""}" data-scout-tab="${htmlEsc(key)}">${htmlEsc(label)}</button>`,
+    )
+    .join("")}</div>`;
+}
+
+function renderLivesView(
+  save: GameSavePayload,
+  livesTab: LivesTab,
+  scheduledLiveUid: string | null,
+  newLiveForm: NewLiveFormState,
+  festivals: Record<string, unknown>[] | null | undefined,
+): string {
   const schedules = (save.lives?.schedules ?? []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
   );
@@ -1592,7 +1947,24 @@ function renderLivesView(save: GameSavePayload): string {
     const db = String(b.start_date ?? b.date ?? "").split("T")[0];
     return da.localeCompare(db);
   };
-  const upcoming = [...schedules].sort(byDate);
+  const grp = getPrimaryGroup(save);
+  const label = String(grp?.name_romanji ?? grp?.name ?? save.managing_group ?? "Managed group");
+  const todayIso =
+    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
+  const venues = getVenuesCatalog();
+  const venueByName = new Map(venues.map((row) => [row.name, row] as const));
+  const managedUid = String(grp?.uid ?? "");
+  const groupSongs = songsForDisplaySorted(save.database_snapshot.songs)
+    .filter((row) => String(row.group_uid ?? "") === managedUid)
+    .slice(0, 40);
+  const upcoming = [...schedules]
+    .filter((live) => String(live.start_date ?? "").split("T")[0] >= todayIso && String(live.status ?? "") !== "played")
+    .sort(byDate);
+  const selectedScheduled =
+    (scheduledLiveUid ? upcoming.find((live) => String(live.uid ?? "") === scheduledLiveUid) : null) ?? upcoming[0] ?? null;
+  const managedFestivalPerformances = festivals?.length
+    ? festivalPerformancesForManagedGroup(normalizeFestivalCatalog(festivals), String(save.managing_group_uid ?? ""))
+    : [];
 
   const upcomingRows = upcoming
     .map((live) => {
@@ -1604,7 +1976,8 @@ function renderLivesView(save: GameSavePayload): string {
       const slot = formatLiveSlotLine(live);
       const typ = String(live.live_type ?? live.event_type ?? "");
       const where = loc ? `${venue} · ${loc}` : venue;
-      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
+      const active = String(live.uid ?? "") === String(selectedScheduled?.uid ?? "") ? " class=\"is-selected-row\"" : "";
+      return `<tr${active} data-scheduled-live="${htmlEsc(String(live.uid ?? ""))}"><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
     })
     .join("");
 
@@ -1618,16 +1991,93 @@ function renderLivesView(save: GameSavePayload): string {
       return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(venue)}</td><td class="num">${htmlEsc(perf)}</td></tr>`;
     })
     .join("");
+  const selectedPreset = LIVE_TYPE_PRESETS[newLiveForm.liveType] ?? LIVE_TYPE_PRESETS.Routine;
+  const selectedVenue = venueByName.get(newLiveForm.venueName);
+  const selectedSetlist = newLiveForm.setlist.filter(Boolean);
+  const setlistOptions = groupSongs
+    .map((song) => {
+      const title = String(song.title ?? song.title_romanji ?? "").trim();
+      const checked = selectedSetlist.includes(title) ? "checked" : "";
+      return `<label class="check-pill"><input type="checkbox" data-live-song="${htmlEsc(encodeURIComponent(title))}" ${checked} /> <span>${htmlEsc(title)}</span></label>`;
+    })
+    .join("");
+  const venueOptions = [
+    `<option value="">Select venue</option>`,
+    ...venues.map((venue) => {
+      const selected = venue.name === newLiveForm.venueName ? "selected" : "";
+      return `<option value="${htmlEsc(venue.name)}" ${selected}>${htmlEsc(`${venue.name} (${venue.capacity})`)}</option>`;
+    }),
+  ].join("");
+  const summaryLines = [
+    `${newLiveForm.liveType} · ${newLiveForm.date || "TBD"} · ${newLiveForm.startTime}-${newLiveForm.endTime}`,
+    `Venue: ${newLiveForm.venueName || "TBA"}${selectedVenue?.location ? ` · ${selectedVenue.location}` : ""}${selectedVenue?.capacity ? ` · cap ${selectedVenue.capacity}` : ""}`,
+    `Setlist: ${selectedSetlist.length ? selectedSetlist.join(", ") : "Not set"}`,
+    `Tokutenkai: ${newLiveForm.tokutenkaiEnabled ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}` : "Off"}`,
+    `Goods: ${newLiveForm.goodsEnabled ? `${newLiveForm.goodsLine || "Standard goods"} · est ¥${newLiveForm.goodsExpectedRevenueYen.toLocaleString("ja-JP")}` : "Off"}`,
+    `Ticket price: ${newLiveForm.ticketPriceYen > 0 ? `¥${newLiveForm.ticketPriceYen.toLocaleString("ja-JP")}` : "Not set"}`,
+  ];
 
-  const grp = getPrimaryGroup(save);
-  const label = String(grp?.name_romanji ?? grp?.name ?? save.managing_group ?? "Managed group");
+  const scheduledDetail = selectedScheduled
+    ? `<div class="content-muted">${[
+        `${String(selectedScheduled.title ?? selectedScheduled.live_type ?? "Live")}`,
+        `When: ${formatLiveSlotLine(selectedScheduled)}`,
+        `Venue: ${String(selectedScheduled.venue ?? "TBA")}${String(selectedScheduled.location ?? "").trim() ? ` · ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
+        `Setlist: ${Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(", ") : "Not set"}`,
+        `Tokutenkai: ${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start ?? "")}-${String(selectedScheduled.tokutenkai_end ?? "")} · est ${String(selectedScheduled.tokutenkai_expected_tickets ?? "0")}` : "Off"}`,
+        `Goods: ${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line ?? "Goods")} · est ¥${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}` : "Off"}`,
+      ].map((line) => htmlEsc(line)).join("<br />")}</div>`
+    : `<p class="content-muted">No scheduled live selected.</p>`;
 
-  return `<section class="content-panel lives-view">
-    <h2 class="content-h2">Lives</h2>
-    <p class="content-muted">${htmlEsc(
-      `Managed group: ${label}. Venues match desktop booking: closest hall capacity to a fan-scale target, from the same venues.json bundled with the web build.`,
-    )}</p>
-    <section class="fm-card">
+  const newLiveBody = `<div class="lives-planner-grid">
+      <section class="fm-card">
+        <h3 class="content-h3">New live setup</h3>
+        <div class="form-grid live-form-grid">
+          <label><span>Type</span><select class="fm-select" data-live-form-field="liveType">
+            ${(["Routine", "Concert", "Taiban", "Festival"] as const)
+              .map((type) => `<option value="${type}" ${newLiveForm.liveType === type ? "selected" : ""}>${type}</option>`)
+              .join("")}
+          </select></label>
+          <label><span>Title</span><input class="fm-input" data-live-form-field="title" value="${htmlEsc(newLiveForm.title)}" /></label>
+          <label><span>Date</span><input type="date" class="fm-input" data-live-form-field="date" value="${htmlEsc(newLiveForm.date)}" /></label>
+          <label><span>Venue</span><select class="fm-select" data-live-form-field="venueName">${venueOptions}</select></label>
+          <label><span>Start</span><input class="fm-input" data-live-form-field="startTime" value="${htmlEsc(newLiveForm.startTime)}" /></label>
+          <label><span>End</span><input class="fm-input" data-live-form-field="endTime" value="${htmlEsc(newLiveForm.endTime)}" /></label>
+          <label><span>Rehearsal start</span><input class="fm-input" data-live-form-field="rehearsalStart" value="${htmlEsc(newLiveForm.rehearsalStart)}" /></label>
+          <label><span>Rehearsal end</span><input class="fm-input" data-live-form-field="rehearsalEnd" value="${htmlEsc(newLiveForm.rehearsalEnd)}" /></label>
+          <label><span>Ticket price</span><input class="fm-input" data-live-form-field="ticketPriceYen" value="${htmlEsc(String(newLiveForm.ticketPriceYen))}" /></label>
+        </div>
+        <div class="planner-subpanel">
+          <h4 class="content-h3">Songs</h4>
+          <div class="check-pill-wrap">${setlistOptions || `<p class="content-muted">No released songs for this group yet.</p>`}</div>
+        </div>
+        <div class="planner-subpanel">
+          <h4 class="content-h3">Tokutenkai</h4>
+          <label class="check-pill"><input type="checkbox" data-live-toggle="tokutenkaiEnabled" ${newLiveForm.tokutenkaiEnabled ? "checked" : ""} /> <span>Enable tokutenkai / cheki</span></label>
+          <div class="form-grid live-form-grid">
+            <label><span>Start</span><input class="fm-input" data-live-form-field="tokutenkaiStart" value="${htmlEsc(newLiveForm.tokutenkaiStart)}" /></label>
+            <label><span>End</span><input class="fm-input" data-live-form-field="tokutenkaiEnd" value="${htmlEsc(newLiveForm.tokutenkaiEnd)}" /></label>
+            <label><span>Ticket price</span><input class="fm-input" data-live-form-field="tokutenkaiTicketPrice" value="${htmlEsc(String(newLiveForm.tokutenkaiTicketPrice))}" /></label>
+            <label><span>Talk slot seconds</span><input class="fm-input" data-live-form-field="tokutenkaiSlotSeconds" value="${htmlEsc(String(newLiveForm.tokutenkaiSlotSeconds))}" /></label>
+            <label><span>Expected tickets</span><input class="fm-input" data-live-form-field="tokutenkaiExpectedTickets" value="${htmlEsc(String(newLiveForm.tokutenkaiExpectedTickets))}" /></label>
+          </div>
+        </div>
+        <div class="planner-subpanel">
+          <h4 class="content-h3">Goods</h4>
+          <label class="check-pill"><input type="checkbox" data-live-toggle="goodsEnabled" ${newLiveForm.goodsEnabled ? "checked" : ""} /> <span>Run goods booth</span></label>
+          <div class="form-grid live-form-grid">
+            <label><span>Goods line</span><input class="fm-input" data-live-form-field="goodsLine" value="${htmlEsc(newLiveForm.goodsLine)}" /></label>
+            <label><span>Expected gross</span><input class="fm-input" data-live-form-field="goodsExpectedRevenueYen" value="${htmlEsc(String(newLiveForm.goodsExpectedRevenueYen))}" /></label>
+          </div>
+        </div>
+        <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-live-schedule="1">Schedule Live</button></div>
+      </section>
+      <section class="fm-card">
+        <h3 class="content-h3">Summary</h3>
+        <div class="content-muted">${summaryLines.map((line) => htmlEsc(line)).join("<br />")}</div>
+      </section>
+    </div>`;
+
+  const scheduledBody = `<section class="fm-card">
       <h3 class="content-h3">Scheduled</h3>
       <div class="table-scroll">
         <table class="fm-table">
@@ -1637,6 +2087,16 @@ function renderLivesView(save: GameSavePayload): string {
       </div>
     </section>
     <section class="fm-card">
+      <h3 class="content-h3">Selected live detail</h3>
+      ${scheduledDetail}
+      ${
+        selectedScheduled
+          ? `<div class="planner-actions"><button type="button" class="fm-btn" data-live-cancel="${htmlEsc(String(selectedScheduled.uid ?? ""))}">Cancel Selected</button></div>`
+          : ""
+      }
+    </section>`;
+
+  const pastBody = `<section class="fm-card">
       <h3 class="content-h3">Recent results (last 30)</h3>
       <div class="table-scroll">
         <table class="fm-table">
@@ -1644,7 +2104,201 @@ function renderLivesView(save: GameSavePayload): string {
           <tbody>${resultRows || `<tr><td colspan="4" class="content-muted">No played lives yet.</td></tr>`}</tbody>
         </table>
       </div>
-    </section>
+    </section>`;
+
+  const festivalRows = managedFestivalPerformances
+    .map(({ festival, performance }) => {
+      const date = String(performance.date ?? "").split("T")[0];
+      const slot = [String(performance.start_time ?? "").slice(0, 5), String(performance.end_time ?? "").slice(0, 5)]
+        .filter(Boolean)
+        .join("-");
+      const stage = String(performance.stage ?? "Stage TBA");
+      const subtitle = String(performance.subtitle ?? "").trim();
+      const venue = String(festival.name ?? "Festival");
+      return `<tr><td>${htmlEsc(date)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(venue)}</td><td>${htmlEsc(stage)}</td><td>${htmlEsc(subtitle || String(performance.title ?? performance.artist_name ?? "Appearance"))}</td></tr>`;
+    })
+    .join("");
+
+  const festivalBody = `<section class="fm-card">
+      <h3 class="content-h3">Managed festival appearances</h3>
+      <div class="table-scroll">
+        <table class="fm-table">
+          <thead><tr><th>Date</th><th>Slot</th><th>Festival</th><th>Stage</th><th>Appearance</th></tr></thead>
+          <tbody>${festivalRows || `<tr><td colspan="5" class="content-muted">No festival appearances found for the managed group in the loaded catalog.</td></tr>`}</tbody>
+        </table>
+      </div>
+      <p class="content-muted">${htmlEsc("TIF 2025 appearances from festivals.json are auto-imported into Scheduled lives when the managed group appears in the official timetable.")}</p>
+    </section>`;
+
+  const body =
+    livesTab === "scheduled"
+      ? scheduledBody
+      : livesTab === "past"
+        ? pastBody
+        : livesTab === "festival"
+          ? festivalBody
+          : newLiveBody;
+
+  return `<section class="content-panel lives-view">
+    <h2 class="content-h2">Lives</h2>
+    <p class="content-muted">${htmlEsc(
+      `Managed group: ${label}. New Live matches the desktop planner flow: venue, setlist, tokutenkai, and goods can all be staged before scheduling.`,
+    )}</p>
+    ${renderLiveTabs(livesTab)}
+    ${body}
+  </section>`;
+}
+
+function renderScoutView(
+  save: GameSavePayload,
+  scoutTab: ScoutTab,
+  selectedScoutLeadUid: string | null,
+  selectedScoutApplicantUid: string | null,
+): string {
+  const companies = buildDefaultScoutCompanies();
+  const selectedCompany =
+    companies.find((company) => company.uid === save.scout.selected_company_uid) ?? companies[0] ?? null;
+  if (!selectedCompany) return renderPlaceholder("Scout", "No scout companies are configured.");
+  const currentIso =
+    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
+  const managedGroupName = String(getPrimaryGroup(save)?.name ?? save.managing_group ?? "");
+  const auditionsKey = buildAuditionStorageKey(selectedCompany.uid, currentIso);
+  const auditionRows = Array.isArray(save.scout.auditions[auditionsKey])
+    ? (save.scout.auditions[auditionsKey] as ScoutAuditionRow[])
+    : [];
+  const leadRows =
+    scoutTab === "audition"
+      ? []
+      : recommendScoutLeads({
+          idols: save.database_snapshot.idols,
+          managedGroupName,
+          company: selectedCompany,
+          targetType: scoutTab,
+          currentIso,
+          limit: 18,
+        });
+  const shortlist = new Set(save.shortlist.map((uid) => String(uid)));
+  const idolsByUid = new Map(save.database_snapshot.idols.map((idol) => [String(idol.uid ?? ""), idol] as const));
+  const selectedLead =
+    leadRows.find((row) => row.idol_uid === selectedScoutLeadUid) ?? leadRows[0] ?? null;
+  const selectedApplicant =
+    auditionRows.find((row) => String(row.uid) === selectedScoutApplicantUid) ?? auditionRows[0] ?? null;
+
+  const companyRows = companies
+    .map((company) => {
+      const active = company.uid === selectedCompany.uid ? " is-active" : "";
+      return `<button type="button" class="inbox-row-btn fm-card${active}" data-scout-company="${htmlEsc(company.uid)}">
+        <span class="inbox-row-title"><span>${htmlEsc(company.name)}</span></span>
+        <span class="inbox-row-meta">${htmlEsc(`${company.city} · Lv${company.level} · ¥${company.service_fee_yen.toLocaleString("ja-JP")}`)}</span>
+      </button>`;
+    })
+    .join("");
+
+  const companyDetail = [
+    selectedCompany.name,
+    `Base: ${selectedCompany.city}`,
+    `Level: ${selectedCompany.level}`,
+    `Retainer: ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")}`,
+    `Specialty: ${selectedCompany.specialty}`,
+    `Focus: ${selectedCompany.focus_note}`,
+  ]
+    .map((line) => htmlEsc(line))
+    .join("<br />");
+
+  let rightBody = "";
+  if (scoutTab === "audition") {
+    const rows = auditionRows
+      .map((row) => {
+        const active = String(row.uid) === String(selectedApplicant?.uid ?? "") ? ` class="is-selected-row"` : "";
+        const status = row.signed_idol_uid ? "Signed" : "Available";
+        return `<tr${active} data-scout-applicant="${htmlEsc(String(row.uid))}"><td>${htmlEsc(row.name)}</td><td>${htmlEsc(String(row.age))}</td><td>${htmlEsc(row.birthplace)}</td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(row.background)}</td><td>${htmlEsc(status)}</td></tr>`;
+      })
+      .join("");
+    const detail = selectedApplicant
+      ? [
+          selectedApplicant.name,
+          `Romaji: ${selectedApplicant.romaji || "—"}`,
+          `Age: ${selectedApplicant.age} · Height: ${selectedApplicant.height} cm`,
+          `Birthplace: ${selectedApplicant.birthplace}`,
+          `Background: ${selectedApplicant.background}`,
+          `Scout note: ${selectedApplicant.note}`,
+          `Profile score: ${selectedApplicant.profile_score}`,
+          `Status: ${selectedApplicant.signed_idol_uid ? "Signed to shortlist" : "Unsigned applicant"}`,
+        ]
+          .map((line) => htmlEsc(line))
+          .join("<br />")
+      : "Hold today's audition to generate applicants.";
+    rightBody = `<section class="fm-card">
+        <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-scout-hold-audition="1">Hold Audition Today</button></div>
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Applicant</th><th>Age</th><th>Birthplace</th><th>Profile</th><th>Background</th><th>Status</th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="6" class="content-muted">No audition pool yet for ${htmlEsc(currentIso)}.</td></tr>`}</tbody>
+          </table>
+        </div>
+      </section>
+      <section class="fm-card">
+        <h3 class="content-h3">Applicant detail</h3>
+        <div class="content-muted">${detail}</div>
+        ${
+          selectedApplicant
+            ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-sign-applicant="${htmlEsc(String(selectedApplicant.uid))}">${htmlEsc(selectedApplicant.signed_idol_uid ? "Already Signed" : "Sign Selected")}</button></div>`
+            : ""
+        }
+      </section>`;
+  } else {
+    const rows = leadRows
+      .map((row) => {
+        const idol = idolsByUid.get(row.idol_uid);
+        const active = row.idol_uid === String(selectedLead?.idol_uid ?? "") ? ` class="is-selected-row"` : "";
+        return `<tr${active} data-scout-lead="${htmlEsc(row.idol_uid)}"><td>${htmlEsc(String(idol?.name ?? row.idol_uid))}</td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(String(idol?.birthplace ?? "—"))}</td><td>${htmlEsc(row.current_groups.length ? row.current_groups.join(", ") : "Independent")}</td><td>${htmlEsc(row.reason)}</td></tr>`;
+      })
+      .join("");
+    const leadIdol = selectedLead ? idolsByUid.get(selectedLead.idol_uid) : null;
+    const detail = selectedLead && leadIdol
+      ? [
+          String(leadIdol.name ?? selectedLead.idol_uid),
+          `Profile score: ${selectedLead.profile_score}/100`,
+          `Birthplace: ${String(leadIdol.birthplace ?? "—")}`,
+          `Current groups: ${selectedLead.current_groups.length ? selectedLead.current_groups.join(", ") : "Independent"}`,
+          `Popularity: ${num(leadIdol.popularity, 0)} · Fans: ${num(leadIdol.fan_count, 0).toLocaleString("ja-JP")} · X: ${num(leadIdol.x_followers, 0).toLocaleString("ja-JP")}`,
+          `Scout read: ${selectedLead.reason}`,
+          `Shortlist: ${shortlist.has(selectedLead.idol_uid) ? "Already tracked" : "Not yet shortlisted"}`,
+        ]
+          .map((line) => htmlEsc(line))
+          .join("<br />")
+      : "Select a scout lead to review fit and shortlist status.";
+    rightBody = `<section class="fm-card">
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Idol</th><th>Profile</th><th>Birthplace</th><th>Current groups</th><th>Scout read</th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="5" class="content-muted">No scout leads in this pool.</td></tr>`}</tbody>
+          </table>
+        </div>
+      </section>
+      <section class="fm-card">
+        <h3 class="content-h3">Lead detail</h3>
+        <div class="content-muted">${detail}</div>
+        ${
+          selectedLead
+            ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? "Already Shortlisted" : "Shortlist Selected")}</button></div>`
+            : ""
+        }
+      </section>`;
+  }
+
+  return `<section class="content-panel scout-view">
+    <h2 class="content-h2">Scout</h2>
+    <p class="content-muted">${htmlEsc(`Managed group: ${managedGroupName || "Managed group"}. Hyper scout agencies sort local freelancers, transfer leads, and auditions by territory and profile.`)}</p>
+    ${renderScoutTabs(scoutTab)}
+    <div class="lives-planner-grid">
+      <section class="fm-card">
+        <h3 class="content-h3">Scout firms</h3>
+        <div class="inbox-list-col scout-company-list">${companyRows}</div>
+        <div class="content-muted">${companyDetail}</div>
+      </section>
+      <div class="scout-right-stack">${rightBody}</div>
+    </div>
   </section>`;
 }
 
@@ -1661,6 +2315,12 @@ export function renderMainContent(
     songsWorkspaceTab: SongsWorkspaceTab;
     songsDiscographyKey: string | null;
     inboxSelectedUid: string | null;
+    livesTab: LivesTab;
+    scheduledLiveUid: string | null;
+    newLiveForm: NewLiveFormState;
+    scoutTab: ScoutTab;
+    selectedScoutLeadUid: string | null;
+    selectedScoutApplicantUid: string | null;
     /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
     scheduleCalendarMonthStart: string | null;
   },
@@ -1677,6 +2337,12 @@ export function renderMainContent(
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid,
+    livesTab,
+    scheduledLiveUid,
+    newLiveForm,
+    scoutTab,
+    selectedScoutLeadUid,
+    selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
   } = ctx;
 
@@ -1747,7 +2413,7 @@ export function renderMainContent(
     case "Inbox":
       return renderInbox(save, inboxSelectedUid);
     case "Finances":
-      return renderFinances(save);
+      return renderFinancesProjectionView(save);
     case "Idols": {
       const refIso = displayReferenceIso(save, browseData?.preset?.opening_date);
       const uidStr = idolDetailUid?.trim() ?? "";
@@ -1795,7 +2461,7 @@ export function renderMainContent(
     case "Schedule":
       return renderSchedule(save, scheduleCalendarMonthStart);
     case "Lives":
-      return renderLivesView(save);
+      return renderLivesView(save, livesTab, scheduledLiveUid, newLiveForm, browseData?.festivals ?? null);
     case "Training":
       return renderTraining(save);
     case "Making":
@@ -1825,6 +2491,8 @@ export function renderMainContent(
           save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
         trackSplitSurface: "songs",
       });
+    case "Scout":
+      return renderScoutView(save, scoutTab, selectedScoutLeadUid, selectedScoutApplicantUid);
     default:
       return renderPlaceholder(view);
   }
@@ -1850,6 +2518,12 @@ export interface DesktopShellProps {
   songsDiscographyKey: string | null;
   /** Selected inbox notification uid (management mode). */
   inboxSelectedUid: string | null;
+  livesTab: LivesTab;
+  scheduledLiveUid: string | null;
+  newLiveForm: NewLiveFormState;
+  scoutTab: ScoutTab;
+  selectedScoutLeadUid: string | null;
+  selectedScoutApplicantUid: string | null;
   /** Selected month for Schedule calendar (`YYYY-MM-01`); null follows next simulation day. */
   scheduleCalendarMonthStart: string | null;
   slot: number;
@@ -1870,6 +2544,12 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid,
+    livesTab,
+    scheduledLiveUid,
+    newLiveForm,
+    scoutTab,
+    selectedScoutLeadUid,
+    selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     slot,
     occupiedSlots,
@@ -1918,6 +2598,12 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid: inboxSelectedUid ?? null,
+    livesTab,
+    scheduledLiveUid: scheduledLiveUid ?? null,
+    newLiveForm,
+    scoutTab,
+    selectedScoutLeadUid: selectedScoutLeadUid ?? null,
+    selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
     scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
   });
 

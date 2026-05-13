@@ -33,6 +33,8 @@ import {
 } from "./livePerformanceWeb";
 import { isSongHiddenFromDisplay } from "../data/songDisplayPolicy";
 import { buildAutopilotRoutineLive, formatLiveSlotLine } from "./liveScheduleWeb";
+import { applyScenarioEventsForDate } from "./scenarioRuntimeWeb";
+import { buildDefaultScoutCompanies } from "./scoutWeb";
 
 export { createGameSaveFromLoadedScenario };
 
@@ -165,14 +167,17 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
   const memberLines: string[] = [];
   const deltas = live.member_deltas;
   if (Array.isArray(deltas)) {
-    for (const row of deltas.slice(0, 5)) {
+    for (const row of deltas.slice(0, 6)) {
       if (!row || typeof row !== "object") continue;
       const r = row as Record<string, unknown>;
       const nm = String(r.name ?? "Member");
       const rate = r.performance_rating != null ? String(r.performance_rating) : "—";
       const fg = Number(r.fan_gain ?? 0) || 0;
       const mg = Number(r.morale_gain ?? r.morale_delta ?? 0) || 0;
-      memberLines.push(`${nm}: rate ${rate}, fans ${fg >= 0 ? "+" : ""}${fg}, morale ${mg >= 0 ? "+" : ""}${mg}`);
+      const tk = Number(r.tokutenkai_tickets ?? 0) || 0;
+      memberLines.push(
+        `${nm}: rate ${rate}, fans ${fg >= 0 ? "+" : ""}${fg}, morale ${mg >= 0 ? "+" : ""}${mg}, tokutenkai ${tk}`,
+      );
     }
   }
   const titleSeed = String(live.title ?? live.live_type ?? "Live");
@@ -180,12 +185,33 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
   const venue = String(live.venue ?? "").trim();
   const loc = String(live.location ?? "").trim();
   const when = formatLiveSlotLine(live) || String(live.start_date ?? "").split("T")[0];
+  const attendance = Number(live.attendance ?? 0) || 0;
+  const capacity = Number(live.capacity ?? 0) || 0;
+  const expectation = live.expectation_score != null ? String(live.expectation_score) : "—";
+  const novelty = live.novelty_score != null ? String(live.novelty_score) : "—";
+  const tokutenkaiActual = Number(live.tokutenkai_actual_tickets ?? 0) || 0;
+  const tokutenkaiPlanned = Number(live.tokutenkai_expected_tickets ?? 0) || 0;
+  const tokutenkaiGross =
+    Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(tokutenkaiActual)) || 0;
+  const ticketGross = Number(live.ticket_gross_yen ?? 0) || 0;
+  const goodsGross = Number(live.goods_gross_yen ?? 0) || 0;
   let body = `${titleSeed} finished with performance ${live.performance_score ?? "—"} and satisfaction ${live.audience_satisfaction ?? "—"}. `;
-  body += `Attendance ${live.attendance ?? 0}, fan change ${fanCh >= 0 ? "+" : ""}${fanCh}.`;
+  body += `Attendance ${attendance}${capacity > 0 ? ` / ${capacity}` : ""}, fan change ${fanCh >= 0 ? "+" : ""}${fanCh}, expectation ${expectation}, novelty ${novelty}.`;
   if (venue) body += ` Venue: ${venue}${loc ? ` (${loc})` : ""}.`;
   if (when) body += ` Slot: ${when}.`;
   const setlist = Array.isArray(live.setlist) ? (live.setlist as unknown[]).map((x) => String(x)).filter(Boolean) : [];
   if (setlist.length) body += ` Setlist: ${setlist.join(" · ")}.`;
+  if (tokutenkaiActual || tokutenkaiPlanned) {
+    body += ` Tokutenkai ${tokutenkaiActual}/${tokutenkaiPlanned} tickets`;
+    if (tokutenkaiGross > 0) body += ` (gross ¥${tokutenkaiGross.toLocaleString("ja-JP")})`;
+    body += `.`;
+  }
+  if (ticketGross > 0 || goodsGross > 0) {
+    const revenueBits: string[] = [];
+    if (ticketGross > 0) revenueBits.push(`tickets ¥${ticketGross.toLocaleString("ja-JP")}`);
+    if (goodsGross > 0) revenueBits.push(`goods ¥${goodsGross.toLocaleString("ja-JP")}`);
+    body += ` Sales: ${revenueBits.join(" · ")}.`;
+  }
   if (memberLines.length) body += " " + memberLines.join(" | ");
   return body;
 }
@@ -313,6 +339,10 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
 
     const resolution = resolveGroupLiveResultWeb(g, members, songs, live);
     const applied = applyLiveResultToSnapshot(g, members, resolution);
+    const ticketPrice = Math.max(0, Number(live.ticket_price ?? 0) || 0);
+    const goodsGross = Math.max(0, Number(live.goods_gross_yen ?? live.goods_expected_revenue_yen ?? 0) || 0);
+    const ticketGross = ticketPrice > 0 ? resolution.attendance * ticketPrice : 0;
+    const tokutenkaiRevenue = estimateTokutenkaiRevenueYen(resolution.tokutenkai_actual_tickets);
     const played: Record<string, unknown> = {
       ...live,
       status: "played",
@@ -322,6 +352,9 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       audience_satisfaction: resolution.audience_satisfaction,
       attendance: resolution.attendance,
       tokutenkai_actual_tickets: resolution.tokutenkai_actual_tickets,
+      ticket_gross_yen: ticketGross,
+      goods_gross_yen: goodsGross,
+      tokutenkai_revenue_yen: tokutenkaiRevenue,
     };
     save.lives.results.push({
       date: targetIso,
@@ -330,7 +363,6 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
     });
     if (uid) resultUids.add(uid);
 
-    const tokutenkaiRevenue = estimateTokutenkaiRevenueYen(resolution.tokutenkai_actual_tickets);
     const cap = typeof live.capacity === "number" ? live.capacity : Number(live.capacity ?? 200) || 200;
     const liveVenueFeeTotal = estimateVenueFee(cap, { isWeekendOrHoliday: isWeekendUtc(targetIso) });
     const { popularity, fans, xFollowers } = readPopFans(save);
@@ -502,6 +534,10 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   next.finances = finances;
   next.turn_number = dayOffset + 1;
   next.current_date = targetIso;
+  applyScenarioEventsForDate(next, targetIso);
+  if (!next.scout.selected_company_uid) {
+    next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
+  }
 
   addNotification(next, {
     title: "Day closed",

@@ -35,13 +35,6 @@
     "sort_key": -1322989
   },
   {
-    "uid": "QmlsbGxpZQ",
-    "letter_tier": "S",
-    "fans": 702820,
-    "popularity": 47,
-    "sort_key": -702820
-  },
-  {
     "uid": "QUtCNDg",
     "letter_tier": "S",
     "fans": 550295,
@@ -57,10 +50,10 @@
   },
   {
     "uid": "QmlTSA",
-    "letter_tier": "S",
+    "letter_tier": "A",
     "fans": 411234,
     "popularity": 50,
-    "sort_key": -411234
+    "sort_key": 999999999588766
   },
   {
     "uid": "5pel5ZCR5Z2CNDY",
@@ -71,38 +64,24 @@
   },
   {
     "uid": "RlJVSVRTIFpJUFBFUg",
-    "letter_tier": "S",
+    "letter_tier": "A",
     "fans": 305959,
     "popularity": 61,
-    "sort_key": -305959
+    "sort_key": 999999999694041
   },
   {
     "uid": "PUxPVkU",
-    "letter_tier": "S",
+    "letter_tier": "A",
     "fans": 296768,
     "popularity": 68,
-    "sort_key": -296768
+    "sort_key": 999999999703232
   },
   {
     "uid": "44OV44Kh44Oz44OI44Og44K344O844K_",
-    "letter_tier": "S",
+    "letter_tier": "A",
     "fans": 277269,
     "popularity": 57,
-    "sort_key": -277269
-  },
-  {
-    "uid": "Q1VUSUUgU1RSRUVU",
-    "letter_tier": "S",
-    "fans": 238350,
-    "popularity": 60,
-    "sort_key": -238350
-  },
-  {
-    "uid": "44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg",
-    "letter_tier": "S",
-    "fans": 232986,
-    "popularity": 50,
-    "sort_key": -232986
+    "sort_key": 999999999722731
   },
   {
     "uid": "5qu75Z2CNDY",
@@ -112,179 +91,158 @@
     "sort_key": -226614
   },
   {
+    "uid": "Q1VUSUUgU1RSRUVU",
+    "letter_tier": "B",
+    "fans": 238350,
+    "popularity": 60,
+    "sort_key": 1999999999761650
+  },
+  {
+    "uid": "44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg",
+    "letter_tier": "B",
+    "fans": 232986,
+    "popularity": 50,
+    "sort_key": 1999999999767014
+  },
+  {
     "uid": "Um9ja2V0IFB1bmNo",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 219217,
     "popularity": 32,
-    "sort_key": -219217
+    "sort_key": 1999999999780783
   },
   {
     "uid": "TUU6SQ",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 164748,
     "popularity": 53,
-    "sort_key": -164748
+    "sort_key": 1999999999835252
   },
   {
     "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 136942,
     "popularity": 39,
-    "sort_key": -136942
+    "sort_key": 1999999999863058
   },
   {
     "uid": "6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 132919,
     "popularity": 54,
-    "sort_key": -132919
+    "sort_key": 1999999999867081
   },
   {
     "uid": "aUxpRkUh",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 129753,
     "popularity": 61,
-    "sort_key": -129753
+    "sort_key": 1999999999870247
   },
   {
     "uid": "Q0FORFkgVFVORQ",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 125972,
     "popularity": 56,
-    "sort_key": -125972
+    "sort_key": 1999999999874028
   },
   {
     "uid": "UGFzc0NvZGU",
-    "letter_tier": "S",
+    "letter_tier": "B",
     "fans": 113809,
     "popularity": 40,
-    "sort_key": -113809
-  },
-  {
-    "uid": "Tk1CNDg",
-    "letter_tier": "S",
-    "fans": 91994,
-    "popularity": 40,
-    "sort_key": -91994
-  },
-  {
-    "uid": "44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
-    "letter_tier": "S",
-    "fans": 69895,
-    "popularity": 52,
-    "sort_key": -69895
-  },
-  {
-    "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
-    "letter_tier": "S",
-    "fans": 2824,
-    "popularity": 307,
-    "sort_key": -2824
+    "sort_key": 1999999999886191
   },
   {
     "uid": "Q1NS",
-    "letter_tier": "A",
+    "letter_tier": "B",
     "fans": 99103,
     "popularity": 35,
-    "sort_key": 999999999900897
+    "sort_key": 1999999999900897
   },
   {
-    "uid": "U0tFNDg",
-    "letter_tier": "A",
-    "fans": 88903,
-    "popularity": 35,
-    "sort_key": 999999999911097
-  },
-  {
-    "uid": "SEtUNDg",
-    "letter_tier": "A",
-    "fans": 78998,
-    "popularity": 35,
-    "sort_key": 999999999921002
-  },
-  {
-    "uid": "44Gn44KT44Gx57WELmluYw",
-    "letter_tier": "A",
-    "fans": 76655,
-    "popularity": 36,
-    "sort_key": 999999999923345
-  },
-  {
-    "uid": "aeKYhlJpcw",
-    "letter_tier": "A",
-    "fans": 71168,
+    "uid": "Tk1CNDg",
+    "letter_tier": "B",
+    "fans": 91994,
     "popularity": 40,
-    "sort_key": 999999999928832
+    "sort_key": 1999999999908006
   },
   {
-    "uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
-    "letter_tier": "A",
-    "fans": 69264,
-    "popularity": 41,
-    "sort_key": 999999999930736
+    "uid": "44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
+    "letter_tier": "B",
+    "fans": 69895,
+    "popularity": 52,
+    "sort_key": 1999999999930105
   },
   {
     "uid": "4omgTUU",
-    "letter_tier": "A",
+    "letter_tier": "B",
     "fans": 64622,
     "popularity": 51,
-    "sort_key": 999999999935378
+    "sort_key": 1999999999935378
   },
   {
-    "uid": "56We5a6_",
-    "letter_tier": "A",
-    "fans": 54257,
-    "popularity": 48,
-    "sort_key": 999999999945743
+    "uid": "U0tFNDg",
+    "letter_tier": "C",
+    "fans": 88903,
+    "popularity": 35,
+    "sort_key": 2999999999911097
+  },
+  {
+    "uid": "SEtUNDg",
+    "letter_tier": "C",
+    "fans": 78998,
+    "popularity": 35,
+    "sort_key": 2999999999921002
+  },
+  {
+    "uid": "44Gn44KT44Gx57WELmluYw",
+    "letter_tier": "C",
+    "fans": 76655,
+    "popularity": 36,
+    "sort_key": 2999999999923345
+  },
+  {
+    "uid": "aeKYhlJpcw",
+    "letter_tier": "C",
+    "fans": 71168,
+    "popularity": 40,
+    "sort_key": 2999999999928832
+  },
+  {
+    "uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
+    "letter_tier": "C",
+    "fans": 69264,
+    "popularity": 41,
+    "sort_key": 2999999999930736
   },
   {
     "uid": "QnJva2VuIEJ5IFRoZSBTY3JlYW0",
-    "letter_tier": "B",
+    "letter_tier": "C",
     "fans": 66331,
     "popularity": 35,
-    "sort_key": 1999999999933669
+    "sort_key": 2999999999933669
   },
   {
     "uid": "bG9s",
-    "letter_tier": "B",
+    "letter_tier": "C",
     "fans": 61866,
     "popularity": 33,
-    "sort_key": 1999999999938134
+    "sort_key": 2999999999938134
+  },
+  {
+    "uid": "56We5a6_",
+    "letter_tier": "C",
+    "fans": 54257,
+    "popularity": 48,
+    "sort_key": 2999999999945743
   },
   {
     "uid": "Wk9DWA",
-    "letter_tier": "B",
+    "letter_tier": "C",
     "fans": 51416,
     "popularity": 38,
-    "sort_key": 1999999999948584
-  },
-  {
-    "uid": "RU1QaVJF",
-    "letter_tier": "B",
-    "fans": 39484,
-    "popularity": 38,
-    "sort_key": 1999999999960516
-  },
-  {
-    "uid": "QnVvbm8h",
-    "letter_tier": "B",
-    "fans": 34930,
-    "popularity": 43,
-    "sort_key": 1999999999965070
-  },
-  {
-    "uid": "4omSSk9Z",
-    "letter_tier": "B",
-    "fans": 34091,
-    "popularity": 49,
-    "sort_key": 1999999999965909
-  },
-  {
-    "uid": "U1dFRVQgU1RFQURZ",
-    "letter_tier": "B",
-    "fans": 30769,
-    "popularity": 49,
-    "sort_key": 1999999999969231
+    "sort_key": 2999999999948584
   },
   {
     "uid": "ZmVtbWUgZmF0YWxl",
@@ -308,6 +266,13 @@
     "sort_key": 2999999999960263
   },
   {
+    "uid": "RU1QaVJF",
+    "letter_tier": "C",
+    "fans": 39484,
+    "popularity": 38,
+    "sort_key": 2999999999960516
+  },
+  {
     "uid": "QmlT",
     "letter_tier": "C",
     "fans": 38344,
@@ -322,18 +287,25 @@
     "sort_key": 2999999999962277
   },
   {
-    "uid": "44KP44O844GZ44Gf",
-    "letter_tier": "C",
-    "fans": 36404,
-    "popularity": 34,
-    "sort_key": 2999999999963596
-  },
-  {
     "uid": "Q1k4RVI",
     "letter_tier": "C",
     "fans": 36086,
     "popularity": 28,
     "sort_key": 2999999999963914
+  },
+  {
+    "uid": "QnVvbm8h",
+    "letter_tier": "C",
+    "fans": 34930,
+    "popularity": 43,
+    "sort_key": 2999999999965070
+  },
+  {
+    "uid": "4omSSk9Z",
+    "letter_tier": "C",
+    "fans": 34091,
+    "popularity": 49,
+    "sort_key": 2999999999965909
   },
   {
     "uid": "44OV44Kj44Ot44K944OV44Kj44O844Gu44OA44Oz44K5",
@@ -343,11 +315,25 @@
     "sort_key": 2999999999967353
   },
   {
+    "uid": "U1dFRVQgU1RFQURZ",
+    "letter_tier": "C",
+    "fans": 30769,
+    "popularity": 49,
+    "sort_key": 2999999999969231
+  },
+  {
     "uid": "4oSDLXV0ZQ",
     "letter_tier": "C",
     "fans": 30665,
     "popularity": 38,
     "sort_key": 2999999999969335
+  },
+  {
+    "uid": "TkVDUk9OT01JRE9M",
+    "letter_tier": "C",
+    "fans": 30053,
+    "popularity": 23,
+    "sort_key": 2999999999969947
   },
   {
     "uid": "5oiR5YSY44Op44Kt44Ki",
@@ -371,6 +357,20 @@
     "sort_key": 2999999999970881
   },
   {
+    "uid": "TWFpc29uIGJvb2sgZ2lybA",
+    "letter_tier": "C",
+    "fans": 27706,
+    "popularity": 23,
+    "sort_key": 2999999999972294
+  },
+  {
+    "uid": "5p2x5Lqs5aWz5a2Q5rWB",
+    "letter_tier": "C",
+    "fans": 26337,
+    "popularity": 25,
+    "sort_key": 2999999999973663
+  },
+  {
     "uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
     "letter_tier": "C",
     "fans": 26283,
@@ -385,6 +385,13 @@
     "sort_key": 2999999999975066
   },
   {
+    "uid": "U1VQRVLimIZHaVJMUw",
+    "letter_tier": "C",
+    "fans": 23382,
+    "popularity": 24,
+    "sort_key": 2999999999976618
+  },
+  {
     "uid": "QVZBTQ",
     "letter_tier": "C",
     "fans": 23287,
@@ -392,18 +399,18 @@
     "sort_key": 2999999999976713
   },
   {
-    "uid": "R0VOSUM",
-    "letter_tier": "C",
-    "fans": 23050,
-    "popularity": 39,
-    "sort_key": 2999999999976950
-  },
-  {
     "uid": "QkFCWUJFQVJE",
     "letter_tier": "C",
     "fans": 22028,
     "popularity": 37,
     "sort_key": 2999999999977972
+  },
+  {
+    "uid": "SVJPTkJVTk5Z",
+    "letter_tier": "C",
+    "fans": 22024,
+    "popularity": 28,
+    "sort_key": 2999999999977976
   },
   {
     "uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
@@ -420,6 +427,13 @@
     "sort_key": 2999999999980116
   },
   {
+    "uid": "44GV44GP44KJ5a2m6Zmi",
+    "letter_tier": "C",
+    "fans": 18919,
+    "popularity": 25,
+    "sort_key": 2999999999981081
+  },
+  {
     "uid": "44GE44GO44Gq44KK5p2x5YyX55Sj",
     "letter_tier": "C",
     "fans": 18487,
@@ -427,11 +441,25 @@
     "sort_key": 2999999999981513
   },
   {
-    "uid": "UkVJUklF",
+    "uid": "44OO44O844K544Oq44O844OW44K5",
     "letter_tier": "C",
-    "fans": 16779,
-    "popularity": 32,
-    "sort_key": 2999999999983221
+    "fans": 18200,
+    "popularity": 27,
+    "sort_key": 2999999999981800
+  },
+  {
+    "uid": "bHlyaWNhbCBzY2hvb2w",
+    "letter_tier": "C",
+    "fans": 18140,
+    "popularity": 24,
+    "sort_key": 2999999999981860
+  },
+  {
+    "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
+    "letter_tier": "C",
+    "fans": 17773,
+    "popularity": 24,
+    "sort_key": 2999999999982227
   },
   {
     "uid": "5riF56uc5Lq6MjU",
@@ -439,20 +467,6 @@
     "fans": 15874,
     "popularity": 34,
     "sort_key": 2999999999984126
-  },
-  {
-    "uid": "44Gu44KT44G144GD44GP77yB",
-    "letter_tier": "C",
-    "fans": 15566,
-    "popularity": 42,
-    "sort_key": 2999999999984434
-  },
-  {
-    "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
-    "letter_tier": "C",
-    "fans": 14999,
-    "popularity": 36,
-    "sort_key": 2999999999985001
   },
   {
     "uid": "QlBNMTVR/#google_vignette",
@@ -476,6 +490,118 @@
     "sort_key": 2999999999988372
   },
   {
+    "uid": "TkVPIEpBUE9OSVNN",
+    "letter_tier": "C",
+    "fans": 11251,
+    "popularity": 27,
+    "sort_key": 2999999999988749
+  },
+  {
+    "uid": "QG9uZWZpdmU",
+    "letter_tier": "C",
+    "fans": 11220,
+    "popularity": 32,
+    "sort_key": 2999999999988780
+  },
+  {
+    "uid": "UkFZ",
+    "letter_tier": "C",
+    "fans": 11015,
+    "popularity": 27,
+    "sort_key": 2999999999988985
+  },
+  {
+    "uid": "aS1DT0w",
+    "letter_tier": "C",
+    "fans": 10873,
+    "popularity": 28,
+    "sort_key": 2999999999989127
+  },
+  {
+    "uid": "RXhXSFla",
+    "letter_tier": "C",
+    "fans": 10561,
+    "popularity": 28,
+    "sort_key": 2999999999989439
+  },
+  {
+    "uid": "cGlucG9ucGFucG9u",
+    "letter_tier": "C",
+    "fans": 10014,
+    "popularity": 30,
+    "sort_key": 2999999999989986
+  },
+  {
+    "uid": "RkVT4piGVElWRQ",
+    "letter_tier": "C",
+    "fans": 9894,
+    "popularity": 24,
+    "sort_key": 2999999999990106
+  },
+  {
+    "uid": "SmFtc0NvbGxlY3Rpb24",
+    "letter_tier": "C",
+    "fans": 8936,
+    "popularity": 31,
+    "sort_key": 2999999999991064
+  },
+  {
+    "uid": "TUFEIEpBTUlF",
+    "letter_tier": "C",
+    "fans": 8896,
+    "popularity": 30,
+    "sort_key": 2999999999991104
+  },
+  {
+    "uid": "VEVBTSBTSEFDSEk",
+    "letter_tier": "C",
+    "fans": 8861,
+    "popularity": 20,
+    "sort_key": 2999999999991139
+  },
+  {
+    "uid": "QXBwYXJlIQ",
+    "letter_tier": "C",
+    "fans": 8383,
+    "popularity": 29,
+    "sort_key": 2999999999991617
+  },
+  {
+    "uid": "RGV2aWwgQU5USEVNLg",
+    "letter_tier": "C",
+    "fans": 8343,
+    "popularity": 25,
+    "sort_key": 2999999999991657
+  },
+  {
+    "uid": "Q2lPTg",
+    "letter_tier": "C",
+    "fans": 4791,
+    "popularity": 33,
+    "sort_key": 2999999999995209
+  },
+  {
+    "uid": "44K_44Kk44OI44Or5pyq5a6a",
+    "letter_tier": "C",
+    "fans": 4397,
+    "popularity": 23,
+    "sort_key": 2999999999995603
+  },
+  {
+    "uid": "44Oe44K244Oq",
+    "letter_tier": "C",
+    "fans": 3125,
+    "popularity": 31,
+    "sort_key": 2999999999996875
+  },
+  {
+    "uid": "44KP44O844GZ44Gf",
+    "letter_tier": "D",
+    "fans": 36404,
+    "popularity": 34,
+    "sort_key": 3999999999963596
+  },
+  {
     "uid": "QmVhdXR5IEJveA",
     "letter_tier": "D",
     "fans": 34166,
@@ -483,39 +609,18 @@
     "sort_key": 3999999999965834
   },
   {
-    "uid": "TkVDUk9OT01JRE9M",
+    "uid": "SE9ORVkgUE9QQ09STg",
     "letter_tier": "D",
-    "fans": 30053,
-    "popularity": 23,
-    "sort_key": 3999999999969947
+    "fans": 25691,
+    "popularity": 12,
+    "sort_key": 3999999999974309
   },
   {
-    "uid": "TWFpc29uIGJvb2sgZ2lybA",
+    "uid": "R0VOSUM",
     "letter_tier": "D",
-    "fans": 27706,
-    "popularity": 23,
-    "sort_key": 3999999999972294
-  },
-  {
-    "uid": "5p2x5Lqs5aWz5a2Q5rWB",
-    "letter_tier": "D",
-    "fans": 26337,
-    "popularity": 25,
-    "sort_key": 3999999999973663
-  },
-  {
-    "uid": "U1VQRVLimIZHaVJMUw",
-    "letter_tier": "D",
-    "fans": 23382,
-    "popularity": 24,
-    "sort_key": 3999999999976618
-  },
-  {
-    "uid": "SVJPTkJVTk5Z",
-    "letter_tier": "D",
-    "fans": 22024,
-    "popularity": 28,
-    "sort_key": 3999999999977976
+    "fans": 23050,
+    "popularity": 39,
+    "sort_key": 3999999999976950
   },
   {
     "uid": "44KG44KL44KB44KL44Oi77yB",
@@ -532,13 +637,6 @@
     "sort_key": 3999999999980150
   },
   {
-    "uid": "44GV44GP44KJ5a2m6Zmi",
-    "letter_tier": "D",
-    "fans": 18919,
-    "popularity": 25,
-    "sort_key": 3999999999981081
-  },
-  {
     "uid": "TmVnaWNjbw",
     "letter_tier": "D",
     "fans": 18532,
@@ -546,25 +644,32 @@
     "sort_key": 3999999999981468
   },
   {
-    "uid": "44OO44O844K544Oq44O844OW44K5",
+    "uid": "UkVJUklF",
     "letter_tier": "D",
-    "fans": 18200,
-    "popularity": 27,
-    "sort_key": 3999999999981800
+    "fans": 16779,
+    "popularity": 32,
+    "sort_key": 3999999999983221
   },
   {
-    "uid": "bHlyaWNhbCBzY2hvb2w",
+    "uid": "44Gu44KT44G144GD44GP77yB",
     "letter_tier": "D",
-    "fans": 18140,
-    "popularity": 24,
-    "sort_key": 3999999999981860
+    "fans": 15566,
+    "popularity": 42,
+    "sort_key": 3999999999984434
   },
   {
-    "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
+    "uid": "44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI",
     "letter_tier": "D",
-    "fans": 17773,
-    "popularity": 24,
-    "sort_key": 3999999999982227
+    "fans": 15007,
+    "popularity": 15,
+    "sort_key": 3999999999984993
+  },
+  {
+    "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+    "letter_tier": "D",
+    "fans": 14999,
+    "popularity": 36,
+    "sort_key": 3999999999985001
   },
   {
     "uid": "6LGG5p-044Gu5aSn576k",
@@ -581,11 +686,25 @@
     "sort_key": 3999999999986078
   },
   {
+    "uid": "RlJVSVRQT0NIRVRURQ",
+    "letter_tier": "D",
+    "fans": 13671,
+    "popularity": 15,
+    "sort_key": 3999999999986329
+  },
+  {
     "uid": "44Gw44Gj44Gm44KT5bCR5aWz6ZqK",
     "letter_tier": "D",
     "fans": 12688,
     "popularity": 25,
     "sort_key": 3999999999987312
+  },
+  {
+    "uid": "44OL44Kh44OU44Oz",
+    "letter_tier": "D",
+    "fans": 12370,
+    "popularity": 15,
+    "sort_key": 3999999999987630
   },
   {
     "uid": "5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
@@ -595,32 +714,25 @@
     "sort_key": 3999999999987937
   },
   {
-    "uid": "TkVPIEpBUE9OSVNN",
+    "uid": "a29sbWU",
     "letter_tier": "D",
-    "fans": 11251,
-    "popularity": 27,
-    "sort_key": 3999999999988749
+    "fans": 11517,
+    "popularity": 12,
+    "sort_key": 3999999999988483
   },
   {
-    "uid": "QG9uZWZpdmU",
+    "uid": "Q2FuZHll4pmhU3lydXA",
     "letter_tier": "D",
-    "fans": 11220,
-    "popularity": 32,
-    "sort_key": 3999999999988780
+    "fans": 11487,
+    "popularity": 14,
+    "sort_key": 3999999999988513
   },
   {
-    "uid": "UkFZ",
+    "uid": "44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM",
     "letter_tier": "D",
-    "fans": 11015,
-    "popularity": 27,
-    "sort_key": 3999999999988985
-  },
-  {
-    "uid": "aS1DT0w",
-    "letter_tier": "D",
-    "fans": 10873,
-    "popularity": 28,
-    "sort_key": 3999999999989127
+    "fans": 10612,
+    "popularity": 18,
+    "sort_key": 3999999999989388
   },
   {
     "uid": "TUFETUVE",
@@ -630,11 +742,11 @@
     "sort_key": 3999999999989416
   },
   {
-    "uid": "RXhXSFla",
+    "uid": "44Of44O844Og44OI44O844Kt44On44O8",
     "letter_tier": "D",
-    "fans": 10561,
-    "popularity": 28,
-    "sort_key": 3999999999989439
+    "fans": 10481,
+    "popularity": 19,
+    "sort_key": 3999999999989519
   },
   {
     "uid": "TUFaRQ",
@@ -658,39 +770,11 @@
     "sort_key": 3999999999989967
   },
   {
-    "uid": "cGlucG9ucGFucG9u",
-    "letter_tier": "D",
-    "fans": 10014,
-    "popularity": 30,
-    "sort_key": 3999999999989986
-  },
-  {
-    "uid": "RkVT4piGVElWRQ",
-    "letter_tier": "D",
-    "fans": 9894,
-    "popularity": 24,
-    "sort_key": 3999999999990106
-  },
-  {
     "uid": "QVJDQU5BIFBST0pFQ1Q",
     "letter_tier": "D",
     "fans": 9405,
     "popularity": 29,
     "sort_key": 3999999999990595
-  },
-  {
-    "uid": "SmFtc0NvbGxlY3Rpb24",
-    "letter_tier": "D",
-    "fans": 8936,
-    "popularity": 31,
-    "sort_key": 3999999999991064
-  },
-  {
-    "uid": "TUFEIEpBTUlF",
-    "letter_tier": "D",
-    "fans": 8896,
-    "popularity": 30,
-    "sort_key": 3999999999991104
   },
   {
     "uid": "5Luu6Z2i44Op44Kk44OA44O8R0lSTFM",
@@ -707,18 +791,11 @@
     "sort_key": 3999999999991437
   },
   {
-    "uid": "QXBwYXJlIQ",
+    "uid": "55yf44Gj55m944Gq44Kt44Oj44Oz44OQ44K5",
     "letter_tier": "D",
-    "fans": 8383,
-    "popularity": 29,
-    "sort_key": 3999999999991617
-  },
-  {
-    "uid": "RGV2aWwgQU5USEVNLg",
-    "letter_tier": "D",
-    "fans": 8343,
-    "popularity": 25,
-    "sort_key": 3999999999991657
+    "fans": 8388,
+    "popularity": 17,
+    "sort_key": 3999999999991612
   },
   {
     "uid": "eW9zdWdhbGE",
@@ -742,6 +819,20 @@
     "sort_key": 3999999999992088
   },
   {
+    "uid": "44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og",
+    "letter_tier": "D",
+    "fans": 7458,
+    "popularity": 15,
+    "sort_key": 3999999999992542
+  },
+  {
+    "uid": "S0xQNDg",
+    "letter_tier": "D",
+    "fans": 7410,
+    "popularity": 20,
+    "sort_key": 3999999999992590
+  },
+  {
     "uid": "UElHR1M",
     "letter_tier": "D",
     "fans": 7109,
@@ -754,6 +845,20 @@
     "fans": 7017,
     "popularity": 22,
     "sort_key": 3999999999992983
+  },
+  {
+    "uid": "I-ODkOODkOODkOODkOODs-ODkw",
+    "letter_tier": "D",
+    "fans": 6988,
+    "popularity": 17,
+    "sort_key": 3999999999993012
+  },
+  {
+    "uid": "dWtrYQ",
+    "letter_tier": "D",
+    "fans": 6973,
+    "popularity": 20,
+    "sort_key": 3999999999993027
   },
   {
     "uid": "Y2h1TGE",
@@ -777,6 +882,20 @@
     "sort_key": 3999999999993458
   },
   {
+    "uid": "SWxs",
+    "letter_tier": "D",
+    "fans": 6472,
+    "popularity": 18,
+    "sort_key": 3999999999993528
+  },
+  {
+    "uid": "44Kv44Oe44Oq44OH44OR44O844OI",
+    "letter_tier": "D",
+    "fans": 6228,
+    "popularity": 17,
+    "sort_key": 3999999999993772
+  },
+  {
     "uid": "44K344Oz44OH44Os44Op5a6j6KiA77yB",
     "letter_tier": "D",
     "fans": 6190,
@@ -791,11 +910,32 @@
     "sort_key": 3999999999993840
   },
   {
+    "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
+    "letter_tier": "D",
+    "fans": 6106,
+    "popularity": 20,
+    "sort_key": 3999999999993894
+  },
+  {
     "uid": "44Oi44OO44Kv44Ot44O844Oz",
     "letter_tier": "D",
     "fans": 6085,
     "popularity": 22,
     "sort_key": 3999999999993915
+  },
+  {
+    "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+    "letter_tier": "D",
+    "fans": 6061,
+    "popularity": 18,
+    "sort_key": 3999999999993939
+  },
+  {
+    "uid": "dWlqaW4",
+    "letter_tier": "D",
+    "fans": 5817,
+    "popularity": 15,
+    "sort_key": 3999999999994183
   },
   {
     "uid": "V0hJVEUgU0NPUlBJT04",
@@ -812,11 +952,39 @@
     "sort_key": 3999999999994721
   },
   {
-    "uid": "Q2lPTg",
+    "uid": "44Ki44Kt44K344OWcHJvamVjdA",
     "letter_tier": "D",
-    "fans": 4791,
-    "popularity": 33,
-    "sort_key": 3999999999995209
+    "fans": 5166,
+    "popularity": 19,
+    "sort_key": 3999999999994834
+  },
+  {
+    "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
+    "letter_tier": "D",
+    "fans": 5014,
+    "popularity": 20,
+    "sort_key": 3999999999994986
+  },
+  {
+    "uid": "TlVBTkNF",
+    "letter_tier": "D",
+    "fans": 4924,
+    "popularity": 18,
+    "sort_key": 3999999999995076
+  },
+  {
+    "uid": "S29sb2tvbA",
+    "letter_tier": "D",
+    "fans": 4906,
+    "popularity": 17,
+    "sort_key": 3999999999995094
+  },
+  {
+    "uid": "57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
+    "letter_tier": "D",
+    "fans": 4823,
+    "popularity": 21,
+    "sort_key": 3999999999995177
   },
   {
     "uid": "44Oe44O844Kt44Ol44Ot",
@@ -840,11 +1008,18 @@
     "sort_key": 3999999999995305
   },
   {
-    "uid": "44K_44Kk44OI44Or5pyq5a6a",
+    "uid": "UGVlbCB0aGUgQXBwbGU",
     "letter_tier": "D",
-    "fans": 4397,
-    "popularity": 23,
-    "sort_key": 3999999999995603
+    "fans": 4598,
+    "popularity": 19,
+    "sort_key": 3999999999995402
+  },
+  {
+    "uid": "RG9yb3RoeSBMaXR0bGUgSGFwcHk",
+    "letter_tier": "D",
+    "fans": 4564,
+    "popularity": 6,
+    "sort_key": 3999999999995436
   },
   {
     "uid": "TGluUQ",
@@ -852,6 +1027,13 @@
     "fans": 4268,
     "popularity": 23,
     "sort_key": 3999999999995732
+  },
+  {
+    "uid": "44Oq44Or44ON44O844OJ",
+    "letter_tier": "D",
+    "fans": 4246,
+    "popularity": 16,
+    "sort_key": 3999999999995754
   },
   {
     "uid": "UXV1Ymk",
@@ -875,11 +1057,46 @@
     "sort_key": 3999999999995909
   },
   {
+    "uid": "576k6Z2S44Gu5LiW55WM",
+    "letter_tier": "D",
+    "fans": 4056,
+    "popularity": 20,
+    "sort_key": 3999999999995944
+  },
+  {
+    "uid": "U0lUVUFTSU9O",
+    "letter_tier": "D",
+    "fans": 3885,
+    "popularity": 19,
+    "sort_key": 3999999999996115
+  },
+  {
     "uid": "5ZCb44Gr44CB6IO444Kt44Ol44Oz44CC",
     "letter_tier": "D",
     "fans": 3882,
     "popularity": 28,
     "sort_key": 3999999999996118
+  },
+  {
+    "uid": "44Ki44Oz44K544Oq44Ol44O844Og",
+    "letter_tier": "D",
+    "fans": 3770,
+    "popularity": 18,
+    "sort_key": 3999999999996230
+  },
+  {
+    "uid": "VEhFIE9SQ0hFU1RSQSBUT0tZTw",
+    "letter_tier": "D",
+    "fans": 3770,
+    "popularity": 22,
+    "sort_key": 3999999999996230
+  },
+  {
+    "uid": "44G144KP44G144KP",
+    "letter_tier": "D",
+    "fans": 3688,
+    "popularity": 9,
+    "sort_key": 3999999999996312
   },
   {
     "uid": "TUFQQQ",
@@ -896,6 +1113,20 @@
     "sort_key": 3999999999996528
   },
   {
+    "uid": "44G_44GG44G_44GK",
+    "letter_tier": "D",
+    "fans": 3402,
+    "popularity": 16,
+    "sort_key": 3999999999996598
+  },
+  {
+    "uid": "TXlEZWFyRGFybGluJw",
+    "letter_tier": "D",
+    "fans": 3255,
+    "popularity": 16,
+    "sort_key": 3999999999996745
+  },
+  {
     "uid": "TWHigJlTY2Fy4oCZUGllY2U",
     "letter_tier": "D",
     "fans": 3223,
@@ -910,11 +1141,25 @@
     "sort_key": 3999999999996823
   },
   {
-    "uid": "44Oe44K244Oq",
+    "uid": "TEVJV0FO",
     "letter_tier": "D",
-    "fans": 3125,
-    "popularity": 31,
-    "sort_key": 3999999999996875
+    "fans": 3162,
+    "popularity": 17,
+    "sort_key": 3999999999996838
+  },
+  {
+    "uid": "QUlCRUNL",
+    "letter_tier": "D",
+    "fans": 3145,
+    "popularity": 15,
+    "sort_key": 3999999999996855
+  },
+  {
+    "uid": "U1RBUk1BUklF",
+    "letter_tier": "D",
+    "fans": 2929,
+    "popularity": 5,
+    "sort_key": 3999999999997071
   },
   {
     "uid": "RGFuY2luZyBEb2xscw",
@@ -938,11 +1183,123 @@
     "sort_key": 3999999999997178
   },
   {
+    "uid": "6KGb5pif44Go44Kr44Op44OG44Ki",
+    "letter_tier": "D",
+    "fans": 2737,
+    "popularity": 22,
+    "sort_key": 3999999999997263
+  },
+  {
+    "uid": "U1RBaU5Z",
+    "letter_tier": "D",
+    "fans": 2710,
+    "popularity": 15,
+    "sort_key": 3999999999997290
+  },
+  {
+    "uid": "UFJTTUlO",
+    "letter_tier": "D",
+    "fans": 2671,
+    "popularity": 12,
+    "sort_key": 3999999999997329
+  },
+  {
+    "uid": "VklMTEFJTlMgSE9VU0U",
+    "letter_tier": "D",
+    "fans": 2529,
+    "popularity": 23,
+    "sort_key": 3999999999997471
+  },
+  {
     "uid": "VXRhR2Uh",
     "letter_tier": "D",
     "fans": 2519,
     "popularity": 27,
     "sort_key": 3999999999997481
+  },
+  {
+    "uid": "U0FZLUxB",
+    "letter_tier": "D",
+    "fans": 2504,
+    "popularity": 11,
+    "sort_key": 3999999999997496
+  },
+  {
+    "uid": "44Op44OVw5fjg6njg5U",
+    "letter_tier": "D",
+    "fans": 2481,
+    "popularity": 23,
+    "sort_key": 3999999999997519
+  },
+  {
+    "uid": "TWlycm9yLE1pcnJvcg",
+    "letter_tier": "D",
+    "fans": 2436,
+    "popularity": 21,
+    "sort_key": 3999999999997564
+  },
+  {
+    "uid": "44GN44Gu44Ob44CC",
+    "letter_tier": "D",
+    "fans": 2377,
+    "popularity": 20,
+    "sort_key": 3999999999997623
+  },
+  {
+    "uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs",
+    "letter_tier": "D",
+    "fans": 2162,
+    "popularity": 17,
+    "sort_key": 3999999999997838
+  },
+  {
+    "uid": "TElOS0wgUExBTkVU",
+    "letter_tier": "D",
+    "fans": 2136,
+    "popularity": 17,
+    "sort_key": 3999999999997864
+  },
+  {
+    "uid": "6Iqx6a2B6YGT5Lit",
+    "letter_tier": "D",
+    "fans": 2108,
+    "popularity": 21,
+    "sort_key": 3999999999997892
+  },
+  {
+    "uid": "44Op44Kk44K544Oc44O844Or",
+    "letter_tier": "D",
+    "fans": 2041,
+    "popularity": 18,
+    "sort_key": 3999999999997959
+  },
+  {
+    "uid": "UGFsZXR0ZSBQYXJhZGU",
+    "letter_tier": "D",
+    "fans": 1984,
+    "popularity": 17,
+    "sort_key": 3999999999998016
+  },
+  {
+    "uid": "QVpBVE9Z",
+    "letter_tier": "D",
+    "fans": 1961,
+    "popularity": 20,
+    "sort_key": 3999999999998039
+  },
+  {
+    "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
+    "letter_tier": "D",
+    "fans": 1957,
+    "popularity": 10,
+    "sort_key": 3999999999998043
+  },
+  {
+    "uid": "WU9MT1o",
+    "letter_tier": "D",
+    "fans": 1932,
+    "popularity": 21,
+    "sort_key": 3999999999998068
   },
   {
     "uid": "44Gq44G_44Gg6Imy44Gu5raI44GX44GU44KA",
@@ -952,11 +1309,88 @@
     "sort_key": 3999999999998084
   },
   {
+    "uid": "QkxVRUdPQVRT",
+    "letter_tier": "D",
+    "fans": 1915,
+    "popularity": 21,
+    "sort_key": 3999999999998085
+  },
+  {
+    "uid": "U3dlZXQgQWxsZXk",
+    "letter_tier": "D",
+    "fans": 1880,
+    "popularity": 17,
+    "sort_key": 3999999999998120
+  },
+  {
+    "uid": "TUlTUyBNRVJDWQ",
+    "letter_tier": "D",
+    "fans": 1815,
+    "popularity": 18,
+    "sort_key": 3999999999998185
+  },
+  {
+    "uid": "Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw",
+    "letter_tier": "D",
+    "fans": 1814,
+    "popularity": 21,
+    "sort_key": 3999999999998186
+  },
+  {
+    "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+    "letter_tier": "D",
+    "fans": 1811,
+    "popularity": 22,
+    "sort_key": 3999999999998189
+  },
+  {
+    "uid": "emFua2E",
+    "letter_tier": "D",
+    "fans": 1759,
+    "popularity": 18,
+    "sort_key": 3999999999998241
+  },
+  {
+    "uid": "QkFOWkFJIEpBUEFO",
+    "letter_tier": "D",
+    "fans": 1629,
+    "popularity": 4,
+    "sort_key": 3999999999998371
+  },
+  {
+    "uid": "44Kr44Op44OV44Or44K544Kv44Oq44O844Og",
+    "letter_tier": "D",
+    "fans": 1588,
+    "popularity": 17,
+    "sort_key": 3999999999998412
+  },
+  {
+    "uid": "S1JEOA",
+    "letter_tier": "D",
+    "fans": 1578,
+    "popularity": 8,
+    "sort_key": 3999999999998422
+  },
+  {
+    "uid": "44Gz44Gj44GP44GI44KT44GY44GH44KL",
+    "letter_tier": "D",
+    "fans": 1558,
+    "popularity": 20,
+    "sort_key": 3999999999998442
+  },
+  {
     "uid": "44OZ44Ot44OG44Kj44Kr",
     "letter_tier": "D",
     "fans": 1510,
     "popularity": 25,
     "sort_key": 3999999999998490
+  },
+  {
+    "uid": "44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8",
+    "letter_tier": "D",
+    "fans": 1404,
+    "popularity": 18,
+    "sort_key": 3999999999998596
   },
   {
     "uid": "44OP44Or44OL44K344Kq44Oz",
@@ -966,11 +1400,60 @@
     "sort_key": 3999999999998597
   },
   {
-    "uid": "SE9ORVkgUE9QQ09STg",
-    "letter_tier": "E",
-    "fans": 25691,
-    "popularity": 12,
-    "sort_key": 4999999999974309
+    "uid": "RElBVkVM",
+    "letter_tier": "D",
+    "fans": 1382,
+    "popularity": 21,
+    "sort_key": 3999999999998618
+  },
+  {
+    "uid": "44Kv44Op44Op44O744Oe44Kw44Op",
+    "letter_tier": "D",
+    "fans": 1111,
+    "popularity": 19,
+    "sort_key": 3999999999998889
+  },
+  {
+    "uid": "SElCQU5B",
+    "letter_tier": "D",
+    "fans": 1102,
+    "popularity": 23,
+    "sort_key": 3999999999998898
+  },
+  {
+    "uid": "5pyI5YiKUEFN",
+    "letter_tier": "D",
+    "fans": 1069,
+    "popularity": 18,
+    "sort_key": 3999999999998931
+  },
+  {
+    "uid": "VG9pIFRvaSBUb2k",
+    "letter_tier": "D",
+    "fans": 1057,
+    "popularity": 18,
+    "sort_key": 3999999999998943
+  },
+  {
+    "uid": "VG9oa2Vp",
+    "letter_tier": "D",
+    "fans": 989,
+    "popularity": 18,
+    "sort_key": 3999999999999011
+  },
+  {
+    "uid": "QU9BTw",
+    "letter_tier": "D",
+    "fans": 909,
+    "popularity": 19,
+    "sort_key": 3999999999999091
+  },
+  {
+    "uid": "RUdSe-OBiOOBkOOCi30",
+    "letter_tier": "D",
+    "fans": 290,
+    "popularity": 20,
+    "sort_key": 3999999999999710
   },
   {
     "uid": "5oKq6a2U44Gu44Kt44OD44K5",
@@ -980,62 +1463,6 @@
     "sort_key": 4999999999983279
   },
   {
-    "uid": "44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI",
-    "letter_tier": "E",
-    "fans": 15007,
-    "popularity": 15,
-    "sort_key": 4999999999984993
-  },
-  {
-    "uid": "RlJVSVRQT0NIRVRURQ",
-    "letter_tier": "E",
-    "fans": 13671,
-    "popularity": 15,
-    "sort_key": 4999999999986329
-  },
-  {
-    "uid": "44OL44Kh44OU44Oz",
-    "letter_tier": "E",
-    "fans": 12370,
-    "popularity": 15,
-    "sort_key": 4999999999987630
-  },
-  {
-    "uid": "a29sbWU",
-    "letter_tier": "E",
-    "fans": 11517,
-    "popularity": 12,
-    "sort_key": 4999999999988483
-  },
-  {
-    "uid": "Q2FuZHll4pmhU3lydXA",
-    "letter_tier": "E",
-    "fans": 11487,
-    "popularity": 14,
-    "sort_key": 4999999999988513
-  },
-  {
-    "uid": "44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM",
-    "letter_tier": "E",
-    "fans": 10612,
-    "popularity": 18,
-    "sort_key": 4999999999989388
-  },
-  {
-    "uid": "44Of44O844Og44OI44O844Kt44On44O8",
-    "letter_tier": "E",
-    "fans": 10481,
-    "popularity": 19,
-    "sort_key": 4999999999989519
-  },
-  {
-    "uid": "VEVBTSBTSEFDSEk",
-    "letter_tier": "E",
-    "fans": 8861,
-    "popularity": 20,
-    "sort_key": 4999999999991139
-  },
-  {
     "uid": "TUlHTUEgU0hFTFRFUg",
     "letter_tier": "E",
     "fans": 8568,
@@ -1043,74 +1470,11 @@
     "sort_key": 4999999999991432
   },
   {
-    "uid": "55yf44Gj55m944Gq44Kt44Oj44Oz44OQ44K5",
-    "letter_tier": "E",
-    "fans": 8388,
-    "popularity": 17,
-    "sort_key": 4999999999991612
-  },
-  {
     "uid": "QkxBQ0tOQVpBUkVORQ",
     "letter_tier": "E",
     "fans": 7796,
     "popularity": 13,
     "sort_key": 4999999999992204
-  },
-  {
-    "uid": "44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og",
-    "letter_tier": "E",
-    "fans": 7458,
-    "popularity": 15,
-    "sort_key": 4999999999992542
-  },
-  {
-    "uid": "S0xQNDg",
-    "letter_tier": "E",
-    "fans": 7410,
-    "popularity": 20,
-    "sort_key": 4999999999992590
-  },
-  {
-    "uid": "I-ODkOODkOODkOODkOODs-ODkw",
-    "letter_tier": "E",
-    "fans": 6988,
-    "popularity": 17,
-    "sort_key": 4999999999993012
-  },
-  {
-    "uid": "dWtrYQ",
-    "letter_tier": "E",
-    "fans": 6973,
-    "popularity": 20,
-    "sort_key": 4999999999993027
-  },
-  {
-    "uid": "SWxs",
-    "letter_tier": "E",
-    "fans": 6472,
-    "popularity": 18,
-    "sort_key": 4999999999993528
-  },
-  {
-    "uid": "44Kv44Oe44Oq44OH44OR44O844OI",
-    "letter_tier": "E",
-    "fans": 6228,
-    "popularity": 17,
-    "sort_key": 4999999999993772
-  },
-  {
-    "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
-    "letter_tier": "E",
-    "fans": 6106,
-    "popularity": 20,
-    "sort_key": 4999999999993894
-  },
-  {
-    "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
-    "letter_tier": "E",
-    "fans": 6061,
-    "popularity": 18,
-    "sort_key": 4999999999993939
   },
   {
     "uid": "VGFzayBoYXZlIEZ1bg",
@@ -1125,13 +1489,6 @@
     "fans": 5969,
     "popularity": 11,
     "sort_key": 4999999999994031
-  },
-  {
-    "uid": "dWlqaW4",
-    "letter_tier": "E",
-    "fans": 5817,
-    "popularity": 15,
-    "sort_key": 4999999999994183
   },
   {
     "uid": "R08gVE8gVEhFIEJFRFM",
@@ -1155,6 +1512,13 @@
     "sort_key": 4999999999994537
   },
   {
+    "uid": "TmlnaHRPd2w",
+    "letter_tier": "E",
+    "fans": 5315,
+    "popularity": 8,
+    "sort_key": 4999999999994685
+  },
+  {
     "uid": "UGltbSdz",
     "letter_tier": "E",
     "fans": 5303,
@@ -1162,18 +1526,18 @@
     "sort_key": 4999999999994697
   },
   {
-    "uid": "44Ki44Kt44K344OWcHJvamVjdA",
+    "uid": "Q1JPV04gUE9Q",
     "letter_tier": "E",
-    "fans": 5166,
-    "popularity": 19,
-    "sort_key": 4999999999994834
+    "fans": 5131,
+    "popularity": 8,
+    "sort_key": 4999999999994869
   },
   {
-    "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
+    "uid": "R0VN",
     "letter_tier": "E",
-    "fans": 5014,
-    "popularity": 20,
-    "sort_key": 4999999999994986
+    "fans": 5084,
+    "popularity": 7,
+    "sort_key": 4999999999994916
   },
   {
     "uid": "44Oe44K444Kr44Or44O744OR44Oz44OB44Op44Kk44Oz",
@@ -1190,32 +1554,18 @@
     "sort_key": 4999999999995041
   },
   {
-    "uid": "TlVBTkNF",
+    "uid": "TUVMTE9XIE1FTExPVw",
     "letter_tier": "E",
-    "fans": 4924,
-    "popularity": 18,
-    "sort_key": 4999999999995076
+    "fans": 4913,
+    "popularity": 8,
+    "sort_key": 4999999999995087
   },
   {
-    "uid": "S29sb2tvbA",
+    "uid": "WFRFRU4",
     "letter_tier": "E",
-    "fans": 4906,
-    "popularity": 17,
-    "sort_key": 4999999999995094
-  },
-  {
-    "uid": "57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
-    "letter_tier": "E",
-    "fans": 4823,
-    "popularity": 21,
-    "sort_key": 4999999999995177
-  },
-  {
-    "uid": "UGVlbCB0aGUgQXBwbGU",
-    "letter_tier": "E",
-    "fans": 4598,
-    "popularity": 19,
-    "sort_key": 4999999999995402
+    "fans": 4671,
+    "popularity": 9,
+    "sort_key": 4999999999995329
   },
   {
     "uid": "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC",
@@ -1225,6 +1575,13 @@
     "sort_key": 4999999999995421
   },
   {
+    "uid": "UEFSQURJU0VT",
+    "letter_tier": "E",
+    "fans": 4386,
+    "popularity": 6,
+    "sort_key": 4999999999995614
+  },
+  {
     "uid": "VEhFIEhPT1BFUlM",
     "letter_tier": "E",
     "fans": 4322,
@@ -1232,25 +1589,18 @@
     "sort_key": 4999999999995678
   },
   {
-    "uid": "44Oq44Or44ON44O844OJ",
+    "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
     "letter_tier": "E",
-    "fans": 4246,
-    "popularity": 16,
-    "sort_key": 4999999999995754
+    "fans": 4144,
+    "popularity": 8,
+    "sort_key": 4999999999995856
   },
   {
-    "uid": "576k6Z2S44Gu5LiW55WM",
+    "uid": "44GY44KF44GY44KF",
     "letter_tier": "E",
-    "fans": 4056,
-    "popularity": 20,
-    "sort_key": 4999999999995944
-  },
-  {
-    "uid": "U0lUVUFTSU9O",
-    "letter_tier": "E",
-    "fans": 3885,
-    "popularity": 19,
-    "sort_key": 4999999999996115
+    "fans": 3944,
+    "popularity": 8,
+    "sort_key": 4999999999996056
   },
   {
     "uid": "bWlzY2FzdA",
@@ -1260,18 +1610,11 @@
     "sort_key": 4999999999996136
   },
   {
-    "uid": "44Ki44Oz44K544Oq44Ol44O844Og",
+    "uid": "44Gq44KT44Kt44OL77yB",
     "letter_tier": "E",
-    "fans": 3770,
-    "popularity": 18,
-    "sort_key": 4999999999996230
-  },
-  {
-    "uid": "VEhFIE9SQ0hFU1RSQSBUT0tZTw",
-    "letter_tier": "E",
-    "fans": 3770,
-    "popularity": 22,
-    "sort_key": 4999999999996230
+    "fans": 3863,
+    "popularity": 8,
+    "sort_key": 4999999999996137
   },
   {
     "uid": "Mzc3Ng",
@@ -1281,32 +1624,32 @@
     "sort_key": 4999999999996281
   },
   {
-    "uid": "44G_44GG44G_44GK",
+    "uid": "U0FLQS1TQU1B",
     "letter_tier": "E",
-    "fans": 3402,
-    "popularity": 16,
-    "sort_key": 4999999999996598
+    "fans": 3570,
+    "popularity": 7,
+    "sort_key": 4999999999996430
   },
   {
-    "uid": "TXlEZWFyRGFybGluJw",
+    "uid": "U0FpTlQgU0VY",
     "letter_tier": "E",
-    "fans": 3255,
-    "popularity": 16,
-    "sort_key": 4999999999996745
+    "fans": 3502,
+    "popularity": 7,
+    "sort_key": 4999999999996498
   },
   {
-    "uid": "TEVJV0FO",
+    "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ",
     "letter_tier": "E",
-    "fans": 3162,
-    "popularity": 17,
-    "sort_key": 4999999999996838
+    "fans": 3337,
+    "popularity": 10,
+    "sort_key": 4999999999996663
   },
   {
-    "uid": "QUlCRUNL",
+    "uid": "44OK44OK44Op44Oz44OJ",
     "letter_tier": "E",
-    "fans": 3145,
-    "popularity": 15,
-    "sort_key": 4999999999996855
+    "fans": 3212,
+    "popularity": 9,
+    "sort_key": 4999999999996788
   },
   {
     "uid": "IzJpMg",
@@ -1314,6 +1657,13 @@
     "fans": 3066,
     "popularity": 13,
     "sort_key": 4999999999996934
+  },
+  {
+    "uid": "cHJlZGlh",
+    "letter_tier": "E",
+    "fans": 3054,
+    "popularity": 9,
+    "sort_key": 4999999999996946
   },
   {
     "uid": "44OU44Ol44O844ORISE",
@@ -1344,6 +1694,13 @@
     "sort_key": 4999999999997120
   },
   {
+    "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+    "letter_tier": "E",
+    "fans": 2824,
+    "popularity": 307,
+    "sort_key": 4999999999997176
+  },
+  {
     "uid": "ZGlpZw",
     "letter_tier": "E",
     "fans": 2804,
@@ -1358,25 +1715,11 @@
     "sort_key": 4999999999997198
   },
   {
-    "uid": "6KGb5pif44Go44Kr44Op44OG44Ki",
+    "uid": "S2lzc0JlZQ",
     "letter_tier": "E",
-    "fans": 2737,
-    "popularity": 22,
-    "sort_key": 4999999999997263
-  },
-  {
-    "uid": "U1RBaU5Z",
-    "letter_tier": "E",
-    "fans": 2710,
-    "popularity": 15,
-    "sort_key": 4999999999997290
-  },
-  {
-    "uid": "UFJTTUlO",
-    "letter_tier": "E",
-    "fans": 2671,
-    "popularity": 12,
-    "sort_key": 4999999999997329
+    "fans": 2800,
+    "popularity": 8,
+    "sort_key": 4999999999997200
   },
   {
     "uid": "SURPTEFURVI",
@@ -1386,39 +1729,18 @@
     "sort_key": 4999999999997383
   },
   {
-    "uid": "VklMTEFJTlMgSE9VU0U",
+    "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
     "letter_tier": "E",
-    "fans": 2529,
-    "popularity": 23,
-    "sort_key": 4999999999997471
+    "fans": 2589,
+    "popularity": 8,
+    "sort_key": 4999999999997411
   },
   {
-    "uid": "U0FZLUxB",
+    "uid": "6YO95YaF5p-Q5omA",
     "letter_tier": "E",
-    "fans": 2504,
-    "popularity": 11,
-    "sort_key": 4999999999997496
-  },
-  {
-    "uid": "44Op44OVw5fjg6njg5U",
-    "letter_tier": "E",
-    "fans": 2481,
-    "popularity": 23,
-    "sort_key": 4999999999997519
-  },
-  {
-    "uid": "TWlycm9yLE1pcnJvcg",
-    "letter_tier": "E",
-    "fans": 2436,
-    "popularity": 21,
-    "sort_key": 4999999999997564
-  },
-  {
-    "uid": "44GN44Gu44Ob44CC",
-    "letter_tier": "E",
-    "fans": 2377,
-    "popularity": 20,
-    "sort_key": 4999999999997623
+    "fans": 2585,
+    "popularity": 9,
+    "sort_key": 4999999999997415
   },
   {
     "uid": "44Kt44Oz44Kw44K144Oq",
@@ -1456,46 +1778,25 @@
     "sort_key": 4999999999997806
   },
   {
-    "uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs",
-    "letter_tier": "E",
-    "fans": 2162,
-    "popularity": 17,
-    "sort_key": 4999999999997838
-  },
-  {
-    "uid": "TElOS0wgUExBTkVU",
-    "letter_tier": "E",
-    "fans": 2136,
-    "popularity": 17,
-    "sort_key": 4999999999997864
-  },
-  {
-    "uid": "6Iqx6a2B6YGT5Lit",
+    "uid": "5pif5q20MTPlpJw",
     "letter_tier": "E",
     "fans": 2108,
-    "popularity": 21,
+    "popularity": 8,
     "sort_key": 4999999999997892
   },
   {
-    "uid": "44Op44Kk44K544Oc44O844Or",
+    "uid": "44KB44KN44KT55WRYSBnbyBnbw",
     "letter_tier": "E",
-    "fans": 2041,
-    "popularity": 18,
-    "sort_key": 4999999999997959
+    "fans": 2082,
+    "popularity": 8,
+    "sort_key": 4999999999997918
   },
   {
-    "uid": "UGFsZXR0ZSBQYXJhZGU",
+    "uid": "S2lTUyBLaVNT",
     "letter_tier": "E",
-    "fans": 1984,
-    "popularity": 17,
-    "sort_key": 4999999999998016
-  },
-  {
-    "uid": "QVpBVE9Z",
-    "letter_tier": "E",
-    "fans": 1961,
-    "popularity": 20,
-    "sort_key": 4999999999998039
+    "fans": 2025,
+    "popularity": 9,
+    "sort_key": 4999999999997975
   },
   {
     "uid": "QXhlbGlnaHQ",
@@ -1505,18 +1806,11 @@
     "sort_key": 4999999999998056
   },
   {
-    "uid": "WU9MT1o",
+    "uid": "YW1iaXRpb3Vz",
     "letter_tier": "E",
     "fans": 1932,
-    "popularity": 21,
+    "popularity": 8,
     "sort_key": 4999999999998068
-  },
-  {
-    "uid": "QkxVRUdPQVRT",
-    "letter_tier": "E",
-    "fans": 1915,
-    "popularity": 21,
-    "sort_key": 4999999999998085
   },
   {
     "uid": "44K344Oj44OL44Og44OL77yd44OR44Os44O844OJ",
@@ -1533,11 +1827,11 @@
     "sort_key": 4999999999998096
   },
   {
-    "uid": "U3dlZXQgQWxsZXk",
+    "uid": "TWlpUw",
     "letter_tier": "E",
-    "fans": 1880,
-    "popularity": 17,
-    "sort_key": 4999999999998120
+    "fans": 1876,
+    "popularity": 8,
+    "sort_key": 4999999999998124
   },
   {
     "uid": "44GV44Go44KK44Oi44Oz44K544K_44O8",
@@ -1561,25 +1855,11 @@
     "sort_key": 4999999999998169
   },
   {
-    "uid": "TUlTUyBNRVJDWQ",
+    "uid": "ZmFuY3lsYWJv",
     "letter_tier": "E",
-    "fans": 1815,
-    "popularity": 18,
-    "sort_key": 4999999999998185
-  },
-  {
-    "uid": "Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw",
-    "letter_tier": "E",
-    "fans": 1814,
-    "popularity": 21,
-    "sort_key": 4999999999998186
-  },
-  {
-    "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
-    "letter_tier": "E",
-    "fans": 1811,
-    "popularity": 22,
-    "sort_key": 4999999999998189
+    "fans": 1807,
+    "popularity": 8,
+    "sort_key": 4999999999998193
   },
   {
     "uid": "I01vb292ZSE",
@@ -1596,18 +1876,46 @@
     "sort_key": 4999999999998218
   },
   {
-    "uid": "emFua2E",
+    "uid": "U09NT1NPTU8",
     "letter_tier": "E",
-    "fans": 1759,
-    "popularity": 18,
-    "sort_key": 4999999999998241
+    "fans": 1743,
+    "popularity": 10,
+    "sort_key": 4999999999998257
   },
   {
-    "uid": "44Kr44Op44OV44Or44K544Kv44Oq44O844Og",
+    "uid": "6Zu75b2x44Go5bCR5bm0Q1E",
     "letter_tier": "E",
-    "fans": 1588,
-    "popularity": 17,
-    "sort_key": 4999999999998412
+    "fans": 1727,
+    "popularity": 8,
+    "sort_key": 4999999999998273
+  },
+  {
+    "uid": "UklSWURBWQ",
+    "letter_tier": "E",
+    "fans": 1724,
+    "popularity": 8,
+    "sort_key": 4999999999998276
+  },
+  {
+    "uid": "RU1QQVRIWQ",
+    "letter_tier": "E",
+    "fans": 1644,
+    "popularity": 11,
+    "sort_key": 4999999999998356
+  },
+  {
+    "uid": "RmluZ2VyIFJ1bnM",
+    "letter_tier": "E",
+    "fans": 1613,
+    "popularity": 9,
+    "sort_key": 4999999999998387
+  },
+  {
+    "uid": "44Kw44OH44Kk",
+    "letter_tier": "E",
+    "fans": 1612,
+    "popularity": 11,
+    "sort_key": 4999999999998388
   },
   {
     "uid": "44GL44GZ44G_6I2J44Go44K544OG44Op",
@@ -1617,11 +1925,18 @@
     "sort_key": 4999999999998427
   },
   {
-    "uid": "44Gz44Gj44GP44GI44KT44GY44GH44KL",
+    "uid": "SSBNWSBNRSBNSU5F",
     "letter_tier": "E",
-    "fans": 1558,
-    "popularity": 20,
-    "sort_key": 4999999999998442
+    "fans": 1569,
+    "popularity": 9,
+    "sort_key": 4999999999998431
+  },
+  {
+    "uid": "TydDSEFXQU5aIEhJUC1IT1AgQ09MTEVHRQ",
+    "letter_tier": "E",
+    "fans": 1544,
+    "popularity": 10,
+    "sort_key": 4999999999998456
   },
   {
     "uid": "44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz",
@@ -1631,11 +1946,32 @@
     "sort_key": 4999999999998479
   },
   {
+    "uid": "VU5CUw",
+    "letter_tier": "E",
+    "fans": 1519,
+    "popularity": 9,
+    "sort_key": 4999999999998481
+  },
+  {
     "uid": "5aSq6Zm944Go6LiK44KM5pyI5aSc44Gr5ZSE44GI",
     "letter_tier": "E",
     "fans": 1513,
     "popularity": 15,
     "sort_key": 4999999999998487
+  },
+  {
+    "uid": "bWF5IGluIGZpbG0",
+    "letter_tier": "E",
+    "fans": 1450,
+    "popularity": 9,
+    "sort_key": 4999999999998550
+  },
+  {
+    "uid": "RmluYWxseQ",
+    "letter_tier": "E",
+    "fans": 1431,
+    "popularity": 11,
+    "sort_key": 4999999999998569
   },
   {
     "uid": "5qOYLeOBiuOBqeOCjS0",
@@ -1659,18 +1995,25 @@
     "sort_key": 4999999999998589
   },
   {
-    "uid": "44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8",
+    "uid": "UkVBRFkgVE8gS0lTUw",
     "letter_tier": "E",
-    "fans": 1404,
-    "popularity": 18,
-    "sort_key": 4999999999998596
+    "fans": 1351,
+    "popularity": 4,
+    "sort_key": 4999999999998649
   },
   {
-    "uid": "RElBVkVM",
+    "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
     "letter_tier": "E",
-    "fans": 1382,
-    "popularity": 21,
-    "sort_key": 4999999999998618
+    "fans": 1329,
+    "popularity": 6,
+    "sort_key": 4999999999998671
+  },
+  {
+    "uid": "44ON44Kz44OX44OpcGl4eC4",
+    "letter_tier": "E",
+    "fans": 1319,
+    "popularity": 8,
+    "sort_key": 4999999999998681
   },
   {
     "uid": "QXNJcw",
@@ -1680,11 +2023,53 @@
     "sort_key": 4999999999998707
   },
   {
+    "uid": "SElHSCBTUElSSVRT",
+    "letter_tier": "E",
+    "fans": 1288,
+    "popularity": 11,
+    "sort_key": 4999999999998712
+  },
+  {
+    "uid": "44Ov44OD44OE4peO44GV44O844GP44KL",
+    "letter_tier": "E",
+    "fans": 1248,
+    "popularity": 8,
+    "sort_key": 4999999999998752
+  },
+  {
+    "uid": "44Or44Or44ON44O844K444Ol",
+    "letter_tier": "E",
+    "fans": 1229,
+    "popularity": 10,
+    "sort_key": 4999999999998771
+  },
+  {
+    "uid": "SlVHUyBNQUZJQQ",
+    "letter_tier": "E",
+    "fans": 1221,
+    "popularity": 4,
+    "sort_key": 4999999999998779
+  },
+  {
     "uid": "bG9ubGl1bQ",
     "letter_tier": "E",
     "fans": 1174,
     "popularity": 14,
     "sort_key": 4999999999998826
+  },
+  {
+    "uid": "T1PimIZV",
+    "letter_tier": "E",
+    "fans": 1170,
+    "popularity": 9,
+    "sort_key": 4999999999998830
+  },
+  {
+    "uid": "V1TimIZFZ3JldA",
+    "letter_tier": "E",
+    "fans": 1151,
+    "popularity": 9,
+    "sort_key": 4999999999998849
   },
   {
     "uid": "SGVsbHphcG9wcGluJw",
@@ -1699,6 +2084,13 @@
     "fans": 1142,
     "popularity": 15,
     "sort_key": 4999999999998858
+  },
+  {
+    "uid": "44Oh44Kk44OT44O8TUU",
+    "letter_tier": "E",
+    "fans": 1138,
+    "popularity": 7,
+    "sort_key": 4999999999998862
   },
   {
     "uid": "44GC44Gf44G-44Gu44Gq44GL44GvOOODk-ODg-ODiOKBie-4jg",
@@ -1722,13 +2114,6 @@
     "sort_key": 4999999999998887
   },
   {
-    "uid": "44Kv44Op44Op44O744Oe44Kw44Op",
-    "letter_tier": "E",
-    "fans": 1111,
-    "popularity": 19,
-    "sort_key": 4999999999998889
-  },
-  {
     "uid": "LkJQTQ",
     "letter_tier": "E",
     "fans": 1110,
@@ -1736,18 +2121,18 @@
     "sort_key": 4999999999998890
   },
   {
-    "uid": "SElCQU5B",
+    "uid": "aWRlYWwgcGVjbw",
     "letter_tier": "E",
-    "fans": 1102,
-    "popularity": 23,
-    "sort_key": 4999999999998898
+    "fans": 1107,
+    "popularity": 8,
+    "sort_key": 4999999999998893
   },
   {
-    "uid": "5pyI5YiKUEFN",
+    "uid": "44K144Kv44Ok44Kz44OO44OP44OK",
     "letter_tier": "E",
-    "fans": 1069,
-    "popularity": 18,
-    "sort_key": 4999999999998931
+    "fans": 1084,
+    "popularity": 9,
+    "sort_key": 4999999999998916
   },
   {
     "uid": "44KP44KM44KJ44GM44OX44Ov44OX44Ov44OX44O844Ov44OX44Ov",
@@ -1764,11 +2149,11 @@
     "sort_key": 4999999999998939
   },
   {
-    "uid": "VG9pIFRvaSBUb2k",
+    "uid": "QnVubnkgTGEgQ3Jldw",
     "letter_tier": "E",
-    "fans": 1057,
-    "popularity": 18,
-    "sort_key": 4999999999998943
+    "fans": 1054,
+    "popularity": 9,
+    "sort_key": 4999999999998946
   },
   {
     "uid": "44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go",
@@ -1792,6 +2177,13 @@
     "sort_key": 4999999999998961
   },
   {
+    "uid": "U0FJwrJSaXVt",
+    "letter_tier": "E",
+    "fans": 1031,
+    "popularity": 8,
+    "sort_key": 4999999999998969
+  },
+  {
     "uid": "QUZURVJT",
     "letter_tier": "E",
     "fans": 1013,
@@ -1806,18 +2198,25 @@
     "sort_key": 4999999999999001
   },
   {
-    "uid": "VG9oa2Vp",
-    "letter_tier": "E",
-    "fans": 989,
-    "popularity": 18,
-    "sort_key": 4999999999999011
-  },
-  {
     "uid": "c2VsZmlzaA",
     "letter_tier": "E",
     "fans": 961,
     "popularity": 17,
     "sort_key": 4999999999999039
+  },
+  {
+    "uid": "VE9LWU_jgabjgbXjgabjgbU",
+    "letter_tier": "E",
+    "fans": 960,
+    "popularity": 10,
+    "sort_key": 4999999999999040
+  },
+  {
+    "uid": "44OP44OL44O844K544OR44Kk44K5UmUu",
+    "letter_tier": "E",
+    "fans": 957,
+    "popularity": 9,
+    "sort_key": 4999999999999043
   },
   {
     "uid": "TElUIE1PT04",
@@ -1846,13 +2245,6 @@
     "fans": 912,
     "popularity": 14,
     "sort_key": 4999999999999088
-  },
-  {
-    "uid": "QU9BTw",
-    "letter_tier": "E",
-    "fans": 909,
-    "popularity": 19,
-    "sort_key": 4999999999999091
   },
   {
     "uid": "44Op44OK44Kt44Ol44Op",
@@ -1925,6 +2317,13 @@
     "sort_key": 4999999999999187
   },
   {
+    "uid": "44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6",
+    "letter_tier": "E",
+    "fans": 812,
+    "popularity": 10,
+    "sort_key": 4999999999999188
+  },
+  {
     "uid": "6ISz5YaF44OR44K544OG44Or",
     "letter_tier": "E",
     "fans": 811,
@@ -1953,11 +2352,25 @@
     "sort_key": 4999999999999197
   },
   {
+    "uid": "44OV44Ol44O844OB44Oj44O844K144Kk44OA44O8",
+    "letter_tier": "E",
+    "fans": 802,
+    "popularity": 11,
+    "sort_key": 4999999999999198
+  },
+  {
     "uid": "U2lMRU5U4oaQTk9pU0U",
     "letter_tier": "E",
     "fans": 797,
     "popularity": 12,
     "sort_key": 4999999999999203
+  },
+  {
+    "uid": "bXkgZmF2",
+    "letter_tier": "E",
+    "fans": 781,
+    "popularity": 9,
+    "sort_key": 4999999999999219
   },
   {
     "uid": "Q2hhbGNh",
@@ -1972,6 +2385,13 @@
     "fans": 749,
     "popularity": 14,
     "sort_key": 4999999999999251
+  },
+  {
+    "uid": "44Or44O844K444Ol44OW44OD44Kv",
+    "letter_tier": "E",
+    "fans": 706,
+    "popularity": 9,
+    "sort_key": 4999999999999294
   },
   {
     "uid": "TWVsdHkgQmVhUg",
@@ -1995,11 +2415,53 @@
     "sort_key": 4999999999999330
   },
   {
+    "uid": "44KR44KT44KJ",
+    "letter_tier": "E",
+    "fans": 636,
+    "popularity": 7,
+    "sort_key": 4999999999999364
+  },
+  {
+    "uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
+    "letter_tier": "E",
+    "fans": 620,
+    "popularity": 11,
+    "sort_key": 4999999999999380
+  },
+  {
     "uid": "6ZmQ44KK44Gq44GP55m944GP",
     "letter_tier": "E",
     "fans": 613,
     "popularity": 14,
     "sort_key": 4999999999999387
+  },
+  {
+    "uid": "UmFSYUphTQ",
+    "letter_tier": "E",
+    "fans": 609,
+    "popularity": 9,
+    "sort_key": 4999999999999391
+  },
+  {
+    "uid": "SEFQUFkgQ1JFQVRPUlM",
+    "letter_tier": "E",
+    "fans": 601,
+    "popularity": 11,
+    "sort_key": 4999999999999399
+  },
+  {
+    "uid": "44Ks44Op44OB44Ki",
+    "letter_tier": "E",
+    "fans": 584,
+    "popularity": 11,
+    "sort_key": 4999999999999416
+  },
+  {
+    "uid": "44OI44OK44Oq44Ki",
+    "letter_tier": "E",
+    "fans": 572,
+    "popularity": 9,
+    "sort_key": 4999999999999428
   },
   {
     "uid": "VEhFIEVOQ09SRQ",
@@ -2014,6 +2476,13 @@
     "fans": 556,
     "popularity": 12,
     "sort_key": 4999999999999444
+  },
+  {
+    "uid": "Q2hhcm0gUG9jaGU",
+    "letter_tier": "E",
+    "fans": 546,
+    "popularity": 9,
+    "sort_key": 4999999999999454
   },
   {
     "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
@@ -2044,11 +2513,32 @@
     "sort_key": 4999999999999513
   },
   {
+    "uid": "QkFEIElWWQ",
+    "letter_tier": "E",
+    "fans": 471,
+    "popularity": 11,
+    "sort_key": 4999999999999529
+  },
+  {
     "uid": "U1RBUlJZw5dOSUdIVOKGl--4jg",
     "letter_tier": "E",
     "fans": 451,
     "popularity": 12,
     "sort_key": 4999999999999549
+  },
+  {
+    "uid": "RlVMSVQgQk9Y",
+    "letter_tier": "E",
+    "fans": 445,
+    "popularity": 10,
+    "sort_key": 4999999999999555
+  },
+  {
+    "uid": "44Oy44OJ44Or44Oe44Oo44OK44Kr",
+    "letter_tier": "E",
+    "fans": 428,
+    "popularity": 9,
+    "sort_key": 4999999999999572
   },
   {
     "uid": "44Kr44Of44K144Oe44OR44Os44O844OJ",
@@ -2065,18 +2555,18 @@
     "sort_key": 4999999999999672
   },
   {
+    "uid": "YWkqYWk",
+    "letter_tier": "E",
+    "fans": 309,
+    "popularity": 10,
+    "sort_key": 4999999999999691
+  },
+  {
     "uid": "QmVsb3ZlZA",
     "letter_tier": "E",
     "fans": 293,
     "popularity": 12,
     "sort_key": 4999999999999707
-  },
-  {
-    "uid": "RUdSe-OBiOOBkOOCi30",
-    "letter_tier": "E",
-    "fans": 290,
-    "popularity": 20,
-    "sort_key": 4999999999999710
   },
   {
     "uid": "QWljb25n",
@@ -2086,6 +2576,13 @@
     "sort_key": 4999999999999729
   },
   {
+    "uid": "QVZBQ0xVQg",
+    "letter_tier": "E",
+    "fans": 236,
+    "popularity": 11,
+    "sort_key": 4999999999999764
+  },
+  {
     "uid": "5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA",
     "letter_tier": "E",
     "fans": 185,
@@ -2093,74 +2590,11 @@
     "sort_key": 4999999999999815
   },
   {
-    "uid": "TmlnaHRPd2w",
-    "letter_tier": "F",
-    "fans": 5315,
-    "popularity": 8,
-    "sort_key": 5999999999994685
-  },
-  {
-    "uid": "Q1JPV04gUE9Q",
-    "letter_tier": "F",
-    "fans": 5131,
-    "popularity": 8,
-    "sort_key": 5999999999994869
-  },
-  {
-    "uid": "R0VN",
-    "letter_tier": "F",
-    "fans": 5084,
-    "popularity": 7,
-    "sort_key": 5999999999994916
-  },
-  {
-    "uid": "TUVMTE9XIE1FTExPVw",
-    "letter_tier": "F",
-    "fans": 4913,
-    "popularity": 8,
-    "sort_key": 5999999999995087
-  },
-  {
-    "uid": "WFRFRU4",
-    "letter_tier": "F",
-    "fans": 4671,
-    "popularity": 9,
-    "sort_key": 5999999999995329
-  },
-  {
-    "uid": "RG9yb3RoeSBMaXR0bGUgSGFwcHk",
-    "letter_tier": "F",
-    "fans": 4564,
-    "popularity": 6,
-    "sort_key": 5999999999995436
-  },
-  {
-    "uid": "UEFSQURJU0VT",
-    "letter_tier": "F",
-    "fans": 4386,
-    "popularity": 6,
-    "sort_key": 5999999999995614
-  },
-  {
-    "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
-    "letter_tier": "F",
-    "fans": 4144,
-    "popularity": 8,
-    "sort_key": 5999999999995856
-  },
-  {
-    "uid": "44GY44KF44GY44KF",
-    "letter_tier": "F",
-    "fans": 3944,
-    "popularity": 8,
-    "sort_key": 5999999999996056
-  },
-  {
-    "uid": "44Gq44KT44Kt44OL77yB",
-    "letter_tier": "F",
-    "fans": 3863,
-    "popularity": 8,
-    "sort_key": 5999999999996137
+    "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+    "letter_tier": "E",
+    "fans": 0,
+    "popularity": 0,
+    "sort_key": 5000000000000000
   },
   {
     "uid": "U0FOREFMIFRFTEVQSE9ORQ",
@@ -2170,81 +2604,11 @@
     "sort_key": 5999999999996233
   },
   {
-    "uid": "44G144KP44G144KP",
-    "letter_tier": "F",
-    "fans": 3688,
-    "popularity": 9,
-    "sort_key": 5999999999996312
-  },
-  {
-    "uid": "U0FLQS1TQU1B",
-    "letter_tier": "F",
-    "fans": 3570,
-    "popularity": 7,
-    "sort_key": 5999999999996430
-  },
-  {
-    "uid": "U0FpTlQgU0VY",
-    "letter_tier": "F",
-    "fans": 3502,
-    "popularity": 7,
-    "sort_key": 5999999999996498
-  },
-  {
-    "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ",
-    "letter_tier": "F",
-    "fans": 3337,
-    "popularity": 10,
-    "sort_key": 5999999999996663
-  },
-  {
-    "uid": "44OK44OK44Op44Oz44OJ",
-    "letter_tier": "F",
-    "fans": 3212,
-    "popularity": 9,
-    "sort_key": 5999999999996788
-  },
-  {
-    "uid": "cHJlZGlh",
-    "letter_tier": "F",
-    "fans": 3054,
-    "popularity": 9,
-    "sort_key": 5999999999996946
-  },
-  {
     "uid": "5oSb5LmZ5aWz4piGRE9MTA",
     "letter_tier": "F",
     "fans": 3010,
     "popularity": 6,
     "sort_key": 5999999999996990
-  },
-  {
-    "uid": "U1RBUk1BUklF",
-    "letter_tier": "F",
-    "fans": 2929,
-    "popularity": 5,
-    "sort_key": 5999999999997071
-  },
-  {
-    "uid": "S2lzc0JlZQ",
-    "letter_tier": "F",
-    "fans": 2800,
-    "popularity": 8,
-    "sort_key": 5999999999997200
-  },
-  {
-    "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
-    "letter_tier": "F",
-    "fans": 2589,
-    "popularity": 8,
-    "sort_key": 5999999999997411
-  },
-  {
-    "uid": "6YO95YaF5p-Q5omA",
-    "letter_tier": "F",
-    "fans": 2585,
-    "popularity": 9,
-    "sort_key": 5999999999997415
   },
   {
     "uid": "SEFNSURBU1lTVEVN",
@@ -2275,20 +2639,6 @@
     "sort_key": 5999999999997874
   },
   {
-    "uid": "5pif5q20MTPlpJw",
-    "letter_tier": "F",
-    "fans": 2108,
-    "popularity": 8,
-    "sort_key": 5999999999997892
-  },
-  {
-    "uid": "44KB44KN44KT55WRYSBnbyBnbw",
-    "letter_tier": "F",
-    "fans": 2082,
-    "popularity": 8,
-    "sort_key": 5999999999997918
-  },
-  {
     "uid": "44Kk44Kx44Gm44KL44OP44O844OE",
     "letter_tier": "F",
     "fans": 2080,
@@ -2310,48 +2660,6 @@
     "sort_key": 5999999999997938
   },
   {
-    "uid": "S2lTUyBLaVNT",
-    "letter_tier": "F",
-    "fans": 2025,
-    "popularity": 9,
-    "sort_key": 5999999999997975
-  },
-  {
-    "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
-    "letter_tier": "F",
-    "fans": 1957,
-    "popularity": 10,
-    "sort_key": 5999999999998043
-  },
-  {
-    "uid": "YW1iaXRpb3Vz",
-    "letter_tier": "F",
-    "fans": 1932,
-    "popularity": 8,
-    "sort_key": 5999999999998068
-  },
-  {
-    "uid": "TWlpUw",
-    "letter_tier": "F",
-    "fans": 1876,
-    "popularity": 8,
-    "sort_key": 5999999999998124
-  },
-  {
-    "uid": "ZmFuY3lsYWJv",
-    "letter_tier": "F",
-    "fans": 1807,
-    "popularity": 8,
-    "sort_key": 5999999999998193
-  },
-  {
-    "uid": "U09NT1NPTU8",
-    "letter_tier": "F",
-    "fans": 1743,
-    "popularity": 10,
-    "sort_key": 5999999999998257
-  },
-  {
     "uid": "OGJpdEJSQUlO",
     "letter_tier": "F",
     "fans": 1741,
@@ -2366,32 +2674,11 @@
     "sort_key": 5999999999998273
   },
   {
-    "uid": "6Zu75b2x44Go5bCR5bm0Q1E",
-    "letter_tier": "F",
-    "fans": 1727,
-    "popularity": 8,
-    "sort_key": 5999999999998273
-  },
-  {
-    "uid": "UklSWURBWQ",
-    "letter_tier": "F",
-    "fans": 1724,
-    "popularity": 8,
-    "sort_key": 5999999999998276
-  },
-  {
     "uid": "WE9YTyBFWFRSRU1F",
     "letter_tier": "F",
     "fans": 1719,
     "popularity": 6,
     "sort_key": 5999999999998281
-  },
-  {
-    "uid": "RU1QQVRIWQ",
-    "letter_tier": "F",
-    "fans": 1644,
-    "popularity": 11,
-    "sort_key": 5999999999998356
   },
   {
     "uid": "eXVtZWdpd2EgbGFzdCBnaXJs",
@@ -2401,60 +2688,11 @@
     "sort_key": 5999999999998358
   },
   {
-    "uid": "QkFOWkFJIEpBUEFO",
-    "letter_tier": "F",
-    "fans": 1629,
-    "popularity": 4,
-    "sort_key": 5999999999998371
-  },
-  {
-    "uid": "RmluZ2VyIFJ1bnM",
-    "letter_tier": "F",
-    "fans": 1613,
-    "popularity": 9,
-    "sort_key": 5999999999998387
-  },
-  {
-    "uid": "44Kw44OH44Kk",
-    "letter_tier": "F",
-    "fans": 1612,
-    "popularity": 11,
-    "sort_key": 5999999999998388
-  },
-  {
     "uid": "44Kv44Ot44K544OO44Ko44K344K5",
     "letter_tier": "F",
     "fans": 1578,
     "popularity": 3,
     "sort_key": 5999999999998422
-  },
-  {
-    "uid": "S1JEOA",
-    "letter_tier": "F",
-    "fans": 1578,
-    "popularity": 8,
-    "sort_key": 5999999999998422
-  },
-  {
-    "uid": "SSBNWSBNRSBNSU5F",
-    "letter_tier": "F",
-    "fans": 1569,
-    "popularity": 9,
-    "sort_key": 5999999999998431
-  },
-  {
-    "uid": "TydDSEFXQU5aIEhJUC1IT1AgQ09MTEVHRQ",
-    "letter_tier": "F",
-    "fans": 1544,
-    "popularity": 10,
-    "sort_key": 5999999999998456
-  },
-  {
-    "uid": "VU5CUw",
-    "letter_tier": "F",
-    "fans": 1519,
-    "popularity": 9,
-    "sort_key": 5999999999998481
   },
   {
     "uid": "TG92ZSBDb2NjaGk",
@@ -2471,13 +2709,6 @@
     "sort_key": 5999999999998543
   },
   {
-    "uid": "bWF5IGluIGZpbG0",
-    "letter_tier": "F",
-    "fans": 1450,
-    "popularity": 9,
-    "sort_key": 5999999999998550
-  },
-  {
     "uid": "TUFOQUNMRQ",
     "letter_tier": "F",
     "fans": 1445,
@@ -2490,13 +2721,6 @@
     "fans": 1433,
     "popularity": 5,
     "sort_key": 5999999999998567
-  },
-  {
-    "uid": "RmluYWxseQ",
-    "letter_tier": "F",
-    "fans": 1431,
-    "popularity": 11,
-    "sort_key": 5999999999998569
   },
   {
     "uid": "TklMS0xZ",
@@ -2513,32 +2737,11 @@
     "sort_key": 5999999999998618
   },
   {
-    "uid": "UkVBRFkgVE8gS0lTUw",
-    "letter_tier": "F",
-    "fans": 1351,
-    "popularity": 4,
-    "sort_key": 5999999999998649
-  },
-  {
     "uid": "Rml2ZSBlbW90aW9u",
     "letter_tier": "F",
     "fans": 1342,
     "popularity": 2,
     "sort_key": 5999999999998658
-  },
-  {
-    "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
-    "letter_tier": "F",
-    "fans": 1329,
-    "popularity": 6,
-    "sort_key": 5999999999998671
-  },
-  {
-    "uid": "44ON44Kz44OX44OpcGl4eC4",
-    "letter_tier": "F",
-    "fans": 1319,
-    "popularity": 8,
-    "sort_key": 5999999999998681
   },
   {
     "uid": "aVNQWQ",
@@ -2548,25 +2751,11 @@
     "sort_key": 5999999999998686
   },
   {
-    "uid": "SElHSCBTUElSSVRT",
-    "letter_tier": "F",
-    "fans": 1288,
-    "popularity": 11,
-    "sort_key": 5999999999998712
-  },
-  {
     "uid": "RFJFQU1JTkcgTU9OU1RFUg",
     "letter_tier": "F",
     "fans": 1281,
     "popularity": 7,
     "sort_key": 5999999999998719
-  },
-  {
-    "uid": "44Ov44OD44OE4peO44GV44O844GP44KL",
-    "letter_tier": "F",
-    "fans": 1248,
-    "popularity": 8,
-    "sort_key": 5999999999998752
   },
   {
     "uid": "Mm8gTG92ZSB0byBTd2VldCBCdWxsZXQ",
@@ -2583,20 +2772,6 @@
     "sort_key": 5999999999998761
   },
   {
-    "uid": "44Or44Or44ON44O844K444Ol",
-    "letter_tier": "F",
-    "fans": 1229,
-    "popularity": 10,
-    "sort_key": 5999999999998771
-  },
-  {
-    "uid": "SlVHUyBNQUZJQQ",
-    "letter_tier": "F",
-    "fans": 1221,
-    "popularity": 4,
-    "sort_key": 5999999999998779
-  },
-  {
     "uid": "Q1VCzqNMSUM",
     "letter_tier": "F",
     "fans": 1213,
@@ -2604,32 +2779,11 @@
     "sort_key": 5999999999998787
   },
   {
-    "uid": "T1PimIZV",
-    "letter_tier": "F",
-    "fans": 1170,
-    "popularity": 9,
-    "sort_key": 5999999999998830
-  },
-  {
     "uid": "Q2h1LVo",
     "letter_tier": "F",
     "fans": 1152,
     "popularity": 3,
     "sort_key": 5999999999998848
-  },
-  {
-    "uid": "V1TimIZFZ3JldA",
-    "letter_tier": "F",
-    "fans": 1151,
-    "popularity": 9,
-    "sort_key": 5999999999998849
-  },
-  {
-    "uid": "44Oh44Kk44OT44O8TUU",
-    "letter_tier": "F",
-    "fans": 1138,
-    "popularity": 7,
-    "sort_key": 5999999999998862
   },
   {
     "uid": "44Gk44G844G_5aSn6Z2p5ZG9",
@@ -2644,13 +2798,6 @@
     "fans": 1124,
     "popularity": 7,
     "sort_key": 5999999999998876
-  },
-  {
-    "uid": "aWRlYWwgcGVjbw",
-    "letter_tier": "F",
-    "fans": 1107,
-    "popularity": 8,
-    "sort_key": 5999999999998893
   },
   {
     "uid": "UGlua3lTcGljZQ",
@@ -2674,13 +2821,6 @@
     "sort_key": 5999999999998899
   },
   {
-    "uid": "44K144Kv44Ok44Kz44OO44OP44OK",
-    "letter_tier": "F",
-    "fans": 1084,
-    "popularity": 9,
-    "sort_key": 5999999999998916
-  },
-  {
     "uid": "bWV0YXJpdW0",
     "letter_tier": "F",
     "fans": 1084,
@@ -2700,13 +2840,6 @@
     "fans": 1057,
     "popularity": 7,
     "sort_key": 5999999999998943
-  },
-  {
-    "uid": "QnVubnkgTGEgQ3Jldw",
-    "letter_tier": "F",
-    "fans": 1054,
-    "popularity": 9,
-    "sort_key": 5999999999998946
   },
   {
     "uid": "44K544OB44O844Og44Ks44O844Or44K6",
@@ -2744,60 +2877,11 @@
     "sort_key": 5999999999998956
   },
   {
-    "uid": "U0FJwrJSaXVt",
-    "letter_tier": "F",
-    "fans": 1031,
-    "popularity": 8,
-    "sort_key": 5999999999998969
-  },
-  {
     "uid": "TkVPVE9LWU8tVFJJQkU",
     "letter_tier": "F",
     "fans": 978,
     "popularity": 5,
     "sort_key": 5999999999999022
-  },
-  {
-    "uid": "VE9LWU_jgabjgbXjgabjgbU",
-    "letter_tier": "F",
-    "fans": 960,
-    "popularity": 10,
-    "sort_key": 5999999999999040
-  },
-  {
-    "uid": "44OP44OL44O844K544OR44Kk44K5UmUu",
-    "letter_tier": "F",
-    "fans": 957,
-    "popularity": 9,
-    "sort_key": 5999999999999043
-  },
-  {
-    "uid": "44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6",
-    "letter_tier": "F",
-    "fans": 812,
-    "popularity": 10,
-    "sort_key": 5999999999999188
-  },
-  {
-    "uid": "44OV44Ol44O844OB44Oj44O844K144Kk44OA44O8",
-    "letter_tier": "F",
-    "fans": 802,
-    "popularity": 11,
-    "sort_key": 5999999999999198
-  },
-  {
-    "uid": "bXkgZmF2",
-    "letter_tier": "F",
-    "fans": 781,
-    "popularity": 9,
-    "sort_key": 5999999999999219
-  },
-  {
-    "uid": "44Or44O844K444Ol44OW44OD44Kv",
-    "letter_tier": "F",
-    "fans": 706,
-    "popularity": 9,
-    "sort_key": 5999999999999294
   },
   {
     "uid": "UEFOREFNSUM",
@@ -2807,55 +2891,6 @@
     "sort_key": 5999999999999362
   },
   {
-    "uid": "44KR44KT44KJ",
-    "letter_tier": "F",
-    "fans": 636,
-    "popularity": 7,
-    "sort_key": 5999999999999364
-  },
-  {
-    "uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
-    "letter_tier": "F",
-    "fans": 620,
-    "popularity": 11,
-    "sort_key": 5999999999999380
-  },
-  {
-    "uid": "UmFSYUphTQ",
-    "letter_tier": "F",
-    "fans": 609,
-    "popularity": 9,
-    "sort_key": 5999999999999391
-  },
-  {
-    "uid": "SEFQUFkgQ1JFQVRPUlM",
-    "letter_tier": "F",
-    "fans": 601,
-    "popularity": 11,
-    "sort_key": 5999999999999399
-  },
-  {
-    "uid": "44Ks44Op44OB44Ki",
-    "letter_tier": "F",
-    "fans": 584,
-    "popularity": 11,
-    "sort_key": 5999999999999416
-  },
-  {
-    "uid": "44OI44OK44Oq44Ki",
-    "letter_tier": "F",
-    "fans": 572,
-    "popularity": 9,
-    "sort_key": 5999999999999428
-  },
-  {
-    "uid": "Q2hhcm0gUG9jaGU",
-    "letter_tier": "F",
-    "fans": 546,
-    "popularity": 9,
-    "sort_key": 5999999999999454
-  },
-  {
     "uid": "44GC44GS44KC44KT77yB",
     "letter_tier": "F",
     "fans": 493,
@@ -2863,46 +2898,11 @@
     "sort_key": 5999999999999507
   },
   {
-    "uid": "QkFEIElWWQ",
-    "letter_tier": "F",
-    "fans": 471,
-    "popularity": 11,
-    "sort_key": 5999999999999529
-  },
-  {
-    "uid": "RlVMSVQgQk9Y",
-    "letter_tier": "F",
-    "fans": 445,
-    "popularity": 10,
-    "sort_key": 5999999999999555
-  },
-  {
-    "uid": "44Oy44OJ44Or44Oe44Oo44OK44Kr",
-    "letter_tier": "F",
-    "fans": 428,
-    "popularity": 9,
-    "sort_key": 5999999999999572
-  },
-  {
     "uid": "44OK44OI4piG44Kr44Oz/#google_vignette",
     "letter_tier": "F",
     "fans": 364,
     "popularity": 2,
     "sort_key": 5999999999999636
-  },
-  {
-    "uid": "YWkqYWk",
-    "letter_tier": "F",
-    "fans": 309,
-    "popularity": 10,
-    "sort_key": 5999999999999691
-  },
-  {
-    "uid": "QVZBQ0xVQg",
-    "letter_tier": "F",
-    "fans": 236,
-    "popularity": 11,
-    "sort_key": 5999999999999764
   },
   {
     "uid": "44Oq44Oq44K344OD44Kv5a2m5ZyS",
@@ -3011,10 +3011,10 @@
   },
   {
     "uid": "5qyF5Z2CNDY",
-    "letter_tier": "F",
+    "letter_tier": "S",
     "fans": 0,
     "popularity": 0,
-    "sort_key": 6000000000000000
+    "sort_key": -1
   },
   {
     "uid": "5ZCb44Go6KaL44KL44Gd44KJ",
@@ -3074,13 +3074,6 @@
   },
   {
     "uid": "bWVtZSB0b2t5by4",
-    "letter_tier": "F",
-    "fans": 0,
-    "popularity": 0,
-    "sort_key": 6000000000000000
-  },
-  {
-    "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
     "letter_tier": "F",
     "fans": 0,
     "popularity": 0,

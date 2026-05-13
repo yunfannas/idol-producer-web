@@ -1,0 +1,801 @@
+{
+  "title": "Live venue reference (capacity, costs, real mappings)",
+  "currency": "JPY",
+  "version": 14,
+  "venue_rank_indexing": {
+    "letters_in_order": [
+      "S",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "venue_rank_index": "Integer **0–6** in the same order: **0 = S** (largest / most expensive class here) through **6 = F** (smallest room). This is a **venue-size** axis; it reuses letters from `database/idol_group_rank_table.md` but measures **room scale**, not group commercial tier.",
+    "letter_to_index": {
+      "S": 0,
+      "A": 1,
+      "B": 2,
+      "C": 3,
+      "D": 4,
+      "E": 5,
+      "F": 6
+    }
+  },
+  "assumptions": {
+    "capacity": "Standing (or max published) capacities are **approximate** from press, hall sites, and Wikipedia-ja summaries; seated-only shows differ. For **fixed-seat concert halls**, `capacity_standing_about` often uses the **published seat count** as a size proxy (not a standing-room figure).",
+    "venue_rank_ef_boundary": "**F** = `livehouse_micro` (about **50–180** standing). **E** = `livehouse_small` (**181–300**) so rank-D **~300 cap** one-mans sit in **E**, not **F**.",
+    "stadium_design_band": "**Venue rank S / `stadium` scale** uses capacity band **25,000–60,000** for sim sizing (rent curve anchor). Real venues with **>60k** official capacity stay listed with `above_stadium_design_band_max: true` (e.g. Nissan Stadium, Japan National Stadium fixed seat count ~68k).",
+    "hall_large_max_model": "**Venue rank B / `hall_large`** is **3,101–7,000** model concert capacity (see `venue_scales`). **Makuhari Event Hall** ([Makuhari Messe facility guide](https://www.m-messe.co.jp/en/organizers/guide/eventhall/guide_eventhall)) is the reference **largest hall_large**; the operator cites **~9,000** for large-scale layouts—`capacity_standing_about` uses **7,000** to match the tier ceiling unless you fork the JSON.",
+    "hall_medium_band": "**Venue rank C / `hall_medium`** is **800–3,100**.",
+    "arena_band": "**Venue rank A / `arena`** is **7,001–24,999** (everything above `hall_large` max and below the stadium band).",
+    "club_gap_fill": "`livehouse_club` (**D**) extends to **799** so **651–799** is covered between the old club ceiling and **C** at **800**.",
+    "venue_rent": "**Ballpark** single-day hall rental + house tech buyout for an indie/idol-sized promoter block—not audited venue quotes.",
+    "live_ops_cost": "Day-of ops **excluding** monthly salaries: local staff, basic PA, security share. Default formula matches `FinanceSystem.build_daily_breakdown` per live: `18_000 + member_count × 4_500` JPY (see `database/finance/finance_system.py`). Scales below add a **venue-size multiplier** on top of that base for larger rooms.",
+    "event_fee_note": "`FinanceSystem.estimate_venue_fee` supports **weekday vs weekend/holiday** and booking plans (`half_day_a`, `half_day_b`, `full_day`) for capacity ≤ `small_venue_capacity_threshold` (300), anchored to TwinBox chart points (150/200 cap) and interpolated by capacity. Legacy `small_venue_event_fee_yen` remains as compatibility fallback.",
+    "type_1_ticket_mix_venue_sa": "For **venue ranks S (`stadium`) and A (`arena`)**, **live type 1** (premium concert) **house** inventory is modeled as **70%** at **full-view** list price and **10%** at **obstructed / partial-view** price; the **remaining ~20%** is not forced to one tier (VIP, fanclub, comps, promoter holds, etc.). Yen anchors match `database/idol_group_rank_table.md` (**¥10,000** full, **¥8,000** obstructed). See `type_1_premium_concert_ticket_inventory`.",
+    "rank_b_ticket_mix_hall_large": "**Venue rank B (`hall_large`)**: **85%** of house at **full** list and **15%** at **partial** list (same yen anchors as type 1 for the partial slice unless you fork). Blended **¥9,700** per unit capacity from priced shares only (`0.85×10,000 + 0.15×8,000`). `capacity_standing_about` for **Makuhari Event Hall** stays **7,000** (tier ceiling); **~9,000** remains operator large-layout reference only.",
+    "type_4_taiban_venue_preference": "Type 4 taiban is usually hosted at **rank C / hall_medium**; **rank B / hall_large** and **rank D / livehouse_club** are secondary and less frequent options."
+  },
+  "type_1_premium_concert_ticket_inventory": {
+    "applies_to_venue_rank_letters": [
+      "S",
+      "A"
+    ],
+    "applies_to_scale_ids": [
+      "stadium",
+      "arena"
+    ],
+    "house_ticket_capacity_shares": {
+      "full_view_list_price": 0.7,
+      "obstructed_or_partial_view": 0.1
+    },
+    "remainder_capacity_share_about": 0.2,
+    "remainder_note": "Other price tiers, allocations, or non-revenue holds—blend per event; not defaulted to a single anchor.",
+    "price_anchors_jpy": {
+      "full_view": 10000,
+      "obstructed_or_partial_view": 8000
+    },
+    "price_anchor_source": "database/idol_group_rank_table.md — Type 1 premium concert rows",
+    "tickets_jpy_after_rule_applied": {
+      "full_price_ticket_jpy": 10000,
+      "partial_or_obstructed_ticket_jpy": 8000
+    },
+    "expected_ticket_revenue_per_unit_house_capacity_jpy": 7800,
+    "expected_ticket_revenue_formula": "0.7 * full_price_ticket_jpy + 0.1 * partial_or_obstructed_ticket_jpy; remainder share (0.2) treated as 0 in this scalar (see remainder_note)."
+  },
+  "rank_b_hall_large_ticket_inventory": {
+    "applies_to_venue_rank_letters": [
+      "B"
+    ],
+    "applies_to_scale_ids": [
+      "hall_large"
+    ],
+    "house_ticket_capacity_shares": {
+      "full_price": 0.85,
+      "partial": 0.15
+    },
+    "tickets_jpy_after_rule_applied": {
+      "full_price_ticket_jpy": 10000,
+      "partial_ticket_jpy": 8000
+    },
+    "expected_ticket_revenue_per_unit_house_capacity_jpy": 9700,
+    "expected_ticket_revenue_formula": "0.85 * full_price_ticket_jpy + 0.15 * partial_ticket_jpy",
+    "price_anchor_source": "Same anchors as type 1 full / partial in `database/idol_group_rank_table.md`; rank-B split is venue-tier policy in this file.",
+    "capacity_model_note": "Reference largest B: Makuhari uses `capacity_standing_about` 7,000 with operator ~9,000 noted separately on the venue row."
+  },
+  "links": {
+    "group_finance": "database/finance/group_finance.json",
+    "typical_tier_b_group": "database/finance/typical_tier_b_group.json",
+    "typical_tier_c_group": "database/finance/typical_tier_c_group.json",
+    "typical_tier_d_group": "database/finance/typical_tier_d_group.json",
+    "idol_group_rank_table": "database/idol_group_rank_table.md",
+    "finance_system": "database/finance/finance_system.py",
+    "wikipedia_category_music_venues_tokyo": "https://en.wikipedia.org/wiki/Category:Music_venues_in_Tokyo"
+  },
+  "venue_scales": [
+    {
+      "venue_rank_letter": "S",
+      "venue_rank_index": 0,
+      "scale_id": "stadium",
+      "label": "Stadium / large outdoor",
+      "capacity_standing_typical": [
+        25000,
+        60000
+      ],
+      "assumed_venue_rent_yen_per_event": 45000000,
+      "live_ops_multiplier": 2.5,
+      "maps_to_live_types": [
+        "1",
+        "2"
+      ],
+      "type_1_house_ticket_capacity_shares": {
+        "full_view_list_price": 0.7,
+        "obstructed_or_partial_view": 0.1
+      },
+      "tickets_jpy_after_rule_applied": {
+        "full_price_ticket_jpy": 10000,
+        "partial_or_obstructed_ticket_jpy": 8000
+      },
+      "expected_ticket_revenue_per_unit_house_capacity_jpy": 7800
+    },
+    {
+      "venue_rank_letter": "A",
+      "venue_rank_index": 1,
+      "scale_id": "arena",
+      "label": "Arena-class indoor venue (7,001+; large bowls below stadium band)",
+      "capacity_standing_typical": [
+        7001,
+        24999
+      ],
+      "assumed_venue_rent_yen_per_event": 18000000,
+      "live_ops_multiplier": 2.0,
+      "maps_to_live_types": [
+        "1",
+        "2"
+      ],
+      "type_1_house_ticket_capacity_shares": {
+        "full_view_list_price": 0.7,
+        "obstructed_or_partial_view": 0.1
+      },
+      "tickets_jpy_after_rule_applied": {
+        "full_price_ticket_jpy": 10000,
+        "partial_or_obstructed_ticket_jpy": 8000
+      },
+      "expected_ticket_revenue_per_unit_house_capacity_jpy": 7800
+    },
+    {
+      "venue_rank_letter": "B",
+      "venue_rank_index": 2,
+      "scale_id": "hall_large",
+      "label": "Large hall / ballroom (rank B: 3,101–7,000)",
+      "capacity_standing_typical": [
+        3101,
+        7000
+      ],
+      "assumed_venue_rent_yen_per_event": 6500000,
+      "live_ops_multiplier": 1.6,
+      "maps_to_live_types": [
+        "2",
+        "6",
+        "4"
+      ],
+      "house_ticket_capacity_shares": {
+        "full_price": 0.85,
+        "partial": 0.15
+      },
+      "tickets_jpy_after_rule_applied": {
+        "full_price_ticket_jpy": 10000,
+        "partial_ticket_jpy": 8000
+      },
+      "expected_ticket_revenue_per_unit_house_capacity_jpy": 9700,
+      "type_4_taiban_frequency_hint": "seldom"
+    },
+    {
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "label": "Hall (single balcony / flat floor; rank C: 800–3,100)",
+      "capacity_standing_typical": [
+        800,
+        3100
+      ],
+      "assumed_venue_rent_yen_per_event": 2800000,
+      "live_ops_multiplier": 1.35,
+      "maps_to_live_types": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "type_4_taiban_frequency_hint": "usually"
+    },
+    {
+      "venue_rank_letter": "D",
+      "venue_rank_index": 4,
+      "scale_id": "livehouse_club",
+      "label": "Club-scale livehouse",
+      "capacity_standing_typical": [
+        301,
+        799
+      ],
+      "assumed_venue_rent_yen_per_event": 1200000,
+      "live_ops_multiplier": 1.15,
+      "maps_to_live_types": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "S"
+      ],
+      "type_4_taiban_frequency_hint": "seldom"
+    },
+    {
+      "venue_rank_letter": "E",
+      "venue_rank_index": 5,
+      "scale_id": "livehouse_small",
+      "label": "Small livehouse (rank-D routine sweet spot)",
+      "capacity_standing_typical": [
+        181,
+        300
+      ],
+      "assumed_venue_rent_yen_per_event": 700000,
+      "live_ops_multiplier": 1.0,
+      "aligns_with_finance_small_venue_threshold": true,
+      "maps_to_live_types": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "S"
+      ]
+    },
+    {
+      "venue_rank_letter": "F",
+      "venue_rank_index": 6,
+      "scale_id": "livehouse_micro",
+      "label": "Micro livehouse / bar stage",
+      "capacity_standing_typical": [
+        50,
+        180
+      ],
+      "assumed_venue_rent_yen_per_event": 220000,
+      "live_ops_multiplier": 0.75,
+      "maps_to_live_types": [
+        "4",
+        "7"
+      ]
+    }
+  ],
+  "live_ops_base_formula": {
+    "expression": "floor((18000 + member_count * 4500) * live_ops_multiplier)",
+    "member_count_example": 7,
+    "example_at_members_7_multiplier_1_0": 49500
+  },
+  "recorded_venues": [
+    {
+      "name": "Japan National Stadium",
+      "name_ja": "国立競技場",
+      "area": "Shinjuku, Tokyo",
+      "capacity_standing_about": 68000,
+      "capacity_notes": "Wikipedia: fixed ~68,000 (athletics mode); expandable to ~80,000 with temporary seating over track for some events.",
+      "venue_rank_letter": "S",
+      "venue_rank_index": 0,
+      "scale_id": "stadium",
+      "above_stadium_design_band_max": true,
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Japan_National_Stadium",
+        "https://ja.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E7%AB%B6%E6%8A%80%E5%A0%B4"
+      ]
+    },
+    {
+      "name": "Saitama Super Arena",
+      "name_ja": "さいたまスーパーアリーナ",
+      "area": "Saitama, Saitama",
+      "capacity_standing_about": 37000,
+      "venue_rank_letter": "S",
+      "venue_rank_index": 0,
+      "scale_id": "stadium",
+      "reference_urls": [
+        "https://www.saitama-super-arena.co.jp/"
+      ]
+    },
+    {
+      "name": "Nissan Stadium",
+      "name_ja": "日産スタジアム",
+      "area": "Yokohama, Kanagawa",
+      "capacity_standing_about": 70000,
+      "venue_rank_letter": "S",
+      "venue_rank_index": 0,
+      "scale_id": "stadium",
+      "above_stadium_design_band_max": true,
+      "reference_urls": [
+        "https://www.nissan-stadium.jp/"
+      ]
+    },
+    {
+      "name": "Yokohama Arena",
+      "name_ja": "横浜アリーナ",
+      "area": "Yokohama, Kanagawa",
+      "capacity_standing_about": 12000,
+      "venue_rank_letter": "A",
+      "venue_rank_index": 1,
+      "scale_id": "arena",
+      "reference_urls": [
+        "https://www.yokohama-arena.co.jp/"
+      ]
+    },
+    {
+      "name": "Tokyo Dome",
+      "name_ja": "東京ドーム",
+      "area": "Bunkyo, Tokyo",
+      "capacity_standing_about": 50000,
+      "capacity_notes": "Wikipedia: events about 42,000–55,000 depending on layout; baseball 45,600; maximum about 57,000. Value here is a mid concert-style estimate within the stadium design band.",
+      "venue_rank_letter": "S",
+      "venue_rank_index": 0,
+      "scale_id": "stadium",
+      "above_stadium_design_band_max": false,
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Tokyo_Dome"
+      ]
+    },
+    {
+      "name": "Nippon Budokan",
+      "name_ja": "日本武道館",
+      "area": "Chiyoda, Tokyo",
+      "capacity_standing_about": 14471,
+      "venue_rank_letter": "A",
+      "venue_rank_index": 1,
+      "scale_id": "arena",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Nippon_Budokan"
+      ]
+    },
+    {
+      "name": "Ariake Arena",
+      "name_ja": "有明アリーナ",
+      "area": "Koto, Tokyo",
+      "capacity_standing_about": 15000,
+      "capacity_notes": "Wikipedia: up to 15,000 with temporary seating; 12,000 fixed seats.",
+      "venue_rank_letter": "A",
+      "venue_rank_index": 1,
+      "scale_id": "arena",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Ariake_Arena"
+      ]
+    },
+    {
+      "name": "Yoyogi National Gymnasium (First Gymnasium)",
+      "name_ja": "国立代々木競技場 第一体育館",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 12898,
+      "capacity_notes": "Wikipedia: maximum 12,898 (sport mode 8,774).",
+      "venue_rank_letter": "A",
+      "venue_rank_index": 1,
+      "scale_id": "arena",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Yoyogi_National_Gymnasium"
+      ]
+    },
+    {
+      "name": "Tokyo Metropolitan Gymnasium (Main Arena)",
+      "name_ja": "東京体育館 メインアリーナ",
+      "area": "Sendagaya, Shibuya, Tokyo",
+      "capacity_standing_about": 10000,
+      "capacity_notes": "Wikipedia: 10,000 total (6,000 fixed + 4,000 temporary).",
+      "venue_rank_letter": "A",
+      "venue_rank_index": 1,
+      "scale_id": "arena",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Gymnasium"
+      ]
+    },
+    {
+      "name": "Yoyogi National Gymnasium (Second Gymnasium / Annex)",
+      "name_ja": "国立代々木競技場 第二体育館",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 4002,
+      "capacity_notes": "Wikipedia: maximum 4,002 (sport mode 2,811).",
+      "venue_rank_letter": "B",
+      "venue_rank_index": 2,
+      "scale_id": "hall_large",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Yoyogi_National_Gymnasium"
+      ]
+    },
+    {
+      "name": "Tokyo International Forum (Hall A)",
+      "name_ja": "東京国際フォーラム ホールA",
+      "area": "Marunouchi, Chiyoda, Tokyo",
+      "capacity_standing_about": 5000,
+      "capacity_notes": "Wikipedia: one main hall seats about 5,000; complex has multiple smaller halls.",
+      "venue_rank_letter": "B",
+      "venue_rank_index": 2,
+      "scale_id": "hall_large",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Tokyo_International_Forum"
+      ]
+    },
+    {
+      "name": "Musashino Forest Sport Plaza Main Arena",
+      "name_ja": "武蔵野の森総合スポーツプラザ メインアリーナ",
+      "area": "Chofu, Tokyo",
+      "capacity_standing_about": 7000,
+      "venue_rank_letter": "B",
+      "venue_rank_index": 2,
+      "scale_id": "hall_large",
+      "reference_urls": [
+        "https://www.seibu-leisure.co.jp/mfsp/"
+      ]
+    },
+    {
+      "name": "Makuhari Event Hall",
+      "name_ja": "幕張イベントホール",
+      "area": "Makuhari Messe, Mihama-ku, Chiba city",
+      "capacity_standing_about": 7000,
+      "capacity_operator_stated_about": 9000,
+      "capacity_notes": "Makuhari Messe: large-scale event capacity ~9,000; this file uses 7,000 as the hall_large tier ceiling for concert-style modeling.",
+      "venue_rank_letter": "B",
+      "venue_rank_index": 2,
+      "scale_id": "hall_large",
+      "largest_in_scale_hall_large": true,
+      "reference_urls": [
+        "https://www.m-messe.co.jp/en/organizers/guide/eventhall/guide_eventhall"
+      ]
+    },
+    {
+      "name": "Toyosu PIT",
+      "name_ja": "豊洲PIT",
+      "area": "Koto, Tokyo",
+      "capacity_standing_about": 3100,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://toyosupit.jp/"
+      ]
+    },
+    {
+      "name": "Zepp DiverCity (TOKYO)",
+      "name_ja": "Zepp DiverCity（東京）",
+      "area": "Koto, Tokyo",
+      "capacity_standing_about": 2800,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://www.zepp.co.jp/hall/divercity/"
+      ]
+    },
+    {
+      "name": "Zepp Namba",
+      "name_ja": "Zepp Namba",
+      "area": "Osaka",
+      "capacity_standing_about": 2500,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://www.zepp.co.jp/hall/namba/"
+      ]
+    },
+    {
+      "name": "Zepp Haneda (TOKYO)",
+      "name_ja": "Zepp Haneda（東京）",
+      "area": "Ota, Tokyo",
+      "capacity_standing_about": 2400,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://www.zepp.co.jp/hall/tokyo/"
+      ]
+    },
+    {
+      "name": "LINE CUBE SHIBUYA",
+      "name_ja": "LINE CUBE SHIBUYA",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 2000,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://linecubeshibuya.com/"
+      ]
+    },
+    {
+      "name": "Tokyo Dome City Hall",
+      "name_ja": "東京ドームシティホール",
+      "area": "Koraku, Bunkyo, Tokyo",
+      "capacity_standing_about": 3100,
+      "capacity_notes": "Wikipedia: standing about 3,100; also branded JCB Hall (2008–2011) and Kanadevia Hall (from 2025).",
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Tokyo_Dome_City_Hall",
+        "https://www.tokyo-dome.co.jp/tdc-hall/"
+      ]
+    },
+    {
+      "name": "Hibiya Open-Air Concert Hall (large / Yaon)",
+      "name_ja": "日比谷野外音楽堂（大ホール）",
+      "area": "Hibiya Park, Chiyoda, Tokyo",
+      "capacity_standing_about": 3053,
+      "capacity_notes": "Wikipedia: large hall 3,053 (incl. standing seats); closed Oct 2025 for rebuild. Outdoor; weekend/holiday season limits historically.",
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Hibiya_Open-Air_Concert_Hall"
+      ]
+    },
+    {
+      "name": "Tokyo Bunka Kaikan (Main Hall)",
+      "name_ja": "東京文化会館 メインホール",
+      "area": "Ueno Park, Taito, Tokyo",
+      "capacity_standing_about": 2303,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Tokyo_Bunka_Kaikan"
+      ]
+    },
+    {
+      "name": "Nakano Sunplaza (Main Hall)",
+      "name_ja": "中野サンプラザ",
+      "area": "Nakano, Tokyo",
+      "capacity_standing_about": 2222,
+      "capacity_notes": "Wikipedia: concert hall about 2,222 seats; complex closed July 2023 (historical reference).",
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Nakano_Sunplaza"
+      ]
+    },
+    {
+      "name": "Suntory Hall (Main Hall)",
+      "name_ja": "サントリーホール 大ホール",
+      "area": "Akasaka, Minato, Tokyo",
+      "capacity_standing_about": 2006,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Suntory_Hall"
+      ]
+    },
+    {
+      "name": "Tokyo Metropolitan Theatre (Concert Hall)",
+      "name_ja": "東京芸術劇場 コンサートホール",
+      "area": "Nishi-Ikebukuro, Toshima, Tokyo",
+      "capacity_standing_about": 1999,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Theatre"
+      ]
+    },
+    {
+      "name": "New National Theatre Tokyo (Opera House)",
+      "name_ja": "新国立劇場 オペラ劇場",
+      "area": "Honmachi, Shibuya, Tokyo",
+      "capacity_standing_about": 1814,
+      "capacity_notes": "Wikipedia: Opera House 1,814 seats; Playhouse 1,038; The Pit 340–468.",
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/New_National_Theatre_Tokyo"
+      ]
+    },
+    {
+      "name": "Sumida Triphony Hall (Main Hall)",
+      "name_ja": "すみだトリフォニーホール 大ホール",
+      "area": "Sumida, Tokyo",
+      "capacity_standing_about": 1801,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Sumida_Triphony_Hall"
+      ]
+    },
+    {
+      "name": "Nippon Seinenkan Hall",
+      "name_ja": "日本青年館 大ホール",
+      "area": "Shinjuku, Tokyo",
+      "capacity_standing_about": 1360,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Nippon_Seinenkan"
+      ]
+    },
+    {
+      "name": "Casals Hall",
+      "name_ja": "カザルスホール",
+      "area": "Kanda-Surugadai, Chiyoda, Tokyo",
+      "capacity_standing_about": 511,
+      "capacity_notes": "Wikipedia: 511 seats; hall closed March 2010 (historical reference).",
+      "venue_rank_letter": "D",
+      "venue_rank_index": 4,
+      "scale_id": "livehouse_club",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Casals_Hall"
+      ]
+    },
+    {
+      "name": "Blue Note Tokyo",
+      "name_ja": "ブルーノート東京",
+      "area": "Aoyama, Minato, Tokyo",
+      "capacity_standing_about": 300,
+      "capacity_notes": "Wikipedia: seats about 300 (jazz club).",
+      "venue_rank_letter": "E",
+      "venue_rank_index": 5,
+      "scale_id": "livehouse_small",
+      "reference_urls": [
+        "https://en.wikipedia.org/wiki/Blue_Note_Tokyo"
+      ]
+    },
+    {
+      "name": "Spotify O-EAST",
+      "name_ja": "Spotify O-EAST",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 1200,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://www.spotify-east.jp/"
+      ]
+    },
+    {
+      "name": "EX THEATER ROPPONGI",
+      "name_ja": "EXシアター六本木",
+      "area": "Minato, Tokyo",
+      "capacity_standing_about": 900,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://www.ex-theater.com/"
+      ]
+    },
+    {
+      "name": "BIGCAT",
+      "name_ja": "BIGCAT",
+      "area": "Namba, Osaka",
+      "capacity_standing_about": 800,
+      "venue_rank_letter": "C",
+      "venue_rank_index": 3,
+      "scale_id": "hall_medium",
+      "reference_urls": [
+        "https://www.bigcat.osaka/"
+      ]
+    },
+    {
+      "name": "Spotify O-WEST",
+      "name_ja": "Spotify O-WEST",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 600,
+      "venue_rank_letter": "D",
+      "venue_rank_index": 4,
+      "scale_id": "livehouse_club",
+      "reference_urls": [
+        "https://www.spotify-west.jp/"
+      ]
+    },
+    {
+      "name": "Veats SHIBUYA",
+      "name_ja": "Veats SHIBUYA",
+      "area": "Udagawacho, Shibuya, Tokyo",
+      "capacity_standing_about": 600,
+      "capacity_notes": "Official hall info states max capacity 600.",
+      "venue_rank_letter": "D",
+      "venue_rank_index": 4,
+      "scale_id": "livehouse_club",
+      "reference_urls": [
+        "https://veats.jp/hall-info/",
+        "https://veats.jp/"
+      ]
+    },
+    {
+      "name": "duo MUSIC EXCHANGE",
+      "name_ja": "デュオミュージックエクスチェンジ",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 400,
+      "venue_rank_letter": "D",
+      "venue_rank_index": 4,
+      "scale_id": "livehouse_club",
+      "reference_urls": [
+        "https://www.duomusicexchange.com/"
+      ]
+    },
+    {
+      "name": "Shinjuku MARZ",
+      "name_ja": "新宿MARZ",
+      "area": "Shinjuku, Tokyo",
+      "capacity_standing_about": 300,
+      "venue_rank_letter": "E",
+      "venue_rank_index": 5,
+      "scale_id": "livehouse_small",
+      "reference_urls": [
+        "https://marz.shinjuku.live/"
+      ]
+    },
+    {
+      "name": "TwinBox AKIHABARA",
+      "name_ja": "TwinBoxAKIHABARA",
+      "area": "Sotokanda, Chiyoda, Tokyo",
+      "capacity_standing_about": 200,
+      "capacity_notes": "Facility overview lists TwinBoxAKIHABARA (B1). Fee chart is on the same about page; visible text includes daytime slots and extension fee (JPY 15,000/hour).",
+      "venue_rank_letter": "E",
+      "venue_rank_index": 5,
+      "scale_id": "livehouse_small",
+      "reference_urls": [
+        "https://www.twinbox.info/about"
+      ]
+    },
+    {
+      "name": "TwinBox GARAGE",
+      "name_ja": "TwinBoxGARAGE",
+      "area": "Sotokanda, Chiyoda, Tokyo",
+      "capacity_standing_about": 150,
+      "capacity_notes": "Facility overview lists TwinBoxGARAGE (1F). Fee chart is on the same about page; visible text includes daytime slots and extension fee (JPY 15,000/hour).",
+      "venue_rank_letter": "F",
+      "venue_rank_index": 6,
+      "scale_id": "livehouse_micro",
+      "reference_urls": [
+        "https://www.twinbox.info/about"
+      ]
+    },
+    {
+      "name": "Spotify O-nest",
+      "name_ja": "Spotify O-nest",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 200,
+      "venue_rank_letter": "E",
+      "venue_rank_index": 5,
+      "scale_id": "livehouse_small",
+      "operator_hint": "Spotify O-family / CJ",
+      "reference_urls": [
+        "https://www.spotify-onest.jp/"
+      ]
+    },
+    {
+      "name": "Shibuya WWW X",
+      "name_ja": "WWW X",
+      "area": "Shibuya, Tokyo",
+      "capacity_standing_about": 250,
+      "venue_rank_letter": "E",
+      "venue_rank_index": 5,
+      "scale_id": "livehouse_small",
+      "reference_urls": [
+        "https://www-shibuya.jp/"
+      ]
+    },
+    {
+      "name": "Shimokitazawa THREE",
+      "name_ja": "下北沢THREE",
+      "area": "Setagaya, Tokyo",
+      "capacity_standing_about": 170,
+      "venue_rank_letter": "F",
+      "venue_rank_index": 6,
+      "scale_id": "livehouse_micro",
+      "reference_urls": [
+        "http://www.toos.co.jp/3/"
+      ]
+    },
+    {
+      "name": "KICHIJOJI SHUFFLE",
+      "name_ja": "吉祥寺SHUFFLE",
+      "area": "Musashino, Tokyo",
+      "capacity_standing_about": 160,
+      "venue_rank_letter": "F",
+      "venue_rank_index": 6,
+      "scale_id": "livehouse_micro",
+      "reference_urls": [
+        "http://www.k-shuffle.com/"
+      ]
+    }
+  ],
+  "type_4_taiban_venue_preference": {
+    "primary_rank_letter": "C",
+    "primary_scale_id": "hall_medium",
+    "secondary_rank_letters": [
+      "B",
+      "D"
+    ],
+    "secondary_scale_ids": [
+      "hall_large",
+      "livehouse_club"
+    ],
+    "note": "Usually rank C; rank B or D used less often by demand, lineup mix, or promo intent."
+  }
+}

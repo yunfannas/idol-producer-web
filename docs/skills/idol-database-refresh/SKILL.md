@@ -179,3 +179,22 @@ Only do this when the user explicitly asks for a broad refresh.
 - `fetcher/idol_record_validation.py`
 - `database/groups.json`
 - `database/idols.json`
+
+---
+
+## Web repo (`idol-producer-web`)
+
+This skill’s commands run in the **idol_producer** (desktop) checkout, not inside `idol-producer-web`. The web app ships **frozen JSON** under `public/data/`.
+
+**After** you refresh `database/groups.json` / `database/idols.json` (and any songs pipeline) in idol_producer:
+
+1. **Scenario 6 bundle** — Copy or export the slice the web preset uses into:
+   - `public/data/scenarios/scenario_6_2025-07-20/groups.json`
+   - `public/data/scenarios/scenario_6_2025-07-20/idols.json`
+   - (and `songs.json` if that slice changed)
+2. **Global catalog** (optional, for browse / large `songs.json`) — Update `public/data/groups.json`, `public/data/idols.json`, `public/data/songs.json` when you intentionally sync the full tree.
+3. **Static tiers** — Regenerate `public/data/scenarios/scenario_6_2025-07-20/group_tiers.json` from desktop `build_scenario_group_tier_list.py` when available; otherwise `npm run data:group-tiers` in this repo (heuristic stub).
+4. **Group table CSV** — `npm run data:export-scenario6-groups-csv` → `docs/scenario_6_groups_detail.csv` (close the file in the editor if Windows reports `EBUSY`).
+5. **Port plan** — See `docs/WEB_PORT_PLAN.md` for versioning, manifests, and parity milestones.
+
+Apply **Step 3.5** (Fandom import cleanup rules) in idol_producer **before** copying rows into the web bundle so bad `group_history` / packed colors do not ship to players.

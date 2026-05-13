@@ -15,12 +15,23 @@ import {
   isManagementNav,
   isBrowseNav,
   type DesktopNavId,
+  type LivesTab,
+  type NewLiveFormState,
+  type ScoutTab,
   type SongsWorkspaceTab,
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
 import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
-import { notificationRequiresAck } from "./save/inbox";
+import { addNotification, notificationRequiresAck } from "./save/inbox";
 import { songsForDisplaySorted, buildDiscBuckets } from "./data/songDisplayPolicy";
+import { addMinutesToHHMM, getVenuesCatalog, LIVE_TYPE_PRESETS } from "./engine/liveScheduleWeb";
+import {
+  auditionCandidateToIdolRow,
+  buildAuditionStorageKey,
+  buildDefaultScoutCompanies,
+  generateAuditionCandidates,
+} from "./engine/scoutWeb";
+import { normalizeFestivalCatalog, syncManagedTif2025Lives } from "./engine/festivalWeb";
 import {
   type OpeningScreen,
   renderOpeningHome,
@@ -30,6 +41,7 @@ import {
 import { clearSlot, listOccupiedSlots, loadFromSlot, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
+import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 
 const appRootElt = document.querySelector<HTMLDivElement>("#app");
 if (!appRootElt) {
@@ -45,6 +57,53 @@ function addScheduleCalendarMonths(firstOfMonthIso: string, delta: number): stri
   const y = 1970 + Math.floor(idx / 12);
   const mo = (idx % 12) + 1;
   return `${String(y).padStart(4, "0")}-${String(mo).padStart(2, "0")}-01`;
+}
+
+function currentIsoForNewLive(): string {
+  return save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? "2020-01-01";
+}
+
+function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Routine"): void {
+  const preset = LIVE_TYPE_PRESETS[liveType] ?? LIVE_TYPE_PRESETS.Routine;
+  const date = currentIsoForNewLive();
+  const endTime = addMinutesToHHMM(preset.default_start_time, preset.default_duration);
+  const tokutenkaiStart = preset.tokutenkai_enabled ? endTime : "";
+  const tokutenkaiEnd = preset.tokutenkai_enabled ? addMinutesToHHMM(endTime, preset.tokutenkai_duration) : "";
+  const managedUid = save?.managing_group_uid ?? "";
+  const suggestedSetlist = save
+    ? songsForDisplaySorted(save.database_snapshot.songs)
+        .filter((row) => String(row.group_uid ?? "") === managedUid)
+        .slice(0, liveType === "Concert" ? 6 : liveType === "Taiban" ? 3 : 5)
+        .map((row) => String(row.title ?? row.title_romanji ?? "").trim())
+        .filter(Boolean)
+    : [];
+  const venue = getVenuesCatalog()[0]?.name ?? "";
+  newLiveForm = {
+    liveType,
+    title: save?.managing_group ? `${save.managing_group} ${liveType}` : `${liveType} Live`,
+    date,
+    startTime: preset.default_start_time,
+    endTime,
+    rehearsalStart: preset.rehearsal_start,
+    rehearsalEnd: preset.rehearsal_end,
+    venueName: venue,
+    setlist: suggestedSetlist,
+    tokutenkaiEnabled: preset.tokutenkai_enabled,
+    tokutenkaiStart,
+    tokutenkaiEnd,
+    tokutenkaiTicketPrice: preset.tokutenkai_ticket_price,
+    tokutenkaiSlotSeconds: preset.tokutenkai_slot_seconds,
+    tokutenkaiExpectedTickets: preset.tokutenkai_expected_tickets,
+    goodsEnabled: true,
+    goodsLine: liveType === "Concert" ? "Tour shirt + cheki" : "Cheki + random bromide",
+    goodsExpectedRevenueYen: liveType === "Concert" ? 90000 : liveType === "Taiban" ? 25000 : 45000,
+    ticketPriceYen: liveType === "Concert" ? 3800 : liveType === "Festival" ? 0 : 2500,
+  };
+}
+
+function numberOrZero(value: string): number {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
 }
 
 let loadedScenario: LoadedScenario | null = null;
@@ -69,7 +128,33 @@ let songsDiscographyKey: string | null = null;
 let inboxSelectedUid: string | null = null;
 /** Schedule: visible month (`YYYY-MM-01`); null = month of next simulation day. */
 let scheduleCalendarMonthStart: string | null = null;
+let livesTab: LivesTab = "new";
+let scheduledLiveUid: string | null = null;
+let scoutTab: ScoutTab = "freelancer";
+let selectedScoutLeadUid: string | null = null;
+let selectedScoutApplicantUid: string | null = null;
 let trainingRepaintTimer: ReturnType<typeof setTimeout> | null = null;
+let newLiveForm: NewLiveFormState = {
+  liveType: "Routine",
+  title: "",
+  date: "2020-01-01",
+  startTime: "18:00",
+  endTime: "19:10",
+  rehearsalStart: "",
+  rehearsalEnd: "",
+  venueName: "",
+  setlist: [],
+  tokutenkaiEnabled: true,
+  tokutenkaiStart: "19:10",
+  tokutenkaiEnd: "20:40",
+  tokutenkaiTicketPrice: 2000,
+  tokutenkaiSlotSeconds: 40,
+  tokutenkaiExpectedTickets: 90,
+  goodsEnabled: true,
+  goodsLine: "Cheki + logo towel",
+  goodsExpectedRevenueYen: 45000,
+  ticketPriceYen: 2500,
+};
 
 const IDOL_LIST_LAYOUT_KEY = "idol-producer-idol-list-layout";
 
@@ -113,16 +198,15 @@ function ensureSongsGroupUid(): void {
     songsGroupUid = null;
     return;
   }
-  const validUids = new Set(
-    groups.map((g) => String((g as { uid?: unknown }).uid ?? "").trim()).filter(Boolean),
-  );
+  const listed = groupsForDirectoryListing(groups);
+  const validUids = new Set(listed.map((g) => String((g as { uid?: unknown }).uid ?? "").trim()).filter(Boolean));
   if (songsGroupUid && validUids.has(songsGroupUid)) return;
   const mg = save?.managing_group_uid?.trim();
   if (mg && validUids.has(mg)) {
     songsGroupUid = mg;
     return;
   }
-  const sorted = sortGroupsForDirectory(groups);
+  const sorted = sortGroupsForDirectory(listed);
   const first = sorted[0];
   songsGroupUid = String((first as { uid?: unknown }).uid ?? "").trim() || null;
 }
@@ -148,6 +232,12 @@ function ensureSongsDiscographyKey(): void {
   }
 }
 
+function syncFestivalLivesIfPossible(): void {
+  if (!save || !loadedScenario?.festivals?.length) return;
+  const festivals = normalizeFestivalCatalog(loadedScenario.festivals);
+  syncManagedTif2025Lives(save, festivals);
+}
+
 function paintOpening(): void {
   const preset = loadedScenario?.preset ?? null;
   const dbReady = loadedScenario != null;
@@ -155,7 +245,12 @@ function paintOpening(): void {
     openingScreen === "home"
       ? renderOpeningHome(preset, dbReady, openingStatus, save != null && !browseMode, slot, listOccupiedSlots())
       : loadedScenario
-        ? renderNewGameScreen(buildNewGameRows(loadedScenario), loadedScenario.preset, "Producer")
+        ? renderNewGameScreen(
+            buildNewGameRows(loadedScenario),
+            loadedScenario.preset,
+            "Producer",
+            loadedScenario.preset.scenario_number === 6,
+          )
         : `<p class="fm-error" role="alert">No scenario loaded.</p>`;
 
   if (openingScreen === "home") {
@@ -184,8 +279,10 @@ function paintOpening(): void {
       if (loaded && assertHydratedSave(loaded)) {
         save = loaded;
         scheduleCalendarMonthStart = null;
+        resetNewLiveFormDefaults();
         if (loadedScenario) {
           hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
+          syncFestivalLivesIfPossible();
         }
         browseMode = false;
         openingScreen = "home";
@@ -244,6 +341,8 @@ function paintOpening(): void {
           managedGroupUid: selectedNewGameGroupUid,
         });
         scheduleCalendarMonthStart = null;
+        resetNewLiveFormDefaults();
+        syncFestivalLivesIfPossible();
         browseMode = false;
         openingScreen = "home";
         selectedNewGameGroupUid = null;
@@ -274,6 +373,7 @@ function paintGame(): void {
 
   ensureSongsGroupUid();
   ensureSongsDiscographyKey();
+  if (!browseMode) syncFestivalLivesIfPossible();
   if (!browseMode && save && currentView === "Making") {
     const m = save.managing_group_uid?.trim();
     if (m) songsGroupUid = m;
@@ -301,6 +401,12 @@ function paintGame(): void {
     songsWorkspaceTab,
     songsDiscographyKey,
     inboxSelectedUid,
+    livesTab,
+    scheduledLiveUid,
+    newLiveForm,
+    scoutTab,
+    selectedScoutLeadUid,
+    selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     slot,
     occupiedSlots: listOccupiedSlots(),
@@ -324,6 +430,191 @@ function paintGame(): void {
     const calToday = t.closest<HTMLElement>("[data-sched-cal-today]");
     if (calToday && save && !browseMode && currentView === "Schedule") {
       scheduleCalendarMonthStart = null;
+      paintGame();
+      return;
+    }
+    const livesTabPick = t.closest<HTMLElement>("[data-lives-tab]");
+    if (livesTabPick && save && !browseMode && currentView === "Lives") {
+      const tab = livesTabPick.getAttribute("data-lives-tab");
+      if (tab === "new" || tab === "scheduled" || tab === "past" || tab === "festival") {
+        livesTab = tab;
+        paintGame();
+      }
+      return;
+    }
+    const scheduledPick = t.closest<HTMLElement>("[data-scheduled-live]");
+    if (scheduledPick && save && !browseMode && currentView === "Lives") {
+      scheduledLiveUid = scheduledPick.getAttribute("data-scheduled-live");
+      paintGame();
+      return;
+    }
+    const scheduleLiveBtn = t.closest<HTMLElement>("[data-live-schedule]");
+    if (scheduleLiveBtn && save && !browseMode && currentView === "Lives") {
+      const venue = getVenuesCatalog().find((row) => row.name === newLiveForm.venueName) ?? null;
+      const uid = `manual-live-${Date.now().toString(36)}`;
+      const live = {
+        uid,
+        title: newLiveForm.title.trim() || `${save.managing_group ?? "Managed group"} ${newLiveForm.liveType}`,
+        title_romanji: "",
+        event_type: LIVE_TYPE_PRESETS[newLiveForm.liveType].event_type,
+        live_type: newLiveForm.liveType,
+        start_date: newLiveForm.date,
+        end_date: newLiveForm.date,
+        start_time: newLiveForm.startTime,
+        end_time: newLiveForm.endTime,
+        duration: 0,
+        rehearsal_start: newLiveForm.rehearsalStart,
+        rehearsal_end: newLiveForm.rehearsalEnd,
+        venue: newLiveForm.venueName || null,
+        venue_uid: venue?.uid ?? null,
+        location: venue?.location ?? "",
+        description: `Managed ${newLiveForm.liveType.toLowerCase()} for ${save.managing_group ?? "managed group"}.`,
+        performance_count: 1,
+        capacity: venue?.capacity ?? null,
+        attendance: null,
+        ticket_price: newLiveForm.ticketPriceYen,
+        poster_image_path: null,
+        setlist: [...newLiveForm.setlist],
+        tokutenkai_enabled: newLiveForm.tokutenkaiEnabled,
+        tokutenkai_start: newLiveForm.tokutenkaiStart,
+        tokutenkai_end: newLiveForm.tokutenkaiEnd,
+        tokutenkai_duration: 0,
+        tokutenkai_ticket_price: newLiveForm.tokutenkaiTicketPrice,
+        tokutenkai_slot_seconds: newLiveForm.tokutenkaiSlotSeconds,
+        tokutenkai_expected_tickets: newLiveForm.tokutenkaiExpectedTickets,
+        goods_enabled: newLiveForm.goodsEnabled,
+        goods_line: newLiveForm.goodsLine,
+        goods_expected_revenue_yen: newLiveForm.goodsExpectedRevenueYen,
+        group: [save.managing_group ?? ""].filter(Boolean),
+        group_uid: save.managing_group_uid ?? "",
+        status: "scheduled",
+      };
+      save.lives.schedules.push(live);
+      addNotification(save, {
+        title: `Live scheduled: ${live.title}`,
+        body: `${live.start_date} ${live.start_time}-${live.end_time} · ${live.venue ?? "TBA"} · ${newLiveForm.setlist.length} song(s) · tokutenkai ${newLiveForm.tokutenkaiEnabled ? "on" : "off"} · goods ${newLiveForm.goodsEnabled ? "on" : "off"}.`,
+        sender: "Operations",
+        category: "internal",
+        level: "normal",
+        isoDate: currentIsoForNewLive(),
+        unread: true,
+        dedupeKey: `live-scheduled|${uid}`,
+        relatedEventUid: uid,
+      });
+      scheduledLiveUid = uid;
+      livesTab = "scheduled";
+      resetNewLiveFormDefaults(newLiveForm.liveType);
+      paintGame();
+      return;
+    }
+    const cancelLiveBtn = t.closest<HTMLElement>("[data-live-cancel]");
+    if (cancelLiveBtn && save && !browseMode && currentView === "Lives") {
+      const uid = cancelLiveBtn.getAttribute("data-live-cancel");
+      if (uid) {
+        save.lives.schedules = save.lives.schedules.filter((row) => String((row as { uid?: unknown }).uid ?? "") !== uid);
+        scheduledLiveUid = null;
+        paintGame();
+      }
+      return;
+    }
+    const scoutTabPick = t.closest<HTMLElement>("[data-scout-tab]");
+    if (scoutTabPick && save && !browseMode && currentView === "Scout") {
+      const tab = scoutTabPick.getAttribute("data-scout-tab");
+      if (tab === "freelancer" || tab === "transfer" || tab === "audition") {
+        scoutTab = tab;
+        paintGame();
+      }
+      return;
+    }
+    const scoutCompanyPick = t.closest<HTMLElement>("[data-scout-company]");
+    if (scoutCompanyPick && save && !browseMode && currentView === "Scout") {
+      const uid = scoutCompanyPick.getAttribute("data-scout-company");
+      if (uid) {
+        save.scout.selected_company_uid = uid;
+        selectedScoutLeadUid = null;
+        selectedScoutApplicantUid = null;
+        paintGame();
+      }
+      return;
+    }
+    const scoutLeadPick = t.closest<HTMLElement>("[data-scout-lead]");
+    if (scoutLeadPick && save && !browseMode && currentView === "Scout") {
+      selectedScoutLeadUid = scoutLeadPick.getAttribute("data-scout-lead");
+      paintGame();
+      return;
+    }
+    const shortlistLeadBtn = t.closest<HTMLElement>("[data-scout-shortlist]");
+    if (shortlistLeadBtn && save && !browseMode && currentView === "Scout") {
+      const uid = shortlistLeadBtn.getAttribute("data-scout-shortlist");
+      if (uid && !save.shortlist.includes(uid)) {
+        save.shortlist.push(uid);
+        addNotification(save, {
+          title: `Shortlist updated: ${uid}`,
+          body: `A scout lead was added to your shortlist for follow-up.`,
+          sender: "Scout",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          dedupeKey: `scout-shortlist|${uid}|${currentIsoForNewLive()}`,
+          relatedEventUid: uid,
+        });
+      }
+      paintGame();
+      return;
+    }
+    const holdAuditionBtn = t.closest<HTMLElement>("[data-scout-hold-audition]");
+    if (holdAuditionBtn && save && !browseMode && currentView === "Scout") {
+      const currentSave = save;
+      const company = buildDefaultScoutCompanies().find((row) => row.uid === currentSave.scout.selected_company_uid);
+      if (company) {
+        const key = buildAuditionStorageKey(company.uid, currentIsoForNewLive());
+        if (!Array.isArray(currentSave.scout.auditions[key]) || currentSave.scout.auditions[key].length === 0) {
+          currentSave.scout.auditions[key] = generateAuditionCandidates(company, currentIsoForNewLive());
+        }
+      }
+      paintGame();
+      return;
+    }
+    const scoutApplicantPick = t.closest<HTMLElement>("[data-scout-applicant]");
+    if (scoutApplicantPick && save && !browseMode && currentView === "Scout") {
+      selectedScoutApplicantUid = scoutApplicantPick.getAttribute("data-scout-applicant");
+      paintGame();
+      return;
+    }
+    const signApplicantBtn = t.closest<HTMLElement>("[data-scout-sign-applicant]");
+    if (signApplicantBtn && save && !browseMode && currentView === "Scout") {
+      const applicantUid = signApplicantBtn.getAttribute("data-scout-sign-applicant");
+      const currentSave = save;
+      const company = buildDefaultScoutCompanies().find((row) => row.uid === currentSave.scout.selected_company_uid);
+      if (applicantUid && company) {
+        const key = buildAuditionStorageKey(company.uid, currentIsoForNewLive());
+        const rows = Array.isArray(currentSave.scout.auditions[key]) ? (currentSave.scout.auditions[key] as Record<string, unknown>[]) : [];
+        const row = rows.find((item) => String(item.uid ?? "") === applicantUid);
+        if (row) {
+          let signedUid = String(row.signed_idol_uid ?? "");
+          if (!signedUid) {
+            const idolRow = auditionCandidateToIdolRow(row as never);
+            signedUid = String(idolRow.uid ?? applicantUid);
+            row.signed_idol_uid = signedUid;
+            if (!currentSave.database_snapshot.idols.some((idol) => String(idol.uid ?? "") === signedUid)) {
+              currentSave.database_snapshot.idols.push(idolRow);
+            }
+          }
+          if (!currentSave.shortlist.includes(signedUid)) currentSave.shortlist.push(signedUid);
+          addNotification(currentSave, {
+            title: `Signing confirmation: ${String(row.name ?? signedUid)}`,
+            body: `${String(row.name ?? signedUid)} joined your scout shortlist as a new freelancer candidate.`,
+            sender: "Scout",
+            category: "decision",
+            level: "high",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `scout-sign|${signedUid}|${currentIsoForNewLive()}`,
+            relatedEventUid: signedUid,
+          });
+        }
+      }
       paintGame();
       return;
     }
@@ -454,6 +745,67 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("input", (ev) => {
     const t = ev.target as HTMLElement;
+    const liveInput = t.closest<HTMLInputElement | HTMLSelectElement>("[data-live-form-field]");
+    if (liveInput && save && !browseMode && currentView === "Lives") {
+      const field = liveInput.getAttribute("data-live-form-field");
+      if (field) {
+        const value = liveInput.value;
+        switch (field) {
+          case "liveType":
+            resetNewLiveFormDefaults(value as NewLiveFormState["liveType"]);
+            break;
+          case "title":
+            newLiveForm.title = value;
+            break;
+          case "date":
+            newLiveForm.date = value;
+            break;
+          case "startTime":
+            newLiveForm.startTime = value;
+            break;
+          case "endTime":
+            newLiveForm.endTime = value;
+            break;
+          case "rehearsalStart":
+            newLiveForm.rehearsalStart = value;
+            break;
+          case "rehearsalEnd":
+            newLiveForm.rehearsalEnd = value;
+            break;
+          case "venueName":
+            newLiveForm.venueName = value;
+            break;
+          case "tokutenkaiStart":
+            newLiveForm.tokutenkaiStart = value;
+            break;
+          case "tokutenkaiEnd":
+            newLiveForm.tokutenkaiEnd = value;
+            break;
+          case "goodsLine":
+            newLiveForm.goodsLine = value;
+            break;
+          case "tokutenkaiTicketPrice":
+            newLiveForm.tokutenkaiTicketPrice = numberOrZero(value);
+            break;
+          case "tokutenkaiSlotSeconds":
+            newLiveForm.tokutenkaiSlotSeconds = numberOrZero(value);
+            break;
+          case "tokutenkaiExpectedTickets":
+            newLiveForm.tokutenkaiExpectedTickets = numberOrZero(value);
+            break;
+          case "goodsExpectedRevenueYen":
+            newLiveForm.goodsExpectedRevenueYen = numberOrZero(value);
+            break;
+          case "ticketPriceYen":
+            newLiveForm.ticketPriceYen = numberOrZero(value);
+            break;
+          default:
+            break;
+        }
+        paintGame();
+      }
+      return;
+    }
     const sl = t.closest<HTMLInputElement>("[data-training-slider]");
     if (!sl || !save || browseMode || currentView !== "Training") return;
     const uid = sl.getAttribute("data-idol-uid");
@@ -474,6 +826,31 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const t = ev.target as HTMLElement;
+    const liveSong = t.closest<HTMLInputElement>("[data-live-song]");
+    if (liveSong && save && !browseMode && currentView === "Lives") {
+      const raw = liveSong.getAttribute("data-live-song") ?? "";
+      let title = raw;
+      try {
+        title = decodeURIComponent(raw);
+      } catch {
+        title = raw;
+      }
+      if (liveSong.checked) {
+        if (!newLiveForm.setlist.includes(title)) newLiveForm.setlist = [...newLiveForm.setlist, title];
+      } else {
+        newLiveForm.setlist = newLiveForm.setlist.filter((item) => item !== title);
+      }
+      paintGame();
+      return;
+    }
+    const liveToggle = t.closest<HTMLInputElement>("[data-live-toggle]");
+    if (liveToggle && save && !browseMode && currentView === "Lives") {
+      const field = liveToggle.getAttribute("data-live-toggle");
+      if (field === "tokutenkaiEnabled") newLiveForm.tokutenkaiEnabled = liveToggle.checked;
+      else if (field === "goodsEnabled") newLiveForm.goodsEnabled = liveToggle.checked;
+      paintGame();
+      return;
+    }
     const focusSel = t.closest<HTMLSelectElement>("[data-training-focus]");
     if (focusSel && save && !browseMode && currentView === "Training") {
       const uid = focusSel.getAttribute("data-idol-uid");
@@ -523,6 +900,7 @@ function paintGame(): void {
       return;
     }
     save = advanceOneDay(save);
+    resetNewLiveFormDefaults(newLiveForm.liveType);
     paintGame();
   });
   document.getElementById("btn-save")?.addEventListener("click", () => {
@@ -536,6 +914,7 @@ function paintGame(): void {
     if (loaded && assertHydratedSave(loaded)) {
       save = loaded;
       scheduleCalendarMonthStart = null;
+      resetNewLiveFormDefaults();
       if (loadedScenario) {
         hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
       }

@@ -1,0 +1,206 @@
+{
+  "AKBG": {
+    "group_names": [
+      "AKB48",
+      "HKT48",
+      "KLP48",
+      "NGT48",
+      "NMB48",
+      "SKE48",
+      "STU48"
+    ],
+    "group_uids": [
+      "QUtCNDg",
+      "SEtUNDg",
+      "S0xQNDg",
+      "TkdUNDg",
+      "Tk1CNDg",
+      "U0tFNDg",
+      "U1RVNDg"
+    ],
+    "group_join_dates": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "Sakamichi": {
+    "group_names": [
+      "乃木坂46",
+      "日向坂46",
+      "櫻坂46",
+      "欅坂46"
+    ],
+    "group_uids": [
+      "5LmD5pyo5Z2CNDY",
+      "5pel5ZCR5Z2CNDY",
+      "5qu75Z2CNDY",
+      "5qyF5Z2CNDY"
+    ],
+    "group_join_dates": [
+      null,
+      null,
+      "2020-10-14",
+      "2015-08-21"
+    ]
+  },
+  "HEROINES": {
+    "group_names": [
+      "LADYBABY",
+      "ZUTTOMOTTO",
+      "chuLa",
+      "アキシブproject",
+      "iLiFE!",
+      "パラディーク",
+      "ガガピエロ",
+      "ドレスコード",
+      "iON!",
+      "ヒロインズ研究生",
+      "ポンコツコンポ",
+      "TENRIN",
+      "Ill",
+      "i-COL",
+      "パラレルサイダー",
+      "AdamLilith",
+      "ナナコロビヤオキ",
+      "のんふぃく！",
+      "夜光性アミューズ",
+      "CAL&RES",
+      "MEGAFON"
+    ],
+    "group_uids": [
+      "TEFEWUJBQlk",
+      "WlVUVE9NT1RUTw",
+      "Y2h1TGE",
+      "44Ki44Kt44K344OWcHJvamVjdA",
+      "aUxpRkUh",
+      "44OR44Op44OH44Kj44O844Kv",
+      "df3e70ea-93af-41a2-bc29-22f7087350d8",
+      "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+      "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+      "9b937bbf-facf-437b-9815-94152bfe5805",
+      "44Od44Oz44Kz44OE44Kz44Oz44Od",
+      "VEVOUklO",
+      "SWxs",
+      "aS1DT0w",
+      "44OR44Op44Os44Or44K144Kk44OA44O8",
+      "QWRhbUxpbGl0aA",
+      "055cd81a-8c78-44ad-b74b-3f45fc551f9b",
+      "44Gu44KT44G144GD44GP77yB",
+      "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+      "Q0FMJlJFUw",
+      "TUVHQUZPTg"
+    ],
+    "group_join_dates": [
+      null,
+      "2023-02-04",
+      "2022-05-07",
+      "2023-12-23",
+      "2023-12-23",
+      "2021-03-27",
+      "2023-01-14",
+      "2024-09-21",
+      "2025-04-20",
+      "2023-10-16",
+      "2019-08-16",
+      "2020-05-25",
+      "2021-08-27",
+      "2021-05-14",
+      null,
+      "2022-09-24",
+      "2024-06-14",
+      "2021-04-05",
+      "2021-03-17",
+      "2021-08-16",
+      "2025-04-06"
+    ]
+  },
+  "KABUKIMONO'DOGs": {
+    "group_names": [
+      "AMAKAZE",
+      "GANGDEMIC",
+      "Raiden",
+      "Ragken!",
+      "SUIGETSU",
+      "神使轟く、激情の如く。"
+    ],
+    "group_uids": [
+      "a7805041-7cce-4541-86b5-a3fe06d3d4ea",
+      "R0FOR0RFTUlD",
+      "743724ff-5c2d-4e42-85ab-95e7e5c42954",
+      "d8f8e543-16c7-4f7e-8903-ded7ec8c5380",
+      "764d49a4-9186-44f0-9c88-ab913d7c95ca",
+      "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC"
+    ],
+    "group_join_dates": [
+      "2020-11-05",
+      "2021-05-19",
+      "2020-11-05",
+      "2019-09-05",
+      "2020-11-05",
+      null
+    ]
+  },
+  "Last Idol": {
+    "group_names": [
+      "Last Idol",
+      "my fav",
+      "La Luce",
+      "Good Tears",
+      "Choux Cream Rockets",
+      "Someday Somewhere",
+      "Love Cocchi",
+      "Last Idol 2nd Generation",
+      "Last Idol 2nd Generation Under"
+    ],
+    "group_uids": [
+      "TGFzdCBJZG9s",
+      "bXkgZmF2",
+      "TGEgTHVjZQ",
+      "R29vZCBUZWFycw",
+      "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
+      "U29tZWRheSBTb21ld2hlcmU",
+      "TG92ZSBDb2NjaGk",
+      "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
+      "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9uIFVuZGVy"
+    ],
+    "group_join_dates": [
+      "2017-08-13",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "2018-04-15",
+      "2018-04-15"
+    ]
+  },
+  "KAWAII LAB.": {
+    "group_names": [
+      "CANDY TUNE",
+      "CUTIE STREET",
+      "FRUITS ZIPPER",
+      "SWEET STEADY",
+      "PiKi"
+    ],
+    "group_uids": [
+      "Q0FORFkgVFVORQ",
+      "Q1VUSUUgU1RSRUVU",
+      "RlJVSVRTIFpJUFBFUg",
+      "U1dFRVQgU1RFQURZ",
+      "UGlLaQ"
+    ],
+    "group_join_dates": [
+      null,
+      null,
+      null,
+      null,
+      "2025-06-21"
+    ]
+  }
+}

@@ -42,6 +42,13 @@ export interface ScenarioManifest {
   defaultPreset: string;
 }
 
+/** Curated new-game group list (`startup_allowlist.json`); `names_in_order` matches `groups[].name`. */
+export interface ScenarioStartupAllowlist {
+  /** First N entries in `names_in_order` are highlighted as recommended (default 4). */
+  recommended_count: number;
+  names_in_order: string[];
+}
+
 export interface LoadedScenario {
   preset: ScenarioPreset;
   idols: Record<string, unknown>[];
@@ -49,6 +56,10 @@ export interface LoadedScenario {
   songs: Record<string, unknown>[];
   /** Optional `public/data/lives.json` rows (filtered by group in UI). */
   lives?: Record<string, unknown>[];
+  /** Optional `public/data/festivals.json` editions. */
+  festivals?: Record<string, unknown>[];
   /** Optional static tiers beside `groups.json` (see `docs/WEB_PORT_PLAN.md` §1b). */
   group_tiers?: GroupTierRow[];
+  /** When present (scenario 6), new-game picker is restricted to these `name` values in list order. */
+  startup_allowlist?: ScenarioStartupAllowlist;
 }

@@ -439,6 +439,133 @@ body {
   padding: 0.85rem 1rem;
 }
 
+.finance-projection-card {
+  margin: 0.85rem 0 1rem;
+  padding: 1rem 1rem 0.9rem;
+  background: linear-gradient(180deg, rgb(18 23 43 / 0.96), rgb(16 21 38 / 0.98));
+}
+
+.finance-projection-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.85rem 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.finance-projection-title {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.finance-projection-copy {
+  margin: 0;
+  max-width: 38rem;
+}
+
+.finance-projection-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.finance-projection-kpi {
+  min-width: 10rem;
+  padding: 0.55rem 0.7rem;
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 3px;
+}
+
+.finance-projection-kpi-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.finance-projection-kpi-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.finance-projection-kpi-value.is-positive {
+  color: #96e072;
+}
+
+.finance-projection-kpi-value.is-negative {
+  color: #ff7d96;
+}
+
+.finance-projection-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: rgb(255 255 255 / 0.015);
+  border-top: 1px solid rgb(255 255 255 / 0.04);
+}
+
+.finance-projection-grid {
+  stroke: rgb(255 255 255 / 0.08);
+  stroke-width: 1;
+}
+
+.finance-projection-grid-x {
+  stroke: rgb(255 255 255 / 0.04);
+}
+
+.finance-projection-y,
+.finance-projection-x {
+  fill: rgb(255 255 255 / 0.72);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.finance-projection-x {
+  fill: rgb(255 255 255 / 0.62);
+}
+
+.finance-projection-area {
+  opacity: 0.95;
+}
+
+.finance-projection-line {
+  fill: none;
+  stroke: #ff70a8;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.finance-projection-future-band {
+  fill: rgb(255 255 255 / 0.025);
+}
+
+.finance-projection-divider {
+  stroke: rgb(255 255 255 / 0.26);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 4;
+}
+
+.finance-projection-dot {
+  stroke-width: 1.4;
+}
+
+.finance-projection-dot.is-actual {
+  fill: #ffd7e8;
+  stroke: #ff70a8;
+}
+
+.finance-projection-dot.is-projected {
+  fill: #1a1a2e;
+  stroke: #ff70a8;
+}
+
 .inbox-card.is-unread {
   border-left: 3px solid var(--accent-light);
 }
@@ -1295,6 +1422,30 @@ text.idol-radar-val.attr-tone-low {
   border: 1px solid rgb(255 255 255 / 0.2);
 }
 
+/* Group roster: default name white; validated member hex sets inline color on .group-roster-name-wrap (inherited by link). */
+.group-detail-roster-table .group-roster-name-wrap {
+  color: #ffffff;
+}
+
+.group-detail-roster-table .group-roster-name-wrap .idol-detail-group-link,
+.group-detail-roster-table .group-roster-name-wrap .idol-detail-group-link:hover {
+  color: inherit;
+}
+
+.group-detail-roster-table .group-roster-name-wrap .idol-detail-group-link:hover {
+  opacity: 0.88;
+}
+
+.group-detail-roster-table td.group-roster-stat {
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.group-member-color-chip--default {
+  background: #ffffff;
+}
+
 .idol-detail-ability-line {
   margin: 0.55rem 0 0;
   display: flex;
@@ -1568,6 +1719,106 @@ text.idol-radar-val.attr-tone-low {
   border-color: var(--accent-light);
   background: rgb(83 52 131 / 0.35);
   color: #fff;
+}
+
+.workspace-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+}
+
+.workspace-tab {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.38rem 0.85rem;
+  border-radius: 3px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: rgb(255 255 255 / 0.04);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.workspace-tab.is-active {
+  border-color: var(--accent-light);
+  background: rgb(83 52 131 / 0.35);
+  color: #fff;
+}
+
+.lives-planner-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.scout-right-stack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.form-grid.live-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.form-grid.live-form-grid label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.planner-subpanel {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.planner-actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.check-pill-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.check-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.03);
+  color: var(--text-primary);
+}
+
+.is-selected-row {
+  background: rgb(83 52 131 / 0.18);
+}
+
+.scout-company-list {
+  max-height: 26rem;
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 64rem) {
+  .lives-planner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42rem) {
+  .form-grid.live-form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .songs-discography-layout {
@@ -1928,6 +2179,18 @@ text.idol-radar-val.attr-tone-low {
   outline: 2px solid var(--accent-light);
   outline-offset: -2px;
   background: rgb(83 52 131 / 0.2);
+}
+
+.group-picker-row--recommended td:first-child {
+  box-shadow: inset 3px 0 0 0 color-mix(in oklab, var(--accent-light) 70%, transparent);
+}
+
+.opening-rec-mark {
+  display: inline-block;
+  margin-right: 0.35em;
+  font-size: 0.92em;
+  color: var(--accent-light);
+  user-select: none;
 }
 
 .opening-label {

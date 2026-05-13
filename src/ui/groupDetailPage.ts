@@ -5,6 +5,7 @@
 import { resolveGroupLetterTier } from "../engine/financeSystem";
 import {
   activeGroupMembershipsAtReference,
+  ageLabel,
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
@@ -78,18 +79,55 @@ function memberColorInCurrentGroup(
     : "—";
 }
 
-function otherActiveGroupsLabel(
+function membershipLinksHtml(mems: { uid: string; name: string }[]): string {
+  if (!mems.length) return htmlEsc("—");
+  return mems
+    .map((m) =>
+      m.uid
+        ? `<button type="button" class="idol-detail-group-link" data-group-detail="${htmlEsc(m.uid)}">${htmlEsc(m.name)}</button>`
+        : htmlEsc(m.name),
+    )
+    .join(", ");
+}
+
+function allGroupsMembershipHtml(
   idol: Record<string, unknown>,
-  groupUid: string,
   referenceIso: string | undefined,
   groups: Record<string, unknown>[],
 ): string {
-  const mems = activeGroupMembershipsAtReference(idol, referenceIso, groups);
-  const names = mems
-    .filter((m) => m.uid !== groupUid)
-    .map((m) => m.name.trim())
-    .filter(Boolean);
-  return names.length ? names.join(", ") : "—";
+  return membershipLinksHtml(activeGroupMembershipsAtReference(idol, referenceIso, groups));
+}
+
+function rosterTheadHtml(): string {
+  return `<thead><tr><th>${htmlEsc("Name")}</th><th>${htmlEsc("Romaji")}</th><th>${htmlEsc("Color")}</th><th>${htmlEsc("Age")}</th><th>${htmlEsc("Join")}</th><th>${htmlEsc("Groups")}</th></tr></thead>`;
+}
+
+/** One roster row for current or past members (group detail). */
+function rosterMemberRowHtml(
+  uid: string,
+  displayJa: string,
+  idol: Record<string, unknown> | undefined,
+  gid: string,
+  groupName: string,
+  refIso: string | undefined,
+  groups: Record<string, unknown>[],
+): string {
+  const romaji = idol ? romajiFromRow(idol) : "";
+  const color = idol ? memberColorInCurrentGroup(idol, gid, groupName) : "—";
+  const colorTrim = color.trim();
+  const join = idol ? joinDateInCurrentGroup(idol, gid, groupName) : "—";
+  const age = idol ? ageLabel(idol, refIso) : "—";
+  const groupsCol = idol ? allGroupsMembershipHtml(idol, refIso, groups) : htmlEsc("—");
+  const hasHex = /^#[0-9A-Fa-f]{3,8}$/.test(colorTrim);
+  const colorCell = hasHex
+    ? `<span class="group-member-color-chip" style="background:${colorTrim}" title="${htmlEsc(color)}"></span> ${htmlEsc(color)}`
+    : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "—" ? color : "Default")}"></span> ${htmlEsc(color !== "—" ? color : "—")}`;
+  const nameBtn = idol
+    ? `<button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(displayJa)}</button>`
+    : htmlEsc(displayJa);
+  const nameStyle = hasHex ? ` style="color:${colorTrim}"` : "";
+  const nameCell = `<span class="group-roster-name-wrap"${nameStyle}>${nameBtn}</span>`;
+  return `<tr><td>${nameCell}</td><td>${romaji ? htmlEsc(romaji) : htmlEsc("—")}</td><td>${colorCell}</td><td class="group-roster-stat">${htmlEsc(age)}</td><td class="group-roster-stat">${htmlEsc(join)}</td><td>${groupsCol}</td></tr>`;
 }
 
 function pickGroupHeroPicturePaths(g: Record<string, unknown>): { heroRaw: string | null; logoRaw: string | null } {
@@ -289,28 +327,14 @@ export function renderGroupDetailPage(
     .map((uid, i) => {
       const idol = byUid.get(uid);
       const stage = memberNames[i] ?? "";
-      const displayName = idol
-        ? `${stage || String(idol.name ?? "—")}${romajiFromRow(idol) ? ` (${romajiFromRow(idol)})` : ""}`
-        : stage || uid.slice(0, 8);
-      const color = idol ? memberColorInCurrentGroup(idol, gid, name) : "—";
-      const join = idol ? joinDateInCurrentGroup(idol, gid, name) : "—";
-      const other = idol ? otherActiveGroupsLabel(idol, gid, refIsoU, ctx.groups) : "—";
-      const colorCell =
-        /^#[0-9A-Fa-f]{3,8}$/.test(color.trim())
-          ? `<span class="group-member-color-chip" style="background:${color.trim()}" title="${htmlEsc(color)}"></span> ${htmlEsc(color)}`
-          : htmlEsc(color);
-      const nameCell = idol
-        ? `<button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(displayName)}</button>`
-        : htmlEsc(displayName);
-      return `<tr><td>${nameCell}</td><td>${colorCell}</td><td class="num">${htmlEsc(join)}</td><td>${htmlEsc(other)}</td></tr>`;
+      const displayJa = idol ? stage || String(idol.name ?? "—") : stage || uid.slice(0, 8);
+      return rosterMemberRowHtml(uid, displayJa, idol, gid, name, refIsoU, ctx.groups);
     })
     .join("");
 
   const currentTable =
     memberUids.length > 0
-      ? `<div class="table-scroll"><table class="fm-table group-detail-roster-table">
-      <thead><tr><th>${htmlEsc("Name in group")}</th><th>${htmlEsc("Color")}</th><th>${htmlEsc("Join")}</th><th>${htmlEsc("Other groups")}</th></tr></thead>
-      <tbody>${currentRows}</tbody></table></div>`
+      ? `<div class="table-scroll"><table class="fm-table group-detail-roster-table">${rosterTheadHtml()}<tbody>${currentRows}</tbody></table></div>`
       : `<p class="content-muted">${htmlEsc("No current member UIDs in snapshot.")}</p>`;
 
   let pastBlock = "";
@@ -318,16 +342,14 @@ export function renderGroupDetailPage(
     const prow = pastUids
       .map((uid, i) => {
         const idol = byUid.get(uid);
-        const label = pastNames[i] ?? (idol ? String(idol.name ?? "—") : uid.slice(0, 8));
-        const cell = idol
-          ? `<button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(label)}</button>`
-          : htmlEsc(label);
-        return `<tr><td>${cell}</td></tr>`;
+        const displayJa =
+          (pastNames[i] && String(pastNames[i]).trim()) || (idol ? String(idol.name ?? "—") : uid.slice(0, 8));
+        return rosterMemberRowHtml(uid, displayJa, idol, gid, name, refIsoU, ctx.groups);
       })
       .join("");
     pastBlock = `<details class="group-detail-past"><summary class="group-detail-past-sum">${htmlEsc(
       `Past members (${pastUids.length.toLocaleString("ja-JP")})`,
-    )}</summary><div class="table-scroll"><table class="fm-table"><tbody>${prow}</tbody></table></div></details>`;
+    )}</summary><div class="table-scroll"><table class="fm-table group-detail-roster-table">${rosterTheadHtml()}<tbody>${prow}</tbody></table></div></details>`;
   }
 
   const discFromJson = renderDiscographyRowsFromGroupJson(g, ctx.referenceIso);

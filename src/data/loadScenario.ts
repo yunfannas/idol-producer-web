@@ -1,4 +1,11 @@
-import type { LoadedScenario, ScenarioManifest, ScenarioPreset, ScenariosCatalogFile, GroupTierRow } from "./scenarioTypes";
+import type {
+  LoadedScenario,
+  ScenarioManifest,
+  ScenarioPreset,
+  ScenariosCatalogFile,
+  GroupTierRow,
+  ScenarioStartupAllowlist,
+} from "./scenarioTypes";
 import { applyAttributesToAllIdols } from "../engine/idolAttributes";
 
 function base(): string {
@@ -54,6 +61,48 @@ function songsForScenarioGroups(
   return songsAll.filter((row) => groupUids.has(String((row as { group_uid?: unknown }).group_uid ?? "").trim()));
 }
 
+/** `public/data/group_union.json` — union key → group UIDs; sets `group.union` for directory / detail. */
+async function applyGroupUnionsFromCatalog(groups: Record<string, unknown>[]): Promise<void> {
+  try {
+    const res = await fetch(`${base()}data/group_union.json`);
+    if (!res.ok) return;
+    const data: unknown = await res.json();
+    if (!data || typeof data !== "object") return;
+    const uidToUnion = new Map<string, string>();
+    for (const [unionName, block] of Object.entries(data as Record<string, unknown>)) {
+      if (!block || typeof block !== "object") continue;
+      const uids = (block as { group_uids?: unknown }).group_uids;
+      if (!Array.isArray(uids)) continue;
+      for (const raw of uids) {
+        const u = String(raw ?? "").trim();
+        if (u) uidToUnion.set(u, unionName);
+      }
+    }
+    for (const g of groups) {
+      const uid = String((g as { uid?: unknown }).uid ?? "").trim();
+      const un = uidToUnion.get(uid);
+      if (un) (g as { union?: string }).union = un;
+    }
+  } catch {
+    /* optional */
+  }
+}
+
+/** Sakamichi series groups — treat as letter tier S in UI and finance heuristics. */
+const SAKAMICHI_GROUP_UIDS: ReadonlySet<string> = new Set([
+  "5LmD5pyo5Z2CNDY",
+  "5pel5ZCR5Z2CNDY",
+  "5qu75Z2CNDY",
+  "5qyF5Z2CNDY",
+]);
+
+function applySakamichiLetterTierS(groups: Record<string, unknown>[]): void {
+  for (const g of groups) {
+    const u = String((g as { uid?: unknown }).uid ?? "").trim();
+    if (SAKAMICHI_GROUP_UIDS.has(u)) (g as { letter_tier?: string }).letter_tier = "S";
+  }
+}
+
 export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<LoadedScenario> {
   const root = `${base()}data/scenarios/${preset.data_subdir}/`;
   const globalSongsUrl = `${base()}data/songs.json`;
@@ -62,6 +111,9 @@ export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<Load
     fetchJsonArray(`${root}idols.json`),
     fetchJsonArray(`${root}groups.json`),
   ]);
+
+  await applyGroupUnionsFromCatalog(groups);
+  applySakamichiLetterTierS(groups);
 
   let songsAll: Record<string, unknown>[];
   try {
@@ -96,6 +148,20 @@ export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<Load
     /* optional catalog */
   }
 
+  let festivals: Record<string, unknown>[] = [];
+  try {
+    const res = await fetch(`${base()}data/festivals.json`);
+    if (res.ok) {
+      const j: unknown = await res.json();
+      if (Array.isArray(j)) festivals = j as Record<string, unknown>[];
+      else if (j && typeof j === "object" && Array.isArray((j as { festivals?: unknown }).festivals)) {
+        festivals = (j as { festivals: Record<string, unknown>[] }).festivals;
+      }
+    }
+  } catch {
+    /* optional catalog */
+  }
+
   let group_tiers: GroupTierRow[] | undefined;
   try {
     const gtRes = await fetch(`${root}group_tiers.json`);
@@ -107,7 +173,25 @@ export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<Load
     /* optional static tiers */
   }
 
-  return { preset, idols, groups, songs, lives, group_tiers };
+  let startup_allowlist: ScenarioStartupAllowlist | undefined;
+  try {
+    const alRes = await fetch(`${root}startup_allowlist.json`);
+    if (alRes.ok) {
+      const al: unknown = await alRes.json();
+      if (al && typeof al === "object") {
+        const o = al as { recommended_count?: unknown; names_in_order?: unknown };
+        const names = Array.isArray(o.names_in_order)
+          ? o.names_in_order.map((x) => String(x ?? "").trim()).filter((n) => n.length > 0)
+          : [];
+        const rc = typeof o.recommended_count === "number" && Number.isFinite(o.recommended_count) ? o.recommended_count : 4;
+        if (names.length > 0) startup_allowlist = { recommended_count: Math.max(0, Math.min(32, Math.floor(rc))), names_in_order: names };
+      }
+    }
+  } catch {
+    /* optional new-game allowlist */
+  }
+
+  return { preset, idols, groups, songs, lives, festivals, group_tiers, startup_allowlist };
 }
 
 export async function loadDefaultScenario(): Promise<LoadedScenario> {

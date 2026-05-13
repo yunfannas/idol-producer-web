@@ -2,9 +2,9 @@
  * Launcher flow analogous to idol_producer main_ui.show_startup_screen.
  */
 
-import type { LoadedScenario, ScenarioPreset } from "../data/scenarioTypes";
+import type { LoadedScenario, ScenarioPreset, GroupTierRow } from "../data/scenarioTypes";
 import { playableGroups } from "../data/scenarioBrowse";
-import { groupTierRowMap, sortGroupsForStartupPick } from "../data/startupGroupPicker";
+import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } from "../data/startupGroupPicker";
 import { inferLetterTier } from "../engine/financeSystem";
 import { htmlEsc } from "./htmlEsc";
 
@@ -62,45 +62,121 @@ export interface NewGameRow {
   memberCount: number;
   formed: string;
   popularity: string;
+  /** True for the first `recommended_count` allowlist names that matched (pinned to top of the table). */
+  recommended?: boolean;
 }
 
-/** Playable groups for the new-game picker (tier `sort_key` when `group_tiers.json` shipped). */
+function rowFromGroup(g: Record<string, unknown>, tierMap: Map<string, GroupTierRow>, recommended: boolean): NewGameRow | null {
+  const uid = String(g.uid ?? "");
+  if (!uid.length) return null;
+  const name = String(g.name ?? g.name_romanji ?? "—");
+  const nameRomanji = String(g.name_romanji ?? "") || undefined;
+  const mc = Array.isArray(g.member_uids) ? g.member_uids.length : 0;
+  const formed = typeof g.formed_date === "string" ? g.formed_date : "—";
+  const popNum = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
+  const fansNum = typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
+  const staticT = tierMap.get(uid);
+  const tier =
+    staticT && typeof staticT.letter_tier === "string" && /^[SABCDEF]$/i.test(staticT.letter_tier.trim())
+      ? String(staticT.letter_tier).trim().toUpperCase()
+      : typeof g.letter_tier === "string" && g.letter_tier.trim()
+        ? String(g.letter_tier)
+        : inferLetterTier(popNum, fansNum, 0);
+  return {
+    uid,
+    name,
+    nameRomanji,
+    tier,
+    memberCount: mc,
+    formed,
+    popularity: g.popularity != null ? String(g.popularity) : "—",
+    recommended: recommended || undefined,
+  };
+}
+
+/** Playable groups for the new-game picker; scenario 6 may restrict to `startup_allowlist.json` order. */
 export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
   const tierMap = groupTierRowMap(loaded.group_tiers);
-  const raw = sortGroupsForStartupPick(playableGroups(loaded.groups), tierMap);
-  return raw.map((g) => {
-    const uid = String(g.uid ?? "");
-    const name = String(g.name ?? g.name_romanji ?? "—");
-    const nameRomanji = String(g.name_romanji ?? "") || undefined;
-    const mc = Array.isArray(g.member_uids) ? g.member_uids.length : 0;
-    const formed = typeof g.formed_date === "string" ? g.formed_date : "—";
-    const popNum = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
-    const fansNum = typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
-    const staticT = uid ? tierMap.get(uid) : undefined;
-    const tier =
-      staticT && typeof staticT.letter_tier === "string" && /^[SABCDEF]$/i.test(staticT.letter_tier.trim())
-        ? String(staticT.letter_tier).trim().toUpperCase()
-        : typeof g.letter_tier === "string" && g.letter_tier.trim()
-          ? String(g.letter_tier)
-          : inferLetterTier(popNum, fansNum, 0);
-    return {
-      uid,
-      name,
-      nameRomanji,
-      tier,
-      memberCount: mc,
-      formed,
-      popularity: g.popularity != null ? String(g.popularity) : "—",
-    };
-  }).filter((r) => r.uid.length > 0);
+  const playable = playableGroups(loaded.groups);
+  const allow = loaded.startup_allowlist;
+
+  type Pair = { g: Record<string, unknown>; recommended: boolean };
+  let pairs: Pair[];
+
+  if (allow?.names_in_order?.length) {
+    const nameOrder = allow.names_in_order;
+    const recK = Math.max(0, Math.min(nameOrder.length, allow.recommended_count ?? 4));
+
+    const byName = new Map<string, Record<string, unknown>>();
+    for (const g of playable) {
+      const n = String((g as { name?: unknown }).name ?? "").trim();
+      if (!n || byName.has(n)) continue;
+      byName.set(n, g);
+    }
+
+    const seenUid = new Set<string>();
+    const matched: { g: Record<string, unknown>; name: string }[] = [];
+    for (const name of nameOrder) {
+      const g = byName.get(name);
+      if (!g) continue;
+      const uid = String(g.uid ?? "").trim();
+      if (!uid || seenUid.has(uid)) continue;
+      seenUid.add(uid);
+      matched.push({ g, name });
+    }
+
+    const recommendedNameSet = new Set(nameOrder.slice(0, recK));
+    const head: Pair[] = [];
+    const tail: { g: Record<string, unknown> }[] = [];
+    for (const row of matched) {
+      if (recommendedNameSet.has(row.name)) head.push({ g: row.g, recommended: true });
+      else tail.push({ g: row.g });
+    }
+    tail.sort((a, b) => compareStartupGroupRows(a.g, b.g, tierMap));
+    pairs = [...head, ...tail.map((t) => ({ g: t.g, recommended: false }))];
+  } else if (loaded.preset.scenario_number === 6) {
+    // Scenario 6 new game is curated-only (docs/scenario6_available_groups.txt → startup_allowlist.json); never show the full roster.
+    pairs = [];
+  } else {
+    pairs = sortGroupsForStartupPick(playable, tierMap).map((g) => ({ g, recommended: false }));
+  }
+
+  const out: NewGameRow[] = [];
+  for (const { g, recommended } of pairs) {
+    const r = rowFromGroup(g, tierMap, recommended);
+    if (r) out.push(r);
+  }
+  return out;
 }
 
-export function renderNewGameScreen(rows: NewGameRow[], preset: ScenarioPreset, playerNameDefault: string): string {
+export function renderNewGameScreen(
+  rows: NewGameRow[],
+  preset: ScenarioPreset,
+  playerNameDefault: string,
+  scenario6CuratedPicker?: boolean,
+): string {
+  const s6 = scenario6CuratedPicker === true;
+  const hasRec = rows.some((r) => r.recommended);
+  const recCount = rows.filter((r) => r.recommended).length;
+  const recTopHint =
+    recCount === 1
+      ? "The first shortlist name stays at the top (★); the rest follow, sorted by tier, fans, popularity."
+      : `The first ${recCount} shortlist names stay at the top (★); the rest follow, sorted by tier, fans, popularity.`;
+  const noRows = rows.length === 0;
+  const tableHint = s6 && noRows
+    ? "Scenario 6 lists only groups from docs/scenario6_available_groups.txt (synced to startup_allowlist.json). None matched yet — run npm run data:scenario6-startup-allowlist, ship the JSON beside group_tiers.json, and align Japanese names in groups.json (2+ current members)."
+    : s6 && !noRows
+      ? hasRec
+        ? `Only groups from docs/scenario6_available_groups.txt appear here. ${recTopHint}`
+        : "Only groups from docs/scenario6_available_groups.txt appear here (sorted by tier, fans, popularity)."
+      : hasRec
+        ? `Only groups from the scenario shortlist are shown. ${recTopHint}`
+        : "Playable roster list from the snapshot (sorted by tier, fans, popularity). Click a row to select.";
   const tableRows = rows
     .map(
       (r) => `
-    <tr data-group-uid="${htmlEsc(r.uid)}" class="group-picker-row">
-      <td>${htmlEsc(r.name)}</td>
+    <tr data-group-uid="${htmlEsc(r.uid)}" class="group-picker-row${r.recommended ? " group-picker-row--recommended" : ""}">
+      <td>${r.recommended ? `<span class="opening-rec-mark" title="${htmlEsc("Recommended")}">★</span>` : ""}${htmlEsc(r.name)}</td>
       <td>${htmlEsc(r.nameRomanji ?? "—")}</td>
       <td>${htmlEsc(r.tier)}</td>
       <td>${r.memberCount}</td>
@@ -124,7 +200,7 @@ export function renderNewGameScreen(rows: NewGameRow[], preset: ScenarioPreset, 
 
   <div class="fm-card-opening opening-table-wrap">
     <h2 class="opening-table-h">${htmlEsc("Managed group")}</h2>
-    <p class="content-muted">${htmlEsc("Playable roster list from the snapshot. Click a row to select.")}</p>
+    <p class="content-muted">${htmlEsc(tableHint)}</p>
     <div class="table-scroll">
       <table class="fm-table group-pick-table" id="group-pick-table">
         <thead>

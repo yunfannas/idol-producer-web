@@ -8,6 +8,10 @@
     "build": "vite build",
     "typecheck": "tsc --noEmit",
     "data:group-tiers": "node scripts/build-scenario6-group-tiers.mjs",
+    "data:backfill-scenario6-tiers": "node scripts/backfill-scenario6-tiers-from-available-list.mjs",
+    "data:scenario6-startup-allowlist": "node scripts/sync-scenario6-startup-allowlist.mjs",
+    "data:reinterpolate-scenario6-tiers": "node scripts/reinterpolate-scenario6-tiers.mjs",
+    "data:export-scenario6-groups-csv": "node scripts/export-scenario6-groups-csv.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
