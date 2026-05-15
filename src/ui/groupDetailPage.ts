@@ -9,6 +9,7 @@ import {
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
+import { resolveMemberColorCss } from "./memberColor";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, groupPicturePublicSrc } from "./portraitUrl";
 import {
   buildDiscBuckets,
@@ -118,14 +119,15 @@ function rosterMemberRowHtml(
   const join = idol ? joinDateInCurrentGroup(idol, gid, groupName) : "—";
   const age = idol ? ageLabel(idol, refIso) : "—";
   const groupsCol = idol ? allGroupsMembershipHtml(idol, refIso, groups) : htmlEsc("—");
-  const hasHex = /^#[0-9A-Fa-f]{3,8}$/.test(colorTrim);
-  const colorCell = hasHex
-    ? `<span class="group-member-color-chip" style="background:${colorTrim}" title="${htmlEsc(color)}"></span> ${htmlEsc(color)}`
+  const colorCss = resolveMemberColorCss(colorTrim);
+  const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
+  const colorCell = colorCss
+    ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
     : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "—" ? color : "Default")}"></span> ${htmlEsc(color !== "—" ? color : "—")}`;
   const nameBtn = idol
     ? `<button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(displayJa)}</button>`
     : htmlEsc(displayJa);
-  const nameStyle = hasHex ? ` style="color:${colorTrim}"` : "";
+  const nameStyle = colorCss ? ` style="color:${colorCss}"` : "";
   const nameCell = `<span class="group-roster-name-wrap"${nameStyle}>${nameBtn}</span>`;
   return `<tr><td>${nameCell}</td><td>${romaji ? htmlEsc(romaji) : htmlEsc("—")}</td><td>${colorCell}</td><td class="group-roster-stat">${htmlEsc(age)}</td><td class="group-roster-stat">${htmlEsc(join)}</td><td>${groupsCol}</td></tr>`;
 }

@@ -18,6 +18,7 @@ export interface NotificationRow {
   choice_status: string;
   choice_options: Record<string, string>[];
   related_event_uid: string;
+  report_data?: Record<string, unknown>;
 }
 
 export function notificationSortKey(item: NotificationRow): [number, number, string] {
@@ -126,6 +127,7 @@ export function addNotification(
     dedupeKey?: string;
     requiresConfirmation?: boolean;
     relatedEventUid?: string;
+    reportData?: Record<string, unknown>;
   },
 ): NotificationRow {
   const {
@@ -140,6 +142,7 @@ export function addNotification(
     dedupeKey = "",
     requiresConfirmation = false,
     relatedEventUid = "",
+    reportData,
   } = params;
 
   const day = isoDate && /^\d{4}-\d{2}-\d{2}$/.test(isoDate) ? isoDate : new Date().toISOString().slice(0, 10);
@@ -167,6 +170,7 @@ export function addNotification(
     choice_status: "",
     choice_options: [],
     related_event_uid: relatedEventUid ? String(relatedEventUid) : "",
+    report_data: reportData,
   };
   save.inbox.notifications.push(item);
   sortNotificationsInPlace(save.inbox.notifications);

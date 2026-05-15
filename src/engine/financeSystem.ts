@@ -9,6 +9,7 @@ import type { DailyBreakdown, Finances, LetterTier } from "./types";
 const GF = groupFinanceJson as {
   default_financial_constants?: Record<string, unknown>;
   member_compensation_by_letter_tier?: Record<string, unknown>;
+  additional_cost_assumptions?: Record<string, unknown>;
 };
 
 const DEFAULT_CONST = GF.default_financial_constants ?? {};
@@ -181,6 +182,40 @@ export function monthlyBaseSalaryYenForGroupLetterTier(
   const base = defaultMonthlyBaseSalaryYen;
   const mult = baseSalaryMultiplierForGroupLetterTier(letterTier);
   return Math.max(0, Math.round(base * mult));
+}
+
+export function monthlyStaffSalaryYen(): number {
+  const addl = GF.additional_cost_assumptions;
+  const staffBlock =
+    addl && typeof addl === "object" && "staff_salary" in addl
+      ? (addl as { staff_salary?: Record<string, unknown> }).staff_salary
+      : undefined;
+  if (!staffBlock || typeof staffBlock !== "object") return 600_000;
+  return Math.max(0, intOr(staffBlock.monthly_staff_salary_total_yen, 600_000));
+}
+
+export function monthlyAdminTrainingCostYenForGroupLetterTier(letterTier: LetterTier): number {
+  const addl = GF.additional_cost_assumptions;
+  const monthlyBlock =
+    addl && typeof addl === "object" && "monthly_admin_training_costs_per_tier_yen" in addl
+      ? (addl as { monthly_admin_training_costs_per_tier_yen?: Record<string, unknown> })
+          .monthly_admin_training_costs_per_tier_yen
+      : undefined;
+  if (!monthlyBlock || typeof monthlyBlock !== "object") {
+    return 300_000;
+  }
+  const adminBlock =
+    "admin" in monthlyBlock
+      ? (monthlyBlock as { admin?: Record<string, unknown> }).admin
+      : undefined;
+  const trainingBlock =
+    "training" in monthlyBlock
+      ? (monthlyBlock as { training?: Record<string, unknown> }).training
+      : undefined;
+  const admin = adminBlock && typeof adminBlock === "object" ? intOr(adminBlock[letterTier], 0) : 0;
+  const training =
+    trainingBlock && typeof trainingBlock === "object" ? intOr(trainingBlock[letterTier], 0) : 0;
+  return Math.max(0, admin + training);
 }
 
 export function estimateVenueFee(

@@ -7,8 +7,18 @@ import { playableGroups } from "../data/scenarioBrowse";
 import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } from "../data/startupGroupPicker";
 import { inferLetterTier } from "../engine/financeSystem";
 import { htmlEsc } from "./htmlEsc";
+import { languageOptions, t, type UiLanguage } from "./i18n";
 
 export type OpeningScreen = "home" | "new_game" | "load_slot";
+
+function renderLanguageSelect(lang: UiLanguage): string {
+  return `<label class="opening-label opening-slot-row" for="lang-select-opening">${htmlEsc(t(lang, "language"))}</label>
+    <select id="lang-select-opening" class="opening-input" style="max-width: 14rem">
+      ${languageOptions()
+        .map((opt) => `<option value="${opt.value}" ${opt.value === lang ? "selected" : ""}>${htmlEsc(opt.label)}</option>`)
+        .join("")}
+    </select>`;
+}
 
 export function renderOpeningHome(
   presetHint: ScenarioPreset | null,
@@ -17,9 +27,10 @@ export function renderOpeningHome(
   canResume: boolean,
   slot: number,
   occupiedSlots: number[],
+  lang: UiLanguage,
 ): string {
   const hint = presetHint
-    ? `Default scenario preset: <strong>${htmlEsc(presetHint.name)}</strong> (opening ${htmlEsc(presetHint.opening_date)}).`
+    ? t(lang, "opening_default_scenario", { name: presetHint.name, date: presetHint.opening_date })
     : "";
 
   const disabled = dbReady ? "" : "disabled";
@@ -27,26 +38,27 @@ export function renderOpeningHome(
   return `
 <section class="opening-screen" aria-label="Launcher">
   <div class="opening-hero fm-card-opening">
+    ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
-    <p class="opening-tagline">${htmlEsc("Choose how to enter the world: start a fresh scenario, load browser save slots, or browse the database first.")}</p>
-    ${hint ? `<p class="opening-preset">${hint}</p>` : ""}
+    <p class="opening-tagline">${htmlEsc(t(lang, "opening_tagline"))}</p>
+    ${hint ? `<p class="opening-preset">${htmlEsc(hint)}</p>` : ""}
   </div>
 
   <div class="opening-actions">
-    ${canResume ? `<button type="button" class="opening-btn opening-btn-green" id="opening-resume">Resume</button>` : ""}
-    <button type="button" class="opening-btn opening-btn-primary" id="opening-new-game" ${disabled}>New Game</button>
-    <button type="button" class="opening-btn opening-btn-primary" id="opening-load-slot" ${disabled}>Load</button>
-    <button type="button" class="opening-btn opening-btn-primary" id="opening-browse" ${disabled}>Browse</button>
+    ${canResume ? `<button type="button" class="opening-btn opening-btn-green" id="opening-resume">${htmlEsc(t(lang, "opening_resume"))}</button>` : ""}
+    <button type="button" class="opening-btn opening-btn-primary" id="opening-new-game" ${disabled}>${htmlEsc(t(lang, "opening_new_game"))}</button>
+    <button type="button" class="opening-btn opening-btn-primary" id="opening-load-slot" ${disabled}>${htmlEsc(t(lang, "opening_load"))}</button>
+    <button type="button" class="opening-btn opening-btn-primary" id="opening-browse" ${disabled}>${htmlEsc(t(lang, "opening_browse"))}</button>
   </div>
 
   <div class="opening-status fm-card-opening">
-    <h2 class="opening-status-h">Status</h2>
-    <p class="opening-status-strong">${dbReady ? "Database ready." : "Loading scenario database files…"}</p>
+    <h2 class="opening-status-h">${htmlEsc(t(lang, "opening_status"))}</h2>
+    <p class="opening-status-strong">${htmlEsc(dbReady ? t(lang, "opening_db_ready") : t(lang, "opening_db_loading"))}</p>
     <p class="opening-status-msg">${htmlEsc(status)}</p>
-    <label class="opening-label opening-slot-row" for="opening-slot-select">Load slot</label>
+    <label class="opening-label opening-slot-row" for="opening-slot-select">${htmlEsc(t(lang, "opening_load_slot"))}</label>
     <select id="opening-slot-select" class="opening-input" style="max-width: 14rem">
       ${Array.from({ length: 10 }, (_, s) => {
-        const occ = occupiedSlots.includes(s) ? " — saved" : "";
+        const occ = occupiedSlots.includes(s) ? ` - ${t(lang, "opening_slot_saved")}` : "";
         return `<option value="${s}" ${s === slot ? "selected" : ""}>Slot ${s}${occ}</option>`;
       }).join("")}
     </select>
@@ -69,13 +81,14 @@ export interface NewGameRow {
 function rowFromGroup(g: Record<string, unknown>, tierMap: Map<string, GroupTierRow>, recommended: boolean): NewGameRow | null {
   const uid = String(g.uid ?? "");
   if (!uid.length) return null;
-  const name = String(g.name ?? g.name_romanji ?? "—");
+  const name = String(g.name ?? g.name_romanji ?? "-");
   const nameRomanji = String(g.name_romanji ?? "") || undefined;
   const mc = Array.isArray(g.member_uids) ? g.member_uids.length : 0;
-  const formed = typeof g.formed_date === "string" ? g.formed_date : "—";
+  const formed = typeof g.formed_date === "string" ? g.formed_date : "-";
   const popNum = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
   const fansNum = typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
-  const staticT = tierMap.get(uid);
+  const staticT =
+    tierMap.get(uid);
   const tier =
     staticT && typeof staticT.letter_tier === "string" && /^[SABCDEF]$/i.test(staticT.letter_tier.trim())
       ? String(staticT.letter_tier).trim().toUpperCase()
@@ -89,7 +102,7 @@ function rowFromGroup(g: Record<string, unknown>, tierMap: Map<string, GroupTier
     tier,
     memberCount: mc,
     formed,
-    popularity: g.popularity != null ? String(g.popularity) : "—",
+    popularity: g.popularity != null ? String(g.popularity) : "-",
     recommended: recommended || undefined,
   };
 }
@@ -133,9 +146,8 @@ export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
       else tail.push({ g: row.g });
     }
     tail.sort((a, b) => compareStartupGroupRows(a.g, b.g, tierMap));
-    pairs = [...head, ...tail.map((t) => ({ g: t.g, recommended: false }))];
+    pairs = [...head, ...tail.map((t0) => ({ g: t0.g, recommended: false }))];
   } else if (loaded.preset.scenario_number === 6) {
-    // Scenario 6 new game is curated-only (docs/scenario6_available_groups.txt → startup_allowlist.json); never show the full roster.
     pairs = [];
   } else {
     pairs = sortGroupsForStartupPick(playable, tierMap).map((g) => ({ g, recommended: false }));
@@ -151,33 +163,15 @@ export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
 
 export function renderNewGameScreen(
   rows: NewGameRow[],
-  preset: ScenarioPreset,
   playerNameDefault: string,
-  scenario6CuratedPicker?: boolean,
+  lang: UiLanguage,
 ): string {
-  const s6 = scenario6CuratedPicker === true;
-  const hasRec = rows.some((r) => r.recommended);
-  const recCount = rows.filter((r) => r.recommended).length;
-  const recTopHint =
-    recCount === 1
-      ? "The first shortlist name stays at the top (★); the rest follow, sorted by tier, fans, popularity."
-      : `The first ${recCount} shortlist names stay at the top (★); the rest follow, sorted by tier, fans, popularity.`;
-  const noRows = rows.length === 0;
-  const tableHint = s6 && noRows
-    ? "Scenario 6 lists only groups from docs/scenario6_available_groups.txt (synced to startup_allowlist.json). None matched yet — run npm run data:scenario6-startup-allowlist, ship the JSON beside group_tiers.json, and align Japanese names in groups.json (2+ current members)."
-    : s6 && !noRows
-      ? hasRec
-        ? `Only groups from docs/scenario6_available_groups.txt appear here. ${recTopHint}`
-        : "Only groups from docs/scenario6_available_groups.txt appear here (sorted by tier, fans, popularity)."
-      : hasRec
-        ? `Only groups from the scenario shortlist are shown. ${recTopHint}`
-        : "Playable roster list from the snapshot (sorted by tier, fans, popularity). Click a row to select.";
   const tableRows = rows
     .map(
       (r) => `
     <tr data-group-uid="${htmlEsc(r.uid)}" class="group-picker-row${r.recommended ? " group-picker-row--recommended" : ""}">
-      <td>${r.recommended ? `<span class="opening-rec-mark" title="${htmlEsc("Recommended")}">★</span>` : ""}${htmlEsc(r.name)}</td>
-      <td>${htmlEsc(r.nameRomanji ?? "—")}</td>
+      <td>${r.recommended ? `<span class="opening-rec-mark" title="${htmlEsc(t(lang, "opening_recommended"))}">★</span>` : ""}${htmlEsc(r.name)}</td>
+      <td>${htmlEsc(r.nameRomanji ?? "-")}</td>
       <td>${htmlEsc(r.tier)}</td>
       <td>${r.memberCount}</td>
       <td>${htmlEsc(r.formed)}</td>
@@ -189,31 +183,30 @@ export function renderNewGameScreen(
   return `
 <section class="opening-screen opening-new-game" aria-label="New game">
   <div class="opening-hero fm-card-opening">
-    <h1 class="opening-title">${htmlEsc("NEW GAME")}</h1>
-    <p class="opening-tagline">${htmlEsc(`Confirm producer name and choose your managed group. Scenario ${preset.scenario_number} · ${preset.name}`)}.</p>
+    ${renderLanguageSelect(lang)}
+    <h1 class="opening-title">${htmlEsc(t(lang, "opening_new_game_title"))}</h1>
   </div>
 
   <div class="fm-card-opening producer-block">
-    <label class="opening-label" for="producer-name">Producer Name</label>
-    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(playerNameDefault)}" placeholder="Your name" autocomplete="off" />
+    <label class="opening-label" for="producer-name">${htmlEsc(t(lang, "opening_producer_name"))}</label>
+    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(playerNameDefault)}" placeholder="${htmlEsc(t(lang, "opening_your_name"))}" autocomplete="off" />
   </div>
 
   <div class="fm-card-opening opening-table-wrap">
-    <h2 class="opening-table-h">${htmlEsc("Managed group")}</h2>
-    <p class="content-muted">${htmlEsc(tableHint)}</p>
+    <h2 class="opening-table-h">${htmlEsc(t(lang, "opening_managed_group"))}</h2>
     <div class="table-scroll">
       <table class="fm-table group-pick-table" id="group-pick-table">
         <thead>
-          <tr><th>Group</th><th>Romanji</th><th>Tier</th><th>Members</th><th>Formed</th><th>Pop</th></tr>
+          <tr><th>${htmlEsc(t(lang, "opening_group"))}</th><th>${htmlEsc(t(lang, "opening_romaji"))}</th><th>${htmlEsc(t(lang, "opening_tier"))}</th><th>${htmlEsc(t(lang, "opening_members"))}</th><th>${htmlEsc(t(lang, "opening_formed"))}</th><th>${htmlEsc(t(lang, "opening_pop"))}</th></tr>
         </thead>
-        <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">No rows</td></tr>`}</tbody>
+        <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(t(lang, "opening_no_rows"))}</td></tr>`}</tbody>
       </table>
     </div>
   </div>
 
   <div class="opening-actions-footer">
-    <button type="button" class="opening-btn" id="new-game-back">Back</button>
-    <button type="button" class="opening-btn opening-btn-green" id="new-game-start" disabled>${htmlEsc("Start scenario")}</button>
+    <button type="button" class="opening-btn" id="new-game-back">${htmlEsc(t(lang, "opening_back"))}</button>
+    <button type="button" class="opening-btn opening-btn-green" id="new-game-start" disabled>${htmlEsc(t(lang, "opening_start_scenario"))}</button>
   </div>
 </section>`;
 }

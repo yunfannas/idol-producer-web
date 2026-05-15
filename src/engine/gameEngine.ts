@@ -19,29 +19,62 @@ import {
 } from "./financeSystem";
 import {
   applyDailyStatusUpdateJson,
+  buildDailyTrainingPlan,
   defaultAutopilotTrainingIntensity,
   ensureIdolSimulationDefaults,
   normalizeTrainingWeekLog,
   recordTrainingDay,
   safeTrainingRow,
-  trainingLoadFromRow,
 } from "./idolStatusSystem";
 import {
   applyLiveResultToSnapshot,
   estimateTokutenkaiRevenueYen,
   resolveGroupLiveResultWeb,
 } from "./livePerformanceWeb";
-import { isSongHiddenFromDisplay } from "../data/songDisplayPolicy";
-import { buildAutopilotRoutineLive, formatLiveSlotLine } from "./liveScheduleWeb";
+import { formatLiveSlotLine } from "./liveScheduleWeb";
 import { applyScenarioEventsForDate } from "./scenarioRuntimeWeb";
 import { buildDefaultScoutCompanies } from "./scoutWeb";
+import {
+  autoBookMonthFromMonthEndPrompt,
+  ensureAutoBookedLivesThroughEndOfNextMonth,
+  maybeSeedMonthEndAutoBookPrompt,
+} from "./monthlyLiveScheduler";
 
 export { createGameSaveFromLoadedScenario };
+export const SIMULATION_DAY_START_TIME = "08:00:00";
 
-/** Autopilot: routine live when `turn_number % 7` matches at day advance (same as advanceOneDay). */
+export function isoDatePart(isoLike: string | null | undefined): string {
+  return String(isoLike ?? "").split("T")[0] || "2020-01-01";
+}
+
+export function isoTimePart(isoLike: string | null | undefined): string {
+  const text = String(isoLike ?? "");
+  const time = text.includes("T") ? text.split("T")[1] ?? "" : "";
+  const m = /^(\d{2}:\d{2})(?::\d{2})?/.exec(time);
+  return m?.[1] ?? "08:00";
+}
+
+export function combineIsoDateTime(dateIso: string, hhmmss: string): string {
+  return `${isoDatePart(dateIso)}T${hhmmss}`;
+}
+
+function hhmmToMinutes(value: string): number {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(value.trim());
+  if (!m) return 0;
+  return Number(m[1]) * 60 + Number(m[2]);
+}
+
+function isoTimeToMinutes(isoLike: string | null | undefined): number {
+  return hhmmToMinutes(isoTimePart(isoLike));
+}
+
+function currentSimulationIso(save: GameSavePayload): string {
+  const base = save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? "2020-01-01";
+  return String(base).includes("T") ? String(base) : combineIsoDateTime(String(base), SIMULATION_DAY_START_TIME);
+}
+
+/** Legacy weekly autopilot marker retained only for older UI references. */
 export const AUTOPILOT_LIVE_WEEKDAY_INDEX = 3;
-
-const LIVE_DAY_INDEX = AUTOPILOT_LIVE_WEEKDAY_INDEX;
 
 function deepSaveCopy(save: GameSavePayload): GameSavePayload {
   return JSON.parse(JSON.stringify(save)) as GameSavePayload;
@@ -52,11 +85,16 @@ export function createNewGameSaveFromScenario(
   loaded: LoadedScenario,
   opts: { playerName: string; managedGroupLabel: string; managedGroupUid?: string },
 ): GameSavePayload {
-  return createGameSaveFromLoadedScenario(loaded, {
+  const save = createGameSaveFromLoadedScenario(loaded, {
     playerName: opts.playerName,
     managedGroupLabel: opts.managedGroupLabel,
     managedGroupUid: opts.managedGroupUid ?? null,
   });
+  ensureAutoBookedLivesThroughEndOfNextMonth(save);
+  save.current_date = combineIsoDateTime(save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01", SIMULATION_DAY_START_TIME);
+  seedTodaysLiveBlockingInbox(save, save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01");
+  maybeSeedMonthEndAutoBookPrompt(save);
+  return save;
 }
 
 function memberCountFromSave(save: GameSavePayload): number {
@@ -75,51 +113,6 @@ function readPopFans(save: GameSavePayload): { popularity: number; fans: number;
   const xFollowers =
     typeof g?.x_followers === "number" ? g.x_followers : Number(g?.x_followers ?? 0) || 0;
   return { popularity, fans, xFollowers };
-}
-
-function pickRecentSetlistTitles(
-  songs: Record<string, unknown>[],
-  groupUid: string,
-  liveIso: string,
-  maxN: number,
-): string[] {
-  const liveT = Date.parse(liveIso + "T12:00:00Z");
-  if (Number.isNaN(liveT)) return [];
-  const hits: { title: string; t: number }[] = [];
-  for (const song of songs) {
-    if (!song || typeof song !== "object") continue;
-    const s = song as Record<string, unknown>;
-    if (String(s.group_uid ?? "") !== groupUid) continue;
-    if (s.hidden === true) continue;
-    if (isSongHiddenFromDisplay(s)) continue;
-    const rd = String(s.release_date ?? "").split("T")[0];
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(rd)) continue;
-    const delta = Math.round((liveT - Date.parse(rd + "T12:00:00Z")) / 86400000);
-    if (delta >= 0 && delta <= 60) {
-      const title = String(s.title ?? s.title_romanji ?? "").trim();
-      if (title) hits.push({ title, t: Date.parse(rd + "T12:00:00Z") });
-    }
-  }
-  hits.sort((a, b) => b.t - a.t);
-  const out: string[] = [];
-  const seen = new Set<string>();
-  for (const h of hits) {
-    if (seen.has(h.title)) continue;
-    seen.add(h.title);
-    out.push(h.title);
-    if (out.length >= maxN) break;
-  }
-  return out;
-}
-
-function buildRoutineLive(
-  targetIso: string,
-  group: Record<string, unknown>,
-  songs: Record<string, unknown>[],
-): Record<string, unknown> {
-  const gUid = String(group.uid ?? "");
-  const setlist = pickRecentSetlistTitles(songs, gUid, targetIso, 5);
-  return buildAutopilotRoutineLive({ targetIso, group, setlist });
 }
 
 export function getBlockingNotificationForSave(save: GameSavePayload) {
@@ -216,6 +209,146 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
   return body;
 }
 
+function durationMinutesFromLive(live: Record<string, unknown>): number {
+  const start = String(live.start_time ?? "").slice(0, 5);
+  const end = String(live.end_time ?? "").slice(0, 5);
+  const parse = (value: string): number | null => {
+    const m = /^(\d{1,2}):(\d{2})$/.exec(value);
+    if (!m) return null;
+    return Number(m[1]) * 60 + Number(m[2]);
+  };
+  const startMin = parse(start);
+  const endMin = parse(end);
+  if (startMin == null || endMin == null) return 0;
+  const delta = endMin - startMin;
+  return delta > 0 ? delta : 0;
+}
+
+interface SimulationEvent {
+  kind: "training_end" | "live_report";
+  iso: string;
+  label: string;
+  liveUid?: string;
+  slotId?: string;
+  idolUids?: string[];
+  trainingBlocksByUid?: Record<string, number>;
+}
+
+function liveDaysInWeekForGroup(save: GameSavePayload, groupUid: string): Set<string> {
+  return new Set(
+    (save.lives?.schedules ?? [])
+      .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+      .filter((live) => String(live.group_uid ?? "") === groupUid)
+      .map((live) => isoDatePart(String(live.start_date ?? "")))
+      .filter(Boolean),
+  );
+}
+
+function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] {
+  const nowIso = currentSimulationIso(save);
+  const todayIso = isoDatePart(nowIso);
+  const nowMin = isoTimeToMinutes(nowIso);
+  const out: SimulationEvent[] = [];
+  const group = getPrimaryGroup(save);
+  const gid = String(group?.uid ?? "");
+  const memberUids = Array.isArray(group?.member_uids)
+    ? (group!.member_uids as unknown[]).map((x) => String(x))
+    : [];
+  const rosterUids = memberUids.length > 0 ? memberUids : save.shortlist.map((x) => String(x));
+  const liveDaysInWeek = liveDaysInWeekForGroup(save, gid);
+
+  const trainingBySlot = new Map<string, { iso: string; label: string; byUid: Record<string, number> }>();
+  for (const uid of rosterUids) {
+    const intensity = safeTrainingRow(save.training_intensity[uid] ?? defaultAutopilotTrainingIntensity());
+    const plan = buildDailyTrainingPlan(intensity, todayIso, liveDaysInWeek);
+    for (const session of plan.sessions) {
+      const eventMin = isoTimeToMinutes(session.endTime);
+      if (eventMin <= nowMin) continue;
+      const existing = trainingBySlot.get(session.slotId) ?? {
+        iso: session.endTime,
+        label: session.label,
+        byUid: {},
+      };
+      existing.byUid[uid] = session.blocks;
+      trainingBySlot.set(session.slotId, existing);
+    }
+  }
+  for (const [slotId, row] of trainingBySlot.entries()) {
+    out.push({
+      kind: "training_end",
+      iso: row.iso,
+      label: row.label,
+      slotId,
+      idolUids: Object.keys(row.byUid),
+      trainingBlocksByUid: row.byUid,
+    });
+  }
+
+  for (const raw of save.lives.schedules) {
+    if (!raw || typeof raw !== "object") continue;
+    const live = raw as Record<string, unknown>;
+    if (isoDatePart(String(live.start_date ?? "")) !== todayIso) continue;
+    if (String(live.status ?? "") === "played") continue;
+    const endTime = String(live.end_time ?? "").trim();
+    const eventIso = combineIsoDateTime(todayIso, `${endTime || "23:59"}:00`.replace(/^(\d{2}:\d{2})$/, "$1:00"));
+    if (isoTimeToMinutes(eventIso) <= nowMin) continue;
+    out.push({
+      kind: "live_report",
+      iso: eventIso,
+      label: String(live.title ?? live.live_type ?? "Live report"),
+      liveUid: String(live.uid ?? ""),
+    });
+  }
+
+  out.sort((a, b) => a.iso.localeCompare(b.iso) || a.kind.localeCompare(b.kind));
+  return out;
+}
+
+export function hasPendingEventsToday(save: GameSavePayload): boolean {
+  return collectTodaySimulationEvents(save).length > 0;
+}
+
+function buildLiveReportData(live: Record<string, unknown>): Record<string, unknown> {
+  const ticketGross = Number(live.ticket_gross_yen ?? 0) || 0;
+  const goodsGross = Number(live.goods_gross_yen ?? 0) || 0;
+  const tokutenkaiRevenue =
+    Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(Number(live.tokutenkai_actual_tickets ?? 0) || 0)) || 0;
+  return {
+    kind: "live_report",
+    title: String(live.title ?? live.live_type ?? "Live"),
+    live_type: String(live.live_type ?? live.event_type ?? "Live"),
+    date: String(live.date ?? live.start_date ?? "").split("T")[0],
+    slot: formatLiveSlotLine(live) || String(live.start_date ?? "").split("T")[0],
+    venue: String(live.venue ?? "—"),
+    location: String(live.location ?? "").trim(),
+    attendance: Number(live.attendance ?? 0) || 0,
+    capacity: Number(live.capacity ?? 0) || 0,
+    expectation_score: live.expectation_score ?? "—",
+    novelty_score: live.novelty_score ?? "—",
+    performance_score: live.performance_score ?? "—",
+    audience_satisfaction: live.audience_satisfaction ?? "—",
+    group_fan_gain: Number(live.group_fan_gain ?? live.fan_gain ?? 0) || 0,
+    gross_yen: ticketGross + goodsGross + tokutenkaiRevenue,
+    ticket_gross_yen: ticketGross,
+    goods_gross_yen: goodsGross,
+    tokutenkai_actual_tickets: Number(live.tokutenkai_actual_tickets ?? 0) || 0,
+    tokutenkai_expected_tickets: Number(live.tokutenkai_expected_tickets ?? 0) || 0,
+    tokutenkai_revenue_yen: tokutenkaiRevenue,
+    setlist: Array.isArray(live.setlist) ? live.setlist : [],
+    member_deltas: Array.isArray(live.member_deltas)
+      ? live.member_deltas.map((row) => {
+          if (!row || typeof row !== "object") return row;
+          const r = row as Record<string, unknown>;
+          const tk = Number(r.tokutenkai_tickets ?? 0) || 0;
+          return {
+            ...r,
+            cheki_sale_money_yen: estimateTokutenkaiRevenueYen(tk),
+          };
+        })
+      : [],
+  };
+}
+
 function subtractBreakdowns(a: DailyBreakdown, b: DailyBreakdown): DailyBreakdown {
   const keys: (keyof DailyBreakdown)[] = [
     "income_total",
@@ -306,6 +439,7 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
   const uidSet = new Set(rosterUids);
   const members = idols.filter((row) => row && uidSet.has(String(row.uid ?? "")));
   const songs = save.database_snapshot.songs as Record<string, unknown>[];
+  const weekLog = normalizeTrainingWeekLog(save.training_week_log);
 
   const resultUids = new Set(
     save.lives.results
@@ -339,6 +473,32 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
 
     const resolution = resolveGroupLiveResultWeb(g, members, songs, live);
     const applied = applyLiveResultToSnapshot(g, members, resolution);
+    const liveMinutes = durationMinutesFromLive(live);
+    const rehearsalStart = String(live.rehearsal_start ?? "").slice(0, 5);
+    const rehearsalEnd = String(live.rehearsal_end ?? "").slice(0, 5);
+    const rehearsalMinutes = (() => {
+      const parse = (value: string): number | null => {
+        const m = /^(\d{1,2}):(\d{2})$/.exec(value);
+        if (!m) return null;
+        return Number(m[1]) * 60 + Number(m[2]);
+      };
+      const startMin = parse(rehearsalStart);
+      const endMin = parse(rehearsalEnd);
+      if (startMin == null || endMin == null) return 0;
+      const delta = endMin - startMin;
+      return delta > 0 ? delta : 0;
+    })();
+    for (const member of members) {
+      applyDailyStatusUpdateJson(member, {
+        trainingLoad: 0,
+        trainingHours: 0,
+        liveCount: 1,
+        liveMinutes,
+        rehearsalMinutes,
+        birthday: false,
+        includeSleepRecovery: false,
+      });
+    }
     const ticketPrice = Math.max(0, Number(live.ticket_price ?? 0) || 0);
     const goodsGross = Math.max(0, Number(live.goods_gross_yen ?? live.goods_expected_revenue_yen ?? 0) || 0);
     const ticketGross = ticketPrice > 0 ? resolution.attendance * ticketPrice : 0;
@@ -387,17 +547,35 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       category: "internal",
       level: "normal",
       isoDate: targetIso,
+      createdTime: `${String(live.end_time ?? "21:00").slice(0, 5)}:00`,
       unread: true,
       dedupeKey: `live-report-start|${uid}|${targetIso}`,
       relatedEventUid: uid,
+      reportData: buildLiveReportData(played),
     });
     played.report_generated_same_day = true;
   }
   save.lives.schedules = remaining;
   save.finances = finances;
+  save.training_week_log = weekLog as unknown as GameSavePayload["training_week_log"];
 }
 
-function seedTodaysLiveBlockingInbox(save: GameSavePayload, targetIso: string, live: Record<string, unknown>): void {
+function scheduledManagedLivesForDate(save: GameSavePayload, targetIso: string): Record<string, unknown>[] {
+  const g = getPrimaryGroup(save) as Record<string, unknown> | null;
+  const gid = g && String(g.uid ?? "");
+  if (!gid) return [];
+  return save.lives.schedules.filter((raw): raw is Record<string, unknown> => {
+    if (!raw || typeof raw !== "object") return false;
+    const live = raw as Record<string, unknown>;
+    const sd = String(live.start_date ?? "").split("T")[0];
+    return sd === targetIso && String(live.group_uid ?? "") === gid && String(live.status ?? "") !== "played";
+  });
+}
+
+function seedTodaysLiveBlockingInbox(save: GameSavePayload, targetIso: string): void {
+  const dayIso = isoDatePart(targetIso);
+  const todaysLives = scheduledManagedLivesForDate(save, dayIso);
+  if (!todaysLives.length) return;
   const g = getPrimaryGroup(save) as Record<string, unknown> | null;
   const gid = g && String(g.uid ?? "");
   if (!gid) return;
@@ -407,16 +585,16 @@ function seedTodaysLiveBlockingInbox(save: GameSavePayload, targetIso: string, l
   const idols = save.database_snapshot.idols as Record<string, unknown>[];
   const uidSet = new Set(memberUids);
   const members = idols.filter((row) => row && uidSet.has(String(row.uid ?? "")));
-  const body = formatTodaysLiveScheduleBody([live], members);
+  const body = formatTodaysLiveScheduleBody(todaysLives, members);
   addNotification(save, {
     title: "Today's live schedule",
     body,
     sender: "Assistant",
     category: "confirmation",
     level: "critical",
-    isoDate: targetIso,
+    isoDate: dayIso,
     unread: true,
-    dedupeKey: `daily-lives|${gid}|${targetIso}`,
+    dedupeKey: `daily-lives|${gid}|${dayIso}`,
     requiresConfirmation: true,
   });
 }
@@ -434,6 +612,12 @@ export function acknowledgeInboxNotification(save: GameSavePayload, notification
     const curIso = String(cur).split("T")[0];
     archiveAndResolveManagedLivesForDate(next, curIso);
   }
+  if (dk.startsWith("auto-book-lives|")) {
+    const monthStart = dk.split("|")[2] ?? "";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(monthStart)) {
+      autoBookMonthFromMonthEndPrompt(next, monthStart);
+    }
+  }
 
   item.read = true;
   item.requires_confirmation = false;
@@ -444,9 +628,64 @@ export function acknowledgeInboxNotification(save: GameSavePayload, notification
   return next;
 }
 
-/** Simulate one calendar day (desktop NEXT DAY analogue). */
-export function advanceOneDay(save: GameSavePayload): GameSavePayload {
+function applyMorningRecovery(next: GameSavePayload, targetDateIso: string): void {
+  const group = getPrimaryGroup(next);
+  if (!group || typeof group !== "object") return;
+  const g = group as Record<string, unknown>;
+  const memberUids = Array.isArray(g.member_uids)
+    ? (g.member_uids as unknown[]).map((x) => String(x))
+    : [];
+  const rosterUids = memberUids.length > 0 ? memberUids : next.shortlist.map((x) => String(x));
+  const idols = next.database_snapshot.idols as Record<string, unknown>[];
+  for (const uid of rosterUids) {
+    const idol = idols.find((r) => String(r.uid ?? "") === uid);
+    if (!idol) continue;
+    applyDailyStatusUpdateJson(idol, {
+      trainingLoad: 0,
+      trainingHours: 0,
+      liveCount: 0,
+      liveMinutes: 0,
+      rehearsalMinutes: 0,
+      birthday: false,
+      includeSleepRecovery: true,
+    });
+  }
+}
+
+function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent): void {
+  const idols = next.database_snapshot.idols as Record<string, unknown>[];
+  const affected: string[] = [];
+  for (const uid of event.idolUids ?? []) {
+    const idol = idols.find((r) => String(r.uid ?? "") === uid);
+    if (!idol) continue;
+    const blocks = Math.max(1, event.trainingBlocksByUid?.[uid] ?? 1);
+    applyDailyStatusUpdateJson(idol, {
+      trainingLoad: Math.min(20, blocks * 10),
+      trainingHours: blocks * 4,
+      liveCount: 0,
+      liveMinutes: 0,
+      rehearsalMinutes: 0,
+      birthday: false,
+      includeSleepRecovery: false,
+    });
+    affected.push(String(idol.name ?? uid));
+  }
+  addNotification(next, {
+    title: `${event.label} ended`,
+    body: `${isoDatePart(event.iso)} ${isoTimePart(event.iso)} · ${affected.length} idol(s): ${affected.join(", ")}.`,
+    sender: "Training",
+    category: "general",
+    isoDate: isoDatePart(event.iso),
+    createdTime: `${isoTimePart(event.iso)}:00`,
+    unread: true,
+    dedupeKey: `training-end|${event.slotId}|${isoDatePart(event.iso)}`,
+  });
+}
+
+/** Legacy full-day advance path retained while event-step mode wraps it. */
+export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   const next = deepSaveCopy(save);
+  ensureAutoBookedLivesThroughEndOfNextMonth(next);
   const mc = memberCountFromSave(next);
   const group = getPrimaryGroup(next);
   const letterTier = getLetterTierFromGroup(group);
@@ -458,7 +697,6 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   let finances = normalizeFinances(getActiveFinances(next) as Parameters<typeof normalizeFinances>[0]);
 
   const targetIso = addCalendarDays(typeof gameStart === "string" ? gameStart : "2020-01-01", dayOffset);
-  const isLiveDay = dayOffset % 7 === LIVE_DAY_INDEX;
   /** Live stress applies only after Live Start (desktop); day-of advance keeps training load lower. */
   const liveCount = 0;
   const liveMinutes = 0;
@@ -471,47 +709,38 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
       ? (g.member_uids as unknown[]).map((x) => String(x))
       : [];
     const rosterUids = memberUids.length > 0 ? memberUids : next.shortlist.map((x) => String(x));
-
-    const idols = next.database_snapshot.idols as Record<string, unknown>[];
-    const uidSet = new Set(rosterUids);
-    const members = idols.filter((row) => row && uidSet.has(String(row.uid ?? "")));
-
     const weekLog = normalizeTrainingWeekLog(next.training_week_log);
+    const liveDaysInWeek = new Set(
+      next.lives.schedules
+        .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+        .filter((live) => String(live.group_uid ?? "") === String(g.uid ?? ""))
+        .map((live) => String(live.start_date ?? "").split("T")[0])
+        .filter(Boolean),
+    );
 
     for (const uid of rosterUids) {
-      const idol = idols.find((r) => String(r.uid ?? "") === uid);
-      if (!idol) continue;
-      ensureIdolSimulationDefaults(idol);
       const ti = next.training_intensity[uid];
       if (!ti || typeof ti !== "object") {
         next.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
       }
       const intensity = safeTrainingRow(next.training_intensity[uid]);
       const focus = String(next.training_focus_skill[uid] ?? "");
-      recordTrainingDay(weekLog, uid, targetIso, intensity, liveCount, liveMinutes, focus);
-      applyDailyStatusUpdateJson(idol, {
-        trainingLoad: trainingLoadFromRow(intensity),
+      const trainingPlan = buildDailyTrainingPlan(intensity, targetIso, liveDaysInWeek);
+      recordTrainingDay(
+        weekLog,
+        uid,
+        targetIso,
+        intensity,
+        trainingPlan.trainingHours,
+        trainingPlan.sessionLabels,
         liveCount,
         liveMinutes,
-        birthday: false,
-      });
+        focus,
+      );
     }
 
     next.training_week_log = weekLog as unknown as GameSavePayload["training_week_log"];
 
-    if (isLiveDay && members.length > 0) {
-      const songs = next.database_snapshot.songs as Record<string, unknown>[];
-      const live = buildRoutineLive(targetIso, g, songs);
-      const uid = String(live.uid ?? "");
-      const dup = (next.lives.schedules as unknown[]).some((row) => {
-        if (!row || typeof row !== "object") return false;
-        return String((row as Record<string, unknown>).uid ?? "") === uid;
-      });
-      if (!dup) {
-        next.lives.schedules.push({ ...live });
-        seedTodaysLiveBlockingInbox(next, targetIso, live);
-      }
-    }
   }
 
   const { popularity, fans, xFollowers } = readPopFans(next);
@@ -535,6 +764,9 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   next.turn_number = dayOffset + 1;
   next.current_date = targetIso;
   applyScenarioEventsForDate(next, targetIso);
+  ensureAutoBookedLivesThroughEndOfNextMonth(next);
+  seedTodaysLiveBlockingInbox(next, targetIso);
+  maybeSeedMonthEndAutoBookPrompt(next);
   if (!next.scout.selected_company_uid) {
     next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
   }
@@ -553,6 +785,34 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   }
 
   return next;
+}
+
+/** Advance simulation to the next event today, otherwise to the next day 08:00. */
+export function advanceOneDay(save: GameSavePayload): GameSavePayload {
+  const next = deepSaveCopy(save);
+  ensureAutoBookedLivesThroughEndOfNextMonth(next);
+  const nowIso = currentSimulationIso(next);
+  const todayIso = isoDatePart(nowIso);
+  const events = collectTodaySimulationEvents(next);
+  if (events.length > 0) {
+    const event = events[0]!;
+    next.current_date = event.iso;
+    if (event.kind === "training_end") {
+      processTrainingEndEvent(next, event);
+    } else if (event.kind === "live_report") {
+      archiveAndResolveManagedLivesForDate(next, todayIso);
+    }
+    if (!next.scout.selected_company_uid) {
+      next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
+    }
+    return next;
+  }
+
+  const dayAdvanced = advanceOneDayLegacy(next);
+  const targetIso = isoDatePart(dayAdvanced.current_date ?? currentSimulationIso(dayAdvanced));
+  dayAdvanced.current_date = combineIsoDateTime(targetIso, SIMULATION_DAY_START_TIME);
+  applyMorningRecovery(dayAdvanced, targetIso);
+  return dayAdvanced;
 }
 
 export { getBlockingNotification };

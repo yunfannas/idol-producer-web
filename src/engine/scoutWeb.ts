@@ -87,6 +87,10 @@ function normText(value: unknown): string {
   return String(value ?? "").trim().toLowerCase();
 }
 
+function stableHash01(seed: string): number {
+  return noise01(`scout-hash|${seed}`);
+}
+
 function cityMatchesText(city: string, text: string): boolean {
   const norm = normText(text);
   return CITY_ALIASES[city]?.some((alias) => norm.includes(alias.toLowerCase())) ?? false;
@@ -180,6 +184,31 @@ export function buildDefaultScoutCompanies(): ScoutCompany[] {
   return companies;
 }
 
+function hometownAffinityScore(city: string, idol: Record<string, unknown>): number {
+  return cityMatchesText(city, String(idol.birthplace ?? "")) ? 100 : 0;
+}
+
+function companyAssignmentScore(company: ScoutCompany, idol: Record<string, unknown>): number {
+  const local = hometownAffinityScore(company.city, idol);
+  const profile = idolProfileScore(idol);
+  const followerBand = Math.min(12, Math.floor(idolFollowers(idol) / 15_000));
+  const stableBias = stableHash01(`${company.uid}|${String(idol.uid ?? "")}`) * 10;
+  return local + profile * 0.18 + followerBand + stableBias - company.level * 0.5;
+}
+
+function preferredFreelancerCompanyUid(idol: Record<string, unknown>, companies: ScoutCompany[]): string | null {
+  let bestUid: string | null = null;
+  let bestScore = Number.NEGATIVE_INFINITY;
+  for (const company of companies) {
+    const score = companyAssignmentScore(company, idol);
+    if (score > bestScore) {
+      bestScore = score;
+      bestUid = company.uid;
+    }
+  }
+  return bestUid;
+}
+
 export function recommendScoutLeads(params: {
   idols: Record<string, unknown>[];
   managedGroupName: string;
@@ -187,21 +216,29 @@ export function recommendScoutLeads(params: {
   targetType: "freelancer" | "transfer";
   currentIso: string;
   limit?: number;
+  companies?: ScoutCompany[];
 }): ScoutLeadRow[] {
-  const { idols, managedGroupName, company, targetType, currentIso, limit = 18 } = params;
+  const { idols, managedGroupName, company, targetType, currentIso, limit = 18, companies } = params;
   const playerNorm = normText(managedGroupName);
   const rows: ScoutLeadRow[] = [];
+  const assignmentPool = companies?.length ? companies : [company];
   for (const idol of idols) {
     if (!idol || typeof idol !== "object") continue;
-    const currentGroups = activeGroupsForDate(idol, currentIso).filter((name) => normText(name) !== playerNorm);
-    if (targetType === "freelancer" && currentGroups.length > 0) continue;
+    const allCurrentGroups = activeGroupsForDate(idol, currentIso);
+    const inManagedGroup = allCurrentGroups.some((name) => normText(name) === playerNorm);
+    const currentGroups = allCurrentGroups.filter((name) => normText(name) !== playerNorm);
+    if (targetType === "freelancer" && (inManagedGroup || currentGroups.length > 0)) continue;
     if (targetType === "transfer" && currentGroups.length === 0) continue;
+    if (targetType === "freelancer") {
+      const assignedCompanyUid = preferredFreelancerCompanyUid(idol, assignmentPool);
+      if (assignedCompanyUid !== company.uid) continue;
+    }
     const profile = idolProfileScore(idol);
     const localityBonus = cityMatchesText(company.city, String(idol.birthplace ?? "")) ? 15 : 0;
     const availabilityBonus =
       targetType === "freelancer"
         ? 18
-        : clamp(Math.round((55 - num(idol.morale, 50)) / 3) + Math.round(num(idol.jadedness, 0) / 4), 0, 20);
+        : clamp(Math.round((55 - num(idol.morale, 70)) / 3) + Math.round(num(idol.jadedness, 0) / 4), 0, 20);
     const score = profile + localityBonus + availabilityBonus + Math.min(12, Math.floor(idolFollowers(idol) / 15_000));
     const reasonParts = [targetType === "freelancer" ? "Freelancer" : "Transfer"];
     if (localityBonus) reasonParts.push(`${CITY_NAME_JA[company.city] ?? company.city} area fit`);

@@ -12,9 +12,15 @@ import {
   getWorkbookRadarDimensions,
   normalizePersistedAttributes,
 } from "../engine/idolAttributes";
-import { resolveGroupLetterTier, sortGroupsForDirectory, addCalendarDays } from "../engine/financeSystem";
 import {
-  AUTOPILOT_LIVE_WEEKDAY_INDEX,
+  resolveGroupLetterTier,
+  sortGroupsForDirectory,
+  addCalendarDays,
+  monthlyBaseSalaryYenForGroupLetterTier,
+  monthlyStaffSalaryYen,
+  monthlyAdminTrainingCostYenForGroupLetterTier,
+} from "../engine/financeSystem";
+import {
   getBlockingNotificationForSave,
 } from "../engine/gameEngine";
 import {
@@ -41,6 +47,8 @@ import {
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
+import { languageOptions, navLabel, t, type UiLanguage } from "./i18n";
+import { resolveMemberColorCss } from "./memberColor";
 import { notificationRequiresAck } from "../save/inbox";
 import { renderGroupDetailPage } from "./groupDetailPage";
 import {
@@ -61,13 +69,6 @@ import {
 } from "../engine/idolStatusSystem";
 
 const FOCUS_SKILL_OPTIONS = ["", "talking", "host", "variety", "acting", "make-up", "model"] as const;
-
-function calendarDaysBetween(earlierIso: string, laterIso: string): number {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(earlierIso) || !/^\d{4}-\d{2}-\d{2}$/.test(laterIso)) return 0;
-  const a = new Date(`${earlierIso}T12:00:00Z`).getTime();
-  const b = new Date(`${laterIso}T12:00:00Z`).getTime();
-  return Math.round((b - a) / 86400000);
-}
 
 function startOfUtcMonthIso(isoYmd: string): string {
   const s = String(isoYmd).split("T")[0].trim();
@@ -118,8 +119,6 @@ function buildScheduleMonthCalendarHtml(
     const d = String(r.date ?? r.start_date ?? "").split("T")[0];
     if (/^\d{4}-\d{2}-\d{2}$/.test(d)) resultDates.add(d);
   }
-
-  const gs = /^\d{4}-\d{2}-\d{2}$/.test(ctx.gameStart) ? ctx.gameStart : "2020-01-01";
   const dowLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const head = dowLabels.map((lab) => `<div class="schedule-cal-dow">${htmlEsc(lab)}</div>`).join("");
 
@@ -129,8 +128,6 @@ function buildScheduleMonthCalendarHtml(
   }
   for (let day = 1; day <= dim; day++) {
     const iso = `${String(y).padStart(4, "0")}-${String(m1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-    const offset = calendarDaysBetween(gs, iso);
-    const autop = offset >= 0 && offset % 7 === AUTOPILOT_LIVE_WEEKDAY_INDEX;
     const booked = scheduleByDate.has(iso);
     const played = resultDates.has(iso);
     const isNext = iso === ctx.nextIso;
@@ -139,7 +136,6 @@ function buildScheduleMonthCalendarHtml(
       "schedule-cal-cell",
       isClosed ? "is-past" : "",
       isNext ? "is-next-day" : "",
-      autop ? "has-autopilot" : "",
       booked ? "has-booking" : "",
       played ? "has-result" : "",
     ]
@@ -150,7 +146,6 @@ function buildScheduleMonthCalendarHtml(
     const tip: string[] = [];
     if (isClosed) tip.push("Day closed in save");
     if (isNext) tip.push("Next simulation day");
-    if (autop) tip.push("Autopilot live weekday");
     if (booked) {
       for (const ex of extras.slice(0, 2)) {
         const vn = String((ex as Record<string, unknown>).venue ?? "").trim();
@@ -165,7 +160,6 @@ function buildScheduleMonthCalendarHtml(
     cells.push(`<div class="${cls}" title="${htmlEsc(title)}">
       <span class="schedule-cal-daynum">${day}</span>
       <span class="schedule-cal-dots" aria-hidden="true">
-        ${autop ? `<span class="schedule-cal-dot schedule-cal-dot--auto"></span>` : ""}
         ${booked ? `<span class="schedule-cal-dot schedule-cal-dot--book"></span>` : ""}
         ${played ? `<span class="schedule-cal-dot schedule-cal-dot--done"></span>` : ""}
       </span>
@@ -178,7 +172,6 @@ function buildScheduleMonthCalendarHtml(
   }
 
   const legend = `<ul class="schedule-cal-legend">
-    <li><span class="schedule-cal-dot schedule-cal-dot--auto"></span> ${htmlEsc("Autopilot live day (offset % 7)")}</li>
     <li><span class="schedule-cal-dot schedule-cal-dot--book"></span> ${htmlEsc("Booked live in save")}</li>
     <li><span class="schedule-cal-dot schedule-cal-dot--done"></span> ${htmlEsc("Played result logged")}</li>
     <li class="schedule-cal-legend-outline">${htmlEsc("Outline = next simulation day")}</li>
@@ -200,8 +193,17 @@ function buildScheduleMonthCalendarHtml(
 
 /** Primary Songs workspace tabs (matches `public/ref/main_ui.py` show_songs_view). */
 export type SongsWorkspaceTab = "group_songs" | "disc";
-export type LivesTab = "new" | "scheduled" | "past" | "festival";
+export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival";
 export type ScoutTab = "freelancer" | "transfer" | "audition";
+export type TrainingTab = "assignments" | "roster";
+
+export interface LiveProgramItem {
+  id: string;
+  kind: "song" | "mc" | "break";
+  label: string;
+  durationMinutes: number;
+  songTitle?: string;
+}
 
 export interface NewLiveFormState {
   liveType: "Routine" | "Concert" | "Taiban" | "Festival";
@@ -212,6 +214,7 @@ export interface NewLiveFormState {
   rehearsalStart: string;
   rehearsalEnd: string;
   venueName: string;
+  program: LiveProgramItem[];
   setlist: string[];
   tokutenkaiEnabled: boolean;
   tokutenkaiStart: string;
@@ -304,15 +307,19 @@ function buildSongCountByGroupUid(songs: Record<string, unknown>[] | undefined):
 }
 
 function formatLongDate(iso: string | undefined): string {
-  if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return "—";
-  const d = new Date(iso + "T12:00:00Z");
-  return d.toLocaleDateString("en-US", {
+  if (!iso) return "—";
+  const datePart = String(iso).split("T")[0];
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "—";
+  const d = new Date(datePart + "T12:00:00Z");
+  const base = d.toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
     day: "numeric",
     year: "numeric",
     timeZone: "UTC",
   });
+  const timePart = String(iso).includes("T") ? String(iso).split("T")[1]?.slice(0, 5) ?? "" : "";
+  return timePart ? `${base} ${timePart}` : base;
 }
 
 function shortlistRows(save: GameSavePayload): { uid: string; label: string }[] {
@@ -747,7 +754,7 @@ function renderIdolDetailPage(
 }
 
 function renderInbox(save: GameSavePayload, selectedUid: string | null): string {
-  const rows = [...save.inbox.notifications].reverse();
+  const rows = [...save.inbox.notifications];
   if (!rows.length) {
     return `<section class="content-panel"><p class="content-muted">No messages in inbox.</p></section>`;
   }
@@ -769,26 +776,92 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
 
   const detail = selected
     ? (() => {
+        const liveReport =
+          selected.report_data &&
+          typeof selected.report_data === "object" &&
+          String((selected.report_data as Record<string, unknown>).kind ?? "") === "live_report"
+            ? (selected.report_data as Record<string, unknown>)
+            : null;
         const isLiveSchedule =
           selected.title === "Today's live schedule" ||
           String(selected.dedupe_key ?? "").startsWith("daily-lives|");
         const primaryBtn = isLiveSchedule
-          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}" ${selected.read ? "disabled" : ""}>${htmlEsc("Live Start")}</button>`
-          : `<button type="button" class="fm-btn fm-btn-accent" data-inbox-mark-read="${htmlEsc(selected.uid)}" ${selected.read ? "disabled" : ""}>${htmlEsc("Mark read")}</button>`;
+          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}">${htmlEsc("Live Start")}</button>`
+          : ``;
+        const liveScheduleLinks = isLiveSchedule
+          ? (() => {
+              const dateIso = String(selected.date ?? "").split("T")[0];
+              const todaysLives = (save.lives?.schedules ?? [])
+                .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+                .filter((live) => String(live.start_date ?? "").split("T")[0] === dateIso)
+                .sort((a, b) => String(a.start_time ?? "").localeCompare(String(b.start_time ?? "")));
+              if (!todaysLives.length) return "";
+              const items = todaysLives
+                .map((live) => {
+                  const uid = String(live.uid ?? "");
+                  const title = String(live.title ?? live.live_type ?? "Live");
+                  const when = liveTimeRangeText(live) || formatLiveSlotLine(live) || dateIso;
+                  const venueText = liveVenueCompactText(live);
+                  return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} · ${venueText}`)}</span></li>`;
+                })
+                .join("");
+              return `<div class="live-report-detail"><h4 class="content-h3">Today's lives</h4><ul class="plain-list">${items}</ul></div>`;
+            })()
+          : "";
+        const renderLiveReport = (): string => {
+          if (!liveReport) {
+            const plainBody = htmlEsc(selected.body).replaceAll("\n", "<br />");
+            return liveScheduleLinks ? `${liveScheduleLinks}<div class="inbox-plain-body">${plainBody}</div>` : plainBody;
+          }
+          const venue = String(liveReport.venue ?? "—");
+          const memberRows = Array.isArray(liveReport.member_deltas)
+            ? (liveReport.member_deltas as unknown[])
+                .filter((row) => row && typeof row === "object")
+                .map((row) => {
+                  const r = row as Record<string, unknown>;
+                  const fanGain = Number(r.fan_gain ?? 0) || 0;
+                  const moraleGain = Number(r.morale_gain ?? r.morale_delta ?? 0) || 0;
+                  return `<tr>
+                    <td>${htmlEsc(String(r.name ?? "Member"))}</td>
+                    <td class="num">${htmlEsc(String(r.performance_rating ?? "—"))}</td>
+                    <td class="num">${htmlEsc(`${fanGain >= 0 ? "+" : ""}${fanGain}`)}</td>
+                    <td class="num">${htmlEsc(String(r.condition_after ?? "—"))}</td>
+                    <td class="num">${htmlEsc(`${moraleGain >= 0 ? "+" : ""}${moraleGain}`)}</td>
+                    <td class="num">${htmlEsc(`¥${Number(r.cheki_sale_money_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
+                  </tr>`;
+                })
+                .join("")
+            : "";
+          return `<div class="live-report-detail">
+            <div class="live-report-summary-grid">
+              <div class="live-report-summary-item"><span class="label">Performance</span><strong>${htmlEsc(String(liveReport.performance_score ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Satisfaction</span><strong>${htmlEsc(String(liveReport.audience_satisfaction ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Attendance</span><strong>${htmlEsc(String(liveReport.attendance ?? 0))}${Number(liveReport.capacity ?? 0) > 0 ? htmlEsc(` / ${String(liveReport.capacity)}`) : ""}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Fan Change</span><strong>${htmlEsc(`${Number(liveReport.group_fan_gain ?? 0) >= 0 ? "+" : ""}${String(liveReport.group_fan_gain ?? 0)}`)}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Venue</span><strong>${htmlEsc(venue)}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Time</span><strong>${htmlEsc(String(liveReport.slot ?? liveReport.date ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Gross</span><strong>${htmlEsc(`¥${Number(liveReport.gross_yen ?? 0).toLocaleString("ja-JP")}`)}</strong></div>
+            </div>
+            <div class="table-scroll">
+              <table class="fm-table">
+                <thead><tr><th>Name</th><th>Rate</th><th>Fan Change</th><th>Condition</th><th>Morale</th><th>Cheki Sale Money</th></tr></thead>
+                <tbody>${memberRows || `<tr><td colspan="6" class="content-muted">No member breakdown recorded.</td></tr>`}</tbody>
+              </table>
+            </div>
+          </div>`;
+        };
         return `<article class="fm-card inbox-detail-card" aria-label="Message detail">
         <header class="fm-card-head">
           <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}</h3>
           <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.date)}">${htmlEsc(selected.date)}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
         </header>
-        <div class="inbox-detail-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+        <div class="inbox-detail-body">${renderLiveReport()}</div>
         ${
           selected.requires_confirmation
             ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> — ${isLiveSchedule ? "Use Live Start to run the live and clear this blocker." : "Acknowledge when you have decided (full choice parity is still in progress)."}</p>`
             : ""
         }
-        <div class="inbox-detail-actions">
-          ${primaryBtn}
-        </div>
+        ${primaryBtn ? `<div class="inbox-detail-actions">${primaryBtn}</div>` : ""}
       </article>`;
       })()
     : `<p class="content-muted">Select a message.</p>`;
@@ -805,7 +878,7 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
   </section>`;
 }
 
-function renderTraining(save: GameSavePayload): string {
+function renderTraining(save: GameSavePayload, trainingTab: TrainingTab): string {
   const grp = getPrimaryGroup(save);
   const memberUidsRaw = Array.isArray(grp?.member_uids)
     ? (grp!.member_uids as unknown[]).map((x) => String(x))
@@ -819,7 +892,6 @@ function renderTraining(save: GameSavePayload): string {
     [String(grp?.name ?? "").trim(), String(grp?.name_romanji ?? "").trim()].filter(Boolean),
   );
 
-  /** Sort key: membership `start_date` in this group (earlier join first). */
   const joinDateMsInGroup = (row: Record<string, unknown>): number => {
     const hist = row.group_history;
     if (!Array.isArray(hist)) return Number.POSITIVE_INFINITY;
@@ -835,6 +907,87 @@ function renderTraining(save: GameSavePayload): string {
       }
     }
     return Number.POSITIVE_INFINITY;
+  };
+
+  const joinDateInTrainingGroup = (row: Record<string, unknown>): string => {
+    const hist = Array.isArray(row.group_history) ? row.group_history : [];
+    for (const raw of hist) {
+      if (!raw || typeof raw !== "object") continue;
+      const entry = raw as Record<string, unknown>;
+      const uid = String(entry.group_uid ?? "").trim();
+      const gn = String(entry.group_name ?? "").trim();
+      if (uid === groupUidStr || (gn && groupNames.has(gn))) {
+        const sd = typeof entry.start_date === "string" ? entry.start_date.trim().split("T")[0] : "";
+        return /^\d{4}-\d{2}-\d{2}$/.test(sd) ? sd : "—";
+      }
+    }
+    return "—";
+  };
+
+  void joinDateInTrainingGroup;
+
+  const memberColorInTrainingGroup = (row: Record<string, unknown>): string => {
+    const hist = Array.isArray(row.group_history) ? row.group_history : [];
+    for (const raw of hist) {
+      if (!raw || typeof raw !== "object") continue;
+      const entry = raw as Record<string, unknown>;
+      const uid = String(entry.group_uid ?? "").trim();
+      const gn = String(entry.group_name ?? "").trim();
+      if (uid === groupUidStr || (gn && groupNames.has(gn))) {
+        const color = typeof entry.member_color === "string" ? entry.member_color.trim() : "";
+        return color || "—";
+      }
+    }
+    return typeof row.member_color === "string" && row.member_color.trim() ? String(row.member_color).trim() : "—";
+  };
+
+  const trainingValueToneClass = (value: number): string => {
+    if (value >= 90) return "training-value--green";
+    if (value > 70) return "training-value--light-green";
+    if (value > 50) return "training-value--yellow";
+    if (value > 30) return "training-value--orange";
+    return "training-value--red";
+  };
+
+  const trainingStatusBadges = (row: Record<string, unknown>): string => {
+    const history = Array.isArray(row.status_history) ? row.status_history : [];
+    const activeStatuses = history
+      .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
+      .filter((entry) => {
+        const start = String(entry.start_date ?? "").split("T")[0];
+        if (!ref || !/^\d{4}-\d{2}-\d{2}$/.test(start)) return true;
+        return start <= ref;
+      });
+    const normalized = activeStatuses.map((entry) =>
+      `${String(entry.kind ?? "")} ${String(entry.status ?? "")} ${String(entry.summary ?? "")} ${String(entry.label ?? "")} ${String(entry.title ?? "")}`
+        .toLowerCase()
+        .replace(/[_-]+/g, " "),
+    );
+
+    let primary: "rdy" | "inj" | "ill" = "rdy";
+    if (normalized.some((text) => /\binjur|\binjured\b|\bfracture\b|\bsprain\b/.test(text))) primary = "inj";
+    else if (normalized.some((text) => /\bill\b|\billness\b|\bsick\b|\bfever\b|\bcovid\b/.test(text))) primary = "ill";
+
+    const optionalBadges: string[] = [];
+    if (normalized.some((text) => /\bdepress|\bmental\b|\bbreakdown\b/.test(text))) optionalBadges.push("dpr");
+    if (normalized.some((text) => /\bhiatus\b|\bpaused\b|\bon hold\b/.test(text))) optionalBadges.push("hia");
+    if (normalized.some((text) => /\bsuspend|\bsuspension\b/.test(text))) optionalBadges.push("sus");
+
+    const badge = (code: string, label: string, klass: string) =>
+      `<span class="training-status-badge training-status-badge--${klass}" title="${htmlEsc(label)}">${htmlEsc(code)}</span>`;
+
+    const primaryBadge =
+      primary === "inj"
+        ? badge("INJ", "Injured", "inj")
+        : primary === "ill"
+          ? badge("ILL", "Ill", "ill")
+          : badge("RDY", "Ready", "rdy");
+    const extras = optionalBadges.map((code) => {
+      if (code === "dpr") return badge("DPR", "Depressed", "dpr");
+      if (code === "hia") return badge("HIA", "Hiatus", "hia");
+      return badge("SUS", "Suspended", "sus");
+    });
+    return `<div class="training-status-badges">${[primaryBadge, ...extras].join("")}</div>`;
   };
 
   const memberUids = [...memberUidsRaw].sort((a, b) => {
@@ -880,7 +1033,7 @@ function renderTraining(save: GameSavePayload): string {
       }).join("");
 
       const cond = typeof r.condition === "number" ? r.condition : Number(r.condition ?? 0) || 0;
-      const mor = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 0) || 0;
+      const mor = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 70) || 70;
 
       const nameLine = romaji
         ? `<h3 class="content-h3 training-member-title"><span class="training-name-ja">${htmlEsc(name)}</span><span class="training-name-ro">${htmlEsc(romaji)}</span></h3>`
@@ -913,10 +1066,66 @@ function renderTraining(save: GameSavePayload): string {
     .filter(Boolean)
     .join("");
 
+  const rosterRows = memberUids
+    .map((uid) => {
+      const row = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uid);
+      if (!row || typeof row !== "object") return "";
+      const r = row as Record<string, unknown>;
+      const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
+      const romaji = romajiFromRow(r);
+      const age = ageLabel(r, ref);
+      const ability = getAbility(normalizePersistedAttributes(r.attributes));
+      const initial = [...(name.trim() || "?")][0] ?? "?";
+      const color = memberColorInTrainingGroup(r);
+      const colorTrim = color.trim();
+      const portraitSrc = idolPortraitPublicSrc(r);
+      const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
+      const portraitCell = portraitSrc
+        ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
+        : `<span class="idol-thumb-ph" aria-hidden="true">${htmlEsc(initial)}</span>`;
+      const colorCss = resolveMemberColorCss(colorTrim);
+      const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
+      const colorCell = colorCss
+        ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
+        : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "—" ? color : "Default")}"></span> ${htmlEsc(color !== "—" ? color : "—")}`;
+      const condition = typeof r.condition === "number" ? r.condition : Number(r.condition ?? 90) || 90;
+      const morale = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 70) || 70;
+      const conditionTone = trainingValueToneClass(condition);
+      const moraleTone = trainingValueToneClass(morale);
+      const statusBadges = trainingStatusBadges(r);
+      const nameCell = `<span class="group-roster-name-wrap"><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></span>`;
+      return `<tr>
+        <td class="idol-list-photo">${portraitCell}</td>
+        <td>${nameCell}</td>
+        <td>${romaji ? htmlEsc(romaji) : "—"}</td>
+        <td>${colorCell}</td>
+        <td class="group-roster-stat">${htmlEsc(age)}</td>
+        <td class="group-roster-stat">${htmlEsc(String(ability))}</td>
+        <td class="group-roster-stat"><span class="training-value ${conditionTone}">${htmlEsc(String(condition))}</span></td>
+        <td class="group-roster-stat"><span class="training-value ${moraleTone}">${htmlEsc(String(morale))}</span></td>
+        <td>${statusBadges}</td>
+      </tr>`;
+    })
+    .filter(Boolean)
+    .join("");
+
   return `<section class="content-panel training-view">
     <h2 class="content-h2">Training</h2>
     <p class="content-muted">Daily sliders (0–5 each) for <strong>${htmlEsc(String(grp?.name_romanji ?? grp?.name ?? "group"))}</strong>. Sum caps at 20 and feeds <code>advanceOneDay</code> with the same condition/morale rules as the desktop save loop. Reference date: ${htmlEsc(String(ref ?? "—"))}.</p>
-    <div class="training-grid">${cards || `<p class="content-muted">No roster members.</p>`}</div>
+    ${renderTrainingTabs(trainingTab)}
+    ${
+      trainingTab === "roster"
+        ? `<section class="fm-card">
+            <h3 class="content-h3">Managed roster</h3>
+            <div class="table-scroll">
+              <table class="fm-table group-detail-roster-table training-roster-table">
+                <thead><tr><th></th><th>Name</th><th>Romaji</th><th>Color</th><th>Age</th><th>Ability</th><th>Condition</th><th>Morale</th><th>Status</th></tr></thead>
+                <tbody>${rosterRows || `<tr><td colspan="9" class="content-muted">No roster members.</td></tr>`}</tbody>
+              </table>
+            </div>
+          </section>`
+        : `<div class="training-grid">${cards || `<p class="content-muted">No roster members.</p>`}</div>`
+    }
   </section>`;
 }
 
@@ -944,10 +1153,10 @@ function formatMonthTick(isoDate: string): string {
 function financeMoneyShort(value: number): string {
   const rounded = Math.round(value);
   const abs = Math.abs(rounded);
-  if (abs >= 1_000_000_000) return `Â¥${(rounded / 1_000_000_000).toFixed(1)}B`;
-  if (abs >= 1_000_000) return `Â¥${(rounded / 1_000_000).toFixed(1)}M`;
-  if (abs >= 1_000) return `Â¥${(rounded / 1_000).toFixed(0)}K`;
-  return `Â¥${rounded.toLocaleString("ja-JP")}`;
+  if (abs >= 1_000_000_000) return `&yen;${(rounded / 1_000_000_000).toFixed(1)}B`;
+  if (abs >= 1_000_000) return `&yen;${(rounded / 1_000_000).toFixed(1)}M`;
+  if (abs >= 1_000) return `&yen;${(rounded / 1_000).toFixed(0)}K`;
+  return `&yen;${rounded.toLocaleString("ja-JP")}`;
 }
 
 interface FinanceMonthPoint {
@@ -959,20 +1168,15 @@ interface FinanceMonthPoint {
   projected: boolean;
 }
 
-const TIER_REFERENCE_MONTHLY_NET: Record<string, number> = {
-  S: 15_000_000,
-  A: 9_500_000,
-  B: 4_000_000,
-  C: 2_139_817,
-  D: 751_203,
-  E: 95_750,
-  F: 14_605,
-};
-
 function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[] {
   const finances = getActiveFinances(save);
-  const tier = resolveGroupLetterTier(getPrimaryGroup(save));
-  const tierReferenceNet = TIER_REFERENCE_MONTHLY_NET[tier] ?? 0;
+  const primaryGroup = getPrimaryGroup(save);
+  const letterTier = resolveGroupLetterTier(primaryGroup);
+  const memberCount = Array.isArray(primaryGroup?.member_uids) ? primaryGroup!.member_uids.length : 0;
+  const idolSalaryExpense = memberCount * monthlyBaseSalaryYenForGroupLetterTier(letterTier);
+  const staffSalaryExpense = monthlyStaffSalaryYen();
+  const adminTrainingExpense = monthlyAdminTrainingCostYenForGroupLetterTier(letterTier);
+  const conservativeMonthlyExpense = idolSalaryExpense + staffSalaryExpense + adminTrainingExpense;
   const ledger = [...finances.ledger]
     .filter((row) => typeof row?.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(row.date))
     .sort((a, b) => String(a.date).localeCompare(String(b.date)));
@@ -984,9 +1188,9 @@ function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[
     return Array.from({ length: 24 }, (_, index) => ({
       monthIso: addCalendarMonths(currentMonthIso, index),
       income: 0,
-      expense: 0,
-      net: tierReferenceNet,
-      closingBalance: finances.cash_yen + tierReferenceNet * index,
+      expense: conservativeMonthlyExpense,
+      net: -conservativeMonthlyExpense,
+      closingBalance: finances.cash_yen - conservativeMonthlyExpense * index,
       projected: index > 0,
     }));
   }
@@ -1013,17 +1217,6 @@ function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[
   }
 
   const actualMonths = [...monthly.values()].sort((a, b) => a.monthIso.localeCompare(b.monthIso));
-  const recentTemplate = actualMonths.slice(-Math.min(6, actualMonths.length));
-  const blendedTemplateDenom = Math.max(3, recentTemplate.length);
-  const fallbackIncome =
-    recentTemplate.reduce((sum, row) => sum + row.income, 0) / Math.max(1, recentTemplate.length);
-  const fallbackExpense =
-    recentTemplate.reduce((sum, row) => sum + row.expense, 0) / Math.max(1, recentTemplate.length);
-  const fallbackNet = Math.round(
-    (recentTemplate.reduce((sum, row) => sum + row.net, 0) + tierReferenceNet * Math.max(0, blendedTemplateDenom - recentTemplate.length)) /
-      blendedTemplateDenom,
-  );
-
   const currentIndex = actualMonths.findIndex((row) => row.monthIso === currentMonthIso);
   const points = (currentIndex >= 0 ? actualMonths.slice(currentIndex) : [actualMonths[actualMonths.length - 1]])
     .slice(0, 24)
@@ -1037,11 +1230,9 @@ function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[
     : actualMonths[actualMonths.length - 1]?.monthIso ?? currentMonthIso;
 
   while (points.length < 24) {
-    const index = points.length - (currentIndex >= 0 ? currentIndex : Math.max(0, actualMonths.length - 1));
-    const template = recentTemplate.length ? recentTemplate[Math.abs(index) % recentTemplate.length] : null;
-    const income = template ? template.income : fallbackIncome;
-    const expense = template ? template.expense : fallbackExpense;
-    const net = template ? template.net : fallbackNet;
+    const income = 0;
+    const expense = conservativeMonthlyExpense;
+    const net = -expense;
     anchorMonth = addCalendarMonths(anchorMonth, 1);
     balance += net;
     points.push({
@@ -1172,12 +1363,17 @@ function renderFinancesProjectionView(save: GameSavePayload): string {
   const projectionPoints = buildFinanceProjectionPoints(save);
   const projectedLast = projectionPoints[projectionPoints.length - 1] ?? null;
   const actualWindow = projectionPoints.filter((row) => !row.projected).slice(-6);
+  const projectedWindow = projectionPoints.filter((row) => row.projected);
   const avgMonthlyNet =
     actualWindow.reduce((sum, row) => sum + row.net, 0) / Math.max(1, actualWindow.length);
+  const projectedIncome =
+    projectedWindow.reduce((sum, row) => sum + row.income, 0) / Math.max(1, projectedWindow.length);
+  const projectedExpense =
+    projectedWindow.reduce((sum, row) => sum + row.expense, 0) / Math.max(1, projectedWindow.length);
   const head = `
     <div class="stat-row" role="group" aria-label="Cash">
-      <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">Â¥${f.cash_yen.toLocaleString("ja-JP")}</span></div>
-      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "â€”")}</span></div>
+      <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">&yen;${f.cash_yen.toLocaleString("ja-JP")}</span></div>
+      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "-")}</span></div>
     </div>`;
   const tableRows = ledger
     .map(
@@ -1193,7 +1389,7 @@ function renderFinancesProjectionView(save: GameSavePayload): string {
         <div class="finance-projection-head">
           <div>
             <h3 class="content-h3 finance-projection-title">Overall Balance Projection</h3>
-            <p class="content-muted finance-projection-copy">24-month axis using recent monthly cash-flow patterns from the current ledger.</p>
+            <p class="content-muted finance-projection-copy">24-month conservative runway. Fixed monthly burden is counted, but uncertain future live income is not assumed.</p>
           </div>
           <div class="finance-projection-kpis">
             <div class="finance-projection-kpi">
@@ -1204,6 +1400,14 @@ function renderFinancesProjectionView(save: GameSavePayload): string {
               <span class="finance-projection-kpi-label">Avg monthly net</span>
               <strong class="finance-projection-kpi-value ${avgMonthlyNet >= 0 ? "is-positive" : "is-negative"}">${htmlEsc(financeMoneyShort(avgMonthlyNet))}</strong>
             </div>
+            <div class="finance-projection-kpi">
+              <span class="finance-projection-kpi-label">Projected income / month</span>
+              <strong class="finance-projection-kpi-value is-positive">${htmlEsc(financeMoneyShort(projectedIncome))}</strong>
+            </div>
+            <div class="finance-projection-kpi">
+              <span class="finance-projection-kpi-label">Projected expense / month</span>
+              <strong class="finance-projection-kpi-value is-negative">${htmlEsc(financeMoneyShort(projectedExpense))}</strong>
+            </div>
           </div>
         </div>
         ${renderFinanceProjectionSvg(projectionPoints)}
@@ -1212,7 +1416,7 @@ function renderFinancesProjectionView(save: GameSavePayload): string {
         <h3 class="content-h3">Daily ledger (recent)</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Net Â¥</th><th>Tier</th><th>Income</th><th>Expense</th></tr></thead>
+            <thead><tr><th>Date</th><th>Net &yen;</th><th>Tier</th><th>Income</th><th>Expense</th></tr></thead>
             <tbody>${tableRows || `<tr><td colspan="5" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
           </table>
         </div>
@@ -1825,8 +2029,6 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
   for (let i = 0; i < weekDays; i++) {
     const iso = addCalendarDays(nextIso, i);
     const dow = new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" });
-    const offset = calendarDaysBetween(typeof gameStart === "string" ? gameStart : "2020-01-01", iso);
-    const autopilotLive = offset >= 0 && offset % 7 === AUTOPILOT_LIVE_WEEKDAY_INDEX;
     const isTodayish = iso === nextIso;
     const schedules = save.lives?.schedules;
     const extra = Array.isArray(schedules)
@@ -1848,11 +2050,11 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
             .join(", ")
         : "";
 
-    cells.push(`<div class="schedule-cell ${isTodayish ? "is-next" : ""}${autopilotLive ? " has-live" : ""}">
+    cells.push(`<div class="schedule-cell ${isTodayish ? "is-next" : ""}${extra.length > 0 ? " has-live" : ""}">
       <div class="schedule-cell-dow">${htmlEsc(dow)}</div>
       <div class="schedule-cell-date">${htmlEsc(iso)}</div>
       <div class="schedule-cell-body">
-        ${autopilotLive ? `<span class="schedule-pill schedule-pill-live">${htmlEsc("Routine live (autopilot)")}</span>` : `<span class="schedule-pill">${htmlEsc("—")}</span>`}
+        ${extra.length > 0 ? `<span class="schedule-pill schedule-pill-live">${htmlEsc(`${extra.length} scheduled live${extra.length === 1 ? "" : "s"}`)}</span>` : `<span class="schedule-pill">${htmlEsc("—")}</span>`}
         ${extraLbl ? `<div class="schedule-extra">${htmlEsc(extraLbl)}</div>` : ""}
       </div>
     </div>`);
@@ -1884,7 +2086,7 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
       </section>
       <section class="fm-card schedule-teaser">
         <h3 class="content-h3">Upcoming week (from next day)</h3>
-        <p class="content-muted">Routine lives run when the day offset from <code>game_start_date</code> satisfies <code>offset % 7 === ${AUTOPILOT_LIVE_WEEKDAY_INDEX}</code> (same rule as <code>advanceOneDay</code> in the web engine). Use <strong>NEXT DAY</strong> in the top bar to progress.</p>
+        <p class="content-muted">Default lives are auto-booked from the monthly live-count reference for your letter tier. Use <strong>NEXT DAY</strong> in the top bar to progress, and confirm month-end Operations prompts when you want the following month after next booked automatically.</p>
         <div class="schedule-week">${cells.join("")}</div>
       </section>
       <section class="fm-card">
@@ -1903,6 +2105,7 @@ function renderLiveTabs(active: LivesTab): string {
   const tabs: Array<[LivesTab, string]> = [
     ["new", "New Live"],
     ["scheduled", "Scheduled"],
+    ["live", "Live"],
     ["past", "Past"],
     ["festival", "Festival"],
   ];
@@ -1928,11 +2131,47 @@ function renderScoutTabs(active: ScoutTab): string {
     .join("")}</div>`;
 }
 
+function renderScoutCompanyTabs(companies: Array<{ uid: string; name: string }>, activeUid: string): string {
+  return `<div class="workspace-tabs scout-company-tabs">${companies
+    .map(
+      (company) =>
+        `<button type="button" class="workspace-tab ${company.uid === activeUid ? "is-active" : ""}" data-scout-company="${htmlEsc(company.uid)}">${htmlEsc(company.name)}</button>`,
+    )
+    .join("")}</div>`;
+}
+
+function renderTrainingTabs(active: TrainingTab): string {
+  const tabs: Array<[TrainingTab, string]> = [
+    ["roster", "Roster"],
+    ["assignments", "Assignments"],
+  ];
+  return `<div class="workspace-tabs training-tabs">${tabs
+    .map(
+      ([key, label]) =>
+        `<button type="button" class="workspace-tab ${active === key ? "is-active" : ""}" data-training-tab="${htmlEsc(key)}">${htmlEsc(label)}</button>`,
+    )
+    .join("")}</div>`;
+}
+
+function liveTimeRangeText(live: Record<string, unknown>): string {
+  const start = String(live.start_time ?? "").slice(0, 5);
+  const end = String(live.end_time ?? "").slice(0, 5);
+  return [start, end].filter(Boolean).join("-");
+}
+
+function liveVenueCompactText(live: Record<string, unknown>): string {
+  const venue = String(live.venue ?? "—").trim() || "—";
+  const city = String(live.location ?? "").trim();
+  return city ? `${venue}, ${city}` : venue;
+}
+
 function renderLivesView(
   save: GameSavePayload,
   livesTab: LivesTab,
   scheduledLiveUid: string | null,
   newLiveForm: NewLiveFormState,
+  selectedLiveSongTitle: string | null,
+  selectedSetlistSongIndex: number | null,
   festivals: Record<string, unknown>[] | null | undefined,
 ): string {
   const schedules = (save.lives?.schedules ?? []).filter(
@@ -1970,14 +2209,12 @@ function renderLivesView(
     .map((live) => {
       const d = String(live.start_date ?? "").split("T")[0];
       const title = String(live.title ?? live.live_type ?? "—");
-      const venue = String(live.venue ?? "—");
-      const loc = String(live.location ?? "").trim();
       const cap = live.capacity != null ? String(live.capacity) : "—";
-      const slot = formatLiveSlotLine(live);
+      const slot = liveTimeRangeText(live) || "—";
       const typ = String(live.live_type ?? live.event_type ?? "");
-      const where = loc ? `${venue} · ${loc}` : venue;
+      const where = liveVenueCompactText(live);
       const active = String(live.uid ?? "") === String(selectedScheduled?.uid ?? "") ? " class=\"is-selected-row\"" : "";
-      return `<tr${active} data-scheduled-live="${htmlEsc(String(live.uid ?? ""))}"><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
+      return `<tr${active} data-scheduled-live="${htmlEsc(String(live.uid ?? ""))}"><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(String(live.uid ?? ""))}">${htmlEsc(title)}</button></td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
     })
     .join("");
 
@@ -1988,17 +2225,56 @@ function renderLivesView(
       const venue = String(live.venue ?? "—");
       const perf = live.performance_score != null ? String(live.performance_score) : "—";
       const title = String(live.title ?? live.live_type ?? "—");
-      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(venue)}</td><td class="num">${htmlEsc(perf)}</td></tr>`;
+      const gross =
+        (Number(live.ticket_gross_yen ?? 0) || 0) +
+        (Number(live.goods_gross_yen ?? 0) || 0) +
+        (Number(live.tokutenkai_revenue_yen ?? 0) || 0);
+      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(venue)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(`¥${gross.toLocaleString("ja-JP")}`)}</td></tr>`;
     })
     .join("");
   const selectedPreset = LIVE_TYPE_PRESETS[newLiveForm.liveType] ?? LIVE_TYPE_PRESETS.Routine;
   const selectedVenue = venueByName.get(newLiveForm.venueName);
-  const selectedSetlist = newLiveForm.setlist.filter(Boolean);
-  const setlistOptions = groupSongs
+  const tokutenkaiSummary = newLiveForm.tokutenkaiEnabled
+    ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}`
+    : "Tokutenkai: None";
+  const programSummary = newLiveForm.program.map((item) =>
+    item.kind === "song" ? item.label : `${item.label} ${item.durationMinutes}m`,
+  );
+  const songListRows = groupSongs
     .map((song) => {
       const title = String(song.title ?? song.title_romanji ?? "").trim();
-      const checked = selectedSetlist.includes(title) ? "checked" : "";
-      return `<label class="check-pill"><input type="checkbox" data-live-song="${htmlEsc(encodeURIComponent(title))}" ${checked} /> <span>${htmlEsc(title)}</span></label>`;
+      const selected = title === selectedLiveSongTitle ? " is-selected-row" : "";
+      return `<tr class="live-song-row${selected}" data-live-song-pick="${htmlEsc(title)}">
+        <td>${htmlEsc(title)}</td>
+        <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
+      </tr>`;
+    })
+    .join("");
+  const programItems = newLiveForm.program
+    .map((item, index) => {
+      const durationField =
+        item.kind === "song"
+          ? ""
+          : `<input class="fm-input live-program-duration" data-live-program-duration="${htmlEsc(String(index))}" value="${htmlEsc(String(item.durationMinutes))}" />`;
+      const meta = item.kind === "song" ? "Song" : item.kind === "mc" ? "MC" : "Break";
+      const detail =
+        item.kind === "song"
+          ? (() => {
+              const title = String(item.songTitle ?? item.label ?? "").trim();
+              const source = groupSongs.find((song) => String(song.title ?? song.title_romanji ?? "").trim() === title);
+              return `Popularity ${songPopularityNum(source ?? {}).toFixed(1)}`;
+            })()
+          : `${item.durationMinutes}m`;
+      const selected = selectedSetlistSongIndex === index ? " is-selected-row" : "";
+      return `<div class="live-program-dropzone" data-live-drop-index="${htmlEsc(String(index))}"></div>
+        <div class="live-program-item${selected}" draggable="true" data-live-program-index="${htmlEsc(String(index))}" data-live-setlist-pick="${htmlEsc(String(index))}">
+          <span class="live-program-grab" aria-hidden="true">⋮⋮</span>
+          <span class="live-program-kind live-program-kind--${htmlEsc(item.kind)}">${htmlEsc(meta)}</span>
+          <span class="live-program-label">${htmlEsc(item.label)}</span>
+          <span class="live-program-detail">${htmlEsc(detail)}</span>
+          ${durationField}
+          <button type="button" class="fm-btn live-program-remove" data-live-program-remove="${htmlEsc(String(index))}">Remove</button>
+        </div>`;
     })
     .join("");
   const venueOptions = [
@@ -2008,10 +2284,17 @@ function renderLivesView(
       return `<option value="${htmlEsc(venue.name)}" ${selected}>${htmlEsc(`${venue.name} (${venue.capacity})`)}</option>`;
     }),
   ].join("");
+  const scheduledVenueOptions = [
+    `<option value="">Select venue</option>`,
+    ...venues.map((venue) => {
+      const selected = venue.name === String(selectedScheduled?.venue ?? "") ? "selected" : "";
+      return `<option value="${htmlEsc(venue.name)}" ${selected}>${htmlEsc(`${venue.name} (${venue.capacity})`)}</option>`;
+    }),
+  ].join("");
   const summaryLines = [
     `${newLiveForm.liveType} · ${newLiveForm.date || "TBD"} · ${newLiveForm.startTime}-${newLiveForm.endTime}`,
     `Venue: ${newLiveForm.venueName || "TBA"}${selectedVenue?.location ? ` · ${selectedVenue.location}` : ""}${selectedVenue?.capacity ? ` · cap ${selectedVenue.capacity}` : ""}`,
-    `Setlist: ${selectedSetlist.length ? selectedSetlist.join(", ") : "Not set"}`,
+    `Program: ${programSummary.length ? programSummary.join(" · ") : "Not set"}`,
     `Tokutenkai: ${newLiveForm.tokutenkaiEnabled ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}` : "Off"}`,
     `Goods: ${newLiveForm.goodsEnabled ? `${newLiveForm.goodsLine || "Standard goods"} · est ¥${newLiveForm.goodsExpectedRevenueYen.toLocaleString("ja-JP")}` : "Off"}`,
     `Ticket price: ${newLiveForm.ticketPriceYen > 0 ? `¥${newLiveForm.ticketPriceYen.toLocaleString("ja-JP")}` : "Not set"}`,
@@ -2022,14 +2305,88 @@ function renderLivesView(
         `${String(selectedScheduled.title ?? selectedScheduled.live_type ?? "Live")}`,
         `When: ${formatLiveSlotLine(selectedScheduled)}`,
         `Venue: ${String(selectedScheduled.venue ?? "TBA")}${String(selectedScheduled.location ?? "").trim() ? ` · ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
-        `Setlist: ${Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(", ") : "Not set"}`,
+        `Program: ${Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
+          ? (selectedScheduled.program as unknown[])
+              .map((raw) => {
+                if (!raw || typeof raw !== "object") return "";
+                const item = raw as Record<string, unknown>;
+                const kind = String(item.kind ?? "song");
+                const label = String(item.label ?? item.songTitle ?? "").trim();
+                const duration = Number(item.durationMinutes ?? 0) || 0;
+                return kind === "song" ? label : `${label} ${duration}m`;
+              })
+              .filter(Boolean)
+              .join(", ")
+          : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
+            ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(", ")
+            : "Not set"}`,
         `Tokutenkai: ${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start ?? "")}-${String(selectedScheduled.tokutenkai_end ?? "")} · est ${String(selectedScheduled.tokutenkai_expected_tickets ?? "0")}` : "Off"}`,
         `Goods: ${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line ?? "Goods")} · est ¥${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}` : "Off"}`,
       ].map((line) => htmlEsc(line)).join("<br />")}</div>`
     : `<p class="content-muted">No scheduled live selected.</p>`;
 
-  const newLiveBody = `<div class="lives-planner-grid">
-      <section class="fm-card">
+  const scheduledProgramSummary = selectedScheduled
+    ? Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
+      ? (selectedScheduled.program as unknown[])
+          .map((raw) => {
+            if (!raw || typeof raw !== "object") return "";
+            const item = raw as Record<string, unknown>;
+            const kind = String(item.kind ?? "song");
+            const lineLabel = String(item.label ?? item.songTitle ?? "").trim();
+            const duration = Number(item.durationMinutes ?? 0) || 0;
+            return kind === "song" ? lineLabel : `${lineLabel} ${duration}m`;
+          })
+          .filter(Boolean)
+          .join(" · ")
+      : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
+        ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(" · ")
+        : "Not set"
+    : "";
+
+  const liveDetailBody = selectedScheduled
+    ? `<section class="fm-card">
+      <h3 class="content-h3">Upcoming live detail</h3>
+      <div class="form-grid live-form-grid">
+        <label><span>Type</span><input class="fm-input" data-live-detail-field="live_type" value="${htmlEsc(String(selectedScheduled.live_type ?? ""))}" /></label>
+        <label><span>Title</span><input class="fm-input" data-live-detail-field="title" value="${htmlEsc(String(selectedScheduled.title ?? ""))}" /></label>
+        <label><span>Date</span><input type="date" class="fm-input" data-live-detail-field="start_date" value="${htmlEsc(String(selectedScheduled.start_date ?? "").split("T")[0])}" /></label>
+        <label><span>Venue</span><select class="fm-select" data-live-detail-field="venue">${scheduledVenueOptions}</select></label>
+        <label><span>Start</span><input class="fm-input" data-live-detail-field="start_time" value="${htmlEsc(String(selectedScheduled.start_time ?? ""))}" /></label>
+        <label><span>End</span><input class="fm-input" data-live-detail-field="end_time" value="${htmlEsc(String(selectedScheduled.end_time ?? ""))}" /></label>
+        <label><span>Rehearsal start</span><input class="fm-input" data-live-detail-field="rehearsal_start" value="${htmlEsc(String(selectedScheduled.rehearsal_start ?? ""))}" /></label>
+        <label><span>Rehearsal end</span><input class="fm-input" data-live-detail-field="rehearsal_end" value="${htmlEsc(String(selectedScheduled.rehearsal_end ?? ""))}" /></label>
+        <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="ticket_price" value="${htmlEsc(String(selectedScheduled.ticket_price ?? 0))}" /></label>
+      </div>
+      <div class="planner-subpanel live-tokutenkai-card">
+        <h4 class="content-h3">Post-live tokutenkai / cheki</h4>
+        <label class="check-pill live-tokutenkai-toggle"><input type="checkbox" data-live-detail-toggle="tokutenkai_enabled" ${selectedScheduled.tokutenkai_enabled ? "checked" : ""} /> <span>Enable tokutenkai / cheki</span></label>
+        <div class="form-grid live-form-grid live-tokutenkai-grid">
+          <label><span>Start</span><input class="fm-input" data-live-detail-field="tokutenkai_start" value="${htmlEsc(String(selectedScheduled.tokutenkai_start ?? ""))}" /></label>
+          <label><span>End</span><input class="fm-input" data-live-detail-field="tokutenkai_end" value="${htmlEsc(String(selectedScheduled.tokutenkai_end ?? ""))}" /></label>
+          <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="tokutenkai_ticket_price" value="${htmlEsc(String(selectedScheduled.tokutenkai_ticket_price ?? 0))}" /></label>
+          <label><span>Talk slot seconds</span><input class="fm-input" data-live-detail-field="tokutenkai_slot_seconds" value="${htmlEsc(String(selectedScheduled.tokutenkai_slot_seconds ?? 0))}" /></label>
+          <label><span>Expected tickets</span><input class="fm-input" data-live-detail-field="tokutenkai_expected_tickets" value="${htmlEsc(String(selectedScheduled.tokutenkai_expected_tickets ?? 0))}" /></label>
+        </div>
+      </div>
+      <div class="planner-subpanel">
+        <h4 class="content-h3">Goods</h4>
+        <label class="check-pill"><input type="checkbox" data-live-detail-toggle="goods_enabled" ${selectedScheduled.goods_enabled ? "checked" : ""} /> <span>Run goods booth</span></label>
+        <div class="form-grid live-form-grid">
+          <label><span>Goods line</span><input class="fm-input" data-live-detail-field="goods_line" value="${htmlEsc(String(selectedScheduled.goods_line ?? ""))}" /></label>
+          <label><span>Expected gross</span><input class="fm-input" data-live-detail-field="goods_expected_revenue_yen" value="${htmlEsc(String(selectedScheduled.goods_expected_revenue_yen ?? 0))}" /></label>
+        </div>
+      </div>
+      <div class="live-new-summary-grid">
+        <div class="live-new-summary-item">${htmlEsc(`When: ${formatLiveSlotLine(selectedScheduled) || "TBA"}`)}</div>
+        <div class="live-new-summary-item">${htmlEsc(`Venue: ${liveVenueCompactText(selectedScheduled)}`)}</div>
+        <div class="live-new-summary-item">${htmlEsc(`Program: ${scheduledProgramSummary}`)}</div>
+      </div>
+      <div class="planner-actions"><button type="button" class="fm-btn" data-live-cancel="${htmlEsc(String(selectedScheduled.uid ?? ""))}">Cancel Live</button></div>
+    </section>`
+    : `<section class="fm-card"><p class="content-muted">No upcoming live selected.</p></section>`;
+
+  const newLiveBody = `<div class="live-new-layout">
+      <section class="fm-card live-new-card">
         <h3 class="content-h3">New live setup</h3>
         <div class="form-grid live-form-grid">
           <label><span>Type</span><select class="fm-select" data-live-form-field="liveType">
@@ -2046,19 +2403,47 @@ function renderLivesView(
           <label><span>Rehearsal end</span><input class="fm-input" data-live-form-field="rehearsalEnd" value="${htmlEsc(newLiveForm.rehearsalEnd)}" /></label>
           <label><span>Ticket price</span><input class="fm-input" data-live-form-field="ticketPriceYen" value="${htmlEsc(String(newLiveForm.ticketPriceYen))}" /></label>
         </div>
-        <div class="planner-subpanel">
-          <h4 class="content-h3">Songs</h4>
-          <div class="check-pill-wrap">${setlistOptions || `<p class="content-muted">No released songs for this group yet.</p>`}</div>
-        </div>
-        <div class="planner-subpanel">
-          <h4 class="content-h3">Tokutenkai</h4>
-          <label class="check-pill"><input type="checkbox" data-live-toggle="tokutenkaiEnabled" ${newLiveForm.tokutenkaiEnabled ? "checked" : ""} /> <span>Enable tokutenkai / cheki</span></label>
-          <div class="form-grid live-form-grid">
+        <div class="planner-subpanel live-tokutenkai-card">
+          <h4 class="content-h3">Post-live tokutenkai / cheki</h4>
+          <label class="check-pill live-tokutenkai-toggle"><input type="checkbox" data-live-toggle="tokutenkaiEnabled" ${newLiveForm.tokutenkaiEnabled ? "checked" : ""} /> <span>Enable tokutenkai / cheki</span></label>
+          <div class="form-grid live-form-grid live-tokutenkai-grid">
             <label><span>Start</span><input class="fm-input" data-live-form-field="tokutenkaiStart" value="${htmlEsc(newLiveForm.tokutenkaiStart)}" /></label>
             <label><span>End</span><input class="fm-input" data-live-form-field="tokutenkaiEnd" value="${htmlEsc(newLiveForm.tokutenkaiEnd)}" /></label>
             <label><span>Ticket price</span><input class="fm-input" data-live-form-field="tokutenkaiTicketPrice" value="${htmlEsc(String(newLiveForm.tokutenkaiTicketPrice))}" /></label>
             <label><span>Talk slot seconds</span><input class="fm-input" data-live-form-field="tokutenkaiSlotSeconds" value="${htmlEsc(String(newLiveForm.tokutenkaiSlotSeconds))}" /></label>
             <label><span>Expected tickets</span><input class="fm-input" data-live-form-field="tokutenkaiExpectedTickets" value="${htmlEsc(String(newLiveForm.tokutenkaiExpectedTickets))}" /></label>
+          </div>
+          <div class="live-tokutenkai-footer">
+            <span>${htmlEsc(`Members: ${typeof grp?.member_count === "number" ? grp.member_count : "—"}`)}</span>
+            <span>${htmlEsc(tokutenkaiSummary)}</span>
+          </div>
+        </div>
+        <div class="planner-subpanel live-song-picker">
+          <div class="live-song-picker-grid">
+            <section class="live-song-table-card">
+              <h4 class="content-h3">Group Songs</h4>
+              <div class="table-scroll live-song-table-scroll">
+                <table class="fm-table live-song-table">
+                  <thead><tr><th>Title</th><th>Popularity</th></tr></thead>
+                  <tbody>${songListRows || `<tr><td colspan="2" class="content-muted">No released songs for this group yet.</td></tr>`}</tbody>
+                </table>
+              </div>
+            </section>
+            <div class="live-song-picker-actions">
+              <button type="button" class="fm-btn fm-btn-accent" data-live-setlist-add-selected ${selectedLiveSongTitle ? "" : "disabled"}>Add -&gt;</button>
+              <button type="button" class="live-program-template" draggable="true" data-live-add-template="mc:2" data-live-template="mc:2">MC 2m</button>
+              <button type="button" class="live-program-template" draggable="true" data-live-add-template="mc:6" data-live-template="mc:6">MC 6m</button>
+              <button type="button" class="live-program-template" draggable="true" data-live-add-template="break:2" data-live-template="break:2">Break 2m</button>
+              <button type="button" class="live-program-template" draggable="true" data-live-add-template="break:6" data-live-template="break:6">Break 6m</button>
+            </div>
+            <section class="live-song-table-card">
+              <h4 class="content-h3">Setlist / running order</h4>
+              <p class="content-muted">Drag to reorder songs, MC, and breaks in one combined list.</p>
+              <div class="live-program-list" data-live-drop-end="1">
+                ${programItems || `<p class="content-muted">No songs or segments added yet.</p>`}
+                <div class="live-program-dropzone is-end" data-live-drop-index="${htmlEsc(String(newLiveForm.program.length))}"></div>
+              </div>
+            </section>
           </div>
         </div>
         <div class="planner-subpanel">
@@ -2071,9 +2456,11 @@ function renderLivesView(
         </div>
         <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-live-schedule="1">Schedule Live</button></div>
       </section>
-      <section class="fm-card">
+      <section class="fm-card live-new-summary-card">
         <h3 class="content-h3">Summary</h3>
-        <div class="content-muted">${summaryLines.map((line) => htmlEsc(line)).join("<br />")}</div>
+        <div class="live-new-summary-grid">
+          ${summaryLines.map((line) => `<div class="live-new-summary-item">${htmlEsc(line)}</div>`).join("")}
+        </div>
       </section>
     </div>`;
 
@@ -2081,27 +2468,18 @@ function renderLivesView(
       <h3 class="content-h3">Scheduled</h3>
       <div class="table-scroll">
         <table class="fm-table">
-          <thead><tr><th>Date</th><th>Slot</th><th>Title</th><th>Type</th><th>Venue</th><th>Cap.</th></tr></thead>
+          <thead><tr><th>Date</th><th>Time</th><th>Title</th><th>Type</th><th>Venue</th><th>Cap.</th></tr></thead>
           <tbody>${upcomingRows || `<tr><td colspan="6" class="content-muted">No scheduled lives in save.</td></tr>`}</tbody>
         </table>
       </div>
-    </section>
-    <section class="fm-card">
-      <h3 class="content-h3">Selected live detail</h3>
-      ${scheduledDetail}
-      ${
-        selectedScheduled
-          ? `<div class="planner-actions"><button type="button" class="fm-btn" data-live-cancel="${htmlEsc(String(selectedScheduled.uid ?? ""))}">Cancel Selected</button></div>`
-          : ""
-      }
     </section>`;
 
   const pastBody = `<section class="fm-card">
       <h3 class="content-h3">Recent results (last 30)</h3>
       <div class="table-scroll">
         <table class="fm-table">
-          <thead><tr><th>Date</th><th>Title</th><th>Venue</th><th>Perf.</th></tr></thead>
-          <tbody>${resultRows || `<tr><td colspan="4" class="content-muted">No played lives yet.</td></tr>`}</tbody>
+          <thead><tr><th>Date</th><th>Title</th><th>Venue</th><th>Perf.</th><th>Gross</th></tr></thead>
+          <tbody>${resultRows || `<tr><td colspan="5" class="content-muted">No played lives yet.</td></tr>`}</tbody>
         </table>
       </div>
     </section>`;
@@ -2133,6 +2511,8 @@ function renderLivesView(
   const body =
     livesTab === "scheduled"
       ? scheduledBody
+      : livesTab === "live"
+        ? liveDetailBody
       : livesTab === "past"
         ? pastBody
         : livesTab === "festival"
@@ -2175,7 +2555,8 @@ function renderScoutView(
           company: selectedCompany,
           targetType: scoutTab,
           currentIso,
-          limit: 18,
+          limit: scoutTab === "freelancer" ? 8 : 12,
+          companies,
         });
   const shortlist = new Set(save.shortlist.map((uid) => String(uid)));
   const idolsByUid = new Map(save.database_snapshot.idols.map((idol) => [String(idol.uid ?? ""), idol] as const));
@@ -2204,6 +2585,19 @@ function renderScoutView(
   ]
     .map((line) => htmlEsc(line))
     .join("<br />");
+  const companyTabs = renderScoutCompanyTabs(
+    companies.map((company) => ({ uid: company.uid, name: company.name })),
+    selectedCompany.uid,
+  );
+  const scoutPortraitCell = (idol: Record<string, unknown> | undefined, fallbackName: string) => {
+    const name = typeof idol?.name === "string" ? idol.name : fallbackName;
+    const initial = [...(name.trim() || "?")][0] ?? "?";
+    const portraitSrc = idol ? idolPortraitPublicSrc(idol) : undefined;
+    const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
+    return portraitSrc
+      ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
+      : `<span class="idol-thumb-ph" aria-hidden="true">${htmlEsc(initial)}</span>`;
+  };
 
   let rightBody = "";
   if (scoutTab === "audition") {
@@ -2251,6 +2645,25 @@ function renderScoutView(
       .map((row) => {
         const idol = idolsByUid.get(row.idol_uid);
         const active = row.idol_uid === String(selectedLead?.idol_uid ?? "") ? ` class="is-selected-row"` : "";
+        if (scoutTab === "freelancer") {
+          const name = String(idol?.name ?? row.idol_uid);
+          const romaji = idol ? romajiFromRow(idol) : "";
+          const age = idol ? ageLabel(idol, currentIso) : "—";
+          const height = idol ? heightCmLabel(idol) : "—";
+          const abl = idol ? getAbility(attrsFromRow(idol)) : "—";
+          const xFollowers = idol ? xFollowersLabel(idol) : "—";
+          const groups = row.current_groups.length ? row.current_groups.join(", ") : "Independent";
+          return `<tr class="idol-list-table-row${active ? " is-selected-row" : ""}" data-scout-lead="${htmlEsc(row.idol_uid)}" tabindex="0" role="button">
+            <td class="idol-list-photo">${scoutPortraitCell(idol, name)}</td>
+            <td>${htmlEsc(name)}</td>
+            <td>${romaji ? htmlEsc(romaji) : "—"}</td>
+            <td>${htmlEsc(age)}</td>
+            <td class="num">${htmlEsc(height)}</td>
+            <td class="num">${htmlEsc(String(abl))}</td>
+            <td class="num">${htmlEsc(xFollowers)}</td>
+            <td>${htmlEsc(groups)}</td>
+          </tr>`;
+        }
         return `<tr${active} data-scout-lead="${htmlEsc(row.idol_uid)}"><td>${htmlEsc(String(idol?.name ?? row.idol_uid))}</td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(String(idol?.birthplace ?? "—"))}</td><td>${htmlEsc(row.current_groups.length ? row.current_groups.join(", ") : "Independent")}</td><td>${htmlEsc(row.reason)}</td></tr>`;
       })
       .join("");
@@ -2268,28 +2681,62 @@ function renderScoutView(
           .map((line) => htmlEsc(line))
           .join("<br />")
       : "Select a scout lead to review fit and shortlist status.";
-    rightBody = `<section class="fm-card">
-        <div class="table-scroll">
-          <table class="fm-table">
-            <thead><tr><th>Idol</th><th>Profile</th><th>Birthplace</th><th>Current groups</th><th>Scout read</th></tr></thead>
-            <tbody>${rows || `<tr><td colspan="5" class="content-muted">No scout leads in this pool.</td></tr>`}</tbody>
-          </table>
-        </div>
+    rightBody =
+      scoutTab === "freelancer"
+        ? `<section class="fm-card scout-fullwidth-card">
+            <h3 class="content-h3">Freelancer pool</h3>
+            <div class="table-scroll">
+              <table class="fm-table idol-list-table scout-idol-list-table">
+                <thead><tr><th></th><th>Name</th><th>Romaji</th><th>Age</th><th>Height cm</th><th>ABL</th><th>X followers</th><th>Current group(s)</th></tr></thead>
+                <tbody>${rows || `<tr><td colspan="8" class="content-muted">No freelancer leads in this pool.</td></tr>`}</tbody>
+              </table>
+            </div>
+          </section>
+          <section class="fm-card scout-fullwidth-card">
+            <h3 class="content-h3">Lead detail</h3>
+            <div class="content-muted">${detail}</div>
+            ${
+              selectedLead
+                ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? "Already Shortlisted" : "Shortlist Selected")}</button></div>`
+                : ""
+            }
+          </section>`
+        : `<section class="fm-card">
+            <div class="table-scroll">
+              <table class="fm-table">
+                <thead><tr><th>Idol</th><th>Profile</th><th>Birthplace</th><th>Current groups</th><th>Scout read</th></tr></thead>
+                <tbody>${rows || `<tr><td colspan="5" class="content-muted">No scout leads in this pool.</td></tr>`}</tbody>
+              </table>
+            </div>
+          </section>
+          <section class="fm-card">
+            <h3 class="content-h3">Lead detail</h3>
+            <div class="content-muted">${detail}</div>
+            ${
+              selectedLead
+                ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? "Already Shortlisted" : "Shortlist Selected")}</button></div>`
+                : ""
+            }
+          </section>`;
+  }
+
+  if (scoutTab === "freelancer") {
+    return `<section class="content-panel scout-view">
+      <h2 class="content-h2">Scout</h2>
+      <p class="content-muted">${htmlEsc(`Managed group: ${managedGroupName || "Managed group"}. Freelancer firms now surface smaller local pools with low overlap between agencies.`)}</p>
+      ${renderScoutTabs(scoutTab)}
+      <section class="fm-card scout-fullwidth-card">
+        <h3 class="content-h3">Scout firms</h3>
+        ${companyTabs}
+        <div class="content-muted">${companyDetail}</div>
       </section>
-      <section class="fm-card">
-        <h3 class="content-h3">Lead detail</h3>
-        <div class="content-muted">${detail}</div>
-        ${
-          selectedLead
-            ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? "Already Shortlisted" : "Shortlist Selected")}</button></div>`
-            : ""
-        }
-      </section>`;
+      ${rightBody}
+    </section>`;
   }
 
   return `<section class="content-panel scout-view">
     <h2 class="content-h2">Scout</h2>
-    <p class="content-muted">${htmlEsc(`Managed group: ${managedGroupName || "Managed group"}. Hyper scout agencies sort local freelancers, transfer leads, and auditions by territory and profile.`)}</p>
+    <p class="content-muted">${htmlEsc(`Managed group: ${managedGroupName || "Managed group"}. Freelancer firms now surface smaller local pools with low overlap between agencies.`)}</p>
     ${renderScoutTabs(scoutTab)}
     <div class="lives-planner-grid">
       <section class="fm-card">
@@ -2318,7 +2765,10 @@ export function renderMainContent(
     livesTab: LivesTab;
     scheduledLiveUid: string | null;
     newLiveForm: NewLiveFormState;
+    selectedLiveSongTitle: string | null;
+    selectedSetlistSongIndex: number | null;
     scoutTab: ScoutTab;
+    trainingTab: TrainingTab;
     selectedScoutLeadUid: string | null;
     selectedScoutApplicantUid: string | null;
     /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
@@ -2340,7 +2790,10 @@ export function renderMainContent(
     livesTab,
     scheduledLiveUid,
     newLiveForm,
+    selectedLiveSongTitle,
+    selectedSetlistSongIndex,
     scoutTab,
+    trainingTab,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
@@ -2461,9 +2914,17 @@ export function renderMainContent(
     case "Schedule":
       return renderSchedule(save, scheduleCalendarMonthStart);
     case "Lives":
-      return renderLivesView(save, livesTab, scheduledLiveUid, newLiveForm, browseData?.festivals ?? null);
+      return renderLivesView(
+        save,
+        livesTab,
+        scheduledLiveUid,
+        newLiveForm,
+        selectedLiveSongTitle,
+        selectedSetlistSongIndex,
+        browseData?.festivals ?? null,
+      );
     case "Training":
-      return renderTraining(save);
+      return renderTraining(save, trainingTab);
     case "Making":
       return renderSongsList(save.database_snapshot.songs, {
         subtitle: save.scenario_context?.startup_date
@@ -2499,6 +2960,7 @@ export function renderMainContent(
 }
 
 export interface DesktopShellProps {
+  lang: UiLanguage;
   browseMode: boolean;
   browseData: LoadedScenario | null;
   save: GameSavePayload | null;
@@ -2521,17 +2983,23 @@ export interface DesktopShellProps {
   livesTab: LivesTab;
   scheduledLiveUid: string | null;
   newLiveForm: NewLiveFormState;
+  selectedLiveSongTitle: string | null;
+  selectedSetlistSongIndex: number | null;
   scoutTab: ScoutTab;
+  trainingTab: TrainingTab;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
   /** Selected month for Schedule calendar (`YYYY-MM-01`); null follows next simulation day. */
   scheduleCalendarMonthStart: string | null;
+  canGoBack: boolean;
+  canGoForward: boolean;
   slot: number;
   occupiedSlots: number[];
 }
 
 export function renderDesktopShell(p: DesktopShellProps): string {
   const {
+    lang,
     browseMode,
     browseData,
     save,
@@ -2547,10 +3015,15 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     livesTab,
     scheduledLiveUid,
     newLiveForm,
+    selectedLiveSongTitle,
+    selectedSetlistSongIndex,
     scoutTab,
+    trainingTab,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
+    canGoBack,
+    canGoForward,
     slot,
     occupiedSlots,
   } = p;
@@ -2568,7 +3041,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     .map((item) => {
       const active = item === currentView ? 'aria-current="page"' : "";
       const cls = item === currentView ? "nav-item is-active" : "nav-item";
-      return `<li role="none"><button type="button" class="${cls}" data-nav="${htmlEsc(item)}" ${active}>${htmlEsc(item)}</button></li>`;
+      return `<li role="none"><button type="button" class="${cls}" data-nav="${htmlEsc(item)}" ${active}>${htmlEsc(navLabel(lang, item))}</button></li>`;
     })
     .join("");
 
@@ -2577,7 +3050,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
         const shortlist = shortlistRows(save);
         return shortlist.length
           ? shortlist.map((s) => `<li class="shortlist-entry">${htmlEsc(s.label)}</li>`).join("")
-          : `<li class="shortlist-empty" role="note">No shortlisted idols yet.</li>`;
+          : `<li class="shortlist-empty" role="note">${htmlEsc(t(lang, "shell_no_shortlist"))}</li>`;
       })()
     : `<li class="shortlist-empty" role="note">Browse mode — shortlist N/A</li>`;
 
@@ -2601,7 +3074,10 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     livesTab,
     scheduledLiveUid: scheduledLiveUid ?? null,
     newLiveForm,
+    selectedLiveSongTitle: selectedLiveSongTitle ?? null,
+    selectedSetlistSongIndex: selectedSetlistSongIndex ?? null,
     scoutTab,
+    trainingTab,
     selectedScoutLeadUid: selectedScoutLeadUid ?? null,
     selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
     scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
@@ -2635,8 +3111,8 @@ export function renderDesktopShell(p: DesktopShellProps): string {
           <button type="button" class="fm-menu-action danger" id="btn-clear">Clear slot</button>
         </div>
       </details>
-      <button type="button" class="fm-btn fm-btn-history" disabled title="Back" aria-label="Back" data-history="back">&lsaquo;</button>
-      <button type="button" class="fm-btn fm-btn-history" disabled title="Forward" aria-label="Forward" data-history="fwd">&rsaquo;</button>
+      <button type="button" class="fm-btn fm-btn-history" ${canGoBack ? "" : "disabled"} title="Back" aria-label="Back" data-history="back">&lsaquo;</button>
+      <button type="button" class="fm-btn fm-btn-history" ${canGoForward ? "" : "disabled"} title="Forward" aria-label="Forward" data-history="fwd">&rsaquo;</button>
       <h1 class="fm-game-title"><span class="fm-game-title-main">IDOL PRODUCER</span><span class="fm-game-title-sub" title="Managed group">${browseMode ? htmlEsc("Browse database") : titleClickable}</span></h1>
     </div>
     <div class="fm-top-bar-center">
@@ -2672,6 +3148,168 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     <span class="fm-status-item">View: <strong>${htmlEsc(currentView)}</strong></span>
     <span class="fm-status-sep">·</span>
     <span class="fm-status-item">Turn: <strong>${save?.turn_number ?? 0}</strong></span>
+    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${htmlEsc(typeof ver === "string" ? ver : String(ver))}</span>
+  </footer>
+</div>`;
+}
+
+export function renderDesktopShellI18n(p: DesktopShellProps): string {
+  const {
+    lang,
+    browseMode,
+    browseData,
+    save,
+    preview,
+    currentView,
+    idolDetailUid,
+    groupDetailUid,
+    idolListLayout,
+    songsGroupUid,
+    songsWorkspaceTab,
+    songsDiscographyKey,
+    inboxSelectedUid,
+    livesTab,
+    scheduledLiveUid,
+    newLiveForm,
+    selectedLiveSongTitle,
+    selectedSetlistSongIndex,
+    scoutTab,
+    trainingTab,
+    selectedScoutLeadUid,
+    selectedScoutApplicantUid,
+    scheduleCalendarMonthStart,
+    canGoBack,
+    canGoForward,
+    slot,
+    occupiedSlots,
+  } = p;
+  const finances = save ? getActiveFinances(save) : null;
+  const grp = save ? getPrimaryGroup(save) : null;
+  const displayName =
+    grp && typeof grp.name === "string" ? grp.name : browseData?.preset?.name ?? preview?.group?.name ?? "-";
+  const titleClickable = htmlEsc(displayName);
+  const dateStr =
+    save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? browseData?.preset.opening_date ?? "";
+  const dateLabel = formatLongDate(dateStr || undefined);
+
+  const navSource = browseMode ? BROWSE_NAV_ITEMS : MANAGEMENT_NAV_ITEMS;
+  const navButtons = navSource
+    .map((item) => {
+      const active = item === currentView ? 'aria-current="page"' : "";
+      const cls = item === currentView ? "nav-item is-active" : "nav-item";
+      return `<li role="none"><button type="button" class="${cls}" data-nav="${htmlEsc(item)}" ${active}>${htmlEsc(navLabel(lang, item))}</button></li>`;
+    })
+    .join("");
+
+  const shortlistItems = save
+    ? (() => {
+        const shortlist = shortlistRows(save);
+        return shortlist.length
+          ? shortlist.map((s) => `<li class="shortlist-entry">${htmlEsc(s.label)}</li>`).join("")
+          : `<li class="shortlist-empty" role="note">${htmlEsc(t(lang, "shell_no_shortlist"))}</li>`;
+      })()
+    : `<li class="shortlist-empty" role="note">${htmlEsc(t(lang, "shell_browse_shortlist_na"))}</li>`;
+
+  const slotOpts = Array.from({ length: 10 }, (_, s) => {
+    const occ = occupiedSlots.includes(s) ? ` - ${t(lang, "opening_slot_saved")}` : "";
+    return `<option value="${s}" ${s === slot ? "selected" : ""}>${htmlEsc(t(lang, "shell_slot"))} ${s}${htmlEsc(occ)}</option>`;
+  }).join("");
+
+  const mainInner = renderMainContent({
+    browseMode,
+    browseData,
+    save,
+    view: currentView,
+    idolDetailUid: idolDetailUid ?? null,
+    groupDetailUid: groupDetailUid ?? null,
+    idolListLayout,
+    songsGroupUid: songsGroupUid ?? null,
+    songsWorkspaceTab,
+    songsDiscographyKey,
+    inboxSelectedUid: inboxSelectedUid ?? null,
+    livesTab,
+    scheduledLiveUid: scheduledLiveUid ?? null,
+    newLiveForm,
+    selectedLiveSongTitle: selectedLiveSongTitle ?? null,
+    selectedSetlistSongIndex: selectedSetlistSongIndex ?? null,
+    scoutTab,
+    trainingTab,
+    selectedScoutLeadUid: selectedScoutLeadUid ?? null,
+    selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
+    scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
+  });
+
+  const cashPill = finances
+    ? `<div class="fm-cash-pill" title="${htmlEsc(t(lang, "shell_cash_on_hand"))}"><span class="fm-cash-label">¥</span>${finances.cash_yen.toLocaleString("ja-JP")}</div>`
+    : `<div class="fm-cash-pill content-muted" title="${htmlEsc(t(lang, "shell_browse"))}">${htmlEsc(t(lang, "shell_browse"))}</div>`;
+
+  const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
+  const nextHint = inboxBlock ? `${navLabel(lang, "Inbox")}: ${inboxBlock.title}` : t(lang, "shell_advance_one_day");
+
+  const nextDayBtn = browseMode
+    ? `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}">${htmlEsc(t(lang, "shell_next_day"))}</button>`
+    : `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" title="${htmlEsc(nextHint)}">${htmlEsc(t(lang, "shell_next_day"))}</button>`;
+
+  const ver = save ? String(save.version ?? "-") : browseData ? "browse" : "-";
+  const statusLeft = browseMode ? t(lang, "shell_browse") : t(lang, "shell_save_version", { version: save?.version ?? "?" });
+  const languageSelect = languageOptions()
+    .map((opt) => `<option value="${opt.value}" ${opt.value === lang ? "selected" : ""}>${htmlEsc(opt.label)}</option>`)
+    .join("");
+
+  return `
+<div class="fm-app">
+  <header class="fm-top-bar" role="banner">
+    <div class="fm-top-bar-left">
+      <details class="fm-home-dropdown">
+        <summary class="fm-btn fm-btn-accent">${htmlEsc(t(lang, "shell_home"))}</summary>
+        <div class="fm-home-menu" role="menu">
+          <button type="button" class="fm-menu-action" id="btn-main-menu">${htmlEsc(t(lang, "shell_main_menu"))}</button>
+          <label class="fm-menu-row">${htmlEsc(t(lang, "shell_slot"))} <select id="slot-select" class="fm-select" aria-label="${htmlEsc(t(lang, "shell_slot"))}">${slotOpts}</select></label>
+          <label class="fm-menu-row">${htmlEsc(t(lang, "language"))} <select id="lang-select-shell" class="fm-select" aria-label="${htmlEsc(t(lang, "language"))}">${languageSelect}</select></label>
+          <button type="button" class="fm-menu-action" id="btn-save" ${browseMode ? "disabled" : ""}>${htmlEsc(t(lang, "shell_save_game"))}</button>
+          <button type="button" class="fm-menu-action" id="btn-load">${htmlEsc(t(lang, "shell_load_game"))}</button>
+          <button type="button" class="fm-menu-action" id="btn-new">${htmlEsc(t(lang, "shell_new_game"))}</button>
+          <button type="button" class="fm-menu-action danger" id="btn-clear">${htmlEsc(t(lang, "shell_clear_slot"))}</button>
+        </div>
+      </details>
+      <button type="button" class="fm-btn fm-btn-history" ${canGoBack ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_back"))}" aria-label="${htmlEsc(t(lang, "shell_back"))}" data-history="back">&lsaquo;</button>
+      <button type="button" class="fm-btn fm-btn-history" ${canGoForward ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_forward"))}" aria-label="${htmlEsc(t(lang, "shell_forward"))}" data-history="fwd">&rsaquo;</button>
+      <h1 class="fm-game-title"><span class="fm-game-title-main">IDOL PRODUCER</span><span class="fm-game-title-sub" title="${htmlEsc(t(lang, "shell_managed_group"))}">${browseMode ? htmlEsc(t(lang, "shell_browse_database")) : titleClickable}</span></h1>
+    </div>
+    <div class="fm-top-bar-center">
+      <button type="button" class="fm-date-btn" id="btn-goto-schedule" data-nav="Schedule" title="${htmlEsc(t(lang, "shell_open_schedule"))}">${htmlEsc(dateLabel)}</button>
+    </div>
+    <div class="fm-top-bar-right">
+      ${nextDayBtn}
+      ${cashPill}
+    </div>
+  </header>
+
+  <div class="fm-body">
+    <aside class="fm-sidebar" aria-label="${htmlEsc(t(lang, "shell_main_navigation"))}">
+      <nav class="fm-side-nav" aria-label="${htmlEsc(t(lang, "shell_sections"))}">
+        <ul class="fm-side-nav-list" role="list">${navButtons}</ul>
+      </nav>
+      <section class="fm-shortlist" aria-labelledby="shortlist-heading">
+        <h2 id="shortlist-heading" class="fm-shortlist-label">${htmlEsc(t(lang, "shell_shortlist"))}</h2>
+        <ul class="fm-shortlist-ul" role="list">${shortlistItems}</ul>
+      </section>
+    </aside>
+
+    <main class="fm-content" id="main-content" role="main" aria-label="${htmlEsc(navLabel(lang, currentView))}">
+      <div class="fm-content-inner">
+        ${mainInner}
+      </div>
+    </main>
+  </div>
+
+  <footer class="fm-status-bar" role="contentinfo">
+    <span class="fm-status-item">${htmlEsc(statusLeft)}</span>
+    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${htmlEsc(t(lang, "shell_view"))}: <strong>${htmlEsc(navLabel(lang, currentView))}</strong></span>
+    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${htmlEsc(t(lang, "shell_turn"))}: <strong>${save?.turn_number ?? 0}</strong></span>
     <span class="fm-status-sep">·</span>
     <span class="fm-status-item">${htmlEsc(typeof ver === "string" ? ver : String(ver))}</span>
   </footer>

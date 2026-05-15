@@ -566,6 +566,15 @@ body {
   stroke: #ff70a8;
 }
 
+.scout-fullwidth-card {
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.scout-idol-list-table {
+  table-layout: fixed;
+}
+
 .inbox-card.is-unread {
   border-left: 3px solid var(--accent-light);
 }
@@ -1422,6 +1431,80 @@ text.idol-radar-val.attr-tone-low {
   border: 1px solid rgb(255 255 255 / 0.2);
 }
 
+.group-member-color-text {
+  font-weight: 600;
+}
+
+.training-status-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.training-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.7rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.training-status-badge--rdy {
+  background: #1f9d55;
+}
+
+.training-status-badge--inj {
+  background: #d14343;
+}
+
+.training-status-badge--ill {
+  background: #e07a1f;
+}
+
+.training-status-badge--dpr {
+  background: #7c3aed;
+}
+
+.training-status-badge--hia {
+  background: #6b7280;
+}
+
+.training-status-badge--sus {
+  background: #d4a017;
+  color: #1a1a1a;
+}
+
+.training-value {
+  font-weight: 700;
+}
+
+.training-value--green {
+  color: #34c759;
+}
+
+.training-value--light-green {
+  color: #9adf63;
+}
+
+.training-value--yellow {
+  color: #facc15;
+}
+
+.training-value--orange {
+  color: #fb923c;
+}
+
+.training-value--red {
+  color: #f87171;
+}
+
 /* Group roster: default name white; validated member hex sets inline color on .group-roster-name-wrap (inherited by link). */
 .group-detail-roster-table .group-roster-name-wrap {
   color: #ffffff;
@@ -1437,9 +1520,53 @@ text.idol-radar-val.attr-tone-low {
 }
 
 .group-detail-roster-table td.group-roster-stat {
-  text-align: left;
+  text-align: center;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+
+.training-roster-table .idol-list-photo {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--bg-card-dim);
+  border: 1px solid var(--border);
+  vertical-align: middle;
+  text-align: center;
+}
+
+.training-roster-table .idol-list-photo .idol-thumb,
+.training-roster-table .idol-list-photo .idol-thumb-ph {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center 5%;
+}
+
+.training-roster-table th:nth-child(5),
+.training-roster-table td:nth-child(5),
+.training-roster-table th:nth-child(6),
+.training-roster-table td:nth-child(6),
+.training-roster-table th:nth-child(7),
+.training-roster-table td:nth-child(7),
+.training-roster-table th:nth-child(8),
+.training-roster-table td:nth-child(8) {
+  width: 6rem;
+}
+
+.training-roster-table th:nth-child(5),
+.training-roster-table th:nth-child(6),
+.training-roster-table th:nth-child(7),
+.training-roster-table th:nth-child(8) {
+  text-align: center;
+}
+
+.training-roster-table th:nth-child(9),
+.training-roster-table td:nth-child(9) {
+  min-width: 10rem;
 }
 
 .group-member-color-chip--default {
@@ -1783,6 +1910,193 @@ text.idol-radar-val.attr-tone-low {
   margin-top: 1rem;
 }
 
+.live-new-layout {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.live-new-card,
+.live-new-summary-card {
+  width: 100%;
+}
+
+.live-new-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.65rem;
+}
+
+.live-new-summary-item {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.03);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+}
+
+.live-tokutenkai-card {
+  background: linear-gradient(180deg, rgb(109 74 158 / 0.95), rgb(96 66 143 / 0.95));
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.live-tokutenkai-card .content-h3 {
+  margin-top: 0;
+}
+
+.live-tokutenkai-toggle {
+  margin-bottom: 0.8rem;
+  background: rgb(255 255 255 / 0.08);
+}
+
+.live-tokutenkai-grid {
+  margin-bottom: 0.8rem;
+}
+
+.live-tokutenkai-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+  color: #fff;
+}
+
+.live-song-picker-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.live-song-table-card {
+  min-width: 0;
+}
+
+.live-song-table-scroll {
+  max-height: 24rem;
+}
+
+.live-song-table tbody tr {
+  cursor: pointer;
+}
+
+.live-song-picker-actions {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+  align-content: center;
+}
+
+.live-program-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.live-program-template,
+.live-song-palette-item {
+  font: inherit;
+  cursor: grab;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  background: rgb(255 255 255 / 0.04);
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.live-program-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+.live-program-column {
+  min-width: 0;
+}
+
+.live-song-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-content: flex-start;
+}
+
+.live-program-list {
+  min-height: 12rem;
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.55rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.02);
+}
+
+.live-program-item {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto auto auto;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.03);
+  cursor: grab;
+}
+
+.live-program-grab {
+  color: var(--text-secondary);
+  letter-spacing: -0.08em;
+}
+
+.live-program-kind {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.live-program-kind--mc {
+  color: #7dd3fc;
+}
+
+.live-program-kind--break {
+  color: #fbbf24;
+}
+
+.live-program-label {
+  min-width: 0;
+}
+
+.live-program-detail {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.live-program-duration {
+  width: 4rem;
+}
+
+.live-program-remove {
+  padding: 0.3rem 0.55rem;
+}
+
+.live-program-dropzone {
+  height: 0.4rem;
+  border-radius: 999px;
+}
+
+.live-program-dropzone:hover,
+.live-program-dropzone.is-end {
+  background: rgb(255 255 255 / 0.05);
+}
+
 .check-pill-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -1800,6 +2114,33 @@ text.idol-radar-val.attr-tone-low {
   color: var(--text-primary);
 }
 
+.live-report-detail {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.live-report-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.6rem;
+}
+
+.live-report-summary-item {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.03);
+}
+
+.live-report-summary-item .label {
+  display: block;
+  margin-bottom: 0.18rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
 .is-selected-row {
   background: rgb(83 52 131 / 0.18);
 }
@@ -1811,6 +2152,19 @@ text.idol-radar-val.attr-tone-low {
 
 @media (max-width: 64rem) {
   .lives-planner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-song-picker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-song-picker-actions {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+
+  .live-program-columns {
     grid-template-columns: 1fr;
   }
 }
@@ -2049,6 +2403,7 @@ text.idol-radar-val.attr-tone-low {
 .fm-table th,
 .fm-table td {
   text-align: left;
+  vertical-align: middle;
   padding: 0.45rem 0.65rem;
   border-bottom: 1px solid rgb(255 255 255 / 0.06);
 }
@@ -2062,7 +2417,7 @@ text.idol-radar-val.attr-tone-low {
 }
 
 .fm-table td.num {
-  text-align: right;
+  text-align: center;
   font-variant-numeric: tabular-nums;
 }
 
@@ -2179,6 +2534,11 @@ text.idol-radar-val.attr-tone-low {
   outline: 2px solid var(--accent-light);
   outline-offset: -2px;
   background: rgb(83 52 131 / 0.2);
+}
+
+.group-picker-row,
+.group-picker-row td {
+  cursor: pointer;
 }
 
 .group-picker-row--recommended td:first-child {
@@ -2388,6 +2748,34 @@ code {
   margin-top: 0.65rem;
   color: var(--yellow);
   font-size: 0.88rem;
+}
+
+.plain-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.plain-list li + li {
+  margin-top: 0.35rem;
+}
+
+.text-action-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cyan);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.text-action-btn:hover {
+  color: var(--accent);
+}
+
+.inbox-plain-body {
+  margin-top: 0.85rem;
 }
 
 /* ---- Training ---- */

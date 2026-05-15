@@ -190,9 +190,9 @@ export function createGameSaveFromLoadedScenario(
   });
 
   addNotification(save, {
-    title: "Upcoming lives (autopilot)",
+    title: "Upcoming lives",
     body:
-      "Routine one-man lives are inserted on the web schedule when calendar offset from opening satisfies offset mod 7 === 3 (same rule as NEXT DAY). You will get a blocking Today's live schedule inbox item on those mornings — confirm with Live Start before advancing again.",
+      "Default lives are booked from the monthly live-count reference for your letter tier through the end of next month. On each month end, Operations will ask whether to book the following month after next, and you will get a blocking Today's live schedule inbox item on performance days.",
     sender: "Assistant",
     category: "guidance",
     level: "high",

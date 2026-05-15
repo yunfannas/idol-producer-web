@@ -167,7 +167,7 @@ function memberLiveComponentScores(idol: Record<string, unknown>, refIso: string
 
 function memberStatusMultiplier(idol: Record<string, unknown>): number {
   const condition = num(idol.condition, 90);
-  const morale = num(idol.morale, 50);
+  const morale = num(idol.morale, 70);
   let mult = 1.0;
   mult += (condition - 70) / 200.0;
   mult += (morale - 50) / 250.0;
@@ -176,7 +176,7 @@ function memberStatusMultiplier(idol: Record<string, unknown>): number {
 
 function memberMoodScore(idol: Record<string, unknown>): number {
   const condition = num(idol.condition, 90);
-  const morale = num(idol.morale, 50);
+  const morale = num(idol.morale, 70);
   return clamp(condition * 0.58 + morale * 0.42, 0, 100);
 }
 
@@ -691,7 +691,7 @@ export function applyLiveResultToSnapshot(
     const uid = String(idol.uid ?? "");
     const name = String(idol.name ?? "").trim() || "Member";
     const beforeCondition = Math.round(num(idol.condition, 90));
-    const beforeMorale = Math.round(num(idol.morale, 50));
+    const beforeMorale = Math.round(num(idol.morale, 70));
     const share = totalWeight > 0 ? weight / totalWeight : 1 / Math.max(1, memberWeights.length);
     let memberFanGain = Math.round(fanGain * share);
     if (fanGain > 0 && memberFanGain <= 0) memberFanGain = index === 0 ? 1 : 0;
@@ -709,7 +709,7 @@ export function applyLiveResultToSnapshot(
     if (ms >= performanceScore + 6) memberMoraleDelta += 1;
     else if (ms <= performanceScore - 8 && memberMoraleDelta > 0) memberMoraleDelta -= 1;
 
-    idol.morale = clamp(num(idol.morale, 50) + memberMoraleDelta, 0, 100);
+    idol.morale = clamp(num(idol.morale, 70) + memberMoraleDelta, 0, 100);
 
     const lr = ratingByUid.get(uid);
     const performance_rating =
@@ -717,7 +717,7 @@ export function applyLiveResultToSnapshot(
         ? Math.round(lr * 100) / 100
         : Math.round((ms / 10.0) * 100) / 100;
     const afterCondition = Math.round(num(idol.condition, 90));
-    const afterMorale = Math.round(num(idol.morale, 50));
+    const afterMorale = Math.round(num(idol.morale, 70));
 
     appliedMembers.push({
       uid,
