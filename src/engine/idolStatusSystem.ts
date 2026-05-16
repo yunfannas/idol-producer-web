@@ -115,10 +115,11 @@ function liveConditionCost(
   liveCount: number,
   liveMinutes: number,
   rehearsalMinutes: number,
+  extraLiveMinutes: number,
 ): number {
   const attrs = normalizePersistedAttributes(idol.attributes);
   const stamina = attrs.physical.stamina;
-  const weightedMinutes = liveMinutes + rehearsalMinutes * REHEARSAL_LIVE_COST_RATIO;
+  const weightedMinutes = liveMinutes + rehearsalMinutes * REHEARSAL_LIVE_COST_RATIO + extraLiveMinutes;
   const effectiveMinutes = Math.max(weightedMinutes, liveCount > 0 ? liveCount * 120 : 0);
   if (effectiveMinutes <= 0) return 0;
   const baselineCost = BASE_2H_LIVE_CONDITION_COST * (effectiveMinutes / 120.0);
@@ -232,6 +233,7 @@ export interface DailyStatusApplyInput {
   liveCount: number;
   liveMinutes: number;
   rehearsalMinutes?: number;
+  extraLiveMinutes?: number;
   birthday?: boolean;
   includeSleepRecovery?: boolean;
 }
@@ -247,17 +249,21 @@ export function applyDailyStatusUpdateJson(
   const liveCount = Math.max(0, Math.trunc(input.liveCount));
   const liveMinutes = Math.max(0, Math.trunc(input.liveMinutes));
   const rehearsalMinutes = Math.max(0, Math.trunc(input.rehearsalMinutes ?? 0));
+  const extraLiveMinutes = Math.max(0, Math.trunc(input.extraLiveMinutes ?? 0));
   const includeSleepRecovery = input.includeSleepRecovery !== false;
 
   const beforeCondition = num(idol.condition, 90);
   const beforeMorale = num(idol.morale, 70);
 
   const bear = trainingBearIndex(idol);
-  const liveLoad = Math.max(0, Math.floor((liveMinutes + rehearsalMinutes * REHEARSAL_LIVE_COST_RATIO) / 30));
+  const liveLoad = Math.max(
+    0,
+    Math.floor((liveMinutes + rehearsalMinutes * REHEARSAL_LIVE_COST_RATIO + extraLiveMinutes) / 30),
+  );
   const totalLoad = trainingLoad + liveLoad;
   const overwork = Math.max(0, trainingLoad - bear);
 
-  const liveCost = liveConditionCost(idol, liveCount, liveMinutes, rehearsalMinutes);
+  const liveCost = liveConditionCost(idol, liveCount, liveMinutes, rehearsalMinutes, extraLiveMinutes);
   const trainCost = trainingConditionCost(trainingLoad, trainingHours);
   const overloadCost = 0;
   const totalConditionCost = liveCost + trainCost + overloadCost;

@@ -5,6 +5,7 @@
 import type { LoadedScenario } from "../data/scenarioTypes";
 import type { WebPreviewBundle } from "../types";
 import type { GameSavePayload } from "../save/gameSaveSchema";
+import { AUTOSAVE_SLOT } from "../persistence/saves";
 import { getActiveFinances, getPrimaryGroup } from "../save/gameSaveSchema";
 import type { PersistedIdolAttributes } from "../engine/idolAttributes";
 import {
@@ -49,7 +50,7 @@ import {
 import { htmlEsc } from "./htmlEsc";
 import { languageOptions, navLabel, t, type UiLanguage } from "./i18n";
 import { resolveMemberColorCss } from "./memberColor";
-import { notificationRequiresAck } from "../save/inbox";
+import { notificationRequiresAck, sortNotificationsInPlace } from "../save/inbox";
 import { renderGroupDetailPage } from "./groupDetailPage";
 import {
   isSongHiddenFromDisplay,
@@ -60,6 +61,10 @@ import {
   splitSongsReleasedVsMaking,
   type DiscBucket,
 } from "../data/songDisplayPolicy";
+import {
+  songCatalogDisplayLabel,
+  songCatalogMatchesPick,
+} from "../data/songCatalog";
 import { groupsForDirectoryListing } from "../data/scenarioBrowse";
 import {
   defaultAutopilotTrainingIntensity,
@@ -196,6 +201,7 @@ export type SongsWorkspaceTab = "group_songs" | "disc";
 export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival";
 export type ScoutTab = "freelancer" | "transfer" | "audition";
 export type TrainingTab = "assignments" | "roster";
+export type FinanceHistoryRange = "day" | "week" | "month" | "year" | "all";
 
 export interface LiveProgramItem {
   id: string;
@@ -755,6 +761,7 @@ function renderIdolDetailPage(
 
 function renderInbox(save: GameSavePayload, selectedUid: string | null): string {
   const rows = [...save.inbox.notifications];
+  sortNotificationsInPlace(rows);
   if (!rows.length) {
     return `<section class="content-panel"><p class="content-muted">No messages in inbox.</p></section>`;
   }
@@ -808,25 +815,73 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
               return `<div class="live-report-detail"><h4 class="content-h3">Today's lives</h4><ul class="plain-list">${items}</ul></div>`;
             })()
           : "";
+        const startupActions = (() => {
+          const dedupeKey = String(selected.dedupe_key ?? "");
+          if (dedupeKey.startsWith("startup-staff|")) {
+            return `<div class="live-report-detail"><div class="inbox-action-row"><button type="button" class="fm-btn" data-open-training-view="assignments">Training schedule</button><button type="button" class="fm-btn" data-open-training-view="roster">Idol status table</button></div></div>`;
+          }
+          if (dedupeKey.startsWith("startup-roster|")) {
+            const groups = save.database_snapshot.groups as Record<string, unknown>[];
+            const rows = save.database_snapshot.idols
+              .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
+              .filter((row) => {
+                const hist = row.group_history;
+                if (Array.isArray(hist) && hist.some((entry) => String((entry as Record<string, unknown>).group_uid ?? "") === save.managing_group_uid)) {
+                  return true;
+                }
+                return activeGroupMembershipsAtReference(row, save.current_date, groups).some((m) => m.uid === save.managing_group_uid);
+              })
+              .map((row) => {
+                const uid = String(row.uid ?? "");
+                const name = String((row.name ?? uid) || "Idol");
+                const memberships = activeGroupMembershipsAtReference(row, save.current_date, groups)
+                  .map((m) => m.name)
+                  .filter(Boolean)
+                  .join(", ") || "—";
+                const historySummary = Array.isArray(row.group_history)
+                  ? row.group_history
+                      .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
+                      .map((entry) => String(entry.group_name ?? entry.group_uid ?? "").trim())
+                      .filter(Boolean)
+                      .join(", ") || "—"
+                  : "—";
+                return `<tr><td><button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></td><td>${htmlEsc(memberships)}</td><td>${htmlEsc(historySummary)}</td></tr>`;
+              })
+              .join("");
+            return `<div class="live-report-detail"><div class="table-scroll"><table class="fm-table"><thead><tr><th>Idol</th><th>Current Group</th><th>History</th></tr></thead><tbody>${rows || `<tr><td colspan="3" class="content-muted">No roster rows available.</td></tr>`}</tbody></table></div></div>`;
+          }
+          return "";
+        })();
         const renderLiveReport = (): string => {
           if (!liveReport) {
             const plainBody = htmlEsc(selected.body).replaceAll("\n", "<br />");
-            return liveScheduleLinks ? `${liveScheduleLinks}<div class="inbox-plain-body">${plainBody}</div>` : plainBody;
+            return `${liveScheduleLinks}${startupActions}<div class="inbox-plain-body">${plainBody}</div>`;
           }
           const venue = String(liveReport.venue ?? "—");
+          const ticketGross = Number(liveReport.ticket_gross_yen ?? 0) || 0;
+          const goodsGross = Number(liveReport.goods_gross_yen ?? 0) || 0;
+          const chekiGross = Number(liveReport.tokutenkai_revenue_yen ?? 0) || 0;
+          const groupFanCount = Number(liveReport.group_fan_count ?? 0) || 0;
+          const groupFanGain = Number(liveReport.group_fan_gain ?? 0) || 0;
+          const liveTimeText = String(liveReport.slot ?? liveReport.date ?? "—");
+          const liveTime = liveTimeText.replace(/^\d{4}-\d{2}-\d{2}\s+/, "");
           const memberRows = Array.isArray(liveReport.member_deltas)
             ? (liveReport.member_deltas as unknown[])
                 .filter((row) => row && typeof row === "object")
                 .map((row) => {
                   const r = row as Record<string, unknown>;
                   const fanGain = Number(r.fan_gain ?? 0) || 0;
+                  const fanCount = Number(r.fan_count ?? 0) || 0;
+                  const conditionAfter = Number(r.condition_after ?? 0) || 0;
+                  const conditionDelta = Number(r.condition_delta ?? 0) || 0;
                   const moraleGain = Number(r.morale_gain ?? r.morale_delta ?? 0) || 0;
+                  const moraleAfter = Number(r.morale_after ?? 0) || 0;
                   return `<tr>
                     <td>${htmlEsc(String(r.name ?? "Member"))}</td>
                     <td class="num">${htmlEsc(String(r.performance_rating ?? "—"))}</td>
-                    <td class="num">${htmlEsc(`${fanGain >= 0 ? "+" : ""}${fanGain}`)}</td>
-                    <td class="num">${htmlEsc(String(r.condition_after ?? "—"))}</td>
-                    <td class="num">${htmlEsc(`${moraleGain >= 0 ? "+" : ""}${moraleGain}`)}</td>
+                    <td class="num">${htmlEsc(`${fanCount.toLocaleString("ja-JP")} (${fanGain >= 0 ? "+" : ""}${fanGain.toLocaleString("ja-JP")})`)}</td>
+                    <td class="num">${htmlEsc(`${conditionAfter} (${conditionDelta >= 0 ? "+" : ""}${conditionDelta})`)}</td>
+                    <td class="num">${htmlEsc(`${moraleAfter} (${moraleGain >= 0 ? "+" : ""}${moraleGain})`)}</td>
                     <td class="num">${htmlEsc(`¥${Number(r.cheki_sale_money_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
                   </tr>`;
                 })
@@ -837,14 +892,14 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
               <div class="live-report-summary-item"><span class="label">Performance</span><strong>${htmlEsc(String(liveReport.performance_score ?? "—"))}</strong></div>
               <div class="live-report-summary-item"><span class="label">Satisfaction</span><strong>${htmlEsc(String(liveReport.audience_satisfaction ?? "—"))}</strong></div>
               <div class="live-report-summary-item"><span class="label">Attendance</span><strong>${htmlEsc(String(liveReport.attendance ?? 0))}${Number(liveReport.capacity ?? 0) > 0 ? htmlEsc(` / ${String(liveReport.capacity)}`) : ""}</strong></div>
-              <div class="live-report-summary-item"><span class="label">Fan Change</span><strong>${htmlEsc(`${Number(liveReport.group_fan_gain ?? 0) >= 0 ? "+" : ""}${String(liveReport.group_fan_gain ?? 0)}`)}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Fan</span><strong>${htmlEsc(`${groupFanCount.toLocaleString("ja-JP")} (${groupFanGain >= 0 ? "+" : ""}${groupFanGain.toLocaleString("ja-JP")})`)}</strong></div>
               <div class="live-report-summary-item"><span class="label">Venue</span><strong>${htmlEsc(venue)}</strong></div>
-              <div class="live-report-summary-item"><span class="label">Time</span><strong>${htmlEsc(String(liveReport.slot ?? liveReport.date ?? "—"))}</strong></div>
-              <div class="live-report-summary-item"><span class="label">Gross</span><strong>${htmlEsc(`¥${Number(liveReport.gross_yen ?? 0).toLocaleString("ja-JP")}`)}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Time</span><strong>${htmlEsc(liveTime)}</strong></div>
+              <div class="live-report-summary-item live-report-summary-item--wide"><span class="label">Gross</span><strong>${htmlEsc(`\u00A5${Number(liveReport.gross_yen ?? 0).toLocaleString("ja-JP")}`)}</strong><span class="live-report-breakdown">${htmlEsc(`Tickets \u00A5${ticketGross.toLocaleString("ja-JP")} / Goods \u00A5${goodsGross.toLocaleString("ja-JP")} / Cheki \u00A5${chekiGross.toLocaleString("ja-JP")}`)}</span></div>
             </div>
             <div class="table-scroll">
               <table class="fm-table">
-                <thead><tr><th>Name</th><th>Rate</th><th>Fan Change</th><th>Condition</th><th>Morale</th><th>Cheki Sale Money</th></tr></thead>
+                <thead><tr><th>Name</th><th>Rate</th><th>Fan Count</th><th>Condition</th><th>Morale</th><th>Cheki Sale</th></tr></thead>
                 <tbody>${memberRows || `<tr><td colspan="6" class="content-muted">No member breakdown recorded.</td></tr>`}</tbody>
               </table>
             </div>
@@ -1357,7 +1412,7 @@ function renderFinances(save: GameSavePayload): string {
 }
 
 /** All idols · portrait · age / romaji / X / groups on reference date · open detail on click. */
-function renderFinancesProjectionView(save: GameSavePayload): string {
+function renderFinancesProjectionView(save: GameSavePayload, financeHistoryRange: FinanceHistoryRange): string {
   const f = getActiveFinances(save);
   const ledger = [...f.ledger].slice(-20).reverse();
   const projectionPoints = buildFinanceProjectionPoints(save);
@@ -1381,6 +1436,36 @@ function renderFinancesProjectionView(save: GameSavePayload): string {
         `<tr><td>${htmlEsc(row.date)}</td><td class="num">${row.net_total.toLocaleString("ja-JP")}</td><td>${htmlEsc(row.tier)}</td><td class="num muted">${row.income_total.toLocaleString("ja-JP")}</td><td class="num muted">${row.expense_total.toLocaleString("ja-JP")}</td></tr>`,
     )
     .join("");
+  const historySource = [...f.ledger].reverse();
+  const historyLimit = {
+    day: 1,
+    week: 7,
+    month: 30,
+    year: 365,
+    all: Number.POSITIVE_INFINITY,
+  }[financeHistoryRange];
+  const historyRows = historySource.filter((_, index) => index < historyLimit);
+  const historyTotals = historyRows.reduce(
+    (acc, row) => {
+      acc.income += num(row.income_total);
+      acc.expense += num(row.expense_total);
+      return acc;
+    },
+    { income: 0, expense: 0 },
+  );
+  const historyTableRows = historyRows
+    .map(
+      (row) =>
+        `<tr><td>${htmlEsc(row.date)}</td><td>${htmlEsc(row.tier)}</td><td class="num">${num(row.income_total).toLocaleString("ja-JP")}</td><td class="num">${num(row.expense_total).toLocaleString("ja-JP")}</td><td class="num ${num(row.net_total) >= 0 ? "is-positive" : "is-negative"}">${num(row.net_total).toLocaleString("ja-JP")}</td></tr>`,
+    )
+    .join("");
+  const historyRangeButtons: Array<[FinanceHistoryRange, string]> = [
+    ["day", "Day"],
+    ["week", "Week"],
+    ["month", "Month"],
+    ["year", "Year"],
+    ["all", "All"],
+  ];
   return `
     <section class="content-panel finances-view">
       <h2 class="content-h2">Finances</h2>
@@ -1418,6 +1503,24 @@ function renderFinancesProjectionView(save: GameSavePayload): string {
           <table class="fm-table">
             <thead><tr><th>Date</th><th>Net &yen;</th><th>Tier</th><th>Income</th><th>Expense</th></tr></thead>
             <tbody>${tableRows || `<tr><td colspan="5" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
+          </table>
+        </div>
+      </div>
+      <div class="table-panel">
+        <div class="finance-history-head">
+          <h3 class="content-h3">Income / expense history</h3>
+          <div class="finance-history-tabs">${historyRangeButtons
+            .map(
+              ([value, label]) =>
+                `<button type="button" class="fm-btn ${financeHistoryRange === value ? "is-active" : ""}" data-finance-history-range="${value}">${htmlEsc(label)}</button>`,
+            )
+            .join("")}</div>
+        </div>
+        <p class="content-muted">Income &yen;${historyTotals.income.toLocaleString("ja-JP")} / Expense &yen;${historyTotals.expense.toLocaleString("ja-JP")}</p>
+        <div class="table-scroll">
+          <table class="fm-table">
+            <thead><tr><th>Date</th><th>Tier</th><th>Income</th><th>Expense</th><th>Net</th></tr></thead>
+            <tbody>${historyTableRows || `<tr><td colspan="5" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
           </table>
         </div>
       </div>
@@ -1543,7 +1646,10 @@ function renderIdolsList(
 function makingWorkshopRowsHtml(rows: Record<string, unknown>[]): string {
   return rows
     .map((row) => {
-      const title = typeof row.title === "string" ? row.title : String(row.uid ?? "—");
+      const title =
+        typeof row.title === "string" || typeof row.title_romanji === "string"
+          ? songCatalogDisplayLabel(row)
+          : String(row.uid ?? "—");
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
       const dtype = typeof row.disc_type === "string" && row.disc_type.trim() ? String(row.disc_type) : "—";
       const uid = String(row.uid ?? "").trim();
@@ -1567,7 +1673,10 @@ function songRowsHtml(
   const hideCatalogFields = rowKind === "making";
   return rows
     .map((row) => {
-      const title = typeof row.title === "string" ? row.title : String(row.uid ?? "—");
+      const title =
+        typeof row.title === "string" || typeof row.title_romanji === "string"
+          ? songCatalogDisplayLabel(row)
+          : String(row.uid ?? "—");
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
       const rel = hideCatalogFields ? "—" : typeof row.release_date === "string" ? row.release_date : "—";
       const gname = typeof row.group_name === "string" ? row.group_name : "";
@@ -2242,8 +2351,8 @@ function renderLivesView(
   );
   const songListRows = groupSongs
     .map((song) => {
-      const title = String(song.title ?? song.title_romanji ?? "").trim();
-      const selected = title === selectedLiveSongTitle ? " is-selected-row" : "";
+      const title = songCatalogDisplayLabel(song);
+      const selected = songCatalogMatchesPick(String(selectedLiveSongTitle ?? "").trim(), song) ? " is-selected-row" : "";
       return `<tr class="live-song-row${selected}" data-live-song-pick="${htmlEsc(title)}">
         <td>${htmlEsc(title)}</td>
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
@@ -2261,7 +2370,7 @@ function renderLivesView(
         item.kind === "song"
           ? (() => {
               const title = String(item.songTitle ?? item.label ?? "").trim();
-              const source = groupSongs.find((song) => String(song.title ?? song.title_romanji ?? "").trim() === title);
+              const source = groupSongs.find((song) => songCatalogMatchesPick(title, song));
               return `Popularity ${songPopularityNum(source ?? {}).toFixed(1)}`;
             })()
           : `${item.durationMinutes}m`;
@@ -2769,6 +2878,7 @@ export function renderMainContent(
     selectedSetlistSongIndex: number | null;
     scoutTab: ScoutTab;
     trainingTab: TrainingTab;
+    financeHistoryRange: FinanceHistoryRange;
     selectedScoutLeadUid: string | null;
     selectedScoutApplicantUid: string | null;
     /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
@@ -2794,6 +2904,7 @@ export function renderMainContent(
     selectedSetlistSongIndex,
     scoutTab,
     trainingTab,
+    financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
@@ -2866,7 +2977,7 @@ export function renderMainContent(
     case "Inbox":
       return renderInbox(save, inboxSelectedUid);
     case "Finances":
-      return renderFinancesProjectionView(save);
+      return renderFinancesProjectionView(save, financeHistoryRange);
     case "Idols": {
       const refIso = displayReferenceIso(save, browseData?.preset?.opening_date);
       const uidStr = idolDetailUid?.trim() ?? "";
@@ -2987,6 +3098,7 @@ export interface DesktopShellProps {
   selectedSetlistSongIndex: number | null;
   scoutTab: ScoutTab;
   trainingTab: TrainingTab;
+  financeHistoryRange: FinanceHistoryRange;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
   /** Selected month for Schedule calendar (`YYYY-MM-01`); null follows next simulation day. */
@@ -3019,6 +3131,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     selectedSetlistSongIndex,
     scoutTab,
     trainingTab,
+    financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
@@ -3054,9 +3167,10 @@ export function renderDesktopShell(p: DesktopShellProps): string {
       })()
     : `<li class="shortlist-empty" role="note">Browse mode — shortlist N/A</li>`;
 
-  const slotOpts = Array.from({ length: 10 }, (_, s) => {
+  const slotOpts = Array.from({ length: AUTOSAVE_SLOT + 1 }, (_, s) => {
     const occ = occupiedSlots.includes(s) ? " · saved" : "";
-    return `<option value="${s}" ${s === slot ? "selected" : ""}>Slot ${s}${occ}</option>`;
+    const label = s === AUTOSAVE_SLOT ? `Autosave${occ}` : `Slot ${s}${occ}`;
+    return `<option value="${s}" ${s === slot ? "selected" : ""}>${label}</option>`;
   }).join("");
 
   const mainInner = renderMainContent({
@@ -3176,6 +3290,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     selectedSetlistSongIndex,
     scoutTab,
     trainingTab,
+    financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
@@ -3211,9 +3326,10 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
       })()
     : `<li class="shortlist-empty" role="note">${htmlEsc(t(lang, "shell_browse_shortlist_na"))}</li>`;
 
-  const slotOpts = Array.from({ length: 10 }, (_, s) => {
+  const slotOpts = Array.from({ length: AUTOSAVE_SLOT + 1 }, (_, s) => {
     const occ = occupiedSlots.includes(s) ? ` - ${t(lang, "opening_slot_saved")}` : "";
-    return `<option value="${s}" ${s === slot ? "selected" : ""}>${htmlEsc(t(lang, "shell_slot"))} ${s}${htmlEsc(occ)}</option>`;
+    const label = s === AUTOSAVE_SLOT ? `Autosave${occ}` : `${t(lang, "shell_slot")} ${s}${occ}`;
+    return `<option value="${s}" ${s === slot ? "selected" : ""}>${htmlEsc(label)}</option>`;
   }).join("");
 
   const mainInner = renderMainContent({

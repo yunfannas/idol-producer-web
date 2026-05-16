@@ -4,6 +4,7 @@
  */
 
 import { isSongHiddenFromDisplay } from "../data/songDisplayPolicy";
+import { songCatalogDisplayLabel } from "../data/songCatalog";
 import { normalizePersistedAttributes } from "./idolAttributes";
 import { sha256BytesUtf8 } from "./sha256sync";
 import { ensureIdolSimulationDefaults } from "./idolStatusSystem";
@@ -16,6 +17,10 @@ function num(v: unknown, fallback = 0): number {
   if (typeof v === "number" && Number.isFinite(v)) return v;
   if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v))) return Number(v);
   return fallback;
+}
+
+function isLimitedDiscoveryLiveType(liveType: string): boolean {
+  return liveType === "Taiban" || liveType === "Festival" || liveType === "Joint";
 }
 
 function avgFloat(...values: number[]): number {
@@ -324,7 +329,7 @@ export function collectRecentReleaseSignalFromSnapshot(
     const delta = Math.round((liveT - Date.parse(rd + "T12:00:00Z")) / 86400000);
     if (delta >= 0 && delta <= 60) {
       recentSongCount += 1;
-      const title = String(s.title ?? s.title_romanji ?? "").trim();
+      const title = songCatalogDisplayLabel(s);
       if (title) recentTitles.add(title);
     }
   }
@@ -494,6 +499,10 @@ export function resolveGroupLiveResultWeb(
     memberScores.length > 0
       ? avgFloat(...memberScores.map((r) => num(r.score, 45)))
       : 45.0;
+  const averageRating =
+    memberScores.length > 0
+      ? avgFloat(...memberScores.map((r) => num(r.rating, 5.5)))
+      : 5.5;
 
   const synergy =
     members.length > 0
@@ -572,13 +581,26 @@ export function resolveGroupLiveResultWeb(
     Concert: 0.012,
     Routine: 0.018,
     Taiban: 0.022,
+    Joint: 0.018,
   };
   const expectationGap = audienceSatisfaction - expectation;
-  let conversionRate =
-    (baseDiscovery[liveType] ?? 0.016) + expectationGap / 60.0 + noveltyScore / 180.0;
-  if (liveType === "Festival") conversionRate = clamp(conversionRate, -0.18, 0.28);
-  else conversionRate = clamp(conversionRate, -0.1, 0.22);
-  const fanGain = Math.round(exposurePool * conversionRate);
+  let conversionRate = 0;
+  let discoveryPool = exposurePool;
+  if (isLimitedDiscoveryLiveType(liveType)) {
+    discoveryPool = attendance;
+    conversionRate =
+      0.015 +
+      (performanceScore - 60.0) / 180.0 +
+      (averageRating - 6.0) / 12.0 +
+      (audienceSatisfaction - 60.0) / 300.0 +
+      (noveltyScore - 50.0) / 600.0 +
+      expectationGap / 300.0;
+    conversionRate = clamp(conversionRate, -0.08, 0.15);
+  } else {
+    conversionRate = (baseDiscovery[liveType] ?? 0.016) + expectationGap / 60.0 + noveltyScore / 180.0;
+    conversionRate = clamp(conversionRate, -0.1, 0.22);
+  }
+  const fanGain = Math.round(discoveryPool * conversionRate);
 
   let popularityGain = 0;
   if (expectationGap >= 18 || audienceSatisfaction >= 82) popularityGain = 2;
@@ -593,9 +615,10 @@ export function resolveGroupLiveResultWeb(
     novelty_score: Math.round(noveltyScore * 100) / 100,
     attendance,
     broadcast_exposure: broadcastExposure,
-    exposure_count: exposurePool,
+    exposure_count: discoveryPool,
     tokutenkai_actual_tickets: Math.max(0, actualTickets),
     fan_gain: fanGain,
+    average_member_rating: Math.round(averageRating * 100) / 100,
     popularity_gain: popularityGain,
     member_scores: memberScores,
     recent_song_count: freshness.recent_song_count,
@@ -725,6 +748,7 @@ export function applyLiveResultToSnapshot(
       performance_rating,
       performance_score: Math.round(ms * 100) / 100,
       fan_gain: memberFanGain,
+      fan_count: Math.round(num(idol.fan_count, 0)),
       popularity_gain: memberPopDelta,
       morale_gain: memberMoraleDelta,
       morale_delta: memberMoraleDelta,
@@ -739,6 +763,7 @@ export function applyLiveResultToSnapshot(
 
   return {
     group_fan_gain: fanGain,
+    group_fan_count: Math.round(num(group.fans, 0)),
     group_popularity_gain: popularityGain,
     group_morale_gain: groupMoraleGain,
     member_deltas: appliedMembers,

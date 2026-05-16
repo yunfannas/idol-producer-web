@@ -4,10 +4,11 @@ import { hydrateStoredGame } from "../save/migrate";
 const STORAGE_VERSION = 2;
 const KEY_PREFIX = "ip-web-save-v";
 const LEGACY_STORAGE_VERSION = 1;
+export const AUTOSAVE_SLOT = 10;
 
 function key(slot: number): string {
-  if (slot < 0 || slot > 9 || !Number.isInteger(slot)) {
-    throw new Error("Save slot must be an integer 0–9");
+  if (slot < 0 || slot > AUTOSAVE_SLOT || !Number.isInteger(slot)) {
+    throw new Error(`Save slot must be an integer 0-${AUTOSAVE_SLOT}`);
   }
   return `${KEY_PREFIX}${STORAGE_VERSION}-slot-${slot}`;
 }
@@ -47,7 +48,7 @@ export function clearSlot(slot: number): void {
 
 export function listOccupiedSlots(): number[] {
   const out: number[] = [];
-  for (let s = 0; s < 10; s++) {
+  for (let s = 0; s <= AUTOSAVE_SLOT; s++) {
     if (rawHas(s)) out.push(s);
   }
   return out;

@@ -211,7 +211,9 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
 
 function durationMinutesFromLive(live: Record<string, unknown>): number {
   const start = String(live.start_time ?? "").slice(0, 5);
-  const end = String(live.end_time ?? "").slice(0, 5);
+  const end = String(
+    live.tokutenkai_enabled ? live.tokutenkai_end ?? live.end_time ?? "" : live.end_time ?? "",
+  ).slice(0, 5);
   const parse = (value: string): number | null => {
     const m = /^(\d{1,2}):(\d{2})$/.exec(value);
     if (!m) return null;
@@ -225,13 +227,45 @@ function durationMinutesFromLive(live: Record<string, unknown>): number {
 }
 
 interface SimulationEvent {
-  kind: "training_end" | "live_report";
+  kind: "training_end" | "live_start";
   iso: string;
   label: string;
   liveUid?: string;
   slotId?: string;
   idolUids?: string[];
   trainingBlocksByUid?: Record<string, number>;
+}
+
+function liveReportEndTime(live: Record<string, unknown>): string {
+  if (live.tokutenkai_enabled) {
+    const end = String(live.tokutenkai_end ?? "").trim();
+    if (/^\d{2}:\d{2}$/.test(end)) return end;
+  }
+  const liveEnd = String(live.end_time ?? "").trim();
+  if (/^\d{2}:\d{2}$/.test(liveEnd)) return liveEnd;
+  return "21:00";
+}
+
+function todaysLiveScheduleNotificationTime(lives: Record<string, unknown>[]): string {
+  let latest = "18:00";
+  let latestMinutes = hhmmToMinutes(latest);
+  for (const live of lives) {
+    const start = String(live.start_time ?? "").trim();
+    if (!/^\d{2}:\d{2}$/.test(start)) continue;
+    const minutes = hhmmToMinutes(start);
+    if (minutes >= latestMinutes) {
+      latest = start;
+      latestMinutes = minutes;
+    }
+  }
+  return latest;
+}
+
+function tokutenkaiExtraMinutesForMember(live: Record<string, unknown>, ticketCount: number): number {
+  const tickets = Math.max(0, Math.trunc(ticketCount));
+  const slotSeconds = Math.max(0, Number(live.tokutenkai_slot_seconds ?? 0) || 0);
+  if (tickets <= 0 || slotSeconds <= 0) return 0;
+  return Math.ceil((tickets * slotSeconds) / 60);
 }
 
 function liveDaysInWeekForGroup(save: GameSavePayload, groupUid: string): Set<string> {
@@ -289,13 +323,13 @@ function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] 
     const live = raw as Record<string, unknown>;
     if (isoDatePart(String(live.start_date ?? "")) !== todayIso) continue;
     if (String(live.status ?? "") === "played") continue;
-    const endTime = String(live.end_time ?? "").trim();
-    const eventIso = combineIsoDateTime(todayIso, `${endTime || "23:59"}:00`.replace(/^(\d{2}:\d{2})$/, "$1:00"));
+    const startTime = String(live.start_time ?? "").trim();
+    const eventIso = combineIsoDateTime(todayIso, `${startTime || "18:00"}:00`.replace(/^(\d{2}:\d{2})$/, "$1:00"));
     if (isoTimeToMinutes(eventIso) <= nowMin) continue;
     out.push({
-      kind: "live_report",
+      kind: "live_start",
       iso: eventIso,
-      label: String(live.title ?? live.live_type ?? "Live report"),
+      label: String(live.title ?? live.live_type ?? "Today's live schedule"),
       liveUid: String(live.uid ?? ""),
     });
   }
@@ -328,6 +362,7 @@ function buildLiveReportData(live: Record<string, unknown>): Record<string, unkn
     performance_score: live.performance_score ?? "—",
     audience_satisfaction: live.audience_satisfaction ?? "—",
     group_fan_gain: Number(live.group_fan_gain ?? live.fan_gain ?? 0) || 0,
+    group_fan_count: Number(live.group_fan_count ?? live.fans ?? 0) || 0,
     gross_yen: ticketGross + goodsGross + tokutenkaiRevenue,
     ticket_gross_yen: ticketGross,
     goods_gross_yen: goodsGross,
@@ -488,16 +523,41 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       const delta = endMin - startMin;
       return delta > 0 ? delta : 0;
     })();
+    const memberDeltaByUid = new Map<string, Record<string, unknown>>();
+    if (Array.isArray(applied.member_deltas)) {
+      for (const row of applied.member_deltas) {
+        if (!row || typeof row !== "object") continue;
+        const uid = String((row as Record<string, unknown>).uid ?? "");
+        if (uid) memberDeltaByUid.set(uid, row as Record<string, unknown>);
+      }
+    }
     for (const member of members) {
+      const uid = String(member.uid ?? "");
+      const reportRow = memberDeltaByUid.get(uid);
+      const tickets = Number(reportRow?.tokutenkai_tickets ?? 0) || 0;
+      const extraLiveMinutes = tokutenkaiExtraMinutesForMember(live, tickets);
       applyDailyStatusUpdateJson(member, {
         trainingLoad: 0,
         trainingHours: 0,
         liveCount: 1,
         liveMinutes,
         rehearsalMinutes,
+        extraLiveMinutes,
         birthday: false,
         includeSleepRecovery: false,
       });
+      if (reportRow) {
+        const beforeCondition = Number(reportRow.condition_before ?? member.condition ?? 0) || 0;
+        const beforeMorale = Number(reportRow.morale_before ?? member.morale ?? 0) || 0;
+        const afterCondition = Math.round(Number(member.condition ?? 0) || 0);
+        const afterMorale = Math.round(Number(member.morale ?? 0) || 0);
+        reportRow.fan_count = Math.round(Number(member.fan_count ?? reportRow.fan_count ?? 0) || 0);
+        reportRow.condition_after = afterCondition;
+        reportRow.condition_delta = afterCondition - beforeCondition;
+        reportRow.morale_after = afterMorale;
+        reportRow.morale_delta = afterMorale - beforeMorale;
+        reportRow.morale_gain = afterMorale - beforeMorale;
+      }
     }
     const ticketPrice = Math.max(0, Number(live.ticket_price ?? 0) || 0);
     const goodsGross = Math.max(0, Number(live.goods_gross_yen ?? live.goods_expected_revenue_yen ?? 0) || 0);
@@ -547,7 +607,7 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       category: "internal",
       level: "normal",
       isoDate: targetIso,
-      createdTime: `${String(live.end_time ?? "21:00").slice(0, 5)}:00`,
+      createdTime: `${liveReportEndTime(live)}:00`,
       unread: true,
       dedupeKey: `live-report-start|${uid}|${targetIso}`,
       relatedEventUid: uid,
@@ -593,6 +653,7 @@ function seedTodaysLiveBlockingInbox(save: GameSavePayload, targetIso: string): 
     category: "confirmation",
     level: "critical",
     isoDate: dayIso,
+    createdTime: `${todaysLiveScheduleNotificationTime(todaysLives)}:00`,
     unread: true,
     dedupeKey: `daily-lives|${gid}|${dayIso}`,
     requiresConfirmation: true,
@@ -610,6 +671,14 @@ export function acknowledgeInboxNotification(save: GameSavePayload, notification
   if (title === "Today's live schedule" || dk.startsWith("daily-lives|")) {
     const cur = next.current_date ?? next.game_start_date ?? next.scenario_context.startup_date ?? "2020-01-01";
     const curIso = String(cur).split("T")[0];
+    const todaysLives = scheduledManagedLivesForDate(next, curIso);
+    if (todaysLives.length > 0) {
+      const reportTime = todaysLives
+        .map((live) => liveReportEndTime(live))
+        .sort()
+        .at(-1) ?? "21:00";
+      next.current_date = combineIsoDateTime(curIso, `${reportTime}:00`);
+    }
     archiveAndResolveManagedLivesForDate(next, curIso);
   }
   if (dk.startsWith("auto-book-lives|")) {
@@ -771,15 +840,6 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
   }
 
-  addNotification(next, {
-    title: "Day closed",
-    body: `${targetIso} · net ¥${breakdown.net_total.toLocaleString("ja-JP")} · cash ¥${finances.cash_yen.toLocaleString("ja-JP")}`,
-    sender: "Finance",
-    category: "general",
-    isoDate: targetIso,
-    unread: true,
-  });
-
   if (next.inbox.notifications.length > 500) {
     next.inbox.notifications = next.inbox.notifications.slice(-500);
   }
@@ -799,8 +859,8 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
     next.current_date = event.iso;
     if (event.kind === "training_end") {
       processTrainingEndEvent(next, event);
-    } else if (event.kind === "live_report") {
-      archiveAndResolveManagedLivesForDate(next, todayIso);
+    } else if (event.kind === "live_start") {
+      seedTodaysLiveBlockingInbox(next, event.iso);
     }
     if (!next.scout.selected_company_uid) {
       next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;

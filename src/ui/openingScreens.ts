@@ -6,6 +6,7 @@ import type { LoadedScenario, ScenarioPreset, GroupTierRow } from "../data/scena
 import { playableGroups } from "../data/scenarioBrowse";
 import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } from "../data/startupGroupPicker";
 import { inferLetterTier } from "../engine/financeSystem";
+import { AUTOSAVE_SLOT } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
 import { languageOptions, t, type UiLanguage } from "./i18n";
 
@@ -57,9 +58,10 @@ export function renderOpeningHome(
     <p class="opening-status-msg">${htmlEsc(status)}</p>
     <label class="opening-label opening-slot-row" for="opening-slot-select">${htmlEsc(t(lang, "opening_load_slot"))}</label>
     <select id="opening-slot-select" class="opening-input" style="max-width: 14rem">
-      ${Array.from({ length: 10 }, (_, s) => {
+      ${Array.from({ length: AUTOSAVE_SLOT + 1 }, (_, s) => {
         const occ = occupiedSlots.includes(s) ? ` - ${t(lang, "opening_slot_saved")}` : "";
-        return `<option value="${s}" ${s === slot ? "selected" : ""}>Slot ${s}${occ}</option>`;
+        const label = s === AUTOSAVE_SLOT ? `Autosave${occ}` : `Slot ${s}${occ}`;
+        return `<option value="${s}" ${s === slot ? "selected" : ""}>${label}</option>`;
       }).join("")}
     </select>
   </div>

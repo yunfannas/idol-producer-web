@@ -2132,6 +2132,10 @@ text.idol-radar-val.attr-tone-low {
   background: rgb(255 255 255 / 0.03);
 }
 
+.live-report-summary-item--wide {
+  grid-column: 1 / -1;
+}
+
 .live-report-summary-item .label {
   display: block;
   margin-bottom: 0.18rem;
@@ -2139,6 +2143,19 @@ text.idol-radar-val.attr-tone-low {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-secondary);
+}
+
+.live-report-breakdown {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.inbox-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .is-selected-row {
@@ -2172,6 +2189,40 @@ text.idol-radar-val.attr-tone-low {
 @media (max-width: 42rem) {
   .form-grid.live-form-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Group detail: discography releases with shared + edition-specific track splits */
+.group-disc-track-totals {
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.group-disc-edition-row .group-disc-edition-cell {
+  padding-top: 0;
+  padding-bottom: 0.85rem;
+  border-top: 1px dashed rgb(255 255 255 / 0.06);
+}
+
+.group-disc-track-detail {
+  margin: 0.35rem 0 0.5rem;
+}
+
+.group-disc-track-detail summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.group-disc-track-ol {
+  margin: 0.35rem 0 0 1.35rem;
+  padding: 0;
+}
+
+@media (max-width: 42rem) {
+  .group-disc-track-ol {
+    margin-left: 1rem;
   }
 }
 

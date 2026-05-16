@@ -17,6 +17,7 @@ import {
   isManagementNav,
   isBrowseNav,
   type DesktopNavId,
+  type FinanceHistoryRange,
   type LiveProgramItem,
   type LivesTab,
   type NewLiveFormState,
@@ -26,8 +27,9 @@ import {
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
 import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
-import { addNotification, notificationRequiresAck } from "./save/inbox";
+import { addNotification, notificationRequiresAck, sortNotificationsInPlace } from "./save/inbox";
 import { songsForDisplaySorted, buildDiscBuckets } from "./data/songDisplayPolicy";
+import { songCatalogDisplayLabel } from "./data/songCatalog";
 import { addMinutesToHHMM, getVenuesCatalog, LIVE_TYPE_PRESETS } from "./engine/liveScheduleWeb";
 import {
   auditionCandidateToIdolRow,
@@ -43,7 +45,7 @@ import {
   renderNewGameScreen,
   buildNewGameRows,
 } from "./ui/openingScreens";
-import { clearSlot, listOccupiedSlots, loadFromSlot, saveToSlot } from "./persistence/saves";
+import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, loadFromSlot, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
@@ -216,7 +218,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     ? songsForDisplaySorted(save.database_snapshot.songs)
         .filter((row) => String(row.group_uid ?? "") === managedUid)
         .slice(0, liveType === "Concert" ? 6 : liveType === "Taiban" ? 3 : 5)
-        .map((row) => String(row.title ?? row.title_romanji ?? "").trim())
+        .map((row) => songCatalogDisplayLabel(row))
         .filter(Boolean)
     : [];
   const venue = getVenuesCatalog()[0]?.name ?? "";
@@ -271,6 +273,13 @@ function markInboxOpened(uid: string | null): void {
   row.read = true;
 }
 
+function oldestUnreadInboxUid(rows: { uid: string; read: boolean }[]): string | null {
+  for (let i = rows.length - 1; i >= 0; i--) {
+    if (!rows[i]?.read) return rows[i]?.uid ?? null;
+  }
+  return null;
+}
+
 let loadedScenario: LoadedScenario | null = null;
 let save: GameSavePayload | null = null;
 let slot = 0;
@@ -298,6 +307,7 @@ let livesTab: LivesTab = "new";
 let scheduledLiveUid: string | null = null;
 let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
+let financeHistoryRange: FinanceHistoryRange = "month";
 let selectedScoutLeadUid: string | null = null;
 let selectedScoutApplicantUid: string | null = null;
 let trainingRepaintTimer: ReturnType<typeof setTimeout> | null = null;
@@ -340,6 +350,7 @@ interface NavigationSnapshot {
   scheduledLiveUid: string | null;
   scoutTab: ScoutTab;
   trainingTab: TrainingTab;
+  financeHistoryRange: FinanceHistoryRange;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
   scheduleCalendarMonthStart: string | null;
@@ -362,6 +373,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     scheduledLiveUid,
     scoutTab,
     trainingTab,
+    financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
@@ -382,6 +394,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.scheduledLiveUid === b.scheduledLiveUid &&
     a.scoutTab === b.scoutTab &&
     a.trainingTab === b.trainingTab &&
+    a.financeHistoryRange === b.financeHistoryRange &&
     a.selectedScoutLeadUid === b.selectedScoutLeadUid &&
     a.selectedScoutApplicantUid === b.selectedScoutApplicantUid &&
     a.scheduleCalendarMonthStart === b.scheduleCalendarMonthStart
@@ -401,6 +414,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   scheduledLiveUid = snapshot.scheduledLiveUid;
   scoutTab = snapshot.scoutTab;
   trainingTab = snapshot.trainingTab;
+  financeHistoryRange = snapshot.financeHistoryRange;
   selectedScoutLeadUid = snapshot.selectedScoutLeadUid;
   selectedScoutApplicantUid = snapshot.selectedScoutApplicantUid;
   scheduleCalendarMonthStart = snapshot.scheduleCalendarMonthStart;
@@ -684,9 +698,10 @@ function paintGame(): void {
   }
 
   if (!browseMode && save && currentView === "Inbox" && save.inbox.notifications.length) {
+    sortNotificationsInPlace(save.inbox.notifications);
     const rows = save.inbox.notifications;
     if (!inboxSelectedUid || !rows.some((r) => r.uid === inboxSelectedUid)) {
-      inboxSelectedUid = rows[0]?.uid ?? null;
+      inboxSelectedUid = rows[rows.length - 1]?.uid ?? null;
     }
     markInboxOpened(inboxSelectedUid);
   } else if (currentView !== "Inbox") {
@@ -714,6 +729,7 @@ function paintGame(): void {
     selectedSetlistSongIndex,
     scoutTab,
     trainingTab,
+    financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
@@ -941,6 +957,16 @@ function paintGame(): void {
       }
       return;
     }
+    const financeRangePick = t.closest<HTMLElement>("[data-finance-history-range]");
+    if (financeRangePick && save && !browseMode && currentView === "Finances") {
+      const range = financeRangePick.getAttribute("data-finance-history-range");
+      if (range === "day" || range === "week" || range === "month" || range === "year" || range === "all") {
+        navigate(() => {
+          financeHistoryRange = range;
+        });
+      }
+      return;
+    }
     const scoutCompanyPick = t.closest<HTMLElement>("[data-scout-company]");
     if (scoutCompanyPick && save && !browseMode && currentView === "Scout") {
       const uid = scoutCompanyPick.getAttribute("data-scout-company");
@@ -1048,6 +1074,7 @@ function paintGame(): void {
       const uid = liveStartBtn.getAttribute("data-inbox-live-start");
       if (uid) {
         save = acknowledgeInboxNotification(save, uid);
+        inboxSelectedUid = save.inbox.notifications[0]?.uid ?? null;
         paintGame();
       }
       return;
@@ -1071,6 +1098,17 @@ function paintGame(): void {
           currentView = "Lives";
           livesTab = "live";
           scheduledLiveUid = uid;
+        });
+      }
+      return;
+    }
+    const openTrainingView = t.closest<HTMLElement>("[data-open-training-view]");
+    if (openTrainingView && save && !browseMode) {
+      const tab = openTrainingView.getAttribute("data-open-training-view");
+      if (tab === "assignments" || tab === "roster") {
+        navigate(() => {
+          currentView = "Training";
+          trainingTab = tab;
         });
       }
       return;
@@ -1453,17 +1491,29 @@ function paintGame(): void {
 
   document.getElementById("btn-next-day")?.addEventListener("click", () => {
     if (!save || browseMode) return;
+    sortNotificationsInPlace(save.inbox.notifications);
+    const unreadUid = oldestUnreadInboxUid(save.inbox.notifications);
+    if (unreadUid) {
+      currentView = "Inbox";
+      inboxSelectedUid = unreadUid;
+      paintGame();
+      return;
+    }
     const blocker = getBlockingNotificationForSave(save);
-    const isTodaysLiveBlocker =
-      blocker &&
-      (blocker.title === "Today's live schedule" || String(blocker.dedupe_key ?? "").startsWith("daily-lives|"));
-    if (blocker && !isTodaysLiveBlocker) {
+    if (blocker) {
       currentView = "Inbox";
       inboxSelectedUid = blocker.uid;
       paintGame();
       return;
     }
+    const beforeDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
     save = advanceOneDay(save);
+    const afterDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
+    if (afterDate !== beforeDate) {
+      saveToSlot(AUTOSAVE_SLOT, save);
+    }
+    currentView = "Inbox";
+    inboxSelectedUid = save.inbox.notifications[0]?.uid ?? null;
     resetNewLiveFormDefaults(newLiveForm.liveType);
     paintGame();
   });

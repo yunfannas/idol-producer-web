@@ -20,11 +20,29 @@ import {
   ensureIdolSimulationDefaults,
   normalizeTrainingWeekLog,
 } from "../engine/idolStatusSystem";
+import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { buildFilteredSnapshotWithFutureEvents } from "../engine/scenarioRuntimeWeb";
 import { buildDefaultScoutCompanies } from "../engine/scoutWeb";
 import { addNotification, type NotificationRow } from "./inbox";
 
 export const GAME_SAVE_VERSION = 11 as const;
+
+function startOfMonthIso(isoDate: string): string {
+  const [y, m] = String(isoDate).split("T")[0].split("-");
+  return `${y}-${m}-01`;
+}
+
+function addMonths(monthStartIso: string, delta: number): string {
+  const [y, m] = monthStartIso.split("-").map((part) => Number(part));
+  const dt = new Date(Date.UTC(y, m - 1 + delta, 1));
+  return dt.toISOString().slice(0, 10);
+}
+
+function endOfMonthIso(monthStartIso: string): string {
+  const [y, m] = monthStartIso.split("-").map((part) => Number(part));
+  const dt = new Date(Date.UTC(y, m, 0));
+  return dt.toISOString().slice(0, 10);
+}
 
 export interface ScenarioContext {
   startup_date: string | null;
@@ -67,6 +85,63 @@ function deepSnapshot(
     groups: JSON.parse(JSON.stringify(groups)),
     songs: JSON.parse(JSON.stringify(songs)),
   };
+}
+
+function num(v: unknown, fallback = 0): number {
+  if (typeof v === "number" && Number.isFinite(v)) return v;
+  if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v))) return Number(v);
+  return fallback;
+}
+
+function estimatedGroupFanReach(group: Record<string, unknown>): number {
+  const popularity = Math.max(0, num(group.popularity, 0));
+  const fans = Math.max(0, num(group.fans, 0));
+  const xFollowers = Math.max(0, num(group.x_followers, 0));
+  const tier = resolveGroupLetterTier(group);
+  const tierFloor: Record<LetterTier, number> = {
+    S: 180000,
+    A: 80000,
+    B: 30000,
+    C: 10000,
+    D: 3500,
+    E: 1200,
+    F: 300,
+  };
+  const popularityFloor = Math.round(tierFloor[tier] * (0.35 + popularity / 100));
+  const followerFloor = Math.round(xFollowers * (0.12 + popularity / 500));
+  return Math.max(fans, popularityFloor, followerFloor);
+}
+
+function backfillGroupMemberFanCounts(
+  idols: Record<string, unknown>[],
+  group: Record<string, unknown> | null | undefined,
+): void {
+  if (!group) return;
+  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((x) => String(x)) : [];
+  if (!memberUids.length) return;
+  const members = memberUids
+    .map((uid) => idols.find((idol) => String(idol.uid ?? "") === uid))
+    .filter((idol): idol is Record<string, unknown> => Boolean(idol));
+  if (!members.length) return;
+
+  const groupReach = estimatedGroupFanReach(group);
+  const totalX = members.reduce((sum, idol) => sum + Math.max(0, num(idol.x_followers, 0)), 0);
+  const popularity = Math.max(0, num(group.popularity, 0));
+  const memberCount = Math.max(1, members.length);
+
+  for (const idol of members) {
+    ensureIdolSimulationDefaults(idol);
+    const currentFans = Math.max(0, num(idol.fan_count, 0));
+    if (currentFans > 0) continue;
+    const idolX = Math.max(0, num(idol.x_followers, 0));
+    const equalShare = 1 / memberCount;
+    const xShare = totalX > 0 ? idolX / totalX : equalShare;
+    const blendedShare = equalShare * 0.35 + xShare * 0.65;
+    const groupPortion = groupReach * blendedShare;
+    const personalPortion = idolX * (0.16 + popularity / 500);
+    const seededFans = Math.max(idolX > 0 || groupReach > 0 ? 1 : 0, Math.round(groupPortion + personalPortion));
+    idol.fan_count = seededFans;
+  }
 }
 
 /**
@@ -125,6 +200,7 @@ export function createGameSaveFromLoadedScenario(
     const row = snap.idols.find((i) => String(i.uid ?? "") === uid);
     if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
   }
+  backfillGroupMemberFanCounts(snap.idols, g);
 
   const save = defaultGameSavePayload();
   save.player_name = opts.playerName.trim();
@@ -139,7 +215,7 @@ export function createGameSaveFromLoadedScenario(
   };
   save.database_snapshot = snap;
   save.scenario_runtime.future_events = filtered.futureEvents;
-  save.shortlist = [...memberUids];
+  save.shortlist = [];
   for (const uid of memberUids) {
     save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
     save.training_focus_skill[uid] = "talking";
@@ -152,87 +228,51 @@ export function createGameSaveFromLoadedScenario(
   save.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
   const gid = String(g.uid);
 
-  const memberLines = memberUids
-    .map((uid) => {
-      const row = snap.idols.find((i) => String(i.uid ?? "") === uid) as Record<string, unknown> | undefined;
-      const ja = row && typeof row.name === "string" ? row.name : uid.slice(0, 8);
-      const ro =
-        row && typeof row.romaji === "string" && String(row.romaji).trim()
-          ? ` · ${String(row.romaji).trim()}`
-          : "";
-      return `· ${ja}${ro}`;
-    })
-    .join("\n");
-
   addNotification(save, {
-    title: "Welcome to your managed roster",
-    body: `You are producing ${String(g.name_romanji ?? g.name ?? "this group")}.\n\nCurrent lineup:\n${memberLines || "· (no members resolved)"}`,
-    sender: "Assistant",
-    category: "guidance",
-    level: "high",
-    isoDate: opening,
-    createdTime: "09:01:00",
-    unread: true,
-    dedupeKey: `startup-roster|${gid}|${opening}`,
-  });
-
-  addNotification(save, {
-    title: "Training defaults need review",
-    body:
-      "Autopilot training sliders start at a balanced mix (sing / dance / physical / target). Open Training to tune load per member before the first heavy live stretch.",
+    title: "Roster overview",
+    body: `Current roster for ${String(g.name_romanji ?? g.name ?? "this group")} is attached below. Open any idol profile from this mail to review history before planning the first week.`,
     sender: "Assistant",
     category: "guidance",
     level: "high",
     isoDate: opening,
     createdTime: "09:02:00",
     unread: true,
-    dedupeKey: `startup-training|${gid}|${opening}`,
+    dedupeKey: `startup-roster|${gid}|${opening}`,
   });
 
   addNotification(save, {
     title: "Upcoming lives",
-    body:
-      "Default lives are booked from the monthly live-count reference for your letter tier through the end of next month. On each month end, Operations will ask whether to book the following month after next, and you will get a blocking Today's live schedule inbox item on performance days.",
+    body: startupUpcomingLivesBody(save, opening),
     sender: "Assistant",
     category: "guidance",
     level: "high",
     isoDate: opening,
-    createdTime: "09:03:00",
+    createdTime: "09:04:00",
     unread: true,
     dedupeKey: `startup-lives|${gid}|${opening}`,
   });
 
   addNotification(save, {
-    title: "Morning atmosphere in the room",
-    body: `The practice room feels tense but hopeful this morning. ${String(g.name ?? g.name_romanji ?? "The group")} are waiting for direction, and the early mood suggests they want a plan they can trust.`,
-    sender: "News",
-    category: "background",
-    level: "normal",
-    isoDate: opening,
-    createdTime: "09:04:00",
-    unread: true,
-    dedupeKey: `startup-room|${gid}|${opening}`,
-  });
-
-  addNotification(save, {
     title: "Staff briefing before opening week",
-    body: "Staff note: focus the first week on stability, punctual rehearsals, and visible small wins. If the members feel the routine is clear, morale should settle before the first heavy stretch of lives.",
+    body:
+      "Assistant briefing:\n\nTraining sessions run in fixed blocks: morning 08:00-12:00 and afternoon 13:00-17:00.\nPlease review the weekly assignments schedule and the idol status table before the first heavy stretch.\n\nThe default sliders are balanced for now, but each member's workload and focus should be confirmed before the weekend.",
     sender: "Assistant",
     category: "background",
     level: "normal",
     isoDate: opening,
-    createdTime: "09:05:00",
+    createdTime: "09:03:00",
     unread: true,
     dedupeKey: `startup-staff|${gid}|${opening}`,
   });
 
   addNotification(save, {
     title: "Production started",
-    body: `${save.player_name ? `Producer ${save.player_name} · ` : ""}Scenario ${loaded.preset.scenario_number}: ${loaded.preset.name}. ${String(g.name_romanji ?? g.name)} · ¥${cash.toLocaleString("ja-JP")} opening cash.`,
+    body:
+      `From: Assistant\nTo: ${save.player_name ? `Producer ${save.player_name}` : "Producer"}\nSubject: Management handoff for ${String(g.name_romanji ?? g.name)}\n\nYou are now in charge of ${String(g.name_romanji ?? g.name)} for scenario ${loaded.preset.scenario_number}: ${loaded.preset.name}.\nOpening cash on hand: \u00A5${cash.toLocaleString("ja-JP")}.\n\nPlease review the roster, the training plan, and the upcoming live calendar, including TIF appearances where they are already booked.`,
     sender: "Assistant",
     category: "general",
     isoDate: opening,
-    createdTime: "09:06:00",
+    createdTime: "09:01:00",
     unread: true,
     dedupeKey: `production-started|${gid}|${opening}`,
   });
@@ -275,6 +315,60 @@ export interface GameSavePayload {
 
 function deepCopy<T>(v: T): T {
   return JSON.parse(JSON.stringify(v)) as T;
+}
+
+function startupUpcomingLivesBody(save: GameSavePayload, openingIso: string): string {
+  const startIso = String(openingIso).split("T")[0];
+  const thisMonth = startOfMonthIso(startIso);
+  const nextMonth = addMonths(thisMonth, 1);
+  const endIso = endOfMonthIso(nextMonth);
+  const rows = save.lives.schedules
+    .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+    .filter((live) => {
+      const d = String(live.start_date ?? "").split("T")[0];
+      return d >= startIso && d <= endIso;
+    })
+    .sort((a, b) => {
+      const da = String(a.start_date ?? "");
+      const db = String(b.start_date ?? "");
+      if (da !== db) return da.localeCompare(db);
+      return String(a.start_time ?? "").localeCompare(String(b.start_time ?? ""));
+    });
+  if (!rows.length) {
+    return "No booked lives were found for the rest of this month and next month.";
+  }
+  const formatMonth = (monthIso: string): string => {
+    const d = new Date(`${monthIso}T12:00:00Z`);
+    return d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+  };
+  const sections = [thisMonth, nextMonth]
+    .map((monthIso) => {
+      const monthEnd = endOfMonthIso(monthIso);
+      const monthRows = rows.filter((live) => {
+        const d = String(live.start_date ?? "").split("T")[0];
+        return d >= monthIso && d <= monthEnd;
+      });
+      if (!monthRows.length) return "";
+      const lines = monthRows
+        .map((live) => {
+          const title = String(live.title ?? live.live_type ?? "Live");
+          const venue = String(live.venue ?? "TBA");
+          const slot = formatLiveSlotLine(live) || String(live.start_date ?? "").split("T")[0];
+          return `- ${slot} · ${title} · ${venue}`;
+        })
+        .join("\n");
+      return `${formatMonth(monthIso)}\n${lines}`;
+    })
+    .filter(Boolean);
+  const hasTif = rows.some((live) => {
+    const title = String(live.title ?? "").toLowerCase();
+    const venue = String(live.venue ?? "").toLowerCase();
+    return title.includes("tif") || venue.includes("tif");
+  });
+  const intro = hasTif
+    ? "Upcoming lives for the rest of this month and next month are listed below, including TIF."
+    : "Upcoming lives for the rest of this month and next month are listed below.";
+  return [intro, ...sections].filter(Boolean).join("\n\n");
 }
 
 export function defaultScenarioContext(): ScenarioContext {
@@ -430,6 +524,13 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     out.training_focus_skill = deepCopy(p.training_focus_skill as Record<string, string>);
   }
 
+  for (const idol of out.database_snapshot.idols) {
+    ensureIdolSimulationDefaults(idol);
+  }
+  for (const group of out.database_snapshot.groups) {
+    backfillGroupMemberFanCounts(out.database_snapshot.idols, group);
+  }
+
   out.version = GAME_SAVE_VERSION;
   return out;
 }
@@ -517,14 +618,15 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.database_snapshot.groups = [groupRow];
   save.database_snapshot.idols = bundle.idols.map((i) => ({ ...(i as object) }));
   save.database_snapshot.songs = [];
-  save.shortlist = [...(g.member_uids?.map(String) ?? [])];
+  save.shortlist = [];
   applyAttributesToAllIdols(save.database_snapshot.idols, save.database_snapshot.groups, opening);
-  for (const uid of save.shortlist) {
+  for (const uid of (g.member_uids?.map(String) ?? [])) {
     save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
     save.training_focus_skill[uid] = "talking";
     const row = save.database_snapshot.idols.find((r) => String(r.uid ?? "") === uid);
     if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
   }
+  backfillGroupMemberFanCounts(save.database_snapshot.idols, groupRow);
   save.game_start_date = opening;
   save.current_date = opening;
   save.turn_number = 0;
