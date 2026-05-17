@@ -30,6 +30,32 @@ export const DEFAULT_STARTING_CASH = 5_000_000;
 /** Merged typical tier-D anchor (see desktop `typical_tier_d_group.json`). */
 export const AVERAGE_MONTHLY_BASE_SALARY_YEN = 240_000;
 
+export interface ProducedGoodsRow {
+  uid: string;
+  name: string;
+  category: string;
+  member_uid: string | null;
+  member_name: string | null;
+  unit_price_yen: number;
+  unit_cost_yen: number;
+  desired_amount: number;
+  stock: number;
+}
+
+const DEFAULT_GOODS_OPTIONS: ReadonlyArray<{
+  key: string;
+  name: string;
+  category: string;
+  unit_price_yen: number;
+  unit_cost_yen: number;
+  default_desired_amount: number;
+}> = [
+  { key: "signed-cheki", name: "Signed cheki", category: "Photo", unit_price_yen: 1500, unit_cost_yen: 180, default_desired_amount: 80 },
+  { key: "penlight", name: "Penlight", category: "Concert", unit_price_yen: 3000, unit_cost_yen: 1100, default_desired_amount: 24 },
+  { key: "uchiwa", name: "Uchiwa", category: "Concert", unit_price_yen: 1800, unit_cost_yen: 420, default_desired_amount: 30 },
+  { key: "birthday-tee", name: "Birthday T-shirt", category: "Apparel", unit_price_yen: 4500, unit_cost_yen: 1800, default_desired_amount: 16 },
+];
+
 export function scenarioStartingCash(scenarioNumber: number | null | undefined): number {
   if (scenarioNumber != null && scenarioNumber in SCENARIO_STARTING_CASH) {
     return SCENARIO_STARTING_CASH[scenarioNumber];
@@ -182,6 +208,105 @@ export function monthlyBaseSalaryYenForGroupLetterTier(
   const base = defaultMonthlyBaseSalaryYen;
   const mult = baseSalaryMultiplierForGroupLetterTier(letterTier);
   return Math.max(0, Math.round(base * mult));
+}
+
+export function defaultGoodsInventory(
+  members?: Array<{ uid: string; name: string }>,
+): ProducedGoodsRow[] {
+  const roster = (members ?? []).filter((member) => member.uid && member.name);
+  const fallbackRoster = roster.length ? roster : [{ uid: "shared", name: "Group" }];
+  return fallbackRoster.flatMap((member) =>
+    DEFAULT_GOODS_OPTIONS.map((row) => ({
+      uid: `goods-${member.uid}-${row.key}`,
+      name: row.name,
+      category: row.category,
+      member_uid: member.uid === "shared" ? null : member.uid,
+      member_name: member.uid === "shared" ? null : member.name,
+      unit_price_yen: row.unit_price_yen,
+      unit_cost_yen: row.unit_cost_yen,
+      desired_amount: row.default_desired_amount,
+      stock: 0,
+    })),
+  );
+}
+
+export function normalizeGoodsInventory(
+  raw: unknown,
+  members?: Array<{ uid: string; name: string }>,
+): ProducedGoodsRow[] {
+  const defaults = defaultGoodsInventory(members);
+  const byUid = new Map(defaults.map((row) => [row.uid, { ...row }] as const));
+  if (Array.isArray(raw)) {
+    for (const item of raw) {
+      if (!item || typeof item !== "object") continue;
+      const row = item as Record<string, unknown>;
+      const uid = String(row.uid ?? "").trim();
+      if (!uid) continue;
+      const base = byUid.get(uid) ?? {
+        uid,
+        name: String(row.name ?? uid),
+        category: String(row.category ?? "Goods"),
+        member_uid: row.member_uid == null ? null : String(row.member_uid),
+        member_name: row.member_name == null ? null : String(row.member_name),
+        unit_price_yen: Math.max(0, intOr(row.unit_price_yen, 0)),
+        unit_cost_yen: Math.max(0, intOr(row.unit_cost_yen, 0)),
+        desired_amount: 0,
+        stock: 0,
+      };
+      byUid.set(uid, {
+        uid,
+        name: String(row.name ?? base.name).trim() || base.name,
+        category: String(row.category ?? base.category).trim() || base.category,
+        member_uid: row.member_uid == null ? base.member_uid : String(row.member_uid),
+        member_name: row.member_name == null ? base.member_name : String(row.member_name),
+        unit_price_yen: Math.max(0, intOr(row.unit_price_yen, base.unit_price_yen)),
+        unit_cost_yen: Math.max(0, intOr(row.unit_cost_yen, base.unit_cost_yen)),
+        desired_amount: Math.max(0, intOr(row.desired_amount, base.desired_amount)),
+        stock: Math.max(0, intOr(row.stock, base.stock)),
+      });
+    }
+  }
+  return [...byUid.values()];
+}
+
+function goodsDemandRateByLiveType(liveType: string): number {
+  const key = String(liveType ?? "").trim().toLowerCase();
+  if (key === "concert") return 0.3;
+  if (key === "festival") return 0.2;
+  if (key === "taiban") return 0.14;
+  return 0.18;
+}
+
+export function estimateLiveGoodsUnits(
+  goods: ProducedGoodsRow | null | undefined,
+  opts: {
+    liveType: string;
+    capacity?: number | null;
+    groupFans?: number | null;
+    groupPopularity?: number | null;
+    groupTier?: LetterTier | null;
+  },
+): number {
+  if (!goods) return 0;
+  const stock = Math.max(0, intOr(goods.stock, 0));
+  if (stock <= 0) return 0;
+  const capacity = Math.max(0, intOr(opts.capacity, 0));
+  const fans = Math.max(0, intOr(opts.groupFans, 0));
+  const popularity = Math.max(0, Number(opts.groupPopularity ?? 0) || 0);
+  const tier = normalizeGroupLetterTier(opts.groupTier ?? "F");
+  const tierBoost: Record<LetterTier, number> = { S: 1.25, A: 1.18, B: 1.1, C: 1.03, D: 0.96, E: 0.88, F: 0.8 };
+  const baseAudience = Math.max(capacity, Math.round(Math.min(fans, Math.max(40, capacity || 0) * 1.2)));
+  const demand = Math.round(baseAudience * goodsDemandRateByLiveType(opts.liveType) * (0.75 + popularity / 200) * tierBoost[tier]);
+  return Math.max(0, Math.min(stock, demand));
+}
+
+export function estimateLiveGoodsGrossYen(
+  goods: ProducedGoodsRow | null | undefined,
+  opts: Parameters<typeof estimateLiveGoodsUnits>[1],
+): number {
+  if (!goods) return 0;
+  const units = estimateLiveGoodsUnits(goods, opts);
+  return Math.max(0, units * Math.max(0, intOr(goods.unit_price_yen, 0)));
 }
 
 export function monthlyStaffSalaryYen(): number {

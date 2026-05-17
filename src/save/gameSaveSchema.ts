@@ -12,6 +12,9 @@ import {
   inferLetterTier,
   normalizeGroupLetterTier,
   resolveGroupLetterTier,
+  defaultGoodsInventory,
+  normalizeGoodsInventory,
+  type ProducedGoodsRow,
 } from "../engine/financeSystem";
 import type { Finances, LetterTier } from "../engine/types";
 import { applyAttributesToAllIdols } from "../engine/idolAttributes";
@@ -144,6 +147,21 @@ function backfillGroupMemberFanCounts(
   }
 }
 
+function managedGoodsMembers(saveLike: {
+  managing_group_uid: string | null;
+  database_snapshot: DatabaseSnapshot;
+}): Array<{ uid: string; name: string }> {
+  const group =
+    saveLike.database_snapshot.groups.find((row) => String(row.uid ?? "") === String(saveLike.managing_group_uid ?? "")) ?? null;
+  const memberUids = Array.isArray(group?.member_uids) ? group.member_uids.map((x) => String(x)) : [];
+  return memberUids
+    .map((uid) => {
+      const idol = saveLike.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid);
+      return idol ? { uid, name: String(idol.name ?? idol.name_romanji ?? uid) } : null;
+    })
+    .filter((row): row is { uid: string; name: string } => Boolean(row));
+}
+
 /**
  * Fresh save with full idols / groups / songs (save-owned mutable DB), scenario metadata, and default attributes.
  */
@@ -216,6 +234,7 @@ export function createGameSaveFromLoadedScenario(
   save.database_snapshot = snap;
   save.scenario_runtime.future_events = filtered.futureEvents;
   save.shortlist = [];
+  save.goods_inventory = defaultGoodsInventory(managedGoodsMembers(save));
   for (const uid of memberUids) {
     save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
     save.training_focus_skill[uid] = "talking";
@@ -299,6 +318,7 @@ export interface GameSavePayload {
   database_snapshot: DatabaseSnapshot;
   scenario_runtime: { future_events: Record<string, unknown>[] };
   shortlist: string[];
+  goods_inventory: ProducedGoodsRow[];
   inbox: { notifications: NotificationRow[] };
   schedules: Record<string, unknown>;
   lives: LivesBlock;
@@ -371,6 +391,13 @@ function startupUpcomingLivesBody(save: GameSavePayload, openingIso: string): st
   return [intro, ...sections].filter(Boolean).join("\n\n");
 }
 
+export function refreshStartupUpcomingLivesNotification(save: GameSavePayload, openingIso?: string): void {
+  const opening = String(openingIso ?? save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? "2020-01-01").split("T")[0];
+  const row = save.inbox.notifications.find((item) => String(item.dedupe_key ?? "").startsWith("startup-lives|"));
+  if (!row) return;
+  row.body = startupUpcomingLivesBody(save, opening);
+}
+
 export function defaultScenarioContext(): ScenarioContext {
   return {
     startup_date: null,
@@ -405,6 +432,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     database_snapshot: { idols: [], groups: [], songs: [] },
     scenario_runtime: { future_events: [] },
     shortlist: [],
+    goods_inventory: [],
     inbox: { notifications: [] },
     schedules: {},
     lives: { schedules: [], results: [] },
@@ -497,7 +525,7 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     if (sc.auditions && typeof sc.auditions === "object") out.scout.auditions = deepCopy(sc.auditions);
   }
 
-  if (p.current_date != null) out.current_date = String(p.current_date).split("T")[0];
+  if (p.current_date != null) out.current_date = String(p.current_date);
   if (p.game_start_date != null) out.game_start_date = String(p.game_start_date).split("T")[0];
   if (p.turn_number != null) {
     const t = Number(p.turn_number);
@@ -530,6 +558,10 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   for (const group of out.database_snapshot.groups) {
     backfillGroupMemberFanCounts(out.database_snapshot.idols, group);
   }
+  out.goods_inventory = normalizeGoodsInventory(
+    (p as { goods_inventory?: unknown }).goods_inventory,
+    managedGoodsMembers(out),
+  );
 
   out.version = GAME_SAVE_VERSION;
   return out;
@@ -619,6 +651,7 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.database_snapshot.idols = bundle.idols.map((i) => ({ ...(i as object) }));
   save.database_snapshot.songs = [];
   save.shortlist = [];
+  save.goods_inventory = defaultGoodsInventory(managedGoodsMembers(save));
   applyAttributesToAllIdols(save.database_snapshot.idols, save.database_snapshot.groups, opening);
   for (const uid of (g.member_uids?.map(String) ?? [])) {
     save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };

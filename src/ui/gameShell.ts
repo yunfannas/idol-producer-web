@@ -20,6 +20,8 @@ import {
   monthlyBaseSalaryYenForGroupLetterTier,
   monthlyStaffSalaryYen,
   monthlyAdminTrainingCostYenForGroupLetterTier,
+  estimateLiveGoodsGrossYen,
+  type ProducedGoodsRow,
 } from "../engine/financeSystem";
 import {
   getBlockingNotificationForSave,
@@ -48,7 +50,7 @@ import {
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
-import { languageOptions, navLabel, t, type UiLanguage } from "./i18n";
+import { gameManualHref, languageOptions, liveTypeLabel, navLabel, t, type UiLanguage } from "./i18n";
 import { resolveMemberColorCss } from "./memberColor";
 import { notificationRequiresAck, sortNotificationsInPlace } from "../save/inbox";
 import { renderGroupDetailPage } from "./groupDetailPage";
@@ -102,6 +104,7 @@ function buildScheduleMonthCalendarHtml(
     nextIso: string;
     schedules: Record<string, unknown>[];
     results: Record<string, unknown>[];
+    lang: UiLanguage;
   },
 ): string {
   const y = parseInt(firstOfMonthIso.slice(0, 4), 10);
@@ -154,7 +157,8 @@ function buildScheduleMonthCalendarHtml(
     if (booked) {
       for (const ex of extras.slice(0, 2)) {
         const vn = String((ex as Record<string, unknown>).venue ?? "").trim();
-        const tt = String((ex as Record<string, unknown>).title ?? (ex as Record<string, unknown>).live_type ?? "Live");
+        const rawType = String((ex as Record<string, unknown>).live_type ?? (ex as Record<string, unknown>).event_type ?? "");
+        const tt = String((ex as Record<string, unknown>).title ?? "").trim() || liveTypeLabel(ctx.lang, rawType) || "Live";
         tip.push(vn ? `${tt} @ ${vn}` : tt);
       }
       if (extras.length > 2) tip.push(`+${extras.length - 2} more`);
@@ -198,6 +202,7 @@ function buildScheduleMonthCalendarHtml(
 
 /** Primary Songs workspace tabs (matches `public/ref/main_ui.py` show_songs_view). */
 export type SongsWorkspaceTab = "group_songs" | "disc";
+export type MakingTab = "songs" | "goods";
 export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival";
 export type ScoutTab = "freelancer" | "transfer" | "audition";
 export type TrainingTab = "assignments" | "roster";
@@ -229,8 +234,7 @@ export interface NewLiveFormState {
   tokutenkaiSlotSeconds: number;
   tokutenkaiExpectedTickets: number;
   goodsEnabled: boolean;
-  goodsLine: string;
-  goodsExpectedRevenueYen: number;
+  goodsUids: string[];
   ticketPriceYen: number;
 }
 
@@ -759,7 +763,7 @@ function renderIdolDetailPage(
 </section>`;
 }
 
-function renderInbox(save: GameSavePayload, selectedUid: string | null): string {
+function renderInbox(save: GameSavePayload, selectedUid: string | null, simulationBusy: boolean): string {
   const rows = [...save.inbox.notifications];
   sortNotificationsInPlace(rows);
   if (!rows.length) {
@@ -769,6 +773,10 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
   const selected = sel ? rows.find((r) => r.uid === sel) ?? null : null;
 
   const markAllDisabled = rows.every((r) => r.read || notificationRequiresAck(r));
+  const notificationTimeLabel = (row: { created_at?: string }): string => {
+    const created = String(row.created_at ?? "").trim();
+    return created.includes("T") ? created.split("T")[1]?.slice(0, 5) ?? "00:00" : "00:00";
+  };
 
   const list = rows
     .map((n) => {
@@ -793,7 +801,7 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
           selected.title === "Today's live schedule" ||
           String(selected.dedupe_key ?? "").startsWith("daily-lives|");
         const primaryBtn = isLiveSchedule
-          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}">${htmlEsc("Live Start")}</button>`
+          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}" ${simulationBusy ? "disabled" : ""}>${htmlEsc("Live Start")}</button>`
           : ``;
         const liveScheduleLinks = isLiveSchedule
           ? (() => {
@@ -817,38 +825,147 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
           : "";
         const startupActions = (() => {
           const dedupeKey = String(selected.dedupe_key ?? "");
+          if (dedupeKey.startsWith("startup-lives|")) {
+            const upcomingItems = (save.lives?.schedules ?? [])
+              .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+              .sort((a, b) => {
+                const da = String(a.start_date ?? "");
+                const db = String(b.start_date ?? "");
+                if (da !== db) return da.localeCompare(db);
+                return String(a.start_time ?? "").localeCompare(String(b.start_time ?? ""));
+              })
+              .slice(0, 24)
+              .map((live) => {
+                const uid = String(live.uid ?? "");
+                const title = String(live.title ?? live.live_type ?? "Live");
+                const when = formatLiveSlotLine(live) || String(live.start_date ?? "").split("T")[0];
+                const venueText = liveVenueCompactText(live);
+                return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} Â· ${venueText}`)}</span></li>`;
+              })
+              .join("");
+            if (upcomingItems) {
+              return `<div class="live-report-detail"><h4 class="content-h3">Booked lives</h4><ul class="plain-list">${upcomingItems}</ul></div>`;
+            }
+          }
           if (dedupeKey.startsWith("startup-staff|")) {
             return `<div class="live-report-detail"><div class="inbox-action-row"><button type="button" class="fm-btn" data-open-training-view="assignments">Training schedule</button><button type="button" class="fm-btn" data-open-training-view="roster">Idol status table</button></div></div>`;
           }
           if (dedupeKey.startsWith("startup-roster|")) {
             const groups = save.database_snapshot.groups as Record<string, unknown>[];
-            const rows = save.database_snapshot.idols
+            const managedGroup = groups.find((row) => String(row.uid ?? "") === save.managing_group_uid) ?? null;
+            const managedMemberUids = new Set(
+              Array.isArray(managedGroup?.member_uids) ? managedGroup.member_uids.map((x) => String(x)) : [],
+            );
+            const matchGroupHistory = (row: Record<string, unknown>) => {
+              const hist = Array.isArray(row.group_history) ? row.group_history : [];
+              return hist
+                .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
+                .filter((entry) => String(entry.group_uid ?? "") === save.managing_group_uid);
+            };
+            const entryStartKey = (entry: Record<string, unknown>): string => String(entry.start_date ?? "").split("T")[0];
+            const entryEndKey = (entry: Record<string, unknown>): string => String(entry.end_date ?? "").split("T")[0];
+            const portraitCell = (row: Record<string, unknown>, name: string) => {
+              const initial = [...(name.trim() || "?")][0] ?? "?";
+              const portraitSrc = idolPortraitPublicSrc(row);
+              const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
+              return portraitSrc
+                ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
+                : `<span class="idol-thumb-ph" aria-hidden="true">${htmlEsc(initial)}</span>`;
+            };
+            const colorCell = (color: string, colorCode?: unknown) => {
+              const colorTrim = color.trim();
+              const colorCss = resolveMemberColorCss(colorTrim, colorCode);
+              const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
+              return colorCss
+                ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
+                : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "—" ? color : "Default")}"></span> ${htmlEsc(color !== "—" ? color : "—")}`;
+            };
+            const currentRows = save.database_snapshot.idols
               .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
-              .filter((row) => {
-                const hist = row.group_history;
-                if (Array.isArray(hist) && hist.some((entry) => String((entry as Record<string, unknown>).group_uid ?? "") === save.managing_group_uid)) {
-                  return true;
-                }
-                return activeGroupMembershipsAtReference(row, save.current_date, groups).some((m) => m.uid === save.managing_group_uid);
-              })
+              .filter((row) => managedMemberUids.has(String(row.uid ?? "")))
               .map((row) => {
                 const uid = String(row.uid ?? "");
                 const name = String((row.name ?? uid) || "Idol");
-                const memberships = activeGroupMembershipsAtReference(row, save.current_date, groups)
-                  .map((m) => m.name)
-                  .filter(Boolean)
-                  .join(", ") || "—";
-                const historySummary = Array.isArray(row.group_history)
-                  ? row.group_history
-                      .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
-                      .map((entry) => String(entry.group_name ?? entry.group_uid ?? "").trim())
-                      .filter(Boolean)
-                      .join(", ") || "—"
-                  : "—";
-                return `<tr><td><button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></td><td>${htmlEsc(memberships)}</td><td>${htmlEsc(historySummary)}</td></tr>`;
+                const currentEntry =
+                  matchGroupHistory(row)
+                    .find((entry) => {
+                      const end = entryEndKey(entry);
+                      return !end || end >= String(save.current_date ?? "").split("T")[0];
+                    }) ?? null;
+                const enterDate = currentEntry ? fmtHistoryDateDisplay(currentEntry.start_date, save.current_date, currentEntry, "start") : "—";
+                const color =
+                  currentEntry && typeof currentEntry.member_color === "string" && currentEntry.member_color.trim()
+                    ? currentEntry.member_color.trim()
+                    : typeof row.member_color === "string" && row.member_color.trim()
+                      ? row.member_color.trim()
+                      : "—";
+                const colorCode = currentEntry?.member_color_code ?? row.member_color_code;
+                return { uid, name, enterDate, color, colorCode, photo: portraitCell(row, name) };
               })
+              .sort((a, b) => a.enterDate.localeCompare(b.enterDate));
+            const pastRows = save.database_snapshot.idols
+              .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
+              .filter((row) => !managedMemberUids.has(String(row.uid ?? "")))
+              .map((row) => {
+                const uid = String(row.uid ?? "");
+                const name = String((row.name ?? uid) || "Idol");
+                const pastEntries = matchGroupHistory(row).filter((entry) => Boolean(entryEndKey(entry)));
+                if (!pastEntries.length) return null;
+                const latest = [...pastEntries].sort((a, b) => entryStartKey(b).localeCompare(entryStartKey(a)))[0];
+                const leaveKey = entryEndKey(latest);
+                const activeGroupUids = new Set(
+                  activeGroupMembershipsAtReference(row, save.current_date, groups)
+                    .map((m) => String(m.uid ?? "").trim())
+                    .filter(Boolean),
+                );
+                const followingGroups = (Array.isArray(row.group_history) ? row.group_history : [])
+                  .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
+                  .filter((entry) => String(entry.group_uid ?? "") !== save.managing_group_uid)
+                  .filter((entry) => {
+                    const start = entryStartKey(entry);
+                    return Boolean(start) && (!leaveKey || start >= leaveKey);
+                  })
+                  .map((entry) => {
+                    const groupUid = String(entry.group_uid ?? "").trim();
+                    const groupName = String(entry.group_name ?? "").trim() || groupUid || "—";
+                    const linked = groupUid
+                      ? `<button type="button" class="text-action-btn" data-group-detail="${htmlEsc(groupUid)}">${htmlEsc(groupName)}</button>`
+                      : htmlEsc(groupName);
+                    return activeGroupUids.has(groupUid) ? `<strong>${linked}</strong>` : linked;
+                  })
+                  .filter(Boolean);
+                return {
+                  uid,
+                  name,
+                  enterDate: fmtHistoryDateDisplay(latest.start_date, save.current_date, latest, "start"),
+                  leaveDate: fmtHistoryDateDisplay(latest.end_date, save.current_date, latest, "end"),
+                  followingGroups: followingGroups.join(", ") || "—",
+                };
+              })
+              .filter((row): row is { uid: string; name: string; enterDate: string; leaveDate: string; followingGroups: string } => Boolean(row))
+              .sort((a, b) => a.leaveDate.localeCompare(b.leaveDate));
+            const currentTable = currentRows
+              .map(
+                (row) =>
+                  `<tr><td class="idol-list-photo startup-roster-photo">${row.photo}</td><td><button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(row.uid)}">${htmlEsc(row.name)}</button></td><td>${colorCell(row.color, row.colorCode)}</td><td>${htmlEsc(row.enterDate)}</td></tr>`,
+              )
               .join("");
-            return `<div class="live-report-detail"><div class="table-scroll"><table class="fm-table"><thead><tr><th>Idol</th><th>Current Group</th><th>History</th></tr></thead><tbody>${rows || `<tr><td colspan="3" class="content-muted">No roster rows available.</td></tr>`}</tbody></table></div></div>`;
+            const pastTable = pastRows
+              .map(
+                (row) =>
+                  `<tr><td><button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(row.uid)}">${htmlEsc(row.name)}</button></td><td>${htmlEsc(row.enterDate)}</td><td>${htmlEsc(row.leaveDate)}</td><td>${row.followingGroups}</td></tr>`,
+              )
+              .join("");
+            return `<div class="live-report-detail">
+              <div class="table-panel">
+                <h4 class="content-h3">Current members</h4>
+                <div class="table-scroll"><table class="fm-table"><thead><tr><th></th><th>Name</th><th>Color</th><th>Enter group</th></tr></thead><tbody>${currentTable || `<tr><td colspan="4" class="content-muted">No current members found.</td></tr>`}</tbody></table></div>
+              </div>
+              <div class="table-panel">
+                <h4 class="content-h3">Past members</h4>
+                <div class="table-scroll"><table class="fm-table"><thead><tr><th>Name</th><th>Enter group</th><th>Leave group</th><th>Following group</th></tr></thead><tbody>${pastTable || `<tr><td colspan="4" class="content-muted">No past members found.</td></tr>`}</tbody></table></div>
+              </div>
+            </div>`;
           }
           return "";
         })();
@@ -908,7 +1025,7 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null): string 
         return `<article class="fm-card inbox-detail-card" aria-label="Message detail">
         <header class="fm-card-head">
           <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}</h3>
-          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.date)}">${htmlEsc(selected.date)}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
+          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.created_at || selected.date)}">${htmlEsc(selected.date)} ${htmlEsc(notificationTimeLabel(selected))}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
         </header>
         <div class="inbox-detail-body">${renderLiveReport()}</div>
         ${
@@ -1138,7 +1255,7 @@ function renderTraining(save: GameSavePayload, trainingTab: TrainingTab): string
       const portraitCell = portraitSrc
         ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
         : `<span class="idol-thumb-ph" aria-hidden="true">${htmlEsc(initial)}</span>`;
-      const colorCss = resolveMemberColorCss(colorTrim);
+      const colorCss = resolveMemberColorCss(colorTrim, r.member_color_code);
       const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
       const colorCell = colorCss
         ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
@@ -1644,6 +1761,14 @@ function renderIdolsList(
 
 /** Making workshop: Title, Romanji, Type, empty disc text field, Arrange / Release (no release or pop columns). */
 function makingWorkshopRowsHtml(rows: Record<string, unknown>[]): string {
+  const discList = `<datalist id="making-disc-options">
+    <option value="Single CD"></option>
+    <option value="Album CD"></option>
+    <option value="Bromide photos"></option>
+    <option value="2-shot meeting ticket"></option>
+    <option value="Online talking ticket"></option>
+    <option value="Handshaking meeting ticket"></option>
+  </datalist>`;
   return rows
     .map((row) => {
       const title =
@@ -1655,14 +1780,14 @@ function makingWorkshopRowsHtml(rows: Record<string, unknown>[]): string {
       const uid = String(row.uid ?? "").trim();
       const uidAttr = uid ? encodeURIComponent(uid) : "";
       const uidData = uidAttr ? ` data-song-uid="${uidAttr}"` : "";
-      const discInput = `<input type="text" class="fm-input making-disc-input" autocomplete="off" value="" data-making-disc-input${uidData} aria-label="${htmlEsc(`Disc · ${title}`.slice(0, 120))}" />`;
+      const discInput = `<input type="text" class="fm-input making-disc-input" list="making-disc-options" autocomplete="off" value="" data-making-disc-input${uidData} aria-label="${htmlEsc(`Disc · ${title}`.slice(0, 120))}" />`;
       const actions = `<div class="making-track-actions">
         <button type="button" class="fm-btn making-arrange-btn" data-making-arrange${uidData}>${htmlEsc("Arrange")}</button>
         <button type="button" class="fm-btn fm-btn-accent making-release-btn" data-making-release${uidData}>${htmlEsc("Release")}</button>
       </div>`;
       return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td>${htmlEsc(dtype)}</td><td class="making-disc-cell">${discInput}</td><td class="making-actions-cell">${actions}</td></tr>`;
     })
-    .join("");
+    .join("") + discList;
 }
 
 function songRowsHtml(
@@ -1762,6 +1887,47 @@ function renderSongsWorkspaceTabs(active: SongsWorkspaceTab): string {
   const b1 = `<button type="button" class="songs-workspace-tab${songsAct}" data-songs-workspace-tab="group_songs" role="tab">${htmlEsc("Songs")}</button>`;
   const b2 = `<button type="button" class="songs-workspace-tab${discAct}" data-songs-workspace-tab="disc" role="tab">${htmlEsc("Discography")}</button>`;
   return `<div class="songs-workspace-tabs" role="tablist">${b1}${b2}</div>`;
+}
+
+function renderMakingTabs(active: MakingTab): string {
+  const songsAct = active === "songs" ? " is-active" : "";
+  const goodsAct = active === "goods" ? " is-active" : "";
+  return `<div class="songs-workspace-tabs" role="tablist">
+    <button type="button" class="songs-workspace-tab${songsAct}" data-making-tab="songs" role="tab">${htmlEsc("Songs")}</button>
+    <button type="button" class="songs-workspace-tab${goodsAct}" data-making-tab="goods" role="tab">${htmlEsc("Goods")}</button>
+  </div>`;
+}
+
+function renderGoodsInventoryTable(goods: ProducedGoodsRow[]): string {
+  const rows = goods
+    .map(
+      (item) => `<tr>
+        <td>${htmlEsc(item.member_name ?? "Group")}</td>
+        <td>${htmlEsc(item.name)}</td>
+        <td>${htmlEsc(item.category)}</td>
+        <td class="num">${htmlEsc(`JPY ${Number(item.unit_price_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
+        <td class="num">${htmlEsc(`JPY ${Number(item.unit_cost_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
+        <td class="num">${htmlEsc(String(Math.max(0, Number(item.stock ?? 0) || 0)))}</td>
+        <td><input class="fm-input goods-amount-input" data-goods-desired-uid="${htmlEsc(item.uid)}" value="${htmlEsc(String(Math.max(0, Number(item.desired_amount ?? 0) || 0)))}" /></td>
+        <td class="num">${htmlEsc(`JPY ${(Math.max(0, Number(item.desired_amount ?? 0) || 0) * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0)).toLocaleString("ja-JP")}`)}</td>
+        <td><button type="button" class="fm-btn fm-btn-accent" data-goods-order-uid="${htmlEsc(item.uid)}">Order</button></td>
+      </tr>`,
+    )
+    .join("");
+  return `<section class="content-panel songs-view making-track-view">
+    <h2 class="content-h2">Making</h2>
+    <p class="content-muted">${htmlEsc("Build stock here first. Goods are tracked per member, and ordering now consumes cash as production cost.")}</p>
+    ${renderMakingTabs("goods")}
+    <section class="fm-card">
+      <h3 class="content-h3">Goods workshop</h3>
+      <div class="table-scroll">
+        <table class="fm-table">
+          <thead><tr><th>Member</th><th>Item</th><th>Category</th><th>Unit price</th><th>Make cost</th><th>Made</th><th>Desired amount</th><th>Total cost</th><th>Order</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </section>
+  </section>`;
 }
 
 function bucketEarliestRelease(songs: Record<string, unknown>[]): string {
@@ -1923,6 +2089,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
       <h2 class="content-h2">${htmlEsc(pageTitle)}</h2>
       ${sub}
       ${toolbar}
+      ${renderMakingTabs("songs")}
       ${songsPanel}
     </section>`;
   }
@@ -2108,7 +2275,16 @@ function renderBrowseGroups(data: LoadedScenario): string {
   );
 }
 
-function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart: string | null): string {
+function renderLiveTypeSelectOptions(lang: UiLanguage, selected: string, types: readonly string[]): string {
+  return types
+    .map((type) => {
+      const sel = type === selected ? "selected" : "";
+      return `<option value="${htmlEsc(type)}" ${sel}>${htmlEsc(liveTypeLabel(lang, type))}</option>`;
+    })
+    .join("");
+}
+
+function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart: string | null, lang: UiLanguage): string {
   if (!save) {
     return `<section class="content-panel schedule-view"><p class="content-muted">No save loaded.</p></section>`;
   }
@@ -2131,6 +2307,7 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
     nextIso,
     schedules: schedulesList,
     results: resultsList,
+    lang,
   });
 
   const weekDays = 7;
@@ -2152,7 +2329,7 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
         ? extra
             .map((s) => {
               const o = s as Record<string, unknown>;
-              const typ = String(o.live_type ?? o.event_type ?? "Event");
+              const typ = liveTypeLabel(lang, String(o.live_type ?? o.event_type ?? "Event"));
               const vn = String(o.venue ?? "").trim();
               return vn ? `${typ} @ ${vn}` : typ;
             })
@@ -2269,9 +2446,18 @@ function liveTimeRangeText(live: Record<string, unknown>): string {
 }
 
 function liveVenueCompactText(live: Record<string, unknown>): string {
-  const venue = String(live.venue ?? "—").trim() || "—";
+  const venue = String(live.venue ?? "-").trim() || "-";
   const city = String(live.location ?? "").trim();
   return city ? `${venue}, ${city}` : venue;
+}
+
+function goodsByUid(goods: ProducedGoodsRow[]): Map<string, ProducedGoodsRow> {
+  return new Map(goods.map((item) => [String(item.uid), item] as const));
+}
+
+function goodsDisplayLabel(item: ProducedGoodsRow | null | undefined): string {
+  if (!item) return "";
+  return item.member_name ? `${item.member_name} / ${item.name}` : item.name;
 }
 
 function renderLivesView(
@@ -2282,6 +2468,7 @@ function renderLivesView(
   selectedLiveSongTitle: string | null,
   selectedSetlistSongIndex: number | null,
   festivals: Record<string, unknown>[] | null | undefined,
+  lang: UiLanguage,
 ): string {
   const schedules = (save.lives?.schedules ?? []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
@@ -2301,6 +2488,9 @@ function renderLivesView(
     save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
   const venues = getVenuesCatalog();
   const venueByName = new Map(venues.map((row) => [row.name, row] as const));
+  const goodsInventory = Array.isArray(save.goods_inventory) ? save.goods_inventory : [];
+  const availableGoods = goodsInventory.filter((item) => Math.max(0, Number(item.stock ?? 0) || 0) > 0);
+  const goodsLookup = goodsByUid(goodsInventory);
   const managedUid = String(grp?.uid ?? "");
   const groupSongs = songsForDisplaySorted(save.database_snapshot.songs)
     .filter((row) => String(row.group_uid ?? "") === managedUid)
@@ -2320,7 +2510,7 @@ function renderLivesView(
       const title = String(live.title ?? live.live_type ?? "—");
       const cap = live.capacity != null ? String(live.capacity) : "—";
       const slot = liveTimeRangeText(live) || "—";
-      const typ = String(live.live_type ?? live.event_type ?? "");
+      const typ = liveTypeLabel(lang, String(live.live_type ?? live.event_type ?? ""));
       const where = liveVenueCompactText(live);
       const active = String(live.uid ?? "") === String(selectedScheduled?.uid ?? "") ? " class=\"is-selected-row\"" : "";
       return `<tr${active} data-scheduled-live="${htmlEsc(String(live.uid ?? ""))}"><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(String(live.uid ?? ""))}">${htmlEsc(title)}</button></td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
@@ -2343,6 +2533,20 @@ function renderLivesView(
     .join("");
   const selectedPreset = LIVE_TYPE_PRESETS[newLiveForm.liveType] ?? LIVE_TYPE_PRESETS.Routine;
   const selectedVenue = venueByName.get(newLiveForm.venueName);
+  const selectedGoodsUids = newLiveForm.goodsUids.filter((uid) => goodsLookup.has(uid));
+  const selectedGoodsNames = selectedGoodsUids.map((uid) => goodsDisplayLabel(goodsLookup.get(uid) ?? null)).filter(Boolean);
+  const selectedGoodsGross = selectedGoodsUids.reduce((sum, uid) => {
+    return (
+      sum +
+      estimateLiveGoodsGrossYen(goodsLookup.get(uid) ?? null, {
+        liveType: newLiveForm.liveType,
+        capacity: selectedVenue?.capacity ?? null,
+        groupFans: Number(grp?.fans ?? 0) || 0,
+        groupPopularity: Number(grp?.popularity ?? 0) || 0,
+        groupTier: resolveGroupLetterTier(grp ?? undefined),
+      })
+    );
+  }, 0);
   const tokutenkaiSummary = newLiveForm.tokutenkaiEnabled
     ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}`
     : "Tokutenkai: None";
@@ -2400,12 +2604,13 @@ function renderLivesView(
       return `<option value="${htmlEsc(venue.name)}" ${selected}>${htmlEsc(`${venue.name} (${venue.capacity})`)}</option>`;
     }),
   ].join("");
+  const plannerLiveTypes = ["Routine", "Concert", "Taiban", "Festival"] as const;
   const summaryLines = [
-    `${newLiveForm.liveType} · ${newLiveForm.date || "TBD"} · ${newLiveForm.startTime}-${newLiveForm.endTime}`,
+    `${liveTypeLabel(lang, newLiveForm.liveType)} · ${newLiveForm.date || "TBD"} · ${newLiveForm.startTime}-${newLiveForm.endTime}`,
     `Venue: ${newLiveForm.venueName || "TBA"}${selectedVenue?.location ? ` · ${selectedVenue.location}` : ""}${selectedVenue?.capacity ? ` · cap ${selectedVenue.capacity}` : ""}`,
     `Program: ${programSummary.length ? programSummary.join(" · ") : "Not set"}`,
     `Tokutenkai: ${newLiveForm.tokutenkaiEnabled ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}` : "Off"}`,
-    `Goods: ${newLiveForm.goodsEnabled ? `${newLiveForm.goodsLine || "Standard goods"} · est ¥${newLiveForm.goodsExpectedRevenueYen.toLocaleString("ja-JP")}` : "Off"}`,
+    `Goods: ${newLiveForm.goodsEnabled ? `${selectedGoodsNames.join(", ") || "None selected"} / est JPY ${selectedGoodsGross.toLocaleString("ja-JP")}` : "Off"}`,
     `Ticket price: ${newLiveForm.ticketPriceYen > 0 ? `¥${newLiveForm.ticketPriceYen.toLocaleString("ja-JP")}` : "Not set"}`,
   ];
 
@@ -2452,11 +2657,35 @@ function renderLivesView(
         : "Not set"
     : "";
 
+  const scheduledSelectedGoodsUids = selectedScheduled
+    ? Array.isArray(selectedScheduled.goods_uids)
+      ? (selectedScheduled.goods_uids as unknown[]).map((x) => String(x))
+      : String(selectedScheduled.goods_uid ?? "").trim()
+        ? [String(selectedScheduled.goods_uid ?? "").trim()]
+        : []
+    : [];
+  const scheduledGoodsChecklist = availableGoods.length
+    ? availableGoods
+        .map((item) => {
+          const checked = scheduledSelectedGoodsUids.includes(item.uid) ? "checked" : "";
+          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-detail-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
+        })
+        .join("")
+    : `<p class="content-muted">No made goods in stock yet. Use Making -> Goods first.</p>`;
+  const newLiveGoodsChecklist = availableGoods.length
+    ? availableGoods
+        .map((item) => {
+          const checked = selectedGoodsUids.includes(item.uid) ? "checked" : "";
+          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
+        })
+        .join("")
+    : `<p class="content-muted">No made goods in stock yet. Use Making -> Goods first.</p>`;
+
   const liveDetailBody = selectedScheduled
     ? `<section class="fm-card">
       <h3 class="content-h3">Upcoming live detail</h3>
       <div class="form-grid live-form-grid">
-        <label><span>Type</span><input class="fm-input" data-live-detail-field="live_type" value="${htmlEsc(String(selectedScheduled.live_type ?? ""))}" /></label>
+        <label><span>Type</span><select class="fm-select" data-live-detail-field="live_type">${renderLiveTypeSelectOptions(lang, String(selectedScheduled.live_type ?? "Routine"), plannerLiveTypes)}</select></label>
         <label><span>Title</span><input class="fm-input" data-live-detail-field="title" value="${htmlEsc(String(selectedScheduled.title ?? ""))}" /></label>
         <label><span>Date</span><input type="date" class="fm-input" data-live-detail-field="start_date" value="${htmlEsc(String(selectedScheduled.start_date ?? "").split("T")[0])}" /></label>
         <label><span>Venue</span><select class="fm-select" data-live-detail-field="venue">${scheduledVenueOptions}</select></label>
@@ -2480,9 +2709,9 @@ function renderLivesView(
       <div class="planner-subpanel">
         <h4 class="content-h3">Goods</h4>
         <label class="check-pill"><input type="checkbox" data-live-detail-toggle="goods_enabled" ${selectedScheduled.goods_enabled ? "checked" : ""} /> <span>Run goods booth</span></label>
+        <div class="live-goods-checklist">${scheduledGoodsChecklist}</div>
         <div class="form-grid live-form-grid">
-          <label><span>Goods line</span><input class="fm-input" data-live-detail-field="goods_line" value="${htmlEsc(String(selectedScheduled.goods_line ?? ""))}" /></label>
-          <label><span>Expected gross</span><input class="fm-input" data-live-detail-field="goods_expected_revenue_yen" value="${htmlEsc(String(selectedScheduled.goods_expected_revenue_yen ?? 0))}" /></label>
+          <label><span>Expected gross</span><input class="fm-input" value="${htmlEsc(`JPY ${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}`)}" readonly /></label>
         </div>
       </div>
       <div class="live-new-summary-grid">
@@ -2498,11 +2727,7 @@ function renderLivesView(
       <section class="fm-card live-new-card">
         <h3 class="content-h3">New live setup</h3>
         <div class="form-grid live-form-grid">
-          <label><span>Type</span><select class="fm-select" data-live-form-field="liveType">
-            ${(["Routine", "Concert", "Taiban", "Festival"] as const)
-              .map((type) => `<option value="${type}" ${newLiveForm.liveType === type ? "selected" : ""}>${type}</option>`)
-              .join("")}
-          </select></label>
+          <label><span>Type</span><select class="fm-select" data-live-form-field="liveType">${renderLiveTypeSelectOptions(lang, newLiveForm.liveType, plannerLiveTypes)}</select></label>
           <label><span>Title</span><input class="fm-input" data-live-form-field="title" value="${htmlEsc(newLiveForm.title)}" /></label>
           <label><span>Date</span><input type="date" class="fm-input" data-live-form-field="date" value="${htmlEsc(newLiveForm.date)}" /></label>
           <label><span>Venue</span><select class="fm-select" data-live-form-field="venueName">${venueOptions}</select></label>
@@ -2558,9 +2783,9 @@ function renderLivesView(
         <div class="planner-subpanel">
           <h4 class="content-h3">Goods</h4>
           <label class="check-pill"><input type="checkbox" data-live-toggle="goodsEnabled" ${newLiveForm.goodsEnabled ? "checked" : ""} /> <span>Run goods booth</span></label>
+          <div class="live-goods-checklist">${newLiveGoodsChecklist}</div>
           <div class="form-grid live-form-grid">
-            <label><span>Goods line</span><input class="fm-input" data-live-form-field="goodsLine" value="${htmlEsc(newLiveForm.goodsLine)}" /></label>
-            <label><span>Expected gross</span><input class="fm-input" data-live-form-field="goodsExpectedRevenueYen" value="${htmlEsc(String(newLiveForm.goodsExpectedRevenueYen))}" /></label>
+            <label><span>Expected gross</span><input class="fm-input" value="${htmlEsc(`JPY ${selectedGoodsGross.toLocaleString("ja-JP")}`)}" readonly /></label>
           </div>
         </div>
         <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-live-schedule="1">Schedule Live</button></div>
@@ -2870,6 +3095,7 @@ export function renderMainContent(
     songsGroupUid: string | null;
     songsWorkspaceTab: SongsWorkspaceTab;
     songsDiscographyKey: string | null;
+    makingTab: MakingTab;
     inboxSelectedUid: string | null;
     livesTab: LivesTab;
     scheduledLiveUid: string | null;
@@ -2883,6 +3109,8 @@ export function renderMainContent(
     selectedScoutApplicantUid: string | null;
     /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
     scheduleCalendarMonthStart: string | null;
+    lang: UiLanguage;
+    simulationBusy: boolean;
   },
 ): string {
   const {
@@ -2896,6 +3124,7 @@ export function renderMainContent(
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    makingTab,
     inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
@@ -2908,6 +3137,8 @@ export function renderMainContent(
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
+    lang,
+    simulationBusy,
   } = ctx;
 
   if (browseMode && browseData) {
@@ -2975,7 +3206,7 @@ export function renderMainContent(
 
   switch (view) {
     case "Inbox":
-      return renderInbox(save, inboxSelectedUid);
+      return renderInbox(save, inboxSelectedUid, simulationBusy);
     case "Finances":
       return renderFinancesProjectionView(save, financeHistoryRange);
     case "Idols": {
@@ -3023,7 +3254,7 @@ export function renderMainContent(
       return renderGroupsManaged(save);
     }
     case "Schedule":
-      return renderSchedule(save, scheduleCalendarMonthStart);
+      return renderSchedule(save, scheduleCalendarMonthStart, lang);
     case "Lives":
       return renderLivesView(
         save,
@@ -3033,11 +3264,14 @@ export function renderMainContent(
         selectedLiveSongTitle,
         selectedSetlistSongIndex,
         browseData?.festivals ?? null,
+        lang,
       );
     case "Training":
       return renderTraining(save, trainingTab);
     case "Making":
-      return renderSongsList(save.database_snapshot.songs, {
+      return makingTab === "goods"
+        ? renderGoodsInventoryTable(save.goods_inventory)
+        : renderSongsList(save.database_snapshot.songs, {
         subtitle: save.scenario_context?.startup_date
           ? `Opening ${save.scenario_context.startup_date}`
           : undefined,
@@ -3089,6 +3323,7 @@ export interface DesktopShellProps {
   songsWorkspaceTab: SongsWorkspaceTab;
   /** Songs Discography tab: selected release bucket key. */
   songsDiscographyKey: string | null;
+  makingTab: MakingTab;
   /** Selected inbox notification uid (management mode). */
   inboxSelectedUid: string | null;
   livesTab: LivesTab;
@@ -3105,6 +3340,7 @@ export interface DesktopShellProps {
   scheduleCalendarMonthStart: string | null;
   canGoBack: boolean;
   canGoForward: boolean;
+  simulationBusy: boolean;
   slot: number;
   occupiedSlots: number[];
 }
@@ -3123,6 +3359,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    makingTab,
     inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
@@ -3184,6 +3421,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsGroupUid: songsGroupUid ?? null,
     songsWorkspaceTab,
     songsDiscographyKey,
+    makingTab,
     inboxSelectedUid: inboxSelectedUid ?? null,
     livesTab,
     scheduledLiveUid: scheduledLiveUid ?? null,
@@ -3195,6 +3433,8 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     selectedScoutLeadUid: selectedScoutLeadUid ?? null,
     selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
     scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
+    lang: "en",
+    simulationBusy: p.simulationBusy,
   });
 
   const cashPill = finances
@@ -3205,8 +3445,8 @@ export function renderDesktopShell(p: DesktopShellProps): string {
   const nextHint = inboxBlock ? `Inbox: ${inboxBlock.title}` : "Advance one simulated day";
 
   const nextDayBtn = browseMode
-    ? `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="Not in browse mode">${htmlEsc("NEXT DAY")}</button>`
-    : `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" title="${htmlEsc(nextHint)}">${htmlEsc("NEXT DAY")}</button>`;
+    ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="Not in browse mode"><span id="btn-next-day-label">${htmlEsc("NEXT DAY")}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
+    : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc("NEXT DAY")}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
 
   const ver = save ? String(save.version ?? "—") : browseData ? "browse" : "—";
 
@@ -3279,10 +3519,11 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     idolDetailUid,
     groupDetailUid,
     idolListLayout,
-    songsGroupUid,
-    songsWorkspaceTab,
-    songsDiscographyKey,
-    inboxSelectedUid,
+      songsGroupUid,
+      songsWorkspaceTab,
+      songsDiscographyKey,
+      makingTab,
+      inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
     newLiveForm,
@@ -3343,6 +3584,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     songsGroupUid: songsGroupUid ?? null,
     songsWorkspaceTab,
     songsDiscographyKey,
+    makingTab,
     inboxSelectedUid: inboxSelectedUid ?? null,
     livesTab,
     scheduledLiveUid: scheduledLiveUid ?? null,
@@ -3351,9 +3593,12 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     selectedSetlistSongIndex: selectedSetlistSongIndex ?? null,
     scoutTab,
     trainingTab,
+    financeHistoryRange,
     selectedScoutLeadUid: selectedScoutLeadUid ?? null,
     selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
     scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
+    lang,
+    simulationBusy: p.simulationBusy,
   });
 
   const cashPill = finances
@@ -3364,8 +3609,8 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
   const nextHint = inboxBlock ? `${navLabel(lang, "Inbox")}: ${inboxBlock.title}` : t(lang, "shell_advance_one_day");
 
   const nextDayBtn = browseMode
-    ? `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}">${htmlEsc(t(lang, "shell_next_day"))}</button>`
-    : `<button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" title="${htmlEsc(nextHint)}">${htmlEsc(t(lang, "shell_next_day"))}</button>`;
+    ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
+    : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
 
   const ver = save ? String(save.version ?? "-") : browseData ? "browse" : "-";
   const statusLeft = browseMode ? t(lang, "shell_browse") : t(lang, "shell_save_version", { version: save?.version ?? "?" });
@@ -3381,6 +3626,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
         <summary class="fm-btn fm-btn-accent">${htmlEsc(t(lang, "shell_home"))}</summary>
         <div class="fm-home-menu" role="menu">
           <button type="button" class="fm-menu-action" id="btn-main-menu">${htmlEsc(t(lang, "shell_main_menu"))}</button>
+          <a class="fm-menu-action fm-menu-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_game_manual"))}</a>
           <label class="fm-menu-row">${htmlEsc(t(lang, "shell_slot"))} <select id="slot-select" class="fm-select" aria-label="${htmlEsc(t(lang, "shell_slot"))}">${slotOpts}</select></label>
           <label class="fm-menu-row">${htmlEsc(t(lang, "language"))} <select id="lang-select-shell" class="fm-select" aria-label="${htmlEsc(t(lang, "language"))}">${languageSelect}</select></label>
           <button type="button" class="fm-menu-action" id="btn-save" ${browseMode ? "disabled" : ""}>${htmlEsc(t(lang, "shell_save_game"))}</button>

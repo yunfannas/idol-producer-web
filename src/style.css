@@ -81,6 +81,12 @@ body {
   gap: 0.35rem;
 }
 
+.fm-next-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
 .fm-btn {
   font: inherit;
   cursor: pointer;
@@ -229,6 +235,29 @@ body {
   background: rgb(244 67 54 / 0.35);
 }
 
+a.fm-menu-link {
+  text-decoration: none;
+}
+
+a.fm-menu-link:hover {
+  color: var(--text-primary);
+}
+
+.opening-manual-row {
+  margin: 0.35rem 0 0;
+}
+
+.opening-manual-link {
+  font-size: 0.92rem;
+  color: #b8a0e8;
+  text-decoration: none;
+}
+
+.opening-manual-link:hover {
+  color: #d4c4f5;
+  text-decoration: underline;
+}
+
 .fm-date-btn {
   font: inherit;
   font-weight: 700;
@@ -253,10 +282,38 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   padding: 0.55rem 1rem;
+  min-width: 8.5rem;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 .fm-btn-continue:hover {
   filter: brightness(1.06);
+}
+
+.fm-next-spinner {
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  border: 2px solid rgb(255 255 255 / 0.18);
+  border-top-color: rgb(255 255 255 / 0.92);
+  opacity: 0;
+}
+
+.fm-next-spinner.is-active {
+  opacity: 1;
+  animation: fm-spin 0.8s linear infinite;
+}
+
+@keyframes fm-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .fm-cash-pill {
@@ -1904,6 +1961,17 @@ text.idol-radar-val.attr-tone-low {
   border-top: 1px solid rgb(255 255 255 / 0.08);
 }
 
+.live-goods-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.live-goods-pill {
+  justify-content: flex-start;
+}
+
 .planner-actions {
   display: flex;
   gap: 0.65rem;
@@ -2156,6 +2224,16 @@ text.idol-radar-val.attr-tone-low {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+}
+
+.startup-roster-photo {
+  width: 2.4rem;
+}
+
+.startup-roster-photo .idol-thumb,
+.startup-roster-photo .idol-thumb-ph {
+  width: 2rem;
+  height: 2rem;
 }
 
 .is-selected-row {

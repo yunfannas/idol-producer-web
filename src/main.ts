@@ -9,7 +9,7 @@ import {
   hasPendingEventsToday,
   isoDatePart,
 } from "./engine/gameEngine";
-import { sortGroupsForDirectory } from "./engine/financeSystem";
+import { estimateLiveGoodsGrossYen, sortGroupsForDirectory, type ProducedGoodsRow } from "./engine/financeSystem";
 import type { GameSavePayload } from "./save/gameSaveSchema";
 import {
   renderDesktopShellI18n,
@@ -20,6 +20,7 @@ import {
   type FinanceHistoryRange,
   type LiveProgramItem,
   type LivesTab,
+  type MakingTab,
   type NewLiveFormState,
   type ScoutTab,
   type SongsWorkspaceTab,
@@ -222,6 +223,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
         .filter(Boolean)
     : [];
   const venue = getVenuesCatalog()[0]?.name ?? "";
+  const initialGoodsUids = availableGoodsInventory().slice(0, liveType === "Concert" ? 2 : 1).map((item) => item.uid);
   newLiveForm = {
     liveType,
     title: save?.managing_group ? `${save.managing_group} ${liveType}` : `${liveType} Live`,
@@ -240,8 +242,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     tokutenkaiSlotSeconds: preset.tokutenkai_slot_seconds,
     tokutenkaiExpectedTickets: preset.tokutenkai_expected_tickets,
     goodsEnabled: true,
-    goodsLine: liveType === "Concert" ? "Tour shirt + cheki" : "Cheki + random bromide",
-    goodsExpectedRevenueYen: liveType === "Concert" ? 90000 : liveType === "Taiban" ? 25000 : 45000,
+    goodsUids: initialGoodsUids,
     ticketPriceYen: liveType === "Concert" ? 3800 : liveType === "Festival" ? 0 : 2500,
   };
   selectedLiveSongTitle = suggestedSetlist[0] ?? null;
@@ -266,6 +267,47 @@ function selectedScheduledLiveRecord(): Record<string, unknown> | null {
   return schedules[0] ?? null;
 }
 
+function goodsInventory(): ProducedGoodsRow[] {
+  return Array.isArray(save?.goods_inventory) ? save!.goods_inventory : [];
+}
+
+function availableGoodsInventory(): ProducedGoodsRow[] {
+  return goodsInventory().filter((item) => Math.max(0, Number(item.stock ?? 0) || 0) > 0);
+}
+
+function findGoodsByUid(uid: string | null | undefined): ProducedGoodsRow | null {
+  const key = String(uid ?? "").trim();
+  if (!key) return null;
+  return goodsInventory().find((item) => item.uid === key) ?? null;
+}
+
+function goodsDisplayLabel(item: ProducedGoodsRow | null | undefined): string {
+  if (!item) return "";
+  return item.member_name ? `${item.member_name} / ${item.name}` : item.name;
+}
+
+function estimateCurrentLiveGoodsGross(
+  liveType: string,
+  venueName: string,
+  goodsUids: string[],
+): number {
+  const venue = getVenuesCatalog().find((row) => row.name === venueName) ?? null;
+  const group = save ? sortGroupsForDirectory(save.database_snapshot.groups).find((row) => String(row.uid ?? "") === String(save.managing_group_uid ?? "")) ?? null : null;
+  return goodsUids.reduce((sum, goodsUid) => {
+    const goods = findGoodsByUid(goodsUid);
+    return (
+      sum +
+      estimateLiveGoodsGrossYen(goods, {
+        liveType,
+        capacity: venue?.capacity ?? null,
+        groupFans: Number(group?.fans ?? 0) || 0,
+        groupPopularity: Number(group?.popularity ?? 0) || 0,
+        groupTier: typeof group?.letter_tier === "string" ? group.letter_tier : null,
+      })
+    );
+  }, 0);
+}
+
 function markInboxOpened(uid: string | null): void {
   if (!save || !uid) return;
   const row = save.inbox.notifications.find((n) => n.uid === uid);
@@ -280,6 +322,47 @@ function oldestUnreadInboxUid(rows: { uid: string; read: boolean }[]): string | 
   return null;
 }
 
+function notificationTimestampMs(row: { created_at?: string; date?: string }): number {
+  const created = String(row.created_at ?? "").trim();
+  if (created) {
+    const parsed = Date.parse(`${created.endsWith("Z") ? created : `${created}Z`}`);
+    if (Number.isFinite(parsed)) return parsed;
+  }
+  const day = String(row.date ?? "").split("T")[0].trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(day)) {
+    const parsed = Date.parse(`${day}T00:00:00Z`);
+    if (Number.isFinite(parsed)) return parsed;
+  }
+  return 0;
+}
+
+function newestVisibleLiveReportUid(currentSave: GameSavePayload): string | null {
+  const currentMs = notificationTimestampMs({ created_at: String(currentSave.current_date ?? "") });
+  const rows = [...currentSave.inbox.notifications];
+  sortNotificationsInPlace(rows);
+  for (const row of rows) {
+    const title = String(row.title ?? "");
+    if (!title.startsWith("Live report:") && !title.startsWith("Festival report:")) continue;
+    if (notificationTimestampMs(row) > currentMs) continue;
+    return row.uid;
+  }
+  return null;
+}
+
+function runSimulationTask(task: () => void): void {
+  if (simulationBusy) return;
+  simulationBusy = true;
+  paintGame();
+  window.setTimeout(() => {
+    try {
+      task();
+    } finally {
+      simulationBusy = false;
+      paintGame();
+    }
+  }, 0);
+}
+
 let loadedScenario: LoadedScenario | null = null;
 let save: GameSavePayload | null = null;
 let slot = 0;
@@ -288,6 +371,7 @@ let openingScreen: OpeningScreen = "home";
 let selectedNewGameGroupUid: string | null = null;
 let openingStatus = "";
 let uiLang: UiLanguage = readUiLanguage();
+let simulationBusy = false;
 
 let currentView: DesktopNavId = "Inbox";
 let idolDetailUid: string | null = null;
@@ -296,6 +380,7 @@ let groupDetailUid: string | null = null;
 let songsGroupUid: string | null = null;
 /** Songs view: `group_songs` = track list, `disc` = discography (desktop `main_ui.py`). */
 let songsWorkspaceTab: SongsWorkspaceTab = "group_songs";
+let makingTab: MakingTab = "songs";
 /** Selected release bucket in Discography tab; invalid keys cleared in `ensureSongsDiscographyKey`. */
 let songsDiscographyKey: string | null = null;
 
@@ -332,8 +417,7 @@ let newLiveForm: NewLiveFormState = {
   tokutenkaiSlotSeconds: 40,
   tokutenkaiExpectedTickets: 90,
   goodsEnabled: true,
-  goodsLine: "Cheki + logo towel",
-  goodsExpectedRevenueYen: 45000,
+  goodsUids: [],
   ticketPriceYen: 2500,
 };
 
@@ -345,6 +429,7 @@ interface NavigationSnapshot {
   songsGroupUid: string | null;
   songsWorkspaceTab: SongsWorkspaceTab;
   songsDiscographyKey: string | null;
+  makingTab: MakingTab;
   inboxSelectedUid: string | null;
   livesTab: LivesTab;
   scheduledLiveUid: string | null;
@@ -368,6 +453,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    makingTab,
     inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
@@ -389,6 +475,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.songsGroupUid === b.songsGroupUid &&
     a.songsWorkspaceTab === b.songsWorkspaceTab &&
     a.songsDiscographyKey === b.songsDiscographyKey &&
+    a.makingTab === b.makingTab &&
     a.inboxSelectedUid === b.inboxSelectedUid &&
     a.livesTab === b.livesTab &&
     a.scheduledLiveUid === b.scheduledLiveUid &&
@@ -409,6 +496,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   songsGroupUid = snapshot.songsGroupUid;
   songsWorkspaceTab = snapshot.songsWorkspaceTab;
   songsDiscographyKey = snapshot.songsDiscographyKey;
+  makingTab = snapshot.makingTab;
   inboxSelectedUid = snapshot.inboxSelectedUid;
   livesTab = snapshot.livesTab;
   scheduledLiveUid = snapshot.scheduledLiveUid;
@@ -721,6 +809,7 @@ function paintGame(): void {
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    makingTab,
     inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
@@ -735,6 +824,7 @@ function paintGame(): void {
     scheduleCalendarMonthStart,
     canGoBack: backHistory.length > 0,
     canGoForward: forwardHistory.length > 0,
+    simulationBusy,
     slot,
     occupiedSlots: listOccupiedSlots(),
   });
@@ -744,9 +834,10 @@ function paintGame(): void {
 
   if (save && !browseMode) {
     const nextBtn = document.getElementById("btn-next-day") as HTMLButtonElement | null;
+    const nextBtnLabel = document.getElementById("btn-next-day-label");
     if (nextBtn) {
       const hasTodayEvents = hasPendingEventsToday(save);
-      nextBtn.textContent = hasTodayEvents ? "Next" : "Next Day";
+      if (nextBtnLabel) nextBtnLabel.textContent = hasTodayEvents ? "Next" : "Next Day";
       nextBtn.title = hasTodayEvents
         ? "Advance to the next scheduled event today"
         : "Advance to the next day at 08:00";
@@ -870,6 +961,9 @@ function paintGame(): void {
     const scheduleLiveBtn = t.closest<HTMLElement>("[data-live-schedule]");
     if (scheduleLiveBtn && save && !browseMode && currentView === "Lives") {
       const venue = getVenuesCatalog().find((row) => row.name === newLiveForm.venueName) ?? null;
+      const goodsUids = [...newLiveForm.goodsUids];
+      const goodsNames = goodsUids.map((uid) => goodsDisplayLabel(findGoodsByUid(uid))).filter(Boolean);
+      const goodsGross = estimateCurrentLiveGoodsGross(newLiveForm.liveType, newLiveForm.venueName, goodsUids);
       const uid = `manual-live-${Date.now().toString(36)}`;
       const live = {
         uid,
@@ -903,8 +997,10 @@ function paintGame(): void {
         tokutenkai_slot_seconds: newLiveForm.tokutenkaiSlotSeconds,
         tokutenkai_expected_tickets: newLiveForm.tokutenkaiExpectedTickets,
         goods_enabled: newLiveForm.goodsEnabled,
-        goods_line: newLiveForm.goodsLine,
-        goods_expected_revenue_yen: newLiveForm.goodsExpectedRevenueYen,
+        goods_uids: goodsUids,
+        goods_uid: goodsUids[0] ?? "",
+        goods_line: goodsNames.join(", "),
+        goods_expected_revenue_yen: goodsGross,
         group: [save.managing_group ?? ""].filter(Boolean),
         group_uid: save.managing_group_uid ?? "",
         status: "scheduled",
@@ -1073,9 +1169,12 @@ function paintGame(): void {
     if (liveStartBtn && save && !browseMode) {
       const uid = liveStartBtn.getAttribute("data-inbox-live-start");
       if (uid) {
-        save = acknowledgeInboxNotification(save, uid);
-        inboxSelectedUid = save.inbox.notifications[0]?.uid ?? null;
-        paintGame();
+        runSimulationTask(() => {
+          if (!save) return;
+          save = acknowledgeInboxNotification(save, uid);
+          currentView = "Inbox";
+          inboxSelectedUid = newestVisibleLiveReportUid(save) ?? save.inbox.notifications[0]?.uid ?? null;
+        });
       }
       return;
     }
@@ -1138,6 +1237,55 @@ function paintGame(): void {
     }
     if (t.closest("[data-making-release]") && currentView === "Making") {
       ev.preventDefault();
+      return;
+    }
+    const makingTabPick = t.closest<HTMLElement>("[data-making-tab]");
+    if (makingTabPick && currentView === "Making") {
+      const tab = makingTabPick.getAttribute("data-making-tab");
+      if (tab === "songs" || tab === "goods") {
+        navigate(() => {
+          makingTab = tab;
+        });
+      }
+      return;
+    }
+    const goodsOrderBtn = t.closest<HTMLElement>("[data-goods-order-uid]");
+    if (goodsOrderBtn && save && !browseMode && currentView === "Making") {
+      const uid = goodsOrderBtn.getAttribute("data-goods-order-uid");
+      const item = save.goods_inventory.find((row) => row.uid === uid);
+      if (item) {
+        const amount = Math.max(0, Number(item.desired_amount ?? 0) || 0);
+        const totalCost = amount * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0);
+        const finances = save.finances as Record<string, unknown>;
+        const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+        if (totalCost > currentCash) {
+          addNotification(save, {
+            title: `Goods order blocked: ${goodsDisplayLabel(item)}`,
+            body: `Need JPY ${totalCost.toLocaleString("ja-JP")} to make ${amount} units, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
+            sender: "Operations",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `goods-order-blocked|${item.uid}|${currentIsoForNewLive()}`,
+          });
+          paintGame();
+          return;
+        }
+        finances.cash_yen = currentCash - totalCost;
+        item.stock = Math.max(0, Number(item.stock ?? 0) || 0) + amount;
+        addNotification(save, {
+          title: `Goods made: ${goodsDisplayLabel(item)}`,
+          body: `${amount} units completed. Production cost JPY ${totalCost.toLocaleString("ja-JP")}.`,
+          sender: "Operations",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          dedupeKey: `goods-order|${item.uid}|${currentIsoForNewLive()}|${amount}`,
+        });
+        paintGame();
+      }
       return;
     }
     const workspacePick = t.closest<HTMLElement>("[data-songs-workspace-tab]");
@@ -1215,6 +1363,15 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("input", (ev) => {
     const t = ev.target as HTMLElement;
+    const goodsDesiredInput = t.closest<HTMLInputElement>("[data-goods-desired-uid]");
+    if (goodsDesiredInput && save && !browseMode && currentView === "Making") {
+      const uid = goodsDesiredInput.getAttribute("data-goods-desired-uid");
+      const item = save.goods_inventory.find((row) => row.uid === uid);
+      if (item) {
+        item.desired_amount = Math.max(0, numberOrZero(goodsDesiredInput.value));
+      }
+      return;
+    }
     const programDurationInput = t.closest<HTMLInputElement>("[data-live-program-duration]");
     if (programDurationInput && save && !browseMode && currentView === "Lives") {
       const index = Number(programDurationInput.getAttribute("data-live-program-duration"));
@@ -1264,9 +1421,6 @@ function paintGame(): void {
           case "tokutenkaiEnd":
             newLiveForm.tokutenkaiEnd = value;
             break;
-          case "goodsLine":
-            newLiveForm.goodsLine = value;
-            break;
           case "tokutenkaiTicketPrice":
             newLiveForm.tokutenkaiTicketPrice = numberOrZero(value);
             break;
@@ -1275,9 +1429,6 @@ function paintGame(): void {
             break;
           case "tokutenkaiExpectedTickets":
             newLiveForm.tokutenkaiExpectedTickets = numberOrZero(value);
-            break;
-          case "goodsExpectedRevenueYen":
-            newLiveForm.goodsExpectedRevenueYen = numberOrZero(value);
             break;
           case "ticketPriceYen":
             newLiveForm.ticketPriceYen = numberOrZero(value);
@@ -1306,16 +1457,10 @@ function paintGame(): void {
           case "venue":
           case "tokutenkai_start":
           case "tokutenkai_end":
-          case "goods_line":
-            live[field] = value;
-            break;
           case "ticket_price":
           case "tokutenkai_ticket_price":
           case "tokutenkai_slot_seconds":
           case "tokutenkai_expected_tickets":
-          case "goods_expected_revenue_yen":
-            live[field] = numberOrZero(value);
-            break;
           default:
             break;
         }
@@ -1324,6 +1469,22 @@ function paintGame(): void {
           live.venue_uid = venue?.uid ?? null;
           live.location = venue?.location ?? "";
           live.capacity = venue?.capacity ?? live.capacity ?? null;
+        }
+        if (field === "venue" || field === "live_type") {
+          const goodsUids = Array.isArray(live.goods_uids)
+            ? (live.goods_uids as unknown[]).map((x) => String(x))
+            : String(live.goods_uid ?? "").trim()
+              ? [String(live.goods_uid ?? "").trim()]
+              : [];
+          live.goods_line = goodsUids
+            .map((uid) => goodsDisplayLabel(findGoodsByUid(uid)))
+            .filter(Boolean)
+            .join(", ");
+          live.goods_expected_revenue_yen = estimateCurrentLiveGoodsGross(
+            String(live.live_type ?? "Routine"),
+            String(live.venue ?? ""),
+            goodsUids,
+          );
         }
         paintGame();
       }
@@ -1349,6 +1510,47 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const t = ev.target as HTMLElement;
+    const liveGoodsPick = t.closest<HTMLInputElement>("[data-live-goods-pick]");
+    if (liveGoodsPick && save && !browseMode && currentView === "Lives") {
+      const uid = String(liveGoodsPick.getAttribute("data-live-goods-pick") ?? "").trim();
+      if (uid) {
+        const set = new Set(newLiveForm.goodsUids);
+        if (liveGoodsPick.checked) set.add(uid);
+        else set.delete(uid);
+        newLiveForm.goodsUids = [...set];
+        paintGame();
+      }
+      return;
+    }
+    const liveDetailGoodsPick = t.closest<HTMLInputElement>("[data-live-detail-goods-pick]");
+    if (liveDetailGoodsPick && save && !browseMode && currentView === "Lives") {
+      const live = selectedScheduledLiveRecord();
+      const uid = String(liveDetailGoodsPick.getAttribute("data-live-detail-goods-pick") ?? "").trim();
+      if (live && uid) {
+        const current = Array.isArray(live.goods_uids)
+          ? (live.goods_uids as unknown[]).map((x) => String(x))
+          : String(live.goods_uid ?? "").trim()
+            ? [String(live.goods_uid ?? "").trim()]
+            : [];
+        const set = new Set(current);
+        if (liveDetailGoodsPick.checked) set.add(uid);
+        else set.delete(uid);
+        const goodsUids = [...set];
+        live.goods_uids = goodsUids;
+        live.goods_uid = goodsUids[0] ?? "";
+        live.goods_line = goodsUids
+          .map((goodsUid) => goodsDisplayLabel(findGoodsByUid(goodsUid)))
+          .filter(Boolean)
+          .join(", ");
+        live.goods_expected_revenue_yen = estimateCurrentLiveGoodsGross(
+          String(live.live_type ?? "Routine"),
+          String(live.venue ?? ""),
+          goodsUids,
+        );
+        paintGame();
+      }
+      return;
+    }
     const liveToggle = t.closest<HTMLInputElement>("[data-live-toggle]");
     if (liveToggle && save && !browseMode && currentView === "Lives") {
       const field = liveToggle.getAttribute("data-live-toggle");
@@ -1490,7 +1692,7 @@ function paintGame(): void {
   });
 
   document.getElementById("btn-next-day")?.addEventListener("click", () => {
-    if (!save || browseMode) return;
+    if (!save || browseMode || simulationBusy) return;
     sortNotificationsInPlace(save.inbox.notifications);
     const unreadUid = oldestUnreadInboxUid(save.inbox.notifications);
     if (unreadUid) {
@@ -1506,16 +1708,18 @@ function paintGame(): void {
       paintGame();
       return;
     }
-    const beforeDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
-    save = advanceOneDay(save);
-    const afterDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
-    if (afterDate !== beforeDate) {
-      saveToSlot(AUTOSAVE_SLOT, save);
-    }
-    currentView = "Inbox";
-    inboxSelectedUid = save.inbox.notifications[0]?.uid ?? null;
-    resetNewLiveFormDefaults(newLiveForm.liveType);
-    paintGame();
+    runSimulationTask(() => {
+      if (!save) return;
+      const beforeDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
+      save = advanceOneDay(save);
+      const afterDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
+      if (afterDate !== beforeDate) {
+        saveToSlot(AUTOSAVE_SLOT, save);
+      }
+      currentView = "Inbox";
+      inboxSelectedUid = save.inbox.notifications[0]?.uid ?? null;
+      resetNewLiveFormDefaults(newLiveForm.liveType);
+    });
   });
   document.getElementById("btn-save")?.addEventListener("click", () => {
     if (!save || browseMode) return;

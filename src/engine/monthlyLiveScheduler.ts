@@ -4,6 +4,7 @@ import { getPrimaryGroup, getLetterTierFromGroup } from "../save/gameSaveSchema"
 import { addNotification } from "../save/inbox";
 import { addMinutesToHHMM, LIVE_TYPE_PRESETS, getVenuesCatalog, pickVenueForDesiredCapacity } from "./liveScheduleWeb";
 import { songsForDisplaySorted } from "../data/songDisplayPolicy";
+import { songCatalogDisplayLabel } from "../data/songCatalog";
 
 type LiveCountRow = {
   group_letter_tier: string;
@@ -310,7 +311,7 @@ function songTitlesForAutoLive(
   return songsForDisplaySorted(save.database_snapshot.songs)
     .filter((row) => String(row.group_uid ?? "") === groupUid)
     .slice(0, maxN)
-    .map((row) => String(row.title ?? row.title_romanji ?? "").trim())
+    .map((row) => songCatalogDisplayLabel(row))
     .filter(Boolean);
 }
 
@@ -375,9 +376,10 @@ function buildAutoLiveRow(params: {
     tokutenkai_expected_tickets: template.tokutenkaiEnabled
       ? Math.min(Math.max(24, template.tokutenkaiExpectedTickets), Math.max(40, Math.trunc((venuePick.capacity ?? desiredCapacity) * 0.4)))
       : 0,
-    goods_enabled: true,
-    goods_line: template.liveType === "Festival" ? "Festival goods booth" : "Cheki + venue goods",
-    goods_expected_revenue_yen: template.liveType === "Festival" ? 30000 : 45000,
+    goods_enabled: false,
+    goods_uid: "",
+    goods_line: "",
+    goods_expected_revenue_yen: 0,
     group: [groupName].filter(Boolean),
     group_uid: groupUid,
     status: "scheduled",

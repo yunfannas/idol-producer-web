@@ -4,6 +4,7 @@ import {
   getActiveFinances,
   getLetterTierFromGroup,
   getPrimaryGroup,
+  refreshStartupUpcomingLivesNotification,
 } from "../save/gameSaveSchema";
 import { addNotification, getBlockingNotification } from "../save/inbox";
 import type { DailyBreakdown, Finances } from "./types";
@@ -12,6 +13,7 @@ import {
   addCalendarDays,
   applyDailyClose,
   buildDailyBreakdown,
+  estimateLiveGoodsUnits,
   estimateVenueFee,
   normalizeFinances,
   monthlyBaseSalaryYenForGroupLetterTier,
@@ -58,6 +60,26 @@ export function combineIsoDateTime(dateIso: string, hhmmss: string): string {
   return `${isoDatePart(dateIso)}T${hhmmss}`;
 }
 
+function isoToComparableMs(isoLike: string | null | undefined): number {
+  const raw = String(isoLike ?? "").trim();
+  if (!raw) return 0;
+  const normalized = raw.includes("T") ? raw : combineIsoDateTime(raw, SIMULATION_DAY_START_TIME);
+  const parsed = Date.parse(`${normalized.endsWith("Z") ? normalized : `${normalized}Z`}`);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function keepCurrentDateMonotonic(
+  save: GameSavePayload,
+  previousIso: string | null | undefined,
+  nextIso: string | null | undefined,
+): void {
+  const prevText = currentSimulationIso({ ...save, current_date: previousIso ?? save.current_date } as GameSavePayload);
+  const nextText = String(nextIso ?? "").trim()
+    ? (String(nextIso).includes("T") ? String(nextIso) : combineIsoDateTime(String(nextIso), SIMULATION_DAY_START_TIME))
+    : prevText;
+  save.current_date = isoToComparableMs(nextText) >= isoToComparableMs(prevText) ? nextText : prevText;
+}
+
 function hhmmToMinutes(value: string): number {
   const m = /^(\d{1,2}):(\d{2})$/.exec(value.trim());
   if (!m) return 0;
@@ -91,6 +113,7 @@ export function createNewGameSaveFromScenario(
     managedGroupUid: opts.managedGroupUid ?? null,
   });
   ensureAutoBookedLivesThroughEndOfNextMonth(save);
+  refreshStartupUpcomingLivesNotification(save, save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01");
   save.current_date = combineIsoDateTime(save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01", SIMULATION_DAY_START_TIME);
   seedTodaysLiveBlockingInbox(save, save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01");
   maybeSeedMonthEndAutoBookPrompt(save);
@@ -117,7 +140,7 @@ function readPopFans(save: GameSavePayload): { popularity: number; fans: number;
 
 export function getBlockingNotificationForSave(save: GameSavePayload) {
   const cur = save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? "2020-01-01";
-  return getBlockingNotification(save.inbox.notifications, String(cur).split("T")[0]);
+  return getBlockingNotification(save.inbox.notifications, String(cur));
 }
 
 function formatTodaysLiveScheduleBody(
@@ -227,13 +250,20 @@ function durationMinutesFromLive(live: Record<string, unknown>): number {
 }
 
 interface SimulationEvent {
-  kind: "training_end" | "live_start";
+  kind: "training_end" | "live_schedule_notice" | "live_start" | "live_report_notice";
   iso: string;
   label: string;
   liveUid?: string;
   slotId?: string;
   idolUids?: string[];
   trainingBlocksByUid?: Record<string, number>;
+}
+
+function minutesToHHMM(totalMinutes: number): string {
+  const clamped = Math.max(0, Math.min(23 * 60 + 59, Math.trunc(totalMinutes)));
+  const hours = Math.floor(clamped / 60);
+  const minutes = clamped % 60;
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
 }
 
 function liveReportEndTime(live: Record<string, unknown>): string {
@@ -247,18 +277,23 @@ function liveReportEndTime(live: Record<string, unknown>): string {
 }
 
 function todaysLiveScheduleNotificationTime(lives: Record<string, unknown>[]): string {
-  let latest = "18:00";
-  let latestMinutes = hhmmToMinutes(latest);
+  let earliestMinutes = Number.POSITIVE_INFINITY;
   for (const live of lives) {
     const start = String(live.start_time ?? "").trim();
     if (!/^\d{2}:\d{2}$/.test(start)) continue;
     const minutes = hhmmToMinutes(start);
-    if (minutes >= latestMinutes) {
-      latest = start;
-      latestMinutes = minutes;
-    }
+    if (minutes < earliestMinutes) earliestMinutes = minutes;
   }
-  return latest;
+  if (!Number.isFinite(earliestMinutes)) return "17:00";
+  return minutesToHHMM(Math.max(hhmmToMinutes("08:00"), earliestMinutes - 60));
+}
+
+function liveReportNotificationTime(live: Record<string, unknown>): string {
+  return minutesToHHMM(hhmmToMinutes(liveReportEndTime(live)) + 60);
+}
+
+function hasNotificationWithDedupe(save: GameSavePayload, dedupeKey: string): boolean {
+  return save.inbox.notifications.some((row) => String(row.dedupe_key ?? "") === dedupeKey);
 }
 
 function tokutenkaiExtraMinutesForMember(live: Record<string, unknown>, ticketCount: number): number {
@@ -290,6 +325,10 @@ function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] 
     : [];
   const rosterUids = memberUids.length > 0 ? memberUids : save.shortlist.map((x) => String(x));
   const liveDaysInWeek = liveDaysInWeekForGroup(save, gid);
+  const todaysLives = (save.lives?.schedules ?? [])
+    .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+    .filter((live) => isoDatePart(String(live.start_date ?? "")) === todayIso)
+    .filter((live) => String(live.status ?? "") !== "played");
 
   const trainingBySlot = new Map<string, { iso: string; label: string; byUid: Record<string, number> }>();
   for (const uid of rosterUids) {
@@ -318,11 +357,20 @@ function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] 
     });
   }
 
-  for (const raw of save.lives.schedules) {
-    if (!raw || typeof raw !== "object") continue;
-    const live = raw as Record<string, unknown>;
-    if (isoDatePart(String(live.start_date ?? "")) !== todayIso) continue;
-    if (String(live.status ?? "") === "played") continue;
+  const noticeDedupe = `daily-lives|${gid}|${todayIso}`;
+  if (todaysLives.length > 0 && !hasNotificationWithDedupe(save, noticeDedupe)) {
+    const noticeTime = todaysLiveScheduleNotificationTime(todaysLives);
+    const noticeIso = combineIsoDateTime(todayIso, `${noticeTime}:00`);
+    if (isoTimeToMinutes(noticeIso) > nowMin) {
+      out.push({
+        kind: "live_schedule_notice",
+        iso: noticeIso,
+        label: "Today's live schedule",
+      });
+    }
+  }
+
+  for (const live of todaysLives) {
     const startTime = String(live.start_time ?? "").trim();
     const eventIso = combineIsoDateTime(todayIso, `${startTime || "18:00"}:00`.replace(/^(\d{2}:\d{2})$/, "$1:00"));
     if (isoTimeToMinutes(eventIso) <= nowMin) continue;
@@ -331,6 +379,21 @@ function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] 
       iso: eventIso,
       label: String(live.title ?? live.live_type ?? "Today's live schedule"),
       liveUid: String(live.uid ?? ""),
+    });
+  }
+
+  for (const raw of save.lives.results) {
+    if (!raw || typeof raw !== "object") continue;
+    const live = raw as Record<string, unknown>;
+    if (isoDatePart(String(live.start_date ?? live.date ?? "")) !== todayIso) continue;
+    if (live.report_generated_same_day === true) continue;
+    const reportIso = combineIsoDateTime(todayIso, `${liveReportNotificationTime(live)}:00`);
+    if (isoTimeToMinutes(reportIso) <= nowMin) continue;
+    out.push({
+      kind: "live_report_notice",
+      iso: reportIso,
+      label: String(live.title ?? live.live_type ?? "Live report"),
+      liveUid: String(live.live_uid ?? live.uid ?? ""),
     });
   }
 
@@ -382,6 +445,26 @@ function buildLiveReportData(live: Record<string, unknown>): Record<string, unkn
         })
       : [],
   };
+}
+
+function addLiveReportNotification(save: GameSavePayload, live: Record<string, unknown>, targetIso: string): void {
+  const uid = String(live.live_uid ?? live.uid ?? "");
+  const titleSeed = String(live.title ?? live.live_type ?? "Live");
+  const isFest = String(live.live_type ?? live.event_type ?? "") === "Festival";
+  const titlePrefix = isFest ? "Festival report" : "Live report";
+  addNotification(save, {
+    title: `${titlePrefix}: ${titleSeed}`,
+    body: buildLiveReportNotificationBody(live),
+    sender: "Operations",
+    category: "internal",
+    level: "normal",
+    isoDate: targetIso,
+    createdTime: `${liveReportNotificationTime(live)}:00`,
+    unread: true,
+    dedupeKey: `live-report-start|${uid}|${targetIso}`,
+    relatedEventUid: uid,
+    reportData: buildLiveReportData(live),
+  });
 }
 
 function subtractBreakdowns(a: DailyBreakdown, b: DailyBreakdown): DailyBreakdown {
@@ -560,7 +643,31 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       }
     }
     const ticketPrice = Math.max(0, Number(live.ticket_price ?? 0) || 0);
-    const goodsGross = Math.max(0, Number(live.goods_gross_yen ?? live.goods_expected_revenue_yen ?? 0) || 0);
+    const managedGroup = getPrimaryGroup(save);
+    const goodsUids = Array.isArray(live.goods_uids)
+      ? (live.goods_uids as unknown[]).map((x) => String(x))
+      : String(live.goods_uid ?? "").trim()
+        ? [String(live.goods_uid ?? "").trim()]
+        : [];
+    const goodsGross = live.goods_enabled
+      ? goodsUids.reduce((sum, goodsUid) => {
+          const goods = Array.isArray(save.goods_inventory)
+            ? save.goods_inventory.find((item) => item.uid === goodsUid) ?? null
+            : null;
+          if (!goods) return sum;
+          const goodsUnits = estimateLiveGoodsUnits(goods, {
+            liveType: String(live.live_type ?? ""),
+            capacity: Number(live.capacity ?? 0) || 0,
+            groupFans: Number(managedGroup?.fans ?? 0) || 0,
+            groupPopularity: Number(managedGroup?.popularity ?? 0) || 0,
+            groupTier: getLetterTierFromGroup(managedGroup),
+          });
+          if (goodsUnits > 0) {
+            goods.stock = Math.max(0, (Number(goods.stock ?? 0) || 0) - goodsUnits);
+          }
+          return sum + Math.max(0, goodsUnits * Math.max(0, Number(goods.unit_price_yen ?? 0) || 0));
+        }, 0)
+      : Math.max(0, Number(live.goods_gross_yen ?? live.goods_expected_revenue_yen ?? 0) || 0);
     const ticketGross = ticketPrice > 0 ? resolution.attendance * ticketPrice : 0;
     const tokutenkaiRevenue = estimateTokutenkaiRevenueYen(resolution.tokutenkai_actual_tickets);
     const played: Record<string, unknown> = {
@@ -597,23 +704,7 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       liveVenueFeeTotal,
     });
 
-    const titleSeed = String(played.title ?? played.live_type ?? "Live");
-    const isFest = String(played.live_type ?? played.event_type ?? "") === "Festival";
-    const titlePrefix = isFest ? "Festival report" : "Live report";
-    addNotification(save, {
-      title: `${titlePrefix}: ${titleSeed}`,
-      body: buildLiveReportNotificationBody(played),
-      sender: "Operations",
-      category: "internal",
-      level: "normal",
-      isoDate: targetIso,
-      createdTime: `${liveReportEndTime(live)}:00`,
-      unread: true,
-      dedupeKey: `live-report-start|${uid}|${targetIso}`,
-      relatedEventUid: uid,
-      reportData: buildLiveReportData(played),
-    });
-    played.report_generated_same_day = true;
+    played.report_generated_same_day = false;
   }
   save.lives.schedules = remaining;
   save.finances = finances;
@@ -663,6 +754,7 @@ function seedTodaysLiveBlockingInbox(save: GameSavePayload, targetIso: string): 
 /** Confirm inbox item: runs live start for Today's live schedule, otherwise marks read. */
 export function acknowledgeInboxNotification(save: GameSavePayload, notificationUid: string): GameSavePayload {
   const next = deepSaveCopy(save);
+  const beforeIso = currentSimulationIso(next);
   const item = next.inbox.notifications.find((n) => n.uid === notificationUid);
   if (!item) return next;
 
@@ -673,13 +765,17 @@ export function acknowledgeInboxNotification(save: GameSavePayload, notification
     const curIso = String(cur).split("T")[0];
     const todaysLives = scheduledManagedLivesForDate(next, curIso);
     if (todaysLives.length > 0) {
-      const reportTime = todaysLives
+      const liveEndTime = todaysLives
         .map((live) => liveReportEndTime(live))
         .sort()
         .at(-1) ?? "21:00";
-      next.current_date = combineIsoDateTime(curIso, `${reportTime}:00`);
+      next.current_date = combineIsoDateTime(curIso, `${liveEndTime}:00`);
     }
     archiveAndResolveManagedLivesForDate(next, curIso);
+    const reportTime = publishPendingLiveReportsForDate(next, curIso);
+    if (reportTime) {
+      next.current_date = combineIsoDateTime(curIso, `${reportTime}:00`);
+    }
   }
   if (dk.startsWith("auto-book-lives|")) {
     const monthStart = dk.split("|")[2] ?? "";
@@ -690,6 +786,7 @@ export function acknowledgeInboxNotification(save: GameSavePayload, notification
 
   item.read = true;
   item.requires_confirmation = false;
+  keepCurrentDateMonotonic(next, beforeIso, next.current_date);
 
   if (next.inbox.notifications.length > 500) {
     next.inbox.notifications = next.inbox.notifications.slice(-500);
@@ -721,13 +818,35 @@ function applyMorningRecovery(next: GameSavePayload, targetDateIso: string): voi
   }
 }
 
+function processLiveReportEvent(next: GameSavePayload, event: SimulationEvent): void {
+  const dayIso = isoDatePart(event.iso);
+  publishPendingLiveReportsForDate(next, dayIso);
+}
+
+function publishPendingLiveReportsForDate(next: GameSavePayload, dayIso: string): string | null {
+  let latestReportTime: string | null = null;
+  for (const raw of next.lives.results) {
+    if (!raw || typeof raw !== "object") continue;
+    const live = raw as Record<string, unknown>;
+    if (isoDatePart(String(live.start_date ?? live.date ?? "")) !== dayIso) continue;
+    if (live.report_generated_same_day === true) continue;
+    addLiveReportNotification(next, live, dayIso);
+    live.report_generated_same_day = true;
+    const reportTime = liveReportNotificationTime(live);
+    if (!latestReportTime || reportTime > latestReportTime) latestReportTime = reportTime;
+  }
+  return latestReportTime;
+}
+
 function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent): void {
   const idols = next.database_snapshot.idols as Record<string, unknown>[];
   const affected: string[] = [];
+  const conditionLines: string[] = [];
   for (const uid of event.idolUids ?? []) {
     const idol = idols.find((r) => String(r.uid ?? "") === uid);
     if (!idol) continue;
     const blocks = Math.max(1, event.trainingBlocksByUid?.[uid] ?? 1);
+    const beforeCondition = typeof idol.condition === "number" ? idol.condition : Number(idol.condition ?? 0) || 0;
     applyDailyStatusUpdateJson(idol, {
       trainingLoad: Math.min(20, blocks * 10),
       trainingHours: blocks * 4,
@@ -737,11 +856,18 @@ function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent):
       birthday: false,
       includeSleepRecovery: false,
     });
-    affected.push(String(idol.name ?? uid));
+    const afterCondition = typeof idol.condition === "number" ? idol.condition : Number(idol.condition ?? 0) || 0;
+    const delta = Math.round(afterCondition - beforeCondition);
+    const name = String(idol.name ?? uid);
+    affected.push(name);
+    conditionLines.push(`- ${name}: ${Math.round(beforeCondition)} -> ${Math.round(afterCondition)} (${delta >= 0 ? "+" : ""}${delta})`);
   }
   addNotification(next, {
     title: `${event.label} ended`,
-    body: `${isoDatePart(event.iso)} ${isoTimePart(event.iso)} · ${affected.length} idol(s): ${affected.join(", ")}.`,
+    body: `${isoDatePart(event.iso)} ${isoTimePart(event.iso)} ? ${affected.length} idol(s): ${affected.join(", ")}.
+
+Condition changes:
+${conditionLines.join("\n")}`,
     sender: "Training",
     category: "general",
     isoDate: isoDatePart(event.iso),
@@ -754,18 +880,19 @@ function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent):
 /** Legacy full-day advance path retained while event-step mode wraps it. */
 export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   const next = deepSaveCopy(save);
+  const beforeIso = currentSimulationIso(next);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
   const mc = memberCountFromSave(next);
   const group = getPrimaryGroup(next);
   const letterTier = getLetterTierFromGroup(group);
   const monthlySalaryTotal = mc * monthlyBaseSalaryYenForGroupLetterTier(letterTier);
 
-  const gameStart = next.game_start_date ?? next.scenario_context.startup_date ?? "2020-01-01";
-  const dayOffset = typeof next.turn_number === "number" ? next.turn_number : 0;
+  const currentIso = currentSimulationIso(next);
+  const currentDayIso = isoDatePart(currentIso);
 
   let finances = normalizeFinances(getActiveFinances(next) as Parameters<typeof normalizeFinances>[0]);
 
-  const targetIso = addCalendarDays(typeof gameStart === "string" ? gameStart : "2020-01-01", dayOffset);
+  const targetIso = addCalendarDays(currentDayIso, 1);
   /** Live stress applies only after Live Start (desktop); day-of advance keeps training load lower. */
   const liveCount = 0;
   const liveMinutes = 0;
@@ -830,11 +957,11 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   finances = applyDailyClose(finances, breakdown);
 
   next.finances = finances;
-  next.turn_number = dayOffset + 1;
-  next.current_date = targetIso;
+  next.turn_number = (typeof next.turn_number === "number" ? next.turn_number : 0) + 1;
+  next.current_date = combineIsoDateTime(targetIso, SIMULATION_DAY_START_TIME);
   applyScenarioEventsForDate(next, targetIso);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
-  seedTodaysLiveBlockingInbox(next, targetIso);
+  refreshStartupUpcomingLivesNotification(next, targetIso);
   maybeSeedMonthEndAutoBookPrompt(next);
   if (!next.scout.selected_company_uid) {
     next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
@@ -844,12 +971,15 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     next.inbox.notifications = next.inbox.notifications.slice(-500);
   }
 
+  keepCurrentDateMonotonic(next, beforeIso, next.current_date);
+
   return next;
 }
 
 /** Advance simulation to the next event today, otherwise to the next day 08:00. */
 export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   const next = deepSaveCopy(save);
+  const beforeIso = currentSimulationIso(next);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
   const nowIso = currentSimulationIso(next);
   const todayIso = isoDatePart(nowIso);
@@ -859,12 +989,17 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
     next.current_date = event.iso;
     if (event.kind === "training_end") {
       processTrainingEndEvent(next, event);
+    } else if (event.kind === "live_schedule_notice") {
+      seedTodaysLiveBlockingInbox(next, event.iso);
     } else if (event.kind === "live_start") {
       seedTodaysLiveBlockingInbox(next, event.iso);
+    } else if (event.kind === "live_report_notice") {
+      processLiveReportEvent(next, event);
     }
     if (!next.scout.selected_company_uid) {
       next.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
     }
+    keepCurrentDateMonotonic(next, beforeIso, next.current_date);
     return next;
   }
 
@@ -872,6 +1007,7 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   const targetIso = isoDatePart(dayAdvanced.current_date ?? currentSimulationIso(dayAdvanced));
   dayAdvanced.current_date = combineIsoDateTime(targetIso, SIMULATION_DAY_START_TIME);
   applyMorningRecovery(dayAdvanced, targetIso);
+  keepCurrentDateMonotonic(dayAdvanced, beforeIso, dayAdvanced.current_date);
   return dayAdvanced;
 }
 
