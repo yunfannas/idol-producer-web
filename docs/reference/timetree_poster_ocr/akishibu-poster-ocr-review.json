@@ -1,0 +1,479 @@
+{
+  "source_file": "public/data/timetree/akishibu-2025-07-2026-05.json",
+  "slug": "akishibu",
+  "generated_at": "2026-05-16T23:46:11.307Z",
+  "event_count": 8,
+  "instructions": "Set reviewer_venue to the correct catalog name (or null). Use extracted.* and auto_venue as hints. Re-import with timetree_poster_import_review.mjs when ready.",
+  "reviews": [
+    {
+      "date": "2025-07-06",
+      "event": "超NATSUZOME2025",
+      "type": "Festival",
+      "match_key": "2025-07-06|超natsuzome2025",
+      "timetree_id": "2704341962770563917",
+      "timetree_url": "https://timetr.ee/p/akishibu/2704341962770563917",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/844b/2025-05-18/0-1747550683337.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-07-06_2025-07-06_超natsuzome2025_0.jpg",
+          "ocr_text": "の SE\n5 維 に ママ で て 胃\n0 選\n4 避 、 ノ ウ\nビ [へ\n。 - 放 am 只 テー スリ 信\n2 の / ビー RGMES すさ\nッ ハ / ど YS 本 と 3 志 大 5 且 人 人 関目\n本 稚 多 孝 決 素 /\nON! /+COL / アキ シク project / AdamL 之 中\n_ 山 /GILTYXGILTY /CAL&RES\n2ZULTOMOTTO / テ ン シ ン ラン マン / TENRIN\nは US アパ ンティー\nテン 全 較 と 人 イ パ と ン スズ 研究 生 、/\nポン コツ コン ポ / MEGAFON/LADYBABY _\nトニ = 合 張 海浜 公園\n< エエ 7 [6 ニニ つう G ブ ロッ ク 特 設 会 場\n: C/ う 。 [ C つ open 09:00 /Start 10:00\n[は 本 者 所 ーー 朋 人 rY\n主催 : NATSUZOME2025 実行 委員 会",
+          "extracted": {
+            "venue_strings": [
+              "幕張海浜公園"
+            ],
+            "catalog_venues": [
+              "Festival"
+            ],
+            "dates": [
+              "2027-07-05",
+              "2027-07-06"
+            ],
+            "times": [
+              {
+                "kind": "open",
+                "value": "09:00"
+              },
+              {
+                "kind": "start",
+                "value": "10:00"
+              }
+            ],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 39
+        }
+      ],
+      "extracted": {
+        "venue_strings": [
+          "トニ = 合 張 海浜 公園"
+        ],
+        "catalog_venues": [],
+        "dates": [],
+        "times": [
+          {
+            "kind": "open",
+            "value": "09:00"
+          },
+          {
+            "kind": "start",
+            "value": "10:00"
+          }
+        ],
+        "ticket_urls": []
+      },
+      "suggested_venues": [
+        "トニ = 合 張 海浜 公園"
+      ],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": "幕張海浜公園 イベントブロック特設会場",
+      "reviewer_notes": "Outdoor; OPEN 09:00 START 10:00",
+      "agent_suggested_venue": "幕張海浜公園 イベントブロック特設会場",
+      "agent_confidence": "high",
+      "agent_notes": "Outdoor @ Makuhari Seaside Park event block"
+    },
+    {
+      "date": "2025-07-07",
+      "event": "単独定期-カラーチェンジ公演-",
+      "type": "Concert",
+      "match_key": "2025-07-07|単独定期-カラーチェンジ公演-",
+      "timetree_id": "2731320848469148037",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731320848469148037",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/4ced/2025-06-24/0-1750766815301.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-07-07_2025-07-07_単独定期-カラーチェンジ公演-_0.jpg",
+          "ocr_text": "上 ン 半 ド 。 mp 拉 ヘー テッ | る 志 和\nノリ の 導 ビ _ 記 間 に 生 且 5…・、.4\nトト) 人 四 記 旧作 間 上 韻 作 紀 鐘 較 ミー\n和夫 いる + っ 岬 闘 菩 | 層 < 人 開\nヾ 汗 』 央 膨 較 5 天上 征\nN ルン 生 人 ーー ee ーー か 三 放 者\nッッ 天 e レー ッ Je 回 め 2 公 244 は\n2 で レー ッ ン oe る 44 人 |\nっ て サイ 秋 め 1 7 ます の 鐘 る 矯 に に\nMg ロコ ゃ さて 幸 コ 0 し て 4 M で 由 選 。 3\nンー クル mm 直る 00 ME 用\n委 。 人 だ ラ 3 ー ニ : 1 2 | 科 に ーー 議 ゃ も\n| 上 HL 用 「 旋 品 、 ーー 多 相 師 」 生 3\n7 だ だ 六 ニーw 所 こき = ラッ\n誠志 半 。 ハバ ! は\nul oo NGO で 。 .10- _ 一 チェ ンジ 公 雀 -\nQ】KISNniE 定期 公演 v。mso ーー チェ ンジ 公演\nzz / グ ンク 2025.07.07 ②SHIBUYA DIVE\n前 方 : \\4,000 (写メ 人 券 付 き ) 一 般 ・ \\1,000",
+          "extracted": {
+            "venue_strings": [
+              "SHIBUYA DIVE 前 方",
+              "SHIBUYA DIVE"
+            ],
+            "catalog_venues": [
+              {
+                "name": "SHIBUYA DIVE",
+                "uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+              }
+            ],
+            "dates": [
+              "2025-07-07"
+            ],
+            "times": [],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 24
+        }
+      ],
+      "extracted": {
+        "venue_strings": [
+          "SHIBUYA DIVE 前 方",
+          "SHIBUYA DIVE"
+        ],
+        "catalog_venues": [
+          {
+            "name": "SHIBUYA DIVE",
+            "uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+          }
+        ],
+        "dates": [
+          "2025-07-07"
+        ],
+        "times": [],
+        "ticket_urls": []
+      },
+      "suggested_venues": [
+        "SHIBUYA DIVE 前 方",
+        "SHIBUYA DIVE"
+      ],
+      "auto_venue": "SHIBUYA DIVE",
+      "auto_venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
+      "auto_confidence": "high",
+      "reviewer_venue": null,
+      "reviewer_notes": "",
+      "agent_suggested_venue": "SHIBUYA DIVE",
+      "agent_confidence": "high",
+      "agent_notes": "OCR: 2025.07.07 @ SHIBUYA DIVE"
+    },
+    {
+      "date": "2025-07-19",
+      "event": "関ケ原歌姫合戦2025",
+      "type": "Festival",
+      "match_key": "2025-07-19|関ケ原歌姫合戦2025",
+      "timetree_id": "2712421791873057624",
+      "timetree_url": "https://timetr.ee/p/akishibu/2712421791873057624",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/c98c/2025-06-01/0-1748752472130.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-07-19_2025-07-19_関ケ原歌姫合戦2025_0.jpg",
+          "ocr_text": "きも ルル 上 上 アイ ビル フェス を 3 D A Y S 開 仙 リポ 1 1 回 目 の 唄 姫 合 戦 は 、 さ ら に 勢 い リョ\n外 ケ さ o05& る 会 雪\nで に 【 =] ジ\nSEKTGA4ARA TDOL VARS 2D25\n| m、 ド ペー m 画 画 画 画 画 画\nに - 因 融 > | ご 思 た\n記 箇 内 邊 画 画 7 く に に 販 中 に 島 「 軍 画\n衝 xt 必 所 人 箇 ビア 7 証 了 い 、 こい | 有朋 wi 必 知 只 四 |\nUK ビス に NN 朋 < 画 画 臣 Ll い ド 世に に |\n画 放 トミ FFPE 画 上 上 M て に ビリ 」 較 画\n画 画 ペロ 由 | | 画 画 画 、 や コア\n十 ロロ 半 ここ 作 較 d ーー ビ ビ ロ 十\n則 首 WWW 生前 骨 洒 | aa mA AmAI\n「 ー ー 一 。 | に ー 。 ーー 出\n0 王 盾 0 計ら 居 ソー マ 誠 の\n人 い が S な 6 に つる 6.、\nまく が 計 8 寺 0 電 2 ご > に 8 只 e 4\nの 関す 全 WS の ol が に mi\nは を すき る に て まき へ まま る さぶ 較 語 了 ノ ウト が イト 入 0\nーー トト ミン ンー \"ご \"- 「 隊 SN 作っ\nye 貞 像 トー ーッ 間\n5 」 で ゅ 導 に 、 ーー\n周 eo の ン 。 (ST 本 員 貞 に 血 | 右 多 | 2 人 才 多 の / テ ター 症 g 仁 . 替\nの Eo Mem の AB 久 A\n隊 攻 い / 記 。 略語 MWL 和 AT 用 」 | N 人 だき)\n7 層 Wi い し ニン ラド 人 訂 | の で レール 5 人 昌\n0 V Ma いき ンー ョ 2 倉 / WW W Mi と で > 4 め , 。 | を\nがい リリ ペ 5 和 ue ニ ーー 天\nの 者 放 に の ッッ リソー 詳 計 た. 作\nと の い いい 0 て 錠 誠 日 認 旨 央 E 7 電 放 /\nSE 人 め る 各 な で 導 が ああ 寺 すさ 4 2\nーー クジ ク グ 2 間 。 < みね さ ク ネ ら , % た ッ 邊 4",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [],
+            "times": [],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 25
+        }
+      ],
+      "extracted": {
+        "venue_strings": [],
+        "catalog_venues": [],
+        "dates": [],
+        "times": [],
+        "ticket_urls": []
+      },
+      "suggested_venues": [],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": "桃配運動公園",
+      "reviewer_notes": "1673-11 Nogami, Sekigahara, Gifu; outdoor",
+      "agent_suggested_venue": "桃配運動公園",
+      "agent_confidence": "high",
+      "agent_notes": "SEKIGAHARA IDOL WARS @ 桃配運動公園"
+    },
+    {
+      "date": "2025-07-27",
+      "event": "HEROINES SUMMER",
+      "type": "Taiban",
+      "match_key": "2025-07-27|heroines summer",
+      "timetree_id": "2731340956314845874",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731340956314845874",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/b944/2025-07-12/0-1752301662414.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-07-27_2025-07-27_heroines summer_0.jpg",
+          "ocr_text": "こさ | ドー 、 1 2 pl か\nン に に リロ 1 由 1 リ | ワ 、、\nる (2 ) NN 、 ゴ トー 只 暫 | 1\n】 4 』 本 ご 4 ッッ ャ マー マ ャ ママ  g\n人 久 2 た :\n9 の 【0]\nる に] [= (一 |\n人 @ コ 【』 デ\n必 ーW\" ィ 庫 謙 用 リフ リッ ドレ ジャ ー ラ ンド\n+ @ 枯 品 割 着 cs 回 刻 ジ が テマ ッッ マー\nの BEN 店 00 が OO 還 / 症 証 S ま AR 詳 半 上 凍 OO\n| // 2days 出 演 グ ルー プ // | 和\n5 て ニー デン デミ ーー | で 衣\n[ 才 が いち: る この 5 半 「N :\n攻 2 メー ーー を 、 直 党 まあ 。 倫 A 選 / ミ\nに リズ 記 5 生 谷井 HE と 放 誠\nた 3 : 和 の 琴 0\nwm 過 3 いい 2 に\nLE 宙 各 8 っ そい ぃ いた 目 どど) ドッ 誰 い 赤 > |\n9 iLirEi__ ゆめ 目 7 の ん ぶ ぃ く ! る 関 る の 婦 光 性 アミ ュー ズ |\nて. 誤 所 全 Po 見 _ 間 画 中 5 目 iP 目 』\n回 二 5 知 還 - ガ ー ニ 」、。。。 | 人 導 0 語\n計 い 帳 テ | 由 時 ge ウッ に が\nだ ンー ーッ 目 隊 身 語 和 Y 放 ーッ 1 作ら\nを ンー: 目 性 半 癌 得る 2 鐘 や で 放\nlg vecAroN_ や 目 る TENRIN 5 目 AdaomLiiith 5 目 る ドレ スコ ー ド や め 間 0 ioni__ ml |\n5 ーー ーー ーー コー ーー\n| 多 0 科 5Iesteadl で と sy | 関 和 キー |\n選 き 明 目 と で お )/ ゃ 1 ( 才\n内 詳 | \"て ペア 1\nef GiLTrYxoGiLTrY *el| EE 生 計り 村 *@| に ぁ ポン コッ コン ホ 光 目 7 バラ ティ ー ク やゆ 目 ず テン シン ラン マン や あ 症 :、 CALSRES__ ゆ 間 7 と ロイ ンズ 刀 生 9|\n「// ラロ ョ メッ クー // |\n本 季 4 庫 生 答 - 当 | 3 8 生 ク の 3 時 電 時 帳 | 症 zg ご 生 有 ヨ PF 部 $\n0 マテ | を な 2 導き 作 八 | し 2\n好い 区 | トド 剛 い | 選 で 0 。 問 | 4 1 烈 横\n9 CoL 革 | | アァ ェ ッッ projec | 19 ナナ コロ ヒヤ ャ オキ | 8: LApv5 ABY _ や あ 目 @* ZUTTOMoOTTo | 9 バラ レル ライ ター | E 衝 chura |\n2 HEROINES SUMMER 2025 ダ が に の に 0 く 計時\n@ 東 誌 動物 公園 イベ ント ステ ー ジ HOLA! 4 ( 約 7 補\nDAY1 : 7 月 26 日 ( 土 ) / DAY2 : 7 月 27 日 (日 ) ンタ ング さ ン で\nOPEN 10:00 / START 11:00 の イー\n(東吉 生物 公園 9:30 開 国 ) ーー タタ 回 86” の すさ め\nーー 4\nで 天 つ Oiー 作 で ブー 枯\n< ペッ",
+          "extracted": {
+            "venue_strings": [
+              "東武動物公園",
+              "東武動物公園 イベントステージ HOLA!",
+              "枯 品 割 着 cs 回 刻 ジ が テマ ッッ マー の BEN 店 00 が OO 還",
+              "東 誌 動物 公園 イベ ント ステ ー ジ HOLA",
+              "@ 東 誌 動物 公園",
+              "(東吉 生物 公園"
+            ],
+            "catalog_venues": [],
+            "dates": [],
+            "times": [
+              {
+                "kind": "open",
+                "value": "10:00"
+              },
+              {
+                "kind": "start",
+                "value": "11:00"
+              }
+            ],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 29
+        }
+      ],
+      "extracted": {
+        "venue_strings": [
+          "東武動物公園",
+          "東武動物公園 イベントステージ HOLA!",
+          "枯 品 割 着 cs 回 刻 ジ が テマ ッッ マー の BEN 店 00 が OO 還",
+          "東 誌 動物 公園 イベ ント ステ ー ジ HOLA",
+          "@ 東 誌 動物 公園",
+          "(東吉 生物 公園"
+        ],
+        "catalog_venues": [],
+        "dates": [],
+        "times": [
+          {
+            "kind": "open",
+            "value": "10:00"
+          },
+          {
+            "kind": "start",
+            "value": "11:00"
+          }
+        ],
+        "ticket_urls": []
+      },
+      "suggested_venues": [
+        "東武動物公園",
+        "東武動物公園 イベントステージ HOLA!",
+        "枯 品 割 着 cs 回 刻 ジ が テマ ッッ マー の BEN 店 00 が OO 還",
+        "東 誌 動物 公園 イベ ント ステ ー ジ HOLA",
+        "@ 東 誌 動物 公園",
+        "(東吉 生物 公園"
+      ],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": null,
+      "reviewer_notes": "",
+      "agent_suggested_venue": "東急動物公園 イベントステージ HOLA!",
+      "agent_confidence": "medium",
+      "agent_notes": "OCR: 東急動物公園 イベントステージ HOLA!; DAY1 7/26 DAY2 7/27"
+    },
+    {
+      "date": "2025-07-30",
+      "event": "SWEET SUMMER 2025",
+      "type": "Festival",
+      "match_key": "2025-07-30|sweet summer 2025",
+      "timetree_id": "2731319490907160815",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731319490907160815",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/2cdc/2025-06-24/0-1750766655466.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-07-30_2025-07-30_sweet summer 2025_0.jpg",
+          "ocr_text": "。、 天\n7 人 多\n人 上 々 2\n: Ss\nーー こ ーー ア ーー ーー ーー ーー\nーー 梅 YYV ヨ 所 ・\nロ K t が / 一 1 ーー\n同人 由 困 ンク ピ ウツ ララ 邊 う セ 細 半\n. マ 2 。 ge 導 に の で\nャ {て ト う 。 内 一 タ\n本 人 の も 9 の も る 導 ラ る る 補 (に\n、 ング 昌 半 半\nき の 25 滋 |\nに 時 肛 プ みお づ 鉛\n還 直 を ド ご 手 全 間\nいい アデ\nに う ! 上\nーー て\n導 IE mm\n| ーー 4 くう 罰 。 | へ 理 本 | 恒\n上\n中 用 5 詳 馬 首 j | 由\n由 L 放 <08 あし 褒 い て 。 W 交 [| 日\nSn 才 久 人 菜美 0 4 に\n0 人 あ 全 7 0 四 |\nvg まき\nの 0 (PA ps Aa る 5 飽和 MI\n4 8 と 竹馬 か VO の ん で す 陰 こう Ns で\nし 入ら か 六 ベー 4 0 ビ 人 要 て ぴ 1 へ 2 時 が ト テー 日\nで さこ 介 6 の る A 記 。 を 0 導き\n生沢 作 \"2 2 ッ 導 仙\nmh 全 可 用 72 導 | の つら\n1 半 枯 逢 記 < 1\nーー ーー 一 ゃ - に",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [],
+            "times": [],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 19
+        }
+      ],
+      "extracted": {
+        "venue_strings": [],
+        "catalog_venues": [],
+        "dates": [],
+        "times": [],
+        "ticket_urls": []
+      },
+      "suggested_venues": [],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": "渋谷（複数会場フェス）",
+      "reviewer_notes": "Multi-venue festival — single `venue` is area summary; see `venues[]` for halls. Not one physical room.",
+      "agent_suggested_venue": "渋谷（複数会場フェス）",
+      "agent_confidence": "high",
+      "agent_notes": "Festival across 3 venues in 渋谷",
+      "venue_mode": "multi_venue_festival",
+      "venue_area": "渋谷",
+      "venues": [
+        "WWW X",
+        "Veats SHIBUYA",
+        "SHIBUYA VIDENT"
+      ]
+    },
+    {
+      "date": "2025-09-07",
+      "event": "平沢かえ生誕祭2025",
+      "type": "Birthday",
+      "match_key": "2025-09-07|平沢かえ生誕祭2025",
+      "timetree_id": "2682813522271748158",
+      "timetree_url": "https://timetr.ee/p/akishibu/2682813522271748158",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/c4eb/2025-07-29/0-1753767274952.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-08-07_2025-08-07_平沢かえ生誕祭2025_0.jpg",
+          "ocr_text": "の 5 の\n/ ム CT 1 に で ら )\nっ 赤 N 志 記 当 計\n加 シン\nノー 6 記 。\n隊 め Speeial の 2 合い 、 。\nの 、\n( 作 途 。\n0\nる kw 演 、\n放り の\nの が くき\nバラ の\n人 選定 ンー\nか ZN 天 炎 和 ,\n2025.09.97 5\n@SIHHIBUVA DIWE 『\n・ 最 前 ・ \\ 15,000 最前 列 ・ 生 認 T・ コ メン ト 入 り カ ー ド ・ 前 物販 参加 券 ・ 一 部 撮影 可能\n・ 前 方 : \\6,000 前 方 エリ ア ・ サ イン 入り カー ド ・ 前 物販 参加 券 ・ 一 部 撮影 可能\n・ 一 般 :・ \\2,000 一般 エリ ア _ ・ 前 物販 参加 券 : \\1,000",
+          "extracted": {
+            "venue_strings": [
+              "SIHHIBUVA DIWE"
+            ],
+            "catalog_venues": [],
+            "dates": [
+              "2025-09-97"
+            ],
+            "times": [],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 54
+        }
+      ],
+      "extracted": {
+        "venue_strings": [
+          "SIHHIBUVA DIWE"
+        ],
+        "catalog_venues": [],
+        "dates": [
+          "2025-09-97"
+        ],
+        "times": [],
+        "ticket_urls": []
+      },
+      "suggested_venues": [
+        "SIHHIBUVA DIWE"
+      ],
+      "auto_venue": "SHIBUYA DIVE",
+      "auto_venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
+      "auto_confidence": "high",
+      "reviewer_venue": "SHIBUYA DIVE",
+      "reviewer_notes": "Birthday solo (平沢かえ生誕祭); poster 2025-09-07; was TimeTree placeholder 2025-08-07",
+      "agent_suggested_venue": "SHIBUYA DIVE",
+      "agent_confidence": "high",
+      "agent_notes": "OCR: @SHIBUYA DIVE 2025.09.07 — member birthday special, not a regular unit live"
+    },
+    {
+      "date": "2025-08-17",
+      "event": "IDOLEAD",
+      "type": "Festival",
+      "match_key": "2025-08-17|idolead",
+      "timetree_id": "2768079153585406714",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768079153585406714",
+      "note": "🌟お目当て特典：写メ券\n🎟 ticketvillage.jp/events/13490",
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/dbc6/2025-08-14/0-1755148748704.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-08-17_2025-08-17_idolead_0.jpg",
+          "ocr_text": "ーー\nルー ご 7 ぐ * て El | | Fー モ\n本 呈 ? | ! 」 『 みあ | | | | | 1 |\nゆい 呈 上 宮 ンー :\ndd 了 。 導 盆 更 了 W へ へ\n\" )\nに 較 | | 上 & 多き 1 リー ルン\n1 1 5 1\n間 還 | 人 |\n幸 ミニ に 」 雪 に ィ W\n』 1 「 』\n上 。 作 のり ろ 25: )\n用 E 《 導\n時 人 索 伏 こっ 。 ーー 一 ・\n人 で っ 生 由 み m で 1 怠 2 半 李 : A 上 | ス T | 條 at 人 欠\n202 誠 還 メロ 0 枯 人 剛 。 A4AA5A2 婦人 た 法 | 。 放\nの 作 5 の 2 の 科 アッ\noy 時 放\nで の の 各 史 て の 2v デン に WW が OO No nn ag の\nの 7 0 aaA 間 夫 二 07\n2 を 0 吉 スール 関 < て の り 導 誠\nPS2AAaAP SGL AAA\n0 間 ョ rr 人 抽 活 4 8 し 滞 外 274 あ 。\nニー 2 6 人 @@ 人 る の 人 A 6 AA 外角",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [],
+            "times": [],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 21
+        }
+      ],
+      "extracted": {
+        "venue_strings": [],
+        "catalog_venues": [],
+        "dates": [],
+        "times": [],
+        "ticket_urls": []
+      },
+      "suggested_venues": [],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": "白金高輪SELENE b2",
+      "reviewer_notes": "Aug 2025 edition (not 2026 キネマ倶楽部)",
+      "agent_suggested_venue": "白金高輪SELENE b2",
+      "agent_confidence": "high",
+      "agent_notes": "IDOLEAD 2025-08-17 @ 白金高輪SELENE b2"
+    },
+    {
+      "date": "2025-08-31",
+      "event": "単独公演-夏感謝祭SP-",
+      "type": "Concert",
+      "match_key": "2025-08-31|単独公演-夏感謝祭sp-",
+      "timetree_id": "2768087674825687117",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768087674825687117",
+      "note": null,
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/a2aa/2025-08-16/0-1755344688323.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/akishibu/2025-08-31_2025-08-31_単独公演-夏感謝祭sp-_0.jpg",
+          "ocr_text": "| に 、 ッ 用 ーーー 一 一 一\n| 『 二 計 区 = 5 是 ロ Nm\nデア 人 へ リア 2 瑞 = ーー っ 0\nレ い に 、 bk で 訂 間 。 。 g て\n締 / 寺 / 山 い いい を 上 7 仙 ( い \\W\nて いさ 甘い * き U 上 過 / L いい き WW 人 山 い 横 NM AT\nゆ : 5 2 ・ 志 い 《 選 の ・ だ 生 陸 、 電 、 る : ト\nJ 上 g 』 ペ トド + ( 導 8。、 まく 骨 < 】\n人 多 人 あ 信 6 ハー 2 ーー < - 一 M\n3 J が d 昌 4 2 7 。 Pb _ 較 3 幸 包 ああ\n提 4 。 < 師 、 < 誠 ピピ 記 4 也 、> *\nノン ッ 作 < 4 ーー ング 、 し 、 往 旭 アグ 兆\nン ? ぃ の べべ 導 志 、 分 > っ 匠 作品 年 F  * き - :\n4 | 肢 軍 の セン 八 | すす で 導 生 所 和 」  。- 押 ア c 稚 、 生生\n/ 県 て | グ / 4 ペッ 、 * 、 N Na (| プ - 8 / 居 Se | Ns \\\nルレ 学 捕 幅 2 時 ん パル ガー 半 。 低 。 上 用 人 大 。 た 人 入 き ジ\noe 需 了 ドー ルー 選 全 の る , 條 、』 選 を 際 目 党 0 選 有 きり |\n' 鐘 ーー 才 と 名 夫 本 > 本 人 條 、1. し 40 療 ・ ン ン\nぁ リ B 人 『 、 下 ー ダ ~ 3 【。 旬 2 靖 横 馬 放\nメッ | 兆 『 / 照 要 リー 「S いし g』 すす 中\n緊急 単独 公演 5 央 5\n1 oo Go 。 5 @SHIBUYA VIDENT\n'dKISNIDu き\nーー / し 8 月 31 日 (日 ) 開場 15:30/ 開 演 16:00\n$\nリ 前 方 ・\\4,000 (写メ 券 付 き ) 一 般 : 無銭",
+          "extracted": {
+            "venue_strings": [
+              "SHIBUYA VIDENT"
+            ],
+            "catalog_venues": [
+              {
+                "name": "SHIBUYA VIDENT",
+                "uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+              }
+            ],
+            "dates": [],
+            "times": [
+              {
+                "kind": "open",
+                "value": "15:30"
+              }
+            ],
+            "ticket_urls": []
+          },
+          "ocr_confidence": 27
+        }
+      ],
+      "extracted": {
+        "venue_strings": [
+          "SHIBUYA VIDENT"
+        ],
+        "catalog_venues": [
+          {
+            "name": "SHIBUYA VIDENT",
+            "uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+          }
+        ],
+        "dates": [],
+        "times": [
+          {
+            "kind": "open",
+            "value": "15:30"
+          }
+        ],
+        "ticket_urls": []
+      },
+      "suggested_venues": [
+        "SHIBUYA VIDENT"
+      ],
+      "auto_venue": "SHIBUYA VIDENT",
+      "auto_venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b",
+      "auto_confidence": "high",
+      "reviewer_venue": null,
+      "reviewer_notes": "",
+      "agent_suggested_venue": "SHIBUYA VIDENT",
+      "agent_confidence": "high",
+      "agent_notes": "OCR: @SHIBUYA VIDENT 2025-08-31 開場15:30"
+    }
+  ]
+}

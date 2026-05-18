@@ -1,0 +1,325 @@
+{
+  "source_file": "public/data/timetree/ilife_official-2025-07-2026-05.json",
+  "slug": "ilife_official",
+  "generated_at": "2026-05-18T00:10:56.781Z",
+  "event_count": 3,
+  "instructions": "Set reviewer_venue to the correct catalog name (or null). Use extracted.* and auto_venue as hints. Re-import with timetree_poster_import_review.mjs when ready.",
+  "reviews": [
+    {
+      "date": "2025-09-20",
+      "event": "バンドじゃないもん！MAXX NAKAYOSH pre.「NAKAYOSHI FES.2025」",
+      "type": "Festival",
+      "match_key": "2025-09-20|バンドじゃないもん!maxx nakayosh pre. nakayoshi fes.2025",
+      "timetree_id": "2790041378255903209",
+      "timetree_url": "https://timetr.ee/p/ilife_official/2790041378255903209",
+      "note": "9月20日は！「NAKAYOSHI FES.2025」に出演いたします❤︎\n\n仲良しパワー全開で盛り上がろうね꒰ ᐡᴗ͈ ·̫ ᴗ͈ ꒱ ♡\nbyみき\n\n🎫本日20時より一般販売開始！\nhttps://w.pia.jp/t/nakayoshifes2025/",
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/1f8c/2025-09-13/46438-1757766848715.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-09-20_2025-09-20_バンドじゃないもん!maxx nakayosh pre. nakayosh_0.jpg",
+          "ocr_text": "ーッ ーー ジー 語 誠 。 。\nmi 合 , 居 早 : 介 ] 5 人\nーー ヨ 到 うっ 人 0 ああ 放 由\nvwvy が く 0 に フー ンク 千 休 W 害 j 』 、 Eo\nまさ 人 で の > 物語 こき た で きい Nai 隊 人 』\n人 つる 四 め ちく |\n2 ん 上 りき が いと\n6 M で 寺 作用 の Ca リリ シ 条 d\n( マン ブー 120 で 2 補 ぐ 5 た の 2 2 ッッ ト で 放 キ デ\nーー 5 寺 いい\niLiFE!/MyDearDarlin /chuLa\n電 痛 部 池袋 電 音 部 (イケ ブクロ エリ ア )\n二 丁 目 の 事 力 ミ ング アウ トノ /TENRTIN\nfeeINEO/LADYBABY/OLNew\n点 貸 テン セイ 少女 。/metarium/ マ ー キ ュ ロ\nTEAR DROP!/BUNGEE GUM.\nヒロ イン スズ 研究生 /STAiNY/DYNAMAX\nポン コツ コン ボ / ド レス コー ド /AdamLiLith\nパラ レル サイ ダー/ZUTTOMOTTO\nCAL&RES/ テ ン シ ン ラン マン\nOO\n21O)215】 年 $ ヲ 2 日 【( 仁 り\nSpotifu Oo-EAST/Spotifu O-WEST/Spotifu Oo-nest\nduo MUSIC _ EXCHANGE/WOMBLIVE/clubasis etc..…",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:9-20"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://w.pia.jp/t/nakayoshifes2025/"
+            ]
+          },
+          "ocr_confidence": 42
+        },
+        {
+          "poster_index": 1,
+          "source_url": "https://attachments.timetreeapp.com/public_event/f617/2025-09-13/46438-1757766849777.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-09-20_2025-09-20_バンドじゃないもん!maxx nakayosh pre. nakayosh_1.jpg",
+          "ocr_text": "シコ 「  / こ 。 ング 、、 >\n作詩 肘 : エ 台\n「。 峰 上 。 選 2 誠 和 ]\n2 て コ ョ ーー ィ 8 に / 補う | 1 | ア 、 上 / eop か で ー <\nーー 謙 癌 絡 」 選 区 う 導 語 較 て\n意 和 と 6 に 誠 う ( 失 や\nロー ーー ^ / 必\n2707215[ 年 (9 且 21QO】E【(E)\nSpGtiuOEEASiT ル ん SpoiimuO=sWMESTm4SDOtihu 記 0O=n6S\n(duoPMIUS1IC 半 EXCHANGEMWOKMIBUIVEKZGlIuboS19 選 CC 環 前",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:9-20"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://w.pia.jp/t/nakayoshifes2025/"
+            ]
+          },
+          "ocr_confidence": 13
+        }
+      ],
+      "extracted": {
+        "venue_strings": [],
+        "catalog_venues": [],
+        "dates": [
+          "month-day:9-20"
+        ],
+        "times": [],
+        "ticket_urls": [
+          "https://w.pia.jp/t/nakayoshifes2025/"
+        ]
+      },
+      "suggested_venues": [],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": null,
+      "reviewer_notes": ""
+    },
+    {
+      "date": "2025-10-11",
+      "event": "Life Like a Live!10～ハイテンションハロウィン～",
+      "type": "Festival",
+      "match_key": "2025-10-11|life like a live!10~ハイテンションハロウィン~",
+      "timetree_id": "2806062630703569701",
+      "timetree_url": "https://timetr.ee/p/ilife_official/2806062630703569701",
+      "note": "10月11日は！「Life Like a Live!10～ハイテンションハロウィン～」に出演いたします❤︎\n\n遂にiLiFE!バーチャル世界で初めてのライブをするよ！♡\n\n🎫販売中！\nhttps://zan-live.com/ja/live/detail/10675",
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/80d4/2025-10-05/46438-1759676720875.png",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_0.png",
+          "ocr_text": "(てい 本 洛 半 いい の る 、 い いい に て だ\n0 を 放電 に: ん せ\nロー つい つの\nの 0 生 さす\nを 194 SS る\nパー) 短い っ の 意向 W\n必 の を と 。 て な な 人 隊 が\nが 仙 Oi た\nて ンー 生 め RT  ^ 宅 2 才 。 衝\n7 Lee\n問 に ーー の ーー てい に",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 11
+        },
+        {
+          "poster_index": 1,
+          "source_url": "https://attachments.timetreeapp.com/public_event/aaf7/2025-10-05/46438-1759676722363.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_1.jpg",
+          "ocr_text": "_。、\nーー 絵 ザー コラ\n日 之 の 7 (用\n品 LN 6 。 埋 イク \\/\n明生 2 る / 3\n. 計 人 で 人 詞 <\n| パン ジェ 夫 ジジ パ き\n. きく\n正 ビッ か ) 人 な\nュ ン 。。 宛 0 / ば て\nに 1 問 距 輪 / を 上\n日 上 重 0 旧い\nいい ' 臣 華 に 人 作\n・ 肢 多 ンス\n1 、 まい N に リ ーー s\n上 \\ で っ ン の いい の N 1\n] ) ーー し て 』\n[ 4 グッ Wa\n隊 N ンク ジグ 1\nミン いや 年 い ペー\n必 ダン ーー 7 ママ 0 |\n| 四 科 が 信和 失 ニン 紅 7 こき 者\nww _' 変 選 5 。 ケン ング LN 0 誰 い 7A\n| 衝 5 だき 電 だ 68 いい の な お い い\nン ン て いび が (U (U\n財 kg リリ\n: k か 1 話 准 ぶ 私 朗 (LiFE リ\n陸 ン の 全 ・ 3 メ\n: アタ パッ る ーー\nンマ 2 の の トーン\nーー で が 人 めじ 上\n4 Y @ 多 ア ー | 5 、 ん 江 2 \"\nな MG 性 の\n。 へ 雪 性 ) ゆ ヽ ン ペ ーー ペン 刈 5@&@ ふい あ\n人 、. @ こ る 間 ロ / 信 涯\n誠人 の 人 和 0 Pa の の\n7c5 に 5 倫 上 ン リ\nて ンジ シン 伯 ここ 有 /\nーー 生 寺 に ーー\nーー [あさ 只 こ ーー 2 天 M 『 5 みみ 汗 内 い 。 。\nに いや の iLiFE!",
+          "extracted": {
+            "venue_strings": [
+              "多 ア ー",
+              "こ る 間 ロ"
+            ],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 20
+        },
+        {
+          "poster_index": 2,
+          "source_url": "https://attachments.timetreeapp.com/public_event/d4b7/2025-10-05/46438-1759676723747.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_2.jpg",
+          "ocr_text": "導 、\n臣 ーー 一 一 ベ 5\n0 っ 放 克 NM_\n上 志 VN ング\nし > |\n晶 上 \"_ 交 mm ! 太 詳 アー 電\n| に 着 7 甘 、\n< に 懇 さ か 幸人 全 き >\n嘆 」。「 放 \"用 で\n| ノ アハ 人 な きき\n昌 一 革 > 半 由\n| 放 ぶ 導 史 る\n居 き へ ン 誠人 へ 放 計\nEE、 | 区 に @Q 多\n: (| ン に\n%' 背 軸 y マツ (人 /( マ ご 拓\nりり  / ノ 4 副 と ⑥ の ペ\nーー 久 ぁ いす\n1 の る 志 引 ご *\n上 ジ ンー いく 過 Gire\nテン や NN ケン\nか 画 この の F い\nて 4 た (2 2 な 付い 2。\n、 』 1 | 』 ァ ンダ 人 ク J\nUMWG 用\nーー . 6@ こ 全音 / 人 る 作\n) けり 央 ァ いす ーー : > 侍 まま い ( 利 て [ て 倫 、 ヘ r\nSV に さり) 6 の\nて いい ーー ヘー 誠 生\n合い た いい ーー ミン の の 上 よ 間 っ\n』 と や co の iLiFE!",
+          "extracted": {
+            "venue_strings": [
+              "Q 多"
+            ],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 20
+        },
+        {
+          "poster_index": 3,
+          "source_url": "https://attachments.timetreeapp.com/public_event/5ed8/2025-10-05/46438-1759676725480.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_3.jpg",
+          "ocr_text": "ーー\n日 2 ーー ジェ ーー\n= ジ 信 で と 0\n1 人 52 上 :\n昌 レシ と ら |\n5 (用 且\n』 て ペン *\nvV クン\n世 278)\nー ア 0 |/\nES Ha た に に 7\n日 一 s。、 癌 か 、 マッ ペペ 替 、.\n1 選 いい 一 失 |\n帳 る. 2 作 時 / 、 伺 堪 いやー、 > ン が な [\n失 、、 倫 、 SS が 電 学 。\nいい 全会 、 ジ ドジ (っ 科 人 、 へ |\nいい 朋 ーー 3 思 て 次 SN 』 ト |\n師 ハレ アカ\nドド 時 人 急 3 ア くさ の 6 か [\nSE 半生\nラテ いい に WM\nさき し 志 人 の まま る\nし / 計 拉 で 1 |\n1 交 の 涯 irep )\nーー2。 スン 者 - ン\nの め の ミ 2 二 誠人 還 mm 拓馬\nで 全 MD で と 財\n店 こき 伯 全 | 人 ) ' . き 台 り\n人 條 所 選考 ( こ ) 贈 喉 / 人 罰 過 シシ る\n人 ん へ 全う | 固 し 届い つつ 朝会 用 ご 品 ee で\nな 還 ト し 、 、 0@ ご る 間口 / 旋\n0 あ : ご - 二 代り ーー ミ ム\n昌 め 7 イ c 避 に こり 必 リリ で O 了 導\nで 3 ジジ ミミ 半 シ\nーー ヘア ミー クー の 詳\nの ナー mu 二",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 20
+        },
+        {
+          "poster_index": 4,
+          "source_url": "https://attachments.timetreeapp.com/public_event/167f/2025-10-05/46438-1759676726562.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_4.jpg",
+          "ocr_text": "葵 5\nミー ーー\n区 時 py ペー\n… 管 大 と で モ 5\n1 の 5) 2 計\n「 間 時 WW 有人 0 )\n』 上 5 ジラ 3\n1 に る 一 リ\nと る や Y\"\n敵 1 ) 色 の 0\nへ 、 IN 机\n。 ンズ\nhy っ 1 了 5 今 騰\n< ) 町 ・\nCS の\n本 ms、 前 トー 、\n人 る / が / 。 / 、 N うい 、【 半\nペー/ 記 、 六 / 全 ニウス メジ\n。 ペー 作 准 、 に KK ング い |\n放 ンジ 人 5 和 き WW いり パ [|\n4 * 4 ーー 一 いい\n| 202 2 サー ルツ Ni いる / 0\nで 二 メジ ジン が で の 必 和 きい\nの 22 当 か の 5、 』\n] に 7 人 休 和 Neee/ 工 7 リ ペペ\nいう 7 (| 人 旬 の め 秋 |\n拓 スズ が 拓 計 で SC ご ペペ の @ ゲ さき\n220 上 サイ 学\n5 こっこ 華 の あ\n。 人 、 ツ ペ ーー 臣 い A、 g\nシレ ンダ で で へ 、、(GLj |\nビー ED\n] グ / <、 。 記 N いこ 本 ーー ンプ\n\" 愛 ジー 選 >、2 Na 5 ーー 人 狗 mm 沙 き ーー\n( 幸野 / スス いい | 欠 m き が ジッ に ( 則\nTA 4 央 記 べ 4 靖 2 革\nAD 上 シ /( 導き は\n【 へ る 。、 | 応 世 ゆこ プ 孝 三 ラ カス ーー\n: 。 っ < 主 ーー : ・・ 電 0 区\n財 和 Ca がち 、 に 人) 友 4 ア < 3 へ か\na 。 * 完 ご ん こん 師 皿 N り ^ M くさ へ 2 ン\n人 る ス の 255vS 間 | 選 用 筐 避 生 (ニー 箇 o 予 還\n上 ジ ジ ン ン ペ スー 、 ノ\nデン\nきる > 飼主 誤 ii\nに の iLiFE!",
+          "extracted": {
+            "venue_strings": [
+              "ゲ さき 220 上 サイ 学 5 こっこ 華 の あ"
+            ],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 23
+        },
+        {
+          "poster_index": 5,
+          "source_url": "https://attachments.timetreeapp.com/public_event/a936/2025-10-05/46438-1759676728219.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_5.jpg",
+          "ocr_text": "時: 溢 ーー 5\n【 ピ に 7 所 ド き\n1 ご 」 。 み 操 も 間 導\n則 に 1 どき SS に\n| 計 癌 ゲー\nみ $ w\n「 誠 多大 分 公\n/// ル き ボ\n拓 4 ツル\n上 | 3\nNN 人 電 放 、\nNs、、 7 ジー 2\nII 2 ペ や ンス 、 局\n| 。 デー 一 K NN KK し\n1 ン ] ぐ ーー N \\ き 革\n上 証 放 > くつ _ や\n5 / を \" 之 パ ーー 一 ペ N ンー ッ 1\nhs ト < ンー に: リ | 0 た |\nて 中 所 記 際 om いで いこ 交 ダ 1 「|\n培 思 esep 玉 いい 問 いふ ソ 人 計\n7/ リ ン Av 2\nグン 7 選 Ns に 計\n5 作 いい KS 衝 さ\n2 / 履 病\nmrE ビ EE リン クン ワ ここ 、 へ 、\n1 .\" 記 四 GLiFE り 2 ry 5 ここ と る 4 へ 、\n攻 人 ンー っ ーー ママ へ ミン ジン で\n皇 テー、 ら ンス 抽 ド ーー 層 a (<、 Ua 人 財 SCfD\nCC 7 に 22 人 才 が A。 |\ns ト 坦 |@ いい 賠 」\" し 人 信 誠二 0。 |\nの 、 矢 、 LU て ( コ づ 7 選 X( 雪 」= = 』\n人 へ く こ へ 人 居 朋 冊 い ご つ 環 差 到 る ター て oN ジミ\n2 ・S@ ご ふ ぶ 3。 関し し 6 7 だ る る\n次 層 ・ 半 生還 宮 電 | 導 に クツ 写\n\"。 翌 い ペー っ 5 條 M LM 僚 ェ 頂 刻 第 に ーー\nK、 GO 和 5 だ) 民 、 ラ ー ) 区 選 2 議 革 O\nンー 休 放 デー へ 、 の 上 且 RS の\nーー ご ーー 会 こい ング /\nいい ^ スミ ーー ママ の\n「 ・ _ 人 ーー で ミー イイ” <\nで 后 人 作 に\nwa > の iLiFE!",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 23
+        },
+        {
+          "poster_index": 6,
+          "source_url": "https://attachments.timetreeapp.com/public_event/baf5/2025-10-05/46438-1759676729371.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_6.jpg",
+          "ocr_text": "ーー\n匠 の ニュ 須\n衝 / 具 」 き\n上 甘 と や PD や て 、 を\n1 る ジン\nまき シン パ\n由 . バテ  。 個 間 症 二 い\nめき\n5 ン / 事 有 いま & 、\n日 放 、 0 る 2 下 グ 、\n」。 そそ 二 々 と の\n[| 能 、 生 枯 し が が ー0\n1 疾 間 ご -、 来い\n】 1 の 7 の 2 枯 )」 。 記 [|\nッ 1\nと の の ーー\nの ご 少 折 融 呈 |\nで は き ルー IIG 居 6\n、 店 だ ママ 人 を ジジ ハ 、 に |\nきき < 拓 同 粒 所 衣 計 に\n人 ! / 記\n、 全 、 / g 1 H\nの ・ 明 間 名 る 導 GLIFE り\n。 去 2。 須 、、 ンス ーーー\n送 5 の ママ 全 計 A ヽ 、 イト 、 4\nに た ZN\\ 征 に 誠 合作 区\n1 0G リル ( 』 作 2 下\n9 中 ご 世 し ( こ ) いい ー\n1 一 作 いい ご た\nへ へ 全 且 らい ご 王 こる 本 誠 し し 党 / だ る\nタダ SN 婦\n0 捉 に に みあ ジ ニー た つも っ 、 選 軸 私 で 7 三 め 貞 ', の . の O ペ ル 上\nああ 9 6W@ 洗\nSON ニー スズ だ 2。 スー ノン 和 織\nーー | 衝 ナ ゴー 人 。 2 人 血 の で\nに いや \\ の iLiFE!",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 22
+        },
+        {
+          "poster_index": 7,
+          "source_url": "https://attachments.timetreeapp.com/public_event/38a6/2025-10-05/46438-1759676730822.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_7.jpg",
+          "ocr_text": "葵 5\nー 旗 So\nに -\n\njj 衣 時 WM、\n目 ! “ 2 革 人 全 癌\nlexe 1 備 蘭\n1 の 枯 誠 / 記\n四 1 シン 「 や\nアン 関 人 ん C い いい\n判 。 0 ML |\nNs >\n日 放 ンー や 臣\nンダ クン ハー … ご に 、 5\n上 2 ンク 上 < 記 、 [上\nング ンー/ / 誠 ミン / 半 りり 刀 誠人 か て [|\nリン クー ンー 多 ン ププ K に ': 和 結 5 人 A、 [|\nクア ラン ンタ Nl\n覆 ジー リ / 純 礁 れ 才\n1 で 人 5 ジン こめ 月\nll や いき 6 ン 9 SN リヴ 5 $ 『|\n』 1 ー か 攻 い 、、 L [| 1 』 5\n| 8 0 放 >(iLiFED 放\n放 ぼ き , き ビビ\n反 ・ ンー ン ピ る 旬 mm 、 いい\n由 避 っ 肖 ゃ も て ~ 。 ぶさ >\nッ ン ン 人 へ で ラン ジー: で や KN 、 6 ペー _ ミ\n] 居 有 の 人 で 9 人 る 議 記\nレン ぶる ちご ン 因 用 ぐ ・- MM\nクラ ター で ジラ ンー 2 山 才 議 還 了 | 、\nSS / 2 \\ ⑳ (| ジン 。 人 A ル を 際\n2 e 色 選 則 礼 吐 導き てい\nの の 上 衝 ミン / (こり 上 己 受 誠 さ 4 オ\n隊 ア 人 居 誠 加 肛 | 所 成 ゆ ヽ ご 3 ミ へ 計る ご 1r ああ の な ジス\nいら 0@ ご る 3 間 じ に き / 信 ご\nン り 中 [に 貞 5 ま 【 グ : ー や 2 N 茹 電 り ノ ふ < 受 く 、\nある っ 0 グー\n人 ジミ 5 【( い OO ノ / ご リー の 秒 、 トペ ーー ニノ ラガ\n陸 CX ニニ テス 睦 だ し を へー ノー CN\nた マー の ニタ ニー で 5 で マシ\nの ナー au と 拓 LO の DE\nト の iLiFE!",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 23
+        },
+        {
+          "poster_index": 8,
+          "source_url": "https://attachments.timetreeapp.com/public_event/b838/2025-10-05/46438-1759676731953.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2025-10-11_2025-10-11_life like a live!10~ハイテンションハロウィン~_8.jpg",
+          "ocr_text": ") 馬 基 。 て ー\n信二 ンプ\n淫 こき 。 ん の で\n還 骸 ジジ @ /\ni 間 井 外 で で /\nた で NN 。 遂 ン |\n則 たい ト 、 必 が 中\nいい 、 い 77- 放 才 と\n骨 生 、 竹 ぶ 、、 へ や / l\n層 和 いい が りー の\nに い ソ いこ 4\n了 四 、 SU\n1 きい きい 、 N、 1\nトド | 5 1 し NAS 』\n上 は | いい いい 本 、 さき 乱 還 知明\n居 計 。。 同\nと 有人 柚 功 内 用 隊 、 入管 うり で で 衣 MS |\nice 理 な 人\n騰 い 赤き わり / 」 朝\nかい 倫 まり 人 E/\n用 、 mrED 2 用 人 間 - ング\n1 いい 、、、 ニー の 作 テア 玲 き 人 次\nスー クーン\nンー 科 委 ( 色 くく マン MIUJ 間\n吉 思 委 25、 間 | 急 誰 、 憎 * 蘭 々 作 2\n本 ] Y NM NN 中 ま 人 V ペー A\n_ ン 有 人 和 し . 選 ( こ ) ん 4 Ws ルリ 三 き で\n『 - ノ リ いい ご テト ーー ン 、 1 @& の へ 5\n全会 ご ツタ 人気 へい 紀 閥 し に 光 / 全 る やら\n隊 。 と 人 : ごみ ・ ・ K NM ゆめ アベ SA、 >\n度 て いい\nミミ 電 つこ 半 天 シシ\nを ご の _ 2 枯 導 失 ss ーー で で (ころ\n稚 ナ ぱー 2 と と 。 そ W ンコ 証\nる し の iLiFE!",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [
+              "month-day:10-11"
+            ],
+            "times": [],
+            "ticket_urls": [
+              "https://zan-live.com/ja/live/detail/10675"
+            ]
+          },
+          "ocr_confidence": 20
+        }
+      ],
+      "extracted": {
+        "venue_strings": [
+          "多 ア ー",
+          "こ る 間 ロ",
+          "Q 多",
+          "ゲ さき 220 上 サイ 学 5 こっこ 華 の あ"
+        ],
+        "catalog_venues": [],
+        "dates": [
+          "month-day:10-11"
+        ],
+        "times": [],
+        "ticket_urls": [
+          "https://zan-live.com/ja/live/detail/10675"
+        ]
+      },
+      "suggested_venues": [
+        "多 ア ー",
+        "こ る 間 ロ",
+        "Q 多",
+        "ゲ さき 220 上 サイ 学 5 こっこ 華 の あ"
+      ],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": null,
+      "reviewer_notes": ""
+    },
+    {
+      "date": "2026-03-06",
+      "event": "ラウンドワン×iLiFE!コラボ(~6/7まで)",
+      "type": "Other",
+      "match_key": "2026-03-06|ラウンドワン×ilife!コラボ ~6/7まで",
+      "timetree_id": "2924051873228233481",
+      "timetree_url": "https://timetr.ee/p/ilife_official/2924051873228233481",
+      "note": "ラウンドワン全店でiLiFE!コラボを実施しています❤︎\n\nコラボグッズにコラボドリンク、カラオケコラボルームもあるよ〜🎤\nみんな遊びにきてね🎳♡\n\n▼詳細はこちら\nhttps://round1.co.jp/collaboration/ilife/index.html",
+      "note_venue_hints": [],
+      "ocr_posters": [
+        {
+          "poster_index": 0,
+          "source_url": "https://attachments.timetreeapp.com/public_event/787b/2026-03-17/46438-1773742145565.jpg",
+          "local_image": "docs/reference/timetree_poster_ocr/ilife_official/2026-03-06_2026-03-06_ラウンドワン×ilife!コラボ ~6/7まで_0.jpg",
+          "ocr_text": "ー:\n( く る ヌ ロ\nアッ ヘ ヤ マン 電 。 さこ\n時 し へ <-、 の 。 中 ws。\nノイ > / や N 0 張 等 人\n導 | ング ンー 貫\n7 二 、 9 クン っ 、、 と\n』 ん 上 を | や 0 0 ノ 舌\n1 ーー 5 = 一 一 一 一 ひひ 、/。 男 呈 ) ンク\n人 ーー いう あー の 、 2 | と\n』 隔 あ の 志 只 所: 区 1 記 2 に き リ チ 2 トリ で パ MEJ か 協 、ー ノ | 。 ング ン\nag ーー < ご oN ん 4 K 信人 の いて 2 寺 シー ンタ に > ビー\n(/ 4 いい 介 ーー 閉 コ < いか | * 、 。 須 < の SS 』 ーー 獲 島 、 き クン に の 4\nの 。 机 < * の ーー て で PA >” が る い < 逢 ノン\nテング. 用 呈 須 と 7 人 。 臣 。。 に うた 全 全 4 誠 で の アー こく で て 生還 4 イシ\nント 本 と リン リタ タテ 52 ヤス < ンマ ンー 生 半生 を CC ム 所 朋\n鐘 ク (SS 編 「 人 尼 で ( ae き か ぶつ み み Sg で ア 居 0 \" 閣 まあ リー で 員 7 だ ルー 0 二\n6 SV 9 ウツ アウ 7 リン ん 天 ニ ン ン と ン リリ 信 4 ッ > 0 AN ルル ペー\nの 0 人 し グッ 8 こつ ) / が 0 | ーー 郁 。。 鐘 ジジ 26 いい 誠 演 5 作\nり 間 ヘ に 導 の 人 / 8 は ら に っ ペン おれ N 叙 2 人 マ 』 \\ \" 和 き | 中 了 3\n0 こい 関 2 アリ いい を ン 7 放し 4 で を に で 芝 ^ さあ きき 0、/ コタ イー いっ の ス いで\n7 放 0 こ り こ い や タツ て 本 革 に リバ し の 誠 、\nタン アン 2 生 才 が ナン 人 急 ョ ラジ ルル 。 / る まで 用 時 で 3 ネー \" 鶏 mA て ペ 、\nヘタ ーー マー や 呈 え っ ノン 邊 に リン As 合計 2 ( 選 2 電 人\nし ご 計 の 克 山 ーー で シーン 、 5 は 昌 っ せる 『 WW 愉 機 、 いさ て 愉 労 *\nスン て 逢 人 リ に 1 維 い うい 、 ご\n。 る 計 ア まま 』 員 て 、 は 辻 。 人 愉 全 クン ジミ 志和 Sd 4\nIt w 放 ー* 宮 剛 区 \\ 記 * で ー ーー 放 K き ーー ニー ニー 一\nリリ A、 や - 府 座 織 ーー がい 、、 天 ) 8 交 、 第 ニ ー ニ ー 一\n人 る 7 っ > が 品 一 S ス 270008 人 と テー いい 三\n人 / ア ア ーー wusEwEvrs 天 と 才 を\nで 《 層 し 人 作 a リ マ ーー / 3 目 、 で =\nいし 物 こ が が だ だ ん だ いい へ / 8 リプ 月 記 中 ーー デー\nラム 旧作 性 さき ペラ スン ブー フー ニー",
+          "extracted": {
+            "venue_strings": [],
+            "catalog_venues": [],
+            "dates": [],
+            "times": [],
+            "ticket_urls": [
+              "https://round1.co.jp/collaboration/ilife/index.html"
+            ]
+          },
+          "ocr_confidence": 20
+        }
+      ],
+      "extracted": {
+        "venue_strings": [],
+        "catalog_venues": [],
+        "dates": [],
+        "times": [],
+        "ticket_urls": [
+          "https://round1.co.jp/collaboration/ilife/index.html"
+        ]
+      },
+      "suggested_venues": [],
+      "auto_venue": null,
+      "auto_venue_uid": null,
+      "auto_confidence": "low",
+      "reviewer_venue": null,
+      "reviewer_notes": ""
+    }
+  ]
+}

@@ -9,6 +9,12 @@ export function isSongHiddenFromDisplay(row: Record<string, unknown>): boolean {
   return false;
 }
 
+function specialSongAvailabilityIso(row: Record<string, unknown>): string | null {
+  const uid = String(row.uid ?? "").trim();
+  if (uid === "d3b51910-0f40-4e75-9413-4f3762fbf110") return "2026-01-01";
+  return null;
+}
+
 export function songPopularityNum(row: Record<string, unknown>): number {
   for (const key of ["popularity", "popularity_local", "popularity_global"] as const) {
     const v = row[key];
@@ -18,7 +24,7 @@ export function songPopularityNum(row: Record<string, unknown>): number {
   return 0;
 }
 
-/** Parse `YYYY-MM-DD` (or ISO prefix) to UTC noon ms; invalid → `null`. */
+/** Parse `YYYY-MM-DD` (or ISO prefix) to UTC noon ms; invalid -> `null`. */
 export function parseCatalogIsoToTime(iso: string | null | undefined): number | null {
   const s = String(iso ?? "").trim().split("T")[0];
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
@@ -26,11 +32,17 @@ export function parseCatalogIsoToTime(iso: string | null | undefined): number | 
   return Number.isFinite(t) ? t : null;
 }
 
-function songReleaseTime(row: Record<string, unknown>): number {
-  return parseCatalogIsoToTime(String(row.release_date ?? "")) ?? 0;
+function songAvailabilityTime(row: Record<string, unknown>): number {
+  return parseCatalogIsoToTime(specialSongAvailabilityIso(row) ?? String(row.release_date ?? "")) ?? 0;
 }
 
-/** Row has no parseable `release_date`, or it is strictly after `referenceIso` (desktop “Making”). */
+export function isSongAvailableOn(row: Record<string, unknown>, referenceIso: string | null | undefined): boolean {
+  const refT = parseCatalogIsoToTime(referenceIso);
+  if (refT == null) return true;
+  return songAvailabilityTime(row) <= refT;
+}
+
+/** Row has no parseable availability date, or it is strictly after `referenceIso` (desktop "Making"). */
 export function splitSongsReleasedVsMaking(
   teamSongs: Record<string, unknown>[],
   referenceIso: string | null | undefined,
@@ -42,14 +54,14 @@ export function splitSongsReleasedVsMaking(
   const released: Record<string, unknown>[] = [];
   const making: Record<string, unknown>[] = [];
   for (const row of teamSongs) {
-    const rowT = parseCatalogIsoToTime(String(row.release_date ?? ""));
+    const rowT = songAvailabilityTime(row);
     if (rowT == null || rowT > refT) making.push(row);
     else released.push(row);
   }
   return { released, making };
 }
 
-/** Drop display-hidden rows, then popularity descending (ties: newer release first). */
+/** Drop display-hidden rows, then popularity descending (ties: newer availability first). */
 export function songsForDisplaySorted(all: Record<string, unknown>[]): Record<string, unknown>[] {
   return [...all]
     .filter((r) => !isSongHiddenFromDisplay(r))
@@ -57,7 +69,7 @@ export function songsForDisplaySorted(all: Record<string, unknown>[]): Record<st
       const pa = songPopularityNum(a);
       const pb = songPopularityNum(b);
       if (pb !== pa) return pb - pa;
-      return songReleaseTime(b) - songReleaseTime(a);
+      return songAvailabilityTime(b) - songAvailabilityTime(a);
     });
 }
 

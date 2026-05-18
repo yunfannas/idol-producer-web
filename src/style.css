@@ -2226,6 +2226,21 @@ text.idol-radar-val.attr-tone-low {
   gap: 0.6rem;
 }
 
+.inbox-blocker-alert {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1rem;
+  height: 1rem;
+  margin-left: 0.35rem;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .startup-roster-photo {
   width: 2.4rem;
 }
@@ -2234,6 +2249,57 @@ text.idol-radar-val.attr-tone-low {
 .startup-roster-photo .idol-thumb-ph {
   width: 2rem;
   height: 2rem;
+}
+
+.goods-matrix-cell {
+  min-width: 6.5rem;
+}
+
+.goods-matrix-cell--empty {
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.goods-matrix-stock {
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.goods-price-input,
+.goods-amount-input {
+  min-width: 4.5rem;
+}
+
+.goods-transpose-head {
+  min-width: 10rem;
+  vertical-align: top;
+}
+
+.goods-transpose-title {
+  font-weight: 700;
+}
+
+.goods-transpose-meta {
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.goods-transpose-price {
+  display: grid;
+  gap: 0.2rem;
+  margin-top: 0.4rem;
+}
+
+.goods-transpose-price span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.goods-transpose-order {
+  margin-top: 0.45rem;
+  width: 100%;
 }
 
 .is-selected-row {

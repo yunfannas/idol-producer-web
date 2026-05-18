@@ -1,0 +1,12 @@
+{
+  "_comment": "Official site schedule sources (non-TimeTree)",
+  "groups": {
+    "equal-love": {
+      "group_name": "=LOVE",
+      "base_url": "https://equal-love.jp",
+      "list_path": "/schedule/list/{year}/{month}/",
+      "list_query": "cat=L_ALL,live02,live03,live04,live05,live06,live07",
+      "detail_path": "/schedule/detail/{id}"
+    }
+  }
+}

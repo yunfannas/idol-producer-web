@@ -2,7 +2,7 @@
   "version": "2026-05-10",
   "title": "Group letter-tier assignment policy",
   "authoritative_sources": {
-    "rankings_path": "database/idol_group_rankings_2025_mapped.json",
+    "rankings_path": "reference/idol_group_rankings_2025_mapped.json",
     "groups_path": "database/groups.json"
   },
   "policy": {

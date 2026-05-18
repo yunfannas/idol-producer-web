@@ -221,10 +221,10 @@ function sleepRecovery(idol: Record<string, unknown>, beforeCondition: number): 
   const attrs = normalizePersistedAttributes(idol.attributes);
   const stamina = attrs.physical.stamina;
   const fitness = attrs.physical.natural_fitness;
-  const lowConditionBonus = (beforeCondition < 50 ? 2 : 0) + (beforeCondition < 30 ? 2 : 0);
-  const staminaBonus = (stamina - 10.0) * 0.15;
-  const fitnessBonus = (fitness - 10.0) * 0.2;
-  return Math.max(2, Math.min(10, 5 + lowConditionBonus + staminaBonus + fitnessBonus));
+  const lowConditionBonus = (beforeCondition < 60 ? 2 : 0) + (beforeCondition < 40 ? 2 : 0);
+  const staminaBonus = (stamina - 10.0) * 0.2;
+  const fitnessBonus = (fitness - 10.0) * 0.25;
+  return Math.max(3, Math.min(25, 25 + lowConditionBonus + staminaBonus + fitnessBonus));
 }
 
 export interface DailyStatusApplyInput {

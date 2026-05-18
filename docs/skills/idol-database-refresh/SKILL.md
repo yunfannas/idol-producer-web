@@ -1,17 +1,30 @@
 ---
 name: idol-database-refresh
 description: >-
-  Updates idol_producer database/groups.json and database/idols.json using the
-  current repo workflow for Wikipedia, jpop.fandom/AKB48 Fandom, inferred
-  fandom links, and idol-profile enrichment. Use when refreshing one group,
-  reconciling member rosters, merging fandom-based updates, or running the
-  latest safe database refresh flow instead of older one-off scripts.
+  Three-track refresh: update group catalog row, update songs, update group members
+  (rostermates + idol profiles). Desktop: idol_producer fetchers for groups/idols.json.
+  Web: stage groups_update.json / songs_update.json then merge; members and roster
+  fields patch the group row plus idols.json; auto-fill romanji for group names
+  and song titles (npm run data:fill-romaji). Use for fandom sync, discography,
+  coupling songs, or safe batch refresh flows.
 disable-model-invocation: true
 ---
 
 # Idol database refresh (idol_producer)
 
-Canonical file: `skills/idol-database-refresh/SKILL.md`.
+Canonical file in this repo: `docs/skills/idol-database-refresh/SKILL.md` (referenced elsewhere as `skills/idol-database-refresh`).
+
+## Three update tracks
+
+Every refresh task maps to **one or more** of these (do only what was asked):
+
+| Track | What changes | Idol producer (desktop) | idol-producer-web |
+| ----- | ----------- | ------------------------ | ------------------ |
+| **1. Update group** | Group row only: names, **`name_romanji`**, urls, discs (**`title_romanji`**), publishers, **`song_uids`**, aggregates, narratives—**not** day-to-day roster lines | `database/groups.json` via Step 2 workflows | `groups_update.json` → merge → `public/data/groups.json` · then **romanji fill** (below) |
+| **2. Update songs** | Per-song rows: titles, **`title_romanji`**, `albums[]`, `disc_uid`, streaming ids, coupling metadata | Songs pipeline there (outside this repo) | `songs_update.json` → merge → `public/data/songs.json` · then **romanji fill** (below) |
+| **3. Update group members** | Roster ordering, current/past **names**, **member_uids**/blank slots, counts; idol-level bio/history/color | **`idols.json`** + group roster fields via Fandom/consolidate flows | **`groups_update.json`** (roster slices of the group row) + edit **`public/data/idols.json`** for idol profiles |
+
+Tracks can run in dependency order for one group: typically **members** first if UIDs churn, **songs**/discs second, **`song_uids` & group-only fields** last—or **discography-only** touches track 1 only.
 
 ## Default approach
 
@@ -35,6 +48,8 @@ Older scripts like `fetcher/update_specific_groups_from_fandom.py` are not the d
 - Before edits, inspect `git status` and any existing diffs in `database/groups.json`, `database/idols.json`, and `database/updates/`.
 
 ## Step 2 - Pick the right workflow
+
+Use **Three update tracks** (see table above) to decide whether you need group-only, songs-only, member/idol, or a combination. The commands below often cover **track 1 + 3** together (Fandom scrape updates group row and member links, then idol enrichment).
 
 ### A. Preferred for one group using the latest fandom workflow
 
@@ -180,11 +195,133 @@ Only do this when the user explicitly asks for a broad refresh.
 - `database/groups.json`
 - `database/idols.json`
 
+### Web staging (idol-producer-web checkout)
+
+| Step | Primary file |
+| ---- | ----------- |
+| 1 — group | `public/data/groups_update.json` |
+| 2 — songs | `public/data/songs_update.json` |
+| 3 — members (+ idols) | `groups_update.json` (roster fields) · `public/data/idols.json` (profiles) |
+| Merge | `scripts/mergeCatalogUpdates.mjs` · `npm run data:merge-catalog` |
+| Romanji fill | `scripts/fillCatalogRomaji.mjs` · `npm run data:fill-romaji` · `public/data/reference/romaji_overrides/*.json` |
+
 ---
 
 ## Web repo (`idol-producer-web`)
 
-This skill’s commands run in the **idol_producer** (desktop) checkout, not inside `idol-producer-web`. The web app ships **frozen JSON** under `public/data/`.
+This skill’s desktop refresh commands stay in **idol_producer**; the browser build (`idol-producer-web`) ships **frozen JSON** under `public/data/`.
+
+**Do not paste large catalog deltas straight into `public/data/groups.json` or `songs.json`.** Stage in the *_update*.json files, then merge (`npm run data:merge-catalog`). Afterward clear or trim staging files so intents do not linger.
+
+Implementation: **`scripts/mergeCatalogUpdates.mjs`**; flags `--dry-run`, `--allow-new` (unknown **group** uids).
+
+### Web Step 1 — Update group
+
+**Goal:** Anything on the group row except live roster/editing idols as people—chiefly **`discography`**, publishers, **`song_uids`** (playlist index), **`disc_uids`**, URLs, **`formed_date`**, popularity/fans, narratives, **`agencies`** / **`union`**, **`wiki_url`**, cover paths, etc.
+
+- **Stage** in **`public/data/groups_update.json`** under **`groups[]`**: one object with required **`uid`** (group uid) and only the keys you are changing.
+- **Merge** (with Web Step 2 if you edited songs staging in the same pass):
+
+```bash
+npm run data:merge-catalog -- --dry-run
+npm run data:merge-catalog
+```
+
+See **Merge semantics (groups)** below (`discography` merges by release `uid`, etc.). To add new **releases** (`discography`), include new objects with **`uid`**s; they append after existing discs.
+
+### Web Step 2 — Update songs
+
+**Goal:** New or corrected **song catalog rows**: title, **`group_uid`**, **`albums[]`**, **`disc_uid`**, duration, **`_apple_track_ids`**, `source_confidence`, coupling notes—not the group roster.
+
+- **Stage** in **`public/data/songs_update.json`** under **`songs[]`**; each row must have **`uid`** (existing = update, unknown = append).
+- **Merge** (`merge-catalog` merges both staging files each run):
+
+```bash
+npm run data:merge-catalog -- --dry-run
+npm run data:merge-catalog
+```
+
+See **Merge semantics (songs)** below.
+
+**After coupling songs**, often also run **Web Step 1**: append/link those song uids via **`song_uids`** on the group (merge unions `song_uids`).
+
+### Web Step 2b — Auto-fill romanji (group name + song titles)
+
+**Goal:** Populate empty romanji columns used in the web UI and exports:
+
+| Object | Fields |
+| ------ | ------ |
+| **Group** | `name_romanji`, `nickname_romanji` |
+| **Disc** (on group row) | each `discography[].title_romanji` |
+| **Song** | `title_romanji` (canonical name; keep variants in `title_variant` / `title_listed` when used) |
+
+**When to run:** After **Web Step 1–2** are merged into `public/data/groups.json` and `public/data/songs.json`, or after a catalog-only refresh that left Japanese titles without romanji.
+
+**Command (one group):**
+
+```bash
+npm run data:fill-romaji -- --group "GROUP_NAME"
+npm run data:fill-romaji -- --group "GROUP_NAME" --dry-run
+npm run data:fill-romaji -- --group-uid "BASE64_GROUP_UID"
+```
+
+**How it fills (in order):**
+
+1. **Per-group override file** — `public/data/reference/romaji_overrides/<group_uid>.json` with optional `group`, `discs`, and `songs` maps (uid → romanji string). Use for Japanese titles after checking [jpop.fandom.com](https://jpop.fandom.com) or Apple Music JP.
+2. **Latin copy rule** — If `title` / `name` / `nickname` has **no CJK** characters, copy that string into the empty romanji field (e.g. `Candid Love`, `NEW WORLD`).
+3. **Leave blank** — Rows still empty need manual overrides or a new entry in the override JSON; the script prints `song_skipped_no_source` in its summary.
+
+**Override file shape** (example: `public/data/reference/romaji_overrides/44Ki44Kt44K344OWcHJvamVjdA.json` for アキシブproject):
+
+```json
+{
+  "_meta": { "group_name": "アキシブproject", "sources": ["jpop.fandom", "Apple Music JP"] },
+  "group": { "name_romanji": "Akishibu project" },
+  "discs": { "<disc-uid>": "Midaregami Fighting Girl" },
+  "songs": { "<song-uid>": "Manatsu no Serenade" }
+}
+```
+
+Only include keys you are setting; omitted uids are unchanged. Existing non-empty romanji is **never overwritten**.
+
+**Safety:** Writes via `JSON.parse` → patch → **`.tmp` file** → validate → rename for both `groups.json` and `songs.json`. Expect a **large diff** on `songs.json` when many rows change. Do **not** use `apply_patch` on full `groups.json`.
+
+**Optional CSV check:** `node scripts/exportAkishibuCatalogCsv.mjs` (アキシブproject) or re-export your reference sheet after fill.
+
+**Desktop handoff:** If `database/groups.json` in idol_producer already has `name_romanji` / song romanizations, copy those into the override file or staging JSON instead of re-deriving.
+
+### Web Step 3 — Update group members
+
+**Goal:** Current/past roster as represented on **the group object** **`member_names`**, **`member_uids`**, **`member_count`**, **`past_member_names`**, **`past_member_uids`**, **`past_member_count`**—plus **individual idol bios** elsewhere.
+
+- **Stage roster fields** in **`public/data/groups_update.json`** (`groups[].member_*` / **`past_*`**). Remember: **`member_uids` / `past_member_uids` arrays REPLACE** canon when present on the patch (see semantics); **`song_uids` is union-only**.
+- **Edit idol profiles** directly in **`public/data/idols.json`** (same `group_uid`; names, **`group_history`**, colors, refs). No `idols_update.json` shim yet—use small diffs or copy from idol_producer after **`Step 3.5`** cleanup.
+
+**Desktop analogue:** `consolidate_fandom_scrape_workflow.py` (+ optional `enrich_idols_*`) updates both roster hints and **`idols.json`**.
+
+---
+
+**Merge semantics (groups_update)**
+
+- Match group by **`uid`**. Unknown group uid omitted unless **`--allow-new`**.
+- **`discography[]`**: merge **by release `uid`**; nested plain objects deep-merge; **arrays on the patch replace** the stored array at that nested key; new discs append at end.
+- **`song_uids`**: **union** (existing order kept; new ids from patch appended).
+- Other arrays on patch (**`member_names`**, **`member_uids`**, **`past_*`**, …): **replace** canonical arrays when those keys appear.
+- Nested plain objects: deep-merge recursively.
+
+**Merge semantics (songs_update)**
+
+- Match by **`uid`**; upsert or append trailing row if new.
+- **Arrays on patch**: replace canon at that property.
+- **Plain objects**: deep-merge.
+
+**Caveats**
+
+- Merge **rewrites whole** output files (~normalized JSON + CRLF); expect possible wide diffs (e.g. **`5`** vs **`5.0`**). For single-row churn on **`groups.json`**, use a splice script (**`patchAkishibuDiscographyNode.mjs`**) or **`apply_patch`**, then optionally mirror results into **`groups_update.json`** for documentation.
+
+Desktop → web handoff still flows through idol_producer’s `database/groups.json` / `database/idols.json` when refreshed there.
+
+### Web bundle checklist (scenario + global catalog)
 
 **After** you refresh `database/groups.json` / `database/idols.json` (and any songs pipeline) in idol_producer:
 
@@ -192,7 +329,7 @@ This skill’s commands run in the **idol_producer** (desktop) checkout, not ins
    - `public/data/scenarios/scenario_6_2025-07-20/groups.json`
    - `public/data/scenarios/scenario_6_2025-07-20/idols.json`
    - (and `songs.json` if that slice changed)
-2. **Global catalog** (optional, for browse / large `songs.json`) — Update `public/data/groups.json`, `public/data/idols.json`, `public/data/songs.json` when you intentionally sync the full tree.
+2. **Global catalog** (optional, for browse / large `songs.json`) — Prefer **`groups_update.json` / `songs_update.json` + merge** above for `public/data/groups.json` and `public/data/songs.json`; update `public/data/idols.json` when idols change.
 3. **Static tiers** — Regenerate `public/data/scenarios/scenario_6_2025-07-20/group_tiers.json` from desktop `build_scenario_group_tier_list.py` when available; otherwise `npm run data:group-tiers` in this repo (heuristic stub).
 4. **Group table CSV** — `npm run data:export-scenario6-groups-csv` → `docs/scenario_6_groups_detail.csv` (close the file in the editor if Windows reports `EBUSY`).
 5. **Port plan** — See `docs/WEB_PORT_PLAN.md` for versioning, manifests, and parity milestones.

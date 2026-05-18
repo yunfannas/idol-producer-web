@@ -1,0 +1,52 @@
+﻿row_kind,uid,title,title_romanji,title_variant,title_listed,display_label,solo_track,solo_member_uid,solo_member_name,release_date,publisher,disc_type,track_song_uid_count,shared_track_names,track_list_text,edition_track_lists_summary,primary_album_name,song_json_resolved
+disc,8857fca1-c8d5-4c6e-891f-a95c16938247,AKISHIBU THE BEST,AKISHIBU THE BEST,,,,,,,2019-05-15,King Records,Best Album,16,,"アキシブウェイ | Candid Love | New World | Restart | Summer☆Summer | セツナツリ | アバンチュっ! | ナツラブ | Hola! Hola! Summer | ユメハナビ | Be yourself | Next Gate | キライだ。 | Creaction | WHITE | 真夏のセレナーデ | Akishibu project ""ALL ONEMAN LIVE DIGEST""",,,
+disc,53154494-a8e0-4a6f-b6f7-b607c77a33d0,乱れ髪ファイティングガール,Midaregami Fighting Girl,,,,,,,2015-04-14,TP IDOL,Mini Album,0,,,,,
+disc,d9e08991-23fa-4166-8df4-81f4134a7b67,NEW WORLD,NEW WORLD,,,,,,,2016-02-23,Force Music,Album,0,,,,,
+disc,b6b770ea-d5c7-47e2-9328-55e185aabff0,Summer Summer / セツナツリ,Summer Summer / Setsunatsuri,,,,,,,2016-08-09,Force Music,Single,0,,,,,
+disc,5de335af-4a4d-40b8-8347-cb29493269b4,アバンチュっ！ / ナツラブ,Abanchu! / Natsu Love,,,,,,,2017-08-30,OTODAMA RECORDS,Single,0,,,,,
+disc,ae59c728-630e-4086-97ce-9a4ab889d449,Hola! Hola! Summer,Hola! Hola! Summer,,,,,,,2018-08-15,King Records,Single,0,,,,,
+disc,63e41e76-0e17-40c0-bdc4-d89f1c94f262,The First Summer,The First Summer,,,,,,,2019-08-28,King Records,Single,0,,,,,
+disc,fb82976e-f917-4c19-8f0c-fab5665f0bb1,常夏トロピケーション,Tokonatsu Tropication,,,,,,,2021-08-03,akishibuproject,Digital Single,0,,常夏トロピケーション,,,
+song,f340fa8d-6305-410c-ad86-f4726cf93573,アキシブウェイ,Akishibu Way,,,アキシブウェイ,,,,2015-04-14,,,,,,,AKISHIBU THE BEST,yes
+song,8dc9966e-f5e6-4e6c-9251-e6a82a7d09ef,真夏のセレナーデ,Manatsu no Serenade,,,真夏のセレナーデ,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,c55be4f9-a66e-4b6a-96e3-e80aef397f03,LOVE&PARADISE,LOVE&PARADISE,,,LOVE&PARADISE,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール C-Type,yes
+song,720921c4-a3c9-4f29-8ef0-4fc4fc80f34d,Candid Love,Candid Love,,,Candid Love,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール B-Type,yes
+song,b39e38da-4d24-48f9-92e6-fc117f3df6d5,New World,New World,,,New World,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,7f3b3360-bca5-46d9-b695-bfb4db988a5b,Eternal Blue ~キミと僕と空と海の物語~,Eternal Blue ~Kimi to Boku to Sora to Umi no Monogatari~,,,Eternal Blue ~キミと僕と空と海の物語~,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,f1832d50-d32e-48c4-bbef-866ee4d41853,ガチ恋レボリューション,Gachikoi Revolution,,,ガチ恋レボリューション,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,a9937ae1-41b6-452e-ae6d-83964171601e,乱れ髪ファイティングガール,Midaregami Fighting Girl,,,乱れ髪ファイティングガール,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,3a2cda96-fbc0-4e07-bfc1-f329c680b325,"三百六十五歩のマーチ ~365 Steps, All Cast 2017","Sanbyaku Rokuju Go Ho no March ~365 Steps, All Cast 2017",,,"三百六十五歩のマーチ ~365 Steps, All Cast 2017",,,,2017-10-11,,,,,,,三百六十五歩のマーチ 2017 - EP,yes
+song,c3e640e0-8522-47fd-9071-8c2e68b111b7,Summer☆Summer,Summer☆Summer,,,Summer☆Summer,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,42e70315-6134-4365-b836-6547b37b18e4,WAY TO DREAM,WAY TO DREAM,,,WAY TO DREAM,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,992cb743-c5e4-4a49-8e5f-1a0c55e89987,Hola! Hola! Summer,Hola! Hola! Summer,,,Hola! Hola! Summer,,,,2018-08-15,,,,,,,Hola! Hola! Summer (初回盤TYPE-A) - EP,yes
+song,d05c8e2e-8d08-47e3-9177-5f9aaf95cb54,Acting Girl,Acting Girl,,,Acting Girl,,,,2018-08-15,,,,,,,Hola! Hola! Summer (初回盤TYPE-B) - Single,yes
+song,dfa2942a-0902-4383-8462-d4b296b00166,flower×flower,flower×flower,,,flower×flower,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,be6f95f3-8329-42e5-82f9-3966077ceb73,The First Summer,The First Summer,,,The First Summer,,,,2019-08-28,,,,,,,The First Summer - EP,yes
+song,09c3f517-9102-46ba-8c89-69c31de6398f,AKISHIBU SHIP,AKISHIBU SHIP,,,AKISHIBU SHIP,,,,2018-08-15,,,,,,,Hola! Hola! Summer (初回盤TYPE-C) - Single,yes
+song,3f4e3946-9c42-49a9-bb55-4ce5c06c84e3,ユメハナビ,Yume Hanabi,,,ユメハナビ,,,,2018-08-15,,,,,,,Hola! Hola! Summer (初回盤TYPE-A) - EP,yes
+song,6dd4301a-795a-4caf-9c02-9981e9d5363c,アバンチュっ!,Abanchu!,,,アバンチュっ!,,,,2017-08-25,,,,,,,AKISHIBU THE BEST,yes
+song,9134b294-fc7d-42e5-bb50-e7640c3deedd,"三百六十五歩のマーチ ~365 Steps, Girls Represent 2017","Sanbyaku Rokuju Go Ho no March ~365 Steps, Girls Represent 2017",,,"三百六十五歩のマーチ ~365 Steps, Girls Represent 2017",,,,2017-10-11,,,,,,,三百六十五歩のマーチ 2017 - EP,yes
+song,9a32cd14-7af0-4839-b01f-4c0a9b442fdc,常夏トロピケーション,Tokonatsu Tropication,,,常夏トロピケーション,,,,2021-08-03,,,,,,,常夏トロピケーション - Single,yes
+song,cb3a2723-6cd8-43a4-86e7-7711c1f45854,夏のかけら,Natsu no Kakera,,,夏のかけら,,,,2019-08-28,,,,,,,The First Summer - EP,yes
+song,4cc4be73-331a-43ae-9c9c-e5156408bf3f,虹の色,Niji no Iro,,,虹の色,,,,2015-04-14,,,,,,,乱れ髪ファイティングガール A-Type,yes
+song,e19271c6-220c-4402-996e-49ee8dde1bd5,観測史上,Kansoku Shijou,,,観測史上,,,,2019-08-28,,,,,,,The First Summer - EP,yes
+song,bc8dbc71-3750-48dc-b4ff-182b2f15047e,セツナツリ,Setsunatsuri,,,セツナツリ,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,50059980-a741-4f21-8ae6-55a2aae5689f,Restart,Restart,,,Restart,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,11cba1bd-7673-4ba4-bd8d-91f3d1a051b4,キライだ。,Kirai da.,,,キライだ。,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,6575b72a-6558-43f3-b775-f07760db2e06,Creaction,Creaction,2019 ver.,Creaction (2019 ver.),Creaction (2019 ver.),,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,a3e79185-ac50-4897-8b12-6af2549f8548,Next Gate,Next Gate,,,Next Gate,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,0bff0f17-56d6-434a-8611-dbb193d20bac,Be yourself,Be yourself,,,Be yourself,,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,a3c7ca04-3d60-4bba-9b98-5ea107a8da16,WHITE,WHITE,LIVE ver.,WHITE (LIVE ver.),WHITE (LIVE ver.),,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,c2ca0088-591e-459d-a0ff-76ffb71a4c00,真夏のセレナーデ,Manatsu no Serenade,LIVE ver.,真夏のセレナーデ (LIVE ver.),真夏のセレナーデ (LIVE ver.),,,,2019-05-15,,,,,,,AKISHIBU THE BEST,yes
+song,79af2b24-cfb3-49e8-8d66-2d2c7beb2cc9,ナツラブ,Natsu Love,,,ナツラブ,,,,2017-08-30,,,,,,,アバンチュっ! / ナツラブ - EP,yes
+song,019047d3-7e7c-40a1-a346-e7ca2a570127,Winter story,Winter story,,,Winter story,,,,2025-04-17,,,,,,,Winter story - Single,yes
+song,88255528-41de-4ec0-81ef-f4416686965e,つよくてニューゲーム+,Tsuyokute New Game+,,つよくてニューゲーム+ (茉井良菜),つよくてニューゲーム+ · Solo (茉井良菜),yes,f58e36c6-38e3-49d7-9253-2225dc16f3d2,茉井良菜,2026-02-14,,,,,,,つよくてニューゲーム+ (茉井良菜) - Single,yes
+song,b0fb9964-715a-4b80-abb2-6721b793b2ea,小さな決意,Chiisana Ketsui,,,小さな決意,,,,2025-05-24,,,,,,,小さな決意 - Single,yes
+song,d3b51910-0f40-4e75-9413-4f3762fbf110,タイムレスメモリー,Timeless Memory,,,タイムレスメモリー,,,,2026-04-23,,,,,,,タイムレスメモリー - Single,yes
+song,1f29fd12-83d9-42d9-b1c4-3fc35d32f8be,ときめきらいど!,Tokimeki Ride!,,ときめきらいど! (茉井良菜),ときめきらいど! · Solo (茉井良菜),yes,f58e36c6-38e3-49d7-9253-2225dc16f3d2,茉井良菜,2026-02-14,,,,,,,ときめきらいど! (茉井良菜) - Single,yes
+song,8ca7cb73-e41f-47c8-8f6a-da0f326b2ae3,あてんしょん・ぷりーず,Attention Please,,,あてんしょん・ぷりーず · Solo (古賀みれい),yes,3dfb8264-e501-45a7-a373-b3255445674e,古賀みれい,2025-09-09,,,,,,,あてんしょん・ぷりーず - Single,yes
+song,44cf2ff1-7f83-4e81-9c7a-bffbb54efbcf,Shine on you,Shine on you,,,Shine on you,,,,2025-05-16,,,,,,,Shine on you - Single,yes
+song,ad63da7d-7a74-4d36-9270-c301b45252e4,新宇宙世紀アイドルちゃん,Shin Uchuu Seiki Idol-chan,,,新宇宙世紀アイドルちゃん,,,,2025-04-26,,,,,,,新宇宙世紀アイドルちゃん - Single,yes
+song,8bb84512-65ec-43df-81f4-7a33773d8922,PureMagic,PureMagic,,PureMagic (清見るん),PureMagic · Solo (清見るん),yes,45484495-8792-48db-bab0-560ee4107464,清見るん,2026-01-24,,,,,,,PureMagic (清見るん) - Single,yes
+song,697f1045-525c-4b1a-ac73-715f090c195c,私だけにフォーカスして♡,Watashi dake ni Focus shite♡,,,私だけにフォーカスして♡ · Solo (古賀みれい),yes,3dfb8264-e501-45a7-a373-b3255445674e,古賀みれい,2025-09-09,,,,,,,私だけにフォーカスして♡ - Single,yes
+song,9ad5b1b3-0fd0-48f3-b760-0ed94391da4b,ニャンダフルステージ,Nyandafuru Stage,,ニャンダフルステージ (清見るん),ニャンダフルステージ · Solo (清見るん),yes,45484495-8792-48db-bab0-560ee4107464,清見るん,2026-01-24,,,,,,,ニャンダフルステージ (清見るん) - Single,yes

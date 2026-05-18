@@ -1,5 +1,4 @@
 import type { GameSavePayload } from "../save/gameSaveSchema";
-import { addNotification } from "../save/inbox";
 
 export interface FestivalEditionRow extends Record<string, unknown> {
   uid: string;
@@ -175,19 +174,6 @@ export function syncManagedTif2025Lives(
     save.lives.schedules.push(live);
     seen.add(uid);
     added += 1;
-  }
-  if (added > 0) {
-    addNotification(save, {
-      title: "Festival schedule imported: TIF 2025",
-      body: `${added} TOKYO IDOL FESTIVAL 2025 appearance(s) were added to your live schedule for the managed group.`,
-      sender: "Operations",
-      category: "internal",
-      level: "high",
-      isoDate: save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? "2025-07-20",
-      unread: true,
-      dedupeKey: `festival-sync|tif2025|${managedGroupUid}`,
-      relatedEventUid: String(tif2025.uid ?? ""),
-    });
   }
   return added;
 }

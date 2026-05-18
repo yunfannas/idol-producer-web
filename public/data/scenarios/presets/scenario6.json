@@ -1,8 +1,8 @@
 {
-  "id": "test0",
-  "name": "Akishibu Scenario 6 Test",
+  "id": "scenario6",
+  "name": "Scenario 6",
   "scenario_number": 6,
-  "opening_date": "2025-07-20",
+  "opening_date": "2025-07-05",
   "data_subdir": "scenario_6_2025-07-20",
   "startup_view": "Groups",
   "startup_group": "Akishibu project"

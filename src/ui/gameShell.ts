@@ -21,6 +21,8 @@ import {
   monthlyStaffSalaryYen,
   monthlyAdminTrainingCostYenForGroupLetterTier,
   estimateLiveGoodsGrossYen,
+  BIRTHDAY_TEE_TEMPLATE,
+  birthdayTeeUidForMember,
   type ProducedGoodsRow,
 } from "../engine/financeSystem";
 import {
@@ -56,6 +58,7 @@ import { notificationRequiresAck, sortNotificationsInPlace } from "../save/inbox
 import { renderGroupDetailPage } from "./groupDetailPage";
 import {
   isSongHiddenFromDisplay,
+  isSongAvailableOn,
   songPopularityNum,
   songsForDisplaySorted,
   buildDiscBuckets,
@@ -205,7 +208,7 @@ export type SongsWorkspaceTab = "group_songs" | "disc";
 export type MakingTab = "songs" | "goods";
 export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival";
 export type ScoutTab = "freelancer" | "transfer" | "audition";
-export type TrainingTab = "assignments" | "roster";
+export type TrainingTab = "assignments" | "roster" | "songs";
 export type FinanceHistoryRange = "day" | "week" | "month" | "year" | "all";
 
 export interface LiveProgramItem {
@@ -763,7 +766,12 @@ function renderIdolDetailPage(
 </section>`;
 }
 
-function renderInbox(save: GameSavePayload, selectedUid: string | null, simulationBusy: boolean): string {
+function renderInbox(
+  save: GameSavePayload,
+  selectedUid: string | null,
+  simulationBusy: boolean,
+  attentionActionUid: string | null,
+): string {
   const rows = [...save.inbox.notifications];
   sortNotificationsInPlace(rows);
   if (!rows.length) {
@@ -782,8 +790,9 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null, simulati
     .map((n) => {
       const unread = !n.read ? `<span class="badge-unread" aria-hidden="true">●</span> ` : "";
       const active = n.uid === sel ? " is-active" : "";
+      const attention = attentionActionUid === n.uid ? `<span class="inbox-blocker-alert" aria-hidden="true">!</span>` : "";
       return `<button type="button" class="inbox-row-btn fm-card${active}" data-inbox-uid="${htmlEsc(n.uid)}">
-        <span class="inbox-row-title">${unread}<span>${htmlEsc(n.title)}</span></span>
+        <span class="inbox-row-title">${unread}<span>${htmlEsc(n.title)}</span>${attention}</span>
         <span class="inbox-row-meta">${htmlEsc(n.date)} · ${htmlEsc(n.sender)}</span>
       </button>`;
     })
@@ -801,7 +810,7 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null, simulati
           selected.title === "Today's live schedule" ||
           String(selected.dedupe_key ?? "").startsWith("daily-lives|");
         const primaryBtn = isLiveSchedule
-          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}" ${simulationBusy ? "disabled" : ""}>${htmlEsc("Live Start")}</button>`
+          ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}" ${simulationBusy ? "disabled" : ""}>${htmlEsc("Live Start")}${attentionActionUid === selected.uid ? ` <span class="inbox-blocker-alert" aria-hidden="true">!</span>` : ""}</button>`
           : ``;
         const liveScheduleLinks = isLiveSchedule
           ? (() => {
@@ -1024,13 +1033,13 @@ function renderInbox(save: GameSavePayload, selectedUid: string | null, simulati
         };
         return `<article class="fm-card inbox-detail-card" aria-label="Message detail">
         <header class="fm-card-head">
-          <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}</h3>
+          <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}${attentionActionUid === selected.uid ? ` <span class="inbox-blocker-alert" aria-hidden="true">!</span>` : ""}</h3>
           <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.created_at || selected.date)}">${htmlEsc(selected.date)} ${htmlEsc(notificationTimeLabel(selected))}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
         </header>
         <div class="inbox-detail-body">${renderLiveReport()}</div>
         ${
           selected.requires_confirmation
-            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> — ${isLiveSchedule ? "Use Live Start to run the live and clear this blocker." : "Acknowledge when you have decided (full choice parity is still in progress)."}</p>`
+            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> — ${isLiveSchedule ? "Start live to proceed." : "Acknowledge when you have decided (full choice parity is still in progress)."}</p>`
             : ""
         }
         ${primaryBtn ? `<div class="inbox-detail-actions">${primaryBtn}</div>` : ""}
@@ -1281,6 +1290,31 @@ function renderTraining(save: GameSavePayload, trainingTab: TrainingTab): string
     .filter(Boolean)
     .join("");
 
+  const managedSongs = songsForDisplaySorted(save.database_snapshot.songs)
+    .filter((row) => String(row.group_uid ?? "") === groupUidStr)
+    .filter((row) => !isSongHiddenFromDisplay(row));
+  const selectedSongUids = new Set(save.training_song_uids.map((uid) => String(uid)));
+  const songRows = managedSongs
+    .map((song) => {
+      const uid = String(song.uid ?? "").trim();
+      const title = songCatalogDisplayLabel(song);
+      const availableOn = String((song.uid === "d3b51910-0f40-4e75-9413-4f3762fbf110" ? "2026-01-01" : song.release_date) ?? "")
+        .split("T")[0];
+      const available = isSongAvailableOn(song, ref ?? null);
+      const status = save.managed_song_status[uid];
+      const familiarity = Math.round(Number(status?.familiarity ?? 0) || 0);
+      const fatigue = Math.round(Number(status?.rotation_fatigue ?? 0) || 0);
+      return `<tr>
+        <td><label class="check-pill"><input type="checkbox" data-training-song-pick="${htmlEsc(uid)}" ${selectedSongUids.has(uid) ? "checked" : ""} ${available ? "" : "disabled"} /> <span>${htmlEsc(available ? "Prepare" : "Locked")}</span></label></td>
+        <td>${htmlEsc(title)}</td>
+        <td>${htmlEsc(availableOn || "—")}</td>
+        <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
+        <td class="num">${htmlEsc(String(familiarity))}</td>
+        <td class="num">${htmlEsc(String(fatigue))}</td>
+      </tr>`;
+    })
+    .join("");
+
   return `<section class="content-panel training-view">
     <h2 class="content-h2">Training</h2>
     <p class="content-muted">Daily sliders (0–5 each) for <strong>${htmlEsc(String(grp?.name_romanji ?? grp?.name ?? "group"))}</strong>. Sum caps at 20 and feeds <code>advanceOneDay</code> with the same condition/morale rules as the desktop save loop. Reference date: ${htmlEsc(String(ref ?? "—"))}.</p>
@@ -1296,7 +1330,18 @@ function renderTraining(save: GameSavePayload, trainingTab: TrainingTab): string
               </table>
             </div>
           </section>`
-        : `<div class="training-grid">${cards || `<p class="content-muted">No roster members.</p>`}</div>`
+        : trainingTab === "songs"
+          ? `<section class="fm-card">
+              <h3 class="content-h3">Song preparation</h3>
+              <p class="content-muted">${htmlEsc("Choose the songs the group is actively preparing in training. Familiarity rises from practice, while rotation fatigue grows when the same songs are performed too often.")}</p>
+              <div class="table-scroll">
+                <table class="fm-table">
+                  <thead><tr><th>Prepare</th><th>Song</th><th>Available on</th><th>Popularity</th><th>Familiarity</th><th>Rotation fatigue</th></tr></thead>
+                  <tbody>${songRows || `<tr><td colspan="6" class="content-muted">No managed songs found.</td></tr>`}</tbody>
+                </table>
+              </div>
+            </section>`
+          : `<div class="training-grid">${cards || `<p class="content-muted">No roster members.</p>`}</div>`
     }
   </section>`;
 }
@@ -1898,32 +1943,188 @@ function renderMakingTabs(active: MakingTab): string {
   </div>`;
 }
 
-function renderGoodsInventoryTable(goods: ProducedGoodsRow[]): string {
-  const rows = goods
-    .map(
-      (item) => `<tr>
-        <td>${htmlEsc(item.member_name ?? "Group")}</td>
-        <td>${htmlEsc(item.name)}</td>
-        <td>${htmlEsc(item.category)}</td>
-        <td class="num">${htmlEsc(`JPY ${Number(item.unit_price_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
-        <td class="num">${htmlEsc(`JPY ${Number(item.unit_cost_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
-        <td class="num">${htmlEsc(String(Math.max(0, Number(item.stock ?? 0) || 0)))}</td>
-        <td><input class="fm-input goods-amount-input" data-goods-desired-uid="${htmlEsc(item.uid)}" value="${htmlEsc(String(Math.max(0, Number(item.desired_amount ?? 0) || 0)))}" /></td>
-        <td class="num">${htmlEsc(`JPY ${(Math.max(0, Number(item.desired_amount ?? 0) || 0) * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0)).toLocaleString("ja-JP")}`)}</td>
-        <td><button type="button" class="fm-btn fm-btn-accent" data-goods-order-uid="${htmlEsc(item.uid)}">Order</button></td>
-      </tr>`,
-    )
+type GoodsInventoryMatrixRow = {
+  name: string;
+  category: string;
+  unitPriceYen: number;
+  unitCostYen: number;
+  entriesByMemberUid: Map<string, ProducedGoodsRow>;
+  sharedEntry: ProducedGoodsRow | null;
+};
+
+type BirthdayGoodsQueueRow = {
+  memberUid: string;
+  memberName: string;
+  liveUid: string;
+  liveTitle: string;
+  liveDate: string;
+  goodsUid: string;
+  goods: ProducedGoodsRow | null;
+};
+
+function buildGoodsInventoryMatrix(goods: ProducedGoodsRow[]): {
+  members: Array<{ uid: string; name: string }>;
+  rows: GoodsInventoryMatrixRow[];
+} {
+  const members = new Map<string, { uid: string; name: string }>();
+  const rowsByName = new Map<string, GoodsInventoryMatrixRow>();
+  for (const item of goods) {
+    const rowKey = `${String(item.category ?? "").trim()}|${String(item.name ?? "").trim()}`;
+    let row = rowsByName.get(rowKey);
+    if (!row) {
+      row = {
+        name: String(item.name ?? "").trim(),
+        category: String(item.category ?? "").trim(),
+        unitPriceYen: Math.max(0, Number(item.unit_price_yen ?? 0) || 0),
+        unitCostYen: Math.max(0, Number(item.unit_cost_yen ?? 0) || 0),
+        entriesByMemberUid: new Map<string, ProducedGoodsRow>(),
+        sharedEntry: null,
+      };
+      rowsByName.set(rowKey, row);
+    }
+    row.unitPriceYen = Math.max(0, Number(item.unit_price_yen ?? row.unitPriceYen) || 0);
+    row.unitCostYen = Math.max(0, Number(item.unit_cost_yen ?? row.unitCostYen) || 0);
+    const memberUid = String(item.member_uid ?? "").trim();
+    const memberName = String(item.member_name ?? "").trim();
+    if (memberUid && memberName) {
+      members.set(memberUid, { uid: memberUid, name: memberName });
+      row.entriesByMemberUid.set(memberUid, item);
+    } else {
+      row.sharedEntry = item;
+    }
+  }
+  const sortedMembers = [...members.values()].sort((a, b) => a.name.localeCompare(b.name, "ja"));
+  const rows = [...rowsByName.values()].sort((a, b) => {
+    const cat = a.category.localeCompare(b.category, "en");
+    return cat !== 0 ? cat : a.name.localeCompare(b.name, "en");
+  });
+  return { members: sortedMembers, rows };
+}
+
+function buildBirthdayGoodsQueue(save: GameSavePayload, goods: ProducedGoodsRow[]): BirthdayGoodsQueueRow[] {
+  const group = getPrimaryGroup(save);
+  if (!group || typeof group !== "object") return [];
+  const currentIso = String(save.current_date ?? save.game_start_date ?? "").split("T")[0];
+  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((uid) => String(uid ?? "").trim()).filter(Boolean) : [];
+  const idols = Array.isArray(save.database_snapshot.idols) ? save.database_snapshot.idols : [];
+  const members = memberUids
+    .map((uid) => {
+      const row = idols.find((idol) => String((idol as { uid?: unknown }).uid ?? "").trim() === uid);
+      const name = String((row as { name?: unknown })?.name ?? "").trim();
+      return name ? { uid, name } : null;
+    })
+    .filter((row): row is { uid: string; name: string } => Boolean(row));
+  const goodsByUidMap = goodsByUid(goods);
+  const schedules = Array.isArray(save.lives?.schedules) ? save.lives.schedules : [];
+  const out: BirthdayGoodsQueueRow[] = [];
+  for (const live of schedules) {
+    if (!live || typeof live !== "object") continue;
+    const dateIso = String((live as { start_date?: unknown }).start_date ?? "").split("T")[0];
+    if (currentIso && dateIso && dateIso < currentIso) continue;
+    const title = String((live as { title?: unknown }).title ?? "").trim();
+    if (!/生誕|birthday/i.test(title)) continue;
+    const liveUid = String((live as { uid?: unknown }).uid ?? "").trim();
+    for (const member of members) {
+      if (!title.includes(member.name)) continue;
+      const goodsUid = birthdayTeeUidForMember(member.uid);
+      out.push({
+        memberUid: member.uid,
+        memberName: member.name,
+        liveUid,
+        liveTitle: title,
+        liveDate: dateIso,
+        goodsUid,
+        goods: goodsByUidMap.get(goodsUid) ?? null,
+      });
+      break;
+    }
+  }
+  return out.sort((a, b) => `${a.liveDate} ${a.memberName}`.localeCompare(`${b.liveDate} ${b.memberName}`, "ja"));
+}
+
+function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRow[]): string {
+  const regularGoods = goods.filter((item) => String(item.name ?? "").trim() !== BIRTHDAY_TEE_TEMPLATE.name);
+  const { members, rows } = buildGoodsInventoryMatrix(regularGoods);
+  const birthdayQueue = buildBirthdayGoodsQueue(save, goods);
+  const regularHeaderCells = rows
+    .map((row) => {
+      const totalUnits = [...row.entriesByMemberUid.values()].reduce(
+        (sum, entry) => sum + Math.max(0, Number(entry.desired_amount ?? 0) || 0),
+        row.sharedEntry ? Math.max(0, Number(row.sharedEntry.desired_amount ?? 0) || 0) : 0,
+      );
+      const rowKey = encodeURIComponent(`${row.category}|${row.name}`);
+      return `<th class="goods-transpose-head">
+        <div class="goods-transpose-title">${htmlEsc(row.name)}</div>
+        <label class="goods-transpose-price">
+          <span>${htmlEsc("Price")}</span>
+          <input class="fm-input goods-price-input" data-goods-price-key="${htmlEsc(rowKey)}" value="${htmlEsc(String(row.unitPriceYen))}" />
+        </label>
+        <div class="goods-transpose-meta">${htmlEsc(`Cost ¥${row.unitCostYen.toLocaleString("ja-JP")}`)}</div>
+        <div class="goods-transpose-meta">${htmlEsc(`Total ¥${(totalUnits * row.unitCostYen).toLocaleString("ja-JP")}`)}</div>
+        <button type="button" class="fm-btn fm-btn-accent goods-transpose-order" data-goods-order-key="${htmlEsc(rowKey)}">Order</button>
+      </th>`;
+    })
     .join("");
+  const bodyRows = members
+    .map((member) => {
+      const cells = rows
+        .map((row) => {
+          const entry = row.entriesByMemberUid.get(member.uid) ?? row.sharedEntry;
+          if (!entry) return `<td class="goods-matrix-cell goods-matrix-cell--empty">-</td>`;
+          const stock = Math.max(0, Number(entry.stock ?? 0) || 0);
+          const desired = Math.max(0, Number(entry.desired_amount ?? 0) || 0);
+          return `<td class="goods-matrix-cell">
+            <div class="goods-matrix-stock">${htmlEsc(`Stock ${stock.toLocaleString("ja-JP")}`)}</div>
+            <input class="fm-input goods-amount-input" data-goods-desired-uid="${htmlEsc(entry.uid)}" value="${htmlEsc(String(desired))}" />
+          </td>`;
+        })
+        .join("");
+      return `<tr><th scope="row">${htmlEsc(member.name)}</th>${cells}</tr>`;
+    })
+    .join("");
+  const birthdayQueueRows = birthdayQueue.length
+    ? birthdayQueue
+        .map((row) => {
+          const goods = row.goods;
+          const stock = Math.max(0, Number(goods?.stock ?? 0) || 0);
+          const desired = Math.max(0, Number(goods?.desired_amount ?? BIRTHDAY_TEE_TEMPLATE.default_desired_amount) || 0);
+          const price = Math.max(0, Number(goods?.unit_price_yen ?? BIRTHDAY_TEE_TEMPLATE.unit_price_yen) || 0);
+          const cost = Math.max(0, Number(goods?.unit_cost_yen ?? BIRTHDAY_TEE_TEMPLATE.unit_cost_yen) || 0);
+          return `<tr>
+            <td>${htmlEsc(row.memberName)}</td>
+            <td>${htmlEsc(formatLongDate(row.liveDate))}</td>
+            <td><button type="button" class="link-btn" data-live-open-uid="${htmlEsc(row.liveUid)}">${htmlEsc(row.liveTitle)}</button></td>
+            <td class="num">${htmlEsc(String(stock))}</td>
+            <td><input class="fm-input goods-amount-input" data-goods-desired-uid="${htmlEsc(row.goodsUid)}" data-goods-member-uid="${htmlEsc(row.memberUid)}" data-goods-member-name="${htmlEsc(row.memberName)}" value="${htmlEsc(String(desired))}" /></td>
+            <td><input class="fm-input goods-price-input" data-goods-price-key="${htmlEsc(encodeURIComponent(`birthday-queue|${row.memberUid}`))}" data-goods-member-uid="${htmlEsc(row.memberUid)}" data-goods-member-name="${htmlEsc(row.memberName)}" value="${htmlEsc(String(price))}" /></td>
+            <td class="num">${htmlEsc(`JPY ${cost.toLocaleString("ja-JP")}`)}</td>
+            <td class="num">${htmlEsc(`JPY ${(desired * cost).toLocaleString("ja-JP")}`)}</td>
+            <td><button type="button" class="fm-btn fm-btn-accent" data-birthday-goods-order-uid="${htmlEsc(row.memberUid)}" data-goods-member-name="${htmlEsc(row.memberName)}">Queue order</button></td>
+          </tr>`;
+        })
+        .join("")
+    : `<tr><td colspan="9" class="content-muted">${htmlEsc("No upcoming birthday live for the current managed roster.")}</td></tr>`;
   return `<section class="content-panel songs-view making-track-view">
     <h2 class="content-h2">Making</h2>
-    <p class="content-muted">${htmlEsc("Build stock here first. Goods are tracked per member, and ordering now consumes cash as production cost.")}</p>
+    <p class="content-muted">${htmlEsc("Build stock here first. Each row orders one goods type across the member columns, and ordering consumes cash as production cost.")}</p>
     ${renderMakingTabs("goods")}
     <section class="fm-card">
-      <h3 class="content-h3">Goods workshop</h3>
+      <h3 class="content-h3">Birthday T-shirt for upcoming birthday party</h3>
+      <p class="content-muted">${htmlEsc("Prepare birthday T-shirts here for members with an upcoming birthday live.")}</p>
       <div class="table-scroll">
         <table class="fm-table">
-          <thead><tr><th>Member</th><th>Item</th><th>Category</th><th>Unit price</th><th>Make cost</th><th>Made</th><th>Desired amount</th><th>Total cost</th><th>Order</th></tr></thead>
-          <tbody>${rows}</tbody>
+          <thead><tr><th>Member</th><th>Birthday live date</th><th>Birthday live</th><th>Stock</th><th>Queue amount</th><th>Price</th><th>Cost</th><th>Total cost</th><th>Order</th></tr></thead>
+          <tbody>${birthdayQueueRows}</tbody>
+        </table>
+      </div>
+    </section>
+    <section class="fm-card">
+      <h3 class="content-h3">Goods workshop</h3>
+      <p class="content-muted">${htmlEsc("Regular goods are shown as item columns, with one order button per goods type.")}</p>
+      <div class="table-scroll">
+        <table class="fm-table">
+          <thead><tr><th>Member</th>${regularHeaderCells}</tr></thead>
+          <tbody>${bodyRows}</tbody>
         </table>
       </div>
     </section>
@@ -2430,6 +2631,7 @@ function renderTrainingTabs(active: TrainingTab): string {
   const tabs: Array<[TrainingTab, string]> = [
     ["roster", "Roster"],
     ["assignments", "Assignments"],
+    ["songs", "Songs"],
   ];
   return `<div class="workspace-tabs training-tabs">${tabs
     .map(
@@ -2489,11 +2691,18 @@ function renderLivesView(
   const venues = getVenuesCatalog();
   const venueByName = new Map(venues.map((row) => [row.name, row] as const));
   const goodsInventory = Array.isArray(save.goods_inventory) ? save.goods_inventory : [];
-  const availableGoods = goodsInventory.filter((item) => Math.max(0, Number(item.stock ?? 0) || 0) > 0);
+  const availableGoodsForTitle = (title: string): ProducedGoodsRow[] =>
+    goodsInventory.filter((item) => {
+      const stock = Math.max(0, Number(item.stock ?? 0) || 0);
+      if (stock <= 0) return false;
+      if (String(item.name ?? "") !== BIRTHDAY_TEE_TEMPLATE.name) return true;
+      return /生誕|birthday/i.test(title) && String(item.member_name ?? "").trim() && title.includes(String(item.member_name ?? "").trim());
+    });
   const goodsLookup = goodsByUid(goodsInventory);
   const managedUid = String(grp?.uid ?? "");
   const groupSongs = songsForDisplaySorted(save.database_snapshot.songs)
     .filter((row) => String(row.group_uid ?? "") === managedUid)
+    .filter((row) => isSongAvailableOn(row, todayIso))
     .slice(0, 40);
   const upcoming = [...schedules]
     .filter((live) => String(live.start_date ?? "").split("T")[0] >= todayIso && String(live.status ?? "") !== "played")
@@ -2657,23 +2866,29 @@ function renderLivesView(
         : "Not set"
     : "";
 
-  const scheduledSelectedGoodsUids = selectedScheduled
+  const scheduledAvailableGoods = availableGoodsForTitle(String(selectedScheduled?.title ?? ""));
+  const scheduledSelectedGoodsUidsRaw = selectedScheduled
     ? Array.isArray(selectedScheduled.goods_uids)
       ? (selectedScheduled.goods_uids as unknown[]).map((x) => String(x))
       : String(selectedScheduled.goods_uid ?? "").trim()
         ? [String(selectedScheduled.goods_uid ?? "").trim()]
         : []
     : [];
-  const scheduledGoodsChecklist = availableGoods.length
-    ? availableGoods
+  const scheduledSelectedGoodsUids =
+    selectedScheduled?.goods_enabled && scheduledSelectedGoodsUidsRaw.length === 0
+      ? scheduledAvailableGoods.map((item) => item.uid)
+      : scheduledSelectedGoodsUidsRaw;
+  const scheduledGoodsChecklist = scheduledAvailableGoods.length
+    ? scheduledAvailableGoods
         .map((item) => {
           const checked = scheduledSelectedGoodsUids.includes(item.uid) ? "checked" : "";
           return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-detail-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
         })
         .join("")
     : `<p class="content-muted">No made goods in stock yet. Use Making -> Goods first.</p>`;
-  const newLiveGoodsChecklist = availableGoods.length
-    ? availableGoods
+  const newLiveAvailableGoods = availableGoodsForTitle(newLiveForm.title);
+  const newLiveGoodsChecklist = newLiveAvailableGoods.length
+    ? newLiveAvailableGoods
         .map((item) => {
           const checked = selectedGoodsUids.includes(item.uid) ? "checked" : "";
           return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
@@ -3109,6 +3324,7 @@ export function renderMainContent(
     selectedScoutApplicantUid: string | null;
     /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
     scheduleCalendarMonthStart: string | null;
+    attentionActionUid?: string | null;
     lang: UiLanguage;
     simulationBusy: boolean;
   },
@@ -3137,6 +3353,7 @@ export function renderMainContent(
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
+    attentionActionUid,
     lang,
     simulationBusy,
   } = ctx;
@@ -3206,7 +3423,7 @@ export function renderMainContent(
 
   switch (view) {
     case "Inbox":
-      return renderInbox(save, inboxSelectedUid, simulationBusy);
+      return renderInbox(save, inboxSelectedUid, simulationBusy, ctx.attentionActionUid ?? null);
     case "Finances":
       return renderFinancesProjectionView(save, financeHistoryRange);
     case "Idols": {
@@ -3270,7 +3487,7 @@ export function renderMainContent(
       return renderTraining(save, trainingTab);
     case "Making":
       return makingTab === "goods"
-        ? renderGoodsInventoryTable(save.goods_inventory)
+        ? renderGoodsInventoryTable(save, save.goods_inventory)
         : renderSongsList(save.database_snapshot.songs, {
         subtitle: save.scenario_context?.startup_date
           ? `Opening ${save.scenario_context.startup_date}`
@@ -3442,7 +3659,8 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     : `<div class="fm-cash-pill content-muted" title="Browse">Browse</div>`;
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
-  const nextHint = inboxBlock ? `Inbox: ${inboxBlock.title}` : "Advance one simulated day";
+  const nextHint =
+    inboxBlock?.title === "Today's live schedule" ? "Start live to proceed" : inboxBlock ? `Inbox: ${inboxBlock.title}` : "Advance one simulated day";
 
   const nextDayBtn = browseMode
     ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="Not in browse mode"><span id="btn-next-day-label">${htmlEsc("NEXT DAY")}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
@@ -3606,7 +3824,12 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     : `<div class="fm-cash-pill content-muted" title="${htmlEsc(t(lang, "shell_browse"))}">${htmlEsc(t(lang, "shell_browse"))}</div>`;
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
-  const nextHint = inboxBlock ? `${navLabel(lang, "Inbox")}: ${inboxBlock.title}` : t(lang, "shell_advance_one_day");
+  const nextHint =
+    inboxBlock?.title === "Today's live schedule"
+      ? "Start live to proceed"
+      : inboxBlock
+        ? `${navLabel(lang, "Inbox")}: ${inboxBlock.title}`
+        : t(lang, "shell_advance_one_day");
 
   const nextDayBtn = browseMode
     ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`

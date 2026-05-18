@@ -43,6 +43,20 @@ export function notificationSortKey(item: NotificationRow): [number, number, str
   return [-dayOrd, -seconds, item.uid];
 }
 
+function notificationCreatedAtMs(item: NotificationRow): number {
+  const createdAt = String(item.created_at || "").trim();
+  if (createdAt) {
+    const direct = Date.parse(`${createdAt.endsWith("Z") ? createdAt : `${createdAt}Z`}`);
+    if (Number.isFinite(direct)) return direct;
+  }
+  const dayText = String(item.date || "").split("T")[0].trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dayText)) {
+    const fallback = Date.parse(`${dayText}T00:00:00Z`);
+    if (Number.isFinite(fallback)) return fallback;
+  }
+  return 0;
+}
+
 export function sortNotificationsInPlace(rows: NotificationRow[]): void {
   rows.sort((a, b) => {
     const ka = notificationSortKey(a);
@@ -61,7 +75,7 @@ export function notificationRequiresAck(item: NotificationRow | null | undefined
   const cat = String(item.category ?? "").toLowerCase();
   const title = String(item.title ?? "").toLowerCase();
   if (cat === "confirmation" || cat === "decision") return true;
-  const needles = ["member left", "scandal revealed", "today's live schedule", "signing confirmation"] as const;
+  const needles = ["scandal revealed", "today's live schedule", "signing confirmation"] as const;
   return needles.some((n) => title.includes(n));
 }
 
@@ -72,26 +86,16 @@ export function getBlockingNotification(
   notifications: NotificationRow[],
   currentIso: string,
 ): NotificationRow | null {
-  let curOrd = 0;
-  try {
-    curOrd = new Date(`${String(currentIso).split("T")[0]}T12:00:00Z`).getTime() / 86400000;
-  } catch {
-    curOrd = 0;
-  }
+  const currentText = String(currentIso ?? "").trim();
+  const currentMs = Date.parse(
+    `${currentText.includes("T") ? currentText : `${currentText}T23:59:59`}${currentText.endsWith("Z") ? "" : "Z"}`,
+  );
   const blocking: NotificationRow[] = [];
   for (const item of notifications) {
     if (!notificationRequiresAck(item)) continue;
     if (item.read && String(item.choice_status ?? "").trim() !== "pending") continue;
-    const dayText = String(item.date ?? "").split("T")[0].trim();
-    let itemOrd = 0;
-    if (/^\d{4}-\d{2}-\d{2}$/.test(dayText)) {
-      try {
-        itemOrd = new Date(`${dayText}T12:00:00Z`).getTime() / 86400000;
-      } catch {
-        itemOrd = 0;
-      }
-    }
-    if (itemOrd > curOrd) continue;
+    const itemMs = notificationCreatedAtMs(item);
+    if (Number.isFinite(currentMs) && itemMs > currentMs) continue;
     blocking.push(item);
   }
   if (!blocking.length) return null;

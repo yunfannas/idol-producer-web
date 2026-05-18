@@ -202,5 +202,31 @@
       null,
       "2025-06-21"
     ]
+  },
+  "Hello! Project": {
+    "group_names": [
+      "モーニング娘。'25",
+      "アンジュルム",
+      "Juice=Juice",
+      "つばきファクトリー",
+      "BEYOOOOONDS",
+      "ハロプロ研修生"
+    ],
+    "group_uids": [
+      "44Oi44O844OL44Oz44Kw5aiY44CC",
+      "44Ki44Oz44K444Ol44Or44Og",
+      "SnVpY2U9SnVpY2U",
+      "44Gk44Gw44GN44OV44Kh44Kv44OI44Oq44O8",
+      "QkVZT09PT09ORFM",
+      "44OP44Ot44OX44Ot56CU5L-u55Sf"
+    ],
+    "group_join_dates": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 }

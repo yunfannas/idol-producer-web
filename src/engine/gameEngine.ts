@@ -37,6 +37,12 @@ import { formatLiveSlotLine } from "./liveScheduleWeb";
 import { applyScenarioEventsForDate } from "./scenarioRuntimeWeb";
 import { buildDefaultScoutCompanies } from "./scoutWeb";
 import {
+  applyTrainingToManagedSongs,
+  decayManagedSongsOvernight,
+  maybeAddSongUnlockNotification,
+  registerManagedSetlistPerformance,
+} from "./songStatusSystem";
+import {
   autoBookMonthFromMonthEndPrompt,
   ensureAutoBookedLivesThroughEndOfNextMonth,
   maybeSeedMonthEndAutoBookPrompt,
@@ -589,7 +595,7 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       continue;
     }
 
-    const resolution = resolveGroupLiveResultWeb(g, members, songs, live);
+    const resolution = resolveGroupLiveResultWeb(g, members, songs, live, save.managed_song_status);
     const applied = applyLiveResultToSnapshot(g, members, resolution);
     const liveMinutes = durationMinutesFromLive(live);
     const rehearsalStart = String(live.rehearsal_start ?? "").slice(0, 5);
@@ -683,6 +689,13 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       goods_gross_yen: goodsGross,
       tokutenkai_revenue_yen: tokutenkaiRevenue,
     };
+    registerManagedSetlistPerformance(
+      save.managed_song_status,
+      songs,
+      String(g.uid ?? ""),
+      Array.isArray(live.setlist) ? (live.setlist as unknown[]).map((x) => String(x)) : [],
+      targetIso,
+    );
     save.lives.results.push({
       date: targetIso,
       live_uid: uid,
@@ -816,6 +829,8 @@ function applyMorningRecovery(next: GameSavePayload, targetDateIso: string): voi
       includeSleepRecovery: true,
     });
   }
+  decayManagedSongsOvernight(next.managed_song_status, next.training_song_uids, targetDateIso);
+  maybeAddSongUnlockNotification(next, targetDateIso);
 }
 
 function processLiveReportEvent(next: GameSavePayload, event: SimulationEvent): void {
@@ -842,10 +857,12 @@ function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent):
   const idols = next.database_snapshot.idols as Record<string, unknown>[];
   const affected: string[] = [];
   const conditionLines: string[] = [];
+  let maxBlocks = 0;
   for (const uid of event.idolUids ?? []) {
     const idol = idols.find((r) => String(r.uid ?? "") === uid);
     if (!idol) continue;
     const blocks = Math.max(1, event.trainingBlocksByUid?.[uid] ?? 1);
+    if (blocks > maxBlocks) maxBlocks = blocks;
     const beforeCondition = typeof idol.condition === "number" ? idol.condition : Number(idol.condition ?? 0) || 0;
     applyDailyStatusUpdateJson(idol, {
       trainingLoad: Math.min(20, blocks * 10),
@@ -862,12 +879,20 @@ function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent):
     affected.push(name);
     conditionLines.push(`- ${name}: ${Math.round(beforeCondition)} -> ${Math.round(afterCondition)} (${delta >= 0 ? "+" : ""}${delta})`);
   }
+  const songUpdates = applyTrainingToManagedSongs(
+    next.managed_song_status,
+    next.training_song_uids,
+    isoDatePart(event.iso),
+    maxBlocks || 1,
+  );
   addNotification(next, {
     title: `${event.label} ended`,
     body: `${isoDatePart(event.iso)} ${isoTimePart(event.iso)} ? ${affected.length} idol(s): ${affected.join(", ")}.
 
 Condition changes:
-${conditionLines.join("\n")}`,
+${conditionLines.join("\n")}${songUpdates.length ? `\n\nSong preparation:\n${songUpdates
+  .map((row) => `- ${row.title}: familiarity ${row.familiarity_after} (${row.familiarity_delta >= 0 ? "+" : ""}${row.familiarity_delta})`)
+  .join("\n")}` : ""}`,
     sender: "Training",
     category: "general",
     isoDate: isoDatePart(event.iso),

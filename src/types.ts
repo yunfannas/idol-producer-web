@@ -22,7 +22,13 @@ export interface WebPreviewBundle {
       disc_type?: string;
       release_date?: string;
       publisher?: string;
+      /** Flat listing when the release has no per-type variants. */
       track_list?: string[];
+      /** Tracks shared by every edition; pair with edition_track_lists. */
+      shared_track_list?: string[];
+      /** Per-edition tail tracks (different couplings/exclusive tracks); labels are UI-only. */
+      edition_track_lists?: Array<{ label?: string; track_list?: string[] }>;
+      track_song_uids?: string[];
     }>;
   };
   idols: Array<{

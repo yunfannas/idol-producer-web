@@ -10,6 +10,16 @@ function compareIsoDate(a: string, b: string): number {
   return a.localeCompare(b);
 }
 
+function addUtcDays(isoDate: string, days: number): string {
+  const dt = new Date(`${isoDate}T12:00:00Z`);
+  dt.setUTCDate(dt.getUTCDate() + days);
+  return dt.toISOString().slice(0, 10);
+}
+
+function isMondayUtc(isoDate: string): boolean {
+  return new Date(`${isoDate}T12:00:00Z`).getUTCDay() === 1;
+}
+
 function deepCopy<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
 }
@@ -417,6 +427,65 @@ export function describeAppliedEvent(event: Record<string, unknown>): { title: s
   return { title: "Scenario update", body: `A scheduled scenario event was applied for ${groupName}.` };
 }
 
+function buildWeeklyScenarioNewsSummary(save: GameSavePayload, mondayIso: string): { title: string; body: string } | null {
+  const windowStart = addUtcDays(mondayIso, -6);
+  const formedRows: Array<{ date: string; group: string }> = [];
+  const joinRows: Array<{ date: string; idol: string; group: string }> = [];
+  const leftRows: Array<{ date: string; idol: string; group: string }> = [];
+  for (const rawGroup of save.database_snapshot.groups) {
+    if (!rawGroup || typeof rawGroup !== "object") continue;
+    const group = rawGroup as Record<string, unknown>;
+    const formedDate = parseIsoDate(group.formed_date);
+    if (!formedDate) continue;
+    if (compareIsoDate(formedDate, windowStart) < 0 || compareIsoDate(formedDate, mondayIso) > 0) continue;
+    const groupName = String(group.name ?? group.name_romanji ?? group.uid ?? "a group").trim() || "a group";
+    formedRows.push({ date: formedDate, group: groupName });
+  }
+  for (const rawIdol of save.database_snapshot.idols) {
+    if (!rawIdol || typeof rawIdol !== "object") continue;
+    const idol = rawIdol as Record<string, unknown>;
+    const idolName = String(idol.name ?? "Member").trim() || "Member";
+    const history = Array.isArray(idol.group_history) ? idol.group_history : [];
+    for (const rawEntry of history) {
+      if (!rawEntry || typeof rawEntry !== "object") continue;
+      const entry = rawEntry as Record<string, unknown>;
+      const startDate = parseIsoDate(entry.start_date);
+      const endDate = parseIsoDate(entry.end_date);
+      const groupName = String(entry.group_name ?? entry.group_uid ?? "a group").trim() || "a group";
+      if (startDate && compareIsoDate(startDate, windowStart) >= 0 && compareIsoDate(startDate, mondayIso) <= 0) {
+        joinRows.push({ date: startDate, idol: idolName, group: groupName });
+      }
+      if (endDate && compareIsoDate(endDate, windowStart) >= 0 && compareIsoDate(endDate, mondayIso) <= 0) {
+        leftRows.push({ date: endDate, idol: idolName, group: groupName });
+      }
+    }
+  }
+  if (!formedRows.length && !joinRows.length && !leftRows.length) return null;
+  formedRows.sort((a, b) => a.date.localeCompare(b.date) || a.group.localeCompare(b.group));
+  joinRows.sort((a, b) => a.date.localeCompare(b.date) || a.group.localeCompare(b.group) || a.idol.localeCompare(b.idol));
+  leftRows.sort((a, b) => a.date.localeCompare(b.date) || a.group.localeCompare(b.group) || a.idol.localeCompare(b.idol));
+  const sections: string[] = [];
+  if (formedRows.length) {
+    sections.push(
+      `New groups:\n${formedRows.map((row) => `- ${row.date}: ${row.group} formed.`).join("\n")}`,
+    );
+  }
+  if (joinRows.length) {
+    sections.push(
+      `Member joins:\n${joinRows.map((row) => `- ${row.date}: ${row.idol} joined ${row.group}.`).join("\n")}`,
+    );
+  }
+  if (leftRows.length) {
+    sections.push(
+      `Member departures:\n${leftRows.map((row) => `- ${row.date}: ${row.idol} left ${row.group}.`).join("\n")}`,
+    );
+  }
+  return {
+    title: "Weekly news roundup",
+    body: `News recorded from ${windowStart} to ${mondayIso}:\n\n${sections.join("\n\n")}`,
+  };
+}
+
 export function applyScenarioEventsForDate(save: GameSavePayload, targetIso: string): void {
   const queue = Array.isArray(save.scenario_runtime.future_events) ? save.scenario_runtime.future_events : [];
   if (!queue.length) return;
@@ -430,6 +499,8 @@ export function applyScenarioEventsForDate(save: GameSavePayload, targetIso: str
   save.database_snapshot.groups = applied.groups;
   save.scenario_runtime.future_events = applied.pending;
   for (const event of applied.applied) {
+    const eventType = String(event.type ?? "");
+    if (eventType === "idol_leave_group" || eventType === "idol_join_group" || eventType === "group_formed") continue;
     const desc = describeAppliedEvent(event);
     addNotification(save, {
       title: desc.title,
@@ -441,7 +512,23 @@ export function applyScenarioEventsForDate(save: GameSavePayload, targetIso: str
       unread: true,
       dedupeKey: `future-event|${String(event.uid ?? "")}|${targetIso}`,
       relatedEventUid: String(event.uid ?? ""),
-      requiresConfirmation: desc.title.startsWith("Member left") || desc.title.startsWith("Scandal revealed"),
+      requiresConfirmation: desc.title.startsWith("Scandal revealed"),
     });
+  }
+  if (isMondayUtc(targetIso)) {
+    const summary = buildWeeklyScenarioNewsSummary(save, targetIso);
+    if (summary) {
+      addNotification(save, {
+        title: summary.title,
+        body: summary.body,
+        sender: "News",
+        category: "news",
+        level: "normal",
+        isoDate: targetIso,
+        createdTime: "09:00:00",
+        unread: true,
+        dedupeKey: `weekly-member-left|${targetIso}`,
+      });
+    }
   }
 }

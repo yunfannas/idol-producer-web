@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-05-18T01:55:26.559Z",
+  "sources": [
+    {
+      "source_key": "akishibu-project",
+      "label": "Akishibu TimeTree",
+      "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "group_name": "アキシブproject",
+      "group_name_romanji": "Akishibu project",
+      "aliases": [
+        "Akishibu project",
+        "アキシブproject",
+        "akishibu",
+        "アキシブ"
+      ],
+      "raw_file": "timetree/akishibu-2025-07-2026-05.json",
+      "file": "groups/akishibu-project.json",
+      "event_count": 171,
+      "date_start": "2025-07-05",
+      "date_end": "2026-05-31"
+    },
+    {
+      "source_key": "ilife",
+      "label": "iLiFE! TimeTree",
+      "group_uid": "aUxpRkUh",
+      "group_name": "iLiFE!",
+      "group_name_romanji": "iLiFE!",
+      "aliases": [
+        "iLiFE!",
+        "ilife",
+        "i life"
+      ],
+      "raw_file": "timetree/ilife_official-2025-07-2026-05.json",
+      "file": "groups/ilife.json",
+      "event_count": 126,
+      "date_start": "2025-07-01",
+      "date_end": "2026-05-24"
+    }
+  ]
+}

@@ -1,10 +1,20 @@
 import monthlyLiveCountsCsv from "../../docs/reference/monthly_live_counts_by_letter_tier_template.csv?raw";
+import managedLiveScheduleManifestJson from "../../public/data/managed-live-schedules/manifest.json";
 import type { GameSavePayload } from "../save/gameSaveSchema";
 import { getPrimaryGroup, getLetterTierFromGroup } from "../save/gameSaveSchema";
 import { addNotification } from "../save/inbox";
-import { addMinutesToHHMM, LIVE_TYPE_PRESETS, getVenuesCatalog, pickVenueForDesiredCapacity } from "./liveScheduleWeb";
-import { songsForDisplaySorted } from "../data/songDisplayPolicy";
+import {
+  addMinutesToHHMM,
+  autoSetlistSongCountForLive,
+  buildAutoProgramForLive,
+  durationMinutesBetweenHHMM,
+  LIVE_TYPE_PRESETS,
+  getVenuesCatalog,
+  pickVenueForDesiredCapacity,
+} from "./liveScheduleWeb";
+import { songsForDisplaySorted, songPopularityNum } from "../data/songDisplayPolicy";
 import { songCatalogDisplayLabel } from "../data/songCatalog";
+import { suggestManagedSetlistTitles } from "./songStatusSystem";
 
 type LiveCountRow = {
   group_letter_tier: string;
@@ -37,6 +47,48 @@ type AutoLiveTemplate = {
   setlistCount: number;
   desiredCapacity: (tier: string, venueRank: string) => number;
   preferredWeekdays: number[];
+};
+
+type ManagedLiveScheduleEvent = {
+  uid?: string;
+  source_event_id?: string;
+  date?: string;
+  title?: string;
+  template_key?: AutoLiveTypeKey;
+  event_type?: string;
+  live_type?: string;
+  raw_type?: string;
+  venue?: string;
+  venue_uid?: string;
+  start_time?: string;
+  end_time?: string;
+  tokutenkai_enabled?: boolean;
+  tokutenkai_start?: string;
+  tokutenkai_end?: string;
+  poster_image_path?: string;
+  source_url?: string;
+};
+
+type ManagedLiveScheduleFile = {
+  source_key?: string;
+  label?: string;
+  event_count?: number;
+  events?: ManagedLiveScheduleEvent[];
+};
+
+type ManagedLiveScheduleSource = {
+  source_key?: string;
+  label?: string;
+  group_uid?: string;
+  group_name?: string;
+  group_name_romanji?: string;
+  aliases?: string[];
+  file?: string;
+};
+
+type ManagedLiveScheduleManifest = {
+  generated_at?: string;
+  sources?: ManagedLiveScheduleSource[];
 };
 
 const CAPACITY_BY_RANK: Record<string, number> = {
@@ -196,6 +248,18 @@ const AUTO_LIVE_TEMPLATES: Record<AutoLiveTypeKey, AutoLiveTemplate> = {
 
 let matrixMemo: Map<string, LiveCountRow> | null = null;
 
+const MANAGED_LIVE_SCHEDULE_MANIFEST = managedLiveScheduleManifestJson as ManagedLiveScheduleManifest;
+const MANAGED_LIVE_SCHEDULE_FILES = import.meta.glob("../../public/data/managed-live-schedules/groups/*.json", {
+  eager: true,
+  import: "default",
+}) as Record<string, ManagedLiveScheduleFile>;
+const MANAGED_LIVE_SCHEDULE_DB = new Map<string, ManagedLiveScheduleFile>(
+  Object.entries(MANAGED_LIVE_SCHEDULE_FILES).map(([key, value]) => {
+    const rel = key.split("/managed-live-schedules/")[1] ?? key;
+    return [rel, value];
+  }),
+);
+
 function parseMonthlyLiveMatrix(): Map<string, LiveCountRow> {
   const rows = monthlyLiveCountsCsv
     .trim()
@@ -308,11 +372,34 @@ function songTitlesForAutoLive(
   groupUid: string,
   maxN: number,
 ): string[] {
+  const referenceIso = save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? null;
+  const suggested = suggestManagedSetlistTitles(
+    save.managed_song_status,
+    songsForDisplaySorted(save.database_snapshot.songs),
+    groupUid,
+    referenceIso,
+    maxN,
+    songPopularityNum,
+  );
+  if (suggested.length) return suggested;
   return songsForDisplaySorted(save.database_snapshot.songs)
     .filter((row) => String(row.group_uid ?? "") === groupUid)
     .slice(0, maxN)
     .map((row) => songCatalogDisplayLabel(row))
     .filter(Boolean);
+}
+
+function setlistCountForScheduledLive(
+  liveType: string,
+  startTime: string,
+  endTime: string,
+  fallbackDurationMinutes: number,
+  fallbackCount: number,
+): number {
+  const duration =
+    durationMinutesBetweenHHMM(startTime, endTime) ??
+    Math.max(0, Math.trunc(fallbackDurationMinutes));
+  return autoSetlistSongCountForLive(liveType, duration, fallbackCount);
 }
 
 function buildAutoLiveRow(params: {
@@ -334,7 +421,12 @@ function buildAutoLiveRow(params: {
   const venuePick = pickVenueForDesiredCapacity(getVenuesCatalog(), desiredCapacity);
   const duration = template.defaultDurationMinutes;
   const endTime = addMinutesToHHMM(template.defaultStart, duration);
-  const setlist = songTitlesForAutoLive(save, groupUid, template.setlistCount);
+  const setlistCount = setlistCountForScheduledLive(template.liveType, template.defaultStart, endTime, duration, template.setlistCount);
+  const setlist = songTitlesForAutoLive(
+    save,
+    groupUid,
+    setlistCount,
+  );
   const tokutenkaiStart = template.tokutenkaiEnabled ? endTime : "";
   const tokutenkaiEnd = template.tokutenkaiEnabled ? addMinutesToHHMM(endTime, template.tokutenkaiDurationMinutes) : "";
   return {
@@ -360,13 +452,7 @@ function buildAutoLiveRow(params: {
     ticket_price: template.ticketPriceYen,
     poster_image_path: null,
     setlist,
-    program: setlist.map((title, index) => ({
-      id: `auto-program-${typeKey}-${ordinal + 1}-${index + 1}`,
-      kind: "song",
-      label: title,
-      songTitle: title,
-      durationMinutes: 0,
-    })),
+    program: buildAutoProgramForLive(template.liveType, duration, setlist, `auto-program-${typeKey}-${ordinal + 1}`),
     tokutenkai_enabled: template.tokutenkaiEnabled,
     tokutenkai_start: tokutenkaiStart,
     tokutenkai_end: tokutenkaiEnd,
@@ -386,6 +472,161 @@ function buildAutoLiveRow(params: {
     auto_booked_month: monthStartIso,
     auto_booked_type: typeKey,
   };
+}
+
+function normalizeManagedScheduleKey(value: unknown): string {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[!！]/g, "");
+}
+
+function getManagedScheduleSourceForGroup(group: Record<string, unknown> | null | undefined): ManagedLiveScheduleSource | null {
+  if (!group || typeof group !== "object") return null;
+  const uid = String(group.uid ?? "").trim();
+  const candidates = new Set<string>();
+  if (uid) candidates.add(`uid:${uid}`);
+  const rawKeys = [group.name, group.name_romanji, group.nickname, group.nickname_romanji];
+  for (const key of rawKeys) {
+    const normalized = normalizeManagedScheduleKey(key);
+    if (normalized) candidates.add(`alias:${normalized}`);
+  }
+  const sources = Array.isArray(MANAGED_LIVE_SCHEDULE_MANIFEST.sources) ? MANAGED_LIVE_SCHEDULE_MANIFEST.sources : [];
+  for (const source of sources) {
+    if (!source || typeof source !== "object") continue;
+    const sourceUid = String(source.group_uid ?? "").trim();
+    if (sourceUid && candidates.has(`uid:${sourceUid}`)) return source;
+    const aliases = [
+      source.group_name,
+      source.group_name_romanji,
+      ...(Array.isArray(source.aliases) ? source.aliases : []),
+    ];
+    for (const alias of aliases) {
+      const normalizedAlias = normalizeManagedScheduleKey(alias);
+      if (normalizedAlias && candidates.has(`alias:${normalizedAlias}`)) return source;
+    }
+  }
+  return null;
+}
+
+function templateForManagedScheduleEvent(event: ManagedLiveScheduleEvent): AutoLiveTemplate {
+  const key = String(event.template_key ?? "").trim() as AutoLiveTypeKey;
+  return AUTO_LIVE_TEMPLATES[key] ?? AUTO_LIVE_TEMPLATES.type_4;
+}
+
+function buildManagedScheduleLiveRow(
+  save: GameSavePayload,
+  group: Record<string, unknown>,
+  source: ManagedLiveScheduleSource,
+  event: ManagedLiveScheduleEvent,
+): Record<string, unknown> | null {
+  const dateIso = String(event.date ?? "").split("T")[0];
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) return null;
+  const template = templateForManagedScheduleEvent(event);
+  const venueCatalog = getVenuesCatalog();
+  const venue = venueCatalog.find((row) => row.uid === String(event.venue_uid ?? "").trim()) ?? null;
+  const desiredStart = String(event.start_time ?? "").trim();
+  const desiredEnd = String(event.end_time ?? "").trim();
+  const startTime = /^\d{2}:\d{2}$/.test(desiredStart) ? desiredStart : template.defaultStart;
+  const endTime = /^\d{2}:\d{2}$/.test(desiredEnd) ? desiredEnd : addMinutesToHHMM(startTime, template.defaultDurationMinutes);
+  const liveType = String(event.live_type ?? template.liveType);
+  const setlistCount = setlistCountForScheduledLive(
+    liveType,
+    startTime,
+    endTime,
+    template.defaultDurationMinutes,
+    template.setlistCount,
+  );
+  const setlist = songTitlesForAutoLive(
+    save,
+    String(group.uid ?? ""),
+    setlistCount,
+  );
+  const importedSource = String(source.source_key ?? "managed_schedule").trim() || "managed_schedule";
+  const title = String(event.title ?? `${String(group.name ?? group.name_romanji ?? "Managed group")} ${template.titleSuffix}`).trim();
+  return {
+    uid: String(event.uid ?? `${importedSource}-${dateIso}-${title}`),
+    title,
+    title_romanji: "",
+    event_type: String(event.event_type ?? template.eventType),
+    live_type: liveType,
+    start_date: dateIso,
+    end_date: dateIso,
+    start_time: startTime,
+    end_time: endTime,
+    duration: 0,
+    rehearsal_start: "",
+    rehearsal_end: "",
+    venue: String(event.venue ?? venue?.name ?? "TBA"),
+    venue_uid: String(event.venue_uid ?? venue?.uid ?? ""),
+    location: String(venue?.location ?? ""),
+    description: `Imported from ${String(source.label ?? "managed live schedule")}${event.source_url ? ` · ${event.source_url}` : ""}`,
+    performance_count: 1,
+    capacity: venue?.capacity ?? null,
+    attendance: null,
+    ticket_price: template.ticketPriceYen,
+    poster_image_path: String(event.poster_image_path ?? ""),
+    setlist,
+    program: buildAutoProgramForLive(
+      liveType,
+      durationMinutesBetweenHHMM(startTime, endTime) ?? template.defaultDurationMinutes,
+      setlist,
+      `${importedSource}-program-${String(event.source_event_id ?? event.uid ?? "event")}`,
+    ),
+    tokutenkai_enabled: Boolean(event.tokutenkai_enabled ?? template.tokutenkaiEnabled),
+    tokutenkai_start: String(
+      event.tokutenkai_start ??
+        ((event.tokutenkai_enabled ?? template.tokutenkaiEnabled) ? endTime : ""),
+    ),
+    tokutenkai_end: String(
+      event.tokutenkai_end ??
+        ((event.tokutenkai_enabled ?? template.tokutenkaiEnabled)
+          ? addMinutesToHHMM(endTime, template.tokutenkaiDurationMinutes)
+          : ""),
+    ),
+    tokutenkai_duration: template.tokutenkaiDurationMinutes,
+    tokutenkai_ticket_price: template.tokutenkaiTicketPrice,
+    tokutenkai_slot_seconds: template.tokutenkaiSlotSeconds,
+    tokutenkai_expected_tickets: (event.tokutenkai_enabled ?? template.tokutenkaiEnabled) ? template.tokutenkaiExpectedTickets : 0,
+    goods_enabled: false,
+    goods_uid: "",
+    goods_line: "",
+    goods_expected_revenue_yen: 0,
+    group: [String(group.name ?? group.name_romanji ?? "")].filter(Boolean),
+    group_uid: String(group.uid ?? ""),
+    status: "scheduled",
+    imported_source: importedSource,
+  };
+}
+
+function ensureManagedScheduleLivesInWindow(
+  save: GameSavePayload,
+  group: Record<string, unknown>,
+  source: ManagedLiveScheduleSource,
+  startIso: string,
+  endIso: string,
+): number {
+  const relFile = String(source.file ?? "").trim();
+  const file = relFile ? MANAGED_LIVE_SCHEDULE_DB.get(relFile) : null;
+  const events = Array.isArray(file?.events) ? file.events : [];
+  if (!events.length) return 0;
+  const uidSet = existingUids(save);
+  let added = 0;
+  for (const event of events) {
+    const dateIso = String(event.date ?? "").split("T")[0];
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) continue;
+    if (dateIso < startIso || dateIso > endIso) continue;
+    const live = buildManagedScheduleLiveRow(save, group, source, event);
+    if (!live) continue;
+    const uid = String(live.uid ?? "");
+    if (!uid || uidSet.has(uid)) continue;
+    save.lives.schedules.push(live);
+    uidSet.add(uid);
+    added += 1;
+  }
+  return added;
 }
 
 function existingUids(save: GameSavePayload): Set<string> {
@@ -413,6 +654,19 @@ export function ensureAutoBookedLivesInWindow(
 ): number {
   const group = getPrimaryGroup(save);
   if (!group || typeof group !== "object") return 0;
+  const managedSource = getManagedScheduleSourceForGroup(group);
+  if (managedSource) {
+    const added = ensureManagedScheduleLivesInWindow(save, group, managedSource, startIso, endIso);
+    save.lives.schedules.sort((a, b) => {
+      const da = String((a as Record<string, unknown>).start_date ?? "");
+      const db = String((b as Record<string, unknown>).start_date ?? "");
+      if (da !== db) return da.localeCompare(db);
+      const ta = String((a as Record<string, unknown>).start_time ?? "");
+      const tb = String((b as Record<string, unknown>).start_time ?? "");
+      return ta.localeCompare(tb);
+    });
+    return added;
+  }
   const tier = String(getLetterTierFromGroup(group) ?? "D").trim().toUpperCase();
   const row = liveMatrix().get(tier) ?? liveMatrix().get("D");
   if (!row) return 0;
@@ -487,6 +741,7 @@ export function maybeSeedMonthEndAutoBookPrompt(save: GameSavePayload): void {
   const currentIso = save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? "2020-01-01";
   if (currentIso !== endOfMonthIso(startOfMonthIso(currentIso))) return;
   const group = getPrimaryGroup(save);
+  if (getManagedScheduleSourceForGroup(group)) return;
   const gid = String(group?.uid ?? "");
   if (!gid) return;
   const targetMonth = addMonths(startOfMonthIso(currentIso), 2);

@@ -53,8 +53,16 @@ const DEFAULT_GOODS_OPTIONS: ReadonlyArray<{
   { key: "signed-cheki", name: "Signed cheki", category: "Photo", unit_price_yen: 1500, unit_cost_yen: 180, default_desired_amount: 80 },
   { key: "penlight", name: "Penlight", category: "Concert", unit_price_yen: 3000, unit_cost_yen: 1100, default_desired_amount: 24 },
   { key: "uchiwa", name: "Uchiwa", category: "Concert", unit_price_yen: 1800, unit_cost_yen: 420, default_desired_amount: 30 },
-  { key: "birthday-tee", name: "Birthday T-shirt", category: "Apparel", unit_price_yen: 4500, unit_cost_yen: 1800, default_desired_amount: 16 },
 ];
+
+export const BIRTHDAY_TEE_TEMPLATE = {
+  key: "birthday-tee",
+  name: "Birthday T-shirt",
+  category: "Apparel",
+  unit_price_yen: 4500,
+  unit_cost_yen: 1800,
+  default_desired_amount: 16,
+} as const;
 
 export function scenarioStartingCash(scenarioNumber: number | null | undefined): number {
   if (scenarioNumber != null && scenarioNumber in SCENARIO_STARTING_CASH) {
@@ -269,11 +277,46 @@ export function normalizeGoodsInventory(
   return [...byUid.values()];
 }
 
+export function birthdayTeeUidForMember(memberUid: string): string {
+  return `goods-${memberUid}-${BIRTHDAY_TEE_TEMPLATE.key}`;
+}
+
+export function ensureBirthdayTeeInventoryRow(
+  goods: ProducedGoodsRow[],
+  member: { uid: string; name: string },
+): ProducedGoodsRow {
+  const uid = birthdayTeeUidForMember(member.uid);
+  const existing = goods.find((row) => row.uid === uid);
+  if (existing) {
+    existing.name = BIRTHDAY_TEE_TEMPLATE.name;
+    existing.category = BIRTHDAY_TEE_TEMPLATE.category;
+    existing.member_uid = member.uid;
+    existing.member_name = member.name;
+    existing.unit_price_yen = Math.max(0, intOr(existing.unit_price_yen, BIRTHDAY_TEE_TEMPLATE.unit_price_yen));
+    existing.unit_cost_yen = Math.max(0, intOr(existing.unit_cost_yen, BIRTHDAY_TEE_TEMPLATE.unit_cost_yen));
+    return existing;
+  }
+  const created: ProducedGoodsRow = {
+    uid,
+    name: BIRTHDAY_TEE_TEMPLATE.name,
+    category: BIRTHDAY_TEE_TEMPLATE.category,
+    member_uid: member.uid,
+    member_name: member.name,
+    unit_price_yen: BIRTHDAY_TEE_TEMPLATE.unit_price_yen,
+    unit_cost_yen: BIRTHDAY_TEE_TEMPLATE.unit_cost_yen,
+    desired_amount: BIRTHDAY_TEE_TEMPLATE.default_desired_amount,
+    stock: 0,
+  };
+  goods.push(created);
+  return created;
+}
+
 function goodsDemandRateByLiveType(liveType: string): number {
   const key = String(liveType ?? "").trim().toLowerCase();
   if (key === "concert") return 0.3;
   if (key === "festival") return 0.2;
   if (key === "taiban") return 0.14;
+  if (key === "tokutenkai") return 0.12;
   return 0.18;
 }
 

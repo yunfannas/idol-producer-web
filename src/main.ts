@@ -9,7 +9,12 @@ import {
   hasPendingEventsToday,
   isoDatePart,
 } from "./engine/gameEngine";
-import { estimateLiveGoodsGrossYen, sortGroupsForDirectory, type ProducedGoodsRow } from "./engine/financeSystem";
+import {
+  ensureBirthdayTeeInventoryRow,
+  estimateLiveGoodsGrossYen,
+  sortGroupsForDirectory,
+  type ProducedGoodsRow,
+} from "./engine/financeSystem";
 import type { GameSavePayload } from "./save/gameSaveSchema";
 import {
   renderDesktopShellI18n,
@@ -29,9 +34,9 @@ import {
 } from "./ui/gameShell";
 import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
 import { addNotification, notificationRequiresAck, sortNotificationsInPlace } from "./save/inbox";
-import { songsForDisplaySorted, buildDiscBuckets } from "./data/songDisplayPolicy";
+import { songsForDisplaySorted, buildDiscBuckets, isSongAvailableOn, songPopularityNum } from "./data/songDisplayPolicy";
 import { songCatalogDisplayLabel } from "./data/songCatalog";
-import { addMinutesToHHMM, getVenuesCatalog, LIVE_TYPE_PRESETS } from "./engine/liveScheduleWeb";
+import { addMinutesToHHMM, autoSetlistSongCountForLive, getVenuesCatalog, LIVE_TYPE_PRESETS } from "./engine/liveScheduleWeb";
 import {
   auditionCandidateToIdolRow,
   buildAuditionStorageKey,
@@ -40,6 +45,7 @@ import {
 } from "./engine/scoutWeb";
 import { normalizeFestivalCatalog, syncManagedTif2025Lives } from "./engine/festivalWeb";
 import { ensureAutoBookedLivesThroughEndOfNextMonth, maybeSeedMonthEndAutoBookPrompt } from "./engine/monthlyLiveScheduler";
+import { suggestManagedSetlistTitles } from "./engine/songStatusSystem";
 import {
   type OpeningScreen,
   renderOpeningHome,
@@ -212,18 +218,30 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
   const preset = LIVE_TYPE_PRESETS[liveType] ?? LIVE_TYPE_PRESETS.Routine;
   const date = currentIsoForNewLive();
   const endTime = addMinutesToHHMM(preset.default_start_time, preset.default_duration);
+  const suggestedCount = autoSetlistSongCountForLive(
+    liveType,
+    preset.default_duration,
+    liveType === "Concert" ? 6 : liveType === "Taiban" ? 3 : 5,
+  );
   const tokutenkaiStart = preset.tokutenkai_enabled ? endTime : "";
   const tokutenkaiEnd = preset.tokutenkai_enabled ? addMinutesToHHMM(endTime, preset.tokutenkai_duration) : "";
   const managedUid = save?.managing_group_uid ?? "";
   const suggestedSetlist = save
-    ? songsForDisplaySorted(save.database_snapshot.songs)
-        .filter((row) => String(row.group_uid ?? "") === managedUid)
-        .slice(0, liveType === "Concert" ? 6 : liveType === "Taiban" ? 3 : 5)
-        .map((row) => songCatalogDisplayLabel(row))
-        .filter(Boolean)
+    ? suggestManagedSetlistTitles(
+        save.managed_song_status,
+        songsForDisplaySorted(save.database_snapshot.songs),
+        managedUid,
+        date,
+        suggestedCount,
+        songPopularityNum,
+      )
     : [];
   const venue = getVenuesCatalog()[0]?.name ?? "";
-  const initialGoodsUids = availableGoodsInventory().slice(0, liveType === "Concert" ? 2 : 1).map((item) => item.uid);
+  const initialGoodsUids = defaultGoodsSelectionForLive({
+    title: save?.managing_group ? `${save.managing_group} ${liveType}` : `${liveType} Live`,
+    liveType,
+    date,
+  });
   newLiveForm = {
     liveType,
     title: save?.managing_group ? `${save.managing_group} ${liveType}` : `${liveType} Live`,
@@ -245,6 +263,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     goodsUids: initialGoodsUids,
     ticketPriceYen: liveType === "Concert" ? 3800 : liveType === "Festival" ? 0 : 2500,
   };
+  reconcileNewLiveGoodsSelection();
   selectedLiveSongTitle = suggestedSetlist[0] ?? null;
   selectedSetlistSongIndex = suggestedSetlist.length ? 0 : null;
 }
@@ -275,6 +294,53 @@ function availableGoodsInventory(): ProducedGoodsRow[] {
   return goodsInventory().filter((item) => Math.max(0, Number(item.stock ?? 0) || 0) > 0);
 }
 
+function availableSongsForManagedGroup(referenceIso: string): Record<string, unknown>[] {
+  const managedUid = String(save?.managing_group_uid ?? "").trim();
+  return save
+    ? songsForDisplaySorted(save.database_snapshot.songs)
+        .filter((row) => String(row.group_uid ?? "") === managedUid)
+        .filter((row) => isSongAvailableOn(row, referenceIso))
+    : [];
+}
+
+function isBirthdayLiveTitle(title: string): boolean {
+  return /生誕|birthday/i.test(String(title ?? ""));
+}
+
+function matchingBirthdayGoodsUid(title: string): string[] {
+  if (!save || !isBirthdayLiveTitle(title)) return [];
+  const group = save.database_snapshot.groups.find((row) => String((row as { uid?: unknown }).uid ?? "") === String(save.managing_group_uid ?? "")) as Record<string, unknown> | undefined;
+  const memberUids = Array.isArray(group?.member_uids) ? group!.member_uids.map((x) => String(x)) : [];
+  const idols = save.database_snapshot.idols as Record<string, unknown>[];
+  for (const uid of memberUids) {
+    const idol = idols.find((row) => String(row.uid ?? "") === uid);
+    const name = String(idol?.name ?? "").trim();
+    if (name && String(title).includes(name)) {
+      const item = goodsInventory().find((row) => row.member_uid === uid && row.name === "Birthday T-shirt" && Math.max(0, Number(row.stock ?? 0) || 0) > 0);
+      return item ? [item.uid] : [];
+    }
+  }
+  return [];
+}
+
+function defaultGoodsSelectionForLive(params: { title: string; liveType: string; date: string }): string[] {
+  const regular = availableGoodsInventory()
+    .filter((item) => String(item.name ?? "") !== "Birthday T-shirt")
+    .map((item) => item.uid);
+  return [...regular, ...matchingBirthdayGoodsUid(params.title)];
+}
+
+function reconcileNewLiveGoodsSelection(): void {
+  const defaults = defaultGoodsSelectionForLive({
+    title: newLiveForm.title,
+    liveType: newLiveForm.liveType,
+    date: newLiveForm.date,
+  });
+  const allowed = new Set(defaults);
+  const retained = newLiveForm.goodsUids.filter((uid) => allowed.has(uid));
+  newLiveForm.goodsUids = retained.length > 0 ? retained : defaults;
+}
+
 function findGoodsByUid(uid: string | null | undefined): ProducedGoodsRow | null {
   const key = String(uid ?? "").trim();
   if (!key) return null;
@@ -284,6 +350,23 @@ function findGoodsByUid(uid: string | null | undefined): ProducedGoodsRow | null
 function goodsDisplayLabel(item: ProducedGoodsRow | null | undefined): string {
   if (!item) return "";
   return item.member_name ? `${item.member_name} / ${item.name}` : item.name;
+}
+
+function goodsMatrixKey(item: ProducedGoodsRow | null | undefined): string {
+  if (!item) return "";
+  return `${String(item.category ?? "").trim()}|${String(item.name ?? "").trim()}`;
+}
+
+function goodsRowsForMatrixKey(key: string): ProducedGoodsRow[] {
+  return goodsInventory().filter((item) => goodsMatrixKey(item) === key);
+}
+
+function ensureBirthdayGoodsRowFromDataset(memberUid: string | null | undefined, memberName: string | null | undefined): ProducedGoodsRow | null {
+  if (!save || !memberUid || !memberName) return null;
+  const uid = String(memberUid).trim();
+  const name = String(memberName).trim();
+  if (!uid || !name) return null;
+  return ensureBirthdayTeeInventoryRow(save.goods_inventory, { uid, name });
 }
 
 function estimateCurrentLiveGoodsGross(
@@ -372,6 +455,7 @@ let selectedNewGameGroupUid: string | null = null;
 let openingStatus = "";
 let uiLang: UiLanguage = readUiLanguage();
 let simulationBusy = false;
+let attentionActionUid: string | null = null;
 
 let currentView: DesktopNavId = "Inbox";
 let idolDetailUid: string | null = null;
@@ -631,6 +715,7 @@ function paintOpening(): void {
         ? renderNewGameScreen(
             buildNewGameRows(loadedScenario),
             "Producer",
+            loadedScenario.preset,
             uiLang,
           )
         : `<p class="fm-error" role="alert">${htmlEsc(t(uiLang, "opening_no_scenario_loaded"))}</p>`;
@@ -822,6 +907,7 @@ function paintGame(): void {
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
+    attentionActionUid,
     canGoBack: backHistory.length > 0,
     canGoForward: forwardHistory.length > 0,
     simulationBusy,
@@ -1046,7 +1132,7 @@ function paintGame(): void {
     const trainingTabPick = t.closest<HTMLElement>("[data-training-tab]");
     if (trainingTabPick && save && !browseMode && currentView === "Training") {
       const tab = trainingTabPick.getAttribute("data-training-tab");
-      if (tab === "assignments" || tab === "roster") {
+      if (tab === "assignments" || tab === "roster" || tab === "songs") {
         navigate(() => {
           trainingTab = tab;
         });
@@ -1171,6 +1257,7 @@ function paintGame(): void {
       if (uid) {
         runSimulationTask(() => {
           if (!save) return;
+          attentionActionUid = null;
           save = acknowledgeInboxNotification(save, uid);
           currentView = "Inbox";
           inboxSelectedUid = newestVisibleLiveReportUid(save) ?? save.inbox.notifications[0]?.uid ?? null;
@@ -1183,6 +1270,7 @@ function paintGame(): void {
       const u = inboxPick.getAttribute("data-inbox-uid");
       if (u) {
         navigate(() => {
+          attentionActionUid = null;
           inboxSelectedUid = u;
           markInboxOpened(u);
         });
@@ -1249,25 +1337,103 @@ function paintGame(): void {
       }
       return;
     }
-    const goodsOrderBtn = t.closest<HTMLElement>("[data-goods-order-uid]");
+    const goodsOrderBtn = t.closest<HTMLElement>("[data-goods-order-key]");
     if (goodsOrderBtn && save && !browseMode && currentView === "Making") {
-      const uid = goodsOrderBtn.getAttribute("data-goods-order-uid");
-      const item = save.goods_inventory.find((row) => row.uid === uid);
+      const rowKeyRaw = goodsOrderBtn.getAttribute("data-goods-order-key");
+      const rowKey = rowKeyRaw ? decodeURIComponent(rowKeyRaw) : "";
+      const items = save.goods_inventory.filter((row) => goodsMatrixKey(row) === rowKey);
+      if (items.length) {
+        const totalCost = items.reduce(
+          (sum, item) =>
+            sum +
+            Math.max(0, Number(item.desired_amount ?? 0) || 0) * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0),
+          0,
+        );
+        const totalAmount = items.reduce((sum, item) => sum + Math.max(0, Number(item.desired_amount ?? 0) || 0), 0);
+        const finances = save.finances as Record<string, unknown>;
+        const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+        const rowLabel = items[0]!.name;
+        if (totalAmount <= 0) {
+          addNotification(save, {
+            title: `Goods order skipped: ${rowLabel}`,
+            body: `Enter at least one unit in the member cells before ordering ${rowLabel}.`,
+            sender: "Operations",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `goods-order-empty|${rowKey}|${currentIsoForNewLive()}`,
+          });
+          paintGame();
+          return;
+        }
+        if (totalCost > currentCash) {
+          addNotification(save, {
+            title: `Goods order blocked: ${rowLabel}`,
+            body: `Need JPY ${totalCost.toLocaleString("ja-JP")} to make ${totalAmount} units, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
+            sender: "Operations",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `goods-order-blocked|${rowKey}|${currentIsoForNewLive()}`,
+          });
+          paintGame();
+          return;
+        }
+        finances.cash_yen = currentCash - totalCost;
+        for (const item of items) {
+          const amount = Math.max(0, Number(item.desired_amount ?? 0) || 0);
+          item.stock = Math.max(0, Number(item.stock ?? 0) || 0) + amount;
+        }
+        addNotification(save, {
+          title: `Goods made: ${rowLabel}`,
+          body: `${totalAmount} units completed across ${items.length} member slot(s). Production cost JPY ${totalCost.toLocaleString("ja-JP")}.`,
+          sender: "Operations",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          dedupeKey: `goods-order|${rowKey}|${currentIsoForNewLive()}|${totalAmount}`,
+        });
+        paintGame();
+      }
+      return;
+    }
+    const birthdayGoodsOrderBtn = t.closest<HTMLElement>("[data-birthday-goods-order-uid]");
+    if (birthdayGoodsOrderBtn && save && !browseMode && currentView === "Making") {
+      const memberUid = birthdayGoodsOrderBtn.getAttribute("data-birthday-goods-order-uid");
+      const memberName = birthdayGoodsOrderBtn.getAttribute("data-goods-member-name");
+      const item = ensureBirthdayGoodsRowFromDataset(memberUid, memberName);
       if (item) {
         const amount = Math.max(0, Number(item.desired_amount ?? 0) || 0);
         const totalCost = amount * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0);
         const finances = save.finances as Record<string, unknown>;
         const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+        if (amount <= 0) {
+          addNotification(save, {
+            title: `Birthday tee order skipped: ${memberName ?? item.member_name ?? item.name}`,
+            body: `Enter at least one unit before queueing this birthday T-shirt order.`,
+            sender: "Operations",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `birthday-goods-order-empty|${item.uid}|${currentIsoForNewLive()}`,
+          });
+          paintGame();
+          return;
+        }
         if (totalCost > currentCash) {
           addNotification(save, {
-            title: `Goods order blocked: ${goodsDisplayLabel(item)}`,
+            title: `Birthday tee order blocked: ${memberName ?? item.member_name ?? item.name}`,
             body: `Need JPY ${totalCost.toLocaleString("ja-JP")} to make ${amount} units, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
             sender: "Operations",
             category: "internal",
             level: "normal",
             isoDate: currentIsoForNewLive(),
             unread: true,
-            dedupeKey: `goods-order-blocked|${item.uid}|${currentIsoForNewLive()}`,
+            dedupeKey: `birthday-goods-order-blocked|${item.uid}|${currentIsoForNewLive()}`,
           });
           paintGame();
           return;
@@ -1275,14 +1441,14 @@ function paintGame(): void {
         finances.cash_yen = currentCash - totalCost;
         item.stock = Math.max(0, Number(item.stock ?? 0) || 0) + amount;
         addNotification(save, {
-          title: `Goods made: ${goodsDisplayLabel(item)}`,
+          title: `Birthday tees made: ${memberName ?? item.member_name ?? item.name}`,
           body: `${amount} units completed. Production cost JPY ${totalCost.toLocaleString("ja-JP")}.`,
           sender: "Operations",
           category: "internal",
           level: "normal",
           isoDate: currentIsoForNewLive(),
           unread: true,
-          dedupeKey: `goods-order|${item.uid}|${currentIsoForNewLive()}|${amount}`,
+          dedupeKey: `birthday-goods-order|${item.uid}|${currentIsoForNewLive()}|${amount}`,
         });
         paintGame();
       }
@@ -1363,10 +1529,32 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("input", (ev) => {
     const t = ev.target as HTMLElement;
+    const goodsPriceInput = t.closest<HTMLInputElement>("[data-goods-price-key]");
+    if (goodsPriceInput && save && !browseMode && currentView === "Making") {
+      const rowKeyRaw = goodsPriceInput.getAttribute("data-goods-price-key");
+      const rowKey = rowKeyRaw ? decodeURIComponent(rowKeyRaw) : "";
+      const nextPrice = Math.max(0, numberOrZero(goodsPriceInput.value));
+      const memberUid = goodsPriceInput.getAttribute("data-goods-member-uid");
+      const memberName = goodsPriceInput.getAttribute("data-goods-member-name");
+      if (rowKey.startsWith("birthday-queue|")) {
+        const item = ensureBirthdayGoodsRowFromDataset(memberUid, memberName);
+        if (item) item.unit_price_yen = nextPrice;
+      } else {
+        for (const item of save.goods_inventory) {
+          if (goodsMatrixKey(item) === rowKey) item.unit_price_yen = nextPrice;
+        }
+      }
+      return;
+    }
     const goodsDesiredInput = t.closest<HTMLInputElement>("[data-goods-desired-uid]");
     if (goodsDesiredInput && save && !browseMode && currentView === "Making") {
       const uid = goodsDesiredInput.getAttribute("data-goods-desired-uid");
-      const item = save.goods_inventory.find((row) => row.uid === uid);
+      const item =
+        save.goods_inventory.find((row) => row.uid === uid) ??
+        ensureBirthdayGoodsRowFromDataset(
+          goodsDesiredInput.getAttribute("data-goods-member-uid"),
+          goodsDesiredInput.getAttribute("data-goods-member-name"),
+        );
       if (item) {
         item.desired_amount = Math.max(0, numberOrZero(goodsDesiredInput.value));
       }
@@ -1396,6 +1584,7 @@ function paintGame(): void {
             break;
           case "title":
             newLiveForm.title = value;
+            reconcileNewLiveGoodsSelection();
             break;
           case "date":
             newLiveForm.date = value;
@@ -1569,6 +1758,18 @@ function paintGame(): void {
       }
       return;
     }
+    const trainingSongPick = t.closest<HTMLInputElement>("[data-training-song-pick]");
+    if (trainingSongPick && save && !browseMode && currentView === "Training") {
+      const uid = String(trainingSongPick.getAttribute("data-training-song-pick") ?? "").trim();
+      if (uid) {
+        const set = new Set(save.training_song_uids.map((x) => String(x)));
+        if (trainingSongPick.checked) set.add(uid);
+        else set.delete(uid);
+        save.training_song_uids = [...set];
+        paintGame();
+      }
+      return;
+    }
     const focusSel = t.closest<HTMLSelectElement>("[data-training-focus]");
     if (focusSel && save && !browseMode && currentView === "Training") {
       const uid = focusSel.getAttribute("data-idol-uid");
@@ -1696,6 +1897,7 @@ function paintGame(): void {
     sortNotificationsInPlace(save.inbox.notifications);
     const unreadUid = oldestUnreadInboxUid(save.inbox.notifications);
     if (unreadUid) {
+      attentionActionUid = null;
       currentView = "Inbox";
       inboxSelectedUid = unreadUid;
       paintGame();
@@ -1703,6 +1905,7 @@ function paintGame(): void {
     }
     const blocker = getBlockingNotificationForSave(save);
     if (blocker) {
+      attentionActionUid = blocker.uid;
       currentView = "Inbox";
       inboxSelectedUid = blocker.uid;
       paintGame();
@@ -1710,6 +1913,7 @@ function paintGame(): void {
     }
     runSimulationTask(() => {
       if (!save) return;
+      attentionActionUid = null;
       const beforeDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
       save = advanceOneDay(save);
       const afterDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");

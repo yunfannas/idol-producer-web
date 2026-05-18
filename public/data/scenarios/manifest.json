@@ -1,4 +1,4 @@
 {
-  "presets": ["test0"],
-  "defaultPreset": "test0"
+  "presets": ["scenario6"],
+  "defaultPreset": "scenario6"
 }

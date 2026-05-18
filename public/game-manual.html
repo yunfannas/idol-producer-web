@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Idol Producer — Game Manual</title>
+  <style>
+    :root {
+      --bg-main: #1a1a2e;
+      --bg-sidebar: #16213e;
+      --bg-content: #0f3460;
+      --bg-card: #16213e;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --accent: #533483;
+      --accent-light: #6a4c93;
+      --green: #4caf50;
+      --yellow: #ffc107;
+      --border: #2a2a3e;
+      --font-ui: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-ui);
+      line-height: 1.55;
+      color: var(--text-primary);
+      background: var(--bg-main);
+    }
+
+    a { color: #b8a0e8; }
+    a:hover { color: #d4c4f5; }
+
+    .manual-header {
+      background: linear-gradient(135deg, var(--bg-sidebar) 0%, var(--bg-content) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .manual-header-inner {
+      max-width: 52rem;
+      margin: 0 auto;
+    }
+
+    .manual-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin: 0 0 0.35rem;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .manual-lead {
+      margin: 0;
+      color: var(--text-secondary);
+      max-width: 40rem;
+    }
+
+    .manual-actions {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--accent-light); color: #fff; }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+
+    .btn-ghost:hover { border-color: var(--accent-light); }
+
+    .manual-layout {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .manual-layout { grid-template-columns: 1fr; }
+      .manual-toc { position: static !important; }
+    }
+
+    .manual-toc {
+      position: sticky;
+      top: 1rem;
+      align-self: start;
+      font-size: 0.85rem;
+    }
+
+    .manual-toc h2 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      margin: 0 0 0.75rem;
+    }
+
+    .manual-toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .manual-toc li { margin: 0.35rem 0; }
+
+    .manual-toc a {
+      text-decoration: none;
+      color: var(--text-secondary);
+    }
+
+    .manual-toc a:hover { color: var(--text-primary); }
+
+    .manual-body section {
+      margin-bottom: 2.5rem;
+      scroll-margin-top: 1rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.5rem;
+      color: #e0d8f0;
+    }
+
+    p { margin: 0 0 0.85rem; }
+
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+
+    li { margin: 0.35rem 0; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.15rem;
+      margin: 1rem 0;
+    }
+
+    .card-warn {
+      border-left: 4px solid var(--yellow);
+    }
+
+    .card-tip {
+      border-left: 4px solid var(--green);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--bg-sidebar);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td { background: rgba(15, 52, 96, 0.35); }
+
+    code, kbd {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 0.88em;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+
+    kbd {
+      border: 1px solid var(--border);
+      padding: 0.15em 0.45em;
+    }
+
+    .tier-S { color: #ffd700; font-weight: 700; }
+    .tier-A { color: #c0c0c0; font-weight: 700; }
+    .tier-B { color: #cd7f32; font-weight: 700; }
+
+    .manual-footer {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header class="manual-header">
+    <div class="manual-header-inner">
+      <p class="manual-kicker">Idol Producer Web · v0.1</p>
+      <h1>Game Manual</h1>
+      <p class="manual-lead">
+        Manage a Japanese idol group as their producer: schedule lives, train members, scout talent,
+        read the inbox, and advance day by day.
+      </p>
+      <div class="manual-actions">
+        <a class="btn btn-primary" href="./index.html">Play the game</a>
+        <a class="btn btn-ghost" href="#quick-start">Quick start</a>
+        <a class="btn btn-ghost" href="./game-manual.zh-CN.html">简体中文</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="manual-layout">
+    <nav class="manual-toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#scenarios">Scenarios</a></li>
+        <li><a href="#interface">Interface</a></li>
+        <li><a href="#core-loop">Core loop</a></li>
+        <li><a href="#sections">Main sections</a></li>
+        <li><a href="#tiers">Letter tiers</a></li>
+        <li><a href="#lives">Lives &amp; schedule</a></li>
+        <li><a href="#finance">Finances</a></li>
+        <li><a href="#idols">Idols &amp; training</a></li>
+        <li><a href="#scout">Scout</a></li>
+        <li><a href="#inbox">Inbox</a></li>
+        <li><a href="#saves">Saves &amp; browse</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </nav>
+
+    <main class="manual-body">
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>
+          <strong>Idol Producer</strong> is a management simulation inspired by Football Manager’s
+          information-dense UI. You play as a <em>producer</em> (制作人) responsible for one
+          <strong>managed group</strong> in a fixed historical scenario. The world is built from a
+          real-world-inspired catalog of groups, idols, songs, and discography data.
+        </p>
+        <p>Your main pressures are:</p>
+        <ul>
+          <li><strong>Time</strong> — the calendar advances one day at a time.</li>
+          <li><strong>Cash</strong> — lives, training, staff, and scouting cost money.</li>
+          <li><strong>Roster health</strong> — members have condition, morale, and training load.</li>
+          <li><strong>Visibility</strong> — letter tier and fan reach shape what venues and live types are realistic.</li>
+        </ul>
+      </section>
+
+      <section id="quick-start">
+        <h2>Quick start</h2>
+        <ol>
+          <li>Open the game (<a href="./index.html">index.html</a>) and wait for <strong>Database ready</strong>.</li>
+          <li>Choose <strong>New Game</strong>, enter your producer name, and pick a group from the ranked list.</li>
+          <li>Press <strong>Start scenario</strong> — the opening date is set by the scenario (e.g. 2025-07-20 for Scenario 6).</li>
+          <li>Use the left sidebar to open <strong>Inbox</strong>, <strong>Schedule</strong>, <strong>Lives</strong>, <strong>Idols</strong>, etc.</li>
+          <li>When ready, click <strong>NEXT DAY</strong> in the top bar to simulate the next calendar day.</li>
+        </ol>
+        <div class="card card-tip">
+          <strong>Browse mode</strong> — From the opening screen, choose <strong>Browse</strong> to explore
+          the database without a save. You can view groups, idols, and songs, but <strong>NEXT DAY</strong>
+          and finances are disabled until you start or load a game.
+        </div>
+        <div class="card card-warn">
+          <strong>Language</strong> — The in-game UI supports English and Simplified Chinese via the language
+          control on the opening screen. See also the <a href="./game-manual.zh-CN.html">简体中文手册</a>.
+        </div>
+      </section>
+
+      <section id="scenarios">
+        <h2>Scenarios</h2>
+        <p>
+          A <strong>scenario</strong> is a time-locked snapshot of the idol industry: opening date,
+          playable group pool, and bundled data files (<code>idols.json</code>, <code>groups.json</code>,
+          <code>songs.json</code>).
+        </p>
+        <table>
+          <thead>
+            <tr><th>#</th><th>Name</th><th>Opening date</th><th>Web data</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Rise of AKB</td><td>2008-12-08</td><td>Planned</td></tr>
+            <tr><td>2</td><td>Idol Wars</td><td>2013-04-01</td><td>Planned</td></tr>
+            <tr><td>3</td><td>Sashihara's Ambition</td><td>2017-01-01</td><td>Planned</td></tr>
+            <tr><td>4</td><td>COVID Challenge</td><td>2020-02-01</td><td>Planned</td></tr>
+            <tr><td>5</td><td>Kawaii Lab</td><td>2022-03-01</td><td>Planned</td></tr>
+            <tr><td>6</td><td>Latest snapshot</td><td><strong>2025-07-20</strong></td><td><strong>Available</strong></td></tr>
+          </tbody>
+        </table>
+        <p>
+          Scenario 6 ships a large roster plus a <strong>startup allowlist</strong> of recommended groups.
+          Letter tiers for ranking use a static <code>group_tiers.json</code> file (S–F), aligned with the
+          Idol Ranking 2025 reference where curated.
+        </p>
+        <h3>Formed date policy</h3>
+        <p>
+          When catalog data lists a group’s <strong>formed date</strong>, the game prefers the
+          <strong>earliest</strong> of: first public announcement, unveiling/reveal, or debut live —
+          whichever is documented first.
+        </p>
+      </section>
+
+      <section id="interface">
+        <h2>Interface</h2>
+        <p>The layout follows a classic management-game pattern:</p>
+        <ul>
+          <li><strong>Top bar</strong> — Game title, managed group name (clickable), current date, cash (¥), <strong>NEXT DAY</strong>, and Home menu (save/load/slot).</li>
+          <li><strong>Left sidebar</strong> — Section navigation and idol shortlist.</li>
+          <li><strong>Main panel</strong> — Content for the active section (tables, detail pages, forms).</li>
+          <li><strong>Status bar</strong> — Current view name and turn number.</li>
+        </ul>
+        <p>
+          <strong>History buttons</strong> (‹ ›) next to Home step back/forward through in-session view
+          history (like browser back within the app).
+        </p>
+      </section>
+
+      <section id="core-loop">
+        <h2>Core loop</h2>
+        <ol>
+          <li><strong>Read the Inbox</strong> — Resolve confirmations, live results, and scenario events.</li>
+          <li><strong>Plan</strong> — Check Schedule, Training, Finances, and roster status.</li>
+          <li><strong>Act</strong> — Adjust training, review songs, scout, or book and edit lives in <strong>Lives</strong>.</li>
+          <li><strong>Advance</strong> — Press <strong>NEXT DAY</strong> to run the daily simulation.</li>
+        </ol>
+        <p>
+          Each advance increments the <strong>turn</strong> counter and moves <code>current_date</code>
+          forward. Autopilot systems may book routine lives, apply training effects, and post financial
+          entries depending on save state and tier templates.
+        </p>
+        <div class="card card-warn">
+          Some inbox items <strong>block NEXT DAY</strong> until you confirm a choice — especially
+          critical scenario events that need your decision.
+        </div>
+      </section>
+
+      <section id="sections">
+        <h2>Main sections</h2>
+        <table>
+          <thead>
+            <tr><th>Section</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Inbox</strong></td>
+              <td>Notifications, live results, scenario mail, and choices that may gate day advance.</td>
+            </tr>
+            <tr>
+              <td><strong>Idols</strong></td>
+              <td>Roster list; open a member for attributes, birthday, group history, and portrait.</td>
+            </tr>
+            <tr>
+              <td><strong>Groups</strong></td>
+              <td>Database of all groups in the scenario; open detail for members, discography, tier, producers, wiki link.</td>
+            </tr>
+            <tr>
+              <td><strong>Training</strong></td>
+              <td>Weekly training intensity per idol; affects skills, condition, and morale over time.</td>
+            </tr>
+            <tr>
+              <td><strong>Schedule</strong></td>
+              <td>Month calendar and upcoming-week overview of booked lives and recent results; click the date in the top bar to jump here.</td>
+            </tr>
+            <tr>
+              <td><strong>Lives</strong></td>
+              <td>Book new lives, edit or cancel upcoming ones, review past results, and see festival appearances.</td>
+            </tr>
+            <tr>
+              <td><strong>Songs</strong></td>
+              <td>Per-track catalog for your managed group, sorted by popularity; used for setlists and “making” flows.</td>
+            </tr>
+            <tr>
+              <td><strong>Making</strong></td>
+              <td>Production / recording oriented view (scope may vary by scenario).</td>
+            </tr>
+            <tr>
+              <td><strong>Publish</strong></td>
+              <td>Release and publishing workflows (when wired for the scenario).</td>
+            </tr>
+            <tr>
+              <td><strong>Scout</strong></td>
+              <td>Hire scout companies to surface freelancer, transfer, and audition candidates by region.</td>
+            </tr>
+            <tr>
+              <td><strong>Finances</strong></td>
+              <td>Cash on hand, monthly costs, live revenue, and tier-based budget templates.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Shortlist</h3>
+        <p>
+          Pin idols from detail views into the sidebar <strong>Shortlist</strong> for quick comparison
+          while scouting or training. Shortlist is per save (not available in pure Browse mode).
+        </p>
+      </section>
+
+      <section id="tiers">
+        <h2>Letter tiers (S–F)</h2>
+        <p>
+          Every group has a <strong>letter tier</strong> from <span class="tier-S">S</span> (largest commercial footprint)
+          down to <strong>F</strong> (livehouse-scale). Tiers drive:
+        </p>
+        <ul>
+          <li>Starting cash and monthly cost templates</li>
+          <li>Typical live frequency (taiban vs one-man vs festival)</li>
+          <li>Fan reach floors used in simulation</li>
+          <li>Startup picker ordering (with fans and popularity)</li>
+        </ul>
+        <table>
+          <thead>
+            <tr><th>Tier</th><th>Typical scale (summary)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tier-S">S</td><td>Stadium tours, major CD cycles, national TV</td></tr>
+            <tr><td class="tier-A">A</td><td>Stadium-capable, strong sales and media</td></tr>
+            <tr><td>B</td><td>Large halls, Budokan-class milestone possible</td></tr>
+            <tr><td>C</td><td>Hall tours plus heavy taiban circuit</td></tr>
+            <tr><td>D</td><td>Smaller halls, very taiban-heavy</td></tr>
+            <tr><td>E</td><td>Small venues, mostly omnibus / taiban</td></tr>
+            <tr><td>F</td><td>Livehouse, building a floor audience</td></tr>
+          </tbody>
+        </table>
+        <p>
+          Tiers <span class="tier-S">S</span>–<strong>C</strong> for ranked groups come from the curated
+          <em>Idol Ranking 2025</em> mapping. Other groups may be inferred into D–F only. Letter tier is
+          <em>not</em> the same as live type <strong>S</strong> (special birthday/anniversary overlay).
+        </p>
+      </section>
+
+      <section id="lives">
+        <h2>Lives &amp; schedule</h2>
+        <p>
+          <strong>Lives</strong> are the main public activity. Each event has a <strong>live type</strong>,
+          venue, date, and optional setlist. Types are numbered for design and finance:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Name</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Premium concert</td><td>Long set; large venue; separate after-party days</td></tr>
+            <tr><td>2</td><td>Roaming concert series</td><td>Multi-city tour legs</td></tr>
+            <tr><td>3</td><td>Festival</td><td>Short festival set (~30 min) on multi-day bills</td></tr>
+            <tr><td>4</td><td>Taiban (対バン)</td><td>Shared bill; ~20–35 min; tokutenkai after show. In Simplified Chinese UI/manual: <strong>拼盘</strong>.</td></tr>
+            <tr><td>5</td><td>2 / 3 / 4-man live</td><td>Joint headliners; collaboration segments</td></tr>
+            <tr><td>6</td><td>One-man (routine+)</td><td>Club/hall step-up from residency</td></tr>
+            <tr><td>7</td><td>Routine live</td><td>Recurring livehouse residency</td></tr>
+            <tr><td>S</td><td>Special overlay</td><td>Birthday / anniversary on top of type 4, 6, or 7</td></tr>
+          </tbody>
+        </table>
+        <p>
+          Lives come from two sources: <strong>your bookings</strong> and <strong>automatic monthly
+          scheduling</strong> based on your group’s letter tier (routine taiban, two-man, one-man,
+          festivals). Confirm month-end Operations inbox prompts when offered to fill the month after next.
+        </p>
+
+        <h3>Booking lives manually</h3>
+        <p>Open <strong>Lives</strong> and use the workspace tabs:</p>
+        <table>
+          <thead>
+            <tr><th>Tab</th><th>Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>New Live</strong></td><td>Create a live: type, title, date, venue, times, rehearsal window, ticket price, setlist, tokutenkai, and goods booth.</td></tr>
+            <tr><td><strong>Scheduled</strong></td><td>List all upcoming booked lives; click a row to open it in <strong>Live</strong>.</td></tr>
+            <tr><td><strong>Live</strong></td><td>Edit the selected upcoming live or <strong>Cancel Live</strong> to remove it.</td></tr>
+            <tr><td><strong>Past</strong></td><td>Recent played lives with performance and revenue summaries.</td></tr>
+            <tr><td><strong>Festival</strong></td><td>Festival timetable appearances for your managed group (e.g. TIF slots imported into the schedule).</td></tr>
+          </tbody>
+        </table>
+        <p><strong>New Live</strong> workflow:</p>
+        <ol>
+          <li>Pick a <strong>type</strong> (Routine, Concert, Taiban, or Festival) — presets adjust default duration and tokutenkai timing.</li>
+          <li>Choose <strong>date</strong>, <strong>venue</strong>, start/end, and optional <strong>rehearsal</strong> times.</li>
+          <li>Build the <strong>setlist</strong>: add songs from your group catalog, insert MC or break segments, drag to reorder.</li>
+          <li>Optionally enable <strong>tokutenkai / cheki</strong> (talk slots after the show) and a <strong>goods booth</strong> with expected revenue.</li>
+          <li>Click <strong>Schedule Live</strong> — the event appears on <strong>Schedule</strong> and in <strong>Scheduled</strong>.</li>
+        </ol>
+        <p>
+          On <strong>Schedule</strong>, the month grid shows days with booked lives (marked on the calendar).
+          The <strong>upcoming week</strong> strip starts from your next simulation day. Use
+          <strong>NEXT DAY</strong> to play out lives on the current date; results land in the inbox and under
+          <strong>Past</strong>.
+        </p>
+
+        <h3>After-live meet (tokutenkai)</h3>
+        <p>
+          Types 4–7 often include a <strong>tokutenkai</strong> (特典会): fans buy goods or tickets for
+          timed talk slots and cheki photos. Default design uses ~60 minutes post-live, mixed ¥2,000 / ¥3,000
+          talk tiers.
+        </p>
+      </section>
+
+      <section id="finance">
+        <h2>Finances</h2>
+        <p>
+          <strong>Cash on hand</strong> (¥) appears in the top bar during play. Starting budget depends on
+          scenario number and your group’s letter tier. Ongoing costs include:
+        </p>
+        <ul>
+          <li>Member compensation (tier-scaled)</li>
+          <li>Monthly admin and training budgets</li>
+          <li>Live production and venue costs (by type and venue rank)</li>
+          <li>Scout company service fees when engaged</li>
+        </ul>
+        <p>
+          Revenue comes from ticket sales, goods, and event-specific rules. Open <strong>Finances</strong>
+          for ledgers and monthly breakdowns when available in your build.
+        </p>
+      </section>
+
+      <section id="idols">
+        <h2>Idols &amp; training</h2>
+        <p>
+          Each idol has visible and hidden attributes (0–20 scale), birthday, condition, morale, and
+          <strong>group history</strong> segments (join/graduate dates per group).
+        </p>
+        <h3>Training</h3>
+        <p>
+          Set per-idol <strong>training intensity</strong> for the week (vocal, dance, variety, etc.).
+          Training consumes condition and affects morale; overloading weak members risks burnout.
+          Training blocks may schedule morning/afternoon sessions up to a weekly load cap.
+        </p>
+        <h3>Group detail fields</h3>
+        <ul>
+          <li><strong>Formed</strong> — earliest announce/reveal/debut date</li>
+          <li><strong>Producers</strong> — credited producer(s), e.g. “former Maneki Kecak member, Fukase Mio”</li>
+          <li><strong>Agencies</strong> — management companies when cataloged</li>
+          <li><strong>Discography</strong> — releases with track lists linked to the song catalog</li>
+        </ul>
+      </section>
+
+      <section id="scout">
+        <h2>Scout</h2>
+        <p>
+          Scout <strong>companies</strong> (by city and level) search for talent under three channels:
+        </p>
+        <ul>
+          <li><strong>Freelancers</strong> — idols with no current group</li>
+          <li><strong>Transfers</strong> — idols active elsewhere but plausibly recruitable</li>
+          <li><strong>Auditions</strong> — open applications from indie hopefuls</li>
+        </ul>
+        <p>
+          Companies charge a <strong>service fee</strong> and favor idols whose birthplace matches their
+          region (Tokyo, Osaka, Nagoya, etc.). Higher-level firms cover wider nets.
+        </p>
+        <h3>Eligibility rules</h3>
+        <ul>
+          <li>Idols with a current group are not freelancers.</li>
+          <li>
+            <strong>Retired</strong> (excluded from scout): if years since last group ended plus current age
+            ≥ 30, they are treated as retired from scouting.
+          </li>
+          <li>A curated <strong>solo performer list</strong> may be added later for active solo freelancers.</li>
+        </ul>
+      </section>
+
+      <section id="inbox">
+        <h2>Inbox</h2>
+        <p>
+          The inbox is your operational feed: scheduled live reminders, performance summaries, financial
+          notes, and scenario narrative events. Some messages include <strong>choices</strong>; pick an
+          option before advancing the day if the UI blocks <strong>NEXT DAY</strong>.
+        </p>
+        <p>
+          Future-dated scenario events (debuts, graduations, formation milestones) are applied when their
+          effective date arrives, using the scenario runtime engine.
+        </p>
+      </section>
+
+      <section id="saves">
+        <h2>Saves &amp; browse</h2>
+        <h3>Save slots</h3>
+        <p>
+          Games are stored in the browser (local storage) across numbered slots plus an autosave slot.
+          Use <strong>Home → Save game</strong> / <strong>Load game</strong> or the opening <strong>Load</strong>
+          screen. Saves use schema <strong>version 11</strong> and embed a snapshot of scenario database rows
+          at new-game time.
+        </p>
+        <h3>What is saved</h3>
+        <ul>
+          <li>Producer name, managed group, current date, turn, finances</li>
+          <li>Per-idol simulation state (training, condition, morale)</li>
+          <li>Live schedule, inbox, scout engagements, and scenario flags</li>
+        </ul>
+        <h3>Browse database</h3>
+        <p>
+          Browse mode loads scenario JSON without creating a save — ideal for researching groups and songs
+          before committing to a career. No cash, no day advance, no shortlist persistence.
+        </p>
+      </section>
+
+      <section id="tips">
+        <h2>Tips</h2>
+        <ul>
+          <li>Clear the inbox before spamming <strong>NEXT DAY</strong> — blocked events are easy to miss.</li>
+          <li>Book extra lives in <strong>Lives → New Live</strong> before big weeks; check <strong>Schedule</strong> so nothing clashes with auto-booked dates.</li>
+          <li>Lower-tier groups survive on <strong>taiban volume</strong>; don’t expect stadium economics on tier D–F.</li>
+          <li>Watch training load on members with low condition before big live weeks.</li>
+          <li>Use <strong>Groups</strong> → wiki links for real-world context on unfamiliar names.</li>
+          <li>Recommended startup groups in Scenario 6 are a curated subset, not the full 400+ group database.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="manual-footer">
+    <p>
+      Idol Producer Web · Game manual generated for the static preview.
+      Data is fictionalized management simulation based on public idol industry references.
+    </p>
+    <p>
+      <a href="./index.html">Return to game</a> ·
+      <a href="./game-manual.zh-CN.html">简体中文手册</a>
+    </p>
+  </footer>
+</body>
+</html>

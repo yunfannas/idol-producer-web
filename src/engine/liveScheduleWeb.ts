@@ -11,6 +11,8 @@ export interface VenueRow {
   name_romanji?: string;
   venue_type?: string;
   location?: string;
+  city?: string;
+  setting?: "indoor" | "outdoor";
   capacity: number;
 }
 
@@ -41,6 +43,18 @@ export const LIVE_TYPE_PRESETS: Record<
     tokutenkai_ticket_price: 2000,
     tokutenkai_slot_seconds: 40,
     tokutenkai_expected_tickets: 0,
+  },
+  Birthday: {
+    event_type: "Birthday",
+    default_start_time: "18:00",
+    default_duration: 120,
+    rehearsal_start: "12:00",
+    rehearsal_end: "16:00",
+    tokutenkai_enabled: true,
+    tokutenkai_duration: 90,
+    tokutenkai_ticket_price: 2000,
+    tokutenkai_slot_seconds: 40,
+    tokutenkai_expected_tickets: 60,
   },
   Routine: {
     event_type: "Routine",
@@ -78,6 +92,18 @@ export const LIVE_TYPE_PRESETS: Record<
     tokutenkai_slot_seconds: 0,
     tokutenkai_expected_tickets: 0,
   },
+  Tokutenkai: {
+    event_type: "Tokutenkai",
+    default_start_time: "14:00",
+    default_duration: 90,
+    rehearsal_start: "",
+    rehearsal_end: "",
+    tokutenkai_enabled: true,
+    tokutenkai_duration: 90,
+    tokutenkai_ticket_price: 2000,
+    tokutenkai_slot_seconds: 30,
+    tokutenkai_expected_tickets: 80,
+  },
 };
 
 export function loadVenuesCatalog(): VenueRow[] {
@@ -90,12 +116,19 @@ export function loadVenuesCatalog(): VenueRow[] {
     const name = String(r.name ?? "").trim();
     const cap = typeof r.capacity === "number" ? r.capacity : Number(r.capacity ?? 0) || 0;
     if (!name || cap <= 0) continue;
+    const settingRaw = String(r.setting ?? "").toLowerCase();
+    const setting =
+      settingRaw === "outdoor" || settingRaw === "indoor"
+        ? (settingRaw as "indoor" | "outdoor")
+        : undefined;
     out.push({
       uid: String(r.uid ?? ""),
       name,
       name_romanji: typeof r.name_romanji === "string" ? r.name_romanji : undefined,
       venue_type: typeof r.venue_type === "string" ? r.venue_type : undefined,
       location: typeof r.location === "string" ? r.location : undefined,
+      city: typeof r.city === "string" ? r.city : undefined,
+      setting,
       capacity: cap,
     });
   }
@@ -143,6 +176,112 @@ export function addMinutesToHHMM(startTime: string, durationMinutes: number): st
   const h = Math.floor(total / 60);
   const min = total % 60;
   return `${String(h).padStart(2, "0")}:${String(min).padStart(2, "0")}`;
+}
+
+function hhmmToMinutes(value: string): number | null {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(String(value ?? "").trim());
+  if (!m) return null;
+  const h = Number(m[1]);
+  const min = Number(m[2]);
+  if (!Number.isFinite(h) || !Number.isFinite(min)) return null;
+  return h * 60 + min;
+}
+
+export function durationMinutesBetweenHHMM(startTime: string, endTime: string): number | null {
+  const start = hhmmToMinutes(startTime);
+  const end = hhmmToMinutes(endTime);
+  if (start == null || end == null) return null;
+  let delta = end - start;
+  if (delta < 0) delta += 24 * 60;
+  return delta;
+}
+
+export function autoSetlistSongCountForLive(
+  liveType: string,
+  durationMinutes: number,
+  fallbackCount = 0,
+): number {
+  const duration = Math.max(0, Math.trunc(durationMinutes));
+  if (duration <= 0) return Math.max(0, Math.trunc(fallbackCount));
+  const typeKey = String(liveType ?? "").trim();
+  if (typeKey === "Concert" || typeKey === "OneMan") {
+    if (duration >= 95) return 18;
+    if (duration >= 80) return 16;
+  }
+  if (typeKey === "Taiban" || typeKey === "Festival" || typeKey === "Joint" || typeKey === "Routine") {
+    return Math.max(1, Math.floor(duration / 5));
+  }
+  return Math.max(1, Math.trunc(fallbackCount || Math.round(duration / 15)));
+}
+
+export interface AutoLiveProgramItem {
+  id: string;
+  kind: "song" | "mc" | "break";
+  label: string;
+  durationMinutes: number;
+  songTitle?: string;
+}
+
+function buildSongProgramItems(setlist: string[], prefix: string): AutoLiveProgramItem[] {
+  return setlist.map((title, index) => ({
+    id: `${prefix}-song-${index + 1}`,
+    kind: "song",
+    label: title,
+    songTitle: title,
+    durationMinutes: 0,
+  }));
+}
+
+function appendSongSegment(
+  out: AutoLiveProgramItem[],
+  setlist: string[],
+  indexRef: { value: number },
+  count: number,
+  prefix: string,
+): void {
+  for (let i = 0; i < count && indexRef.value < setlist.length; i += 1) {
+    const title = setlist[indexRef.value]!;
+    out.push({
+      id: `${prefix}-song-${indexRef.value + 1}`,
+      kind: "song",
+      label: title,
+      songTitle: title,
+      durationMinutes: 0,
+    });
+    indexRef.value += 1;
+  }
+}
+
+export function buildAutoProgramForLive(
+  liveType: string,
+  durationMinutes: number,
+  setlist: string[],
+  idPrefix: string,
+): AutoLiveProgramItem[] {
+  const duration = Math.max(0, Math.trunc(durationMinutes));
+  const typeKey = String(liveType ?? "").trim();
+  if ((typeKey === "Concert" || typeKey === "OneMan") && duration >= 95 && setlist.length >= 18) {
+    const out: AutoLiveProgramItem[] = [];
+    const indexRef = { value: 0 };
+    appendSongSegment(out, setlist, indexRef, 6, idPrefix);
+    out.push({ id: `${idPrefix}-mc-1`, kind: "mc", label: "MC", durationMinutes: 2 });
+    appendSongSegment(out, setlist, indexRef, 6, idPrefix);
+    out.push({ id: `${idPrefix}-break-1`, kind: "break", label: "Costume change", durationMinutes: 6 });
+    out.push({ id: `${idPrefix}-mc-2`, kind: "mc", label: "MC", durationMinutes: 6 });
+    appendSongSegment(out, setlist, indexRef, 6, idPrefix);
+    return out;
+  }
+  if ((typeKey === "Concert" || typeKey === "OneMan") && duration >= 80 && setlist.length >= 16) {
+    const out: AutoLiveProgramItem[] = [];
+    const indexRef = { value: 0 };
+    appendSongSegment(out, setlist, indexRef, 5, idPrefix);
+    out.push({ id: `${idPrefix}-mc-1`, kind: "mc", label: "MC", durationMinutes: 2 });
+    appendSongSegment(out, setlist, indexRef, 5, idPrefix);
+    out.push({ id: `${idPrefix}-mc-2`, kind: "mc", label: "MC", durationMinutes: 6 });
+    appendSongSegment(out, setlist, indexRef, Math.max(0, setlist.length - indexRef.value), idPrefix);
+    return out;
+  }
+  return buildSongProgramItems(setlist, idPrefix);
 }
 
 export function desiredStartupLiveCapacityFromFans(fans: number): number {

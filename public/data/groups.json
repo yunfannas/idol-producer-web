@@ -142,7 +142,6 @@
       "a3e79185-ac50-4897-8b12-6af2549f8548",
       "0bff0f17-56d6-434a-8611-dbb193d20bac",
       "a3c7ca04-3d60-4bba-9b98-5ea107a8da16",
-      "26b1f47c-a535-422b-bf98-1bc3134242ec",
       "c2ca0088-591e-459d-a0ff-76ffb71a4c00",
       "79af2b24-cfb3-49e8-8d66-2d2c7beb2cc9",
       "019047d3-7e7c-40a1-a346-e7ca2a570127",
@@ -196,7 +195,7 @@
       {
         "uid": "8857fca1-c8d5-4c6e-891f-a95c16938247",
         "title": "AKISHIBU THE BEST",
-        "title_romanji": "",
+        "title_romanji": "AKISHIBU THE BEST",
         "disc_type": "Best Album",
         "release_date": "2019-05-15",
         "publisher": "King Records",
@@ -217,9 +216,9 @@
           "Be yourself",
           "Next Gate",
           "キライだ。",
-          "Creaction (2019 ver.)",
-          "WHITE (LIVE ver.)",
-          "真夏のセレナーデ (LIVE ver.)",
+          "Creaction",
+          "WHITE",
+          "真夏のセレナーデ",
           "Akishibu project \"ALL ONEMAN LIVE DIGEST\""
         ],
         "duration": null,
@@ -260,7 +259,7 @@
       {
         "uid": "d9e08991-23fa-4166-8df4-81f4134a7b67",
         "title": "NEW WORLD",
-        "title_romanji": "",
+        "title_romanji": "NEW WORLD",
         "disc_type": "Album",
         "release_date": "2016-02-23",
         "publisher": "Force Music",
@@ -302,7 +301,7 @@
       {
         "uid": "ae59c728-630e-4086-97ce-9a4ab889d449",
         "title": "Hola! Hola! Summer",
-        "title_romanji": "",
+        "title_romanji": "Hola! Hola! Summer",
         "disc_type": "Single",
         "release_date": "2018-08-15",
         "publisher": "King Records",
@@ -316,7 +315,7 @@
       {
         "uid": "63e41e76-0e17-40c0-bdc4-d89f1c94f262",
         "title": "The First Summer",
-        "title_romanji": "",
+        "title_romanji": "The First Summer",
         "disc_type": "Single",
         "release_date": "2019-08-28",
         "publisher": "King Records",
@@ -464,7 +463,8 @@
       "bc673f2a-adb9-44ec-84c6-fce624048d58",
       "e348dad2-84e9-4148-8e8a-63e58b998b12"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce127"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce127",
+    "producers": "Shimizu Misa"
   },
   {
     "uid": "QmlT",
@@ -546,8 +546,8 @@
     "color": null,
     "description": "BiS June 2019 Information Also Known As Brand-new idol Society Origin Tokyo, Japan Genre J-Pop, Rock, Punk Years 2010-2014 2016-2019 2019-2025 (disbanded 2025-01-12) Label NIPPON CROWN Agency WACK Final Line-Up Toggy Nano3 Hyuga Iko Mugennokanata Kurenai World's End Former Members Yokoyama Rina Nakayama Yukiko Terashima Yufu Wakisaka Yurika Michibayashi Rio Hirano Nozomi Kamiya Saki Tentenko First Summer Uika Koshouji Megumi Pour Lui MOMOLAND Gamiya Saki PERi UBU KiKA FRONT FRONTALE AYA EiGHTPRiNCE GO ZEELA PAN LUNA",
     "formed_date": null,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "popularity": 29,
     "fans": 38344,
     "agencies": [
@@ -1461,8 +1461,8 @@
     "formed_date": "2015-10-31",
     "popularity": 18,
     "fans": 6061,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ArowZ Entertainment\n(2022-Present)",
       "TOY Planet*"
@@ -1870,8 +1870,8 @@
     "formed_date": "2016-01-01",
     "popularity": 46,
     "fans": 14655,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "BPM15Q",
     "nickname": "",
     "nickname_romanji": "",
@@ -2081,8 +2081,8 @@
     "formed_date": "2021-11-07",
     "popularity": 21,
     "fans": 1915,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "BLUEGOATS",
     "nickname": "蒼い山羊",
     "nickname_romanji": "Aoi Yagi",
@@ -2581,8 +2581,8 @@
     "formed_date": null,
     "popularity": 23,
     "fans": 1102,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "HIBANA",
     "nickname": "",
     "nickname_romanji": "",
@@ -2829,8 +2829,8 @@
     "formed_date": null,
     "popularity": 21,
     "fans": 21140,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/NEVER_GIVE_UP_DRUNK_MONKEYS_EP",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44KG44KL44KB44KL44Oi77yB",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -3791,8 +3791,8 @@
     "formed_date": null,
     "popularity": 22,
     "fans": 7017,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "K DASH Stage"
     ],
@@ -4796,8 +4796,8 @@
     "formed_date": "2020-11-01",
     "popularity": 22,
     "fans": 6190,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Cinderella_Sengen!",
     "name_romanji": "Cinderella_Sengen!",
     "nickname": "シン宣",
@@ -5723,8 +5723,8 @@
     "formed_date": "2018-01-01",
     "popularity": 17,
     "fans": 4906,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Kolokol",
     "nickname": "",
     "nickname_romanji": "",
@@ -6062,8 +6062,8 @@
     "formed_date": "2021-09-26",
     "popularity": 23,
     "fans": 4241,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "KiTSUNE WORKS"
     ],
@@ -6641,8 +6641,8 @@
     "formed_date": "2016-10-01",
     "popularity": 33,
     "fans": 4791,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TOIL&MOIL"
     ],
@@ -6953,8 +6953,8 @@
     "formed_date": "2021-09-25",
     "popularity": 25,
     "fans": 3595,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TOKYO PINK"
     ],
@@ -7147,7 +7147,8 @@
       "293d5480-475e-4d78-8d88-ea8d64df96b4",
       "e9ea96d6-935a-4423-8a59-44cc4595145a",
       "55f3ef0c-36bf-4edc-baf2-b34de1b21a29"
-    ]
+    ],
+    "producers": "Oomori Seiko"
   },
   {
     "uid": "bHlyaWNhbCBzY2hvb2w",
@@ -7221,8 +7222,8 @@
     "formed_date": "2010-10-01",
     "popularity": 24,
     "fans": 18140,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "NEWTRAL\n(2010-2012)\nBootRock Inc.\n(2012-Present)"
     ],
@@ -8248,8 +8249,8 @@
     "formed_date": null,
     "popularity": 21,
     "fans": 4823,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Never_say_Never",
     "idolsdiagram_url": "https://idolsdiagram.com/g/57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -8888,8 +8889,8 @@
     "formed_date": "2011-01-01",
     "popularity": 23,
     "fans": 4268,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "IQ Project"
     ],
@@ -9442,8 +9443,8 @@
     "formed_date": null,
     "popularity": 19,
     "fans": 3885,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ALLYOUNEEDS Inc."
     ],
@@ -10052,8 +10053,8 @@
     "formed_date": "2021-02-27",
     "popularity": 22,
     "fans": 3770,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SP-RAY.CO"
     ],
@@ -10641,8 +10642,8 @@
     "formed_date": "2021-06-21",
     "popularity": 22,
     "fans": 2737,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Starray Production"
     ],
@@ -10991,8 +10992,8 @@
     "formed_date": null,
     "popularity": 20,
     "fans": 12063,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/SUPER_JET_SUPER",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -11690,8 +11691,8 @@
     "formed_date": "2015-11-01",
     "popularity": 18,
     "fans": 10612,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Not_Secured%2C_Loose_Ends",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce30",
@@ -11733,8 +11734,8 @@
     "formed_date": null,
     "popularity": 19,
     "fans": 10481,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/VaniBest_II",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Of44O844Og44OI44O844Kt44On44O8",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce67",
@@ -12284,8 +12285,8 @@
     "formed_date": "2019-11-23",
     "popularity": 23,
     "fans": 6722,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Sun Colorz"
     ],
@@ -13458,8 +13459,8 @@
     "formed_date": "2014-08-01",
     "popularity": 20,
     "fans": 6106,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Arc Jewel"
     ],
@@ -13752,8 +13753,8 @@
     "formed_date": "2018-01-01",
     "popularity": 17,
     "fans": 3162,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "COMRIZED"
     ],
@@ -14826,8 +14827,8 @@
     "formed_date": "2015-02-01",
     "popularity": 20,
     "fans": 290,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Happy_People_Party",
     "name_romanji": "Happy_People_Party",
     "nickname": "",
@@ -14933,8 +14934,8 @@
     "ended_date": "2024-11-04",
     "popularity": 17,
     "fans": 8388,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Masshiro_na_Canvas",
     "name_romanji": "Masshiro_na_Canvas",
     "agencies": [
@@ -15195,7 +15196,8 @@
       "a91ca35c-c157-421d-9305-0bea0b8818f8",
       "76e03855-5820-423f-8a3e-e186bc32a89e",
       "cbc3f290-bedb-4291-9d32-ac7312eedcc5"
-    ]
+    ],
+    "producers": "Aoki Hayato"
   },
   {
     "uid": "I-ODkOODkOODkOODkOODs-ODkw",
@@ -15239,8 +15241,8 @@
     "formed_date": "2020-01-30",
     "popularity": 17,
     "fans": 6988,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/BABABABAMBI",
     "idolsdiagram_url": "https://idolsdiagram.com/g/I-ODkOODkOODkOODkOODs-ODkw",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -15899,8 +15901,8 @@
     "formed_date": "2021-08-27",
     "popularity": 18,
     "fans": 6472,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Ill",
     "nickname": "",
     "nickname_romanji": "",
@@ -16089,8 +16091,8 @@
     "formed_date": null,
     "popularity": 17,
     "fans": 6228,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Sakura_ni_Nacchau_yo%21",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kv44Oe44Oq44OH44OR44O844OI",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -16647,8 +16649,8 @@
     "formed_date": null,
     "popularity": 20,
     "fans": 5014,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ORIGAMI"
     ],
@@ -16751,8 +16753,8 @@
     "formed_date": null,
     "popularity": 20,
     "fans": 2377,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Ho?",
     "nickname": "",
     "nickname_romanji": "",
@@ -17068,8 +17070,8 @@
     "formed_date": "2015-09-01",
     "popularity": 18,
     "fans": 2041,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Rice_Ball",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Op44Kk44K544Oc44O844Or",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -17280,8 +17282,8 @@
     "formed_date": "2021-09-05",
     "popularity": 17,
     "fans": 1984,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "PLAYYTE"
     ],
@@ -17570,8 +17572,8 @@
     "formed_date": "2019-05-19",
     "popularity": 17,
     "fans": 1880,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LIVE PLANET"
     ],
@@ -17779,8 +17781,8 @@
     "formed_date": "2023-10-01",
     "popularity": 19,
     "fans": 1111,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Clara_Magura",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kv44Op44Op44O744Oe44Kw44Op",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce138",
@@ -18249,8 +18251,8 @@
     "formed_date": "2016-12-03",
     "popularity": 15,
     "fans": 5817,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Kabushiki Gaisha sakebi"
     ],
@@ -18704,8 +18706,8 @@
     "formed_date": "2016-06-01",
     "popularity": 2,
     "fans": 638,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/PANDA_CLUB",
     "idolsdiagram_url": "https://idolsdiagram.com/g/UEFOREFNSUM",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -18814,8 +18816,8 @@
     "formed_date": "2022-12-18",
     "popularity": 16,
     "fans": 3402,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ASH Entertainment"
     ],
@@ -18933,8 +18935,8 @@
     "formed_date": "2020-11-01",
     "popularity": 17,
     "fans": 2162,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Schr%C3%B6dinger_no_Inu",
     "name_romanji": "Schrödinger_no_Inu",
     "agencies": [
@@ -19645,8 +19647,8 @@
     "formed_date": "2024-01-04",
     "popularity": 21,
     "fans": 1932,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ANTVOX"
     ],
@@ -19876,7 +19878,8 @@
       "be7fdfb6-63cc-4c00-bb80-714c1894b1a5",
       "d566e44b-a800-4203-a0e6-d7edbac8d685",
       "10cf38e3-92e7-4ddd-80b3-49db495349e2"
-    ]
+    ],
+    "producers": "uijin member Ary"
   },
   {
     "uid": "emFua2E",
@@ -19912,8 +19915,8 @@
     "formed_date": "2023-04-01",
     "popularity": 18,
     "fans": 1759,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "QOOLONG"
     ],
@@ -20067,8 +20070,8 @@
     "formed_date": "2019-08-16",
     "popularity": 22,
     "fans": 1811,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Ponkotsu_Konpo",
     "nickname": "",
     "nickname_romanji": "",
@@ -20213,8 +20216,8 @@
     "formed_date": "2024-10-12",
     "popularity": 15,
     "fans": 1142,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "AQ",
     "nickname": "",
     "nickname_romanji": "",
@@ -20381,7 +20384,8 @@
       "f6976847-e399-41fd-b6f3-da60fe2d485a",
       "72039e04-8a1e-4763-be0b-50869246dfaa",
       "28c5b3b0-f506-4ebc-8e6b-174948a562d0"
-    ]
+    ],
+    "producers": "singer and songwriter INSHOW-HA"
   },
   {
     "uid": "QXNJcw",
@@ -20413,8 +20417,8 @@
     "formed_date": "2024-03-29",
     "popularity": 22,
     "fans": 1293,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "AsIs",
     "nickname": "",
     "nickname_romanji": "",
@@ -20625,8 +20629,8 @@
     "formed_date": "2023-07-06",
     "popularity": 18,
     "fans": 989,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SCOT"
     ],
@@ -20764,8 +20768,8 @@
     "formed_date": null,
     "popularity": 18,
     "fans": 1069,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Kyary_Pamyu_Pamyu",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5pyI5YiKUEFN",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -21646,8 +21650,8 @@
     "formed_date": "2024-06-27",
     "popularity": 19,
     "fans": 909,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "AOAO",
     "nickname": "",
     "nickname_romanji": "",
@@ -22048,8 +22052,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 803,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "AQBIRec"
     ],
@@ -22361,8 +22365,8 @@
     "formed_date": "2024-09-01",
     "popularity": 16,
     "fans": 702,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Melty_BeaR",
     "nickname": "",
     "nickname_romanji": "",
@@ -22445,8 +22449,8 @@
     "formed_date": "2012-12-23",
     "popularity": 15,
     "fans": 13671,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "MAD MAGAZINE RECORDS"
     ],
@@ -22832,8 +22836,8 @@
     "formed_date": "2017-03-01",
     "popularity": 18,
     "fans": 4924,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Minimaring Studio"
     ],
@@ -23232,8 +23236,8 @@
     "formed_date": null,
     "popularity": 16,
     "fans": 4246,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Rirunede",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Oq44Or44ON44O844OJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce67",
@@ -23520,8 +23524,8 @@
     "formed_date": "2019-03-17",
     "popularity": 18,
     "fans": 3770,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Anthurium",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44Oz44K544Oq44Ol44O844Og",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -24065,8 +24069,8 @@
     "formed_date": "2020-01-26",
     "popularity": 16,
     "fans": 3255,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "RIZE PRODUCTION"
     ],
@@ -24610,8 +24614,8 @@
     "formed_date": "2017-01-01",
     "popularity": 15,
     "fans": 3145,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "COMRIZED"
     ],
@@ -25552,8 +25556,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 2201,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://akb48.fandom.com/wiki/Aimai",
     "name_romanji": "Aimai",
     "nickname": "",
@@ -25818,8 +25822,8 @@
     "formed_date": "2022-03-21",
     "popularity": 17,
     "fans": 2136,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "BANDAI SPIRITS CO."
     ],
@@ -26047,8 +26051,8 @@
     "formed_date": "2022-06-08",
     "popularity": 16,
     "fans": 1904,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Top Athlete Records"
     ],
@@ -26342,8 +26346,8 @@
     "formed_date": "2023-09-15",
     "popularity": 20,
     "fans": 1961,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "OTONA CHILD."
     ],
@@ -26557,8 +26561,8 @@
     "formed_date": "2022-12-01",
     "popularity": 9,
     "fans": 1613,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "AQBIRec"
     ],
@@ -26790,8 +26794,8 @@
     "formed_date": "2023-11-30",
     "popularity": 21,
     "fans": 2108,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Oiran_Dochu",
     "name_romanji": "Oiran_Dochu",
     "agencies": [
@@ -27092,8 +27096,8 @@
     "formed_date": "2018-04-29",
     "popularity": 20,
     "fans": 1558,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Big_Angel",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gz44Gj44GP44GI44KT44GY44GH44KL",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -27321,8 +27325,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 617,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": null,
     "name_romanji": "Narukami",
     "nickname": "",
@@ -27361,8 +27365,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 15007,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Stamp_EP",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -27438,8 +27442,8 @@
     "formed_date": "2018-01-01",
     "popularity": 13,
     "fans": 7796,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "MARVELOUS ARC"
     ],
@@ -27965,8 +27969,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 7458,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Oyasumi",
     "nickname": "",
     "nickname_romanji": "",
@@ -28668,8 +28672,8 @@
     "formed_date": "2020-12-03",
     "popularity": 13,
     "fans": 3066,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "01familia"
     ],
@@ -29312,8 +29316,8 @@
     "formed_date": "2021-01-02",
     "popularity": 15,
     "fans": 2710,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SCOT"
     ],
@@ -29713,8 +29717,8 @@
     "formed_date": "2024-09-14",
     "popularity": 16,
     "fans": 2804,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ekoms"
     ],
@@ -29834,7 +29838,8 @@
       "4630cc48-3a61-4ac3-893b-a20db7327dcb",
       "e646ee9b-de02-4720-a34f-2f1cccbdd212",
       "8bc1ded0-d5ec-400e-861a-13f169d1ec55"
-    ]
+    ],
+    "producers": "Sakurai, along with Kominami Yasuha and MOSAIC"
   },
   {
     "uid": "44Kt44Oz44Kw44K144Oq",
@@ -29883,8 +29888,8 @@
     "formed_date": "2022-04-30",
     "popularity": 16,
     "fans": 2337,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Kingsari",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kt44Oz44Kw44K144Oq",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -30212,8 +30217,8 @@
     "formed_date": "2022-05-01",
     "popularity": 16,
     "fans": 1944,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "we-B studios"
     ],
@@ -30554,8 +30559,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 1782,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/%4017",
     "name_romanji": "@17",
     "agencies": [
@@ -30772,8 +30777,8 @@
     "formed_date": "2023-04-01",
     "popularity": 14,
     "fans": 1789,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "01familia"
     ],
@@ -30980,8 +30985,8 @@
     "formed_date": "2023-07-28",
     "popularity": 15,
     "fans": 1513,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Taiyou_to_Odore_Tsukiyo_ni_Utae",
     "agencies": [
       "Arc Jewel / Pony Canyon"
@@ -31181,8 +31186,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 1521,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/HIROMI_IWASAKI_30TH_ANNIVERSARY_BOX",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce86",
@@ -31499,8 +31504,8 @@
     "formed_date": "2023-07-24",
     "popularity": 13,
     "fans": 1061,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Cinderella's Dog Project"
     ],
@@ -31859,8 +31864,8 @@
     "formed_date": "2023-12-21",
     "popularity": 16,
     "fans": 1113,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "OTONA CHILD."
     ],
@@ -32005,8 +32010,8 @@
     "formed_date": "2023-02-26",
     "popularity": 15,
     "fans": 904,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Ranaqura",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Op44OK44Kt44Ol44Op",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce125",
@@ -32220,8 +32225,8 @@
     "formed_date": "1978-01-01",
     "popularity": 10,
     "fans": 812,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Yellow_Magic_Orchestra",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce115",
@@ -33761,8 +33766,8 @@
     "formed_date": null,
     "popularity": 14,
     "fans": 11487,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Candye♡Syrup",
     "nickname": "",
     "nickname_romanji": "",
@@ -34061,8 +34066,8 @@
     "formed_date": "2021-05-25",
     "popularity": 12,
     "fans": 2671,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ANTVOX"
     ],
@@ -34424,7 +34429,8 @@
       "5ca49578-46ac-4c2f-8461-67bc8144d401",
       "ccc991cc-8166-4091-8669-cb6d4aa58f41",
       "f2004684-4c3b-4f86-af1a-5c4a9dca254b"
-    ]
+    ],
+    "producers": "Ary"
   },
   {
     "uid": "6YCP6Imy44OJ44Ot44OD44OX",
@@ -34478,8 +34484,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 1831,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Nana_Drop_Bijou",
     "idolsdiagram_url": "https://idolsdiagram.com/g/6YCP6Imy44OJ44Ot44OD44OX",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce79",
@@ -34724,8 +34730,8 @@
     "formed_date": "2017-01-14",
     "popularity": 17,
     "fans": 1588,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Colorful_Scream",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kr44Op44OV44Or44K544Kv44Oq44O844Og",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce38",
@@ -35061,8 +35067,8 @@
     "formed_date": "2021-04-23",
     "popularity": 11,
     "fans": 1431,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TOIL&MOIL"
     ],
@@ -35612,8 +35618,8 @@
     "formed_date": "2021-03-27",
     "popularity": 18,
     "fans": 1416,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Paradeeq",
     "nickname": "",
     "nickname_romanji": "",
@@ -35916,8 +35922,8 @@
     "formed_date": null,
     "popularity": 14,
     "fans": 1174,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Lonlium",
     "nickname": "",
     "nickname_romanji": "",
@@ -36137,8 +36143,8 @@
     "formed_date": "2020-09-01",
     "popularity": 13,
     "fans": 1148,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Hellzapoppin'",
     "nickname": "クレイビット",
     "nickname_romanji": "Craveit",
@@ -36499,8 +36505,8 @@
     "formed_date": null,
     "popularity": 17,
     "fans": 961,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Selfish",
     "nickname": "",
     "nickname_romanji": "",
@@ -36731,8 +36737,8 @@
     "formed_date": null,
     "popularity": 13,
     "fans": 857,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Kyun_Kyun_Cream",
     "idolsdiagram_url": "https://idolsdiagram.com/g/MeOBpOi2s-OCiuOBquOBhOizveOBr-aKleOBkuOCieOCjOOBnw",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce109",
@@ -36897,8 +36903,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 826,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/.LiN%E2%85%A8LiNE.",
     "idolsdiagram_url": "https://idolsdiagram.com/g/LkxpTklYTGlORS4",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -37029,8 +37035,8 @@
     "formed_date": "2023-03-15",
     "popularity": 9,
     "fans": 706,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Rougebook",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Or44O844K444Ol44OW44OD44Kv",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -37169,8 +37175,8 @@
     "formed_date": null,
     "popularity": 16,
     "fans": 755,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Chalca",
     "nickname": "",
     "nickname_romanji": "",
@@ -37235,7 +37241,8 @@
       "9b3b5103-8ed1-46d6-8b03-e3d5082c76bc",
       "b9f6cdd5-083c-4ea9-9fe1-1897aff4de97",
       "177ff6a6-78f5-4654-9d22-b39e19a4c1f7"
-    ]
+    ],
+    "producers": "photographer Asukai Rina"
   },
   {
     "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
@@ -37288,8 +37295,8 @@
     "formed_date": "2022-05-22",
     "popularity": 17,
     "fans": 822,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "",
     "nickname": "",
     "nickname_romanji": "",
@@ -37395,8 +37402,8 @@
     "formed_date": "2024-06-26",
     "popularity": 14,
     "fans": 328,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Phantom_Siita",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44G944GR44Gj44Go44OV44Kh44Oz44OI44Og",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce53",
@@ -37492,8 +37499,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 11517,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Avex"
     ],
@@ -37769,8 +37776,8 @@
     "formed_date": "2017-02-01",
     "popularity": 12,
     "fans": 8568,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "AQBIRec"
     ],
@@ -38201,8 +38208,8 @@
     "formed_date": null,
     "popularity": 14,
     "fans": 2880,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/AQBIRec",
     "idolsdiagram_url": "https://idolsdiagram.com/g/QkVMTFJJTkflsJHlpbPjg4_jg7zjg4g",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -38510,8 +38517,8 @@
     "formed_date": "2016-09-01",
     "popularity": 14,
     "fans": 2802,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "eight one"
     ],
@@ -38911,8 +38918,8 @@
     "formed_date": "2022-01-31",
     "popularity": 14,
     "fans": 2331,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SOVA LLC."
     ],
@@ -39362,8 +39369,8 @@
     "formed_date": "1959-02-11",
     "popularity": 16,
     "fans": 1914,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/The_Peanuts",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44K344Oj44OL44Og44OL77yd44OR44Os44O844OJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce83",
@@ -42854,8 +42861,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 1411,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "9DayzGlitchClubTokyo",
     "nickname": "",
     "nickname_romanji": "",
@@ -43109,8 +43116,8 @@
     "formed_date": "2020-12-27",
     "popularity": 18,
     "fans": 1404,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Kaiju_By_Me",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -43439,8 +43446,8 @@
     "formed_date": "2018-11-01",
     "popularity": 10,
     "fans": 1229,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Ruruneige",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Or44Or44ON44O844K444Ol",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce57",
@@ -44064,8 +44071,8 @@
     "formed_date": null,
     "popularity": 13,
     "fans": 1039,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Wakamiya_Yuriko",
     "idolsdiagram_url": "https://idolsdiagram.com/g/556s44GN44KC44Gb44Ga",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce50",
@@ -44448,8 +44455,8 @@
     "formed_date": "2023-02-26",
     "popularity": 12,
     "fans": 953,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Astle Inc."
     ],
@@ -44869,8 +44876,8 @@
     "formed_date": "2021-06-18",
     "popularity": 13,
     "fans": 867,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "FR2PON!",
     "nickname": "ふるぽん",
     "nickname_romanji": "Frupon",
@@ -45195,8 +45202,8 @@
     "formed_date": "2024-03-08",
     "popularity": 13,
     "fans": 811,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SOVA LLC."
     ],
@@ -45478,7 +45485,8 @@
       "cee6c977-097a-40e4-b629-97cf44075808",
       "fa3611de-83f6-46ad-a170-50165b405e7a",
       "f35513cc-9664-431d-b418-8d302ccab621"
-    ]
+    ],
+    "producers": "Funasoko Haruki"
   },
   {
     "uid": "U1BSSVNF",
@@ -45526,8 +45534,8 @@
     "formed_date": "2019-06-01",
     "popularity": 14,
     "fans": 824,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SCRUM Entertainment"
     ],
@@ -46138,8 +46146,8 @@
     "formed_date": "2020-06-23",
     "popularity": 14,
     "fans": 811,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Nounai_Pastel",
     "nickname": "",
     "nickname_romanji": "",
@@ -46237,8 +46245,8 @@
     "formed_date": null,
     "popularity": 14,
     "fans": 749,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "W",
     "nickname": "",
     "nickname_romanji": "",
@@ -46426,8 +46434,8 @@
     "formed_date": "2023-07-05",
     "popularity": 14,
     "fans": 613,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Koi_ni_Ochiru_Kakuritsu_wa_Kagirinaku_Hikui_ga_0_ja_Nai",
     "idolsdiagram_url": "https://idolsdiagram.com/g/6ZmQ44KK44Gq44GP55m944GP",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -46636,8 +46644,8 @@
     "formed_date": "2023-03-01",
     "popularity": 15,
     "fans": 566,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "FreoMotto"
     ],
@@ -47006,8 +47014,8 @@
     "formed_date": "2024-08-01",
     "popularity": 13,
     "fans": 493,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Kurai_Sekai",
     "nickname": "クラセカ",
     "nickname_romanji": "クライセカイ\nKuraSeka",
@@ -47286,8 +47294,8 @@
     "formed_date": null,
     "popularity": 18,
     "fans": 510,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ORIGAMI"
     ],
@@ -47382,8 +47390,8 @@
     "formed_date": null,
     "popularity": 14,
     "fans": 6045,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Gips_(Task_have_Fun)",
     "nickname": "",
     "nickname_romanji": "",
@@ -48058,8 +48066,8 @@
     "formed_date": "2016-11-02",
     "popularity": 11,
     "fans": 5582,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "SOVA LLC."
     ],
@@ -48707,8 +48715,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 2296,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/IDOL_COLLEGE",
     "notes": "Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the best available official/fandom sources. Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44Kk44OJ44Or44Kr44Os44OD44K4",
@@ -49458,8 +49466,8 @@
     "formed_date": "2020-06-21",
     "popularity": 13,
     "fans": 1854,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/JUROCK",
     "idolsdiagram_url": "https://idolsdiagram.com/g/I-OCuOODpeODvOODreODg-OCrw",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce79",
@@ -49832,8 +49840,8 @@
     "formed_date": null,
     "popularity": 13,
     "fans": 1867,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Sakurashimeji",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44GV44Go44KK44Oi44Oz44K544K_44O8",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce65",
@@ -50400,8 +50408,8 @@
     "formed_date": "2019-07-01",
     "popularity": 10,
     "fans": 1743,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "HASYAGE jp"
     ],
@@ -50769,8 +50777,8 @@
     "formed_date": "2020-07-01",
     "popularity": 12,
     "fans": 1110,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WONDER VILLAGE×SAVAGE promotion"
     ],
@@ -51068,8 +51076,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 1116,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Zero_Project",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5aSp5L2_44Gr44Gv44Gq44KM44Gq44GE",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -51166,8 +51174,8 @@
     "formed_date": "2021-09-01",
     "popularity": 14,
     "fans": 1053,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Zero_Kara%E2%AD%90%EF%B8%8EStar%E2%86%92t",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce101",
@@ -51595,8 +51603,8 @@
     "formed_date": "2020-12-31",
     "popularity": 10,
     "fans": 960,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "codomomental"
     ],
@@ -51981,8 +51989,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 864,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Flower",
     "agencies": [
       "LDH JAPAN"
@@ -52121,8 +52129,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 813,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://akb48.fandom.com/wiki/FACTORY",
     "name_romanji": "FACTORY",
     "nickname": "",
@@ -52299,8 +52307,8 @@
     "formed_date": "2024-03-27",
     "popularity": 16,
     "fans": 809,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Disco Production"
     ],
@@ -52589,8 +52597,8 @@
     "formed_date": null,
     "popularity": 9,
     "fans": 781,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "GATE Inc.\n(2023-2026)"
     ],
@@ -53109,8 +53117,8 @@
     "formed_date": "2024-10-01",
     "popularity": 11,
     "fans": 601,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "HAPPY_CREATORS",
     "nickname": "ハピクリ",
     "nickname_romanji": "HappiKuri",
@@ -53472,8 +53480,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 293,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Beloved",
     "nickname": "",
     "nickname_romanji": "",
@@ -53866,8 +53874,8 @@
     "formed_date": "2018-03-21",
     "popularity": 12,
     "fans": 25691,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://kpop.fandom.com/wiki/Honey_Popcorn",
     "name_romanji": "Honey_Popcorn",
     "nickname": "",
@@ -53943,8 +53951,8 @@
     "formed_date": "2014-01-01",
     "popularity": 11,
     "fans": 4322,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "THE_HOOPERS",
     "nickname": "",
     "nickname_romanji": "",
@@ -54182,8 +54190,8 @@
     "formed_date": null,
     "popularity": 11,
     "fans": 3719,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "3776",
     "nickname": "",
     "nickname_romanji": "",
@@ -54764,8 +54772,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 2913,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Hibi",
     "idolsdiagram_url": "https://idolsdiagram.com/g/6ZaL5q2MLeOBi-OBhOOBiy0",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -55043,8 +55051,8 @@
     "formed_date": null,
     "popularity": 11,
     "fans": 2903,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Tokino_Sora",
     "idolsdiagram_url": "https://idolsdiagram.com/g/6Zuo5qih5qeY44Gu44K944Op44Oq44K5",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce89",
@@ -55693,8 +55701,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 1727,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "Shounen",
     "nickname": "",
     "nickname_romanji": "",
@@ -56041,8 +56049,8 @@
     "formed_date": "2021-12-19",
     "popularity": 11,
     "fans": 1644,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "COMRIZED"
     ],
@@ -56530,8 +56538,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 1573,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Watanabe_Misato",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44GL44GZ44G_6I2J44Go44K544OG44Op",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce97",
@@ -58300,8 +58308,8 @@
     "formed_date": null,
     "popularity": 13,
     "fans": 1417,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Nakamori_Akina",
     "discography": [
       {
@@ -62663,8 +62671,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 1133,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/BibitLOVE",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44GC44Gf44G-44Gu44Gq44GL44GvOOODk-ODg-ODiOKBie-4jg",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -63189,8 +63197,8 @@
     "formed_date": "2016-05-26",
     "popularity": 15,
     "fans": 1065,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "CYELON"
     ],
@@ -63598,8 +63606,8 @@
     "formed_date": "2021-04-23",
     "popularity": 16,
     "fans": 999,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Tensen_Tensei_Shoujo.",
     "idolsdiagram_url": "https://idolsdiagram.com/g/54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -63956,7 +63964,8 @@
       "84bc9e3a-8cb4-417a-9800-199fdd217916",
       "2fbf0a6f-a643-46fd-b5e3-33b015bda8d0",
       "86c2e258-cb99-4efc-9204-71caabc746cf"
-    ]
+    ],
+    "name_romanji": "Tensen Tensei Shoujo."
   },
   {
     "uid": "QUZURVJT",
@@ -64016,8 +64025,8 @@
     "formed_date": "2023-06-01",
     "popularity": 14,
     "fans": 1013,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ALLYOUNEEDS"
     ],
@@ -64389,8 +64398,8 @@
     "formed_date": "2022-09-16",
     "popularity": 11,
     "fans": 802,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Future_Cider",
     "discography": [
       {
@@ -64477,8 +64486,8 @@
     "formed_date": "2023-08-01",
     "popularity": 12,
     "fans": 842,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ALL INc."
     ],
@@ -64747,7 +64756,8 @@
       "95619af2-0876-45ae-abb2-8e107e90760e",
       "9002dcb2-6f70-43de-8f14-e3cd6062d0af",
       "1d3754bf-a6c3-4eaf-9508-a743adbdbea2"
-    ]
+    ],
+    "producers": "Suzuki Sara"
   },
   {
     "uid": "U2lMRU5U4oaQTk9pU0U",
@@ -64801,8 +64811,8 @@
     "formed_date": "2022-02-28",
     "popularity": 12,
     "fans": 797,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "GMG Entertainment Inc."
     ],
@@ -64951,8 +64961,8 @@
     "formed_date": "2018-07-28",
     "popularity": 12,
     "fans": 672,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "HelloYouth",
     "nickname": "",
     "nickname_romanji": "",
@@ -65108,7 +65118,8 @@
       "6a8cb9bb-1568-41bc-86b7-fe1c72ebf9dc",
       "15d28866-1458-4300-ab9c-16ca793fc31c",
       "901ab0de-9f43-44c6-96d6-7c70bba4aaf7"
-    ]
+    ],
+    "producers": "ISAKICK, the bassist of 175R"
   },
   {
     "uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
@@ -65228,8 +65239,8 @@
     "formed_date": "2016-06-12",
     "popularity": 11,
     "fans": 620,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Hokuriku_Idolbu",
     "agencies": [
       "Answer Entertainment"
@@ -65466,7 +65477,8 @@
       "56c64018-50a1-4cee-bb4d-5f97f92bc49d",
       "242c0653-bc84-4db1-a9e9-5ed0ece528a4"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce40"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce40",
+    "producers": "Nakashin Masato"
   },
   {
     "uid": "5ZCb44Go6KaL44KL44Gd44KJ",
@@ -65676,8 +65688,8 @@
     "formed_date": "2023-02-04",
     "popularity": 12,
     "fans": 670,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "ZUTTOMOTTO",
     "nickname": "ずっとも",
     "nickname_romanji": "Zuttomo",
@@ -65746,8 +65758,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 921,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/39_Very_much",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44K544Ov44Oz44K544Ov44Oz44K6",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -65961,8 +65973,8 @@
     "formed_date": "2023-12-24",
     "popularity": 12,
     "fans": 487,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ASH Entertainment\n(2023-2025)\nAURIX Co., Ltd.\n(2025-Present)"
     ],
@@ -66123,8 +66135,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 506,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Plus Production"
     ],
@@ -66305,7 +66317,8 @@
       "502c3b91-f108-41b6-8940-dd7b7b8002b8",
       "da1bce2e-2323-45b9-8ea6-44f654d0baa7",
       "8474fa77-5689-4e25-af02-f4a99748c51c"
-    ]
+    ],
+    "producers": "Higuchi Nazuna Links"
   },
   {
     "uid": "U1RBUlJZw5dOSUdIVOKGl--4jg",
@@ -66337,8 +66350,8 @@
     "formed_date": "2024-05-05",
     "popularity": 12,
     "fans": 451,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "GMG Entertainment Inc."
     ],
@@ -66626,8 +66639,8 @@
     "formed_date": null,
     "popularity": 12,
     "fans": 339,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Hyakkiyako",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kr44Of44K144Oe44OR44Os44O844OJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce151",
@@ -66870,8 +66883,8 @@
     "formed_date": "2003-01-01",
     "popularity": 13,
     "fans": 271,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Bless4",
     "discography": [
       {
@@ -67080,8 +67093,8 @@
     "formed_date": null,
     "popularity": 13,
     "fans": 185,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Nakamori_Akina",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -71375,8 +71388,8 @@
     "formed_date": null,
     "popularity": 11,
     "fans": 5658,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -71609,8 +71622,8 @@
     "formed_date": "2019-08-23",
     "popularity": 8,
     "fans": 5315,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "QOOLONG"
     ],
@@ -71933,8 +71946,8 @@
     "formed_date": "2018-02-05",
     "popularity": 9,
     "fans": 4671,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "XAQUA ARTISTS"
     ],
@@ -72115,8 +72128,8 @@
     "formed_date": "2018-07-07",
     "popularity": 9,
     "fans": 3212,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Nanaland",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OK44OK44Op44Oz44OJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -72288,8 +72301,8 @@
     "formed_date": "2017-01-01",
     "popularity": 10,
     "fans": 1544,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ROMANTIC PRODUCTION"
     ],
@@ -72447,8 +72460,8 @@
     "formed_date": "2021-05-01",
     "popularity": 9,
     "fans": 1450,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "NOROSHI PRODUCTION"
     ],
@@ -72699,7 +72712,8 @@
       "62443202-9fbe-44b1-b270-ec07508696c1",
       "44d1f7d3-fc07-484b-88f5-cca1bae99735"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce98"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce98",
+    "producers": "Shirai Masato"
   },
   {
     "uid": "SElHSCBTUElSSVRT",
@@ -72782,8 +72796,8 @@
     "formed_date": "2016-11-13",
     "popularity": 11,
     "fans": 1288,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LIVE PLANET"
     ],
@@ -72953,8 +72967,8 @@
     "formed_date": "2022-05-09",
     "popularity": 9,
     "fans": 1054,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "UP DANCE ENTERTAINMENT"
     ],
@@ -73049,8 +73063,8 @@
     "formed_date": "2021-01-01",
     "popularity": 15,
     "fans": 1051,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "MAGICAL_SPEC",
     "nickname": "",
     "nickname_romanji": "",
@@ -73523,8 +73537,8 @@
     "formed_date": "2020-02-01",
     "popularity": 13,
     "fans": 935,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "JuliaHouse / LIME LIGHT"
     ],
@@ -73732,7 +73746,8 @@
       "71637aad-c036-425d-b217-9cee3813f727",
       "4887cd26-d782-4b36-b239-55746abdeb72",
       "a81bc3c0-1f9f-4b95-ba7e-e7e3fd4f2374"
-    ]
+    ],
+    "producers": "Shiraki Toyoji"
   },
   {
     "uid": "44Ks44Op44OB44Ki",
@@ -73785,8 +73800,8 @@
     "formed_date": "2023-10-01",
     "popularity": 11,
     "fans": 584,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Galatia",
     "discography": [
       {
@@ -74092,8 +74107,8 @@
     "formed_date": null,
     "popularity": 9,
     "fans": 572,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Tonariau_/_ONE'S_AGAIN",
     "nickname": "",
     "nickname_romanji": "",
@@ -74416,8 +74431,8 @@
     "formed_date": "2013-01-01",
     "popularity": 11,
     "fans": 471,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Novelbright",
     "discography": [
       {
@@ -74921,8 +74936,8 @@
     "formed_date": "2024-04-12",
     "popularity": 10,
     "fans": 445,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "One Eight Promotion"
     ],
@@ -75269,8 +75284,8 @@
     "formed_date": "2022-01-24",
     "popularity": 10,
     "fans": 309,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Ai%2Aai",
     "name_romanji": "Ai*ai",
     "discography": [
@@ -75373,8 +75388,8 @@
     "formed_date": "2003-01-01",
     "popularity": 11,
     "fans": 236,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Bless4",
     "idolsdiagram_url": "https://idolsdiagram.com/g/QVZBQ0xVQg",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -75602,8 +75617,8 @@
     "formed_date": "2015-09-01",
     "popularity": 11,
     "fans": 5969,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Asia Promotion"
     ],
@@ -76301,8 +76316,8 @@
     "formed_date": "2014-03-29",
     "popularity": 10,
     "fans": 4959,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Arc Jewel"
     ],
@@ -76631,8 +76646,8 @@
     "formed_date": null,
     "popularity": 10,
     "fans": 4579,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Shinshi_Todoroku%2C_Gekijou_no_Gotoku.",
     "idolsdiagram_url": "https://idolsdiagram.com/g/56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC",
     "notes": "Current source page says the group is on hiatus and lists Current Members as TBA. Debut date from Jpop Wiki: 2017-09-30. Agency/label on page: KABUKIMONO'DOGs.",
@@ -77284,8 +77299,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 4144,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Qumaniki",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -78529,8 +78544,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 3944,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Sony Music Artists"
     ],
@@ -80011,8 +80026,8 @@
     "formed_date": "2015-08-24",
     "popularity": 9,
     "fans": 3688,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "RISING PRODUCTION"
     ],
@@ -80206,8 +80221,8 @@
     "formed_date": null,
     "popularity": 10,
     "fans": 3337,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/ROYAL_BOX_~SUPER_LIVE_COLLECTION~",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -81036,8 +81051,8 @@
     "formed_date": null,
     "popularity": 11,
     "fans": 2942,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Tenshi_to_Akuma",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OU44Ol44O844ORISE",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce66",
@@ -81596,8 +81611,8 @@
     "formed_date": "2014-01-01",
     "popularity": 8,
     "fans": 2800,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "KissBee International, Co. Ltd."
     ],
@@ -82237,8 +82252,8 @@
     "formed_date": "2022-12-01",
     "popularity": 9,
     "fans": 2585,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "TONAi_BOUSHO",
     "nickname": "",
     "nickname_romanji": "",
@@ -82475,8 +82490,8 @@
     "formed_date": "2014-12-21",
     "popularity": 11,
     "fans": 2504,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "I-GET"
     ],
@@ -82938,8 +82953,8 @@
     "formed_date": null,
     "popularity": 11,
     "fans": 2194,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Erabareshi",
     "nickname": "",
     "nickname_romanji": "",
@@ -83155,8 +83170,8 @@
     "formed_date": "2023-03-01",
     "popularity": 9,
     "fans": 2025,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -83445,8 +83460,8 @@
     "formed_date": "2020-03-01",
     "popularity": 10,
     "fans": 1957,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Apnet Co., Ltd."
     ],
@@ -83683,8 +83698,8 @@
     "formed_date": "2021-01-23",
     "popularity": 8,
     "fans": 1876,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "MiiS",
     "nickname": "",
     "nickname_romanji": "",
@@ -83972,8 +83987,8 @@
     "formed_date": "2020-02-01",
     "popularity": 11,
     "fans": 1612,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/GoodDay",
     "discography": [
       {
@@ -84125,8 +84140,8 @@
     "formed_date": "2021-06-03",
     "popularity": 9,
     "fans": 1569,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "RIZE PRODUCTION"
     ],
@@ -84372,8 +84387,8 @@
     "formed_date": null,
     "popularity": 9,
     "fans": 1151,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Ippan Shadanhojin Himeji Ouen Project"
     ],
@@ -84843,7 +84858,8 @@
       "7d54cbff-13fa-4b21-b529-e73d987ca47a",
       "be88c9db-ef97-42bd-b9ec-84ffe76cb5e7",
       "f088725e-d1c7-44ad-ae5a-744c8ab12422"
-    ]
+    ],
+    "producers": "Iwaisako Yasuyuki"
   },
   {
     "uid": "TkVPVE9LWU8tVFJJQkU",
@@ -84897,8 +84913,8 @@
     "formed_date": null,
     "popularity": 5,
     "fans": 978,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "NEOTOKYO TRACKS"
     ],
@@ -85065,8 +85081,8 @@
     "formed_date": null,
     "popularity": 9,
     "fans": 957,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Honey_Spice",
     "discography": [
       {
@@ -85257,8 +85273,8 @@
     "formed_date": "2021-05-19",
     "popularity": 14,
     "fans": 912,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "KABUKIMONO'DOGs"
     ],
@@ -85630,8 +85646,8 @@
     "formed_date": "2018-02-01",
     "popularity": 7,
     "fans": 636,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Wyenra",
     "nickname": "",
     "nickname_romanji": "",
@@ -85755,8 +85771,8 @@
     "formed_date": "2024-11-22",
     "popularity": 9,
     "fans": 609,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "MAD'S iNK"
     ],
@@ -85895,8 +85911,8 @@
     "formed_date": "2024-02-17",
     "popularity": 9,
     "fans": 546,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "STARRAY PRODUCTION"
     ],
@@ -86083,8 +86099,8 @@
     "formed_date": "2021-12-30",
     "popularity": 9,
     "fans": 428,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "KABUKIMONO'DOGs",
       "OWLscroll"
@@ -86425,8 +86441,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 34166,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Horikiri_Sara",
     "idolsdiagram_url": "https://idolsdiagram.com/g/QmVhdXR5IEJveA",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -86554,8 +86570,8 @@
     "formed_date": "2022-04-01",
     "popularity": 7,
     "fans": 16721,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ekoms"
     ],
@@ -86872,8 +86888,8 @@
     "formed_date": null,
     "popularity": 10,
     "fans": 5463,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Papillon_La_Trace_1",
     "notes": "Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the best available official/fandom sources. Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5pS-6Kqy5b6M44OX44Oq44Oz44K744K5",
@@ -87600,8 +87616,8 @@
     "formed_date": null,
     "popularity": 11,
     "fans": 5007,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Majika",
     "nickname": "",
     "nickname_romanji": "",
@@ -88056,8 +88072,8 @@
     "formed_date": "2017-10-01",
     "popularity": 8,
     "fans": 4913,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "MELLOW_MELLOW",
     "nickname": "",
     "nickname_romanji": "",
@@ -88232,8 +88248,8 @@
     "formed_date": "2016-12-01",
     "popularity": 7,
     "fans": 3570,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TRASH-UP!! RECORDS"
     ],
@@ -88566,8 +88582,8 @@
     "formed_date": null,
     "popularity": 15,
     "fans": 3161,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/LumiUnion",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5rWq5rGf5aWz5a2Q55m657WE5ZCI",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -88775,8 +88791,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 2589,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Koutei_Camera_Girl_Drei",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -88949,8 +88965,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 2108,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Itoshi_Utakata_to",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5pif5q20MTPlpJw",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce58",
@@ -88992,8 +89008,8 @@
     "formed_date": "2021-03-27",
     "popularity": 8,
     "fans": 1932,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Ambitious",
     "nickname": "",
     "nickname_romanji": "",
@@ -89194,8 +89210,8 @@
     "formed_date": "2003-01-01",
     "popularity": 8,
     "fans": 1807,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Bless4",
     "discography": [
       {
@@ -89392,8 +89408,8 @@
     "formed_date": "2024-07-01",
     "popularity": 8,
     "fans": 1724,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "RIRYDAY",
     "nickname": "",
     "nickname_romanji": "",
@@ -89528,8 +89544,8 @@
     "formed_date": null,
     "popularity": 9,
     "fans": 1519,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ONEtoONE Agency"
     ],
@@ -90121,8 +90137,8 @@
     "formed_date": null,
     "popularity": 5,
     "fans": 1433,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Komatsu_Mikako",
     "discography": [
       {
@@ -90677,8 +90693,8 @@
     "formed_date": "2016-12-24",
     "popularity": 8,
     "fans": 1319,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/NECOPLA",
     "discography": [
       {
@@ -91188,8 +91204,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 1248,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/MAISONdes",
     "discography": [
       {
@@ -92171,8 +92187,8 @@
     "formed_date": "2010-08-01",
     "popularity": 9,
     "fans": 1170,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "O-STAR"
     ],
@@ -92534,8 +92550,8 @@
     "formed_date": null,
     "popularity": 7,
     "fans": 1124,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/No_Surprises",
     "discography": [
       {
@@ -92638,8 +92654,8 @@
     "formed_date": "2023-09-18",
     "popularity": 8,
     "fans": 1107,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "iCON DOLL LOUNGE (iDL)"
     ],
@@ -93092,8 +93108,8 @@
     "formed_date": "2017-03-11",
     "popularity": 9,
     "fans": 1084,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LIVE PLANET"
     ],
@@ -93247,8 +93263,8 @@
     "formed_date": null,
     "popularity": 7,
     "fans": 1044,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "O-key"
     ],
@@ -93998,7 +94014,8 @@
       "b05ad846-6ab6-4a8a-bc5e-5f9e912a81ab",
       "4b33cf4d-bc69-4561-aee9-ab256afb3c19",
       "ff5894b1-e665-4d24-b3d3-7d3ee60bf30e"
-    ]
+    ],
+    "producers": "Iguchi Ichiro from SCRAMBLES"
   },
   {
     "uid": "U0FJwrJSaXVt",
@@ -94062,8 +94079,8 @@
     "formed_date": "2022-07-22",
     "popularity": 8,
     "fans": 1031,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "caSTORY"
     ],
@@ -94509,7 +94526,8 @@
       "144c8fa1-ea7c-4ba6-b9d2-430590166f2a",
       "66dda1b5-72cb-40b0-9af1-d67249889c48"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce117"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce117",
+    "producers": "Yuzuriha Miyuu"
   },
   {
     "uid": "44Gq44KT44Kt44OL77yB",
@@ -94591,8 +94609,8 @@
     "formed_date": "2017-09-05",
     "popularity": 8,
     "fans": 3863,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TARGET inc."
     ],
@@ -94776,8 +94794,8 @@
     "formed_date": "2017-07-01",
     "popularity": 6,
     "fans": 3767,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "Sandal_Telephone",
     "nickname": "終演後物販",
     "nickname_romanji": "Shuuengo Buppan",
@@ -95055,8 +95073,8 @@
     "formed_date": null,
     "popularity": 7,
     "fans": 3502,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://wackidol.fandom.com/wiki/SAiNT_SEX",
     "name_romanji": "SAiNT_SEX",
     "nickname": "",
@@ -95195,8 +95213,8 @@
     "formed_date": "2019-10-01",
     "popularity": 6,
     "fans": 3010,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": ".DOLL",
     "nickname": "",
     "nickname_romanji": "",
@@ -95538,8 +95556,8 @@
     "formed_date": null,
     "popularity": 8,
     "fans": 2082,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Mashiro_Karin",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44KB44KN44KT55WRYSBnbyBnbw",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce49",
@@ -95946,8 +95964,8 @@
     "formed_date": null,
     "popularity": 7,
     "fans": 1727,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Purely_Monster",
     "discography": [
       {
@@ -96147,8 +96165,8 @@
     "formed_date": null,
     "popularity": 7,
     "fans": 1457,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "NaNoMoRaL",
     "nickname": "",
     "nickname_romanji": "",
@@ -96392,8 +96410,8 @@
     "formed_date": "2015-07-22",
     "popularity": 7,
     "fans": 1281,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LIVE PLANET"
     ],
@@ -96561,8 +96579,8 @@
     "formed_date": "2019-11-01",
     "popularity": 7,
     "fans": 1213,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "CUBΣLIC",
     "nickname": "",
     "nickname_romanji": "",
@@ -96944,8 +96962,8 @@
     "formed_date": "2018-07-07",
     "popularity": 7,
     "fans": 1138,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Meibii ME",
     "nickname": "",
     "nickname_romanji": "",
@@ -97096,8 +97114,8 @@
     "formed_date": "2019-06-23",
     "popularity": 7,
     "fans": 1106,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "CDC PRODUCTION"
     ],
@@ -97246,7 +97264,8 @@
       "a7d9b7ca-c5a1-4704-87b2-291663528197",
       "b7f6b846-4fac-4f07-98a4-09304c3a88f6"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce60"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce60",
+    "producers": "Kamoike Ayano"
   },
   {
     "uid": "bWV0YXJpdW0",
@@ -97284,8 +97303,8 @@
     "formed_date": "2022-10-13",
     "popularity": 7,
     "fans": 1084,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Be Rise Lab"
     ],
@@ -97611,8 +97630,8 @@
     "formed_date": "2019-01-01",
     "popularity": 7,
     "fans": 1057,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "KETEL"
     ],
@@ -98383,8 +98402,8 @@
     "formed_date": "2007-01-01",
     "popularity": 7,
     "fans": 1046,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Momoiro_Clover_Z",
     "discography": [
       {
@@ -99610,8 +99629,8 @@
     "formed_date": "2011-09-01",
     "popularity": 7,
     "fans": 1046,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Menkoi_Girls",
     "discography": [
       {
@@ -99880,8 +99899,8 @@
     "formed_date": "2021-01-27",
     "popularity": 7,
     "fans": 1045,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Office Bit"
     ],
@@ -100275,8 +100294,8 @@
     "formed_date": "2016-03-01",
     "popularity": 6,
     "fans": 1719,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Twelve-Notes"
     ],
@@ -100639,8 +100658,8 @@
     "formed_date": "2013-12-27",
     "popularity": 8,
     "fans": 1578,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Ippan Shadanhojin Himeji Ouen Project"
     ],
@@ -101086,8 +101105,8 @@
     "formed_date": "2021-08-01",
     "popularity": 4,
     "fans": 1314,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "DANKX LLC"
     ],
@@ -101509,8 +101528,8 @@
     "formed_date": "2010-01-01",
     "popularity": 6,
     "fans": 4564,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Dorothy_Little_Happy",
     "nickname": "",
     "nickname_romanji": "",
@@ -102015,8 +102034,8 @@
     "formed_date": null,
     "popularity": 6,
     "fans": 4386,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -102398,8 +102417,8 @@
     "formed_date": "2008-01-01",
     "popularity": 5,
     "fans": 2929,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "M-SMILE"
     ],
@@ -103491,8 +103510,8 @@
     "formed_date": null,
     "popularity": 6,
     "fans": 2080,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Sekai_he_Habatake%21",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kk44Kx44Gm44KL44OP44O844OE",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce21",
@@ -103809,8 +103828,8 @@
     "formed_date": "2018-03-01",
     "popularity": 6,
     "fans": 1741,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Cmajor Works"
     ],
@@ -103986,8 +104005,8 @@
     "formed_date": "2020-10-01",
     "popularity": 5,
     "fans": 1642,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "M.L&Co. INC"
     ],
@@ -104271,8 +104290,8 @@
     "formed_date": "2021-07-01",
     "popularity": 6,
     "fans": 1382,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ORIGAMI"
     ],
@@ -104647,7 +104666,8 @@
       "a86c525e-d9a9-4e82-88be-d075616cb73c",
       "71937ce0-48a6-4b5c-b3be-8da03e0b37ea",
       "a3289a47-0a6f-427a-8944-8dd9697ac99d"
-    ]
+    ],
+    "producers": "Ishiwata Hinako"
   },
   {
     "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
@@ -104693,8 +104713,8 @@
     "formed_date": "2017-01-01",
     "popularity": 6,
     "fans": 1329,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "McDog Works"
     ],
@@ -104945,8 +104965,8 @@
     "formed_date": "2010-04-01",
     "popularity": 6,
     "fans": 1134,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "Yoshimoto Kogyo"
     ],
@@ -105533,8 +105553,8 @@
     "formed_date": "2013-07-01",
     "popularity": 3,
     "fans": 2205,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LAUGHFACE"
     ],
@@ -105835,8 +105855,8 @@
     "formed_date": "2014-05-05",
     "popularity": 4,
     "fans": 1629,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Cospanic Entertainment"
     ],
@@ -106117,8 +106137,8 @@
     "formed_date": "2017-09-01",
     "popularity": 5,
     "fans": 1564,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/SUPER_JYAPON",
     "discography": [
       {
@@ -106460,8 +106480,8 @@
     "formed_date": null,
     "popularity": 4,
     "fans": 1351,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "I-GET"
     ],
@@ -106873,8 +106893,8 @@
     "formed_date": "2023-02-08",
     "popularity": 4,
     "fans": 1221,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "YABACUBE INC."
     ],
@@ -107285,8 +107305,8 @@
     "formed_date": "2020-04-01",
     "popularity": 4,
     "fans": 1071,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SCOT"
     ],
@@ -107623,8 +107643,8 @@
     "formed_date": "2019-05-27",
     "popularity": 3,
     "fans": 1578,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/CROSSNOESIS",
     "discography": [
       {
@@ -107902,8 +107922,8 @@
     "formed_date": "2020-09-13",
     "popularity": 4,
     "fans": 1445,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "M-SMILE"
     ],
@@ -108203,8 +108223,8 @@
     "formed_date": null,
     "popularity": 3,
     "fans": 1247,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "Ai_no_Hana_(2o_Love_to_Sweet_Bullet)",
     "nickname": "",
     "nickname_romanji": "",
@@ -108561,8 +108581,8 @@
     "formed_date": null,
     "popularity": 3,
     "fans": 1152,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "GOOD CHOICE ENTERTAINMENT"
     ],
@@ -108870,7 +108890,8 @@
       "6477dd94-00ad-4b31-a3cb-14c1c843d720",
       "fb26b5ea-dea7-4bc8-a922-062ff5768dfc",
       "9e5bd124-9c16-4ca4-9d2e-be6433030895"
-    ]
+    ],
+    "producers": "PaniCrew 's YOHEY"
   },
   {
     "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or",
@@ -108886,8 +108907,8 @@
     "formed_date": null,
     "popularity": 3,
     "fans": 1088,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Girlz_Can%27t",
     "discography": [],
     "disc_uids": [],
@@ -108929,8 +108950,8 @@
     "formed_date": "2020-04-01",
     "popularity": 3,
     "fans": 1046,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "MEWM",
     "nickname": "やよいももこ",
     "nickname_romanji": "YAYOIMOMOKO",
@@ -109470,7 +109491,8 @@
       "a5cf51aa-0e89-4d26-ac71-f37bac422145",
       "ee8523cc-92a5-42f2-b8e1-8c47f66eacf1"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce92"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce92",
+    "producers": "Yayoi Links"
   },
   {
     "uid": "SEFNSURBU1lTVEVN",
@@ -109507,8 +109529,8 @@
     "formed_date": "2016-11-03",
     "popularity": 3,
     "fans": 2552,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "Increption, Inc."
     ],
@@ -109924,8 +109946,8 @@
     "formed_date": "2020-01-01",
     "popularity": 2,
     "fans": 2062,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "VINEYARD"
     ],
@@ -110023,7 +110045,8 @@
       "053d8e9b-04e7-4fcd-876d-83a56ba3d972",
       "77f0d16b-b7a2-4f5a-ba1b-75c4e1b56c6f",
       "6ed3d025-e2d0-4e89-b5c7-afc86e7efa9f"
-    ]
+    ],
+    "producers": "Popteen"
   },
   {
     "uid": "5aSW56We55Sw44GE44Gj44Gh44KH44KB",
@@ -110229,8 +110252,8 @@
     "formed_date": null,
     "popularity": 2,
     "fans": 1239,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/But_Beautiful",
     "notes": "Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the best available official/fandom sources.",
     "discography": [
@@ -110566,8 +110589,8 @@
     "formed_date": "2021-04-21",
     "popularity": 2,
     "fans": 1106,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "Zest"
     ],
@@ -110791,7 +110814,8 @@
       "bd532885-7676-411e-a08d-341c7317e36b",
       "b33b80ab-6ddf-4107-8ec8-2e9469db6535",
       "5005ce3a-4ca5-457c-a4a5-9bdbf123ccd4"
-    ]
+    ],
+    "producers": "Kikuchi Kazuhito"
   },
   {
     "uid": "44Kw44O844Kw44O844Or44Or",
@@ -110827,8 +110851,8 @@
     "formed_date": "2018-04-08",
     "popularity": 1,
     "fans": 2065,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Gu-Gu_LULU",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Kw44O844Kw44O844Or44Or",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -110986,8 +111010,8 @@
     "formed_date": "2019-05-25",
     "popularity": 1,
     "fans": 1418,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "AQBIRec"
     ],
@@ -111139,8 +111163,8 @@
     "formed_date": "2020-12-01",
     "popularity": 2,
     "fans": 1342,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "PLATINUM PIXEL"
     ],
@@ -111217,8 +111241,8 @@
     "formed_date": "2018-08-18",
     "popularity": 1,
     "fans": 1101,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "EMOE",
     "nickname": "",
     "nickname_romanji": "",
@@ -111392,8 +111416,8 @@
     "formed_date": "2024-06-20",
     "popularity": 2,
     "fans": 166,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "Leadi Inc."
     ],
@@ -111512,8 +111536,8 @@
     "formed_date": "2019-01-01",
     "popularity": 29,
     "fans": 9405,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "DEARSTAGE"
     ],
@@ -111830,7 +111854,8 @@
       "1e7ed409-4f93-4c0f-a33b-0416a0337d92",
       "b6be1856-7bb2-4c03-a86c-01e44ad65b4a",
       "137022de-2957-4f40-abe9-e2ef74925119"
-    ]
+    ],
+    "producers": "Lantis and DEARSTAGE, and Mia_REGINA directs some of their songs and dances"
   },
   {
     "uid": "TWHigJlTY2Fy4oCZUGllY2U",
@@ -111860,8 +111885,8 @@
     "formed_date": "2024-08-01",
     "popularity": 26,
     "fans": 3223,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TWIN PLANET ENTERTAINMENT"
     ],
@@ -112073,8 +112098,8 @@
     "formed_date": "2009-01-01",
     "popularity": 25,
     "fans": 26337,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/TOKYO_GIRLS%27_STYLE",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5p2x5Lqs5aWz5a2Q5rWB",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -113808,8 +113833,8 @@
     "formed_date": null,
     "popularity": 37,
     "fans": 22028,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "FIFTY-FIFTY Inc."
     ],
@@ -113920,8 +113945,8 @@
     "formed_date": "2015-06-21",
     "popularity": 25,
     "fans": 12688,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "STARDUST PLANET",
       "Stardust Promotion"
@@ -114436,8 +114461,8 @@
     "formed_date": "2013-03-27",
     "popularity": 24,
     "fans": 9894,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "RIZE PRODUCTION"
     ],
@@ -114996,8 +115021,8 @@
     "formed_date": "2011-09-11",
     "popularity": 20,
     "fans": 8861,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "STARDUST PLANET",
       "Stardust Promotion"
@@ -115782,8 +115807,8 @@
     "formed_date": null,
     "popularity": 20,
     "fans": 7410,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "KLP48",
     "nickname": "",
     "nickname_romanji": "",
@@ -115994,8 +116019,8 @@
     "formed_date": "2023-10-07",
     "popularity": 28,
     "fans": 5289,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "OVERSE"
     ],
@@ -116184,7 +116209,8 @@
       "71671f48-13d1-4d2c-aef1-5277010f8fb5",
       "12615af9-a2c0-4ef7-b82a-8b84906bb6b2",
       "5000400a-22a2-4f39-902b-f4ca40329d8b"
-    ]
+    ],
+    "producers": "Akimoto Yasushi"
   },
   {
     "uid": "44K_44Kk44OI44Or5pyq5a6a",
@@ -116220,8 +116246,8 @@
     "formed_date": "2020-04-16",
     "popularity": 23,
     "fans": 4397,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Title_Mitei",
     "name_romanji": "Title_Mitei",
     "agencies": [
@@ -116450,7 +116476,8 @@
       "df71dafd-34b7-41d5-a38e-3a92a838a62a",
       "44e77585-1ddd-4cda-85d0-c6cd574a57bc",
       "3e5af4de-8bd4-47a2-ac38-52ca0a5388ff"
-    ]
+    ],
+    "producers": "Matsui Koudai"
   },
   {
     "uid": "VXRhR2Uh",
@@ -116494,8 +116521,8 @@
     "formed_date": "2022-04-15",
     "popularity": 27,
     "fans": 2519,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "PLAYYTE"
     ],
@@ -116875,8 +116902,8 @@
     "formed_date": "2025-01-05",
     "popularity": 28,
     "fans": 1403,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Harunision",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OP44Or44OL44K344Kq44Oz",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -117083,8 +117110,8 @@
     "formed_date": "2014-02-01",
     "popularity": 23,
     "fans": 30053,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "NECRONOMIDOL",
     "nickname": "",
     "nickname_romanji": "",
@@ -117556,8 +117583,8 @@
     "formed_date": "2010-06-21",
     "popularity": 24,
     "fans": 23382,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "avex Management\n(2010-2013; 2017-Present)\navex vanguard\n(2013-2017)"
     ],
@@ -118753,8 +118780,8 @@
     "formed_date": null,
     "popularity": 22,
     "fans": 19850,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Maneki_Kecak",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44G-44Gt44GN44Kx44OB44Oj",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -119078,8 +119105,8 @@
     "formed_date": null,
     "popularity": 24,
     "fans": 8824,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Kamen_Rider_Girls",
     "name_romanji": "Kamen_Rider_Girls",
     "nickname": "",
@@ -119392,8 +119419,8 @@
     "formed_date": "2021-01-01",
     "popularity": 21,
     "fans": 8226,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Fishbowl",
     "nickname": "",
     "nickname_romanji": "",
@@ -120054,7 +120081,8 @@
       "2abadf46-ce2f-4f66-a74a-73d711a8f3e0",
       "09076635-3b86-4d1f-9697-5f6215580fe3",
       "9316d50d-c226-4a42-a801-a45e9c0e55f6"
-    ]
+    ],
+    "producers": "Yamamoto Sho"
   },
   {
     "uid": "UElHR1M",
@@ -120106,8 +120134,8 @@
     "formed_date": "2020-04-19",
     "popularity": 25,
     "fans": 7109,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "PIGGS",
     "nickname": "",
     "nickname_romanji": "",
@@ -120597,7 +120625,8 @@
       "7daf72d0-6d79-4a9d-a543-27cf981e8858",
       "7276b873-e535-4665-b9e6-67adc7623894",
       "658e4443-bff2-4cee-ab4d-e41dbf86b8ec"
-    ]
+    ],
+    "producers": "Pour Lui"
   },
   {
     "uid": "Y2h1TGE",
@@ -120687,8 +120716,8 @@
     "formed_date": "2017-05-07",
     "popularity": 26,
     "fans": 6968,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "ChuLa",
     "nickname": "ちゅらら",
     "nickname_romanji": "ChuLaLa",
@@ -121241,8 +121270,8 @@
     "formed_date": "2011-01-01",
     "popularity": 25,
     "fans": 2899,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "Dancing_Dolls",
     "nickname": "",
     "nickname_romanji": "",
@@ -121445,8 +121474,8 @@
     "formed_date": "2018-06-09",
     "popularity": 25,
     "fans": 1916,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Tenkuu_Island",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gq44G_44Gg6Imy44Gu5raI44GX44GU44KA",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce134",
@@ -121957,8 +121986,8 @@
     "formed_date": "2023-10-01",
     "popularity": 25,
     "fans": 1510,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Verotica",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OZ44Ot44OG44Kj44Kr",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -122484,8 +122513,8 @@
     "formed_date": "2014-01-01",
     "popularity": 23,
     "fans": 27706,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "ekoms"
     ],
@@ -122813,7 +122842,8 @@
       "787e7f75-3666-45d5-90de-e2740bfef84a",
       "70f938dc-c458-428c-b8a4-4558b0bfc040",
       "5a02d100-0f93-43de-ba75-b3852ad7a2de"
-    ]
+    ],
+    "producers": "Sakurai Kenta"
   },
   {
     "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
@@ -122849,8 +122879,8 @@
     "formed_date": null,
     "popularity": 24,
     "fans": 17773,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/MAISONdes",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -123727,8 +123757,8 @@
     "formed_date": "2022-01-01",
     "popularity": 22,
     "fans": 10189,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "MAZE",
     "nickname": "",
     "nickname_romanji": "",
@@ -123932,8 +123962,8 @@
     "formed_date": "2022-05-20",
     "popularity": 23,
     "fans": 8563,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "imaginate"
     ],
@@ -124054,8 +124084,8 @@
     "formed_date": "2021-01-01",
     "popularity": 23,
     "fans": 7912,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -124461,8 +124491,8 @@
     "formed_date": "2015-05-01",
     "popularity": 20,
     "fans": 6973,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "STARDUST PLANET",
       "STARDUST PROMOTION"
@@ -124818,8 +124848,8 @@
     "formed_date": "2025-08-27",
     "popularity": 26,
     "fans": 4695,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "MAPLE INC."
     ],
@@ -125380,8 +125410,8 @@
     "formed_date": "2022-07-07",
     "popularity": 25,
     "fans": 4118,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "Shunkashuutou",
     "nickname": "",
     "nickname_romanji": "",
@@ -125519,8 +125549,8 @@
     "formed_date": "2022-12-08",
     "popularity": 23,
     "fans": 2481,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Rough_x_Laugh",
     "name_romanji": "Rough_x_Laugh",
     "agencies": [
@@ -125750,7 +125780,8 @@
       "8ace2e58-deeb-4ed1-930e-e4435d1a2566",
       "ab785feb-ffb0-499b-9451-cb2e22c5758b",
       "962b1857-583b-4ea7-9fc3-960a811f6430"
-    ]
+    ],
+    "producers": "Sakuma Nobuyuki"
   },
   {
     "uid": "Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw",
@@ -125800,8 +125831,8 @@
     "formed_date": "2015-11-01",
     "popularity": 21,
     "fans": 1814,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "codomomental"
     ],
@@ -125946,8 +125977,8 @@
     "formed_date": "2003-07-01",
     "popularity": 24,
     "fans": 18532,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Negi-Pro"
     ],
@@ -126731,8 +126762,8 @@
     "formed_date": "2020-04-11",
     "popularity": 22,
     "fans": 6085,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Monoclone",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Oi44OO44Kv44Ot44O844Oz",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce78",
@@ -127476,8 +127507,8 @@
     "formed_date": "2017-06-24",
     "popularity": 22,
     "fans": 6160,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Tebasaki_Sensation",
     "name_romanji": "Tebasaki_Sensation",
     "agencies": [
@@ -128028,8 +128059,8 @@
     "formed_date": null,
     "popularity": 26,
     "fans": 4764,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Ringo Music"
     ],
@@ -128905,8 +128936,8 @@
     "formed_date": "2020-07-16",
     "popularity": 19,
     "fans": 4598,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Peel_the_Apple",
     "name_romanji": "Peel_the_Apple",
     "agencies": [
@@ -129233,8 +129264,8 @@
     "formed_date": "2018-12-23",
     "popularity": 20,
     "fans": 4056,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "BIG ISLAND RECORDS"
     ],
@@ -129914,8 +129945,8 @@
     "formed_date": "2022-01-30",
     "popularity": 21,
     "fans": 2436,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "VONOBA"
     ],
@@ -130117,8 +130148,8 @@
     "formed_date": "2022-09-24",
     "popularity": 24,
     "fans": 2827,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "AdamLilith",
     "nickname": "アダムス",
     "nickname_romanji": "Adamth",
@@ -130195,8 +130226,8 @@
     "formed_date": "2023-01-01",
     "popularity": 32,
     "fans": 16779,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Launen"
     ],
@@ -130474,8 +130505,8 @@
     "formed_date": null,
     "popularity": 30,
     "fans": 10014,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Pinponpanpon",
     "nickname": "",
     "nickname_romanji": "",
@@ -130815,7 +130846,8 @@
       "e997d3d0-3647-414d-b6b2-dd0df1140b9c",
       "742d5565-bf22-44b6-9f56-02674b60deee",
       "560ffec3-dc4b-4aa1-8354-de93fdf85800"
-    ]
+    ],
+    "producers": "french cries"
   },
   {
     "uid": "5pyA57WC5pyq5p2l5bCR5aWz",
@@ -130845,8 +130877,8 @@
     "formed_date": "2023-01-01",
     "popularity": 36,
     "fans": 11628,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Saishu_Mirai_Shoujo",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5pyA57WC5pyq5p2l5bCR5aWz",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -131323,8 +131355,8 @@
     "formed_date": "2021-01-20",
     "popularity": 31,
     "fans": 8936,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LIVE PLANET",
       "RIZE PRODUCTION"
@@ -131717,8 +131749,8 @@
     "formed_date": "2014-09-01",
     "popularity": 30,
     "fans": 24934,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -132592,8 +132624,8 @@
     "formed_date": "2022-06-01",
     "popularity": 28,
     "fans": 10561,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -133134,8 +133166,8 @@
     "formed_date": "2021-04-29",
     "popularity": 30,
     "fans": 8896,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "MAD_JAMIE",
     "nickname": "",
     "nickname_romanji": "",
@@ -133631,8 +133663,8 @@
     "formed_date": null,
     "popularity": 29,
     "fans": 8383,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "PLAYYTE"
     ],
@@ -134387,8 +134419,8 @@
     "formed_date": "2020-05-25",
     "popularity": 35,
     "fans": 6542,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "TENRIN",
     "nickname": "",
     "nickname_romanji": "",
@@ -134691,8 +134723,8 @@
     "formed_date": null,
     "popularity": 28,
     "fans": 36086,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "ICIGO STYLE"
     ],
@@ -134969,8 +135001,8 @@
     "formed_date": null,
     "popularity": 28,
     "fans": 22024,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "IRONBUNNY",
     "nickname": "",
     "nickname_romanji": "",
@@ -135121,8 +135153,8 @@
     "formed_date": null,
     "popularity": 27,
     "fans": 18200,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/7-Gatsu_no_Ame_Nara",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OO44O844K544Oq44O844OW44K5",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -135445,8 +135477,8 @@
     "formed_date": null,
     "popularity": 27,
     "fans": 10033,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Tsukishiro_Himari",
     "idolsdiagram_url": "https://idolsdiagram.com/g/SXNpbGllbA",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -135696,8 +135728,8 @@
     "formed_date": "2022-05-13",
     "popularity": 28,
     "fans": 10083,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "OTONA CHILD."
     ],
@@ -135938,7 +135970,8 @@
       "2458343b-bfc7-4934-a852-680334dcdbaa",
       "108e5db6-83d6-45d4-87cb-79678dd50162",
       "e39c1549-2d59-4580-a477-95c1a8425d3d"
-    ]
+    ],
+    "producers": "Koyubi Chan"
   },
   {
     "uid": "44Oe44O844Kt44Ol44Ot",
@@ -135972,8 +136005,8 @@
     "formed_date": "2022-06-24",
     "popularity": 29,
     "fans": 4787,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Mercuro",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Oe44O844Kt44Ol44Ot",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -136845,11 +136878,11 @@
     ],
     "color": null,
     "description": "Onephony ワンフォニー September 2025 Information Years 2022-Present Agency Summary Entertainment Current Members Kubota Sayaka Tachibana Ayane Yumeno Mio Asakura Mirai Tajima Sakurako Former Members Kizuki Rise Producer Fukase Mio Links Social Media Onephony (ワンフォニー) is a 5-member idol group produced by former Maneki Kecak member, Fukase Mio. The group was first announced on November 13, 2022. They held an unveiling performance on December 18, 2022 at Nakano ZERO Small Hall.",
-    "formed_date": null,
+    "formed_date": "2022-11-13",
     "popularity": 28,
     "fans": 4091,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Summary Entertainment"
     ],
@@ -137006,7 +137039,8 @@
       "e433fc67-a7d9-41a4-ad17-df6454023c87",
       "3b51269f-b460-4716-a1ca-0651ecf81207",
       "dee00c39-c373-443b-aa76-90b7424b0bb5"
-    ]
+    ],
+    "producers": "former Maneki Kecak member, Fukase Mio"
   },
   {
     "uid": "44OJ44Op44Oe44OB44OD44Kv44Os44Kz44O844OJ",
@@ -137048,8 +137082,8 @@
     "formed_date": "2022-09-19",
     "popularity": 29,
     "fans": 2822,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Dramatic_Record",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OJ44Op44Oe44OB44OD44Kv44Os44Kz44O844OJ",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce121",
@@ -137324,8 +137358,8 @@
     "formed_date": "2024-10-11",
     "popularity": 31,
     "fans": 3125,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Musukono Production",
       "MAD'S iNK"
@@ -137799,8 +137833,8 @@
     "formed_date": null,
     "popularity": 29,
     "fans": 42398,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "NGT48",
     "nickname": "",
     "nickname_romanji": "",
@@ -138125,8 +138159,8 @@
     "formed_date": "2017-06-25",
     "popularity": 28,
     "fans": 13922,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "DEARSTAGE"
     ],
@@ -138832,8 +138866,8 @@
     "formed_date": null,
     "popularity": 27,
     "fans": 11251,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "NEO JAPONISM Inc."
     ],
@@ -139535,8 +139569,8 @@
     "formed_date": "2021-05-14",
     "popularity": 28,
     "fans": 10873,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "I-COL",
     "nickname": "",
     "nickname_romanji": "",
@@ -139648,8 +139682,8 @@
     "formed_date": "2014-12-12",
     "popularity": 25,
     "fans": 8343,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Asia Promotion"
     ],
@@ -140423,8 +140457,8 @@
     "formed_date": "2021-09-05",
     "popularity": 27,
     "fans": 5279,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Karen_na_Ivory",
     "name_romanji": "Karen_na_Ivory",
     "agencies": [
@@ -140910,8 +140944,8 @@
     "formed_date": "2018-08-15",
     "popularity": 28,
     "fans": 3882,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Kimi_ni%2C_Mune_Kyun._%28Idol_Group%29",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5ZCb44Gr44CB6IO444Kt44Ol44Oz44CC",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce52",
@@ -140985,8 +141019,8 @@
     "formed_date": "2022-05-01",
     "popularity": 29,
     "fans": 3472,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "HATENA CREATION"
     ],
@@ -141564,8 +141598,8 @@
     "formed_date": "2022-06-21",
     "popularity": 28,
     "fans": 3177,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ESOLA MADE"
     ],
@@ -141671,8 +141705,8 @@
     "formed_date": null,
     "popularity": 21,
     "fans": 14961,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "WACK"
     ],
@@ -142316,8 +142350,8 @@
     "formed_date": "2019-04-15",
     "popularity": 27,
     "fans": 11015,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "SOVA LLC."
     ],
@@ -143146,8 +143180,8 @@
     "formed_date": null,
     "popularity": 26,
     "fans": 10584,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "Musukono Production",
       "MAD'S iNK"
@@ -143752,8 +143786,8 @@
     "formed_date": null,
     "popularity": 53,
     "fans": 164748,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Nishimoto_Meisa",
     "name_romanji": "Nishimoto Meisa",
     "idolsdiagram_url": "https://idolsdiagram.com/g/TUU6SQ",
@@ -144002,8 +144036,8 @@
     "formed_date": null,
     "popularity": 54,
     "fans": 132919,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Cho_Tokimeki%E2%99%A1Sendenbu",
     "name_romanji": "Cho_Tokimeki♡Sendenbu",
     "agencies": [
@@ -145003,8 +145037,8 @@
     "formed_date": "2024-06-26",
     "popularity": 57,
     "fans": 277269,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Phantom_Siita",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OV44Kh44Oz44OI44Og44K344O844K_",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -145088,8 +145122,8 @@
     "formed_date": "2021-01-23",
     "popularity": 52,
     "fans": 69895,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Kyururin_te_shitemite",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce88",
@@ -145599,8 +145633,8 @@
     "formed_date": null,
     "popularity": 54,
     "fans": 347493,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Hinatazaka46",
     "nickname": "",
     "nickname_romanji": "",
@@ -146110,8 +146144,8 @@
     "formed_date": null,
     "popularity": 50,
     "fans": 411234,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "WACK"
     ],
@@ -146184,8 +146218,8 @@
     "formed_date": "2007-01-01",
     "popularity": 50,
     "fans": 232986,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "STARDUST PLANET",
       "Stardust Promotion"
@@ -147533,8 +147567,8 @@
     "formed_date": "2019-08-04",
     "popularity": 51,
     "fans": 64622,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Yoyogi Animation Academy"
     ],
@@ -148315,7 +148349,8 @@
       "102fb9e7-3bcd-42c1-ad77-a39232eb8e12",
       "eaea623e-4a88-4f7a-a037-ba009b450820"
     ],
-    "songs": []
+    "songs": [],
+    "producers": "Sashihara Rino"
   },
   {
     "uid": "QmlsbGxpZQ",
@@ -148357,8 +148392,8 @@
     "formed_date": "2021-11-10",
     "popularity": 47,
     "fans": 702820,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://kpop.fandom.com/wiki/Billlie",
     "name_romanji": "Fukutomi Tsuki",
     "nickname": "",
@@ -148842,8 +148877,8 @@
     "formed_date": "2024-01-23",
     "popularity": 49,
     "fans": 30769,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ASOBISYSTEM",
       "KAWAII LAB."
@@ -149196,8 +149231,8 @@
     "formed_date": null,
     "popularity": 43,
     "fans": 34930,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "UP-FRONT AGENCY (2007-2012)\nUP-FRONT PROMOTION (2012-2017)"
     ],
@@ -149793,8 +149828,8 @@
     "formed_date": "2022-03-29",
     "popularity": 49,
     "fans": 34091,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Yoyogi Animation Academy"
     ],
@@ -150039,7 +150074,8 @@
       "d39b65ae-d428-4dbc-9ee6-abc204cb7f1a",
       "bfa1b06b-52ab-496c-880e-c187af7bf8fb",
       "3789bd3f-7e74-469f-b41e-a85679c9e0fe"
-    ]
+    ],
+    "producers": "Sashihara Rino"
   },
   {
     "uid": "Tk1CNDg",
@@ -150347,8 +150383,8 @@
     "formed_date": "2010-01-01",
     "popularity": 40,
     "fans": 91994,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "NMB48",
     "nickname": "",
     "nickname_romanji": "",
@@ -151332,8 +151368,8 @@
     "formed_date": "2012-01-01",
     "popularity": 40,
     "fans": 71168,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "avex"
     ],
@@ -152523,8 +152559,8 @@
     "formed_date": "2009-08-04",
     "popularity": 41,
     "fans": 69264,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Shiritsu_Ebisu_Chugaku",
     "name_romanji": "Shiritsu_Ebisu_Chugaku",
     "agencies": [
@@ -153880,8 +153916,8 @@
     "formed_date": "2021-10-01",
     "popularity": 42,
     "fans": 23287,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LIVE PLANET"
     ],
@@ -154578,8 +154614,8 @@
     "formed_date": "2022-07-10",
     "popularity": 40,
     "fans": 26283,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TWIN PLANET ENTERTAINMENT"
     ],
@@ -155078,8 +155114,8 @@
     "formed_date": "2019-01-21",
     "popularity": 39,
     "fans": 455265,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://kpop.fandom.com/wiki/Cherry_Bullet",
     "name_romanji": "Cherry Bullet",
     "nickname": "",
@@ -155266,8 +155302,8 @@
     "formed_date": null,
     "popularity": 40,
     "fans": 113809,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "we-B studios"
     ],
@@ -156164,8 +156200,8 @@
     "formed_date": "2015-08-09",
     "popularity": 38,
     "fans": 18487,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Iginari_Tohokusan",
     "name_romanji": "Iginari_Tohokusan",
     "agencies": [
@@ -156954,8 +156990,8 @@
     "formed_date": "2021-04-05",
     "popularity": 42,
     "fans": 15566,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Non¬Fiction",
     "nickname": "",
     "nickname_romanji": "",
@@ -157158,8 +157194,8 @@
     "formed_date": "2017-08-23",
     "popularity": 38,
     "fans": 39484,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "WACK"
     ],
@@ -157266,8 +157302,8 @@
     "formed_date": null,
     "popularity": 38,
     "fans": 51416,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "TOKYO PINK"
     ],
@@ -157442,8 +157478,8 @@
     "formed_date": "2020-05-27",
     "popularity": 39,
     "fans": 23050,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Avex Management"
     ],
@@ -157992,8 +158028,8 @@
     "formed_date": "2010-06-03",
     "popularity": 36,
     "fans": 76655,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Dempagumi.inc",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gn44KT44Gx57WELmluYw",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06. Timeline verified on 2026-04-12: formed_date set to 2010-06-03 (recognized start of Dempagumi.inc activity), ended_date set to 2025-01-05 (THE ENDING final live at Makuhari Event Hall).",
@@ -159493,8 +159529,8 @@
     "formed_date": null,
     "popularity": 36,
     "fans": 37723,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "LDH",
       "EXPG",
@@ -160818,8 +160854,8 @@
     "formed_date": "2014-09-01",
     "popularity": 34,
     "fans": 15874,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Kiyoshi Ryujin 25",
     "nickname": "",
     "nickname_romanji": "",
@@ -161507,8 +161543,8 @@
     "formed_date": null,
     "popularity": 35,
     "fans": 88903,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "SKE48",
     "nickname": "",
     "nickname_romanji": "",
@@ -162770,8 +162806,8 @@
     "formed_date": "2011-01-01",
     "popularity": 35,
     "fans": 78998,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "HKT48",
     "nickname": "",
     "nickname_romanji": "",
@@ -163315,8 +163351,8 @@
     "formed_date": "2017-01-01",
     "popularity": 35,
     "fans": 66331,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "BROKEN_BY_THE_SCREAM",
     "nickname": "",
     "nickname_romanji": "",
@@ -163590,8 +163626,8 @@
     "formed_date": null,
     "popularity": 35,
     "fans": 32647,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Fanclub",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OV44Kj44Ot44K944OV44Kj44O844Gu44OA44Oz44K5",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -165164,8 +165200,8 @@
     "formed_date": "2017-08-01",
     "popularity": 36,
     "fans": 29119,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "codomomental"
     ],
@@ -165490,8 +165526,8 @@
     "formed_date": "2005-06-01",
     "popularity": 38,
     "fans": 30665,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "UP-FRONT PROMOTION"
     ],
@@ -166658,8 +166694,8 @@
     "formed_date": "2021-03-17",
     "popularity": 36,
     "fans": 14999,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Yakousei_Amuse",
     "nickname": "よるあみ",
     "nickname_romanji": "Yoruami",
@@ -166989,8 +167025,8 @@
     "formed_date": "2015-01-01",
     "popularity": 34,
     "fans": 36404,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Avex"
     ],
@@ -167510,8 +167546,8 @@
     "formed_date": "2018-11-03",
     "popularity": 34,
     "fans": 13867,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "STARDUST PLANET",
       "STARDUST PROMOTION"
@@ -168260,8 +168296,8 @@
     "formed_date": null,
     "popularity": 35,
     "fans": 99103,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Iimura_Yuna",
     "idolsdiagram_url": "https://idolsdiagram.com/g/Q1NS",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -168487,8 +168523,8 @@
     "formed_date": null,
     "popularity": 33,
     "fans": 61866,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Avex Management"
     ],
@@ -169790,8 +169826,8 @@
     "formed_date": "2019-08-07",
     "popularity": 32,
     "fans": 219217,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://kpop.fandom.com/wiki/Rocket_Punch",
     "name_romanji": "Rocket_Punch",
     "nickname": "",
@@ -169899,8 +169935,8 @@
     "formed_date": "2018-10-22",
     "popularity": 32,
     "fans": 44687,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Self-Produced"
     ],
@@ -170289,8 +170325,8 @@
     "formed_date": null,
     "popularity": 32,
     "fans": 39737,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "STU48",
     "nickname": "",
     "nickname_romanji": "",
@@ -170703,8 +170739,8 @@
     "formed_date": "2016-01-01",
     "popularity": 32,
     "fans": 29384,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "name_romanji": "WAGAMAMARAKIA",
     "nickname": "",
     "nickname_romanji": "",
@@ -171122,8 +171158,8 @@
     "formed_date": "2019-10-20",
     "popularity": 32,
     "fans": 11220,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "AMUSE"
     ],
@@ -171283,8 +171319,8 @@
     "formed_date": "2022-05-15",
     "popularity": 32,
     "fans": 8329,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "sakebi"
     ],
@@ -171883,8 +171919,8 @@
     "formed_date": "2014-07-14",
     "popularity": 31,
     "fans": 20702,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Niji_no_Conquistador",
     "name_romanji": "Niji no Conquistador",
     "idolsdiagram_url": "https://idolsdiagram.com/g/6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
@@ -172962,8 +172998,8 @@
     "formed_date": null,
     "popularity": 32,
     "fans": 19884,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://jpop.fandom.com/wiki/Hori_Yuuka",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gc44KT44G25ZCb44Gu44Gb44GE44Gg44CC",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -173141,8 +173177,8 @@
     "formed_date": "2022-05-02",
     "popularity": 80,
     "fans": 9697819,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://kpop.fandom.com/wiki/LE_SSERAFIM",
     "name_romanji": "LE_SSERAFIM",
     "nickname": "",
@@ -174284,8 +174320,8 @@
     "formed_date": "2023-11-27",
     "popularity": 77,
     "fans": 7521603,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "wiki_url": "https://kpop.fandom.com/wiki/BABYMONSTER",
     "name_romanji": "Kawai Ruka",
     "nickname": "",
@@ -174389,8 +174425,8 @@
     "formed_date": "2010-01-01",
     "popularity": 70,
     "fans": 2967244,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "AMUSE"
     ],
@@ -175617,8 +175653,8 @@
     "formed_date": "2017-08-05",
     "popularity": 68,
     "fans": 296768,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "Yoyogi Animation Academy"
     ],
@@ -176499,7 +176535,8 @@
       "dc107534-c1e0-4989-b440-ae6434a9ff2d",
       "b400d686-db25-4ca2-ba06-16c3c46a9617",
       "3662a261-f32c-4ac3-ab2d-d6e59d3da395"
-    ]
+    ],
+    "producers": "Sashihara Rino"
   },
   {
     "uid": "5LmD5pyo5Z2CNDY",
@@ -176719,8 +176756,8 @@
     "formed_date": null,
     "popularity": 62,
     "fans": 1322989,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Nogizaka46",
     "nickname": "",
     "nickname_romanji": "",
@@ -177847,8 +177884,8 @@
     "formed_date": "2022-04-01",
     "popularity": 61,
     "fans": 305959,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ASOBISYSTEM",
       "KAWAII LAB."
@@ -178362,7 +178399,8 @@
       "402d7dbd-4d32-45d8-a027-4230fac02bfe",
       "fe3fbc50-bf50-4929-8d12-6ba6501b3e3d",
       "402b86bc-946e-44da-97a9-9c1898f8d7ca"
-    ]
+    ],
+    "producers": "Kimura Misa"
   },
   {
     "uid": "QUtCNDg",
@@ -179130,8 +179168,8 @@
     "formed_date": "2005-01-01",
     "popularity": 59,
     "fans": 550295,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "AKB48",
     "nickname": "",
     "nickname_romanji": "",
@@ -181909,8 +181947,8 @@
     "formed_date": "2020-06-05",
     "popularity": 61,
     "fans": 129753,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "iLiFE!",
     "nickname": "",
     "nickname_romanji": "",
@@ -182524,8 +182562,8 @@
     "formed_date": "2020-10-14",
     "popularity": 61,
     "fans": 226614,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Sakurazaka46",
     "nickname": "",
     "nickname_romanji": "",
@@ -183002,8 +183040,8 @@
     "formed_date": "2024-08-04",
     "popularity": 60,
     "fans": 238350,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "agencies": [
       "ASOBISYSTEM",
       "KAWAII LAB."
@@ -183218,7 +183256,8 @@
       "6a938180-5b35-4b97-8ac2-da8b3d4645ba",
       "52bc85d9-007a-4c5f-87c2-973aa4ed0613",
       "b3967802-0e3a-4296-b737-b8cd602aa339"
-    ]
+    ],
+    "producers": "Kimura Misa"
   },
   {
     "uid": "Q0FORFkgVFVORQ",
@@ -183250,8 +183289,8 @@
     "formed_date": "2023-02-02",
     "popularity": 56,
     "fans": 125972,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "ASOBISYSTEM",
       "KAWAII LAB."
@@ -183652,8 +183691,8 @@
     "color": null,
     "description": "",
     "formed_date": "2019-12-27",
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "wiki_url": "https://jpop.fandom.com/wiki/Sieglamm%21",
     "discography": [
       {
@@ -184083,7 +184122,7 @@
     "color": null,
     "description": "N Zero Information Also Known As AKBN 0 Origin Akabane, Kita, Tokyo, Japan Genre J-Pop Years 2010-Present Label Kandou Agency Kabushiki Gaisha Kandou Links Website Official Website N Zero (Nゼロ) (formerly known as AKBN 0) is an idol group formed in May 2010.",
     "formed_date": "2010-05-01",
-    "average_ability": 55.0,
+    "average_ability": 55,
     "average_rating": 10.454166666666667,
     "agencies": [
       "Kabushiki Gaisha Kandou"
@@ -184455,8 +184494,8 @@
     "formed_date": null,
     "popularity": null,
     "fans": null,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "past_member_count": 4,
     "name_romanji": "Checkmate!?",
     "nickname": "",
@@ -184894,8 +184933,8 @@
     "formed_date": "2024-08-01",
     "popularity": 23,
     "fans": 2529,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "past_member_count": 2,
     "name_romanji": "VILLAINS_HOUSE",
     "nickname": "ヴィラハ",
@@ -185224,8 +185263,8 @@
     "formed_date": null,
     "popularity": null,
     "fans": null,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "past_member_count": 2,
     "name_romanji": "YAMINABE",
     "nickname": "",
@@ -185504,8 +185543,8 @@
     "formed_date": "2021-07-23",
     "popularity": 1,
     "fans": 493,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "past_member_count": 10,
     "agencies": [
       "PRODUCTION IDOL BANG"
@@ -185847,8 +185886,8 @@
     "formed_date": "2011-12-12",
     "popularity": 2,
     "fans": 364,
-    "average_ability": 0.0,
-    "average_rating": 0.0,
+    "average_ability": 0,
+    "average_rating": 0,
     "agencies": [
       "CANDY MIX"
     ],
@@ -187148,7 +187187,8 @@
       "b2c307d9-4e31-4b92-b5e5-e610f78d67c6",
       "17539e10-b45a-4fb6-b9f1-c2579386738b",
       "a22dc6a7-335e-4d26-bb41-3e22dfe80cae"
-    ]
+    ],
+    "producers": "Tsunku"
   },
   {
     "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
@@ -187778,8 +187818,8 @@
     "formed_date": "2015-01-01",
     "popularity": 39,
     "fans": 136942,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "song_uids": [
       "05e46c58-9f4c-4280-9270-86d7ea5cbfcb",
       "d0bb8a48-dddf-462e-ba6a-2cdd2a65ab2c",
@@ -190358,8 +190398,8 @@
     "formed_date": "2023-10-16",
     "popularity": null,
     "fans": null,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "HEROINES Kenkyuusei",
     "nickname": "",
     "nickname_romanji": "",
@@ -203127,7 +203167,8 @@
       "af132120-3928-408d-af33-cd0674b2d9a6",
       "096b9acc-ff45-4f43-bbf2-7b508bc5df83",
       "5ef8897c-f902-4489-a3c0-40e04e8650aa"
-    ]
+    ],
+    "producers": "social media personality, Yurinya"
   },
   {
     "uid": "TU9SRSBTVEFS",
@@ -203256,7 +203297,8 @@
       "42192e6f-90a0-43bc-a63a-6a677d2b9982",
       "2555df6f-83eb-48d1-9fd6-a3a89cfcc526",
       "79ffd3d5-c398-423e-9849-cf93017a2901"
-    ]
+    ],
+    "producers": "Kimura Misa"
   },
   {
     "uid": "TUVHQUZPTg",
@@ -206508,7 +206550,8 @@
     "disc_uids": [
       "b5884c85-be27-4d15-823f-d1f5a9ae0dfb",
       "85309a00-50ad-4547-9008-b94f93c168b5"
-    ]
+    ],
+    "producers": "SM ENTERTAINMENT JAPAN"
   },
   {
     "uid": "UmVhbFJvbWFudGlj",
@@ -206673,7 +206716,8 @@
       "3ec0821f-9ee1-455d-a4c2-9011155a1e6e",
       "6bffa036-43a8-4b46-a8e2-6b9f5bcec6c5",
       "2c8a123c-fea7-408d-934f-c56428fa5e08"
-    ]
+    ],
+    "producers": "lyricist Nakamura Kanata"
   },
   {
     "uid": "UElHTU9OWg",
@@ -206767,7 +206811,8 @@
     "disc_uids": [
       "ac541976-27b3-42d4-b79e-21ab4e070553",
       "8a315503-9f18-4448-bfb6-aea9e98cff02"
-    ]
+    ],
+    "producers": "Pour Lui"
   },
   {
     "uid": "T05FUElYQ0VM",
@@ -209521,7 +209566,8 @@
       "fcc3cb12-4e50-487b-bb4a-4ee641c9ee03",
       "6e8e38a6-8532-4fbf-b59f-c6c836487af1",
       "54456ae9-6795-4787-b8c6-b3a7ca375b43"
-    ]
+    ],
+    "producers": "MMA fighter Asakura Mikuru, ABEMA and ASOBISYSTEM in 2024"
   },
   {
     "uid": "YW1pbmk",
@@ -209676,7 +209722,8 @@
       "c6a3ac6e-80a3-49be-9b35-06b09f7a1410",
       "951ac449-0c92-43be-91d3-8dea9c7a60cd",
       "cf235d1d-b902-4cea-8d59-a4952ed2bdc1"
-    ]
+    ],
+    "producers": "YU-KA and formed by member Pan Luna Leafy"
   },
   {
     "uid": "44K744Kv44OI",
@@ -211223,7 +211270,8 @@
       "58e208cf-5aab-4730-bd05-fc777d293cfb",
       "ebd82bd0-1120-44ef-8656-e0862bafdef3",
       "505eafc5-342b-4abe-9e7b-2596672d5a8e"
-    ]
+    ],
+    "producers": "DaijiroNakagawa and Muroi Yu"
   },
   {
     "uid": "56We5qeY44Gu6KiA44GG6YCa44KK",
@@ -211761,7 +211809,8 @@
     "disc_uids": [
       "c1e89aa8-a068-4a45-9c97-91c5d082f75e",
       "5a235b8d-0ad2-49a7-9639-fa078aced154"
-    ]
+    ],
+    "producers": "Utsu-P"
   },
   {
     "uid": "44Kz44Os44Gj44Gm5oGL44Gn44GZ44GL77yf",
@@ -211923,7 +211972,8 @@
       "eac9d101-e310-4db3-88c5-88435c7b3009",
       "05dce6e3-b6de-40c7-b98c-c90015a29da0",
       "6208f350-8225-4e84-8f19-49f54522f22f"
-    ]
+    ],
+    "producers": "Korekore"
   },
   {
     "uid": "44OX44Op44Oz44Kv44K544K_44O844K6",
@@ -212349,7 +212399,8 @@
       "538009f8-31c3-4056-b601-8a89916fdd86",
       "ce79a26b-7f61-45cb-9a05-51eb468c357e",
       "002ce0f5-b1cc-4282-873d-801ca2552c69"
-    ]
+    ],
+    "producers": "Kurosaki Nanako"
   },
   {
     "uid": "bG9nIHlvdQ",
@@ -216007,7 +216058,8 @@
       "2f694c74-65f8-4ed6-995b-facfe397af22",
       "0b5e1f82-e679-4a30-beb0-33373f14ba0f",
       "2994f3bf-f46f-4de6-820d-4649d4d97a92"
-    ]
+    ],
+    "producers": "Kimura Misa"
   },
   {
     "uid": "44OV44Kh44O844K544OI44OX44Os44Kk44Oq44K544OI",
@@ -219314,7 +219366,8 @@
       "a966369c-9543-4793-97a7-8bd3c7e4ab53",
       "55aedfaa-7741-4df3-a578-0fef9e2017e4",
       "cbbc46bd-b53b-4732-947d-ddceec434eb0"
-    ]
+    ],
+    "producers": "Ichigo Rinahamu"
   },
   {
     "uid": "5bqD54Cs5oSb6I-c",
@@ -222282,7 +222335,8 @@
       "048b0932-96f8-4b7f-a46f-f5d0c10f24e8",
       "3db71d41-9626-4aee-87dd-3177453e6936",
       "a63e4974-7dda-4650-a76d-e8c7fa0350bd"
-    ]
+    ],
+    "producers": "Ary"
   },
   {
     "uid": "TkVMTg",
@@ -241434,7 +241488,8 @@
     "disc_uids": [
       "0d7b880f-5cb3-43bf-b3b3-d558d2891c4d"
     ]
-  },  {
+  },
+  {
     "uid": "44OX44OG44Kj44OR",
     "name": "プティパ",
     "member_count": 3,

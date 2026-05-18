@@ -8,7 +8,7 @@ import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } fr
 import { inferLetterTier } from "../engine/financeSystem";
 import { AUTOSAVE_SLOT } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
-import { languageOptions, t, type UiLanguage } from "./i18n";
+import { gameManualHref, languageOptions, t, type UiLanguage } from "./i18n";
 
 export type OpeningScreen = "home" | "new_game" | "load_slot";
 
@@ -30,10 +30,6 @@ export function renderOpeningHome(
   occupiedSlots: number[],
   lang: UiLanguage,
 ): string {
-  const hint = presetHint
-    ? t(lang, "opening_default_scenario", { name: presetHint.name, date: presetHint.opening_date })
-    : "";
-
   const disabled = dbReady ? "" : "disabled";
 
   return `
@@ -42,7 +38,6 @@ export function renderOpeningHome(
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
     <p class="opening-tagline">${htmlEsc(t(lang, "opening_tagline"))}</p>
-    ${hint ? `<p class="opening-preset">${htmlEsc(hint)}</p>` : ""}
   </div>
 
   <div class="opening-actions">
@@ -51,6 +46,10 @@ export function renderOpeningHome(
     <button type="button" class="opening-btn opening-btn-primary" id="opening-load-slot" ${disabled}>${htmlEsc(t(lang, "opening_load"))}</button>
     <button type="button" class="opening-btn opening-btn-primary" id="opening-browse" ${disabled}>${htmlEsc(t(lang, "opening_browse"))}</button>
   </div>
+
+  <p class="opening-manual-row">
+    <a class="opening-manual-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_game_manual"))}</a>
+  </p>
 
   <div class="opening-status fm-card-opening">
     <h2 class="opening-status-h">${htmlEsc(t(lang, "opening_status"))}</h2>
@@ -166,8 +165,12 @@ export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
 export function renderNewGameScreen(
   rows: NewGameRow[],
   playerNameDefault: string,
+  preset: ScenarioPreset | null,
   lang: UiLanguage,
 ): string {
+  const scenarioMeta = preset
+    ? `${preset.name} · opening ${preset.opening_date}`
+    : "";
   const tableRows = rows
     .map(
       (r) => `
@@ -187,6 +190,7 @@ export function renderNewGameScreen(
   <div class="opening-hero fm-card-opening">
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc(t(lang, "opening_new_game_title"))}</h1>
+    ${scenarioMeta ? `<p class="opening-tagline">${htmlEsc(scenarioMeta)}</p>` : ""}
   </div>
 
   <div class="fm-card-opening producer-block">

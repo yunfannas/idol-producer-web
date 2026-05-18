@@ -23,6 +23,11 @@ import {
   ensureIdolSimulationDefaults,
   normalizeTrainingWeekLog,
 } from "../engine/idolStatusSystem";
+import {
+  normalizeManagedSongStatus,
+  normalizeTrainingSongSelection,
+  type ManagedSongStatusRow,
+} from "../engine/songStatusSystem";
 import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { buildFilteredSnapshotWithFutureEvents } from "../engine/scenarioRuntimeWeb";
 import { buildDefaultScoutCompanies } from "../engine/scoutWeb";
@@ -241,6 +246,14 @@ export function createGameSaveFromLoadedScenario(
   }
   save.game_start_date = opening;
   save.current_date = opening;
+  save.managed_song_status = normalizeManagedSongStatus(
+    {},
+    save.database_snapshot.songs,
+    String(g.uid),
+    opening,
+    memberUids.length,
+  );
+  save.training_song_uids = [];
   save.turn_number = 0;
   save.finances = defaultFinances(cash);
   save.inbox.notifications = [];
@@ -326,6 +339,8 @@ export interface GameSavePayload {
   training_intensity: Record<string, Record<string, unknown>>;
   training_week_log: Record<string, unknown>;
   training_focus_skill: Record<string, string>;
+  managed_song_status: Record<string, ManagedSongStatusRow>;
+  training_song_uids: string[];
   scout: ScoutBlock;
   /** ISO date · optional until first simulated day settles in desktop; web sets at new game */
   game_start_date?: string;
@@ -440,6 +455,8 @@ export function defaultGameSavePayload(): GameSavePayload {
     training_intensity: {},
     training_week_log: {},
     training_focus_skill: {},
+    managed_song_status: {},
+    training_song_uids: [],
     scout: { selected_company_uid: null, auditions: {} },
   };
 }
@@ -562,6 +579,20 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     (p as { goods_inventory?: unknown }).goods_inventory,
     managedGoodsMembers(out),
   );
+  const primaryGroup = getPrimaryGroup(out);
+  const primaryGroupUid = String(primaryGroup?.uid ?? "").trim();
+  const primaryMemberCount = Array.isArray(primaryGroup?.member_uids) ? primaryGroup!.member_uids.length : 0;
+  out.managed_song_status = normalizeManagedSongStatus(
+    (p as { managed_song_status?: unknown }).managed_song_status,
+    out.database_snapshot.songs,
+    primaryGroupUid,
+    out.current_date ?? out.game_start_date ?? out.scenario_context.startup_date ?? null,
+    primaryMemberCount,
+  );
+  out.training_song_uids = normalizeTrainingSongSelection(
+    (p as { training_song_uids?: unknown }).training_song_uids,
+    out.managed_song_status,
+  );
 
   out.version = GAME_SAVE_VERSION;
   return out;
@@ -652,6 +683,8 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.database_snapshot.songs = [];
   save.shortlist = [];
   save.goods_inventory = defaultGoodsInventory(managedGoodsMembers(save));
+  save.managed_song_status = {};
+  save.training_song_uids = [];
   applyAttributesToAllIdols(save.database_snapshot.idols, save.database_snapshot.groups, opening);
   for (const uid of (g.member_uids?.map(String) ?? [])) {
     save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };

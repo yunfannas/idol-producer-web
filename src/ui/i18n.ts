@@ -36,6 +36,8 @@ const EN: Dict = {
   opening_loaded_slot: "Loaded slot {slot}.",
   opening_slot_invalid: "Slot {slot} is empty or not a valid save.",
   opening_new_production_started: "New production started.",
+  opening_game_manual: "Game manual",
+  shell_game_manual: "Game manual",
   shell_home: "Home",
   shell_main_menu: "Main menu",
   shell_slot: "Slot",
@@ -112,6 +114,8 @@ const ZH_CN: Dict = {
   opening_slot_invalid:
     "\u5b58\u6863\u69fd {slot} \u4e3a\u7a7a\uff0c\u6216\u4e0d\u662f\u6709\u6548\u5b58\u6863\u3002",
   opening_new_production_started: "\u65b0\u7684\u5236\u4f5c\u5df2\u5f00\u59cb\u3002",
+  opening_game_manual: "\u6e38\u620f\u624b\u518c",
+  shell_game_manual: "\u6e38\u620f\u624b\u518c",
   shell_home: "\u4e3b\u9875",
   shell_main_menu: "\u4e3b\u83dc\u5355",
   shell_slot: "\u5b58\u6863\u69fd",
@@ -172,4 +176,51 @@ export function languageOptions(): Array<{ value: UiLanguage; label: string }> {
 export function navLabel(lang: UiLanguage, navId: string): string {
   const key = `nav_${navId.toLowerCase()}`;
   return t(lang, key);
+}
+
+/** Canonical `live_type` / `event_type` values stored in save data → UI label. */
+const LIVE_TYPE_LABELS_EN: Record<string, string> = {
+  Routine: "Routine",
+  Concert: "Concert",
+  Birthday: "Birthday",
+  Taiban: "Taiban",
+  Festival: "Festival",
+  Tokutenkai: "Fan meet (tokutenkai)",
+  Meet: "Meet & greet",
+  Virtual: "Virtual live",
+  Promo: "Promo / collab",
+  Roaming: "Roaming",
+  Joint: "Joint",
+  OneMan: "One-man",
+  "One-man": "One-man",
+};
+
+const LIVE_TYPE_LABELS_ZH: Record<string, string> = {
+  Routine: "例行",
+  Concert: "演唱会",
+  Birthday: "生诞祭",
+  Taiban: "拼盘",
+  Festival: "音乐节",
+  Tokutenkai: "特典会（翌日）",
+  Meet: "见面会",
+  Virtual: "线上演出",
+  Promo: "商业联动",
+  Roaming: "巡演",
+  Joint: "联合",
+  OneMan: "单独",
+  "One-man": "单独",
+};
+
+export function liveTypeLabel(lang: UiLanguage, liveType: string): string {
+  const key = String(liveType ?? "").trim();
+  if (!key) return "—";
+  if (lang === "zh-CN") {
+    return LIVE_TYPE_LABELS_ZH[key] ?? key;
+  }
+  return LIVE_TYPE_LABELS_EN[key] ?? key;
+}
+
+/** Static HTML manual next to index.html (respects Vite `base: "./"`). */
+export function gameManualHref(lang: UiLanguage): string {
+  return lang === "zh-CN" ? "./game-manual.zh-CN.html" : "./game-manual.html";
 }

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>偶像制作人 — 游戏手册</title>
+  <style>
+    :root {
+      --bg-main: #1a1a2e;
+      --bg-sidebar: #16213e;
+      --bg-content: #0f3460;
+      --bg-card: #16213e;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --accent: #533483;
+      --accent-light: #6a4c93;
+      --green: #4caf50;
+      --yellow: #ffc107;
+      --border: #2a2a3e;
+      --font-ui: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-ui);
+      line-height: 1.65;
+      color: var(--text-primary);
+      background: var(--bg-main);
+    }
+
+    a { color: #b8a0e8; }
+    a:hover { color: #d4c4f5; }
+
+    .manual-header {
+      background: linear-gradient(135deg, var(--bg-sidebar) 0%, var(--bg-content) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .manual-header-inner { max-width: 52rem; margin: 0 auto; }
+
+    .manual-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin: 0 0 0.35rem;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .manual-lead {
+      margin: 0;
+      color: var(--text-secondary);
+      max-width: 40rem;
+    }
+
+    .manual-actions {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-light); color: #fff; }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+
+    .btn-ghost:hover { border-color: var(--accent-light); }
+
+    .manual-layout {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .manual-layout { grid-template-columns: 1fr; }
+      .manual-toc { position: static !important; }
+    }
+
+    .manual-toc {
+      position: sticky;
+      top: 1rem;
+      align-self: start;
+      font-size: 0.85rem;
+    }
+
+    .manual-toc h2 {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin: 0 0 0.75rem;
+    }
+
+    .manual-toc ul { list-style: none; margin: 0; padding: 0; }
+    .manual-toc li { margin: 0.35rem 0; }
+    .manual-toc a { text-decoration: none; color: var(--text-secondary); }
+    .manual-toc a:hover { color: var(--text-primary); }
+
+    .manual-body section { margin-bottom: 2.5rem; scroll-margin-top: 1rem; }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.5rem;
+      color: #e0d8f0;
+    }
+
+    p { margin: 0 0 0.85rem; }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin: 0.35rem 0; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.15rem;
+      margin: 1rem 0;
+    }
+
+    .card-warn { border-left: 4px solid var(--yellow); }
+    .card-tip { border-left: 4px solid var(--green); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: var(--bg-sidebar); font-weight: 600; }
+    tr:nth-child(even) td { background: rgba(15, 52, 96, 0.35); }
+
+    code, kbd {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 0.88em;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+
+    .tier-S { color: #ffd700; font-weight: 700; }
+    .tier-A { color: #c0c0c0; font-weight: 700; }
+    .tier-B { color: #cd7f32; font-weight: 700; }
+
+    .manual-footer {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .lang-switch {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header class="manual-header">
+    <div class="manual-header-inner">
+      <p class="manual-kicker">偶像制作人 Web · v0.1</p>
+      <h1>游戏手册</h1>
+      <p class="manual-lead">
+        你是一名偶像组合的<strong>制作人</strong>：安排 live、训练成员、发掘人才、处理收件箱，并逐日推进日历。
+      </p>
+      <div class="manual-actions">
+        <a class="btn btn-primary" href="./index.html">开始游戏</a>
+        <a class="btn btn-ghost" href="#quick-start">快速上手</a>
+        <a class="btn btn-ghost" href="./game-manual.html">English</a>
+      </div>
+      <p class="lang-switch"><a href="./game-manual.html">Read in English</a></p>
+    </div>
+  </header>
+
+  <div class="manual-layout">
+    <nav class="manual-toc" aria-label="目录">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#overview">概览</a></li>
+        <li><a href="#quick-start">快速上手</a></li>
+        <li><a href="#scenarios">剧本</a></li>
+        <li><a href="#interface">界面</a></li>
+        <li><a href="#core-loop">核心循环</a></li>
+        <li><a href="#sections">主要栏目</a></li>
+        <li><a href="#tiers">字母等级</a></li>
+        <li><a href="#lives">Live 与日程</a></li>
+        <li><a href="#finance">财务</a></li>
+        <li><a href="#idols">偶像与训练</a></li>
+        <li><a href="#scout">星探</a></li>
+        <li><a href="#inbox">收件箱</a></li>
+        <li><a href="#saves">存档与浏览</a></li>
+        <li><a href="#tips">提示</a></li>
+      </ul>
+    </nav>
+
+    <main class="manual-body">
+      <section id="overview">
+        <h2>概览</h2>
+        <p>
+          <strong>偶像制作人（Idol Producer）</strong>是一款经营模拟游戏，界面风格参考 Football Manager 的信息密度布局。
+          你在固定历史<strong>剧本</strong>中负责一支<strong>经营组合</strong>。游戏世界由真实偶像产业启发的组合、成员、歌曲与碟片数据构成。
+        </p>
+        <p>主要压力来源：</p>
+        <ul>
+          <li><strong>时间</strong> — 日历按天推进。</li>
+          <li><strong>资金</strong> — live、训练、人事与星探均需花费。</li>
+          <li><strong>阵容状态</strong> — 成员有体力、士气与训练负荷。</li>
+          <li><strong>知名度</strong> — 字母等级与粉丝规模决定可行的会场与 live 类型。</li>
+        </ul>
+      </section>
+
+      <section id="quick-start">
+        <h2>快速上手</h2>
+        <ol>
+          <li>打开游戏（<a href="./index.html">index.html</a>），等待<strong>数据库已就绪</strong>。</li>
+          <li>选择<strong>新游戏</strong>，输入制作人名称，从排序列表中挑选组合。</li>
+          <li>点击<strong>开始剧本</strong> — 开局日期由剧本决定（例如剧本 6 为 2025-07-20）。</li>
+          <li>用左侧栏打开<strong>收件箱</strong>、<strong>日程</strong>、<strong>Lives</strong>、<strong>偶像</strong>等栏目。</li>
+          <li>准备好后，点击顶栏<strong>下一天</strong>模拟下一日历日。</li>
+        </ol>
+        <div class="card card-tip">
+          <strong>浏览模式</strong> — 在开始界面选择<strong>浏览</strong>，可在无存档的情况下查阅数据库（组合、偶像、歌曲）。
+          未开始或读取游戏前，<strong>下一天</strong>与财务功能不可用。
+        </div>
+        <div class="card card-warn">
+          <strong>语言</strong> — 游戏内可在开始界面切换<strong>英语</strong>与<strong>简体中文</strong>。
+          本手册为简体中文版；<a href="./game-manual.html">英文手册</a>另附。
+        </div>
+      </section>
+
+      <section id="scenarios">
+        <h2>剧本</h2>
+        <p>
+          <strong>剧本</strong>是偶像产业在某一时间点的快照：开局日期、可选组合池，以及打包数据
+          （<code>idols.json</code>、<code>groups.json</code>、<code>songs.json</code>）。
+        </p>
+        <table>
+          <thead>
+            <tr><th>#</th><th>名称</th><th>开局日期</th><th>网页数据</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Rise of AKB</td><td>2008-12-08</td><td>计划中</td></tr>
+            <tr><td>2</td><td>Idol Wars</td><td>2013-04-01</td><td>计划中</td></tr>
+            <tr><td>3</td><td>Sashihara's Ambition</td><td>2017-01-01</td><td>计划中</td></tr>
+            <tr><td>4</td><td>COVID Challenge</td><td>2020-02-01</td><td>计划中</td></tr>
+            <tr><td>5</td><td>Kawaii Lab</td><td>2022-03-01</td><td>计划中</td></tr>
+            <tr><td>6</td><td>最新快照</td><td><strong>2025-07-20</strong></td><td><strong>已提供</strong></td></tr>
+          </tbody>
+        </table>
+        <p>
+          剧本 6 包含大量组合及<strong>开局推荐名单</strong>（startup allowlist）。
+          排序用静态 <code>group_tiers.json</code>（S–F），在可考处与 Idol Ranking 2025 参考对齐。
+        </p>
+        <h3>成立日期规则</h3>
+        <p>
+          目录中的<strong>成立日期</strong>取 documented 的<strong>最早</strong>一日：
+          首次公开宣布、解禁／披露活动，或出道 live，以最早者为准。
+        </p>
+      </section>
+
+      <section id="interface">
+        <h2>界面</h2>
+        <p>布局为经典经营游戏结构：</p>
+        <ul>
+          <li><strong>顶栏</strong> — 标题、经营组合名（可点）、当前日期、现金（¥）、<strong>下一天</strong>、主页菜单（存读档／栏位）。</li>
+          <li><strong>左侧栏</strong> — 栏目导航与偶像备选名单。</li>
+          <li><strong>主区域</strong> — 当前栏目的表格、详情与表单。</li>
+          <li><strong>状态栏</strong> — 当前视图名称与回合数。</li>
+        </ul>
+        <p>
+          主页旁的<strong>后退／前进</strong>（‹ ›）在当次会话的浏览历史中切换视图（类似应用内“返回”）。
+        </p>
+      </section>
+
+      <section id="core-loop">
+        <h2>核心循环</h2>
+        <ol>
+          <li><strong>读收件箱</strong> — 处理确认项、live 结果与剧本事件。</li>
+          <li><strong>规划</strong> — 查看日程、训练、财务与阵容状态。</li>
+          <li><strong>执行</strong> — 调整训练、查阅歌曲、星探，或在 <strong>Lives</strong> 中预订与编辑公演。</li>
+          <li><strong>推进</strong> — 按<strong>下一天</strong>运行当日模拟。</li>
+        </ol>
+        <p>
+          每推进一日，<strong>回合</strong>加一，<code>current_date</code> 前进。
+          自动系统可能预订例行 live、结算训练并记入账目，具体取决于存档状态与等级模板。
+        </p>
+        <div class="card card-warn">
+          部分收件箱消息在做出选择前会<strong>阻止下一天</strong>，尤其是需要你决断的重要剧本事件。
+        </div>
+      </section>
+
+      <section id="sections">
+        <h2>主要栏目</h2>
+        <table>
+          <thead>
+            <tr><th>栏目</th><th>用途</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>收件箱</strong></td><td>通知、live 结果、剧本邮件；部分含选项，可能阻挡日推进。</td></tr>
+            <tr><td><strong>偶像</strong></td><td>成员列表；可查看属性、生日、所属履历与头像。</td></tr>
+            <tr><td><strong>组合</strong></td><td>剧本内全部组合；详情含成员、碟片、等级、制作人、Wiki 链接等。</td></tr>
+            <tr><td><strong>训练</strong></td><td>按周设置各成员训练强度；影响能力、体力与士气。</td></tr>
+            <tr><td><strong>日程</strong></td><td>月历与「自下一日起一周」概览已订公演与近期结果；可点击顶栏日期跳转。</td></tr>
+            <tr><td><strong>Lives</strong></td><td>新建公演、编辑或取消待办场次、查看过往结果与音乐节出场。</td></tr>
+            <tr><td><strong>歌曲</strong></td><td>经营组合曲目表（按人气排序）；用于歌单与制作流程。</td></tr>
+            <tr><td><strong>制作</strong></td><td>录音／制作向界面（完成度因剧本与版本而异）。</td></tr>
+            <tr><td><strong>发行</strong></td><td>发布与上架流程（剧本接入后可用）。</td></tr>
+            <tr><td><strong>星探</strong></td><td>委托星探公司，按地区推荐自由身、转籍与应征候选人。</td></tr>
+            <tr><td><strong>财务</strong></td><td>手头现金、月度开支、live 收入与等级预算模板。</td></tr>
+          </tbody>
+        </table>
+        <h3>备选名单</h3>
+        <p>
+          在偶像详情页可将成员加入侧栏<strong>备选名单</strong>，便于星探或训练时对照。
+          备选名单随存档保存；纯浏览模式下不可用。
+        </p>
+      </section>
+
+      <section id="tiers">
+        <h2>字母等级（S–F）</h2>
+        <p>
+          每个组合有<strong>字母等级</strong>，从 <span class="tier-S">S</span>（商业规模最大）到 <strong>F</strong>（ livehouse 级）。
+          等级影响：
+        </p>
+        <ul>
+          <li>开局资金与月度成本模板</li>
+          <li>典型 live 频率（拼盘、单独、音乐节等）</li>
+          <li>模拟中的粉丝规模下限</li>
+          <li>新游戏选组合时的排序</li>
+        </ul>
+        <table>
+          <thead>
+            <tr><th>等级</th><th>典型规模（摘要）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tier-S">S</td><td>体育馆级巡演、大厂发片、全国电视</td></tr>
+            <tr><td class="tier-A">A</td><td>具备体育馆能力，销量与媒体强</td></tr>
+            <tr><td>B</td><td>大厅级；可能达成武道馆里程碑</td></tr>
+            <tr><td>C</td><td>大厅巡演 + 密集拼盘</td></tr>
+            <tr><td>D</td><td>较小会场，极度依赖拼盘</td></tr>
+            <tr><td>E</td><td>小场地，多为拼盘</td></tr>
+            <tr><td>F</td><td> livehouse，培育核心受众</td></tr>
+          </tbody>
+        </table>
+        <p>
+          上榜组合的 <span class="tier-S">S</span>–<strong>C</strong> 来自策划的 <em>Idol Ranking 2025</em> 映射；
+          其余组合仅能推断为 D–F。<strong>字母等级 S</strong> 与 live 类型 <strong>S</strong>（生日／纪念等特殊 overlay）不是同一概念。
+        </p>
+      </section>
+
+      <section id="lives">
+        <h2>Live 与日程</h2>
+        <p>
+          <strong>Live</strong>是主要对外活动。每场含<strong>live 类型</strong>、会场、日期，及可选歌单。
+          类型编号用于设计与财务：
+        </p>
+        <table>
+          <thead>
+            <tr><th>类型</th><th>名称</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>大型演唱会</td><td>长时段；大场地；庆功可另日举办</td></tr>
+            <tr><td>2</td><td>巡回演唱会</td><td>多城市巡演各站</td></tr>
+            <tr><td>3</td><td>音乐节</td><td>多日音乐节；每组约 30 分钟</td></tr>
+            <tr><td>4</td><td>拼盘（対バン / Taiban）</td><td>同晚多组；约 20–35 分钟；常有特典会</td></tr>
+            <tr><td>5</td><td>2／3／4 人联合</td><td>联合 headline；合作环节</td></tr>
+            <tr><td>6</td><td>单独 live（进阶）</td><td>比常规单独更隆重；俱乐部～大厅规模</td></tr>
+            <tr><td>7</td><td>例行 live</td><td> livehouse 定期驻场</td></tr>
+            <tr><td>S</td><td>特殊 overlay</td><td>生日／周年等，叠加于 4、6 或 7</td></tr>
+          </tbody>
+        </table>
+        <p>
+          公演来源有两类：<strong>你手动预订</strong>，以及按组合<strong>字母等级</strong>的<strong>月度自动排期</strong>
+          （例行 live、拼盘、联合、单独、音乐节等）。月末可在收件箱的营运提示中确认是否自动填满下下月档期。
+        </p>
+
+        <h3>手动预订公演</h3>
+        <p>打开 <strong>Lives</strong>，使用工作区标签：</p>
+        <table>
+          <thead>
+            <tr><th>标签</th><th>用途</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>New Live</strong></td><td>新建：类型、标题、日期、会场、时段、彩排、票价、歌单、特典会、周边摊位。</td></tr>
+            <tr><td><strong>Scheduled</strong></td><td>待办公演列表；点击行在 <strong>Live</strong> 中打开编辑。</td></tr>
+            <tr><td><strong>Live</strong></td><td>修改当前选中的待办公演，或 <strong>Cancel Live</strong> 取消。</td></tr>
+            <tr><td><strong>Past</strong></td><td>已演出场次与成绩、收入摘要。</td></tr>
+            <tr><td><strong>Festival</strong></td><td>经营组合在音乐节 timetable 中的出场（如 TIF 会导入日程）。</td></tr>
+          </tbody>
+        </table>
+        <p><strong>New Live</strong> 流程：</p>
+        <ol>
+          <li>选择<strong>类型</strong>（例行、演唱会、拼盘、音乐节）— 预设会调整默认时长与特典会时间。</li>
+          <li>设定<strong>日期</strong>、<strong>会场</strong>、开演／终了，以及可选<strong>彩排</strong>时段。</li>
+          <li>编辑<strong>歌单</strong>：从组合曲库添加曲目，插入 MC 或 break，拖拽排序。</li>
+          <li>可选开启<strong>特典会／拍立得</strong>与<strong>周边摊位</strong>及预期收入。</li>
+          <li>点击 <strong>Schedule Live</strong> — 场次出现在 <strong>日程</strong> 与 <strong>Scheduled</strong> 中。</li>
+        </ol>
+        <p>
+          <strong>日程</strong>页的月历会标出有公演的日期；<strong>即将到来的一周</strong>从下一模拟日开始。
+          按<strong>下一天</strong>结算当日公演，结果进入收件箱与 <strong>Past</strong>。
+        </p>
+
+        <h3>特典会（tokutenkai）</h3>
+        <p>
+          类型 4–7 常含<strong>特典会</strong>：购物或购票兑换谈话席、拍立得等。
+          默认设计约为 live 后约 60 分钟，谈话档 ¥2,000／¥3,000 混合。
+        </p>
+      </section>
+
+      <section id="finance">
+        <h2>财务</h2>
+        <p>
+          游玩时顶栏显示<strong>手头现金</strong>（¥）。开局预算取决于剧本编号与组合字母等级。常见支出：
+        </p>
+        <ul>
+          <li>成员报酬（随等级缩放）</li>
+          <li>月度管理与训练预算</li>
+          <li>live 制作与会场费用（按类型与会场等级）</li>
+          <li>启用星探公司的服务费</li>
+        </ul>
+        <p>
+          收入来自票务、周边及活动规则。打开<strong>财务</strong>可查看账目与月度明细（视当前版本）。
+        </p>
+      </section>
+
+      <section id="idols">
+        <h2>偶像与训练</h2>
+        <p>
+          每位偶像有可见／隐藏属性（0–20）、生日、体力、士气，以及按组合划分的<strong>所属履历</strong>（加入／毕业日期）。
+        </p>
+        <h3>训练</h3>
+        <p>
+          为每位成员设置当周<strong>训练强度</strong>（歌唱、舞蹈、综艺等）。
+          训练消耗体力并影响士气；对状态差的成员过度训练可能导致倦怠。
+          可安排上午／下午场次，有每周负荷上限。
+        </p>
+        <h3>组合详情字段</h3>
+        <ul>
+          <li><strong>成立</strong> — 最早宣布／解禁／出道日</li>
+          <li><strong>制作人</strong> — 署名的制作人，如「前 Maneki Kecak 成员 Fukase Mio」</li>
+          <li><strong>事务所</strong> — 经纪公司（若目录有记录）</li>
+          <li><strong>碟片</strong> — 发行列表，曲目关联歌曲库</li>
+        </ul>
+      </section>
+
+      <section id="scout">
+        <h2>星探</h2>
+        <p>星探<strong>公司</strong>（按城市与等级）通过三种渠道搜寻人才：</p>
+        <ul>
+          <li><strong>自由身</strong> — 当前无所属组合</li>
+          <li><strong>转籍</strong> — 在其他组合活动但可能被挖角</li>
+          <li><strong>应征</strong> — 独立偶像或未经事务所的应征者</li>
+        </ul>
+        <p>
+          公司收取<strong>服务费</strong>，并倾向推荐籍贯与公司地区匹配的偶像（东京、大阪、名古屋等）。等级越高，覆盖面越广。
+        </p>
+        <h3>资格规则</h3>
+        <ul>
+          <li>当前有所属者不算自由身。</li>
+          <li>
+            <strong>引退</strong>（不进入推荐）：自上一段所属结束至今的年数 + 当前年龄 ≥ 30，视为引退，不再推荐星探。
+          </li>
+          <li>日后可能加入<strong>活跃 solo 名单</strong>，筛选仍在活动的自由身 solo。</li>
+        </ul>
+      </section>
+
+      <section id="inbox">
+        <h2>收件箱</h2>
+        <p>
+          收件箱是运营信息流：live 提醒、演出摘要、财务备忘与剧本叙事。
+          部分消息含<strong>选项</strong>；若界面阻止<strong>下一天</strong>，须先做出选择。
+        </p>
+        <p>
+          未来日期的剧本事件（出道、毕业、成立里程碑等）在生效日由剧本运行时引擎应用。
+        </p>
+      </section>
+
+      <section id="saves">
+        <h2>存档与浏览</h2>
+        <h3>存档栏位</h3>
+        <p>
+          游戏保存在浏览器本地存储中，含编号栏位与自动存档。
+          使用<strong>主页 → 保存游戏</strong>／<strong>读取游戏</strong>，或在开始界面<strong>读取</strong>。
+          存档架构为<strong>版本 11</strong>，新游戏时会嵌入当时剧本数据库快照。
+        </p>
+        <h3>存档内容</h3>
+        <ul>
+          <li>制作人名、经营组合、当前日期、回合、财务</li>
+          <li>各偶像模拟状态（训练、体力、士气）</li>
+          <li>live 日程、收件箱、星探委托与剧本标记</li>
+        </ul>
+        <h3>浏览数据库</h3>
+        <p>
+          浏览模式只加载剧本 JSON、不创建存档，适合开档前查阅组合与歌曲。
+          无现金、无法推进日期、备选名单不保留。
+        </p>
+      </section>
+
+      <section id="tips">
+        <h2>提示</h2>
+        <ul>
+          <li>连续点<strong>下一天</strong>前先清空收件箱，避免遗漏阻挡项。</li>
+          <li>重要周前在 <strong>Lives → New Live</strong> 加订场次，并用 <strong>日程</strong> 核对是否与自动排期冲突。</li>
+          <li>低等级组合靠<strong>拼盘数量</strong>生存；D–F 勿按体育馆经济规划。</li>
+          <li>重要 live 周前注意体力偏低成员的训练负荷。</li>
+          <li>不熟组合名时，在<strong>组合</strong>详情中打开 Wiki 链接了解背景。</li>
+          <li>剧本 6 推荐开局组合是策划子集，非全部 400+ 组合数据库。</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="manual-footer">
+    <p>
+      偶像制作人 Web · 静态预览用游戏手册。数据为基于公开偶像产业参考的经营模拟，非官方授权。
+    </p>
+    <p>
+      <a href="./index.html">返回游戏</a> ·
+      <a href="./game-manual.html">English manual</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -8,6 +8,7 @@ import { songCatalogDisplayLabel } from "../data/songCatalog";
 import { normalizePersistedAttributes } from "./idolAttributes";
 import { sha256BytesUtf8 } from "./sha256sync";
 import { ensureIdolSimulationDefaults } from "./idolStatusSystem";
+import { managedSetlistEffect, type ManagedSongStatusRow } from "./songStatusSystem";
 
 function clamp(n: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, n));
@@ -472,6 +473,7 @@ export function resolveGroupLiveResultWeb(
   members: Record<string, unknown>[],
   songs: Record<string, unknown>[],
   live: Record<string, unknown>,
+  managedSongStatus?: Record<string, ManagedSongStatusRow>,
 ): LiveResultPayload {
   const liveType = String(live.live_type ?? live.event_type ?? "Routine");
   const refIso =
@@ -512,7 +514,6 @@ export function resolveGroupLiveResultWeb(
       : 10.0;
   const synergyBonus = clamp((synergy - 10.0) * 0.8, -4, 6);
   const noise = deterministicNoise(`${live.uid}|${live.start_date}|${group.uid}`) * 2.4;
-  const performanceScore = clamp(rosterScore + synergyBonus + noise, 25, 100);
 
   const basePopularity = num(group.popularity, 0);
   const memberPopularity = avgFloat(...members.map((m) => num(m.popularity, 0)));
@@ -522,6 +523,13 @@ export function resolveGroupLiveResultWeb(
   let freshness = collectRecentReleaseSignalFromSnapshot(songs, gUid, refIso, live);
   freshness = mergeDiscographySignal(group, live, refIso, freshness);
   const noveltyScore = freshness.novelty_score;
+  const setlistEffect = managedSetlistEffect(
+    managedSongStatus ?? {},
+    songs,
+    gUid,
+    Array.isArray(live.setlist) ? (live.setlist as unknown[]).map((x) => String(x)) : [],
+  );
+  const performanceScore = clamp(rosterScore + synergyBonus + noise + setlistEffect.score_delta, 25, 100);
 
   const expectation = expectationScore(group, members, liveType, profileStrength, noveltyScore);
 
@@ -627,6 +635,10 @@ export function resolveGroupLiveResultWeb(
     costume_refresh_bonus: freshness.costume_refresh_bonus,
     lineup_tokutenkai_sales_strength: Math.round(lineupSalesStrength * 100) / 100,
     top_tokutenkai_sales_strength: Math.round(topSellerStrength * 100) / 100,
+    setlist_familiarity: setlistEffect.avg_familiarity,
+    setlist_rotation_fatigue: setlistEffect.avg_rotation_fatigue,
+    setlist_low_familiarity_count: setlistEffect.low_familiarity_count,
+    setlist_score_delta: setlistEffect.score_delta,
   };
 }
 

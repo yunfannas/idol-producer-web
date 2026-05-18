@@ -1,0 +1,2632 @@
+{
+  "source_url": "https://timetreeapp.com/public_calendars/akishibu",
+  "slug": "akishibu",
+  "range": {
+    "from": "2025-07",
+    "to": "2026-05"
+  },
+  "generated_at": "2026-05-16T17:56:47.181Z",
+  "event_count": 171,
+  "events": [
+    {
+      "date": "2025-07-05",
+      "event": "TOKYO GIRLS GIRLS extra!!",
+      "timetree_id": "2714419616194446113",
+      "timetree_url": "https://timetr.ee/p/akishibu/2714419616194446113",
+      "note": "@ 恵比寿ガーデンルーム \n\n🎙出演時間\nLIVE：17:25-17:50📍STAGE1\n特典会：18:05-19:15(B)\n\n🌟お目当て特典：写メ券\n🎟t-dv.com/tgg_0705",
+      "venue_hint": "恵比寿ガーデンルーム",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/05a7/2025-06-24/0-1750768416146.jpg",
+        "https://attachments.timetreeapp.com/public_event/9646/2025-06-24/0-1750768420070.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ガーデンルーム",
+      "venue_uid": "43bdc0e3-991d-4a97-be9c-ac08305af777"
+    },
+    {
+      "date": "2025-07-06",
+      "event": "超NATSUZOME2025",
+      "timetree_id": "2704341962770563917",
+      "timetree_url": "https://timetr.ee/p/akishibu/2704341962770563917",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/844b/2025-05-18/0-1747550683337.jpg"
+      ],
+      "type": "Festival",
+      "venue": "幕張海浜公園 イベントブロック特設会場",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/844b/2025-05-18/0-1747550683337.jpg",
+      "venue_uid": "a8c4e1f2-9b3d-4a6e-8c5d-1f0e2d3a4b5c",
+      "event_type": "Festival",
+      "start_time": "10:00",
+      "note": "OPEN 09:00 START 10:00. Outdoor @ Makuhari Seaside Park event block."
+    },
+    {
+      "date": "2025-07-07",
+      "event": "単独定期-カラーチェンジ公演-",
+      "timetree_id": "2731320848469148037",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731320848469148037",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4ced/2025-06-24/0-1750766815301.jpg"
+      ],
+      "type": "Concert",
+      "venue": "SHIBUYA DIVE",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/4ced/2025-06-24/0-1750766815301.jpg",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+    },
+    {
+      "date": "2025-07-12",
+      "event": "SPARK2025 渋谷納涼祭",
+      "timetree_id": "2712421632321733520",
+      "timetree_url": "https://timetr.ee/p/akishibu/2712421632321733520",
+      "note": "@ベルサール渋谷ガーデン 他\n🎟https://t-dv.com/spark2025_summer",
+      "venue_hint": "ベルサール渋谷ガーデン 他",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9743/2025-06-01/0-1748752136382.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ベルサール渋谷ガーデン 他",
+      "venue_uid": "d16beb51-bb1d-4c43-bd8d-4f406724552c"
+    },
+    {
+      "date": "2025-07-14",
+      "event": "HEROINES LEAGUE Ⅰ",
+      "timetree_id": "2704368159797756021",
+      "timetree_url": "https://timetr.ee/p/akishibu/2704368159797756021",
+      "note": "@豊洲PIT\n🎟https://t-dv.com/heroinesleague0714",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/edd1/2025-06-24/0-1750767711274.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-07-18",
+      "event": "カルデラ道場",
+      "timetree_id": "2731340615217267351",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731340615217267351",
+      "note": "@ KABUKICHO TOWER STAGE\nZepp Shinjuku \n\n🎟tiget.net/events/407010",
+      "venue_hint": "KABUKICHO TOWER STAGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/24ca/2025-06-24/0-1750769173498.jpg"
+      ],
+      "type": "Other",
+      "venue": "KABUKICHO TOWER STAGE",
+      "venue_uid": "6ecd7944-1fa1-4c49-855d-6967c695c825"
+    },
+    {
+      "date": "2025-07-19",
+      "event": "関ケ原歌姫合戦2025",
+      "timetree_id": "2712421791873057624",
+      "timetree_url": "https://timetr.ee/p/akishibu/2712421791873057624",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c98c/2025-06-01/0-1748752472130.jpg"
+      ],
+      "type": "Festival",
+      "venue": "桃配運動公園",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c98c/2025-06-01/0-1748752472130.jpg",
+      "venue_uid": "51de93e5-b0c1-4070-bac0-2a5254c82ed5",
+      "event_type": "Festival",
+      "note": "1673-11 Nogami, Sekigahara, Gifu. SEKIGAHARA IDOL WARS outdoor venue."
+    },
+    {
+      "date": "2025-07-21",
+      "event": "iLiVE! SUMMER -いくぞッ！武道館SP-",
+      "timetree_id": "2704368338953257917",
+      "timetree_url": "https://timetr.ee/p/akishibu/2704368338953257917",
+      "note": "@立川ステージガーデン\n\n🌟お目当て特典：アキシブお宝くじ⋆˙⟡\n🎫t-dv.com/ilive250721\n\n🎙出演時間\nLIVE：13:00-13:20\n特典会：13:30-14:30(A)",
+      "venue_hint": "立川ステージガーデン",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8dcf/2025-06-24/0-1750766590303.jpg"
+      ],
+      "type": "Concert",
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
+    },
+    {
+      "date": "2025-07-25",
+      "event": "GIRLS☆DELIGHT 浴衣SP",
+      "timetree_id": "2731339329352712921",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731339329352712921",
+      "note": "@神田明神ホール \n\n🎙出演時間\nLIVE：19:50-20:10\n特典会：終演後特典会\n\n🎟 https://t.livepocket.jp/e/girlsdelight351",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f401/2025-06-24/0-1750769020257.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2025-07-27",
+      "event": "HEROINES SUMMER",
+      "timetree_id": "2731340956314845874",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731340956314845874",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b944/2025-07-12/0-1752301662414.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "東武動物公園 イベントステージ HOLA!",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/b944/2025-07-12/0-1752301662414.jpg",
+      "venue_uid": "7f4e8a2c-3b1d-4e9f-a6c5-8d2e1f0a9b7c",
+      "start_time": "11:00",
+      "end_time": null,
+      "note": "DAY1: 2025-07-26 / DAY2: 2025-07-27. OPEN 10:00 START 11:00. Zoo opens 9:30."
+    },
+    {
+      "date": "2025-07-30",
+      "event": "SWEET SUMMER 2025",
+      "timetree_id": "2731319490907160815",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731319490907160815",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2cdc/2025-06-24/0-1750766655466.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷（複数会場フェス）",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/2cdc/2025-06-24/0-1750766655466.jpg",
+      "event_type": "Festival",
+      "venue_mode": "multi_venue_festival",
+      "venue_area": "渋谷",
+      "venues": [
+        "WWW X",
+        "Veats SHIBUYA",
+        "SHIBUYA VIDENT"
+      ],
+      "venue_uid": null
+    },
+    {
+      "date": "2025-08-02",
+      "event": "AGE FES",
+      "timetree_id": "2744188495057600695",
+      "timetree_url": "https://timetr.ee/p/akishibu/2744188495057600695",
+      "note": "@赤羽ReNY\n\n🎙出演時間\nLIVE：12:30-13:00\n特典会：終演後特典会\n\n🌟お目当て特典：写メ券\n🎟https://t-dv.com/QUzCaeZ6nw52Nhns7aiE",
+      "venue_hint": "赤羽ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6e7b/2025-07-29/0-1753766529814.jpg"
+      ],
+      "type": "Festival",
+      "venue": "赤羽ReNY",
+      "venue_uid": "3ae7751c-913a-4e9d-9cc2-66e7e4533daf"
+    },
+    {
+      "date": "2025-08-03",
+      "event": "TOKYO IDOL FESTIVAL",
+      "timetree_id": "2744195022459978024",
+      "timetree_url": "https://timetr.ee/p/akishibu/2744195022459978024",
+      "note": "LIVE①：10:00-10:15📍浮き島ステージ🏝️\nLIVE②：14:50-15:10📍DOLL FACTORY\n\n🔗詳細：official.idolfes.com/s/tif2025/\n🎫チケット：eplus.jp/tif/",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0e5d/2025-07-29/0-1753766908408.jpg"
+      ],
+      "type": "Festival",
+      "venue": "お台場臨海公園（TIF・複数ステージ）",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/0e5d/2025-07-29/0-1753766908408.jpg",
+      "event_type": "Festival",
+      "venue_mode": "multi_venue_festival",
+      "venue_area": "お台場",
+      "venues": [
+        "浮き島ステージ",
+        "DOLL FACTORY"
+      ],
+      "venue_uid": null
+    },
+    {
+      "date": "2025-08-04",
+      "event": "HEROINES LEAGUE Ⅰ",
+      "timetree_id": "2704369130561028594",
+      "timetree_url": "https://timetr.ee/p/akishibu/2704369130561028594",
+      "note": "🌟動員重要ライブ🌟\n\n@恵比寿ガーデンホール\n\n出演時間\nLIVE：15:00-15:25\n特典会：15:35-16:35\n\n🎟https://t-dv.com/league1_0804",
+      "venue_hint": "恵比寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d1c9/2025-07-29/0-1753766652715.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2025-09-07",
+      "event": "平沢かえ生誕祭2025",
+      "timetree_id": "2682813522271748158",
+      "timetree_url": "https://timetr.ee/p/akishibu/2682813522271748158",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c4eb/2025-07-29/0-1753767274952.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "SHIBUYA DIVE",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c4eb/2025-07-29/0-1753767274952.jpg",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
+      "event_type": "Birthday",
+      "venue_source_note": "Member birthday solo (生誕祭); poster 2025-09-07 @ SHIBUYA DIVE (TimeTree had placeholder 2025-08-07)"
+    },
+    {
+      "date": "2025-08-09",
+      "event": "Pretty Parade Vol.2",
+      "timetree_id": "2704369412577640856",
+      "timetree_url": "https://timetr.ee/p/akishibu/2704369412577640856",
+      "note": "@神田明神ホール\n\n🎙出演時間\nLIVE：18:30-18:55\n特典会：20:00-21:30\n\n🎟https://t.livepocket.jp/e/prettyparade_vol2",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/754a/2025-07-29/0-1753766830059.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2025-08-13",
+      "event": "NEO KASSEN 2025",
+      "timetree_id": "2731338238330356436",
+      "timetree_url": "https://timetr.ee/p/akishibu/2731338238330356436",
+      "note": "🎟http://r-t.jp/neokassen2025",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f726/2025-06-24/0-1750768890040.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷（複数会場フェス）",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/f726/2025-06-24/0-1750768890040.jpg",
+      "event_type": "Festival",
+      "venue_mode": "multi_venue_festival",
+      "venue_area": "渋谷",
+      "venues": [
+        "Spotify O-EAST",
+        "Spotify O-WEST",
+        "Spotify O-nest",
+        "Spotify O-Crest",
+        "clubasia",
+        "duo MUSIC EXCHANGE",
+        "WOMB",
+        "SHIBUYA RING",
+        "SHIBUYA DESEO"
+      ],
+      "venue_uid": null
+    },
+    {
+      "date": "2025-08-14",
+      "event": "単独定期公演-浴衣ドレス編-",
+      "timetree_id": "2744188660011188807",
+      "timetree_url": "https://timetr.ee/p/akishibu/2744188660011188807",
+      "note": "@Spotify O-nest\n\n19:00開場/19:30開演\n19:30-20:30 ライブ\n20:40-22:00 特典会\n\n🎟https://t.livepocket.jp/e/akishibu_vol11",
+      "venue_hint": "Spotify O-nest",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e702/2025-07-29/0-1753767619432.jpg"
+      ],
+      "type": "Concert",
+      "venue": "Spotify O-nest",
+      "venue_uid": "b18a171b-9481-437b-9368-58f77b6e7993"
+    },
+    {
+      "date": "2025-08-16",
+      "event": "【茉井ゲスト出演】Ange☆Reve 初季バースデーライブ",
+      "timetree_id": "2744194808265261671",
+      "timetree_url": "https://timetr.ee/p/akishibu/2744194808265261671",
+      "note": "@GOTANDA G7\n\n特典会あり\n17:30開場╱18:00開演",
+      "venue_hint": "GOTANDA G7",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fbbf/2025-08-14/0-1755148698783.jpg"
+      ],
+      "type": "Other",
+      "venue": "GOTANDA G7",
+      "venue_uid": "a5a1e723-0e29-43a8-b84f-bbbc528be5d3"
+    },
+    {
+      "date": "2025-08-16",
+      "event": "Hi!Hi!Fes",
+      "timetree_id": "2768077142710239923",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768077142710239923",
+      "note": "@シティーホール五反田\nLIVE：14:00-14:20\n特典会：14:30-15:30(Ｃ)\n\n🌟お目当て特典：写メ券\n🎫 t.livepocket.jp/e/hihifes_vol4",
+      "venue_hint": "シティーホール五反田",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6704/2025-08-14/0-1755148507617.jpg",
+        "https://attachments.timetreeapp.com/public_event/4c4c/2025-08-14/0-1755148508855.jpg"
+      ],
+      "type": "Festival",
+      "venue": "シティーホール五反田",
+      "venue_uid": "4d500f58-d046-4ef4-bc5c-9a69ca396608"
+    },
+    {
+      "date": "2025-08-17",
+      "event": "IDOLEAD",
+      "timetree_id": "2768079153585406714",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768079153585406714",
+      "note": "🌟お目当て特典：写メ券\n🎟 ticketvillage.jp/events/13490",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dbc6/2025-08-14/0-1755148748704.jpg"
+      ],
+      "type": "Other",
+      "venue": "白金高輪SELENE b2",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/dbc6/2025-08-14/0-1755148748704.jpg",
+      "venue_uid": "8849c27a-75b7-429c-afd9-0fa8dd676eab",
+      "event_type": "Festival"
+    },
+    {
+      "date": "2025-08-20",
+      "event": "水琴まなみ生誕祭2025",
+      "timetree_id": "2682813620561068417",
+      "timetree_url": "https://timetr.ee/p/akishibu/2682813620561068417",
+      "note": "@SHIBUYA DIVE\n\n17:00開場╱18:00開演\n🎟http://t.livepocket.jp/e/manami_birthday",
+      "venue_hint": "SHIBUYA DIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bcfe/2025-08-14/0-1755148875345.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "SHIBUYA DIVE",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+    },
+    {
+      "date": "2025-08-22",
+      "event": "HEROINES SUMMER",
+      "timetree_id": "2768082204060762566",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768082204060762566",
+      "note": "@ Zepp osaka Bayside \n\n🎙出演時間\nLIVE：14:40-15:05\n特典会：15:15-16:15(B)\n\n🎟t-dv.com/summer_osaka",
+      "venue_hint": "Zepp osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/24c9/2025-08-14/0-1755149111321.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-08-23",
+      "event": "GIRLS☆DELIGHT 浴衣SP",
+      "timetree_id": "2768084299451155258",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768084299451155258",
+      "note": "@zephyr hall\n\n🎙出演時間\nLIVE：18:45-19:05\n特典会：19:15-20:45\n\n🎟️https://t.livepocket.jp/e/girlsdelight355",
+      "venue_hint": "zephyr hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bb25/2025-08-14/0-1755149361931.jpg"
+      ],
+      "type": "Other",
+      "venue": "zephyr hall",
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
+    },
+    {
+      "date": "2025-08-24",
+      "event": "GIRLS☆DELIGHT",
+      "timetree_id": "2768087464363901342",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768087464363901342",
+      "note": "@DIAMOND HALL\n\n🌟お目当て特典：写メ券(前方のみ)\n🎟https://t.livepocket.jp/girls_delight356",
+      "venue_hint": "DIAMOND HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4cb0/2025-08-14/0-1755149739334.jpg"
+      ],
+      "type": "Other",
+      "venue": "DIAMOND HALL",
+      "venue_uid": "83363638-0bf2-40a1-ac2e-c1150de9f2e8"
+    },
+    {
+      "date": "2025-08-26",
+      "event": "エンドレスサマー2025",
+      "timetree_id": "2744190994317525787",
+      "timetree_url": "https://timetr.ee/p/akishibu/2744190994317525787",
+      "note": "@渋谷複数会場\n\n🎟https://t-dv.com/endlessummer2025",
+      "venue_hint": "渋谷複数会場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/188c/2025-08-14/0-1755149844699.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷複数会場",
+      "venue_uid": "4199ef00-7f6f-4e24-b884-b467286ecc00"
+    },
+    {
+      "date": "2025-08-30",
+      "event": "ONE AND ONLY vol.24",
+      "timetree_id": "2773434761452929819",
+      "timetree_url": "https://timetr.ee/p/akishibu/2773434761452929819",
+      "note": "@飛行船シアター \n\n🎙️ 出演時間\nLIVE : 15:50-16:15\n特典会 : 16:25-17:25(2F C)\n\n🌟お目当て特典：写メ券",
+      "location_name": "飛行船シアター",
+      "venue_hint": "飛行船シアター",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9815/2025-08-26/0-1756205237978.jpg"
+      ],
+      "type": "Other",
+      "venue": "飛行船シアター",
+      "venue_uid": "e8521d95-fb0a-4530-890c-89a84c081ee6"
+    },
+    {
+      "date": "2025-08-31",
+      "event": "単独公演-夏感謝祭SP-",
+      "timetree_id": "2768087674825687117",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768087674825687117",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a2aa/2025-08-16/0-1755344688323.jpg"
+      ],
+      "type": "Concert",
+      "venue": "SHIBUYA VIDENT",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/a2aa/2025-08-16/0-1755344688323.jpg",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+    },
+    {
+      "date": "2025-09-02",
+      "event": "ふぃくふぇす！",
+      "timetree_id": "2768091828411383921",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768091828411383921",
+      "note": "@Spotify O-EAST\n\n🎙出演時間\nLIVE：14:00-14:20\n特典会：14:30-15:30(A)\n\n🌟お目当て特典：10秒動画券\n🎫t-dv.com/ficfes250902",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9b2a/2025-08-14/0-1755150259611.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-09-07",
+      "event": "アイドル甲子園",
+      "timetree_id": "2768090194553815660",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768090194553815660",
+      "note": "@品川インターシティホール\n\n🎙出演時間\nLIVE：16:00-16:25\n特典会：16:45-18:05(並行A)\n\n🌟お目当て特典：写メ券",
+      "location_name": "品川インターシティホール&貸会議室",
+      "venue_hint": "品川インターシティホール&貸会議室",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/288c/2025-08-14/0-1755150064756.jpg",
+        "https://attachments.timetreeapp.com/public_event/933c/2025-08-25/0-1756122188616.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川インターシティホール&貸会議室",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
+    },
+    {
+      "date": "2025-09-08",
+      "event": "古賀みれい生誕祭2025",
+      "timetree_id": "2682813763108684344",
+      "timetree_url": "https://timetr.ee/p/akishibu/2682813763108684344",
+      "note": "@Veats SHIBUYA",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6e36/2025-08-29/0-1756465519314.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-09-09",
+      "event": "超明星現象2025",
+      "timetree_id": "2744202045780082936",
+      "timetree_url": "https://timetr.ee/p/akishibu/2744202045780082936",
+      "note": "@ WWWX\n\n🎙出演時間\nLIVE：15:00-15:25\n特典会 : 15:40-16:50(WWWX 4F)\n\n「アイドルの“ななちゃん”と『Stardust story』を一夜限りのコラボ歌唱！」\n\n🎙️出演時間\n17:25-17:40\n※如月ななのみ\n\n🌟お目当て特典：お楽しみくじ",
+      "location_name": "WWW X",
+      "venue_hint": "WWW X",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4eb4/2025-08-26/0-1756205334670.jpg",
+        "https://attachments.timetreeapp.com/public_event/daf6/2025-09-03/0-1756871089624.jpg",
+        "https://attachments.timetreeapp.com/public_event/f469/2025-09-07/0-1757227132724.jpg",
+        "https://attachments.timetreeapp.com/public_event/712c/2025-09-07/0-1757227134639.jpg"
+      ],
+      "type": "Other",
+      "venue": "WWW X",
+      "venue_uid": "5ab9e0c9-157d-4372-a09e-dbf9885c86d2"
+    },
+    {
+      "date": "2025-09-10",
+      "event": "MARQUEE FES",
+      "timetree_id": "2768089474668642606",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768089474668642606",
+      "note": "@Spotify O-EAST\n\n🎙出演時間\nLIVE：15:45-16:10\n特典会：16:25-17:25(3階 ブースF)\n\n🌟お目当て特典：10秒動画券\n🎟http://eplus.jp/marquee-matsuri/",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0756/2025-08-14/0-1755149978920.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-09-13",
+      "event": "SPARK2025 in MAKUHARI",
+      "timetree_id": "2768093430878781446",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768093430878781446",
+      "note": "@幕張メッセ国際展示場9-11ホール\n\n9/13(土)💙BOTAN STAGE\n🎙出演時間\nLIVE：10:50-11:15\n特典会 : 11:35-12:35\n線香花火 : 12:40-13:40 (7)\n\n💚YANAGI STAGE\nLIVE：16:00-16:20\n特典会：16:40-17:40(ブース18)\n\n9/14(日)💛KIKU STAGE\n🎙出演時間\nLIVE：20:00-20:20\n特典会 : 18:15-19:15",
+      "venue_hint": "幕張メッセ国際展示場9-11ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/57ff/2025-08-14/0-1755150450744.jpg",
+        "https://attachments.timetreeapp.com/public_event/9dac/2025-09-01/0-1756722190247.jpg",
+        "https://attachments.timetreeapp.com/public_event/a8be/2025-09-03/0-1756894088407.jpg",
+        "https://attachments.timetreeapp.com/public_event/1a5d/2025-09-10/0-1757509294198.jpg",
+        "https://attachments.timetreeapp.com/public_event/0388/2025-09-12/0-1757694379987.jpg",
+        "https://attachments.timetreeapp.com/public_event/1549/2025-09-12/0-1757694380772.jpg"
+      ],
+      "type": "Festival",
+      "venue": "幕張メッセ国際展示場9-11ホール",
+      "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
+    },
+    {
+      "date": "2025-09-15",
+      "event": "クロフェス2025",
+      "timetree_id": "2756488145307386453",
+      "timetree_url": "https://timetr.ee/p/akishibu/2756488145307386453",
+      "note": "@ 海の森水上競技場\n\n🎙出演時間\n💚エメラルドステージ\nLIVE : 12:35-12:50\n特典会 : 13:20-14:40(24)\n\n💛ダイヤモンドステージ\nLIVE : 16:45-17:10\n特典会 : 17:40-19:00 (1)",
+      "location_name": "海の森水上競技場",
+      "venue_hint": "海の森水上競技場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/92ce/2025-07-29/0-1753766992732.jpg",
+        "https://attachments.timetreeapp.com/public_event/7caa/2025-08-27/0-1756281913694.jpg",
+        "https://attachments.timetreeapp.com/public_event/9717/2025-09-10/0-1757497314562.jpg",
+        "https://attachments.timetreeapp.com/public_event/d33d/2025-09-10/0-1757497324336.jpg"
+      ],
+      "type": "Festival",
+      "venue": "海の森水上競技場",
+      "venue_uid": "b42d75da-187c-4090-9454-3c24733de520"
+    },
+    {
+      "date": "2025-09-18",
+      "event": "『 B.L.T. W LIVE + vol.5 』",
+      "timetree_id": "2780683783943176992",
+      "timetree_url": "https://timetr.ee/p/akishibu/2780683783943176992",
+      "note": "@ duo MUSIC EXCHANGE\n\n🎙️出演時間\nライブ : 20:20-20:45\n特典会 : 21:25-22:25\n\n🌟お目当て特典 : 写メ券",
+      "location_name": "duo MUSIC EXCHANGE",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/21ea/2025-09-12/0-1757677327811.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2025-09-19",
+      "event": "『YORU-FES』",
+      "timetree_id": "2775570993117086507",
+      "timetree_url": "https://timetr.ee/p/akishibu/2775570993117086507",
+      "note": "『YORU-FES』\n@ ステラボール に出演します🎶\n\n⏱️ OPEN 11:00 / START 11:30\n🎟️ 前方 8,000円 /一般3,000円 /女性1,500円\n\n🎙出演時間\nLIVE：15:35-16:00\n特典会：16:10-17:10( C )\n\n🌟お目当て特典 : 5秒動画券",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c60e/2025-08-24/0-1756041845301.jpg",
+        "https://attachments.timetreeapp.com/public_event/19ae/2025-09-07/0-1757242915474.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2025-09-20",
+      "event": "『Pretty Parade Vol.3』",
+      "timetree_id": "2785650289122689880",
+      "timetree_url": "https://timetr.ee/p/akishibu/2785650289122689880",
+      "note": "@ SHIBUYA PLEASURE PLEASURE\n\n⏱️ 開場11:30／開演12:00\n🎟️ 前売優先5,000円／前売一般1,000円／当日各+1,000円（D代別）\n\n🎙️出演時間\nLIVE : 12:25-12:50\n特典会 : 13:30-15:00\n\n9/9 (火) 22:00-販売開始！",
+      "location_name": "SHIBUYA PLEASURE PLEASURE",
+      "venue_hint": "SHIBUYA PLEASURE PLEASURE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3ef4/2025-09-08/0-1757326673160.jpg"
+      ],
+      "type": "Other",
+      "venue": "SHIBUYA PLEASURE PLEASURE",
+      "venue_uid": "59f1093c-b7ee-4440-b3fb-4f3b657f7ed9"
+    },
+    {
+      "date": "2025-09-21",
+      "event": "SWEET AUTUMN 2025-DAY2-",
+      "timetree_id": "2768093641416065250",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768093641416065250",
+      "note": "@品川グランドホール \n\n🎙出演時間\nLIVE：15:15-15:40\n特典会：15:50-16:50 (D)\n\n🌟お目当て特典：写メ券(前方のみ)",
+      "location_name": "品川グランドホール",
+      "venue_hint": "品川グランドホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6327/2025-08-26/0-1756204934468.jpg",
+        "https://attachments.timetreeapp.com/public_event/1d58/2025-09-09/0-1757413647905.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川グランドホール",
+      "venue_uid": "50c9bd94-d0d1-4022-846f-af27b241a90b"
+    },
+    {
+      "date": "2025-09-23",
+      "event": "HEROINES LEAGUE Ⅰ",
+      "timetree_id": "2768094661386912484",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768094661386912484",
+      "note": "@KANDA SQUARE HALL\n\n⏱️ OPEN 14:00 / START 15:00\n\n前方チケット ¥8,500/一般チケット ¥3,500/ 女性チケット ¥3,000\n\n🎙️出演時間\nLIVE : 15:00-15:25\n特典会 : 15:35-16:35 (A)\n\n\n🎟FC先行\nhttps://heroines.jp/news/public/_/a4c5891quw1gbej9.html\n\n🎫一般\nhttps://t-dv.com/heroinesleague250923",
+      "venue_hint": "KANDA SQUARE HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/aec6/2025-08-14/0-1755150597078.jpg",
+        "https://attachments.timetreeapp.com/public_event/66b9/2025-09-20/0-1758382041899.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "KANDA SQUARE HALL",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2025-09-24",
+      "event": "『HEROINES LEAGUE Ⅰ【Sep. part2】』",
+      "timetree_id": "2786464962646589580",
+      "timetree_url": "https://timetr.ee/p/akishibu/2786464962646589580",
+      "note": "@ EXシアター六本木\n\n🎟️FC先行　9/8(月)21:00〜\nhttps://heroines.jp/news/public/_/dj5qiyvmg1d5yien.html\n\n🎟一般販売  9/13(土)20:00～\nhttps://t-dv.com/heroinesleague250924",
+      "location_name": "EX THEATER ROPPONGI",
+      "venue_hint": "EX THEATER ROPPONGI",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8ef7/2025-09-08/0-1757340507773.jpg",
+        "https://attachments.timetreeapp.com/public_event/78c5/2025-09-19/0-1758294508361.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "EX THEATER ROPPONGI",
+      "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e"
+    },
+    {
+      "date": "2025-09-25",
+      "event": "『HEROINES ROCK FES』",
+      "timetree_id": "2768094990807548384",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768094990807548384",
+      "note": "@ SHIBUYA WOMB LIVE\n\n🎟️ 前方¥8,000/一般¥4,000\n⏱️ OPEN14:30/START15:00\n\n🎤 16:00-16:30\n📸 16:40-17:55(C)\n\n🌟お目当て特典 : 写メ券\n\n9/11 22:00~販売開始❕\nt-dv.com/HR_FES",
+      "location_name": "WOMB",
+      "venue_hint": "WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c83a/2025-09-10/0-1757509501447.jpg"
+      ],
+      "type": "Festival",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-09-27",
+      "event": "『 GIRLS☆DELIGHT#359-MeMeQデビューSP- 』",
+      "timetree_id": "2779614347085693127",
+      "timetree_url": "https://timetr.ee/p/akishibu/2779614347085693127",
+      "note": "@  大手町プレイスホール&カンファレンス\n\n🎙️出演時間\nライブ : 19:30-19:50\n特典会 : 20:55-22:10\n\n🌟お目当て特典 : 写メ券(前方のみ)",
+      "venue_hint": "大手町プレイスホール&カンファレンス",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a4d8/2025-09-20/0-1758362608189.jpg"
+      ],
+      "type": "Other",
+      "venue": "大手町プレイスホール&カンファレンス",
+      "venue_uid": "6e2f43d6-6fce-49dc-91e6-2d950bbad525"
+    },
+    {
+      "date": "2025-09-27",
+      "event": "Sweet Alley presents『SWEET PARTY-Road To 幕張メッセ-』",
+      "timetree_id": "2789287976610251481",
+      "timetree_url": "https://timetr.ee/p/akishibu/2789287976610251481",
+      "note": "@ 大手町プレイスホール&カンファレンス HALL B \n\n⏱️ 開場11:30／開演12:00\n🎫 前売優先エリア5,000円／前売一般エリア1,000円／当日各+1,000円（D代別）\n\n🎙️出演時間\nライブ : 12:45-13:15\n特典会 : 14:00-15:30\n\n9/13 22:00-販売開始❕",
+      "venue_hint": "大手町プレイスホール&カンファレンス HALL B",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/355d/2025-09-12/0-1757677036888.jpg"
+      ],
+      "type": "Other",
+      "venue": "大手町プレイスホール&カンファレンス HALL B",
+      "venue_uid": "6e2f43d6-6fce-49dc-91e6-2d950bbad525"
+    },
+    {
+      "date": "2025-09-28",
+      "event": "アイドル甲子園 in TACHIKAWA STAGE GARDEN」-DAY2-",
+      "timetree_id": "2775898325157626142",
+      "timetree_url": "https://timetr.ee/p/akishibu/2775898325157626142",
+      "note": "@ TACHIKAWA STAGE GARDEN\n\n🎙出演時間\nLIVE：15:40-16:05\n特典会：16:25-17:45 (D)\n\n🌟お目当て特典：写メ券",
+      "location_name": "TACHIKAWA STAGE GARDEN",
+      "venue_hint": "TACHIKAWA STAGE GARDEN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2649/2025-09-03/0-1756871009913.jpg",
+        "https://attachments.timetreeapp.com/public_event/8426/2025-09-26/0-1758871003197.jpg"
+      ],
+      "type": "Other",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+    },
+    {
+      "date": "2025-09-29",
+      "event": "『アキシブproject 古賀みれい卒業公演』",
+      "timetree_id": "2768095156952318793",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768095156952318793",
+      "note": "@ Spotify O-WEST\n\n⏱️ 開場17:00／開演18:00\n🎫 最前席 25,000円 (チェキ撮影ファストパス・延長物販参加券付き・メッセージ付きポストカード)/前方エリア6,000円(延長物販参加券付き)／一般エリア1,000円（D代別）/延長物販参加券1000円\n\n🎟️抽選販売\n9/14 22:00~ 9/15 22:00\n\n🎟️先着販売\n9/16 22:00~ 9/29 13:00",
+      "location_name": "Spotify O-WEST",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c1d4/2025-09-13/0-1757767940379.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-10-02",
+      "event": "『HEROINES FES~渋谷サーキット~』",
+      "timetree_id": "2780681901908640364",
+      "timetree_url": "https://timetr.ee/p/akishibu/2780681901908640364",
+      "note": "@ Spotify O-EAST\n🎙️出演時間\nLIVE : 13:55-14:20\n特典会 : 14:35-15:35 (A3)\n\n@ Spotify O-nest\n🎙️出演時間\nLIVE : 17:10-17:30\n特典会 : 17:45-18:45 (E1)\n\n🌟お目当て特典 : 5秒動画券",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b565/2025-08-31/0-1756651113273.jpg",
+        "https://attachments.timetreeapp.com/public_event/5e92/2025-09-24/0-1758719418542.jpg",
+        "https://attachments.timetreeapp.com/public_event/5c94/2025-09-26/0-1758888889385.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-10-04",
+      "event": "アキシブproject presents『アキシブ夢千乱舞』",
+      "timetree_id": "2782781539746792083",
+      "timetree_url": "https://timetr.ee/p/akishibu/2782781539746792083",
+      "note": "@ SMALL WORLDS 開催決定🎶\n\n⏱️ 開場11:00／開演11:30\n🎫 前売前方エリア4,000円／前売一般エリア1,000円／当日各+1,000円（D代別）\n\n🎙️出演時間\nLIVE : 14:55-15:25\n特典会 : 15:35-16:55 (終演後)\n\n🌟 お目当て特典 : 写メ券(前方のみ)\n       9/13 21:00-販売開始❕",
+      "location_name": "スモールワールズ",
+      "venue_hint": "スモールワールズ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a65a/2025-09-12/0-1757676912589.jpg",
+        "https://attachments.timetreeapp.com/public_event/3efd/2025-09-22/0-1758535516315.jpg"
+      ],
+      "type": "Other",
+      "venue": "スモールワールズ",
+      "venue_uid": "f8fb8d17-61f2-4312-b8e4-cdd67c81bb69"
+    },
+    {
+      "date": "2025-10-06",
+      "event": "『ラブコール vol.13』",
+      "timetree_id": "2799455333185962223",
+      "timetree_url": "https://timetr.ee/p/akishibu/2799455333185962223",
+      "note": "@ Spotify O-nest\n\n🎙️出演時間\nライブ : 18:10-18:35\n特典会 : 18:35-19:35\n\n🌟お目当て特典 : 写メ券",
+      "location_name": "Spotify O-nest",
+      "venue_hint": "Spotify O-nest",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c96b/2025-09-26/0-1758889080809.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-nest",
+      "venue_uid": "b18a171b-9481-437b-9368-58f77b6e7993"
+    },
+    {
+      "date": "2025-10-08",
+      "event": "『HEROINES LEAGUE 入れ替え戦 vol.1』",
+      "timetree_id": "2791929882188137104",
+      "timetree_url": "https://timetr.ee/p/akishibu/2791929882188137104",
+      "note": "@ Zepp Haneda \n\n⏱️ OPEN 10:30 / START 11:30\n🎫 前方7,000円/一般3,000円/女性チケット2,000円\n\n出演時間🎙️\nライブ : 14:30-14:55\n特典会 : 終演後\n\n\n🎟️ 9/26(金)21:30-販売開始！",
+      "location_name": "Zepp Haneda TOKYO",
+      "venue_hint": "Zepp Haneda TOKYO",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b512/2025-09-25/0-1758822089877.jpg",
+        "https://attachments.timetreeapp.com/public_event/4235/2025-10-07/0-1759843593114.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Haneda TOKYO",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
+    },
+    {
+      "date": "2025-10-11",
+      "event": "『KABUKILLING CIRCUIT!! 2025』",
+      "timetree_id": "2768095700441842415",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768095700441842415",
+      "note": "📍KABUKICHO TOWER STAGE / JAM17 SPACE WEST / Zirco Tokyo / 東急歌舞伎町タワー FIRST STAGE\n\n🎟️ 前方チケット ¥8,000 / 一般チケット ¥3,000（当日 各¥1,000up）\nチケット：\n<抽選> ~9/12(金) 23:59\n<先着> 9/14(日) 20:00~\n※一部無料観覧エリア・ステージ有り\n※入場順：前方エリア⇒一般\n\n⏱️ 【TT】\nリストバンド引換 9:30~（東急歌舞伎町タワー 2F エスカレーター裏）\n開場/開演\n・KABUKICHO TOWER STAGE 10:30/11:00\n・JAM17 SPACE WEST 11:30/12:00\n・Zirco Tokyo 10:30/11:00\n・東急歌舞伎町タワー FIRST STAGE 観覧フリー\n\n🎙️出演時間\nLIVE : 11:10-11:30\n特典会 : 11:40-12:50 (C)\n\n🌟 お目当て特典 : 写メ券",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f836/2025-09-09/0-1757420303154.jpg",
+        "https://attachments.timetreeapp.com/public_event/36fc/2025-09-23/0-1758626319400.jpg"
+      ],
+      "type": "Festival",
+      "venue": "歌舞伎町（複数会場フェス）",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/f836/2025-09-09/0-1757420303154.jpg",
+      "event_type": "Festival",
+      "venue_mode": "multi_venue_festival",
+      "venue_area": "歌舞伎町",
+      "venues": [
+        "KABUKICHO TOWER STAGE",
+        "JAM17 SPACE WEST",
+        "Zirco Tokyo",
+        "東急歌舞伎町タワー FIRST STAGE"
+      ],
+      "venue_uid": null
+    },
+    {
+      "date": "2025-10-12",
+      "event": "『HEROINES HALLOWEEN in NAGOYA』",
+      "timetree_id": "2768095582489625352",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768095582489625352",
+      "note": "@ COMTEC PORTBASE \n\n⏱️ OPEN 12:00 / START 12:30\n🎟️ 前方 9,000円/一般 3,500円/女性 2,500円\n\n🎙出演時間\nLIVE：14:35-15:00\n特典会：15:10-16:10 (B)",
+      "location_name": "COMTEC PORTBASE",
+      "venue_hint": "COMTEC PORTBASE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dcd0/2025-10-07/0-1759803856424.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
+    },
+    {
+      "date": "2025-10-13",
+      "event": "『GIRLS☆DELIGHT#362-野音無銭祭-』",
+      "timetree_id": "2794466977125450375",
+      "timetree_url": "https://timetr.ee/p/akishibu/2794466977125450375",
+      "note": "@ 上野恩賜公園野外ステージ\n\n⏱️開場10:30／開演11:00\n\n🎟️ 前売優先エリア4,000円／当日優先エリア5,000円／前売当日一般エリア0円（1D代別※食券200円配布！）\n\n出演時間🎙️\nライブ : 19:00-19:20\n特典会 : 19:30-20:30(D)\n\n🌟 お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "上野恩賜公園 野外ステージ",
+      "venue_hint": "上野恩賜公園 野外ステージ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fb68/2025-09-23/0-1758626387731.jpg",
+        "https://attachments.timetreeapp.com/public_event/b6ce/2025-10-02/0-1759415606172.jpg"
+      ],
+      "type": "Other",
+      "venue": "上野恩賜公園 野外ステージ",
+      "venue_uid": "b51cc531-5e30-4e09-b6a0-a0c28005bc93"
+    },
+    {
+      "date": "2025-10-13",
+      "event": "『HYPE // VIBE supported by bis』 in HERO GATE",
+      "timetree_id": "2768095858365776273",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768095858365776273",
+      "note": "@ 代々木公園野外音楽堂\n\n⏱️ OPEN 11:00 / START 11:30\n🎫 前方エリア 7,900円 / 一般エリア 3,500円(各1D別)\n\n🎙️出演時間\nライブ : 13:30-13:55\n特典会 : 14:00-15:30 (B)\n\n🌟 お目当て特典 : 写メ券\n🎟️ 9/12 18:00~先行販売開始❕",
+      "venue_hint": "代々木公園野外音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3931/2025-09-12/0-1757667856496.jpg",
+        "https://attachments.timetreeapp.com/public_event/ac04/2025-10-09/0-1760009421028.jpg"
+      ],
+      "type": "Other",
+      "venue": "代々木公園野外音楽堂",
+      "venue_uid": "0effb7dd-4f6f-4966-b5f9-abd16da18613"
+    },
+    {
+      "date": "2025-10-18",
+      "event": "『GIGA•GIGA SONIC presented by UtaTen / チェキチャ 〜推ししか勝たん！君と僕とのギガ推し祭🏮～』",
+      "timetree_id": "2768098327099556024",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768098327099556024",
+      "note": "@幕張メッセ国際展示場7-8ホール\n\n🩷ハッチャケステージ\nライブ : 18:55-19:15\n特典会 : 19:35-20:35 (9)\n\n🌟 お目当て特典 : 写メ券",
+      "venue_hint": "幕張メッセ国際展示場7-8ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2c07/2025-08-21/0-1755785185337.jpg",
+        "https://attachments.timetreeapp.com/public_event/9b20/2025-10-15/0-1760519962320.jpg"
+      ],
+      "type": "Other",
+      "venue": "幕張メッセ国際展示場7-8ホール",
+      "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
+    },
+    {
+      "date": "2025-10-19",
+      "event": "『ロマンチックコンポートVol.100』",
+      "timetree_id": "2792969509833491000",
+      "timetree_url": "https://timetr.ee/p/akishibu/2792969509833491000",
+      "note": "@ 品川ステラボール\n\n🎟️ 前方エリアチケット 7000円 / 一般チケット 4000円\n・当日+¥1,000-\n（+1D代）\n\n🎙️出演時間\nライブ : 14:05-14:30\n特典会 : 14:40-15:50 (C)\n\n🌟 お目当て特典 : 写メ券\n\n※如月ななはお休みとなります",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3c86/2025-09-20/0-1758374936770.jpg",
+        "https://attachments.timetreeapp.com/public_event/cd2f/2025-10-16/0-1760596939830.jpg"
+      ],
+      "type": "Other",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2025-10-21",
+      "event": "AOAO主催サーキットフェス『\"ブルーセッション EX\"』",
+      "timetree_id": "2782781871759507891",
+      "timetree_url": "https://timetr.ee/p/akishibu/2782781871759507891",
+      "note": "@ 渋谷音楽堂 \n\n🎙️出演時間\nライブ : 19:30-19:55\n特典会 : 20:30-21:40(終演後)\n\n🎟️ 通常4500円 当日5500円(+1D 700円 / 再入場自由)\n\n◯先行抽選\n9/14(土) 19:00 ~ 9/21(日) 23:59　※クレカ決済のみ\n※抽選発表 9/22(月) 18:00頃\n\n◯一般販売\n9/23(火) 19:00 ~\n\n🌟 お目当て特典 : 写メ券",
+      "location_name": "渋谷音楽堂",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3a8b/2025-09-16/0-1758017096592.jpg",
+        "https://attachments.timetreeapp.com/public_event/ef30/2025-10-17/0-1760694203012.jpg",
+        "https://attachments.timetreeapp.com/public_event/127a/2025-10-20/0-1760963596964.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-10-22",
+      "event": "『カリスマめんざいふっ！Spotify O-EASTワンマン応援祭』",
+      "timetree_id": "2782781999274738472",
+      "timetree_url": "https://timetr.ee/p/akishibu/2782781999274738472",
+      "note": "@ 新宿ReNY \n\n⏱️ 開場16:30／開演17:00\n🎟️ 前売前方エリア3,000円／当日前方エリア4,000円／前売当日一般エリア【0円】（D代別）\n\n🎙️出演時間\nライブ : 19:30-19:50\n特典会 : 終演後",
+      "location_name": "新宿ReNY",
+      "venue_hint": "新宿ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/73b4/2025-10-04/0-1759583962267.jpg",
+        "https://attachments.timetreeapp.com/public_event/11dc/2025-10-12/0-1760266732398.jpg"
+      ],
+      "type": "Other",
+      "venue": "新宿ReNY",
+      "venue_uid": "e86f5b7d-6263-4ed1-85fe-db0f738e0515"
+    },
+    {
+      "date": "2025-10-23",
+      "event": "『MARQUEE Fes.』",
+      "timetree_id": "2768098480292315731",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768098480292315731",
+      "note": "@ 豊洲PIT \n\n出演時間🎙️\nライブ : 14:15-14:35\n特典会 : 14:55-15:55 (ブースA )\n\n🌟お目当て特典 : 10秒動画+写メ券\n\n🎟️ 8/27 12:00- 先行予約開始！",
+      "location_name": "豊洲PIT",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d67f/2025-10-07/0-1759803944699.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-10-25",
+      "event": "『【音楽と食の祭典】埼玉MUSIC＆FOOD FESTIVAL』",
+      "timetree_id": "2782782250991698246",
+      "timetree_url": "https://timetr.ee/p/akishibu/2782782250991698246",
+      "note": "@ ところざわサクラタウン・ホール\n\n1部\n⏱️ 10時開場/11時開演\n\n🎙️出演時間\nライブ : 14:20-14:45\n特典会 : 14:55-15:55(ロビー物販③\n\n🌟 お目当て特典 : 一言動画券\n🎟️ 9/13 12:00~販売開始❕",
+      "location_name": "ところざわサクラタウン",
+      "venue_hint": "ところざわサクラタウン",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d2c6/2025-09-12/0-1757668120151.jpg",
+        "https://attachments.timetreeapp.com/public_event/52ff/2025-10-16/0-1760597011857.jpg",
+        "https://attachments.timetreeapp.com/public_event/8869/2025-10-17/0-1760718410684.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ところざわサクラタウン",
+      "venue_uid": "0744246e-4840-4732-9efb-303510bba8fa"
+    },
+    {
+      "date": "2025-10-26",
+      "event": "『TOKYO GIRLS GIRLS Halloween!!』",
+      "timetree_id": "2802921146324828202",
+      "timetree_url": "https://timetr.ee/p/akishibu/2802921146324828202",
+      "note": "@ TFTホール1000\n\n⏱️ 開場：11:00/開演：11:20\n※変更の可能性あり\n\n🎟️ 前方10000円 通常4000円 当日各+1000円\n(入場時1ドリンク必須)\n\n🎙️出演時間\nライブ : 20:05-20:30\n特典会 : 終演後\n\n🌟 お目当て特典 : ブロマイド\n\n👗 ハロウィン衣装",
+      "location_name": "TFTホール",
+      "venue_hint": "TFTホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7858/2025-10-10/0-1760098749653.jpg",
+        "https://attachments.timetreeapp.com/public_event/055f/2025-10-19/0-1760878683667.jpg"
+      ],
+      "type": "Other",
+      "venue": "TFTホール",
+      "venue_uid": "2dc7fafb-61e5-40cb-b310-98f106730989"
+    },
+    {
+      "date": "2025-10-27",
+      "event": "『HEROINES HALLOWEEN DAY1』",
+      "timetree_id": "2768098780679979967",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768098780679979967",
+      "note": "@ Zepp DiverCity\n\n⏱️OPEN 10:00 / START 10:30\n\nチケット\n前方 10,000円/一般 4,000円/女性 3,000円\n\n🎙️出演時間\nライブ : 16:15-16:40\n特典会 : 16:50-17:50\n\n🌟お目当て特典:写メ券\n🎟️ 【DAY1】9/29 21:30-",
+      "location_name": "Zepp DiverCity (TOKYO)",
+      "venue_hint": "Zepp DiverCity (TOKYO)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/458e/2025-09-28/0-1759055055273.jpg",
+        "https://attachments.timetreeapp.com/public_event/c36a/2025-10-14/0-1760448813053.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity (TOKYO)",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-10-28",
+      "event": "『HEROINES HALLOWEEN DAY2』",
+      "timetree_id": "2800850188567004115",
+      "timetree_url": "https://timetr.ee/p/akishibu/2800850188567004115",
+      "note": "@ Zepp DiverCity\n\n⏱️OPEN 9:00 / START 9:30\n\nチケット\n前方 10,000円/一般 4,000円/女性 3,000円\n\n🎙️出演時間\nライブ : 14:10-14:35\n特典会 : 14:45-15:45 (B)\n\n🌟お目当て特典 : 写メ券\n🎟️9/29 22:00〜販売開始！",
+      "location_name": "Zepp DiverCity (TOKYO)",
+      "venue_hint": "Zepp DiverCity (TOKYO)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1469/2025-09-28/0-1759055359531.jpg",
+        "https://attachments.timetreeapp.com/public_event/7c5b/2025-10-28/0-1761624748584.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity (TOKYO)",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-10-31",
+      "event": "『HEROINES HALLOWEEN -PREMIUM-』",
+      "timetree_id": "2768098893372539133",
+      "timetree_url": "https://timetr.ee/p/akishibu/2768098893372539133",
+      "note": "@ Spotify O-EAST\n\n⏱️ 開場時刻 10:00 / 開演時刻 10:30\n🎟️ 前方チケット ¥10,000/一般チケット ¥5,000/女性チケット ¥4,000\n\n🎙️出演時間\nライブ : 15:55-16:20\n特典会 : 16:30-17:30(並行B)\n\n🎟️ 10/26(日)21:00-追加販売開始！",
+      "location_name": "Spotify O-EAST",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/044b/2025-10-02/0-1759415856755.jpg",
+        "https://attachments.timetreeapp.com/public_event/6726/2025-10-25/0-1761380020842.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-11-01",
+      "event": "アキシブproject presents『アキシブ無銭乱舞』",
+      "timetree_id": "2792969814558064718",
+      "timetree_url": "https://timetr.ee/p/akishibu/2792969814558064718",
+      "note": "@ 横浜1000club に出演します🎶\n\n⏱️ 開場11:00／開演11:30\n🎟️ 前売前方エリア3,000円／当日前方エリア4,000円／前売当日一般エリア0円（D代別）開場11:00／開演11:30\n\n🎙️出演時間\nライブ : 13:10-13:40\n特典会 : 13:50-15:20\n\n🌟 お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "1000 CLUB",
+      "venue_hint": "1000 CLUB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4b47/2025-10-17/0-1760694045055.jpg",
+        "https://attachments.timetreeapp.com/public_event/a51e/2025-10-24/0-1761301296212.jpg"
+      ],
+      "type": "Other",
+      "venue": "1000 CLUB",
+      "venue_uid": "68a6c42e-c1c4-4d20-96a2-832fa45b012b"
+    },
+    {
+      "date": "2025-11-02",
+      "event": "Sweet Alley presents『SWEET HALLOWEEN 2025』",
+      "timetree_id": "2799455839950160227",
+      "timetree_url": "https://timetr.ee/p/akishibu/2799455839950160227",
+      "note": "@ GARDEN新木場FACTORY に出演します🎶\n\n⏱️ 開場14:00／開演14:45\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／前売女性(一般エリア)0円／当日各+1,000円（1D代別）\n\n🎙️出演時間\nライブ : 14:45-15:05\n特典会 : 15:15-16:15 (並行B)\n\n🌟 お目当て特典 : 写メ券(前方のみ)\n\n10/11 (土)22:00-販売開始！",
+      "location_name": "GARDEN新木場FACTORY",
+      "venue_hint": "GARDEN新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bd40/2025-10-10/0-1760098535889.jpg",
+        "https://attachments.timetreeapp.com/public_event/0061/2025-10-24/0-1761295890219.jpg"
+      ],
+      "type": "Other",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2025-11-03",
+      "event": "『秋葉原アイドルサーキット vol.5』",
+      "timetree_id": "2791930354483545044",
+      "timetree_url": "https://timetr.ee/p/akishibu/2791930354483545044",
+      "note": "@ 神田明神ホール\n\n🎙️出演時間\nライブ : 15:55-16:20\n特典会 : 16:40-17:40 (B)\n\n🌟お目当て特典 : おやすみ💤動画券",
+      "location_name": "神田明神ホール",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5357/2025-10-03/0-1759486193779.jpg",
+        "https://attachments.timetreeapp.com/public_event/ea68/2025-10-15/0-1760520101962.jpg",
+        "https://attachments.timetreeapp.com/public_event/f67f/2025-10-15/0-1760520105313.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2025-11-05",
+      "event": "『アキシブproject単独公演-過去衣装ランダムSP-』",
+      "timetree_id": "2811012209954472228",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811012209954472228",
+      "note": "@ SHIBUYA DIVE\n\n⏱️ 開場18:30／開演19:00\n🎟️ 前方エリア4000円／一般エリア1000円（D代別）",
+      "location_name": "SHIBUYA DIVE",
+      "venue_hint": "SHIBUYA DIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a101/2025-10-22/0-1761131103655.jpg"
+      ],
+      "type": "Concert",
+      "venue": "SHIBUYA DIVE",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+    },
+    {
+      "date": "2025-11-06",
+      "event": "『ネコプラ主催公演〜にゃんフェス！〜』",
+      "timetree_id": "2811012367165375248",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811012367165375248",
+      "note": "@WOMB\n\n⏱️ OPEN/START：18:00/18:20\n🎟️ 前方¥5,000/通常¥1,000円/当日各+¥500円(D別)\n▼入場順：①前売前方整理番号順②前売通常整理番号順③当日\n\n出演時間🎙️\nライブ：18:35-19:00\n特典会：19:15-20:15",
+      "location_name": "WOMB",
+      "venue_hint": "WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6122/2025-11-02/0-1762091763581.jpg"
+      ],
+      "type": "Festival",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-11-09",
+      "event": "『AGE FES』",
+      "timetree_id": "2799455954077171970",
+      "timetree_url": "https://timetr.ee/p/akishibu/2799455954077171970",
+      "note": "@ キネマ倶楽部\n\n⏱️ OPEN TBA / START TBA\n🎟️ 前売前方6000円/前売通常3000円/前売女性2000円/当日+500円(D別)\n▼入場順：①前売優先整理番号順②前売通常整理番号順③前売女性整理番号順④当日\n\n🎙️出演時間\nライブ : 14:25-14:50\n特典会 : 15:05-16:05 (並行C)\n\n🌟 お目当て特典 : 写メ券\n🎟️ 10/17(金)19:00-発売開始！",
+      "location_name": "東京キネマ倶楽部",
+      "venue_hint": "東京キネマ倶楽部",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f4b9/2025-10-17/0-1760694342742.jpg",
+        "https://attachments.timetreeapp.com/public_event/48ba/2025-10-24/0-1761301346513.jpg"
+      ],
+      "type": "Festival",
+      "venue": "東京キネマ倶楽部",
+      "venue_uid": "ed987d96-33d9-457a-be2b-78ab8b936d7e"
+    },
+    {
+      "date": "2025-11-16",
+      "event": "『GIRLS☆DELIGHT#368』",
+      "timetree_id": "2811012576553419337",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811012576553419337",
+      "note": "@ 神田明神ホール\n\n⏱️ 開場10:00／開演10:20\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／当日各+1,000円（D代別）\n10/18(土)23:00-11/16(日)8:00\n\n出演時間🎙️\nライブ : 19:10-19:30\n特典会 : 19:45-20:45(B)\n\n🌟お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "神田明神ホール",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7012/2025-10-17/0-1760699895236.jpg",
+        "https://attachments.timetreeapp.com/public_event/eeb5/2025-11-05/0-1762310117936.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2025-11-17",
+      "event": "『MARQUEE FES.』",
+      "timetree_id": "2791930539813060773",
+      "timetree_url": "https://timetr.ee/p/akishibu/2791930539813060773",
+      "note": "@ Spotify O-EAST\n\n🎟️前方エリア ¥11,000（税込）+1D/前売¥4,500（税込）＋1D/当日 ¥5,500（税込）＋1D\n\n🧑‍💻【先行予約】10/3（金）正午～10/8（水）23:59\n     ※クレカ決済でのみ受付\n     【一般発売】10/11（土）10:00~11/16（日）18:00\n\n🎙️出演時間\nライブ : 16:15-16:35\n特典会 : 16:50-17:50 ブースA (2F)\n\n🌟お目当て特典 : 10秒動画券+写メ券",
+      "location_name": "Spotify O-EAST",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e1e3/2025-10-01/0-1759288163123.jpg",
+        "https://attachments.timetreeapp.com/public_event/7871/2025-10-03/0-1759461177756.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-11-18",
+      "event": "葵ふう生誕祭2025 『にゃんこの虜になっチャイナ！』",
+      "timetree_id": "2803152857117704676",
+      "timetree_url": "https://timetr.ee/p/akishibu/2803152857117704676",
+      "note": "@ Veats SHIBUYA\n\n⏱️ OPEN / START：17:00 / 18:00\n      前物販14:00~16:00(チェキ券・グッズ販売、葵ふうのみ特典会あり)\n\n🎀Special guest🎀\n古賀みれい\n\n【チケット】\n◎最前22,000円\n最前列確約・サイン入り葵ふうTシャツ・メッセージ付きブロマイド・特典会ファストパス券・前物販参加券・一部撮影可能\n\n◎前方 5,500円\n前方エリア・前物販参加券・サイン入りブロマイド・一部撮影可能\n\n◎一般 1,500円\n一般エリア\n\n◎前物販参加券：¥1,000\n\n\n\n🎟️ 最前チケット\n10/25(土)22:00-受付開始！\n(10/27(月)15:00当落予定)\n\n🎟️ 前方・一般チケット・前物販参加券\n10/27(月)22:00-販売開始！",
+      "location_name": "Veats SHIBUYA",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2861/2025-10-25/0-1761429408612.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-11-19",
+      "event": "『GigiLライプラ加入祭』",
+      "timetree_id": "2811012738008957424",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811012738008957424",
+      "note": "@ 新宿ReNY\n\n⏱️ 開場16:20／開演16:40\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／当日各+1,000円（D代別）\n\n🎙出演時間\nLIVE：19:50-20:10\n特典会：20:45-21:55\n\n販売期間：10/21(火)22:00-11/19(水)14:00",
+      "location_name": "新宿ReNY",
+      "venue_hint": "新宿ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e2a7/2025-10-20/0-1760962103961.jpg",
+        "https://attachments.timetreeapp.com/public_event/5f56/2025-11-12/0-1762946678856.jpg"
+      ],
+      "type": "Other",
+      "venue": "新宿ReNY",
+      "venue_uid": "e86f5b7d-6263-4ed1-85fe-db0f738e0515"
+    },
+    {
+      "date": "2025-11-23",
+      "event": "『TOKYO GIRLS GIRLS extra!!』",
+      "timetree_id": "2821837207812128954",
+      "timetree_url": "https://timetr.ee/p/akishibu/2821837207812128954",
+      "note": "@ EBiS303\n\n⏱️ 開場：9:00/開演：9:15\n※変更の可能性あり\n\n🎟️ 料金：前方6000円 通常3000円 当日各+1000円\n(入場時1ドリンク必須)\n\n[抽選販売]\n受付 10/28(火) 20:00~  10/31(金) 23:59まで\n当選発表 11/1(土) 12:00頃\n\n[通常先着販売]\n11/1(土) 20:00~\n\n出演時間🎙️\nライブ : 17:00-17:25\n特典会 : 17:35-18:45(D)\n\n🌟お目当て特典 : 写メ券",
+      "venue_hint": "EBiS303",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ce7a/2025-10-28/0-1761657172131.jpg",
+        "https://attachments.timetreeapp.com/public_event/e99a/2025-11-22/0-1763798548032.jpg"
+      ],
+      "type": "Other",
+      "venue": "EBiS303",
+      "venue_uid": "ec85a1e3-67a1-4a6a-a8b3-e0db46d9dc5c"
+    },
+    {
+      "date": "2025-11-24",
+      "event": "『TOKYO GIRLS GIRLS』",
+      "timetree_id": "2811012891142996195",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811012891142996195",
+      "note": "@ 恵比寿ガーデンホール\n\n⏱️ 開場：8:00/開演：8:20\n※変更の可能性あり\n🎟️ 前方10000円 通常4000円 当日各+1000円\n(入場時1ドリンク必須)\n\n出演時間🎙️\nLIVE : 12:35-13:00\n特典会 : 13:10-14:30(B)\n\n🌟 お目当て特典 : 写メ券",
+      "location_name": "The Garden Hall The Garden Room",
+      "venue_hint": "The Garden Hall The Garden Room",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0e18/2025-10-17/0-1760700030360.jpg",
+        "https://attachments.timetreeapp.com/public_event/c7ab/2025-11-19/0-1763522230034.jpg"
+      ],
+      "type": "Other",
+      "venue": "The Garden Hall The Garden Room",
+      "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
+    },
+    {
+      "date": "2025-11-25",
+      "event": "『HEROINES LEAGUE 入れ替え戦vol.2』",
+      "timetree_id": "2823206129174004509",
+      "timetree_url": "https://timetr.ee/p/akishibu/2823206129174004509",
+      "note": "@ 恵⽐寿ガーデンホール\n\n🎟️HEROINES FC先行 19:00-販売開始！\nhttps://heroines.jp/news/public/_/2pg85cgw0zued418.html\n\n🔽FC投票受付はこちらから\nhttps://heroines.jp/news/public/_/4aetwh7mo5n1nw72.html\n\n🔽一般発売 11/2 21:00〜販売開始！\nhttps://ticketdive.com/event/heroinesleague251125",
+      "venue_hint": "恵⽐寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/19f3/2025-10-29/0-1761733544574.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "恵⽐寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2025-11-26",
+      "event": "『STAY TUNE! 渋谷サーキット』",
+      "timetree_id": "2802803432453260134",
+      "timetree_url": "https://timetr.ee/p/akishibu/2802803432453260134",
+      "note": "@ WWW\n\n🎟️ 一般4500円/当日各+1000円(各+1Drink)\n\n出演時間🎙️\nライブ : 16:15-16:40\n特典会 : 16:55-18:05(TK NIGHT CLUB1)\n\n🌟お目当て特典 : 写メ券",
+      "location_name": "WWW",
+      "venue_hint": "WWW",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fd11/2025-10-07/0-1759803799575.jpg",
+        "https://attachments.timetreeapp.com/public_event/9628/2025-11-25/0-1764064835118.jpg",
+        "https://attachments.timetreeapp.com/public_event/c0a5/2025-11-25/0-1764064835960.jpg",
+        "https://attachments.timetreeapp.com/public_event/0208/2025-11-25/0-1764064836960.jpg",
+        "https://attachments.timetreeapp.com/public_event/1b95/2025-11-25/0-1764064838671.jpg"
+      ],
+      "type": "Other",
+      "venue": "WWW",
+      "venue_uid": "1c36daf9-c7cc-45ab-b59b-339f6cecf98d"
+    },
+    {
+      "date": "2025-11-29",
+      "event": "『SPA!FES 2025』",
+      "timetree_id": "2791930827257102762",
+      "timetree_url": "https://timetr.ee/p/akishibu/2791930827257102762",
+      "note": "@ SHIBUYA RING\n\n⏱️ OPEN 11:00 START 11:45 ※10:30予定\n🎟️ 料金（+1D）\n      前方エリアチケット（duo,WESTのみ） ：¥11,000\n      一般エリアチケット ：¥5,000\n🗓️先行抽選(クレジットカードのみ)\n     10/10（金）18:00~10/27(月)23:59\n     一般発売\n     10/31(金）21:00~\n\n出演時間🎙️\nライブ : 19:45-20:05\n特典会 : 20:45-21:55(終演後)\n\n🌟 お目当て特典 : 写メ券",
+      "location_name": "SHIBUYA RING",
+      "venue_hint": "SHIBUYA RING",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5a8e/2025-10-10/0-1760087105623.jpg",
+        "https://attachments.timetreeapp.com/public_event/4613/2025-11-27/0-1764238399680.jpg",
+        "https://attachments.timetreeapp.com/public_event/9078/2025-11-27/0-1764238400530.jpg"
+      ],
+      "type": "Festival",
+      "venue": "SHIBUYA RING",
+      "venue_uid": "66a17665-5593-4780-8be2-a083caea3c36"
+    },
+    {
+      "date": "2025-11-30",
+      "event": "『TIF学園 「学園祭」秋』",
+      "timetree_id": "2821837485449888672",
+      "timetree_url": "https://timetr.ee/p/akishibu/2821837485449888672",
+      "note": "@ ベルサール渋谷ガーデン\n\n⏱️ 開場：9:30 予定\n\n出演時間🎙️\nライブ : 16:20-16:40(A)\n特典会 : 18:00-19:30(3)\nクラス別企画 : 20:30-22:00(H)\n\n🎟️ 入場料： 優先エリアチケット ¥9,000-\n                     一般エリアチケット ¥4,000-\n                    （別途＋1D）\n\n🔽TIF学園青春チケット\nhttps://ticketvillage.jp/events/13621\n※当日は、入場料の他に上記の学園祭特別チケットをお買い求めいただければ、各種コンテンツにご参加いただけます。\n\n\n🔽公式サイト\nhttps://www.tifgakuen.com/",
+      "location_name": "ベルサール渋谷ガーデン",
+      "venue_hint": "ベルサール渋谷ガーデン",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/aa55/2025-11-09/0-1762700614801.jpg",
+        "https://attachments.timetreeapp.com/public_event/19bd/2025-11-25/0-1764069309219.jpg",
+        "https://attachments.timetreeapp.com/public_event/23af/2025-11-25/0-1764069310034.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ベルサール渋谷ガーデン",
+      "venue_uid": "d16beb51-bb1d-4c43-bd8d-4f406724552c"
+    },
+    {
+      "date": "2025-12-02",
+      "event": "『AGE FES』",
+      "timetree_id": "2827551858118050526",
+      "timetree_url": "https://timetr.ee/p/akishibu/2827551858118050526",
+      "note": "📍代官山UNIT\n\n⏱️ OPEN TBA / START TBA\n※変更の可能性あり\n🎟️ 前方 6000円 /一般 2500円 /女性1500円 / 当日+¥1,000円(1D別)\n11/15(土)19:00-発売開始！\n\n出演時間🎙️\nライブ : 20:05-20:30\n特典会 : 21:30-22:30(終演後)\n\n🌟お目当て特典 : 写メ券",
+      "location_name": "UNIT",
+      "venue_hint": "UNIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3863/2025-11-14/0-1763123988713.jpg",
+        "https://attachments.timetreeapp.com/public_event/f487/2025-11-25/0-1764069436674.jpg"
+      ],
+      "type": "Festival",
+      "venue": "UNIT",
+      "venue_uid": "8e4efb63-5b05-4449-9de8-9b8477b499cd"
+    },
+    {
+      "date": "2025-12-06",
+      "event": "『YANFES2025』",
+      "timetree_id": "2833494420553154920",
+      "timetree_url": "https://timetr.ee/p/akishibu/2833494420553154920",
+      "note": "@ Zepp Haneda\n\n⏱️ OPEN 9:00 / START 10:00\n🎟️ 前方 7,000円/一般 2,500円/女性 1,500円　　　　　\n      11/13(木)22:30-販売開始！\n\n出演時間🎙️\nライブ : 13:15-13:40\n特典会 : 13:50-14:50(C)",
+      "location_name": "Zepp Haneda TOKYO",
+      "venue_hint": "Zepp Haneda TOKYO",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d22f/2025-11-12/0-1762946856156.jpg",
+        "https://attachments.timetreeapp.com/public_event/c8f6/2025-12-02/0-1764676581044.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Zepp Haneda TOKYO",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
+    },
+    {
+      "date": "2025-12-07",
+      "event": "DJ KOO presents 『KOOmic idol Festa』",
+      "timetree_id": "2811015779089072374",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811015779089072374",
+      "note": "@ 品川ステラボール\n\n🎟️ 料金：前方10000円 通常5000円 当日+1000円\n(入場時1ドリンク代600円必須)\n\n出演時間🎙️\nライブ : 14:55-15:15\n特典会 : 15:25-16:35(A)\n\n🌟お目当て特典 : 写メ券",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4121/2025-11-15/0-1763217553023.jpg",
+        "https://attachments.timetreeapp.com/public_event/ff56/2025-11-25/0-1764069390149.jpg"
+      ],
+      "type": "Other",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2025-12-10",
+      "event": "『HEROINES LEAGUE 入れ替え戦 vol.3』",
+      "timetree_id": "2838627406634237998",
+      "timetree_url": "https://timetr.ee/p/akishibu/2838627406634237998",
+      "note": "@ 豊洲PIT \n\n⏱️ open 10:00 / start 11:00\n🎫 前方チケット ￥8,000/一般チケット ￥3,500/女性チケット ￥2,500\n\n出演時間🎙️\nライブ : 13:35-14:00\n特典会 : 終演後\n\n🔽FC先行(11/21 23:59まで)\nhttps://heroines.jp/news/public/_/04e1wb6e41bmzjmq.html\n\n🔽FC投票(11/26 23:59まで)\nhttps://heroines.jp/news/public/_/zwuo8kb975o6iaor.html\n\n🔽一般販売11/23 21:00~\nhttps://ticketdive.com/event/heroinesleague251210",
+      "location_name": "豊洲PIT",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f5e9/2025-12-08/0-1765200293044.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-12-10",
+      "event": "アキシブproject presents『夢千乱舞-2025感謝祭-』",
+      "timetree_id": "2827552233877357192",
+      "timetree_url": "https://timetr.ee/p/akishibu/2827552233877357192",
+      "note": "@ 神田明神ホール\n\n⏱️ 開場15:30／開演15:50\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／女性0円／当日各+1,000円（D代別）\n\n出演時間🎙️\nライブ : 20:20-20:45\n特典会 : 終演後\n\n🌟お目当て特典 : 写メ券(前方のみ)\n\n🔗 販売期間：11月10日(月)22:00-12月10日(水)13:00",
+      "location_name": "神田明神ホール",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f197/2025-12-02/0-1764680190882.jpg",
+        "https://attachments.timetreeapp.com/public_event/07f2/2025-12-02/0-1764671165215.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2025-12-12",
+      "event": "サクヤコノハナ 主催ライブ『ワンマン満開ふぇすてぃばる~大阪城音楽堂で待ってんで~』",
+      "timetree_id": "2811015975986479133",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811015975986479133",
+      "note": "📍FANJ twice\n\n⏱️ 開場18:30/開演19:00\n🎟️ 一般無料0円!!/優先¥3,000/優先当日+¥1,000\n※別途1D代必要\n販売期間 : 11月15日(土)12:00～12月12日(金)15:30\n\n※ご本人様確認書類必須\n※再入場不可\n※優先エリア有り\n※入場順：①優先整理番号順②一般整理番号順③当日券整列順",
+      "location_name": "americamura FANJ twice",
+      "venue_hint": "americamura FANJ twice",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2952/2025-11-14/0-1763124594175.jpg"
+      ],
+      "type": "Other",
+      "venue": "americamura FANJ twice",
+      "venue_uid": "85e15ccb-25ee-423f-8b84-e4120eb10731"
+    },
+    {
+      "date": "2025-12-13",
+      "event": "『GIRLS☆DELIGHT#369-大阪城野音無銭祭-』",
+      "timetree_id": "2831279992155881781",
+      "timetree_url": "https://timetr.ee/p/akishibu/2831279992155881781",
+      "note": "@ 大阪城音楽堂\n\n⏱️ 開場9:30／開演10:00\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／当日各+1,000円（D代別）※前売D代事前徴収\n\n出演時間🎙️\nライブ : 13:50-14:10\n特典会 : 14:20-15:20(D)\n\n🌟お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "大阪城音楽堂",
+      "venue_hint": "大阪城音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9467/2025-11-27/0-1764238219528.jpg",
+        "https://attachments.timetreeapp.com/public_event/6379/2025-11-30/0-1764504367741.jpg"
+      ],
+      "type": "Other",
+      "venue": "大阪城音楽堂",
+      "venue_uid": "75722583-0863-4323-8fd7-b6d9c9b97277"
+    },
+    {
+      "date": "2025-12-14",
+      "event": "『GIRLS☆DELIGHT#370-大阪冬の無銭祭-』",
+      "timetree_id": "2831280317365436886",
+      "timetree_url": "https://timetr.ee/p/akishibu/2831280317365436886",
+      "note": "@ 松下IMPホール\n\n⏱️ 開場11:00／開演11:30\n🎟️ 前売優先エリア3,000円／当日優先エリア4,000円／前売当日一般エリア0円（※前売D代事前徴収）\n販売期間 : 11月19日(水)22:00-12月14日(日)8:00\n\n出演時間🎙️\nライブ : 12:30-12:50\n特典会 : 14:00-15:00(終演後)\n\n🌟お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "松下IMPホール",
+      "venue_hint": "松下IMPホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a7d8/2025-11-19/0-1763539622920.jpg",
+        "https://attachments.timetreeapp.com/public_event/5332/2025-12-02/0-1764671105636.jpg"
+      ],
+      "type": "Other",
+      "venue": "松下IMPホール",
+      "venue_uid": "6ee7fa2e-9eee-4217-a28b-9417a9a8ea85"
+    },
+    {
+      "date": "2025-12-17",
+      "event": "『AISTEAL-VeatsSHIBUYA-ワンマン応援祭』",
+      "timetree_id": "2811016093787702258",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811016093787702258",
+      "note": "@ 新宿ReNY\n\n⏱️ 開場17:00／開演17:20\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／当日各+1,000円（D代別）\n販売期間：11月24日(月祝)22:00-12月17日(水)15:00\n\n出演時間🎙️\nライブ : 19:30-19:50\n特典会 : 20:45-21:55(終演後)",
+      "location_name": "新宿ReNY",
+      "venue_hint": "新宿ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6057/2025-11-23/0-1763893151325.jpg",
+        "https://attachments.timetreeapp.com/public_event/bfcf/2025-12-03/0-1764758745773.jpg"
+      ],
+      "type": "Other",
+      "venue": "新宿ReNY",
+      "venue_uid": "e86f5b7d-6263-4ed1-85fe-db0f738e0515"
+    },
+    {
+      "date": "2025-12-20",
+      "event": "『GIRLS☆DELIGHT-ゆるイベ前夜祭-』",
+      "timetree_id": "2811016704771965307",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811016704771965307",
+      "note": "@ 横浜ランドマークホール\n\n⏱️ 開場11:00／開演11:30\n🎟️ 前売優先5,000円／前売一般2,000円／当日各+1,000円（D代別）\n\n出演時間🎙️\nライブ : 13:40-14:05\n特典会 : 14:15-15:45(中物販)\n\n｡.୨୧ Special topics ୨୧.｡\nコンセプトが地味にある私服⁉️公演\nライプラカバー楽曲あり🎧\n\n販売期間：12月12日(金)22:00-12月20日(土)9:00",
+      "location_name": "ランドマークホール (Landmark Hall)",
+      "venue_hint": "ランドマークホール (Landmark Hall)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/05b2/2025-12-11/0-1765447808663.jpg",
+        "https://attachments.timetreeapp.com/public_event/3f1a/2025-12-11/0-1765447809441.jpg"
+      ],
+      "type": "Other",
+      "venue": "ランドマークホール (Landmark Hall)",
+      "venue_uid": "fe632cc6-c550-4c4a-a05d-83cc380399f3"
+    },
+    {
+      "date": "2025-12-21",
+      "event": "『GIRLS☆DELIGHT-シャッフルユニットSP-』",
+      "timetree_id": "2811016815291875610",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811016815291875610",
+      "note": "@ 横浜ランドマークホール\n\n1部 ⏱️開場11:30／開演12:00\n💙葵ふう❤️如月なな 🩵水琴まなみ\n\n2部 ⏱️開場15:00／開演15:30\n💚茉井良菜 💛平沢かえ\n\n3部 ⏱️開場18:30／開演19:00\n🧡清見るん\n\n【3部通しチケット】\n優先15,000円／一般5,000円（D代別）\n🎟️ https://livepocket.jp/e/girlsdelight_shuffle2026\n販売期間 : 12/11(木)22:00-12/21(日)9:00\n\n【各部チケット】\n優先6,000円／一般2,000円（D代別）\n🎟️ https://livepocket.jp/e/girlsdelight_shuffle2026123\n販売期間 : 12/17(水)22:00-12/21(日)9:00",
+      "location_name": "ランドマークホール (Landmark Hall)",
+      "venue_hint": "ランドマークホール (Landmark Hall)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f6cc/2025-12-16/0-1765884865425.jpg",
+        "https://attachments.timetreeapp.com/public_event/b2a6/2025-12-16/0-1765884877541.jpg",
+        "https://attachments.timetreeapp.com/public_event/fb0a/2025-12-16/0-1765884880939.jpg"
+      ],
+      "type": "Other",
+      "venue": "ランドマークホール (Landmark Hall)",
+      "venue_uid": "fe632cc6-c550-4c4a-a05d-83cc380399f3"
+    },
+    {
+      "date": "2025-12-23",
+      "event": "『アキシブproject 単独公演 -Anniversary SP-』",
+      "timetree_id": "2827552862662246765",
+      "timetree_url": "https://timetr.ee/p/akishibu/2827552862662246765",
+      "note": "@ SHIBUYA DIVE \n\n⏱️ 開場18:30／開演19:00\n🎟️前方エリア4000円／一般エリア1000円（D代別）\n販売期間 : 11/28(金)22:00-12/23(火)15:00\n\nこの日はヒロインズデビュー衣装👗♡\nそして現体制解禁曲も...🎼\n是非お見逃しなく.ᐟ.ᐟ⟡.·",
+      "location_name": "SHIBUYA DIVE",
+      "venue_hint": "SHIBUYA DIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/716c/2025-11-27/0-1764254949428.jpg"
+      ],
+      "type": "Concert",
+      "venue": "SHIBUYA DIVE",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+    },
+    {
+      "date": "2025-12-24",
+      "event": "『HEROINES Xmas DAY1』",
+      "timetree_id": "2811016941993411353",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811016941993411353",
+      "note": "@ Kanadevia Hall\n\n⏱️ OPEN 12:30 / START 13:00\n🎟️ 前方チケット¥8,500 /一般チケット¥3,500 /女性チケット¥2,500\n\n出演時間🎙️\nライブ : 18:20-18:45\n特典会 : 18:55-19:55(A)\n\n11/28 21:00-販売開始！",
+      "location_name": "Kanadevia Hall",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5f5e/2025-11-27/0-1764238559219.jpg",
+        "https://attachments.timetreeapp.com/public_event/70ed/2025-12-14/0-1765674744389.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2025-12-25",
+      "event": "『HEROINES Xmas DAY2』",
+      "timetree_id": "2811017033009807966",
+      "timetree_url": "https://timetr.ee/p/akishibu/2811017033009807966",
+      "note": "@ Kanadevia Hall\n\n⏱️ OPEN 9:30/ START 10:00\n🎟️ 前方チケット ¥8,500/一般チケット ¥3,500/女性チケット ¥2,500\n\n出演時間🎙️\nライブ : 12:05-12:25\n特典会 : 12:35-13:35(C)\n\n11/28 21:30-販売開始！",
+      "location_name": "Kanadevia Hall",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0728/2025-11-27/0-1764238673712.jpg",
+        "https://attachments.timetreeapp.com/public_event/353c/2025-12-14/0-1765674827330.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2025-12-27",
+      "event": "Sweet Alley presents『SWEET WINTER 2025』",
+      "timetree_id": "2827553002944938766",
+      "timetree_url": "https://timetr.ee/p/akishibu/2827553002944938766",
+      "note": "@ 品川グランドホール \n\n⏱️ 開場11:00／開演11:30\n🎟️ 前売優先エリア3,000円／前売一般エリア1,000円／当日各+1,000円（D代別）※前売D代事前徴収\n販売期間：11月25日(火)22:00-12月27日(土)8:00\n\n出演時間🎙️\nライブ : 14:15-14:35\n特典会 : 14:45-15:55(A)\n\n🌟お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "品川グランドホール",
+      "venue_hint": "品川グランドホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2d63/2025-11-24/0-1763983116141.jpg",
+        "https://attachments.timetreeapp.com/public_event/71ca/2025-12-18/0-1766056251481.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川グランドホール",
+      "venue_uid": "50c9bd94-d0d1-4022-846f-af27b241a90b"
+    },
+    {
+      "date": "2025-12-28",
+      "event": "『LEADING PREMIUM 年末感謝祭'25』",
+      "timetree_id": "2852270711112680425",
+      "timetree_url": "https://timetr.ee/p/akishibu/2852270711112680425",
+      "note": "@ SHIBUYA RING\n\n出演時間🎙️\nライブ : 20:35-21:05\n特典会 : 21:05-22:20(終演後)\n\n⏱️ OPEN 10:30/START 11:15\n🎟️ 優先エリアチケット¥12,000 / 一般 ¥6,500 / 当日 ¥7,500\n\n【先行抽選】\n11/6(木)20:00-11/25(火) 23:59\n\n【一般先着】\n11/27(木)20:00-",
+      "location_name": "SHIBUYA RING",
+      "venue_hint": "SHIBUYA RING",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a8c1/2025-12-11/0-1765451252464.jpg",
+        "https://attachments.timetreeapp.com/public_event/40c0/2025-12-19/0-1766163246268.jpg",
+        "https://attachments.timetreeapp.com/public_event/311a/2025-12-24/0-1766578182506.jpg"
+      ],
+      "type": "Other",
+      "venue": "SHIBUYA RING",
+      "venue_uid": "66a17665-5593-4780-8be2-a083caea3c36"
+    },
+    {
+      "date": "2025-12-30",
+      "event": "『HEROINES COUNTDOWN EVE』",
+      "timetree_id": "2853735595482497667",
+      "timetree_url": "https://timetr.ee/p/akishibu/2853735595482497667",
+      "note": "@ Kanadevia Hall\n\n⏱️ OPEN 13:30/ START 14:30\n🎟️ Sチケット ¥8,000（アリーナ前方）/Aチケット ¥4,000（アリーナ後方/第1バルコニー）/Bチケット ¥2,500（第2,3バルコニー）\n\n出演時間🎙️\nライブ : 16:20-16:45\n特典会 : 16:55-17:55(B)\n\n12/11(木)21:00-販売開始.ᐟ.ᐟ",
+      "location_name": "Kanadevia Hall",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bf50/2025-12-10/0-1765365383082.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2025-12-31",
+      "event": "『HEROINES COUNTDOWN 2025-2026』",
+      "timetree_id": "2794468856509186303",
+      "timetree_url": "https://timetr.ee/p/akishibu/2794468856509186303",
+      "note": "@ Kanadevia Hall \n\nSチケット ￥18,000/Aチケット ￥6,000/Bチケット ￥3,000 \n\n出演時間🎙️\nライブ① : 17:30-17:45\nライブ② : 1:40-1:50\n特典会 : 2:50-3:20(B)\n\n🎟️ HEROINES FC先行\nhttps://heroines.jp/news/public/_/ogd1njs4m8xgz5sz.html\n\n🎟️ 9/26 21:00〜 オフィシャル先行\nhttps://t-dv.com/heroinescountdown251231\n\n🎟️ 10/3 19:00〜 プレイガイド一般\nhttps://t-dv.com/heroinescountdown251231",
+      "location_name": "Kanadevia Hall",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6779/2025-09-19/0-1758294646169.jpg",
+        "https://attachments.timetreeapp.com/public_event/d0e6/2025-12-24/0-1766578255361.jpg",
+        "https://attachments.timetreeapp.com/public_event/c678/2025-12-24/0-1766578257728.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2026-01-02",
+      "event": "『謹賀新年！アイドル初夢ライブ 2026 supported by @JAM/ダイキサウンド』",
+      "timetree_id": "2831271392750551894",
+      "timetree_url": "https://timetr.ee/p/akishibu/2831271392750551894",
+      "note": "@ ダイバーシティ東京 プラザ フェスティバル広場\n\n⏱️ 開場11:00／開演12:00（予定）\n🎟️ ＜2 日通し券＞前方スタンディング：¥14,000(税込)／一般スタンディング：¥8,000(税込)\n＜各日券＞前方スタンディング：¥8,000(税込)／一般スタンディング：¥4,500(税込)／2F 指定席：¥5,500(税込)\n【一般販売】12/6(土)10:00〜各公演日前日の 23:59\n\n出演時間🎙️\n縁日 : 12:00-12:40\nライブ : 13:55-14:20\n特典会 : 14:50-15:50(D)\n\n🌟 お目当て特典 : あけおめ動画",
+      "location_name": "ダイバーシティ東京 プラザ",
+      "venue_hint": "ダイバーシティ東京 プラザ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b590/2025-12-08/0-1765185405733.jpg",
+        "https://attachments.timetreeapp.com/public_event/7da0/2025-12-26/0-1766763701452.jpg",
+        "https://attachments.timetreeapp.com/public_event/715b/2025-12-26/0-1766763702277.jpg",
+        "https://attachments.timetreeapp.com/public_event/222d/2025-12-31/0-1767179629328.jpg"
+      ],
+      "type": "Other",
+      "venue": "ダイバーシティ東京 プラザ",
+      "venue_uid": "6c53e801-cc02-4859-b8b5-8503c1641210"
+    },
+    {
+      "date": "2026-01-03",
+      "event": "『GIRLS☆DELIGHT#374-新春SP-』",
+      "timetree_id": "2860477984091882362",
+      "timetree_url": "https://timetr.ee/p/akishibu/2860477984091882362",
+      "note": "@ 品川インターシティホール \n\n⏱️ 開場11:00／開演11:20\n🎫 前売優先エリア3,000円／前売一般エリア1,000円／当日各+1,000円（D代別）\n販売期間：12/4(木)22:00-1/3(土)8:00まで\n\n出演時間🎙️\nライブ : 19:35-19:55\n特典会 : 20:45-21:45(A)\n\n⭐️お目当て特典 : 写メ券(前方のみ)",
+      "location_name": "品川インターシティホール&貸会議室",
+      "venue_hint": "品川インターシティホール&貸会議室",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f293/2025-12-19/0-1766163546491.jpg",
+        "https://attachments.timetreeapp.com/public_event/9e11/2025-12-26/0-1766763960306.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川インターシティホール&貸会議室",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
+    },
+    {
+      "date": "2026-01-04",
+      "event": "『LIVE PLANET新春祭2026』",
+      "timetree_id": "2831271527026999304",
+      "timetree_url": "https://timetr.ee/p/akishibu/2831271527026999304",
+      "note": "@ 品川インターシティホール\n\n⏱️ 開場13:00／開演13:30\n🎟️ 前売優先エリア5,000円／前売一般エリア2,000円／当日各+1,000円（D代別）\n\n出演時間🎙️\nライブ : 18:00-18:20\n特典会 : 18:30-20:00(終演後)\n\n販売期間：12月10日(水)22:00-1月4日(日)11:00まで",
+      "location_name": "品川インターシティホール&貸会議室",
+      "venue_hint": "品川インターシティホール&貸会議室",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b7a3/2025-12-09/0-1765285789321.jpg",
+        "https://attachments.timetreeapp.com/public_event/a210/2025-12-30/0-1767108280022.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川インターシティホール&貸会議室",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
+    },
+    {
+      "date": "2026-01-10",
+      "event": "『HEROINES FES in Nagoya』",
+      "timetree_id": "2852334395881112205",
+      "timetree_url": "https://timetr.ee/p/akishibu/2852334395881112205",
+      "note": "@ COMTEC PORTBASE\n\n⏱️ OPEN 12:00 / START 13:00\n🎟️ 前方8,000円/一般   3,500円/女性   2,500円\n12/9(火)20:00-販売開始！",
+      "location_name": "COMTEC PORTBASE",
+      "venue_hint": "COMTEC PORTBASE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9f7d/2025-12-08/0-1765192756006.jpg"
+      ],
+      "type": "Festival",
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
+    },
+    {
+      "date": "2026-01-11",
+      "event": "『HEROINES 成人式2026 DAY1』",
+      "timetree_id": "2863958340409442786",
+      "timetree_url": "https://timetr.ee/p/akishibu/2863958340409442786",
+      "note": "@ KANDA SQUARE HALL \n\n⏱️ OPEN 12:00 / START 13:00\n🎟️ 前方チケット ¥8,000/一般チケット ¥3,000/女性チケット ¥2,000\n\n出演時間🎙️\nライブ : 16:35-17:00\n特典会 : 17:10-18:10(A)\n\n❤️如月なな振袖特典会\n18:00-19:00",
+      "location_name": "KANDA SQUARE HALL",
+      "venue_hint": "KANDA SQUARE HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/54a6/2025-12-24/0-1766578436864.jpg",
+        "https://attachments.timetreeapp.com/public_event/9fe8/2025-12-24/0-1766578438451.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "KANDA SQUARE HALL",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2026-01-13",
+      "event": "『HEROINES LEAGUE 入れ替え戦 大阪編』",
+      "timetree_id": "2846562851905028667",
+      "timetree_url": "https://timetr.ee/p/akishibu/2846562851905028667",
+      "note": "@ Zepp Osaka Bayside\n\n⏱️ OPEN 13:30 / START 14:00\n\n🎟️ 前方チケット¥8,000/一般チケット¥3,500/女性チケット¥2,500\n\n🔽FC抽選（12/19 23:59まで）\nhttps://heroines.jp/news/public/_/q0jdh1t6vovmx7z4.html\n\n🔽一般先着（12/20  22:00〜）\nhttps://t-dv.com/heroines_league_osaka\n\n🔽FC投票（12/22 23:59まで）\nhttps://heroines.jp/news/public/_/4zcazbgihrdgenbq.html",
+      "location_name": "Zepp Osaka Bayside",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4766/2025-12-15/0-1765793651807.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "清見るん生誕祭-invitation-『るんにゃが魔法をかけたげるっ♪』",
+      "timetree_id": "2810303968647790947",
+      "timetree_url": "https://timetr.ee/p/akishibu/2810303968647790947",
+      "note": "@ SHIBUYA DIVE\n\n⏱️ OPEN 17:00/ START18:00\n      前物販14:00~16:00(チェキ券・グッズ販売、るんのみ特典会あり)\n\n🎟️ 最前15,000円\n最前列確約・生誕Tシャツ（実写）・メッセージ付きブロマイド・前物販参加券・一部撮影可能\n\n🎟️ 前方 6,000円\n前方エリア・前物販参加券・サイン入りブロマイド・一部撮影可能\n\n🎟️ 一般 2,000円\n一般エリア\n\n🎟️ 前物販参加券：¥1,000\n\n◎最前チケット\n12月22日22:00- 受付開始\n（12月25日 15:00当落予定）\n\n◎前方・一般チケット・前物販参加券\n12月25日 22:00- 販売開始",
+      "location_name": "SHIBUYA DIVE",
+      "venue_hint": "SHIBUYA DIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4487/2025-12-23/0-1766459614742.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "SHIBUYA DIVE",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "『TOKYO LOLITA IDOLFESTIVAL .01東京Kawaiiスタジオ原宿5周年記念』",
+      "timetree_id": "2853916903559086482",
+      "timetree_url": "https://timetr.ee/p/akishibu/2853916903559086482",
+      "note": "@ ベルエポック美容専門学校第2校舎ホール\n\n⏱️ 開場11:45/開演12:15\n🎟️ 前方エリア6500円 一般エリア3500円 当日各+1000円\n(入場時1ドリンク必須)\n\n出演時間🎙️\nライブ : 12:20-12:40\n特典会 : 12:45-13:55\n\n【券売スケジュール】\n【前方エリア先行抽選】\n12/20（土）22:00-12/25（木）23:59\n※当落発表12/26（金）12:00予定\n\n【先着販売】\n12/26（金）20:00-1/17（土）21:00",
+      "location_name": "ベルエポック美容専門学校 第2校舎",
+      "venue_hint": "ベルエポック美容専門学校 第2校舎",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1127/2025-12-20/0-1766240428725.jpg",
+        "https://attachments.timetreeapp.com/public_event/c082/2026-01-08/0-1767846910598.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ベルエポック美容専門学校 第2校舎",
+      "venue_uid": "5f732f6f-5b4f-48f2-870a-212ed5fcf935"
+    },
+    {
+      "date": "2026-01-21",
+      "event": "HIGH SPIRITS presents『Hi ! Hi ! Fes. vol.5』",
+      "timetree_id": "2853917041560076570",
+      "timetree_url": "https://timetr.ee/p/akishibu/2853917041560076570",
+      "note": "📍新宿ReNY\n\n⏱️ 開場17:30／開演18:00\n🎫 前売優先5,000円／前売一般2,000円／当日各+1,000円（D代別）\n\n出演時間🎙️\nライブ : 18:20-18:40\n特典会 : 18:50-19:50(B)\n \n販売期間：1月12日(月祝)22:00-1月21日(水)15:00",
+      "location_name": "新宿ReNY",
+      "venue_hint": "新宿ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0cb8/2026-01-11/0-1768155202660.jpg",
+        "https://attachments.timetreeapp.com/public_event/b2f3/2026-01-14/0-1768385807251.jpg"
+      ],
+      "type": "Festival",
+      "venue": "新宿ReNY",
+      "venue_uid": "e86f5b7d-6263-4ed1-85fe-db0f738e0515"
+    },
+    {
+      "date": "2026-01-25",
+      "event": "『IDOLEAD』",
+      "timetree_id": "2853917182379639640",
+      "timetree_url": "https://timetr.ee/p/akishibu/2853917182379639640",
+      "note": "@ キネマ倶楽部 \n\n⏱️ OPEN / START:TBA\n🎟️ 優先エリア¥7,000/一般¥3,000/女性・学生¥1,500\n\n出演時間🎙️\nライブ : 19:55-20:20\n特典会 : 終演後\n\n🌟お目当て特典 : 写メ券\n\n先行抽選：12/22(月)21:00-1/5(月)23:59\n一般発売：1/6(火)21:00-1/24(土)23:59",
+      "location_name": "東京キネマ倶楽部",
+      "venue_hint": "東京キネマ倶楽部",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/33c9/2025-12-23/0-1766459432037.jpg",
+        "https://attachments.timetreeapp.com/public_event/8ebc/2026-01-18/0-1768718533694.jpg"
+      ],
+      "type": "Other",
+      "venue": "東京キネマ倶楽部",
+      "venue_uid": "ed987d96-33d9-457a-be2b-78ab8b936d7e"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "『UTAGE FES Vol.4』",
+      "timetree_id": "2831271718916407941",
+      "timetree_url": "https://timetr.ee/p/akishibu/2831271718916407941",
+      "note": "@ 歌舞伎町タワーステージ \n\n⏱️ OPEN 11:00 / START 12:00\n※変更の可能性あり\n🎟️ VIP ¥10,000 (Tシャツ付) / 一般¥2,500\n※全会場前方エリアあり\n\n出演時間🎙️\nライブ : 13:05-13:25\n特典会 : 13:40-14:50(A)\n\n🌟 お目当て特典 : 写メ券\n\nチケット取扱：Ticket Dive\n先行抽選(VIPチケット/一般チケット)：2025/11/13 (木) 21:00 〜 2025/12/12 (金) 23:59\n一般販売(VIPチケット/一般チケット)：2025/12/13 (土) 21:00 〜 2026/1/26 (月) 23:59",
+      "venue_hint": "歌舞伎町タワーステージ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0c0f/2025-11-29/0-1764386721910.jpg",
+        "https://attachments.timetreeapp.com/public_event/5d18/2025-11-29/0-1764386724418.jpg",
+        "https://attachments.timetreeapp.com/public_event/90d1/2026-01-14/0-1768358512167.jpg",
+        "https://attachments.timetreeapp.com/public_event/70a6/2026-01-14/0-1768358513483.jpg",
+        "https://attachments.timetreeapp.com/public_event/1cc2/2026-01-21/0-1768999889592.jpg",
+        "https://attachments.timetreeapp.com/public_event/6c5f/2026-01-21/0-1768999890689.jpg"
+      ],
+      "type": "Festival",
+      "venue": "歌舞伎町タワーステージ",
+      "venue_uid": "51ad860e-3fa6-4937-91f2-076c9499a1fa"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "『アキシブproject 単独公演-生誕衣装 SP-』",
+      "timetree_id": "2871249859470377131",
+      "timetree_url": "https://timetr.ee/p/akishibu/2871249859470377131",
+      "note": "@ Viblue EBISU\n\n⏱️ 開場18:30/開演19:00\n🎫 前方エリア4000円/一般エリア1000円（D代別）\n\n🎟️ 1/11(日)22:00-販売開始.ᐟ.ᐟ",
+      "location_name": "ViblueEBISU",
+      "venue_hint": "ViblueEBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d86d/2026-01-11/0-1768105577590.jpg"
+      ],
+      "type": "Concert",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2026-01-31",
+      "event": "『HEROINES Party』",
+      "timetree_id": "2865340275102794394",
+      "timetree_url": "https://timetr.ee/p/akishibu/2865340275102794394",
+      "note": "@ 恵比寿ガーデンホール\n\n⏱️ OP 10:00/ST 10:30\n🎟️ 前方7,000円/一般3,000円/女性2,000円\n\n出演時間🎙️\nライブ : 19:35-20:00\n特典会 : 21:25-22:30(終演後)\n\n🌟 お目当て特典 : 写メ券 \n販売期間 : 12/31(水)14:00-1/30(金)23:59",
+      "location_name": "The Garden Hall The Garden Room",
+      "venue_hint": "The Garden Hall The Garden Room",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1f0a/2025-12-30/0-1767108241992.jpg",
+        "https://attachments.timetreeapp.com/public_event/e884/2026-01-19/0-1768831005000.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "The Garden Hall The Garden Room",
+      "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "『hilfe''!!!!!!!!』",
+      "timetree_id": "2887481624874664649",
+      "timetree_url": "https://timetr.ee/p/akishibu/2887481624874664649",
+      "note": "@ 白金高輪SELENE b2\n\n⏱️ 開場15:00 - 開演15:30 \n🎟️ 前方エリア¥3,500- 一般¥1,500-（+1D代）\n\n出演時間🎙️\nライブ : 18:40-19:10\n特典会 : 19:45-(終演後)\n\n1/25 22:00-1/27 23:59 抽選受付\n1/28 当落確認\n1/28 12:00～公演前日の23:59　一般先着発売",
+      "location_name": "白金高輪 セレネ スタジオ SELENE b2",
+      "venue_hint": "白金高輪 セレネ スタジオ SELENE b2",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6c85/2026-01-25/0-1769382632225.jpg"
+      ],
+      "type": "Other",
+      "venue": "白金高輪 セレネ スタジオ SELENE b2",
+      "venue_uid": "3de7431b-c160-412a-b3a0-132a4bcdf6c1"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "『SWEET PARTY』",
+      "timetree_id": "2879871383597171074",
+      "timetree_url": "https://timetr.ee/p/akishibu/2879871383597171074",
+      "note": "@ VeatsSHIBUYA \n\n⏱️ 開場18:00／開演18:45\n🎟️ 前売優先エリア6,000円／前売一般エリア2,000円（D代別）\n\n出演時間🎙️\nライブ : 19:10-19:35\n特典会 : 20:45-22:15\n\n🌟お目当て特典 : 写メ券(前方のみ)\n\n販売期間：1月16日(金)22:00-2月2日(月)15:00",
+      "location_name": "Veats SHIBUYA",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/531b/2026-01-15/0-1768475421022.jpg",
+        "https://attachments.timetreeapp.com/public_event/94e0/2026-01-31/0-1769856558343.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "『ふぃくふぇす！circuit2026』",
+      "timetree_id": "2866758178024931757",
+      "timetree_url": "https://timetr.ee/p/akishibu/2866758178024931757",
+      "note": "@ Spotify O-EAST\n\n⏱️ OPEN 10:30 / START 11:00\n🎟️ 前方¥10,000/一般¥3,500/女性¥2,500\n\n出演時間🎙️\nライブ : 12:40-13:05\n特典会 : 13:15-14:15(並行B)\n\n🌟 お目当て特典 : 10秒動画券\n\n🎟️オフィシャル抽選先行\nhttps://t-dv.com/ficfes260203\n12.27 19:00〜1.7 23:59\n\n🎟️一般チケット\nhttps://t-dv.com/ficfes260203\n1/10(土)22:00-2/2(月)23:59",
+      "location_name": "Spotify O-EAST",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/12fb/2025-12-28/0-1766912205202.jpg",
+        "https://attachments.timetreeapp.com/public_event/87cb/2026-01-26/0-1769434210250.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2026-02-07",
+      "event": "『HEROINES LEAGUE 入れ替え戦 最終決戦』",
+      "timetree_id": "2874600776747925650",
+      "timetree_url": "https://timetr.ee/p/akishibu/2874600776747925650",
+      "note": "@ GARDEN新木場FACTORY\n\n⏱️ OPEN 10:30 / START 11:30\n🎟️ 前方チケット¥8,000/一般チケット¥3,500/女性チケット¥2,500\n\n出演時間🎙️\nライブ : 12:20-12:45\n特典会 : 12:55-13:55(C)\n\nHEROINES FC抽選（1/14 23:59まで）\nhttps://heroines.jp/news/public/_/2fyi3hhevps3g13v.html\n\n一般発売（1/15 22:00〜）\nhttps://t-dv.com/heroines_league0207\n\nFC投票（1/14 23:59まで）\nhttps://heroines.jp/news/public/_/qm630spym3h95ojj.html",
+      "location_name": "GARDEN新木場FACTORY",
+      "venue_hint": "GARDEN新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ec30/2026-02-06/0-1770370463988.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2026-02-08",
+      "event": "【女性限定LIVE】Girls place to be. vo.1  in 池袋 harevutai",
+      "timetree_id": "2881048938261987351",
+      "timetree_url": "https://timetr.ee/p/akishibu/2881048938261987351",
+      "note": "@ 池袋 harevutai \n\n⏱️ 開場17:00/開演17:30\n🎟️ 前方4,000円/一般エリア1,000円（1D代別）\n🌟 お目当て特典 : 写メ券",
+      "location_name": "harevutai",
+      "venue_hint": "harevutai",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3aac/2026-01-17/0-1768615795879.jpg"
+      ],
+      "type": "Other",
+      "venue": "harevutai",
+      "venue_uid": "479159a3-276a-4cbb-8c4f-ea39462db12e"
+    },
+    {
+      "date": "2026-02-09",
+      "event": "茉井良菜生誕祭『らなかわらんど-つよくてにゅーげーむ♡-』",
+      "timetree_id": "2841459780891919074",
+      "timetree_url": "https://timetr.ee/p/akishibu/2841459780891919074",
+      "note": "@ Veats SHIBUYA\n\n⏱️ OPEN/START：17:00/18:00\n\n前物販14:00~16:00(チェキ券・グッズ販売、茉井良菜のみ特典会あり)\n\n💚最前23,000円\n最前列確約・生誕Tシャツ・生誕衣装デコチェキ・サイン入りポストカード・特典会ファストパス券・前物販参加券・一部撮影可能\n\n💚カメコ席 10,000円\n全編静止画撮影可・オリジナル腕章・前物販参加券\n\n💚前方 5,000円\n前方エリア・前物販参加券・サイン入りポストカード・一部撮影可能\n\n💚一般 1,500円\n一般エリア\n\n💚前物販参加券：¥1,000",
+      "location_name": "Veats SHIBUYA",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d0bb/2026-01-24/0-1769220386856.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "『HEROINES February』",
+      "timetree_id": "2875374487348396639",
+      "timetree_url": "https://timetr.ee/p/akishibu/2875374487348396639",
+      "note": "@ 品川ステラボール\n\n⏱️ OP/ST 11:00/11:30\n🎟️ 前方7000円/一般2500円/女性1500円\n\n出演時間🎙️\nライブ : 17:10-17:35\n特典会 : 17:45-18:45(B)\n\n🌟 お目当て特典 : 写メ券",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bf2d/2026-01-17/0-1768621705028.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2026-02-13",
+      "event": "『Peel the Apple 新体制2026 お披露目対バンLIVE -APPLE WEEK Day5』",
+      "timetree_id": "2881098921086501641",
+      "timetree_url": "https://timetr.ee/p/akishibu/2881098921086501641",
+      "note": "@ P.A.R.M.S秋葉原店\n\n⏱️ OPEN17:45/START18:15\n🎟️ 前方¥4,000(税込)+1D/一般¥0+1D\n\n出演時間🎙️\nライブ : 19:00-19:30\n特典会 : 20:50-22:00(終演後)\n\n🌟 お目当て特典 : 一言動画券(前方のみ)\n\n①抽選先行：1月24日(土)10：00〜1月27日(火)23：59\n②一般先着：1月28日(水)18：00〜2月12日(木)23：59",
+      "location_name": "P.A.R.M.S 秋葉原店",
+      "venue_hint": "P.A.R.M.S 秋葉原店",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b7ff/2026-01-24/0-1769219446111.jpg",
+        "https://attachments.timetreeapp.com/public_event/1426/2026-02-04/0-1770214235497.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "P.A.R.M.S 秋葉原店",
+      "venue_uid": "0c1cafb0-d9aa-4794-b5ef-63c5a36a4dec"
+    },
+    {
+      "date": "2026-02-14",
+      "event": "『HEROINES VALENTINE DAY1』",
+      "timetree_id": "2875374582047392041",
+      "timetree_url": "https://timetr.ee/p/akishibu/2875374582047392041",
+      "note": "@ 品川ステラボール \n\n⏱️ OPEN 9:00 / START 9:30\n🎟️ 前方 9,000円/一般 3,500円/女性 2,500円\n\n出演時間🎙️\nライブ : 12:15-12:35\n特典会 : 12:45-13:45(C)\n\n🌟 お目当て特典 : バレンタインブロマイド",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e13a/2026-01-24/0-1769219968227.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2026-02-15",
+      "event": "『HEROINES VALENTINE DAY2』",
+      "timetree_id": "2875374839778984571",
+      "timetree_url": "https://timetr.ee/p/akishibu/2875374839778984571",
+      "note": "@ 神田スクエアホール\n\n⏱️ OPEN 11:00 / START 11:30\n🎟️ 前方 9,000円/一般 3,500円/女性 2,500円\n\n出演時間🎙️\nライブ : 16:30-16:55\n特典会 : 17:05-18:05(A)\n\n🌟 お目当て特典 : チョコプレゼント🍫\n1/25 22:00-販売開始.ᐟ.ᐟ",
+      "location_name": "KANDA SQUARE HALL",
+      "venue_hint": "KANDA SQUARE HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3413/2026-01-24/0-1769253619090.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "KANDA SQUARE HALL",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "如月なな生誕祭2026『なっなと秘密のお茶会』",
+      "timetree_id": "2863960589361692900",
+      "timetree_url": "https://timetr.ee/p/akishibu/2863960589361692900",
+      "note": "@ SHIBUYA DIVE\n\n📸 前物販14:00~16:00\n(チェキ券・グッズ販売、ななのみ特典会あり)\n⏱️ OPEN / START：17:00 / 18:00\n\n◎最前15,000円\n最前列確約・生誕Tシャツ（実写）・メッセージ付きブロマイド・前物販参加券・一部撮影可能\n🎟️ 2/4 21:00-受付開始.ᐟ.ᐟ(2/7 15:00頃当落予定)\n\n◎前方 6,000円\n前方エリア・前物販参加券・サイン入りブロマイド・一部撮影可能\n🎟️ 2/7 22:30-販売開始.ᐟ.ᐟ\n\n◎一般 2,000円\n一般エリア\n🎟️ 2/7 22:30-販売開始.ᐟ.ᐟ\n\n◎前物販参加券：¥1,000\n🎟️ 2/7 22:30-販売開始.ᐟ.ᐟ",
+      "location_name": "SHIBUYA DIVE",
+      "venue_hint": "SHIBUYA DIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0fd9/2026-02-04/0-1770214623162.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "SHIBUYA DIVE",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
+    },
+    {
+      "date": "2026-02-20",
+      "event": "『THE HEROINES』",
+      "timetree_id": "2879871969465942270",
+      "timetree_url": "https://timetr.ee/p/akishibu/2879871969465942270",
+      "note": "@ Zepp Shinjuku\n\n⏱️ OP/ST 15:00/16:00\n🎟️ 前方7000円/一般3000円/女性2500円\n\n\n出演時間🎙️\nライブ : 17:00-17:30\n特典会 : 17:40-18:40(A)",
+      "location_name": "Zepp Shinjuku (TOKYO)",
+      "venue_hint": "Zepp Shinjuku (TOKYO)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/838c/2026-01-17/0-1768621275871.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Shinjuku (TOKYO)",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
+    },
+    {
+      "date": "2026-02-22",
+      "event": "『HEROINES CATITUDE 』",
+      "timetree_id": "2875374081373324216",
+      "timetree_url": "https://timetr.ee/p/akishibu/2875374081373324216",
+      "note": "@ GARDEN 新木場 FACTORY \n\n⏱️ OPEN 11:00  START 12:00\n🎟️ 前方チケット7,000円（前方エリア)/一般チケット：2,222円\n\n出演時間🎙️\nライブ : 12:50-13:15\n特典会 : 13:25-14:25(C)\n\n🌟 お目当て特典 : 猫耳ランチェキ",
+      "location_name": "GARDEN新木場FACTORY",
+      "venue_hint": "GARDEN新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b207/2026-01-13/0-1768302769834.jpg",
+        "https://attachments.timetreeapp.com/public_event/93a6/2026-02-12/0-1770877045266.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2026-02-23",
+      "event": "『GIRLS☆DELIGHT#383』g",
+      "timetree_id": "2875374936751292447",
+      "timetree_url": "https://timetr.ee/p/akishibu/2875374936751292447",
+      "note": "@ シティホール五反田\n\n⏱️ 開場8:45／開演9:00\n🎟️ 前売優先エリア5,000円／前売一般エリア2,000円／当日各+1,000円（1D代別）\n\n🌟お目当て特典 : 写メ券(前方のみ)\n\n販売期間：1月25日(日)22:00-2月23日(月祝)8:00まで",
+      "venue_hint": "シティホール五反田",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0be0/2026-02-20/0-1771556407289.jpg",
+        "https://attachments.timetreeapp.com/public_event/151e/2026-02-20/0-1771556411522.jpg"
+      ],
+      "type": "Other",
+      "venue": "シティホール五反田",
+      "venue_uid": "be864719-ec7f-475c-9e03-ceb130a5961a"
+    },
+    {
+      "date": "2026-02-24",
+      "event": "『アキシブproject  平沢かえ卒業公演』",
+      "timetree_id": "2887912545746632755",
+      "timetree_url": "https://timetr.ee/p/akishibu/2887912545746632755",
+      "note": "@ GRIT at shibuya\n\n⏱️ OPEN / START：17:00 / 18:00\n前物販14:00~16:00(チェキ券 平沢かえのみ特典会あり)\n\n🎟️ 最前8,000円\n最前エリア/特別一言メッセージ入りブロマイド/前物販参加券\n\n🎟️ 前方 5,000円\n前方エリア/特別ブロマイド/前物販参加券\n \n🎟️ 後方 2,000円\n\n◎最前チケット\n1/28 18:00- 1/30 23:59 抽選\n(1/31 15:00頃 当落発表)\n\n◎前方・後方チケット\n1/31 22:30-2/24 13:00\n\n\n\n💛卒業公演支援チケット\nhttps://livepocket.jp/e/kae_lastap\n\n◾︎50,000円\nサイン入りロンT 氏名入り\n\n◾︎30,000円\nラストメッセージムービー\n\n◾︎20,000円\n平沢かえ過去グッズくじ\n\n◾︎10,000円\n一言メッセージブロマイド",
+      "location_name": "GRIT",
+      "venue_hint": "GRIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5b49/2026-01-28/0-1769591226846.jpg"
+      ],
+      "type": "Other",
+      "venue": "GRIT",
+      "venue_uid": "6f33b378-82d2-4c71-9f41-93f780dfb245"
+    },
+    {
+      "date": "2026-02-27",
+      "event": "『HEROINES FES』",
+      "timetree_id": "2887911646789845487",
+      "timetree_url": "https://timetr.ee/p/akishibu/2887911646789845487",
+      "note": "@ LaLa arena TOKYO-BAY\n\n2/27(金)👗CINDERELLA STAGE👗\n出演時間🎙️\nライブ : 16:30-16:55\n特典会 : 17:15-18:15(E)\n🌟お目当て特典 : 5秒動画券\n\n2/28(土)新体制お披露目🪄.⋆⟡\n👑PRINCESS STAGE👑\n出演時間🎙️\nライブ : 12:05-12:25\n特典会 : 12:45-13:45(D)\n🌟お目当て特典 : 5秒動画券\n\n3/1(日)👑PRINCESS STAGE👑\n出演時間🎙️\nライブ : 15:20-15:50\n特典会 : 16:10-17:10(B)\n🌟お目当て特典 : 5秒動画券\n\n🎟️ 1/27 22:00-販売開始.ᐟ.ᐟ",
+      "location_name": "LaLa arena TOKYO-BAY",
+      "venue_hint": "LaLa arena TOKYO-BAY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9ccb/2026-01-26/0-1769433895070.jpg",
+        "https://attachments.timetreeapp.com/public_event/13e9/2026-02-20/0-1771557516941.jpg",
+        "https://attachments.timetreeapp.com/public_event/7c8b/2026-02-20/0-1771557519104.jpg",
+        "https://attachments.timetreeapp.com/public_event/9927/2026-02-27/0-1772172025264.jpg"
+      ],
+      "type": "Festival",
+      "venue": "LaLa arena TOKYO-BAY",
+      "venue_uid": "629bdaf0-807e-473e-a088-3c96441c1e6b"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "『IDOL ∞ INFINITY vol.18』",
+      "timetree_id": "2883999987197232050",
+      "timetree_url": "https://timetr.ee/p/akishibu/2883999987197232050",
+      "note": "@ duo MUSIC EXCHANGE\n\n⏱️ OPEN18:00 / START 18:30\n🎟️ 前売¥6,000/一般¥3,000(当日 各+¥1,000) +1ドリンク\n\n出演時間🎙️\nライブ : 20:40-21:05\n特典会 : 21:15-22:15(終演後)\n\n🌟お目当て特典 : 2s写メ券(指名可能)\n\n1/29(木)20:00-販売開始.ᐟ.ᐟ",
+      "location_name": "duo MUSIC EXCHANGE",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/089f/2026-01-28/0-1769600743426.jpg",
+        "https://attachments.timetreeapp.com/public_event/878c/2026-01-28/0-1769600745845.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-03-07",
+      "event": "『IDORISE!! FESTIVAL 2026』",
+      "timetree_id": "2840938998172434806",
+      "timetree_url": "https://timetr.ee/p/akishibu/2840938998172434806",
+      "note": "@ Spotify O-EAST、Spotify O-WEST、Spotify O-nest、Spotify O-Crest、duo MUSIC EXCHANGE、WOMB、clubasia、LOFT9 Shibuya SHIBUYA RING (※9会場連動)\n\n⏱️ 開場/開演：10:00/11:00 ※リストバンド交換あり\n🎟️ 1DAYチケット¥8,200/2DAYSチケット¥15,000/VIPチケット¥16,000(VIP観覧エリアはO-EASTのみ)\n\n各税込/各日1D代別途\nチケット取扱：e+(スマチケ限定)\ne+2次先行受付期間：11/21 (金) 16:00〜12/14(日) 23:59\ne+受付URL:\n\n3/7(土)📍Spotify O-Crest\n出演時間🎙️\nライブ : 16:00-16:25\n特典会 : 16:45-17:45(ATOM5F)\n\n3/8(日)📍club asia\n出演時間🎙️\nライブ : 15:05-15:30\n特典会 : 15:45-16:45",
+      "venue_hint": "Spotify O-EAST、Spotify O-WEST、Spotify O-nest、Spotify O-Crest、duo MUSIC EXCHANGE、WOMB、clubasia、LOFT9 Shibuya SHIBUYA RING (※9会場連動)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e61a/2025-11-22/0-1763834317081.jpg",
+        "https://attachments.timetreeapp.com/public_event/6383/2025-11-22/0-1763834317836.jpg",
+        "https://attachments.timetreeapp.com/public_event/2ba5/2025-12-19/0-1766135491601.jpg",
+        "https://attachments.timetreeapp.com/public_event/358f/2026-02-21/0-1771669366579.jpg",
+        "https://attachments.timetreeapp.com/public_event/d1ca/2026-02-21/0-1771669369238.jpg",
+        "https://attachments.timetreeapp.com/public_event/0d60/2026-02-27/0-1772176589748.jpg",
+        "https://attachments.timetreeapp.com/public_event/871e/2026-02-27/0-1772176590650.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Spotify O-EAST、Spotify O-WEST、Spotify O-nest、Spotify O-Crest、duo MUSIC EXCHANGE、WOMB、clubasia、LOFT9 Shibuya SHIBUYA RING (※9会場連動)",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "『LUNA PARADE』",
+      "timetree_id": "2896591428155032368",
+      "timetree_url": "https://timetr.ee/p/akishibu/2896591428155032368",
+      "note": "@ 白金高輪SELENE b2 \n\n⏱️ 開場 16:45 / 開演 17:15\n　※変更の可能性がございます。\n🎟️ 前方 ¥4,000- / 一般 ¥1,500-（各種+1D代）\n\n◎抽選販売期間\n2月23日（月祝）19:00〜2月26日（木）23:59\n　※当落 2月27日（金）12:00\n\n◎先着販売期間\n2月27日（金）22:00〜3月9日（月）23:59\n\n出演時間🎙️\nライブ : 18:30-18:55\n特典会 : 19:05-20:20(A)\n\n🌟 お目当て特典 : 一言動画券",
+      "location_name": "白金高輪 セレネ スタジオ SELENE b2",
+      "venue_hint": "白金高輪 セレネ スタジオ SELENE b2",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fd24/2026-02-26/0-1772076246438.jpg",
+        "https://attachments.timetreeapp.com/public_event/b883/2026-03-06/0-1772786620255.jpg"
+      ],
+      "type": "Other",
+      "venue": "白金高輪 セレネ スタジオ SELENE b2",
+      "venue_uid": "3de7431b-c160-412a-b3a0-132a4bcdf6c1"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "『HEROINES WHITEDAY』",
+      "timetree_id": "2900012570370851802",
+      "timetree_url": "https://timetr.ee/p/akishibu/2900012570370851802",
+      "note": "@ 豊洲PIT\n\n⏱️ OPEN13:00/START13:40\n🎟️ 前方チケット ￥8,000/一般チケット ￥3,000/女性チケット ￥2,000/ホワイトデーお返しチケット ￥1,000（数量限定）\n\n出演時間🎙️\nライブ : 15:25-15:50\n特典会 : 16:00-17:00",
+      "location_name": "豊洲PIT",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/48ee/2026-02-26/0-1772075861375.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-03-14",
+      "event": "『死舞夜炎舞 弍零弍陸』",
+      "timetree_id": "2912289851919254481",
+      "timetree_url": "https://timetr.ee/p/akishibu/2912289851919254481",
+      "note": "@ SHIBUYA VIDENT\n\n⏱️ OPEN12:30/START13:00\n🎟️ 優先入場券 ¥3,000 / 一般 ¥500（当日 各¥1,000up）\n\n出演時間🎙️\nライブ : 13:25-13:50\n特典会 : 14:00-15:20\n\n🌟 お目当て特典 : 写メ券",
+      "location_name": "SHIBUYA VIDENT",
+      "venue_hint": "SHIBUYA VIDENT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2510/2026-03-01/0-1772340002705.jpg"
+      ],
+      "type": "Other",
+      "venue": "SHIBUYA VIDENT",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+    },
+    {
+      "date": "2026-03-15",
+      "event": "『B.L.T. W LIVE PARTY 2026 SPRING』",
+      "timetree_id": "2900012729980895898",
+      "timetree_url": "https://timetr.ee/p/akishibu/2900012729980895898",
+      "note": "@ 新宿LOFT\n\n🎟️ 一般 4,800円(+1D代)\n\n出演時間🎙️\nライブ : 17:45-18:15\n特典会 : 18:40-19:40(C)\n\n🌟 お目当て特典 : 一言動画券\n\n◎Ticket dive（先行抽選）\n受付期間：2026年2月12日(木)18:00〜2026年2月15日(日)23:59\n抽選発表：2月16日(月)15:00\n\n◎Ticket dive（先着販売）\n受付期間：2026年2月16日(月)20:00〜3月14日(土)23:59予定",
+      "venue_hint": "新宿LOFT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e821/2026-03-13/0-1773400525736.jpg",
+        "https://attachments.timetreeapp.com/public_event/7db3/2026-03-04/0-1772596086176.jpg",
+        "https://attachments.timetreeapp.com/public_event/4154/2026-03-12/0-1773286960846.jpg"
+      ],
+      "type": "Other",
+      "venue": "新宿LOFT",
+      "venue_uid": "5f416a84-bffc-4a57-9b3f-770a6b242071"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "『パラディークpresents「PARAD-i-SE Vol.3」』",
+      "timetree_id": "2896591804493153259",
+      "timetree_url": "https://timetr.ee/p/akishibu/2896591804493153259",
+      "note": "@ 有楽町ヒューリックホール\n\n🎟️ 前方チケット¥8,000- / 一般チケット¥3,000- / 女性・学生チケット¥1,000-(各+1D)\n\n出演時間🎙️\nライブ : 13:20-13:45\n特典会 : 14:00-15:00(C)\n\n🌟 お目当て特典 : 写メ券\n\n◎前方先行抽選\n2026/2/15(日)19:00〜2026/2/25(水)23:59\n\n◎一般先着販売(一般チケット、女性・学生チケット)\n2026/2/16(月)21:00〜2023/3/18(水)23:59\n\n◎前方先着販売\n2026/2/26(木)21:00〜2023/3/18(水)23:59",
+      "location_name": "ヒューリックホール東京",
+      "venue_hint": "ヒューリックホール東京",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b6f4/2026-02-21/0-1771669545590.jpg",
+        "https://attachments.timetreeapp.com/public_event/98ab/2026-03-06/0-1772792924283.jpg"
+      ],
+      "type": "Other",
+      "venue": "ヒューリックホール東京",
+      "venue_uid": "6448eba7-8f0d-4f60-b22b-7172800d2780"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "AGE FES!",
+      "timetree_id": "2900012912340844649",
+      "timetree_url": "https://timetr.ee/p/akishibu/2900012912340844649",
+      "note": "@ 大塚 FUTURE:\n\n🎟️ 前方5,000円/一般2,500円/女性学生1,500円/当日各+500円(各+1Drink)\n\n出演時間🎙️\nライブ : 20:00-20:20\n特典会 : 20:40-21:40(F)\n\n🌟お目当て特典 : 写メ券",
+      "venue_hint": "大塚 FUTURE:",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fab1/2026-03-13/0-1773400360339.jpg",
+        "https://attachments.timetreeapp.com/public_event/8533/2026-03-13/0-1773400361189.jpg"
+      ],
+      "type": "Festival",
+      "venue": "大塚 FUTURE:",
+      "venue_uid": "3a42116b-caf1-4020-b4b7-cb734aaacbde"
+    },
+    {
+      "date": "2026-03-21",
+      "event": "『ふぉにコレ!　vol.3』",
+      "timetree_id": "2900013035057791745",
+      "timetree_url": "https://timetr.ee/p/akishibu/2900013035057791745",
+      "note": "@ 品川ステラボール\n\n⏱️ 開場11:45/開演12:15\n※変更の場合あり\n🎟️ 優先9000円/一般4000円/女性3000円/当日＋1000円(入場時1ドリンク必須)\n\n🎙️出演時間\nライブ : 14:20-14:45\n特典会 : 14:55-16:05(C)\n\n🌟お目当て特典 : 写メ券\n\n優先抽選\n2026/3/2（月）21:00-3/8（日）23:59\n※抽選結果3/9（月）中\n\n一般/女性チケット先着\n2026/3/11（水）21:00-3/20（金）23:59",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cf14/2026-03-03/0-1772516394877.jpg",
+        "https://attachments.timetreeapp.com/public_event/b40a/2026-03-16/0-1773634731661.jpg"
+      ],
+      "type": "Other",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2026-03-22",
+      "event": "『KABUKILLING CIRCUIT!! Vol.2』",
+      "timetree_id": "2900013161063071945",
+      "timetree_url": "https://timetr.ee/p/akishibu/2900013161063071945",
+      "note": "@ KABUKICHO TOWER STAGE \n\n🎟️ 前方チケット ¥8,000 / 一般チケット ¥3,000（当日 各¥1,000up）\n\n出演時間🎙️\nライブ : 12:35-13:00\n特典会 : 13:10-14:20(C)\n\nリストバンド引換 9:30~（東急歌舞伎町タワー 2F エスカレーター裏）\n開場/開演\n・KABUKICHO TOWER STAGE 10:00/10:30\n・JAM17 SPACE WEST 10:30/11:00\n・SHINJUKU WALLY 10:00/10:30\n・東急歌舞伎町タワー FIRST STAGE 観覧フリー\n\n3/9 22:00-販売開始",
+      "venue_hint": "KABUKICHO TOWER STAGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8242/2026-03-08/0-1772975701329.jpg",
+        "https://attachments.timetreeapp.com/public_event/4e5f/2026-03-19/0-1773899542970.jpg"
+      ],
+      "type": "Festival",
+      "venue": "KABUKICHO TOWER STAGE",
+      "venue_uid": "6ecd7944-1fa1-4c49-855d-6967c695c825"
+    },
+    {
+      "date": "2026-03-24",
+      "event": "『アキシブproject 新体制初！単独公演』",
+      "timetree_id": "2910303420703260852",
+      "timetree_url": "https://timetr.ee/p/akishibu/2910303420703260852",
+      "note": "@ Viblue EBISU\n\n⏱️ 開場18:30／開演19:00\n🎟️ 前方エリア4000円／一般エリア1000円（D代別）\n\n3/10 22:30-販売開始.ᐟ.ᐟ",
+      "location_name": "ViblueEBISU",
+      "venue_hint": "ViblueEBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/aed5/2026-03-09/0-1773058354232.jpg"
+      ],
+      "type": "Concert",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2026-03-29",
+      "event": "『LIVEPLANET FREE LIVE』",
+      "timetree_id": "2916797819863909327",
+      "timetree_url": "https://timetr.ee/p/akishibu/2916797819863909327",
+      "note": "@ としま区民センター多目的ホール \n\n⏱️ 開場10:45／開演11:15\n🎟️ 前売優先エリア4,000円／当日優先エリア5,000円／前売当日一般エリア0円（D代別）\n\n出演時間🎙️\nライブ : 13:40-14:00\n特典会 : 14:10-15:30(終演後)\n \n販売期間：3月12日(木)21:00-3月29日(日)8:00まで",
+      "location_name": "としま区民センター 多目的ホール",
+      "venue_hint": "としま区民センター 多目的ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7fdc/2026-03-11/0-1773228960669.jpg"
+      ],
+      "type": "Other",
+      "venue": "としま区民センター 多目的ホール",
+      "venue_uid": "7ca6245e-f598-4d9d-afa9-04db1c6c19da"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "『HEROINES FES -春- DAY2』",
+      "timetree_id": "2900013422066222058",
+      "timetree_url": "https://timetr.ee/p/akishibu/2900013422066222058",
+      "note": "@ Kanadevia Hall\n\n⏱️ open 13:30 / start 14:10\n🎟️ Sチケット ￥8,000/Aチケット ￥4,000/Bチケット ￥2,500/新生活応援チケット ￥500\n\n出演時間🎙️\nライブ : 18:10-18:35\n特典会 : 18:45-19:45(B)\n\n🌟 お目当て特典 : サインなしチェキ+10秒動画券\n\n販売期間 : 3月11日(水)21:00-公演前日23:59",
+      "location_name": "Kanadevia Hall",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9b05/2026-03-10/0-1773153910394.jpg",
+        "https://attachments.timetreeapp.com/public_event/76b2/2026-03-21/0-1774102081388.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "LIVE予定",
+      "timetree_id": "2914660051650036146",
+      "timetree_url": "https://timetr.ee/p/akishibu/2914660051650036146",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-04-03",
+      "event": "大阪LIVE予定",
+      "timetree_id": "2917445272644568056",
+      "timetree_url": "https://timetr.ee/p/akishibu/2917445272644568056",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-04-04",
+      "event": "『GIRLS☆DELIGHT#392』",
+      "timetree_id": "2914660183124689084",
+      "timetree_url": "https://timetr.ee/p/akishibu/2914660183124689084",
+      "note": "@ Zephyr Hall \n\n⏱️ 開場11:30／開演12:00\n🎫 前売優先5,000円／前売一般2,000円／当日各+1,000円（D代別）\n\n出演時間🎙️\nライブ : 13:15-13:40\n特典会 : 13:55-15:15(D)\n \n🌟 お目当て特典 : 写メ券\n販売期間：3月18日(水)22:00-4月4日(土)9:00",
+      "location_name": "Zephyr Hall",
+      "venue_hint": "Zephyr Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ee1e/2026-03-19/0-1773912596052.jpg",
+        "https://attachments.timetreeapp.com/public_event/5338/2026-03-25/0-1774429931819.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zephyr Hall",
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
+    },
+    {
+      "date": "2026-04-05",
+      "event": "『GIRLS☆DELIGHT#393』",
+      "timetree_id": "2914660304776282114",
+      "timetree_url": "https://timetr.ee/p/akishibu/2914660304776282114",
+      "note": "@ NAGOYA ReNY limited \n\n ⏱️ 開場10:30／開演11:00\n🎫 前売優先5,000円／前売一般2,000円／当日各+1,000円（D代別）\n\n出演時間🎙️\nライブ : 18:00-18:25\n特典会 : 18:40-20:00(終演後)\n\n🌟 お目当て特典 : 写メ券\n販売期間：3月18日(水)22:30-4月5日(日)9:00",
+      "location_name": "NAGOYA Reny Limited",
+      "venue_hint": "NAGOYA Reny Limited",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5b04/2026-03-19/0-1773912613405.jpg",
+        "https://attachments.timetreeapp.com/public_event/3150/2026-03-25/0-1774429976875.jpg"
+      ],
+      "type": "Other",
+      "venue": "NAGOYA Reny Limited",
+      "venue_uid": "d0e4cab0-666d-48c6-9c9b-f94e715e79f5"
+    },
+    {
+      "date": "2026-04-13",
+      "event": "Sweet Alley presents『SWEET CIRCUIT 2026』",
+      "timetree_id": "2892750193459938112",
+      "timetree_url": "https://timetr.ee/p/akishibu/2892750193459938112",
+      "note": "@ Spotify O-WEST／duo MUSIC EXCHANGE／VeatsSHIBUYA／clubasia／SHIBUYA RING\n\n⏱️ 開場TBA／開演TBA\n🎟️ 前売優先¥8,000／前売一般¥3,000／当日各+¥1,000（D代別）",
+      "venue_hint": "Spotify O-WEST／duo MUSIC EXCHANGE／VeatsSHIBUYA／clubasia／SHIBUYA RING",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d850/2026-03-04/0-1772622778880.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-WEST／duo MUSIC EXCHANGE／VeatsSHIBUYA／clubasia／SHIBUYA RING",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-04-14",
+      "event": "LIVE予定",
+      "timetree_id": "2918774481757356076",
+      "timetree_url": "https://timetr.ee/p/akishibu/2918774481757356076",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-04-15",
+      "event": "LIVE予定",
+      "timetree_id": "2914660458656907914",
+      "timetree_url": "https://timetr.ee/p/akishibu/2914660458656907914",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-04-18",
+      "event": "『HEROINES FES -DEBUT DAY-』",
+      "timetree_id": "2927477914458866668",
+      "timetree_url": "https://timetr.ee/p/akishibu/2927477914458866668",
+      "note": "@ 立川ステージガーデン \n\n⏱️ OPEN12:00/START12:40\n🎟️ Sチケット¥8,000(1階席前方)/Aチケット¥4,000(1階席後方/2階席)/Bチケット¥2,000(3階席)\n\n販売期間 : 3/28 22:00-公演前日23:59",
+      "location_name": "TACHIKAWA STAGE GARDEN",
+      "venue_hint": "TACHIKAWA STAGE GARDEN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9ff7/2026-03-27/0-1774609464390.jpg"
+      ],
+      "type": "Festival",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+    },
+    {
+      "date": "2026-04-19",
+      "event": "HEADSUP project 新体制 2man企画 『第3弾 Sweet project 』@ WWW",
+      "timetree_id": "2918775224686035635",
+      "timetree_url": "https://timetr.ee/p/akishibu/2918775224686035635",
+      "venue_hint": "WWW",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/22f6/2026-04-18/0-1776490921854.jpg"
+      ],
+      "type": "Other",
+      "venue": "WWW",
+      "venue_uid": "1c36daf9-c7cc-45ab-b59b-339f6cecf98d"
+    },
+    {
+      "date": "2026-04-22",
+      "event": "『アキシブproject 定期公演                        -夢咲ありさプロデュース-』@ Viblue EBISU",
+      "timetree_id": "2916803335583383880",
+      "timetree_url": "https://timetr.ee/p/akishibu/2916803335583383880",
+      "venue_hint": "Viblue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/886e/2026-04-18/0-1776490992183.jpg"
+      ],
+      "type": "Other",
+      "venue": "Viblue EBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2026-04-23",
+      "event": "Pretty Chuu presents『Pretty parade Vol.6』 @ 白金高輪SELENE b2",
+      "timetree_id": "2923104433608802925",
+      "timetree_url": "https://timetr.ee/p/akishibu/2923104433608802925",
+      "venue_hint": "白金高輪SELENE b2",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/40f6/2026-04-18/0-1776491063170.jpg",
+        "https://attachments.timetreeapp.com/public_event/50bd/2026-04-18/0-1776491079369.jpg"
+      ],
+      "type": "Other",
+      "venue": "白金高輪SELENE b2",
+      "venue_uid": "8849c27a-75b7-429c-afd9-0fa8dd676eab"
+    },
+    {
+      "date": "2026-04-24",
+      "event": "『HEROINES LEAGUE 昇格戦』@ Kanadevia Hall",
+      "timetree_id": "2930600460138004528",
+      "timetree_url": "https://timetr.ee/p/akishibu/2930600460138004528",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ec88/2026-04-18/0-1776491145354.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2026-04-25",
+      "event": "『GIRLS☆DELIGHT#395』 @シティホール五反田",
+      "timetree_id": "2922401027520938006",
+      "timetree_url": "https://timetr.ee/p/akishibu/2922401027520938006",
+      "venue_hint": "シティホール五反田",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e322/2026-04-18/0-1776491557179.jpg"
+      ],
+      "type": "Other",
+      "venue": "シティホール五反田",
+      "venue_uid": "be864719-ec7f-475c-9e03-ceb130a5961a"
+    },
+    {
+      "date": "2026-04-27",
+      "event": "DREAMING MONSTER presents『MONSTER BOX Vol.24』 @神田明神ホール",
+      "timetree_id": "2925556684797461152",
+      "timetree_url": "https://timetr.ee/p/akishibu/2925556684797461152",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ac1f/2026-04-18/0-1776491626184.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2026-04-29",
+      "event": "HEADSUP project 新体制2man企画 『第4弾 chuLa project 』@ 池袋harevutai",
+      "timetree_id": "2923929313359118834",
+      "timetree_url": "https://timetr.ee/p/akishibu/2923929313359118834",
+      "venue_hint": "池袋harevutai",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7947/2026-04-27/0-1777277722926.jpg"
+      ],
+      "type": "Other",
+      "venue": "池袋harevutai",
+      "venue_uid": "479159a3-276a-4cbb-8c4f-ea39462db12e"
+    },
+    {
+      "date": "2026-05-01",
+      "event": "『ヒロインズ体育祭』",
+      "timetree_id": "2912977728319734305",
+      "timetree_url": "https://timetr.ee/p/akishibu/2912977728319734305",
+      "note": "@ 東京体育館 メインアリーナ\n\n⏱️ OPEN 17:40 / START 18:30\n\nSSチケット\n¥35,000（アリーナ前方席、4チームの応援席あり）\n▼5大特典付き\n①アリーナ前方席確約\n②開場前 準備体操見学\n③推しチーム応援 オリジナルフラッグ\n④開場前 特典会\n⑤メンバー実況付き PPVチケット\n\nSチケット\n¥20,000（アリーナ席、4チームの応援席あり）\n▼3大特典付き\n①推しチーム応援 オリジナルフラッグ\n②開場前 特典会\n③メンバー実況付き PPVチケット\n\nAチケット (PPV付き)\n¥10,000 （スタンド前方席）\nメンバー実況付き PPVチケット\n\nAチケット\n¥8,000 （スタンド前方席）\n\nBチケット (PPV付き)\n¥5,000 （スタンド席）\nメンバー実況付き PPVチケット\n\nBチケット\n¥3,000 （スタンド席）\n\n※上記全て税込価格となります。\n※全席指定席となります。",
+      "location_name": "東京体育館",
+      "venue_hint": "東京体育館",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8597/2026-03-02/0-1772422004953.jpg"
+      ],
+      "type": "Other",
+      "venue": "東京体育館",
+      "venue_uid": "f80b9805-818e-43e3-9732-604997abd74d"
+    },
+    {
+      "date": "2026-05-02",
+      "event": "『IDOL SUMMER JUNGLE GOLDEN』@ お台場R地区",
+      "timetree_id": "2921186948663951886",
+      "timetree_url": "https://timetr.ee/p/akishibu/2921186948663951886",
+      "venue_hint": "お台場R地区",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4ba7/2026-04-18/0-1776492069691.jpg",
+        "https://attachments.timetreeapp.com/public_event/4e21/2026-04-27/0-1777281974837.jpg",
+        "https://attachments.timetreeapp.com/public_event/d837/2026-04-27/0-1777281975879.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "お台場R地区",
+      "venue_uid": "c6da72fa-6d7e-4230-a967-cfa74bf55331"
+    },
+    {
+      "date": "2026-05-04",
+      "event": "『HEROINES FES -HEROINES 7th ANNIVERSARY-』@立川ステージガーデン",
+      "timetree_id": "2947121151238684726",
+      "timetree_url": "https://timetr.ee/p/akishibu/2947121151238684726",
+      "venue_hint": "立川ステージガーデン",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8f22/2026-04-18/0-1776492217837.jpg",
+        "https://attachments.timetreeapp.com/public_event/f617/2026-04-27/0-1777282890000.jpg"
+      ],
+      "type": "Festival",
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
+    },
+    {
+      "date": "2026-05-05",
+      "event": "『歌舞伎町UP GATE↑↑2026』",
+      "timetree_id": "2921185150398054541",
+      "timetree_url": "https://timetr.ee/p/akishibu/2921185150398054541",
+      "note": "📍Zepp Shinjuku/APEXIA/新宿LOFT/SHINJUKU WALLY/新宿MARZ/Zirco TOKYO/新宿DHNoA/新宿Biske/シアターマーキュリー新宿/新宿motion/歌舞伎町タワーステージ\n\n詳細は後日お知らせ.ᐟ.ᐟ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/de5b/2026-03-13/0-1773400405706.jpg",
+        "https://attachments.timetreeapp.com/public_event/677d/2026-04-27/0-1777283306119.jpg",
+        "https://attachments.timetreeapp.com/public_event/0c6f/2026-04-27/0-1777283306737.jpg"
+      ],
+      "type": "Festival",
+      "venue": "新宿（複数会場フェス）",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/de5b/2026-03-13/0-1773400405706.jpg",
+      "event_type": "Festival",
+      "venue_mode": "multi_venue_festival",
+      "venue_area": "新宿",
+      "venues": [
+        "Zepp Shinjuku",
+        "APEXIA",
+        "新宿LOFT",
+        "SHINJUKU WALLY",
+        "新宿MARZ",
+        "Zirco TOKYO",
+        "新宿DHNoA",
+        "新宿Biske",
+        "シアターマーキュリー新宿",
+        "新宿motion",
+        "歌舞伎町タワーステージ"
+      ],
+      "venue_uid": null
+    },
+    {
+      "date": "2026-05-06",
+      "event": "『HEROINES FES GOLDEN Limited』@品川インターシティホール",
+      "timetree_id": "2923488331249435368",
+      "timetree_url": "https://timetr.ee/p/akishibu/2923488331249435368",
+      "venue_hint": "品川インターシティホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/90a4/2026-04-27/0-1777279496192.jpg",
+        "https://attachments.timetreeapp.com/public_event/d4ad/2026-05-04/0-1777879951255.jpg"
+      ],
+      "type": "Festival",
+      "venue": "品川インターシティホール",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
+    },
+    {
+      "date": "2026-05-09",
+      "event": "「GIRLS☆DELIGHT#398」@シティホール五反田",
+      "timetree_id": "2947122126540194262",
+      "timetree_url": "https://timetr.ee/p/akishibu/2947122126540194262",
+      "venue_hint": "シティホール五反田",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a196/2026-04-18/0-1776492334310.jpg",
+        "https://attachments.timetreeapp.com/public_event/445f/2026-05-09/0-1778313778703.jpg"
+      ],
+      "type": "Other",
+      "venue": "シティホール五反田",
+      "venue_uid": "be864719-ec7f-475c-9e03-ceb130a5961a"
+    },
+    {
+      "date": "2026-05-10",
+      "event": "HEADSUP project 新体制2man企画 『第5弾 TENRIN project 』@ 代官山UNIT",
+      "timetree_id": "2918774737584734406",
+      "timetree_url": "https://timetr.ee/p/akishibu/2918774737584734406",
+      "venue_hint": "代官山UNIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/342c/2026-04-27/0-1777279688916.jpg"
+      ],
+      "type": "Other",
+      "venue": "代官山UNIT",
+      "venue_uid": "8e4efb63-5b05-4449-9de8-9b8477b499cd"
+    },
+    {
+      "date": "2026-05-11",
+      "event": "HEADSUP project 新体制2man企画 『第6弾 Pretty project 』@ Veats SHIBUYA",
+      "timetree_id": "2931887134797153227",
+      "timetree_url": "https://timetr.ee/p/akishibu/2931887134797153227",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/68ff/2026-04-27/0-1777279773478.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-05-15",
+      "event": "HIGH SPIRITS presents『Hi ! Hi ! Fes. vol.8 -新体制お披露目SP-』 @ 新宿ReNY",
+      "timetree_id": "2947122721049232176",
+      "timetree_url": "https://timetr.ee/p/akishibu/2947122721049232176",
+      "venue_hint": "新宿ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f87b/2026-04-27/0-1777279861731.jpg",
+        "https://attachments.timetreeapp.com/public_event/0073/2026-05-09/0-1778313974666.jpg"
+      ],
+      "type": "Festival",
+      "venue": "新宿ReNY",
+      "venue_uid": "e86f5b7d-6263-4ed1-85fe-db0f738e0515"
+    },
+    {
+      "date": "2026-05-16",
+      "event": "「波響祭」@ うみかぜ公園 野外特設会場",
+      "timetree_id": "2963098640662348256",
+      "timetree_url": "https://timetr.ee/p/akishibu/2963098640662348256",
+      "venue_hint": "うみかぜ公園 野外特設会場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/12e0/2026-05-10/0-1778396880088.jpg",
+        "https://attachments.timetreeapp.com/public_event/356b/2026-05-10/0-1778396883309.jpg"
+      ],
+      "type": "Other",
+      "venue": "うみかぜ公園 野外特設会場",
+      "venue_uid": "fa47d7c9-2272-45df-9ea7-5d386dd60b34"
+    },
+    {
+      "date": "2026-05-18",
+      "event": "『HEROINES LEAGUE II Section1』@ Ebisu Garden Hall",
+      "timetree_id": "2947122973554721299",
+      "timetree_url": "https://timetr.ee/p/akishibu/2947122973554721299",
+      "venue_hint": "Ebisu Garden Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4a1d/2026-05-10/0-1778413208732.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Ebisu Garden Hall",
+      "venue_uid": "0e2c33e0-7fc4-4347-aaa1-0874a26a8f4b"
+    },
+    {
+      "date": "2026-05-20",
+      "event": "『MARQUEE Fes.-day2-』@ Spotify O-EAST",
+      "timetree_id": "2925411470912996260",
+      "timetree_url": "https://timetr.ee/p/akishibu/2925411470912996260",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/33ab/2026-04-18/0-1776492494058.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2026-05-22",
+      "event": "『アキシブproject 周年公演-13th Anniversary LIVE -』@ 白金高輪SELENE STUDIO SELENE b2",
+      "timetree_id": "2931886976470564922",
+      "timetree_url": "https://timetr.ee/p/akishibu/2931886976470564922",
+      "venue_hint": "白金高輪SELENE STUDIO SELENE b2",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e3da/2026-04-18/0-1776492537962.jpg"
+      ],
+      "type": "Other",
+      "venue": "白金高輪SELENE STUDIO SELENE b2",
+      "venue_uid": "2a675574-9b03-4c13-896c-c8f2165fb033"
+    },
+    {
+      "date": "2026-05-23",
+      "event": "名古屋LIVE予定",
+      "timetree_id": "2931887341173686399",
+      "timetree_url": "https://timetr.ee/p/akishibu/2931887341173686399",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-05-30",
+      "event": "名古屋LIVE予定",
+      "timetree_id": "2915933075099566334",
+      "timetree_url": "https://timetr.ee/p/akishibu/2915933075099566334",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-05-31",
+      "event": "大阪LIVE予定",
+      "timetree_id": "2947124159343182747",
+      "timetree_url": "https://timetr.ee/p/akishibu/2947124159343182747",
+      "type": "Other",
+      "venue": null
+    }
+  ],
+  "enriched_at": "2026-05-18T00:21:38.735Z",
+  "venues_resolved_at": "2026-05-16T17:58:07.318Z",
+  "venue_stats": {
+    "with_venue": 152,
+    "with_poster_only": 12,
+    "with_venue_uid": 152
+  },
+  "multi_venue_patched_at": "2026-05-16T18:07:22.554Z"
+}

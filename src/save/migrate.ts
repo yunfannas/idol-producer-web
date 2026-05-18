@@ -77,7 +77,7 @@ export function hydrateStoredGame(raw: unknown): GameSavePayload | null {
   const lastProcessed = obj.finances.last_processed_date;
   save.current_date =
     typeof lastProcessed === "string" && lastProcessed
-      ? lastProcessed.split("T")[0]
+      ? lastProcessed
       : obj.openingDate;
   const hint = typeof save.current_date === "string" ? save.current_date : obj.openingDate;
   save.inbox.notifications = activityToNotifications(obj.activityLog ?? [], hint).concat(save.inbox.notifications);
