@@ -12,6 +12,8 @@ import {
 import {
   ensureBirthdayTeeInventoryRow,
   estimateLiveGoodsGrossYen,
+  estimateVenueFee,
+  isWeekendUtc,
   sortGroupsForDirectory,
   type ProducedGoodsRow,
 } from "./engine/financeSystem";
@@ -30,6 +32,7 @@ import {
   type ScoutTab,
   type SongsWorkspaceTab,
   type TrainingTab,
+  type TrainingRosterSortKey,
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
 import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
@@ -46,6 +49,7 @@ import {
 import { normalizeFestivalCatalog, syncManagedTif2025Lives } from "./engine/festivalWeb";
 import { ensureAutoBookedLivesThroughEndOfNextMonth, maybeSeedMonthEndAutoBookPrompt } from "./engine/monthlyLiveScheduler";
 import { suggestManagedSetlistTitles } from "./engine/songStatusSystem";
+import { scheduleIdolVacation } from "./engine/idolStatusSystem";
 import {
   type OpeningScreen,
   renderOpeningHome,
@@ -161,6 +165,38 @@ function currentIsoForNewLive(): string {
   return isoDatePart(save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? "2020-01-01");
 }
 
+function daysBetweenIso(fromIso: string, toIso: string): number | null {
+  const from = Date.parse(`${isoDatePart(fromIso)}T12:00:00Z`);
+  const to = Date.parse(`${isoDatePart(toIso)}T12:00:00Z`);
+  if (!Number.isFinite(from) || !Number.isFinite(to)) return null;
+  return Math.floor((to - from) / 86400000);
+}
+
+function reservationFeeForNewLive(venueCapacity: number | null, startDateIso: string): {
+  baseVenueFeeYen: number;
+  reservationFeeYen: number;
+  reservationRate: number;
+  daysAhead: number | null;
+  blocked: boolean;
+} {
+  const daysAhead = daysBetweenIso(currentIsoForNewLive(), startDateIso);
+  const baseVenueFeeYen = estimateVenueFee(venueCapacity, {
+    isWeekendOrHoliday: isWeekendUtc(startDateIso),
+    bookingPlan: "full_day",
+  });
+  if (daysAhead != null && daysAhead < 7) {
+    return { baseVenueFeeYen, reservationFeeYen: 0, reservationRate: 0, daysAhead, blocked: true };
+  }
+  const reservationRate = daysAhead != null && daysAhead <= 30 ? 0.2 : 0.1;
+  return {
+    baseVenueFeeYen,
+    reservationFeeYen: Math.round(baseVenueFeeYen * reservationRate),
+    reservationRate,
+    daysAhead,
+    blocked: false,
+  };
+}
+
 function newLiveProgramId(prefix: string): string {
   return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -262,6 +298,8 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     goodsEnabled: true,
     goodsUids: initialGoodsUids,
     ticketPriceYen: liveType === "Concert" ? 3800 : liveType === "Festival" ? 0 : 2500,
+    vipTicketPriceYen: 0,
+    vipCapacity: 0,
   };
   reconcileNewLiveGoodsSelection();
   selectedLiveSongTitle = suggestedSetlist[0] ?? null;
@@ -476,6 +514,8 @@ let livesTab: LivesTab = "new";
 let scheduledLiveUid: string | null = null;
 let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
+let trainingRosterSortKey: TrainingRosterSortKey = "started";
+let trainingRosterSortDir: "asc" | "desc" = "asc";
 let financeHistoryRange: FinanceHistoryRange = "month";
 let selectedScoutLeadUid: string | null = null;
 let selectedScoutApplicantUid: string | null = null;
@@ -519,6 +559,8 @@ interface NavigationSnapshot {
   scheduledLiveUid: string | null;
   scoutTab: ScoutTab;
   trainingTab: TrainingTab;
+  trainingRosterSortKey: TrainingRosterSortKey;
+  trainingRosterSortDir: "asc" | "desc";
   financeHistoryRange: FinanceHistoryRange;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
@@ -543,6 +585,8 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     scheduledLiveUid,
     scoutTab,
     trainingTab,
+    trainingRosterSortKey,
+    trainingRosterSortDir,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -565,6 +609,8 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.scheduledLiveUid === b.scheduledLiveUid &&
     a.scoutTab === b.scoutTab &&
     a.trainingTab === b.trainingTab &&
+    a.trainingRosterSortKey === b.trainingRosterSortKey &&
+    a.trainingRosterSortDir === b.trainingRosterSortDir &&
     a.financeHistoryRange === b.financeHistoryRange &&
     a.selectedScoutLeadUid === b.selectedScoutLeadUid &&
     a.selectedScoutApplicantUid === b.selectedScoutApplicantUid &&
@@ -586,6 +632,8 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   scheduledLiveUid = snapshot.scheduledLiveUid;
   scoutTab = snapshot.scoutTab;
   trainingTab = snapshot.trainingTab;
+  trainingRosterSortKey = snapshot.trainingRosterSortKey;
+  trainingRosterSortDir = snapshot.trainingRosterSortDir;
   financeHistoryRange = snapshot.financeHistoryRange;
   selectedScoutLeadUid = snapshot.selectedScoutLeadUid;
   selectedScoutApplicantUid = snapshot.selectedScoutApplicantUid;
@@ -903,6 +951,8 @@ function paintGame(): void {
     selectedSetlistSongIndex,
     scoutTab,
     trainingTab,
+    trainingRosterSortKey,
+    trainingRosterSortDir,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -1047,6 +1097,37 @@ function paintGame(): void {
     const scheduleLiveBtn = t.closest<HTMLElement>("[data-live-schedule]");
     if (scheduleLiveBtn && save && !browseMode && currentView === "Lives") {
       const venue = getVenuesCatalog().find((row) => row.name === newLiveForm.venueName) ?? null;
+      const reservation = reservationFeeForNewLive(venue?.capacity ?? null, newLiveForm.date);
+      if (reservation.blocked) {
+        addNotification(save, {
+          title: `Live scheduling blocked: ${newLiveForm.title.trim() || `${save.managing_group ?? "Managed group"} ${newLiveForm.liveType}`}`,
+          body: `Lives cannot be scheduled within 7 days. Pick a date at least 7 days after ${currentIsoForNewLive()}.`,
+          sender: "Operations",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          dedupeKey: `live-schedule-blocked|${newLiveForm.date}|${newLiveForm.venueName}|${newLiveForm.title}`,
+        });
+        paintGame();
+        return;
+      }
+      const finances = save.finances as Record<string, unknown>;
+      const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+      if (reservation.reservationFeeYen > currentCash) {
+        addNotification(save, {
+          title: `Live scheduling blocked: ${newLiveForm.title.trim() || `${save.managing_group ?? "Managed group"} ${newLiveForm.liveType}`}`,
+          body: `Need JPY ${reservation.reservationFeeYen.toLocaleString("ja-JP")} for the venue reservation fee, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
+          sender: "Operations",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          dedupeKey: `live-schedule-cash-blocked|${newLiveForm.date}|${newLiveForm.venueName}|${newLiveForm.title}`,
+        });
+        paintGame();
+        return;
+      }
       const goodsUids = [...newLiveForm.goodsUids];
       const goodsNames = goodsUids.map((uid) => goodsDisplayLabel(findGoodsByUid(uid))).filter(Boolean);
       const goodsGross = estimateCurrentLiveGoodsGross(newLiveForm.liveType, newLiveForm.venueName, goodsUids);
@@ -1072,6 +1153,8 @@ function paintGame(): void {
         capacity: venue?.capacity ?? null,
         attendance: null,
         ticket_price: newLiveForm.ticketPriceYen,
+        vip_ticket_price: newLiveForm.vipTicketPriceYen,
+        vip_capacity: newLiveForm.vipCapacity,
         poster_image_path: null,
         setlist: [...newLiveForm.setlist],
         program: newLiveForm.program.map((item) => ({ ...item })),
@@ -1091,10 +1174,11 @@ function paintGame(): void {
         group_uid: save.managing_group_uid ?? "",
         status: "scheduled",
       };
+      finances.cash_yen = currentCash - reservation.reservationFeeYen;
       save.lives.schedules.push(live);
       addNotification(save, {
         title: `Live scheduled: ${live.title}`,
-        body: `${live.start_date} ${live.start_time}-${live.end_time} · ${live.venue ?? "TBA"} · ${newLiveForm.setlist.length} song(s) · tokutenkai ${newLiveForm.tokutenkaiEnabled ? "on" : "off"} · goods ${newLiveForm.goodsEnabled ? "on" : "off"}.`,
+        body: `${live.start_date} ${live.start_time}-${live.end_time} · ${live.venue ?? "TBA"} · ${newLiveForm.setlist.length} song(s) · tokutenkai ${newLiveForm.tokutenkaiEnabled ? "on" : "off"} · goods ${newLiveForm.goodsEnabled ? "on" : "off"} · venue reservation fee JPY ${reservation.reservationFeeYen.toLocaleString("ja-JP")} (${Math.round(reservation.reservationRate * 100)}% of JPY ${reservation.baseVenueFeeYen.toLocaleString("ja-JP")}).`,
         sender: "Operations",
         category: "internal",
         level: "normal",
@@ -1136,6 +1220,27 @@ function paintGame(): void {
         navigate(() => {
           trainingTab = tab;
         });
+      }
+      return;
+    }
+    const trainingSortPick = t.closest<HTMLElement>("[data-training-roster-sort]");
+    if (trainingSortPick && save && !browseMode && currentView === "Training") {
+      const key = trainingSortPick.getAttribute("data-training-roster-sort");
+      if (
+        key === "romaji" ||
+        key === "age" ||
+        key === "ability" ||
+        key === "condition" ||
+        key === "morale" ||
+        key === "started"
+      ) {
+        if (trainingRosterSortKey === key) {
+          trainingRosterSortDir = trainingRosterSortDir === "asc" ? "desc" : "asc";
+        } else {
+          trainingRosterSortKey = key;
+          trainingRosterSortDir = "asc";
+        }
+        paintGame();
       }
       return;
     }
@@ -1622,6 +1727,12 @@ function paintGame(): void {
           case "ticketPriceYen":
             newLiveForm.ticketPriceYen = numberOrZero(value);
             break;
+          case "vipTicketPriceYen":
+            newLiveForm.vipTicketPriceYen = numberOrZero(value);
+            break;
+          case "vipCapacity":
+            newLiveForm.vipCapacity = numberOrZero(value);
+            break;
           default:
             break;
         }
@@ -1637,19 +1748,54 @@ function paintGame(): void {
         const value = liveDetailInput.value;
         switch (field) {
           case "live_type":
+            live.live_type = value;
+            break;
           case "title":
+            live.title = value;
+            break;
           case "start_date":
+            live.start_date = value;
+            live.end_date = value;
+            break;
           case "start_time":
+            live.start_time = value;
+            break;
           case "end_time":
+            live.end_time = value;
+            break;
           case "rehearsal_start":
+            live.rehearsal_start = value;
+            break;
           case "rehearsal_end":
+            live.rehearsal_end = value;
+            break;
           case "venue":
+            live.venue = value;
+            break;
           case "tokutenkai_start":
+            live.tokutenkai_start = value;
+            break;
           case "tokutenkai_end":
+            live.tokutenkai_end = value;
+            break;
           case "ticket_price":
+            live.ticket_price = numberOrZero(value);
+            break;
+          case "vip_ticket_price":
+            live.vip_ticket_price = numberOrZero(value);
+            break;
+          case "vip_capacity":
+            live.vip_capacity = numberOrZero(value);
+            break;
           case "tokutenkai_ticket_price":
+            live.tokutenkai_ticket_price = numberOrZero(value);
+            break;
           case "tokutenkai_slot_seconds":
+            live.tokutenkai_slot_seconds = numberOrZero(value);
+            break;
           case "tokutenkai_expected_tickets":
+            live.tokutenkai_expected_tickets = numberOrZero(value);
+            break;
           default:
             break;
         }
@@ -1697,8 +1843,29 @@ function paintGame(): void {
     }, 140);
   });
 
-  document.getElementById("main-content")?.addEventListener("change", (ev) => {
+document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const t = ev.target as HTMLElement;
+    const trainingSongPick = t.closest<HTMLInputElement>("[data-training-song-pick]");
+    if (trainingSongPick && save && !browseMode && currentView === "Training") {
+      const uid = String(trainingSongPick.getAttribute("data-training-song-pick") ?? "").trim();
+      if (uid) {
+        const set = new Set(save.training_song_uids.map((x) => String(x)));
+        if (trainingSongPick.checked) set.add(uid);
+        else set.delete(uid);
+        save.training_song_uids = [...set];
+        paintGame();
+      }
+      return;
+    }
+    const focusSel = t.closest<HTMLSelectElement>("[data-training-focus]");
+    if (focusSel && save && !browseMode && currentView === "Training") {
+      const uid = focusSel.getAttribute("data-idol-uid");
+      if (uid) {
+        save.training_focus_skill[uid] = focusSel.value;
+        paintGame();
+      }
+      return;
+    }
     const liveGoodsPick = t.closest<HTMLInputElement>("[data-live-goods-pick]");
     if (liveGoodsPick && save && !browseMode && currentView === "Lives") {
       const uid = String(liveGoodsPick.getAttribute("data-live-goods-pick") ?? "").trim();
@@ -1758,23 +1925,33 @@ function paintGame(): void {
       }
       return;
     }
-    const trainingSongPick = t.closest<HTMLInputElement>("[data-training-song-pick]");
-    if (trainingSongPick && save && !browseMode && currentView === "Training") {
-      const uid = String(trainingSongPick.getAttribute("data-training-song-pick") ?? "").trim();
+    const vacationBtn = t.closest<HTMLElement>("[data-training-vacation]");
+    if (vacationBtn && save && !browseMode && currentView === "Training") {
+      const uid = vacationBtn.getAttribute("data-training-vacation");
       if (uid) {
-        const set = new Set(save.training_song_uids.map((x) => String(x)));
-        if (trainingSongPick.checked) set.add(uid);
-        else set.delete(uid);
-        save.training_song_uids = [...set];
-        paintGame();
-      }
-      return;
-    }
-    const focusSel = t.closest<HTMLSelectElement>("[data-training-focus]");
-    if (focusSel && save && !browseMode && currentView === "Training") {
-      const uid = focusSel.getAttribute("data-idol-uid");
-      if (uid) {
-        save.training_focus_skill[uid] = focusSel.value;
+        const idol = save.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid);
+        if (idol && typeof idol === "object") {
+          const root = vacationBtn.closest("tr, .training-vacation-controls, td, article") ?? document;
+          const daysInput = root.querySelector<HTMLInputElement>(`[data-training-vacation-days="${uid}"]`);
+          const rawDays = Number(daysInput?.value ?? 1);
+          const hiatusDays = Number.isFinite(rawDays) ? Math.max(1, Math.min(365, Math.trunc(rawDays))) : 1;
+          const period = scheduleIdolVacation(
+            idol as Record<string, unknown>,
+            save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? currentIsoForNewLive(),
+            hiatusDays,
+          );
+          const name = String((idol as Record<string, unknown>).name ?? uid);
+          addNotification(save, {
+            title: `Hiatus scheduled: ${name}`,
+            body: `${name} is on vacation from ${period.start_date} and will return on ${period.return_date}. Training and managed live participation are paused during this period.`,
+            sender: "Assistant",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `hiatus|${uid}|${period.start_date}|${period.return_date}`,
+          });
+        }
         paintGame();
       }
       return;
@@ -1892,6 +2069,30 @@ function paintGame(): void {
     });
   });
 
+  appRoot.querySelectorAll<HTMLButtonElement>("[data-training-roster-sort]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!save || browseMode || currentView !== "Training") return;
+      const key = btn.getAttribute("data-training-roster-sort");
+      if (
+        key !== "romaji" &&
+        key !== "age" &&
+        key !== "ability" &&
+        key !== "condition" &&
+        key !== "morale" &&
+        key !== "started"
+      ) {
+        return;
+      }
+      if (trainingRosterSortKey === key) {
+        trainingRosterSortDir = trainingRosterSortDir === "asc" ? "desc" : "asc";
+      } else {
+        trainingRosterSortKey = key;
+        trainingRosterSortDir = "asc";
+      }
+      paintGame();
+    });
+  });
+
   document.getElementById("btn-next-day")?.addEventListener("click", () => {
     if (!save || browseMode || simulationBusy) return;
     sortNotificationsInPlace(save.inbox.notifications);
@@ -1985,3 +2186,4 @@ loadDefaultScenario()
     const msg = e instanceof Error ? e.message : String(e);
     appRoot.innerHTML = `<div class="fm-error" role="alert"><strong>Could not load scenario.</strong><br />${htmlEsc(msg)}</div>`;
   });
+
