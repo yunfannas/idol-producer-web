@@ -10,7 +10,7 @@ import { AUTOSAVE_SLOT } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
 import { gameManualHref, languageOptions, t, type UiLanguage } from "./i18n";
 
-export type OpeningScreen = "home" | "new_game" | "load_slot";
+export type OpeningScreen = "login" | "home" | "new_game" | "load_slot";
 
 function renderLanguageSelect(lang: UiLanguage): string {
   return `<label class="opening-label opening-slot-row" for="lang-select-opening">${htmlEsc(t(lang, "language"))}</label>
@@ -19,6 +19,39 @@ function renderLanguageSelect(lang: UiLanguage): string {
         .map((opt) => `<option value="${opt.value}" ${opt.value === lang ? "selected" : ""}>${htmlEsc(opt.label)}</option>`)
         .join("")}
     </select>`;
+}
+
+export function renderOpeningLogin(
+  dbReady: boolean,
+  status: string,
+  accountName: string,
+  lang: UiLanguage,
+): string {
+  const disabled = dbReady && accountName.trim() ? "" : "disabled";
+
+  return `
+<section class="opening-screen" aria-label="Login">
+  <div class="opening-hero fm-card-opening">
+    ${renderLanguageSelect(lang)}
+    <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
+    <p class="opening-tagline">${htmlEsc(t(lang, "opening_tagline"))}</p>
+  </div>
+
+  <div class="fm-card-opening producer-block">
+    <label class="opening-label" for="account-name">${htmlEsc("Account name")}</label>
+    <input type="text" id="account-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc("Enter account name")}" autocomplete="off" />
+    <p class="opening-status-msg">${htmlEsc("Password support can be added later.")}</p>
+    <div class="opening-actions-footer">
+      <button type="button" class="opening-btn opening-btn-green" id="opening-login" ${disabled}>${htmlEsc("Log in")}</button>
+    </div>
+  </div>
+
+  <div class="opening-status fm-card-opening">
+    <h2 class="opening-status-h">${htmlEsc(t(lang, "opening_status"))}</h2>
+    <p class="opening-status-strong">${htmlEsc(dbReady ? t(lang, "opening_db_ready") : t(lang, "opening_db_loading"))}</p>
+    <p class="opening-status-msg">${htmlEsc(status)}</p>
+  </div>
+</section>`;
 }
 
 export function renderOpeningHome(
@@ -164,7 +197,7 @@ export function buildNewGameRows(loaded: LoadedScenario): NewGameRow[] {
 
 export function renderNewGameScreen(
   rows: NewGameRow[],
-  playerNameDefault: string,
+  accountName: string,
   preset: ScenarioPreset | null,
   lang: UiLanguage,
 ): string {
@@ -194,8 +227,8 @@ export function renderNewGameScreen(
   </div>
 
   <div class="fm-card-opening producer-block">
-    <label class="opening-label" for="producer-name">${htmlEsc(t(lang, "opening_producer_name"))}</label>
-    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(playerNameDefault)}" placeholder="${htmlEsc(t(lang, "opening_your_name"))}" autocomplete="off" />
+    <label class="opening-label" for="producer-name">${htmlEsc("Producer / account")}</label>
+    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(accountName)}" readonly />
   </div>
 
   <div class="fm-card-opening opening-table-wrap">

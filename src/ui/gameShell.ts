@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Desktop-style layout (Football Manager / idol_producer main_ui.py colors & structure).
  */
 
@@ -37,7 +37,9 @@ import {
 import {
   buildAuditionStorageKey,
   buildDefaultScoutCompanies,
+  isScoutCompanySubscribed,
   recommendScoutLeads,
+  scoutLeadRevealCount,
   type ScoutAuditionRow,
 } from "../engine/scoutWeb";
 import { festivalPerformancesForManagedGroup, normalizeFestivalCatalog } from "../engine/festivalWeb";
@@ -123,14 +125,14 @@ function buildScheduleMonthCalendarHtml(
 
   const scheduleByDate = new Map<string, Record<string, unknown>[]>();
   for (const s of ctx.schedules) {
-    const d = String(s.start_date ?? "").split("T")[0];
+    const d = String(s.start_date JPY   "").split("T")[0];
     if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
     if (!scheduleByDate.has(d)) scheduleByDate.set(d, []);
     scheduleByDate.get(d)!.push(s);
   }
   const resultDates = new Set<string>();
   for (const r of ctx.results) {
-    const d = String(r.date ?? r.start_date ?? "").split("T")[0];
+    const d = String(r.date JPY   r.start_date JPY   "").split("T")[0];
     if (/^\d{4}-\d{2}-\d{2}$/.test(d)) resultDates.add(d);
   }
   const dowLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -156,21 +158,21 @@ function buildScheduleMonthCalendarHtml(
       .filter(Boolean)
       .join(" ");
 
-    const extras = scheduleByDate.get(iso) ?? [];
+    const extras = scheduleByDate.get(iso) JPY   [];
     const tip: string[] = [];
     if (isClosed) tip.push("Day closed in save");
     if (isNext) tip.push("Next simulation day");
     if (booked) {
       for (const ex of extras.slice(0, 2)) {
-        const vn = String((ex as Record<string, unknown>).venue ?? "").trim();
-        const rawType = String((ex as Record<string, unknown>).live_type ?? (ex as Record<string, unknown>).event_type ?? "");
-        const tt = String((ex as Record<string, unknown>).title ?? "").trim() || liveTypeLabel(ctx.lang, rawType) || "Live";
+        const vn = String((ex as Record<string, unknown>).venue JPY   "").trim();
+        const rawType = String((ex as Record<string, unknown>).live_type JPY   (ex as Record<string, unknown>).event_type JPY   "");
+        const tt = String((ex as Record<string, unknown>).title JPY   "").trim() || liveTypeLabel(ctx.lang, rawType) || "Live";
         tip.push(vn ? `${tt} @ ${vn}` : tt);
       }
       if (extras.length > 2) tip.push(`+${extras.length - 2} more`);
     }
     if (played) tip.push("Has played live result");
-    const title = tip.join(" · ") || iso;
+    const title = tip.join(" Â· ") || iso;
 
     cells.push(`<div class="${cls}" title="${htmlEsc(title)}">
       <span class="schedule-cal-daynum">${day}</span>
@@ -196,9 +198,9 @@ function buildScheduleMonthCalendarHtml(
 
   return `<div class="schedule-cal" data-sched-cal-root="${htmlEsc(firstOfMonthIso)}">
     <div class="schedule-cal-toolbar">
-      <button type="button" class="fm-btn" data-sched-cal-delta="-1" aria-label="Previous month">${htmlEsc("←")}</button>
+      <button type="button" class="fm-btn" data-sched-cal-delta="-1" aria-label="Previous month">${htmlEsc("â†")}</button>
       <h3 class="schedule-cal-month-title content-h3">${htmlEsc(monthTitle)}</h3>
-      <button type="button" class="fm-btn" data-sched-cal-delta="1" aria-label="Next month">${htmlEsc("→")}</button>
+      <button type="button" class="fm-btn" data-sched-cal-delta="1" aria-label="Next month">${htmlEsc("â†’")}</button>
       <button type="button" class="fm-btn fm-btn-accent schedule-cal-today" data-sched-cal-today="1">${htmlEsc("This month")}</button>
     </div>
     <div class="schedule-cal-grid" role="grid" aria-label="Month calendar">${head}${cells.join("")}</div>
@@ -213,6 +215,7 @@ export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival";
 export type ScoutTab = "freelancer" | "transfer" | "audition";
 export type TrainingTab = "assignments" | "roster" | "songs";
 export type FinanceHistoryRange = "day" | "week" | "month" | "year" | "all";
+export type FinanceTab = "finance" | "contract";
 export type TrainingRosterSortKey = "romaji" | "age" | "ability" | "condition" | "morale" | "started";
 
 export interface LiveProgramItem {
@@ -302,15 +305,15 @@ function sortIdolsByXFollowersDesc(rows: Record<string, unknown>[]): Record<stri
 function xFollowersLabel(row: Record<string, unknown>): string {
   const v = row.x_followers;
   if (typeof v === "number" && Number.isFinite(v)) return v.toLocaleString("ja-JP");
-  if (v == null || v === "") return "—";
+  if (v == null || v === "") return "â€”";
   const n = Number(v);
-  return Number.isFinite(n) ? n.toLocaleString("ja-JP") : "—";
+  return Number.isFinite(n) ? n.toLocaleString("ja-JP") : "â€”";
 }
 
 function heightCmLabel(row: Record<string, unknown>): string {
   const h = row.height;
   if (typeof h === "number" && Number.isFinite(h)) return String(Math.round(h));
-  return "—";
+  return "â€”";
 }
 
 function buildSongCountByGroupUid(songs: Record<string, unknown>[] | undefined): Map<string, number> {
@@ -318,17 +321,17 @@ function buildSongCountByGroupUid(songs: Record<string, unknown>[] | undefined):
   if (!Array.isArray(songs)) return m;
   for (const s of songs) {
     if (isSongHiddenFromDisplay(s as Record<string, unknown>)) continue;
-    const g = String((s as { group_uid?: unknown }).group_uid ?? "").trim();
+    const g = String((s as { group_uid?: unknown }).group_uid JPY   "").trim();
     if (!g) continue;
-    m.set(g, (m.get(g) ?? 0) + 1);
+    m.set(g, (m.get(g) JPY   0) + 1);
   }
   return m;
 }
 
 function formatLongDate(iso: string | undefined): string {
-  if (!iso) return "—";
+  if (!iso) return "â€”";
   const datePart = String(iso).split("T")[0];
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "—";
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "â€”";
   const d = new Date(datePart + "T12:00:00Z");
   const base = d.toLocaleDateString("en-US", {
     weekday: "long",
@@ -337,7 +340,7 @@ function formatLongDate(iso: string | undefined): string {
     year: "numeric",
     timeZone: "UTC",
   });
-  const timePart = String(iso).includes("T") ? String(iso).split("T")[1]?.slice(0, 5) ?? "" : "";
+  const timePart = String(iso).includes("T") ? String(iso).split("T")[1]?.slice(0, 5) JPY   "" : "";
   return timePart ? `${base} ${timePart}` : base;
 }
 
@@ -355,14 +358,14 @@ function shortlistRows(save: GameSavePayload): { uid: string; label: string }[] 
         ? row.name
         : row && typeof row.romaji === "string"
           ? row.romaji
-          : uid.slice(0, 8) + "…";
+          : uid.slice(0, 8) + "â€¦";
     return { uid, label: name };
   });
 }
 
 function renderPlaceholder(view: string, blurb?: string): string {
   const text =
-    blurb ??
+    blurb JPY  
     `This screen mirrors the desktop <strong>${htmlEsc(view)}</strong> tab. Gameplay will be ported step by step.`;
   return `<section class="content-panel" aria-label="${htmlEsc(view)}"><p class="content-lead">${text}</p></section>`;
 }
@@ -465,7 +468,7 @@ function radarToneClass(v: number): string {
 
 function fmtHistoryDateCell(v: unknown): string {
   if (typeof v === "string" && v.trim()) return v.trim().split("T")[0];
-  if (v == null || v === "") return "—";
+  if (v == null || v === "") return "â€”";
   return String(v);
 }
 
@@ -503,7 +506,7 @@ function fmtHistoryDateDisplay(
   entry: Record<string, unknown>,
   role: "start" | "end",
 ): string {
-  if (v == null || v === "") return "—";
+  if (v == null || v === "") return "â€”";
 
   const day = historyIsoDay(v);
   const ref = refDayString(refIso);
@@ -600,17 +603,17 @@ function renderGroupHistoryTable(
   const tbody = hist
     .filter((x): x is Record<string, unknown> => Boolean(x && typeof x === "object"))
     .map((e) => {
-      const gname = String(e.group_name ?? "").trim();
-      let guid = String(e.group_uid ?? "").trim();
+      const gname = String(e.group_name JPY   "").trim();
+      let guid = String(e.group_uid JPY   "").trim();
       const label =
         gname ||
-        (guid ? (uidToName.get(guid) ?? `${guid.slice(0, 10)}…`) : "—");
-      if (!guid && label !== "—") guid = lookupGroupUidByName(groupsSnapshot, label) ?? "";
+        (guid ? (uidToName.get(guid) JPY   `${guid.slice(0, 10)}â€¦`) : "â€”");
+      if (!guid && label !== "â€”") guid = lookupGroupUidByName(groupsSnapshot, label) JPY   "";
       const groupCell = guid
         ? `<button type="button" class="idol-history-group-link" data-group-detail="${htmlEsc(guid)}">${htmlEsc(label)}</button>`
         : htmlEsc(label);
-      const col = typeof e.member_color === "string" && e.member_color ? e.member_color : "—";
-      const mn = typeof e.member_name === "string" && e.member_name ? e.member_name : "—";
+      const col = typeof e.member_color === "string" && e.member_color ? e.member_color : "â€”";
+      const mn = typeof e.member_name === "string" && e.member_name ? e.member_name : "â€”";
       const startDisp = fmtHistoryDateDisplay(e.start_date, referenceIso, e, "start");
       const endDisp = fmtHistoryDateDisplay(e.end_date, referenceIso, e, "end");
       return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td></tr>`;
@@ -627,11 +630,11 @@ function renderGroupHistoryTable(
 
 function pastNamesSummary(row: Record<string, unknown>): string {
   const pn = row.past_names;
-  if (!pn || typeof pn !== "object") return "—";
+  if (!pn || typeof pn !== "object") return "â€”";
   const entries = Object.entries(pn as Record<string, unknown>)
     .map(([k, v]) => `${k}${v != null && String(v) ? ` (${String(v)})` : ""}`)
     .filter(Boolean);
-  return entries.length ? entries.join(" · ") : "—";
+  return entries.length ? entries.join(" Â· ") : "â€”";
 }
 
 /** Single-idol profile (mirrors desktop `IdolUIMixin._show_idol_profile`). */
@@ -640,14 +643,14 @@ function renderIdolDetailPage(
   groupsSnapshot: Record<string, unknown>[],
   referenceIso: string | undefined,
 ): string {
-  const name = typeof row.name === "string" ? row.name : "—";
+  const name = typeof row.name === "string" ? row.name : "â€”";
   const romaji = romajiFromRow(row);
   const nick = typeof row.nickname === "string" ? row.nickname.trim() : "";
   const hiragana = typeof row.hiragana === "string" ? row.hiragana.trim() : "";
   const attrs = attrsFromRow(row);
   const attrPanels = renderAttributePanels(attrs);
 
-  const initial = [...(name.trim() || "?")][0] ?? "?";
+  const initial = [...(name.trim() || "?")][0] JPY   "?";
   const portraitSrc = idolPortraitPublicSrc(row);
   const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
   const portraitBig = portraitSrc
@@ -666,7 +669,7 @@ function renderIdolDetailPage(
               : htmlEsc(m.name),
           )
           .join(", ")
-      : htmlEsc("—");
+      : htmlEsc("â€”");
 
   const secLine = [
     romaji ? htmlEsc(romaji) : "",
@@ -693,12 +696,12 @@ function renderIdolDetailPage(
       ? htmlEsc(row.birthday.trim().split("T")[0])
       : typeof row.birthday_partial === "string" && row.birthday_partial.trim()
         ? htmlEsc(row.birthday_partial.trim())
-        : "—";
+        : "â€”";
   const langs = Array.isArray(row.languages) ? row.languages.map((x) => String(x)).join(", ") : "";
 
   const xa = typeof row.x_account === "string" ? row.x_account.trim() : "";
   const xh = typeof row.x_handle === "string" ? row.x_handle.trim() : "";
-  let xHandle = "—";
+  let xHandle = "â€”";
   if (xa) xHandle = `@${xa.replace(/^@/, "")}`;
   else if (xh) xHandle = xh.startsWith("@") ? xh : `@${xh}`;
 
@@ -708,9 +711,9 @@ function renderIdolDetailPage(
   const xFollowersDisp = xFollowersLabel(row);
 
   const xHandleLink =
-    xProfileUrl && xHandle !== "—"
+    xProfileUrl && xHandle !== "â€”"
       ? `<a class="idol-detail-x-strip-a" href="${attrQuotedUrl(xProfileUrl)}" target="_blank" rel="noopener noreferrer">${htmlEsc(xHandle)}</a>`
-      : xHandle !== "—"
+      : xHandle !== "â€”"
         ? `<span class="idol-detail-x-strip-plain">${htmlEsc(xHandle)}</span>`
         : "";
 
@@ -731,7 +734,7 @@ function renderIdolDetailPage(
   return `
 <section class="content-panel idol-detail-view" aria-label="${htmlEsc(name)}">
   <header class="idol-detail-toolbar">
-    <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">← Idol list</button>
+    <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">â† Idol list</button>
   </header>
 
   <div class="idol-detail-head fm-card idol-detail-head-grid">
@@ -739,7 +742,7 @@ function renderIdolDetailPage(
     <div class="idol-detail-head-main">
       <h2 class="idol-detail-name">${htmlEsc(name)}</h2>
       ${secLine ? `<p class="idol-detail-sub">${secLine}</p>` : ""}
-      <p class="idol-detail-facts">${facts.join(` ${htmlEsc("•")} `)}</p>
+      <p class="idol-detail-facts">${facts.join(` ${htmlEsc("â€¢")} `)}</p>
       <p class="idol-detail-current-groups"><strong>${htmlEsc("Group")}:</strong> ${currentGroupsHtml}</p>
       ${linksInline}
     </div>
@@ -757,7 +760,7 @@ function renderIdolDetailPage(
     <h3 class="content-h3 idol-detail-h">${htmlEsc("Basic information")}</h3>
     <dl class="basic-dl">
       <div><dt>${htmlEsc("Birthday")}</dt><dd>${birthdayDisplay}</dd></div>
-      <div><dt>${htmlEsc("Birthplace")}</dt><dd>${bp ? htmlEsc(bp) : "—"}</dd></div>
+      <div><dt>${htmlEsc("Birthplace")}</dt><dd>${bp ? htmlEsc(bp) : "â€”"}</dd></div>
       <div><dt>${htmlEsc("Languages")}</dt><dd>${langs ? htmlEsc(langs) : htmlEsc("Japanese")}</dd></div>
       <div><dt>${htmlEsc("Past names")}</dt><dd>${htmlEsc(pastNamesSummary(row))}</dd></div>
       <div><dt>${htmlEsc("X handle")}</dt><dd>${htmlEsc(xHandle)}</dd></div>
@@ -784,22 +787,22 @@ function renderInbox(
     return `<section class="content-panel"><p class="content-muted">No messages in inbox.</p></section>`;
   }
   const sel = selectedUid && rows.some((r) => r.uid === selectedUid) ? selectedUid : null;
-  const selected = sel ? rows.find((r) => r.uid === sel) ?? null : null;
+  const selected = sel ? rows.find((r) => r.uid === sel) JPY   null : null;
 
   const markAllDisabled = rows.every((r) => r.read || notificationRequiresAck(r));
   const notificationTimeLabel = (row: { created_at?: string }): string => {
-    const created = String(row.created_at ?? "").trim();
-    return created.includes("T") ? created.split("T")[1]?.slice(0, 5) ?? "00:00" : "00:00";
+    const created = String(row.created_at JPY   "").trim();
+    return created.includes("T") ? created.split("T")[1]?.slice(0, 5) JPY   "00:00" : "00:00";
   };
 
   const list = rows
     .map((n) => {
-      const unread = !n.read ? `<span class="badge-unread" aria-hidden="true">●</span> ` : "";
+      const unread = !n.read ? `<span class="badge-unread" aria-hidden="true">*</span> ` : "";
       const active = n.uid === sel ? " is-active" : "";
       const attention = attentionActionUid === n.uid ? `<span class="inbox-blocker-alert" aria-hidden="true">!</span>` : "";
       return `<button type="button" class="inbox-row-btn fm-card${active}" data-inbox-uid="${htmlEsc(n.uid)}">
         <span class="inbox-row-title">${unread}<span>${htmlEsc(n.title)}</span>${attention}</span>
-        <span class="inbox-row-meta">${htmlEsc(n.date)} · ${htmlEsc(n.sender)}</span>
+        <span class="inbox-row-meta">${htmlEsc(n.date)} - ${htmlEsc(n.sender)}</span>
       </button>`;
     })
     .join("");
@@ -809,53 +812,58 @@ function renderInbox(
         const liveReport =
           selected.report_data &&
           typeof selected.report_data === "object" &&
-          String((selected.report_data as Record<string, unknown>).kind ?? "") === "live_report"
+          String((selected.report_data as Record<string, unknown>).kind JPY   "") === "live_report"
             ? (selected.report_data as Record<string, unknown>)
             : null;
+        const specialReport =
+          selected.report_data && typeof selected.report_data === "object"
+            ? (selected.report_data as Record<string, unknown>)
+            : null;
+        const specialKind = String(specialReport?.kind JPY   "");
         const isLiveSchedule =
           selected.title === "Today's live schedule" ||
-          String(selected.dedupe_key ?? "").startsWith("daily-lives|");
+          String(selected.dedupe_key JPY   "").startsWith("daily-lives|");
         const primaryBtn = isLiveSchedule
           ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(selected.uid)}" ${simulationBusy ? "disabled" : ""}>${htmlEsc("Live Start")}${attentionActionUid === selected.uid ? ` <span class="inbox-blocker-alert" aria-hidden="true">!</span>` : ""}</button>`
           : ``;
         const liveScheduleLinks = isLiveSchedule
           ? (() => {
-              const dateIso = String(selected.date ?? "").split("T")[0];
-              const todaysLives = (save.lives?.schedules ?? [])
+              const dateIso = String(selected.date JPY   "").split("T")[0];
+              const todaysLives = (save.lives?.schedules JPY   [])
                 .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
-                .filter((live) => String(live.start_date ?? "").split("T")[0] === dateIso)
-                .sort((a, b) => String(a.start_time ?? "").localeCompare(String(b.start_time ?? "")));
+                .filter((live) => String(live.start_date JPY   "").split("T")[0] === dateIso)
+                .sort((a, b) => String(a.start_time JPY   "").localeCompare(String(b.start_time JPY   "")));
               if (!todaysLives.length) return "";
               const items = todaysLives
                 .map((live) => {
-                  const uid = String(live.uid ?? "");
+                  const uid = String(live.uid JPY   "");
                   const title = liveDisplayTitleText(live);
                   const when = liveTimeRangeText(live) || formatLiveSlotLine(live) || dateIso;
                   const venueText = liveVenueCompactText(live);
-                  return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} · ${venueText}`)}</span></li>`;
+                  return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} Â· ${venueText}`)}</span></li>`;
                 })
                 .join("");
               return `<div class="live-report-detail"><h4 class="content-h3">Today's lives</h4><ul class="plain-list">${items}</ul></div>`;
             })()
           : "";
         const startupActions = (() => {
-          const dedupeKey = String(selected.dedupe_key ?? "");
+          const dedupeKey = String(selected.dedupe_key JPY   "");
           if (dedupeKey.startsWith("startup-lives|")) {
-            const upcomingItems = (save.lives?.schedules ?? [])
+            const upcomingItems = (save.lives?.schedules JPY   [])
               .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
               .sort((a, b) => {
-                const da = String(a.start_date ?? "");
-                const db = String(b.start_date ?? "");
+                const da = String(a.start_date JPY   "");
+                const db = String(b.start_date JPY   "");
                 if (da !== db) return da.localeCompare(db);
-                return String(a.start_time ?? "").localeCompare(String(b.start_time ?? ""));
+                return String(a.start_time JPY   "").localeCompare(String(b.start_time JPY   ""));
               })
               .slice(0, 24)
               .map((live) => {
-                const uid = String(live.uid ?? "");
+                const uid = String(live.uid JPY   "");
                 const title = liveDisplayTitleText(live);
-                const when = formatLiveSlotLine(live) || String(live.start_date ?? "").split("T")[0];
+                const when = formatLiveSlotLine(live) || String(live.start_date JPY   "").split("T")[0];
                 const venueText = liveVenueCompactText(live);
-                return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} · ${venueText}`)}</span></li>`;
+                return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} Â· ${venueText}`)}</span></li>`;
               })
               .join("");
             if (upcomingItems) {
@@ -867,7 +875,7 @@ function renderInbox(
           }
           if (dedupeKey.startsWith("startup-roster|")) {
             const groups = save.database_snapshot.groups as Record<string, unknown>[];
-            const managedGroup = groups.find((row) => String(row.uid ?? "") === save.managing_group_uid) ?? null;
+            const managedGroup = groups.find((row) => String(row.uid JPY   "") === save.managing_group_uid) JPY   null;
             const managedMemberUids = new Set(
               Array.isArray(managedGroup?.member_uids) ? managedGroup.member_uids.map((x) => String(x)) : [],
             );
@@ -875,12 +883,12 @@ function renderInbox(
               const hist = Array.isArray(row.group_history) ? row.group_history : [];
               return hist
                 .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
-                .filter((entry) => String(entry.group_uid ?? "") === save.managing_group_uid);
+                .filter((entry) => String(entry.group_uid JPY   "") === save.managing_group_uid);
             };
-            const entryStartKey = (entry: Record<string, unknown>): string => String(entry.start_date ?? "").split("T")[0];
-            const entryEndKey = (entry: Record<string, unknown>): string => String(entry.end_date ?? "").split("T")[0];
+            const entryStartKey = (entry: Record<string, unknown>): string => String(entry.start_date JPY   "").split("T")[0];
+            const entryEndKey = (entry: Record<string, unknown>): string => String(entry.end_date JPY   "").split("T")[0];
             const portraitCell = (row: Record<string, unknown>, name: string) => {
-              const initial = [...(name.trim() || "?")][0] ?? "?";
+              const initial = [...(name.trim() || "?")][0] JPY   "?";
               const portraitSrc = idolPortraitPublicSrc(row);
               const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
               return portraitSrc
@@ -893,56 +901,56 @@ function renderInbox(
               const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
               return colorCss
                 ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
-                : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "—" ? color : "Default")}"></span> ${htmlEsc(color !== "—" ? color : "—")}`;
+                : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "â€”" ? color : "Default")}"></span> ${htmlEsc(color !== "â€”" ? color : "â€”")}`;
             };
             const currentRows = save.database_snapshot.idols
               .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
-              .filter((row) => managedMemberUids.has(String(row.uid ?? "")))
+              .filter((row) => managedMemberUids.has(String(row.uid JPY   "")))
               .map((row) => {
-                const uid = String(row.uid ?? "");
-                const name = String((row.name ?? uid) || "Idol");
+                const uid = String(row.uid JPY   "");
+                const name = String((row.name JPY   uid) || "Idol");
                 const currentEntry =
                   matchGroupHistory(row)
                     .find((entry) => {
                       const end = entryEndKey(entry);
-                      return !end || end >= String(save.current_date ?? "").split("T")[0];
-                    }) ?? null;
-                const enterDate = currentEntry ? fmtHistoryDateDisplay(currentEntry.start_date, save.current_date, currentEntry, "start") : "—";
+                      return !end || end >= String(save.current_date JPY   "").split("T")[0];
+                    }) JPY   null;
+                const enterDate = currentEntry ? fmtHistoryDateDisplay(currentEntry.start_date, save.current_date, currentEntry, "start") : "â€”";
                 const color =
                   currentEntry && typeof currentEntry.member_color === "string" && currentEntry.member_color.trim()
                     ? currentEntry.member_color.trim()
                     : typeof row.member_color === "string" && row.member_color.trim()
                       ? row.member_color.trim()
-                      : "—";
-                const colorCode = currentEntry?.member_color_code ?? row.member_color_code;
+                      : "â€”";
+                const colorCode = currentEntry?.member_color_code JPY   row.member_color_code;
                 return { uid, name, enterDate, color, colorCode, photo: portraitCell(row, name) };
               })
               .sort((a, b) => a.enterDate.localeCompare(b.enterDate));
             const pastRows = save.database_snapshot.idols
               .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
-              .filter((row) => !managedMemberUids.has(String(row.uid ?? "")))
+              .filter((row) => !managedMemberUids.has(String(row.uid JPY   "")))
               .map((row) => {
-                const uid = String(row.uid ?? "");
-                const name = String((row.name ?? uid) || "Idol");
+                const uid = String(row.uid JPY   "");
+                const name = String((row.name JPY   uid) || "Idol");
                 const pastEntries = matchGroupHistory(row).filter((entry) => Boolean(entryEndKey(entry)));
                 if (!pastEntries.length) return null;
                 const latest = [...pastEntries].sort((a, b) => entryStartKey(b).localeCompare(entryStartKey(a)))[0];
                 const leaveKey = entryEndKey(latest);
                 const activeGroupUids = new Set(
                   activeGroupMembershipsAtReference(row, save.current_date, groups)
-                    .map((m) => String(m.uid ?? "").trim())
+                    .map((m) => String(m.uid JPY   "").trim())
                     .filter(Boolean),
                 );
                 const followingGroups = (Array.isArray(row.group_history) ? row.group_history : [])
                   .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
-                  .filter((entry) => String(entry.group_uid ?? "") !== save.managing_group_uid)
+                  .filter((entry) => String(entry.group_uid JPY   "") !== save.managing_group_uid)
                   .filter((entry) => {
                     const start = entryStartKey(entry);
                     return Boolean(start) && (!leaveKey || start >= leaveKey);
                   })
                   .map((entry) => {
-                    const groupUid = String(entry.group_uid ?? "").trim();
-                    const groupName = String(entry.group_name ?? "").trim() || groupUid || "—";
+                    const groupUid = String(entry.group_uid JPY   "").trim();
+                    const groupName = String(entry.group_name JPY   "").trim() || groupUid || "â€”";
                     const linked = groupUid
                       ? `<button type="button" class="text-action-btn" data-group-detail="${htmlEsc(groupUid)}">${htmlEsc(groupName)}</button>`
                       : htmlEsc(groupName);
@@ -954,7 +962,7 @@ function renderInbox(
                   name,
                   enterDate: fmtHistoryDateDisplay(latest.start_date, save.current_date, latest, "start"),
                   leaveDate: fmtHistoryDateDisplay(latest.end_date, save.current_date, latest, "end"),
-                  followingGroups: followingGroups.join(", ") || "—",
+                  followingGroups: followingGroups.join(", ") || "â€”",
                 };
               })
               .filter((row): row is { uid: string; name: string; enterDate: string; leaveDate: string; followingGroups: string } => Boolean(row))
@@ -982,52 +990,140 @@ function renderInbox(
               </div>
             </div>`;
           }
+          if (specialKind === "weekly_news_roundup" && specialReport) {
+            const renderGroupLink = (groupUid: string, groupName: string) =>
+              groupUid
+                ? `<button type="button" class="text-action-btn" data-group-detail="${htmlEsc(groupUid)}">${htmlEsc(groupName)}</button>`
+                : htmlEsc(groupName);
+            const renderIdolLink = (idolUid: string, idolName: string) =>
+              idolUid
+                ? `<button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(idolUid)}">${htmlEsc(idolName)}</button>`
+                : htmlEsc(idolName);
+            const formedRows = Array.isArray(specialReport.formed_rows) ? (specialReport.formed_rows as Record<string, unknown>[]) : [];
+            const joinRows = Array.isArray(specialReport.join_rows) ? (specialReport.join_rows as Record<string, unknown>[]) : [];
+            const leftRows = Array.isArray(specialReport.left_rows) ? (specialReport.left_rows as Record<string, unknown>[]) : [];
+            const formedItems = formedRows
+              .map((row) => `<li>${htmlEsc(String(row.date JPY   ""))}: ${renderGroupLink(String(row.groupUid JPY   ""), String(row.group JPY   "Group"))} formed.</li>`)
+              .join("");
+            const joinItems = joinRows
+              .map((row) => `<li>${htmlEsc(String(row.date JPY   ""))}: ${renderIdolLink(String(row.idolUid JPY   ""), String(row.idol JPY   "Member"))} joined ${renderGroupLink(String(row.groupUid JPY   ""), String(row.group JPY   "Group"))}.</li>`)
+              .join("");
+            const leftItems = leftRows
+              .map((row) => `<li>${htmlEsc(String(row.date JPY   ""))}: ${renderIdolLink(String(row.idolUid JPY   ""), String(row.idol JPY   "Member"))} left ${renderGroupLink(String(row.groupUid JPY   ""), String(row.group JPY   "Group"))}.</li>`)
+              .join("");
+            return `<div class="live-report-detail">
+              <div class="table-panel">
+                <h4 class="content-h3">New groups</h4>
+                <ul class="plain-list">${formedItems || `<li class="content-muted">No new groups this week.</li>`}</ul>
+              </div>
+              <div class="table-panel">
+                <h4 class="content-h3">Member joins</h4>
+                <ul class="plain-list">${joinItems || `<li class="content-muted">No member joins this week.</li>`}</ul>
+              </div>
+              <div class="table-panel">
+                <h4 class="content-h3">Member departures</h4>
+                <ul class="plain-list">${leftItems || `<li class="content-muted">No member departures this week.</li>`}</ul>
+              </div>
+            </div>`;
+          }
           return "";
         })();
         const renderLiveReport = (): string => {
+          if (specialKind === "contract_renew_review" && specialReport) {
+            return `<div class="live-report-detail contract-event-detail">
+              <div class="live-report-summary-grid">
+                <div class="live-report-summary-item"><span class="label">Current salary</span><strong>${htmlEsc(`Â¥${Number(specialReport.current_salary_yen JPY   0).toLocaleString("ja-JP")}`)}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Current end</span><strong>${htmlEsc(String(specialReport.current_end_date JPY   "-"))}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Likelihood</span><strong>${htmlEsc(String(specialReport.likelihood JPY   "-"))}</strong></div>
+              </div>
+              <div class="form-grid live-form-grid">
+                <label><span>New salary</span><input type="number" class="fm-input" data-contract-draft-salary="${htmlEsc(selected.uid)}" value="${htmlEsc(String(Number(specialReport.proposed_salary_yen JPY   0) || 0))}" /></label>
+                <label><span>New end date</span><input type="date" class="fm-input" data-contract-draft-end="${htmlEsc(selected.uid)}" value="${htmlEsc(String(specialReport.proposed_end_date JPY   ""))}" /></label>
+              </div>
+            </div>`;
+          }
+          if (specialKind === "contract_renew_confirm" && specialReport) {
+            return `<div class="live-report-detail contract-event-detail">
+              <div class="live-report-summary-grid">
+                <div class="live-report-summary-item"><span class="label">Proposed salary</span><strong>${htmlEsc(`Â¥${Number(specialReport.proposed_salary_yen JPY   0).toLocaleString("ja-JP")}`)}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Proposed end</span><strong>${htmlEsc(String(specialReport.proposed_end_date JPY   "-"))}</strong></div>
+              </div>
+              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+            </div>`;
+          }
+          if (specialKind === "contract_terminate_review" && specialReport) {
+            return `<div class="live-report-detail contract-event-detail">
+              <div class="live-report-summary-grid">
+                <div class="live-report-summary-item"><span class="label">Salary</span><strong>${htmlEsc(`Â¥${Number(specialReport.salary_yen JPY   0).toLocaleString("ja-JP")}`)}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Contract end</span><strong>${htmlEsc(String(specialReport.contract_end_date JPY   "-"))}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Scandal</span><strong>${htmlEsc(`Level ${String(specialReport.scandal_level JPY   0)}`)}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Termination fee</span><strong>${htmlEsc(`Â¥${Number(specialReport.termination_fee_yen JPY   0).toLocaleString("ja-JP")}`)}</strong></div>
+              </div>
+              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+            </div>`;
+          }
+          if (specialKind === "scout_subscription" && specialReport) {
+            const leadUid = String(specialReport.first_lead_uid JPY   "");
+            const lead = leadUid
+              ? (save.database_snapshot.idols.find((row) => String((row as Record<string, unknown>).uid JPY   "") === leadUid) as Record<string, unknown> | undefined)
+              : undefined;
+            const leadName = String((lead?.name JPY   leadUid) || "No lead yet");
+            const companyName = String(specialReport.company_name JPY   selected.sender JPY   "Scout");
+            const profileScore = Number(specialReport.first_lead_profile_score JPY   NaN);
+            const reason = String(specialReport.first_lead_reason JPY   "").trim();
+            return `<div class="live-report-detail contract-event-detail">
+              <div class="live-report-summary-grid">
+                <div class="live-report-summary-item"><span class="label">Scout firm</span><strong>${htmlEsc(companyName)}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Monthly fee</span><strong>${htmlEsc(`¥${Number(specialReport.service_fee_yen JPY   0).toLocaleString("ja-JP")}`)}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Immediate lead</span><strong>${leadUid ? `<button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(leadUid)}">${htmlEsc(leadName)}</button>` : htmlEsc("None")}</strong></div>
+                <div class="live-report-summary-item"><span class="label">Profile</span><strong>${Number.isFinite(profileScore) ? htmlEsc(String(profileScore)) : "—"}</strong></div>
+              </div>
+              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}${reason ? `<br /><br /><strong>Scout read:</strong> ${htmlEsc(reason)}` : ""}</div>
+            </div>`;
+          }
           if (!liveReport) {
             const plainBody = htmlEsc(selected.body).replaceAll("\n", "<br />");
             return `${liveScheduleLinks}${startupActions}<div class="inbox-plain-body">${plainBody}</div>`;
           }
-          const venue = String(liveReport.venue ?? "—");
-          const ticketGross = Number(liveReport.ticket_gross_yen ?? 0) || 0;
-          const goodsGross = Number(liveReport.goods_gross_yen ?? 0) || 0;
-          const chekiGross = Number(liveReport.tokutenkai_revenue_yen ?? 0) || 0;
-          const groupFanCount = Number(liveReport.group_fan_count ?? 0) || 0;
-          const groupFanGain = Number(liveReport.group_fan_gain ?? 0) || 0;
-          const liveTimeText = String(liveReport.slot ?? liveReport.date ?? "—");
+          const venue = String(liveReport.venue JPY   "â€”");
+          const ticketGross = Number(liveReport.ticket_gross_yen JPY   0) || 0;
+          const goodsGross = Number(liveReport.goods_gross_yen JPY   0) || 0;
+          const chekiGross = Number(liveReport.tokutenkai_revenue_yen JPY   0) || 0;
+          const groupFanCount = Number(liveReport.group_fan_count JPY   0) || 0;
+          const groupFanGain = Number(liveReport.group_fan_gain JPY   0) || 0;
+          const liveTimeText = String(liveReport.slot JPY   liveReport.date JPY   "â€”");
           const liveTime = liveTimeText.replace(/^\d{4}-\d{2}-\d{2}\s+/, "");
           const memberRows = Array.isArray(liveReport.member_deltas)
             ? (liveReport.member_deltas as unknown[])
                 .filter((row) => row && typeof row === "object")
                 .map((row) => {
                   const r = row as Record<string, unknown>;
-                  const fanGain = Number(r.fan_gain ?? 0) || 0;
-                  const fanCount = Number(r.fan_count ?? 0) || 0;
-                  const conditionAfter = Number(r.condition_after ?? 0) || 0;
-                  const conditionDelta = Number(r.condition_delta ?? 0) || 0;
-                  const moraleGain = Number(r.morale_gain ?? r.morale_delta ?? 0) || 0;
-                  const moraleAfter = Number(r.morale_after ?? 0) || 0;
+                  const fanGain = Number(r.fan_gain JPY   0) || 0;
+                  const fanCount = Number(r.fan_count JPY   0) || 0;
+                  const conditionAfter = Number(r.condition_after JPY   0) || 0;
+                  const conditionDelta = Number(r.condition_delta JPY   0) || 0;
+                  const moraleGain = Number(r.morale_gain JPY   r.morale_delta JPY   0) || 0;
+                  const moraleAfter = Number(r.morale_after JPY   0) || 0;
                   return `<tr>
-                    <td>${htmlEsc(String(r.name ?? "Member"))}</td>
-                    <td class="num">${htmlEsc(String(r.performance_rating ?? "—"))}</td>
+                    <td>${htmlEsc(String(r.name JPY   "Member"))}</td>
+                    <td class="num">${htmlEsc(String(r.performance_rating JPY   "â€”"))}</td>
                     <td class="num">${htmlEsc(`${fanCount.toLocaleString("ja-JP")} (${fanGain >= 0 ? "+" : ""}${fanGain.toLocaleString("ja-JP")})`)}</td>
                     <td class="num">${htmlEsc(`${conditionAfter} (${conditionDelta >= 0 ? "+" : ""}${conditionDelta})`)}</td>
                     <td class="num">${htmlEsc(`${moraleAfter} (${moraleGain >= 0 ? "+" : ""}${moraleGain})`)}</td>
-                    <td class="num">${htmlEsc(`¥${Number(r.cheki_sale_money_yen ?? 0).toLocaleString("ja-JP")}`)}</td>
+                    <td class="num">${htmlEsc(`Â¥${Number(r.cheki_sale_money_yen JPY   0).toLocaleString("ja-JP")}`)}</td>
                   </tr>`;
                 })
                 .join("")
             : "";
           return `<div class="live-report-detail">
             <div class="live-report-summary-grid">
-              <div class="live-report-summary-item"><span class="label">Performance</span><strong>${htmlEsc(String(liveReport.performance_score ?? "—"))}</strong></div>
-              <div class="live-report-summary-item"><span class="label">Satisfaction</span><strong>${htmlEsc(String(liveReport.audience_satisfaction ?? "—"))}</strong></div>
-              <div class="live-report-summary-item"><span class="label">Attendance</span><strong>${htmlEsc(String(liveReport.attendance ?? 0))}${Number(liveReport.capacity ?? 0) > 0 ? htmlEsc(` / ${String(liveReport.capacity)}`) : ""}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Performance</span><strong>${htmlEsc(String(liveReport.performance_score JPY   "â€”"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Satisfaction</span><strong>${htmlEsc(String(liveReport.audience_satisfaction JPY   "â€”"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">Attendance</span><strong>${htmlEsc(String(liveReport.attendance JPY   0))}${Number(liveReport.capacity JPY   0) > 0 ? htmlEsc(` / ${String(liveReport.capacity)}`) : ""}</strong></div>
               <div class="live-report-summary-item"><span class="label">Fan</span><strong>${htmlEsc(`${groupFanCount.toLocaleString("ja-JP")} (${groupFanGain >= 0 ? "+" : ""}${groupFanGain.toLocaleString("ja-JP")})`)}</strong></div>
               <div class="live-report-summary-item"><span class="label">Venue</span><strong>${htmlEsc(venue)}</strong></div>
               <div class="live-report-summary-item"><span class="label">Time</span><strong>${htmlEsc(liveTime)}</strong></div>
-              <div class="live-report-summary-item live-report-summary-item--wide"><span class="label">Gross</span><strong>${htmlEsc(`\u00A5${Number(liveReport.gross_yen ?? 0).toLocaleString("ja-JP")}`)}</strong><span class="live-report-breakdown">${htmlEsc(`Tickets \u00A5${ticketGross.toLocaleString("ja-JP")} / Goods \u00A5${goodsGross.toLocaleString("ja-JP")} / Cheki \u00A5${chekiGross.toLocaleString("ja-JP")}`)}</span></div>
+              <div class="live-report-summary-item live-report-summary-item--wide"><span class="label">Gross</span><strong>${htmlEsc(`\u00A5${Number(liveReport.gross_yen JPY   0).toLocaleString("ja-JP")}`)}</strong><span class="live-report-breakdown">${htmlEsc(`Tickets \u00A5${ticketGross.toLocaleString("ja-JP")} / Goods \u00A5${goodsGross.toLocaleString("ja-JP")} / Cheki \u00A5${chekiGross.toLocaleString("ja-JP")}`)}</span></div>
             </div>
             <div class="table-scroll">
               <table class="fm-table">
@@ -1040,15 +1136,28 @@ function renderInbox(
         return `<article class="fm-card inbox-detail-card" aria-label="Message detail">
         <header class="fm-card-head">
           <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}${attentionActionUid === selected.uid ? ` <span class="inbox-blocker-alert" aria-hidden="true">!</span>` : ""}</h3>
-          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.created_at || selected.date)}">${htmlEsc(selected.date)} ${htmlEsc(notificationTimeLabel(selected))}</time> · ${htmlEsc(selected.sender)} · ${htmlEsc(selected.category)}</p>
+          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.created_at || selected.date)}">${htmlEsc(selected.date)} ${htmlEsc(notificationTimeLabel(selected))}</time> - ${htmlEsc(selected.sender)} - ${htmlEsc(selected.category)}</p>
         </header>
         <div class="inbox-detail-body">${renderLiveReport()}</div>
         ${
           selected.requires_confirmation
-            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> — ${isLiveSchedule ? "Start live to proceed." : "Acknowledge when you have decided (full choice parity is still in progress)."}</p>`
+            ? `<p class="inbox-flag" role="note"><strong>Confirmation required</strong> - ${isLiveSchedule ? "Start live to proceed." : "Acknowledge when you have decided (full choice parity is still in progress)."}</p>`
             : ""
         }
-        ${primaryBtn ? `<div class="inbox-detail-actions">${primaryBtn}</div>` : ""}
+        ${
+          primaryBtn || specialKind.startsWith("contract_")
+            ? `<div class="inbox-detail-actions">${
+                primaryBtn ||
+                (specialKind === "contract_renew_review"
+                  ? `<button type="button" class="fm-btn fm-btn-accent" data-contract-propose-renew="${htmlEsc(selected.uid)}">Propose</button><button type="button" class="fm-btn" data-contract-cancel="${htmlEsc(selected.uid)}">Cancel</button>`
+                  : specialKind === "contract_renew_confirm"
+                    ? `<button type="button" class="fm-btn fm-btn-accent" data-contract-confirm-renew="${htmlEsc(selected.uid)}">Confirm</button><button type="button" class="fm-btn" data-contract-cancel="${htmlEsc(selected.uid)}">Cancel</button>`
+                    : specialKind === "contract_terminate_review"
+                      ? `<button type="button" class="fm-btn fm-btn-danger" data-contract-confirm-terminate="${htmlEsc(selected.uid)}">Confirm terminate</button><button type="button" class="fm-btn" data-contract-cancel="${htmlEsc(selected.uid)}">Cancel</button>`
+                      : "")
+              }</div>`
+            : ""
+        }
       </article>`;
       })()
     : `<p class="content-muted">Select a message.</p>`;
@@ -1073,7 +1182,7 @@ function renderTraining(
 ): string {
   const sortHeader = (key: TrainingRosterSortKey, label: string) => {
     const active = rosterSortKey === key;
-    const arrow = active ? (rosterSortDir === "asc" ? " ↑" : " ↓") : "";
+    const arrow = active ? (rosterSortDir === "asc" ? " â†‘" : " â†“") : "";
     return `<button type="button" class="text-action-btn training-sort-btn${active ? " is-active" : ""}" data-training-roster-sort="${htmlEsc(key)}">${htmlEsc(label + arrow)}</button>`;
   };
   const grp = getPrimaryGroup(save);
@@ -1082,11 +1191,11 @@ function renderTraining(
     : [...save.shortlist];
   const idols = save.database_snapshot.idols;
   const ref =
-    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? undefined;
+    save.current_date JPY   save.game_start_date JPY   save.scenario_context?.startup_date JPY   undefined;
 
-  const groupUidStr = String(grp?.uid ?? "").trim();
+  const groupUidStr = String(grp?.uid JPY   "").trim();
   const groupNames = new Set(
-    [String(grp?.name ?? "").trim(), String(grp?.name_romanji ?? "").trim()].filter(Boolean),
+    [String(grp?.name JPY   "").trim(), String(grp?.name_romanji JPY   "").trim()].filter(Boolean),
   );
 
   const joinDateMsInGroup = (row: Record<string, unknown>): number => {
@@ -1095,8 +1204,8 @@ function renderTraining(
     for (const raw of hist) {
       if (!raw || typeof raw !== "object") continue;
       const e = raw as Record<string, unknown>;
-      const uid = String(e.group_uid ?? "").trim();
-      const gn = String(e.group_name ?? "").trim();
+      const uid = String(e.group_uid JPY   "").trim();
+      const gn = String(e.group_name JPY   "").trim();
       if (uid === groupUidStr || (gn && groupNames.has(gn))) {
         const sd = typeof e.start_date === "string" ? e.start_date.trim().split("T")[0] : "";
         if (/^\d{4}-\d{2}-\d{2}$/.test(sd)) return new Date(`${sd}T12:00:00Z`).getTime();
@@ -1111,14 +1220,14 @@ function renderTraining(
     for (const raw of hist) {
       if (!raw || typeof raw !== "object") continue;
       const entry = raw as Record<string, unknown>;
-      const uid = String(entry.group_uid ?? "").trim();
-      const gn = String(entry.group_name ?? "").trim();
+      const uid = String(entry.group_uid JPY   "").trim();
+      const gn = String(entry.group_name JPY   "").trim();
       if (uid === groupUidStr || (gn && groupNames.has(gn))) {
         const sd = typeof entry.start_date === "string" ? entry.start_date.trim().split("T")[0] : "";
-        return /^\d{4}-\d{2}-\d{2}$/.test(sd) ? sd : "—";
+        return /^\d{4}-\d{2}-\d{2}$/.test(sd) ? sd : "â€”";
       }
     }
-    return "—";
+    return "â€”";
   };
 
   void joinDateInTrainingGroup;
@@ -1128,14 +1237,14 @@ function renderTraining(
     for (const raw of hist) {
       if (!raw || typeof raw !== "object") continue;
       const entry = raw as Record<string, unknown>;
-      const uid = String(entry.group_uid ?? "").trim();
-      const gn = String(entry.group_name ?? "").trim();
+      const uid = String(entry.group_uid JPY   "").trim();
+      const gn = String(entry.group_name JPY   "").trim();
       if (uid === groupUidStr || (gn && groupNames.has(gn))) {
         const color = typeof entry.member_color === "string" ? entry.member_color.trim() : "";
-        return color || "—";
+        return color || "â€”";
       }
     }
-    return typeof row.member_color === "string" && row.member_color.trim() ? String(row.member_color).trim() : "—";
+    return typeof row.member_color === "string" && row.member_color.trim() ? String(row.member_color).trim() : "â€”";
   };
 
   const trainingValueToneClass = (value: number): string => {
@@ -1147,17 +1256,17 @@ function renderTraining(
   };
 
   const trainingStatusBadges = (row: Record<string, unknown>): string => {
-    const hiatusActive = isIdolOnHiatus(row, ref ?? null);
+    const hiatusActive = isIdolOnHiatus(row, ref JPY   null);
     const history = Array.isArray(row.status_history) ? row.status_history : [];
     const activeStatuses = history
       .filter((entry): entry is Record<string, unknown> => Boolean(entry && typeof entry === "object"))
       .filter((entry) => {
-        const start = String(entry.start_date ?? "").split("T")[0];
+        const start = String(entry.start_date JPY   "").split("T")[0];
         if (!ref || !/^\d{4}-\d{2}-\d{2}$/.test(start)) return true;
         return start <= ref;
       });
     const normalized = activeStatuses.map((entry) =>
-      `${String(entry.kind ?? "")} ${String(entry.status ?? "")} ${String(entry.summary ?? "")} ${String(entry.label ?? "")} ${String(entry.title ?? "")}`
+      `${String(entry.kind JPY   "")} ${String(entry.status JPY   "")} ${String(entry.summary JPY   "")} ${String(entry.label JPY   "")} ${String(entry.title JPY   "")}`
         .toLowerCase()
         .replace(/[_-]+/g, " "),
     );
@@ -1189,8 +1298,8 @@ function renderTraining(
   };
 
   const memberUids = [...memberUidsRaw].sort((a, b) => {
-    const ra = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === a) as Record<string, unknown> | undefined;
-    const rb = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === b) as Record<string, unknown> | undefined;
+    const ra = idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === a) as Record<string, unknown> | undefined;
+    const rb = idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === b) as Record<string, unknown> | undefined;
     if (!ra) return 1;
     if (!rb) return -1;
     const da = joinDateMsInGroup(ra);
@@ -1206,7 +1315,7 @@ function renderTraining(
 
   const trainingRosterRowsData = memberUids
     .map((uid) => {
-      const row = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uid);
+      const row = idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === uid);
       if (!row || typeof row !== "object") return null;
       const r = row as Record<string, unknown>;
       const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
@@ -1214,8 +1323,8 @@ function renderTraining(
       const age = ageLabel(r, ref);
       const ability = getAbility(normalizePersistedAttributes(r.attributes));
       const started = joinDateInTrainingGroup(r);
-      const condition = typeof r.condition === "number" ? r.condition : Number(r.condition ?? 90) || 90;
-      const morale = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 70) || 70;
+      const condition = typeof r.condition === "number" ? r.condition : Number(r.condition JPY   90) || 90;
+      const morale = typeof r.morale === "number" ? r.morale : Number(r.morale JPY   70) || 70;
       return {
         uid,
         row: r,
@@ -1252,7 +1361,7 @@ function renderTraining(
 
   const cards = memberUids
     .map((uid) => {
-      const row = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uid);
+      const row = idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === uid);
       if (!row || typeof row !== "object") return "";
       const r = row as Record<string, unknown>;
       const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
@@ -1267,7 +1376,7 @@ function renderTraining(
       const load = trainingLoadFromRow(intensity);
       const bear = trainingBearIndex(r);
       const over = Math.max(0, load - bear);
-      const focus = String(save.training_focus_skill[uid] ?? "");
+      const focus = String(save.training_focus_skill[uid] JPY   "");
 
       const slider = (field: keyof typeof intensity, label: string) => {
         const v = intensity[field];
@@ -1277,12 +1386,12 @@ function renderTraining(
       };
 
       const focusOpts = FOCUS_SKILL_OPTIONS.map((opt) => {
-        const lab = opt === "" ? "— (none)" : opt;
+        const lab = opt === "" ? "â€” (none)" : opt;
         return `<option value="${htmlEsc(opt)}" ${focus === opt ? "selected" : ""}>${htmlEsc(lab)}</option>`;
       }).join("");
 
-      const cond = typeof r.condition === "number" ? r.condition : Number(r.condition ?? 0) || 0;
-      const mor = typeof r.morale === "number" ? r.morale : Number(r.morale ?? 70) || 70;
+      const cond = typeof r.condition === "number" ? r.condition : Number(r.condition JPY   0) || 0;
+      const mor = typeof r.morale === "number" ? r.morale : Number(r.morale JPY   70) || 70;
 
       const nameLine = romaji
         ? `<h3 class="content-h3 training-member-title"><span class="training-name-ja">${htmlEsc(name)}</span><span class="training-name-ro">${htmlEsc(romaji)}</span></h3>`
@@ -1298,7 +1407,7 @@ function renderTraining(
             <span title="Morale">M ${htmlEsc(String(mor))}</span>
           </div>
         </header>
-        <p class="content-muted training-bear-line" data-training-bear="${htmlEsc(uid)}">${htmlEsc(`Training load ${load}/20 · bear index ${bear}`)}${over > 0 ? htmlEsc(` · overwork +${over} vs bear`) : ""}</p>
+        <p class="content-muted training-bear-line" data-training-bear="${htmlEsc(uid)}">${htmlEsc(`Training load ${load}/20 Â· bear index ${bear}`)}${over > 0 ? htmlEsc(` Â· overwork +${over} vs bear`) : ""}</p>
         <div class="training-sliders">
           ${slider("sing", "Sing")}
           ${slider("dance", "Dance")}
@@ -1317,7 +1426,7 @@ function renderTraining(
 
   const rosterRows = rosterSorted
     .map(({ uid, row: r, name, romaji, age, ability, started, condition, morale }) => {
-      const initial = [...(name.trim() || "?")][0] ?? "?";
+      const initial = [...(name.trim() || "?")][0] JPY   "?";
       const color = memberColorInTrainingGroup(r);
       const colorTrim = color.trim();
       const portraitSrc = idolPortraitPublicSrc(r);
@@ -1329,8 +1438,8 @@ function renderTraining(
       const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
       const colorCell = colorCss
         ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
-        : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "—" ? color : "Default")}"></span> ${htmlEsc(color !== "—" ? color : "—")}`;
-      const hiatusActive = isIdolOnHiatus(r, ref ?? null);
+        : `<span class="group-member-color-chip group-member-color-chip--default" title="${htmlEsc(color !== "â€”" ? color : "Default")}"></span> ${htmlEsc(color !== "â€”" ? color : "â€”")}`;
+      const hiatusActive = isIdolOnHiatus(r, ref JPY   null);
       const conditionTone = trainingValueToneClass(condition);
       const moraleTone = trainingValueToneClass(morale);
       const statusBadges = trainingStatusBadges(r);
@@ -1344,13 +1453,13 @@ function renderTraining(
       return `<tr>
         <td class="idol-list-photo">${portraitCell}</td>
         <td>${nameCell}</td>
-        <td>${romaji ? htmlEsc(romaji) : "—"}</td>
+        <td>${romaji ? htmlEsc(romaji) : "â€”"}</td>
         <td>${colorCell}</td>
         <td class="group-roster-stat">${htmlEsc(age)}</td>
         <td class="group-roster-stat">${htmlEsc(String(ability))}</td>
         <td class="group-roster-stat"><span class="training-value ${conditionTone}">${htmlEsc(String(condition))}</span></td>
         <td class="group-roster-stat"><span class="training-value ${moraleTone}">${htmlEsc(String(morale))}</span></td>
-        <td class="group-roster-stat">${htmlEsc(started || "—")}</td>
+        <td class="group-roster-stat">${htmlEsc(started || "â€”")}</td>
         <td>${statusBadges}</td>
         <td>${actionCell}</td>
       </tr>`;
@@ -1360,17 +1469,17 @@ function renderTraining(
 
   const hiatusRows = memberUids
     .map((uid) => {
-      const row = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uid);
+      const row = idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === uid);
       if (!row || typeof row !== "object") return "";
       const r = row as Record<string, unknown>;
-      if (!isIdolOnHiatus(r, ref ?? null)) return "";
+      if (!isIdolOnHiatus(r, ref JPY   null)) return "";
       const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
       const romaji = romajiFromRow(r);
-      const returnDate = hiatusReturnDate(r, ref ?? null) ?? "—";
-      const days = hiatusDaysRemaining(r, ref ?? null);
+      const returnDate = hiatusReturnDate(r, ref JPY   null) JPY   "â€”";
+      const days = hiatusDaysRemaining(r, ref JPY   null);
       return `<tr>
         <td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></td>
-        <td>${romaji ? htmlEsc(romaji) : "—"}</td>
+        <td>${romaji ? htmlEsc(romaji) : "â€”"}</td>
         <td>${htmlEsc(returnDate)}</td>
         <td class="group-roster-stat">${htmlEsc(`${days} day${days === 1 ? "" : "s"}`)}</td>
       </tr>`;
@@ -1379,23 +1488,23 @@ function renderTraining(
     .join("");
 
   const managedSongs = songsForDisplaySorted(save.database_snapshot.songs)
-    .filter((row) => String(row.group_uid ?? "") === groupUidStr)
+    .filter((row) => String(row.group_uid JPY   "") === groupUidStr)
     .filter((row) => !isSongHiddenFromDisplay(row))
-    .filter((row) => isSongAvailableOn(row, ref ?? null));
+    .filter((row) => isSongAvailableOn(row, ref JPY   null));
   const selectedSongUids = new Set(save.training_song_uids.map((uid) => String(uid)));
   const songRows = managedSongs
     .map((song) => {
-      const uid = String(song.uid ?? "").trim();
+      const uid = String(song.uid JPY   "").trim();
       const title = songCatalogDisplayLabel(song);
-      const availableOn = String((song.uid === "d3b51910-0f40-4e75-9413-4f3762fbf110" ? "2026-01-01" : song.release_date) ?? "")
+      const availableOn = String((song.uid === "d3b51910-0f40-4e75-9413-4f3762fbf110" ? "2026-01-01" : song.release_date) JPY   "")
         .split("T")[0];
       const status = save.managed_song_status[uid];
-      const familiarity = Math.round(Number(status?.familiarity ?? 0) || 0);
-      const fatigue = Math.round(Number(status?.rotation_fatigue ?? 0) || 0);
+      const familiarity = Math.round(Number(status?.familiarity JPY   0) || 0);
+      const fatigue = Math.round(Number(status?.rotation_fatigue JPY   0) || 0);
       return `<tr>
         <td><label class="check-pill"><input type="checkbox" data-training-song-pick="${htmlEsc(uid)}" ${selectedSongUids.has(uid) ? "checked" : ""} /> <span>Prepare</span></label></td>
         <td>${htmlEsc(title)}</td>
-        <td>${htmlEsc(availableOn || "—")}</td>
+        <td>${htmlEsc(availableOn || "â€”")}</td>
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
         <td class="num">${htmlEsc(String(familiarity))}</td>
         <td class="num">${htmlEsc(String(fatigue))}</td>
@@ -1405,7 +1514,7 @@ function renderTraining(
 
   return `<section class="content-panel training-view">
     <h2 class="content-h2">Training</h2>
-    <p class="content-muted">Daily sliders (0–5 each) for <strong>${htmlEsc(String(grp?.name_romanji ?? grp?.name ?? "group"))}</strong>. Sum caps at 20 and feeds <code>advanceOneDay</code> with the same condition/morale rules as the desktop save loop. Reference date: ${htmlEsc(String(ref ?? "—"))}.</p>
+    <p class="content-muted">Daily sliders (0â€“5 each) for <strong>${htmlEsc(String(grp?.name_romanji JPY   grp?.name JPY   "group"))}</strong>. Sum caps at 20 and feeds <code>advanceOneDay</code> with the same condition/morale rules as the desktop save loop. Reference date: ${htmlEsc(String(ref JPY   "â€”"))}.</p>
     ${renderTrainingTabs(trainingTab)}
     ${
       trainingTab === "roster"
@@ -1442,21 +1551,21 @@ function renderTraining(
 }
 
 function firstOfMonthIso(isoDate: string): string {
-  const s = String(isoDate ?? "").split("T")[0].trim();
+  const s = String(isoDate JPY   "").split("T")[0].trim();
   const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(s);
   if (!m) return "2000-01-01";
   return `${m[1]}-${m[2]}-01`;
 }
 
 function addCalendarMonths(firstOfMonthIsoDate: string, deltaMonths: number): string {
-  const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(String(firstOfMonthIsoDate ?? "").trim());
+  const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(String(firstOfMonthIsoDate JPY   "").trim());
   if (!m) return "2000-01-01";
   const dt = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1 + deltaMonths, 1));
   return dt.toISOString().slice(0, 10);
 }
 
 function formatMonthTick(isoDate: string): string {
-  const s = String(isoDate ?? "").split("T")[0].trim();
+  const s = String(isoDate JPY   "").split("T")[0].trim();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
   const dt = new Date(`${s}T12:00:00Z`);
   return dt.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
@@ -1493,7 +1602,7 @@ function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[
     .filter((row) => typeof row?.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(row.date))
     .sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const currentMonthIso = firstOfMonthIso(
-    save.current_date ?? finances.last_processed_date ?? save.game_start_date ?? "2000-01-01",
+    save.current_date JPY   finances.last_processed_date JPY   save.game_start_date JPY   "2000-01-01",
   );
 
   if (!ledger.length) {
@@ -1513,7 +1622,7 @@ function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[
   for (const row of ledger) {
     runningBalance += num(row.net_total);
     const monthIso = firstOfMonthIso(row.date);
-    const current = monthly.get(monthIso) ?? {
+    const current = monthly.get(monthIso) JPY   {
       monthIso,
       income: 0,
       expense: 0,
@@ -1536,10 +1645,10 @@ function buildFinanceProjectionPoints(save: GameSavePayload): FinanceMonthPoint[
 
   let balance = points.length
     ? points[points.length - 1].closingBalance
-    : actualMonths[actualMonths.length - 1]?.closingBalance ?? finances.cash_yen;
+    : actualMonths[actualMonths.length - 1]?.closingBalance JPY   finances.cash_yen;
   let anchorMonth = points.length
     ? points[points.length - 1].monthIso
-    : actualMonths[actualMonths.length - 1]?.monthIso ?? currentMonthIso;
+    : actualMonths[actualMonths.length - 1]?.monthIso JPY   currentMonthIso;
 
   while (points.length < 24) {
     const income = 0;
@@ -1643,8 +1752,8 @@ function renderFinances(save: GameSavePayload): string {
   const ledger = [...f.ledger].slice(-20).reverse();
   const head = `
     <div class="stat-row" role="group" aria-label="Cash">
-      <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">¥${f.cash_yen.toLocaleString("ja-JP")}</span></div>
-      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "—")}</span></div>
+      <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">Â¥${f.cash_yen.toLocaleString("ja-JP")}</span></div>
+      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date JPY   "â€”")}</span></div>
     </div>`;
   const tableRows = ledger
     .map(
@@ -1660,7 +1769,7 @@ function renderFinances(save: GameSavePayload): string {
         <h3 class="content-h3">Daily ledger (recent)</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Net ¥</th><th>Tier</th><th>Income</th><th>Expense</th></tr></thead>
+            <thead><tr><th>Date</th><th>Net Â¥</th><th>Tier</th><th>Income</th><th>Expense</th></tr></thead>
             <tbody>${tableRows || `<tr><td colspan="5" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
           </table>
         </div>
@@ -1668,12 +1777,21 @@ function renderFinances(save: GameSavePayload): string {
     </section>`;
 }
 
-/** All idols · portrait · age / romaji / X / groups on reference date · open detail on click. */
-function renderFinancesProjectionView(save: GameSavePayload, financeHistoryRange: FinanceHistoryRange): string {
+/** All idols Â· portrait Â· age / romaji / X / groups on reference date Â· open detail on click. */
+function renderFinancesProjectionView(
+  save: GameSavePayload,
+  financeHistoryRange: FinanceHistoryRange,
+  financeTab: FinanceTab,
+): string {
   const f = getActiveFinances(save);
+  const grp = getPrimaryGroup(save);
+  const groupUidStr = String(grp?.uid JPY   "").trim();
+  const groupNames = new Set(
+    [String(grp?.name JPY   "").trim(), String(grp?.name_romanji JPY   "").trim()].filter(Boolean),
+  );
   const ledger = [...f.ledger].slice(-20).reverse();
   const projectionPoints = buildFinanceProjectionPoints(save);
-  const projectedLast = projectionPoints[projectionPoints.length - 1] ?? null;
+  const projectedLast = projectionPoints[projectionPoints.length - 1] JPY   null;
   const actualWindow = projectionPoints.filter((row) => !row.projected).slice(-6);
   const projectedWindow = projectionPoints.filter((row) => row.projected);
   const avgMonthlyNet =
@@ -1685,7 +1803,7 @@ function renderFinancesProjectionView(save: GameSavePayload, financeHistoryRange
   const head = `
     <div class="stat-row" role="group" aria-label="Cash">
       <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">&yen;${f.cash_yen.toLocaleString("ja-JP")}</span></div>
-      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "-")}</span></div>
+      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date JPY   "-")}</span></div>
     </div>`;
   const tableRows = ledger
     .map(
@@ -1723,9 +1841,82 @@ function renderFinancesProjectionView(save: GameSavePayload, financeHistoryRange
     ["year", "Year"],
     ["all", "All"],
   ];
+  const financeTabs: Array<[FinanceTab, string]> = [
+    ["finance", "Finance"],
+    ["contract", "Contract"],
+  ];
+  const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
+  const contractRows = memberUids
+    .map((uid) => {
+      const row = save.database_snapshot.idols.find((idol) => String(idol.uid JPY   "") === uid);
+      if (!row || typeof row !== "object") return "";
+      const idol = row as Record<string, unknown>;
+      const name = String(idol.name JPY   uid);
+      const romaji = romajiFromRow(idol);
+      const portraitSrc = idolPortraitPublicSrc(idol);
+      const initial = [...(name.trim() || "?")][0] JPY   "?";
+      const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
+      const portraitCell = portraitSrc
+        ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
+        : `<span class="idol-thumb-ph" aria-hidden="true">${htmlEsc(initial)}</span>`;
+      const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+      let started = "-";
+      for (const raw of hist) {
+        if (!raw || typeof raw !== "object") continue;
+        const entry = raw as Record<string, unknown>;
+        const guid = String(entry.group_uid JPY   "").trim();
+        const gname = String(entry.group_name JPY   "").trim();
+        if (guid === groupUidStr || (gname && groupNames.has(gname))) {
+          const start = String(entry.start_date JPY   "").split("T")[0];
+          if (/^\d{4}-\d{2}-\d{2}$/.test(start)) started = start;
+          break;
+        }
+      }
+      const salary = Number(idol.contract_salary_yen JPY   0) || 0;
+      const endDate = String(idol.contract_end_date JPY   "-").split("T")[0] || "-";
+      return `<tr>
+        <td class="idol-list-photo contract-col-photo">${portraitCell}</td>
+        <td class="contract-col-name"><span class="group-roster-name-wrap"><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></span></td>
+        <td class="contract-col-romaji">${romaji ? htmlEsc(romaji) : "-"}</td>
+        <td class="group-roster-stat contract-col-salary">&yen;${salary.toLocaleString("ja-JP")}</td>
+        <td class="group-roster-stat contract-col-started">${htmlEsc(started)}</td>
+        <td class="group-roster-stat contract-col-end">${htmlEsc(endDate)}</td>
+        <td class="contract-col-action"><div class="contract-actions"><button type="button" class="fm-btn" data-contract-renew="${htmlEsc(uid)}">Renew</button><button type="button" class="fm-btn fm-btn-danger" data-contract-terminate="${htmlEsc(uid)}">Terminate</button></div></td>
+      </tr>`;
+    })
+    .join("");
   return `
     <section class="content-panel finances-view">
       <h2 class="content-h2">Finances</h2>
+      <div class="workspace-tabs finance-tabs">${financeTabs
+        .map(
+          ([value, label]) =>
+            `<button type="button" class="workspace-tab ${financeTab === value ? "is-active" : ""}" data-finance-tab="${value}">${htmlEsc(label)}</button>`,
+        )
+        .join("")}</div>
+      ${
+        financeTab === "contract"
+          ? `
+      <div class="table-panel">
+        <h3 class="content-h3">Managed contracts</h3>
+        <p class="content-muted">Renewal and termination requests open as blocking inbox events for review and confirmation.</p>
+        <div class="table-scroll">
+          <table class="fm-table group-detail-roster-table training-roster-table contract-roster-table">
+            <colgroup>
+              <col class="contract-col-photo" />
+              <col class="contract-col-name" />
+              <col class="contract-col-romaji" />
+              <col class="contract-col-salary" />
+              <col class="contract-col-started" />
+              <col class="contract-col-end" />
+              <col class="contract-col-action" />
+            </colgroup>
+            <thead><tr><th></th><th>NAME</th><th>ROMAJI</th><th>SALARY</th><th>STARTED</th><th>CONTRACT END</th><th>ACTION</th></tr></thead>
+            <tbody>${contractRows || `<tr><td colspan="7" class="content-muted">No managed members found.</td></tr>`}</tbody>
+          </table>
+        </div>
+      </div>`
+          : `
       ${head}
       <section class="fm-card finance-projection-card" aria-label="24 month projection">
         <div class="finance-projection-head">
@@ -1736,7 +1927,7 @@ function renderFinancesProjectionView(save: GameSavePayload, financeHistoryRange
           <div class="finance-projection-kpis">
             <div class="finance-projection-kpi">
               <span class="finance-projection-kpi-label">Projected 24M close</span>
-              <strong class="finance-projection-kpi-value">${htmlEsc(financeMoneyShort(projectedLast?.closingBalance ?? f.cash_yen))}</strong>
+              <strong class="finance-projection-kpi-value">${htmlEsc(financeMoneyShort(projectedLast?.closingBalance JPY   f.cash_yen))}</strong>
             </div>
             <div class="finance-projection-kpi">
               <span class="finance-projection-kpi-label">Avg monthly net</span>
@@ -1780,7 +1971,8 @@ function renderFinancesProjectionView(save: GameSavePayload, financeHistoryRange
             <tbody>${historyTableRows || `<tr><td colspan="5" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
           </table>
         </div>
-      </div>
+      </div>`
+      }
     </section>`;
 }
 
@@ -1799,7 +1991,7 @@ function renderIdolsList(
   const rows = sorted.filter((row) => typeof row.uid === "string" && row.uid.trim());
 
   const portraitThumbHtml = (row: Record<string, unknown>, name: string) => {
-    const initial = [...(name.trim() || "?")][0] ?? "?";
+    const initial = [...(name.trim() || "?")][0] JPY   "?";
     const portraitSrc = idolPortraitPublicSrc(row);
     const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
     return portraitSrc
@@ -1809,13 +2001,13 @@ function renderIdolsList(
 
   const cards = rows
     .map((row) => {
-      const name = typeof row.name === "string" ? row.name : "—";
+      const name = typeof row.name === "string" ? row.name : "â€”";
       const uid = (row.uid as string).trim();
       const romaji = romajiFromRow(row);
       const attrs = attrsFromRow(row);
       const age = ageLabel(row, referenceIso);
       const grps = activeGroupsAtReference(row, referenceIso);
-      const grpTxt = grps.length ? grps.join(", ") : "—";
+      const grpTxt = grps.length ? grps.join(", ") : "â€”";
       const portraitInner = portraitThumbHtml(row, name);
 
       return `
@@ -1826,7 +2018,7 @@ function renderIdolsList(
             <span class="idol-card-name">${htmlEsc(name)}</span>
             ${romaji ? `<span class="idol-card-romaji">${htmlEsc(romaji)}</span>` : ""}
           </span>
-          <span class="idol-card-row2">${htmlEsc(`Age ${age}`)} · ${htmlEsc("X")} ${htmlEsc(xFollowersLabel(row))} · ${htmlEsc("ABL")} ${getAbility(attrs)}</span>
+          <span class="idol-card-row2">${htmlEsc(`Age ${age}`)} Â· ${htmlEsc("X")} ${htmlEsc(xFollowersLabel(row))} Â· ${htmlEsc("ABL")} ${getAbility(attrs)}</span>
           <span class="idol-card-row3"><strong>${htmlEsc("Group")}:</strong> ${htmlEsc(grpTxt)}</span>
         </span>
       </button>`;
@@ -1835,18 +2027,18 @@ function renderIdolsList(
 
   const tableRows = rows
     .map((row) => {
-      const name = typeof row.name === "string" ? row.name : "—";
+      const name = typeof row.name === "string" ? row.name : "â€”";
       const uid = (row.uid as string).trim();
       const romaji = romajiFromRow(row);
       const attrs = attrsFromRow(row);
       const age = ageLabel(row, referenceIso);
       const grps = activeGroupsAtReference(row, referenceIso);
-      const grpTxt = grps.length ? grps.join(", ") : "—";
+      const grpTxt = grps.length ? grps.join(", ") : "â€”";
       const ph = portraitThumbHtml(row, name);
       return `<tr class="idol-list-table-row" data-idol-detail="${htmlEsc(uid)}" tabindex="0" role="button">
         <td class="idol-list-photo">${ph}</td>
         <td>${htmlEsc(name)}</td>
-        <td>${romaji ? htmlEsc(romaji) : "—"}</td>
+        <td>${romaji ? htmlEsc(romaji) : "â€”"}</td>
         <td>${htmlEsc(age)}</td>
         <td class="num">${htmlEsc(heightCmLabel(row))}</td>
         <td class="num">${getAbility(attrs)}</td>
@@ -1858,7 +2050,7 @@ function renderIdolsList(
 
   const noteHtml = note ? `<p class="content-muted">${note}</p>` : "";
   const sortNote = `<p class="content-muted">${htmlEsc(
-    "Order: X followers (high → low). Portraits: public/data/pictures/idols/ (basename of portrait_photo_path).",
+    "Order: X followers (high â†’ low). Portraits: public/data/pictures/idols/ (basename of portrait_photo_path).",
   )}</p>`;
 
   const toolbar = `<div class="idol-list-toolbar" role="toolbar" aria-label="Idol list layout">
@@ -1891,7 +2083,7 @@ function renderIdolsList(
   return `
     <section class="content-panel idols-view">
       <h2 class="content-h2">${htmlEsc(headline)}</h2>
-      <p class="content-muted">${htmlEsc(`${sorted.length.toLocaleString()} idols · reference ${referenceIso ?? "—"}`)}.</p>
+      <p class="content-muted">${htmlEsc(`${sorted.length.toLocaleString()} idols Â· reference ${referenceIso JPY   "â€”"}`)}.</p>
       ${noteHtml}
       ${toolbar}
       ${sortNote}
@@ -1914,13 +2106,13 @@ function makingWorkshopRowsHtml(rows: Record<string, unknown>[]): string {
       const title =
         typeof row.title === "string" || typeof row.title_romanji === "string"
           ? songCatalogDisplayLabel(row)
-          : String(row.uid ?? "—");
+          : String(row.uid JPY   "â€”");
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
-      const dtype = typeof row.disc_type === "string" && row.disc_type.trim() ? String(row.disc_type) : "—";
-      const uid = String(row.uid ?? "").trim();
+      const dtype = typeof row.disc_type === "string" && row.disc_type.trim() ? String(row.disc_type) : "â€”";
+      const uid = String(row.uid JPY   "").trim();
       const uidAttr = uid ? encodeURIComponent(uid) : "";
       const uidData = uidAttr ? ` data-song-uid="${uidAttr}"` : "";
-      const discInput = `<input type="text" class="fm-input making-disc-input" list="making-disc-options" autocomplete="off" value="" data-making-disc-input${uidData} aria-label="${htmlEsc(`Disc · ${title}`.slice(0, 120))}" />`;
+      const discInput = `<input type="text" class="fm-input making-disc-input" list="making-disc-options" autocomplete="off" value="" data-making-disc-input${uidData} aria-label="${htmlEsc(`Disc Â· ${title}`.slice(0, 120))}" />`;
       const actions = `<div class="making-track-actions">
         <button type="button" class="fm-btn making-arrange-btn" data-making-arrange${uidData}>${htmlEsc("Arrange")}</button>
         <button type="button" class="fm-btn fm-btn-accent making-release-btn" data-making-release${uidData}>${htmlEsc("Release")}</button>
@@ -1941,14 +2133,14 @@ function songRowsHtml(
       const title =
         typeof row.title === "string" || typeof row.title_romanji === "string"
           ? songCatalogDisplayLabel(row)
-          : String(row.uid ?? "—");
+          : String(row.uid JPY   "â€”");
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
-      const rel = hideCatalogFields ? "—" : typeof row.release_date === "string" ? row.release_date : "—";
+      const rel = hideCatalogFields ? "â€”" : typeof row.release_date === "string" ? row.release_date : "â€”";
       const gname = typeof row.group_name === "string" ? row.group_name : "";
       const dtype = typeof row.disc_type === "string" ? row.disc_type : "";
       const disc = primaryDiscLabel(row);
       const popCell = hideCatalogFields
-        ? `<td class="num songs-making-na">${htmlEsc("—")}</td>`
+        ? `<td class="num songs-making-na">${htmlEsc("â€”")}</td>`
         : `<td class="num">${htmlEsc(String(songPopularityNum(row)))}</td>`;
       const relCellClass = hideCatalogFields ? " songs-making-na" : "";
       const discCell = `<td class="songs-disc-cell">${htmlEsc(disc)}</td>`;
@@ -1971,7 +2163,7 @@ function renderSongsTrackTableBodies(
   const ncol = cols === "pair" ? 6 : 7;
   const refShort = asOfIso ? String(asOfIso).trim().split("T")[0] : "";
   const refPretty =
-    refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort) ? formatLongDate(refShort) : refShort || "—";
+    refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort) ? formatLongDate(refShort) : refShort || "â€”";
   const releasedRows = songRowsHtml(released, cols, "released");
   const makingRows = songRowsHtml(making, cols, "making");
   const showMaking = making.length > 0;
@@ -1992,19 +2184,19 @@ function renderSongsGroupDropdown(
   managedGroupUid?: string | null,
 ): string {
   const sorted = sortGroupsForDirectory(groupsForDirectoryListing(groups));
-  const managedUid = String(managedGroupUid ?? "").trim();
+  const managedUid = String(managedGroupUid JPY   "").trim();
   const ordered =
     managedUid
       ? [
-          ...sorted.filter((g) => String((g as { uid?: unknown }).uid ?? "").trim() === managedUid),
-          ...sorted.filter((g) => String((g as { uid?: unknown }).uid ?? "").trim() !== managedUid),
+          ...sorted.filter((g) => String((g as { uid?: unknown }).uid JPY   "").trim() === managedUid),
+          ...sorted.filter((g) => String((g as { uid?: unknown }).uid JPY   "").trim() !== managedUid),
         ]
       : sorted;
   const opts = ordered
     .map((g) => {
-      const uid = String((g as { uid?: unknown }).uid ?? "").trim();
+      const uid = String((g as { uid?: unknown }).uid JPY   "").trim();
       if (!uid) return "";
-      const name = String((g as { name?: unknown }).name ?? (g as { name_romanji?: unknown }).name_romanji ?? uid.slice(0, 10));
+      const name = String((g as { name?: unknown }).name JPY   (g as { name_romanji?: unknown }).name_romanji JPY   uid.slice(0, 10));
       const sel = uid === selectedUid ? " selected" : "";
       return `<option value="${encodeURIComponent(uid)}"${sel}>${htmlEsc(name)}</option>`;
     })
@@ -2020,11 +2212,11 @@ function renderSongsGroupDropdown(
 /** Making view: managed group only (no picker). */
 function renderMakingManagedGroupBar(groups: Record<string, unknown>[], managedUid: string): string {
   const sorted = sortGroupsForDirectory(groups);
-  const row = sorted.find((g) => String((g as { uid?: unknown }).uid ?? "").trim() === managedUid);
+  const row = sorted.find((g) => String((g as { uid?: unknown }).uid JPY   "").trim() === managedUid);
   const name = row
-    ? String((row as { name?: unknown }).name ?? (row as { name_romanji?: unknown }).name_romanji ?? managedUid)
+    ? String((row as { name?: unknown }).name JPY   (row as { name_romanji?: unknown }).name_romanji JPY   managedUid)
     : managedUid;
-  const rj = row ? String((row as { name_romanji?: unknown }).name_romanji ?? "").trim() : "";
+  const rj = row ? String((row as { name_romanji?: unknown }).name_romanji JPY   "").trim() : "";
   const label = rj && rj !== name ? `${name} (${rj})` : name;
   return `<div class="songs-toolbar fm-card-inline songs-making-managed-bar" role="group" aria-label="${htmlEsc("Managed group (Making)")}">
     <span class="songs-toolbar-label"><span class="songs-toolbar-text">${htmlEsc("Group")}</span>
@@ -2076,23 +2268,23 @@ function buildGoodsInventoryMatrix(goods: ProducedGoodsRow[]): {
   const members = new Map<string, { uid: string; name: string }>();
   const rowsByName = new Map<string, GoodsInventoryMatrixRow>();
   for (const item of goods) {
-    const rowKey = `${String(item.category ?? "").trim()}|${String(item.name ?? "").trim()}`;
+    const rowKey = `${String(item.category JPY   "").trim()}|${String(item.name JPY   "").trim()}`;
     let row = rowsByName.get(rowKey);
     if (!row) {
       row = {
-        name: String(item.name ?? "").trim(),
-        category: String(item.category ?? "").trim(),
-        unitPriceYen: Math.max(0, Number(item.unit_price_yen ?? 0) || 0),
-        unitCostYen: Math.max(0, Number(item.unit_cost_yen ?? 0) || 0),
+        name: String(item.name JPY   "").trim(),
+        category: String(item.category JPY   "").trim(),
+        unitPriceYen: Math.max(0, Number(item.unit_price_yen JPY   0) || 0),
+        unitCostYen: Math.max(0, Number(item.unit_cost_yen JPY   0) || 0),
         entriesByMemberUid: new Map<string, ProducedGoodsRow>(),
         sharedEntry: null,
       };
       rowsByName.set(rowKey, row);
     }
-    row.unitPriceYen = Math.max(0, Number(item.unit_price_yen ?? row.unitPriceYen) || 0);
-    row.unitCostYen = Math.max(0, Number(item.unit_cost_yen ?? row.unitCostYen) || 0);
-    const memberUid = String(item.member_uid ?? "").trim();
-    const memberName = String(item.member_name ?? "").trim();
+    row.unitPriceYen = Math.max(0, Number(item.unit_price_yen JPY   row.unitPriceYen) || 0);
+    row.unitCostYen = Math.max(0, Number(item.unit_cost_yen JPY   row.unitCostYen) || 0);
+    const memberUid = String(item.member_uid JPY   "").trim();
+    const memberName = String(item.member_name JPY   "").trim();
     if (memberUid && memberName) {
       members.set(memberUid, { uid: memberUid, name: memberName });
       row.entriesByMemberUid.set(memberUid, item);
@@ -2111,13 +2303,13 @@ function buildGoodsInventoryMatrix(goods: ProducedGoodsRow[]): {
 function buildBirthdayGoodsQueue(save: GameSavePayload, goods: ProducedGoodsRow[]): BirthdayGoodsQueueRow[] {
   const group = getPrimaryGroup(save);
   if (!group || typeof group !== "object") return [];
-  const currentIso = String(save.current_date ?? save.game_start_date ?? "").split("T")[0];
-  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((uid) => String(uid ?? "").trim()).filter(Boolean) : [];
+  const currentIso = String(save.current_date JPY   save.game_start_date JPY   "").split("T")[0];
+  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((uid) => String(uid JPY   "").trim()).filter(Boolean) : [];
   const idols = Array.isArray(save.database_snapshot.idols) ? save.database_snapshot.idols : [];
   const members = memberUids
     .map((uid) => {
-      const row = idols.find((idol) => String((idol as { uid?: unknown }).uid ?? "").trim() === uid);
-      const name = String((row as { name?: unknown })?.name ?? "").trim();
+      const row = idols.find((idol) => String((idol as { uid?: unknown }).uid JPY   "").trim() === uid);
+      const name = String((row as { name?: unknown })?.name JPY   "").trim();
       return name ? { uid, name } : null;
     })
     .filter((row): row is { uid: string; name: string } => Boolean(row));
@@ -2126,11 +2318,11 @@ function buildBirthdayGoodsQueue(save: GameSavePayload, goods: ProducedGoodsRow[
   const out: BirthdayGoodsQueueRow[] = [];
   for (const live of schedules) {
     if (!live || typeof live !== "object") continue;
-    const dateIso = String((live as { start_date?: unknown }).start_date ?? "").split("T")[0];
+    const dateIso = String((live as { start_date?: unknown }).start_date JPY   "").split("T")[0];
     if (currentIso && dateIso && dateIso < currentIso) continue;
-    const title = String((live as { title?: unknown }).title ?? "").trim();
-    if (!/生誕|birthday/i.test(title)) continue;
-    const liveUid = String((live as { uid?: unknown }).uid ?? "").trim();
+    const title = String((live as { title?: unknown }).title JPY   "").trim();
+    if (!/ç”Ÿèª•|birthday/i.test(title)) continue;
+    const liveUid = String((live as { uid?: unknown }).uid JPY   "").trim();
     for (const member of members) {
       if (!title.includes(member.name)) continue;
       const goodsUid = birthdayTeeUidForMember(member.uid);
@@ -2141,7 +2333,7 @@ function buildBirthdayGoodsQueue(save: GameSavePayload, goods: ProducedGoodsRow[
         liveTitle: title,
         liveDate: dateIso,
         goodsUid,
-        goods: goodsByUidMap.get(goodsUid) ?? null,
+        goods: goodsByUidMap.get(goodsUid) JPY   null,
       });
       break;
     }
@@ -2150,14 +2342,14 @@ function buildBirthdayGoodsQueue(save: GameSavePayload, goods: ProducedGoodsRow[
 }
 
 function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRow[]): string {
-  const regularGoods = goods.filter((item) => String(item.name ?? "").trim() !== BIRTHDAY_TEE_TEMPLATE.name);
+  const regularGoods = goods.filter((item) => String(item.name JPY   "").trim() !== BIRTHDAY_TEE_TEMPLATE.name);
   const { members, rows } = buildGoodsInventoryMatrix(regularGoods);
   const birthdayQueue = buildBirthdayGoodsQueue(save, goods);
   const regularHeaderCells = rows
     .map((row) => {
       const totalUnits = [...row.entriesByMemberUid.values()].reduce(
-        (sum, entry) => sum + Math.max(0, Number(entry.desired_amount ?? 0) || 0),
-        row.sharedEntry ? Math.max(0, Number(row.sharedEntry.desired_amount ?? 0) || 0) : 0,
+        (sum, entry) => sum + Math.max(0, Number(entry.desired_amount JPY   0) || 0),
+        row.sharedEntry ? Math.max(0, Number(row.sharedEntry.desired_amount JPY   0) || 0) : 0,
       );
       const rowKey = encodeURIComponent(`${row.category}|${row.name}`);
       return `<th class="goods-transpose-head">
@@ -2166,8 +2358,8 @@ function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRo
           <span>${htmlEsc("Price")}</span>
           <input class="fm-input goods-price-input" data-goods-price-key="${htmlEsc(rowKey)}" value="${htmlEsc(String(row.unitPriceYen))}" />
         </label>
-        <div class="goods-transpose-meta">${htmlEsc(`Cost ¥${row.unitCostYen.toLocaleString("ja-JP")}`)}</div>
-        <div class="goods-transpose-meta">${htmlEsc(`Total ¥${(totalUnits * row.unitCostYen).toLocaleString("ja-JP")}`)}</div>
+        <div class="goods-transpose-meta">${htmlEsc(`Cost Â¥${row.unitCostYen.toLocaleString("ja-JP")}`)}</div>
+        <div class="goods-transpose-meta">${htmlEsc(`Total Â¥${(totalUnits * row.unitCostYen).toLocaleString("ja-JP")}`)}</div>
         <button type="button" class="fm-btn fm-btn-accent goods-transpose-order" data-goods-order-key="${htmlEsc(rowKey)}">Order</button>
       </th>`;
     })
@@ -2176,10 +2368,10 @@ function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRo
     .map((member) => {
       const cells = rows
         .map((row) => {
-          const entry = row.entriesByMemberUid.get(member.uid) ?? row.sharedEntry;
+          const entry = row.entriesByMemberUid.get(member.uid) JPY   row.sharedEntry;
           if (!entry) return `<td class="goods-matrix-cell goods-matrix-cell--empty">-</td>`;
-          const stock = Math.max(0, Number(entry.stock ?? 0) || 0);
-          const desired = Math.max(0, Number(entry.desired_amount ?? 0) || 0);
+          const stock = Math.max(0, Number(entry.stock JPY   0) || 0);
+          const desired = Math.max(0, Number(entry.desired_amount JPY   0) || 0);
           return `<td class="goods-matrix-cell">
             <div class="goods-matrix-stock">${htmlEsc(`Stock ${stock.toLocaleString("ja-JP")}`)}</div>
             <input class="fm-input goods-amount-input" data-goods-desired-uid="${htmlEsc(entry.uid)}" value="${htmlEsc(String(desired))}" />
@@ -2193,10 +2385,10 @@ function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRo
     ? birthdayQueue
         .map((row) => {
           const goods = row.goods;
-          const stock = Math.max(0, Number(goods?.stock ?? 0) || 0);
-          const desired = Math.max(0, Number(goods?.desired_amount ?? BIRTHDAY_TEE_TEMPLATE.default_desired_amount) || 0);
-          const price = Math.max(0, Number(goods?.unit_price_yen ?? BIRTHDAY_TEE_TEMPLATE.unit_price_yen) || 0);
-          const cost = Math.max(0, Number(goods?.unit_cost_yen ?? BIRTHDAY_TEE_TEMPLATE.unit_cost_yen) || 0);
+          const stock = Math.max(0, Number(goods?.stock JPY   0) || 0);
+          const desired = Math.max(0, Number(goods?.desired_amount JPY   BIRTHDAY_TEE_TEMPLATE.default_desired_amount) || 0);
+          const price = Math.max(0, Number(goods?.unit_price_yen JPY   BIRTHDAY_TEE_TEMPLATE.unit_price_yen) || 0);
+          const cost = Math.max(0, Number(goods?.unit_cost_yen JPY   BIRTHDAY_TEE_TEMPLATE.unit_cost_yen) || 0);
           return `<tr>
             <td>${htmlEsc(row.memberName)}</td>
             <td>${htmlEsc(formatLongDate(row.liveDate))}</td>
@@ -2240,16 +2432,16 @@ function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRo
 
 function bucketEarliestRelease(songs: Record<string, unknown>[]): string {
   const dates = songs
-    .map((s) => String(s.release_date ?? "").trim())
+    .map((s) => String(s.release_date JPY   "").trim())
     .filter((d) => /^\d{4}-\d{2}-\d{2}/.test(d));
-  if (!dates.length) return "—";
+  if (!dates.length) return "â€”";
   dates.sort();
-  return dates[0] ?? "—";
+  return dates[0] JPY   "â€”";
 }
 
 function bucketRepresentativeDiscType(songs: Record<string, unknown>[]): string {
-  const t = songs.map((s) => String(s.disc_type ?? "").trim()).find(Boolean);
-  return t || "—";
+  const t = songs.map((s) => String(s.disc_type JPY   "").trim()).find(Boolean);
+  return t || "â€”";
 }
 
 function resolveDiscographyBucketKey(buckets: DiscBucket[], selected: string | null): string {
@@ -2263,7 +2455,7 @@ function renderDiscographyPanel(buckets: DiscBucket[], selectedKey: string | nul
     return `<p class="content-muted">${htmlEsc("No releases inferred from song rows for this group yet.")}</p>`;
   }
   const eff = resolveDiscographyBucketKey(buckets, selectedKey);
-  const bucket = buckets.find((b) => b.key === eff) ?? buckets[0]!;
+  const bucket = buckets.find((b) => b.key === eff) JPY   buckets[0]!;
   const discRows = buckets
     .map((b) => {
       const sel = b.key === eff ? " is-selected" : "";
@@ -2278,7 +2470,7 @@ function renderDiscographyPanel(buckets: DiscBucket[], selectedKey: string | nul
   const rel0 = bucketEarliestRelease(bucket.songs);
   const typ0 = bucketRepresentativeDiscType(bucket.songs);
   const meta = `<p class="content-muted songs-discography-meta">${htmlEsc(
-    `Release: ${rel0} · Type: ${typ0} · ${bucket.songs.length.toLocaleString()} track(s)`,
+    `Release: ${rel0} Â· Type: ${typ0} Â· ${bucket.songs.length.toLocaleString()} track(s)`,
   )}</p>`;
   return `
     <div class="songs-discography-layout">
@@ -2298,7 +2490,7 @@ function renderDiscographyPanel(buckets: DiscBucket[], selectedKey: string | nul
         <div class="table-scroll">
           <table class="fm-table">
             <thead><tr><th>Title</th><th>Romanji</th><th>Release</th><th>Type</th><th>Disc</th><th>Pop</th></tr></thead>
-            <tbody>${tracks || `<tr><td colspan="6" class="content-muted">—</td></tr>`}</tbody>
+            <tbody>${tracks || `<tr><td colspan="6" class="content-muted">â€”</td></tr>`}</tbody>
           </table>
         </div>
       </div>
@@ -2311,7 +2503,7 @@ interface SongsRenderOpts {
   selectedGroupUid: string;
   selectedWorkspaceTab: SongsWorkspaceTab;
   selectedDiscographyKey: string | null;
-  /** Game / browse “today” for released vs future / undated (`YYYY-MM-DD`). */
+  /** Game / browse â€œtodayâ€ for released vs future / undated (`YYYY-MM-DD`). */
   catalogReferenceIso: string | null;
   /**
    * `songs` = main Songs nav (released-only when catalog splits; in-production list under Making).
@@ -2324,9 +2516,9 @@ interface SongsRenderOpts {
 
 /** Songs workspace: group picker, Songs | Discography tabs (desktop `main_ui.py`), tables. */
 function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRenderOpts): string {
-  const surface = opts?.trackSplitSurface ?? "songs";
+  const surface = opts?.trackSplitSurface JPY   "songs";
   const pageTitle = surface === "making" ? "Making" : "Songs";
-  const managedUid = opts?.managedGroupUid?.trim() ?? "";
+  const managedUid = opts?.managedGroupUid?.trim() JPY   "";
 
   if (!allSongs.length) return renderPlaceholder(pageTitle, "No songs in <code>songs.json</code>.");
   if (!opts?.groups?.length) {
@@ -2336,14 +2528,14 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
     return renderPlaceholder(pageTitle, "No managed group on this save.");
   }
 
-  const effectiveGid = surface === "making" && managedUid ? managedUid : String(opts.selectedGroupUid ?? "").trim();
+  const effectiveGid = surface === "making" && managedUid ? managedUid : String(opts.selectedGroupUid JPY   "").trim();
   if (!effectiveGid) {
     return renderPlaceholder(pageTitle, "No groups in snapshot for song directory.");
   }
 
   const ordered = songsForDisplaySorted(allSongs);
   const gid = effectiveGid;
-  const teamSongs = ordered.filter((row) => String(row.group_uid ?? "") === gid);
+  const teamSongs = ordered.filter((row) => String(row.group_uid JPY   "") === gid);
   const { released: releasedTeam, making: makingTeam } = splitSongsReleasedVsMaking(
     teamSongs,
     opts.catalogReferenceIso,
@@ -2360,7 +2552,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
   const toolbar =
     surface === "making" && managedUid
       ? renderMakingManagedGroupBar(opts.groups, managedUid)
-      : renderSongsGroupDropdown(opts.groups, gid, opts.managedGroupUid ?? null);
+      : renderSongsGroupDropdown(opts.groups, gid, opts.managedGroupUid JPY   null);
 
   if (surface === "making") {
     const workshopRows = hasRef ? makingTeam : teamSongs;
@@ -2368,7 +2560,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
     if (!teamSongs.length) {
       workshopTbody = `<tr><td colspan="5" class="content-muted">${htmlEsc("No tracks for this group in snapshot.")}</td></tr>`;
     } else if (hasRef && makingTeam.length === 0) {
-      workshopTbody = `<tr><td colspan="5" class="content-muted">${htmlEsc(`No future or undated tracks as of ${refShort} — everything is released in the catalog for this date. Use Songs in the sidebar for the released list.`)}</td></tr>`;
+      workshopTbody = `<tr><td colspan="5" class="content-muted">${htmlEsc(`No future or undated tracks as of ${refShort} â€” everything is released in the catalog for this date. Use Songs in the sidebar for the released list.`)}</td></tr>`;
     } else {
       workshopTbody = makingWorkshopRowsHtml(workshopRows);
     }
@@ -2378,9 +2570,9 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
         ? "No tracks for this group in snapshot."
         : hasRef
           ? makingTeam.length > 0
-            ? `${makingTeam.length.toLocaleString()} in-production track(s) (no release date or after ${refShort}) · set Disc per row, then Arrange or Release.`
+            ? `${makingTeam.length.toLocaleString()} in-production track(s) (no release date or after ${refShort}) Â· set Disc per row, then Arrange or Release.`
             : `Reference ${refShort}: no in-production bucket for this group.`
-          : `${teamSongs.length.toLocaleString()} track(s) — no reference date on save yet; showing full group list in the workshop layout.`,
+          : `${teamSongs.length.toLocaleString()} track(s) â€” no reference date on save yet; showing full group list in the workshop layout.`,
     )}</p>`;
 
     const songsPanel = `
@@ -2411,7 +2603,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
     const inner =
       releasedTeam.length > 0
         ? songRowsHtml(releasedTeam, "pair", "released")
-        : `<tr><td colspan="6" class="content-muted">${htmlEsc("No tracks released as of this date — open Making in the sidebar (between Songs and Publish) for in-production tracks.")}</td></tr>`;
+        : `<tr><td colspan="6" class="content-muted">${htmlEsc("No tracks released as of this date â€” open Making in the sidebar (between Songs and Publish) for in-production tracks.")}</td></tr>`;
     mainTrackBodies = `<tbody>${inner}</tbody>`;
   }
 
@@ -2421,13 +2613,13 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
     !teamSongs.length
       ? "No tracks for this group in snapshot."
       : catalogSplitsFuture
-        ? `${releasedTeam.length.toLocaleString()} released (as of ${refShort}). ${makingTeam.length.toLocaleString()} in production — open Making in the sidebar (between Songs and Publish).`
+        ? `${releasedTeam.length.toLocaleString()} released (as of ${refShort}). ${makingTeam.length.toLocaleString()} in production â€” open Making in the sidebar (between Songs and Publish).`
         : hasRef
-          ? `${releasedTeam.length.toLocaleString()} released (as of ${refShort}) — no in-production entries.`
-          : `${teamSongs.length.toLocaleString()} track(s) · popularity high → low (set a reference date to split catalog by release date).`,
+          ? `${releasedTeam.length.toLocaleString()} released (as of ${refShort}) â€” no in-production entries.`
+          : `${teamSongs.length.toLocaleString()} track(s) Â· popularity high â†’ low (set a reference date to split catalog by release date).`,
   )}</p>`;
   const explDisc = `<p class="content-muted">${htmlEsc(
-    `${buckets.length.toLocaleString()} release bucket(s) · derived from song rows.`,
+    `${buckets.length.toLocaleString()} release bucket(s) Â· derived from song rows.`,
   )}</p>`;
 
   const budget = SONG_EXPAND_ALL_LIMIT;
@@ -2435,7 +2627,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
   const expMaking = makingTeam.slice(0, Math.max(0, budget - expReleased.length));
   const expBodies =
     teamSongs.length === 0
-      ? `<tbody><tr><td colspan="7" class="content-muted">—</td></tr></tbody>`
+      ? `<tbody><tr><td colspan="7" class="content-muted">â€”</td></tr></tbody>`
       : renderSongsTrackTableBodies(
           expReleased,
           expMaking,
@@ -2459,7 +2651,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
         </table>
       </div>
       <details class="fm-card songs-expand">
-        <summary class="content-h3 songs-expand-sum">This group — all tracks (${teamSongs.length.toLocaleString()})</summary>
+        <summary class="content-h3 songs-expand-sum">This group â€” all tracks (${teamSongs.length.toLocaleString()})</summary>
         ${truncated}
         <div class="table-scroll">
           <table class="fm-table">
@@ -2484,14 +2676,14 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
 }
 
 function groupFansNum(g: Record<string, unknown>): number {
-  return typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
+  return typeof g.fans === "number" ? g.fans : Number(g.fans JPY   0) || 0;
 }
 
 function groupPopNum(g: Record<string, unknown>): number {
-  return typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
+  return typeof g.popularity === "number" ? g.popularity : Number(g.popularity JPY   0) || 0;
 }
 
-/** All groups sorted S→F, then descending fans (browse + management directory). */
+/** All groups sorted Sâ†’F, then descending fans (browse + management directory). */
 function renderGroupsFullTable(
   groups: Record<string, unknown>[],
   subtitle: string,
@@ -2502,20 +2694,20 @@ function renderGroupsFullTable(
   if (!listed.length) {
     return renderPlaceholder(
       "Groups",
-      "No groups in this list after filters (directory hides history-only slugs and groups with 0–1 current members). Full data remains in the snapshot for idol history.",
+      "No groups in this list after filters (directory hides history-only slugs and groups with 0â€“1 current members). Full data remains in the snapshot for idol history.",
     );
   }
 
-  const songCount = buildSongCountByGroupUid(songs ?? undefined);
+  const songCount = buildSongCountByGroupUid(songs JPY   undefined);
   const sorted = sortGroupsForDirectory(listed);
   const rows = sorted
     .map((g) => {
-      const name = String(g.name ?? g.name_romanji ?? "—");
-      const formed = typeof g.formed_date === "string" ? g.formed_date : "—";
+      const name = String(g.name JPY   g.name_romanji JPY   "â€”");
+      const formed = typeof g.formed_date === "string" ? g.formed_date : "â€”";
       const tier = resolveGroupLetterTier(g);
       const fans = groupFansNum(g);
       const pop = groupPopNum(g);
-      const uid = String(g.uid ?? "");
+      const uid = String(g.uid JPY   "");
       const memNow =
         typeof g.member_count === "number" && Number.isFinite(g.member_count)
           ? g.member_count
@@ -2529,7 +2721,7 @@ function renderGroupsFullTable(
             ? g.past_member_uids.length
             : 0;
       const memPast = `${memNow} (${past})`;
-      const songN = uid ? songCount.get(uid) ?? 0 : 0;
+      const songN = uid ? songCount.get(uid) JPY   0 : 0;
       const rowClass = [
         "group-dir-row",
         highlightUid && uid === highlightUid ? "is-managed-row" : "",
@@ -2564,10 +2756,10 @@ function renderGroupsManaged(save: GameSavePayload): string {
       ? grp.name_romanji
       : typeof grp?.name === "string"
         ? grp.name
-        : uid?.slice(0, 12) ?? "—";
+        : uid?.slice(0, 12) JPY   "â€”";
   return renderGroupsFullTable(
     save.database_snapshot.groups,
-    `Letter tier order (best first), then fans (high→low). Managed: ${label}. Highlighted row = your roster.`,
+    `Managed: ${label}. Highlighted row = your roster.`,
     uid,
     save.database_snapshot.songs,
   );
@@ -2577,7 +2769,7 @@ function renderGroupsManaged(save: GameSavePayload): string {
 function renderBrowseGroups(data: LoadedScenario): string {
   return renderGroupsFullTable(
     data.groups,
-    `Browse · scenario ${data.preset?.name ?? "?"}. Sorted best letter tier first, then descending fans.`,
+    `Browse Â· scenario ${data.preset?.name JPY   "?"}. Sorted best letter tier first, then descending fans.`,
     null,
     data.songs,
   );
@@ -2596,19 +2788,19 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
   if (!save) {
     return `<section class="content-panel schedule-view"><p class="content-muted">No save loaded.</p></section>`;
   }
-  const gameStart = save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
-  const cur = save.current_date ?? gameStart;
+  const gameStart = save.game_start_date JPY   save.scenario_context?.startup_date JPY   "2020-01-01";
+  const cur = save.current_date JPY   gameStart;
   const turn = typeof save.turn_number === "number" ? save.turn_number : 0;
   const nextIso = addCalendarDays(cur, 1);
 
-  const schedulesList = (save.lives?.schedules ?? []).filter(
+  const schedulesList = (save.lives?.schedules JPY   []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
   );
-  const resultsList = (save.lives?.results ?? []).filter(
+  const resultsList = (save.lives?.results JPY   []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
   );
   const gs = typeof gameStart === "string" && /^\d{4}-\d{2}-\d{2}$/.test(gameStart) ? gameStart : "2020-01-01";
-  const anchor = scheduleCalendarMonthStart ?? startOfUtcMonthIso(nextIso);
+  const anchor = scheduleCalendarMonthStart JPY   startOfUtcMonthIso(nextIso);
   const calHtml = buildScheduleMonthCalendarHtml(anchor, {
     gameStart: gs,
     cur: String(cur).split("T")[0],
@@ -2628,7 +2820,7 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
     const extra = Array.isArray(schedules)
       ? schedules.filter((s) => {
           if (!s || typeof s !== "object") return false;
-          const sd = String((s as { start_date?: unknown }).start_date ?? "").split("T")[0];
+          const sd = String((s as { start_date?: unknown }).start_date JPY   "").split("T")[0];
           return sd === iso;
         })
       : [];
@@ -2637,8 +2829,8 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
         ? extra
             .map((s) => {
               const o = s as Record<string, unknown>;
-              const typ = liveTypeLabel(lang, String(o.live_type ?? o.event_type ?? "Event"));
-              const vn = String(o.venue ?? "").trim();
+              const typ = liveTypeLabel(lang, String(o.live_type JPY   o.event_type JPY   "Event"));
+              const vn = String(o.venue JPY   "").trim();
               return vn ? `${typ} @ ${vn}` : typ;
             })
             .join(", ")
@@ -2648,22 +2840,22 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
       <div class="schedule-cell-dow">${htmlEsc(dow)}</div>
       <div class="schedule-cell-date">${htmlEsc(iso)}</div>
       <div class="schedule-cell-body">
-        ${extra.length > 0 ? `<span class="schedule-pill schedule-pill-live">${htmlEsc(`${extra.length} scheduled live${extra.length === 1 ? "" : "s"}`)}</span>` : `<span class="schedule-pill">${htmlEsc("—")}</span>`}
+        ${extra.length > 0 ? `<span class="schedule-pill schedule-pill-live">${htmlEsc(`${extra.length} scheduled live${extra.length === 1 ? "" : "s"}`)}</span>` : `<span class="schedule-pill">${htmlEsc("â€”")}</span>`}
         ${extraLbl ? `<div class="schedule-extra">${htmlEsc(extraLbl)}</div>` : ""}
       </div>
     </div>`);
   }
 
-  const recentResults = [...(save.lives?.results ?? [])].slice(-5).reverse();
+  const recentResults = [...(save.lives?.results JPY   [])].slice(-5).reverse();
   const resRows = recentResults
     .map((raw) => {
       if (!raw || typeof raw !== "object") return "";
       const r = raw as Record<string, unknown>;
-      const d = String(r.date ?? "").split("T")[0];
-      const perf = r.performance_score != null ? String(r.performance_score) : "—";
-      const aud = r.audience_satisfaction != null ? String(r.audience_satisfaction) : "—";
-      const fans = r.fan_gain != null ? String(r.fan_gain) : "—";
-      const att = r.attendance != null ? String(r.attendance) : "—";
+      const d = String(r.date JPY   "").split("T")[0];
+      const perf = r.performance_score != null ? String(r.performance_score) : "â€”";
+      const aud = r.audience_satisfaction != null ? String(r.audience_satisfaction) : "â€”";
+      const fans = r.fan_gain != null ? String(r.fan_gain) : "â€”";
+      const att = r.attendance != null ? String(r.attendance) : "â€”";
       return `<tr><td>${htmlEsc(d)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(aud)}</td><td class="num">${htmlEsc(fans)}</td><td class="num">${htmlEsc(att)}</td></tr>`;
     })
     .filter(Boolean)
@@ -2672,7 +2864,7 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
   return `
     <section class="content-panel schedule-view">
       <h2 class="content-h2">Schedule</h2>
-      <p class="content-lead">Last closed day: <strong>${htmlEsc(String(cur))}</strong> · Next simulation day: <strong>${htmlEsc(nextIso)}</strong> · Turn <strong>${htmlEsc(String(turn))}</strong></p>
+      <p class="content-lead">Last closed day: <strong>${htmlEsc(String(cur))}</strong> Â· Next simulation day: <strong>${htmlEsc(nextIso)}</strong> Â· Turn <strong>${htmlEsc(String(turn))}</strong></p>
       <section class="fm-card schedule-calendar-card">
         <h3 class="content-h3">Calendar</h3>
         <p class="content-muted">${htmlEsc("UTC month grid. Use arrows to change month; This month jumps to the month of your next simulation day.")}</p>
@@ -2687,7 +2879,7 @@ function renderSchedule(save: GameSavePayload | null, scheduleCalendarMonthStart
         <h3 class="content-h3">Recent live results</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Performance</th><th>Audience</th><th>Fan Δ</th><th>Attendance</th></tr></thead>
+            <thead><tr><th>Date</th><th>Performance</th><th>Audience</th><th>Fan Î”</th><th>Attendance</th></tr></thead>
             <tbody>${resRows || `<tr><td colspan="5" class="content-muted">No results yet.</td></tr>`}</tbody>
           </table>
         </div>
@@ -2749,24 +2941,24 @@ function renderTrainingTabs(active: TrainingTab): string {
 }
 
 function liveTimeRangeText(live: Record<string, unknown>): string {
-  const start = String(live.start_time ?? "").slice(0, 5);
-  const end = String(live.end_time ?? "").slice(0, 5);
+  const start = String(live.start_time JPY   "").slice(0, 5);
+  const end = String(live.end_time JPY   "").slice(0, 5);
   return [start, end].filter(Boolean).join("-");
 }
 
 function liveVenueCompactText(live: Record<string, unknown>): string {
-  const festivalStage = String(live.festival_stage ?? "").trim();
-  const festivalLocation = String(live.location ?? "").trim();
+  const festivalStage = String(live.festival_stage JPY   "").trim();
+  const festivalLocation = String(live.location JPY   "").trim();
   if (festivalStage) return festivalLocation ? `${festivalStage}, ${festivalLocation}` : festivalStage;
-  const venue = String(live.venue ?? "-").trim() || "-";
-  const city = String(live.location ?? "").trim();
+  const venue = String(live.venue JPY   "-").trim() || "-";
+  const city = String(live.location JPY   "").trim();
   return city ? `${venue}, ${city}` : venue;
 }
 
 function liveDisplayTitleText(live: Record<string, unknown>): string {
-  const festivalName = String(live.festival_name ?? "").trim();
+  const festivalName = String(live.festival_name JPY   "").trim();
   if (festivalName) return festivalName;
-  return String(live.title ?? live.live_type ?? "Live");
+  return String(live.title JPY   live.live_type JPY   "Live");
 }
 
 function goodsByUid(goods: ProducedGoodsRow[]): Map<string, ProducedGoodsRow> {
@@ -2788,92 +2980,102 @@ function renderLivesView(
   festivals: Record<string, unknown>[] | null | undefined,
   lang: UiLanguage,
 ): string {
-  const schedules = (save.lives?.schedules ?? []).filter(
+  const schedules = (save.lives?.schedules JPY   []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
   );
-  const results = (save.lives?.results ?? []).filter(
+  const results = (save.lives?.results JPY   []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
   );
 
   const byDate = (a: Record<string, unknown>, b: Record<string, unknown>) => {
-    const da = String(a.start_date ?? a.date ?? "").split("T")[0];
-    const db = String(b.start_date ?? b.date ?? "").split("T")[0];
+    const da = String(a.start_date JPY   a.date JPY   "").split("T")[0];
+    const db = String(b.start_date JPY   b.date JPY   "").split("T")[0];
     return da.localeCompare(db);
   };
   const grp = getPrimaryGroup(save);
-  const label = String(grp?.name_romanji ?? grp?.name ?? save.managing_group ?? "Managed group");
+  const label = String(grp?.name_romanji JPY   grp?.name JPY   save.managing_group JPY   "Managed group");
   const todayIso =
-    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
-  const venues = getVenuesCatalog();
+    save.current_date JPY   save.game_start_date JPY   save.scenario_context?.startup_date JPY   "2020-01-01";
+  const venues = [...getVenuesCatalog()].sort((a, b) => {
+    const capDiff = Number(a.capacity JPY   0) - Number(b.capacity JPY   0);
+    if (capDiff !== 0) return capDiff;
+    return String(a.name JPY   "").localeCompare(String(b.name JPY   ""));
+  });
   const venueByName = new Map(venues.map((row) => [row.name, row] as const));
   const goodsInventory = Array.isArray(save.goods_inventory) ? save.goods_inventory : [];
   const availableGoodsForTitle = (title: string): ProducedGoodsRow[] =>
     goodsInventory.filter((item) => {
-      const stock = Math.max(0, Number(item.stock ?? 0) || 0);
+      const stock = Math.max(0, Number(item.stock JPY   0) || 0);
       if (stock <= 0) return false;
-      if (String(item.name ?? "") !== BIRTHDAY_TEE_TEMPLATE.name) return true;
-      return /生誕|birthday/i.test(title) && String(item.member_name ?? "").trim() && title.includes(String(item.member_name ?? "").trim());
+      if (String(item.name JPY   "") !== BIRTHDAY_TEE_TEMPLATE.name) return true;
+      return /ç”Ÿèª•|birthday/i.test(title) && String(item.member_name JPY   "").trim() && title.includes(String(item.member_name JPY   "").trim());
     });
   const goodsLookup = goodsByUid(goodsInventory);
-  const managedUid = String(grp?.uid ?? "");
+  const managedUid = String(grp?.uid JPY   "");
   const groupSongs = songsForDisplaySorted(save.database_snapshot.songs)
-    .filter((row) => String(row.group_uid ?? "") === managedUid)
+    .filter((row) => String(row.group_uid JPY   "") === managedUid)
     .filter((row) => isSongAvailableOn(row, todayIso))
     .slice(0, 40);
   const upcoming = [...schedules]
-    .filter((live) => String(live.start_date ?? "").split("T")[0] >= todayIso && String(live.status ?? "") !== "played")
+    .filter((live) => String(live.start_date JPY   "").split("T")[0] >= todayIso && String(live.status JPY   "") !== "played")
     .sort(byDate);
   const selectedScheduled =
-    (scheduledLiveUid ? upcoming.find((live) => String(live.uid ?? "") === scheduledLiveUid) : null) ?? upcoming[0] ?? null;
+    (scheduledLiveUid ? upcoming.find((live) => String(live.uid JPY   "") === scheduledLiveUid) : null) JPY   upcoming[0] JPY   null;
   const managedFestivalPerformances = festivals?.length
-    ? festivalPerformancesForManagedGroup(normalizeFestivalCatalog(festivals), String(save.managing_group_uid ?? ""))
+    ? festivalPerformancesForManagedGroup(normalizeFestivalCatalog(festivals), String(save.managing_group_uid JPY   ""))
     : [];
 
   const upcomingRows = upcoming
     .map((live) => {
-      const d = String(live.start_date ?? "").split("T")[0];
-      const title = String(live.title ?? live.live_type ?? "—");
-      const cap = live.capacity != null ? String(live.capacity) : "—";
-      const slot = liveTimeRangeText(live) || "—";
-      const typ = liveTypeLabel(lang, String(live.live_type ?? live.event_type ?? ""));
+      const d = String(live.start_date JPY   "").split("T")[0];
+      const title = String(live.title JPY   live.live_type JPY   "â€”");
+      const cap = live.capacity != null ? String(live.capacity) : "â€”";
+      const slot = liveTimeRangeText(live) || "â€”";
+      const typ = liveTypeLabel(lang, String(live.live_type JPY   live.event_type JPY   ""));
       const where = liveVenueCompactText(live);
-      const active = String(live.uid ?? "") === String(selectedScheduled?.uid ?? "") ? " class=\"is-selected-row\"" : "";
-      return `<tr${active} data-scheduled-live="${htmlEsc(String(live.uid ?? ""))}"><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(String(live.uid ?? ""))}">${htmlEsc(title)}</button></td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
+      const active = String(live.uid JPY   "") === String(selectedScheduled?.uid JPY   "") ? " class=\"is-selected-row\"" : "";
+      return `<tr${active} data-scheduled-live="${htmlEsc(String(live.uid JPY   ""))}"><td>${htmlEsc(d)}</td><td>${htmlEsc(slot)}</td><td><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(String(live.uid JPY   ""))}">${htmlEsc(title)}</button></td><td>${htmlEsc(typ)}</td><td>${htmlEsc(where)}</td><td class="num">${htmlEsc(cap)}</td></tr>`;
     })
     .join("");
 
   const recent = [...results].sort(byDate).reverse().slice(0, 30);
   const resultRows = recent
     .map((live) => {
-      const d = String(live.date ?? live.start_date ?? "").split("T")[0];
-      const venue = String(live.venue ?? "—");
-      const perf = live.performance_score != null ? String(live.performance_score) : "—";
-      const title = String(live.title ?? live.live_type ?? "—");
+      const d = String(live.date JPY   live.start_date JPY   "").split("T")[0];
+      const venue = String(live.venue JPY   "â€”");
+      const perf = live.performance_score != null ? String(live.performance_score) : "â€”";
+      const title = String(live.title JPY   live.live_type JPY   "â€”");
       const gross =
-        (Number(live.ticket_gross_yen ?? 0) || 0) +
-        (Number(live.goods_gross_yen ?? 0) || 0) +
-        (Number(live.tokutenkai_revenue_yen ?? 0) || 0);
-      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(venue)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(`¥${gross.toLocaleString("ja-JP")}`)}</td></tr>`;
+        (Number(live.ticket_gross_yen JPY   0) || 0) +
+        (Number(live.goods_gross_yen JPY   0) || 0) +
+        (Number(live.tokutenkai_revenue_yen JPY   0) || 0);
+      return `<tr><td>${htmlEsc(d)}</td><td>${htmlEsc(title)}</td><td>${htmlEsc(venue)}</td><td class="num">${htmlEsc(perf)}</td><td class="num">${htmlEsc(`Â¥${gross.toLocaleString("ja-JP")}`)}</td></tr>`;
     })
     .join("");
-  const selectedPreset = LIVE_TYPE_PRESETS[newLiveForm.liveType] ?? LIVE_TYPE_PRESETS.Routine;
+  const selectedPreset = LIVE_TYPE_PRESETS[newLiveForm.liveType] JPY   LIVE_TYPE_PRESETS.Routine;
   const selectedVenue = venueByName.get(newLiveForm.venueName);
+  const selectedVenueFee =
+    selectedVenue?.capacity != null
+      ? estimateVenueFee(selectedVenue.capacity, {
+          isWeekendOrHoliday: isWeekendUtc(newLiveForm.date || todayIso),
+        })
+      : 0;
   const selectedGoodsUids = newLiveForm.goodsUids.filter((uid) => goodsLookup.has(uid));
-  const selectedGoodsNames = selectedGoodsUids.map((uid) => goodsDisplayLabel(goodsLookup.get(uid) ?? null)).filter(Boolean);
+  const selectedGoodsNames = selectedGoodsUids.map((uid) => goodsDisplayLabel(goodsLookup.get(uid) JPY   null)).filter(Boolean);
   const selectedGoodsGross = selectedGoodsUids.reduce((sum, uid) => {
     return (
       sum +
-      estimateLiveGoodsGrossYen(goodsLookup.get(uid) ?? null, {
+      estimateLiveGoodsGrossYen(goodsLookup.get(uid) JPY   null, {
         liveType: newLiveForm.liveType,
-        capacity: selectedVenue?.capacity ?? null,
-        groupFans: Number(grp?.fans ?? 0) || 0,
-        groupPopularity: Number(grp?.popularity ?? 0) || 0,
-        groupTier: resolveGroupLetterTier(grp ?? undefined),
+        capacity: selectedVenue?.capacity JPY   null,
+        groupFans: Number(grp?.fans JPY   0) || 0,
+        groupPopularity: Number(grp?.popularity JPY   0) || 0,
+        groupTier: resolveGroupLetterTier(grp JPY   undefined),
       })
     );
   }, 0);
   const tokutenkaiSummary = newLiveForm.tokutenkaiEnabled
-    ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}`
+    ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} Â· Â¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} Â· ${newLiveForm.tokutenkaiSlotSeconds}s Â· est ${newLiveForm.tokutenkaiExpectedTickets}`
     : "Tokutenkai: None";
   const programSummary = newLiveForm.program.map((item) =>
     item.kind === "song" ? item.label : `${item.label} ${item.durationMinutes}m`,
@@ -2881,9 +3083,9 @@ function renderLivesView(
   const songListRows = groupSongs
     .map((song) => {
       const title = songCatalogDisplayLabel(song);
-      const uid = String(song.uid ?? "").trim();
-      const familiarity = Math.round(Number(save.managed_song_status[uid]?.familiarity ?? 0) || 0);
-      const selected = songCatalogMatchesPick(String(selectedLiveSongTitle ?? "").trim(), song) ? " is-selected-row" : "";
+      const uid = String(song.uid JPY   "").trim();
+      const familiarity = Math.round(Number(save.managed_song_status[uid]?.familiarity JPY   0) || 0);
+      const selected = songCatalogMatchesPick(String(selectedLiveSongTitle JPY   "").trim(), song) ? " is-selected-row" : "";
       return `<tr class="live-song-row${selected}" data-live-song-pick="${htmlEsc(title)}">
         <td>${htmlEsc(title)}</td>
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
@@ -2901,15 +3103,15 @@ function renderLivesView(
       const detail =
         item.kind === "song"
           ? (() => {
-              const title = String(item.songTitle ?? item.label ?? "").trim();
+              const title = String(item.songTitle JPY   item.label JPY   "").trim();
               const source = groupSongs.find((song) => songCatalogMatchesPick(title, song));
-              return `Popularity ${songPopularityNum(source ?? {}).toFixed(1)}`;
+              return `Popularity ${songPopularityNum(source JPY   {}).toFixed(1)}`;
             })()
           : `${item.durationMinutes}m`;
       const selected = selectedSetlistSongIndex === index ? " is-selected-row" : "";
       return `<div class="live-program-dropzone" data-live-drop-index="${htmlEsc(String(index))}"></div>
         <div class="live-program-item${selected}" draggable="true" data-live-program-index="${htmlEsc(String(index))}" data-live-setlist-pick="${htmlEsc(String(index))}">
-          <span class="live-program-grab" aria-hidden="true">⋮⋮</span>
+          <span class="live-program-grab" aria-hidden="true">â‹®â‹®</span>
           <span class="live-program-kind live-program-kind--${htmlEsc(item.kind)}">${htmlEsc(meta)}</span>
           <span class="live-program-label">${htmlEsc(item.label)}</span>
           <span class="live-program-detail">${htmlEsc(detail)}</span>
@@ -2928,33 +3130,34 @@ function renderLivesView(
   const scheduledVenueOptions = [
     `<option value="">Select venue</option>`,
     ...venues.map((venue) => {
-      const selected = venue.name === String(selectedScheduled?.venue ?? "") ? "selected" : "";
+      const selected = venue.name === String(selectedScheduled?.venue JPY   "") ? "selected" : "";
       return `<option value="${htmlEsc(venue.name)}" ${selected}>${htmlEsc(`${venue.name} (${venue.capacity})`)}</option>`;
     }),
   ].join("");
   const plannerLiveTypes = ["Routine", "Concert", "Taiban", "Festival"] as const;
   const summaryLines = [
-    `${liveTypeLabel(lang, newLiveForm.liveType)} · ${newLiveForm.date || "TBD"} · ${newLiveForm.startTime}-${newLiveForm.endTime}`,
-    `Venue: ${newLiveForm.venueName || "TBA"}${selectedVenue?.location ? ` · ${selectedVenue.location}` : ""}${selectedVenue?.capacity ? ` · cap ${selectedVenue.capacity}` : ""}`,
-    `Program: ${programSummary.length ? programSummary.join(" · ") : "Not set"}`,
-    `Tokutenkai: ${newLiveForm.tokutenkaiEnabled ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} · ¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} · ${newLiveForm.tokutenkaiSlotSeconds}s · est ${newLiveForm.tokutenkaiExpectedTickets}` : "Off"}`,
-    `Goods: ${newLiveForm.goodsEnabled ? `${selectedGoodsNames.join(", ") || "None selected"} / est JPY ${selectedGoodsGross.toLocaleString("ja-JP")}` : "Off"}`,
-    `Ticket price: ${newLiveForm.ticketPriceYen > 0 ? `¥${newLiveForm.ticketPriceYen.toLocaleString("ja-JP")}` : "Not set"}`,
+    `${liveTypeLabel(lang, newLiveForm.liveType)} Â· ${newLiveForm.date || "TBD"} Â· ${newLiveForm.startTime}-${newLiveForm.endTime}`,
+    `Venue: ${newLiveForm.venueName || "TBA"}${selectedVenue?.location ? ` Â· ${selectedVenue.location}` : ""}${selectedVenue?.capacity ? ` Â· cap ${selectedVenue.capacity}` : ""}`,
+    `Venue fee: ${selectedVenue ? `JPY ${selectedVenueFee.toLocaleString("ja-JP")}` : "TBD"}`,
+    `Program: ${programSummary.length ? programSummary.join(" Â· ") : "Not set"}`,
+    `Tokutenkai: ${newLiveForm.tokutenkaiEnabled ? `${newLiveForm.tokutenkaiStart || newLiveForm.endTime}-${newLiveForm.tokutenkaiEnd || addMinutesToHHMM(newLiveForm.endTime, selectedPreset.tokutenkai_duration)} Â· Â¥${newLiveForm.tokutenkaiTicketPrice.toLocaleString("ja-JP")} Â· ${newLiveForm.tokutenkaiSlotSeconds}s Â· est ${newLiveForm.tokutenkaiExpectedTickets}` : "Off"}`,
+    `Goods: ${newLiveForm.goodsEnabled ? `${selectedGoodsNames.join(", ") || "None selected"} / est JPY  ${selectedGoodsGross.toLocaleString("ja-JP")}` : "Off"}`,
+    `Ticket price: ${newLiveForm.ticketPriceYen > 0 ? `Â¥${newLiveForm.ticketPriceYen.toLocaleString("ja-JP")}` : "Not set"}`,
   ];
 
   const scheduledDetail = selectedScheduled
     ? `<div class="content-muted">${[
-        `${String(selectedScheduled.title ?? selectedScheduled.live_type ?? "Live")}`,
+        `${String(selectedScheduled.title JPY   selectedScheduled.live_type JPY   "Live")}`,
         `When: ${formatLiveSlotLine(selectedScheduled)}`,
-        `Venue: ${String(selectedScheduled.venue ?? "TBA")}${String(selectedScheduled.location ?? "").trim() ? ` · ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
+        `Venue: ${String(selectedScheduled.venue JPY   "TBA")}${String(selectedScheduled.location JPY   "").trim() ? ` Â· ${String(selectedScheduled.location JPY   "").trim()}` : ""}`,
         `Program: ${Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
           ? (selectedScheduled.program as unknown[])
               .map((raw) => {
                 if (!raw || typeof raw !== "object") return "";
                 const item = raw as Record<string, unknown>;
-                const kind = String(item.kind ?? "song");
-                const label = String(item.label ?? item.songTitle ?? "").trim();
-                const duration = Number(item.durationMinutes ?? 0) || 0;
+                const kind = String(item.kind JPY   "song");
+                const label = String(item.label JPY   item.songTitle JPY   "").trim();
+                const duration = Number(item.durationMinutes JPY   0) || 0;
                 return kind === "song" ? label : `${label} ${duration}m`;
               })
               .filter(Boolean)
@@ -2962,8 +3165,8 @@ function renderLivesView(
           : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
             ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(", ")
             : "Not set"}`,
-        `Tokutenkai: ${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start ?? "")}-${String(selectedScheduled.tokutenkai_end ?? "")} · est ${String(selectedScheduled.tokutenkai_expected_tickets ?? "0")}` : "Off"}`,
-        `Goods: ${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line ?? "Goods")} · est ¥${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}` : "Off"}`,
+        `Tokutenkai: ${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start JPY   "")}-${String(selectedScheduled.tokutenkai_end JPY   "")} Â· est ${String(selectedScheduled.tokutenkai_expected_tickets JPY   "0")}` : "Off"}`,
+        `Goods: ${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line JPY   "Goods")} Â· est Â¥${Number(selectedScheduled.goods_expected_revenue_yen JPY   0).toLocaleString("ja-JP")}` : "Off"}`,
       ].map((line) => htmlEsc(line)).join("<br />")}</div>`
     : `<p class="content-muted">No scheduled live selected.</p>`;
 
@@ -2973,24 +3176,24 @@ function renderLivesView(
           .map((raw) => {
             if (!raw || typeof raw !== "object") return "";
             const item = raw as Record<string, unknown>;
-            const kind = String(item.kind ?? "song");
-            const lineLabel = String(item.label ?? item.songTitle ?? "").trim();
-            const duration = Number(item.durationMinutes ?? 0) || 0;
+            const kind = String(item.kind JPY   "song");
+            const lineLabel = String(item.label JPY   item.songTitle JPY   "").trim();
+            const duration = Number(item.durationMinutes JPY   0) || 0;
             return kind === "song" ? lineLabel : `${lineLabel} ${duration}m`;
           })
           .filter(Boolean)
-          .join(" · ")
+          .join(" Â· ")
       : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
-        ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(" · ")
+        ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(" Â· ")
         : "Not set"
     : "";
 
-  const scheduledAvailableGoods = availableGoodsForTitle(String(selectedScheduled?.title ?? ""));
+  const scheduledAvailableGoods = availableGoodsForTitle(String(selectedScheduled?.title JPY   ""));
   const scheduledSelectedGoodsUidsRaw = selectedScheduled
     ? Array.isArray(selectedScheduled.goods_uids)
       ? (selectedScheduled.goods_uids as unknown[]).map((x) => String(x))
-      : String(selectedScheduled.goods_uid ?? "").trim()
-        ? [String(selectedScheduled.goods_uid ?? "").trim()]
+      : String(selectedScheduled.goods_uid JPY   "").trim()
+        ? [String(selectedScheduled.goods_uid JPY   "").trim()]
         : []
     : [];
   const scheduledSelectedGoodsUids =
@@ -3001,7 +3204,7 @@ function renderLivesView(
     ? scheduledAvailableGoods
         .map((item) => {
           const checked = scheduledSelectedGoodsUids.includes(item.uid) ? "checked" : "";
-          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-detail-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
+          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-detail-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY  ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
         })
         .join("")
     : `<p class="content-muted">No made goods in stock yet. Use Making -> Goods first.</p>`;
@@ -3010,7 +3213,7 @@ function renderLivesView(
     ? newLiveAvailableGoods
         .map((item) => {
           const checked = selectedGoodsUids.includes(item.uid) ? "checked" : "";
-          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
+          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY  ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
         })
         .join("")
     : `<p class="content-muted">No made goods in stock yet. Use Making -> Goods first.</p>`;
@@ -3019,27 +3222,27 @@ function renderLivesView(
     ? `<section class="fm-card">
       <h3 class="content-h3">Upcoming live detail</h3>
       <div class="form-grid live-form-grid">
-        <label><span>Type</span><select class="fm-select" data-live-detail-field="live_type">${renderLiveTypeSelectOptions(lang, String(selectedScheduled.live_type ?? "Routine"), plannerLiveTypes)}</select></label>
-        <label><span>Title</span><input class="fm-input" data-live-detail-field="title" value="${htmlEsc(String(selectedScheduled.title ?? ""))}" /></label>
-        <label><span>Date</span><input type="date" class="fm-input" data-live-detail-field="start_date" value="${htmlEsc(String(selectedScheduled.start_date ?? "").split("T")[0])}" /></label>
+        <label><span>Type</span><select class="fm-select" data-live-detail-field="live_type">${renderLiveTypeSelectOptions(lang, String(selectedScheduled.live_type JPY   "Routine"), plannerLiveTypes)}</select></label>
+        <label><span>Title</span><input class="fm-input" data-live-detail-field="title" value="${htmlEsc(String(selectedScheduled.title JPY   ""))}" /></label>
+        <label><span>Date</span><input type="date" class="fm-input" data-live-detail-field="start_date" value="${htmlEsc(String(selectedScheduled.start_date JPY   "").split("T")[0])}" /></label>
         <label><span>Venue</span><select class="fm-select" data-live-detail-field="venue">${scheduledVenueOptions}</select></label>
-        <label><span>Start</span><input class="fm-input" data-live-detail-field="start_time" value="${htmlEsc(String(selectedScheduled.start_time ?? ""))}" /></label>
-        <label><span>End</span><input class="fm-input" data-live-detail-field="end_time" value="${htmlEsc(String(selectedScheduled.end_time ?? ""))}" /></label>
-        <label><span>Rehearsal start</span><input class="fm-input" data-live-detail-field="rehearsal_start" value="${htmlEsc(String(selectedScheduled.rehearsal_start ?? ""))}" /></label>
-        <label><span>Rehearsal end</span><input class="fm-input" data-live-detail-field="rehearsal_end" value="${htmlEsc(String(selectedScheduled.rehearsal_end ?? ""))}" /></label>
-        <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="ticket_price" value="${htmlEsc(String(selectedScheduled.ticket_price ?? 0))}" /></label>
-        <label><span>VIP ticket price</span><input class="fm-input" data-live-detail-field="vip_ticket_price" value="${htmlEsc(String(selectedScheduled.vip_ticket_price ?? 0))}" /></label>
-        <label><span>VIP numbers</span><input class="fm-input" data-live-detail-field="vip_capacity" value="${htmlEsc(String(selectedScheduled.vip_capacity ?? 0))}" /></label>
+        <label><span>Start</span><input class="fm-input" data-live-detail-field="start_time" value="${htmlEsc(String(selectedScheduled.start_time JPY   ""))}" /></label>
+        <label><span>End</span><input class="fm-input" data-live-detail-field="end_time" value="${htmlEsc(String(selectedScheduled.end_time JPY   ""))}" /></label>
+        <label><span>Rehearsal start</span><input class="fm-input" data-live-detail-field="rehearsal_start" value="${htmlEsc(String(selectedScheduled.rehearsal_start JPY   ""))}" /></label>
+        <label><span>Rehearsal end</span><input class="fm-input" data-live-detail-field="rehearsal_end" value="${htmlEsc(String(selectedScheduled.rehearsal_end JPY   ""))}" /></label>
+        <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="ticket_price" value="${htmlEsc(String(selectedScheduled.ticket_price JPY   0))}" /></label>
+        <label><span>VIP ticket price</span><input class="fm-input" data-live-detail-field="vip_ticket_price" value="${htmlEsc(String(selectedScheduled.vip_ticket_price JPY   0))}" /></label>
+        <label><span>VIP numbers</span><input class="fm-input" data-live-detail-field="vip_capacity" value="${htmlEsc(String(selectedScheduled.vip_capacity JPY   0))}" /></label>
       </div>
       <div class="planner-subpanel live-tokutenkai-card">
         <h4 class="content-h3">Post-live tokutenkai / cheki</h4>
         <label class="check-pill live-tokutenkai-toggle"><input type="checkbox" data-live-detail-toggle="tokutenkai_enabled" ${selectedScheduled.tokutenkai_enabled ? "checked" : ""} /> <span>Enable tokutenkai / cheki</span></label>
         <div class="form-grid live-form-grid live-tokutenkai-grid">
-          <label><span>Start</span><input class="fm-input" data-live-detail-field="tokutenkai_start" value="${htmlEsc(String(selectedScheduled.tokutenkai_start ?? ""))}" /></label>
-          <label><span>End</span><input class="fm-input" data-live-detail-field="tokutenkai_end" value="${htmlEsc(String(selectedScheduled.tokutenkai_end ?? ""))}" /></label>
-          <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="tokutenkai_ticket_price" value="${htmlEsc(String(selectedScheduled.tokutenkai_ticket_price ?? 0))}" /></label>
-          <label><span>Talk slot seconds</span><input class="fm-input" data-live-detail-field="tokutenkai_slot_seconds" value="${htmlEsc(String(selectedScheduled.tokutenkai_slot_seconds ?? 0))}" /></label>
-          <label><span>Expected tickets</span><input class="fm-input" data-live-detail-field="tokutenkai_expected_tickets" value="${htmlEsc(String(selectedScheduled.tokutenkai_expected_tickets ?? 0))}" /></label>
+          <label><span>Start</span><input class="fm-input" data-live-detail-field="tokutenkai_start" value="${htmlEsc(String(selectedScheduled.tokutenkai_start JPY   ""))}" /></label>
+          <label><span>End</span><input class="fm-input" data-live-detail-field="tokutenkai_end" value="${htmlEsc(String(selectedScheduled.tokutenkai_end JPY   ""))}" /></label>
+          <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="tokutenkai_ticket_price" value="${htmlEsc(String(selectedScheduled.tokutenkai_ticket_price JPY   0))}" /></label>
+          <label><span>Talk slot seconds</span><input class="fm-input" data-live-detail-field="tokutenkai_slot_seconds" value="${htmlEsc(String(selectedScheduled.tokutenkai_slot_seconds JPY   0))}" /></label>
+          <label><span>Expected tickets</span><input class="fm-input" data-live-detail-field="tokutenkai_expected_tickets" value="${htmlEsc(String(selectedScheduled.tokutenkai_expected_tickets JPY   0))}" /></label>
         </div>
       </div>
       <div class="planner-subpanel">
@@ -3047,7 +3250,7 @@ function renderLivesView(
         <label class="check-pill"><input type="checkbox" data-live-detail-toggle="goods_enabled" ${selectedScheduled.goods_enabled ? "checked" : ""} /> <span>Run goods booth</span></label>
         <div class="live-goods-checklist">${scheduledGoodsChecklist}</div>
         <div class="form-grid live-form-grid">
-          <label><span>Expected gross</span><input class="fm-input" value="${htmlEsc(`JPY ${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}`)}" readonly /></label>
+          <label><span>Expected gross</span><input class="fm-input" value="${htmlEsc(`JPY ${Number(selectedScheduled.goods_expected_revenue_yen JPY   0).toLocaleString("ja-JP")}`)}" readonly /></label>
         </div>
       </div>
       <div class="live-new-summary-grid">
@@ -3055,7 +3258,7 @@ function renderLivesView(
         <div class="live-new-summary-item">${htmlEsc(`Venue: ${liveVenueCompactText(selectedScheduled)}`)}</div>
         <div class="live-new-summary-item">${htmlEsc(`Program: ${scheduledProgramSummary}`)}</div>
       </div>
-      <div class="planner-actions"><button type="button" class="fm-btn" data-live-cancel="${htmlEsc(String(selectedScheduled.uid ?? ""))}">Cancel Live</button></div>
+      <div class="planner-actions"><button type="button" class="fm-btn" data-live-cancel="${htmlEsc(String(selectedScheduled.uid JPY   ""))}">Cancel Live</button></div>
     </section>`
     : `<section class="fm-card"><p class="content-muted">No upcoming live selected.</p></section>`;
 
@@ -3067,6 +3270,7 @@ function renderLivesView(
           <label><span>Title</span><input class="fm-input" data-live-form-field="title" value="${htmlEsc(newLiveForm.title)}" /></label>
           <label><span>Date</span><input type="date" class="fm-input" data-live-form-field="date" value="${htmlEsc(newLiveForm.date)}" /></label>
           <label><span>Venue</span><select class="fm-select" data-live-form-field="venueName">${venueOptions}</select></label>
+          <label><span>Venue fee</span><input class="fm-input" value="${htmlEsc(selectedVenue ? `JPY ${selectedVenueFee.toLocaleString("ja-JP")}` : "TBD")}" readonly /></label>
           <label><span>Start</span><input class="fm-input" data-live-form-field="startTime" value="${htmlEsc(newLiveForm.startTime)}" /></label>
           <label><span>End</span><input class="fm-input" data-live-form-field="endTime" value="${htmlEsc(newLiveForm.endTime)}" /></label>
           <label><span>Rehearsal start</span><input class="fm-input" data-live-form-field="rehearsalStart" value="${htmlEsc(newLiveForm.rehearsalStart)}" /></label>
@@ -3086,7 +3290,7 @@ function renderLivesView(
             <label><span>Expected tickets</span><input class="fm-input" data-live-form-field="tokutenkaiExpectedTickets" value="${htmlEsc(String(newLiveForm.tokutenkaiExpectedTickets))}" /></label>
           </div>
           <div class="live-tokutenkai-footer">
-            <span>${htmlEsc(`Members: ${typeof grp?.member_count === "number" ? grp.member_count : "—"}`)}</span>
+            <span>${htmlEsc(`Members: ${typeof grp?.member_count === "number" ? grp.member_count : "â€”"}`)}</span>
             <span>${htmlEsc(tokutenkaiSummary)}</span>
           </div>
         </div>
@@ -3165,14 +3369,14 @@ function renderLivesView(
 
   const festivalRows = managedFestivalPerformances
     .map(({ festival, performance }) => {
-      const date = String(performance.date ?? "").split("T")[0];
-      const slot = [String(performance.start_time ?? "").slice(0, 5), String(performance.end_time ?? "").slice(0, 5)]
+      const date = String(performance.date JPY   "").split("T")[0];
+      const slot = [String(performance.start_time JPY   "").slice(0, 5), String(performance.end_time JPY   "").slice(0, 5)]
         .filter(Boolean)
         .join("-");
-      const stage = String(performance.stage ?? "Stage TBA");
-      const subtitle = String(performance.subtitle ?? "").trim();
-      const venue = String(festival.name ?? "Festival");
-      return `<tr><td>${htmlEsc(date)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(venue)}</td><td>${htmlEsc(stage)}</td><td>${htmlEsc(subtitle || String(performance.title ?? performance.artist_name ?? "Appearance"))}</td></tr>`;
+      const stage = String(performance.stage JPY   "Stage TBA");
+      const subtitle = String(performance.subtitle JPY   "").trim();
+      const venue = String(festival.name JPY   "Festival");
+      return `<tr><td>${htmlEsc(date)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(venue)}</td><td>${htmlEsc(stage)}</td><td>${htmlEsc(subtitle || String(performance.title JPY   performance.artist_name JPY   "Appearance"))}</td></tr>`;
     })
     .join("");
 
@@ -3216,40 +3420,56 @@ function renderScoutView(
 ): string {
   const companies = buildDefaultScoutCompanies();
   const selectedCompany =
-    companies.find((company) => company.uid === save.scout.selected_company_uid) ?? companies[0] ?? null;
+    companies.find((company) => company.uid === save.scout.selected_company_uid) JPY   companies[0] JPY   null;
   if (!selectedCompany) return renderPlaceholder("Scout", "No scout companies are configured.");
   const currentIso =
-    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
-  const managedGroupName = String(getPrimaryGroup(save)?.name ?? save.managing_group ?? "");
+    save.current_date JPY   save.game_start_date JPY   save.scenario_context?.startup_date JPY   "2020-01-01";
+  const selectedCompanySubscribed = isScoutCompanySubscribed(save.scout.subscriptions, selectedCompany.uid);
+  const selectedCompanyLeadLimit = scoutLeadRevealCount(save.scout.subscriptions, selectedCompany.uid, currentIso);
+  const managedGroupName = String(getPrimaryGroup(save)?.name JPY   save.managing_group JPY   "");
+  const recommendVisibleLeads = (targetType: "freelancer" | "transfer", limit: number) => {
+    const strictRows = recommendScoutLeads({
+      idols: save.database_snapshot.idols,
+      managedGroupName,
+      company: selectedCompany,
+      targetType,
+      currentIso,
+      limit,
+      companies,
+    });
+    if (strictRows.length > 0 || targetType !== "freelancer") return strictRows;
+    return recommendScoutLeads({
+      idols: save.database_snapshot.idols,
+      managedGroupName,
+      company: selectedCompany,
+      targetType,
+      currentIso,
+      limit,
+    });
+  };
   const auditionsKey = buildAuditionStorageKey(selectedCompany.uid, currentIso);
-  const auditionRows = Array.isArray(save.scout.auditions[auditionsKey])
+  const auditionRows = selectedCompanySubscribed && Array.isArray(save.scout.auditions[auditionsKey])
     ? (save.scout.auditions[auditionsKey] as ScoutAuditionRow[])
     : [];
   const leadRows =
-    scoutTab === "audition"
+    scoutTab === "audition" || !selectedCompanySubscribed
       ? []
-      : recommendScoutLeads({
-          idols: save.database_snapshot.idols,
-          managedGroupName,
-          company: selectedCompany,
-          targetType: scoutTab,
-          currentIso,
-          limit: scoutTab === "freelancer" ? 8 : 12,
-          companies,
-        });
+      : recommendVisibleLeads(scoutTab, Math.max(0, selectedCompanyLeadLimit));
   const shortlist = new Set(save.shortlist.map((uid) => String(uid)));
-  const idolsByUid = new Map(save.database_snapshot.idols.map((idol) => [String(idol.uid ?? ""), idol] as const));
+  const idolsByUid = new Map(save.database_snapshot.idols.map((idol) => [String(idol.uid JPY   ""), idol] as const));
   const selectedLead =
-    leadRows.find((row) => row.idol_uid === selectedScoutLeadUid) ?? leadRows[0] ?? null;
+    leadRows.find((row) => row.idol_uid === selectedScoutLeadUid) JPY   leadRows[0] JPY   null;
   const selectedApplicant =
-    auditionRows.find((row) => String(row.uid) === selectedScoutApplicantUid) ?? auditionRows[0] ?? null;
+    auditionRows.find((row) => String(row.uid) === selectedScoutApplicantUid) JPY   auditionRows[0] JPY   null;
 
   const companyRows = companies
     .map((company) => {
       const active = company.uid === selectedCompany.uid ? " is-active" : "";
+      const subscribed = isScoutCompanySubscribed(save.scout.subscriptions, company.uid);
+      const leadCount = scoutLeadRevealCount(save.scout.subscriptions, company.uid, currentIso);
       return `<button type="button" class="inbox-row-btn fm-card${active}" data-scout-company="${htmlEsc(company.uid)}">
         <span class="inbox-row-title"><span>${htmlEsc(company.name)}</span></span>
-        <span class="inbox-row-meta">${htmlEsc(`${company.city} · Lv${company.level} · ¥${company.service_fee_yen.toLocaleString("ja-JP")}`)}</span>
+        <span class="inbox-row-meta">${htmlEsc(`${company.city} · Lv${company.level} · ¥${company.service_fee_yen.toLocaleString("ja-JP")}/month${subscribed ? ` · ${leadCount} lead${leadCount === 1 ? "" : "s"}` : " · Unsubscribed"}`)}</span>
       </button>`;
     })
     .join("");
@@ -3258,19 +3478,25 @@ function renderScoutView(
     selectedCompany.name,
     `Base: ${selectedCompany.city}`,
     `Level: ${selectedCompany.level}`,
-    `Retainer: ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")}`,
+    `Retainer: ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")} / month`,
     `Specialty: ${selectedCompany.specialty}`,
     `Focus: ${selectedCompany.focus_note}`,
+    selectedCompanySubscribed
+      ? `Subscription: Active · ${selectedCompanyLeadLimit} lead${selectedCompanyLeadLimit === 1 ? "" : "s"} currently surfaced`
+      : "Subscription: Inactive · subscribe to receive 1 lead now and 1 more each month",
   ]
     .map((line) => htmlEsc(line))
     .join("<br />");
+  const subscribeBtn = selectedCompanySubscribed
+    ? `<button type="button" class="fm-btn" disabled>Subscribed</button>`
+    : `<button type="button" class="fm-btn fm-btn-accent" data-scout-subscribe="${htmlEsc(selectedCompany.uid)}">Subscribe · ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")}/month</button>`;
   const companyTabs = renderScoutCompanyTabs(
     companies.map((company) => ({ uid: company.uid, name: company.name })),
     selectedCompany.uid,
   );
   const scoutPortraitCell = (idol: Record<string, unknown> | undefined, fallbackName: string) => {
     const name = typeof idol?.name === "string" ? idol.name : fallbackName;
-    const initial = [...(name.trim() || "?")][0] ?? "?";
+    const initial = [...(name.trim() || "?")][0] JPY   "?";
     const portraitSrc = idol ? idolPortraitPublicSrc(idol) : undefined;
     const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
     return portraitSrc
@@ -3282,7 +3508,7 @@ function renderScoutView(
   if (scoutTab === "audition") {
     const rows = auditionRows
       .map((row) => {
-        const active = String(row.uid) === String(selectedApplicant?.uid ?? "") ? ` class="is-selected-row"` : "";
+        const active = String(row.uid) === String(selectedApplicant?.uid JPY   "") ? ` class="is-selected-row"` : "";
         const status = row.signed_idol_uid ? "Signed" : "Available";
         return `<tr${active} data-scout-applicant="${htmlEsc(String(row.uid))}"><td>${htmlEsc(row.name)}</td><td>${htmlEsc(String(row.age))}</td><td>${htmlEsc(row.birthplace)}</td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(row.background)}</td><td>${htmlEsc(status)}</td></tr>`;
       })
@@ -3290,8 +3516,8 @@ function renderScoutView(
     const detail = selectedApplicant
       ? [
           selectedApplicant.name,
-          `Romaji: ${selectedApplicant.romaji || "—"}`,
-          `Age: ${selectedApplicant.age} · Height: ${selectedApplicant.height} cm`,
+          `Romaji: ${selectedApplicant.romaji || "â€”"}`,
+          `Age: ${selectedApplicant.age} Â· Height: ${selectedApplicant.height} cm`,
           `Birthplace: ${selectedApplicant.birthplace}`,
           `Background: ${selectedApplicant.background}`,
           `Scout note: ${selectedApplicant.note}`,
@@ -3300,13 +3526,15 @@ function renderScoutView(
         ]
           .map((line) => htmlEsc(line))
           .join("<br />")
-      : "Hold today's audition to generate applicants.";
+      : selectedCompanySubscribed
+        ? "Hold today's audition to generate applicants."
+        : "Subscribe to this scout firm before viewing applicants.";
     rightBody = `<section class="fm-card">
-        <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-scout-hold-audition="1">Hold Audition Today</button></div>
+        <div class="planner-actions">${selectedCompanySubscribed ? `<button type="button" class="fm-btn fm-btn-accent" data-scout-hold-audition="1">Hold Audition Today</button>` : subscribeBtn}</div>
         <div class="table-scroll">
           <table class="fm-table">
             <thead><tr><th>Applicant</th><th>Age</th><th>Birthplace</th><th>Profile</th><th>Background</th><th>Status</th></tr></thead>
-            <tbody>${rows || `<tr><td colspan="6" class="content-muted">No audition pool yet for ${htmlEsc(currentIso)}.</td></tr>`}</tbody>
+            <tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(selectedCompanySubscribed ? `No audition pool yet for ${currentIso}.` : "Subscribe to this agent to open the audition pool.")}</td></tr>`}</tbody>
           </table>
         </div>
       </section>
@@ -3323,37 +3551,44 @@ function renderScoutView(
     const rows = leadRows
       .map((row) => {
         const idol = idolsByUid.get(row.idol_uid);
-        const active = row.idol_uid === String(selectedLead?.idol_uid ?? "") ? ` class="is-selected-row"` : "";
+        const active = row.idol_uid === String(selectedLead?.idol_uid JPY   "") ? ` class="is-selected-row"` : "";
         if (scoutTab === "freelancer") {
-          const name = String(idol?.name ?? row.idol_uid);
+          const name = String(idol?.name JPY   row.idol_uid);
           const romaji = idol ? romajiFromRow(idol) : "";
-          const age = idol ? ageLabel(idol, currentIso) : "—";
-          const height = idol ? heightCmLabel(idol) : "—";
-          const abl = idol ? getAbility(attrsFromRow(idol)) : "—";
-          const xFollowers = idol ? xFollowersLabel(idol) : "—";
+          const age = idol ? ageLabel(idol, currentIso) : "â€”";
+          const height = idol ? heightCmLabel(idol) : "â€”";
+          const abl = idol ? getAbility(attrsFromRow(idol)) : "â€”";
+          const xFollowers = idol ? xFollowersLabel(idol) : "â€”";
           const groups = row.current_groups.length ? row.current_groups.join(", ") : "Independent";
+          const shortlistAction = shortlist.has(row.idol_uid)
+            ? `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}" disabled>Shortlisted</button>`
+            : `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}">Shortlist</button>`;
           return `<tr class="idol-list-table-row${active ? " is-selected-row" : ""}" data-scout-lead="${htmlEsc(row.idol_uid)}" tabindex="0" role="button">
             <td class="idol-list-photo">${scoutPortraitCell(idol, name)}</td>
-            <td>${htmlEsc(name)}</td>
-            <td>${romaji ? htmlEsc(romaji) : "—"}</td>
+            <td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(row.idol_uid)}">${htmlEsc(name)}</button></td>
+            <td>${romaji ? htmlEsc(romaji) : "â€”"}</td>
             <td>${htmlEsc(age)}</td>
             <td class="num">${htmlEsc(height)}</td>
             <td class="num">${htmlEsc(String(abl))}</td>
             <td class="num">${htmlEsc(xFollowers)}</td>
             <td>${htmlEsc(groups)}</td>
+            <td class="num">${shortlistAction}</td>
           </tr>`;
         }
-        return `<tr${active} data-scout-lead="${htmlEsc(row.idol_uid)}"><td>${htmlEsc(String(idol?.name ?? row.idol_uid))}</td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(String(idol?.birthplace ?? "—"))}</td><td>${htmlEsc(row.current_groups.length ? row.current_groups.join(", ") : "Independent")}</td><td>${htmlEsc(row.reason)}</td></tr>`;
+        const shortlistActionTransfer = shortlist.has(row.idol_uid)
+          ? `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}" disabled>Shortlisted</button>`
+          : `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}">Shortlist</button>`;
+        return `<tr${active} data-scout-lead="${htmlEsc(row.idol_uid)}"><td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(row.idol_uid)}">${htmlEsc(String(idol?.name JPY   row.idol_uid))}</button></td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(String(idol?.birthplace JPY   "—"))}</td><td>${htmlEsc(row.current_groups.length ? row.current_groups.join(", ") : "Independent")}</td><td>${htmlEsc(row.reason)}</td><td class="num">${shortlistActionTransfer}</td></tr>`;
       })
       .join("");
     const leadIdol = selectedLead ? idolsByUid.get(selectedLead.idol_uid) : null;
     const detail = selectedLead && leadIdol
       ? [
-          String(leadIdol.name ?? selectedLead.idol_uid),
+          String(leadIdol.name JPY   selectedLead.idol_uid),
           `Profile score: ${selectedLead.profile_score}/100`,
-          `Birthplace: ${String(leadIdol.birthplace ?? "—")}`,
+          `Birthplace: ${String(leadIdol.birthplace JPY   "â€”")}`,
           `Current groups: ${selectedLead.current_groups.length ? selectedLead.current_groups.join(", ") : "Independent"}`,
-          `Popularity: ${num(leadIdol.popularity, 0)} · Fans: ${num(leadIdol.fan_count, 0).toLocaleString("ja-JP")} · X: ${num(leadIdol.x_followers, 0).toLocaleString("ja-JP")}`,
+          `Popularity: ${num(leadIdol.popularity, 0)} Â· Fans: ${num(leadIdol.fan_count, 0).toLocaleString("ja-JP")} Â· X: ${num(leadIdol.x_followers, 0).toLocaleString("ja-JP")}`,
           `Scout read: ${selectedLead.reason}`,
           `Shortlist: ${shortlist.has(selectedLead.idol_uid) ? "Already tracked" : "Not yet shortlisted"}`,
         ]
@@ -3364,10 +3599,11 @@ function renderScoutView(
       scoutTab === "freelancer"
         ? `<section class="fm-card scout-fullwidth-card">
             <h3 class="content-h3">Freelancer pool</h3>
+            <div class="planner-actions">${subscribeBtn}</div>
             <div class="table-scroll">
               <table class="fm-table idol-list-table scout-idol-list-table">
-                <thead><tr><th></th><th>Name</th><th>Romaji</th><th>Age</th><th>Height cm</th><th>ABL</th><th>X followers</th><th>Current group(s)</th></tr></thead>
-                <tbody>${rows || `<tr><td colspan="8" class="content-muted">No freelancer leads in this pool.</td></tr>`}</tbody>
+                <thead><tr><th></th><th>Name</th><th>Romaji</th><th>Age</th><th>Height cm</th><th>ABL</th><th>X followers</th><th>Current group(s)</th><th>Shortlist</th></tr></thead>
+                <tbody>${rows || `<tr><td colspan="9" class="content-muted">${htmlEsc(selectedCompanySubscribed ? "No freelancer leads in this pool yet." : "Subscribe to this agent to receive leads.")}</td></tr>`}</tbody>
               </table>
             </div>
           </section>
@@ -3381,10 +3617,11 @@ function renderScoutView(
             }
           </section>`
         : `<section class="fm-card">
+            <div class="planner-actions">${subscribeBtn}</div>
             <div class="table-scroll">
               <table class="fm-table">
-                <thead><tr><th>Idol</th><th>Profile</th><th>Birthplace</th><th>Current groups</th><th>Scout read</th></tr></thead>
-                <tbody>${rows || `<tr><td colspan="5" class="content-muted">No scout leads in this pool.</td></tr>`}</tbody>
+                <thead><tr><th>Idol</th><th>Profile</th><th>Birthplace</th><th>Current groups</th><th>Scout read</th><th>Shortlist</th></tr></thead>
+                <tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(selectedCompanySubscribed ? "No scout leads in this pool yet." : "Subscribe to this agent to receive leads.")}</td></tr>`}</tbody>
               </table>
             </div>
           </section>
@@ -3451,6 +3688,7 @@ export function renderMainContent(
     trainingTab: TrainingTab;
     trainingRosterSortKey: TrainingRosterSortKey;
     trainingRosterSortDir: "asc" | "desc";
+    financeTab: FinanceTab;
     financeHistoryRange: FinanceHistoryRange;
     selectedScoutLeadUid: string | null;
     selectedScoutApplicantUid: string | null;
@@ -3483,6 +3721,7 @@ export function renderMainContent(
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -3496,14 +3735,14 @@ export function renderMainContent(
     const refIso = displayReferenceIso(null, browseData.preset?.opening_date);
     switch (view) {
       case "Idols": {
-        const uidStr = idolDetailUid?.trim() ?? "";
+        const uidStr = idolDetailUid?.trim() JPY   "";
         if (uidStr) {
-          const row = browseData.idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uidStr);
+          const row = browseData.idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === uidStr);
           if (row) return renderIdolDetailPage(row, browseData.groups, refIso);
           return `
             <section class="content-panel">
               <p class="content-muted">${htmlEsc(`Idol '${uidStr}' not in snapshot.`)}</p>
-              <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">${htmlEsc("← Idol list")}</button>
+              <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">${htmlEsc("â† Idol list")}</button>
             </section>`;
         }
         return renderIdolsList(
@@ -3511,41 +3750,41 @@ export function renderMainContent(
           refIso,
           "Idols (browse)",
           idolListLayout,
-          `${browseData.idols.length.toLocaleString()} rows in snapshot · default attributes when missing in JSON.`,
+          `${browseData.idols.length.toLocaleString()} rows in snapshot Â· default attributes when missing in JSON.`,
         );
       }
       case "Groups": {
-        const gUid = groupDetailUid?.trim() ?? "";
+        const gUid = groupDetailUid?.trim() JPY   "";
         if (gUid) {
-          const grow = browseData.groups.find((r) => String((r as { uid?: unknown }).uid ?? "") === gUid);
+          const grow = browseData.groups.find((r) => String((r as { uid?: unknown }).uid JPY   "") === gUid);
           if (grow)
             return renderGroupDetailPage(
               grow,
-              browseData.preset?.name ? `Browse · ${browseData.preset.name}` : "Browse",
+              browseData.preset?.name ? `Browse Â· ${browseData.preset.name}` : "Browse",
               {
                 idols: browseData.idols,
                 songs: browseData.songs,
                 groups: browseData.groups,
-                lives: browseData.lives ?? null,
-                referenceIso: browseData.preset.opening_date ?? null,
+                lives: browseData.lives JPY   null,
+                referenceIso: browseData.preset.opening_date JPY   null,
               },
             );
           return `
             <section class="content-panel">
               <p class="content-muted">${htmlEsc(`Group '${gUid}' not in snapshot.`)}</p>
-              <button type="button" class="fm-btn fm-btn-accent" id="btn-group-detail-back">${htmlEsc("← Groups")}</button>
+              <button type="button" class="fm-btn fm-btn-accent" id="btn-group-detail-back">${htmlEsc("â† Groups")}</button>
             </section>`;
         }
         return renderBrowseGroups(browseData);
       }
       case "Songs":
         return renderSongsList(browseData.songs, {
-          subtitle: browseData.preset?.name ?? undefined,
+          subtitle: browseData.preset?.name JPY   undefined,
           groups: browseData.groups,
-          selectedGroupUid: songsGroupUid ?? "",
+          selectedGroupUid: songsGroupUid JPY   "",
           selectedWorkspaceTab: songsWorkspaceTab,
           selectedDiscographyKey: songsDiscographyKey,
-          catalogReferenceIso: browseData.preset?.opening_date ?? null,
+          catalogReferenceIso: browseData.preset?.opening_date JPY   null,
           trackSplitSurface: "songs",
         });
       default:
@@ -3557,19 +3796,19 @@ export function renderMainContent(
 
   switch (view) {
     case "Inbox":
-      return renderInbox(save, inboxSelectedUid, simulationBusy, ctx.attentionActionUid ?? null);
+      return renderInbox(save, inboxSelectedUid, simulationBusy, ctx.attentionActionUid JPY   null);
     case "Finances":
-      return renderFinancesProjectionView(save, financeHistoryRange);
+      return renderFinancesProjectionView(save, financeHistoryRange, financeTab);
     case "Idols": {
       const refIso = displayReferenceIso(save, browseData?.preset?.opening_date);
-      const uidStr = idolDetailUid?.trim() ?? "";
+      const uidStr = idolDetailUid?.trim() JPY   "";
       if (uidStr) {
-        const row = save.database_snapshot.idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uidStr);
+        const row = save.database_snapshot.idols.find((r) => String((r as { uid?: unknown }).uid JPY   "") === uidStr);
         if (row) return renderIdolDetailPage(row, save.database_snapshot.groups, refIso);
         return `
             <section class="content-panel">
               <p class="content-muted">${htmlEsc(`Idol '${uidStr}' not in save snapshot.`)}</p>
-              <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">${htmlEsc("← Idol list")}</button>
+              <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">${htmlEsc("â† Idol list")}</button>
             </section>`;
       }
       return renderIdolsList(
@@ -3581,25 +3820,25 @@ export function renderMainContent(
       );
     }
     case "Groups": {
-      const gUid = groupDetailUid?.trim() ?? "";
+      const gUid = groupDetailUid?.trim() JPY   "";
       if (gUid) {
-        const grow = save.database_snapshot.groups.find((r) => String((r as { uid?: unknown }).uid ?? "") === gUid);
+        const grow = save.database_snapshot.groups.find((r) => String((r as { uid?: unknown }).uid JPY   "") === gUid);
         if (grow) return renderGroupDetailPage(grow, "Management roster", {
           idols: save.database_snapshot.idols,
           songs: save.database_snapshot.songs,
           groups: save.database_snapshot.groups,
-          lives: browseData?.lives ?? null,
+          lives: browseData?.lives JPY   null,
           referenceIso:
-            save.current_date ??
-            save.game_start_date ??
-            save.scenario_context?.startup_date ??
-            browseData?.preset.opening_date ??
+            save.current_date JPY  
+            save.game_start_date JPY  
+            save.scenario_context?.startup_date JPY  
+            browseData?.preset.opening_date JPY  
             null,
         });
         return `
             <section class="content-panel">
               <p class="content-muted">${htmlEsc(`Group '${gUid}' not in save snapshot.`)}</p>
-              <button type="button" class="fm-btn fm-btn-accent" id="btn-group-detail-back">${htmlEsc("← Groups")}</button>
+              <button type="button" class="fm-btn fm-btn-accent" id="btn-group-detail-back">${htmlEsc("â† Groups")}</button>
             </section>`;
       }
       return renderGroupsManaged(save);
@@ -3614,7 +3853,7 @@ export function renderMainContent(
         newLiveForm,
         selectedLiveSongTitle,
         selectedSetlistSongIndex,
-        browseData?.festivals ?? null,
+        browseData?.festivals JPY   null,
         lang,
       );
     case "Training":
@@ -3627,13 +3866,13 @@ export function renderMainContent(
           ? `Opening ${save.scenario_context.startup_date}`
           : undefined,
         groups: save.database_snapshot.groups,
-        selectedGroupUid: songsGroupUid ?? "",
+        selectedGroupUid: songsGroupUid JPY   "",
         selectedWorkspaceTab: "group_songs",
         selectedDiscographyKey: null,
         catalogReferenceIso:
-          save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
+          save.current_date JPY   save.game_start_date JPY   save.scenario_context?.startup_date JPY   null,
         trackSplitSurface: "making",
-        managedGroupUid: save.managing_group_uid ?? null,
+        managedGroupUid: save.managing_group_uid JPY   null,
       });
     case "Songs":
       return renderSongsList(save.database_snapshot.songs, {
@@ -3641,13 +3880,13 @@ export function renderMainContent(
           ? `Opening ${save.scenario_context.startup_date}`
           : undefined,
         groups: save.database_snapshot.groups,
-        selectedGroupUid: songsGroupUid ?? "",
+        selectedGroupUid: songsGroupUid JPY   "",
         selectedWorkspaceTab: songsWorkspaceTab,
         selectedDiscographyKey: songsDiscographyKey,
         catalogReferenceIso:
-          save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
+          save.current_date JPY   save.game_start_date JPY   save.scenario_context?.startup_date JPY   null,
         trackSplitSurface: "songs",
-        managedGroupUid: save.managing_group_uid ?? null,
+        managedGroupUid: save.managing_group_uid JPY   null,
       });
     case "Scout":
       return renderScoutView(save, scoutTab, selectedScoutLeadUid, selectedScoutApplicantUid);
@@ -3687,6 +3926,7 @@ export interface DesktopShellProps {
   trainingTab: TrainingTab;
   trainingRosterSortKey: TrainingRosterSortKey;
   trainingRosterSortDir: "asc" | "desc";
+  financeTab: FinanceTab;
   financeHistoryRange: FinanceHistoryRange;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
@@ -3724,6 +3964,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -3736,10 +3977,10 @@ export function renderDesktopShell(p: DesktopShellProps): string {
   const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
   const displayName =
-    grp && typeof grp.name === "string" ? grp.name : browseData?.preset?.name ?? preview?.group?.name ?? "—";
+    grp && typeof grp.name === "string" ? grp.name : browseData?.preset?.name JPY   preview?.group?.name JPY   "â€”";
   const titleClickable = htmlEsc(displayName);
   const dateStr =
-    save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? browseData?.preset.opening_date ?? "";
+    save?.current_date JPY   save?.game_start_date JPY   save?.scenario_context?.startup_date JPY   browseData?.preset.opening_date JPY   "";
   const dateLabel = formatLongDate(dateStr || undefined);
 
   const navSource = browseMode ? BROWSE_NAV_ITEMS : MANAGEMENT_NAV_ITEMS;
@@ -3758,10 +3999,10 @@ export function renderDesktopShell(p: DesktopShellProps): string {
           ? shortlist.map((s) => `<li class="shortlist-entry">${htmlEsc(s.label)}</li>`).join("")
           : `<li class="shortlist-empty" role="note">${htmlEsc(t(lang, "shell_no_shortlist"))}</li>`;
       })()
-    : `<li class="shortlist-empty" role="note">Browse mode — shortlist N/A</li>`;
+    : `<li class="shortlist-empty" role="note">Browse mode â€” shortlist N/A</li>`;
 
   const slotOpts = Array.from({ length: AUTOSAVE_SLOT + 1 }, (_, s) => {
-    const occ = occupiedSlots.includes(s) ? " · saved" : "";
+    const occ = occupiedSlots.includes(s) ? " Â· saved" : "";
     const label = s === AUTOSAVE_SLOT ? `Autosave${occ}` : `Slot ${s}${occ}`;
     return `<option value="${s}" ${s === slot ? "selected" : ""}>${label}</option>`;
   }).join("");
@@ -3771,33 +4012,33 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     browseData,
     save,
     view: currentView,
-    idolDetailUid: idolDetailUid ?? null,
-    groupDetailUid: groupDetailUid ?? null,
+    idolDetailUid: idolDetailUid JPY   null,
+    groupDetailUid: groupDetailUid JPY   null,
     idolListLayout,
-    songsGroupUid: songsGroupUid ?? null,
+    songsGroupUid: songsGroupUid JPY   null,
     songsWorkspaceTab,
     songsDiscographyKey,
     makingTab,
-    inboxSelectedUid: inboxSelectedUid ?? null,
+    inboxSelectedUid: inboxSelectedUid JPY   null,
     livesTab,
-    scheduledLiveUid: scheduledLiveUid ?? null,
+    scheduledLiveUid: scheduledLiveUid JPY   null,
     newLiveForm,
-    selectedLiveSongTitle: selectedLiveSongTitle ?? null,
-    selectedSetlistSongIndex: selectedSetlistSongIndex ?? null,
+    selectedLiveSongTitle: selectedLiveSongTitle JPY   null,
+    selectedSetlistSongIndex: selectedSetlistSongIndex JPY   null,
     scoutTab,
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
     financeHistoryRange,
-    selectedScoutLeadUid: selectedScoutLeadUid ?? null,
-    selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
-    scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
+    selectedScoutLeadUid: selectedScoutLeadUid JPY   null,
+    selectedScoutApplicantUid: selectedScoutApplicantUid JPY   null,
+    scheduleCalendarMonthStart: scheduleCalendarMonthStart JPY   null,
     lang: "en",
     simulationBusy: p.simulationBusy,
   });
 
   const cashPill = finances
-    ? `<div class="fm-cash-pill" title="Cash on hand"><span class="fm-cash-label">¥</span>${finances.cash_yen.toLocaleString("ja-JP")}</div>`
+    ? `<div class="fm-cash-pill" title="Cash on hand"><span class="fm-cash-label">Â¥</span>${finances.cash_yen.toLocaleString("ja-JP")}</div>`
     : `<div class="fm-cash-pill content-muted" title="Browse">Browse</div>`;
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
@@ -3808,7 +4049,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="Not in browse mode"><span id="btn-next-day-label">${htmlEsc("NEXT DAY")}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
     : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc("NEXT DAY")}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
 
-  const ver = save ? String(save.version ?? "—") : browseData ? "browse" : "—";
+  const ver = save ? String(save.version JPY   "â€”") : browseData ? "browse" : "â€”";
 
   return `
 <div class="fm-app">
@@ -3857,12 +4098,12 @@ export function renderDesktopShell(p: DesktopShellProps): string {
   </div>
 
   <footer class="fm-status-bar" role="contentinfo">
-    <span class="fm-status-item">${browseMode ? "Browse" : `Save v${save?.version ?? "?"}`}</span>
-    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${browseMode ? "Browse" : `Save v${save?.version JPY   "?"}`}</span>
+    <span class="fm-status-sep">Â·</span>
     <span class="fm-status-item">View: <strong>${htmlEsc(currentView)}</strong></span>
-    <span class="fm-status-sep">·</span>
-    <span class="fm-status-item">Turn: <strong>${save?.turn_number ?? 0}</strong></span>
-    <span class="fm-status-sep">·</span>
+    <span class="fm-status-sep">Â·</span>
+    <span class="fm-status-item">Turn: <strong>${save?.turn_number JPY   0}</strong></span>
+    <span class="fm-status-sep">Â·</span>
     <span class="fm-status-item">${htmlEsc(typeof ver === "string" ? ver : String(ver))}</span>
   </footer>
 </div>`;
@@ -3891,6 +4132,9 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     selectedSetlistSongIndex,
     scoutTab,
     trainingTab,
+    trainingRosterSortKey,
+    trainingRosterSortDir,
+    financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -3903,10 +4147,10 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
   const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
   const displayName =
-    grp && typeof grp.name === "string" ? grp.name : browseData?.preset?.name ?? preview?.group?.name ?? "-";
+    grp && typeof grp.name === "string" ? grp.name : browseData?.preset?.name JPY   preview?.group?.name JPY   "-";
   const titleClickable = htmlEsc(displayName);
   const dateStr =
-    save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? browseData?.preset.opening_date ?? "";
+    save?.current_date JPY   save?.game_start_date JPY   save?.scenario_context?.startup_date JPY   browseData?.preset.opening_date JPY   "";
   const dateLabel = formatLongDate(dateStr || undefined);
 
   const navSource = browseMode ? BROWSE_NAV_ITEMS : MANAGEMENT_NAV_ITEMS;
@@ -3938,31 +4182,34 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     browseData,
     save,
     view: currentView,
-    idolDetailUid: idolDetailUid ?? null,
-    groupDetailUid: groupDetailUid ?? null,
+    idolDetailUid: idolDetailUid JPY   null,
+    groupDetailUid: groupDetailUid JPY   null,
     idolListLayout,
-    songsGroupUid: songsGroupUid ?? null,
+    songsGroupUid: songsGroupUid JPY   null,
     songsWorkspaceTab,
     songsDiscographyKey,
     makingTab,
-    inboxSelectedUid: inboxSelectedUid ?? null,
+    inboxSelectedUid: inboxSelectedUid JPY   null,
     livesTab,
-    scheduledLiveUid: scheduledLiveUid ?? null,
+    scheduledLiveUid: scheduledLiveUid JPY   null,
     newLiveForm,
-    selectedLiveSongTitle: selectedLiveSongTitle ?? null,
-    selectedSetlistSongIndex: selectedSetlistSongIndex ?? null,
+    selectedLiveSongTitle: selectedLiveSongTitle JPY   null,
+    selectedSetlistSongIndex: selectedSetlistSongIndex JPY   null,
     scoutTab,
     trainingTab,
+    trainingRosterSortKey,
+    trainingRosterSortDir,
+    financeTab,
     financeHistoryRange,
-    selectedScoutLeadUid: selectedScoutLeadUid ?? null,
-    selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
-    scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
+    selectedScoutLeadUid: selectedScoutLeadUid JPY   null,
+    selectedScoutApplicantUid: selectedScoutApplicantUid JPY   null,
+    scheduleCalendarMonthStart: scheduleCalendarMonthStart JPY   null,
     lang,
     simulationBusy: p.simulationBusy,
   });
 
   const cashPill = finances
-    ? `<div class="fm-cash-pill" title="${htmlEsc(t(lang, "shell_cash_on_hand"))}"><span class="fm-cash-label">¥</span>${finances.cash_yen.toLocaleString("ja-JP")}</div>`
+    ? `<div class="fm-cash-pill" title="${htmlEsc(t(lang, "shell_cash_on_hand"))}"><span class="fm-cash-label">Â¥</span>${finances.cash_yen.toLocaleString("ja-JP")}</div>`
     : `<div class="fm-cash-pill content-muted" title="${htmlEsc(t(lang, "shell_browse"))}">${htmlEsc(t(lang, "shell_browse"))}</div>`;
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
@@ -3977,8 +4224,8 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
     : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
 
-  const ver = save ? String(save.version ?? "-") : browseData ? "browse" : "-";
-  const statusLeft = browseMode ? t(lang, "shell_browse") : t(lang, "shell_save_version", { version: save?.version ?? "?" });
+  const ver = save ? String(save.version JPY   "-") : browseData ? "browse" : "-";
+  const statusLeft = browseMode ? t(lang, "shell_browse") : t(lang, "shell_save_version", { version: save?.version JPY   "?" });
   const languageSelect = languageOptions()
     .map((opt) => `<option value="${opt.value}" ${opt.value === lang ? "selected" : ""}>${htmlEsc(opt.label)}</option>`)
     .join("");
@@ -4033,11 +4280,11 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
 
   <footer class="fm-status-bar" role="contentinfo">
     <span class="fm-status-item">${htmlEsc(statusLeft)}</span>
-    <span class="fm-status-sep">·</span>
+    <span class="fm-status-sep">Â·</span>
     <span class="fm-status-item">${htmlEsc(t(lang, "shell_view"))}: <strong>${htmlEsc(navLabel(lang, currentView))}</strong></span>
-    <span class="fm-status-sep">·</span>
-    <span class="fm-status-item">${htmlEsc(t(lang, "shell_turn"))}: <strong>${save?.turn_number ?? 0}</strong></span>
-    <span class="fm-status-sep">·</span>
+    <span class="fm-status-sep">Â·</span>
+    <span class="fm-status-item">${htmlEsc(t(lang, "shell_turn"))}: <strong>${save?.turn_number JPY   0}</strong></span>
+    <span class="fm-status-sep">Â·</span>
     <span class="fm-status-item">${htmlEsc(typeof ver === "string" ? ver : String(ver))}</span>
   </footer>
 </div>`;

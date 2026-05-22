@@ -24,6 +24,7 @@ import {
   isManagementNav,
   isBrowseNav,
   type DesktopNavId,
+  type FinanceTab,
   type FinanceHistoryRange,
   type LiveProgramItem,
   type LivesTab,
@@ -35,7 +36,7 @@ import {
   type TrainingRosterSortKey,
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
-import { hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
+import { ensureManagedContracts, getActiveFinances, getPrimaryGroup, hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
 import { addNotification, notificationRequiresAck, sortNotificationsInPlace } from "./save/inbox";
 import { songsForDisplaySorted, buildDiscBuckets, isSongAvailableOn, songPopularityNum } from "./data/songDisplayPolicy";
 import { songCatalogDisplayLabel } from "./data/songCatalog";
@@ -45,6 +46,7 @@ import {
   buildAuditionStorageKey,
   buildDefaultScoutCompanies,
   generateAuditionCandidates,
+  recommendScoutLeads,
 } from "./engine/scoutWeb";
 import { normalizeFestivalCatalog, syncManagedTif2025Lives } from "./engine/festivalWeb";
 import { ensureAutoBookedLivesThroughEndOfNextMonth, maybeSeedMonthEndAutoBookPrompt } from "./engine/monthlyLiveScheduler";
@@ -52,11 +54,12 @@ import { suggestManagedSetlistTitles } from "./engine/songStatusSystem";
 import { scheduleIdolVacation } from "./engine/idolStatusSystem";
 import {
   type OpeningScreen,
+  renderOpeningLogin,
   renderOpeningHome,
   renderNewGameScreen,
   buildNewGameRows,
 } from "./ui/openingScreens";
-import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, loadFromSlot, saveToSlot } from "./persistence/saves";
+import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, loadFromSlot, normalizeAccountName, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
@@ -68,6 +71,7 @@ if (!appRootElt) {
 }
 const appRoot: HTMLDivElement = appRootElt;
 const UI_LANG_STORAGE_KEY = "idol-producer-ui-lang";
+const ACCOUNT_NAME_STORAGE_KEY = "idol-producer-account-name";
 
 function isUiLanguage(value: unknown): value is UiLanguage {
   return value === "en" || value === "zh-CN";
@@ -86,6 +90,24 @@ function setUiLanguage(next: UiLanguage): void {
   uiLang = next;
   try {
     window.localStorage.setItem(UI_LANG_STORAGE_KEY, next);
+  } catch {
+    /* ignore storage failures */
+  }
+}
+
+function readAccountName(): string {
+  try {
+    return normalizeAccountName(window.localStorage.getItem(ACCOUNT_NAME_STORAGE_KEY) ??  "");
+  } catch {
+    return "";
+  }
+}
+
+function setAccountName(next: string): void {
+  accountName = normalizeAccountName(next);
+  try {
+    if (accountName) window.localStorage.setItem(ACCOUNT_NAME_STORAGE_KEY, accountName);
+    else window.localStorage.removeItem(ACCOUNT_NAME_STORAGE_KEY);
   } catch {
     /* ignore storage failures */
   }
@@ -162,7 +184,7 @@ function addScheduleCalendarMonths(firstOfMonthIso: string, delta: number): stri
 }
 
 function currentIsoForNewLive(): string {
-  return isoDatePart(save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? "2020-01-01");
+  return isoDatePart(save?.current_date ??  save?.game_start_date ??  save?.scenario_context?.startup_date ??  "2020-01-01");
 }
 
 function daysBetweenIso(fromIso: string, toIso: string): number | null {
@@ -170,6 +192,103 @@ function daysBetweenIso(fromIso: string, toIso: string): number | null {
   const to = Date.parse(`${isoDatePart(toIso)}T12:00:00Z`);
   if (!Number.isFinite(from) || !Number.isFinite(to)) return null;
   return Math.floor((to - from) / 86400000);
+}
+
+function addYearsToIsoDate(iso: string, years: number): string {
+  const datePart = isoDatePart(iso);
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(datePart);
+  if (!match) return datePart;
+  return `${String(Number(match[1]) + years).padStart(4, "0")}-${match[2]}-${match[3]}`;
+}
+
+function monthsBetweenIsoCeil(fromIso: string, toIso: string): number {
+  const fromMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDatePart(fromIso));
+  const toMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDatePart(toIso));
+  if (!fromMatch || !toMatch) return 0;
+  let months = (Number(toMatch[1]) - Number(fromMatch[1])) * 12 + (Number(toMatch[2]) - Number(fromMatch[2]));
+  if (Number(toMatch[3]) > Number(fromMatch[3])) months += 1;
+  return Math.max(0, months);
+}
+
+function managedIdolByUid(uid: string): Record<string, unknown> | null {
+  if (!save) return null;
+  return (
+    save.database_snapshot.idols.find(
+      (row) => String(row.uid ??  "") === uid,
+    ) as Record<string, unknown> | undefined
+  ) ??  null;
+}
+
+function selectedInboxNotification(): Record<string, unknown> | null {
+  if (!save || !inboxSelectedUid) return null;
+  return (save.inbox.notifications.find((row) => row.uid === inboxSelectedUid) as unknown as Record<string, unknown> | undefined) ??  null;
+}
+
+function activeScandalLevel(idol: Record<string, unknown>): number {
+  const refIso = save?.current_date ??  save?.game_start_date ??  save?.scenario_context?.startup_date ??  currentIsoForNewLive();
+  const refDate = isoDatePart(refIso);
+  const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+  let maxLevel = 0;
+  for (const raw of history) {
+    if (!raw || typeof raw !== "object") continue;
+    const row = raw as Record<string, unknown>;
+    if (String(row.kind ??  "").trim().toLowerCase() !== "scandal") continue;
+    const start = String(row.start_date ??  "").split("T")[0];
+    const end = String(row.end_date ??  "").split("T")[0];
+    if (start && /^\d{4}-\d{2}-\d{2}$/.test(start) && start > refDate) continue;
+    if (end && /^\d{4}-\d{2}-\d{2}$/.test(end) && end < refDate) continue;
+    const explicit = Number(row.level ??  row.severity ??  row.rank ??  0) || 0;
+    if (explicit > maxLevel) maxLevel = explicit;
+    const text = `${String(row.status ??  "")} ${String(row.summary ??  "")} ${String(row.title ??  "")}`.toLowerCase();
+    if (/\blevel\s*3\b|\bmajor\b|\bsevere\b/.test(text)) maxLevel = Math.max(maxLevel, 3);
+    else if (/\blevel\s*2\b|\bmoderate\b/.test(text)) maxLevel = Math.max(maxLevel, 2);
+    else if (/\blevel\s*1\b|\bminor\b/.test(text)) maxLevel = Math.max(maxLevel, 1);
+  }
+  return maxLevel;
+}
+
+function contractRenewLikelihoodLabel(idol: Record<string, unknown>, currentSalary: number, proposedSalary: number, currentEndDate: string, proposedEndDate: string): string {
+  const morale = Number(idol.morale ??  70) || 70;
+  const raiseRatio = currentSalary > 0 ? proposedSalary / currentSalary : 1;
+  const extensionMonths = monthsBetweenIsoCeil(currentEndDate, proposedEndDate);
+  if (raiseRatio >= 1 && extensionMonths <= 12 && morale >= 45) return "Highly likely to agree";
+  if (raiseRatio >= 0.98 && extensionMonths <= 12 && morale >= 35) return "Likely to agree";
+  if (raiseRatio >= 0.9 && extensionMonths <= 18) return "Uncertain";
+  return "Unlikely to agree";
+}
+
+function terminationFeeYen(idol: Record<string, unknown>, salaryYen: number, contractEndDate: string): { feeYen: number; scandalLevel: number } {
+  const scandalLevel = activeScandalLevel(idol);
+  if (scandalLevel >= 3) return { feeYen: 0, scandalLevel };
+  const monthsRemaining = monthsBetweenIsoCeil(currentIsoForNewLive(), contractEndDate);
+  const base = Math.max(salaryYen, salaryYen * monthsRemaining);
+  const multiplier = scandalLevel >= 2 ? 0.15 : scandalLevel >= 1 ? 0.35 : 0.6;
+  return {
+    feeYen: Math.round(base * multiplier),
+    scandalLevel,
+  };
+}
+
+function removeIdolFromManagedGroup(idolUid: string): void {
+  if (!save) return;
+  const group = getPrimaryGroup(save);
+  if (!group) return;
+  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((x) => String(x)) : [];
+  group.member_uids = memberUids.filter((uid) => uid !== idolUid);
+  group.member_count = Array.isArray(group.member_uids) ? group.member_uids.length : 0;
+  const idol = managedIdolByUid(idolUid);
+  if (!idol) return;
+  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+  const today = currentIsoForNewLive();
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const row = raw as Record<string, unknown>;
+    if (String(row.group_uid ??  "") === String(group.uid ??  "")) {
+      if (!row.end_date || String(row.end_date).split("T")[0] >= today) {
+        row.end_date = today;
+      }
+    }
+  }
 }
 
 function reservationFeeForNewLive(venueCapacity: number | null, startDateIso: string): {
@@ -223,7 +342,7 @@ function createBlockProgramItem(kind: "mc" | "break", durationMinutes: number): 
 function songTitlesFromProgram(items: LiveProgramItem[]): string[] {
   return items
     .filter((item) => item.kind === "song")
-    .map((item) => String(item.songTitle ?? item.label ?? "").trim())
+    .map((item) => String(item.songTitle ??  item.label ??  "").trim())
     .filter(Boolean);
 }
 
@@ -251,7 +370,7 @@ function moveProgramItem(fromIndex: number, toIndex: number): void {
 }
 
 function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Routine"): void {
-  const preset = LIVE_TYPE_PRESETS[liveType] ?? LIVE_TYPE_PRESETS.Routine;
+  const preset = LIVE_TYPE_PRESETS[liveType] ??  LIVE_TYPE_PRESETS.Routine;
   const date = currentIsoForNewLive();
   const endTime = addMinutesToHHMM(preset.default_start_time, preset.default_duration);
   const suggestedCount = autoSetlistSongCountForLive(
@@ -261,7 +380,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
   );
   const tokutenkaiStart = preset.tokutenkai_enabled ? endTime : "";
   const tokutenkaiEnd = preset.tokutenkai_enabled ? addMinutesToHHMM(endTime, preset.tokutenkai_duration) : "";
-  const managedUid = save?.managing_group_uid ?? "";
+  const managedUid = save?.managing_group_uid ??  "";
   const suggestedSetlist = save
     ? suggestManagedSetlistTitles(
         save.managed_song_status,
@@ -272,7 +391,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
         songPopularityNum,
       )
     : [];
-  const venue = getVenuesCatalog()[0]?.name ?? "";
+  const venue = getVenuesCatalog()[0]?.name ??  "";
   const initialGoodsUids = defaultGoodsSelectionForLive({
     title: save?.managing_group ? `${save.managing_group} ${liveType}` : `${liveType} Live`,
     liveType,
@@ -302,7 +421,7 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     vipCapacity: 0,
   };
   reconcileNewLiveGoodsSelection();
-  selectedLiveSongTitle = suggestedSetlist[0] ?? null;
+  selectedLiveSongTitle = suggestedSetlist[0] ??  null;
   selectedSetlistSongIndex = suggestedSetlist.length ? 0 : null;
 }
 
@@ -313,15 +432,15 @@ function numberOrZero(value: string): number {
 
 function selectedScheduledLiveRecord(): Record<string, unknown> | null {
   if (!save) return null;
-  const schedules = (save.lives?.schedules ?? []).filter(
+  const schedules = (save.lives?.schedules ??  []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
   );
   if (!schedules.length) return null;
   if (scheduledLiveUid) {
-    const matched = schedules.find((live) => String(live.uid ?? "") === scheduledLiveUid);
+    const matched = schedules.find((live) => String(live.uid ??  "") === scheduledLiveUid);
     if (matched) return matched;
   }
-  return schedules[0] ?? null;
+  return schedules[0] ??  null;
 }
 
 function goodsInventory(): ProducedGoodsRow[] {
@@ -329,32 +448,32 @@ function goodsInventory(): ProducedGoodsRow[] {
 }
 
 function availableGoodsInventory(): ProducedGoodsRow[] {
-  return goodsInventory().filter((item) => Math.max(0, Number(item.stock ?? 0) || 0) > 0);
+  return goodsInventory().filter((item) => Math.max(0, Number(item.stock ??  0) || 0) > 0);
 }
 
 function availableSongsForManagedGroup(referenceIso: string): Record<string, unknown>[] {
-  const managedUid = String(save?.managing_group_uid ?? "").trim();
+  const managedUid = String(save?.managing_group_uid ??  "").trim();
   return save
     ? songsForDisplaySorted(save.database_snapshot.songs)
-        .filter((row) => String(row.group_uid ?? "") === managedUid)
+        .filter((row) => String(row.group_uid ??  "") === managedUid)
         .filter((row) => isSongAvailableOn(row, referenceIso))
     : [];
 }
 
 function isBirthdayLiveTitle(title: string): boolean {
-  return /生誕|birthday/i.test(String(title ?? ""));
+  return /生誕|birthday/i.test(String(title ??  ""));
 }
 
 function matchingBirthdayGoodsUid(title: string): string[] {
   if (!save || !isBirthdayLiveTitle(title)) return [];
-  const group = save.database_snapshot.groups.find((row) => String((row as { uid?: unknown }).uid ?? "") === String(save.managing_group_uid ?? "")) as Record<string, unknown> | undefined;
+  const group = save.database_snapshot.groups.find((row) => String((row as { uid?: unknown }).uid ??  "") === String(save.managing_group_uid ??  "")) as Record<string, unknown> | undefined;
   const memberUids = Array.isArray(group?.member_uids) ? group!.member_uids.map((x) => String(x)) : [];
   const idols = save.database_snapshot.idols as Record<string, unknown>[];
   for (const uid of memberUids) {
-    const idol = idols.find((row) => String(row.uid ?? "") === uid);
-    const name = String(idol?.name ?? "").trim();
+    const idol = idols.find((row) => String(row.uid ??  "") === uid);
+    const name = String(idol?.name ??  "").trim();
     if (name && String(title).includes(name)) {
-      const item = goodsInventory().find((row) => row.member_uid === uid && row.name === "Birthday T-shirt" && Math.max(0, Number(row.stock ?? 0) || 0) > 0);
+      const item = goodsInventory().find((row) => row.member_uid === uid && row.name === "Birthday T-shirt" && Math.max(0, Number(row.stock ??  0) || 0) > 0);
       return item ? [item.uid] : [];
     }
   }
@@ -363,7 +482,7 @@ function matchingBirthdayGoodsUid(title: string): string[] {
 
 function defaultGoodsSelectionForLive(params: { title: string; liveType: string; date: string }): string[] {
   const regular = availableGoodsInventory()
-    .filter((item) => String(item.name ?? "") !== "Birthday T-shirt")
+    .filter((item) => String(item.name ??  "") !== "Birthday T-shirt")
     .map((item) => item.uid);
   return [...regular, ...matchingBirthdayGoodsUid(params.title)];
 }
@@ -380,9 +499,9 @@ function reconcileNewLiveGoodsSelection(): void {
 }
 
 function findGoodsByUid(uid: string | null | undefined): ProducedGoodsRow | null {
-  const key = String(uid ?? "").trim();
+  const key = String(uid ??  "").trim();
   if (!key) return null;
-  return goodsInventory().find((item) => item.uid === key) ?? null;
+  return goodsInventory().find((item) => item.uid === key) ??  null;
 }
 
 function goodsDisplayLabel(item: ProducedGoodsRow | null | undefined): string {
@@ -392,7 +511,7 @@ function goodsDisplayLabel(item: ProducedGoodsRow | null | undefined): string {
 
 function goodsMatrixKey(item: ProducedGoodsRow | null | undefined): string {
   if (!item) return "";
-  return `${String(item.category ?? "").trim()}|${String(item.name ?? "").trim()}`;
+  return `${String(item.category ??  "").trim()}|${String(item.name ??  "").trim()}`;
 }
 
 function goodsRowsForMatrixKey(key: string): ProducedGoodsRow[] {
@@ -412,17 +531,17 @@ function estimateCurrentLiveGoodsGross(
   venueName: string,
   goodsUids: string[],
 ): number {
-  const venue = getVenuesCatalog().find((row) => row.name === venueName) ?? null;
-  const group = save ? sortGroupsForDirectory(save.database_snapshot.groups).find((row) => String(row.uid ?? "") === String(save.managing_group_uid ?? "")) ?? null : null;
+  const venue = getVenuesCatalog().find((row) => row.name === venueName) ??  null;
+  const group = save ? sortGroupsForDirectory(save.database_snapshot.groups).find((row) => String(row.uid ??  "") === String(save.managing_group_uid ??  "")) ??  null : null;
   return goodsUids.reduce((sum, goodsUid) => {
     const goods = findGoodsByUid(goodsUid);
     return (
       sum +
       estimateLiveGoodsGrossYen(goods, {
         liveType,
-        capacity: venue?.capacity ?? null,
-        groupFans: Number(group?.fans ?? 0) || 0,
-        groupPopularity: Number(group?.popularity ?? 0) || 0,
+        capacity: venue?.capacity ??  null,
+        groupFans: Number(group?.fans ??  0) || 0,
+        groupPopularity: Number(group?.popularity ??  0) || 0,
         groupTier: typeof group?.letter_tier === "string" ? group.letter_tier : null,
       })
     );
@@ -438,18 +557,18 @@ function markInboxOpened(uid: string | null): void {
 
 function oldestUnreadInboxUid(rows: { uid: string; read: boolean }[]): string | null {
   for (let i = rows.length - 1; i >= 0; i--) {
-    if (!rows[i]?.read) return rows[i]?.uid ?? null;
+    if (!rows[i]?.read) return rows[i]?.uid ??  null;
   }
   return null;
 }
 
 function notificationTimestampMs(row: { created_at?: string; date?: string }): number {
-  const created = String(row.created_at ?? "").trim();
+  const created = String(row.created_at ??  "").trim();
   if (created) {
     const parsed = Date.parse(`${created.endsWith("Z") ? created : `${created}Z`}`);
     if (Number.isFinite(parsed)) return parsed;
   }
-  const day = String(row.date ?? "").split("T")[0].trim();
+  const day = String(row.date ??  "").split("T")[0].trim();
   if (/^\d{4}-\d{2}-\d{2}$/.test(day)) {
     const parsed = Date.parse(`${day}T00:00:00Z`);
     if (Number.isFinite(parsed)) return parsed;
@@ -458,11 +577,11 @@ function notificationTimestampMs(row: { created_at?: string; date?: string }): n
 }
 
 function newestVisibleLiveReportUid(currentSave: GameSavePayload): string | null {
-  const currentMs = notificationTimestampMs({ created_at: String(currentSave.current_date ?? "") });
+  const currentMs = notificationTimestampMs({ created_at: String(currentSave.current_date ??  "") });
   const rows = [...currentSave.inbox.notifications];
   sortNotificationsInPlace(rows);
   for (const row of rows) {
-    const title = String(row.title ?? "");
+    const title = String(row.title ??  "");
     if (!title.startsWith("Live report:") && !title.startsWith("Festival report:")) continue;
     if (notificationTimestampMs(row) > currentMs) continue;
     return row.uid;
@@ -488,10 +607,11 @@ let loadedScenario: LoadedScenario | null = null;
 let save: GameSavePayload | null = null;
 let slot = 0;
 let browseMode = false;
-let openingScreen: OpeningScreen = "home";
+let openingScreen: OpeningScreen = accountName ? "home" : "login";
 let selectedNewGameGroupUid: string | null = null;
 let openingStatus = "";
 let uiLang: UiLanguage = readUiLanguage();
+let accountName = readAccountName();
 let simulationBusy = false;
 let attentionActionUid: string | null = null;
 
@@ -516,6 +636,7 @@ let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
 let trainingRosterSortKey: TrainingRosterSortKey = "started";
 let trainingRosterSortDir: "asc" | "desc" = "asc";
+let financeTab: FinanceTab = "finance";
 let financeHistoryRange: FinanceHistoryRange = "month";
 let selectedScoutLeadUid: string | null = null;
 let selectedScoutApplicantUid: string | null = null;
@@ -561,6 +682,7 @@ interface NavigationSnapshot {
   trainingTab: TrainingTab;
   trainingRosterSortKey: TrainingRosterSortKey;
   trainingRosterSortDir: "asc" | "desc";
+  financeTab: FinanceTab;
   financeHistoryRange: FinanceHistoryRange;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
@@ -587,6 +709,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -611,6 +734,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.trainingTab === b.trainingTab &&
     a.trainingRosterSortKey === b.trainingRosterSortKey &&
     a.trainingRosterSortDir === b.trainingRosterSortDir &&
+    a.financeTab === b.financeTab &&
     a.financeHistoryRange === b.financeHistoryRange &&
     a.selectedScoutLeadUid === b.selectedScoutLeadUid &&
     a.selectedScoutApplicantUid === b.selectedScoutApplicantUid &&
@@ -634,6 +758,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   trainingTab = snapshot.trainingTab;
   trainingRosterSortKey = snapshot.trainingRosterSortKey;
   trainingRosterSortDir = snapshot.trainingRosterSortDir;
+  financeTab = snapshot.financeTab;
   financeHistoryRange = snapshot.financeHistoryRange;
   selectedScoutLeadUid = snapshot.selectedScoutLeadUid;
   selectedScoutApplicantUid = snapshot.selectedScoutApplicantUid;
@@ -713,7 +838,7 @@ function ensureSongsGroupUid(): void {
     return;
   }
   const listed = groupsForDirectoryListing(groups);
-  const validUids = new Set(listed.map((g) => String((g as { uid?: unknown }).uid ?? "").trim()).filter(Boolean));
+  const validUids = new Set(listed.map((g) => String((g as { uid?: unknown }).uid ??  "").trim()).filter(Boolean));
   if (songsGroupUid && validUids.has(songsGroupUid)) return;
   const mg = save?.managing_group_uid?.trim();
   if (mg && validUids.has(mg)) {
@@ -722,7 +847,7 @@ function ensureSongsGroupUid(): void {
   }
   const sorted = sortGroupsForDirectory(listed);
   const first = sorted[0];
-  songsGroupUid = String((first as { uid?: unknown }).uid ?? "").trim() || null;
+  songsGroupUid = String((first as { uid?: unknown }).uid ??  "").trim() || null;
 }
 
 function songsListForDiscographyCheck(): Record<string, unknown>[] | null {
@@ -739,7 +864,7 @@ function ensureSongsDiscographyKey(): void {
     songsDiscographyKey = null;
     return;
   }
-  const team = songsForDisplaySorted(songs).filter((row) => String(row.group_uid ?? "") === gid);
+  const team = songsForDisplaySorted(songs).filter((row) => String(row.group_uid ??  "") === gid);
   const buckets = buildDiscBuckets(team);
   if (songsDiscographyKey && !buckets.some((b) => b.key === songsDiscographyKey)) {
     songsDiscographyKey = null;
@@ -754,22 +879,41 @@ function syncFestivalLivesIfPossible(): void {
 
 function paintOpening(): void {
   const focus = captureFocus(appRoot);
-  const preset = loadedScenario?.preset ?? null;
+  const preset = loadedScenario?.preset ??  null;
   const dbReady = loadedScenario != null;
   appRoot.innerHTML =
-    openingScreen === "home"
-      ? renderOpeningHome(preset, dbReady, openingStatus, save != null && !browseMode, slot, listOccupiedSlots(), uiLang)
+    openingScreen === "login"
+      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang)
+      : openingScreen === "home"
+        ? renderOpeningHome(preset, dbReady, openingStatus, save != null && !browseMode, slot, listOccupiedSlots(accountName), uiLang)
       : loadedScenario
         ? renderNewGameScreen(
             buildNewGameRows(loadedScenario),
-            "Producer",
+            accountName,
             loadedScenario.preset,
             uiLang,
           )
         : `<p class="fm-error" role="alert">${htmlEsc(t(uiLang, "opening_no_scenario_loaded"))}</p>`;
   restoreFocus(appRoot, focus);
 
-  if (openingScreen === "home") {
+  if (openingScreen === "login") {
+    document.getElementById("account-name")?.addEventListener("input", (ev) => {
+      setAccountName((ev.target as HTMLInputElement).value);
+    });
+
+    document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
+      const value = (ev.target as HTMLSelectElement).value;
+      if (!isUiLanguage(value)) return;
+      setUiLanguage(value);
+      paintOpening();
+    });
+
+    document.getElementById("opening-login")?.addEventListener("click", () => {
+      if (!accountName.trim()) return;
+      openingScreen = "home";
+      paintOpening();
+    });
+  } else if (openingScreen === "home") {
     document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
       const value = (ev.target as HTMLSelectElement).value;
       if (!isUiLanguage(value)) return;
@@ -799,9 +943,13 @@ function paintOpening(): void {
       paintOpening();
     });
     document.getElementById("opening-load-slot")?.addEventListener("click", () => {
-      const loaded = loadFromSlot(slot);
+      if (!accountName) return;
+      const loaded = loadFromSlot(accountName, slot);
       if (loaded && assertHydratedSave(loaded)) {
         save = loaded;
+        setAccountName(String(save.account_name ??  save.player_name ??  accountName));
+        save.account_name = accountName;
+        save.player_name = accountName;
         ensureAutoBookedLivesThroughEndOfNextMonth(save);
         maybeSeedMonthEndAutoBookPrompt(save);
         scheduleCalendarMonthStart = null;
@@ -863,18 +1011,20 @@ function paintOpening(): void {
     });
 
     document.getElementById("new-game-start")?.addEventListener("click", () => {
-      if (!loadedScenario || !selectedNewGameGroupUid || !nameInput) return;
+      if (!loadedScenario || !selectedNewGameGroupUid || !nameInput || !accountName) return;
       const row = rows.find((r) => r.uid === selectedNewGameGroupUid);
       const label =
         row?.nameRomanji && row.nameRomanji !== "—" && row.nameRomanji.trim()
           ? row.nameRomanji
-          : (row?.name ?? "");
+          : (row?.name ??  "");
       try {
         save = createNewGameSaveFromScenario(loadedScenario, {
-          playerName: nameInput.value.trim() || "Producer",
+          playerName: accountName,
           managedGroupLabel: label,
           managedGroupUid: selectedNewGameGroupUid,
         });
+        save.account_name = accountName;
+        save.player_name = accountName;
         ensureAutoBookedLivesThroughEndOfNextMonth(save);
         maybeSeedMonthEndAutoBookPrompt(save);
         scheduleCalendarMonthStart = null;
@@ -890,6 +1040,7 @@ function paintOpening(): void {
         resetNavigationHistory();
         paintGame();
       } catch (e) {
+        console.error("new-game-start failed", e);
         window.alert(e instanceof Error ? e.message : String(e));
       }
     });
@@ -922,7 +1073,7 @@ function paintGame(): void {
     sortNotificationsInPlace(save.inbox.notifications);
     const rows = save.inbox.notifications;
     if (!inboxSelectedUid || !rows.some((r) => r.uid === inboxSelectedUid)) {
-      inboxSelectedUid = rows[rows.length - 1]?.uid ?? null;
+      inboxSelectedUid = rows[rows.length - 1]?.uid ??  null;
     }
     markInboxOpened(inboxSelectedUid);
   } else if (currentView !== "Inbox") {
@@ -953,6 +1104,7 @@ function paintGame(): void {
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
@@ -962,7 +1114,7 @@ function paintGame(): void {
     canGoForward: forwardHistory.length > 0,
     simulationBusy,
     slot,
-    occupiedSlots: listOccupiedSlots(),
+    occupiedSlots: listOccupiedSlots(accountName),
   });
   restoreFocus(appRoot, focus);
 
@@ -992,7 +1144,7 @@ function paintGame(): void {
     const calNav = t.closest<HTMLElement>("[data-sched-cal-delta]");
     if (calNav && save && !browseMode && currentView === "Schedule") {
       const root = appRoot.querySelector("[data-sched-cal-root]");
-      const curMonth = root?.getAttribute("data-sched-cal-root") ?? "2000-01-01";
+      const curMonth = root?.getAttribute("data-sched-cal-root") ??  "2000-01-01";
       const d = Number(calNav.getAttribute("data-sched-cal-delta"));
       if (Number.isFinite(d)) {
         scheduleCalendarMonthStart = addScheduleCalendarMonths(curMonth, d);
@@ -1053,7 +1205,7 @@ function paintGame(): void {
     }
     const addSongBtn = t.closest<HTMLElement>("[data-live-add-song]");
     if (addSongBtn && save && !browseMode && currentView === "Lives") {
-      const raw = addSongBtn.getAttribute("data-live-add-song") ?? "";
+      const raw = addSongBtn.getAttribute("data-live-add-song") ??  "";
       let title = raw;
       try {
         title = decodeURIComponent(raw);
@@ -1068,7 +1220,7 @@ function paintGame(): void {
     }
     const addTemplateBtn = t.closest<HTMLElement>("[data-live-add-template]");
     if (addTemplateBtn && save && !browseMode && currentView === "Lives") {
-      const token = String(addTemplateBtn.getAttribute("data-live-add-template") ?? "");
+      const token = String(addTemplateBtn.getAttribute("data-live-add-template") ??  "");
       const [kindRaw, durationRaw] = token.split(":");
       const kind = kindRaw === "mc" || kindRaw === "break" ? kindRaw : null;
       const duration = Math.max(1, Number(durationRaw) || 0);
@@ -1096,11 +1248,11 @@ function paintGame(): void {
     }
     const scheduleLiveBtn = t.closest<HTMLElement>("[data-live-schedule]");
     if (scheduleLiveBtn && save && !browseMode && currentView === "Lives") {
-      const venue = getVenuesCatalog().find((row) => row.name === newLiveForm.venueName) ?? null;
-      const reservation = reservationFeeForNewLive(venue?.capacity ?? null, newLiveForm.date);
+      const venue = getVenuesCatalog().find((row) => row.name === newLiveForm.venueName) ??  null;
+      const reservation = reservationFeeForNewLive(venue?.capacity ??  null, newLiveForm.date);
       if (reservation.blocked) {
         addNotification(save, {
-          title: `Live scheduling blocked: ${newLiveForm.title.trim() || `${save.managing_group ?? "Managed group"} ${newLiveForm.liveType}`}`,
+          title: `Live scheduling blocked: ${newLiveForm.title.trim() || `${save.managing_group ??  "Managed group"} ${newLiveForm.liveType}`}`,
           body: `Lives cannot be scheduled within 7 days. Pick a date at least 7 days after ${currentIsoForNewLive()}.`,
           sender: "Operations",
           category: "internal",
@@ -1113,11 +1265,11 @@ function paintGame(): void {
         return;
       }
       const finances = save.finances as Record<string, unknown>;
-      const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+      const currentCash = Math.max(0, Number(finances.cash_yen ??  0) || 0);
       if (reservation.reservationFeeYen > currentCash) {
         addNotification(save, {
-          title: `Live scheduling blocked: ${newLiveForm.title.trim() || `${save.managing_group ?? "Managed group"} ${newLiveForm.liveType}`}`,
-          body: `Need JPY ${reservation.reservationFeeYen.toLocaleString("ja-JP")} for the venue reservation fee, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
+          title: `Live scheduling blocked: ${newLiveForm.title.trim() || `${save.managing_group ??  "Managed group"} ${newLiveForm.liveType}`}`,
+          body: `Need ?? ${reservation.reservationFeeYen.toLocaleString("ja-JP")} for the venue reservation fee, but current cash is ?? ${currentCash.toLocaleString("ja-JP")}.`,
           sender: "Operations",
           category: "internal",
           level: "normal",
@@ -1134,7 +1286,7 @@ function paintGame(): void {
       const uid = `manual-live-${Date.now().toString(36)}`;
       const live = {
         uid,
-        title: newLiveForm.title.trim() || `${save.managing_group ?? "Managed group"} ${newLiveForm.liveType}`,
+        title: newLiveForm.title.trim() || `${save.managing_group ??  "Managed group"} ${newLiveForm.liveType}`,
         title_romanji: "",
         event_type: LIVE_TYPE_PRESETS[newLiveForm.liveType].event_type,
         live_type: newLiveForm.liveType,
@@ -1146,11 +1298,11 @@ function paintGame(): void {
         rehearsal_start: newLiveForm.rehearsalStart,
         rehearsal_end: newLiveForm.rehearsalEnd,
         venue: newLiveForm.venueName || null,
-        venue_uid: venue?.uid ?? null,
-        location: venue?.location ?? "",
-        description: `Managed ${newLiveForm.liveType.toLowerCase()} for ${save.managing_group ?? "managed group"}.`,
+        venue_uid: venue?.uid ??  null,
+        location: venue?.location ??  "",
+        description: `Managed ${newLiveForm.liveType.toLowerCase()} for ${save.managing_group ??  "managed group"}.`,
         performance_count: 1,
-        capacity: venue?.capacity ?? null,
+        capacity: venue?.capacity ??  null,
         attendance: null,
         ticket_price: newLiveForm.ticketPriceYen,
         vip_ticket_price: newLiveForm.vipTicketPriceYen,
@@ -1167,18 +1319,18 @@ function paintGame(): void {
         tokutenkai_expected_tickets: newLiveForm.tokutenkaiExpectedTickets,
         goods_enabled: newLiveForm.goodsEnabled,
         goods_uids: goodsUids,
-        goods_uid: goodsUids[0] ?? "",
+        goods_uid: goodsUids[0] ??  "",
         goods_line: goodsNames.join(", "),
         goods_expected_revenue_yen: goodsGross,
-        group: [save.managing_group ?? ""].filter(Boolean),
-        group_uid: save.managing_group_uid ?? "",
+        group: [save.managing_group ??  ""].filter(Boolean),
+        group_uid: save.managing_group_uid ??  "",
         status: "scheduled",
       };
       finances.cash_yen = currentCash - reservation.reservationFeeYen;
       save.lives.schedules.push(live);
       addNotification(save, {
         title: `Live scheduled: ${live.title}`,
-        body: `${live.start_date} ${live.start_time}-${live.end_time} · ${live.venue ?? "TBA"} · ${newLiveForm.setlist.length} song(s) · tokutenkai ${newLiveForm.tokutenkaiEnabled ? "on" : "off"} · goods ${newLiveForm.goodsEnabled ? "on" : "off"} · venue reservation fee JPY ${reservation.reservationFeeYen.toLocaleString("ja-JP")} (${Math.round(reservation.reservationRate * 100)}% of JPY ${reservation.baseVenueFeeYen.toLocaleString("ja-JP")}).`,
+        body: `${live.start_date} ${live.start_time}-${live.end_time} · ${live.venue ??  "TBA"} · ${newLiveForm.setlist.length} song(s) · tokutenkai ${newLiveForm.tokutenkaiEnabled ? "on" : "off"} · goods ${newLiveForm.goodsEnabled ? "on" : "off"} · venue reservation fee ?? ${reservation.reservationFeeYen.toLocaleString("ja-JP")} (${Math.round(reservation.reservationRate * 100)}% of ?? ${reservation.baseVenueFeeYen.toLocaleString("ja-JP")}).`,
         sender: "Operations",
         category: "internal",
         level: "normal",
@@ -1197,7 +1349,7 @@ function paintGame(): void {
     if (cancelLiveBtn && save && !browseMode && currentView === "Lives") {
       const uid = cancelLiveBtn.getAttribute("data-live-cancel");
       if (uid) {
-        save.lives.schedules = save.lives.schedules.filter((row) => String((row as { uid?: unknown }).uid ?? "") !== uid);
+        save.lives.schedules = save.lives.schedules.filter((row) => String((row as { uid?: unknown }).uid ??  "") !== uid);
         scheduledLiveUid = null;
         paintGame();
       }
@@ -1244,6 +1396,16 @@ function paintGame(): void {
       }
       return;
     }
+    const financeTabPick = t.closest<HTMLElement>("[data-finance-tab]");
+    if (financeTabPick && save && !browseMode && currentView === "Finances") {
+      const tab = financeTabPick.getAttribute("data-finance-tab");
+      if (tab === "finance" || tab === "contract") {
+        navigate(() => {
+          financeTab = tab;
+        });
+      }
+      return;
+    }
     const financeRangePick = t.closest<HTMLElement>("[data-finance-history-range]");
     if (financeRangePick && save && !browseMode && currentView === "Finances") {
       const range = financeRangePick.getAttribute("data-finance-history-range");
@@ -1251,6 +1413,211 @@ function paintGame(): void {
         navigate(() => {
           financeHistoryRange = range;
         });
+      }
+      return;
+    }
+    const contractRenewBtn = t.closest<HTMLElement>("[data-contract-renew]");
+    if (contractRenewBtn && save && !browseMode && currentView === "Finances") {
+      const uid = String(contractRenewBtn.getAttribute("data-contract-renew") ??  "").trim();
+      const idol = managedIdolByUid(uid);
+      if (idol) {
+        const name = String(idol.name ??  uid);
+        const currentSalary = Number(idol.contract_salary_yen ??  0) || 0;
+        const currentEndDate = String(idol.contract_end_date ??  currentIsoForNewLive()).split("T")[0];
+        const proposedSalary = currentSalary;
+        const proposedEndDate = addYearsToIsoDate(currentEndDate, 1);
+        const likelihood = contractRenewLikelihoodLabel(idol, currentSalary, proposedSalary, currentEndDate, proposedEndDate);
+        const created = addNotification(save, {
+          title: `Contract renewal review: ${name}`,
+          body: `Review the renewal terms for ${name}. Update the salary and end date, then propose the renewal when the outlook is acceptable.`,
+          sender: "Management",
+          category: "confirmation",
+          level: "high",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          requiresConfirmation: true,
+          relatedEventUid: uid,
+          reportData: {
+            kind: "contract_renew_review",
+            idol_uid: uid,
+            current_salary_yen: currentSalary,
+            proposed_salary_yen: proposedSalary,
+            current_end_date: currentEndDate,
+            proposed_end_date: proposedEndDate,
+            likelihood,
+          },
+        });
+        currentView = "Inbox";
+        inboxSelectedUid = created.uid;
+        paintGame();
+      }
+      return;
+    }
+    const contractTerminateBtn = t.closest<HTMLElement>("[data-contract-terminate]");
+    if (contractTerminateBtn && save && !browseMode && currentView === "Finances") {
+      const uid = String(contractTerminateBtn.getAttribute("data-contract-terminate") ??  "").trim();
+      const idol = managedIdolByUid(uid);
+      if (idol) {
+        const name = String(idol.name ??  uid);
+        const salary = Number(idol.contract_salary_yen ??  0) || 0;
+        const contractEndDate = String(idol.contract_end_date ??  currentIsoForNewLive()).split("T")[0];
+        const fee = terminationFeeYen(idol, salary, contractEndDate);
+        const created = addNotification(save, {
+          title: `Termination review: ${name}`,
+          body: fee.feeYen <= 0
+            ? `${name} can be terminated without fee because the active scandal severity is level ${fee.scandalLevel}.`
+            : `Review the termination fee and confirm if you want to release ${name} from the group.`,
+          sender: "Management",
+          category: "confirmation",
+          level: "high",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+          requiresConfirmation: true,
+          relatedEventUid: uid,
+          reportData: {
+            kind: "contract_terminate_review",
+            idol_uid: uid,
+            salary_yen: salary,
+            contract_end_date: contractEndDate,
+            scandal_level: fee.scandalLevel,
+            termination_fee_yen: fee.feeYen,
+          },
+        });
+        currentView = "Inbox";
+        inboxSelectedUid = created.uid;
+        paintGame();
+      }
+      return;
+    }
+    const contractCancelBtn = t.closest<HTMLElement>("[data-contract-cancel]");
+    if (contractCancelBtn && save && !browseMode && currentView === "Inbox") {
+      const uid = String(contractCancelBtn.getAttribute("data-contract-cancel") ??  "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      if (row) {
+        row.requires_confirmation = false;
+        row.read = true;
+        row.choice_status = "cancelled";
+        paintGame();
+      }
+      return;
+    }
+    const contractProposeBtn = t.closest<HTMLElement>("[data-contract-propose-renew]");
+    if (contractProposeBtn && save && !browseMode && currentView === "Inbox") {
+      const uid = String(contractProposeBtn.getAttribute("data-contract-propose-renew") ??  "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      const report = row?.report_data && typeof row.report_data === "object" ? (row.report_data as Record<string, unknown>) : null;
+      const idol = report ? managedIdolByUid(String(report.idol_uid ??  "")) : null;
+      if (row && report && idol) {
+        const name = String(idol.name ??  report.idol_uid ??  "Idol");
+        const currentSalary = Number(report.current_salary_yen ??  0) || 0;
+        const proposedSalary = Number(report.proposed_salary_yen ??  currentSalary) || currentSalary;
+        const currentEndDate = String(report.current_end_date ??  currentIsoForNewLive()).split("T")[0];
+        const proposedEndDate = String(report.proposed_end_date ??  currentEndDate).split("T")[0];
+        const likelihood = contractRenewLikelihoodLabel(idol, currentSalary, proposedSalary, currentEndDate, proposedEndDate);
+        report.likelihood = likelihood;
+        if (likelihood === "Highly likely to agree") {
+          row.requires_confirmation = false;
+          row.read = true;
+          row.choice_status = "processed";
+          const created = addNotification(save, {
+            title: `Contract renewal confirmation: ${name}`,
+            body: `New salary: ?? ${proposedSalary.toLocaleString("ja-JP")}\nNew end date: ${proposedEndDate}\nConfirm the new contract to finalize it.`,
+            sender: "Management",
+            category: "confirmation",
+            level: "high",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            requiresConfirmation: true,
+            relatedEventUid: String(report.idol_uid ??  ""),
+            reportData: {
+              kind: "contract_renew_confirm",
+              idol_uid: String(report.idol_uid ??  ""),
+              proposed_salary_yen: proposedSalary,
+              proposed_end_date: proposedEndDate,
+            },
+          });
+          inboxSelectedUid = created.uid;
+        } else {
+          const created = addNotification(save, {
+            title: `Renewal outlook updated: ${name}`,
+            body: `Current likelihood is "${likelihood}". Adjust the proposed salary or end date before sending this renewal forward.`,
+            sender: "Assistant",
+            category: "guidance",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+          });
+        }
+        paintGame();
+      }
+      return;
+    }
+    const contractConfirmRenewBtn = t.closest<HTMLElement>("[data-contract-confirm-renew]");
+    if (contractConfirmRenewBtn && save && !browseMode && currentView === "Inbox") {
+      const uid = String(contractConfirmRenewBtn.getAttribute("data-contract-confirm-renew") ??  "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      const report = row?.report_data && typeof row.report_data === "object" ? (row.report_data as Record<string, unknown>) : null;
+      const idol = report ? managedIdolByUid(String(report.idol_uid ??  "")) : null;
+      if (row && report && idol) {
+        idol.contract_salary_yen = Number(report.proposed_salary_yen ??  idol.contract_salary_yen ??  0) || 0;
+        idol.contract_end_date = String(report.proposed_end_date ??  idol.contract_end_date ??  currentIsoForNewLive()).split("T")[0];
+        row.requires_confirmation = false;
+        row.read = true;
+        row.choice_status = "completed";
+        addNotification(save, {
+          title: `Contract renewed: ${String(idol.name ??  report.idol_uid ??  "Idol")}`,
+          body: `New monthly salary is ?? ${Number(idol.contract_salary_yen ??  0).toLocaleString("ja-JP")} through ${String(idol.contract_end_date ??  "-")}.`,
+          sender: "Management",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+        });
+        paintGame();
+      }
+      return;
+    }
+    const contractConfirmTerminateBtn = t.closest<HTMLElement>("[data-contract-confirm-terminate]");
+    if (contractConfirmTerminateBtn && save && !browseMode && currentView === "Inbox") {
+      const uid = String(contractConfirmTerminateBtn.getAttribute("data-contract-confirm-terminate") ??  "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      const report = row?.report_data && typeof row.report_data === "object" ? (row.report_data as Record<string, unknown>) : null;
+      const idolUid = String(report?.idol_uid ??  "").trim();
+      const idol = idolUid ? managedIdolByUid(idolUid) : null;
+      if (row && report && idol) {
+        const feeYen = Number(report.termination_fee_yen ??  0) || 0;
+        const finances = save.finances as Record<string, unknown>;
+        const currentCash = Math.max(0, Number(finances.cash_yen ??  0) || 0);
+        if (feeYen > currentCash) {
+          addNotification(save, {
+            title: `Termination blocked: ${String(idol.name ??  idolUid)}`,
+            body: `Need ?? ${feeYen.toLocaleString("ja-JP")} to terminate this contract, but current cash is only ?? ${currentCash.toLocaleString("ja-JP")}.`,
+            sender: "Management",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+          });
+          paintGame();
+          return;
+        }
+        finances.cash_yen = currentCash - feeYen;
+        removeIdolFromManagedGroup(idolUid);
+        row.requires_confirmation = false;
+        row.read = true;
+        row.choice_status = "completed";
+        addNotification(save, {
+          title: `Contract terminated: ${String(idol.name ??  idolUid)}`,
+          body: feeYen > 0
+            ? `Termination completed with a fee of ?? ${feeYen.toLocaleString("ja-JP")}.`
+            : `Termination completed without fee.`,
+          sender: "Management",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+        });
+        paintGame();
       }
       return;
     }
@@ -1266,11 +1633,79 @@ function paintGame(): void {
       }
       return;
     }
-    const scoutLeadPick = t.closest<HTMLElement>("[data-scout-lead]");
-    if (scoutLeadPick && save && !browseMode && currentView === "Scout") {
-      navigate(() => {
-        selectedScoutLeadUid = scoutLeadPick.getAttribute("data-scout-lead");
-      });
+    const scoutSubscribeBtn = t.closest<HTMLElement>("[data-scout-subscribe]");
+    if (scoutSubscribeBtn && save && !browseMode && currentView === "Scout") {
+      const uid = scoutSubscribeBtn.getAttribute("data-scout-subscribe");
+      const company = buildDefaultScoutCompanies().find((row) => row.uid === uid);
+      if (uid && company && !save.scout.subscriptions[uid]) {
+        const finances = getActiveFinances(save);
+        const currentCash = Math.max(0, Number(finances.cash_yen ??  0) || 0);
+        const fee = Math.max(0, Number(company.service_fee_yen ??  0) || 0);
+        if (currentCash < fee) {
+          addNotification(save, {
+            title: `Scout subscription blocked: ${company.name}`,
+            body: `You need ¥${fee.toLocaleString("ja-JP")} cash to activate this monthly scout retainer.`,
+            sender: "Scout",
+            category: "internal",
+            level: "high",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `scout-subscribe-blocked|${uid}|${currentIsoForNewLive()}`,
+          });
+        } else {
+          finances.cash_yen = currentCash - fee;
+          save.scout.subscriptions[uid] = {
+            company_uid: uid,
+            subscribed_at: currentIsoForNewLive().split("T")[0],
+          };
+          selectedScoutLeadUid = null;
+          selectedScoutApplicantUid = null;
+          const managedGroupName = String(getPrimaryGroup(save)?.name ??  save.managing_group ??  "");
+          const targetType = scoutTab === "transfer" ? "transfer" : "freelancer";
+          const firstLead =
+            recommendScoutLeads({
+              idols: save.database_snapshot.idols,
+              managedGroupName,
+              company,
+              targetType,
+              currentIso: currentIsoForNewLive(),
+              limit: 1,
+              companies: buildDefaultScoutCompanies(),
+            })[0] ?? 
+            (targetType === "freelancer"
+              ? recommendScoutLeads({
+                  idols: save.database_snapshot.idols,
+                  managedGroupName,
+                  company,
+                  targetType,
+                  currentIso: currentIsoForNewLive(),
+                  limit: 1,
+                })[0] ??  null
+              : null);
+          const created = addNotification(save, {
+            title: `Scout subscription active: ${company.name}`,
+            body: `${company.name} is now on retainer for ¥${fee.toLocaleString("ja-JP")} per month. 1 lead is available immediately, and 1 more will surface each month.`,
+            sender: "Scout",
+            category: "internal",
+            level: "normal",
+            isoDate: currentIsoForNewLive(),
+            unread: true,
+            dedupeKey: `scout-subscribe|${uid}|${currentIsoForNewLive()}`,
+            reportData: {
+              kind: "scout_subscription",
+              company_uid: company.uid,
+              company_name: company.name,
+              service_fee_yen: fee,
+              first_lead_uid: firstLead?.idol_uid ??  "",
+              first_lead_profile_score: firstLead?.profile_score ??  null,
+              first_lead_reason: firstLead?.reason ??  "",
+            },
+          });
+          currentView = "Inbox";
+          inboxSelectedUid = created.uid;
+        }
+      }
+      paintGame();
       return;
     }
     const shortlistLeadBtn = t.closest<HTMLElement>("[data-scout-shortlist]");
@@ -1321,21 +1756,21 @@ function paintGame(): void {
       if (applicantUid && company) {
         const key = buildAuditionStorageKey(company.uid, currentIsoForNewLive());
         const rows = Array.isArray(currentSave.scout.auditions[key]) ? (currentSave.scout.auditions[key] as Record<string, unknown>[]) : [];
-        const row = rows.find((item) => String(item.uid ?? "") === applicantUid);
+        const row = rows.find((item) => String(item.uid ??  "") === applicantUid);
         if (row) {
-          let signedUid = String(row.signed_idol_uid ?? "");
+          let signedUid = String(row.signed_idol_uid ??  "");
           if (!signedUid) {
             const idolRow = auditionCandidateToIdolRow(row as never);
-            signedUid = String(idolRow.uid ?? applicantUid);
+            signedUid = String(idolRow.uid ??  applicantUid);
             row.signed_idol_uid = signedUid;
-            if (!currentSave.database_snapshot.idols.some((idol) => String(idol.uid ?? "") === signedUid)) {
+            if (!currentSave.database_snapshot.idols.some((idol) => String(idol.uid ??  "") === signedUid)) {
               currentSave.database_snapshot.idols.push(idolRow);
             }
           }
           if (!currentSave.shortlist.includes(signedUid)) currentSave.shortlist.push(signedUid);
           addNotification(currentSave, {
-            title: `Signing confirmation: ${String(row.name ?? signedUid)}`,
-            body: `${String(row.name ?? signedUid)} joined your scout shortlist as a new freelancer candidate.`,
+            title: `Signing confirmation: ${String(row.name ??  signedUid)}`,
+            body: `${String(row.name ??  signedUid)} joined your scout shortlist as a new freelancer candidate.`,
             sender: "Scout",
             category: "decision",
             level: "high",
@@ -1365,7 +1800,11 @@ function paintGame(): void {
           attentionActionUid = null;
           save = acknowledgeInboxNotification(save, uid);
           currentView = "Inbox";
-          inboxSelectedUid = newestVisibleLiveReportUid(save) ?? save.inbox.notifications[0]?.uid ?? null;
+          inboxSelectedUid =
+            newestVisibleLiveReportUid(save) ?? 
+            save.inbox.notifications.find((row) => !notificationRequiresAck(row) || !row.read)?.uid ?? 
+            save.inbox.notifications[0]?.uid ?? 
+            null;
         });
       }
       return;
@@ -1451,12 +1890,12 @@ function paintGame(): void {
         const totalCost = items.reduce(
           (sum, item) =>
             sum +
-            Math.max(0, Number(item.desired_amount ?? 0) || 0) * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0),
+            Math.max(0, Number(item.desired_amount ??  0) || 0) * Math.max(0, Number(item.unit_cost_yen ??  0) || 0),
           0,
         );
-        const totalAmount = items.reduce((sum, item) => sum + Math.max(0, Number(item.desired_amount ?? 0) || 0), 0);
+        const totalAmount = items.reduce((sum, item) => sum + Math.max(0, Number(item.desired_amount ??  0) || 0), 0);
         const finances = save.finances as Record<string, unknown>;
-        const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+        const currentCash = Math.max(0, Number(finances.cash_yen ??  0) || 0);
         const rowLabel = items[0]!.name;
         if (totalAmount <= 0) {
           addNotification(save, {
@@ -1475,7 +1914,7 @@ function paintGame(): void {
         if (totalCost > currentCash) {
           addNotification(save, {
             title: `Goods order blocked: ${rowLabel}`,
-            body: `Need JPY ${totalCost.toLocaleString("ja-JP")} to make ${totalAmount} units, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
+            body: `Need ?? ${totalCost.toLocaleString("ja-JP")} to make ${totalAmount} units, but current cash is ?? ${currentCash.toLocaleString("ja-JP")}.`,
             sender: "Operations",
             category: "internal",
             level: "normal",
@@ -1488,12 +1927,12 @@ function paintGame(): void {
         }
         finances.cash_yen = currentCash - totalCost;
         for (const item of items) {
-          const amount = Math.max(0, Number(item.desired_amount ?? 0) || 0);
-          item.stock = Math.max(0, Number(item.stock ?? 0) || 0) + amount;
+          const amount = Math.max(0, Number(item.desired_amount ??  0) || 0);
+          item.stock = Math.max(0, Number(item.stock ??  0) || 0) + amount;
         }
         addNotification(save, {
           title: `Goods made: ${rowLabel}`,
-          body: `${totalAmount} units completed across ${items.length} member slot(s). Production cost JPY ${totalCost.toLocaleString("ja-JP")}.`,
+          body: `${totalAmount} units completed across ${items.length} member slot(s). Production cost ?? ${totalCost.toLocaleString("ja-JP")}.`,
           sender: "Operations",
           category: "internal",
           level: "normal",
@@ -1505,19 +1944,38 @@ function paintGame(): void {
       }
       return;
     }
+    const scoutIdolOpen = t.closest<HTMLElement>("[data-idol-detail]");
+    if (scoutIdolOpen && save && !browseMode && currentView === "Scout") {
+      const uid = scoutIdolOpen.getAttribute("data-idol-detail");
+      if (uid) {
+        navigate(() => {
+          idolDetailUid = uid;
+          groupDetailUid = null;
+          currentView = "Idols";
+        });
+      }
+      return;
+    }
+    const scoutLeadPick = t.closest<HTMLElement>("[data-scout-lead]");
+    if (scoutLeadPick && save && !browseMode && currentView === "Scout") {
+      navigate(() => {
+        selectedScoutLeadUid = scoutLeadPick.getAttribute("data-scout-lead");
+      });
+      return;
+    }
     const birthdayGoodsOrderBtn = t.closest<HTMLElement>("[data-birthday-goods-order-uid]");
     if (birthdayGoodsOrderBtn && save && !browseMode && currentView === "Making") {
       const memberUid = birthdayGoodsOrderBtn.getAttribute("data-birthday-goods-order-uid");
       const memberName = birthdayGoodsOrderBtn.getAttribute("data-goods-member-name");
       const item = ensureBirthdayGoodsRowFromDataset(memberUid, memberName);
       if (item) {
-        const amount = Math.max(0, Number(item.desired_amount ?? 0) || 0);
-        const totalCost = amount * Math.max(0, Number(item.unit_cost_yen ?? 0) || 0);
+        const amount = Math.max(0, Number(item.desired_amount ??  0) || 0);
+        const totalCost = amount * Math.max(0, Number(item.unit_cost_yen ??  0) || 0);
         const finances = save.finances as Record<string, unknown>;
-        const currentCash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+        const currentCash = Math.max(0, Number(finances.cash_yen ??  0) || 0);
         if (amount <= 0) {
           addNotification(save, {
-            title: `Birthday tee order skipped: ${memberName ?? item.member_name ?? item.name}`,
+            title: `Birthday tee order skipped: ${memberName ??  item.member_name ??  item.name}`,
             body: `Enter at least one unit before queueing this birthday T-shirt order.`,
             sender: "Operations",
             category: "internal",
@@ -1531,8 +1989,8 @@ function paintGame(): void {
         }
         if (totalCost > currentCash) {
           addNotification(save, {
-            title: `Birthday tee order blocked: ${memberName ?? item.member_name ?? item.name}`,
-            body: `Need JPY ${totalCost.toLocaleString("ja-JP")} to make ${amount} units, but current cash is JPY ${currentCash.toLocaleString("ja-JP")}.`,
+            title: `Birthday tee order blocked: ${memberName ??  item.member_name ??  item.name}`,
+            body: `Need ?? ${totalCost.toLocaleString("ja-JP")} to make ${amount} units, but current cash is ?? ${currentCash.toLocaleString("ja-JP")}.`,
             sender: "Operations",
             category: "internal",
             level: "normal",
@@ -1544,10 +2002,10 @@ function paintGame(): void {
           return;
         }
         finances.cash_yen = currentCash - totalCost;
-        item.stock = Math.max(0, Number(item.stock ?? 0) || 0) + amount;
+        item.stock = Math.max(0, Number(item.stock ??  0) || 0) + amount;
         addNotification(save, {
-          title: `Birthday tees made: ${memberName ?? item.member_name ?? item.name}`,
-          body: `${amount} units completed. Production cost JPY ${totalCost.toLocaleString("ja-JP")}.`,
+          title: `Birthday tees made: ${memberName ??  item.member_name ??  item.name}`,
+          body: `${amount} units completed. Production cost ?? ${totalCost.toLocaleString("ja-JP")}.`,
           sender: "Operations",
           category: "internal",
           level: "normal",
@@ -1655,7 +2113,7 @@ function paintGame(): void {
     if (goodsDesiredInput && save && !browseMode && currentView === "Making") {
       const uid = goodsDesiredInput.getAttribute("data-goods-desired-uid");
       const item =
-        save.goods_inventory.find((row) => row.uid === uid) ??
+        save.goods_inventory.find((row) => row.uid === uid) ?? 
         ensureBirthdayGoodsRowFromDataset(
           goodsDesiredInput.getAttribute("data-goods-member-uid"),
           goodsDesiredInput.getAttribute("data-goods-member-name"),
@@ -1800,24 +2258,24 @@ function paintGame(): void {
             break;
         }
         if (field === "venue") {
-          const venue = getVenuesCatalog().find((row) => row.name === value) ?? null;
-          live.venue_uid = venue?.uid ?? null;
-          live.location = venue?.location ?? "";
-          live.capacity = venue?.capacity ?? live.capacity ?? null;
+          const venue = getVenuesCatalog().find((row) => row.name === value) ??  null;
+          live.venue_uid = venue?.uid ??  null;
+          live.location = venue?.location ??  "";
+          live.capacity = venue?.capacity ??  live.capacity ??  null;
         }
         if (field === "venue" || field === "live_type") {
           const goodsUids = Array.isArray(live.goods_uids)
             ? (live.goods_uids as unknown[]).map((x) => String(x))
-            : String(live.goods_uid ?? "").trim()
-              ? [String(live.goods_uid ?? "").trim()]
+            : String(live.goods_uid ??  "").trim()
+              ? [String(live.goods_uid ??  "").trim()]
               : [];
           live.goods_line = goodsUids
             .map((uid) => goodsDisplayLabel(findGoodsByUid(uid)))
             .filter(Boolean)
             .join(", ");
           live.goods_expected_revenue_yen = estimateCurrentLiveGoodsGross(
-            String(live.live_type ?? "Routine"),
-            String(live.venue ?? ""),
+            String(live.live_type ??  "Routine"),
+            String(live.venue ??  ""),
             goodsUids,
           );
         }
@@ -1843,11 +2301,49 @@ function paintGame(): void {
     }, 140);
   });
 
-document.getElementById("main-content")?.addEventListener("change", (ev) => {
+  document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const t = ev.target as HTMLElement;
+    const contractSalaryInput = t.closest<HTMLInputElement>("[data-contract-draft-salary]");
+    if (contractSalaryInput && save && !browseMode && currentView === "Inbox") {
+      const uid = String(contractSalaryInput.getAttribute("data-contract-draft-salary") ??  "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      const report = row?.report_data && typeof row.report_data === "object" ? (row.report_data as Record<string, unknown>) : null;
+      const idol = report ? managedIdolByUid(String(report.idol_uid ??  "")) : null;
+      if (report && idol) {
+        report.proposed_salary_yen = Math.max(0, numberOrZero(contractSalaryInput.value));
+        report.likelihood = contractRenewLikelihoodLabel(
+          idol,
+          Number(report.current_salary_yen ??  0) || 0,
+          Number(report.proposed_salary_yen ??  0) || 0,
+          String(report.current_end_date ??  currentIsoForNewLive()),
+          String(report.proposed_end_date ??  report.current_end_date ??  currentIsoForNewLive()),
+        );
+        paintGame();
+      }
+      return;
+    }
+    const contractEndInput = t.closest<HTMLInputElement>("[data-contract-draft-end]");
+    if (contractEndInput && save && !browseMode && currentView === "Inbox") {
+      const uid = String(contractEndInput.getAttribute("data-contract-draft-end") ??  "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      const report = row?.report_data && typeof row.report_data === "object" ? (row.report_data as Record<string, unknown>) : null;
+      const idol = report ? managedIdolByUid(String(report.idol_uid ??  "")) : null;
+      if (report && idol) {
+        report.proposed_end_date = String(contractEndInput.value ??  "").split("T")[0];
+        report.likelihood = contractRenewLikelihoodLabel(
+          idol,
+          Number(report.current_salary_yen ??  0) || 0,
+          Number(report.proposed_salary_yen ??  report.current_salary_yen ??  0) || 0,
+          String(report.current_end_date ??  currentIsoForNewLive()),
+          String(report.proposed_end_date ??  report.current_end_date ??  currentIsoForNewLive()),
+        );
+        paintGame();
+      }
+      return;
+    }
     const trainingSongPick = t.closest<HTMLInputElement>("[data-training-song-pick]");
     if (trainingSongPick && save && !browseMode && currentView === "Training") {
-      const uid = String(trainingSongPick.getAttribute("data-training-song-pick") ?? "").trim();
+      const uid = String(trainingSongPick.getAttribute("data-training-song-pick") ??  "").trim();
       if (uid) {
         const set = new Set(save.training_song_uids.map((x) => String(x)));
         if (trainingSongPick.checked) set.add(uid);
@@ -1868,7 +2364,7 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     }
     const liveGoodsPick = t.closest<HTMLInputElement>("[data-live-goods-pick]");
     if (liveGoodsPick && save && !browseMode && currentView === "Lives") {
-      const uid = String(liveGoodsPick.getAttribute("data-live-goods-pick") ?? "").trim();
+      const uid = String(liveGoodsPick.getAttribute("data-live-goods-pick") ??  "").trim();
       if (uid) {
         const set = new Set(newLiveForm.goodsUids);
         if (liveGoodsPick.checked) set.add(uid);
@@ -1881,26 +2377,26 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const liveDetailGoodsPick = t.closest<HTMLInputElement>("[data-live-detail-goods-pick]");
     if (liveDetailGoodsPick && save && !browseMode && currentView === "Lives") {
       const live = selectedScheduledLiveRecord();
-      const uid = String(liveDetailGoodsPick.getAttribute("data-live-detail-goods-pick") ?? "").trim();
+      const uid = String(liveDetailGoodsPick.getAttribute("data-live-detail-goods-pick") ??  "").trim();
       if (live && uid) {
         const current = Array.isArray(live.goods_uids)
           ? (live.goods_uids as unknown[]).map((x) => String(x))
-          : String(live.goods_uid ?? "").trim()
-            ? [String(live.goods_uid ?? "").trim()]
+          : String(live.goods_uid ??  "").trim()
+            ? [String(live.goods_uid ??  "").trim()]
             : [];
         const set = new Set(current);
         if (liveDetailGoodsPick.checked) set.add(uid);
         else set.delete(uid);
         const goodsUids = [...set];
         live.goods_uids = goodsUids;
-        live.goods_uid = goodsUids[0] ?? "";
+        live.goods_uid = goodsUids[0] ??  "";
         live.goods_line = goodsUids
           .map((goodsUid) => goodsDisplayLabel(findGoodsByUid(goodsUid)))
           .filter(Boolean)
           .join(", ");
         live.goods_expected_revenue_yen = estimateCurrentLiveGoodsGross(
-          String(live.live_type ?? "Routine"),
-          String(live.venue ?? ""),
+          String(live.live_type ??  "Routine"),
+          String(live.venue ??  ""),
           goodsUids,
         );
         paintGame();
@@ -1929,18 +2425,18 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     if (vacationBtn && save && !browseMode && currentView === "Training") {
       const uid = vacationBtn.getAttribute("data-training-vacation");
       if (uid) {
-        const idol = save.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid);
+        const idol = save.database_snapshot.idols.find((row) => String(row.uid ??  "") === uid);
         if (idol && typeof idol === "object") {
-          const root = vacationBtn.closest("tr, .training-vacation-controls, td, article") ?? document;
+          const root = vacationBtn.closest("tr, .training-vacation-controls, td, article") ??  document;
           const daysInput = root.querySelector<HTMLInputElement>(`[data-training-vacation-days="${uid}"]`);
-          const rawDays = Number(daysInput?.value ?? 1);
+          const rawDays = Number(daysInput?.value ??  1);
           const hiatusDays = Number.isFinite(rawDays) ? Math.max(1, Math.min(365, Math.trunc(rawDays))) : 1;
           const period = scheduleIdolVacation(
             idol as Record<string, unknown>,
-            save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? currentIsoForNewLive(),
+            save.current_date ??  save.game_start_date ??  save.scenario_context?.startup_date ??  currentIsoForNewLive(),
             hiatusDays,
           );
-          const name = String((idol as Record<string, unknown>).name ?? uid);
+          const name = String((idol as Record<string, unknown>).name ??  uid);
           addNotification(save, {
             title: `Hiatus scheduled: ${name}`,
             body: `${name} is on vacation from ${period.start_date} and will return on ${period.return_date}. Training and managed live participation are paused during this period.`,
@@ -1977,7 +2473,7 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     if (song) {
       liveProgramDragData = JSON.stringify({
         source: "song",
-        title: song.getAttribute("data-live-palette-song") ?? "",
+        title: song.getAttribute("data-live-palette-song") ??  "",
       });
       ev.dataTransfer?.setData("text/plain", liveProgramDragData);
       return;
@@ -1986,7 +2482,7 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     if (template) {
       liveProgramDragData = JSON.stringify({
         source: "template",
-        token: template.getAttribute("data-live-template") ?? "",
+        token: template.getAttribute("data-live-template") ??  "",
       });
       ev.dataTransfer?.setData("text/plain", liveProgramDragData);
       return;
@@ -2019,7 +2515,7 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     try {
       const payload = JSON.parse(raw) as Record<string, unknown>;
       if (payload.source === "song") {
-        let title = String(payload.title ?? "");
+        let title = String(payload.title ??  "");
         try {
           title = decodeURIComponent(title);
         } catch {
@@ -2027,7 +2523,7 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
         }
         insertProgramItem(targetIndex, createSongProgramItem(title));
       } else if (payload.source === "template") {
-        const [kindRaw, durationRaw] = String(payload.token ?? "").split(":");
+        const [kindRaw, durationRaw] = String(payload.token ??  "").split(":");
         const kind = kindRaw === "mc" || kindRaw === "break" ? kindRaw : null;
         const duration = Math.max(1, Number(durationRaw) || 0);
         if (kind) insertProgramItem(targetIndex, createBlockProgramItem(kind, duration));
@@ -2115,27 +2611,32 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     runSimulationTask(() => {
       if (!save) return;
       attentionActionUid = null;
-      const beforeDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
+      const beforeDate = isoDatePart(save.current_date ??  save.game_start_date ??  "");
       save = advanceOneDay(save);
-      const afterDate = isoDatePart(save.current_date ?? save.game_start_date ?? "");
+      const afterDate = isoDatePart(save.current_date ??  save.game_start_date ??  "");
       if (afterDate !== beforeDate) {
-        saveToSlot(AUTOSAVE_SLOT, save);
+        saveToSlot(accountName || String(save.account_name ??  save.player_name ??  "default"), AUTOSAVE_SLOT, save);
       }
       currentView = "Inbox";
-      inboxSelectedUid = save.inbox.notifications[0]?.uid ?? null;
+      inboxSelectedUid = save.inbox.notifications[0]?.uid ??  null;
       resetNewLiveFormDefaults(newLiveForm.liveType);
     });
   });
   document.getElementById("btn-save")?.addEventListener("click", () => {
-    if (!save || browseMode) return;
-    saveToSlot(slot, save);
+    if (!save || browseMode || !accountName) return;
+    save.account_name = accountName;
+    save.player_name = accountName;
+    saveToSlot(accountName, slot, save);
     paintGame();
   });
   document.getElementById("btn-load")?.addEventListener("click", () => {
-    if (browseMode) return;
-    const loaded = loadFromSlot(slot);
+    if (browseMode || !accountName) return;
+    const loaded = loadFromSlot(accountName, slot);
     if (loaded && assertHydratedSave(loaded)) {
       save = loaded;
+      setAccountName(String(save.account_name ??  save.player_name ??  accountName));
+      save.account_name = accountName;
+      save.player_name = accountName;
       scheduleCalendarMonthStart = null;
       resetNewLiveFormDefaults();
       if (loadedScenario) {
@@ -2155,7 +2656,8 @@ document.getElementById("main-content")?.addEventListener("change", (ev) => {
     paintOpening();
   });
   document.getElementById("btn-clear")?.addEventListener("click", () => {
-    clearSlot(slot);
+    if (!accountName) return;
+    clearSlot(accountName, slot);
     scheduleCalendarMonthStart = null;
     paintGame();
   });
@@ -2179,7 +2681,7 @@ loadDefaultScenario()
   .then((ls) => {
     loadedScenario = ls;
     openingStatus = `Loaded ${ls.preset.data_subdir} (${ls.idols.length} idols, ${ls.songs.length.toLocaleString()} song rows).`;
-    openingScreen = "home";
+    openingScreen = accountName ? "home" : "login";
     paintOpening();
   })
   .catch((e: unknown) => {

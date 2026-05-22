@@ -12,6 +12,7 @@ import {
   inferLetterTier,
   normalizeGroupLetterTier,
   resolveGroupLetterTier,
+  monthlyBaseSalaryYenForGroupLetterTier,
   defaultGoodsInventory,
   normalizeGoodsInventory,
   type ProducedGoodsRow,
@@ -30,7 +31,7 @@ import {
 } from "../engine/songStatusSystem";
 import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { buildFilteredSnapshotWithFutureEvents } from "../engine/scenarioRuntimeWeb";
-import { buildDefaultScoutCompanies } from "../engine/scoutWeb";
+import { buildDefaultScoutCompanies, normalizeScoutSubscriptions } from "../engine/scoutWeb";
 import { addNotification, type NotificationRow } from "./inbox";
 
 export const GAME_SAVE_VERSION = 11 as const;
@@ -226,6 +227,7 @@ export function createGameSaveFromLoadedScenario(
   backfillGroupMemberFanCounts(snap.idols, g);
 
   const save = defaultGameSavePayload();
+  save.account_name = opts.playerName.trim();
   save.player_name = opts.playerName.trim();
   save.managing_group = String(g.name_romanji ?? g.name ?? "");
   save.managing_group_uid = String(g.uid);
@@ -256,6 +258,7 @@ export function createGameSaveFromLoadedScenario(
   save.training_song_uids = [];
   save.turn_number = 0;
   save.finances = defaultFinances(cash);
+  ensureManagedContracts(save);
   save.inbox.notifications = [];
   save.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
   const gid = String(g.uid);
@@ -320,10 +323,12 @@ export interface LivesBlock {
 export interface ScoutBlock {
   selected_company_uid: string | null;
   auditions: Record<string, unknown>;
+  subscriptions: Record<string, { company_uid: string; subscribed_at: string }>;
 }
 
 export interface GameSavePayload {
   version: typeof GAME_SAVE_VERSION;
+  account_name?: string;
   player_name: string;
   managing_group: string | null;
   managing_group_uid: string | null;
@@ -352,58 +357,87 @@ function deepCopy<T>(v: T): T {
   return JSON.parse(JSON.stringify(v)) as T;
 }
 
+function managedContractDefaultEndDate(startIso: string): string {
+  const datePart = String(startIso ?? "").split("T")[0];
+  const match = /^(\d{4})-\d{2}-\d{2}$/.exec(datePart);
+  const year = match ? Number(match[1]) : 2020;
+  return `${String(year + 1).padStart(4, "0")}-12-31`;
+}
+
+function managedContractJoinDate(
+  idol: Record<string, unknown>,
+  groupUid: string,
+  groupNames: Set<string>,
+  fallbackIso: string,
+): string {
+  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const row = raw as Record<string, unknown>;
+    const uid = String(row.group_uid ?? "").trim();
+    const name = String(row.group_name ?? "").trim();
+    if (uid === groupUid || (name && groupNames.has(name))) {
+      const start = String(row.start_date ?? "").split("T")[0];
+      if (/^\d{4}-\d{2}-\d{2}$/.test(start)) return start;
+    }
+  }
+  return String(fallbackIso ?? "").split("T")[0] || "2020-01-01";
+}
+
+export function ensureManagedContracts(save: GameSavePayload): void {
+  const group = getPrimaryGroup(save);
+  if (!group) return;
+  const groupUid = String(group.uid ?? "").trim();
+  const groupNames = new Set(
+    [String(group.name ?? "").trim(), String(group.name_romanji ?? "").trim()].filter(Boolean),
+  );
+  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((x) => String(x)) : [];
+  const baseSalary = monthlyBaseSalaryYenForGroupLetterTier(resolveGroupLetterTier(group));
+  const fallbackStart = String(save.game_start_date ?? save.current_date ?? save.scenario_context.startup_date ?? "2020-01-01");
+  const defaultEnd = managedContractDefaultEndDate(fallbackStart);
+  for (const uid of memberUids) {
+    const idol = save.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid);
+    if (!idol || typeof idol !== "object") continue;
+    const row = idol as Record<string, unknown>;
+    if (!(typeof row.contract_salary_yen === "number" && Number.isFinite(row.contract_salary_yen))) {
+      row.contract_salary_yen = baseSalary;
+    }
+    if (typeof row.contract_start_date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(String(row.contract_start_date))) {
+      row.contract_start_date = managedContractJoinDate(row, groupUid, groupNames, fallbackStart);
+    }
+    if (typeof row.contract_end_date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(String(row.contract_end_date))) {
+      row.contract_end_date = defaultEnd;
+    }
+  }
+}
+
 function startupUpcomingLivesBody(save: GameSavePayload, openingIso: string): string {
   const startIso = String(openingIso).split("T")[0];
   const thisMonth = startOfMonthIso(startIso);
   const nextMonth = addMonths(thisMonth, 1);
   const endIso = endOfMonthIso(nextMonth);
+  const seen = new Set<string>();
   const rows = save.lives.schedules
     .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
     .filter((live) => {
       const d = String(live.start_date ?? "").split("T")[0];
       return d >= startIso && d <= endIso;
     })
-    .sort((a, b) => {
-      const da = String(a.start_date ?? "");
-      const db = String(b.start_date ?? "");
-      if (da !== db) return da.localeCompare(db);
-      return String(a.start_time ?? "").localeCompare(String(b.start_time ?? ""));
+    .filter((live) => {
+      const uid = String(live.uid ?? "").trim();
+      const key =
+        uid ||
+        [
+          String(live.start_date ?? "").split("T")[0],
+          String(live.start_time ?? "").trim(),
+          String(live.title ?? live.live_type ?? "Live").trim(),
+          String(live.venue ?? "TBA").trim(),
+        ].join("|");
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
     });
-  if (!rows.length) {
-    return "No booked lives were found for the rest of this month and next month.";
-  }
-  const formatMonth = (monthIso: string): string => {
-    const d = new Date(`${monthIso}T12:00:00Z`);
-    return d.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
-  };
-  const sections = [thisMonth, nextMonth]
-    .map((monthIso) => {
-      const monthEnd = endOfMonthIso(monthIso);
-      const monthRows = rows.filter((live) => {
-        const d = String(live.start_date ?? "").split("T")[0];
-        return d >= monthIso && d <= monthEnd;
-      });
-      if (!monthRows.length) return "";
-      const lines = monthRows
-        .map((live) => {
-          const title = String(live.title ?? live.live_type ?? "Live");
-          const venue = String(live.venue ?? "TBA");
-          const slot = formatLiveSlotLine(live) || String(live.start_date ?? "").split("T")[0];
-          return `- ${slot} · ${title} · ${venue}`;
-        })
-        .join("\n");
-      return `${formatMonth(monthIso)}\n${lines}`;
-    })
-    .filter(Boolean);
-  const hasTif = rows.some((live) => {
-    const title = String(live.title ?? "").toLowerCase();
-    const venue = String(live.venue ?? "").toLowerCase();
-    return title.includes("tif") || venue.includes("tif");
-  });
-  const intro = hasTif
-    ? "Upcoming lives for the rest of this month and next month are listed below, including TIF."
-    : "Upcoming lives for the rest of this month and next month are listed below.";
-  return [intro, ...sections].filter(Boolean).join("\n\n");
+  return rows.length ? "" : "No booked lives.";
 }
 
 export function refreshStartupUpcomingLivesNotification(save: GameSavePayload, openingIso?: string): void {
@@ -440,6 +474,7 @@ export function defaultPendingFinances(): Record<string, unknown> {
 export function defaultGameSavePayload(): GameSavePayload {
   return {
     version: GAME_SAVE_VERSION,
+    account_name: "",
     player_name: "",
     managing_group: null,
     managing_group_uid: null,
@@ -457,7 +492,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     training_focus_skill: {},
     managed_song_status: {},
     training_song_uids: [],
-    scout: { selected_company_uid: null, auditions: {} },
+    scout: { selected_company_uid: null, auditions: {}, subscriptions: {} },
   };
 }
 
@@ -471,7 +506,9 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
 
   if (typeof p.version === "number") out.version = GAME_SAVE_VERSION;
 
+  if (p.account_name != null) out.account_name = String(p.account_name ?? "").trim();
   if (p.player_name != null) out.player_name = String(p.player_name ?? "").trim();
+  if (!out.account_name && out.player_name) out.account_name = out.player_name;
   if ("managing_group" in p) out.managing_group = p.managing_group == null ? null : String(p.managing_group);
   if ("managing_group_uid" in p) {
     out.managing_group_uid = p.managing_group_uid == null ? null : String(p.managing_group_uid);
@@ -540,6 +577,9 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     const sc = p.scout as ScoutBlock;
     if (sc.selected_company_uid != null) out.scout.selected_company_uid = String(sc.selected_company_uid);
     if (sc.auditions && typeof sc.auditions === "object") out.scout.auditions = deepCopy(sc.auditions);
+    if (sc.subscriptions && typeof sc.subscriptions === "object") {
+      out.scout.subscriptions = normalizeScoutSubscriptions(sc.subscriptions);
+    }
   }
 
   if (p.current_date != null) out.current_date = String(p.current_date);
@@ -593,6 +633,7 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     (p as { training_song_uids?: unknown }).training_song_uids,
     out.managed_song_status,
   );
+  ensureManagedContracts(out);
 
   out.version = GAME_SAVE_VERSION;
   return out;
@@ -701,6 +742,7 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
 
   save.scenario_runtime = { future_events: [] };
   save.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
+  save.scout.subscriptions = {};
 
   addNotification(save, {
     title: "Production started",
@@ -713,3 +755,4 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
 
   return normalizeGameSavePayload(save);
 }
+
