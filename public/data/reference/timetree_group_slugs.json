@@ -2,6 +2,7 @@
   "_comment": "TimeTree public_calendar slug → canonical group name in groups.json",
   "slugs": {
     "akishibu": "アキシブproject",
-    "ilife_official": "iLiFE!"
+    "ilife_official": "iLiFE!",
+    "takaneko": "高嶺のなでしこ"
   }
 }

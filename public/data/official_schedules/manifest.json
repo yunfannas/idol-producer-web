@@ -1,0 +1,16 @@
+{
+  "groups": [
+    {
+      "group_key": "equal-love",
+      "group_name": "=LOVE",
+      "file": "equal-love-2025-07-2026-05.json",
+      "aliases": ["Equal Love"]
+    },
+    {
+      "group_key": "takanenonadeshiko",
+      "group_name": "高嶺のなでしこ",
+      "file": "takanenonadeshiko-2025-07-2026-07.json",
+      "aliases": ["Takanene no Nadeshiko", "Takane no Nadeshiko"]
+    }
+  ]
+}

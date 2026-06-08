@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
-const groupsPath = path.join(root, "public", "data", "scenarios", "scenario_6_2025-07-20", "groups.json");
+const groupsPath = path.join(root, "public", "data", "scenarios", "scenario_6", "groups.json");
 const outPath = path.join(root, "docs", "scenario_6_groups_detail.csv");
 
 function pipeJoin(arr) {
@@ -21,9 +21,14 @@ function countArr(v) {
   return Array.isArray(v) ? v.length : "";
 }
 
+function protectExcelText(value) {
+  const s = value == null ? "" : String(value);
+  return /^[=+\-@]/.test(s) ? `\u200B${s}` : s;
+}
+
 /** RFC 4180: always quote for maximum compatibility with Excel. */
 function csvCell(v) {
-  const s = v == null ? "" : String(v);
+  const s = protectExcelText(v);
   return `"${s.replace(/"/g, '""')}"`;
 }
 

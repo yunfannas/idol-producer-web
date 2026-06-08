@@ -47,6 +47,21 @@ npm run calendar:official-schedule -- equal-love 2025-07 2026-05 --create-venues
 
 Writes **`public/data/official_schedules/equal-love-2025-07-2026-05.json`**. Config: `public/data/reference/official_schedule_groups.json`.
 
+### Official site example: 高嶺のなでしこ (Event Organiser + sitemap)
+
+Schedule page: [takanenonadeshiko.jp/schedule/](https://takanenonadeshiko.jp/schedule/) — WordPress **Event Organiser** calendar loads via AJAX, but **`admin-ajax.php?action=eventorganiser-fullcal` returns 403** (WAF). Use the event sitemap instead:
+
+`https://takanenonadeshiko.jp/wp-sitemap-posts-event-1.xml` → ~78 `<loc>` entries (~26 unique `/events/event/…` URLs after dedupe). Each detail page has date, category, and `▼会場` blocks.
+
+**Scraper (implemented):**
+
+```bash
+npm run calendar:official-schedule-takanen -- 2025-07 2026-08 --create-venues
+npm run data:schedule-gaps-csv -- --group takanenonadeshiko
+```
+
+Writes **`public/data/official_schedules/takanenonadeshiko-2025-07-2026-08.json`**. TimeTree cross-check slug: **`takaneko`**.
+
 ---
 
 ## TimeTree path — goal

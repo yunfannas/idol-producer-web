@@ -1,0 +1,1454 @@
+{
+  "startIso": "2025-07-05",
+  "endIso": "2025-12-04",
+  "finalCurrentDate": "2025-12-05T08:00:00",
+  "managedGroup": "アキシブproject",
+  "goodsOrders": [
+    {
+      "item": "Signed cheki",
+      "quantityPerMember": 50,
+      "totalCost": 72000
+    },
+    {
+      "item": "Penlight",
+      "quantityPerMember": 40,
+      "totalCost": 352000
+    },
+    {
+      "item": "Uchiwa",
+      "quantityPerMember": 30,
+      "totalCost": 100800
+    }
+  ],
+  "snapshots": [
+    {
+      "weekStart": "2025-07-05",
+      "weekEnd": "2025-07-11",
+      "currentDate": "2025-07-11T08:00:00",
+      "finance": {
+        "weekStart": "2025-07-05",
+        "weekEnd": "2025-07-11",
+        "cash": 19981092,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 82,
+          "fans": 2772
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 100,
+          "morale": 80,
+          "fans": 2970
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 96,
+          "morale": 71,
+          "fans": 232
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 81,
+          "fans": 1406
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 79,
+          "fans": 1615
+        },
+        {
+          "name": "美山ひな",
+          "condition": 91,
+          "morale": 71,
+          "fans": 231
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 91,
+          "morale": 73,
+          "fans": 948
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 83,
+          "fans": 8358
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-07-12",
+      "weekEnd": "2025-07-18",
+      "currentDate": "2025-07-18T08:00:00",
+      "finance": {
+        "weekStart": "2025-07-12",
+        "weekEnd": "2025-07-18",
+        "cash": 19632934,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 96,
+          "fans": 2796
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 100,
+          "morale": 94,
+          "fans": 2994
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 100,
+          "morale": 82,
+          "fans": 248
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 94,
+          "fans": 1427
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 92,
+          "fans": 1635
+        },
+        {
+          "name": "美山ひな",
+          "condition": 100,
+          "morale": 82,
+          "fans": 248
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 100,
+          "morale": 77,
+          "fans": 968
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 97,
+          "fans": 8382
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-07-19",
+      "weekEnd": "2025-07-25",
+      "currentDate": "2025-07-25T08:00:00",
+      "finance": {
+        "weekStart": "2025-07-19",
+        "weekEnd": "2025-07-25",
+        "cash": 19527054,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2801
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2999
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 100,
+          "morale": 90,
+          "fans": 252
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 100,
+          "fans": 1432
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 100,
+          "fans": 1639
+        },
+        {
+          "name": "美山ひな",
+          "condition": 100,
+          "morale": 88,
+          "fans": 252
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 100,
+          "morale": 81,
+          "fans": 972
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 100,
+          "fans": 8387
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-07-26",
+      "weekEnd": "2025-08-01",
+      "currentDate": "2025-08-01T08:00:00",
+      "finance": {
+        "weekStart": "2025-07-26",
+        "weekEnd": "2025-08-01",
+        "cash": 17177762,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2805
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 100,
+          "morale": 100,
+          "fans": 3003
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 100,
+          "morale": 100,
+          "fans": 256
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 100,
+          "fans": 1436
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 100,
+          "fans": 1642
+        },
+        {
+          "name": "美山ひな",
+          "condition": 100,
+          "morale": 96,
+          "fans": 255
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 100,
+          "morale": 85,
+          "fans": 975
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 100,
+          "fans": 8391
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-08-02",
+      "weekEnd": "2025-08-08",
+      "currentDate": "2025-08-08T08:00:00",
+      "finance": {
+        "weekStart": "2025-08-02",
+        "weekEnd": "2025-08-08",
+        "cash": 16516171,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2797
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2995
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 100,
+          "morale": 100,
+          "fans": 242
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 100,
+          "fans": 1427
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 100,
+          "fans": 1632
+        },
+        {
+          "name": "美山ひな",
+          "condition": 100,
+          "morale": 100,
+          "fans": 244
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 100,
+          "morale": 85,
+          "fans": 965
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 100,
+          "fans": 8383
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-08-09",
+      "weekEnd": "2025-08-15",
+      "currentDate": "2025-08-15T08:00:00",
+      "finance": {
+        "weekStart": "2025-08-09",
+        "weekEnd": "2025-08-15",
+        "cash": 16152782,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 84,
+          "morale": 100,
+          "fans": 2795
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 76,
+          "morale": 100,
+          "fans": 2993
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 72,
+          "morale": 100,
+          "fans": 239
+        },
+        {
+          "name": "清見るん",
+          "condition": 79,
+          "morale": 100,
+          "fans": 1425
+        },
+        {
+          "name": "如月なな",
+          "condition": 77,
+          "morale": 100,
+          "fans": 1629
+        },
+        {
+          "name": "美山ひな",
+          "condition": 68,
+          "morale": 100,
+          "fans": 241
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 68,
+          "morale": 85,
+          "fans": 962
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 84,
+          "morale": 100,
+          "fans": 8381
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-08-16",
+      "weekEnd": "2025-08-22",
+      "currentDate": "2025-08-22T08:00:00",
+      "finance": {
+        "weekStart": "2025-08-16",
+        "weekEnd": "2025-08-22",
+        "cash": 16040175,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 76,
+          "morale": 100,
+          "fans": 2788
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 54,
+          "morale": 90,
+          "fans": 2986
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 41,
+          "morale": 77,
+          "fans": 230
+        },
+        {
+          "name": "清見るん",
+          "condition": 62,
+          "morale": 98,
+          "fans": 1417
+        },
+        {
+          "name": "如月なな",
+          "condition": 55,
+          "morale": 90,
+          "fans": 1620
+        },
+        {
+          "name": "美山ひな",
+          "condition": 40,
+          "morale": 73,
+          "fans": 232
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 40,
+          "morale": 54,
+          "fans": 953
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 76,
+          "morale": 100,
+          "fans": 8375
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-08-23",
+      "weekEnd": "2025-08-29",
+      "currentDate": "2025-08-29T08:00:00",
+      "finance": {
+        "weekStart": "2025-08-23",
+        "weekEnd": "2025-08-29",
+        "cash": 16060298,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2784
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 68,
+          "morale": 71,
+          "fans": 2982
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 55,
+          "morale": 38,
+          "fans": 222
+        },
+        {
+          "name": "清見るん",
+          "condition": 81,
+          "morale": 86,
+          "fans": 1413
+        },
+        {
+          "name": "如月なな",
+          "condition": 69,
+          "morale": 73,
+          "fans": 1614
+        },
+        {
+          "name": "美山ひな",
+          "condition": 55,
+          "morale": 34,
+          "fans": 224
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 55,
+          "morale": 12,
+          "fans": 945
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 100,
+          "fans": 8371
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-08-30",
+      "weekEnd": "2025-09-05",
+      "currentDate": "2025-09-05T08:00:00",
+      "finance": {
+        "weekStart": "2025-08-30",
+        "weekEnd": "2025-09-05",
+        "cash": 14054409,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2780
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 86,
+          "morale": 74,
+          "fans": 2978
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 66,
+          "morale": 24,
+          "fans": 215
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 95,
+          "fans": 1409
+        },
+        {
+          "name": "如月なな",
+          "condition": 87,
+          "morale": 76,
+          "fans": 1609
+        },
+        {
+          "name": "美山ひな",
+          "condition": 62,
+          "morale": 18,
+          "fans": 217
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 62,
+          "morale": 1,
+          "fans": 938
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 100,
+          "fans": 8367
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-09-06",
+      "weekEnd": "2025-09-12",
+      "currentDate": "2025-09-12T08:00:00",
+      "finance": {
+        "weekStart": "2025-09-06",
+        "weekEnd": "2025-09-12",
+        "cash": 13849334,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 40,
+          "morale": 77,
+          "fans": 2776
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 40,
+          "morale": 53,
+          "fans": 2974
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 40,
+          "morale": 0,
+          "fans": 209
+        },
+        {
+          "name": "清見るん",
+          "condition": 40,
+          "morale": 74,
+          "fans": 1405
+        },
+        {
+          "name": "如月なな",
+          "condition": 40,
+          "morale": 55,
+          "fans": 1605
+        },
+        {
+          "name": "美山ひな",
+          "condition": 40,
+          "morale": 0,
+          "fans": 211
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 40,
+          "morale": 0,
+          "fans": 932
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 40,
+          "morale": 79,
+          "fans": 8363
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-09-13",
+      "weekEnd": "2025-09-19",
+      "currentDate": "2025-09-19T08:00:00",
+      "finance": {
+        "weekStart": "2025-09-13",
+        "weekEnd": "2025-09-19",
+        "cash": 13485070,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 81,
+          "morale": 75,
+          "fans": 2763
+        },
+        {
+          "name": "古賀みれい",
+          "condition": 72,
+          "morale": 49,
+          "fans": 2960
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 66,
+          "morale": 1,
+          "fans": 191
+        },
+        {
+          "name": "清見るん",
+          "condition": 75,
+          "morale": 72,
+          "fans": 1391
+        },
+        {
+          "name": "如月なな",
+          "condition": 72,
+          "morale": 51,
+          "fans": 1590
+        },
+        {
+          "name": "美山ひな",
+          "condition": 63,
+          "morale": 1,
+          "fans": 193
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 63,
+          "morale": 1,
+          "fans": 915
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 81,
+          "morale": 81,
+          "fans": 8351
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-09-20",
+      "weekEnd": "2025-09-26",
+      "currentDate": "2025-09-26T08:00:00",
+      "finance": {
+        "weekStart": "2025-09-20",
+        "weekEnd": "2025-09-26",
+        "cash": 13552024,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 56,
+          "morale": 72,
+          "fans": 2761
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 25,
+          "morale": 0,
+          "fans": 184
+        },
+        {
+          "name": "清見るん",
+          "condition": 37,
+          "morale": 58,
+          "fans": 1385
+        },
+        {
+          "name": "如月なな",
+          "condition": 28,
+          "morale": 29,
+          "fans": 1584
+        },
+        {
+          "name": "美山ひな",
+          "condition": 25,
+          "morale": 0,
+          "fans": 186
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 25,
+          "morale": 0,
+          "fans": 908
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 56,
+          "morale": 80,
+          "fans": 8349
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-09-27",
+      "weekEnd": "2025-10-03",
+      "currentDate": "2025-10-03T08:00:00",
+      "finance": {
+        "weekStart": "2025-09-27",
+        "weekEnd": "2025-10-03",
+        "cash": 11898122,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 53,
+          "morale": 44,
+          "fans": 2756
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 48,
+          "morale": 0,
+          "fans": 178
+        },
+        {
+          "name": "清見るん",
+          "condition": 51,
+          "morale": 27,
+          "fans": 1379
+        },
+        {
+          "name": "如月なな",
+          "condition": 50,
+          "morale": 0,
+          "fans": 1578
+        },
+        {
+          "name": "美山ひな",
+          "condition": 47,
+          "morale": 0,
+          "fans": 180
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 47,
+          "morale": 0,
+          "fans": 902
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 53,
+          "morale": 54,
+          "fans": 8345
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-10-04",
+      "weekEnd": "2025-10-10",
+      "currentDate": "2025-10-10T08:00:00",
+      "finance": {
+        "weekStart": "2025-10-04",
+        "weekEnd": "2025-10-10",
+        "cash": 11769572,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 49,
+          "fans": 2750
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 96,
+          "morale": 1,
+          "fans": 170
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 32,
+          "fans": 1373
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 5,
+          "fans": 1571
+        },
+        {
+          "name": "美山ひな",
+          "condition": 90,
+          "morale": 1,
+          "fans": 172
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 90,
+          "morale": 1,
+          "fans": 895
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 61,
+          "fans": 8340
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-10-11",
+      "weekEnd": "2025-10-17",
+      "currentDate": "2025-10-17T08:00:00",
+      "finance": {
+        "weekStart": "2025-10-11",
+        "weekEnd": "2025-10-17",
+        "cash": 11328041,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 56,
+          "fans": 2735
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 91,
+          "morale": 1,
+          "fans": 148
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 37,
+          "fans": 1356
+        },
+        {
+          "name": "如月なな",
+          "condition": 99,
+          "morale": 9,
+          "fans": 1552
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 85,
+          "morale": 1,
+          "fans": 875
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 68,
+          "fans": 8326
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-10-18",
+      "weekEnd": "2025-10-24",
+      "currentDate": "2025-10-24T08:00:00",
+      "finance": {
+        "weekStart": "2025-10-18",
+        "weekEnd": "2025-10-24",
+        "cash": 11395568,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 82,
+          "morale": 62,
+          "fans": 2712
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 57,
+          "morale": 0,
+          "fans": 110
+        },
+        {
+          "name": "清見るん",
+          "condition": 73,
+          "morale": 43,
+          "fans": 1328
+        },
+        {
+          "name": "如月なな",
+          "condition": 67,
+          "morale": 15,
+          "fans": 1520
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 49,
+          "morale": 0,
+          "fans": 841
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 82,
+          "morale": 74,
+          "fans": 8304
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-10-25",
+      "weekEnd": "2025-10-31",
+      "currentDate": "2025-10-31T08:00:00",
+      "finance": {
+        "weekStart": "2025-10-25",
+        "weekEnd": "2025-10-31",
+        "cash": 11343787,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 69,
+          "fans": 2704
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 64,
+          "morale": 1,
+          "fans": 96
+        },
+        {
+          "name": "清見るん",
+          "condition": 92,
+          "morale": 50,
+          "fans": 1318
+        },
+        {
+          "name": "如月なな",
+          "condition": 82,
+          "morale": 15,
+          "fans": 1508
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 55,
+          "morale": 0,
+          "fans": 827
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 81,
+          "fans": 8296
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-11-01",
+      "weekEnd": "2025-11-07",
+      "currentDate": "2025-11-07T08:00:00",
+      "finance": {
+        "weekStart": "2025-11-01",
+        "weekEnd": "2025-11-07",
+        "cash": 10205695,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 64,
+          "morale": 73,
+          "fans": 2697
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 25,
+          "morale": 0,
+          "fans": 86
+        },
+        {
+          "name": "清見るん",
+          "condition": 43,
+          "morale": 49,
+          "fans": 1310
+        },
+        {
+          "name": "如月なな",
+          "condition": 27,
+          "morale": 1,
+          "fans": 1500
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 25,
+          "morale": 0,
+          "fans": 818
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 64,
+          "morale": 85,
+          "fans": 8289
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-11-08",
+      "weekEnd": "2025-11-14",
+      "currentDate": "2025-11-14T08:00:00",
+      "finance": {
+        "weekStart": "2025-11-08",
+        "weekEnd": "2025-11-14",
+        "cash": 9743738,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 84,
+          "fans": 2696
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 100,
+          "morale": 5,
+          "fans": 85
+        },
+        {
+          "name": "清見るん",
+          "condition": 100,
+          "morale": 56,
+          "fans": 1309
+        },
+        {
+          "name": "如月なな",
+          "condition": 100,
+          "morale": 9,
+          "fans": 1499
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 100,
+          "morale": 1,
+          "fans": 817
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 96,
+          "fans": 8288
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-11-15",
+      "weekEnd": "2025-11-21",
+      "currentDate": "2025-11-21T08:00:00",
+      "finance": {
+        "weekStart": "2025-11-15",
+        "weekEnd": "2025-11-21",
+        "cash": 9405125,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 79,
+          "morale": 90,
+          "fans": 2692
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 57,
+          "morale": 0,
+          "fans": 78
+        },
+        {
+          "name": "清見るん",
+          "condition": 70,
+          "morale": 60,
+          "fans": 1304
+        },
+        {
+          "name": "如月なな",
+          "condition": 66,
+          "morale": 8,
+          "fans": 1493
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 51,
+          "morale": 0,
+          "fans": 811
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 79,
+          "morale": 100,
+          "fans": 8284
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-11-22",
+      "weekEnd": "2025-11-28",
+      "currentDate": "2025-11-28T08:00:00",
+      "finance": {
+        "weekStart": "2025-11-22",
+        "weekEnd": "2025-11-28",
+        "cash": 9458717,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 97,
+          "morale": 96,
+          "fans": 2686
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 74,
+          "morale": 1,
+          "fans": 71
+        },
+        {
+          "name": "清見るん",
+          "condition": 89,
+          "morale": 66,
+          "fans": 1298
+        },
+        {
+          "name": "如月なな",
+          "condition": 85,
+          "morale": 14,
+          "fans": 1486
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 63,
+          "morale": 1,
+          "fans": 804
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 97,
+          "morale": 100,
+          "fans": 8279
+        }
+      ]
+    },
+    {
+      "weekStart": "2025-11-29",
+      "weekEnd": "2025-12-05",
+      "currentDate": "2025-12-05T08:00:00",
+      "finance": {
+        "weekStart": "2025-11-29",
+        "weekEnd": "2025-12-05",
+        "cash": 7633213,
+        "income": 0,
+        "expense": 0,
+        "net": 0,
+        "liveTickets": 0,
+        "liveGoods": 0,
+        "tokutenkai": 0,
+        "media": 0,
+        "salaries": 0,
+        "office": 0,
+        "scoutRetainers": 0
+      },
+      "idols": [
+        {
+          "name": "葵ふう",
+          "condition": 100,
+          "morale": 100,
+          "fans": 2683
+        },
+        {
+          "name": "水琴まなみ",
+          "condition": 74,
+          "morale": 1,
+          "fans": 67
+        },
+        {
+          "name": "清見るん",
+          "condition": 98,
+          "morale": 75,
+          "fans": 1295
+        },
+        {
+          "name": "如月なな",
+          "condition": 93,
+          "morale": 23,
+          "fans": 1483
+        },
+        {
+          "name": "平沢かえ",
+          "condition": 60,
+          "morale": 1,
+          "fans": 801
+        },
+        {
+          "name": "茉井良菜",
+          "condition": 100,
+          "morale": 100,
+          "fans": 8276
+        }
+      ]
+    }
+  ],
+  "guard": 395,
+  "livesScheduledRemaining": 30,
+  "livesResults": 81
+}

@@ -30,6 +30,16 @@ function parseIsoDate(value: unknown): string | null {
   return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : null;
 }
 
+function yearsBetweenIso(referenceIso: string | null | undefined, targetIso: string | null | undefined): number | null {
+  const ref = parseIsoDate(referenceIso);
+  const target = parseIsoDate(targetIso);
+  if (!ref || !target) return null;
+  const refMs = Date.parse(`${ref}T12:00:00Z`);
+  const targetMs = Date.parse(`${target}T12:00:00Z`);
+  if (!Number.isFinite(refMs) || !Number.isFinite(targetMs)) return null;
+  return Math.abs(refMs - targetMs) / (365.25 * 86400000);
+}
+
 function isoDayIndex(value: string | null | undefined): number | null {
   const iso = parseIsoDate(value);
   if (!iso) return null;
@@ -56,12 +66,13 @@ function defaultSongStatusRow(
   song: Record<string, unknown>,
   currentIso: string | null | undefined,
   memberCount: number,
+  familiarity: number,
 ): ManagedSongStatusRow {
   const available = isManagedSongAvailableOn(song, currentIso);
   return {
     song_uid: String(song.uid ?? ""),
     title: songCatalogDisplayLabel(song),
-    familiarity: available ? 72 : 0,
+    familiarity: available ? familiarity : 0,
     rotation_fatigue: 0,
     learned_member_count: Math.max(0, memberCount),
     last_trained_date: null,
@@ -80,12 +91,28 @@ export function normalizeManagedSongStatus(
   const out: Record<string, ManagedSongStatusRow> = {};
   const rawMap =
     raw && typeof raw === "object" && !Array.isArray(raw) ? (raw as Record<string, unknown>) : {};
+  const groupSongs = songs
+    .filter((song) => song && typeof song === "object")
+    .filter((song) => String(song.group_uid ?? "") === groupUid)
+    .sort((a, b) => {
+      const popDelta = num(b.popularity, 0) - num(a.popularity, 0);
+      if (popDelta !== 0) return popDelta;
+      const aRelease = parseIsoDate(a.release_date) ?? "";
+      const bRelease = parseIsoDate(b.release_date) ?? "";
+      if (bRelease !== aRelease) return bRelease.localeCompare(aRelease);
+      return songCatalogDisplayLabel(a).localeCompare(songCatalogDisplayLabel(b), "ja");
+    });
+  const topTwelve = new Set(groupSongs.slice(0, 12).map((song) => String(song.uid ?? "").trim()).filter(Boolean));
   for (const song of songs) {
     if (!song || typeof song !== "object") continue;
     if (String(song.group_uid ?? "") !== groupUid) continue;
     const uid = String(song.uid ?? "").trim();
     if (!uid) continue;
-    const base = defaultSongStatusRow(song, currentIso, memberCount);
+    const isTopTwelve = topTwelve.has(uid);
+    const releaseAgeYears = yearsBetweenIso(currentIso, song.release_date);
+    const isRecentSong = releaseAgeYears != null && releaseAgeYears <= 5;
+    const initialFamiliarity = isTopTwelve ? 90 : isRecentSong ? 80 : 20;
+    const base = defaultSongStatusRow(song, currentIso, memberCount, initialFamiliarity);
     const stored =
       rawMap[uid] && typeof rawMap[uid] === "object" && !Array.isArray(rawMap[uid])
         ? (rawMap[uid] as Record<string, unknown>)
@@ -136,7 +163,9 @@ export function applyTrainingToManagedSongs(
   const selected = selectedSongUids
     .map((uid) => statusMap[uid])
     .filter((row): row is ManagedSongStatusRow => Boolean(row));
-  const gain = Math.max(1, Math.round(Math.max(1, blocksPerIdol) * 4));
+  const gain = selected.length
+    ? Math.max(1, Math.round((Math.max(1, blocksPerIdol) * 6) / selected.length))
+    : 0;
   const updates: Array<{ title: string; familiarity_delta: number; familiarity_after: number }> = [];
   for (const row of selected) {
     const before = row.familiarity;
@@ -233,9 +262,9 @@ export function managedSetlistEffect(
   const avgFamiliarity = rows.reduce((sum, row) => sum + row.familiarity, 0) / rows.length;
   const avgFatigue = rows.reduce((sum, row) => sum + row.rotation_fatigue, 0) / rows.length;
   const lowFamiliarityCount = rows.filter((row) => row.familiarity < 50).length;
-  const familiarityBonus = clamp((avgFamiliarity - 68) / 5.5, -8, 6);
-  const fatiguePenalty = clamp(avgFatigue / 7.5, 0, 10);
-  const lowFamPenalty = lowFamiliarityCount * 1.4;
+  const familiarityBonus = clamp((avgFamiliarity - 62) / 4.8, -10, 10);
+  const fatiguePenalty = clamp(avgFatigue / 18, 0, 4);
+  const lowFamPenalty = lowFamiliarityCount * 1.1;
   return {
     score_delta: Math.round((familiarityBonus - fatiguePenalty - lowFamPenalty) * 100) / 100,
     avg_familiarity: Math.round(avgFamiliarity * 100) / 100,

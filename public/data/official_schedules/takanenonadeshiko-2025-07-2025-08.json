@@ -1,0 +1,57 @@
+{
+  "source": "official",
+  "group_key": "takanenonadeshiko",
+  "group_name": "高嶺のなでしこ",
+  "base_url": "https://takanenonadeshiko.jp",
+  "scrape_method": "schedule_page_calendar+sitemap+news",
+  "range": {
+    "from": "2025-07",
+    "to": "2025-08"
+  },
+  "generated_at": "2026-05-29T05:11:35.649Z",
+  "event_count": 3,
+  "events": [
+    {
+      "date": "2025-08-07",
+      "event": "高嶺のなでしこ 3rd ファンミーティング開催決定！",
+      "event_raw": "高嶺のなでしこ 3rd ファンミーティング開催決定！",
+      "site_category": "お知らせ",
+      "type": "Other",
+      "venue": "豊洲PIT",
+      "venue_hint": "豊洲PIT",
+      "note": "■2025年8月7日（木）\n[会場]豊洲PIT\n第一部[OPEN/START]15:00/16:00\n第二部[OPEN/START]18:30/19:30\n[内容]ライブ/トーク",
+      "official_detail_url": "https://takanenonadeshiko.jp/%e9%ab%98%e5%b6%ba%e3%81%ae%e3%81%aa%e3%81%a7%e3%81%97%e3%81%93-3rd-%e3%83%95%e3%82%a1%e3%83%b3%e3%83%9f%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e9%96%8b%e5%82%ac%e6%b1%ba%e5%ae%9a%ef%bc%81/",
+      "official_detail_slug": "%e9%ab%98%e5%b6%ba%e3%81%ae%e3%81%aa%e3%81%a7%e3%81%97%e3%81%93-3rd-%e3%83%95%e3%82%a1%e3%83%b3%e3%83%9f%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e9%96%8b%e5%82%ac%e6%b1%ba%e5%ae%9a%ef%bc%81",
+      "source": "official_news",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-08-07",
+      "event": "高嶺のなでしこ「3rd ファンミーティング〜私たちの宣言式〜」 ファンクラブ先行受付のお知らせ",
+      "event_raw": "高嶺のなでしこ「3rd ファンミーティング〜私たちの宣言式〜」 ファンクラブ先行受付のお知らせ",
+      "site_category": "お知らせ",
+      "type": "Other",
+      "venue": "豊洲PIT",
+      "venue_hint": "豊洲PIT",
+      "note": "■2025年8月7日（木）\n[会場]豊洲PIT\n第一部[OPEN/START]15:00/16:00\n第二部[OPEN/START]18:30/19:30\n[内容]ライブ/トーク",
+      "official_detail_url": "https://takanenonadeshiko.jp/%e9%ab%98%e5%b6%ba%e3%81%ae%e3%81%aa%e3%81%a7%e3%81%97%e3%81%93%e3%80%8c3rd-%e3%83%95%e3%82%a1%e3%83%b3%e3%83%9f%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%80%9c%e7%a7%81%e3%81%9f%e3%81%a1/",
+      "official_detail_slug": "%e9%ab%98%e5%b6%ba%e3%81%ae%e3%81%aa%e3%81%a7%e3%81%97%e3%81%93%e3%80%8c3rd-%e3%83%95%e3%82%a1%e3%83%b3%e3%83%9f%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%80%9c%e7%a7%81%e3%81%9f%e3%81%a1",
+      "source": "official_news",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-08-24",
+      "event": "TAKANE NO NADESHIKO LIVE 2025 SUMMER in SEOUL",
+      "event_raw": "TAKANE NO NADESHIKO LIVE 2025 SUMMER in SEOUL",
+      "site_category": "お知らせ",
+      "type": "Concert",
+      "venue": "YES24 WANDERLOCH HALL",
+      "venue_hint": "YES24 WANDERLOCH HALL",
+      "note": "日 程：8月24日(日)\n開 演：14:00 / 19:00\n会 場：YES24 WANDERLOCH HALL\nチケット販売サイト：https://to.livet.one/TAKANEKO25",
+      "official_detail_url": "https://takanenonadeshiko.jp/%e3%80%8ctakane-no-nadeshiko-live-2025-summer-in-seoul%e3%80%8d%e8%bf%bd%e5%8a%a0%e5%85%ac%e6%bc%94%e6%b1%ba%e5%ae%9a%ef%bc%81/",
+      "official_detail_slug": "%e3%80%8ctakane-no-nadeshiko-live-2025-summer-in-seoul%e3%80%8d%e8%bf%bd%e5%8a%a0%e5%85%ac%e6%bc%94%e6%b1%ba%e5%ae%9a%ef%bc%81",
+      "source": "official_news",
+      "venue_uid": "2c613920-b8c0-4d0f-8b78-0d90e9962d2d"
+    }
+  ]
+}

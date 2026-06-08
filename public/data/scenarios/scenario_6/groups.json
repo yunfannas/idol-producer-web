@@ -592,16 +592,18 @@
   {
     "uid": "44G144KP44G144KP",
     "name": "ふわふわ",
-    "member_count": 2,
+    "member_count": 3,
     "member_names": [
       "遠藤みゆ",
-      "平塚日菜"
+      "平塚日菜",
+      "松崎梨央"
     ],
     "member_uids": [
       "16e91484-1cd5-4a3a-885e-3bd32b4466c0",
-      "28afda5c-6019-4156-b6ad-9aaa54f0fb6c"
+      "28afda5c-6019-4156-b6ad-9aaa54f0fb6c",
+      "37fb1b7a-c7a7-417d-84c4-b78b9fcca0c5"
     ],
-    "past_member_count": 20,
+    "past_member_count": 17,
     "past_member_names": [
       "高岡志帆",
       "石井美優",
@@ -615,14 +617,11 @@
       "吉澤瑠莉花",
       "伊藤小春",
       "本島莉々果",
-      "松崎梨央",
       "中野あいみ",
       "兼次桜菜",
       "赤坂星南",
       "塚田百々花",
-      "岩崎春果",
-      "Yokota Miyuki",
-      "Yoshizawa Rurika"
+      "岩崎春果"
     ],
     "past_member_uids": [
       "8419dd50-f6e3-4503-83df-02a0dc76381c",
@@ -637,13 +636,11 @@
       "c08bfb03-21e1-440e-9dc4-e0f9746eee68",
       "f469c8f6-fe88-47bd-8a72-9921aa393170",
       "4601c4b2-93f4-447d-9b29-a3d22409a5b9",
-      "37fb1b7a-c7a7-417d-84c4-b78b9fcca0c5",
       "0215fe0e-e62d-4e81-ae84-264eb54c33d8",
       "b864cdda-ff77-4799-b8cb-57f790350461",
       "25306952-ac31-4360-8494-5b63efddec8e",
       "aae4657e-80dc-400b-89f6-34a638f90368",
-      "90b46172-4a64-490c-b360-d1429b58d1e6",
-      ""
+      "90b46172-4a64-490c-b360-d1429b58d1e6"
     ],
     "color": null,
     "description": "FuWa FuWa Promoting Princess Carnival (2020) Information Genre J-Pop Years 2015-Present Label SONIC GROOVE Agency RISING PRODUCTION Current Members Endo Miyu Hiratsuka Hina Former Members Takaoka Shiho Ishii Miyuu Tanino Arisa Tsukamoto Nagisa Saeki Mao Yamamoto Nanaho Suzuki Hitomi Yamamoto Nanase Yokota Miyuki Yoshizawa Rurika Ito Koharu Motoshima Ririka Matsuzaki Rio Nakano Aimi Kaneshi Sana Akasaka Sena Tsukada Momoka Iwasaki Haruka FuWa FuWa (ふわふわ) is currently a two-member Japanese idol gr",
@@ -3045,19 +3042,49 @@
   {
     "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
     "name": "おこさまぷれ〜と。",
-    "member_count": 1,
+    "member_count": 7,
     "member_names": [
-      "朝比奈凛"
+      "朝比奈凛",
+      "かすみん",
+      "あっす〜",
+      "ある",
+      "もふちゃん",
+      "えちゃこ",
+      "おいもちゃん"
     ],
     "member_uids": [
-      "44eba567-c618-4b84-807a-22d33ed99bcf"
+      "44eba567-c618-4b84-807a-22d33ed99bcf",
+      "84453e3e-d2c6-4465-acf3-11fb3b23c5fb",
+      "b36afc4d-0f20-4fcd-b734-dd0f5b63e728",
+      "fcc625fd-96dc-49fa-84fd-24189951949e",
+      "696c27d8-ec2d-46a7-a131-0045dfcd58aa",
+      "34d43977-855e-4447-a5db-ea0f81230e92",
+      "f5a93c2f-3f9a-4729-baa9-20c2ba1bd3e4"
     ],
-    "past_member_count": 1,
+    "past_member_count": 10,
     "past_member_names": [
-      "See the Former Member List"
+      "ごりか",
+      "ひめかのん",
+      "もんち",
+      "りんたろー",
+      "ちゃき",
+      "りあら",
+      "のぴ",
+      "ゆあてゃん",
+      "しゅがー",
+      "ゆいにゃ"
     ],
     "past_member_uids": [
-      ""
+      "0e6d0f96-cc65-4165-bd13-d254ab8aeec6",
+      "e84ad889-878c-4058-8893-a495608caec2",
+      "bf15d0c6-5162-4fec-a76d-5a721795f26c",
+      "639e3c52-365a-4226-b024-378da92d6c31",
+      "188e6365-1349-4bd8-8a0b-bc3bcb12a909",
+      "a440910c-4b6d-4129-821b-24c6ceba6e26",
+      "14718705-13f9-43c8-89ad-5627b46cf8ae",
+      "b14177d1-3d16-4f76-947d-eb42baa9303b",
+      "fc1e4bf9-f956-4a13-b0a8-82f4157968f0",
+      "a3507214-7ca3-4ba5-b879-73856796cd14"
     ],
     "color": null,
     "description": "Project Logo Information Also Known As ZERO PROJECT ZeroPro (ゼロプロ) Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency ORIGAMI Current Members See the Member List Former Members See the Former Member List Links Website Official Website Social Media Zero Project (ゼロプロジェクト) is a Japanese idol project consisting of over 100 members split into ranked and themed groups.",
@@ -6114,19 +6141,35 @@
   {
     "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
     "name": "こみっきゅおん！",
-    "member_count": 1,
+    "member_count": 7,
     "member_names": [
-      "朝比奈凛"
+      "朝比奈凛",
+      "花咲みゆ",
+      "四宮るな",
+      "松永すみな",
+      "塩崎なづな",
+      "石浜もも",
+      "月城はるの"
     ],
     "member_uids": [
-      "44eba567-c618-4b84-807a-22d33ed99bcf"
+      "44eba567-c618-4b84-807a-22d33ed99bcf",
+      "559407c3-2435-4e7b-b190-78dbdc5667bf",
+      "8c3a7cdd-57bd-4e71-a921-3f958a196ece",
+      "c331a578-04e6-40f3-af3b-7400968e1c2c",
+      "066d4171-002d-49a0-8c4d-4401f0540d3a",
+      "08af4bbe-481b-4416-b89d-5bfb1bf70a16",
+      "ae29511d-7996-4eaf-bcf1-133377429e00"
     ],
-    "past_member_count": 1,
+    "past_member_count": 3,
     "past_member_names": [
-      "See the Former Member List"
+      "公野舞華",
+      "彩瀬ゆる",
+      "真白うた"
     ],
     "past_member_uids": [
-      ""
+      "36088e0b-8ce0-4ac6-b34c-0c77b1ef411b",
+      "78dcccf5-7da2-4f4c-b8bc-63dbea79d607",
+      "0f646e12-186c-46a2-b3e0-dce8c25bed2b"
     ],
     "color": null,
     "description": "Project Logo Information Also Known As ZERO PROJECT ZeroPro (ゼロプロ) Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency ORIGAMI Current Members See the Member List Former Members See the Former Member List Links Website Official Website Social Media Zero Project (ゼロプロジェクト) is a Japanese idol project consisting of over 100 members split into ranked and themed groups.",
@@ -12030,35 +12073,35 @@
   {
     "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
     "name": "にっぽんワチャチャ",
-    "member_count": 5,
+    "member_count": 6,
     "member_names": [
       "遠藤Nozomi",
       "渡辺Lili",
       "七瀬Ribi",
       "三浦Miu!",
-      "清水Itsuki"
+      "清水Itsuki",
+      "高橋Yagura"
     ],
     "member_uids": [
       "f1e3a5f5-65af-40b2-a7fb-cb26d17050c9",
       "a3c777ae-ac74-4810-af2d-d63a447713c8",
       "4bb6626f-fa7a-4174-bc4a-940f377373e7",
       "f3fd7ab8-e9a7-49c6-a9fb-0da49a9e2c5e",
-      "60a5ef8e-7604-4522-90c9-a52b6121a3ca"
+      "60a5ef8e-7604-4522-90c9-a52b6121a3ca",
+      "5ef2206f-7abc-4088-9376-e57d7ebf402e"
     ],
-    "past_member_count": 5,
+    "past_member_count": 4,
     "past_member_names": [
       "田中Ruru",
       "前田Maton",
       "鈴木Mob.",
-      "中村Ame",
-      "高橋Yagura"
+      "中村Ame"
     ],
     "past_member_uids": [
       "8dedd9bb-5251-41c9-979d-da11fd6fa4c4",
       "56a60bb0-395a-4d76-adc1-e6990b75bd1a",
       "3ccf3e6b-69c1-4588-8902-f850e13a8385",
-      "1beb479b-7479-4d8b-af5a-dc5e04143484",
-      "5ef2206f-7abc-4088-9376-e57d7ebf402e"
+      "1beb479b-7479-4d8b-af5a-dc5e04143484"
     ],
     "color": null,
     "description": "Nippon Wachacha September 2025 Information Also Known As Nippon no Virus (にっぽんのウイルス) Origin Osaka, Japan Genre J-Pop Years 2020-Present Agency Apnet Co., Ltd. Associated Acts Miniwacha THE POWER 7 Ten Fevers! Current Members Endo Nozomi (2020-present) Watanabe Lili (2020-present) Nanase Ribi (2025-present) Miura Miu! (2025-present) Shimizu Itsuki (2025-present) Former Members Tanaka Ruru (2020) Maeda Maton (2021-2023) Suzuki Mob (2020-2025) Nakamura Ame (2021-2025) Takahashi Yagura (2021-2025)",
@@ -12260,7 +12303,7 @@
   {
     "uid": "44Gu44KT44G144GD44GP77yB",
     "name": "のんふぃく！",
-    "member_count": 7,
+    "member_count": 8,
     "member_names": [
       "恋星はるか",
       "水瀬ぴあの",
@@ -12268,7 +12311,8 @@
       "海まりん",
       "こるね",
       "澪織にいな",
-      "香月あむ"
+      "香月あむ",
+      "真白里帆"
     ],
     "member_uids": [
       "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
@@ -12277,16 +12321,15 @@
       "83e5cfe9-c078-46c8-bc74-51bd1c6f9835",
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
       "b7362fff-f7d2-4fba-a5f7-febe07305d84",
-      "ad732d26-4b39-4b95-a642-5db433ed09ae"
+      "ad732d26-4b39-4b95-a642-5db433ed09ae",
+      "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f"
     ],
-    "past_member_count": 2,
+    "past_member_count": 1,
     "past_member_names": [
-      "藤城なみ",
-      "真白里帆"
+      "藤城なみ"
     ],
     "past_member_uids": [
-      "1f22a5cf-f0f8-4c95-a3b7-3b0049239b69",
-      "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f"
+      "1f22a5cf-f0f8-4c95-a3b7-3b0049239b69"
     ],
     "color": null,
     "description": "June 2025 Information Also Known As NONFIC! Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! Yakousei Amuse BLK LiLiY i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Konose Haruka (2021-Present) Minase Piano (2021-",
@@ -12470,7 +12513,7 @@
   {
     "uid": "44Gw44Gj44Gm44KT5bCR5aWz6ZqK",
     "name": "ばってん少女隊",
-    "member_count": 7,
+    "member_count": 8,
     "member_names": [
       "希山愛",
       "上田理子",
@@ -12478,7 +12521,8 @@
       "蒼井りるあ",
       "柳美舞",
       "逢里みう",
-      "日南心那"
+      "日南心那",
+      "浅井アヤネ"
     ],
     "member_uids": [
       "5dc12d9c-0713-49c2-bf2f-ea5aad13b3b6",
@@ -12487,20 +12531,19 @@
       "4bcdd965-2042-49f8-8c72-5de5f78e4757",
       "1c185079-1ae0-42ac-bbe6-08d6ebb771f8",
       "b3637c6f-3b2f-427d-a319-61cba1a58d53",
-      "ee7b3c7c-f6c6-4aa1-b69c-d938bd7af901"
+      "ee7b3c7c-f6c6-4aa1-b69c-d938bd7af901",
+      "aa2f21bd-7d94-4305-b7ff-2f7197a5890c"
     ],
-    "past_member_count": 4,
+    "past_member_count": 3,
     "past_member_names": [
       "西垣有彩",
       "星野蒼良",
-      "瀬田さくら",
-      "浅井アヤネ"
+      "瀬田さくら"
     ],
     "past_member_uids": [
       "97c0cf5c-fd70-4939-b24e-dc96bf233654",
       "8c3030e3-2f3b-458c-a818-bbdcac7239fe",
-      "88ca8aa6-0a82-4704-9ea0-25c79bce1bdb",
-      "aa2f21bd-7d94-4305-b7ff-2f7197a5890c"
+      "88ca8aa6-0a82-4704-9ea0-25c79bce1bdb"
     ],
     "color": null,
     "description": "Batten Shoujo-tai March 2025 Information Also Known As BATTEN GIRLS Basshou (ばっしょー) Origin Fukuoka, Japan Genre J-Pop Years 2015-Present Label Stardust Records (2015) Colourful Records / Victor Entertainment (2016-2019) BATTEN Records (2020-Present) Agency STARDUST PLANET ( Stardust Promotion ) Associated Acts Momoiro Clover Z Shiritsu Ebisu Chugaku TEAM SHACHI Cho Tokimeki♡Sendenbu Ukka Iginari Tohokusan AMEFURASSHI Namie Yoshihatsu Kumiai Stapla Kenkyusei (Trainee Group) Current Members Kiyam",
@@ -26179,7 +26222,7 @@
       "村山沙羅",
       "林玲奈",
       "桜庭萌桃",
-      "森下かのん",
+      "永瀬かのん",
       "橘ひより",
       "津代美月",
       "浅見歩果",
@@ -26489,7 +26532,10 @@
       "fb82976e-f917-4c19-8f0c-fab5665f0bb1"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "shared_release_uids": [
+      "shared-heroines-album-2025"
+    ]
   },
   {
     "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
@@ -37021,8 +37067,8 @@
       "新木るの",
       "灯田にじ",
       "浜辺しずく",
-      "新谷真由",
-      "岬ちなつ"
+      "岬ちなつ",
+      "煌坂もね"
     ],
     "member_uids": [
       "536e98f1-ebbd-4db0-89c7-1f2f7eca9758",
@@ -37030,8 +37076,8 @@
       "542e48c2-688d-425e-903f-22e5a63dc6f8",
       "56029139-a0fd-48cb-b577-e38a3aaedafc",
       "afec82e2-d169-4816-9402-cd7dc8d15db0",
-      "1e200a41-1770-4deb-9d6e-d446bf7865d7",
-      "edda442f-caba-4a4f-b135-f39d6a0e02e0"
+      "edda442f-caba-4a4f-b135-f39d6a0e02e0",
+      "84f94708-21be-400d-a37a-05e75f07885b"
     ],
     "past_member_count": 13,
     "past_member_names": [
@@ -37047,7 +37093,7 @@
       "絢瀬まよ",
       "平沢ゆめ",
       "可愛ぷに",
-      "煌坂もね"
+      "新谷真由"
     ],
     "past_member_uids": [
       "76923792-dc52-4754-b37d-af4a02c53265",
@@ -37062,7 +37108,7 @@
       "55777451-1372-4994-8184-93a2d78bf894",
       "06e43ce8-6662-4290-8cad-6b69eebe6673",
       "cadac094-4ea5-4289-9ad5-0d7b884fe3d0",
-      "84f94708-21be-400d-a37a-05e75f07885b"
+      "1e200a41-1770-4deb-9d6e-d446bf7865d7"
     ],
     "color": null,
     "description": "Paradeeq May 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency PLAYYTE Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa Nanakorobi Yaoki HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Mizuno Mei Kurusu Yuru Araki Runo Akarida Niji Hamabe Shizuku Former Members Akutsu Yuuri Kondo Makoto Maeda Ayaka Niiya Mayu Kanda Fuune Iwasawa Miu",
@@ -40107,20 +40153,30 @@
   {
     "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
     "name": "ポンコツコンポ",
-    "member_count": 4,
+    "member_count": 9,
     "member_names": [
       "晴後あめ",
       "夕葉里めろん",
       "秋田こまち",
-      "チャーリン"
+      "チャーリン",
+      "美々乃らすく",
+      "もちみるく",
+      "結目りぼん",
+      "山田花子",
+      "紅芋たると"
     ],
     "member_uids": [
       "7a7792bd-49a2-49ce-91bf-4a8734bc777c",
       "16c3a7e5-e957-4ead-9682-76dcc85638a0",
       "fa030965-6a01-4c76-a45f-564818fe4be0",
-      "8aa3a1f0-6da3-4dbd-a47d-06591a5b0858"
+      "8aa3a1f0-6da3-4dbd-a47d-06591a5b0858",
+      "613fc5be-9ef8-4ddf-b56f-d2e494175825",
+      "46259269-fe8c-4e40-938a-95fa7448a1fc",
+      "17aefdfe-4d6c-4c4d-8e16-8e5620f13f33",
+      "b25808b4-6bbb-4257-b4db-276e2932295c",
+      "81ac9daa-07f1-4205-a123-6e8bec59abb3"
     ],
-    "past_member_count": 16,
+    "past_member_count": 13,
     "past_member_names": [
       "乱乱",
       "ひめくり暦",
@@ -40130,14 +40186,11 @@
       "愛救なな",
       "カコイマミライ",
       "御昼ねる",
-      "美々乃らすく",
       "ココ・イチバン",
       "アリヨリノアリ",
-      "紅芋たると",
-      "もちみるく",
-      "結目りぼん",
-      "山田花子",
-      "アリヨリノアリィ"
+      "アリヨリノアリィ",
+      "小森ねる",
+      "雛小みらい"
     ],
     "past_member_uids": [
       "5aeec4df-dcbb-46ed-991c-09e10c93b7e8",
@@ -40148,14 +40201,11 @@
       "fd0ad3b5-4acd-495e-a329-2ae8036c7aa3",
       "7b9ecadc-cf6d-403e-8780-36566105c947",
       "1edb731f-f805-4c2e-b774-977bffc38489",
-      "613fc5be-9ef8-4ddf-b56f-d2e494175825",
       "aee662ac-535e-4d8c-b30d-f8780b08c0d8",
       "4a2bb0a7-a7c9-40e8-8fd6-0c7cb2ea0632",
-      "81ac9daa-07f1-4205-a123-6e8bec59abb3",
-      "46259269-fe8c-4e40-938a-95fa7448a1fc",
-      "17aefdfe-4d6c-4c4d-8e16-8e5620f13f33",
-      "b25808b4-6bbb-4257-b4db-276e2932295c",
-      "dd0e287d-11df-4840-a7f9-ac1fd37057ca"
+      "dd0e287d-11df-4840-a7f9-ac1fd37057ca",
+      "475dc395-9acd-4fc1-b761-9cff1e532725",
+      "66c1488a-14fc-45c1-9316-368e8d5709f9"
     ],
     "color": null,
     "description": "Ponkotsu Konpo April 2025 Information Origin Tokyo, Japan Genre J-Pop J-Rock Years 2019-2022 2023-Present Label rockfield (HEROINES) CROSS SIDE MUSIC (Ponkotsu Konpo) Agency imaginate Associated Acts HEROINES Higeki no Heroine Syndrome MOBIUS Nue Mouai Gravity iLiFE! TENRIN Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY YAMINABE AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Paste",
@@ -42399,14 +42449,15 @@
   {
     "uid": "44Oh44Kk44OT44O8TUU",
     "name": "メイビーME",
-    "member_count": 6,
+    "member_count": 7,
     "member_names": [
       "新庄愛",
       "谷あやか",
       "大塚のりか",
       "藤原奈穂",
       "石原すずか",
-      "桜井もも"
+      "桜井もも",
+      "美波まお"
     ],
     "member_uids": [
       "348738c6-4a15-4388-b53e-4a8e667c8c77",
@@ -42414,35 +42465,33 @@
       "fe1170fe-2c35-4606-9f33-2102fa5c4f02",
       "0aae33d6-9772-4be8-b44b-178fa56a8130",
       "dd42a403-a798-4165-b546-783130b5d0a5",
-      "b34f67cb-78b5-4597-a6d1-c5776c1c7552"
+      "b34f67cb-78b5-4597-a6d1-c5776c1c7552",
+      "19187ea0-7d97-4d2e-a0df-1c054c70bb24"
     ],
-    "past_member_count": 11,
+    "past_member_count": 10,
     "past_member_names": [
       "広川つむぎ",
-      "クレア",
       "能登谷このん",
       "金子なつき",
       "白咲月",
-      "夏目りと",
       "木内ゆうか",
       "西野みやび",
       "宮花もも",
       "成瀬かのん",
-      "クレア"
+      "くれあ",
+      "日南りと"
     ],
     "past_member_uids": [
       "261f30b6-288d-4bb9-b16e-b75e22390c78",
-      "d5abb72d-b8f1-4b22-a82e-f96592dd1efd",
       "e127a145-a463-47ba-9a23-505432e15eb7",
       "1b9c0861-a9d7-4559-b662-e5d3528a5656",
       "65485fe1-a32a-41d6-a42a-15d7fc59b850",
-      "f73bfc58-3756-4322-ae8d-6fb3aa8db867",
       "adabe24b-7575-42a6-af6a-081282e21861",
       "4d0a343c-099b-4179-b6a4-2124cc17c573",
       "d2f8cf25-8f13-4f66-acd7-29253095d0a8",
       "cfdeb0ae-78da-46c3-84f5-329f9c6d9174",
       "062ee0bd-da74-4a3e-b604-f7e5731db18d",
-      ""
+      "8d81e57b-adb9-40cb-b917-660f60dbcbb1"
     ],
     "color": null,
     "description": "MAYBE ME July 2024 Information Genre J-Pop Years 2017-Present Current Members Shinjou Ai (2019-Present) Tani Ayaka (2020-Present) Otsuka Norika (2020-Present) Fujiwara Naho (2020-Present) Ishihara Suzuka (2020-Present) Sakurai Momo (2024-Present) Former Members Hirokawa Tsumugi (2018) Claire (2018-2019) Notoya Konon (2018-2019) Kaneko Natsuki (2018-2019) Shirosaki Runa (2019) Natsume Rito (2018-2019) Kiuchi Yuuka (2018-2021) Nishino Miyabi (2020-2023) Miyahana Momo (2023-2024) Naruse Kanon (2023",
@@ -47758,7 +47807,7 @@
         "uid": "d39b65ae-d428-4dbc-9ee6-abc204cb7f1a",
         "title": "≒JOY 1stコンサート「初めまして、≒JOYです。」",
         "title_romanji": "≒JOY 1st Concert \"Hajimemashite, ≒JOY desu.\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-04-24",
         "publisher": null,
         "publisher_uid": null,
@@ -47772,7 +47821,7 @@
         "uid": "bfa1b06b-52ab-496c-880e-c187af7bf8fb",
         "title": "≒JOY 2nd ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-12-11",
         "publisher": null,
         "publisher_uid": null,
@@ -47786,8 +47835,22 @@
         "uid": "3789bd3f-7e74-469f-b41e-a85679c9e0fe",
         "title": "≒JOY ホールツアー2024「今日から君は恋人」",
         "title_romanji": "≒JOY Hall Tour 2024 \"Kyou Kara Kimi wa Koibito\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2025-09-10",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "ef16e5d3-c51e-4ed2-8a92-4dfcc5a99179",
+        "title": "?JOY 3rd ANNIVERSARY PREMIUM CONCERT",
+        "title_romanji": "",
+        "disc_type": "DVD/BD",
+        "release_date": "2026-03-11",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
@@ -47809,45 +47872,51 @@
       "85ebac53-b48f-4d4c-967d-5e3ee6741fcf",
       "d39b65ae-d428-4dbc-9ee6-abc204cb7f1a",
       "bfa1b06b-52ab-496c-880e-c187af7bf8fb",
-      "3789bd3f-7e74-469f-b41e-a85679c9e0fe"
+      "3789bd3f-7e74-469f-b41e-a85679c9e0fe",
+      "ab5fa6a4-fad4-412b-aa07-83f44f543cde",
+      "ef16e5d3-c51e-4ed2-8a92-4dfcc5a99179"
     ],
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Sashihara Rino"
+    "producers": "Sashihara Rino",
+    "shared_release_uids": [
+      "shared-triple-date-2022",
+      "shared-ikonoijoy-2024"
+    ]
   },
   {
     "uid": "4omgTUU",
     "name": "≠ME",
     "member_count": 12,
     "member_names": [
-      "尾木波菜",
-      "落合希来里",
-      "蟹沢萌子",
-      "河口夏音",
-      "川中子奈月心",
-      "櫻井もも",
-      "菅波美玲",
-      "鈴木瞳美",
-      "谷崎早耶",
-      "冨田菜々風",
       "永田詩央里",
-      "本田珠由記"
+      "河口夏音",
+      "蟹沢萌子",
+      "菅波美玲",
+      "谷崎早耶",
+      "尾木波菜",
+      "冨田菜々風",
+      "本田珠由記",
+      "落合希来里",
+      "鈴木瞳美",
+      "櫻井もも",
+      "川中子奈月心"
     ],
     "member_uids": [
-      "183108d6-de47-4c4f-ac4f-b14a8c3e45d8",
-      "ad38aead-6901-47c9-afe0-f1d9aed516e5",
-      "38913886-759c-482e-9a19-1ac5a7124abe",
-      "cb19d915-2e81-4798-9d04-9252d6e91d3e",
-      "5363990d-3455-4c8c-bfea-da686140357e",
-      "e436a6fa-896c-49d8-9d2f-80cf93d22698",
-      "9a3ce340-f13d-485a-95d4-52b97a9e4984",
-      "ebd96467-2ab0-4557-a5a5-1b4904d0872a",
-      "ae52c990-523a-4da8-97d6-728a6dff404d",
-      "b4ba6f0f-9251-4f29-b488-aaba294c4fe6",
       "35d4e27e-f5f8-4f61-a8f4-173ba36d1811",
-      "c58f2463-3df0-46b5-a466-0696ec2306f4"
+      "cb19d915-2e81-4798-9d04-9252d6e91d3e",
+      "38913886-759c-482e-9a19-1ac5a7124abe",
+      "9a3ce340-f13d-485a-95d4-52b97a9e4984",
+      "ae52c990-523a-4da8-97d6-728a6dff404d",
+      "183108d6-de47-4c4f-ac4f-b14a8c3e45d8",
+      "b4ba6f0f-9251-4f29-b488-aaba294c4fe6",
+      "c58f2463-3df0-46b5-a466-0696ec2306f4",
+      "ad38aead-6901-47c9-afe0-f1d9aed516e5",
+      "ebd96467-2ab0-4557-a5a5-1b4904d0872a",
+      "e436a6fa-896c-49d8-9d2f-80cf93d22698",
+      "5363990d-3455-4c8c-bfea-da686140357e"
     ],
     "past_member_count": 0,
     "past_member_names": [],
@@ -48314,45 +48383,6 @@
         "uid": "6d0b523a-669b-41fd-a82c-701658b980bc"
       },
       {
-        "title": "=LOVE、≠ME スペシャルコンサート『24girls 2020』",
-        "title_romanji": "=LOVE, ≠ME Special Concert \"24girls 2020\"",
-        "disc_type": "CD",
-        "release_date": "2021-10-06",
-        "publisher": "SACRA MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "Overture",
-          "アイカツハッピーエンド",
-          "スタート！",
-          "僕らの制服クリスマス",
-          "ロボキッス (W Cover)",
-          "黒い羊 (Keyakizaka46 Cover)",
-          "こんなに好きになっちゃっていいの？ (Hinatazaka46 Cover)",
-          "クルクルかき氷",
-          "「君の音だったんだ」",
-          "≠ME",
-          "手遅れcaution",
-          "CAMEO",
-          "ズルいよ ズルいね",
-          "P.I.C.",
-          "青春\"サブリミナル\"",
-          "=LOVE",
-          "「君と僕の歌」",
-          "「君と私の歌」",
-          "Tsugi ni Aeta Toki Nani wo Hanasou Kana (次に会えた時 何を話そうかな) Encore",
-          "「部活中に目が合うなって思ってたんだ」",
-          "Want you! Want you!",
-          "Sagase Diamond Lily (探せ ダイヤモンドリリー) Bonus Video",
-          "\"24girls\" Hibiya Open Air Concert Hall Making / Live Digest"
-        ],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/=LOVE、≠ME_スペシャルコンサート『24girls_2020』_cover.webp",
-        "uid": "39fcb8c1-db0b-4800-8dff-654594f39f07"
-      },
-      {
         "title": "イコノイフェス2021 <昼公演>",
         "title_romanji": "Ikonoi Fes 2021 -Day-",
         "disc_type": "CD",
@@ -48383,9 +48413,9 @@
         "uid": "74e9c2e1-95bb-4d77-8cbb-998cc11f65d5"
       },
       {
-        "title": "≠ME 1stコンサート〜初めまして、≠MEです。〜)(with=LOVE",
-        "title_romanji": "≠ME 1st Concert ~Hajimemashite, ≠ME desu.~",
-        "disc_type": "CD",
+        "title": "?ME 1st Concert \"Hajimemashite, ?ME desu.\"",
+        "title_romanji": "?ME 1st Concert \"Hajimemashite, ?ME desu.\"",
+        "disc_type": "DVD/BD",
         "release_date": "2022-01-12",
         "publisher": null,
         "publisher_uid": null,
@@ -48422,7 +48452,7 @@
       {
         "title": "≠ME 3rd ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2022-10-12",
         "publisher": "King Records",
         "publisher_uid": null,
@@ -48461,7 +48491,7 @@
       {
         "title": "≠ME 4th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-10-10",
         "publisher": "KING RECORDS",
         "publisher_uid": null,
@@ -48476,7 +48506,7 @@
       {
         "title": "≠ME 5th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-11-20",
         "publisher": "KING RECORDS",
         "publisher_uid": null,
@@ -48491,7 +48521,7 @@
       {
         "title": "≠ME 全国ツアー2024「やっと、同じクラス」ツアーファイナル 横浜アリーナ",
         "title_romanji": "≠ME Zenkoku Tour 2024 \"Yatto, Onaji Class\" Tour Final Yokohama Arena",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2025-03-19",
         "publisher": null,
         "publisher_uid": null,
@@ -48504,49 +48534,11 @@
         "uid": "dd541e96-e2ce-488d-ba17-ed11b1abfce9"
       },
       {
-        "title": "=LOVE、≠ME スペシャルコンサート『24girls 2020』)(with=LOVE",
-        "title_romanji": "=LOVE, ≠ME Special Concert \"24girls 2020\"",
-        "disc_type": "CD",
-        "release_date": "2021-10-06",
-        "publisher": "SACRA MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "Overture",
-          "アイカツハッピーエンド",
-          "スタート！",
-          "僕らの制服クリスマス",
-          "ロボキッス (W Cover)",
-          "黒い羊 (Keyakizaka46 Cover)",
-          "こんなに好きになっちゃっていいの？ (Hinatazaka46 Cover)",
-          "クルクルかき氷",
-          "「君の音だったんだ」",
-          "≠ME",
-          "手遅れcaution",
-          "CAMEO",
-          "ズルいよ ズルいね",
-          "P.I.C.",
-          "青春\"サブリミナル\"",
-          "=LOVE",
-          "「君と僕の歌」",
-          "「君と私の歌」",
-          "Tsugi ni Aeta Toki Nani wo Hanasou Kana (次に会えた時 何を話そうかな) Encore",
-          "「部活中に目が合うなって思ってたんだ」",
-          "Want you! Want you!",
-          "Sagase Diamond Lily (探せ ダイヤモンドリリー) Bonus Video",
-          "\"24girls\" Hibiya Open Air Concert Hall Making / Live Digest"
-        ],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/=LOVE、≠ME_スペシャルコンサート『24girls_2020』)(with=LOVE_cover.webp",
-        "uid": "7d30d7fd-c4bf-461e-b677-90280c340169"
-      },
-      {
-        "title": "イコノイフェス 2021)(with=LOVE",
-        "title_romanji": "Ikonoi Fes 2021",
-        "disc_type": "CD",
-        "release_date": "2022-08-31",
+        "uid": "b081c7d0-d2fe-4f12-8105-774972df9eb6",
+        "title": "?ME THE MOVIE -Yakusoku no Uta-",
+        "title_romanji": "?ME THE MOVIE -Yakusoku no Uta-",
+        "disc_type": "DVD/BD",
+        "release_date": "2026-02-04",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
@@ -48554,14 +48546,14 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "8476b91f-da4d-4fc4-9f73-5ac8eb97bf8c"
+        "cover_image_path": null
       },
       {
-        "title": "イコノイジョイ 2022)(with=LOVE&≒JOY",
-        "title_romanji": "IKONOIJOY 2022",
-        "disc_type": "CD",
-        "release_date": "2023-07-26",
+        "uid": "2d70b2d6-f0f7-459b-b297-8f3443d18ae0",
+        "title": "?ME 6th ANNIVERSARY PREMIUM CONCERT",
+        "title_romanji": "",
+        "disc_type": "DVD/BD",
+        "release_date": "2026-02-04",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
@@ -48569,38 +48561,7 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "f01a3c7d-0a18-42cc-b129-6d0056d92407"
-      },
-      {
-        "title": "イコノイジョイ 2023)(with=LOVE&≒JOY",
-        "title_romanji": "IKONOIJOY 2023",
-        "disc_type": "CD",
-        "release_date": "2024-09-18",
-        "publisher": null,
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": null,
-        "uid": "102fb9e7-3bcd-42c1-ad77-a39232eb8e12"
-      },
-      {
-        "title": "イコノイジョイ 2024)(with=LOVE&≒JOY",
-        "title_romanji": "IKONOIJOY 2024",
-        "disc_type": "CD",
-        "release_date": "2025-09-24",
-        "publisher": null,
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": null,
-        "uid": "eaea623e-4a88-4f7a-a037-ba009b450820"
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
@@ -48635,28 +48596,39 @@
       "8476b91f-da4d-4fc4-9f73-5ac8eb97bf8c",
       "f01a3c7d-0a18-42cc-b129-6d0056d92407",
       "102fb9e7-3bcd-42c1-ad77-a39232eb8e12",
-      "eaea623e-4a88-4f7a-a037-ba009b450820"
+      "eaea623e-4a88-4f7a-a037-ba009b450820",
+      "b081c7d0-d2fe-4f12-8105-774972df9eb6",
+      "2d70b2d6-f0f7-459b-b297-8f3443d18ae0"
     ],
     "songs": [],
     "letter_tier": "B",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Sashihara Rino"
+    "producers": "Sashihara Rino",
+    "shared_release_uids": [
+      "shared-triple-date-2022",
+      "shared-24girls-2020",
+      "shared-ikonoi-fes-2021",
+      "shared-ikonoijoy-2022",
+      "shared-ikonoijoy-2023",
+      "shared-ikonoijoy-2024"
+    ]
   },
   {
     "uid": "54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC",
     "name": "点染テンセイ少女。",
-    "member_count": 9,
+    "member_count": 10,
     "member_names": [
       "コハク カーニバル",
       "空士ヒマリ",
       "アオハルラムネ",
       "那華喜シイナ",
       "麗シュウ",
-      "日向しおん",
       "美雲はに",
       "日暮刹那",
-      "シュンカアキ"
+      "シュンカアキ",
+      "平波芽衣",
+      "泡沫海月"
     ],
     "member_uids": [
       "9cf0bf14-ab0b-49d6-9f20-fa56d682e0d2",
@@ -48664,12 +48636,13 @@
       "66921cb1-6564-4d43-b228-82ddc334baa7",
       "96d4de4f-d1c2-42dc-ad8e-da5913158b7c",
       "4670108e-e93c-4349-a257-cb543dc5efce",
-      "1557774d-6bbe-4e4e-b23b-1e66f57a4ca8",
       "062276f8-0847-491d-8a2f-7d984068007f",
       "c6e61a9d-1751-470a-9260-2efc9a6e832c",
-      "59766543-4eab-4d88-986d-31f2579e1348"
+      "59766543-4eab-4d88-986d-31f2579e1348",
+      "cc29c894-c82f-4a07-9feb-f37237093f4f",
+      "57a4f8eb-829d-4e48-b5b4-6330ffd7091f"
     ],
-    "past_member_count": 9,
+    "past_member_count": 8,
     "past_member_names": [
       "ルナ・ニャアイズ",
       "ふわりめる",
@@ -48678,8 +48651,7 @@
       "チョウゼツムギ",
       "茜ほむら",
       "日向おとは",
-      "平波芽衣",
-      "泡沫海月"
+      "日向しおん"
     ],
     "past_member_uids": [
       "3804b943-e2d7-4724-98c0-10a572161f38",
@@ -48689,8 +48661,7 @@
       "23c75d2f-a1b3-4319-83af-654c55f16423",
       "5414ef55-d28f-4d7e-91fc-5b7dca8b2281",
       "1d74e89a-e091-4fbb-8fdd-9d8c380e0d87",
-      "cc29c894-c82f-4a07-9feb-f37237093f4f",
-      "57a4f8eb-829d-4e48-b5b4-6330ffd7091f"
+      "1557774d-6bbe-4e4e-b23b-1e66f57a4ca8"
     ],
     "color": null,
     "description": "Tensen Tensei Shoujo. August 2025 Information Also Known As Tenten (テンテン) Years 2021-Present Agency KABUKIMONO'DOGs Links Website Official Website Social Media Tensen Tensei Shoujo. (点染テンセイ少女。) is an idol group formed in March 2021 and debuted on April 23, 2021. Their concept is \"light novel world view\".",
@@ -49116,7 +49087,7 @@
   {
     "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
     "name": "煌めき☆アンフォレント",
-    "member_count": 7,
+    "member_count": 8,
     "member_names": [
       "佐藤栞",
       "陽葵なな",
@@ -49124,7 +49095,8 @@
       "月埜みみ",
       "甘楽ゆい",
       "橘すず",
-      "鈴木Mob."
+      "鈴木Mob.",
+      "達家真姫宝"
     ],
     "member_uids": [
       "6bfcc0de-a7a2-4dfc-926a-6872f0bcebcb",
@@ -49133,9 +49105,10 @@
       "18ebd535-3595-42b5-b579-08bb04992064",
       "d0ab09c3-73d7-4b57-a538-7676ff125005",
       "bf534d27-77ea-4767-920b-7583f07097c9",
-      "3ccf3e6b-69c1-4588-8902-f850e13a8385"
+      "3ccf3e6b-69c1-4588-8902-f850e13a8385",
+      "315645a3-374c-4709-9c5f-02e63108a7c8"
     ],
-    "past_member_count": 21,
+    "past_member_count": 23,
     "past_member_names": [
       "瀬乃かなみ",
       "花乃木りおな",
@@ -49151,13 +49124,15 @@
       "天猫なの",
       "神谷美玲",
       "白瀬乃愛",
-      "達家真姫宝",
       "桐下愛未",
       "穂村ゆうか",
       "羽純凜",
       "長田美成",
       "小日向りぃり",
-      "如月愛花"
+      "如月愛花",
+      "達家まきほ",
+      "姫ノ愛花",
+      "日向りり"
     ],
     "past_member_uids": [
       "498bc0a5-f3e9-412e-b21b-131ae5fc7b17",
@@ -49174,13 +49149,15 @@
       "7fbd5cf0-eca8-4ebd-a8a5-197a9183a098",
       "fe4b8f12-27ea-4272-91db-cbdc59ac97d1",
       "d6517e34-c0f3-4ee2-bd07-a0ff6e4e7a21",
-      "315645a3-374c-4709-9c5f-02e63108a7c8",
       "0c7998a8-d164-4931-ae09-0230f9638075",
       "764126f2-c7a0-4442-a8e1-de27677e4732",
       "eaeca103-8d50-46c4-8437-2f106217dfed",
       "31d4768d-5fe6-4f06-af4e-7c8a6bcb1dd8",
       "fd03aeca-b732-4802-9ba7-af3be5108b38",
-      "527450a7-c0f8-4451-a92c-ffcb50428d3b"
+      "527450a7-c0f8-4451-a92c-ffcb50428d3b",
+      "6133f9ca-3848-421d-b0e7-154158d7fa2f",
+      "e6c4e3c2-d1ab-486e-b774-1b5a0dfa23d8",
+      "8e6e6c7d-bcd5-4a31-816d-4d8b5840d300"
     ],
     "color": null,
     "description": "February 2026 Information Also Known As Kirafore (キラフォレ) Origin Mie, Japan Genre J-Pop Years 2015-2023 2025-Present Label Nippon Columbia (2020-Present) Cafe au records(♭) (2017; 2025-Present) OTODAMA RECORDS (2017) rockfield (2019) Agency TOY Planet* Associated Acts Star☆FioreNerd Star★Shiμ'ne!!! Star☆ShiNew’ Star★Cosμ’n Star♩dropTune° Current Members Sato Shiori (2025-Present) Himari Nana (2025-Present) Koori Ria (2025-Present) Tsukino Mimi (2025-Present) Tsuzura Yui (2025-Present) Tachibana",
@@ -64009,7 +63986,7 @@
       "夏姫えれな",
       "雛汰ゆら",
       "工藤鈴菜",
-      "瀬名えま"
+      "雛汰 ゆら"
     ],
     "member_uids": [
       "3a8efd4a-6df1-4c76-a3d5-fafc8a8c89f6",
@@ -64017,12 +63994,11 @@
       "2f3db9c1-b0bc-4a8c-ac09-f8f4c1e89dd9",
       "1f2e6126-0dd9-46e9-bcf1-9600c0793a88",
       "301abff7-e49c-4086-8e1d-3c3357c17ce5",
-      "e7f7ff47-609d-4c4d-97e8-f625bc920ce5"
+      "fd41f7ae-49f3-47eb-b1d2-7f99040a3971"
     ],
-    "past_member_count": 17,
+    "past_member_count": 18,
     "past_member_names": [
       "藤宮帆乃香",
-      "澤川もあ",
       "立花凛乃",
       "市川結愛",
       "三池志歩",
@@ -64037,11 +64013,12 @@
       "茉城奈那",
       "カワイレナ",
       "澄川もあ",
-      "佐野さくら"
+      "佐野さくら",
+      "双葉凛乃",
+      "リンドウ=リン"
     ],
     "past_member_uids": [
       "a6d8195f-d9c8-4e05-9f6b-a44e8d4651f7",
-      "",
       "af241408-bd79-44d2-9dfc-f18efd580270",
       "fdc5d6a7-249b-425a-bc55-abe6f1fda55b",
       "a94072d8-d9e4-42d3-87a9-3d17113bbb06",
@@ -64056,7 +64033,9 @@
       "3572fa90-76f9-4651-bd59-bc57adae4009",
       "f0a372f3-c912-4d20-b3b9-8679e0446771",
       "22a44560-23bc-4bd2-b371-2c3e64242ddf",
-      "28c63a51-d2a0-40eb-8de9-fca729be3a46"
+      "28c63a51-d2a0-40eb-8de9-fca729be3a46",
+      "54cbd730-fa71-4c1d-92b6-621bf7ac24fa",
+      "aa6d7cc3-4244-46d7-aa17-6c2bdf01c0fc"
     ],
     "color": null,
     "description": "December 2025 Information Also Known As Tebasen (手羽セン) Origin Nagoya, Aichi, Japan Genre J-Pop Years 2017-Present Label DREAMUSIC Agency 1623 Freo Entertainment (Until April 1, 2024) Associated Acts Tsuyogari Sensation Yokubari Sensation Current Members Miyashiro Yuzuka Matsuyama Kiri Natsuki Erena Hinata Yura Kudo Suzuna Seina Ema Former Members Fujimiya Honoka Sumikawa Moa Tachibana Rino Ichikawa Yua Miike Shiho Morita Hina Saito Manaka Kamiya Mirei Hashimoto Koharu Tsukano Nayu Sano Sakura",
@@ -74294,39 +74273,57 @@
   {
     "uid": "6ISz5YaF44OR44K544OG44Or",
     "name": "脳内パステル",
-    "member_count": 8,
+    "member_count": 6,
     "member_names": [
-      "らら",
-      "ゆい",
-      "なつめ",
-      "ちゆな",
-      "りな",
-      "さほ",
-      "​みさき",
-      "ゆりな"
+      "あいり",
+      "ことこ",
+      "なの",
+      "りる",
+      "広瀬愛菜",
+      "朝比奈ゆい"
     ],
     "member_uids": [
-      "82bd21fa-7ede-4fa0-81d2-9791ba76dbbd",
-      "05dcc219-5009-413b-aa01-cd993174bbd2",
-      "f49aed64-2e7c-4ff4-8b94-6f2baf9a8ca6",
-      "f56f7007-3987-4aa2-a0cf-9665c83e5b42",
-      "8f0c0d28-f25f-4af7-9fb5-62a0d9f00fdd",
-      "620b2bb2-ce1a-4eba-83b5-4b1ae263a03b",
-      "5197a903-90ae-4350-8c64-11edf64191ec",
-      "6def9e0e-5236-4823-bbd8-fda94865ce7a"
+      "579a036e-93af-4425-8df0-1bb568226f4a",
+      "3043d9f7-9396-4794-8cde-f9361f3888c2",
+      "6096ba75-d5bb-403a-9d20-1df9e7884126",
+      "9aaff1a2-5da3-46a9-b9cf-2d0024659119",
+      "ab8cb05f-935b-49a5-ac0b-caf9d60b551f",
+      "bb9c1e72-4fd7-4bf0-aff1-41e8ebd3b219"
     ],
-    "past_member_count": 4,
+    "past_member_count": 15,
     "past_member_names": [
       "ゆの",
       "ゆうこ",
       "ゆず",
-      "misaki"
+      "TiNA",
+      "さほ",
+      "ちゆな",
+      "なつめ",
+      "​みさき",
+      "ゆりな",
+      "りな",
+      "らら",
+      "罪木めい",
+      "めい",
+      "まふゆ",
+      "​まふゆ"
     ],
     "past_member_uids": [
       "dd63f1fa-0206-4ff4-a4ff-c38efb328e88",
       "dad31276-2e61-49b1-8785-9edd2503885c",
       "d7dd559b-c850-4bde-b6ff-69af7c59d691",
-      "08e08416-3f9a-460a-9bd4-1453d6ea3293"
+      "35865fe7-2227-44a6-9d3b-acd0ff15d354",
+      "620b2bb2-ce1a-4eba-83b5-4b1ae263a03b",
+      "f56f7007-3987-4aa2-a0cf-9665c83e5b42",
+      "f49aed64-2e7c-4ff4-8b94-6f2baf9a8ca6",
+      "5197a903-90ae-4350-8c64-11edf64191ec",
+      "6def9e0e-5236-4823-bbd8-fda94865ce7a",
+      "8f0c0d28-f25f-4af7-9fb5-62a0d9f00fdd",
+      "82bd21fa-7ede-4fa0-81d2-9791ba76dbbd",
+      "f7d96774-2a48-420e-a4d3-5846c8124999",
+      "d6e3f641-0d98-4097-91a6-acdebb59585a",
+      "491a771e-b920-4063-8c20-57509f376661",
+      "72fb617b-e999-46f4-8010-010ba060cc15"
     ],
     "color": null,
     "description": "Nounai Pastel March 2025 Information Also Known As Nopas Origin Osaka, Japan Years 2021-Present Label Mint Music ENTERTAINMENT Current Members Rara Airi Aina Riru Nano Kotoko Yui Former Members Yuno Mafuyu Mei Yuko Yuzu Yurina Misaki Saho Rina Chiyuna Natsume Links Website Social Media Nounai Pastel (脳内パステル; also known as Nopas ) is a seven-member girl group under Mint Music ENTERTAINMENT, that debuted on June 23, 2020.",
@@ -74632,13 +74629,12 @@
   {
     "uid": "6Iqx6a2B6YGT5Lit",
     "name": "花魁道中",
-    "member_count": 6,
+    "member_count": 5,
     "member_names": [
       "朔間宵",
       "守逢りづ",
       "柊千景",
       "赫月都子",
-      "華神初穂",
       "花海杏奈"
     ],
     "member_uids": [
@@ -74646,7 +74642,6 @@
       "2dc3d0de-d3b2-4e09-955c-4bc3e238d33b",
       "1e9fcfff-ee3b-4d0b-a1a5-2f830a1262a5",
       "fce93a52-9f9a-4f52-bd6e-fb63e51f3058",
-      "71559e82-a707-4c58-9485-d56c29b30ad2",
       "9b41ab05-93d1-48e1-b7a5-edc4c68768dd"
     ],
     "past_member_count": 1,
@@ -80176,7 +80171,7 @@
   {
     "uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
     "name": "高嶺のなでしこ",
-    "member_count": 9,
+    "member_count": 10,
     "member_names": [
       "城月菜央",
       "涼海すう",
@@ -80186,7 +80181,8 @@
       "日向端ひな",
       "星谷美来",
       "松本ももな",
-      "籾山ひめり"
+      "籾山ひめり",
+      "春野莉々"
     ],
     "member_uids": [
       "2fda22b6-ffe0-4265-b61c-00caa862380f",
@@ -80197,15 +80193,12 @@
       "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
       "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
       "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
-      "7e1f424a-254d-4c98-9ef4-059e6a8e30b9"
-    ],
-    "past_member_count": 1,
-    "past_member_names": [
-      "春野莉々"
-    ],
-    "past_member_uids": [
+      "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
       "5c75a6ef-154d-4402-b65b-cb9dcfb34a70"
     ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
     "color": null,
     "description": "Takane no Nadeshiko February 2026 Information Also Known As Takaneko (たかねこ) Takaneko-chan (たかねこちゃん) Origin Tokyo, Japan Genre J-Pop Years 2022-Present Label Victor Entertainment (2023-Present) TAKANEKOchan MUSIC (2022-2023) Agency TWIN PLANET ENTERTAINMENT Current Members Kizuki Nao Suzumi Su Hashimoto Momoko Hazuki Saara Higashiyama Erisa Hinahata Hina Hoshitani Mikuru Matsumoto Momona Momiyama Himeri Former Members Haruno Riri Producer HoneyWorks Links Website Official Website Social Media Ta",
     "formed_date": "2022-07-10",
@@ -88119,8 +88112,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "=LOVE",
+          "記憶のどこかで",
+          "スタート!"
+        ],
+        "track_song_uids": [
+          "f6afd094-376d-43f7-9237-81427aa7c38c",
+          "65ad6468-763a-4858-9e3a-268e8060bca7",
+          "45d29181-08fd-4396-834d-d8b050b545d5"
+        ],
         "duration": null,
         "cover_image_path": "picture/=LOVE_cover.webp",
         "uid": "2378cf21-28ea-42df-87ed-cce1287bf80d"
@@ -88134,8 +88135,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "僕らの制服クリスマス",
+          "届いてLOVE YOU",
+          "ようこそ!イコラブ沼"
+        ],
+        "track_song_uids": [
+          "f0781b84-d132-44f0-ab82-a63aeacf210f",
+          "1cb7e964-814b-4d3f-886e-26eb3ebd5604",
+          "5cdb4d05-99b9-4c65-9bb8-ed155d2fd7bc"
+        ],
         "duration": null,
         "cover_image_path": "picture/僕らの制服クリスマス_cover.webp",
         "uid": "d9b4e8a6-2a6f-450a-8221-3b96600850da"
@@ -88149,8 +88158,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "手遅れcaution",
+          "「部活中に目が合うなって思ってたんだ」",
+          "樹愛羅、助けに来たぞ"
+        ],
+        "track_song_uids": [
+          "6a92d679-086d-4344-adb9-e9e6d55a354e",
+          "eda7c4bc-4f1c-41ef-a14d-bfa7f710f723",
+          "6f5d5673-c920-477e-bef7-c72eeedf3f2b"
+        ],
         "duration": null,
         "cover_image_path": "picture/手遅れcaution_cover.webp",
         "uid": "0d15892d-4ad7-41a9-b402-c0cff1f1e291"
@@ -88164,8 +88181,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "Want you!Want you!",
+          "今、この船に乗れ!",
+          "アイカツハッピーエンド"
+        ],
+        "track_song_uids": [
+          "886fa232-9b9b-4047-9823-4729682f350a",
+          "56f02b85-eae8-4d78-aa35-e900f5dfa432",
+          "215e97ab-88a5-4898-80da-8f4c71dee1a8"
+        ],
         "duration": null,
         "cover_image_path": "picture/Want_you!_Want_you!_cover.webp",
         "uid": "f7141646-b231-443b-9d4b-a47cb9bd191f"
@@ -88179,8 +88204,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "探せ ダイヤモンドリリー",
+          "いらない ツインテール",
+          "虹の素"
+        ],
+        "track_song_uids": [
+          "18e6267c-0381-400a-ba66-4917e7117551",
+          "67106e8d-5fdf-4945-a90b-9f47e50b6566",
+          "21791d7d-a503-4621-b9d2-a7fbfc692d07"
+        ],
         "duration": null,
         "cover_image_path": "picture/探せ_ダイヤモンドリリー_cover.webp",
         "uid": "e935ec1d-56b9-4bb3-aa66-4fdf378ba9f5"
@@ -88194,8 +88227,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ズルいよ ズルいね",
+          "Sweetest girl",
+          "推しのいる世界"
+        ],
+        "track_song_uids": [
+          "8ad97ea2-1eff-46c7-8ee1-859d2f5e1a20",
+          "8ee7c67f-a34b-4e2b-ba17-00055ca8b016",
+          "8f96a528-2657-4a6d-a7d9-bece148508ac"
+        ],
         "duration": null,
         "cover_image_path": "picture/ズルいよ_ズルいね_cover.webp",
         "uid": "79694826-0214-4cf9-95ef-ab59efacab4c"
@@ -88209,8 +88250,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "CAMEO",
+          "「君と私の歌」",
+          "My Voice Is For You"
+        ],
+        "track_song_uids": [
+          "b4c9fb43-75fb-4189-98c8-8d9506a07d87",
+          "a36d4547-7e2e-4a8c-b527-556144d7b671",
+          "a13dc171-1217-4a28-91cd-782c607a7291"
+        ],
         "duration": null,
         "cover_image_path": "picture/CAMEO_cover.webp",
         "uid": "8dae8c9e-7103-460a-b06d-7e6e42b247bb"
@@ -88224,8 +88273,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "青春\"サブリミナル\"",
+          "しゅきぴ",
+          "流星群"
+        ],
+        "track_song_uids": [
+          "2aa9fb7b-9b08-4d9b-853d-710234c0507b",
+          "4e536701-0700-4452-abf5-b32ac01caca5",
+          "dd48a262-4fe0-4e35-98a4-6ae880c57785"
+        ],
         "duration": null,
         "cover_image_path": "picture/青春_サブリミナル_cover.webp",
         "uid": "fec3ac45-f9d8-424c-9afc-24f50a1bd956"
@@ -88239,8 +88296,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ウィークエンドシトロン",
+          "ズッ友案件",
+          "夏祭り恋慕う",
+          "祝祭"
+        ],
+        "track_song_uids": [
+          "106e3ed9-a3b4-4c12-91e2-38b3b2d9e49e",
+          "e5a71d4b-56c9-40ce-aa83-a50f545b85b0",
+          "70761e56-4ed2-4253-a93a-4ebc1a86654f",
+          "456abc42-c063-406d-88fc-bbe14bebd74b"
+        ],
         "duration": null,
         "cover_image_path": "picture/ウィークエンドシトロン_cover.webp",
         "uid": "72a745d5-d301-4068-b2f8-8f136e7c4723"
@@ -88254,8 +88321,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "The 5th",
+          "お姫様にしてよ!",
+          "Poison Girl",
+          "BPM170の君へ"
+        ],
+        "track_song_uids": [
+          "a3add335-da75-4897-860d-1777443f183b",
+          "d1f0c8f3-d63d-4258-a35c-cf28be48cf22",
+          "a8d7aafe-d1cf-4911-a717-841be9a2e29e",
+          "0bbe9531-e45b-4297-8a46-77a89526971f"
+        ],
         "duration": null,
         "cover_image_path": "picture/The_5th_cover.webp",
         "uid": "8d68e336-92a0-4794-b38e-54149a51415f"
@@ -88269,8 +88346,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "あの子コンプレックス",
+          "笑顔のレシピ",
+          "知らんけど",
+          "僕のヒロイン"
+        ],
+        "track_song_uids": [
+          "b0c8afd6-8218-4b70-bb89-fae9a5270d6c",
+          "84c5e732-f403-4f9b-8903-60c5477d193e",
+          "e6292901-5749-4a53-9fb9-387584a34683",
+          "d4954232-3d5e-44b1-893f-0cd7a9863b0f"
+        ],
         "duration": null,
         "cover_image_path": "picture/あの子コンプレックス_cover.webp",
         "uid": "e9c9eea3-f853-43a4-85e4-f6c046000ba0"
@@ -88284,8 +88371,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "Be Selfish",
+          "好きって、言えなかった",
+          "わたし、魔法使い",
+          "真夜中マーメイド"
+        ],
+        "track_song_uids": [
+          "f10a9a40-5a73-4427-abc8-c300ee6ff343",
+          "bbd02271-ec79-47f3-8084-33d73de8bf03",
+          "a615d50d-f8b8-415a-8d2e-345a5dafacc5",
+          "c17018a7-9f21-4abe-a9bc-35acf1f42333"
+        ],
         "duration": null,
         "cover_image_path": "picture/Be_Selfish_cover.webp",
         "uid": "4cae1b5a-dd51-4c1b-a9c1-5015ca8fc405"
@@ -88299,8 +88396,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "この空がトリガー",
+          "Junkies",
+          "ラブクリエイト",
+          "Kiara Tiara"
+        ],
+        "track_song_uids": [
+          "e12d21a6-2b1a-4ae9-bc64-5c5d5fc6926f",
+          "e680994b-ff6d-4e10-be51-ccdf736d7160",
+          "ab465502-3653-4233-82e8-fa4671054708",
+          "a25423a7-5716-49f6-bfc0-fc66c4f2dd62"
+        ],
         "duration": null,
         "cover_image_path": "picture/この空がトリガー_cover.webp",
         "uid": "49aaded5-59ee-4e1f-bc9d-8375627efe7c"
@@ -88314,8 +88421,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ナツマトペ",
+          "だからとて",
+          "ヒロインズ",
+          "ラブロケ"
+        ],
+        "track_song_uids": [
+          "53dcc774-a25d-4e78-9787-002f9bd0820a",
+          "ae79e03c-d11b-4a62-8318-2cffb94c0c76",
+          "7cd7b1d8-d99f-49f5-97b1-25634b715054",
+          "0b56faa7-bc12-42ad-a238-4f53e5166771"
+        ],
         "duration": null,
         "cover_image_path": "picture/ナツマトペ_cover.webp",
         "uid": "d68588ac-161d-42bb-a31d-99ccaa1f155f"
@@ -88329,8 +88446,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ラストノートしか知らない",
+          "「ドライブ デート 都内」",
+          "狂想カタストロフィ",
+          "どこが好きか言って"
+        ],
+        "track_song_uids": [
+          "929ba3e0-425d-41cd-a012-a3b2d131748a",
+          "3d1b1a41-3fc8-41b1-a82d-f6f4a06a389d",
+          "0a5ec0c3-0a2c-4c9f-b065-f78aab8d78f9",
+          "bd346afd-8c83-4a1d-adfe-c041550e6752"
+        ],
         "duration": null,
         "cover_image_path": "picture/ラストノートしか知らない_cover.webp",
         "uid": "41d83e65-0eb1-473c-a6db-2de9c0947257"
@@ -88344,8 +88471,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "呪って呪って",
+          "誰にもバレずに",
+          "君の第3ボタン"
+        ],
+        "track_song_uids": [
+          "82d16f46-f801-4490-9e92-cab0efbfed52",
+          "63c9a9ca-344b-40d1-bbb8-08c656ff9592",
+          "b8fc9440-ad93-4530-bbea-ea4dfbc256c9"
+        ],
         "duration": null,
         "cover_image_path": "picture/呪って呪って_cover.webp",
         "uid": "53b50911-c0d3-458a-8d90-9f9283b0a8ee"
@@ -88359,8 +88494,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "絶対アイドル辞めないで",
+          "仲直りシュークリーム",
+          "海とレモンティー"
+        ],
+        "track_song_uids": [
+          "3cba4d84-94a9-47e2-b680-3ed64e988b63",
+          "539aafb7-01a8-4aef-be92-2934b4f3fa39",
+          "88385779-5a27-4416-9605-994a60347c06"
+        ],
         "duration": null,
         "cover_image_path": "picture/絶対アイドル辞めないで_cover.webp",
         "uid": "2aa1e3de-6f68-4fa0-88a2-206da5b90e80"
@@ -88374,8 +88517,15 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "とくべチュ､して",
+          "恋人以上､好き未満",
+          "超特急逃走中"
+        ],
+        "track_song_uids": [
+          "856c2fe9-42fd-4c49-9158-3ef467a09b17",
+          "b21fd697-e51f-41e6-be37-9ddcc9910909"
+        ],
         "duration": null,
         "cover_image_path": "picture/とくべチュ､して___恋人以上､好き未満_cover.webp",
         "uid": "07ecb58e-ba4e-4a43-a026-4d17dc8e1f14"
@@ -88389,8 +88539,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ラブソングに襲われる",
+          "Queens",
+          "木漏れ日メゾフォルテ"
+        ],
+        "track_song_uids": [
+          "8aa3a785-12d6-41c7-a1dd-84144e00282e",
+          "a1b34d3d-f86c-4bcb-99ac-9527abd3f397",
+          "5722192e-02b8-4888-a244-a0ff477b7604"
+        ],
         "duration": null,
         "cover_image_path": "picture/ラブソングに襲われる_cover.webp",
         "uid": "684c603e-1191-4fe0-8693-f1dfe3b3f437"
@@ -88404,8 +88562,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "劇薬中毒",
+          "モラトリアム",
+          "お姫様の作り方"
+        ],
+        "track_song_uids": [
+          "ea4d3773-b178-4f25-ac34-da1877c25cdd",
+          "848cc42b-b9b9-4278-a884-aaba55ce7862",
+          "61f56b34-c4f5-47ad-a866-f890d0da514a"
+        ],
         "duration": null,
         "cover_image_path": "picture/劇薬中毒_cover.webp",
         "uid": "3bb89567-26ed-46f0-9b00-627b223c157b"
@@ -88426,24 +88592,9 @@
         "uid": "ce905562-0096-487b-b7b8-4e0d4291503b"
       },
       {
-        "title": "トリプルデート)(with≠MEand≒JOY",
-        "title_romanji": "Triple Date",
-        "disc_type": "Single",
-        "release_date": "2022-07-20",
-        "publisher": "King Records",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/トリプルデート)(with≠MEand≒JOY_cover.webp",
-        "uid": "06110cf9-c960-4f4c-bb9e-049058484ed9"
-      },
-      {
-        "title": "過去最上キュン",
-        "title_romanji": "Kako Saijou Kyun",
-        "disc_type": "CD",
+        "title": "Kako Saijo Kyun",
+        "title_romanji": "Kako Saijo Kyun",
+        "disc_type": "DVD/BD",
         "release_date": "2023-01-25",
         "publisher": null,
         "publisher_uid": null,
@@ -88458,7 +88609,7 @@
       {
         "title": "=LOVE 1stコンサート「初めまして、＝LOVEです。」",
         "title_romanji": "=LOVE 1st Concert \"Hajimemashite, =LOVE desu.\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2020-09-02",
         "publisher": null,
         "publisher_uid": null,
@@ -88500,7 +88651,7 @@
       {
         "title": "=LOVE デビュー2周年記念コンサート",
         "title_romanji": "=LOVE Debut 2 Shunen Kinen Concert",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2020-09-02",
         "publisher": null,
         "publisher_uid": null,
@@ -88513,9 +88664,9 @@
         "uid": "14abe4e6-7710-4101-8be2-0d4a7d0cb718"
       },
       {
-        "title": "=LOVE 3rd ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 3rd ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2021-02-08",
         "publisher": null,
         "publisher_uid": null,
@@ -88557,7 +88708,7 @@
       {
         "title": "You all are \"My ideal\" 〜日本武道館〜",
         "title_romanji": "You all are \"My ideal\" ~Nippon Budokan~",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2021-06-30",
         "publisher": null,
         "publisher_uid": null,
@@ -88572,7 +88723,7 @@
       {
         "title": "=LOVE 全国ツアー「全部、内緒。」〜横浜アリーナ〜",
         "title_romanji": "=LOVE Zenkoku Tour \"Zenbu, Naisho.\" ~Yokohama Arena~",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2022-03-16",
         "publisher": null,
         "publisher_uid": null,
@@ -88611,9 +88762,9 @@
         "uid": "cde470a9-099a-433b-b72a-4a3c8554b06b"
       },
       {
-        "title": "=LOVE 4th ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 4th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2022-08-10",
         "publisher": null,
         "publisher_uid": null,
@@ -88628,7 +88779,7 @@
       {
         "title": "=LOVE ～齊藤なぎさ卒業コンサート～　現役アイドルちゅ～ みんなのこと大好きだよ♡",
         "title_romanji": "=LOVE ~Saito Nagisa Sotsugyo Concert~ Genneki Idol Chuu Minna no Koto Daisuki da yo♡",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-03-22",
         "publisher": null,
         "publisher_uid": null,
@@ -88643,7 +88794,7 @@
       {
         "title": "=LOVE 全国ツアー2022 「どう考えても、君ってイコラブのこと好きじゃん」",
         "title_romanji": "=LOVE Zenkoku Tour 2022 \"Dou Kangaetemo, Kimi tte Ikorabu no Koto Sukijan\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-03-22",
         "publisher": null,
         "publisher_uid": null,
@@ -88656,9 +88807,9 @@
         "uid": "5113e3b1-d611-4916-92c6-a262113819bc"
       },
       {
-        "title": "=LOVE 5th ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 5th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-04-26",
         "publisher": null,
         "publisher_uid": null,
@@ -88673,7 +88824,7 @@
       {
         "title": "=LOVE 全国ツアー2023「Today is your Trigger」",
         "title_romanji": "=LOVE National Tour 2023 \"Today is your Trigger\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-03-27",
         "publisher": null,
         "publisher_uid": null,
@@ -88686,9 +88837,9 @@
         "uid": "8a4228e3-0f3b-45db-9f3b-4f3922e7a302"
       },
       {
-        "title": "=LOVE 6th ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 6th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-06-26",
         "publisher": null,
         "publisher_uid": null,
@@ -88701,34 +88852,34 @@
         "uid": "dc107534-c1e0-4989-b440-ae6434a9ff2d"
       },
       {
-        "title": "イコノイジョイ 2022)(with≠MEand≒JOY",
-        "title_romanji": "IKONOIJOY 2022",
-        "disc_type": "CD",
-        "release_date": "2023-07-26",
-        "publisher": "King Records",
+        "uid": "0eff1d23-7b0b-4ebd-b4f1-6fa6fcb91290",
+        "title": "=LOVE 7th ANNIVERSARY PREMIUM CONCERT",
+        "title_romanji": "",
+        "disc_type": "DVD/BD",
+        "release_date": "2025-05-21",
+        "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/イコノイジョイ_2022)(with≠MEand≒JOY_cover.webp",
-        "uid": "b400d686-db25-4ca2-ba06-16c3c46a9617"
+        "cover_image_path": null
       },
       {
-        "title": "イコノイジョイ 2023)(with≠MEand≒JOY",
-        "title_romanji": "IKONOIJOY 2023",
-        "disc_type": "CD",
-        "release_date": "2024-09-18",
-        "publisher": "King Records",
+        "uid": "dce0f0ad-8c8d-47b4-8660-9a5665dc163d",
+        "title": "=LOVE ARENA TOUR 2025 \"Timeless Tales\"",
+        "title_romanji": "=LOVE ARENA TOUR 2025 \"Timeless Tales\"",
+        "disc_type": "DVD/BD",
+        "release_date": "2025-12-24",
+        "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/イコノイジョイ_2023)(with≠MEand≒JOY_cover.webp",
-        "uid": "3662a261-f32c-4ac3-ab2d-d6e59d3da395"
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
@@ -88768,13 +88919,24 @@
       "8a4228e3-0f3b-45db-9f3b-4f3922e7a302",
       "dc107534-c1e0-4989-b440-ae6434a9ff2d",
       "b400d686-db25-4ca2-ba06-16c3c46a9617",
-      "3662a261-f32c-4ac3-ab2d-d6e59d3da395"
+      "3662a261-f32c-4ac3-ab2d-d6e59d3da395",
+      "0eff1d23-7b0b-4ebd-b4f1-6fa6fcb91290",
+      "0d56ef6c-9481-44df-9150-b4f9122d3209",
+      "dce0f0ad-8c8d-47b4-8660-9a5665dc163d"
     ],
     "songs": [],
     "letter_tier": "A",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Sashihara Rino"
+    "producers": "Sashihara Rino",
+    "shared_release_uids": [
+      "shared-triple-date-2022",
+      "shared-24girls-2020",
+      "shared-ikonoi-fes-2021",
+      "shared-ikonoijoy-2022",
+      "shared-ikonoijoy-2023",
+      "shared-ikonoijoy-2024"
+    ]
   },
   {
     "uid": "Q0FMJlJFUw",
@@ -88889,22 +89051,18 @@
   {
     "uid": "Q0FORFkgVFVORQ",
     "name": "CANDY TUNE",
-    "member_count": 7,
+    "member_count": 5,
     "member_names": [
       "福山梨乃",
       "桐原美月",
-      "南なつ",
       "小川奈々子",
-      "村川緋杏",
       "宮野静",
       "立花琴未"
     ],
     "member_uids": [
       "f12226fb-57b9-4a3a-a075-e7dc2bdfb557",
       "98c5718a-3e37-456e-a83f-4491d1fda73b",
-      "ca5d6d14-2ce3-441b-a155-75a5dd908817",
       "477a8031-b761-43cf-9e56-fe0fb8a7dcd0",
-      "c30d6362-4e43-40f3-95c3-a90e7f50f880",
       "11fcb180-bbd7-478a-94b1-4a863ab8e458",
       "63e7677d-a4a3-455b-8c73-aa6f3fc6c36f"
     ],
@@ -89292,13 +89450,9 @@
       "7a581b08-bc71-421b-9119-e867e6deaadc",
       "cdce6aab-fbd1-4c1a-8d27-2e41bded7717"
     ],
-    "past_member_count": 10,
+    "past_member_count": 6,
     "past_member_names": [
       "よむ",
-      "よむ",
-      "NEO",
-      "藤和マヨイ",
-      "MAI",
       "藤和マヨイ",
       "MAI",
       "LEO",
@@ -89306,11 +89460,7 @@
       "MEME"
     ],
     "past_member_uids": [
-      "7ceca60a-ac9b-481d-861a-40c6ad752dd7",
       "541386b9-85d1-4985-b226-c685e8abda4c",
-      "3e7c1ca8-2371-4ea5-9e26-2ce99a40b884",
-      "41fad252-0b0f-4952-9b1c-69bb483eef02",
-      "adeeeb2b-f400-4534-b533-31a4ef6c3766",
       "54c9691a-23e1-4b6e-982c-091769ce6c80",
       "e43d9f5e-a7c0-4f92-85f8-a0c521ac3871",
       "03241c92-1f05-4b29-9fa9-f9cab51e58a8",
@@ -95023,16 +95173,16 @@
       "となりのアイル",
       "大神のん",
       "ひなたゆか",
-      "リイ"
+      "姫野たま子"
     ],
     "member_uids": [
       "3a738750-1063-477b-97d5-ea723afd020c",
       "e35fd4de-facc-48a2-9c58-577c0c16bcd6",
       "44b9af8f-fc5e-487f-9914-6d8e1244e527",
       "8b3665ce-5627-40b0-95a7-8a10ef5c5b7f",
-      "5077275d-cba0-44cc-ae32-1c6b37c7cc6e"
+      "afd7c6a3-7af6-4def-8c4b-c76fde26650f"
     ],
-    "past_member_count": 11,
+    "past_member_count": 8,
     "past_member_names": [
       "佐乃茉莉",
       "立花まこ",
@@ -95041,10 +95191,7 @@
       "ナナキ・ナコ",
       "ビリー・アイリ",
       "星乃さゆみ",
-      "姫野たま子",
-      "Niina Chocolat",
-      "ラン・マオ",
-      "ラン・マオ"
+      "茉音"
     ],
     "past_member_uids": [
       "ef36bc4c-827f-42f9-a995-3ef4746f353b",
@@ -95054,8 +95201,6 @@
       "2b4c705e-f55d-4a89-aa0f-1cf1a864a4fd",
       "a2be5365-59fc-4ed1-b664-103f541abef6",
       "0c83b0e1-856c-41f7-8acd-9f94d938026a",
-      "afd7c6a3-7af6-4def-8c4b-c76fde26650f",
-      "",
       "3a7827f3-5d1f-4a0d-b7a1-4bfaddd5a03a"
     ],
     "color": null,
@@ -101276,14 +101421,16 @@
   {
     "uid": "QVpBVE9Z",
     "name": "AZATOY",
-    "member_count": 6,
+    "member_count": 8,
     "member_names": [
       "ぴぴ",
       "麗百花",
       "ちゃんみう",
       "かなたゆま",
       "甘楽すず",
-      "月城こはく"
+      "月城こはく",
+      "朔間宵",
+      "星乃キラリ"
     ],
     "member_uids": [
       "98cdf449-0272-4ff9-a8f5-19ed9306d7f6",
@@ -101291,21 +101438,21 @@
       "42084ad7-1825-419b-ac3d-ac58d759ec08",
       "e96c9bdc-a1d0-427b-a920-81a393a4bf66",
       "59227571-5a19-43e6-b795-fd382644889b",
-      "8b2b46fe-308a-48dc-baf8-bec640d937bd"
+      "8b2b46fe-308a-48dc-baf8-bec640d937bd",
+      "f5416fda-138d-42b2-8f8b-d8d7f34778b9",
+      "10c1e142-9bd4-4906-811e-7f3f05a6c64d"
     ],
-    "past_member_count": 5,
+    "past_member_count": 4,
     "past_member_names": [
       "くつしたちゃん",
       "甘音かのん",
       "月雲巫女",
-      "星乃キラリ",
-      "くつしたちゃん"
+      "KUTSUSHI"
     ],
     "past_member_uids": [
       "6fd93bac-9b20-4b58-ad4d-cedaf9b39a55",
       "79a61a75-2f26-478f-9334-e48a5c13bca2",
       "84dd2065-d735-4f23-a505-a4be02e14d8d",
-      "10c1e142-9bd4-4906-811e-7f3f05a6c64d",
       "c6094f34-ea93-4502-a616-0d91055800e4"
     ],
     "color": null,
@@ -102100,14 +102247,16 @@
   {
     "uid": "QWxjdXRl77yB",
     "name": "Alcute！",
-    "member_count": 6,
+    "member_count": 8,
     "member_names": [
       "とい",
       "ろあ",
       "あず",
       "らん",
       "ろむ",
-      "あいね"
+      "あいね",
+      "朝比奈ゆい",
+      "ゆい"
     ],
     "member_uids": [
       "8ad47c67-a0f1-48f2-91a8-184930d5caad",
@@ -102115,26 +102264,24 @@
       "6b492a4d-455f-4bb9-bb41-59215a02fbc7",
       "6de473f6-d349-48c1-aeb6-bbb01162fc92",
       "59b8ae1c-7c2f-4899-b193-6a9418fbff9b",
-      "5e7deb5a-cfb4-47e5-8690-84fe802df7a3"
+      "5e7deb5a-cfb4-47e5-8690-84fe802df7a3",
+      "bb9c1e72-4fd7-4bf0-aff1-41e8ebd3b219",
+      "05dcc219-5009-413b-aa01-cd993174bbd2"
     ],
-    "past_member_count": 7,
+    "past_member_count": 5,
     "past_member_names": [
       "ちゅんぴ",
       "まゆぴ",
       "はちの",
       "きらめ",
-      "なちゃ",
-      "ゆい",
-      "朝比奈ゆい"
+      "なちゃ"
     ],
     "past_member_uids": [
       "10cdef7b-7daf-4c85-bc52-c671af7a7354",
       "23b4f38b-bc94-472c-891c-58766e0dcc99",
       "24fafec5-9e91-43e4-bf32-3a5755ea2eba",
       "f5b3cb4f-1ad3-4fea-8d30-6f2a7b2b24f2",
-      "620787b6-18fd-4464-814c-265d45822764",
-      "05dcc219-5009-413b-aa01-cd993174bbd2",
-      "bb9c1e72-4fd7-4bf0-aff1-41e8ebd3b219"
+      "620787b6-18fd-4464-814c-265d45822764"
     ],
     "color": null,
     "description": "Alcute! July 2025 Information Also Known As アルキュート otonakawaii オトナカワイイ Origin Tokyo, Japan Genre J-Pop Years 2023-2026 Agency Cinderella's Dog Project Associated Acts Cinderella Sengen! Schrödinger no Inu Lateral Arc Current Members Roa Toy Azu Aine Ran Rom Former Members Chunpi Mayupi Hachino Kirame Nacha Yui Links Website Official Cindog Website Social Media Alcute! (アルキュート) is a six-member idol group. They were unveiled in July of 2023 and debuted on July 24, 2023.",
@@ -105728,15 +105875,19 @@
   {
     "uid": "QkFOWkFJIEpBUEFO",
     "name": "BANZAI JAPAN",
-    "member_count": 7,
+    "member_count": 11,
     "member_names": [
       "藤崎ふみ",
       "笹川ささ",
       "安堂舞花",
       "九十九愛桜",
       "神坂優羽",
-      "朝日奈みみ",
-      "喜瀬マリア"
+      "金子シロ",
+      "藤崎しおり",
+      "指宿理乃",
+      "上野りこ",
+      "悠凪ニノ",
+      "星乃ありす"
     ],
     "member_uids": [
       "be44a472-e147-44bb-bf5a-33d6727e1e49",
@@ -105744,10 +105895,14 @@
       "66108cab-7661-4394-b013-82a83ac3db10",
       "2e2bf3ca-394b-4979-a975-9987cc9ad8ac",
       "190cc89f-d123-4d0d-b0ca-1d9f980f89fc",
-      "8d86a542-1d48-4a1f-8093-130336d32ada",
-      "3af251dd-282b-4a26-989a-9c333b3d5c75"
+      "001a970c-1742-494c-97ad-e4c4a3b03c36",
+      "90fd6ca2-3d35-4cd1-ac17-cfcce4332ae4",
+      "a978e0f9-3ca1-4b70-a204-956a8533f81f",
+      "07790acb-4bdd-4053-b670-8e1a964af314",
+      "ebe9d2a3-acb6-4ec4-81af-3b43a5952322",
+      "adcb3596-8a45-4bea-8854-fe8e4e3c529d"
     ],
-    "past_member_count": 49,
+    "past_member_count": 39,
     "past_member_names": [
       "一ノ瀬かな",
       "七瀬あおい",
@@ -105765,10 +105920,7 @@
       "山口穂花",
       "島田玲奈",
       "志田りん",
-      "悠凪ニノ",
-      "指宿理乃",
       "新海由奈",
-      "星乃ありす",
       "星空みお",
       "春川愛美",
       "朝日奈ゆうみ",
@@ -105784,20 +105936,13 @@
       "花坂小夜",
       "花城沙耶",
       "菜花まりあ",
-      "藤崎しおり",
       "藤谷つかさ",
       "蘭まう",
       "近江莉帆",
       "里中空",
-      "金子シロ",
       "餅丸夢姫",
       "高橋あり",
-      "高橋なぎ",
-      "Hatsuki An",
-      "上野りこ",
-      "Hoshizora Mio",
-      "上野りこ",
-      "Nanana Nako"
+      "高橋なぎ"
     ],
     "past_member_uids": [
       "2a45d1b9-b432-49af-958d-384a1a478d99",
@@ -105816,10 +105961,7 @@
       "ed64267b-7191-410d-9693-4b59ea0cbf2d",
       "4b6eff41-26fb-4d58-967e-30109a1fe279",
       "02087a05-23e2-4b43-badf-b95425dfb365",
-      "ebe9d2a3-acb6-4ec4-81af-3b43a5952322",
-      "a978e0f9-3ca1-4b70-a204-956a8533f81f",
       "bd2867e8-3eff-4d9c-a70e-f0d96f9454a4",
-      "adcb3596-8a45-4bea-8854-fe8e4e3c529d",
       "535483c5-f16c-4a47-8912-3b745ead339a",
       "f16d5012-10f4-40a2-8395-9d04d099663d",
       "0d2d0064-803a-4425-b9c9-fe49be01df47",
@@ -105835,17 +105977,13 @@
       "64b8a9f0-c443-4923-b317-6c3951887f09",
       "1c52fe4a-2baf-4380-bb04-7bbdf2d0817c",
       "512b8df1-cff3-432d-a4eb-d06e50e490a7",
-      "90fd6ca2-3d35-4cd1-ac17-cfcce4332ae4",
       "b5241dd7-7067-48aa-b9b9-5c6550b1b1aa",
       "e3b8cc31-7fa8-49e6-944d-863029268c5d",
       "e7da7896-0999-4a59-98fb-52de0c1b36e6",
       "ef60c64b-310b-47df-9c88-9938b8896f04",
-      "001a970c-1742-494c-97ad-e4c4a3b03c36",
       "c8bee730-0944-4f7d-aa10-b956d661348b",
       "9dac8a4e-5a8d-4514-ab26-ecc68534a1d7",
-      "11f2300f-97dc-4523-b13a-4009e40d097a",
-      "",
-      "07790acb-4bdd-4053-b670-8e1a964af314"
+      "11f2300f-97dc-4523-b13a-4009e40d097a"
     ],
     "color": null,
     "description": "Full Group 2021 Information Origin Tokyo, Japan Genre J-Pop Years 2014-Present Agency Cospanic Entertainment Associated Acts BANZAI JAPAN Front 7 BANZAI JAPAN CENTRAL BANZAI JAPAN WEST Links Website Official Website Social Media BANZAI JAPAN (バンザイジャパン) is an idol group formed on May 5, 2014.",
@@ -109864,7 +110002,7 @@
       "d30f87f9-6550-40e1-8ba6-16a99c7266c5",
       "383454eb-7999-4e2f-aadb-e3443a984821"
     ],
-    "past_member_count": 7,
+    "past_member_count": 8,
     "past_member_names": [
       "岬梨妃果",
       "姫乃美結",
@@ -109872,7 +110010,8 @@
       "橋本澪侑",
       "宮脇彩花",
       "碧井みほ",
-      "日南唯未"
+      "日南唯未",
+      "小栗美結"
     ],
     "past_member_uids": [
       "08ec6b83-0c4c-407f-94c5-d52e981d1726",
@@ -109881,7 +110020,8 @@
       "4a35a4c7-d68c-4bd6-b843-9107194d4be5",
       "d3a64d00-468c-49f4-a22e-39cc694068b0",
       "ebc628bf-6daa-4721-bd30-a825c4b688c0",
-      "226e15e5-f04a-4124-ab08-fd03f278d746"
+      "226e15e5-f04a-4124-ab08-fd03f278d746",
+      "427c6cae-ae6f-4738-a9ce-2f71087253b5"
     ],
     "color": null,
     "description": "October 2024 Information Also Known As Banikuru (バニクル) Origin Tokyo, Japan Genre J-Pop Years 2022-Present Label TOKUMA JAPAN COMMUNICATIONS Agency UP DANCE ENTERTAINMENT Current Members Nishino Kanna (2022-Present) Honami Marina (2022-Present) Shiraishi Yuina (2024-Present) Fujimiya Kurumi (2024-Present) Hoshi Noa (2024-Present) Matsuda Ui (2024-Present) Nanase Yui (2024-Present) Former Members Misaki Rihika (2022-2023) Himeno Miyuu (2022-2024) Kurumi Shiori (2022-2024) Hashimoto Ryoka (2022-20",
@@ -110618,39 +110758,53 @@
   {
     "uid": "R0FOR0RFTUlD",
     "name": "GANGDEMIC",
-    "member_count": 8,
+    "member_count": 14,
     "member_names": [
       "Mirei",
       "Ria",
       "Kurumi",
       "Tsubaki",
-      "Ice",
       "Sui",
-      "Sana",
-      "つばき"
+      "ami",
+      "CHINA",
+      "Orange",
+      "White",
+      "sayo",
+      "Yellow",
+      "hana",
+      "Pink",
+      "Ice"
     ],
     "member_uids": [
       "8e1f88f6-f9d1-4172-9139-3f6873f8de9e",
       "886a7fd1-8d59-4af5-a67b-302177c34414",
       "0f3908d8-4618-49f1-b7ba-1290471eb6e1",
       "53755c8b-b6aa-4e91-be7f-6dcc9758a7e8",
-      "7499e79e-2e71-4bce-a7f5-c6748ad93e5a",
       "d8c70873-14ba-4b1b-8368-46c975bd246f",
-      "7f1e21fd-eeca-4174-98bd-d925bcc3024d",
-      "b8c65e14-3bc5-41a6-8cad-fe7759e6b783"
+      "9eb0d4d3-9ae0-4e23-82ac-0fa3b2e3b70c",
+      "0ebe16ce-52f8-4ce2-acb1-263fc8cf23af",
+      "6991a086-9078-4d91-8002-8e6229edd5cd",
+      "815343ba-901b-4823-b0ab-db7fef40b00f",
+      "9f7eaf22-4b93-40af-a7c8-46fe70c98ad7",
+      "73524b40-0a68-4fa3-a029-ea5771a351e5",
+      "a4217d3d-7923-4cc6-8206-ea9f7916e443",
+      "607cb15b-37f5-4ac7-bc98-66cea9cad81a",
+      "0c55b7c7-bb9a-438d-9644-27b85cac8ae1"
     ],
-    "past_member_count": 4,
+    "past_member_count": 5,
     "past_member_names": [
       "Sae",
       "Kirari",
       "Haruto",
-      "神華メグ"
+      "Megu",
+      "Sana"
     ],
     "past_member_uids": [
       "d606c036-609f-4c34-a3b9-d18b19cfd0a6",
       "98b4d965-5d4a-4a4f-bdc4-bf646ce3972d",
       "d7a5a2f3-9313-4f21-b30e-a3aa4585ecc8",
-      "067a6cf6-f6d9-4e2c-b9fa-4aa8992881fb"
+      "067a6cf6-f6d9-4e2c-b9fa-4aa8992881fb",
+      "7f1e21fd-eeca-4174-98bd-d925bcc3024d"
     ],
     "color": null,
     "description": "GANGDEMIC August 2024 Information Also Known As Gangdemi (ギャンデミ) Origin Tokyo, Japan Genre Pop-rock Years 2021-Present Agency KABUKIMONO'DOGs Current Members Mirei Ria Kurumi Tsubaki Ice Sui Sana Former Members Sae Kirari Haruto Megu Links Website Official Website Social Media GANGDEMIC is an idol group formed in March 2021, and debuted on May 19, 2021. Their concept is \"Party Dance ElectRock\".",
@@ -114358,25 +114512,21 @@
     "member_uids": [
       "a76d32fc-b5b3-441b-aef4-4f85b7016317"
     ],
-    "past_member_count": 13,
+    "past_member_count": 11,
     "past_member_names": [
-      "Founding member",
-      "竹内菜々",
       "竹内菜々",
       "黒川季里",
       "加藤亜希菜",
       "渡邉瑚白",
       "齋藤きらら",
       "内海里菜",
-      "秋元瑠海",
-      "加奈",
-      "早坂香美",
-      "加奈",
-      "まり"
+      "RUUNA",
+      "KOUMI",
+      "髙橋麻里",
+      "白戸佳奈",
+      "鈴木美知代"
     ],
     "past_member_uids": [
-      "8a66b9c1-c561-474b-920f-ca3b8e375bb0",
-      "98a50deb-e189-4991-bb91-557524d97549",
       "040aeba2-684e-4f74-9471-61fb966381f3",
       "cfa3936f-3aa2-47eb-8870-4d1ac861a803",
       "a4180d2e-b3cc-4ab4-9170-74c186bf4c8c",
@@ -114384,10 +114534,10 @@
       "c8383e9f-a187-4f01-82c4-d89da5cc0453",
       "83a639eb-8812-44d9-9a4f-68b0e1edef93",
       "c75f9d30-128e-48ea-a899-7e2f14ff0c59",
-      "",
       "f3de6546-3ce5-4c51-ae79-ae4af09a9cae",
-      "97d22c17-8c2f-4baf-bdd8-d336d2aa2dc3",
-      "0e95e85a-622a-4a90-aa2d-61fc7f11d44e"
+      "e79d3be1-81c3-48bd-947f-114462e1d2af",
+      "8ff86875-e306-4e8c-b14f-c737a196e5cf",
+      "e7f6bb2f-65bd-44ee-a566-72cb7a5b4026"
     ],
     "color": null,
     "description": "August 2022 Information Origin Sendai, Miyagi, Japan Genre J-Pop Associated Acts B♭ kolme Current Members Kurimura Fuuka Former Members MICHIYO (2010) RUUNA (2010-2015) MIMORI (2010-2015) KOUMI (2010-2015) KANA (2010-2017) MARI (2010-2018) Takeuchi Nana (2019) Kurokawa Kiri (2019-2020) Kato Akina (2019-2022) Watanabe Kohaku Saito Kirara Utsumi Rina Links Website Website",
@@ -115036,18 +115186,24 @@
       "a9043434-9c45-4004-847f-1df4c66e3a1a",
       "d29cc6cf-b91d-46e5-85ef-015c80533a64"
     ],
-    "past_member_count": 4,
+    "past_member_count": 7,
     "past_member_names": [
       "藤澤ひより",
       "竹本あいり",
-      "藤澤ひより",
-      "竹本あいり"
+      "AI.",
+      "SATSUKI.",
+      "NANOHA.",
+      "RIRIKA.",
+      "LIM."
     ],
     "past_member_uids": [
-      "3c7de455-2362-4e0f-b23a-4ea5a4589d95",
-      "0a12a772-6ef5-4014-a9d8-30b34eab879b",
       "ec2ef423-22a4-48b9-873e-337479474acc",
-      "2edc4d9b-95ac-4a5a-b0ff-05d8a08743cf"
+      "2edc4d9b-95ac-4a5a-b0ff-05d8a08743cf",
+      "211d9398-e5f2-4edc-a589-176ca5e9fd22",
+      "5bc0aced-53a1-4d4f-95cf-ea530ff08aff",
+      "76b39bfd-4d77-4c88-b468-9584f239ae3f",
+      "e8faf12d-3678-40d7-97e6-f320aff4f3c2",
+      "a49d1e77-40d5-4f14-91c8-0e732a7e7e4d"
     ],
     "color": null,
     "description": "September 2025 Information Also Known As DeviAN (デビアン) Origin Japan Years 2014-present Label MUSIC@NOTE (2020-Present) Kanameishi Records (2018-2019) ZULA Records (2018) youthsource records (2014-2017) Agency Asia Promotion Current Members Takekoshi Kurumi (2013-present) Hashimoto Yume (2016-present) Ando Kaede (2016-present) Mizuno Akira (2018-present) Shiozaki Meisa (2025-present) Yabuki Nene (2025-present) Former Members LIM (2013-2015) RIRIKA (2013-2016) NANOHA (2013-2017) SATSUKI (2013-2017",
@@ -117070,15 +117226,13 @@
   {
     "uid": "Rk9LQUxJVEU",
     "name": "FOKALITE",
-    "member_count": 4,
+    "member_count": 3,
     "member_names": [
-      "タマネ",
       "ワニャ+",
       "スイミイ",
       "ユイノン"
     ],
     "member_uids": [
-      "befdeb29-1f77-44c4-be70-66bb0fab89c8",
       "a5733240-fe42-4ce1-ba31-fe68cdf93c09",
       "7f61d3d4-64d8-4152-ae85-22db5e02a407",
       "2de665c2-335f-4ba2-830b-e835384d27b2"
@@ -117375,16 +117529,17 @@
   {
     "uid": "RkVT4piGVElWRQ",
     "name": "FES☆TIVE",
-    "member_count": 8,
+    "member_count": 9,
     "member_names": [
       "与田理央那",
       "仁科茉彩",
       "星乃ななみ",
       "小柴あいり",
       "七瀬あい",
-      "カワイレナ",
-      "白宮瑠夏",
-      "瀬木まゆの"
+      "瀬木まゆの",
+      "八木ひなた",
+      "辻こはる",
+      "本多しおり"
     ],
     "member_uids": [
       "052e7196-0fc2-4332-8079-28daa61b1a23",
@@ -117392,11 +117547,12 @@
       "67928b49-615f-4444-8ba8-ea65edfd39ff",
       "d584728e-5fc2-4658-957e-55bc9596781d",
       "d8496c32-d3f0-472c-9c46-16c9011e23c4",
-      "f0a372f3-c912-4d20-b3b9-8679e0446771",
-      "96c9f273-0ba3-4ae9-be81-8d5246c04c23",
-      "ae16a68b-fee9-4334-a1c2-31d4749efcfd"
+      "ae16a68b-fee9-4334-a1c2-31d4749efcfd",
+      "b6a6e7f6-336a-466e-a8f7-d32a271efe3e",
+      "a7015a30-68c3-4cc5-b86a-a76120006542",
+      "03f2a34e-20ec-4b90-ae8b-aea3ce4cfeba"
     ],
-    "past_member_count": 23,
+    "past_member_count": 20,
     "past_member_names": [
       "日向真衣",
       "菅野由真",
@@ -117417,10 +117573,7 @@
       "南茉莉花",
       "髙木ゆりあ",
       "土光瑠璃子",
-      "本多しおり",
-      "八木ひなた",
-      "辻こはる",
-      "青葉ひなり"
+      "水瀬ぴあの"
     ],
     "past_member_uids": [
       "9177bbed-7ec0-4fd0-994d-a76a978deb57",
@@ -117442,10 +117595,7 @@
       "a4e8e2ca-e237-45a9-9bf8-1c5199e27ffe",
       "1052ef16-9349-4c2e-8bda-36e34403c44b",
       "0f379317-412e-4e8b-8eaa-36a0bf00b86f",
-      "03f2a34e-20ec-4b90-ae8b-aea3ce4cfeba",
-      "b6a6e7f6-336a-466e-a8f7-d32a271efe3e",
-      "a7015a30-68c3-4cc5-b86a-a76120006542",
-      "739ef766-4bb4-4cab-8e52-90cd238032ee"
+      "68dcb082-3324-4335-b88a-47bd03e9c254"
     ],
     "color": null,
     "description": "December 2025 Information Origin Japan Genre J-Pop Years 2013-Present Label Tokuma Japan Communications Agency RIZE PRODUCTION Associated Acts My Dear Darlin' SUMOMO SEKAIE☆ Current Members Yoda Riona (2024-present) Nishina Maaya (2024-present) Hoshino Nanami (2025-present) Koshiba Airi (2025-present) Nanase Ai (2025-present) Kawai Rena (2026-Present) Shiromiya Runa (2026-Present) Former Members Hinata Mai (2013) Sugano Yuma (2013) Fujimura Momoka (2013-2014) Sakai Ami (2013-2014) Yokoi Honami (",
@@ -119200,13 +119350,13 @@
     "name": "FULIT BOX",
     "member_count": 7,
     "member_names": [
-      "Sakai Rena",
-      "Sonoda Momo",
-      "Tachibana Kotori",
-      "Kotokawa Ami",
-      "Kamiki Ayaka",
-      "Shida Mio",
-      "Hananoi Hina"
+      "坂井鈴奈",
+      "苑田桃",
+      "立花ことり",
+      "琴川あみ",
+      "神木彩花",
+      "志田実生",
+      "花野井ひな"
     ],
     "member_uids": [
       "03aa0e40-c46a-4f58-acef-8c09abdacf61",
@@ -119612,7 +119762,7 @@
       "Tina",
       "Juri",
       "Aoi",
-      "Shion Rinka"
+      "紫苑りんか"
     ],
     "member_uids": [
       "9d53cdfb-9e04-4fd2-ae65-73b9c68e1adb",
@@ -120950,7 +121100,7 @@
   {
     "uid": "S1JEOA",
     "name": "KRD8",
-    "member_count": 10,
+    "member_count": 8,
     "member_names": [
       "宮脇舞依",
       "菅原未結",
@@ -120959,9 +121109,7 @@
       "茅野風花",
       "桜井みる",
       "桧山夢唯",
-      "佐藤みく",
-      "佐藤那実",
-      "八木沙季"
+      "井上千沙"
     ],
     "member_uids": [
       "3e80a1ab-f5a5-4bc0-bfbd-d3426f964560",
@@ -120971,13 +121119,10 @@
       "1e5113ad-f8f9-4a6e-ba68-bbd87a9f618e",
       "e69511eb-7b69-4f4b-8f93-06a097feafd9",
       "589a7aa7-ca33-4efe-a44f-27cdf4d9733a",
-      "f2f331fb-5590-40ee-9b5f-d78a0f2cb223",
-      "01d40b13-0a1b-430d-a595-aa5b767a84f1",
-      "907451b2-dc13-4ffd-8a31-d9a0ce3cccda"
+      "fb5acbc3-d20c-4670-b493-49231360d760"
     ],
-    "past_member_count": 22,
+    "past_member_count": 37,
     "past_member_names": [
-      "井上千沙",
       "黒田知沙",
       "寺田香織",
       "西尾真帆",
@@ -120998,10 +121143,25 @@
       "渡辺葉月",
       "天野凛",
       "石川夏",
-      "宮脇愛"
+      "宮脇愛",
+      "篠咲くれは",
+      "佐藤那実",
+      "高原ひとみ",
+      "藤川日菜",
+      "堀川知華",
+      "高尾実生",
+      "太田百萌花",
+      "山田楓",
+      "朝比奈莉子",
+      "岩崎楓",
+      "淡路かれん",
+      "開發里奈",
+      "高橋あやか",
+      "八木沙季",
+      "橋本朱里",
+      "中上恭子"
     ],
     "past_member_uids": [
-      "fb5acbc3-d20c-4670-b493-49231360d760",
       "90c78a79-e371-4aa1-be7d-623e90721e99",
       "3960f162-dc91-4eaf-bfad-02b1e88402dc",
       "c1b7fab7-fe8a-4ba6-b2d2-765021c0bc79",
@@ -121022,7 +121182,23 @@
       "f6e6adb7-4010-42c1-928f-15e929be5e31",
       "57bda9cd-6cb0-45bb-85a1-968bd8435894",
       "eaba460f-a63f-4596-ab67-aa6c0507f2cb",
-      "30cff612-84a3-4962-a4cf-0a89c47a370a"
+      "30cff612-84a3-4962-a4cf-0a89c47a370a",
+      "c3644a14-6cf5-4b38-a425-2a15650cc139",
+      "01d40b13-0a1b-430d-a595-aa5b767a84f1",
+      "c82ea931-8edf-4976-bc6d-7d6256b2c409",
+      "14d04b0f-650c-4bc7-872e-416c18984e38",
+      "d7d70209-b0e9-476e-9a0b-7571afdfd996",
+      "8d78a6d2-8479-44a6-90b8-e0ab714e6c1d",
+      "94fe7fa6-83cf-4fea-8dd3-c172b90acc06",
+      "2f92cbba-c449-4de9-ab06-727855f4ac18",
+      "eb69081c-3937-486e-94ca-7ec7cc068e08",
+      "0dfc7c83-5c19-4443-992a-a0d0b4a55c00",
+      "305e3ad9-6e56-488f-b79b-b3a16cb63be9",
+      "2502ddba-56bf-47a0-8f88-932d2c5eab21",
+      "3b19d482-0982-4b6e-84d0-d6184645e712",
+      "907451b2-dc13-4ffd-8a31-d9a0ce3cccda",
+      "1390fc42-c342-463f-9222-12178bd143a5",
+      "7ca58238-7df9-4d8a-80eb-9572a0037ec4"
     ],
     "color": null,
     "description": "2023 Information Origin Himeji, Hyogo, Japan Genre J-Pop Years 2013-Present Label UNCLE STAR RECORDS (2013-2015) FORCE MUSIC (2016) OTODAMA RECORDS (2017-2018) FIFTY-FIFTY Records (2019-Present) Agency Ippan Shadanhojin Himeji Ouen Project Associated Acts WT☆Egret Current Members Miyawaki Mai Sugahara Miyu Yagi Kanna Honoka Kaho Kayano Fuuka Sakurai Miru Hiyama Mei KRD8 is an idol group based in Himeji City and was formed on December 27, 2013. They have a research student group called WT☆Egret",
@@ -125162,14 +125338,16 @@
   {
     "uid": "SGVsbG9Zb3V0aA",
     "name": "HelloYouth",
-    "member_count": 6,
+    "member_count": 8,
     "member_names": [
       "大島向葵",
       "大葉みらい",
       "平松聖菜",
       "槙宮令乃",
       "海月らん",
-      "宇咲妃奈乃"
+      "宇咲妃奈乃",
+      "彩木美沙",
+      "白雪夢乃"
     ],
     "member_uids": [
       "3519d875-ef42-4558-9104-9b058f1fb5fc",
@@ -125177,26 +125355,24 @@
       "47f483e3-bf6c-4766-8861-7731dd721984",
       "97a07c07-6890-49e2-8565-54899245d3e6",
       "8c752c84-958f-4ca8-9194-40213f49c7a0",
-      "6fb5e250-fcc4-4903-93d3-fffc8099ccd7"
+      "6fb5e250-fcc4-4903-93d3-fffc8099ccd7",
+      "ec5822e9-cc6b-4907-b1d8-ea6c6b4ccc53",
+      "d2e4e7be-5df8-4345-88ef-923b2b05ad14"
     ],
-    "past_member_count": 7,
+    "past_member_count": 5,
     "past_member_names": [
       "小嶋ひより",
       "田仲笑茉",
       "矢野亜月",
       "花城玲奈",
-      "藤咲まりな",
-      "白雪夢乃",
-      "彩木美沙"
+      "藤咲まりな"
     ],
     "past_member_uids": [
       "9807b654-45e8-45eb-9bbc-0b451d3d5b3d",
       "5398eb32-3bba-4a48-8bc6-f162461515b6",
       "d4af5732-d773-49e3-b741-1b327a3c9c4c",
       "7305b10f-8ddd-490f-aab5-5dd4a82c2ea4",
-      "560ff0db-edfa-49ef-a82e-b5a99ae24e27",
-      "d2e4e7be-5df8-4345-88ef-923b2b05ad14",
-      "ec5822e9-cc6b-4907-b1d8-ea6c6b4ccc53"
+      "560ff0db-edfa-49ef-a82e-b5a99ae24e27"
     ],
     "color": null,
     "description": "September 2024 Information Origin Fukuoka, Japan Genre J-Pop Years 2018-Present Label IQ Project Associated Acts BudLaB Links Website Official Website Social Media HelloYouth is an idol girl group under IQ Project. They were formed on July 28, 2018, of members from IQ Project's Kenkyuusei group BudLaB. They are produced by ISAKICK, the bassist of 175R.",
@@ -127390,18 +127566,18 @@
     "name": "JUGS MAFIA",
     "member_count": 4,
     "member_names": [
-      "橘あさひ",
-      "愛編猫",
-      "美神ナオカ",
-      "ふんわりれいな"
+      "闇月聖惡",
+      "ゼロ・グラビティ",
+      "デパス律",
+      "夢皇じゃむ"
     ],
     "member_uids": [
-      "483ba4f0-206e-482e-871b-c07078f12207",
-      "6b264378-d535-4c7e-9c2a-b96a0016020c",
-      "dd5fd1bb-565f-4208-9ff2-d16172ae4950",
-      "dbbd9bc8-7b00-42c5-a6b7-01b8d165a8de"
+      "d1aa9385-c9d2-4b18-9d3a-ac3b9eb0a154",
+      "5cb8e388-7ad8-483c-9a2d-33b6c2386c89",
+      "29d8f7c3-7d8f-4a14-af06-ef11005d74e0",
+      "5270ddf1-5d7a-4201-b93b-cced380d6881"
     ],
-    "past_member_count": 13,
+    "past_member_count": 10,
     "past_member_names": [
       "羽生ゆか",
       "青藍みぃみ",
@@ -127409,13 +127585,10 @@
       "まり・ちゃ",
       "Thunder White",
       "松原みずき",
-      "ゼロ・グラビティ",
-      "闇月聖惡",
-      "デパス律",
-      "夢皇じゃむ",
       "西元めいさ",
       "Ray",
-      "Mari Cha"
+      "愛編猫",
+      "ふんわりれいな"
     ],
     "past_member_uids": [
       "58a24cfa-d407-4216-99f4-634dee9b03ee",
@@ -127424,13 +127597,10 @@
       "c598e88b-bbb9-45b8-a72a-b2b99223b59b",
       "ed8589be-4f37-4fc3-aeaa-7da8164a56aa",
       "10346ff4-684c-47b7-907f-a8adb21e8e4c",
-      "5cb8e388-7ad8-483c-9a2d-33b6c2386c89",
-      "d1aa9385-c9d2-4b18-9d3a-ac3b9eb0a154",
-      "29d8f7c3-7d8f-4a14-af06-ef11005d74e0",
-      "5270ddf1-5d7a-4201-b93b-cced380d6881",
       "a22dd0cd-f6fa-4300-b428-a6fe3e9f5fa6",
       "3d08a960-68da-4723-ac97-04740fc6df77",
-      ""
+      "6b264378-d535-4c7e-9c2a-b96a0016020c",
+      "dbbd9bc8-7b00-42c5-a6b7-01b8d165a8de"
     ],
     "color": null,
     "description": "May 2025 Information Also Known As JUGMAF (ジャグマフ) Origin Tokyo, Japan Genre J-Pop Years 2023-Present Label YABACUBE INC. Agency YABACUBE INC. Associated Acts aiμ Current Members Tachibana Asahi Former Members Hanyu Yuka Funwari Reina Seiran Miimi Aizawa Aria Aiamu Neko Mari Cha Ray Matsubara Mizuki Zero Gravity Yazuki Miu Depasu Ritsu Munou Jam Nishimoto Meisa Links Social Media",
@@ -127795,7 +127965,7 @@
       "小此木流花",
       "北乃咲久",
       "花坂環",
-      "梅宮萌依"
+      "村望しおん"
     ],
     "member_uids": [
       "e639475e-d905-48c6-bb3a-3ed86ffd8743",
@@ -127804,22 +127974,19 @@
       "40c8e4f5-d8d3-4e35-84c1-a833001eb468",
       "cb7f5b6c-2e77-45ea-a4ea-e5df56dd1b45",
       "91112ca0-d59b-429f-844c-c88287147fee",
-      "af64e051-7828-4c4d-a351-1a0c51fb378d"
+      "34357290-7317-4832-880a-83d76f2113cc"
     ],
-    "past_member_count": 12,
+    "past_member_count": 9,
     "past_member_names": [
       "成瀬みるあ",
       "豊田あさ",
-      "小波もも",
+      "苑田桃",
       "柚木ひるね",
       "坂東遥",
       "神楽胡音",
       "一宮彩夏",
       "大場結女",
-      "村望しおん",
-      "苑田桃",
-      "Naruse Mirua",
-      "Toyoda Asa"
+      "梅宮萌依"
     ],
     "past_member_uids": [
       "3a2b7822-ef76-4d98-992d-7c42775d64c5",
@@ -127830,8 +127997,7 @@
       "4fe42f93-47f9-428d-9623-e774d89ee9dd",
       "a57735df-75ab-4ecd-8f0f-b1608649722a",
       "cab6d73d-6cc4-43af-b9f3-9390b46c3e71",
-      "34357290-7317-4832-880a-83d76f2113cc",
-      ""
+      "af64e051-7828-4c4d-a351-1a0c51fb378d"
     ],
     "color": null,
     "description": "September 2025 Information Also Known As Jams (ジャムズ) Origin Tokyo, Japan Genre J-Pop Years 2021-Present Label Tokuma Japan Communications Agency RIZE PRODUCTION LIVE PLANET Current Members Tsushiro Mizuki Hoshina Lin Minase Sarara Okonogi Ruka Kitano Saku Hanasaka Tamaki Former Members Naruse Mirua Toyoda Asa Konami Momo Yugi Hirune Bandou Haruka Kagura Koto Ichimiya Sayaka Oba Yume Umemiya Moe Muramochi Shion Producer UP DANCE ENTERTAINMENT Links Website Official Website Social Media",
@@ -129011,28 +129177,26 @@
   {
     "uid": "T25lcGhvbnk",
     "name": "Onephony",
-    "member_count": 5,
+    "member_count": 6,
     "member_names": [
       "久保田さやか",
       "橘彩音",
       "夢乃澪",
       "浅桜みらい",
-      "田島櫻子"
+      "田島櫻子",
+      "木月莉星"
     ],
     "member_uids": [
       "1aba1f8d-1d7d-4cdf-a86d-fcdfa7bf2194",
       "642aae9a-3205-4c17-9bc8-59536c577605",
       "9789489a-8408-48a5-88ac-dcc78d923f7a",
       "9193f6f6-181d-41b2-ad45-40aca22190ae",
-      "e2c44271-4867-4251-a5db-1a1650dcd154"
-    ],
-    "past_member_count": 1,
-    "past_member_names": [
-      "木月莉星"
-    ],
-    "past_member_uids": [
+      "e2c44271-4867-4251-a5db-1a1650dcd154",
       "8903e8fe-71f3-4123-b9c7-652f710a85f5"
     ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
     "color": null,
     "description": "Onephony ワンフォニー September 2025 Information Years 2022-Present Agency Summary Entertainment Current Members Kubota Sayaka Tachibana Ayane Yumeno Mio Asakura Mirai Tajima Sakurako Former Members Kizuki Rise Producer Fukase Mio Links Social Media Onephony (ワンフォニー) is a 5-member idol group produced by former Maneki Kecak member, Fukase Mio. The group was first announced on November 13, 2022. They held an unveiling performance on December 18, 2022 at Nakano ZERO Small Hall.",
     "formed_date": "2022-11-13",
@@ -130200,26 +130364,27 @@
   {
     "uid": "TEVJV0FO",
     "name": "LEIWAN",
-    "member_count": 3,
+    "member_count": 4,
     "member_names": [
       "澪・モンスター",
       "卯月彩華",
-      "渋谷龍華"
+      "渋谷龍華",
+      "あぐりぴこ"
     ],
     "member_uids": [
       "0ef1243c-16eb-460b-99a3-b7d9914c2b77",
       "537afcde-66e5-411b-bdc3-61d819d3146b",
-      "216f9f40-f92e-4161-8e94-d4a02ccae9e9"
+      "216f9f40-f92e-4161-8e94-d4a02ccae9e9",
+      "f666d4cf-c16b-402e-a8eb-a04a86192b6d"
     ],
-    "past_member_count": 7,
+    "past_member_count": 6,
     "past_member_names": [
       "黒井マシロ",
       "サキ・スクリーム",
       "双葉モモ",
       "紫音リナ",
       "猫乃ねむ子",
-      "愛成来来",
-      "葵みと"
+      "愛成来来"
     ],
     "past_member_uids": [
       "14d20146-2945-4f7b-80b3-3f3b693ff5f4",
@@ -130227,8 +130392,7 @@
       "985ec1d9-a1e4-4b57-bfde-8b16b975d11d",
       "d44b33cb-fc5b-488c-a0eb-e772c15a7c88",
       "d7cc3569-5efd-4eb2-9dc2-47b49f31850b",
-      "6fbdfb4a-cee7-44b1-ace6-405cf6fcbf4f",
-      "d517416a-1589-4eb9-b4a4-cbfb49659f50"
+      "6fbdfb4a-cee7-44b1-ace6-405cf6fcbf4f"
     ],
     "color": null,
     "description": "August 2025 Information Also Known As レイワン Terror Rhythmn (テロリズムン) (January 2019-April 2019) AIQ (アイキュー) (2018-January 2019) Origin Tokyo, Japan Genre J-pop, Rock Years 2019-Present Label COMRIZED Agency COMRIZED Associated Acts AIBECK EMPATHY JADX KAZALIN Current Members Mio Monster Uzuki Ayaka Shibuya Ryuka Links Website Official Website Social Media LEIWAN (レイワン) is an idol group formed in 2018. They were formed as a sister group to AIBECK.",
@@ -133831,7 +133995,7 @@
   {
     "uid": "TGluUQ",
     "name": "LinQ",
-    "member_count": 8,
+    "member_count": 11,
     "member_names": [
       "海月らな",
       "黒田れい",
@@ -133840,7 +134004,10 @@
       "華山あかり",
       "橘杏来",
       "織多莉鈴",
-      "橘杏來"
+      "橘杏來",
+      "髙木悠未",
+      "岩本琴音",
+      "森山結友"
     ],
     "member_uids": [
       "d7c09067-3f03-4d6a-b5d9-f2579bfa077d",
@@ -133850,9 +134017,12 @@
       "355cb099-87c2-4d9a-9482-4556c61bfdb3",
       "0f700bfd-1c0b-4a95-af98-a5037562401c",
       "8819953e-f36f-410c-81ed-31c709fc721e",
-      "960af2cb-9184-4aa1-b96e-808d81b30fb6"
+      "960af2cb-9184-4aa1-b96e-808d81b30fb6",
+      "bd355b21-240b-41e0-8943-4b9aebe7bbaa",
+      "169e5550-777f-4c49-8ce5-e34da29d3483",
+      "b75b93ce-41b9-4eb9-8af1-5017eb446ad5"
     ],
-    "past_member_count": 66,
+    "past_member_count": 61,
     "past_member_names": [
       "永未結菜",
       "瀧内美麗",
@@ -133863,7 +134033,6 @@
       "波音咲",
       "桐島綾音",
       "有馬梨帆",
-      "水上笑里",
       "秋山あんじぇら",
       "服部さやか",
       "好野紗亜也",
@@ -133890,20 +134059,17 @@
       "志良ふう子",
       "舞川あや",
       "大石芽依",
-      "姫崎愛未",
       "瀬戸楓",
       "岸田麻佑",
       "原直子",
       "桃咲まゆ",
       "大庭彩歌",
       "伊藤麻希",
-      "岩本琴音",
       "新木こころ",
       "星野真依",
       "桜愛美",
       "山木彩乃",
       "福山果奈",
-      "Red",
       "天野なつ",
       "安藤千紗",
       "坂井朝香",
@@ -133913,13 +134079,12 @@
       "涼本理央那",
       "金子みゆ",
       "大空莉子",
-      "高木悠未",
-      "森山結友",
       "MYU",
       "KOTONE",
       "水野真里菜",
-      "髙木悠未",
-      "三角笑里"
+      "与田理央那",
+      "mei",
+      "桐下愛未"
     ],
     "past_member_uids": [
       "3afd63ab-a837-42e3-b7e3-1f8cffd057ee",
@@ -133931,7 +134096,6 @@
       "9867cadb-d6a0-45f9-bdda-4f59810de0a5",
       "ec98f61e-3b8e-4fe7-8d9a-3883393ace62",
       "b2af3473-9c98-480c-9b30-6cf253b037f6",
-      "f1c4585a-6943-417b-acc1-f97ce34ee46c",
       "235beb0e-215d-4cd9-b710-6c1855b70fa0",
       "46e71d32-72df-4683-b823-65dac6791cfa",
       "239a1ddb-bcdb-4c7e-8974-2f15b526272c",
@@ -133958,20 +134122,17 @@
       "3df5b30a-79e3-4488-a427-17bf32eae1a3",
       "fad04cb3-88c8-4986-8c15-0ed0c32976d4",
       "de64851d-e9e0-4129-902e-1eeff9f35042",
-      "22965c2b-8ca6-4775-b40c-5d85581ac783",
       "f44d00e9-1662-4d64-b3bc-8816324d624f",
       "fe290820-ebdd-43ce-9835-203aff0706f9",
       "db6072f1-4228-4c88-9d61-df774648a74e",
       "9d1493b3-3825-4736-9494-864163b5f97d",
       "f1fa546a-bc2f-4b89-850a-c2a516a643f6",
       "8fbab3f9-2a76-43a9-8f9b-634d1f1a6b0f",
-      "169e5550-777f-4c49-8ce5-e34da29d3483",
       "7620d5af-fa1a-4374-84dd-a3afe35b395d",
       "03f7b912-f869-425c-a4e6-4fac15d28c0f",
       "d7ddc74a-92ed-4cdb-87a2-43b4d81cdcd9",
       "6dee9666-5aba-4330-838c-04e00e6c935b",
       "5dd7db7e-e9de-4ebc-afac-8a2cede3cc3c",
-      "03338850-07be-4d65-a244-6f6faaf66bf5",
       "12fd1817-cd8d-4e63-8ec5-1ca75255c815",
       "809335da-b204-4fb6-918c-65e662abc55f",
       "a25cc862-65c2-4a41-93ef-b4329541945c",
@@ -133981,13 +134142,12 @@
       "a5b759e1-ece2-4d2c-a2de-7ea8509fd0df",
       "0c74b7cf-484b-4433-a737-a5b0837076ff",
       "49c954d9-f045-4e22-b03c-d6f5936368cd",
-      "c8bd19cd-bede-41c0-9f09-1bf4dd6ab87c",
-      "b75b93ce-41b9-4eb9-8af1-5017eb446ad5",
       "f8d2858b-b8cb-4152-97bf-bd7971280eb6",
       "406a2a2c-a8d2-40d6-9d9e-7c0f932b4fcb",
       "b89d7117-56a9-4fce-8b53-953dc5a66755",
-      "bd355b21-240b-41e0-8943-4b9aebe7bbaa",
-      "1e55e170-4ae1-4393-83de-acb351b74b8c"
+      "052e7196-0fc2-4332-8079-28daa61b1a23",
+      "1b87dc2c-4982-4965-8d12-9f8bf5889e56",
+      "0c7998a8-d164-4931-ae09-0230f9638075"
     ],
     "color": null,
     "description": "December 2025 Information Origin Kyushu, Fukuoka, Japan Genre J-Pop Years 2011-Present Label JMP (2011) LinQ Records (2011, 2018-Present) T-Palette Records (2011-2013) Warner Music Japan (2013-2016) LEVEL-5/avex「FRAME」 (2016-2018) Daiki Sound Co., Ltd. (2019-present) Agency IQ Project Associated Acts SRAM Toki wo Ikiru Hello Youth CHiSEMiKU LinQ KIDS Current Members Kaizuki Rana (2016-present) Kuroda Rei (2021-present) Arimura Minami (2021-present) Morito Sawa (2023-present) Hanayama Akari (20",
@@ -134519,12 +134679,11 @@
   {
     "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
     "name": "Luce Twinkle Wink☆",
-    "member_count": 6,
+    "member_count": 5,
     "member_names": [
       "宇佐美幸乃",
       "板山紗織",
       "咲本美桜",
-      "桧垣果穂",
       "南雲芽依",
       "一ノ瀬天音"
     ],
@@ -134532,22 +134691,31 @@
       "1f6e0bc2-3dcd-4ffc-9a8e-7e1adf8101f6",
       "cd799945-b46a-49f7-9d1d-deea2b15578f",
       "6e6c2ae5-0e08-4881-8f8b-e74f0a76e1ca",
-      "40c784e3-ee34-4274-8c27-663d86f3b27a",
       "9445e01c-b77c-4bae-84a5-ee5be6b49be4",
       "85b39a34-b21e-4c23-8217-b5df1ea452ad"
     ],
-    "past_member_count": 4,
+    "past_member_count": 9,
     "past_member_names": [
       "錦織めぐみ",
       "深沢紗希",
       "城崎桃華",
-      "小泉かのん"
+      "小泉かのん",
+      "桜良真帆",
+      "上田りお",
+      "優木ゆうな",
+      "凪楽ひより",
+      "桧垣果穂"
     ],
     "past_member_uids": [
       "f09d6f9c-be32-45dd-83c6-493f0b8afd1f",
       "9ab45902-d2ea-400d-9512-7d157572eda6",
       "63e2c0b7-af3e-4b44-94ab-4344ea080789",
-      "86885641-f352-4e2b-bdc1-fd1b543fa9fd"
+      "86885641-f352-4e2b-bdc1-fd1b543fa9fd",
+      "87e216b0-a47f-4a27-a493-7b232518c290",
+      "c48976de-b0a7-4cd7-bd6c-849cb28c5852",
+      "e57fea78-7623-41a5-8c1d-f846294c2710",
+      "418c55cb-f818-4213-8ee7-668374458fb1",
+      "40c784e3-ee34-4274-8c27-663d86f3b27a"
     ],
     "color": null,
     "description": "August 2024 Information Origin Japan Genre J-Pop Years 2014–Present Label NBC Universal Entertainment Agency Arc Jewel Links Website Official Website Luce Twinkle Wink☆ is an idol group formed in August 2014.",
@@ -140636,20 +140804,24 @@
   {
     "uid": "TXlEZWFyRGFybGluJw",
     "name": "MyDearDarlin'",
-    "member_count": 4,
+    "member_count": 6,
     "member_names": [
       "東條ゆりあ",
       "濱田菜々",
       "広山楓",
-      "美怜寿莉亜"
+      "咲真ゆか",
+      "是枝優美",
+      "夢実あすか"
     ],
     "member_uids": [
       "953932ce-7076-4322-bd99-eeb2d02a69ab",
       "0fd1b630-2e58-4448-9d51-e2dfdf8250eb",
       "78407bcd-a634-4520-afd9-8cc03a374af5",
-      "7017c56f-88e3-4001-9630-383ffb1a8fdb"
+      "d0ca5d78-0f32-4269-a472-3805564dfe9f",
+      "2d067919-58d2-4f93-bee9-9844d5749f2c",
+      "8a40b6cc-43e2-4c1d-b84f-99537182b853"
     ],
-    "past_member_count": 10,
+    "past_member_count": 8,
     "past_member_names": [
       "櫻井優衣",
       "櫻井まい",
@@ -140658,9 +140830,7 @@
       "美咲優羽",
       "水城梓",
       "葉山かえで",
-      "咲真ゆか",
-      "是枝優美",
-      "夢実あすか"
+      "櫻衣まい"
     ],
     "past_member_uids": [
       "27fbe6dc-2dc2-46de-9bae-19538af694c0",
@@ -140670,9 +140840,7 @@
       "cc2fa44b-509c-4caa-888c-ae9da84c8c01",
       "83a0ccae-d6de-4590-9e81-f7bfdbfb4ad9",
       "9aa979ae-ccc7-4654-964e-1a32bc1d6f90",
-      "d0ca5d78-0f32-4269-a472-3805564dfe9f",
-      "2d067919-58d2-4f93-bee9-9844d5749f2c",
-      "8a40b6cc-43e2-4c1d-b84f-99537182b853"
+      "40914f22-e39a-48a2-9253-4274d732025f"
     ],
     "color": null,
     "description": "November 2025 Information Also Known As My Dear (マイディア) Origin Tokyo, Japan Genre J-Pop Years 2020-Present Label HIGH CLARITY (2021-Present) 1CENTo INFINITY (2020) Agency RIZE PRODUCTION Associated Acts FES☆TIVE SUMOMO Current Members Tojo Yuria Hamada Nana Hiroyama Kaede Misato Juria Former Members Sakurai Mai Sakurai Yui Matsumoto Rena Shinozaki Rei Misaki Yuu Mizushiro Azusa Hayama Kaede Sakuma Yuka Koreeda Yumi Yumemi Asuka Producer UP DANCE ENTERTAINMENT Links Website Official Website Soci",
@@ -143514,7 +143682,7 @@
   {
     "uid": "TkVPIEpBUE9OSVNN",
     "name": "NEO JAPONISM",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "滝沢ひなの",
       "辰巳さやか",
@@ -143522,8 +143690,7 @@
       "朝倉あい",
       "泉なお",
       "大和田ちより",
-      "本多ともは",
-      "本多朝葉"
+      "福田みゆ"
     ],
     "member_uids": [
       "399848f0-9c38-4c67-8362-32b99c545c98",
@@ -143532,25 +143699,22 @@
       "d5d8bc39-b578-4e6e-9475-1ed82bfbb536",
       "95ad5483-74c5-4961-8f5b-789b781eaa07",
       "fca6f384-16a4-4787-8c0a-e79426c999f4",
-      "ea794980-6b1b-45f4-b667-d952760dad63",
-      "0994fdf0-a336-4942-84b3-b9427161b95a"
+      "a278c008-c34c-4442-92b2-3554e852aefe"
     ],
-    "past_member_count": 6,
+    "past_member_count": 5,
     "past_member_names": [
       "相澤萌楓",
-      "百百百華",
       "森田美玲",
       "藤井ラナ",
       "間宮遊",
-      "福田みゆ"
+      "萬鬼百華"
     ],
     "past_member_uids": [
       "aa56b712-dff6-4293-a4f7-149b7146e0f6",
-      "05df03bf-b135-4888-931c-2e3f7b363916",
       "1f991909-2c79-4c25-b766-a8259d42b650",
       "0d7773bf-52a4-49e7-9019-c41ab1658f76",
       "ee258be9-340b-415f-b44d-32886f05b9cd",
-      "a278c008-c34c-4442-92b2-3554e852aefe"
+      "e40e7e6c-d2b3-4cbd-8eab-5927a35d0662"
     ],
     "color": null,
     "description": "January 2026 Information Also Known As NEOJAPO (ネオジャポ) Origin Tokyo, Japan Genre J-Pop Rock Punk Years 2017-Present Label NEO JAPONISM Inc. Agency NEO JAPONISM Inc. Current Members Takizawa Hinano Tatsumi Sayaka Seto Miruka Asakura Ai Izumi Nao Owada Chiyori Honda Tomoha Former Members Aizawa Moka Dodo Momoka Morita Mirei Fujii Rana Mamiya Yuu Fukuda Miyu Producer Kato Saki (加藤颯) Links Website Official Website Social Media",
@@ -145697,16 +145861,12 @@
       "067a6cf6-f6d9-4e2c-b9fa-4aa8992881fb",
       "ac0613b2-e0ff-458e-b3e8-777121e33b69"
     ],
-    "past_member_count": 4,
+    "past_member_count": 2,
     "past_member_names": [
-      "Miku",
-      "misaki",
       "Miku",
       "Misaki"
     ],
     "past_member_uids": [
-      "8c00612d-9280-4c1d-84a0-9f91b00073d0",
-      "08e08416-3f9a-460a-9bd4-1453d6ea3293",
       "d7d963c7-3c74-47f3-9e75-a3c36346a750",
       "2a19c0db-4d05-4fc9-9317-398789b35125"
     ],
@@ -148894,9 +149054,9 @@
       "わらび",
       "神崎セナ",
       "とわん",
-      "芝咲智菜",
-      "西村彩",
-      "星奈きょうか"
+      "彩川さやな",
+      "咲山しほ",
+      "花園あき"
     ],
     "member_uids": [
       "3be29d8e-cfec-4db6-80d2-5cb92e332730",
@@ -148904,18 +149064,17 @@
       "61a54ab4-e3ed-4416-b93e-f0dc082de9c1",
       "f06a277c-9671-42b3-a11c-953e7d9502df",
       "42553161-8305-4930-bf19-844f10292269",
-      "a759fcdb-8a10-4ce1-9def-d2bbe70ede74",
-      "1c2e9da0-98c3-47b4-b85f-b8c4792e0b6c",
-      "2efa06b5-8b66-42dc-ae46-2e3b01bea0e7"
+      "8a43f488-4918-4edd-8302-6a65f096fb8d",
+      "22c12fdb-1e7b-4901-a10c-a32d12fffd1a",
+      "b28b3ec3-cf71-4d5b-875f-6e5b9e68c9d6"
     ],
-    "past_member_count": 32,
+    "past_member_count": 29,
     "past_member_names": [
       "森川夕衣",
       "山本新奈",
       "春野絵里",
       "大下奈央",
       "清川麗奈",
-      "彩川さやな",
       "椎名杏実",
       "岡村美緒",
       "白石りか",
@@ -148937,11 +149096,9 @@
       "桜未奈星",
       "沙藤まなか",
       "真白みゆり",
-      "花園あき",
-      "咲山しほ",
-      "Yamamoto Niina",
-      "Ayakawa Sayana",
-      "Yoshinaga Miina"
+      "花瀬さな",
+      "あみ乃",
+      "大川彩菜"
     ],
     "past_member_uids": [
       "f08f1d8e-e253-48a2-b3f3-09ad0d2d9945",
@@ -148949,7 +149106,6 @@
       "c7b72a9b-908e-4d02-a66a-fab41c5c42b6",
       "0b3b838f-162e-4177-9b93-63edf2c77fd5",
       "c4c3aff5-6ae2-49a2-a317-ce9533954867",
-      "8a43f488-4918-4edd-8302-6a65f096fb8d",
       "2d37b6d7-36e4-4b9c-986a-fdaf2c5f7516",
       "22e79798-811d-4260-a157-a2e3462826b7",
       "08b0ade9-d0f1-4822-b3d8-44d804aea31e",
@@ -148971,9 +149127,9 @@
       "24b9f742-1e5d-47dd-9931-39198e78fe68",
       "4d90ddb3-50d5-450b-b702-ba4204b3fa18",
       "a37f46e2-a5d0-4fbb-94ce-7f84eab874a4",
-      "b28b3ec3-cf71-4d5b-875f-6e5b9e68c9d6",
-      "22c12fdb-1e7b-4901-a10c-a32d12fffd1a",
-      ""
+      "3cce55bf-ed77-4dd7-96dd-de98ed613330",
+      "f4daf006-1f59-4099-ab73-24b0aee0e838",
+      "0bc79187-0ee8-4fe4-8ae1-b3dcc78c3a33"
     ],
     "color": null,
     "description": "October 2025 Information Origin Japan Genre J-Pop Years 2014-Present Label I-GET MUSIC Agency I-GET Associated Acts Hiragana SAY-LA HOT DOG CAT READY TO KISS BABY TO KISS Qnto syrup Links Website Official Website SAY-LA (セイラ) is currently an eight-member Japanese female idol group under the agency I-GET.",
@@ -149524,26 +149680,22 @@
       "杏優",
       "羽柴愛実",
       "蒼井輝菜",
-      "大月華琳",
-      "風間花音"
+      "西野愛望",
+      "増田葵奈"
     ],
     "member_uids": [
       "30f9d9c6-9ec4-4f6b-94de-6bf06a0b1ede",
       "8200ec78-6528-4067-a281-ea389f149383",
       "fbb1b73f-84ff-4a17-9d9f-c6745d082356",
-      "4e5ccc87-b988-4da7-844d-8a8a0c1f7f5a",
-      "b3168b02-459c-4a35-ae64-4c6871368940"
-    ],
-    "past_member_count": 3,
-    "past_member_names": [
-      "小川すず",
-      "西野愛望",
-      "増田葵奈"
-    ],
-    "past_member_uids": [
-      "d11acb53-5a57-482d-8d38-9c2b95d96642",
       "74334478-a1bf-422b-b931-bde537605844",
       "b8b63ea3-14c1-49ee-ae03-42632a4039dc"
+    ],
+    "past_member_count": 1,
+    "past_member_names": [
+      "小川すず"
+    ],
+    "past_member_uids": [
+      "d11acb53-5a57-482d-8d38-9c2b95d96642"
     ],
     "color": null,
     "description": "September 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2020-Present Label Sanbai Records Agency ALLYOUNEEDS Inc. Current Members Ayu Hashiba Ami Aoi Hina Otsuki Karin Kazama Kanon Former Members Ogawa Suzu Nishino Aimi Masuda Aina Links Website Official Website Social Media situasion is a five-member Japanese idol group based in Tokyo, Japan.",
@@ -152182,35 +152334,35 @@
   {
     "uid": "U1RBUk1BUklF",
     "name": "STARMARIE",
-    "member_count": 5,
+    "member_count": 3,
     "member_names": [
       "木下望",
       "高森紫乃",
-      "中根もにゃ",
-      "松崎博香",
-      "麻弥"
+      "松崎博香"
     ],
     "member_uids": [
       "8124d3c1-cc0e-4598-aec9-8aa48a52e34c",
       "8fe2c435-803f-425d-a094-0ccaa4df8651",
-      "bd40422a-f2f2-426a-8abe-8359a0447647",
-      "f30d546a-495b-446f-af5d-dc7525ef1080",
-      "48c2830e-14f8-4e88-89fd-3ab8198c264d"
+      "f30d546a-495b-446f-af5d-dc7525ef1080"
     ],
-    "past_member_count": 5,
+    "past_member_count": 7,
     "past_member_names": [
       "荒井香里",
       "関根沙亜耶",
       "春名美穂",
       "青木栞",
-      "渡辺楓"
+      "渡辺楓",
+      "中根もにゃ",
+      "麻弥"
     ],
     "past_member_uids": [
       "233b4e73-176a-484b-aa0a-6213f899b969",
       "22389ebb-c69f-42fa-9fe9-971d5cdb02de",
       "47a73849-d772-44be-a12e-d641f8a7d8b1",
       "56ce7505-a566-48e9-bfd3-b740805d7a9e",
-      "2ff4d678-a9a9-43c2-9ab8-ae557346079c"
+      "2ff4d678-a9a9-43c2-9ab8-ae557346079c",
+      "bd40422a-f2f2-426a-8abe-8359a0447647",
+      "48c2830e-14f8-4e88-89fd-3ab8198c264d"
     ],
     "color": null,
     "description": "May 2024 Information Years 2008-Present Label SHIKISAI RECORDS/Bushiroad Music Agency M-SMILE Current Members Kishita Nozomi Takamori Shino Nakane Monya Matsuzaki Hiroka Maya Former Members Arai Kaori (2008-2009) Sekine Saaya (2008-2010) Haruna Miho (2010) Aoki Shiori (2008-2014) Watanabe Kaede (2014-2020) Links Website starmarie.com Social Media STARMARIE is an idol group that was formed in 2008 but didn't start releasing music until 2009. They are under the agency M-SMILE.",
@@ -153512,7 +153664,7 @@
   {
     "uid": "U1RBaU5Z",
     "name": "STAiNY",
-    "member_count": 9,
+    "member_count": 8,
     "member_names": [
       "浜辺千夢",
       "花瀬さな",
@@ -153520,7 +153672,6 @@
       "佐々木ひまり",
       "神崎あゆみ",
       "水城なゆ",
-      "円まむ",
       "希羽そら",
       "夜空りな"
     ],
@@ -153531,11 +153682,10 @@
       "b2a94e24-df8d-4c9f-a128-9ca84790e7a8",
       "97bb1736-2bad-4740-b592-13844f80932f",
       "84681c33-6b32-4f49-a468-149400e4f355",
-      "70806fdf-7995-40f3-856e-cc7381fed208",
       "019f9682-b5eb-462b-9e32-d112fd7e3c51",
       "2ea30de1-5bae-4d04-be40-23cd813e2808"
     ],
-    "past_member_count": 14,
+    "past_member_count": 13,
     "past_member_names": [
       "新井ゆうり",
       "南なぎさ",
@@ -153549,8 +153699,7 @@
       "佐野もか",
       "鈴音こはる",
       "松岡ななか",
-      "大月ももな",
-      "Shirase Hiyori"
+      "大月ももな"
     ],
     "past_member_uids": [
       "ae0ccf1e-f2de-41df-b39e-de212fb2b96a",
@@ -153565,8 +153714,7 @@
       "e69ddb92-9e8d-472e-b78f-d3f8c21c25ce",
       "37f0b3e6-13f5-47f6-8f52-b07e7569fc9f",
       "4b0f4f5b-7645-4e9b-86ec-db823bd1e506",
-      "1fc31fb1-2406-4ffe-be61-2d4e709ee3e2",
-      ""
+      "1fc31fb1-2406-4ffe-be61-2d4e709ee3e2"
     ],
     "color": null,
     "description": "March 2026 Information Origin Tokyo, Japan Genre J-Pop Years 2020-Present Agency SCOT Associated Acts NECOPLA Current Members Hamabe Chimu Hanase Sana Sakurai Hono Sasaki Himari Kanzaki Ayumi Mizuki Nayu Madoka Mamu Former Members Arai Yuuri Minami Nagisa Shirase Hiyori Nagase Kanon Ito Reika Shinonome Ame Shinozaki Koko Matsui Yukina Hazuki Yurika Sano Moka Suzune Koharu Matsuoka Nanaka Otsuki Momona Yozora Rina Kihane Sora Links Social Media STAiNY (ステイニー) is an eight-member Japanese idol gir",
@@ -156449,7 +156597,7 @@
   {
     "uid": "U3dlZXQgQWxsZXk",
     "name": "Sweet Alley",
-    "member_count": 8,
+    "member_count": 9,
     "member_names": [
       "深江有恵",
       "島田菜津美",
@@ -156458,7 +156606,8 @@
       "吉田笑夢",
       "猪狩彩奈",
       "瑚苓",
-      "あみち。"
+      "あみち。",
+      "長谷川あめり"
     ],
     "member_uids": [
       "2db0a967-1481-4b45-9325-87637ca23261",
@@ -156468,15 +156617,15 @@
       "02f18dda-4eba-40c2-b184-3880dc04f9f7",
       "7334cc08-a646-40f9-906e-837478ea4914",
       "0a1f0a0d-3c7a-445d-aa01-b6cbc5386038",
-      "1ea71c4f-7e58-4131-a529-b9eeb1d3ee0b"
+      "1ea71c4f-7e58-4131-a529-b9eeb1d3ee0b",
+      "bebe8ec5-bab9-477e-8b25-aa3ec6bc8df9"
     ],
-    "past_member_count": 6,
+    "past_member_count": 5,
     "past_member_names": [
       "立花 もも",
       "蘆田真帆",
       "桜木花純",
       "小野瀬ひまわり",
-      "長谷川あめり",
       "立花もも"
     ],
     "past_member_uids": [
@@ -156484,7 +156633,6 @@
       "ca775656-2e71-4f6a-97f7-c994647630cd",
       "bfa735cc-b9e4-4d8f-9fdc-1bd437a726cb",
       "e6c10548-f845-483f-815d-56674fc4d7f6",
-      "bebe8ec5-bab9-477e-8b25-aa3ec6bc8df9",
       "4ddcc53e-d4ee-430a-9e48-12e38bcc3cc9"
     ],
     "color": null,
@@ -158596,7 +158744,7 @@
       "仔羽まゆり",
       "シアン",
       "三雲なつみ",
-      "にる"
+      "NiR"
     ],
     "member_uids": [
       "bf56086d-debd-482f-82fd-810abc1d9bfe",
@@ -164480,16 +164628,15 @@
   {
     "uid": "UkVBRFkgVE8gS0lTUw",
     "name": "READY TO KISS",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "もりしょうこ",
       "水島さくら",
       "瀬戸佳凛",
       "白浜さや",
       "小松かやの",
-      "朝七 みゆ",
-      "楠 ゆい",
-      "木村ゆみか"
+      "木村ゆみか",
+      "七海なの"
     ],
     "member_uids": [
       "b98b6825-009a-4377-8e4d-e3d22f608585",
@@ -164497,14 +164644,12 @@
       "5e80c5a6-a62e-47a8-b86f-c468e4187d08",
       "e68fefb5-65bc-41aa-b384-bd8db816eacd",
       "d9e40cd0-3e46-41ed-8bb6-1d7828f6d61d",
-      "f717dcac-092a-4992-8f55-6e7a2e7e8747",
-      "a2c09a7c-2a6d-4e04-bc5c-f5641c6cee3e",
-      "cf972f79-93b6-44c5-915e-50266b3d671f"
+      "cf972f79-93b6-44c5-915e-50266b3d671f",
+      "647e1581-6d83-4a8c-b390-615066d068f9"
     ],
-    "past_member_count": 29,
+    "past_member_count": 24,
     "past_member_names": [
       "永藤葵",
-      "小林怜奈",
       "豊田瀬里奈",
       "来田みや",
       "後藤美弥",
@@ -164516,7 +164661,6 @@
       "大川彩菜",
       "春川桃菜",
       "千葉咲乃",
-      "天羽希純",
       "弓川いち華",
       "清川麗奈",
       "新川るり",
@@ -164528,14 +164672,10 @@
       "柚木美桜",
       "佐々木美帆",
       "牧野広実",
-      "七海なの",
-      "小林玲奈",
-      "Naruse Maika",
-      "Mii Umi"
+      "小林玲奈"
     ],
     "past_member_uids": [
       "08bcb62c-9908-4b67-88b2-fa4e49a01842",
-      "36abd3a1-7f55-4934-b08d-8f1149ea8bb3",
       "4d604ab6-8f51-4fc8-9e47-7bb4aa85b793",
       "c4a8d29e-1f4a-4837-854d-53d08762eb1c",
       "8bb1c47b-37c9-470c-b79d-e1f7f65015f4",
@@ -164547,7 +164687,6 @@
       "0bc79187-0ee8-4fe4-8ae1-b3dcc78c3a33",
       "f65a5ad5-db91-4c5a-a5a4-a71f0eeaf4c5",
       "10a39bb2-9962-49c8-ae3d-f2a2e420bde9",
-      "1bc2aeaf-74da-4442-ba8f-6a760c52ab0c",
       "3f14ec10-bea2-4411-8465-52b5351c5349",
       "c4c3aff5-6ae2-49a2-a317-ce9533954867",
       "e89325c7-95a3-4453-8215-a9f80254c8c1",
@@ -164559,9 +164698,7 @@
       "9b44846c-b3cd-4dde-89c9-7b241345fc8c",
       "ab10d11b-c837-4637-8c14-3e8938a14850",
       "8ab9e63f-4118-4ccb-a935-a7d72953ec41",
-      "647e1581-6d83-4a8c-b390-615066d068f9",
-      "cfd58860-c907-42ec-9460-8b26f7045724",
-      ""
+      "cfd58860-c907-42ec-9460-8b26f7045724"
     ],
     "color": null,
     "description": "April 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2013-Present Label Stand-Up! Records (2015) King Records (2017-2020) Prime Minister Records (2020-Present) Agency I-GET Associated Acts HOT DOG CAT, SAY-LA, Houkago Princess Links Website Official Website READY TO KISS is an idol group originally formed by five former members of Houkago Princess under the agency I-GET. They made their live debut on October 20, 2013.",
@@ -167745,16 +167882,14 @@
       "fc6fb863-59cd-4570-9248-4747e3e8c54e",
       "ad7c81b0-6764-4382-b688-18dc3acb75b7"
     ],
-    "past_member_count": 3,
+    "past_member_count": 2,
     "past_member_names": [
       "安藤ゆず",
-      "伊藤千由李",
-      "Ando Yuzu"
+      "伊藤千由李"
     ],
     "past_member_uids": [
       "45b89756-cb6c-499f-b233-e40bec157cd7",
-      "5a2dcc33-6ff9-4a54-b34c-4f639a175269",
-      ""
+      "5a2dcc33-6ff9-4a54-b34c-4f639a175269"
     ],
     "color": null,
     "description": "February 2025 Information Also Known As Shachi (シャチ) Team Syachihoko (チームしゃちほこ) (2011-2018) Origin Nagoya, Aichi, Japan Genre J-Pop Rock Years 2011-2025 Label Wakuwaku Records (2022-2025) Warner Music Japan (2012-2022) unBORDE (2012-2022) Agency STARDUST PLANET ( Stardust Promotion ) Associated Acts Momoiro Clover Z Shiritsu Ebisu Chuugaku Cho Tokimeki♡Sendenbu Batten Shoujo-tai Ukka Iginari Tohokusan AMEFURASSHI Namie Yoshihatsu Kumiai Stapla Kenshuusei (Trainee Group) Final Line-Up Akimoto H",
@@ -168530,22 +168665,26 @@
   {
     "uid": "VEVOUklO",
     "name": "TENRIN",
-    "member_count": 5,
+    "member_count": 7,
     "member_names": [
       "のもあちゃちゃ",
       "白洲あやん",
       "七瀬にこ",
       "蓮花うらら",
-      "霞あげは"
+      "霞あげは",
+      "月神キラ",
+      "雅なぎ"
     ],
     "member_uids": [
       "52311409-c4f5-4de1-950b-cc18afd1698d",
       "bfcaec9e-eb04-4d51-ba11-99cbf2511c2d",
       "163b40d8-699f-4236-b579-c244ff8e6f9b",
       "1ae94901-0ab4-41d1-a3f8-70218ce9d8d6",
-      "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8"
+      "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8",
+      "677f39d7-0ea5-4b0f-88ff-6f63375fc8d3",
+      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f"
     ],
-    "past_member_count": 10,
+    "past_member_count": 9,
     "past_member_names": [
       "千結",
       "夏目ゆら",
@@ -168554,9 +168693,8 @@
       "今居るか",
       "天鬼桃歌",
       "鳴海こま",
-      "月神キラ",
-      "雅なぎ",
-      "空乃かなた。"
+      "空乃かなた。",
+      "空野すず"
     ],
     "past_member_uids": [
       "ba8a17b0-5c1d-4368-ae4e-866a4555d92b",
@@ -168566,9 +168704,8 @@
       "1671e9b3-a50a-47be-9633-a8cf79a33479",
       "16567862-45ae-4224-be1c-9ab8687bf61c",
       "29697e00-519d-47e0-9c8e-9244accbfa58",
-      "677f39d7-0ea5-4b0f-88ff-6f63375fc8d3",
-      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f",
-      "f03ec679-6183-46bc-a00d-63537e542d63"
+      "f03ec679-6183-46bc-a00d-63537e542d63",
+      "5f49a038-1bfb-4bc5-88dc-d959e669e6b0"
     ],
     "color": null,
     "description": "August 2025 Information Origin Shinjuku, Tokyo, Japan Genre J-Rock Years 2020-Present Label CROSS SIDE MUSIC (2020-Present) imaginate (2020) Agency imaginate Associated Acts HEROINES MOBIUS Higeki no Heroine Syndrome Nue Ponkotsu Konpo iLiFE! iLiFE! Kouhosei Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY YAMINABE AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST S",
@@ -171404,7 +171541,7 @@
       "伊吹うに",
       "みゆう",
       "紬希わかな",
-      "宇佐美ことは"
+      "月宮ひなり"
     ],
     "member_uids": [
       "d96e75c6-8693-453a-9533-cde0f049209c",
@@ -171413,22 +171550,20 @@
       "76bf4866-e588-4932-b8fe-956f7c47ac1f",
       "bd90a31d-ad58-4572-8845-e40305a34884",
       "2f84ecf1-33f8-4313-a4f0-2d1cd3e1b3f6",
-      "2332f74e-16f2-44c2-8606-e845c2ba56c6"
+      "57c68cd8-cf20-44cc-a0d8-b59a8582e7a3"
     ],
-    "past_member_count": 5,
+    "past_member_count": 4,
     "past_member_names": [
       "胡桃るる",
       "水瀬さち",
       "一之瀬しずく",
-      "葉月みる",
-      "月宮ひなり"
+      "葉月みる"
     ],
     "past_member_uids": [
       "ea78d199-2ea9-4d40-b4c9-711f80ca3a34",
       "18a60272-e846-4fdb-9c22-bd0ff99f7337",
       "135b37ff-4329-4f5d-ae41-5603fb6e815b",
-      "fdf6e1ba-17f4-42bb-b2e4-ccaff60febad",
-      "57c68cd8-cf20-44cc-a0d8-b59a8582e7a3"
+      "fdf6e1ba-17f4-42bb-b2e4-ccaff60febad"
     ],
     "color": null,
     "description": "February 2026 Information Origin Tokyo, Japan Genre J-Pop Years 2022-Present Agency PLAYYTE Current Members Haga Uruna Akane Papico Sakino Yui Ibuki Uni Miyuu Tsumugi Wakana Usami Kotoha Former Members Kurumi Ruru Minase Sachi Ichinose Shizuku Hazuki Miru Tsukimiya Hinari Links Website Official Website Social Media UtaGe! (うたげ) is a seven-member idol group formed on April 15, 2022. They made their stage debut on May 15, 2022 @SHIBUYA DIVE.",
@@ -173029,15 +173164,13 @@
   {
     "uid": "WUFNSU5BQkU",
     "name": "YAMINABE",
-    "member_count": 3,
+    "member_count": 2,
     "member_names": [
       "こるね",
-      "卯莎ゆあ",
       "黒崎りある"
     ],
     "member_uids": [
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
-      "85dcb295-c757-4cb8-8b9e-f9b63bcfb518",
       "720bfe27-a27c-4df4-a184-5c0e780cf070"
     ],
     "past_member_names": [
@@ -173456,7 +173589,7 @@
   {
     "uid": "WlVUVE9NT1RUTw",
     "name": "ZUTTOMOTTO",
-    "member_count": 8,
+    "member_count": 9,
     "member_names": [
       "高坂りん",
       "四宮える",
@@ -173465,7 +173598,8 @@
       "望月みら",
       "佐倉あん",
       "青羽わか",
-      "羽澄ほの"
+      "羽澄ほの",
+      "瀬奈ゆのん"
     ],
     "member_uids": [
       "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415",
@@ -173475,7 +173609,8 @@
       "e350221c-442c-4f10-b7ce-5692b42410c9",
       "1fbb3231-5485-455b-8c1e-aa2912dcbafe",
       "86207bdc-a43b-4e11-a985-3518f376f1e5",
-      "29380032-008c-4f52-ab56-d86a028f3d70"
+      "29380032-008c-4f52-ab56-d86a028f3d70",
+      "7a7cbace-6bda-4dbb-b003-42194aec5e56"
     ],
     "past_member_count": 7,
     "past_member_names": [
@@ -173485,7 +173620,7 @@
       "春音みりあ",
       "鈴都りせ",
       "楠瀬かんな",
-      "瀬奈ゆのん"
+      "月城ろあ"
     ],
     "past_member_uids": [
       "45c2f891-89ae-4dfa-a25a-72f6ccc541c7",
@@ -173494,7 +173629,7 @@
       "42cfcd67-43e4-4841-87fb-0d55ab453692",
       "426744c0-7324-4686-8ca7-f2d6a763099f",
       "d55a018a-30d3-4346-98ed-c790784b23be",
-      "7a7cbace-6bda-4dbb-b003-42194aec5e56"
+      "704f1ba3-4718-4b38-b758-b2b4ac6a72c7"
     ],
     "color": null,
     "description": "ZUTTOMOTTO May 2025 Information Also Known As Zuttomo (ずっとも) Origin Tokyo, Japan Genre J-Pop Years 2023-present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Kousaka Rin (2023-Present) Hasumi Hono (20",
@@ -176937,18 +177072,17 @@
   {
     "uid": "aUxpRkUh",
     "name": "iLiFE!",
-    "member_count": 10,
+    "member_count": 9,
     "member_names": [
-      "Konoka Riri",
-      "Aisu",
-      "Fukumaru Usa",
-      "Wakaba Noa",
-      "Sonata Karen",
-      "Kohane Mini",
-      "Sumire Miki",
-      "Koguma Mamu",
-      "Konose Haruka",
-      "Ice"
+      "心花りり",
+      "あいす",
+      "福丸うさ",
+      "若葉のあ",
+      "空詩かれん",
+      "虹羽みに",
+      "純嶺みき",
+      "小熊まむ",
+      "那蘭のどか"
     ],
     "member_uids": [
       "112c6285-2b64-423f-aecc-9792a019fa67",
@@ -176959,12 +177093,10 @@
       "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
       "9871efc4-1501-41eb-a430-94fd34bf4015",
       "39648c9a-5e5c-47b9-9145-4437d165330e",
-      "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
-      "0c55b7c7-bb9a-438d-9644-27b85cac8ae1"
+      "2a3f475a-312d-43b5-ace9-5c66b2df9784"
     ],
-    "past_member_count": 19,
+    "past_member_count": 14,
     "past_member_names": [
-      "心咲めい",
       "双葉りつ",
       "桜餅ふゆ",
       "琥珀しえる",
@@ -176978,14 +177110,9 @@
       "日日にこり",
       "有栖るな",
       "こるね",
-      "那蘭のどか",
-      "恋春ねね",
-      "響羽凛瞳",
-      "佐藤ねね",
       "乃上楓"
     ],
     "past_member_uids": [
-      "93fbcdb0-3243-44ed-871a-f1b60c4198a8",
       "ef20b016-d1c5-4272-8f4a-b69994762ffa",
       "7bc4d961-6d0c-4cd9-bb6b-aafdb621e227",
       "b03e7380-d849-4a97-b03f-b2fc647eb6ca",
@@ -176999,10 +177126,6 @@
       "04e5d504-3ffe-499f-91cc-7beeb74277ff",
       "3f0de201-db1d-43a0-9414-971e6fe8cde1",
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
-      "2a3f475a-312d-43b5-ace9-5c66b2df9784",
-      "a5d97298-bee4-48a2-b0de-9897d297bbad",
-      "39182e99-128e-4556-94b6-d4426f380be8",
-      "e91cda92-0bff-4277-8c1b-fb0bd67785b0",
       "7846b370-746b-4ba5-96ac-e2afa2dc87fa"
     ],
     "color": null,
@@ -177523,7 +177646,10 @@
     "songs": [],
     "letter_tier": "B",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "shared_release_uids": [
+      "shared-heroines-album-2025"
+    ]
   },
   {
     "uid": "aVNQWQ",
@@ -177924,14 +178050,15 @@
   {
     "uid": "aWRlYWwgcGVjbw",
     "name": "ideal peco",
-    "member_count": 6,
+    "member_count": 7,
     "member_names": [
       "近石日奈",
       "菅谷夏子",
       "白星あいり",
       "綾瀬ねね",
       "早海美玖",
-      "吉橋亜理砂"
+      "吉橋亜理砂",
+      "夏目綾"
     ],
     "member_uids": [
       "2eba24a0-a0e0-4255-bf83-5cbfebe7acc5",
@@ -177939,15 +178066,12 @@
       "67997283-9317-45c8-a79d-b5df1c391eec",
       "38a76c16-9d05-4988-b719-7cd0be13ec04",
       "6fb46441-fd08-4e1f-b813-9ed26b7c6d61",
-      "8dfd6397-9d5d-46b8-b228-4b58159d87b9"
-    ],
-    "past_member_count": 1,
-    "past_member_names": [
-      "夏目綾"
-    ],
-    "past_member_uids": [
+      "8dfd6397-9d5d-46b8-b228-4b58159d87b9",
       "ea35d28f-a628-4916-b7ad-9a6daaf2dd2e"
     ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
     "color": null,
     "description": "ideal peco November 2025 Information Also Known As Aipeco (アイペコ) idp Origin Tokyo, Japan Genre J-Pop Years 2023-Present Agency iCON DOLL LOUNGE (iDL) Current Members Chikaishi Hina Sugaya Kako Shirahoshi Airi Ayase Nene Hayami Miku Yoshihashi Arisa Former Members Natsume Aya Producer Ishibashi Tetsuya Takamori Arisa Links Website Official Website Social Media ideal peco is a six-member Japanese idol group formed in May 2023.",
     "formed_date": "2023-09-18",
@@ -184541,30 +184665,26 @@
     "name_romanji": "Dress_Code",
     "nickname": "ドレコ",
     "nickname_romanji": "Dreco",
-    "member_count": 5,
+    "member_count": 6,
     "member_names": [
       "百宮みも",
       "飛茉りのあ",
       "小鈴もゆ",
       "御伽りるむ",
-      "朝日まる"
+      "宮園れな",
+      "朝比奈まどか"
     ],
     "member_uids": [
       "95ac5102-f41d-4e12-9443-8bff871da1e4",
       "f58df1a3-7c12-41d3-b818-35e569f7378c",
       "ff539208-2470-49b4-8ab6-121a38f412c0",
       "0905e105-9720-46ff-8ed1-604dbea12174",
-      "b1ec5e19-c08b-4d68-b1ce-8bd72fa7b0b1"
+      "d758b459-94b7-4a57-9e48-ee2ebcad703d",
+      "e1c3f2b8-edd1-41ca-b9ee-ff458c9cc689"
     ],
-    "past_member_count": 2,
-    "past_member_names": [
-      "朝比奈まどか",
-      "宮園れな"
-    ],
-    "past_member_uids": [
-      "e1c3f2b8-edd1-41ca-b9ee-ff458c9cc689",
-      "d758b459-94b7-4a57-9e48-ee2ebcad703d"
-    ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
     "color": "#FFFFFF",
     "description": "Dress Code December 2025 Information Also Known As Dreco (ドレコ) Origin Tokyo, Japan Genre J-Pop Years 2024-Present Label CROSS SIDE MUSIC Agency Imaginate Associated Acts HEROINES HEROINES Osaka Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO LADYBABY Akishibu project chuLa Paradeeq Nanakorobi Yaoki MEGAFON Tenshinranman iOn! HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Momomiya Mimo (2024-Present) Asuma R",
     "formed_date": "2024-09-21",
@@ -184616,7 +184736,7 @@
     "name_romanji": "iON!",
     "nickname": "",
     "nickname_romanji": "",
-    "member_count": 10,
+    "member_count": 7,
     "member_names": [
       "宇野ゆり",
       "花丸ぺこ",
@@ -184624,10 +184744,7 @@
       "栗栖むぎ",
       "伽久耶くらら",
       "鈴都りせ",
-      "名雲めんま",
-      "透明くりあ",
-      "大須かのん",
-      "苺川えくぼ"
+      "恋春ねね"
     ],
     "member_uids": [
       "a6505d1f-4415-4423-97ba-c94b2af88ccf",
@@ -184636,20 +184753,11 @@
       "99ff9cae-be29-4220-9c67-cd163a4d309e",
       "443535e3-690d-4238-9eb3-c35a916b72fa",
       "426744c0-7324-4686-8ca7-f2d6a763099f",
-      "f826d7d2-49c0-4ee1-be99-48263b332aaa",
-      "e4a905f9-a1b9-4e78-bb08-4124ff4b6e5f",
-      "668dfc7d-ba0a-4534-b201-5c2060689f05",
-      "684ff24b-1111-4ff6-991b-0e4fa51505d4"
+      "a5d97298-bee4-48a2-b0de-9897d297bbad"
     ],
-    "past_member_count": 2,
-    "past_member_names": [
-      "恋春ねね",
-      "佐藤ねね"
-    ],
-    "past_member_uids": [
-      "a5d97298-bee4-48a2-b0de-9897d297bbad",
-      "e91cda92-0bff-4277-8c1b-fb0bd67785b0"
-    ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
     "color": "#FFFFFF",
     "description": "iOn! February 2026 Information Also Known As あいおん Origin Tokyo, Japan Genre J-pop Years 2025-Present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Uno Yuri (2025-present) Hanamaru",
     "formed_date": "2025-04-20",

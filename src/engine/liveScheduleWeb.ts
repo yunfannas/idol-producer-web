@@ -65,7 +65,7 @@ export const LIVE_TYPE_PRESETS: Record<
     tokutenkai_enabled: true,
     tokutenkai_duration: 90,
     tokutenkai_ticket_price: 2000,
-    tokutenkai_slot_seconds: 40,
+    tokutenkai_slot_seconds: 20,
     tokutenkai_expected_tickets: 90,
   },
   Taiban: {
@@ -77,7 +77,7 @@ export const LIVE_TYPE_PRESETS: Record<
     tokutenkai_enabled: true,
     tokutenkai_duration: 60,
     tokutenkai_ticket_price: 2000,
-    tokutenkai_slot_seconds: 15,
+    tokutenkai_slot_seconds: 20,
     tokutenkai_expected_tickets: 48,
   },
   Festival: {

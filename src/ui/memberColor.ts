@@ -1,5 +1,5 @@
 function normalizeColorCode(value: unknown): string | null {
-  const raw = String(value JPY   "").trim();
+  const raw = String(value ?? "").trim();
   if (!raw || raw === "—" || raw === "â€”") return null;
   if (/^#[0-9A-Fa-f]{3,8}$/.test(raw)) return raw;
   const hexMatch = /^0x([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/.exec(raw);
@@ -11,7 +11,7 @@ export function resolveMemberColorCss(color: string, colorCode?: unknown): strin
   const codeCss = normalizeColorCode(colorCode);
   if (codeCss) return codeCss;
 
-  const raw = String(color JPY   "").trim();
+  const raw = String(color ?? "").trim();
   if (!raw || raw === "—" || raw === "â€”") return null;
 
   const literalCss = normalizeColorCode(raw);
@@ -48,5 +48,5 @@ export function resolveMemberColorCss(color: string, colorCode?: unknown): strin
     silver: "#cbd5e1",
   };
 
-  return namedColors[normalized] JPY   null;
+  return namedColors[normalized] ?? null;
 }

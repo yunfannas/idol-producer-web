@@ -11,6 +11,11 @@ export interface ScoutCompany {
   service_fee_yen: number;
 }
 
+export interface ScoutSubscriptionRow {
+  company_uid: string;
+  subscribed_at: string;
+}
+
 export interface ScoutLeadRow {
   idol_uid: string;
   score: number;
@@ -38,6 +43,20 @@ export interface ScoutAuditionRow extends Record<string, unknown> {
   profile_score: number;
   attributes: Record<string, unknown>;
   signed_idol_uid?: string;
+}
+
+function monthStartIso(isoLike: string): string {
+  const datePart = String(isoLike ?? "").split("T")[0];
+  const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(datePart);
+  if (!m) return "2000-01-01";
+  return `${m[1]}-${m[2]}-01`;
+}
+
+function monthDelta(fromIso: string, toIso: string): number {
+  const from = /^(\d{4})-(\d{2})-\d{2}$/.exec(monthStartIso(fromIso));
+  const to = /^(\d{4})-(\d{2})-\d{2}$/.exec(monthStartIso(toIso));
+  if (!from || !to) return 0;
+  return Math.max(0, (Number(to[1]) - Number(from[1])) * 12 + (Number(to[2]) - Number(from[2])));
 }
 
 const CITY_ALIASES: Record<string, string[]> = {
@@ -184,6 +203,50 @@ export function buildDefaultScoutCompanies(): ScoutCompany[] {
   return companies;
 }
 
+export function normalizeScoutSubscriptions(raw: unknown): Record<string, ScoutSubscriptionRow> {
+  const out: Record<string, ScoutSubscriptionRow> = {};
+  if (!raw || typeof raw !== "object") return out;
+  for (const [companyUid, value] of Object.entries(raw as Record<string, unknown>)) {
+    if (!value || typeof value !== "object") continue;
+    const row = value as Record<string, unknown>;
+    const subscribedAt = String(row.subscribed_at ?? "").split("T")[0];
+    if (!companyUid || !/^\d{4}-\d{2}-\d{2}$/.test(subscribedAt)) continue;
+    out[companyUid] = {
+      company_uid: companyUid,
+      subscribed_at: subscribedAt,
+    };
+  }
+  return out;
+}
+
+export function isScoutCompanySubscribed(
+  subscriptions: Record<string, ScoutSubscriptionRow> | null | undefined,
+  companyUid: string,
+): boolean {
+  return Boolean(subscriptions && subscriptions[companyUid]);
+}
+
+export function scoutLeadRevealCount(
+  subscriptions: Record<string, ScoutSubscriptionRow> | null | undefined,
+  companyUid: string,
+  currentIso: string,
+): number {
+  const row = subscriptions?.[companyUid];
+  if (!row) return 0;
+  return 1 + monthDelta(row.subscribed_at, currentIso);
+}
+
+export function totalMonthlyScoutRetainersYen(
+  subscriptions: Record<string, ScoutSubscriptionRow> | null | undefined,
+  companies: ScoutCompany[],
+): number {
+  if (!subscriptions) return 0;
+  return companies.reduce(
+    (sum, company) => sum + (subscriptions[company.uid] ? Math.max(0, company.service_fee_yen) : 0),
+    0,
+  );
+}
+
 function hometownAffinityScore(city: string, idol: Record<string, unknown>): number {
   return cityMatchesText(city, String(idol.birthplace ?? "")) ? 100 : 0;
 }
@@ -191,9 +254,11 @@ function hometownAffinityScore(city: string, idol: Record<string, unknown>): num
 function companyAssignmentScore(company: ScoutCompany, idol: Record<string, unknown>): number {
   const local = hometownAffinityScore(company.city, idol);
   const profile = idolProfileScore(idol);
+  const levelTarget = { 1: 28, 2: 48, 3: 68, 4: 84 }[company.level] ?? 48;
+  const levelFit = Math.max(0, 20 - Math.abs(profile - levelTarget) * 0.45);
   const followerBand = Math.min(12, Math.floor(idolFollowers(idol) / 15_000));
   const stableBias = stableHash01(`${company.uid}|${String(idol.uid ?? "")}`) * 10;
-  return local + profile * 0.18 + followerBand + stableBias - company.level * 0.5;
+  return local + profile * 0.18 + followerBand + levelFit + stableBias - company.level * 0.5;
 }
 
 function preferredFreelancerCompanyUid(idol: Record<string, unknown>, companies: ScoutCompany[]): string | null {
@@ -222,6 +287,8 @@ export function recommendScoutLeads(params: {
   const playerNorm = normText(managedGroupName);
   const rows: ScoutLeadRow[] = [];
   const assignmentPool = companies?.length ? companies : [company];
+  const minProfileByLevel: Record<number, number> = { 1: 0, 2: 35, 3: 55, 4: 72 };
+  const maxProfileByLevel: Record<number, number> = { 1: 62, 2: 82, 3: 96, 4: 100 };
   for (const idol of idols) {
     if (!idol || typeof idol !== "object") continue;
     const allCurrentGroups = activeGroupsForDate(idol, currentIso);
@@ -234,6 +301,8 @@ export function recommendScoutLeads(params: {
       if (assignedCompanyUid !== company.uid) continue;
     }
     const profile = idolProfileScore(idol);
+    if (profile < (minProfileByLevel[company.level] ?? 0)) continue;
+    if (profile > (maxProfileByLevel[company.level] ?? 100)) continue;
     const localityBonus = cityMatchesText(company.city, String(idol.birthplace ?? "")) ? 15 : 0;
     const availabilityBonus =
       targetType === "freelancer"

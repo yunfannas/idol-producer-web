@@ -271,6 +271,16 @@ function currentGroupSignal(
   return best;
 }
 
+function scandalHistoryCount(idol: Record<string, unknown>): number {
+  const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+  let count = 0;
+  for (const raw of history) {
+    if (!raw || typeof raw !== "object") continue;
+    if (String((raw as Record<string, unknown>).kind ?? "").trim().toLowerCase() === "scandal") count += 1;
+  }
+  return count;
+}
+
 export function buildAttributesFromFollowerModel(
   idol: Record<string, unknown>,
   groupPopularity: Map<string, number>,
@@ -281,17 +291,27 @@ export function buildAttributesFromFollowerModel(
   const groupSignal = currentGroupSignal(idol, openingIso, groupPopularity);
   const combined = Math.max(0, Math.min(1, idolSignal * 0.65 + groupSignal * 0.35));
   const base = 7 + Math.round(combined * 12);
+  const scandalCount = scandalHistoryCount(idol);
   const portraitPath = idol.portrait_photo_path;
   const portraitBonus =
     typeof portraitPath === "string" && portraitPath.trim().length > 0 ? 1 : 0;
   const groupBonus = groupSignal > 0 ? 1 : 0;
   const appearanceBase = base + portraitBonus;
   const technicalBase = base + groupBonus;
+  const performanceCore = technicalBase + stableRoll(uid, "performance_core", -2, 3);
+  const vocalCenter = performanceCore + stableRoll(uid, "vocal_center", -2, 2);
+  const danceSeed = technicalBase + stableRoll(uid, "dance_seed", -2, 3);
+  const danceCenter = Math.round(vocalCenter * 0.45 + danceSeed * 0.55);
+  const professionalismPenalty = scandalCount > 0 ? 5 + Math.min(6, (scandalCount - 1) * 2) : 0;
+  const professionalismBase = scandalCount > 0 ? 9 : base;
+  const injuryBase = scandalCount > 0 ? 6 : 4;
+  const loyaltyPenalty = scandalCount > 0 ? Math.min(4, scandalCount) : 0;
 
   return {
     physical: clampPhysical({
-      strength: base + stableRoll(uid, "strength", -3, 3),
-      agility: base + stableRoll(uid, "agility", -3, 4),
+      // Manual calibration set suggests dance-heavy idols tend to carry some extra physicality.
+      strength: Math.round(base * 0.65 + danceCenter * 0.35) + stableRoll(uid, "strength", -2, 2),
+      agility: Math.round(base * 0.55 + danceCenter * 0.45) + stableRoll(uid, "agility", -2, 3),
       natural_fitness: base + stableRoll(uid, "natural_fitness", -2, 4),
       stamina: base + stableRoll(uid, "stamina", -2, 4),
     }),
@@ -300,12 +320,14 @@ export function buildAttributesFromFollowerModel(
       pretty: appearanceBase + stableRoll(uid, "pretty", -3, 4),
     }),
     technical: clampTechnical({
-      pitch: technicalBase + stableRoll(uid, "pitch", -4, 4),
-      tone: technicalBase + stableRoll(uid, "tone", -4, 4),
-      breath: technicalBase + stableRoll(uid, "breath", -4, 4),
-      rhythm: technicalBase + stableRoll(uid, "rhythm", -4, 4),
-      power: technicalBase + stableRoll(uid, "power", -4, 4),
-      grace: technicalBase + stableRoll(uid, "grace", -4, 4),
+      // Use shared vocal / dance cores so singing and dancing usually move together,
+      // matching the manually tuned reference rows more closely than six independent rolls.
+      pitch: vocalCenter + stableRoll(uid, "pitch", -2, 2),
+      tone: vocalCenter + stableRoll(uid, "tone", -2, 2),
+      breath: vocalCenter + stableRoll(uid, "breath", -2, 2),
+      rhythm: danceCenter + stableRoll(uid, "rhythm", -2, 2),
+      power: danceCenter + stableRoll(uid, "power", -2, 2),
+      grace: danceCenter + stableRoll(uid, "grace", -2, 2),
     }),
     mental: clampMental({
       clever: base + stableRoll(uid, "clever", -3, 4),
@@ -316,10 +338,11 @@ export function buildAttributesFromFollowerModel(
       fashion: base + stableRoll(uid, "fashion", -3, 4),
     }),
     hidden: clampHidden({
-      professionalism: base + stableRoll(uid, "professionalism", -2, 5),
-      injury_proneness: 4 + stableRoll(uid, "injury_proneness", -2, 4),
+      professionalism:
+        professionalismBase + stableRoll(uid, "professionalism", -2, 3) - professionalismPenalty,
+      injury_proneness: injuryBase + stableRoll(uid, "injury_proneness", -1, 4) + Math.min(2, scandalCount),
       ambition: base + stableRoll(uid, "ambition", -2, 5),
-      loyalty: base + stableRoll(uid, "loyalty", -2, 5),
+      loyalty: base + stableRoll(uid, "loyalty", -2, 5) - loyaltyPenalty,
     }),
   };
 }

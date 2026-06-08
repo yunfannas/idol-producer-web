@@ -19,10 +19,12 @@ import {
   summarizeEditionTrackTotals,
 } from "../data/discographyNormalize";
 import {
+  buildGroupDiscographyReleaseRows,
   buildDiscBuckets,
   parseCatalogIsoToTime,
   songsForDisplaySorted,
 } from "../data/songDisplayPolicy";
+import { t, type UiLanguage } from "./i18n";
 
 function groupFansNum(g: Record<string, unknown>): number {
   return typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
@@ -106,8 +108,8 @@ function allGroupsMembershipHtml(
   return membershipLinksHtml(activeGroupMembershipsAtReference(idol, referenceIso, groups));
 }
 
-function rosterTheadHtml(): string {
-  return `<thead><tr><th>${htmlEsc("Name")}</th><th>${htmlEsc("Romaji")}</th><th>${htmlEsc("Color")}</th><th>${htmlEsc("Age")}</th><th>${htmlEsc("Join")}</th><th>${htmlEsc("Groups")}</th></tr></thead>`;
+function rosterTheadHtml(lang: UiLanguage): string {
+  return `<thead><tr><th>${htmlEsc(t(lang, "group_name"))}</th><th>${htmlEsc(t(lang, "group_romaji"))}</th><th>${htmlEsc(t(lang, "group_color"))}</th><th>${htmlEsc(t(lang, "idol_age"))}</th><th>${htmlEsc(t(lang, "group_join"))}</th><th>${htmlEsc(t(lang, "group_groups"))}</th></tr></thead>`;
 }
 
 /** One roster row for current or past members (group detail). */
@@ -290,6 +292,24 @@ export interface GroupDetailPageCtx {
   groups: Record<string, unknown>[];
   lives: Record<string, unknown>[] | null;
   referenceIso: string | null;
+  sharedReleases?: Record<string, unknown>[] | null;
+  lang?: UiLanguage;
+}
+
+function renderDiscographyRowsFromReleaseRows(
+  rows: { title: string; discType: string; releaseDate: string; trackCount: number }[],
+): string {
+  if (!rows.length) {
+    return `<tr><td colspan="4" class="content-muted">${htmlEsc("No releases on or before the reference date.")}</td></tr>`;
+  }
+  return rows
+    .map(
+      (row) =>
+        `<tr><td>${htmlEsc(row.title)}</td><td>${htmlEsc(row.discType)}</td><td class="num">${htmlEsc(
+          row.releaseDate,
+        )}</td><td class="num">${row.trackCount.toLocaleString("ja-JP")}</td></tr>`,
+    )
+    .join("");
 }
 
 export function renderGroupDetailPage(
@@ -298,6 +318,7 @@ export function renderGroupDetailPage(
   ctx: GroupDetailPageCtx,
 ): string {
   const name = String(g.name ?? g.name_romanji ?? "—");
+  const lang = ctx.lang ?? "en";
   const romanji = String(g.name_romanji ?? "").trim();
   const nick = typeof g.nickname === "string" ? g.nickname.trim() : "";
   const nickR = typeof g.nickname_romanji === "string" ? g.nickname_romanji.trim() : "";
@@ -321,7 +342,7 @@ export function renderGroupDetailPage(
   const wikiUrl =
     typeof g.wiki_url === "string" && g.wiki_url.trim().startsWith("http") ? g.wiki_url.trim() : "";
   const wikiBlock = wikiUrl
-    ? `<p class="content-muted group-detail-wiki"><a href="${attrQuotedUrl(wikiUrl)}" target="_blank" rel="noopener noreferrer">${htmlEsc("Wiki")}</a></p>`
+    ? `<p class="content-muted group-detail-wiki"><a href="${attrQuotedUrl(wikiUrl)}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "common_wiki"))}</a></p>`
     : "";
 
   const agencies = Array.isArray(g.agencies)
@@ -352,19 +373,20 @@ export function renderGroupDetailPage(
 
   const refShort = ctx.referenceIso ? String(ctx.referenceIso).trim().split("T")[0] : "";
   const refNote =
-    refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort) ? ` (as of ${refShort})` : "";
+    refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort) ? ` ${t(lang, "common_as_of", { date: refShort })}` : "";
 
   const teamSongs = songsForDisplaySorted(ctx.songs).filter((s) => String(s.group_uid ?? "") === gid);
   const songCount = teamSongs.length;
-  const discCount = Array.isArray(g.discography) ? g.discography.length : buildDiscBuckets(teamSongs).length;
+  const mergedDiscRows = buildGroupDiscographyReleaseRows(g, ctx.referenceIso, ctx.sharedReleases ?? []);
+  const discCount = mergedDiscRows.length || buildDiscBuckets(teamSongs).length;
 
   const songsBtn = gid
     ? `<button type="button" class="group-detail-fact-link" data-open-songs-for-group="${encodeURIComponent(gid)}">${htmlEsc(
-        `Songs: ${songCount.toLocaleString("ja-JP")}`,
+        t(lang, "group_songs_count", { count: songCount.toLocaleString("ja-JP") }),
       )}</button>`
-    : htmlEsc(`Songs: ${songCount.toLocaleString("ja-JP")}`);
+    : htmlEsc(t(lang, "group_songs_count", { count: songCount.toLocaleString("ja-JP") }));
 
-  const subtitleBits = [romanji ? romanji : "", nick ? `Nickname: ${nick}` : "", nickR ? nickR : ""].filter(Boolean);
+  const subtitleBits = [romanji ? romanji : "", nick ? `${t(lang, "idol_nickname")}: ${nick}` : "", nickR ? nickR : ""].filter(Boolean);
   const subtitle = subtitleBits.length ? `<p class="content-muted group-detail-sub">${htmlEsc(subtitleBits.join(" | "))}</p>` : "";
 
   const byUid = idolMapByUid(ctx.idols);
@@ -381,8 +403,8 @@ export function renderGroupDetailPage(
 
   const currentTable =
     memberUids.length > 0
-      ? `<div class="table-scroll"><table class="fm-table group-detail-roster-table">${rosterTheadHtml()}<tbody>${currentRows}</tbody></table></div>`
-      : `<p class="content-muted">${htmlEsc("No current member UIDs in snapshot.")}</p>`;
+      ? `<div class="table-scroll"><table class="fm-table group-detail-roster-table">${rosterTheadHtml(lang)}<tbody>${currentRows}</tbody></table></div>`
+      : `<p class="content-muted">${htmlEsc(t(lang, "group_no_current_members"))}</p>`;
 
   let pastBlock = "";
   if (pastUids.length) {
@@ -395,12 +417,14 @@ export function renderGroupDetailPage(
       })
       .join("");
     pastBlock = `<details class="group-detail-past"><summary class="group-detail-past-sum">${htmlEsc(
-      `Past members (${pastUids.length.toLocaleString("ja-JP")})`,
-    )}</summary><div class="table-scroll"><table class="fm-table group-detail-roster-table">${rosterTheadHtml()}<tbody>${prow}</tbody></table></div></details>`;
+      t(lang, "group_past_members", { count: pastUids.length.toLocaleString("ja-JP") }),
+    )}</summary><div class="table-scroll"><table class="fm-table group-detail-roster-table">${rosterTheadHtml(lang)}<tbody>${prow}</tbody></table></div></details>`;
   }
 
-  const discFromJson = renderDiscographyRowsFromGroupJson(g, ctx.referenceIso);
-  const discBody = discFromJson || renderDiscographyRowsFromSongBuckets(teamSongs);
+  const discBody =
+    mergedDiscRows.length > 0
+      ? renderDiscographyRowsFromReleaseRows(mergedDiscRows)
+      : renderDiscographyRowsFromSongBuckets(teamSongs);
 
   return `
 <section class="content-panel group-detail-view" aria-label="${htmlEsc(name)}">
@@ -415,23 +439,23 @@ export function renderGroupDetailPage(
         <h2 class="content-h2">${htmlEsc(name)}</h2>
         ${subtitle}
         <p class="group-detail-facts-row content-muted">
-          <span>${htmlEsc(`Members: ${memberUids.length.toLocaleString("ja-JP")}`)}</span>
+          <span>${htmlEsc(t(lang, "group_members_count", { count: memberUids.length.toLocaleString("ja-JP") }))}</span>
           <span class="group-detail-fact-sep">|</span>
-          <span>${htmlEsc(`Past: ${pastUids.length.toLocaleString("ja-JP")}`)}</span>
+          <span>${htmlEsc(t(lang, "group_past_count", { count: pastUids.length.toLocaleString("ja-JP") }))}</span>
           <span class="group-detail-fact-sep">|</span>
-          <span>${htmlEsc(`Discography: ${discCount.toLocaleString("ja-JP")}`)}</span>
+          <span>${htmlEsc(t(lang, "group_discography_count", { count: discCount.toLocaleString("ja-JP") }))}</span>
           <span class="group-detail-fact-sep">|</span>
           <span>${songsBtn}</span>
           <span class="group-detail-fact-sep">|</span>
-          <span>${htmlEsc(`Formed: ${formed}`)}</span>
+          <span>${htmlEsc(t(lang, "group_formed", { date: formed }))}</span>
         </p>
         <dl class="basic-dl group-detail-meta-dl">
-          <div><dt>${htmlEsc("Tier")}</dt><dd>${htmlEsc(tier)}</dd></div>
-          <div><dt>${htmlEsc("Fans")}</dt><dd>${fans.toLocaleString("ja-JP")}</dd></div>
-          <div><dt>${htmlEsc("Popularity")}</dt><dd>${String(pop)}</dd></div>
+          <div><dt>${htmlEsc(t(lang, "group_tier"))}</dt><dd>${htmlEsc(tier)}</dd></div>
+          <div><dt>${htmlEsc(t(lang, "group_fans"))}</dt><dd>${fans.toLocaleString("ja-JP")}</dd></div>
+          <div><dt>${htmlEsc(t(lang, "group_popularity"))}</dt><dd>${String(pop)}</dd></div>
           <div><dt>${htmlEsc("Agencies")}</dt><dd>${htmlEsc(agencies || "—")}</dd></div>
           <div><dt>${htmlEsc("Producers")}</dt><dd>${htmlEsc(producers || "—")}</dd></div>
-          <div><dt>${htmlEsc("Union")}</dt><dd>${htmlEsc(union)}</dd></div>
+          <div><dt>${htmlEsc(t(lang, "group_union"))}</dt><dd>${htmlEsc(union)}</dd></div>
         </dl>
         ${wikiBlock}
         ${desc}
@@ -440,7 +464,7 @@ export function renderGroupDetailPage(
   </div>
 
   <div class="fm-card group-detail-section">
-    <div class="group-detail-section-head">${htmlEsc("IDOLS")}</div>
+    <div class="group-detail-section-head">${htmlEsc(t(lang, "group_section_idols"))}</div>
     <div class="group-detail-section-body">
       ${currentTable}
       ${pastBlock}
@@ -448,11 +472,11 @@ export function renderGroupDetailPage(
   </div>
 
   <div class="fm-card group-detail-section">
-    <div class="group-detail-section-head">${htmlEsc("DISCOGRAPHY")}${htmlEsc(refNote)}</div>
+    <div class="group-detail-section-head">${htmlEsc(t(lang, "group_section_discography"))}${htmlEsc(refNote)}</div>
     <div class="group-detail-section-body">
       <div class="table-scroll">
         <table class="fm-table">
-          <thead><tr><th>${htmlEsc("Title")}</th><th>${htmlEsc("Type")}</th><th>${htmlEsc("Release")}</th><th>${htmlEsc("Tracks")}</th></tr></thead>
+          <thead><tr><th>${htmlEsc(t(lang, "group_title"))}</th><th>${htmlEsc(t(lang, "group_type"))}</th><th>${htmlEsc(t(lang, "group_release"))}</th><th>${htmlEsc(t(lang, "group_tracks"))}</th></tr></thead>
           <tbody>${discBody}</tbody>
         </table>
       </div>
@@ -460,11 +484,11 @@ export function renderGroupDetailPage(
   </div>
 
   <div class="fm-card group-detail-section">
-    <div class="group-detail-section-head">${htmlEsc("LIVES")}${htmlEsc(refNote)}</div>
+    <div class="group-detail-section-head">${htmlEsc(t(lang, "group_section_lives"))}${htmlEsc(refNote)}</div>
     <div class="group-detail-section-body">
       <div class="table-scroll">
         <table class="fm-table">
-          <thead><tr><th>${htmlEsc("Date")}</th><th>${htmlEsc("Title")}</th><th>${htmlEsc("Venue")}</th><th>${htmlEsc("Type")}</th></tr></thead>
+          <thead><tr><th>${htmlEsc(t(lang, "group_date"))}</th><th>${htmlEsc(t(lang, "group_title"))}</th><th>${htmlEsc(t(lang, "group_venue"))}</th><th>${htmlEsc(t(lang, "group_type"))}</th></tr></thead>
           <tbody>${renderLivesRows(ctx.lives, name, ctx.referenceIso)}</tbody>
         </table>
       </div>

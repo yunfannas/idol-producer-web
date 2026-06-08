@@ -14,10 +14,12 @@ import {
   estimateLiveGoodsGrossYen,
   estimateVenueFee,
   isWeekendUtc,
+  monthlyBaseSalaryYenForGroupLetterTier,
+  resolveGroupLetterTier,
   sortGroupsForDirectory,
   type ProducedGoodsRow,
 } from "./engine/financeSystem";
-import type { GameSavePayload } from "./save/gameSaveSchema";
+import type { CdReleaseProject, GameSavePayload } from "./save/gameSaveSchema";
 import {
   renderDesktopShellI18n,
   isDesktopNavId,
@@ -29,6 +31,7 @@ import {
   type LiveProgramItem,
   type LivesTab,
   type MakingTab,
+  type MediaTab,
   type NewLiveFormState,
   type ScoutTab,
   type SongsWorkspaceTab,
@@ -36,9 +39,21 @@ import {
   type TrainingRosterSortKey,
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
-import { ensureManagedContracts, getActiveFinances, getPrimaryGroup, hydrateSnapshotSongsFromScenario } from "./save/gameSaveSchema";
+import {
+  ensureManagedContracts,
+  getActiveFinances,
+  getPrimaryGroup,
+  hydrateSnapshotGroupsFromScenario,
+  hydrateSnapshotSongsFromScenario,
+} from "./save/gameSaveSchema";
 import { addNotification, notificationRequiresAck, sortNotificationsInPlace } from "./save/inbox";
-import { songsForDisplaySorted, buildDiscBuckets, isSongAvailableOn, songPopularityNum } from "./data/songDisplayPolicy";
+import {
+  songsForDisplaySorted,
+  buildDiscBuckets,
+  buildGroupDiscographyReleaseRows,
+  isSongAvailableOn,
+  songPopularityNum,
+} from "./data/songDisplayPolicy";
 import { songCatalogDisplayLabel } from "./data/songCatalog";
 import { addMinutesToHHMM, autoSetlistSongCountForLive, getVenuesCatalog, LIVE_TYPE_PRESETS } from "./engine/liveScheduleWeb";
 import {
@@ -49,7 +64,7 @@ import {
   recommendScoutLeads,
 } from "./engine/scoutWeb";
 import { normalizeFestivalCatalog, syncManagedTif2025Lives } from "./engine/festivalWeb";
-import { ensureAutoBookedLivesThroughEndOfNextMonth, maybeSeedMonthEndAutoBookPrompt } from "./engine/monthlyLiveScheduler";
+import { ensureAutoBookedLivesThroughEndOfNextMonth, maybeSeedMonthEndAutoBookPrompt, preloadManagedLiveSchedules } from "./engine/monthlyLiveScheduler";
 import { suggestManagedSetlistTitles } from "./engine/songStatusSystem";
 import { scheduleIdolVacation } from "./engine/idolStatusSystem";
 import {
@@ -59,7 +74,7 @@ import {
   renderNewGameScreen,
   buildNewGameRows,
 } from "./ui/openingScreens";
-import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, loadFromSlot, normalizeAccountName, saveToSlot } from "./persistence/saves";
+import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, listSlotSummaries, loadFromSlot, normalizeAccountName, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
@@ -201,6 +216,21 @@ function addYearsToIsoDate(iso: string, years: number): string {
   return `${String(Number(match[1]) + years).padStart(4, "0")}-${match[2]}-${match[3]}`;
 }
 
+function addDaysToIsoDate(iso: string, days: number): string {
+  const datePart = isoDatePart(iso);
+  const parsed = Date.parse(`${datePart}T12:00:00Z`);
+  if (!Number.isFinite(parsed)) return datePart;
+  return new Date(parsed + days * 86400000).toISOString().slice(0, 10);
+}
+
+function stableHash(input: string): number {
+  let h = 0;
+  for (let i = 0; i < input.length; i += 1) {
+    h = (h * 31 + input.charCodeAt(i)) >>> 0;
+  }
+  return h >>> 0;
+}
+
 function monthsBetweenIsoCeil(fromIso: string, toIso: string): number {
   const fromMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDatePart(fromIso));
   const toMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDatePart(toIso));
@@ -251,10 +281,10 @@ function contractRenewLikelihoodLabel(idol: Record<string, unknown>, currentSala
   const morale = Number(idol.morale ??  70) || 70;
   const raiseRatio = currentSalary > 0 ? proposedSalary / currentSalary : 1;
   const extensionMonths = monthsBetweenIsoCeil(currentEndDate, proposedEndDate);
-  if (raiseRatio >= 1 && extensionMonths <= 12 && morale >= 45) return "Highly likely to agree";
-  if (raiseRatio >= 0.98 && extensionMonths <= 12 && morale >= 35) return "Likely to agree";
-  if (raiseRatio >= 0.9 && extensionMonths <= 18) return "Uncertain";
-  return "Unlikely to agree";
+  if (raiseRatio >= 1 && extensionMonths <= 12 && morale >= 45) return t(uiLang, "likelihood_highly_likely");
+  if (raiseRatio >= 0.98 && extensionMonths <= 12 && morale >= 35) return t(uiLang, "likelihood_likely");
+  if (raiseRatio >= 0.9 && extensionMonths <= 18) return t(uiLang, "likelihood_uncertain");
+  return t(uiLang, "likelihood_unlikely");
 }
 
 function terminationFeeYen(idol: Record<string, unknown>, salaryYen: number, contractEndDate: string): { feeYen: number; scandalLevel: number } {
@@ -289,6 +319,55 @@ function removeIdolFromManagedGroup(idolUid: string): void {
       }
     }
   }
+}
+
+function addIdolToManagedGroup(idolUid: string, startDateIso: string, endDateIso: string, salaryYen: number): void {
+  if (!save) return;
+  const group = getPrimaryGroup(save);
+  const idol = managedIdolByUid(idolUid);
+  if (!group || !idol) return;
+  const memberUids = Array.isArray(group.member_uids) ? group.member_uids.map((x) => String(x)) : [];
+  if (!memberUids.includes(idolUid)) {
+    memberUids.push(idolUid);
+    group.member_uids = memberUids;
+    group.member_count = memberUids.length;
+  }
+  const history = Array.isArray(idol.group_history) ? idol.group_history : [];
+  const existing = history.find(
+    (raw) => raw && typeof raw === "object" && String((raw as Record<string, unknown>).group_uid ?? "") === String(group.uid ?? ""),
+  ) as Record<string, unknown> | undefined;
+  if (existing) {
+    existing.start_date = startDateIso;
+    existing.end_date = "";
+  } else {
+    history.push({
+      group_uid: String(group.uid ?? ""),
+      group_name: String(group.name ?? group.name_romanji ?? save.managing_group ?? ""),
+      start_date: startDateIso,
+      end_date: "",
+    });
+    idol.group_history = history;
+  }
+  idol.contract_salary_yen = salaryYen;
+  idol.contract_start_date = startDateIso;
+  idol.contract_end_date = endDateIso;
+}
+
+function shortlistSigningTerms(idol: Record<string, unknown>): { startDate: string; endDate: string; salaryYen: number } {
+  const group = getPrimaryGroup(save);
+  const baseSalary = monthlyBaseSalaryYenForGroupLetterTier(resolveGroupLetterTier(group));
+  const popularity = Number(idol.popularity ?? 0) || 0;
+  const xFollowers = Number(idol.x_followers ?? 0) || 0;
+  const fanCount = Number(idol.fan_count ?? 0) || 0;
+  const profile = popularity + Math.min(30, xFollowers / 4000) + Math.min(20, fanCount / 5000);
+  const years = profile >= 85 ? 5 : profile >= 70 ? 4 : profile >= 55 ? 3 : profile >= 40 ? 2 : 1;
+  const uid = String(idol.uid ?? idol.name ?? Math.random().toString(36));
+  const daysOut = 7 + (stableHash(uid) % 78);
+  const startDate = addDaysToIsoDate(currentIsoForNewLive(), daysOut);
+  const endDate = addYearsToIsoDate(startDate, years);
+  const multiplier = profile >= 85 ? 1.55 : profile >= 70 ? 1.35 : profile >= 55 ? 1.18 : profile >= 40 ? 1.0 : 0.88;
+  const salaryYen = Math.round(baseSalary * multiplier);
+  return { startDate, endDate, salaryYen };
 }
 
 function reservationFeeForNewLive(venueCapacity: number | null, startDateIso: string): {
@@ -607,11 +686,11 @@ let loadedScenario: LoadedScenario | null = null;
 let save: GameSavePayload | null = null;
 let slot = 0;
 let browseMode = false;
-let openingScreen: OpeningScreen = accountName ? "home" : "login";
-let selectedNewGameGroupUid: string | null = null;
-let openingStatus = "";
 let uiLang: UiLanguage = readUiLanguage();
 let accountName = readAccountName();
+let openingScreen: OpeningScreen = "login";
+let selectedNewGameGroupUid: string | null = null;
+let openingStatus = "";
 let simulationBusy = false;
 let attentionActionUid: string | null = null;
 
@@ -623,6 +702,7 @@ let songsGroupUid: string | null = null;
 /** Songs view: `group_songs` = track list, `disc` = discography (desktop `main_ui.py`). */
 let songsWorkspaceTab: SongsWorkspaceTab = "group_songs";
 let makingTab: MakingTab = "songs";
+let selectedCdProjectUid: string | null = null;
 /** Selected release bucket in Discography tab; invalid keys cleared in `ensureSongsDiscographyKey`. */
 let songsDiscographyKey: string | null = null;
 
@@ -630,12 +710,15 @@ let songsDiscographyKey: string | null = null;
 let inboxSelectedUid: string | null = null;
 /** Schedule: visible month (`YYYY-MM-01`); null = month of next simulation day. */
 let scheduleCalendarMonthStart: string | null = null;
+/** Schedule: selected day used to drive the week strip; null = current week of next simulation day. */
+let scheduleWeekAnchorIso: string | null = null;
 let livesTab: LivesTab = "new";
 let scheduledLiveUid: string | null = null;
 let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
 let trainingRosterSortKey: TrainingRosterSortKey = "started";
 let trainingRosterSortDir: "asc" | "desc" = "asc";
+let mediaTab: MediaTab = "tv";
 let financeTab: FinanceTab = "finance";
 let financeHistoryRange: FinanceHistoryRange = "month";
 let selectedScoutLeadUid: string | null = null;
@@ -675,6 +758,7 @@ interface NavigationSnapshot {
   songsWorkspaceTab: SongsWorkspaceTab;
   songsDiscographyKey: string | null;
   makingTab: MakingTab;
+  selectedCdProjectUid: string | null;
   inboxSelectedUid: string | null;
   livesTab: LivesTab;
   scheduledLiveUid: string | null;
@@ -682,11 +766,13 @@ interface NavigationSnapshot {
   trainingTab: TrainingTab;
   trainingRosterSortKey: TrainingRosterSortKey;
   trainingRosterSortDir: "asc" | "desc";
+  mediaTab: MediaTab;
   financeTab: FinanceTab;
   financeHistoryRange: FinanceHistoryRange;
   selectedScoutLeadUid: string | null;
   selectedScoutApplicantUid: string | null;
   scheduleCalendarMonthStart: string | null;
+  scheduleWeekAnchorIso: string | null;
 }
 
 const backHistory: NavigationSnapshot[] = [];
@@ -702,6 +788,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     songsWorkspaceTab,
     songsDiscographyKey,
     makingTab,
+    selectedCdProjectUid,
     inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
@@ -709,11 +796,13 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    mediaTab,
     financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
+    scheduleWeekAnchorIso,
   };
 }
 
@@ -727,6 +816,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.songsWorkspaceTab === b.songsWorkspaceTab &&
     a.songsDiscographyKey === b.songsDiscographyKey &&
     a.makingTab === b.makingTab &&
+    a.selectedCdProjectUid === b.selectedCdProjectUid &&
     a.inboxSelectedUid === b.inboxSelectedUid &&
     a.livesTab === b.livesTab &&
     a.scheduledLiveUid === b.scheduledLiveUid &&
@@ -734,11 +824,13 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.trainingTab === b.trainingTab &&
     a.trainingRosterSortKey === b.trainingRosterSortKey &&
     a.trainingRosterSortDir === b.trainingRosterSortDir &&
+    a.mediaTab === b.mediaTab &&
     a.financeTab === b.financeTab &&
     a.financeHistoryRange === b.financeHistoryRange &&
     a.selectedScoutLeadUid === b.selectedScoutLeadUid &&
     a.selectedScoutApplicantUid === b.selectedScoutApplicantUid &&
-    a.scheduleCalendarMonthStart === b.scheduleCalendarMonthStart
+    a.scheduleCalendarMonthStart === b.scheduleCalendarMonthStart &&
+    a.scheduleWeekAnchorIso === b.scheduleWeekAnchorIso
   );
 }
 
@@ -751,6 +843,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   songsWorkspaceTab = snapshot.songsWorkspaceTab;
   songsDiscographyKey = snapshot.songsDiscographyKey;
   makingTab = snapshot.makingTab;
+  selectedCdProjectUid = snapshot.selectedCdProjectUid;
   inboxSelectedUid = snapshot.inboxSelectedUid;
   livesTab = snapshot.livesTab;
   scheduledLiveUid = snapshot.scheduledLiveUid;
@@ -758,11 +851,13 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   trainingTab = snapshot.trainingTab;
   trainingRosterSortKey = snapshot.trainingRosterSortKey;
   trainingRosterSortDir = snapshot.trainingRosterSortDir;
+  mediaTab = snapshot.mediaTab;
   financeTab = snapshot.financeTab;
   financeHistoryRange = snapshot.financeHistoryRange;
   selectedScoutLeadUid = snapshot.selectedScoutLeadUid;
   selectedScoutApplicantUid = snapshot.selectedScoutApplicantUid;
   scheduleCalendarMonthStart = snapshot.scheduleCalendarMonthStart;
+  scheduleWeekAnchorIso = snapshot.scheduleWeekAnchorIso;
 }
 
 function clearNavigationHistory(): void {
@@ -860,8 +955,23 @@ function songsListForDiscographyCheck(): Record<string, unknown>[] | null {
 function ensureSongsDiscographyKey(): void {
   const songs = songsListForDiscographyCheck();
   const gid = songsGroupUid?.trim();
+  const groups = groupsForSongsPicker();
   if (!songs?.length || !gid) {
     songsDiscographyKey = null;
+    return;
+  }
+  const groupRow = groups?.find((row) => String((row as { uid?: unknown }).uid ?? "").trim() === gid) ?? null;
+  const groupDiscographyRows = buildGroupDiscographyReleaseRows(
+    groupRow,
+    browseMode
+      ? loadedScenario?.preset?.opening_date ?? null
+      : save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? null,
+    browseMode ? loadedScenario?.shared_releases ?? [] : save?.database_snapshot.shared_releases ?? [],
+  );
+  if (groupDiscographyRows.length) {
+    if (songsDiscographyKey && !groupDiscographyRows.some((row) => row.key === songsDiscographyKey)) {
+      songsDiscographyKey = null;
+    }
     return;
   }
   const team = songsForDisplaySorted(songs).filter((row) => String(row.group_uid ??  "") === gid);
@@ -869,6 +979,40 @@ function ensureSongsDiscographyKey(): void {
   if (songsDiscographyKey && !buckets.some((b) => b.key === songsDiscographyKey)) {
     songsDiscographyKey = null;
   }
+}
+
+function cdProjectTitleForKind(kind: CdReleaseProject["release_kind"], count: number): string {
+  return kind === "album" ? `New album ${count}` : `New single ${count}`;
+}
+
+function ensureSelectedCdProjectUid(): void {
+  const projects = Array.isArray(save?.cd_projects) ? save!.cd_projects : [];
+  if (!projects.length) {
+    selectedCdProjectUid = null;
+    return;
+  }
+  if (selectedCdProjectUid && projects.some((row) => row.uid === selectedCdProjectUid)) return;
+  selectedCdProjectUid = projects[0]?.uid ?? null;
+}
+
+function createCdProject(kind: CdReleaseProject["release_kind"]): void {
+  if (!save) return;
+  const nextCount = (save.cd_projects?.length ?? 0) + 1;
+  const project: CdReleaseProject = {
+    uid: `cd-project-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    title: cdProjectTitleForKind(kind, nextCount),
+    release_kind: kind,
+    song_uids: [],
+    released_digital_song_uids: [],
+  };
+  if (!Array.isArray(save.cd_projects)) save.cd_projects = [];
+  save.cd_projects.unshift(project);
+  selectedCdProjectUid = project.uid;
+}
+
+function selectedCdProject(): CdReleaseProject | null {
+  if (!save || !Array.isArray(save.cd_projects)) return null;
+  return save.cd_projects.find((row) => row.uid === selectedCdProjectUid) ?? save.cd_projects[0] ?? null;
 }
 
 function syncFestivalLivesIfPossible(): void {
@@ -885,7 +1029,16 @@ function paintOpening(): void {
     openingScreen === "login"
       ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang)
       : openingScreen === "home"
-        ? renderOpeningHome(preset, dbReady, openingStatus, save != null && !browseMode, slot, listOccupiedSlots(accountName), uiLang)
+        ? renderOpeningHome(
+            preset,
+            dbReady,
+            openingStatus,
+            save != null && !browseMode,
+            slot,
+            listOccupiedSlots(accountName),
+            listSlotSummaries(accountName),
+            uiLang,
+          )
       : loadedScenario
         ? renderNewGameScreen(
             buildNewGameRows(loadedScenario),
@@ -899,6 +1052,7 @@ function paintOpening(): void {
   if (openingScreen === "login") {
     document.getElementById("account-name")?.addEventListener("input", (ev) => {
       setAccountName((ev.target as HTMLInputElement).value);
+      paintOpening();
     });
 
     document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
@@ -936,15 +1090,22 @@ function paintOpening(): void {
       paintGame();
     });
 
-    document.getElementById("opening-new-game")?.addEventListener("click", () => {
+    document.getElementById("opening-new-game")?.addEventListener("click", async () => {
       if (!loadedScenario) return;
+      openingStatus = t(uiLang, "opening_db_loading");
+      paintOpening();
+      try {
+        loadedScenario = await loadDefaultScenario();
+      } catch (e) {
+        console.error("opening-new-game reload failed", e);
+      }
       openingScreen = "new_game";
       selectedNewGameGroupUid = null;
       paintOpening();
     });
-    document.getElementById("opening-load-slot")?.addEventListener("click", () => {
+    document.getElementById("opening-load-slot")?.addEventListener("click", async () => {
       if (!accountName) return;
-      const loaded = loadFromSlot(accountName, slot);
+      const loaded = await loadFromSlot(accountName, slot);
       if (loaded && assertHydratedSave(loaded)) {
         save = loaded;
         setAccountName(String(save.account_name ??  save.player_name ??  accountName));
@@ -955,6 +1116,7 @@ function paintOpening(): void {
         scheduleCalendarMonthStart = null;
         resetNewLiveFormDefaults();
         if (loadedScenario) {
+          hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
           hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
           syncFestivalLivesIfPossible();
         }
@@ -1057,7 +1219,7 @@ function paintGame(): void {
       return;
     }
   } else if (!save) {
-    appRoot.innerHTML = `<p class="fm-error" role="alert">No save loaded.</p>`;
+    appRoot.innerHTML = `<p class="fm-error" role="alert">${htmlEsc(t(uiLang, "shell_no_save_loaded"))}</p>`;
     return;
   }
 
@@ -1067,6 +1229,7 @@ function paintGame(): void {
   if (!browseMode && save && currentView === "Making") {
     const m = save.managing_group_uid?.trim();
     if (m) songsGroupUid = m;
+    ensureSelectedCdProjectUid();
   }
 
   if (!browseMode && save && currentView === "Inbox" && save.inbox.notifications.length) {
@@ -1094,6 +1257,7 @@ function paintGame(): void {
     songsWorkspaceTab,
     songsDiscographyKey,
     makingTab,
+    selectedCdProjectUid,
     inboxSelectedUid,
     livesTab,
     scheduledLiveUid,
@@ -1104,17 +1268,20 @@ function paintGame(): void {
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    mediaTab,
     financeTab,
     financeHistoryRange,
     selectedScoutLeadUid,
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
+    scheduleWeekAnchorIso,
     attentionActionUid,
     canGoBack: backHistory.length > 0,
     canGoForward: forwardHistory.length > 0,
     simulationBusy,
     slot,
     occupiedSlots: listOccupiedSlots(accountName),
+    slotSummaries: listSlotSummaries(accountName),
   });
   restoreFocus(appRoot, focus);
 
@@ -1125,10 +1292,10 @@ function paintGame(): void {
     const nextBtnLabel = document.getElementById("btn-next-day-label");
     if (nextBtn) {
       const hasTodayEvents = hasPendingEventsToday(save);
-      if (nextBtnLabel) nextBtnLabel.textContent = hasTodayEvents ? "Next" : "Next Day";
+      if (nextBtnLabel) nextBtnLabel.textContent = hasTodayEvents ? t(uiLang, "shell_next") : t(uiLang, "shell_next_day");
       nextBtn.title = hasTodayEvents
-        ? "Advance to the next scheduled event today"
-        : "Advance to the next day at 08:00";
+        ? t(uiLang, "shell_next_event_today")
+        : t(uiLang, "shell_next_day_morning");
     }
   }
 
@@ -1155,7 +1322,20 @@ function paintGame(): void {
     const calToday = t.closest<HTMLElement>("[data-sched-cal-today]");
     if (calToday && save && !browseMode && currentView === "Schedule") {
       scheduleCalendarMonthStart = null;
+      scheduleWeekAnchorIso = null;
       paintGame();
+      return;
+    }
+    const liveOpenBtn = t.closest<HTMLElement>("[data-live-open-uid]");
+    if (liveOpenBtn && save && !browseMode) {
+      const uid = liveOpenBtn.getAttribute("data-live-open-uid");
+      if (uid) {
+        navigate(() => {
+          currentView = "Lives";
+          livesTab = "live";
+          scheduledLiveUid = uid;
+        });
+      }
       return;
     }
     const livesTabPick = t.closest<HTMLElement>("[data-lives-tab]");
@@ -1396,6 +1576,16 @@ function paintGame(): void {
       }
       return;
     }
+    const mediaTabPick = t.closest<HTMLElement>("[data-media-tab]");
+    if (mediaTabPick && save && !browseMode && currentView === "Media") {
+      const tab = mediaTabPick.getAttribute("data-media-tab");
+      if (tab === "tv" || tab === "live_events" || tab === "radio" || tab === "books" || tab === "online") {
+        navigate(() => {
+          mediaTab = tab;
+        });
+      }
+      return;
+    }
     const financeTabPick = t.closest<HTMLElement>("[data-finance-tab]");
     if (financeTabPick && save && !browseMode && currentView === "Finances") {
       const tab = financeTabPick.getAttribute("data-finance-tab");
@@ -1621,6 +1811,36 @@ function paintGame(): void {
       }
       return;
     }
+    const shortlistConfirmSignBtn = t.closest<HTMLElement>("[data-shortlist-confirm-sign]");
+    if (shortlistConfirmSignBtn && save && !browseMode && currentView === "Inbox") {
+      const uid = String(shortlistConfirmSignBtn.getAttribute("data-shortlist-confirm-sign") ?? "").trim();
+      const row = save.inbox.notifications.find((item) => item.uid === uid);
+      const report = row?.report_data && typeof row.report_data === "object" ? (row.report_data as Record<string, unknown>) : null;
+      const idolUid = String(report?.idol_uid ?? "").trim();
+      if (row && report && idolUid) {
+        addIdolToManagedGroup(
+          idolUid,
+          String(report.start_date ?? currentIsoForNewLive()).split("T")[0],
+          String(report.end_date ?? addYearsToIsoDate(currentIsoForNewLive(), 1)).split("T")[0],
+          Number(report.salary_yen ?? 0) || 0,
+        );
+        save.shortlist = save.shortlist.filter((entry) => entry !== idolUid);
+        row.requires_confirmation = false;
+        row.read = true;
+        row.choice_status = "completed";
+        addNotification(save, {
+          title: `Signing completed: ${String(report.idol_name ?? idolUid)}`,
+          body: `Contract starts ${String(report.start_date ?? "-")} and runs through ${String(report.end_date ?? "-")} at JPY ${Number(report.salary_yen ?? 0).toLocaleString("ja-JP")} per month.`,
+          sender: "Management",
+          category: "internal",
+          level: "normal",
+          isoDate: currentIsoForNewLive(),
+          unread: true,
+        });
+        paintGame();
+      }
+      return;
+    }
     const scoutCompanyPick = t.closest<HTMLElement>("[data-scout-company]");
     if (scoutCompanyPick && save && !browseMode && currentView === "Scout") {
       const uid = scoutCompanyPick.getAttribute("data-scout-company");
@@ -1713,17 +1933,42 @@ function paintGame(): void {
       const uid = shortlistLeadBtn.getAttribute("data-scout-shortlist");
       if (uid && !save.shortlist.includes(uid)) {
         save.shortlist.push(uid);
-        addNotification(save, {
-          title: `Shortlist updated: ${uid}`,
-          body: `A scout lead was added to your shortlist for follow-up.`,
-          sender: "Scout",
-          category: "internal",
-          level: "normal",
+      }
+      paintGame();
+      return;
+    }
+    const shortlistSignBtn = t.closest<HTMLElement>("[data-shortlist-sign]");
+    if (shortlistSignBtn && save && !browseMode) {
+      const uid = String(shortlistSignBtn.getAttribute("data-shortlist-sign") ?? "").trim();
+      const idol =
+        uid
+          ? ((save.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid) as Record<string, unknown> | undefined) ?? null)
+          : null;
+      if (idol && uid) {
+        const terms = shortlistSigningTerms(idol);
+        const name = String(idol.name ?? idol.name_romanji ?? uid);
+        const created = addNotification(save, {
+          title: `Signing offer: ${name}`,
+          body: `Start date: ${terms.startDate}\nEnd date: ${terms.endDate}\nSalary: JPY ${terms.salaryYen.toLocaleString("ja-JP")}\n\nConfirm to sign this idol to your managed group.`,
+          sender: "Management",
+          category: "decision",
+          level: "high",
           isoDate: currentIsoForNewLive(),
           unread: true,
-          dedupeKey: `scout-shortlist|${uid}|${currentIsoForNewLive()}`,
+          requiresConfirmation: true,
+          dedupeKey: `shortlist-sign|${uid}|${terms.startDate}|${terms.endDate}|${terms.salaryYen}`,
           relatedEventUid: uid,
+          reportData: {
+            kind: "shortlist_signing_offer",
+            idol_uid: uid,
+            idol_name: name,
+            start_date: terms.startDate,
+            end_date: terms.endDate,
+            salary_yen: terms.salaryYen,
+          },
         });
+        currentView = "Inbox";
+        inboxSelectedUid = created.uid;
       }
       paintGame();
       return;
@@ -1821,18 +2066,6 @@ function paintGame(): void {
       }
       return;
     }
-    const liveOpenBtn = t.closest<HTMLElement>("[data-live-open-uid]");
-    if (liveOpenBtn && save && !browseMode) {
-      const uid = liveOpenBtn.getAttribute("data-live-open-uid");
-      if (uid) {
-        navigate(() => {
-          currentView = "Lives";
-          livesTab = "live";
-          scheduledLiveUid = uid;
-        });
-      }
-      return;
-    }
     const openTrainingView = t.closest<HTMLElement>("[data-open-training-view]");
     if (openTrainingView && save && !browseMode) {
       const tab = openTrainingView.getAttribute("data-open-training-view");
@@ -1874,9 +2107,60 @@ function paintGame(): void {
     const makingTabPick = t.closest<HTMLElement>("[data-making-tab]");
     if (makingTabPick && currentView === "Making") {
       const tab = makingTabPick.getAttribute("data-making-tab");
-      if (tab === "songs" || tab === "goods") {
+      if (tab === "songs" || tab === "cd" || tab === "goods") {
         navigate(() => {
           makingTab = tab;
+        });
+      }
+      return;
+    }
+    const cdCreateBtn = t.closest<HTMLElement>("[data-cd-project-create]");
+    if (cdCreateBtn && save && !browseMode && currentView === "Making") {
+      const kind = cdCreateBtn.getAttribute("data-cd-project-create") === "album" ? "album" : "single";
+      navigate(() => {
+        createCdProject(kind);
+      });
+      return;
+    }
+    const cdPickBtn = t.closest<HTMLElement>("[data-cd-project-pick]");
+    if (cdPickBtn && save && !browseMode && currentView === "Making") {
+      const uid = cdPickBtn.getAttribute("data-cd-project-pick");
+      if (uid) {
+        navigate(() => {
+          selectedCdProjectUid = uid;
+        });
+      }
+      return;
+    }
+    const cdAddSongBtn = t.closest<HTMLElement>("[data-cd-project-add-song]");
+    if (cdAddSongBtn && save && !browseMode && currentView === "Making") {
+      const songUid = cdAddSongBtn.getAttribute("data-cd-project-add-song");
+      const project = selectedCdProject();
+      if (songUid && project && !project.song_uids.includes(songUid)) {
+        navigate(() => {
+          project.song_uids = [...project.song_uids, songUid];
+        });
+      }
+      return;
+    }
+    const cdRemoveSongBtn = t.closest<HTMLElement>("[data-cd-project-remove-song]");
+    if (cdRemoveSongBtn && save && !browseMode && currentView === "Making") {
+      const songUid = cdRemoveSongBtn.getAttribute("data-cd-project-remove-song");
+      const project = selectedCdProject();
+      if (songUid && project) {
+        navigate(() => {
+          project.song_uids = project.song_uids.filter((uid) => uid !== songUid);
+        });
+      }
+      return;
+    }
+    const cdDeleteBtn = t.closest<HTMLElement>("[data-cd-project-delete]");
+    if (cdDeleteBtn && save && !browseMode && currentView === "Making") {
+      const uid = cdDeleteBtn.getAttribute("data-cd-project-delete");
+      if (uid) {
+        navigate(() => {
+          save.cd_projects = save.cd_projects.filter((row) => row.uid !== uid);
+          ensureSelectedCdProjectUid();
         });
       }
       return;
@@ -2092,6 +2376,13 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("input", (ev) => {
     const t = ev.target as HTMLElement;
+    const cdTitleInput = t.closest<HTMLInputElement>("[data-cd-project-title]");
+    if (cdTitleInput && save && !browseMode && currentView === "Making") {
+      const uid = cdTitleInput.getAttribute("data-cd-project-title");
+      const row = save.cd_projects.find((project) => project.uid === uid);
+      if (row) row.title = cdTitleInput.value.trim() || row.title;
+      return;
+    }
     const goodsPriceInput = t.closest<HTMLInputElement>("[data-goods-price-key]");
     if (goodsPriceInput && save && !browseMode && currentView === "Making") {
       const rowKeyRaw = goodsPriceInput.getAttribute("data-goods-price-key");
@@ -2121,6 +2412,13 @@ function paintGame(): void {
       if (item) {
         item.desired_amount = Math.max(0, numberOrZero(goodsDesiredInput.value));
       }
+      return;
+    }
+    const cdKindSelect = t.closest<HTMLSelectElement>("[data-cd-project-kind]");
+    if (cdKindSelect && save && !browseMode && currentView === "Making") {
+      const uid = cdKindSelect.getAttribute("data-cd-project-kind");
+      const row = save.cd_projects.find((project) => project.uid === uid);
+      if (row) row.release_kind = cdKindSelect.value === "album" ? "album" : "single";
       return;
     }
     const programDurationInput = t.closest<HTMLInputElement>("[data-live-program-duration]");
@@ -2615,23 +2913,35 @@ function paintGame(): void {
       save = advanceOneDay(save);
       const afterDate = isoDatePart(save.current_date ??  save.game_start_date ??  "");
       if (afterDate !== beforeDate) {
-        saveToSlot(accountName || String(save.account_name ??  save.player_name ??  "default"), AUTOSAVE_SLOT, save);
+        void saveToSlot(accountName || String(save.account_name ??  save.player_name ??  "default"), AUTOSAVE_SLOT, save);
       }
       currentView = "Inbox";
       inboxSelectedUid = save.inbox.notifications[0]?.uid ??  null;
       resetNewLiveFormDefaults(newLiveForm.liveType);
     });
   });
-  document.getElementById("btn-save")?.addEventListener("click", () => {
+  document.getElementById("btn-save")?.addEventListener("click", async () => {
     if (!save || browseMode || !accountName) return;
     save.account_name = accountName;
     save.player_name = accountName;
-    saveToSlot(accountName, slot, save);
+    await saveToSlot(accountName, slot, save);
     paintGame();
   });
-  document.getElementById("btn-load")?.addEventListener("click", () => {
+
+  document.getElementById("main-content")?.addEventListener("dblclick", (ev) => {
+    const t = ev.target as HTMLElement;
+    const calDay = t.closest<HTMLElement>("[data-sched-date]");
+    if (calDay && save && !browseMode && currentView === "Schedule") {
+      const iso = String(calDay.getAttribute("data-sched-date") ?? "").trim();
+      if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
+        scheduleWeekAnchorIso = iso;
+        paintGame();
+      }
+    }
+  });
+  document.getElementById("btn-load")?.addEventListener("click", async () => {
     if (browseMode || !accountName) return;
-    const loaded = loadFromSlot(accountName, slot);
+    const loaded = await loadFromSlot(accountName, slot);
     if (loaded && assertHydratedSave(loaded)) {
       save = loaded;
       setAccountName(String(save.account_name ??  save.player_name ??  accountName));
@@ -2640,6 +2950,7 @@ function paintGame(): void {
       scheduleCalendarMonthStart = null;
       resetNewLiveFormDefaults();
       if (loadedScenario) {
+        hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
         hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
       }
       resetNavigationHistory();
@@ -2655,9 +2966,9 @@ function paintGame(): void {
     selectedNewGameGroupUid = null;
     paintOpening();
   });
-  document.getElementById("btn-clear")?.addEventListener("click", () => {
+  document.getElementById("btn-clear")?.addEventListener("click", async () => {
     if (!accountName) return;
-    clearSlot(accountName, slot);
+    await clearSlot(accountName, slot);
     scheduleCalendarMonthStart = null;
     paintGame();
   });
@@ -2677,11 +2988,11 @@ function paintGame(): void {
 
 appRoot.innerHTML = `<p class="fm-loading">Loading scenario…</p>`;
 
-loadDefaultScenario()
-  .then((ls) => {
+Promise.all([loadDefaultScenario(), preloadManagedLiveSchedules()])
+  .then(([ls]) => {
     loadedScenario = ls;
     openingStatus = `Loaded ${ls.preset.data_subdir} (${ls.idols.length} idols, ${ls.songs.length.toLocaleString()} song rows).`;
-    openingScreen = accountName ? "home" : "login";
+    openingScreen = "login";
     paintOpening();
   })
   .catch((e: unknown) => {

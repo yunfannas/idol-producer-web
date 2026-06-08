@@ -1,0 +1,11 @@
+{
+  "_meta": {
+    "group_name": "終わらないで、夜",
+    "sources": [
+      "https://ja.wikipedia.org/wiki/%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84%E3%81%A7%E3%80%81%E5%A4%9C"
+    ],
+    "suggested_by": "scripts/suggestGroupFormedDates.mjs",
+    "notes": "2018 history 結成を発表"
+  },
+  "formed_date": "2018-09-21"
+}

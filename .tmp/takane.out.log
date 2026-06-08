@@ -1,0 +1,69 @@
+[
+  {
+    "group": "Takane_no_Nadeshiko",
+    "start_date": "2025-07-05",
+    "end_date": "2026-01-05",
+    "final_sim_date": "2025-08-01",
+    "turns": 27,
+    "start": {
+      "fans": 26283,
+      "popularity": 40,
+      "cash_yen": 20000000
+    },
+    "end": {
+      "fans": 26283,
+      "popularity": 40,
+      "cash_yen": 14402372
+    },
+    "delta": {
+      "fans": 0,
+      "popularity": 0,
+      "cash_yen": -5597628
+    },
+    "live_summary": {
+      "live_count": 0,
+      "average_performance": 0,
+      "average_satisfaction": 0,
+      "attendance_rate": 0,
+      "fan_gain_from_lives": 0,
+      "gross_yen": 0
+    },
+    "top_live": null,
+    "top_members_by_fans": [
+      {
+        "name": "松本ももな",
+        "fan_count": 34422,
+        "condition": 100,
+        "morale": 100
+      },
+      {
+        "name": "籾山ひめり",
+        "fan_count": 15189,
+        "condition": 100,
+        "morale": 100
+      },
+      {
+        "name": "橋本桃呼",
+        "fan_count": 13666,
+        "condition": 100,
+        "morale": 100
+      },
+      {
+        "name": "星谷美来",
+        "fan_count": 9297,
+        "condition": 100,
+        "morale": 100
+      },
+      {
+        "name": "城月菜央",
+        "fan_count": 8869,
+        "condition": 100,
+        "morale": 100
+      }
+    ],
+    "team_status": {
+      "average_condition": 100,
+      "average_morale": 100
+    }
+  }
+]

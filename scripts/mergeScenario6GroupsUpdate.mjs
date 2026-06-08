@@ -12,7 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const scenarioDir = path.join(root, "public/data/scenarios/scenario_6_2025-07-20");
+const scenarioDir = path.join(root, "public/data/scenarios/scenario_6");
 const groupsPath = path.join(scenarioDir, "groups.json");
 const groupsUpdatePath = path.join(scenarioDir, "groups_update.json");
 

@@ -24,6 +24,7 @@ import {
   buildDailyTrainingPlan,
   defaultAutopilotTrainingIntensity,
   ensureIdolSimulationDefaults,
+  isIdolOnHiatus,
   normalizeTrainingWeekLog,
   recordTrainingDay,
   safeTrainingRow,
@@ -36,6 +37,7 @@ import {
 import { formatLiveSlotLine } from "./liveScheduleWeb";
 import { applyScenarioEventsForDate } from "./scenarioRuntimeWeb";
 import { buildDefaultScoutCompanies } from "./scoutWeb";
+import { totalMonthlyScoutRetainersYen } from "./scoutWeb";
 import {
   applyTrainingToManagedSongs,
   decayManagedSongsOvernight,
@@ -47,6 +49,10 @@ import {
   ensureAutoBookedLivesThroughEndOfNextMonth,
   maybeSeedMonthEndAutoBookPrompt,
 } from "./monthlyLiveScheduler";
+import {
+  findManagedOfficialScheduleBundleInRuntime,
+  resolveManagedMediaDay,
+} from "./mediaEventWeb";
 
 export { createGameSaveFromLoadedScenario };
 export const SIMULATION_DAY_START_TIME = "08:00:00";
@@ -90,6 +96,16 @@ function hhmmToMinutes(value: string): number {
   const m = /^(\d{1,2}):(\d{2})$/.exec(value.trim());
   if (!m) return 0;
   return Number(m[1]) * 60 + Number(m[2]);
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
+}
+
+function num(value: unknown, fallback = 0): number {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  if (typeof value === "string" && value.trim() !== "" && Number.isFinite(Number(value))) return Number(value);
+  return fallback;
 }
 
 function isoTimeToMinutes(isoLike: string | null | undefined): number {
@@ -319,6 +335,24 @@ function liveDaysInWeekForGroup(save: GameSavePayload, groupUid: string): Set<st
   );
 }
 
+function availableManagedMemberUidsForDate(save: GameSavePayload, targetIso: string): string[] {
+  const group = getPrimaryGroup(save) as Record<string, unknown> | null;
+  const memberUids = Array.isArray(group?.member_uids)
+    ? (group!.member_uids as unknown[]).map((x) => String(x))
+    : [];
+  const rosterUids = memberUids.length > 0 ? memberUids : save.shortlist.map((x) => String(x));
+  const idols = save.database_snapshot.idols as Record<string, unknown>[];
+  return rosterUids.filter((uid) => {
+    const idol = idols.find((row) => String(row.uid ?? "") === uid);
+    return idol ? !isIdolOnHiatus(idol, targetIso) : true;
+  });
+}
+
+function activeManagedMembersForDate(save: GameSavePayload, targetIso: string): Record<string, unknown>[] {
+  const rosterUids = new Set(availableManagedMemberUidsForDate(save, targetIso));
+  return (save.database_snapshot.idols as Record<string, unknown>[]).filter((idol) => rosterUids.has(String(idol.uid ?? "")));
+}
+
 function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] {
   const nowIso = currentSimulationIso(save);
   const todayIso = isoDatePart(nowIso);
@@ -326,10 +360,7 @@ function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] 
   const out: SimulationEvent[] = [];
   const group = getPrimaryGroup(save);
   const gid = String(group?.uid ?? "");
-  const memberUids = Array.isArray(group?.member_uids)
-    ? (group!.member_uids as unknown[]).map((x) => String(x))
-    : [];
-  const rosterUids = memberUids.length > 0 ? memberUids : save.shortlist.map((x) => String(x));
+  const rosterUids = availableManagedMemberUidsForDate(save, todayIso);
   const liveDaysInWeek = liveDaysInWeekForGroup(save, gid);
   const todaysLives = (save.lives?.schedules ?? [])
     .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
@@ -494,6 +525,7 @@ function subtractBreakdowns(a: DailyBreakdown, b: DailyBreakdown): DailyBreakdow
     "tokutenkai_cost",
     "tokutenkai_idol_share",
     "salaries",
+    "scout_retainers",
   ];
   const out = { ...a } as DailyBreakdown;
   const outNum = out as unknown as Record<string, number>;
@@ -526,6 +558,7 @@ function applyLiveFinanceSettlement(
     fans: p.fans,
     xFollowers: p.xFollowers,
     monthlySalaryTotal: p.monthlySalaryTotal,
+    scoutRetainersMonthlyTotal: 0,
     liveCount: 0,
     tokutenkaiRevenue: 0,
     tokutenkaiCost: 0,
@@ -538,6 +571,7 @@ function applyLiveFinanceSettlement(
     fans: p.fans,
     xFollowers: p.xFollowers,
     monthlySalaryTotal: p.monthlySalaryTotal,
+    scoutRetainersMonthlyTotal: 0,
     liveCount: 1,
     tokutenkaiRevenue: p.tokutenkaiRevenue,
     tokutenkaiCost: 0,
@@ -555,10 +589,7 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
   const group = getPrimaryGroup(save);
   if (!group || typeof group !== "object") return;
   const g = group as Record<string, unknown>;
-  const memberUids = Array.isArray(g.member_uids)
-    ? (g.member_uids as unknown[]).map((x) => String(x))
-    : [];
-  const rosterUids = memberUids.length > 0 ? memberUids : save.shortlist.map((x) => String(x));
+  const rosterUids = availableManagedMemberUidsForDate(save, targetIso);
   const idols = save.database_snapshot.idols as Record<string, unknown>[];
   const uidSet = new Set(rosterUids);
   const members = idols.filter((row) => row && uidSet.has(String(row.uid ?? "")));
@@ -743,9 +774,7 @@ function seedTodaysLiveBlockingInbox(save: GameSavePayload, targetIso: string): 
   const g = getPrimaryGroup(save) as Record<string, unknown> | null;
   const gid = g && String(g.uid ?? "");
   if (!gid) return;
-  const memberUids = Array.isArray(g.member_uids)
-    ? (g.member_uids as unknown[]).map((x) => String(x))
-    : save.shortlist.map((x) => String(x));
+  const memberUids = availableManagedMemberUidsForDate(save, dayIso);
   const idols = save.database_snapshot.idols as Record<string, unknown>[];
   const uidSet = new Set(memberUids);
   const members = idols.filter((row) => row && uidSet.has(String(row.uid ?? "")));
@@ -916,6 +945,7 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   const currentDayIso = isoDatePart(currentIso);
 
   let finances = normalizeFinances(getActiveFinances(next) as Parameters<typeof normalizeFinances>[0]);
+  const scoutRetainersMonthlyTotal = totalMonthlyScoutRetainersYen(next.scout.subscriptions, buildDefaultScoutCompanies());
 
   const targetIso = addCalendarDays(currentDayIso, 1);
   /** Live stress applies only after Live Start (desktop); day-of advance keeps training load lower. */
@@ -923,13 +953,12 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   const liveMinutes = 0;
   const tokutenkaiRevenue = 0;
   const liveVenueFeeTotal = 0;
+  let mediaSummary = resolveManagedMediaDay(null, targetIso, null, [], letterTier, 0);
 
   if (group && typeof group === "object") {
     const g = group as Record<string, unknown>;
-    const memberUids = Array.isArray(g.member_uids)
-      ? (g.member_uids as unknown[]).map((x) => String(x))
-      : [];
-    const rosterUids = memberUids.length > 0 ? memberUids : next.shortlist.map((x) => String(x));
+    const rosterUids = availableManagedMemberUidsForDate(next, targetIso);
+    const activeMembers = activeManagedMembersForDate(next, targetIso);
     const weekLog = normalizeTrainingWeekLog(next.training_week_log);
     const liveDaysInWeek = new Set(
       next.lives.schedules
@@ -961,23 +990,72 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     }
 
     next.training_week_log = weekLog as unknown as GameSavePayload["training_week_log"];
-
+    const mediaBundle = findManagedOfficialScheduleBundleInRuntime(
+      next.scenario_runtime.official_schedules,
+      g,
+      next.managing_group,
+    );
+    mediaSummary = resolveManagedMediaDay(mediaBundle, targetIso, g, activeMembers, letterTier, 0);
   }
 
   const { popularity, fans, xFollowers } = readPopFans(next);
 
-  const breakdown = buildDailyBreakdown({
+  const breakdown: DailyBreakdown = buildDailyBreakdown({
     targetDateIso: targetIso,
     memberCount: mc,
     popularity,
     fans,
     xFollowers,
     monthlySalaryTotal,
+    scoutRetainersMonthlyTotal,
     liveCount,
     tokutenkaiRevenue,
     tokutenkaiCost: 0,
     liveVenueFeeTotal,
   });
+
+  const passiveMedia = Math.max(0, Number(breakdown.media ?? 0) || 0);
+  breakdown.media_passive_removed = passiveMedia;
+  breakdown.media_event_revenue = mediaSummary.revenue;
+  breakdown.media_operating_cost = mediaSummary.expense;
+  breakdown.media_event_travel = mediaSummary.travel_cost;
+  breakdown.media_event_making = mediaSummary.making_cost;
+  breakdown.media_event_advertising = mediaSummary.event_advertising_cost;
+  breakdown.media_fixed_admin = mediaSummary.fixed_admin_cost;
+  breakdown.media_fixed_advertising = mediaSummary.fixed_advertising_cost;
+  breakdown.media_event_count = mediaSummary.event_count;
+  breakdown.media_event_popularity_gain = mediaSummary.popularity_gain;
+  breakdown.media_event_fan_gain = mediaSummary.fan_gain;
+  breakdown.cd_release_count = mediaSummary.cd_release_count;
+  breakdown.cd_release_units = mediaSummary.cd_release_units;
+  breakdown.cd_release_revenue = mediaSummary.cd_release_revenue;
+  breakdown.cd_release_mv_cost = mediaSummary.cd_release_mv_cost;
+
+  breakdown.media = mediaSummary.revenue;
+  breakdown.office += mediaSummary.fixed_admin_cost;
+  breakdown.promotion += mediaSummary.fixed_advertising_cost + mediaSummary.event_advertising_cost;
+  breakdown.expense_total += mediaSummary.expense;
+  breakdown.income_total += mediaSummary.revenue - passiveMedia;
+  breakdown.net_total = breakdown.income_total - breakdown.expense_total;
+
+  if (group && typeof group === "object") {
+    const g = group as Record<string, unknown>;
+    g.fans = Math.max(0, Math.round(num(g.fans, 0) + mediaSummary.fan_gain));
+    g.popularity = Math.round(clamp(num(g.popularity, 0) + mediaSummary.popularity_gain, 0, 100) * 1000) / 1000;
+
+    const idols = next.database_snapshot.idols as Record<string, unknown>[];
+    for (const idol of idols) {
+      const uid = String(idol.uid ?? "");
+      const conditionDelta = mediaSummary.member_condition_changes[uid] ?? 0;
+      const fanDelta = mediaSummary.member_fan_changes[uid] ?? 0;
+      const moraleDelta = mediaSummary.member_morale_changes[uid] ?? 0;
+      if (!conditionDelta && !fanDelta && !moraleDelta) continue;
+      ensureIdolSimulationDefaults(idol);
+      idol.condition = Math.round(clamp(num(idol.condition, 90) + conditionDelta, 0, 100));
+      idol.fan_count = Math.max(0, Math.round(num(idol.fan_count, 0) + fanDelta));
+      idol.morale = Math.round(clamp(num(idol.morale, 70) + moraleDelta, 0, 100));
+    }
+  }
 
   finances = applyDailyClose(finances, breakdown);
 

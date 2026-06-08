@@ -9,6 +9,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const dataRoot = path.join(repoRoot, "public", "data");
 const groupsPath = path.join(dataRoot, "groups.json");
 const rawRoot = path.join(dataRoot, "timetree");
+const officialRoot = path.join(dataRoot, "official_schedules");
 const outputRoot = path.join(dataRoot, "managed-live-schedules");
 const outputGroupsRoot = path.join(outputRoot, "groups");
 
@@ -37,6 +38,14 @@ const SOURCE_CONFIGS = [
     rawFile: "ilife_official-2025-07-2026-05.json",
     groupUid: "aUxpRkUh",
     aliases: ["iLiFE!", "ilife", "i life"],
+  },
+  {
+    sourceKey: "takanenonadeshiko",
+    label: "Takane no Nadeshiko Official Schedule",
+    rawFile: "takanenonadeshiko-2025-07-2026-07.json",
+    rawDir: "official_schedules",
+    groupUid: "6auY5ba644Gu44Gq44Gn44GX44GT",
+    aliases: ["高嶺のなでしこ", "Takane no Nadeshiko", "Takane_no_Nadeshiko", "takaneko"],
   },
 ];
 
@@ -103,10 +112,11 @@ function inferTemplateKey(row) {
   const rawType = String(row.event_type ?? row.type ?? "").trim();
   const title = String(row.event ?? "").trim();
   if (rawType === "Festival") return "type_3";
+  if (/ハニフェス|FES\b|Festival/i.test(title)) return "type_3";
   if (/2[-\s]?man|3[-\s]?man|4[-\s]?man|2man|3man|4man|joint/i.test(title)) return "type_5";
   if (/単独|定期|ワンマン|one[- ]?man/i.test(title)) return "type_6";
   if (rawType === "Taiban") return "type_4";
-  if (rawType === "Birthday") return "type_6";
+  if (rawType === "Birthday") return "type_8";
   if (rawType === "Concert") return "type_6";
   return "type_4";
 }
@@ -115,11 +125,22 @@ function shouldKeepRawEvent(row) {
   const rawType = String(row.type ?? row.event_type ?? "").trim();
   const title = String(row.event ?? "").trim();
   const note = String(row.note ?? "");
-  if (rawType === "Cancelled" || rawType === "Media" || rawType === "Meet" || rawType === "Virtual" || rawType === "Promo")
+  if (
+    rawType === "Cancelled" ||
+    rawType === "Media" ||
+    rawType === "Meet" ||
+    rawType === "Virtual" ||
+    rawType === "Promo" ||
+    rawType === "TvShow" ||
+    rawType === "OfflineEvent" ||
+    rawType === "GuestLive" ||
+    rawType === "Birthday"
+  )
     return false;
   if (isVirtualLiveEvent(row) || isCommercialPromoEvent(row)) return false;
+  if (/ファンミーティング|ファンミ\b/i.test(title)) return false;
   if (/【TV】|テレビ|TV|ラジオ|Radio|配信|Streaming/i.test(title)) return false;
-  if (rawType === "Concert" || rawType === "Festival" || rawType === "Taiban" || rawType === "Birthday" || rawType === "Tokutenkai") return true;
+  if (rawType === "Concert" || rawType === "Festival" || rawType === "Taiban" || rawType === "Tokutenkai") return true;
   if (rawType !== "Other") return false;
   if (parseTimeRange(note, "live") || parseStartTime(note)) return true;
   if (/LIVE|特典会|単独|定期|ワンマン|対バン|festival|fes/i.test(`${title}\n${note}`)) return true;
@@ -128,7 +149,7 @@ function shouldKeepRawEvent(row) {
 
 function toManagedEvent(sourceKey, row) {
   const date = String(row.date ?? "").split("T")[0];
-  const title = String(row.event ?? "").trim();
+  const title = String(row.event ?? row.event_raw ?? "").trim();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !title) return null;
   if (!shouldKeepRawEvent(row)) return null;
   const template_key = inferTemplateKey(row);
@@ -179,7 +200,8 @@ function main() {
     if (!group) {
       throw new Error(`Managed live schedule source ${config.sourceKey} could not find group ${config.groupUid} in groups.json`);
     }
-    const raw = readJson(path.join(rawRoot, config.rawFile));
+    const inputRoot = config.rawDir === "official_schedules" ? officialRoot : rawRoot;
+    const raw = readJson(path.join(inputRoot, config.rawFile));
     const rawEvents = Array.isArray(raw.events) ? raw.events : [];
     const events = rawEvents.map((row) => toManagedEvent(config.sourceKey, row)).filter(Boolean);
     const sortedEvents = events.sort((a, b) => {
@@ -211,7 +233,7 @@ function main() {
           ].filter(Boolean),
         ),
       ),
-      raw_file: `timetree/${config.rawFile}`,
+      raw_file: `${config.rawDir === "official_schedules" ? "official_schedules" : "timetree"}/${config.rawFile}`,
       file,
       event_count: sortedEvents.length,
       date_start: sortedEvents[0]?.date ?? "",

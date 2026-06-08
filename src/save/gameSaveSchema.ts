@@ -4,7 +4,7 @@
  */
 
 import type { WebPreviewBundle } from "../types";
-import type { LoadedScenario } from "../data/scenarioTypes";
+import type { LoadedScenario, OfficialScheduleBundle, SharedReleaseRow } from "../data/scenarioTypes";
 import {
   scenarioStartingCash,
   defaultFinances,
@@ -69,6 +69,7 @@ export interface DatabaseSnapshot {
   idols: Record<string, unknown>[];
   groups: Record<string, unknown>[];
   songs: Record<string, unknown>[];
+  shared_releases: SharedReleaseRow[];
 }
 
 export function findScenarioGroupByLabel(
@@ -88,11 +89,13 @@ function deepSnapshot(
   idols: Record<string, unknown>[],
   groups: Record<string, unknown>[],
   songs: Record<string, unknown>[],
+  shared_releases: SharedReleaseRow[],
 ): DatabaseSnapshot {
   return {
     idols: JSON.parse(JSON.stringify(idols)),
     groups: JSON.parse(JSON.stringify(groups)),
     songs: JSON.parse(JSON.stringify(songs)),
+    shared_releases: JSON.parse(JSON.stringify(shared_releases)),
   };
 }
 
@@ -180,7 +183,7 @@ export function createGameSaveFromLoadedScenario(
       ? loaded.preset.opening_date
       : "2020-01-01";
   const filtered = buildFilteredSnapshotWithFutureEvents(loaded.idols, loaded.groups, opening);
-  const snap = deepSnapshot(filtered.idols, filtered.groups, loaded.songs);
+  const snap = deepSnapshot(filtered.idols, filtered.groups, loaded.songs, loaded.shared_releases ?? []);
   applyAttributesToAllIdols(snap.idols, snap.groups, opening);
 
   const g =
@@ -240,6 +243,7 @@ export function createGameSaveFromLoadedScenario(
   };
   save.database_snapshot = snap;
   save.scenario_runtime.future_events = filtered.futureEvents;
+  save.scenario_runtime.official_schedules = deepCopy(loaded.official_schedules ?? []);
   save.shortlist = [];
   save.goods_inventory = defaultGoodsInventory(managedGoodsMembers(save));
   for (const uid of memberUids) {
@@ -326,6 +330,14 @@ export interface ScoutBlock {
   subscriptions: Record<string, { company_uid: string; subscribed_at: string }>;
 }
 
+export interface CdReleaseProject {
+  uid: string;
+  title: string;
+  release_kind: "single" | "album";
+  song_uids: string[];
+  released_digital_song_uids?: string[];
+}
+
 export interface GameSavePayload {
   version: typeof GAME_SAVE_VERSION;
   account_name?: string;
@@ -334,8 +346,12 @@ export interface GameSavePayload {
   managing_group_uid: string | null;
   scenario_context: ScenarioContext;
   database_snapshot: DatabaseSnapshot;
-  scenario_runtime: { future_events: Record<string, unknown>[] };
+  scenario_runtime: {
+    future_events: Record<string, unknown>[];
+    official_schedules?: OfficialScheduleBundle[];
+  };
   shortlist: string[];
+  cd_projects: CdReleaseProject[];
   goods_inventory: ProducedGoodsRow[];
   inbox: { notifications: NotificationRow[] };
   schedules: Record<string, unknown>;
@@ -479,9 +495,10 @@ export function defaultGameSavePayload(): GameSavePayload {
     managing_group: null,
     managing_group_uid: null,
     scenario_context: defaultScenarioContext(),
-    database_snapshot: { idols: [], groups: [], songs: [] },
-    scenario_runtime: { future_events: [] },
+    database_snapshot: { idols: [], groups: [], songs: [], shared_releases: [] },
+    scenario_runtime: { future_events: [], official_schedules: [] },
     shortlist: [],
+    cd_projects: [],
     goods_inventory: [],
     inbox: { notifications: [] },
     schedules: {},
@@ -513,6 +530,32 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   if ("managing_group_uid" in p) {
     out.managing_group_uid = p.managing_group_uid == null ? null : String(p.managing_group_uid);
   }
+  if (Array.isArray(p.cd_projects)) {
+    out.cd_projects = p.cd_projects
+      .map((rawRow, index) => {
+        if (!rawRow || typeof rawRow !== "object") return null;
+        const row = rawRow as Record<string, unknown>;
+        const uid = String(row.uid ?? "").trim() || `cd-project-${index + 1}`;
+        const release_kind = String(row.release_kind ?? "").trim() === "album" ? "album" : "single";
+        const title = String(row.title ?? "").trim() || (release_kind === "album" ? "New album" : "New single");
+        const song_uids = Array.isArray(row.song_uids)
+          ? row.song_uids.map((x) => String(x ?? "").trim()).filter(Boolean)
+          : [];
+        const released_digital_song_uids = Array.isArray(row.released_digital_song_uids)
+          ? row.released_digital_song_uids.map((x) => String(x ?? "").trim()).filter(Boolean)
+          : [];
+        return {
+          uid,
+          title,
+          release_kind,
+          song_uids: song_uids.filter((value, valueIndex, arr) => arr.indexOf(value) === valueIndex),
+          released_digital_song_uids: released_digital_song_uids.filter(
+            (value, valueIndex, arr) => arr.indexOf(value) === valueIndex,
+          ),
+        } satisfies CdReleaseProject;
+      })
+      .filter((row): row is CdReleaseProject => Boolean(row));
+  }
 
   if (p.scenario_context && typeof p.scenario_context === "object") {
     const c = p.scenario_context as Record<string, unknown>;
@@ -539,12 +582,24 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     if (Array.isArray(snap.idols)) out.database_snapshot.idols = deepCopy(snap.idols);
     if (Array.isArray(snap.groups)) out.database_snapshot.groups = deepCopy(snap.groups);
     if (Array.isArray(snap.songs)) out.database_snapshot.songs = deepCopy(snap.songs);
+    if (Array.isArray((snap as { shared_releases?: unknown }).shared_releases)) {
+      out.database_snapshot.shared_releases = deepCopy(
+        (snap as { shared_releases: SharedReleaseRow[] }).shared_releases,
+      );
+    }
   }
 
   if (p.scenario_runtime && typeof p.scenario_runtime === "object") {
-    const fe = (p.scenario_runtime as { future_events?: unknown }).future_events;
+    const runtime = p.scenario_runtime as { future_events?: unknown; official_schedules?: unknown };
+    const fe = runtime.future_events;
     if (Array.isArray(fe)) {
       out.scenario_runtime.future_events = fe.filter((x): x is Record<string, unknown> => typeof x === "object");
+    }
+    const officialSchedules = runtime.official_schedules;
+    if (Array.isArray(officialSchedules)) {
+      out.scenario_runtime.official_schedules = officialSchedules.filter(
+        (x): x is OfficialScheduleBundle => Boolean(x && typeof x === "object" && Array.isArray((x as { events?: unknown }).events)),
+      );
     }
   }
 
@@ -667,6 +722,34 @@ export function hydrateSnapshotSongsFromScenario(
   return true;
 }
 
+/**
+ * Refresh save snapshot groups from the in-memory scenario catalog when group metadata
+ * has been improved in shipped data (for example discography track lists or shared-release links).
+ */
+export function hydrateSnapshotGroupsFromScenario(
+  save: GameSavePayload,
+  catalog: Record<string, unknown>[] | null | undefined,
+  scenarioDataSubdir?: string | null,
+): boolean {
+  if (!catalog?.length) return false;
+  if (scenarioDataSubdir) {
+    const hint = `${save.scenario_context?.songs_path ?? ""}${save.scenario_context?.groups_path ?? ""}`;
+    if (!hint.includes(scenarioDataSubdir)) return false;
+  }
+  const groupUids = new Set(
+    save.database_snapshot.groups
+      .map((g) => String((g as { uid?: unknown }).uid ?? "").trim())
+      .filter((u) => u.length > 0),
+  );
+  if (!groupUids.size) return false;
+  const merged = catalog.filter((g) =>
+    groupUids.has(String((g as { uid?: unknown }).uid ?? "").trim()),
+  );
+  if (merged.length !== save.database_snapshot.groups.length) return false;
+  save.database_snapshot.groups = deepCopy(merged);
+  return true;
+}
+
 export function getPrimaryGroup(save: GameSavePayload): Record<string, unknown> | null {
   const groups = save.database_snapshot.groups;
   if (!groups.length) return null;
@@ -740,7 +823,7 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.finances = defaultFinances(cash);
   save.inbox.notifications = [];
 
-  save.scenario_runtime = { future_events: [] };
+  save.scenario_runtime = { future_events: [], official_schedules: [] };
   save.scout.selected_company_uid = buildDefaultScoutCompanies()[0]?.uid ?? null;
   save.scout.subscriptions = {};
 

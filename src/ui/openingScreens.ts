@@ -6,7 +6,7 @@ import type { LoadedScenario, ScenarioPreset, GroupTierRow } from "../data/scena
 import { playableGroups } from "../data/scenarioBrowse";
 import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } from "../data/startupGroupPicker";
 import { inferLetterTier } from "../engine/financeSystem";
-import { AUTOSAVE_SLOT } from "../persistence/saves";
+import { AUTOSAVE_SLOT, type SlotSummary } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
 import { gameManualHref, languageOptions, t, type UiLanguage } from "./i18n";
 
@@ -30,7 +30,7 @@ export function renderOpeningLogin(
   const disabled = dbReady && accountName.trim() ? "" : "disabled";
 
   return `
-<section class="opening-screen" aria-label="Login">
+<section class="opening-screen" aria-label="${htmlEsc(t(lang, "opening_log_in"))}">
   <div class="opening-hero fm-card-opening">
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
@@ -38,11 +38,11 @@ export function renderOpeningLogin(
   </div>
 
   <div class="fm-card-opening producer-block">
-    <label class="opening-label" for="account-name">${htmlEsc("Account name")}</label>
-    <input type="text" id="account-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc("Enter account name")}" autocomplete="off" />
-    <p class="opening-status-msg">${htmlEsc("Password support can be added later.")}</p>
+    <label class="opening-label" for="account-name">${htmlEsc(t(lang, "opening_account_name"))}</label>
+    <input type="text" id="account-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc(t(lang, "opening_enter_account_name"))}" autocomplete="off" />
+    <p class="opening-status-msg">${htmlEsc(t(lang, "opening_password_later"))}</p>
     <div class="opening-actions-footer">
-      <button type="button" class="opening-btn opening-btn-green" id="opening-login" ${disabled}>${htmlEsc("Log in")}</button>
+      <button type="button" class="opening-btn opening-btn-green" id="opening-login" ${disabled}>${htmlEsc(t(lang, "opening_log_in"))}</button>
     </div>
   </div>
 
@@ -61,12 +61,14 @@ export function renderOpeningHome(
   canResume: boolean,
   slot: number,
   occupiedSlots: number[],
+  slotSummaries: SlotSummary[],
   lang: UiLanguage,
 ): string {
   const disabled = dbReady ? "" : "disabled";
+  const slotSummaryMap = new Map(slotSummaries.map((row) => [row.slot, row.label] as const));
 
   return `
-<section class="opening-screen" aria-label="Launcher">
+<section class="opening-screen" aria-label="${htmlEsc(t(lang, "shell_home"))}">
   <div class="opening-hero fm-card-opening">
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
@@ -91,9 +93,9 @@ export function renderOpeningHome(
     <label class="opening-label opening-slot-row" for="opening-slot-select">${htmlEsc(t(lang, "opening_load_slot"))}</label>
     <select id="opening-slot-select" class="opening-input" style="max-width: 14rem">
       ${Array.from({ length: AUTOSAVE_SLOT + 1 }, (_, s) => {
-        const occ = occupiedSlots.includes(s) ? ` - ${t(lang, "opening_slot_saved")}` : "";
-        const label = s === AUTOSAVE_SLOT ? `Autosave${occ}` : `Slot ${s}${occ}`;
-        return `<option value="${s}" ${s === slot ? "selected" : ""}>${label}</option>`;
+        const detail = slotSummaryMap.get(s);
+        const label = detail ? detail : s === AUTOSAVE_SLOT ? t(lang, "opening_autosave") : `${t(lang, "shell_slot")} ${s}`;
+        return `<option value="${s}" ${s === slot ? "selected" : ""}>${htmlEsc(label)}</option>`;
       }).join("")}
     </select>
   </div>
@@ -219,7 +221,7 @@ export function renderNewGameScreen(
     .join("");
 
   return `
-<section class="opening-screen opening-new-game" aria-label="New game">
+<section class="opening-screen opening-new-game" aria-label="${htmlEsc(t(lang, "opening_new_game"))}">
   <div class="opening-hero fm-card-opening">
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc(t(lang, "opening_new_game_title"))}</h1>
@@ -227,7 +229,7 @@ export function renderNewGameScreen(
   </div>
 
   <div class="fm-card-opening producer-block">
-    <label class="opening-label" for="producer-name">${htmlEsc("Producer / account")}</label>
+    <label class="opening-label" for="producer-name">${htmlEsc(t(lang, "opening_producer_account"))}</label>
     <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(accountName)}" readonly />
   </div>
 

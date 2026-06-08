@@ -1,0 +1,237 @@
+[
+  {
+    "uid": "shared-triple-date-2022",
+    "title": "Triple Date",
+    "title_romanji": "Triple Date",
+    "disc_type": "Single",
+    "release_date": "2022-07-20",
+    "publisher": "King Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": "picture/トリプルデート)(with≠MEand≒JOY_cover.webp",
+    "group_uids": [
+      "PUxPVkU",
+      "4omgTUU",
+      "4omSSk9Z"
+    ],
+    "group_names": [
+      "=LOVE",
+      "≠ME",
+      "≒JOY"
+    ],
+    "shared_track_list": [],
+    "shared_track_song_uids": [],
+    "group_editions": []
+  },
+  {
+    "uid": "shared-24girls-2020",
+    "title": "24girls 2020",
+    "title_romanji": "24girls 2020",
+    "disc_type": "DVD/BD",
+    "release_date": "2021-10-06",
+    "publisher": "",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": null,
+    "group_uids": [
+      "PUxPVkU",
+      "4omgTUU"
+    ],
+    "group_names": [
+      "=LOVE",
+      "≠ME"
+    ],
+    "shared_track_list": [],
+    "shared_track_song_uids": [],
+    "group_editions": []
+  },
+  {
+    "uid": "shared-ikonoi-fes-2021",
+    "title": "IKONOI FES 2021",
+    "title_romanji": "IKONOI FES 2021",
+    "disc_type": "DVD/BD",
+    "release_date": "2022-08-31",
+    "publisher": "",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": null,
+    "group_uids": [
+      "PUxPVkU",
+      "4omgTUU"
+    ],
+    "group_names": [
+      "=LOVE",
+      "≠ME"
+    ],
+    "shared_track_list": [],
+    "shared_track_song_uids": [],
+    "group_editions": []
+  },
+  {
+    "uid": "shared-ikonoijoy-2022",
+    "title": "IKONOIJOY 2022",
+    "title_romanji": "IKONOIJOY 2022",
+    "disc_type": "DVD/BD",
+    "release_date": "2023-07-26",
+    "publisher": "",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": null,
+    "group_uids": [
+      "PUxPVkU",
+      "4omgTUU"
+    ],
+    "group_names": [
+      "=LOVE",
+      "≠ME"
+    ],
+    "shared_track_list": [],
+    "shared_track_song_uids": [],
+    "group_editions": []
+  },
+  {
+    "uid": "shared-ikonoijoy-2023",
+    "title": "IKONOIJOY 2023",
+    "title_romanji": "IKONOIJOY 2023",
+    "disc_type": "DVD/BD",
+    "release_date": "2024-09-18",
+    "publisher": "",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": null,
+    "group_uids": [
+      "PUxPVkU",
+      "4omgTUU"
+    ],
+    "group_names": [
+      "=LOVE",
+      "≠ME"
+    ],
+    "shared_track_list": [],
+    "shared_track_song_uids": [],
+    "group_editions": []
+  },
+  {
+    "uid": "shared-ikonoijoy-2024",
+    "title": "IKONOIJOY 2024",
+    "title_romanji": "IKONOIJOY 2024",
+    "disc_type": "DVD/BD",
+    "release_date": "2025-09-24",
+    "publisher": "",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": null,
+    "group_uids": [
+      "PUxPVkU",
+      "4omgTUU",
+      "4omSSk9Z"
+    ],
+    "group_names": [
+      "=LOVE",
+      "≠ME",
+      "≒JOY"
+    ],
+    "shared_track_list": [],
+    "shared_track_song_uids": [],
+    "group_editions": []
+  },
+  {
+    "uid": "shared-heroines-album-2025",
+    "title": "HEROINES Album 2025",
+    "title_romanji": "HEROINES Album 2025",
+    "disc_type": "Album",
+    "release_date": "2025-02-01",
+    "publisher": "ROCK FIELD",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "cover_image_path": null,
+    "group_uids": [
+      "44Ki44Kt44K344OWcHJvamVjdA",
+      "aUxpRkUh"
+    ],
+    "group_names": [
+      "アキシブproject",
+      "iLiFE!"
+    ],
+    "shared_track_list": [
+      "パラリラダンス",
+      "アイドルライフブースターパック",
+      "アキシブウェイ",
+      "Mariage",
+      "ジェラ",
+      "ノックアウト！",
+      "GILTY",
+      "アンソクチ",
+      "トキメキCherry",
+      "DREAMS ON THE RUN",
+      "ANARCHY",
+      "七転八起",
+      "ノーテンキ超キュートガール",
+      "ちゅ♡ちゅ♡ちゅ♡ぱにぱっ♡",
+      "パラレルサイダー",
+      "サイコオフトン",
+      "デジタルタトゥー",
+      "ジャパサマ"
+    ],
+    "shared_track_song_uids": [],
+    "shared_tracks": [
+      { "title": "パラリラダンス", "group_name": "i-COL" },
+      { "title": "アイドルライフブースターパック", "group_uid": "aUxpRkUh", "group_name": "iLiFE!", "song_uid": "3d50def7-8cae-49cf-af54-61b821d49ca2" },
+      { "title": "アキシブウェイ", "group_uid": "44Ki44Kt44K344OWcHJvamVjdA", "group_name": "アキシブproject", "song_uid": "f340fa8d-6305-410c-ad86-f4726cf93573" },
+      { "title": "Mariage", "group_name": "AdamLilith" },
+      { "title": "ジェラ", "group_name": "Ill" },
+      { "title": "ノックアウト！", "group_name": "ガガピエロ" },
+      { "title": "GILTY", "group_name": "GILTY×GILTY" },
+      { "title": "アンソクチ", "group_name": "ZUTTOMOTTO" },
+      { "title": "トキメキCherry", "group_name": "chuLa" },
+      { "title": "DREAMS ON THE RUN", "group_name": "Tenshi ni wa Narenai" },
+      { "title": "ANARCHY", "group_name": "TENRIN" },
+      { "title": "七転八起", "group_name": "Nanakorobi Yaoki" },
+      { "title": "ノーテンキ超キュートガール", "group_name": "Non¬Fiction" },
+      { "title": "ちゅ♡ちゅ♡ちゅ♡ぱにぱっ♡", "group_name": "Paradeeq" },
+      { "title": "パラレルサイダー", "group_name": "Parallel Cider" },
+      { "title": "サイコオフトン", "group_name": "Ponkotsu Konpo" },
+      { "title": "デジタルタトゥー", "group_name": "Yakousei Amuse" },
+      { "title": "ジャパサマ", "group_name": "LADYBABY" }
+    ],
+    "group_editions": [
+      {
+        "group_uid": "aUxpRkUh",
+        "group_name": "iLiFE!",
+        "edition_label": "iLiFE! Edition",
+        "catalog_number": "QARF-51050",
+        "track_list": [
+          "アイドルライフエクストラパック"
+        ],
+        "track_song_uids": [
+          "e1cffbd9-bc1d-41c5-95ae-74ec77a2d9b6"
+        ],
+        "tracks": [
+          { "title": "アイドルライフエクストラパック", "group_uid": "aUxpRkUh", "group_name": "iLiFE!", "song_uid": "e1cffbd9-bc1d-41c5-95ae-74ec77a2d9b6" }
+        ]
+      },
+      {
+        "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+        "group_name": "アキシブproject",
+        "edition_label": "akishibu project Edition",
+        "catalog_number": "QARF-51051",
+        "track_list": [
+          "新宇宙世紀アイドルちゃん"
+        ],
+        "track_song_uids": [
+          "ad63da7d-7a74-4d36-9270-c301b45252e4"
+        ],
+        "tracks": [
+          { "title": "新宇宙世紀アイドルちゃん", "title_romanji": "Shin Uchuu Seiki Idol-chan", "group_uid": "44Ki44Kt44K344OWcHJvamVjdA", "group_name": "アキシブproject", "song_uid": "ad63da7d-7a74-4d36-9270-c301b45252e4" }
+        ]
+      }
+    ]
+  }
+]

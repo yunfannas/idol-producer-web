@@ -1,5 +1,5 @@
 /**
- * Build `public/data/scenarios/scenario_6_2025-07-20/startup_allowlist.json` from
+ * Build `public/data/scenarios/scenario_6/startup_allowlist.json` from
  * `docs/scenario6_available_groups.txt` (same line shape as tier backfill).
  * Line order defines new-game picker order; first `recommended_count` names are "recommended".
  *
@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const listPath = path.join(root, "docs", "scenario6_available_groups.txt");
-const outPath = path.join(root, "public", "data", "scenarios", "scenario_6_2025-07-20", "startup_allowlist.json");
+const outPath = path.join(root, "public", "data", "scenarios", "scenario_6", "startup_allowlist.json");
 
 /** Same pattern as `backfill-scenario6-tiers-from-available-list.mjs` */
 const LINE_RE = /^\d+\.\s*(.+?)\s*\|\s*tier\s*=\s*([SABCDEFsabcdef])\s*\|\s*members\s*=\s*\d+\s*$/;

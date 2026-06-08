@@ -3,7 +3,7 @@
   "name": "Scenario 6",
   "scenario_number": 6,
   "opening_date": "2025-07-05",
-  "data_subdir": "scenario_6_2025-07-20",
+  "data_subdir": "scenario_6",
   "startup_view": "Groups",
   "startup_group": "Akishibu project"
 }

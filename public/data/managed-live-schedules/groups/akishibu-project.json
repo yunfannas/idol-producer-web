@@ -1,7 +1,7 @@
 {
   "source_key": "akishibu-project",
   "label": "Akishibu TimeTree",
-  "event_count": 171,
+  "event_count": 164,
   "events": [
     {
       "uid": "managed-akishibu-project-2714419616194446113",
@@ -384,25 +384,6 @@
       "source_url": "https://timetr.ee/p/akishibu/2768079153585406714"
     },
     {
-      "uid": "managed-akishibu-project-2682813620561068417",
-      "source_event_id": "2682813620561068417",
-      "date": "2025-08-20",
-      "title": "水琴まなみ生誕祭2025",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "SHIBUYA DIVE",
-      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
-      "start_time": "18:00",
-      "end_time": "19:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "19:35",
-      "tokutenkai_end": "21:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/bcfe/2025-08-14/0-1755148875345.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2682813620561068417"
-    },
-    {
       "uid": "managed-akishibu-project-2768082204060762566",
       "source_event_id": "2768082204060762566",
       "date": "2025-08-22",
@@ -553,44 +534,6 @@
       "tokutenkai_end": "18:05",
       "poster_image_path": "https://attachments.timetreeapp.com/public_event/288c/2025-08-14/0-1755150064756.jpg",
       "source_url": "https://timetr.ee/p/akishibu/2768090194553815660"
-    },
-    {
-      "uid": "managed-akishibu-project-2682813522271748158",
-      "source_event_id": "2682813522271748158",
-      "date": "2025-09-07",
-      "title": "平沢かえ生誕祭2025",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "SHIBUYA DIVE",
-      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
-      "start_time": "18:00",
-      "end_time": "19:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "19:35",
-      "tokutenkai_end": "21:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/c4eb/2025-07-29/0-1753767274952.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2682813522271748158"
-    },
-    {
-      "uid": "managed-akishibu-project-2682813763108684344",
-      "source_event_id": "2682813763108684344",
-      "date": "2025-09-08",
-      "title": "古賀みれい生誕祭2025",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "Veats SHIBUYA",
-      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce",
-      "start_time": "18:00",
-      "end_time": "19:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "19:35",
-      "tokutenkai_end": "21:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/6e36/2025-08-29/0-1756465519314.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2682813763108684344"
     },
     {
       "uid": "managed-akishibu-project-2744202045780082936",
@@ -1372,25 +1315,6 @@
       "source_url": "https://timetr.ee/p/akishibu/2791930539813060773"
     },
     {
-      "uid": "managed-akishibu-project-2803152857117704676",
-      "source_event_id": "2803152857117704676",
-      "date": "2025-11-18",
-      "title": "葵ふう生誕祭2025 『にゃんこの虜になっチャイナ！』",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "Veats SHIBUYA",
-      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce",
-      "start_time": "17:00",
-      "end_time": "18:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "18:35",
-      "tokutenkai_end": "20:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/2861/2025-10-25/0-1761429408612.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2803152857117704676"
-    },
-    {
       "uid": "managed-akishibu-project-2811012738008957424",
       "source_event_id": "2811012738008957424",
       "date": "2025-11-19",
@@ -1980,25 +1904,6 @@
       "source_url": "https://timetr.ee/p/akishibu/2846562851905028667"
     },
     {
-      "uid": "managed-akishibu-project-2810303968647790947",
-      "source_event_id": "2810303968647790947",
-      "date": "2026-01-15",
-      "title": "清見るん生誕祭-invitation-『るんにゃが魔法をかけたげるっ♪』",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "SHIBUYA DIVE",
-      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
-      "start_time": "18:00",
-      "end_time": "19:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "19:35",
-      "tokutenkai_end": "21:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/4487/2025-12-23/0-1766459614742.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2810303968647790947"
-    },
-    {
       "uid": "managed-akishibu-project-2853916903559086482",
       "source_event_id": "2853916903559086482",
       "date": "2026-01-17",
@@ -2208,25 +2113,6 @@
       "source_url": "https://timetr.ee/p/akishibu/2881048938261987351"
     },
     {
-      "uid": "managed-akishibu-project-2841459780891919074",
-      "source_event_id": "2841459780891919074",
-      "date": "2026-02-09",
-      "title": "茉井良菜生誕祭『らなかわらんど-つよくてにゅーげーむ♡-』",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "Veats SHIBUYA",
-      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce",
-      "start_time": "17:00",
-      "end_time": "18:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "18:35",
-      "tokutenkai_end": "20:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/d0bb/2026-01-24/0-1769220386856.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2841459780891919074"
-    },
-    {
       "uid": "managed-akishibu-project-2875374487348396639",
       "source_event_id": "2875374487348396639",
       "date": "2026-02-11",
@@ -2301,25 +2187,6 @@
       "tokutenkai_end": "18:05",
       "poster_image_path": "https://attachments.timetreeapp.com/public_event/3413/2026-01-24/0-1769253619090.jpg",
       "source_url": "https://timetr.ee/p/akishibu/2875374839778984571"
-    },
-    {
-      "uid": "managed-akishibu-project-2863960589361692900",
-      "source_event_id": "2863960589361692900",
-      "date": "2026-02-18",
-      "title": "如月なな生誕祭2026『なっなと秘密のお茶会』",
-      "template_key": "type_6",
-      "event_type": "Concert",
-      "live_type": "OneMan",
-      "raw_type": "Birthday",
-      "venue": "SHIBUYA DIVE",
-      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed",
-      "start_time": "17:00",
-      "end_time": "18:35",
-      "tokutenkai_enabled": true,
-      "tokutenkai_start": "18:35",
-      "tokutenkai_end": "20:05",
-      "poster_image_path": "https://attachments.timetreeapp.com/public_event/0fd9/2026-02-04/0-1770214623162.jpg",
-      "source_url": "https://timetr.ee/p/akishibu/2863960589361692900"
     },
     {
       "uid": "managed-akishibu-project-2879871969465942270",

@@ -1,5 +1,4 @@
 import monthlyLiveCountsCsv from "../../docs/reference/monthly_live_counts_by_letter_tier_template.csv?raw";
-import managedLiveScheduleManifestJson from "../../public/data/managed-live-schedules/manifest.json";
 import type { GameSavePayload } from "../save/gameSaveSchema";
 import { getPrimaryGroup, getLetterTierFromGroup } from "../save/gameSaveSchema";
 import { addNotification } from "../save/inbox";
@@ -15,6 +14,8 @@ import {
 import { songsForDisplaySorted, songPopularityNum } from "../data/songDisplayPolicy";
 import { songCatalogDisplayLabel } from "../data/songCatalog";
 import { suggestManagedSetlistTitles } from "./songStatusSystem";
+import { findManagedOfficialScheduleBundleInRuntime } from "./mediaEventWeb";
+import type { OfficialScheduleBundle, OfficialScheduleEvent } from "../data/scenarioTypes";
 
 type LiveCountRow = {
   group_letter_tier: string;
@@ -248,17 +249,41 @@ const AUTO_LIVE_TEMPLATES: Record<AutoLiveTypeKey, AutoLiveTemplate> = {
 
 let matrixMemo: Map<string, LiveCountRow> | null = null;
 
-const MANAGED_LIVE_SCHEDULE_MANIFEST = managedLiveScheduleManifestJson as ManagedLiveScheduleManifest;
-const MANAGED_LIVE_SCHEDULE_FILES = import.meta.glob("../../public/data/managed-live-schedules/groups/*.json", {
-  eager: true,
-  import: "default",
-}) as Record<string, ManagedLiveScheduleFile>;
-const MANAGED_LIVE_SCHEDULE_DB = new Map<string, ManagedLiveScheduleFile>(
-  Object.entries(MANAGED_LIVE_SCHEDULE_FILES).map(([key, value]) => {
-    const rel = key.split("/managed-live-schedules/")[1] ?? key;
-    return [rel, value];
-  }),
-);
+let managedLiveScheduleManifest: ManagedLiveScheduleManifest = { sources: [] };
+const MANAGED_LIVE_SCHEDULE_DB = new Map<string, ManagedLiveScheduleFile>();
+let managedLiveScheduleLoadPromise: Promise<void> | null = null;
+
+function publicDataBaseUrl(): string {
+  return import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+}
+
+/** Load optional managed live schedule JSON from `public/data/` (runtime fetch, not bundled). */
+export function preloadManagedLiveSchedules(): Promise<void> {
+  if (MANAGED_LIVE_SCHEDULE_DB.size > 0) return Promise.resolve();
+  if (managedLiveScheduleLoadPromise) return managedLiveScheduleLoadPromise;
+  managedLiveScheduleLoadPromise = (async () => {
+    try {
+      const manifestRes = await fetch(`${publicDataBaseUrl()}data/managed-live-schedules/manifest.json`);
+      if (!manifestRes.ok) return;
+      managedLiveScheduleManifest = (await manifestRes.json()) as ManagedLiveScheduleManifest;
+      const sources = Array.isArray(managedLiveScheduleManifest.sources)
+        ? managedLiveScheduleManifest.sources
+        : [];
+      await Promise.all(
+        sources.map(async (source) => {
+          const relFile = String(source?.file ?? "").trim();
+          if (!relFile || MANAGED_LIVE_SCHEDULE_DB.has(relFile)) return;
+          const fileRes = await fetch(`${publicDataBaseUrl()}data/managed-live-schedules/${relFile}`);
+          if (!fileRes.ok) return;
+          MANAGED_LIVE_SCHEDULE_DB.set(relFile, (await fileRes.json()) as ManagedLiveScheduleFile);
+        }),
+      );
+    } catch (err) {
+      console.warn("[monthlyLiveScheduler] managed schedule preload failed", err);
+    }
+  })();
+  return managedLiveScheduleLoadPromise;
+}
 
 function parseMonthlyLiveMatrix(): Map<string, LiveCountRow> {
   const rows = monthlyLiveCountsCsv
@@ -493,7 +518,7 @@ function getManagedScheduleSourceForGroup(group: Record<string, unknown> | null 
     const normalized = normalizeManagedScheduleKey(key);
     if (normalized) candidates.add(`alias:${normalized}`);
   }
-  const sources = Array.isArray(MANAGED_LIVE_SCHEDULE_MANIFEST.sources) ? MANAGED_LIVE_SCHEDULE_MANIFEST.sources : [];
+  const sources = Array.isArray(managedLiveScheduleManifest.sources) ? managedLiveScheduleManifest.sources : [];
   for (const source of sources) {
     if (!source || typeof source !== "object") continue;
     const sourceUid = String(source.group_uid ?? "").trim();
@@ -639,6 +664,118 @@ function existingUids(save: GameSavePayload): Set<string> {
   return out;
 }
 
+function isOfficialScheduleGameplayLive(event: OfficialScheduleEvent): boolean {
+  if (!event || typeof event !== "object") return false;
+  if ((event as { is_live?: unknown }).is_live === false) return false;
+  const type = String(event.type ?? "").trim();
+  return type === "Concert" || type === "Festival" || type === "GuestLive";
+}
+
+function officialScheduleLiveType(event: OfficialScheduleEvent): string {
+  const type = String(event.type ?? "").trim();
+  if (type === "Festival") return "Festival";
+  if (type === "GuestLive") return "Taiban";
+  return "OneMan";
+}
+
+function officialScheduleTemplateForLiveType(liveType: string): AutoLiveTemplate {
+  if (liveType === "Festival") return AUTO_LIVE_TEMPLATES.type_3;
+  if (liveType === "Taiban") return AUTO_LIVE_TEMPLATES.type_4;
+  return AUTO_LIVE_TEMPLATES.type_6;
+}
+
+function buildOfficialScheduleLiveRow(
+  save: GameSavePayload,
+  group: Record<string, unknown>,
+  bundle: OfficialScheduleBundle,
+  event: OfficialScheduleEvent,
+): Record<string, unknown> | null {
+  const dateIso = String(event.date ?? "").split("T")[0];
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) return null;
+  const liveType = officialScheduleLiveType(event);
+  const template = officialScheduleTemplateForLiveType(liveType);
+  const startTime = template.defaultStart;
+  const endTime = addMinutesToHHMM(startTime, template.defaultDurationMinutes);
+  const setlistCount = setlistCountForScheduledLive(
+    liveType,
+    startTime,
+    endTime,
+    template.defaultDurationMinutes,
+    template.setlistCount,
+  );
+  const setlist = songTitlesForAutoLive(save, String(group.uid ?? ""), setlistCount);
+  const title = String(event.event ?? event.event_raw ?? `${String(group.name ?? "Managed group")} ${template.titleSuffix}`).trim();
+  const venue = String(event.venue ?? event.venue_hint ?? "TBA").trim() || "TBA";
+  const detailUrl = String(event.official_detail_url ?? "").trim();
+  const eventId = String(event.official_detail_id ?? "").trim();
+  return {
+    uid: `official-live-${String(bundle.group_key ?? "group")}-${dateIso}-${eventId || title}`,
+    title,
+    title_romanji: "",
+    event_type: String(event.type ?? template.eventType),
+    live_type: liveType,
+    start_date: dateIso,
+    end_date: dateIso,
+    start_time: startTime,
+    end_time: endTime,
+    duration: template.defaultDurationMinutes,
+    rehearsal_start: "",
+    rehearsal_end: "",
+    venue,
+    venue_uid: String((event as { venue_uid?: unknown }).venue_uid ?? "").trim(),
+    location: String(event.venue_hint ?? "").trim(),
+    description: detailUrl ? `Imported from official future events - ${detailUrl}` : "Imported from official future events.",
+    performance_count: 1,
+    capacity: null,
+    attendance: null,
+    ticket_price: template.ticketPriceYen,
+    poster_image_path: null,
+    setlist,
+    program: buildAutoProgramForLive(liveType, template.defaultDurationMinutes, setlist, `official-program-${eventId || dateIso}`),
+    tokutenkai_enabled: false,
+    tokutenkai_start: "",
+    tokutenkai_end: "",
+    tokutenkai_duration: 0,
+    tokutenkai_ticket_price: 0,
+    tokutenkai_slot_seconds: 0,
+    tokutenkai_expected_tickets: 0,
+    goods_enabled: false,
+    goods_uid: "",
+    goods_line: "",
+    goods_expected_revenue_yen: 0,
+    group: [String(group.name ?? group.name_romanji ?? "")].filter(Boolean),
+    group_uid: String(group.uid ?? ""),
+    status: "scheduled",
+    imported_source: `official_schedule:${String(bundle.group_key ?? "group")}`,
+    source_url: detailUrl,
+  };
+}
+
+function ensureOfficialScheduleLivesInWindow(
+  save: GameSavePayload,
+  group: Record<string, unknown>,
+  bundle: OfficialScheduleBundle,
+  startIso: string,
+  endIso: string,
+): number {
+  const uidSet = existingUids(save);
+  let added = 0;
+  for (const event of Array.isArray(bundle.events) ? bundle.events : []) {
+    if (!isOfficialScheduleGameplayLive(event)) continue;
+    const dateIso = String(event.date ?? "").split("T")[0];
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) continue;
+    if (dateIso < startIso || dateIso > endIso) continue;
+    const live = buildOfficialScheduleLiveRow(save, group, bundle, event);
+    if (!live) continue;
+    const uid = String(live.uid ?? "");
+    if (!uid || uidSet.has(uid)) continue;
+    save.lives.schedules.push(live);
+    uidSet.add(uid);
+    added += 1;
+  }
+  return added;
+}
+
 export function purgeLegacyWeeklyAutopilotLives(save: GameSavePayload): void {
   save.lives.schedules = save.lives.schedules.filter((row) => {
     if (!row || typeof row !== "object") return false;
@@ -654,6 +791,23 @@ export function ensureAutoBookedLivesInWindow(
 ): number {
   const group = getPrimaryGroup(save);
   if (!group || typeof group !== "object") return 0;
+  const officialBundle = findManagedOfficialScheduleBundleInRuntime(
+    save.scenario_runtime?.official_schedules,
+    group,
+    save.managing_group ?? null,
+  );
+  if (officialBundle) {
+    const added = ensureOfficialScheduleLivesInWindow(save, group, officialBundle, startIso, endIso);
+    save.lives.schedules.sort((a, b) => {
+      const da = String((a as Record<string, unknown>).start_date ?? "");
+      const db = String((b as Record<string, unknown>).start_date ?? "");
+      if (da !== db) return da.localeCompare(db);
+      const ta = String((a as Record<string, unknown>).start_time ?? "");
+      const tb = String((b as Record<string, unknown>).start_time ?? "");
+      return ta.localeCompare(tb);
+    });
+    return added;
+  }
   const managedSource = getManagedScheduleSourceForGroup(group);
   if (managedSource) {
     const added = ensureManagedScheduleLivesInWindow(save, group, managedSource, startIso, endIso);
@@ -741,6 +895,12 @@ export function maybeSeedMonthEndAutoBookPrompt(save: GameSavePayload): void {
   const currentIso = save.current_date ?? save.game_start_date ?? save.scenario_context.startup_date ?? "2020-01-01";
   if (currentIso !== endOfMonthIso(startOfMonthIso(currentIso))) return;
   const group = getPrimaryGroup(save);
+  const officialBundle = findManagedOfficialScheduleBundleInRuntime(
+    save.scenario_runtime?.official_schedules,
+    group,
+    save.managing_group ?? null,
+  );
+  if (officialBundle) return;
   if (getManagedScheduleSourceForGroup(group)) return;
   const gid = String(group?.uid ?? "");
   if (!gid) return;

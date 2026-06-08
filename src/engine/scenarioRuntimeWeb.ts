@@ -427,11 +427,14 @@ export function describeAppliedEvent(event: Record<string, unknown>): { title: s
   return { title: "Scenario update", body: `A scheduled scenario event was applied for ${groupName}.` };
 }
 
-function buildWeeklyScenarioNewsSummary(save: GameSavePayload, mondayIso: string): { title: string; body: string } | null {
+function buildWeeklyScenarioNewsSummary(
+  save: GameSavePayload,
+  mondayIso: string,
+): { title: string; body: string; reportData: Record<string, unknown> } | null {
   const windowStart = addUtcDays(mondayIso, -6);
-  const formedRows: Array<{ date: string; group: string }> = [];
-  const joinRows: Array<{ date: string; idol: string; group: string }> = [];
-  const leftRows: Array<{ date: string; idol: string; group: string }> = [];
+  const formedRows: Array<{ date: string; group: string; groupUid: string }> = [];
+  const joinRows: Array<{ date: string; idol: string; idolUid: string; group: string; groupUid: string }> = [];
+  const leftRows: Array<{ date: string; idol: string; idolUid: string; group: string; groupUid: string }> = [];
   for (const rawGroup of save.database_snapshot.groups) {
     if (!rawGroup || typeof rawGroup !== "object") continue;
     const group = rawGroup as Record<string, unknown>;
@@ -439,12 +442,13 @@ function buildWeeklyScenarioNewsSummary(save: GameSavePayload, mondayIso: string
     if (!formedDate) continue;
     if (compareIsoDate(formedDate, windowStart) < 0 || compareIsoDate(formedDate, mondayIso) > 0) continue;
     const groupName = String(group.name ?? group.name_romanji ?? group.uid ?? "a group").trim() || "a group";
-    formedRows.push({ date: formedDate, group: groupName });
+    formedRows.push({ date: formedDate, group: groupName, groupUid: String(group.uid ?? "").trim() });
   }
   for (const rawIdol of save.database_snapshot.idols) {
     if (!rawIdol || typeof rawIdol !== "object") continue;
     const idol = rawIdol as Record<string, unknown>;
     const idolName = String(idol.name ?? "Member").trim() || "Member";
+    const idolUid = String(idol.uid ?? "").trim();
     const history = Array.isArray(idol.group_history) ? idol.group_history : [];
     for (const rawEntry of history) {
       if (!rawEntry || typeof rawEntry !== "object") continue;
@@ -452,11 +456,12 @@ function buildWeeklyScenarioNewsSummary(save: GameSavePayload, mondayIso: string
       const startDate = parseIsoDate(entry.start_date);
       const endDate = parseIsoDate(entry.end_date);
       const groupName = String(entry.group_name ?? entry.group_uid ?? "a group").trim() || "a group";
+      const groupUid = String(entry.group_uid ?? "").trim();
       if (startDate && compareIsoDate(startDate, windowStart) >= 0 && compareIsoDate(startDate, mondayIso) <= 0) {
-        joinRows.push({ date: startDate, idol: idolName, group: groupName });
+        joinRows.push({ date: startDate, idol: idolName, idolUid, group: groupName, groupUid });
       }
       if (endDate && compareIsoDate(endDate, windowStart) >= 0 && compareIsoDate(endDate, mondayIso) <= 0) {
-        leftRows.push({ date: endDate, idol: idolName, group: groupName });
+        leftRows.push({ date: endDate, idol: idolName, idolUid, group: groupName, groupUid });
       }
     }
   }
@@ -483,6 +488,14 @@ function buildWeeklyScenarioNewsSummary(save: GameSavePayload, mondayIso: string
   return {
     title: "Weekly news roundup",
     body: `News recorded from ${windowStart} to ${mondayIso}:\n\n${sections.join("\n\n")}`,
+    reportData: {
+      kind: "weekly_news_roundup",
+      window_start: windowStart,
+      window_end: mondayIso,
+      formed_rows: formedRows,
+      join_rows: joinRows,
+      left_rows: leftRows,
+    },
   };
 }
 
@@ -522,13 +535,14 @@ export function applyScenarioEventsForDate(save: GameSavePayload, targetIso: str
         title: summary.title,
         body: summary.body,
         sender: "News",
-        category: "news",
-        level: "normal",
-        isoDate: targetIso,
-        createdTime: "09:00:00",
-        unread: true,
-        dedupeKey: `weekly-member-left|${targetIso}`,
-      });
-    }
+      category: "news",
+      level: "normal",
+      isoDate: targetIso,
+      createdTime: "09:00:00",
+      unread: true,
+      dedupeKey: `weekly-member-left|${targetIso}`,
+      reportData: summary.reportData,
+    });
   }
+}
 }

@@ -1,0 +1,492 @@
+"use strict";
+/**
+ * Ported from idol_producer/database/finance/finance_system.py (subset used by web daily close).
+ * Data file is a copy of desktop `group_finance.json`.
+ */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BIRTHDAY_TEE_TEMPLATE = exports.AVERAGE_MONTHLY_BASE_SALARY_YEN = exports.DEFAULT_STARTING_CASH = exports.SCENARIO_STARTING_CASH = exports.LEDGER_LIMIT = void 0;
+exports.scenarioStartingCash = scenarioStartingCash;
+exports.loadDefaultFinancialConstants = loadDefaultFinancialConstants;
+exports.normalizeGroupLetterTier = normalizeGroupLetterTier;
+exports.inferLetterTier = inferLetterTier;
+exports.resolveGroupLetterTier = resolveGroupLetterTier;
+exports.tierOrdinal = tierOrdinal;
+exports.compareGroupsTierBestFansDesc = compareGroupsTierBestFansDesc;
+exports.sortGroupsForDirectory = sortGroupsForDirectory;
+exports.tierMultiplier = tierMultiplier;
+exports.tokutenkaiIdolShare = tokutenkaiIdolShare;
+exports.baseSalaryMultiplierForGroupLetterTier = baseSalaryMultiplierForGroupLetterTier;
+exports.monthlyBaseSalaryYenForGroupLetterTier = monthlyBaseSalaryYenForGroupLetterTier;
+exports.defaultGoodsInventory = defaultGoodsInventory;
+exports.normalizeGoodsInventory = normalizeGoodsInventory;
+exports.birthdayTeeUidForMember = birthdayTeeUidForMember;
+exports.ensureBirthdayTeeInventoryRow = ensureBirthdayTeeInventoryRow;
+exports.estimateLiveGoodsUnits = estimateLiveGoodsUnits;
+exports.estimateLiveGoodsGrossYen = estimateLiveGoodsGrossYen;
+exports.monthlyStaffSalaryYen = monthlyStaffSalaryYen;
+exports.monthlyAdminTrainingCostYenForGroupLetterTier = monthlyAdminTrainingCostYenForGroupLetterTier;
+exports.estimateVenueFee = estimateVenueFee;
+exports.defaultFinances = defaultFinances;
+exports.normalizeFinances = normalizeFinances;
+exports.buildDailyBreakdown = buildDailyBreakdown;
+exports.addCalendarDays = addCalendarDays;
+exports.isWeekendUtc = isWeekendUtc;
+exports.applyDailyClose = applyDailyClose;
+const group_finance_json_1 = __importDefault(require("./data/group_finance.json"));
+const GF = group_finance_json_1.default;
+const DEFAULT_CONST = GF.default_financial_constants ?? {};
+exports.LEDGER_LIMIT = 180;
+exports.SCENARIO_STARTING_CASH = {
+    1: 2_000_000,
+    2: 5_000_000,
+    3: 10_000_000,
+    4: 8_000_000,
+    5: 12_000_000,
+    6: 20_000_000,
+};
+exports.DEFAULT_STARTING_CASH = 5_000_000;
+/** Merged typical tier-D anchor (see desktop `typical_tier_d_group.json`). */
+exports.AVERAGE_MONTHLY_BASE_SALARY_YEN = 240_000;
+const DEFAULT_GOODS_OPTIONS = [
+    { key: "signed-cheki", name: "Signed cheki", category: "Photo", unit_price_yen: 1500, unit_cost_yen: 180, default_desired_amount: 80 },
+    { key: "penlight", name: "Penlight", category: "Concert", unit_price_yen: 3000, unit_cost_yen: 1100, default_desired_amount: 24 },
+    { key: "uchiwa", name: "Uchiwa", category: "Concert", unit_price_yen: 1800, unit_cost_yen: 420, default_desired_amount: 30 },
+];
+exports.BIRTHDAY_TEE_TEMPLATE = {
+    key: "birthday-tee",
+    name: "Birthday T-shirt",
+    category: "Apparel",
+    unit_price_yen: 4500,
+    unit_cost_yen: 1800,
+    default_desired_amount: 16,
+};
+function scenarioStartingCash(scenarioNumber) {
+    if (scenarioNumber != null && scenarioNumber in exports.SCENARIO_STARTING_CASH) {
+        return exports.SCENARIO_STARTING_CASH[scenarioNumber];
+    }
+    return exports.DEFAULT_STARTING_CASH;
+}
+function intOr(v, fallback) {
+    try {
+        return Math.trunc(Number(v));
+    }
+    catch {
+        return fallback;
+    }
+}
+function loadDefaultFinancialConstants() {
+    return {
+        tokutenkaiIdolShareRate: Number(DEFAULT_CONST.tokutenkai_idol_share_rate ?? 0.1),
+        smallVenueCapacityThreshold: intOr(DEFAULT_CONST.small_venue_capacity_threshold, 300),
+        smallVenueEventFeeYen: intOr(DEFAULT_CONST.small_venue_event_fee_yen, 1_200_000),
+        smallVenueEventFeeWeekdayYen: intOr(DEFAULT_CONST.small_venue_event_fee_weekday_yen, intOr(DEFAULT_CONST.small_venue_event_fee_yen, 352_000)),
+        smallVenueEventFeeWeekendHolidayYen: intOr(DEFAULT_CONST.small_venue_event_fee_weekend_holiday_yen, intOr(DEFAULT_CONST.small_venue_event_fee_yen, 462_000)),
+    };
+}
+const FIN_CONST = loadDefaultFinancialConstants();
+function normalizeGroupLetterTier(t) {
+    const u = String(t ?? "")
+        .trim()
+        .toUpperCase();
+    if (u === "S" || u === "A" || u === "B" || u === "C" || u === "D" || u === "E" || u === "F") {
+        return u;
+    }
+    return "F";
+}
+/**
+ * Heuristic until bundles export `group.letter_tier` from desktop.
+ * Tune thresholds when comparing to real `idol_group_rank` data.
+ */
+function inferLetterTier(popularity, fans, xFollowers = 0) {
+    const score = popularity + fans / 2000 + xFollowers / 5000;
+    if (score >= 85)
+        return "S";
+    if (score >= 70)
+        return "A";
+    if (score >= 55)
+        return "B";
+    if (score >= 40)
+        return "C";
+    if (score >= 25)
+        return "D";
+    if (score >= 12)
+        return "E";
+    return "F";
+}
+/** Letter tier stored on JSON row, otherwise inferred (uses group x_followers when present). */
+function resolveGroupLetterTier(g) {
+    if (!g || typeof g !== "object")
+        return "F";
+    const raw = g.letter_tier;
+    if (typeof raw === "string" && /^[SABCDEF]$/i.test(raw.trim())) {
+        return raw.trim().toUpperCase();
+    }
+    const popularity = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;
+    const fans = typeof g.fans === "number" ? g.fans : Number(g.fans ?? 0) || 0;
+    const xFollowers = typeof g.x_followers === "number" ? g.x_followers : Number(g.x_followers ?? 0) || 0;
+    return inferLetterTier(popularity, fans, xFollowers);
+}
+const LETTER_TIER_ORDER = {
+    S: 0,
+    A: 1,
+    B: 2,
+    C: 3,
+    D: 4,
+    E: 5,
+    F: 6,
+};
+/** Lower = higher tier grade (S is 0). */
+function tierOrdinal(t) {
+    return LETTER_TIER_ORDER[t];
+}
+/** Best letter tier first, then descending fans, then descending popularity (stable uid tiebreak). */
+function compareGroupsTierBestFansDesc(a, b) {
+    const da = tierOrdinal(resolveGroupLetterTier(a));
+    const db = tierOrdinal(resolveGroupLetterTier(b));
+    if (da !== db)
+        return da - db;
+    const fa = typeof a.fans === "number" ? a.fans : Number(a.fans ?? 0) || 0;
+    const fb = typeof b.fans === "number" ? b.fans : Number(b.fans ?? 0) || 0;
+    if (fa !== fb)
+        return fb - fa;
+    const pa = typeof a.popularity === "number" ? a.popularity : Number(a.popularity ?? 0) || 0;
+    const pb = typeof b.popularity === "number" ? b.popularity : Number(b.popularity ?? 0) || 0;
+    if (pa !== pb)
+        return pb - pa;
+    const ua = String(a.uid ?? "").trim();
+    const ub = String(b.uid ?? "").trim();
+    return ua.localeCompare(ub);
+}
+function sortGroupsForDirectory(groups) {
+    return [...groups].sort(compareGroupsTierBestFansDesc);
+}
+function tierMultiplier(popularity, fans, xFollowers) {
+    const score = popularity + fans / 2000.0 + xFollowers / 5000.0;
+    if (score >= 90)
+        return { tierName: "high", tierMult: 3.0 };
+    if (score >= 45)
+        return { tierName: "mid", tierMult: 1.8 };
+    return { tierName: "low", tierMult: 1.0 };
+}
+function tokutenkaiIdolShare(revenue) {
+    const r = Math.max(0, intOr(revenue, 0));
+    return intOr(r * FIN_CONST.tokutenkaiIdolShareRate, 0);
+}
+function baseSalaryMultiplierForGroupLetterTier(letterTier) {
+    const mcp = GF.member_compensation_by_letter_tier;
+    const block = mcp && typeof mcp === "object" && "base_salary_multiplier_vs_default_monthly_base_salary" in mcp
+        ? mcp
+            .base_salary_multiplier_vs_default_monthly_base_salary
+        : undefined;
+    if (!block || typeof block !== "object")
+        return 1.0;
+    const raw = block[letterTier];
+    return Math.max(0, Number(raw ?? 1));
+}
+function monthlyBaseSalaryYenForGroupLetterTier(letterTier, defaultMonthlyBaseSalaryYen = exports.AVERAGE_MONTHLY_BASE_SALARY_YEN) {
+    const base = defaultMonthlyBaseSalaryYen;
+    const mult = baseSalaryMultiplierForGroupLetterTier(letterTier);
+    return Math.max(0, Math.round(base * mult));
+}
+function defaultGoodsInventory(members) {
+    const roster = (members ?? []).filter((member) => member.uid && member.name);
+    const fallbackRoster = roster.length ? roster : [{ uid: "shared", name: "Group" }];
+    return fallbackRoster.flatMap((member) => DEFAULT_GOODS_OPTIONS.map((row) => ({
+        uid: `goods-${member.uid}-${row.key}`,
+        name: row.name,
+        category: row.category,
+        member_uid: member.uid === "shared" ? null : member.uid,
+        member_name: member.uid === "shared" ? null : member.name,
+        unit_price_yen: row.unit_price_yen,
+        unit_cost_yen: row.unit_cost_yen,
+        desired_amount: row.default_desired_amount,
+        stock: 0,
+    })));
+}
+function normalizeGoodsInventory(raw, members) {
+    const defaults = defaultGoodsInventory(members);
+    const byUid = new Map(defaults.map((row) => [row.uid, { ...row }]));
+    if (Array.isArray(raw)) {
+        for (const item of raw) {
+            if (!item || typeof item !== "object")
+                continue;
+            const row = item;
+            const uid = String(row.uid ?? "").trim();
+            if (!uid)
+                continue;
+            const base = byUid.get(uid) ?? {
+                uid,
+                name: String(row.name ?? uid),
+                category: String(row.category ?? "Goods"),
+                member_uid: row.member_uid == null ? null : String(row.member_uid),
+                member_name: row.member_name == null ? null : String(row.member_name),
+                unit_price_yen: Math.max(0, intOr(row.unit_price_yen, 0)),
+                unit_cost_yen: Math.max(0, intOr(row.unit_cost_yen, 0)),
+                desired_amount: 0,
+                stock: 0,
+            };
+            byUid.set(uid, {
+                uid,
+                name: String(row.name ?? base.name).trim() || base.name,
+                category: String(row.category ?? base.category).trim() || base.category,
+                member_uid: row.member_uid == null ? base.member_uid : String(row.member_uid),
+                member_name: row.member_name == null ? base.member_name : String(row.member_name),
+                unit_price_yen: Math.max(0, intOr(row.unit_price_yen, base.unit_price_yen)),
+                unit_cost_yen: Math.max(0, intOr(row.unit_cost_yen, base.unit_cost_yen)),
+                desired_amount: Math.max(0, intOr(row.desired_amount, base.desired_amount)),
+                stock: Math.max(0, intOr(row.stock, base.stock)),
+            });
+        }
+    }
+    return [...byUid.values()];
+}
+function birthdayTeeUidForMember(memberUid) {
+    return `goods-${memberUid}-${exports.BIRTHDAY_TEE_TEMPLATE.key}`;
+}
+function ensureBirthdayTeeInventoryRow(goods, member) {
+    const uid = birthdayTeeUidForMember(member.uid);
+    const existing = goods.find((row) => row.uid === uid);
+    if (existing) {
+        existing.name = exports.BIRTHDAY_TEE_TEMPLATE.name;
+        existing.category = exports.BIRTHDAY_TEE_TEMPLATE.category;
+        existing.member_uid = member.uid;
+        existing.member_name = member.name;
+        existing.unit_price_yen = Math.max(0, intOr(existing.unit_price_yen, exports.BIRTHDAY_TEE_TEMPLATE.unit_price_yen));
+        existing.unit_cost_yen = Math.max(0, intOr(existing.unit_cost_yen, exports.BIRTHDAY_TEE_TEMPLATE.unit_cost_yen));
+        return existing;
+    }
+    const created = {
+        uid,
+        name: exports.BIRTHDAY_TEE_TEMPLATE.name,
+        category: exports.BIRTHDAY_TEE_TEMPLATE.category,
+        member_uid: member.uid,
+        member_name: member.name,
+        unit_price_yen: exports.BIRTHDAY_TEE_TEMPLATE.unit_price_yen,
+        unit_cost_yen: exports.BIRTHDAY_TEE_TEMPLATE.unit_cost_yen,
+        desired_amount: exports.BIRTHDAY_TEE_TEMPLATE.default_desired_amount,
+        stock: 0,
+    };
+    goods.push(created);
+    return created;
+}
+function goodsDemandRateByLiveType(liveType) {
+    const key = String(liveType ?? "").trim().toLowerCase();
+    if (key === "concert")
+        return 0.3;
+    if (key === "festival")
+        return 0.2;
+    if (key === "taiban")
+        return 0.14;
+    if (key === "tokutenkai")
+        return 0.12;
+    return 0.18;
+}
+function estimateLiveGoodsUnits(goods, opts) {
+    if (!goods)
+        return 0;
+    const stock = Math.max(0, intOr(goods.stock, 0));
+    if (stock <= 0)
+        return 0;
+    const capacity = Math.max(0, intOr(opts.capacity, 0));
+    const fans = Math.max(0, intOr(opts.groupFans, 0));
+    const popularity = Math.max(0, Number(opts.groupPopularity ?? 0) || 0);
+    const tier = normalizeGroupLetterTier(opts.groupTier ?? "F");
+    const tierBoost = { S: 1.25, A: 1.18, B: 1.1, C: 1.03, D: 0.96, E: 0.88, F: 0.8 };
+    const baseAudience = Math.max(capacity, Math.round(Math.min(fans, Math.max(40, capacity || 0) * 1.2)));
+    const demand = Math.round(baseAudience * goodsDemandRateByLiveType(opts.liveType) * (0.75 + popularity / 200) * tierBoost[tier]);
+    return Math.max(0, Math.min(stock, demand));
+}
+function estimateLiveGoodsGrossYen(goods, opts) {
+    if (!goods)
+        return 0;
+    const units = estimateLiveGoodsUnits(goods, opts);
+    return Math.max(0, units * Math.max(0, intOr(goods.unit_price_yen, 0)));
+}
+function monthlyStaffSalaryYen() {
+    const addl = GF.additional_cost_assumptions;
+    const staffBlock = addl && typeof addl === "object" && "staff_salary" in addl
+        ? addl.staff_salary
+        : undefined;
+    if (!staffBlock || typeof staffBlock !== "object")
+        return 600_000;
+    return Math.max(0, intOr(staffBlock.monthly_staff_salary_total_yen, 600_000));
+}
+function monthlyAdminTrainingCostYenForGroupLetterTier(letterTier) {
+    const addl = GF.additional_cost_assumptions;
+    const monthlyBlock = addl && typeof addl === "object" && "monthly_admin_training_costs_per_tier_yen" in addl
+        ? addl
+            .monthly_admin_training_costs_per_tier_yen
+        : undefined;
+    if (!monthlyBlock || typeof monthlyBlock !== "object") {
+        return 300_000;
+    }
+    const adminBlock = "admin" in monthlyBlock
+        ? monthlyBlock.admin
+        : undefined;
+    const trainingBlock = "training" in monthlyBlock
+        ? monthlyBlock.training
+        : undefined;
+    const admin = adminBlock && typeof adminBlock === "object" ? intOr(adminBlock[letterTier], 0) : 0;
+    const training = trainingBlock && typeof trainingBlock === "object" ? intOr(trainingBlock[letterTier], 0) : 0;
+    return Math.max(0, admin + training);
+}
+function estimateVenueFee(capacity, options = {}) {
+    if (capacity == null)
+        return 0;
+    const capacityInt = intOr(capacity, 0);
+    if (capacityInt <= 0 || capacityInt > FIN_CONST.smallVenueCapacityThreshold)
+        return 0;
+    let planKey = String(options.bookingPlan ?? "full_day").trim().toLowerCase();
+    if (["half_day_a", "half-a", "a", "halfday_a"].includes(planKey))
+        planKey = "half_day_a";
+    else if (["half_day_b", "half-b", "b", "halfday_b"].includes(planKey))
+        planKey = "half_day_b";
+    else
+        planKey = "full_day";
+    const isWeekend = Boolean(options.isWeekendOrHoliday);
+    const anchors150 = isWeekend
+        ? { half_day_a: 132_000, half_day_b: 187_000, full_day: 297_000 }
+        : { half_day_a: 77_000, half_day_b: 154_000, full_day: 187_000 };
+    const anchors200 = isWeekend
+        ? { half_day_a: 187_000, half_day_b: 242_000, full_day: 352_000 }
+        : { half_day_a: 132_000, half_day_b: 187_000, full_day: 242_000 };
+    const fallback = isWeekend
+        ? FIN_CONST.smallVenueEventFeeWeekendHolidayYen
+        : FIN_CONST.smallVenueEventFeeWeekdayYen;
+    const pk = planKey in anchors150 ? planKey : "full_day";
+    const base150 = anchors150[pk];
+    const base200 = anchors200[pk];
+    if (capacityInt < 150)
+        return Math.max(0, base150);
+    if (capacityInt > FIN_CONST.smallVenueCapacityThreshold)
+        return Math.max(0, fallback);
+    const slope = (base200 - base150) / 50.0;
+    return Math.max(0, Math.round(base150 + (capacityInt - 150) * slope));
+}
+function defaultFinances(startingCash) {
+    const start = startingCash ?? exports.DEFAULT_STARTING_CASH;
+    return {
+        status: "active",
+        currency: "JPY",
+        cash_yen: start,
+        opening_cash_yen: start,
+        last_processed_date: null,
+        ledger: [],
+        notes: "Daily cash flow simulation enabled.",
+    };
+}
+function normalizeFinances(payload, startingCash) {
+    const base = defaultFinances(startingCash);
+    if (!payload || typeof payload !== "object")
+        return base;
+    const cashRaw = payload.cash_yen;
+    const fallbackCash = typeof cashRaw === "number"
+        ? cashRaw
+        : cashRaw === null || cashRaw === undefined
+            ? base.cash_yen
+            : intOr(cashRaw, base.cash_yen);
+    const merged = {
+        ...base,
+        ...payload,
+        cash_yen: fallbackCash,
+        opening_cash_yen: intOr(payload.opening_cash_yen ?? fallbackCash, base.cash_yen),
+        ledger: Array.isArray(payload.ledger) ? payload.ledger.filter((r) => typeof r === "object") : [],
+        status: "active",
+        currency: "JPY",
+    };
+    return merged;
+}
+function buildDailyBreakdown(input) {
+    const { targetDateIso, memberCount, popularity, fans, xFollowers, monthlySalaryTotal, scoutRetainersMonthlyTotal = 0, liveCount = 0, tokutenkaiRevenue = 0, tokutenkaiCost = 0, liveVenueFeeTotal = 0, } = input;
+    const { tierName, tierMult } = tierMultiplier(popularity, fans, xFollowers);
+    const digitalSales = intOr((2_500 + fans * 0.1 + xFollowers * 0.02 + popularity * 180) * tierMult, 0);
+    const fanMeetings = intOr((1_800 + fans * 0.08 + popularity * 120) * tierMult, 0);
+    const goods = intOr((1_500 + fans * 0.12 + memberCount * 1_800) * tierMult, 0);
+    const media = intOr((800 + popularity * 90) * Math.max(0.8, tierMult - 0.15), 0);
+    const lc = liveCount;
+    const liveTickets = intOr(lc * (25_000 + fans * 0.22 + memberCount * 6_000) * tierMult, 0);
+    const liveGoods = intOr(lc * (9_000 + fans * 0.08 + memberCount * 2_000) * tierMult, 0);
+    const staff = intOr(22_000 + memberCount * 7_500, 0);
+    const office = intOr(12_000 + Math.max(0, memberCount - 4) * 1_800, 0);
+    const promotion = intOr((7_500 + popularity * 140) * (tierName === "low" ? 1.0 : tierName === "mid" ? 1.25 : 1.6), 0);
+    const liveOpsCost = intOr(lc * (18_000 + memberCount * 4_500), 0);
+    const venueFee = Math.max(0, intOr(liveVenueFeeTotal, 0));
+    const liveCost = liveOpsCost + venueFee;
+    const dayOfMonth = parseIsoDayOfMonth(targetDateIso);
+    const salaries = dayOfMonth === 1 ? intOr(monthlySalaryTotal, 0) : 0;
+    const scoutRetainers = dayOfMonth === 1 ? intOr(scoutRetainersMonthlyTotal, 0) : 0;
+    const tkr = Math.max(0, intOr(tokutenkaiRevenue, 0));
+    const tkc = Math.max(0, intOr(tokutenkaiCost, 0));
+    const tokutenkaiIdolShareVal = tokutenkaiIdolShare(tkr);
+    const income = digitalSales + fanMeetings + goods + media + liveTickets + liveGoods + tkr;
+    const expense = staff + office + promotion + liveCost + salaries + scoutRetainers + tkc + tokutenkaiIdolShareVal;
+    const net = income - expense;
+    return {
+        date: targetDateIso,
+        tier: tierName,
+        income_total: income,
+        expense_total: expense,
+        net_total: net,
+        digital_sales: digitalSales,
+        fan_meetings: fanMeetings,
+        goods,
+        media,
+        live_tickets: liveTickets,
+        live_goods: liveGoods,
+        tokutenkai_revenue: tkr,
+        staff,
+        office,
+        promotion,
+        live_cost: liveCost,
+        live_ops_cost: liveOpsCost,
+        live_venue_fee: venueFee,
+        tokutenkai_cost: tkc,
+        tokutenkai_idol_share: tokutenkaiIdolShareVal,
+        salaries,
+        scout_retainers: scoutRetainers,
+    };
+}
+function parseIsoDayOfMonth(iso) {
+    const s = String(iso).split("T")[0].trim();
+    const parts = s.split("-");
+    if (parts.length >= 3) {
+        const d = Number(parts[2]);
+        if (Number.isFinite(d))
+            return d;
+    }
+    const t = Date.parse(s + "T12:00:00Z");
+    if (Number.isNaN(t))
+        return 1;
+    return new Date(t).getUTCDate();
+}
+function addCalendarDays(isoDate, days) {
+    const t = Date.parse(isoDate.split("T")[0] + "T12:00:00Z");
+    if (Number.isNaN(t))
+        throw new Error(`Invalid ISO date: ${isoDate}`);
+    const d = new Date(t);
+    d.setUTCDate(d.getUTCDate() + days);
+    return d.toISOString().slice(0, 10);
+}
+function isWeekendUtc(isoDate) {
+    const t = Date.parse(isoDate.split("T")[0] + "T12:00:00Z");
+    if (Number.isNaN(t))
+        return false;
+    const w = new Date(t).getUTCDay();
+    return w === 0 || w === 6;
+}
+function applyDailyClose(finances, breakdown) {
+    const out = normalizeFinances(finances);
+    out.cash_yen = intOr(out.cash_yen, 0) + intOr(breakdown.net_total, 0);
+    out.last_processed_date = breakdown.date;
+    const ledger = [...out.ledger, { ...breakdown }];
+    if (ledger.length > exports.LEDGER_LIMIT) {
+        out.ledger = ledger.slice(-exports.LEDGER_LIMIT);
+    }
+    else {
+        out.ledger = ledger;
+    }
+    return out;
+}

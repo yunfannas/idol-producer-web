@@ -2,7 +2,7 @@
  * Export schedule rows missing venue (physical lives only) to CSV.
  *
  * Usage:
- *   node scripts/schedule_gaps_csv.mjs [--out path.csv]
+ *   node scripts/schedule_gaps_csv.mjs [--out path.csv] [--group equal-love]
  */
 
 import fs from "node:fs";
@@ -18,10 +18,18 @@ import { isImageOnlyLive } from "./timetreePosterExtract.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 
+const groupFilter = process.argv.includes("--group")
+  ? process.argv[process.argv.indexOf("--group") + 1]
+  : null;
+
+const defaultOut = groupFilter
+  ? path.join(root, "docs", "reference", `${groupFilter}_schedule_gaps.csv`)
+  : path.join(root, "docs", "reference", "schedule_gaps.csv");
+
 const outPath = path.resolve(
   process.argv.includes("--out")
     ? process.argv[process.argv.indexOf("--out") + 1]
-    : path.join(root, "docs", "reference", "schedule_gaps.csv"),
+    : defaultOut,
 );
 
 function csvEscape(s) {
@@ -36,7 +44,7 @@ function rowToCsvLine(cols) {
 
 function shouldSkip(row) {
   const type = String(row.type ?? "");
-  if (["Media", "Cancelled", "Promo", "Virtual"].includes(type)) return true;
+  if (["Media", "Cancelled", "Promo", "Virtual", "TvShow", "OfflineEvent", "GuestLive", "Birthday"].includes(type)) return true;
   if (isVirtualLiveEvent(row)) return true;
   if (isPlaceholderLiveTitle(row.event)) return true;
   if (isCommercialPromoEvent(row)) return true;
@@ -110,8 +118,12 @@ const header = [
   "note_preview",
 ];
 
+const filteredGaps = groupFilter
+  ? allGaps.filter((g) => g.group === groupFilter)
+  : allGaps;
+
 const lines = [rowToCsvLine(header)];
-for (const g of allGaps.sort((a, b) =>
+for (const g of filteredGaps.sort((a, b) =>
   `${a.source}\t${a.group}\t${a.date}\t${a.event}`.localeCompare(
     `${b.source}\t${b.group}\t${b.date}\t${b.event}`,
   ),
@@ -136,10 +148,11 @@ for (const g of allGaps.sort((a, b) =>
 }
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
-fs.writeFileSync(outPath, `${lines.join("\n")}\n`, "utf8");
+// UTF-8 BOM + CRLF so Excel on Windows opens Japanese correctly
+fs.writeFileSync(outPath, `\uFEFF${lines.join("\r\n")}\r\n`, "utf8");
 
-const byGroup = Object.groupBy(allGaps, (g) => `${g.source}:${g.group}`);
-console.error(`Wrote ${outPath} (${allGaps.length} gap rows)`);
+const byGroup = Object.groupBy(filteredGaps, (g) => `${g.source}:${g.group}`);
+console.error(`Wrote ${outPath} (${filteredGaps.length} gap rows)`);
 for (const [key, rows] of Object.entries(byGroup).sort()) {
   const noVenue = rows.filter((r) => r.gap === "no_venue").length;
   const poster = rows.filter((r) => r.gap === "poster_only").length;

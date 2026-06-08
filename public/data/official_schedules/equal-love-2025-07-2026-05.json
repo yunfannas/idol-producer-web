@@ -501,7 +501,7 @@
       "event": "「いのちのうたフェス２０２５ 平和がいいに決まっている！」公開収録",
       "event_raw": "「いのちのうたフェス２０２５ 平和がいいに決まっている！」公開収録※＝LOVE",
       "site_category": "ライブ/イベント",
-      "type": "Festival",
+      "type": "TvShow",
       "venue": null,
       "venue_hint": null,
       "members": [
@@ -509,7 +509,11 @@
       ],
       "official_detail_id": "9969",
       "official_detail_url": "https://equal-love.jp/schedule/detail/9969",
-      "source": "official"
+      "source": "official",
+      "gameplay_status": "pending",
+      "pending_feature": "making_tv_show",
+      "performance_songs_min": 1,
+      "performance_songs_max": 2
     },
     {
       "date": "2025-07-18",
@@ -875,7 +879,7 @@
       "event": "テレビ朝日「アイ＝ラブ！げーみんぐ 〜 ○○さんがオンラインになりました 〜 」サマフェス公開収録 2025",
       "event_raw": "テレビ朝日「アイ＝ラブ！げーみんぐ 〜 ○○さんがオンラインになりました 〜 」サマフェス公開収録 2025※齋藤樹愛羅、佐々木舞香、大谷映美里、瀧脇笙古、山本杏奈",
       "site_category": "ライブ/イベント",
-      "type": "Festival",
+      "type": "TvShow",
       "venue": null,
       "venue_hint": null,
       "members": [
@@ -887,7 +891,11 @@
       ],
       "official_detail_id": "10037",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10037",
-      "source": "official"
+      "source": "official",
+      "gameplay_status": "pending",
+      "pending_feature": "making_tv_show",
+      "performance_songs_min": 1,
+      "performance_songs_max": 2
     },
     {
       "date": "2025-08-01",
@@ -895,14 +903,15 @@
       "event_raw": "「コカ･コーラ SUMMER FES 音楽LIVE」※＝LOVE",
       "site_category": "ライブ/イベント",
       "type": "Festival",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "六本木ヒルズアリーナ",
+      "venue_hint": "コカ･コーラ SUMMER FES LIVEアリーナ（六本木ヒルズアリーナ）",
       "members": [
         "＝LOVE"
       ],
       "official_detail_id": "10042",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10042",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "c22fe488-3f73-4e09-ab54-238a4a477f3a"
     },
     {
       "date": "2025-08-01",
@@ -978,18 +987,19 @@
     },
     {
       "date": "2025-08-03",
-      "event": "「TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック」",
+      "event": "TIF2025",
       "event_raw": "「TOKYO IDOL FESTIVAL 2025 supported by にしたんクリニック」※＝LOVE",
       "site_category": "ライブ/イベント",
       "type": "Festival",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "お台場臨海公園（TIF・複数ステージ）",
+      "venue_hint": "TIF2025",
       "members": [
         "＝LOVE"
       ],
       "official_detail_id": "10013",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10013",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "4607dc77-d554-47f7-9411-f00858276334"
     },
     {
       "date": "2025-08-03",
@@ -1084,16 +1094,17 @@
       "event": "「KANSAI COLLECTION 2025 AUTUMN &amp; WINTER」",
       "event_raw": "「KANSAI COLLECTION 2025 AUTUMN &amp; WINTER」※大谷映美里、齋藤樹愛羅",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "Media",
+      "venue": "京セラドーム大阪",
+      "venue_hint": "京セラドーム大阪",
       "members": [
         "大谷映美里",
         "齋藤樹愛羅"
       ],
       "official_detail_id": "9952",
       "official_detail_url": "https://equal-love.jp/schedule/detail/9952",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "62771573-3ae6-46d9-81a6-e2b63917ee9a"
     },
     {
       "date": "2025-08-07",
@@ -1203,11 +1214,12 @@
       "event_raw": "「LuckyFes’25」",
       "site_category": "ライブ/イベント",
       "type": "Festival",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "国営ひたち海浜公園",
+      "venue_hint": "茨城県ひたちなか市",
       "official_detail_id": "9948",
       "official_detail_url": "https://equal-love.jp/schedule/detail/9948",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "8a76cdfc-1d82-4ca2-b473-afca0fbf6e92"
     },
     {
       "date": "2025-08-09",
@@ -1298,25 +1310,29 @@
       "event": "「SASUKE アイドル予選会2025―出場権争奪バトル―」",
       "event_raw": "「SASUKE アイドル予選会2025―出場権争奪バトル―」※大場花菜、瀧脇笙古",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "LaLa arena TOKYO-BAY",
+      "venue_hint": "千葉県・LaLa arena TOKYO-BAY",
       "members": [
         "大場花菜",
         "瀧脇笙古"
       ],
       "official_detail_id": "10070",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10070",
-      "source": "official"
+      "source": "official",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "629bdaf0-807e-473e-a088-3c96441c1e6b"
     },
     {
       "date": "2025-08-13",
       "event": "『＋LIVE2 ～＝LOVE＆芸人 MUSIC DAY～』",
       "event_raw": "『＋LIVE2 ～＝LOVE＆芸人 MUSIC DAY～』※大谷映美里、齋藤樹愛羅、佐々木舞香、髙松瞳、野口衣織、山本杏奈",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "COOL JAPAN PARK OSAKA TTホール",
+      "venue_hint": "COOL JAPAN PARK OSAKA TTホール",
       "members": [
         "大谷映美里",
         "齋藤樹愛羅",
@@ -1327,7 +1343,12 @@
       ],
       "official_detail_id": "10029",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10029",
-      "source": "official"
+      "source": "official",
+      "note": "No singing or live performance (talk/comedy day).",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "106c6aa2-379a-43df-a38c-c34ccbb99895"
     },
     {
       "date": "2025-08-14",
@@ -1822,11 +1843,12 @@
       "event_raw": "映像商品『イコノイジョイ 2024』 発売記念オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10092",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10092",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-08-25",
@@ -2018,11 +2040,12 @@
       "event_raw": "=LOVE 19thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10159",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10159",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-04",
@@ -2227,11 +2250,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10160",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10160",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-11",
@@ -2323,8 +2347,8 @@
       "event_raw": "＝LOVE 19thシングル発売記念スペシャルリリースイベント※齋藤樹愛羅、瀧脇笙古、野口衣織",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "members": [
         "齋藤樹愛羅",
         "瀧脇笙古",
@@ -2332,7 +2356,8 @@
       ],
       "official_detail_id": "10260",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10260",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-13",
@@ -2340,11 +2365,12 @@
       "event_raw": "7thシングル『CAMEO』発売記念「全国イベント参加券」振替",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10300",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10300",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-14",
@@ -2352,11 +2378,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念スペシャルリリースイベントvol.2",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10270",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10270",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-14",
@@ -2364,11 +2391,12 @@
       "event_raw": "7thシングル『CAMEO』発売記念「全国イベント参加券」振替",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10302",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10302",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-14",
@@ -2418,11 +2446,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10161",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10161",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-16",
@@ -2430,8 +2459,8 @@
       "event_raw": "＝LOVE 19thシングル発売記念スペシャルリリースイベント※大谷映美里、大場花菜、音嶋莉沙、髙松瞳",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "members": [
         "大谷映美里",
         "大場花菜",
@@ -2440,7 +2469,8 @@
       ],
       "official_detail_id": "10261",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10261",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-16",
@@ -2448,11 +2478,12 @@
       "event_raw": "7thシングル『CAMEO』発売記念「全国イベント参加券」振替",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10303",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10303",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-16",
@@ -2505,15 +2536,24 @@
       "event": "「広島東洋カープ 対 阪神タイガース戦」始球式",
       "event_raw": "「広島東洋カープ 対 阪神タイガース戦」始球式※山本杏奈",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "GuestLive",
+      "venue": "Mazda Zoom-Zoom Stadium Hiroshima",
+      "venue_hint": "Mazda Zoom-Zoom Stadium Hiroshima（マツダスタジアム）",
       "members": [
         "山本杏奈"
       ],
       "official_detail_id": "10287",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10287",
-      "source": "official"
+      "source": "official",
+      "is_live": true,
+      "gameplay_status": "pending",
+      "pending_feature": "making_guest_live",
+      "performance_songs": 10,
+      "performance_songs_min": 10,
+      "performance_songs_max": 10,
+      "attendance_model": "invitation_fee",
+      "ticket_sale": false,
+      "venue_uid": "102ed953-26fb-40c5-9096-76cc8ebffc5f"
     },
     {
       "date": "2025-09-19",
@@ -2549,14 +2589,15 @@
       "event_raw": "「イナズマロック フェス 2025」※＝LOVE",
       "site_category": "ライブ/イベント",
       "type": "Festival",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "烏丸半島芝生広場",
+      "venue_hint": "滋賀県草津市 烏丸半島芝生広場（イナズマロック フェス）",
       "members": [
         "＝LOVE"
       ],
       "official_detail_id": "10156",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10156",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "8608a998-77ed-4b3b-a24f-b97f51476f82"
     },
     {
       "date": "2025-09-20",
@@ -2690,15 +2731,24 @@
       "event": "「北海道日本ハムファイターズ 千葉ロッテマリーンズ戦」",
       "event_raw": "「北海道日本ハムファイターズ 千葉ロッテマリーンズ戦」※＝LOVE",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "GuestLive",
+      "venue": "エスコンフィールドHOKKAIDO",
+      "venue_hint": "エスコンフィールドHOKKAIDO（北海道北広島市）",
       "members": [
         "＝LOVE"
       ],
       "official_detail_id": "9984",
       "official_detail_url": "https://equal-love.jp/schedule/detail/9984",
-      "source": "official"
+      "source": "official",
+      "is_live": true,
+      "gameplay_status": "pending",
+      "pending_feature": "making_guest_live",
+      "performance_songs": 10,
+      "performance_songs_min": 10,
+      "performance_songs_max": 10,
+      "attendance_model": "invitation_fee",
+      "ticket_sale": false,
+      "venue_uid": "88ab57a7-c7db-4632-ab57-38f18ec3a235"
     },
     {
       "date": "2025-09-24",
@@ -2904,11 +2954,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念スペシャルリリースイベントvol.2",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10271",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10271",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-30",
@@ -2916,11 +2967,12 @@
       "event_raw": "7thシングル『CAMEO』発売記念「全国イベント参加券」振替",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10304",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10304",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-01",
@@ -3134,8 +3186,8 @@
       "event_raw": "＝LOVE 19thシングル発売記念スペシャルリリースイベント※佐々木舞香、諸橋沙夏、山本杏奈",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "members": [
         "佐々木舞香",
         "諸橋沙夏",
@@ -3143,7 +3195,8 @@
       ],
       "official_detail_id": "10262",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10262",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-09",
@@ -3181,11 +3234,12 @@
       "event_raw": "7thシングル『CAMEO』発売記念「全国イベント参加券」振替",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10305",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10305",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-10",
@@ -3238,11 +3292,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念スペシャルリリースイベントvol.3",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10269",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10269",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-10",
@@ -3265,11 +3320,12 @@
       "event_raw": "7thシングル『CAMEO』発売記念「全国イベント参加券」振替",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10306",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10306",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-10",
@@ -3556,9 +3612,9 @@
       "event": "「Rakuten GirlsAward 2025 AUTUMN/WINTER」",
       "event_raw": "「Rakuten GirlsAward 2025 AUTUMN/WINTER」※大谷映美里、音嶋莉沙、齋藤樹愛羅",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "Media",
+      "venue": "幕張メッセ",
+      "venue_hint": "幕張メッセ 9-11ホール",
       "members": [
         "大谷映美里",
         "音嶋莉沙",
@@ -3566,7 +3622,8 @@
       ],
       "official_detail_id": "10330",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10330",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
     },
     {
       "date": "2025-10-18",
@@ -3632,11 +3689,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10178",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10178",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-21",
@@ -3857,11 +3915,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10247",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10247",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-25",
@@ -3941,11 +4000,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10248",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10248",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-10-27",
@@ -4166,11 +4226,12 @@
       "event_raw": "=LOVE 19thシングル発売記念 ツーショット撮影会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10182",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10182",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-11-03",
@@ -4349,11 +4410,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10179",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10179",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-11-08",
@@ -4375,15 +4437,19 @@
       "event": "「高木豊のプロ野球大会議2025in横浜」",
       "event_raw": "「高木豊のプロ野球大会議2025in横浜」※瀧脇笙古",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "県民共済みらいホール",
+      "venue_hint": "県民共済みらいホール（横浜）",
       "members": [
         "瀧脇笙古"
       ],
       "official_detail_id": "10597",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10597",
-      "source": "official"
+      "source": "official",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "70a2df7c-3f98-45b6-a24f-f9afe8b86b39"
     },
     {
       "date": "2025-11-09",
@@ -4880,11 +4946,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE ARENA TOUR 2025「～Timeless Tales～」』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10832",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10832",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-11-25",
@@ -5052,11 +5119,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10249",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10249",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-11-30",
@@ -5166,15 +5234,19 @@
       "event": "「東京クリスマスマーケット 2025 in 芝公園（御成門駅前広場）オープニングセレモニー」",
       "event_raw": "「東京クリスマスマーケット 2025 in 芝公園（御成門駅前広場）オープニングセレモニー」※大谷映美里",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "芝公園（御成門駅前広場）",
+      "venue_hint": "東京クリスマスマーケット 2025 in 芝公園（御成門駅前広場）",
       "members": [
         "大谷映美里"
       ],
       "official_detail_id": "10905",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10905",
-      "source": "official"
+      "source": "official",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "7ed80d04-cb00-4cb8-ac59-c7073585cc24"
     },
     {
       "date": "2025-12-05",
@@ -5239,11 +5311,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10250",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10250",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-12-07",
@@ -5434,11 +5507,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10180",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10180",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-12-14",
@@ -5446,14 +5520,15 @@
       "event_raw": "「GOBOU FES. 2025 -吉田尚記 50th Anniversary-」※野口衣織",
       "site_category": "ライブ/イベント",
       "type": "Festival",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "銀座 BASE GRANBELL",
+      "venue_hint": "銀座 BASE GRANBELL",
       "members": [
         "野口衣織"
       ],
       "official_detail_id": "10384",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10384",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "a41f238d-13e5-42f8-927f-94ac793147a3"
     },
     {
       "date": "2025-12-15",
@@ -5657,11 +5732,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE ARENA TOUR 2025「～Timeless Tales～」』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10915",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10915",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-12-20",
@@ -6128,7 +6204,7 @@
       "event": "「まって、ムリ！Fes 〜 二次通 from 夜な夜なプロジェクト〜」公開収録 Vol.3",
       "event_raw": "「まって、ムリ！Fes 〜 二次通 from 夜な夜なプロジェクト〜」公開収録 Vol.3 ※野口衣織",
       "site_category": "ライブ/イベント",
-      "type": "Festival",
+      "type": "TvShow",
       "venue": null,
       "venue_hint": null,
       "members": [
@@ -6136,7 +6212,11 @@
       ],
       "official_detail_id": "10876",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10876",
-      "source": "official"
+      "source": "official",
+      "gameplay_status": "pending",
+      "pending_feature": "making_tv_show",
+      "performance_songs_min": 1,
+      "performance_songs_max": 2
     },
     {
       "date": "2026-01-08",
@@ -6173,15 +6253,20 @@
       "event": "メギド７２ 1st XR Live『幻境エンタングル -交錯する運命-』ネフィリム役",
       "event_raw": "メギド７２ 1st XR Live『幻境エンタングル -交錯する運命-』ネフィリム役※野口衣織",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "東京国際フォーラム ホールA",
+      "venue_hint": "東京国際フォーラム ホールA",
       "members": [
         "野口衣織"
       ],
       "official_detail_id": "11054",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11054",
-      "source": "official"
+      "source": "official",
+      "note": "Voice role only; member does not appear on stage.",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "ec35fb3a-22ba-4bb1-b313-f1acff191753"
     },
     {
       "date": "2026-01-10",
@@ -6242,15 +6327,19 @@
       "event": "TVアニメ「勇者パーティーにかわいい子がいたので、告白してみた。」キャスト舞台挨拶付き先行上映会",
       "event_raw": "TVアニメ「勇者パーティーにかわいい子がいたので、告白してみた。」キャスト舞台挨拶付き先行上映会※野口衣織",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "ユナイテッド・シネマアクアシティお台場",
+      "venue_hint": "ユナイテッド・シネマアクアシティお台場 スクリーン1",
       "members": [
         "野口衣織"
       ],
       "official_detail_id": "10883",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10883",
-      "source": "official"
+      "source": "official",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "417b50ab-c400-4fa9-96bd-418933ef94b4"
     },
     {
       "date": "2026-01-13",
@@ -6450,11 +6539,12 @@
       "event_raw": "＝LOVE 19thシングル発売記念 スリーショット撮影会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10253",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10253",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-01-19",
@@ -6636,11 +6726,12 @@
       "event_raw": "LAWSON 50th Anniversary presents ＝LOVE・≠ME・≒JOY Special LIVE",
       "site_category": "ライブ/イベント",
       "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "Kアリーナ横浜",
+      "venue_hint": "Kアリーナ横浜",
       "official_detail_id": "10308",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10308",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "a0dbd475-4663-4879-9d0d-790710e112c4"
     },
     {
       "date": "2026-01-25",
@@ -6735,11 +6826,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE ARENA TOUR 2025「～Timeless Tales～」』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10916",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10916",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-01-28",
@@ -6807,11 +6899,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE ARENA TOUR 2025「～Timeless Tales～」』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "10917",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10917",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-01-30",
@@ -7122,11 +7215,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念スペシャルリリースイベント",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11134",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11134",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-02-13",
@@ -7221,11 +7315,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念スペシャルリリースイベント",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11111",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11111",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-02-15",
@@ -7505,11 +7600,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念スペシャルリリースイベント",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11112",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11112",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-02-25",
@@ -7532,8 +7628,8 @@
       "event_raw": "＝LOVE 20thシングル発売記念スペシャルリリースイベント※髙松瞳、瀧脇笙古、野口衣織",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "members": [
         "髙松瞳",
         "瀧脇笙古",
@@ -7541,7 +7637,8 @@
       ],
       "official_detail_id": "11130",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11130",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-02-26",
@@ -7594,11 +7691,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11114",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11114",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-02-28",
@@ -7648,11 +7746,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11119",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11119",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-01",
@@ -7660,11 +7759,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 ツーショット撮影会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11123",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11123",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-02",
@@ -7699,11 +7799,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11115",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11115",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-04",
@@ -7711,8 +7812,8 @@
       "event_raw": "＝LOVE 20thシングル発売記念スペシャルリリースイベント※大谷映美里、音嶋莉沙、諸橋沙夏、山本杏奈",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "members": [
         "大谷映美里",
         "音嶋莉沙",
@@ -7721,7 +7822,8 @@
       ],
       "official_detail_id": "11131",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11131",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-04",
@@ -7745,11 +7847,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11116",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11116",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-05",
@@ -7845,14 +7948,15 @@
       "event_raw": "「CDTVライブ！ライブ！春の大感謝祭2026」※＝LOVE",
       "site_category": "ライブ/イベント",
       "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "Kアリーナ横浜",
+      "venue_hint": "Kアリーナ横浜（CDTVライブ！ライブ！春の大感謝祭2026）",
       "members": [
         "＝LOVE"
       ],
       "official_detail_id": "11021",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11021",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "a0dbd475-4663-4879-9d0d-790710e112c4"
     },
     {
       "date": "2026-03-07",
@@ -7899,11 +8003,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11117",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11117",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-11",
@@ -7937,15 +8042,20 @@
       "event": "一般社団法人広島イベント事業振興協会主催『新アリーナ整備に向けた機運醸成プロジェクト第３弾「新アリーナが広島の未来を創造する ～ひろしまで楽しみ、働き、暮らす ～」』",
       "event_raw": "一般社団法人広島イベント事業振興協会主催『新アリーナ整備に向けた機運醸成プロジェクト第３弾「新アリーナが広島の未来を創造する ～ひろしまで楽しみ、働き、暮らす ～」』※山本杏奈",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "type": "OfflineEvent",
+      "venue": "広島国際会議場 ヒマワリ",
+      "venue_hint": "広島国際会議場 地下2階 ヒマワリ",
       "members": [
         "山本杏奈"
       ],
       "official_detail_id": "11213",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11213",
-      "source": "official"
+      "source": "official",
+      "note": "Free talk event; advance registration required.",
+      "is_live": false,
+      "gameplay_status": "pending",
+      "pending_feature": "making_offline_event",
+      "venue_uid": "d510c704-7f96-4e07-80a7-3ced3883c0ee"
     },
     {
       "date": "2026-03-13",
@@ -8040,11 +8150,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11125",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11125",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-16",
@@ -8283,11 +8394,12 @@
       "event_raw": "「＝LOVEオフィシャルカレンダーブック2026.04～2027.03」発売記念オンラインサイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11298",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11298",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-23",
@@ -8541,11 +8653,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11126",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11126",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-03-30",
@@ -8707,14 +8820,15 @@
       "event_raw": "『CENTRAL MUSIC &amp; ENTERTAINMENT FESTIVAL 2026』※＝LOVE",
       "site_category": "ライブ/イベント",
       "type": "Festival",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "Kアリーナ横浜",
+      "venue_hint": "Kアリーナ横浜（CENTRAL MUSIC & ENTERTAINMENT FESTIVAL 2026）",
       "members": [
         "＝LOVE"
       ],
       "official_detail_id": "11136",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11136",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "a0dbd475-4663-4879-9d0d-790710e112c4"
     },
     {
       "date": "2026-04-04",
@@ -8722,8 +8836,8 @@
       "event_raw": "＝LOVE 20thシングル発売記念スペシャルリリースイベント※大場花菜、齋藤樹愛羅、佐々木舞香",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "members": [
         "大場花菜",
         "齋藤樹愛羅",
@@ -8731,7 +8845,8 @@
       ],
       "official_detail_id": "11132",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11132",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-04-04",
@@ -8946,11 +9061,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 スリーショット撮影会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11225",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11225",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-04-12",
@@ -9107,11 +9223,12 @@
       "event_raw": "＝LOVE 8周年ツアー「＝LOVE 8th ANNIVERSARY PREMIUM TOUR」FINAL in 横浜スタジアム",
       "site_category": "ライブ/イベント",
       "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "横浜スタジアム",
+      "venue_hint": "横浜スタジアム",
       "official_detail_id": "10932",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10932",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "4a50b187-092f-4fbf-81af-511fde6efe4c"
     },
     {
       "date": "2026-04-19",
@@ -9134,11 +9251,12 @@
       "event_raw": "＝LOVE 8周年ツアー「＝LOVE 8th ANNIVERSARY PREMIUM TOUR」FINAL in 横浜スタジアム",
       "site_category": "ライブ/イベント",
       "type": "Concert",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "横浜スタジアム",
+      "venue_hint": "横浜スタジアム",
       "official_detail_id": "10933",
       "official_detail_url": "https://equal-love.jp/schedule/detail/10933",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "4a50b187-092f-4fbf-81af-511fde6efe4c"
     },
     {
       "date": "2026-04-19",
@@ -9360,11 +9478,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11127",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11127",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-04-26",
@@ -9428,7 +9547,7 @@
       "event": "テレビ朝日「アイ＝ラブ！げーみんぐ 〜 ○○さんがオンラインになりました 〜 」公開収録2026春",
       "event_raw": "テレビ朝日「アイ＝ラブ！げーみんぐ 〜 ○○さんがオンラインになりました 〜 」公開収録2026春※齋藤樹愛羅、佐々木舞香",
       "site_category": "ライブ/イベント",
-      "type": "Concert",
+      "type": "TvShow",
       "venue": null,
       "venue_hint": null,
       "members": [
@@ -9437,7 +9556,11 @@
       ],
       "official_detail_id": "11296",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11296",
-      "source": "official"
+      "source": "official",
+      "gameplay_status": "pending",
+      "pending_feature": "making_tv_show",
+      "performance_songs_min": 1,
+      "performance_songs_max": 2
     },
     {
       "date": "2026-04-29",
@@ -9445,11 +9568,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE 8th ANNIVERSARY PREMIUM TOUR』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11348",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11348",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-04-29",
@@ -9576,11 +9700,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11120",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11120",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-05-03",
@@ -9630,11 +9755,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE 8th ANNIVERSARY PREMIUM TOUR』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11349",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11349",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-05-06",
@@ -9642,11 +9768,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE 8th ANNIVERSARY PREMIUM TOUR』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11350",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11350",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-05-06",
@@ -9812,11 +9939,12 @@
       "event_raw": "＝LOVE映像商品『＝LOVE 8th ANNIVERSARY PREMIUM TOUR』 発売記念 オンライン個別サイン会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11352",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11352",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-05-13",
@@ -9928,11 +10056,12 @@
       "event_raw": "＝LOVE 20thシングル発売記念 オンライン個別お話し会",
       "site_category": "握手会",
       "type": "Meet",
-      "venue": null,
-      "venue_hint": null,
+      "venue": "神田スクエアホール",
+      "venue_hint": "握手会・リリースイベント（代表会場）",
       "official_detail_id": "11128",
       "official_detail_url": "https://equal-love.jp/schedule/detail/11128",
-      "source": "official"
+      "source": "official",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2026-05-16",

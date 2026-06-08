@@ -10,7 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const groupsPath = path.join(root, "public/data/scenarios/scenario_6_2025-07-20/groups.json");
+const groupsPath = path.join(root, "public/data/scenarios/scenario_6/groups.json");
 
 function crlfSerialize(obj) {
   return `${JSON.stringify(obj, null, 2).replace(/\n/g, "\r\n")}\r\n`;

@@ -2,7 +2,20 @@
  * Parse equal-love.jp (and similar) official schedule list HTML.
  */
 
-import { classifyEventType, isOnlineScheduleEvent } from "./timetreeEventParse.mjs";
+import {
+  applyGuestLiveGameplayPending,
+  applyOfflineEventGameplayPending,
+  applyTvShowGameplayPending,
+  classifyEventType,
+  isGuestLiveEvent,
+  isOfflineNonLiveEvent,
+  isOnlineScheduleEvent,
+  isTvOpenRecordingEvent,
+} from "./timetreeEventParse.mjs";
+import {
+  MEET_GREET_DEFAULT_VENUE_HINT,
+  MEET_GREET_DEFAULT_VENUE_NAME,
+} from "./timetreeVenueDb.mjs";
 
 function decodeHtmlText(s) {
   return String(s ?? "")
@@ -41,11 +54,16 @@ export function typeFromSiteCategory(siteCategory, title) {
   if (cat === "誕生日") return "Birthday";
   if (cat === "その他") return "Other";
   if (cat === "ライブ/イベント") {
-    const t = classifyEventType(String(title ?? ""));
-    if (t !== "Other" && t !== "Media" && t !== "Promo") return t;
     const titleS = String(title ?? "");
+    if (/COLLECTION|GirlsAward|RUNWAY/i.test(titleS)) return "Media";
+    if (isTvOpenRecordingEvent({ event: titleS })) return "TvShow";
+    if (isGuestLiveEvent({ event: titleS })) return "GuestLive";
+    if (isOfflineNonLiveEvent({ event: titleS })) return "OfflineEvent";
+    const t = classifyEventType(titleS);
+    if (t !== "Other" && t !== "Media" && t !== "Promo") return t;
     if (/FES|フェス|合戦|EXPO|歌合戦|納涼祭/i.test(titleS)) return "Festival";
-    if (/TOUR|ツアー|単独|ワンマン|武道館|ARENA|公演|コンサート|収録/i.test(titleS)) return "Concert";
+    if (/TOUR|ツアー|単独|ワンマン|武道館|ARENA|公演|コンサート/i.test(titleS)) return "Concert";
+    if (/収録/.test(titleS)) return "Concert";
     return "Concert";
   }
   return classifyEventType(String(title ?? "")) || "Other";
@@ -76,12 +94,47 @@ export function extractVenueFromOfficialTitle(title) {
       venue_hint: `${prefVenue[1]}・${prefVenue[2].trim()}`,
     };
   }
+  const finalIn = /\bFINAL\s+in\s+(.+)$/iu.exec(t);
+  if (finalIn) {
+    const v = finalIn[1].trim();
+    return { venue: v, venue_hint: v };
+  }
   const atVenue = /[@＠]\s*([^※【（]+?)\s*$/.exec(t);
   if (atVenue) {
     const v = atVenue[1].trim();
     return { venue: v, venue_hint: v };
   }
   return { venue: null, venue_hint: null };
+}
+
+/** Known festivals / fixed labels when list titles omit venue. */
+const OFFICIAL_EVENT_OVERRIDES = [
+  {
+    date: "2025-08-03",
+    test: /TOKYO\s+IDOL\s+FESTIVAL|ＴＩＦ|TIF/i,
+    event: "TIF2025",
+    venue: "お台場臨海公園（TIF・複数ステージ）",
+    venue_hint: "TIF2025",
+  },
+];
+
+/**
+ * @param {string} date YYYY-MM-DD
+ * @param {string} event
+ */
+export function applyOfficialEventOverrides(date, event) {
+  const d = String(date ?? "").trim();
+  const t = String(event ?? "").trim();
+  for (const rule of OFFICIAL_EVENT_OVERRIDES) {
+    if (d === rule.date && rule.test.test(t)) {
+      return {
+        event: rule.event,
+        venue: rule.venue,
+        venue_hint: rule.venue_hint,
+      };
+    }
+  }
+  return null;
 }
 
 /**
@@ -113,17 +166,38 @@ export function parseOfficialScheduleListHtml(html, year, month, baseUrl = "http
       const { event, members } = parseMembersFromTitle(rawTitle);
       let type = typeFromSiteCategory(siteCategory, event);
       if (isOnlineScheduleEvent({ event, note: "" })) type = "Virtual";
-      const { venue, venue_hint } =
-        type === "Media" || type === "Promo" || type === "Virtual"
-          ? { venue: null, venue_hint: null }
-          : extractVenueFromOfficialTitle(event);
+      if (isTvOpenRecordingEvent({ event, event_raw: rawTitle })) type = "TvShow";
+      if (isGuestLiveEvent({ event, event_raw: rawTitle })) type = "GuestLive";
+      if (isOfflineNonLiveEvent({ event, event_raw: rawTitle })) type = "OfflineEvent";
+      let venue = null;
+      let venue_hint = null;
+      let displayEvent = event;
+      if (type === "TvShow") {
+        /* pending; no venue */
+      } else if (type === "GuestLive" || type === "OfflineEvent") {
+        /* venue from rules via apply*GameplayPending */
+      } else if (type === "Meet") {
+        venue = MEET_GREET_DEFAULT_VENUE_NAME;
+        venue_hint = MEET_GREET_DEFAULT_VENUE_HINT;
+      } else if (type !== "Media" && type !== "Promo" && type !== "Virtual") {
+        const extracted = extractVenueFromOfficialTitle(event);
+        venue = extracted.venue;
+        venue_hint = extracted.venue_hint;
+        const override = applyOfficialEventOverrides(date, event);
+        if (override) {
+          displayEvent = override.event;
+          venue = override.venue;
+          venue_hint = override.venue_hint;
+        }
+      }
 
       const detailId = /\/schedule\/detail\/(\d+)/.exec(href)?.[1] ?? null;
       const detail_url = href.startsWith("http") ? href : `${baseUrl.replace(/\/$/, "")}${href}`;
 
-      events.push({
+      /** @type {Record<string, unknown>} */
+      const row = {
         date,
-        event,
+        event: displayEvent,
         event_raw: rawTitle,
         site_category: siteCategory,
         type,
@@ -133,7 +207,11 @@ export function parseOfficialScheduleListHtml(html, year, month, baseUrl = "http
         official_detail_id: detailId,
         official_detail_url: detail_url,
         source: "official",
-      });
+      };
+      if (type === "TvShow") applyTvShowGameplayPending(row);
+      if (type === "OfflineEvent") applyOfflineEventGameplayPending(row);
+      if (type === "GuestLive") applyGuestLiveGameplayPending(row);
+      events.push(row);
     }
   }
 

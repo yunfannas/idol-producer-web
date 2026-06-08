@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const listPath = path.join(root, "docs", "scenario6_available_groups.txt");
-const groupsPath = path.join(root, "public", "data", "scenarios", "scenario_6_2025-07-20", "groups.json");
+const groupsPath = path.join(root, "public", "data", "scenarios", "scenario_6", "groups.json");
 
 const LINE_RE = /^\d+\.\s*(.+?)\s*\|\s*tier\s*=\s*([SABCDEFsabcdef])\s*\|\s*members\s*=\s*\d+\s*$/;
 

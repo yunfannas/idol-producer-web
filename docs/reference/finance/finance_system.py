@@ -423,16 +423,16 @@ class FinanceSystem:
         """
         Group **net** from **physical CD** units (digital / MV streaming excluded).
 
-        Source: `group_finance.json` → `cd_sales_model.average_net_income_yen_per_cd_sold` (default ¥1,500/unit).
+        Source: `group_finance.json` → `cd_sales_model.average_net_income_yen_per_cd_sold` (default ¥500/unit).
         """
         try:
             u = max(0, int(cd_units_sold))
         except (TypeError, ValueError):
             u = 0
         try:
-            per = int(_CD_SALES_MODEL.get("average_net_income_yen_per_cd_sold", 1500))
+            per = int(_CD_SALES_MODEL.get("average_net_income_yen_per_cd_sold", 500))
         except (TypeError, ValueError):
-            per = 1500
+            per = 500
         return max(0, u * per)
 
     @classmethod

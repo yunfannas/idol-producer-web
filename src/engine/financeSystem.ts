@@ -463,6 +463,7 @@ export interface BuildDailyBreakdownInput {
   fans: number;
   xFollowers: number;
   monthlySalaryTotal: number;
+  scoutRetainersMonthlyTotal?: number;
   liveCount?: number;
   tokutenkaiRevenue?: number;
   tokutenkaiCost?: number;
@@ -477,6 +478,7 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
     fans,
     xFollowers,
     monthlySalaryTotal,
+    scoutRetainersMonthlyTotal = 0,
     liveCount = 0,
     tokutenkaiRevenue = 0,
     tokutenkaiCost = 0,
@@ -505,6 +507,7 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
 
   const dayOfMonth = parseIsoDayOfMonth(targetDateIso);
   const salaries = dayOfMonth === 1 ? intOr(monthlySalaryTotal, 0) : 0;
+  const scoutRetainers = dayOfMonth === 1 ? intOr(scoutRetainersMonthlyTotal, 0) : 0;
 
   const tkr = Math.max(0, intOr(tokutenkaiRevenue, 0));
   const tkc = Math.max(0, intOr(tokutenkaiCost, 0));
@@ -512,7 +515,7 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
 
   const income = digitalSales + fanMeetings + goods + media + liveTickets + liveGoods + tkr;
   const expense =
-    staff + office + promotion + liveCost + salaries + tkc + tokutenkaiIdolShareVal;
+    staff + office + promotion + liveCost + salaries + scoutRetainers + tkc + tokutenkaiIdolShareVal;
   const net = income - expense;
 
   return {
@@ -537,6 +540,7 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
     tokutenkai_cost: tkc,
     tokutenkai_idol_share: tokutenkaiIdolShareVal,
     salaries,
+    scout_retainers: scoutRetainers,
   };
 }
 

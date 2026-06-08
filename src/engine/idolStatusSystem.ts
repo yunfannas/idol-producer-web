@@ -341,3 +341,84 @@ export function recordTrainingDay(
 export function defaultAutopilotTrainingIntensity(): TrainingIntensityRow {
   return { sing: 2, dance: 2, physical: 1, target: 0 };
 }
+
+function isoDayOnly(value: unknown): string {
+  if (typeof value !== "string" || !value.trim()) return "";
+  return value.trim().split("T")[0];
+}
+
+function addIsoDays(isoDate: string, days: number): string {
+  const base = new Date(`${isoDayOnly(isoDate) || "2020-01-01"}T12:00:00Z`);
+  base.setUTCDate(base.getUTCDate() + days);
+  return base.toISOString().slice(0, 10);
+}
+
+function utcDayDiff(fromIso: string, toIso: string): number {
+  const from = new Date(`${isoDayOnly(fromIso) || "2020-01-01"}T12:00:00Z`).getTime();
+  const to = new Date(`${isoDayOnly(toIso) || "2020-01-01"}T12:00:00Z`).getTime();
+  return Math.round((to - from) / 86400000);
+}
+
+export function getActiveHiatusStatus(
+  idol: Record<string, unknown>,
+  referenceIso: string | null | undefined,
+): Record<string, unknown> | null {
+  const refDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+  const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+  for (const raw of history) {
+    if (!raw || typeof raw !== "object") continue;
+    const entry = raw as Record<string, unknown>;
+    const kind = String(entry.kind ?? entry.status ?? "").toLowerCase();
+    if (!/\bhiatus\b|\bvacation\b|\bpaused\b|\bon hold\b/.test(kind)) continue;
+    const startDay = isoDayOnly(entry.start_date ?? refDay) || refDay;
+    const returnDay = isoDayOnly(entry.return_date ?? "");
+    if (startDay > refDay) continue;
+    if (returnDay && refDay >= returnDay) continue;
+    return entry;
+  }
+  return null;
+}
+
+export function isIdolOnHiatus(idol: Record<string, unknown>, referenceIso: string | null | undefined): boolean {
+  return Boolean(getActiveHiatusStatus(idol, referenceIso));
+}
+
+export function hiatusReturnDate(idol: Record<string, unknown>, referenceIso: string | null | undefined): string | null {
+  const entry = getActiveHiatusStatus(idol, referenceIso);
+  if (!entry) return null;
+  const returnDay = isoDayOnly(entry.return_date ?? "");
+  return returnDay || null;
+}
+
+export function hiatusDaysRemaining(idol: Record<string, unknown>, referenceIso: string | null | undefined): number {
+  const refDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+  const returnDay = hiatusReturnDate(idol, referenceIso);
+  if (!returnDay) return 0;
+  return Math.max(0, utcDayDiff(refDay, returnDay));
+}
+
+export function scheduleIdolVacation(
+  idol: Record<string, unknown>,
+  referenceIso: string | null | undefined,
+  days = 7,
+): { start_date: string; return_date: string } {
+  const startDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+  const returnDay = addIsoDays(startDay, Math.max(1, Math.trunc(days)));
+  const history = Array.isArray(idol.status_history) ? [...idol.status_history] : [];
+  const filtered = history.filter((raw) => {
+    if (!raw || typeof raw !== "object") return true;
+    const entry = raw as Record<string, unknown>;
+    const kind = String(entry.kind ?? entry.status ?? "").toLowerCase();
+    if (!/\bhiatus\b|\bvacation\b|\bpaused\b|\bon hold\b/.test(kind)) return true;
+    const existingReturn = isoDayOnly(entry.return_date ?? "");
+    return existingReturn && existingReturn <= startDay;
+  });
+  filtered.push({
+    kind: "hiatus",
+    start_date: startDay,
+    return_date: returnDay,
+    summary: "Vacation scheduled.",
+  });
+  idol.status_history = filtered;
+  return { start_date: startDay, return_date: returnDay };
+}

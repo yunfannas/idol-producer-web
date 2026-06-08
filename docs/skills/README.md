@@ -33,4 +33,9 @@ ln -sfn "$(pwd)/skills" .cursor/skills
 
 ## Verify
 
-`.cursor/skills` should list the same skill folders as `skills/` (for example `apple-music-song-update`).
+`.cursor/skills` should list the available project skill folders.
+
+Current repo-local skills include:
+
+- `timetree-group-schedule`
+- `game-logic-balance`

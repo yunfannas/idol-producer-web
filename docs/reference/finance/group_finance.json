@@ -78,8 +78,8 @@
     }
   },
   "cd_sales_model": {
-    "_note": "**Physical CD** unit economics to the **group** after manufacturing / distribution / channel cuts—**average net ¥1,500 per CD sold**. Each CD is bundled with an **online signing** obligation: **one allocating member spends 30 wall-clock seconds per CD** (serial meet load). **Digital sales** and **MV / streaming watch revenue** are **not** modeled here (intentionally ignored for this block). Helpers: `FinanceSystem.cd_sales_net_income_yen`, `FinanceSystem.cd_online_signing_member_seconds`.",
-    "average_net_income_yen_per_cd_sold": 1500,
+    "_note": "**Physical CD** unit economics to the **group** after manufacturing / distribution / channel cuts—**average net ¥500 per CD sold**. Each CD is bundled with an **online signing** obligation: **one allocating member spends 30 wall-clock seconds per CD** (serial meet load). **Digital sales** and **MV / streaming watch revenue** are **not** modeled here (intentionally ignored for this block). Helpers: `FinanceSystem.cd_sales_net_income_yen`, `FinanceSystem.cd_online_signing_member_seconds`.",
+    "average_net_income_yen_per_cd_sold": 500,
     "online_signing_event": {
       "seconds_per_cd_allocating_member": 30,
       "_note": "Per **sold CD**, the member handling that unit’s lane owes **30 s** of online signing time (not split across the whole group unless you fork the data model)."
@@ -238,7 +238,7 @@
       "per_release_major_publisher_anchor_yen": 1000000,
       "annual_production_and_publish_budget_yen": 4000000,
       "monthly_amortized_yen": 333333,
-      "_note": "Four **major-publisher**, MV-grade drops per year; per-release anchor matches `publishing_costs_yen.major_publisher` (¥1M) unless a scenario forks it.",
+      "_note": "Four **major-publisher**, MV-grade drops per year; use `publishing_costs_yen.major_publisher` (¥1M) as the per-song MV anchor unless a scenario forks it.",
       "publishing_anchor_ref": "publishing_costs_yen.major_publisher"
     },
     "song_and_music_production": {

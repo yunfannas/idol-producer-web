@@ -71,7 +71,7 @@ From `live_goods_model`:
 
 ### CD model
 From `cd_sales_model`:
-- Average net income: `¥1,500` per CD sold
+- Average net income: `¥500` per CD sold
 - Online signing load: `30s` per CD for the allocating member
 - Digital sales and MV watch/stream revenue are intentionally excluded in this block
 

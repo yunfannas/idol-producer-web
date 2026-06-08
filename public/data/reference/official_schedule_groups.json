@@ -4,9 +4,18 @@
     "equal-love": {
       "group_name": "=LOVE",
       "base_url": "https://equal-love.jp",
+      "parser": "equal_love_monthly",
       "list_path": "/schedule/list/{year}/{month}/",
       "list_query": "cat=L_ALL,live02,live03,live04,live05,live06,live07",
       "detail_path": "/schedule/detail/{id}"
+    },
+    "takanenonadeshiko": {
+      "group_name": "高嶺のなでしこ",
+      "base_url": "https://takanenonadeshiko.jp",
+      "parser": "event_organiser_sitemap",
+      "schedule_url": "https://takanenonadeshiko.jp/schedule/",
+      "sitemap_url": "https://takanenonadeshiko.jp/wp-sitemap-posts-event-1.xml",
+      "detail_path": "/events/event/{slug}/"
     }
   }
 }

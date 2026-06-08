@@ -108,6 +108,12 @@ body {
   padding: 0.5rem 0.95rem;
 }
 
+.fm-btn-xs {
+  padding: 0.22rem 0.45rem;
+  font-size: 0.74rem;
+  line-height: 1.1;
+}
+
 .fm-btn-accent:hover:not(:disabled) {
   background: var(--accent-light);
 }
@@ -427,6 +433,10 @@ a.fm-menu-link:hover {
   padding: 0.42rem 0.5rem;
   border-radius: 2px;
   cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
 }
 
 .fm-shortlist-ul .shortlist-entry:hover {
@@ -1679,6 +1689,76 @@ text.idol-radar-val.attr-tone-low {
   text-align: center;
 }
 
+.contract-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.contract-actions .fm-btn {
+  white-space: nowrap;
+}
+
+.contract-roster-table {
+  table-layout: fixed;
+}
+
+.contract-roster-table col.contract-col-photo {
+  width: 5.25rem;
+}
+
+.contract-roster-table col.contract-col-name {
+  width: 18%;
+}
+
+.contract-roster-table col.contract-col-romaji {
+  width: 18%;
+}
+
+.contract-roster-table col.contract-col-salary {
+  width: 12%;
+}
+
+.contract-roster-table col.contract-col-started {
+  width: 12%;
+}
+
+.contract-roster-table col.contract-col-end {
+  width: 15%;
+}
+
+.contract-roster-table col.contract-col-action {
+  width: 18%;
+}
+
+.contract-roster-table td,
+.contract-roster-table th {
+  vertical-align: middle;
+}
+
+.contract-roster-table .contract-col-salary,
+.contract-roster-table th:nth-child(4) {
+  text-align: center;
+}
+
+.contract-roster-table .contract-col-action,
+.contract-roster-table th:nth-child(7) {
+  text-align: center;
+}
+
+.contract-roster-table .contract-col-name,
+.contract-roster-table .contract-col-romaji {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contract-roster-table .contract-col-started,
+.contract-roster-table .contract-col-end {
+  white-space: nowrap;
+}
+
 .group-member-color-chip--default {
   background: #ffffff;
 }
@@ -2549,16 +2629,6 @@ text.idol-radar-val.attr-tone-low {
   white-space: nowrap;
 }
 
-.songs-making-workshop-table .making-disc-cell {
-  min-width: 8rem;
-  max-width: 14rem;
-  vertical-align: middle;
-}
-
-.songs-making-workshop-table .making-disc-input {
-  width: 100%;
-}
-
 .songs-making-workshop-table .making-actions-cell {
   white-space: nowrap;
   vertical-align: middle;
@@ -2574,6 +2644,31 @@ text.idol-radar-val.attr-tone-low {
 .songs-making-workshop-table .making-track-actions .fm-btn {
   font-size: 0.78rem;
   padding: 0.28rem 0.55rem;
+}
+
+.making-cd-project-actions,
+.making-cd-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: end;
+  margin-bottom: 0.75rem;
+}
+
+.making-cd-form .songs-toolbar-label {
+  min-width: 12rem;
+}
+
+.making-cd-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 52rem) {
+  .making-cd-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .fm-card.group-detail {
@@ -3082,6 +3177,16 @@ code {
   color: var(--accent);
 }
 
+.text-action-link {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.text-action-link:hover {
+  color: var(--accent);
+}
+
 .inbox-plain-body {
   margin-top: 0.85rem;
 }
@@ -3205,6 +3310,10 @@ code {
   border-color: var(--green);
 }
 
+.schedule-cell.has-media {
+  box-shadow: inset 0 0 0 1px rgba(87, 168, 255, 0.35);
+}
+
 .schedule-cell-dow {
   font-size: 0.72rem;
   color: var(--text-secondary);
@@ -3234,10 +3343,20 @@ code {
   color: var(--green);
 }
 
+.schedule-pill-media {
+  margin-left: 0.25rem;
+  background: rgba(87, 168, 255, 0.16);
+  color: #8bc4ff;
+}
+
 .schedule-extra {
   margin-top: 0.25rem;
   font-size: 0.72rem;
   color: var(--yellow);
+}
+
+.schedule-extra-media {
+  color: #8bc4ff;
 }
 
 /* ---- Schedule month calendar ---- */
@@ -3307,6 +3426,16 @@ code {
   outline: 1px solid var(--accent-light);
 }
 
+.schedule-cal-cell.is-selected-week {
+  background: rgba(64, 132, 255, 0.16);
+  border-color: rgba(121, 173, 255, 0.5);
+}
+
+.schedule-cal-cell.is-selected-week-anchor {
+  outline: 2px solid var(--cyan);
+  outline-offset: 1px;
+}
+
 .schedule-cal-cell.has-booking {
   border-color: var(--yellow);
 }
@@ -3350,6 +3479,10 @@ code {
 
 .schedule-cal-dot--done {
   background: var(--accent-light);
+}
+
+.schedule-cal-dot--media {
+  background: #8bc4ff;
 }
 
 .schedule-cal-legend {

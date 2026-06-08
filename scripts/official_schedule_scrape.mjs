@@ -12,7 +12,17 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseOfficialScheduleListHtml } from "./officialScheduleParse.mjs";
-import { loadVenuesCatalog, resolveVenueInDatabase, saveVenuesCatalog } from "./timetreeVenueDb.mjs";
+import {
+  applyGuestLiveGameplayPending,
+  applyOfflineEventGameplayPending,
+  resolveGuestLiveVenue,
+} from "./timetreeEventParse.mjs";
+import {
+  applyMeetGreetDefaultVenue,
+  loadVenuesCatalog,
+  resolveVenueInDatabase,
+  saveVenuesCatalog,
+} from "./timetreeVenueDb.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -77,7 +87,43 @@ for (let k = monthKey(startYm.y, startYm.mo); k <= monthKey(endYm.y, endYm.mo); 
   console.error(`  ${rows.length} events`);
 
   for (const row of rows) {
-    if (row.venue && !row.venue_uid) {
+    if (row.type === "Meet") {
+      applyMeetGreetDefaultVenue(row, catalog, {
+        create: createVenues,
+        source: `official schedule ${groupKey}`,
+      });
+    } else if (row.type === "OfflineEvent") {
+      applyOfflineEventGameplayPending(row);
+      if (row.venue && !row.venue_uid) {
+        const resolved = resolveVenueInDatabase(row.venue, catalog, {
+          create: createVenues,
+          source: `official schedule ${groupKey}`,
+        });
+        if (resolved.created) venuesCreated += 1;
+        if (resolved.venue_uid) {
+          row.venue_uid = resolved.venue_uid;
+          row.venue = resolved.venue_name ?? row.venue;
+        }
+      }
+    } else if (row.type === "GuestLive") {
+      applyGuestLiveGameplayPending(row);
+      const spec = resolveGuestLiveVenue(row);
+      if (row.venue && !row.venue_uid) {
+        const resolved = resolveVenueInDatabase(row.venue, catalog, {
+          create: createVenues,
+          source: `official schedule ${groupKey}`,
+          capacity: spec.capacity ?? undefined,
+          setting: "outdoor",
+          city: spec.city ?? undefined,
+          venue_type: "Stadium",
+        });
+        if (resolved.created) venuesCreated += 1;
+        if (resolved.venue_uid) {
+          row.venue_uid = resolved.venue_uid;
+          row.venue = resolved.venue_name ?? row.venue;
+        }
+      }
+    } else if (row.venue && !row.venue_uid) {
       const resolved = resolveVenueInDatabase(row.venue, catalog, {
         create: createVenues,
         source: `official schedule ${groupKey}`,

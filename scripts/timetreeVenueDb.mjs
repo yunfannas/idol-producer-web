@@ -13,6 +13,10 @@ const VENUE_PATHS = [
   path.join(__dirname, "..", "src", "engine", "data", "venues.json"),
 ];
 
+/** ~1000-cap hall used as placeholder for 握手会 / Meet rows (excluded from managed live finance). */
+export const MEET_GREET_DEFAULT_VENUE_NAME = "神田スクエアホール";
+export const MEET_GREET_DEFAULT_VENUE_HINT = "握手会・リリースイベント（代表会場）";
+
 /** Manual aliases: scraped label → catalog `name`. */
 const VENUE_ALIASES = new Map([
   ["zepp fukuoka", "Zepp Fukuoka"],
@@ -36,6 +40,14 @@ const VENUE_ALIASES = new Map([
   ["桃配運動公園", "桃配運動公園"],
   ["幕張海浜公園", "幕張海浜公園 イベントブロック特設会場"],
   ["イベントブロック特設会場", "幕張海浜公園 イベントブロック特設会場"],
+  ["お台場臨海公園", "お台場臨海公園（TIF・複数ステージ）"],
+  ["ひたち海浜公園", "国営ひたち海浜公園"],
+  ["マツダスタジアム", "Mazda Zoom-Zoom Stadium Hiroshima"],
+  ["mazda zoom-zoom stadium", "Mazda Zoom-Zoom Stadium Hiroshima"],
+  ["エスコンフィールド", "エスコンフィールドHOKKAIDO"],
+  ["幕張メッセ 9-11ホール", "幕張メッセ国際展示場9-11ホール"],
+  ["幕張メッセ9-11ホール", "幕張メッセ国際展示場9-11ホール"],
+  ["ttホール", "COOL JAPAN PARK OSAKA TTホール"],
 ]);
 
 export function normalizeVenueKey(name) {
@@ -135,7 +147,7 @@ export function createVenueStub(name, meta = {}) {
 /**
  * @param {string} rawName
  * @param {{ venues: unknown[], path?: string }} catalog
- * @param {{ create?: boolean, source?: string, dryRun?: boolean, capacity?: number | null }} opts
+ * @param {{ create?: boolean, source?: string, dryRun?: boolean, capacity?: number | null, setting?: string | null, city?: string | null, venue_type?: string | null }} opts
  */
 export function resolveVenueInDatabase(rawName, catalog, opts = {}) {
   const index = buildVenueIndex(catalog);
@@ -155,7 +167,13 @@ export function resolveVenueInDatabase(rawName, catalog, opts = {}) {
   if (!opts.create) {
     return { venue_uid: null, venue_name: rawName, created: false, missing: true };
   }
-  const stub = createVenueStub(rawName, { source: opts.source, capacity: opts.capacity });
+  const stub = createVenueStub(rawName, {
+    source: opts.source,
+    capacity: opts.capacity,
+    setting: opts.setting,
+    city: opts.city,
+  });
+  if (opts.venue_type) stub.venue_type = String(opts.venue_type);
   if (!opts.dryRun) {
     catalog.venues.push(stub);
     index.set(normalizeVenueKey(stub.name), stub);
@@ -165,6 +183,27 @@ export function resolveVenueInDatabase(rawName, catalog, opts = {}) {
     venue_name: stub.name,
     created: true,
   };
+}
+
+/**
+ * Assign default meet-and-greet hall when venue is unknown.
+ * @param {Record<string, unknown>} row
+ * @param {{ venues: unknown[] }} catalog
+ * @param {{ create?: boolean, source?: string }} [opts]
+ */
+export function applyMeetGreetDefaultVenue(row, catalog, opts = {}) {
+  const type = String(row.type ?? row.event_type ?? "").trim();
+  if (type !== "Meet") return false;
+  if (String(row.venue ?? "").trim() && row.venue_uid) return false;
+
+  const resolved = resolveVenueInDatabase(MEET_GREET_DEFAULT_VENUE_NAME, catalog, {
+    create: opts.create !== false,
+    source: opts.source ?? "meet-greet default",
+  });
+  row.venue = resolved.venue_name ?? MEET_GREET_DEFAULT_VENUE_NAME;
+  row.venue_hint = String(row.venue_hint ?? "").trim() || MEET_GREET_DEFAULT_VENUE_HINT;
+  if (resolved.venue_uid) row.venue_uid = resolved.venue_uid;
+  return true;
 }
 
 /** Persist catalog to all known venue.json paths (kept in sync). */

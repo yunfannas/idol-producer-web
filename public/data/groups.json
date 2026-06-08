@@ -352,6 +352,9 @@
       "ae59c728-630e-4086-97ce-9a4ab889d449",
       "63e41e76-0e17-40c0-bdc4-d89f1c94f262",
       "fb82976e-f917-4c19-8f0c-fab5665f0bb1"
+    ],
+    "shared_release_uids": [
+      "shared-heroines-album-2025"
     ]
   },
   {
@@ -147530,38 +147533,40 @@
   {
     "uid": "4omgTUU",
     "name": "≠ME",
-    "member_count": 12,
+    "member_count": 10,
     "member_names": [
-      "尾木波菜",
-      "落合希来里",
-      "蟹沢萌子",
-      "河口夏音",
-      "川中子奈月心",
-      "櫻井もも",
-      "菅波美玲",
-      "鈴木瞳美",
-      "谷崎早耶",
-      "冨田菜々風",
       "永田詩央里",
-      "本田珠由記"
+      "河口夏音",
+      "蟹沢萌子",
+      "菅波美玲",
+      "谷崎早耶",
+      "尾木波菜",
+      "本田珠由記",
+      "落合希来里",
+      "櫻井もも",
+      "川中子奈月心"
     ],
     "member_uids": [
-      "183108d6-de47-4c4f-ac4f-b14a8c3e45d8",
-      "ad38aead-6901-47c9-afe0-f1d9aed516e5",
-      "38913886-759c-482e-9a19-1ac5a7124abe",
-      "cb19d915-2e81-4798-9d04-9252d6e91d3e",
-      "5363990d-3455-4c8c-bfea-da686140357e",
-      "e436a6fa-896c-49d8-9d2f-80cf93d22698",
-      "9a3ce340-f13d-485a-95d4-52b97a9e4984",
-      "ebd96467-2ab0-4557-a5a5-1b4904d0872a",
-      "ae52c990-523a-4da8-97d6-728a6dff404d",
-      "b4ba6f0f-9251-4f29-b488-aaba294c4fe6",
       "35d4e27e-f5f8-4f61-a8f4-173ba36d1811",
-      "c58f2463-3df0-46b5-a466-0696ec2306f4"
+      "cb19d915-2e81-4798-9d04-9252d6e91d3e",
+      "38913886-759c-482e-9a19-1ac5a7124abe",
+      "9a3ce340-f13d-485a-95d4-52b97a9e4984",
+      "ae52c990-523a-4da8-97d6-728a6dff404d",
+      "183108d6-de47-4c4f-ac4f-b14a8c3e45d8",
+      "c58f2463-3df0-46b5-a466-0696ec2306f4",
+      "ad38aead-6901-47c9-afe0-f1d9aed516e5",
+      "e436a6fa-896c-49d8-9d2f-80cf93d22698",
+      "5363990d-3455-4c8c-bfea-da686140357e"
     ],
-    "past_member_count": 0,
-    "past_member_names": [],
-    "past_member_uids": [],
+    "past_member_count": 2,
+    "past_member_names": [
+      "鈴木瞳美",
+      "冨田菜々風"
+    ],
+    "past_member_uids": [
+      "ebd96467-2ab0-4557-a5a5-1b4904d0872a",
+      "b4ba6f0f-9251-4f29-b488-aaba294c4fe6"
+    ],
     "color": null,
     "description": "Promoting Haitateki Fighter (November 2025) Information Also Known As Noimii (ノイミー) NOT EQUAL ME Origin Tokyo , Japan Genre J-Pop Years 2019-Present Label King Records Agency Yoyogi Animation Academy Associated Acts =LOVE ≒JOY Current Members Ogi Hana Ochiai Kirari Kanisawa Moeko Kawaguchi Natsune Kawanago Natsumi Sakurai Momo Suganami Mirei Suzuki Hitomi Tanizaki Saya Tomita Nanaka Nagata Shiori Honda Miyuki Producer Sashihara Rino Links Website Official Website Social Media",
     "formed_date": "2019-08-04",
@@ -148026,45 +148031,6 @@
         "uid": "6d0b523a-669b-41fd-a82c-701658b980bc"
       },
       {
-        "title": "=LOVE、≠ME スペシャルコンサート『24girls 2020』",
-        "title_romanji": "=LOVE, ≠ME Special Concert \"24girls 2020\"",
-        "disc_type": "CD",
-        "release_date": "2021-10-06",
-        "publisher": "SACRA MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "Overture",
-          "アイカツハッピーエンド",
-          "スタート！",
-          "僕らの制服クリスマス",
-          "ロボキッス (W Cover)",
-          "黒い羊 (Keyakizaka46 Cover)",
-          "こんなに好きになっちゃっていいの？ (Hinatazaka46 Cover)",
-          "クルクルかき氷",
-          "「君の音だったんだ」",
-          "≠ME",
-          "手遅れcaution",
-          "CAMEO",
-          "ズルいよ ズルいね",
-          "P.I.C.",
-          "青春\"サブリミナル\"",
-          "=LOVE",
-          "「君と僕の歌」",
-          "「君と私の歌」",
-          "Tsugi ni Aeta Toki Nani wo Hanasou Kana (次に会えた時 何を話そうかな) Encore",
-          "「部活中に目が合うなって思ってたんだ」",
-          "Want you! Want you!",
-          "Sagase Diamond Lily (探せ ダイヤモンドリリー) Bonus Video",
-          "\"24girls\" Hibiya Open Air Concert Hall Making / Live Digest"
-        ],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/=LOVE、≠ME_スペシャルコンサート『24girls_2020』_cover.webp",
-        "uid": "39fcb8c1-db0b-4800-8dff-654594f39f07"
-      },
-      {
         "title": "イコノイフェス2021 <昼公演>",
         "title_romanji": "Ikonoi Fes 2021 -Day-",
         "disc_type": "CD",
@@ -148095,9 +148061,9 @@
         "uid": "74e9c2e1-95bb-4d77-8cbb-998cc11f65d5"
       },
       {
-        "title": "≠ME 1stコンサート〜初めまして、≠MEです。〜)(with=LOVE",
-        "title_romanji": "≠ME 1st Concert ~Hajimemashite, ≠ME desu.~",
-        "disc_type": "CD",
+        "title": "?ME 1st Concert \"Hajimemashite, ?ME desu.\"",
+        "title_romanji": "?ME 1st Concert \"Hajimemashite, ?ME desu.\"",
+        "disc_type": "DVD/BD",
         "release_date": "2022-01-12",
         "publisher": null,
         "publisher_uid": null,
@@ -148134,7 +148100,7 @@
       {
         "title": "≠ME 3rd ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2022-10-12",
         "publisher": "King Records",
         "publisher_uid": null,
@@ -148173,7 +148139,7 @@
       {
         "title": "≠ME 4th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-10-10",
         "publisher": "KING RECORDS",
         "publisher_uid": null,
@@ -148188,7 +148154,7 @@
       {
         "title": "≠ME 5th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-11-20",
         "publisher": "KING RECORDS",
         "publisher_uid": null,
@@ -148203,7 +148169,7 @@
       {
         "title": "≠ME 全国ツアー2024「やっと、同じクラス」ツアーファイナル 横浜アリーナ",
         "title_romanji": "≠ME Zenkoku Tour 2024 \"Yatto, Onaji Class\" Tour Final Yokohama Arena",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2025-03-19",
         "publisher": null,
         "publisher_uid": null,
@@ -148216,49 +148182,11 @@
         "uid": "dd541e96-e2ce-488d-ba17-ed11b1abfce9"
       },
       {
-        "title": "=LOVE、≠ME スペシャルコンサート『24girls 2020』)(with=LOVE",
-        "title_romanji": "=LOVE, ≠ME Special Concert \"24girls 2020\"",
-        "disc_type": "CD",
-        "release_date": "2021-10-06",
-        "publisher": "SACRA MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "Overture",
-          "アイカツハッピーエンド",
-          "スタート！",
-          "僕らの制服クリスマス",
-          "ロボキッス (W Cover)",
-          "黒い羊 (Keyakizaka46 Cover)",
-          "こんなに好きになっちゃっていいの？ (Hinatazaka46 Cover)",
-          "クルクルかき氷",
-          "「君の音だったんだ」",
-          "≠ME",
-          "手遅れcaution",
-          "CAMEO",
-          "ズルいよ ズルいね",
-          "P.I.C.",
-          "青春\"サブリミナル\"",
-          "=LOVE",
-          "「君と僕の歌」",
-          "「君と私の歌」",
-          "Tsugi ni Aeta Toki Nani wo Hanasou Kana (次に会えた時 何を話そうかな) Encore",
-          "「部活中に目が合うなって思ってたんだ」",
-          "Want you! Want you!",
-          "Sagase Diamond Lily (探せ ダイヤモンドリリー) Bonus Video",
-          "\"24girls\" Hibiya Open Air Concert Hall Making / Live Digest"
-        ],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/=LOVE、≠ME_スペシャルコンサート『24girls_2020』)(with=LOVE_cover.webp",
-        "uid": "7d30d7fd-c4bf-461e-b677-90280c340169"
-      },
-      {
-        "title": "イコノイフェス 2021)(with=LOVE",
-        "title_romanji": "Ikonoi Fes 2021",
-        "disc_type": "CD",
-        "release_date": "2022-08-31",
+        "uid": "b081c7d0-d2fe-4f12-8105-774972df9eb6",
+        "title": "?ME THE MOVIE -Yakusoku no Uta-",
+        "title_romanji": "?ME THE MOVIE -Yakusoku no Uta-",
+        "disc_type": "DVD/BD",
+        "release_date": "2026-02-04",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
@@ -148266,14 +148194,14 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "8476b91f-da4d-4fc4-9f73-5ac8eb97bf8c"
+        "cover_image_path": null
       },
       {
-        "title": "イコノイジョイ 2022)(with=LOVE&≒JOY",
-        "title_romanji": "IKONOIJOY 2022",
-        "disc_type": "CD",
-        "release_date": "2023-07-26",
+        "uid": "2d70b2d6-f0f7-459b-b297-8f3443d18ae0",
+        "title": "?ME 6th ANNIVERSARY PREMIUM CONCERT",
+        "title_romanji": "",
+        "disc_type": "DVD/BD",
+        "release_date": "2026-02-04",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
@@ -148281,38 +148209,7 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "f01a3c7d-0a18-42cc-b129-6d0056d92407"
-      },
-      {
-        "title": "イコノイジョイ 2023)(with=LOVE&≒JOY",
-        "title_romanji": "IKONOIJOY 2023",
-        "disc_type": "CD",
-        "release_date": "2024-09-18",
-        "publisher": null,
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": null,
-        "uid": "102fb9e7-3bcd-42c1-ad77-a39232eb8e12"
-      },
-      {
-        "title": "イコノイジョイ 2024)(with=LOVE&≒JOY",
-        "title_romanji": "IKONOIJOY 2024",
-        "disc_type": "CD",
-        "release_date": "2025-09-24",
-        "publisher": null,
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": null,
-        "uid": "eaea623e-4a88-4f7a-a037-ba009b450820"
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
@@ -148347,10 +148244,20 @@
       "8476b91f-da4d-4fc4-9f73-5ac8eb97bf8c",
       "f01a3c7d-0a18-42cc-b129-6d0056d92407",
       "102fb9e7-3bcd-42c1-ad77-a39232eb8e12",
-      "eaea623e-4a88-4f7a-a037-ba009b450820"
+      "eaea623e-4a88-4f7a-a037-ba009b450820",
+      "b081c7d0-d2fe-4f12-8105-774972df9eb6",
+      "2d70b2d6-f0f7-459b-b297-8f3443d18ae0"
     ],
     "songs": [],
-    "producers": "Sashihara Rino"
+    "producers": "Sashihara Rino",
+    "shared_release_uids": [
+      "shared-triple-date-2022",
+      "shared-24girls-2020",
+      "shared-ikonoi-fes-2021",
+      "shared-ikonoijoy-2022",
+      "shared-ikonoijoy-2023",
+      "shared-ikonoijoy-2024"
+    ]
   },
   {
     "uid": "QmlsbGxpZQ",
@@ -150022,7 +149929,7 @@
         "uid": "d39b65ae-d428-4dbc-9ee6-abc204cb7f1a",
         "title": "≒JOY 1stコンサート「初めまして、≒JOYです。」",
         "title_romanji": "≒JOY 1st Concert \"Hajimemashite, ≒JOY desu.\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-04-24",
         "publisher": null,
         "publisher_uid": null,
@@ -150036,7 +149943,7 @@
         "uid": "bfa1b06b-52ab-496c-880e-c187af7bf8fb",
         "title": "≒JOY 2nd ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-12-11",
         "publisher": null,
         "publisher_uid": null,
@@ -150050,8 +149957,22 @@
         "uid": "3789bd3f-7e74-469f-b41e-a85679c9e0fe",
         "title": "≒JOY ホールツアー2024「今日から君は恋人」",
         "title_romanji": "≒JOY Hall Tour 2024 \"Kyou Kara Kimi wa Koibito\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2025-09-10",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "ef16e5d3-c51e-4ed2-8a92-4dfcc5a99179",
+        "title": "?JOY 3rd ANNIVERSARY PREMIUM CONCERT",
+        "title_romanji": "",
+        "disc_type": "DVD/BD",
+        "release_date": "2026-03-11",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
@@ -150073,9 +149994,15 @@
       "85ebac53-b48f-4d4c-967d-5e3ee6741fcf",
       "d39b65ae-d428-4dbc-9ee6-abc204cb7f1a",
       "bfa1b06b-52ab-496c-880e-c187af7bf8fb",
-      "3789bd3f-7e74-469f-b41e-a85679c9e0fe"
+      "3789bd3f-7e74-469f-b41e-a85679c9e0fe",
+      "ab5fa6a4-fad4-412b-aa07-83f44f543cde",
+      "ef16e5d3-c51e-4ed2-8a92-4dfcc5a99179"
     ],
-    "producers": "Sashihara Rino"
+    "producers": "Sashihara Rino",
+    "shared_release_uids": [
+      "shared-triple-date-2022",
+      "shared-ikonoijoy-2024"
+    ]
   },
   {
     "uid": "Tk1CNDg",
@@ -175885,8 +175812,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "=LOVE",
+          "記憶のどこかで",
+          "スタート!"
+        ],
+        "track_song_uids": [
+          "f6afd094-376d-43f7-9237-81427aa7c38c",
+          "65ad6468-763a-4858-9e3a-268e8060bca7",
+          "45d29181-08fd-4396-834d-d8b050b545d5"
+        ],
         "duration": null,
         "cover_image_path": "picture/=LOVE_cover.webp",
         "uid": "2378cf21-28ea-42df-87ed-cce1287bf80d"
@@ -175900,8 +175835,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "僕らの制服クリスマス",
+          "届いてLOVE YOU",
+          "ようこそ!イコラブ沼"
+        ],
+        "track_song_uids": [
+          "f0781b84-d132-44f0-ab82-a63aeacf210f",
+          "1cb7e964-814b-4d3f-886e-26eb3ebd5604",
+          "5cdb4d05-99b9-4c65-9bb8-ed155d2fd7bc"
+        ],
         "duration": null,
         "cover_image_path": "picture/僕らの制服クリスマス_cover.webp",
         "uid": "d9b4e8a6-2a6f-450a-8221-3b96600850da"
@@ -175915,8 +175858,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "手遅れcaution",
+          "「部活中に目が合うなって思ってたんだ」",
+          "樹愛羅、助けに来たぞ"
+        ],
+        "track_song_uids": [
+          "6a92d679-086d-4344-adb9-e9e6d55a354e",
+          "eda7c4bc-4f1c-41ef-a14d-bfa7f710f723",
+          "6f5d5673-c920-477e-bef7-c72eeedf3f2b"
+        ],
         "duration": null,
         "cover_image_path": "picture/手遅れcaution_cover.webp",
         "uid": "0d15892d-4ad7-41a9-b402-c0cff1f1e291"
@@ -175930,8 +175881,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "Want you!Want you!",
+          "今、この船に乗れ!",
+          "アイカツハッピーエンド"
+        ],
+        "track_song_uids": [
+          "886fa232-9b9b-4047-9823-4729682f350a",
+          "56f02b85-eae8-4d78-aa35-e900f5dfa432",
+          "215e97ab-88a5-4898-80da-8f4c71dee1a8"
+        ],
         "duration": null,
         "cover_image_path": "picture/Want_you!_Want_you!_cover.webp",
         "uid": "f7141646-b231-443b-9d4b-a47cb9bd191f"
@@ -175945,8 +175904,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "探せ ダイヤモンドリリー",
+          "いらない ツインテール",
+          "虹の素"
+        ],
+        "track_song_uids": [
+          "18e6267c-0381-400a-ba66-4917e7117551",
+          "67106e8d-5fdf-4945-a90b-9f47e50b6566",
+          "21791d7d-a503-4621-b9d2-a7fbfc692d07"
+        ],
         "duration": null,
         "cover_image_path": "picture/探せ_ダイヤモンドリリー_cover.webp",
         "uid": "e935ec1d-56b9-4bb3-aa66-4fdf378ba9f5"
@@ -175960,8 +175927,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ズルいよ ズルいね",
+          "Sweetest girl",
+          "推しのいる世界"
+        ],
+        "track_song_uids": [
+          "8ad97ea2-1eff-46c7-8ee1-859d2f5e1a20",
+          "8ee7c67f-a34b-4e2b-ba17-00055ca8b016",
+          "8f96a528-2657-4a6d-a7d9-bece148508ac"
+        ],
         "duration": null,
         "cover_image_path": "picture/ズルいよ_ズルいね_cover.webp",
         "uid": "79694826-0214-4cf9-95ef-ab59efacab4c"
@@ -175975,8 +175950,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "CAMEO",
+          "「君と私の歌」",
+          "My Voice Is For You"
+        ],
+        "track_song_uids": [
+          "b4c9fb43-75fb-4189-98c8-8d9506a07d87",
+          "a36d4547-7e2e-4a8c-b527-556144d7b671",
+          "a13dc171-1217-4a28-91cd-782c607a7291"
+        ],
         "duration": null,
         "cover_image_path": "picture/CAMEO_cover.webp",
         "uid": "8dae8c9e-7103-460a-b06d-7e6e42b247bb"
@@ -175990,8 +175973,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "青春\"サブリミナル\"",
+          "しゅきぴ",
+          "流星群"
+        ],
+        "track_song_uids": [
+          "2aa9fb7b-9b08-4d9b-853d-710234c0507b",
+          "4e536701-0700-4452-abf5-b32ac01caca5",
+          "dd48a262-4fe0-4e35-98a4-6ae880c57785"
+        ],
         "duration": null,
         "cover_image_path": "picture/青春_サブリミナル_cover.webp",
         "uid": "fec3ac45-f9d8-424c-9afc-24f50a1bd956"
@@ -176005,8 +175996,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ウィークエンドシトロン",
+          "ズッ友案件",
+          "夏祭り恋慕う",
+          "祝祭"
+        ],
+        "track_song_uids": [
+          "106e3ed9-a3b4-4c12-91e2-38b3b2d9e49e",
+          "e5a71d4b-56c9-40ce-aa83-a50f545b85b0",
+          "70761e56-4ed2-4253-a93a-4ebc1a86654f",
+          "456abc42-c063-406d-88fc-bbe14bebd74b"
+        ],
         "duration": null,
         "cover_image_path": "picture/ウィークエンドシトロン_cover.webp",
         "uid": "72a745d5-d301-4068-b2f8-8f136e7c4723"
@@ -176020,8 +176021,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "The 5th",
+          "お姫様にしてよ!",
+          "Poison Girl",
+          "BPM170の君へ"
+        ],
+        "track_song_uids": [
+          "a3add335-da75-4897-860d-1777443f183b",
+          "d1f0c8f3-d63d-4258-a35c-cf28be48cf22",
+          "a8d7aafe-d1cf-4911-a717-841be9a2e29e",
+          "0bbe9531-e45b-4297-8a46-77a89526971f"
+        ],
         "duration": null,
         "cover_image_path": "picture/The_5th_cover.webp",
         "uid": "8d68e336-92a0-4794-b38e-54149a51415f"
@@ -176035,8 +176046,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "あの子コンプレックス",
+          "笑顔のレシピ",
+          "知らんけど",
+          "僕のヒロイン"
+        ],
+        "track_song_uids": [
+          "b0c8afd6-8218-4b70-bb89-fae9a5270d6c",
+          "84c5e732-f403-4f9b-8903-60c5477d193e",
+          "e6292901-5749-4a53-9fb9-387584a34683",
+          "d4954232-3d5e-44b1-893f-0cd7a9863b0f"
+        ],
         "duration": null,
         "cover_image_path": "picture/あの子コンプレックス_cover.webp",
         "uid": "e9c9eea3-f853-43a4-85e4-f6c046000ba0"
@@ -176050,8 +176071,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "Be Selfish",
+          "好きって、言えなかった",
+          "わたし、魔法使い",
+          "真夜中マーメイド"
+        ],
+        "track_song_uids": [
+          "f10a9a40-5a73-4427-abc8-c300ee6ff343",
+          "bbd02271-ec79-47f3-8084-33d73de8bf03",
+          "a615d50d-f8b8-415a-8d2e-345a5dafacc5",
+          "c17018a7-9f21-4abe-a9bc-35acf1f42333"
+        ],
         "duration": null,
         "cover_image_path": "picture/Be_Selfish_cover.webp",
         "uid": "4cae1b5a-dd51-4c1b-a9c1-5015ca8fc405"
@@ -176065,8 +176096,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "この空がトリガー",
+          "Junkies",
+          "ラブクリエイト",
+          "Kiara Tiara"
+        ],
+        "track_song_uids": [
+          "e12d21a6-2b1a-4ae9-bc64-5c5d5fc6926f",
+          "e680994b-ff6d-4e10-be51-ccdf736d7160",
+          "ab465502-3653-4233-82e8-fa4671054708",
+          "a25423a7-5716-49f6-bfc0-fc66c4f2dd62"
+        ],
         "duration": null,
         "cover_image_path": "picture/この空がトリガー_cover.webp",
         "uid": "49aaded5-59ee-4e1f-bc9d-8375627efe7c"
@@ -176080,8 +176121,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ナツマトペ",
+          "だからとて",
+          "ヒロインズ",
+          "ラブロケ"
+        ],
+        "track_song_uids": [
+          "53dcc774-a25d-4e78-9787-002f9bd0820a",
+          "ae79e03c-d11b-4a62-8318-2cffb94c0c76",
+          "7cd7b1d8-d99f-49f5-97b1-25634b715054",
+          "0b56faa7-bc12-42ad-a238-4f53e5166771"
+        ],
         "duration": null,
         "cover_image_path": "picture/ナツマトペ_cover.webp",
         "uid": "d68588ac-161d-42bb-a31d-99ccaa1f155f"
@@ -176095,8 +176146,18 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ラストノートしか知らない",
+          "「ドライブ デート 都内」",
+          "狂想カタストロフィ",
+          "どこが好きか言って"
+        ],
+        "track_song_uids": [
+          "929ba3e0-425d-41cd-a012-a3b2d131748a",
+          "3d1b1a41-3fc8-41b1-a82d-f6f4a06a389d",
+          "0a5ec0c3-0a2c-4c9f-b065-f78aab8d78f9",
+          "bd346afd-8c83-4a1d-adfe-c041550e6752"
+        ],
         "duration": null,
         "cover_image_path": "picture/ラストノートしか知らない_cover.webp",
         "uid": "41d83e65-0eb1-473c-a6db-2de9c0947257"
@@ -176110,8 +176171,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "呪って呪って",
+          "誰にもバレずに",
+          "君の第3ボタン"
+        ],
+        "track_song_uids": [
+          "82d16f46-f801-4490-9e92-cab0efbfed52",
+          "63c9a9ca-344b-40d1-bbb8-08c656ff9592",
+          "b8fc9440-ad93-4530-bbea-ea4dfbc256c9"
+        ],
         "duration": null,
         "cover_image_path": "picture/呪って呪って_cover.webp",
         "uid": "53b50911-c0d3-458a-8d90-9f9283b0a8ee"
@@ -176125,8 +176194,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "絶対アイドル辞めないで",
+          "仲直りシュークリーム",
+          "海とレモンティー"
+        ],
+        "track_song_uids": [
+          "3cba4d84-94a9-47e2-b680-3ed64e988b63",
+          "539aafb7-01a8-4aef-be92-2934b4f3fa39",
+          "88385779-5a27-4416-9605-994a60347c06"
+        ],
         "duration": null,
         "cover_image_path": "picture/絶対アイドル辞めないで_cover.webp",
         "uid": "2aa1e3de-6f68-4fa0-88a2-206da5b90e80"
@@ -176140,8 +176217,15 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "とくべチュ､して",
+          "恋人以上､好き未満",
+          "超特急逃走中"
+        ],
+        "track_song_uids": [
+          "856c2fe9-42fd-4c49-9158-3ef467a09b17",
+          "b21fd697-e51f-41e6-be37-9ddcc9910909"
+        ],
         "duration": null,
         "cover_image_path": "picture/とくべチュ､して___恋人以上､好き未満_cover.webp",
         "uid": "07ecb58e-ba4e-4a43-a026-4d17dc8e1f14"
@@ -176155,8 +176239,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "ラブソングに襲われる",
+          "Queens",
+          "木漏れ日メゾフォルテ"
+        ],
+        "track_song_uids": [
+          "8aa3a785-12d6-41c7-a1dd-84144e00282e",
+          "a1b34d3d-f86c-4bcb-99ac-9527abd3f397",
+          "5722192e-02b8-4888-a244-a0ff477b7604"
+        ],
         "duration": null,
         "cover_image_path": "picture/ラブソングに襲われる_cover.webp",
         "uid": "684c603e-1191-4fe0-8693-f1dfe3b3f437"
@@ -176170,8 +176262,16 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "劇薬中毒",
+          "モラトリアム",
+          "お姫様の作り方"
+        ],
+        "track_song_uids": [
+          "ea4d3773-b178-4f25-ac34-da1877c25cdd",
+          "848cc42b-b9b9-4278-a884-aaba55ce7862",
+          "61f56b34-c4f5-47ad-a866-f890d0da514a"
+        ],
         "duration": null,
         "cover_image_path": "picture/劇薬中毒_cover.webp",
         "uid": "3bb89567-26ed-46f0-9b00-627b223c157b"
@@ -176192,24 +176292,9 @@
         "uid": "ce905562-0096-487b-b7b8-4e0d4291503b"
       },
       {
-        "title": "トリプルデート)(with≠MEand≒JOY",
-        "title_romanji": "Triple Date",
-        "disc_type": "Single",
-        "release_date": "2022-07-20",
-        "publisher": "King Records",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/トリプルデート)(with≠MEand≒JOY_cover.webp",
-        "uid": "06110cf9-c960-4f4c-bb9e-049058484ed9"
-      },
-      {
-        "title": "過去最上キュン",
-        "title_romanji": "Kako Saijou Kyun",
-        "disc_type": "CD",
+        "title": "Kako Saijo Kyun",
+        "title_romanji": "Kako Saijo Kyun",
+        "disc_type": "DVD/BD",
         "release_date": "2023-01-25",
         "publisher": null,
         "publisher_uid": null,
@@ -176224,7 +176309,7 @@
       {
         "title": "=LOVE 1stコンサート「初めまして、＝LOVEです。」",
         "title_romanji": "=LOVE 1st Concert \"Hajimemashite, =LOVE desu.\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2020-09-02",
         "publisher": null,
         "publisher_uid": null,
@@ -176266,7 +176351,7 @@
       {
         "title": "=LOVE デビュー2周年記念コンサート",
         "title_romanji": "=LOVE Debut 2 Shunen Kinen Concert",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2020-09-02",
         "publisher": null,
         "publisher_uid": null,
@@ -176279,9 +176364,9 @@
         "uid": "14abe4e6-7710-4101-8be2-0d4a7d0cb718"
       },
       {
-        "title": "=LOVE 3rd ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 3rd ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2021-02-08",
         "publisher": null,
         "publisher_uid": null,
@@ -176323,7 +176408,7 @@
       {
         "title": "You all are \"My ideal\" 〜日本武道館〜",
         "title_romanji": "You all are \"My ideal\" ~Nippon Budokan~",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2021-06-30",
         "publisher": null,
         "publisher_uid": null,
@@ -176338,7 +176423,7 @@
       {
         "title": "=LOVE 全国ツアー「全部、内緒。」〜横浜アリーナ〜",
         "title_romanji": "=LOVE Zenkoku Tour \"Zenbu, Naisho.\" ~Yokohama Arena~",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2022-03-16",
         "publisher": null,
         "publisher_uid": null,
@@ -176377,9 +176462,9 @@
         "uid": "cde470a9-099a-433b-b72a-4a3c8554b06b"
       },
       {
-        "title": "=LOVE 4th ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 4th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2022-08-10",
         "publisher": null,
         "publisher_uid": null,
@@ -176394,7 +176479,7 @@
       {
         "title": "=LOVE ～齊藤なぎさ卒業コンサート～　現役アイドルちゅ～ みんなのこと大好きだよ♡",
         "title_romanji": "=LOVE ~Saito Nagisa Sotsugyo Concert~ Genneki Idol Chuu Minna no Koto Daisuki da yo♡",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-03-22",
         "publisher": null,
         "publisher_uid": null,
@@ -176409,7 +176494,7 @@
       {
         "title": "=LOVE 全国ツアー2022 「どう考えても、君ってイコラブのこと好きじゃん」",
         "title_romanji": "=LOVE Zenkoku Tour 2022 \"Dou Kangaetemo, Kimi tte Ikorabu no Koto Sukijan\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-03-22",
         "publisher": null,
         "publisher_uid": null,
@@ -176422,9 +176507,9 @@
         "uid": "5113e3b1-d611-4916-92c6-a262113819bc"
       },
       {
-        "title": "=LOVE 5th ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 5th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2023-04-26",
         "publisher": null,
         "publisher_uid": null,
@@ -176439,7 +176524,7 @@
       {
         "title": "=LOVE 全国ツアー2023「Today is your Trigger」",
         "title_romanji": "=LOVE National Tour 2023 \"Today is your Trigger\"",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-03-27",
         "publisher": null,
         "publisher_uid": null,
@@ -176452,9 +176537,9 @@
         "uid": "8a4228e3-0f3b-45db-9f3b-4f3922e7a302"
       },
       {
-        "title": "=LOVE 6th ANNIVERSARY PREMIUM CONCERT",
+        "title": "?LOVE 6th ANNIVERSARY PREMIUM CONCERT",
         "title_romanji": "",
-        "disc_type": "CD",
+        "disc_type": "DVD/BD",
         "release_date": "2024-06-26",
         "publisher": null,
         "publisher_uid": null,
@@ -176467,34 +176552,34 @@
         "uid": "dc107534-c1e0-4989-b440-ae6434a9ff2d"
       },
       {
-        "title": "イコノイジョイ 2022)(with≠MEand≒JOY",
-        "title_romanji": "IKONOIJOY 2022",
-        "disc_type": "CD",
-        "release_date": "2023-07-26",
-        "publisher": "King Records",
+        "uid": "0eff1d23-7b0b-4ebd-b4f1-6fa6fcb91290",
+        "title": "=LOVE 7th ANNIVERSARY PREMIUM CONCERT",
+        "title_romanji": "",
+        "disc_type": "DVD/BD",
+        "release_date": "2025-05-21",
+        "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/イコノイジョイ_2022)(with≠MEand≒JOY_cover.webp",
-        "uid": "b400d686-db25-4ca2-ba06-16c3c46a9617"
+        "cover_image_path": null
       },
       {
-        "title": "イコノイジョイ 2023)(with≠MEand≒JOY",
-        "title_romanji": "IKONOIJOY 2023",
-        "disc_type": "CD",
-        "release_date": "2024-09-18",
-        "publisher": "King Records",
+        "uid": "dce0f0ad-8c8d-47b4-8660-9a5665dc163d",
+        "title": "=LOVE ARENA TOUR 2025 \"Timeless Tales\"",
+        "title_romanji": "=LOVE ARENA TOUR 2025 \"Timeless Tales\"",
+        "disc_type": "DVD/BD",
+        "release_date": "2025-12-24",
+        "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/イコノイジョイ_2023)(with≠MEand≒JOY_cover.webp",
-        "uid": "3662a261-f32c-4ac3-ab2d-d6e59d3da395"
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
@@ -176534,9 +176619,20 @@
       "8a4228e3-0f3b-45db-9f3b-4f3922e7a302",
       "dc107534-c1e0-4989-b440-ae6434a9ff2d",
       "b400d686-db25-4ca2-ba06-16c3c46a9617",
-      "3662a261-f32c-4ac3-ab2d-d6e59d3da395"
+      "3662a261-f32c-4ac3-ab2d-d6e59d3da395",
+      "0eff1d23-7b0b-4ebd-b4f1-6fa6fcb91290",
+      "0d56ef6c-9481-44df-9150-b4f9122d3209",
+      "dce0f0ad-8c8d-47b4-8660-9a5665dc163d"
     ],
-    "producers": "Sashihara Rino"
+    "producers": "Sashihara Rino",
+    "shared_release_uids": [
+      "shared-triple-date-2022",
+      "shared-24girls-2020",
+      "shared-ikonoi-fes-2021",
+      "shared-ikonoijoy-2022",
+      "shared-ikonoijoy-2023",
+      "shared-ikonoijoy-2024"
+    ]
   },
   {
     "uid": "5LmD5pyo5Z2CNDY",
@@ -182458,6 +182554,9 @@
       "f12e77d8-c0a4-40db-9517-4285b095a022",
       "5ba0531f-4fbd-46d5-be75-f30402a45aa5",
       "bfa9d28d-a0ba-421b-a36d-136b218b46dc"
+    ],
+    "shared_release_uids": [
+      "shared-heroines-album-2025"
     ]
   },
   {
@@ -185237,17 +185336,15 @@
   {
     "uid": "WUFNSU5BQkU",
     "name": "YAMINABE",
-    "member_count": 4,
+    "member_count": 3,
     "member_names": [
       "Ice",
       "こるね",
-      "卯莎ゆあ",
       "黒崎りある"
     ],
     "member_uids": [
       "0c55b7c7-bb9a-438d-9644-27b85cac8ae1",
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
-      "85dcb295-c757-4cb8-8b9e-f9b63bcfb518",
       "720bfe27-a27c-4df4-a184-5c0e780cf070"
     ],
     "past_member_names": [

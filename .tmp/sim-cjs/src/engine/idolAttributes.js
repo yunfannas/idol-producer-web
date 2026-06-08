@@ -1,0 +1,390 @@
+"use strict";
+/**
+ * Port of idol_producer/idol_attributes.py — visible + hidden attribute buckets, clamp 0–20,
+ * overall rating, and official ability formula.
+ *
+ * When an idol row has no persisted stat block, attributes are synthesized from X followers +
+ * current group popularity (same rules as `regenerate_scenario6_attributes_by_followers.ps1`).
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.defaultAttributes = defaultAttributes;
+exports.normalizePersistedAttributes = normalizePersistedAttributes;
+exports.hasPersistedAttributeBlock = hasPersistedAttributeBlock;
+exports.stableRoll = stableRoll;
+exports.buildGroupPopularityIndex = buildGroupPopularityIndex;
+exports.buildAttributesFromFollowerModel = buildAttributesFromFollowerModel;
+exports.ensureIdolRowAttributes = ensureIdolRowAttributes;
+exports.applyAttributesToAllIdols = applyAttributesToAllIdols;
+exports.getOverallRating = getOverallRating;
+exports.getWorkbookRadarDimensions = getWorkbookRadarDimensions;
+exports.getAbility = getAbility;
+const sha256sync_1 = require("./sha256sync");
+const clampStat = (n) => Math.max(0, Math.min(20, Math.round(n)));
+function clampPhysical(p) {
+    return {
+        strength: clampStat(p.strength),
+        agility: clampStat(p.agility),
+        natural_fitness: clampStat(p.natural_fitness),
+        stamina: clampStat(p.stamina),
+    };
+}
+function clampAppearance(a) {
+    return { cute: clampStat(a.cute), pretty: clampStat(a.pretty) };
+}
+function clampTechnical(t) {
+    return {
+        pitch: clampStat(t.pitch),
+        tone: clampStat(t.tone),
+        breath: clampStat(t.breath),
+        rhythm: clampStat(t.rhythm),
+        power: clampStat(t.power),
+        grace: clampStat(t.grace),
+    };
+}
+function clampMental(m) {
+    return {
+        clever: clampStat(m.clever),
+        humor: clampStat(m.humor),
+        talking: clampStat(m.talking),
+        determination: clampStat(m.determination),
+        teamwork: clampStat(m.teamwork),
+        fashion: clampStat(m.fashion),
+    };
+}
+function clampHidden(h) {
+    return {
+        professionalism: clampStat(h.professionalism),
+        injury_proneness: clampStat(h.injury_proneness),
+        ambition: clampStat(h.ambition),
+        loyalty: clampStat(h.loyalty),
+    };
+}
+function defaultAttributes() {
+    return {
+        physical: clampPhysical({ strength: 12, agility: 12, natural_fitness: 12, stamina: 12 }),
+        appearance: clampAppearance({ cute: 12, pretty: 12 }),
+        technical: clampTechnical({ pitch: 12, tone: 12, breath: 12, rhythm: 12, power: 12, grace: 12 }),
+        mental: clampMental({
+            clever: 12,
+            humor: 12,
+            talking: 12,
+            determination: 12,
+            teamwork: 12,
+            fashion: 12,
+        }),
+        hidden: clampHidden({ professionalism: 12, injury_proneness: 4, ambition: 12, loyalty: 12 }),
+    };
+}
+function num(v, fallback = 0) {
+    if (typeof v === "number" && Number.isFinite(v))
+        return v;
+    if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v)))
+        return Number(v);
+    return fallback;
+}
+/** Merge partial nested dicts from JSON row into persisted shape. */
+function normalizePersistedAttributes(raw) {
+    const d = raw && typeof raw === "object" ? raw : {};
+    const phys = d.physical ?? {};
+    const app = d.appearance ?? {};
+    const tech = d.technical ?? {};
+    const ment = d.mental ?? {};
+    const hid = d.hidden ?? {};
+    return {
+        physical: clampPhysical({
+            strength: num(phys.strength, 12),
+            agility: num(phys.agility, 12),
+            natural_fitness: num(phys.natural_fitness, 12),
+            stamina: num(phys.stamina, 12),
+        }),
+        appearance: clampAppearance({
+            cute: num(app.cute, 12),
+            pretty: num(app.pretty, 12),
+        }),
+        technical: clampTechnical({
+            pitch: num(tech.pitch, 12),
+            tone: num(tech.tone, 12),
+            breath: num(tech.breath, 12),
+            rhythm: num(tech.rhythm, 12),
+            power: num(tech.power, 12),
+            grace: num(tech.grace, 12),
+        }),
+        mental: clampMental({
+            clever: num(ment.clever, 12),
+            humor: num(ment.humor, 12),
+            talking: num(ment.talking, 12),
+            determination: num(ment.determination, 12),
+            teamwork: num(ment.teamwork, 12),
+            fashion: num(ment.fashion, 12),
+        }),
+        hidden: clampHidden({
+            professionalism: num(hid.professionalism, 12),
+            injury_proneness: num(hid.injury_proneness, 4),
+            ambition: num(hid.ambition, 12),
+            loyalty: num(hid.loyalty, 12),
+        }),
+    };
+}
+/** True when JSON already carries at least one numeric stat (authoritative overlay). */
+function hasPersistedAttributeBlock(raw) {
+    if (!raw || typeof raw !== "object")
+        return false;
+    const d = raw;
+    for (const cat of ["physical", "appearance", "technical", "mental", "hidden"]) {
+        const block = d[cat];
+        if (!block || typeof block !== "object")
+            continue;
+        for (const v of Object.values(block)) {
+            if (typeof v === "number" && Number.isFinite(v))
+                return true;
+            if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v)))
+                return true;
+        }
+    }
+    return false;
+}
+/** Deterministic roll; matches PowerShell `SHA256(UTF8(uid:label))` first four bytes modulo span. */
+function stableRoll(uid, label, low, high) {
+    const digest = (0, sha256sync_1.sha256BytesUtf8)(`${uid}:${label}`);
+    const raw = ((digest[0] << 24) | (digest[1] << 16) | (digest[2] << 8) | digest[3]) >>> 0;
+    const span = high - low + 1;
+    return low + (raw % span);
+}
+function numericMax(record, keys) {
+    let max = 0;
+    for (const k of keys) {
+        const v = record[k];
+        if (typeof v === "number" && Number.isFinite(v) && v > max)
+            max = v;
+        else if (typeof v === "string" && v.trim() !== "") {
+            const n = Number(v);
+            if (Number.isFinite(n) && n > max)
+                max = n;
+        }
+    }
+    return max;
+}
+function popularitySignal(value, floor = 1000, ceiling = 1_000_000) {
+    if (value <= 0)
+        return 0;
+    const low = Math.log10(floor);
+    const high = Math.log10(ceiling);
+    const signal = (Math.log10(Math.max(value, 1)) - low) / (high - low);
+    return Math.max(0, Math.min(1, signal));
+}
+/** uid / name → max(follower signal, popularity/100) per group row. */
+function buildGroupPopularityIndex(groups) {
+    const index = new Map();
+    for (const g of groups) {
+        if (!g || typeof g !== "object")
+            continue;
+        const row = g;
+        const followers = numericMax(row, ["x_followers", "x_followers_count", "fans", "fan_count"]);
+        const followerSignal = popularitySignal(followers);
+        const pop = numericMax(row, ["popularity"]);
+        const popSignal = pop > 0 ? Math.max(0, Math.min(1, pop / 100)) : 0;
+        const signal = Math.max(followerSignal, popSignal);
+        const uid = String(row.uid ?? "").trim();
+        const name = String(row.name ?? "").trim();
+        for (const key of [uid, name]) {
+            if (!key)
+                continue;
+            const prev = index.get(key);
+            if (prev == null || signal > prev)
+                index.set(key, signal);
+        }
+    }
+    return index;
+}
+function parseIsoDay(v) {
+    if (typeof v !== "string")
+        return null;
+    const s = v.trim().split("T")[0];
+    return /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null;
+}
+/** Same membership test as desktop script `Test-MembershipActive`. */
+function membershipActiveAtOpening(entry, openingIso) {
+    const start = parseIsoDay(entry.start_date);
+    if (!start || start > openingIso)
+        return false;
+    const endRaw = entry.end_date;
+    if (endRaw == null || endRaw === "")
+        return true;
+    const end = parseIsoDay(endRaw);
+    if (!end)
+        return false;
+    return openingIso < end;
+}
+function currentGroupSignal(idol, openingIso, groupPopularity) {
+    const hist = idol.group_history;
+    if (!Array.isArray(hist))
+        return 0;
+    let best = 0;
+    for (const raw of hist) {
+        if (!raw || typeof raw !== "object")
+            continue;
+        const e = raw;
+        if (!membershipActiveAtOpening(e, openingIso))
+            continue;
+        for (const key of [String(e.group_uid ?? "").trim(), String(e.group_name ?? "").trim()]) {
+            if (!key)
+                continue;
+            const s = groupPopularity.get(key);
+            if (s != null && s > best)
+                best = s;
+        }
+    }
+    return best;
+}
+function scandalHistoryCount(idol) {
+    const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+    let count = 0;
+    for (const raw of history) {
+        if (!raw || typeof raw !== "object")
+            continue;
+        if (String(raw.kind ?? "").trim().toLowerCase() === "scandal")
+            count += 1;
+    }
+    return count;
+}
+function buildAttributesFromFollowerModel(idol, groupPopularity, openingIso) {
+    const uid = String(idol.uid ?? "unknown");
+    const idolSignal = popularitySignal(numericMax(idol, ["x_followers", "x_followers_count"]));
+    const groupSignal = currentGroupSignal(idol, openingIso, groupPopularity);
+    const combined = Math.max(0, Math.min(1, idolSignal * 0.65 + groupSignal * 0.35));
+    const base = 7 + Math.round(combined * 12);
+    const scandalCount = scandalHistoryCount(idol);
+    const portraitPath = idol.portrait_photo_path;
+    const portraitBonus = typeof portraitPath === "string" && portraitPath.trim().length > 0 ? 1 : 0;
+    const groupBonus = groupSignal > 0 ? 1 : 0;
+    const appearanceBase = base + portraitBonus;
+    const technicalBase = base + groupBonus;
+    const performanceCore = technicalBase + stableRoll(uid, "performance_core", -2, 3);
+    const vocalCenter = performanceCore + stableRoll(uid, "vocal_center", -2, 2);
+    const danceSeed = technicalBase + stableRoll(uid, "dance_seed", -2, 3);
+    const danceCenter = Math.round(vocalCenter * 0.45 + danceSeed * 0.55);
+    const professionalismPenalty = scandalCount > 0 ? 5 + Math.min(6, (scandalCount - 1) * 2) : 0;
+    const professionalismBase = scandalCount > 0 ? 9 : base;
+    const injuryBase = scandalCount > 0 ? 6 : 4;
+    const loyaltyPenalty = scandalCount > 0 ? Math.min(4, scandalCount) : 0;
+    return {
+        physical: clampPhysical({
+            // Manual calibration set suggests dance-heavy idols tend to carry some extra physicality.
+            strength: Math.round(base * 0.65 + danceCenter * 0.35) + stableRoll(uid, "strength", -2, 2),
+            agility: Math.round(base * 0.55 + danceCenter * 0.45) + stableRoll(uid, "agility", -2, 3),
+            natural_fitness: base + stableRoll(uid, "natural_fitness", -2, 4),
+            stamina: base + stableRoll(uid, "stamina", -2, 4),
+        }),
+        appearance: clampAppearance({
+            cute: appearanceBase + stableRoll(uid, "cute", -3, 4),
+            pretty: appearanceBase + stableRoll(uid, "pretty", -3, 4),
+        }),
+        technical: clampTechnical({
+            // Use shared vocal / dance cores so singing and dancing usually move together,
+            // matching the manually tuned reference rows more closely than six independent rolls.
+            pitch: vocalCenter + stableRoll(uid, "pitch", -2, 2),
+            tone: vocalCenter + stableRoll(uid, "tone", -2, 2),
+            breath: vocalCenter + stableRoll(uid, "breath", -2, 2),
+            rhythm: danceCenter + stableRoll(uid, "rhythm", -2, 2),
+            power: danceCenter + stableRoll(uid, "power", -2, 2),
+            grace: danceCenter + stableRoll(uid, "grace", -2, 2),
+        }),
+        mental: clampMental({
+            clever: base + stableRoll(uid, "clever", -3, 4),
+            humor: base + stableRoll(uid, "humor", -3, 4),
+            talking: base + stableRoll(uid, "talking", -3, 4),
+            determination: base + stableRoll(uid, "determination", -2, 5),
+            teamwork: base + stableRoll(uid, "teamwork", -2, 4),
+            fashion: base + stableRoll(uid, "fashion", -3, 4),
+        }),
+        hidden: clampHidden({
+            professionalism: professionalismBase + stableRoll(uid, "professionalism", -2, 3) - professionalismPenalty,
+            injury_proneness: injuryBase + stableRoll(uid, "injury_proneness", -1, 4) + Math.min(2, scandalCount),
+            ambition: base + stableRoll(uid, "ambition", -2, 5),
+            loyalty: base + stableRoll(uid, "loyalty", -2, 5) - loyaltyPenalty,
+        }),
+    };
+}
+/** Ensure idol row has `attributes` for save + UI (mutates row). */
+function ensureIdolRowAttributes(row, ctx) {
+    if (hasPersistedAttributeBlock(row.attributes)) {
+        const normalized = normalizePersistedAttributes(row.attributes);
+        row.attributes = normalized;
+        return normalized;
+    }
+    const ref = ctx?.referenceIso;
+    const groups = ctx?.groups;
+    if (ref && /^\d{4}-\d{2}-\d{2}$/.test(ref) && Array.isArray(groups) && groups.length) {
+        const idx = buildGroupPopularityIndex(groups);
+        const built = buildAttributesFromFollowerModel(row, idx, ref);
+        row.attributes = built;
+        return built;
+    }
+    const fallback = defaultAttributes();
+    row.attributes = fallback;
+    return fallback;
+}
+function applyAttributesToAllIdols(idols, groups, referenceIso) {
+    const ctx = {};
+    if (Array.isArray(groups))
+        ctx.groups = groups;
+    if (typeof referenceIso === "string" && referenceIso)
+        ctx.referenceIso = referenceIso;
+    for (const row of idols) {
+        if (row && typeof row === "object")
+            ensureIdolRowAttributes(row, ctx);
+    }
+}
+function getOverallRating(a) {
+    const p = a.physical;
+    const phAvg = (p.strength + p.agility + p.natural_fitness + p.stamina) / 4;
+    const apAvg = (a.appearance.cute + a.appearance.pretty) / 2;
+    const t = a.technical;
+    const techAvg = (t.pitch + t.tone + t.breath + t.rhythm + t.power + t.grace) / 6;
+    const m = a.mental;
+    const menAvg = (m.clever + m.humor + m.talking + m.determination + m.teamwork + m.fashion) / 6;
+    return phAvg * 0.15 + apAvg * 0.2 + techAvg * 0.4 + menAvg * 0.25;
+}
+/** Desktop `idol_ui._calculate_radar_dimensions` workbook aggregates (0–20-ish). */
+function getWorkbookRadarDimensions(a) {
+    const physical = a.physical;
+    const appearance = a.appearance;
+    const technical = a.technical;
+    const mental = a.mental;
+    const appearanceHigh = Math.max(appearance.cute, appearance.pretty);
+    const appearanceLow = Math.min(appearance.cute, appearance.pretty);
+    return [
+        { key: "PHY", value: (physical.strength + physical.agility + physical.natural_fitness + physical.stamina) / 4 },
+        { key: "APP", value: ((appearanceHigh + appearanceLow / 4) / 5) * 4 },
+        { key: "SNG", value: (technical.pitch + technical.tone + technical.breath + technical.rhythm) / 4 },
+        { key: "DAN", value: (technical.rhythm + technical.power + technical.grace) / 3 },
+        {
+            key: "MEN",
+            value: (mental.clever +
+                mental.humor +
+                mental.talking +
+                mental.determination +
+                mental.teamwork +
+                mental.fashion) /
+                6,
+        },
+    ];
+}
+/**
+ * Official ability (Python `get_ability`) — note mental sum includes **fashion** in code despite comment.
+ */
+function getAbility(a) {
+    const p = a.physical;
+    const physicalSum = p.strength + p.agility + p.natural_fitness + p.stamina;
+    const physicalPart = (physicalSum / 16) * 3;
+    const appearanceMax = Math.max(a.appearance.cute, a.appearance.pretty);
+    const appearanceMin = Math.min(a.appearance.cute, a.appearance.pretty);
+    const appearancePart = appearanceMax + appearanceMin / 4;
+    const t = a.technical;
+    const technicalSum = t.pitch + t.tone + t.breath + t.rhythm + t.power + t.grace;
+    const technicalPart = technicalSum / 3;
+    const m = a.mental;
+    const mentalSum = m.clever + m.humor + m.talking + m.determination + m.teamwork + m.fashion;
+    const mentalPart = mentalSum / 6;
+    return Math.floor(physicalPart + appearancePart + technicalPart + mentalPart);
+}

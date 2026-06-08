@@ -1,0 +1,11 @@
+{
+  "_meta": {
+    "group_name": "Buono!",
+    "sources": [
+      "https://ja.wikipedia.org/wiki/Buono!"
+    ],
+    "suggested_by": "scripts/suggestGroupFormedDates.mjs",
+    "notes": "2007 history 結成を発表"
+  },
+  "formed_date": "2007-07-21"
+}

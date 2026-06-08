@@ -1,0 +1,11 @@
+{
+  "_meta": {
+    "group_name": "さくら学院",
+    "sources": [
+      "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%8F%E3%82%89%E5%AD%A6%E9%99%A2"
+    ],
+    "suggested_by": "scripts/suggestGroupFormedDates.mjs",
+    "notes": "inline 結成を発表"
+  },
+  "formed_date": "2012-08-04"
+}

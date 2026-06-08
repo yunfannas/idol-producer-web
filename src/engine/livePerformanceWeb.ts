@@ -324,7 +324,7 @@ export function collectRecentReleaseSignalFromSnapshot(
     const s = song as Record<string, unknown>;
     if (String(s.group_uid ?? "") !== String(groupUid)) continue;
     if (s.hidden === true) continue;
-    if (isSongHiddenFromDisplay(s)) continue;
+    if (isSongHiddenFromDisplay(s, songs)) continue;
     const rd = parseIsoDate(s.release_date);
     if (!rd) continue;
     const delta = Math.round((liveT - Date.parse(rd + "T12:00:00Z")) / 86400000);

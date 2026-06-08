@@ -1,0 +1,364 @@
+"use strict";
+/**
+ * Subset of idol_producer/idol_status_system.py for JSON idol rows in web saves:
+ * training week log, training load, daily condition/morale from training + lives.
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TRAINING_SESSION_HOURS = exports.TRAINING_LEVEL_HOURS_PER_WEEK = exports.REHEARSAL_LIVE_COST_RATIO = exports.BASE_4H_TRAINING_CONDITION_COST = exports.BASE_2H_LIVE_CONDITION_COST = exports.MAX_TRAINING_LOAD = exports.WEEKLY_TRAINING_LOG_LIMIT = exports.LIGHT_LIVE_EQ_MINUTES = void 0;
+exports.safeTrainingRow = safeTrainingRow;
+exports.trainingLoadFromRow = trainingLoadFromRow;
+exports.normalizeTrainingWeekLog = normalizeTrainingWeekLog;
+exports.ensureIdolSimulationDefaults = ensureIdolSimulationDefaults;
+exports.trainingBearIndex = trainingBearIndex;
+exports.buildDailyTrainingPlan = buildDailyTrainingPlan;
+exports.applyDailyStatusUpdateJson = applyDailyStatusUpdateJson;
+exports.recordTrainingDay = recordTrainingDay;
+exports.defaultAutopilotTrainingIntensity = defaultAutopilotTrainingIntensity;
+exports.getActiveHiatusStatus = getActiveHiatusStatus;
+exports.isIdolOnHiatus = isIdolOnHiatus;
+exports.hiatusReturnDate = hiatusReturnDate;
+exports.hiatusDaysRemaining = hiatusDaysRemaining;
+exports.scheduleIdolVacation = scheduleIdolVacation;
+const idolAttributes_1 = require("./idolAttributes");
+exports.LIGHT_LIVE_EQ_MINUTES = 30;
+exports.WEEKLY_TRAINING_LOG_LIMIT = 21;
+exports.MAX_TRAINING_LOAD = 20;
+exports.BASE_2H_LIVE_CONDITION_COST = 40;
+exports.BASE_4H_TRAINING_CONDITION_COST = 10;
+exports.REHEARSAL_LIVE_COST_RATIO = 1 / 3;
+exports.TRAINING_LEVEL_HOURS_PER_WEEK = 4;
+exports.TRAINING_SESSION_HOURS = 4;
+function clampInt(n, lo, hi) {
+    return Math.max(lo, Math.min(hi, Math.trunc(n)));
+}
+function num(v, fallback = 0) {
+    if (typeof v === "number" && Number.isFinite(v))
+        return v;
+    if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v)))
+        return Number(v);
+    return fallback;
+}
+function safeTrainingRow(raw) {
+    const clean = { sing: 0, dance: 0, physical: 0, target: 0 };
+    if (!raw || typeof raw !== "object")
+        return clean;
+    const d = raw;
+    for (const key of ["sing", "dance", "physical", "target"]) {
+        try {
+            clean[key] = clampInt(Number(d[key] ?? 0), 0, 5);
+        }
+        catch {
+            clean[key] = 0;
+        }
+    }
+    return clean;
+}
+function trainingLoadFromRow(row) {
+    return Math.min(exports.MAX_TRAINING_LOAD, row.sing + row.dance + row.physical + row.target);
+}
+function normalizeTrainingWeekLog(raw) {
+    const out = {};
+    if (!raw || typeof raw !== "object" || Array.isArray(raw))
+        return out;
+    for (const [uid, rows] of Object.entries(raw)) {
+        if (!Array.isArray(rows))
+            continue;
+        const cleanRows = [];
+        const slice = rows.slice(-exports.WEEKLY_TRAINING_LOG_LIMIT);
+        for (const row of slice) {
+            if (!row || typeof row !== "object")
+                continue;
+            const r = row;
+            cleanRows.push({
+                date: String(r.date ?? ""),
+                training: safeTrainingRow(r.training),
+                training_hours: Math.max(0, num(r.training_hours, 0)),
+                training_sessions: Array.isArray(r.training_sessions) ? r.training_sessions.map((x) => String(x)) : [],
+                live_count: Math.max(0, num(r.live_count, 0)),
+                live_minutes: Math.max(0, num(r.live_minutes, 0)),
+                focus_skill: String(r.focus_skill ?? ""),
+            });
+        }
+        out[String(uid)] = cleanRows;
+    }
+    return out;
+}
+/** Ensure playable fields exist on an idol JSON row (mutates). */
+function ensureIdolSimulationDefaults(row) {
+    if (row.condition == null || row.condition === "")
+        row.condition = 90;
+    else
+        row.condition = clampInt(num(row.condition, 90), 0, 100);
+    if (row.morale == null || row.morale === "")
+        row.morale = 70;
+    else
+        row.morale = clampInt(num(row.morale, 70), 0, 100);
+    if (row.fan_count == null)
+        row.fan_count = num(row.fans, 0);
+}
+function avgInts(...values) {
+    const v = values.filter((x) => Number.isFinite(x));
+    if (!v.length)
+        return 0;
+    return v.reduce((a, b) => a + b, 0) / v.length;
+}
+function trainingBearIndex(idol) {
+    const attrs = (0, idolAttributes_1.normalizePersistedAttributes)(idol.attributes);
+    const stamina = attrs.physical.stamina;
+    const fitness = attrs.physical.natural_fitness;
+    const determination = attrs.mental.determination;
+    const condition = num(idol.condition, 90);
+    const base = 8.0 + (avgInts(stamina, fitness) - 10.0) * 0.45 + (determination - 10.0) * 0.15 + (condition - 50) / 22.0;
+    return clampInt(Math.round(base), 6, 18);
+}
+function liveConditionCost(idol, liveCount, liveMinutes, rehearsalMinutes, extraLiveMinutes) {
+    const attrs = (0, idolAttributes_1.normalizePersistedAttributes)(idol.attributes);
+    const stamina = attrs.physical.stamina;
+    const weightedMinutes = liveMinutes + rehearsalMinutes * exports.REHEARSAL_LIVE_COST_RATIO + extraLiveMinutes;
+    const effectiveMinutes = Math.max(weightedMinutes, liveCount > 0 ? liveCount * 120 : 0);
+    if (effectiveMinutes <= 0)
+        return 0;
+    const baselineCost = exports.BASE_2H_LIVE_CONDITION_COST * (effectiveMinutes / 120.0);
+    const staminaModifier = Math.max(0, 1.0 - Math.max(0, stamina) / 40.0);
+    return baselineCost * staminaModifier;
+}
+function trainingConditionCost(trainingLoad, trainingHours) {
+    if (trainingHours > 0) {
+        return exports.BASE_4H_TRAINING_CONDITION_COST * (trainingHours / exports.TRAINING_SESSION_HOURS);
+    }
+    if (trainingLoad <= 0)
+        return 0;
+    return exports.BASE_4H_TRAINING_CONDITION_COST * (Math.min(exports.MAX_TRAINING_LOAD, trainingLoad) / exports.MAX_TRAINING_LOAD);
+}
+function weekdayIndexUtc(isoDate) {
+    const day = new Date(`${String(isoDate).split("T")[0]}T12:00:00Z`).getUTCDay();
+    return Number.isFinite(day) ? day : 0;
+}
+function isoWeekMonday(isoDate) {
+    const base = new Date(`${String(isoDate).split("T")[0]}T12:00:00Z`);
+    const day = base.getUTCDay();
+    const diff = day === 0 ? -6 : 1 - day;
+    base.setUTCDate(base.getUTCDate() + diff);
+    return base.toISOString().slice(0, 10);
+}
+function addUtcDays(isoDate, days) {
+    const base = new Date(`${String(isoDate).split("T")[0]}T12:00:00Z`);
+    base.setUTCDate(base.getUTCDate() + days);
+    return base.toISOString().slice(0, 10);
+}
+function buildDailyTrainingPlan(trainingRow, targetIso, liveDaysInWeek) {
+    const weeklyLevels = Math.max(0, trainingLoadFromRow(trainingRow));
+    const desiredSessions = weeklyLevels * (exports.TRAINING_LEVEL_HOURS_PER_WEEK / exports.TRAINING_SESSION_HOURS);
+    if (desiredSessions <= 0) {
+        return { trainingHours: 0, sessionLabels: [], sessionCount: 0, trainingLoad: 0, sessions: [] };
+    }
+    const monday = isoWeekMonday(targetIso);
+    const slots = [];
+    for (let offset = 0; offset < 7; offset++) {
+        const date = addUtcDays(monday, offset);
+        const wd = weekdayIndexUtc(date);
+        const weekend = wd === 0 || wd === 6;
+        const livePenalty = liveDaysInWeek?.has(date) ? 0.45 : 0;
+        const weekdayBias = weekend ? 0.55 : 1.0;
+        slots.push({ date, period: "morning", assigned: 0, weight: weekdayBias + 0.08 - livePenalty });
+        slots.push({ date, period: "afternoon", assigned: 0, weight: weekdayBias - livePenalty });
+    }
+    for (let i = 0; i < desiredSessions; i++) {
+        let best = null;
+        let bestScore = -Infinity;
+        for (const slot of slots) {
+            const score = slot.weight / (1 + slot.assigned);
+            if (score > bestScore) {
+                bestScore = score;
+                best = slot;
+            }
+        }
+        if (!best)
+            break;
+        best.assigned += 1;
+    }
+    const daySlots = slots.filter((slot) => slot.date === String(targetIso).split("T")[0] && slot.assigned > 0);
+    const sessionLabels = daySlots.map((slot) => {
+        const label = slot.period === "morning" ? "08:00-12:00" : "13:00-17:00";
+        return slot.assigned > 1 ? `${label} x${slot.assigned}` : label;
+    });
+    const sessions = daySlots.map((slot) => ({
+        slotId: `${slot.date}|${slot.period}`,
+        endTime: `${slot.date}T${slot.period === "morning" ? "12:00:00" : "17:00:00"}`,
+        label: slot.period === "morning" ? "Morning training" : "Afternoon training",
+        blocks: slot.assigned,
+    }));
+    const sessionCount = daySlots.reduce((sum, slot) => sum + slot.assigned, 0);
+    const trainingHours = sessionCount * exports.TRAINING_SESSION_HOURS;
+    const trainingLoad = Math.min(exports.MAX_TRAINING_LOAD, sessionCount * 10);
+    return { trainingHours, sessionLabels, sessionCount, trainingLoad, sessions };
+}
+function sleepRecovery(idol, beforeCondition) {
+    const attrs = (0, idolAttributes_1.normalizePersistedAttributes)(idol.attributes);
+    const stamina = attrs.physical.stamina;
+    const fitness = attrs.physical.natural_fitness;
+    const lowConditionBonus = (beforeCondition < 60 ? 2 : 0) + (beforeCondition < 40 ? 2 : 0);
+    const staminaBonus = (stamina - 10.0) * 0.2;
+    const fitnessBonus = (fitness - 10.0) * 0.25;
+    return Math.max(3, Math.min(25, 25 + lowConditionBonus + staminaBonus + fitnessBonus));
+}
+/** One closed day of condition/morale changes (mutates idol row). */
+function applyDailyStatusUpdateJson(idol, input) {
+    ensureIdolSimulationDefaults(idol);
+    const trainingLoad = Math.max(0, Math.trunc(input.trainingLoad));
+    const trainingHours = Math.max(0, Number(input.trainingHours ?? 0) || 0);
+    const liveCount = Math.max(0, Math.trunc(input.liveCount));
+    const liveMinutes = Math.max(0, Math.trunc(input.liveMinutes));
+    const rehearsalMinutes = Math.max(0, Math.trunc(input.rehearsalMinutes ?? 0));
+    const extraLiveMinutes = Math.max(0, Math.trunc(input.extraLiveMinutes ?? 0));
+    const includeSleepRecovery = input.includeSleepRecovery !== false;
+    const beforeCondition = num(idol.condition, 90);
+    const beforeMorale = num(idol.morale, 70);
+    const bear = trainingBearIndex(idol);
+    const liveLoad = Math.max(0, Math.floor((liveMinutes + rehearsalMinutes * exports.REHEARSAL_LIVE_COST_RATIO + extraLiveMinutes) / 30));
+    const totalLoad = trainingLoad + liveLoad;
+    const overwork = Math.max(0, trainingLoad - bear);
+    const liveCost = liveConditionCost(idol, liveCount, liveMinutes, rehearsalMinutes, extraLiveMinutes);
+    const trainCost = trainingConditionCost(trainingLoad, trainingHours);
+    const overloadCost = 0;
+    const totalConditionCost = liveCost + trainCost + overloadCost;
+    const sleepGain = sleepRecovery(idol, beforeCondition);
+    let conditionDelta = includeSleepRecovery ? Math.round(sleepGain) : 0;
+    let moraleDelta = 0;
+    if (includeSleepRecovery && totalConditionCost <= 0) {
+        moraleDelta += 1;
+    }
+    else {
+        conditionDelta -= Math.round(totalConditionCost);
+        if (includeSleepRecovery && liveCount === 0 && trainCost <= 0)
+            conditionDelta += 1;
+        if (overwork > 0)
+            moraleDelta -= 1 + Math.floor(overwork / 4);
+        else if (trainingLoad > 0)
+            moraleDelta += 1;
+    }
+    if (liveCount > 0) {
+        if (beforeCondition >= 60)
+            moraleDelta += 1;
+        else if (beforeCondition < 40)
+            moraleDelta -= 1;
+    }
+    if (input.birthday)
+        moraleDelta += 3;
+    if (totalConditionCost >= 25.0)
+        moraleDelta -= 1;
+    if (beforeCondition < 35)
+        moraleDelta -= 2;
+    const cap = 100;
+    const nextCondition = clampInt(beforeCondition + conditionDelta, 0, 100);
+    idol.condition = Math.min(cap, nextCondition);
+    idol.morale = clampInt(beforeMorale + moraleDelta, 0, 100);
+    return {
+        idol_uid: String(idol.uid ?? ""),
+        training_load: trainingLoad,
+        training_hours: trainingHours,
+        live_count: liveCount,
+        live_minutes: liveMinutes,
+        rehearsal_minutes: rehearsalMinutes,
+        total_load: totalLoad,
+        sleep_recovery: Math.round(sleepGain * 100) / 100,
+        condition_delta: num(idol.condition, 90) - beforeCondition,
+        morale_delta: num(idol.morale, 70) - beforeMorale,
+    };
+}
+/** Append one daily workload row (mutates `log` map). */
+function recordTrainingDay(log, idolUid, targetDate, trainingRow, trainingHours, trainingSessions, liveCount, liveMinutes, focusSkill) {
+    const uid = String(idolUid || "").trim();
+    if (!uid)
+        return;
+    const rows = log[uid] ?? (log[uid] = []);
+    rows.push({
+        date: targetDate,
+        training: { ...trainingRow },
+        training_hours: Math.max(0, trainingHours),
+        training_sessions: [...trainingSessions],
+        live_count: Math.max(0, liveCount),
+        live_minutes: Math.max(0, liveMinutes),
+        focus_skill: focusSkill,
+    });
+    if (rows.length > exports.WEEKLY_TRAINING_LOG_LIMIT)
+        rows.splice(0, rows.length - exports.WEEKLY_TRAINING_LOG_LIMIT);
+}
+function defaultAutopilotTrainingIntensity() {
+    return { sing: 2, dance: 2, physical: 1, target: 0 };
+}
+function isoDayOnly(value) {
+    if (typeof value !== "string" || !value.trim())
+        return "";
+    return value.trim().split("T")[0];
+}
+function addIsoDays(isoDate, days) {
+    const base = new Date(`${isoDayOnly(isoDate) || "2020-01-01"}T12:00:00Z`);
+    base.setUTCDate(base.getUTCDate() + days);
+    return base.toISOString().slice(0, 10);
+}
+function utcDayDiff(fromIso, toIso) {
+    const from = new Date(`${isoDayOnly(fromIso) || "2020-01-01"}T12:00:00Z`).getTime();
+    const to = new Date(`${isoDayOnly(toIso) || "2020-01-01"}T12:00:00Z`).getTime();
+    return Math.round((to - from) / 86400000);
+}
+function getActiveHiatusStatus(idol, referenceIso) {
+    const refDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+    const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+    for (const raw of history) {
+        if (!raw || typeof raw !== "object")
+            continue;
+        const entry = raw;
+        const kind = String(entry.kind ?? entry.status ?? "").toLowerCase();
+        if (!/\bhiatus\b|\bvacation\b|\bpaused\b|\bon hold\b/.test(kind))
+            continue;
+        const startDay = isoDayOnly(entry.start_date ?? refDay) || refDay;
+        const returnDay = isoDayOnly(entry.return_date ?? "");
+        if (startDay > refDay)
+            continue;
+        if (returnDay && refDay >= returnDay)
+            continue;
+        return entry;
+    }
+    return null;
+}
+function isIdolOnHiatus(idol, referenceIso) {
+    return Boolean(getActiveHiatusStatus(idol, referenceIso));
+}
+function hiatusReturnDate(idol, referenceIso) {
+    const entry = getActiveHiatusStatus(idol, referenceIso);
+    if (!entry)
+        return null;
+    const returnDay = isoDayOnly(entry.return_date ?? "");
+    return returnDay || null;
+}
+function hiatusDaysRemaining(idol, referenceIso) {
+    const refDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+    const returnDay = hiatusReturnDate(idol, referenceIso);
+    if (!returnDay)
+        return 0;
+    return Math.max(0, utcDayDiff(refDay, returnDay));
+}
+function scheduleIdolVacation(idol, referenceIso, days = 7) {
+    const startDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+    const returnDay = addIsoDays(startDay, Math.max(1, Math.trunc(days)));
+    const history = Array.isArray(idol.status_history) ? [...idol.status_history] : [];
+    const filtered = history.filter((raw) => {
+        if (!raw || typeof raw !== "object")
+            return true;
+        const entry = raw;
+        const kind = String(entry.kind ?? entry.status ?? "").toLowerCase();
+        if (!/\bhiatus\b|\bvacation\b|\bpaused\b|\bon hold\b/.test(kind))
+            return true;
+        const existingReturn = isoDayOnly(entry.return_date ?? "");
+        return existingReturn && existingReturn <= startDay;
+    });
+    filtered.push({
+        kind: "hiatus",
+        start_date: startDay,
+        return_date: returnDay,
+        summary: "Vacation scheduled.",
+    });
+    idol.status_history = filtered;
+    return { start_date: startDay, return_date: returnDay };
+}

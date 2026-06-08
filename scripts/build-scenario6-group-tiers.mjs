@@ -11,7 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.join(__dirname, "..", "public", "data", "scenarios", "scenario_6_2025-07-20");
+const root = path.join(__dirname, "..", "public", "data", "scenarios", "scenario_6");
 const groupsPath = path.join(root, "groups.json");
 const outPath = path.join(root, "group_tiers.json");
 

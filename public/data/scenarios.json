@@ -45,9 +45,9 @@
       "scenario_number": 6,
       "name": "Latest snapshot",
       "opening_date": "2025-07-05",
-      "data_subdir": "scenario_6_2025-07-20",
+      "data_subdir": "scenario_6",
       "data_available": true,
-      "design_ref": "ROADMAP.md — Scenario 6; docs/scenario6_available_groups.txt; database/game_scenarios/scenario_6_2025-07-20/"
+      "design_ref": "ROADMAP.md — Scenario 6; docs/scenario6_available_groups.txt; database/game_scenarios/scenario_6/"
     }
   ]
 }
