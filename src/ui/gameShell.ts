@@ -45,9 +45,11 @@ import {
   type ScoutAuditionRow,
 } from "../engine/scoutWeb";
 import { festivalPerformancesForManagedGroup, normalizeFestivalCatalog } from "../engine/festivalWeb";
+import { memberRolesSummary, roleAssignmentsFromHistoryEntry } from "../data/memberRoles";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
+  activeGroupRoleMembershipsAtReference,
   activeGroupsAtReference,
   ageLabel,
   displayReferenceIso,
@@ -254,7 +256,7 @@ function buildScheduleMonthCalendarHtml(
   </div>`;
 }
 
-/** Primary Songs workspace tabs (matches `public/ref/main_ui.py` show_songs_view). */
+/** Primary Songs workspace tabs (matches `support/reference/python-desktop/main_ui.py` show_songs_view). */
 export type SongsWorkspaceTab = "group_songs" | "disc";
 export type MakingTab = "songs" | "cd" | "goods";
 export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival";
@@ -670,15 +672,16 @@ function renderGroupHistoryTable(
         : htmlEsc(label);
       const col = typeof e.member_color === "string" && e.member_color ? e.member_color : "â€”";
       const mn = typeof e.member_name === "string" && e.member_name ? e.member_name : "â€”";
+      const roles = memberRolesSummary(roleAssignmentsFromHistoryEntry(e));
       const startDisp = fmtHistoryDateDisplay(e.start_date, referenceIso, e, "start");
       const endDisp = fmtHistoryDateDisplay(e.end_date, referenceIso, e, "end");
-      return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td></tr>`;
+      return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td><td>${htmlEsc(roles)}</td></tr>`;
     })
     .join("");
   return `
     <div class="table-scroll idol-history-scroll">
       <table class="fm-table">
-        <thead><tr><th>Group</th><th>Start</th><th>End</th><th>Color</th><th>Stage name</th></tr></thead>
+        <thead><tr><th>Group</th><th>Start</th><th>End</th><th>Color</th><th>Stage name</th><th>Roles</th></tr></thead>
         <tbody>${tbody}</tbody>
       </table>
     </div>`;
@@ -716,6 +719,7 @@ function renderIdolDetailPage(
   const age = htmlEsc(ageLabel(row, referenceIso));
   const xLbl = htmlEsc(xFollowersLabel(row));
   const memberships = activeGroupMembershipsAtReference(row, referenceIso, groupsSnapshot);
+  const roleMemberships = activeGroupRoleMembershipsAtReference(row, referenceIso, groupsSnapshot);
   const currentGroupsHtml =
     memberships.length > 0
       ? memberships
@@ -726,6 +730,10 @@ function renderIdolDetailPage(
           )
           .join(", ")
       : htmlEsc("-");
+  const currentRolesText = roleMemberships
+    .filter((membership) => membership.roles.length > 0)
+    .map((membership) => `${membership.name}: ${memberRolesSummary(membership.roles)}`)
+    .join(" | ") || "-";
 
   const secLine = [
     romaji ? htmlEsc(romaji) : "",
@@ -800,6 +808,7 @@ function renderIdolDetailPage(
       ${secLine ? `<p class="idol-detail-sub">${secLine}</p>` : ""}
       <p class="idol-detail-facts">${facts.join(" - ")}</p>
       <p class="idol-detail-current-groups"><strong>${htmlEsc("Group")}:</strong> ${currentGroupsHtml}</p>
+      <p class="idol-detail-current-groups"><strong>${htmlEsc("Roles")}:</strong> ${htmlEsc(currentRolesText)}</p>
       ${linksInline}
     </div>
     <aside class="idol-detail-radar-aside" aria-label="Radar">
@@ -818,6 +827,7 @@ function renderIdolDetailPage(
       <div><dt>${htmlEsc("Birthday")}</dt><dd>${birthdayDisplay}</dd></div>
       <div><dt>${htmlEsc("Birthplace")}</dt><dd>${bp ? htmlEsc(bp) : "-"}</dd></div>
       <div><dt>${htmlEsc("Languages")}</dt><dd>${langs ? htmlEsc(langs) : htmlEsc("Japanese")}</dd></div>
+      <div><dt>${htmlEsc("Current roles")}</dt><dd>${htmlEsc(currentRolesText)}</dd></div>
       <div><dt>${htmlEsc("Past names")}</dt><dd>${htmlEsc(pastNamesSummary(row))}</dd></div>
       <div><dt>${htmlEsc("X handle")}</dt><dd>${htmlEsc(xHandle)}</dd></div>
       <div><dt>${htmlEsc("X followers")}</dt><dd>${xLbl}</dd></div>

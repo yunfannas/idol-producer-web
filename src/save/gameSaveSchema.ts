@@ -204,7 +204,7 @@ export function createGameSaveFromLoadedScenario(
     const resolvedJa = String(g.name ?? "").trim();
     if (!allowed.has(resolvedJa)) {
       throw new Error(
-        `Managed group "${resolvedJa}" is not in this scenario's curated new-game allowlist (startup_allowlist.json / docs/scenario6_available_groups.txt).`,
+        `Managed group "${resolvedJa}" is not in this scenario's curated new-game allowlist (startup_allowlist.json / support/docs/scenario6_available_groups.txt).`,
       );
     }
   }

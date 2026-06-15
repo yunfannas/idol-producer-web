@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Web Step 2 — Stage new or updated rows for `public/data/songs.json` before merging (couplings, disc links, corrections). Rosters/edits to group rows go in groups_update.json; idol profiles stay in idols.json.",
-    "merge_command": "node scripts/mergeCatalogUpdates.mjs",
+    "merge_command": "node support/scripts/mergeCatalogUpdates.mjs",
     "merge_rules_summary": "Upsert by song `uid`. Objects deep-merge when both sides are plain objects; arrays on the patch replace the canonical array for that field.",
     "_schema_version": 1
   },

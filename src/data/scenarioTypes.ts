@@ -57,7 +57,9 @@ export interface OfficialScheduleEvent {
   type?: string;
   venue?: string | null;
   venue_hint?: string | null;
+  venue_uid?: string;
   members?: string[];
+  is_live?: boolean;
   official_detail_id?: string;
   official_detail_url?: string;
   source?: string;
@@ -134,7 +136,7 @@ export interface LoadedScenario {
   lives?: Record<string, unknown>[];
   /** Optional `public/data/festivals.json` editions. */
   festivals?: Record<string, unknown>[];
-  /** Optional static tiers beside `groups.json` (see `docs/WEB_PORT_PLAN.md` §1b). */
+  /** Optional static tiers beside `groups.json` (see `support/docs/WEB_PORT_PLAN.md` §1b). */
   group_tiers?: GroupTierRow[];
   /** When present (scenario 6), new-game picker is restricted to these `name` values in list order. */
   startup_allowlist?: ScenarioStartupAllowlist;

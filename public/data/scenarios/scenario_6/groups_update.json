@@ -2,7 +2,7 @@
   "_meta": {
     "purpose": "Stage sync from public/data/groups.json into scenario_6 groups.json (startup_allowlist names, excluding アキシブproject).",
     "built_at": "2026-05-16",
-    "merge_command": "node scripts/mergeScenario6GroupsUpdate.mjs",
+    "merge_command": "node support/scripts/mergeScenario6GroupsUpdate.mjs",
     "excluded_groups": [
       "アキシブproject"
     ],

@@ -1,5 +1,5 @@
 {
-  "document": "WEB_PORT_PLAN.md — scenario catalog for UX and future routing. Only scenario 6 ships full JSON under public/data/scenarios/.",
+  "document": "support/docs/WEB_PORT_PLAN.md — scenario catalog for UX and future routing. Only scenario 6 ships full JSON under public/data/scenarios/.",
   "scenarios": [
     {
       "scenario_number": 1,
@@ -7,7 +7,7 @@
       "opening_date": "2008-12-08",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "docs/project/ROADMAP.md — Scenario 1; database/game_scenarios/scenario_definitions.json"
+      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 1; database/game_scenarios/scenario_definitions.json"
     },
     {
       "scenario_number": 2,
@@ -15,7 +15,7 @@
       "opening_date": "2013-04-01",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "ROADMAP.md — Scenario 2"
+      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 2"
     },
     {
       "scenario_number": 3,
@@ -23,7 +23,7 @@
       "opening_date": "2017-01-01",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "ROADMAP.md — Scenario 3"
+      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 3"
     },
     {
       "scenario_number": 4,
@@ -31,7 +31,7 @@
       "opening_date": "2020-02-01",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "ROADMAP.md — Scenario 4"
+      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 4"
     },
     {
       "scenario_number": 5,
@@ -39,7 +39,7 @@
       "opening_date": "2022-03-01",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "ROADMAP.md — Scenario 5"
+      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 5"
     },
     {
       "scenario_number": 6,
@@ -47,7 +47,7 @@
       "opening_date": "2025-07-05",
       "data_subdir": "scenario_6",
       "data_available": true,
-      "design_ref": "ROADMAP.md — Scenario 6; docs/scenario6_available_groups.txt; database/game_scenarios/scenario_6/"
+      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 6; support/docs/scenario6_available_groups.txt; database/game_scenarios/scenario_6/"
     }
   ]
 }

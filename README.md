@@ -7,7 +7,7 @@ Static preview for the [Idol Producer](../) desktop game. The full game uses Pyt
 From the **parent** `idol_producer` repository root:
 
 ```bash
-python scripts/export_web_preview_bundle.py
+python support/reference/python-desktop/scripts/export_web_preview_bundle.py
 ```
 
 Optional: `--preset test0` and `--out path/to/preview.json`.
@@ -32,6 +32,19 @@ npm run typecheck
 ```
 
 Output is `dist/`, suitable for GitHub Pages.
+
+## Repo layout
+
+Game/runtime files stay in `src/`, `public/data/`, and the root Vite config files.
+
+Support material now lives under `support/`:
+
+- `support/scripts/` for scraping and data-maintenance scripts
+- `support/docs/` for plans, reference notes, and generated review CSVs
+- `support/reports/` for simulation/report outputs
+- `support/tmp/` and `support/.tmp/` for scratch/test artifacts
+- `support/reference/python-desktop/` for mirrored desktop Python reference files
+- `support/ocr/` for OCR language data
 
 ## Deploy on GitHub Pages (this monorepo)
 

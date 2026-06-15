@@ -1,4 +1,4 @@
-import monthlyLiveCountsCsv from "../../docs/reference/monthly_live_counts_by_letter_tier_template.csv?raw";
+import monthlyLiveCountsCsv from "../../support/docs/reference/monthly_live_counts_by_letter_tier_template.csv?raw";
 import type { GameSavePayload } from "../save/gameSaveSchema";
 import { getPrimaryGroup, getLetterTierFromGroup } from "../save/gameSaveSchema";
 import { addNotification } from "../save/inbox";
@@ -668,13 +668,13 @@ function isOfficialScheduleGameplayLive(event: OfficialScheduleEvent): boolean {
   if (!event || typeof event !== "object") return false;
   if ((event as { is_live?: unknown }).is_live === false) return false;
   const type = String(event.type ?? "").trim();
-  return type === "Concert" || type === "Festival" || type === "GuestLive";
+  return type === "Concert" || type === "Festival" || type === "GuestLive" || type === "Taiban";
 }
 
 function officialScheduleLiveType(event: OfficialScheduleEvent): string {
   const type = String(event.type ?? "").trim();
   if (type === "Festival") return "Festival";
-  if (type === "GuestLive") return "Taiban";
+  if (type === "GuestLive" || type === "Taiban") return "Taiban";
   return "OneMan";
 }
 

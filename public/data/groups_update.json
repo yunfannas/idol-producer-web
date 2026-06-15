@@ -1,13 +1,13 @@
 {
   "_meta": {
     "purpose": "Stage edits to idol-producer-web `public/data/groups.json` before merging into the main catalog.",
-    "merge_command": "node scripts/mergeCatalogUpdates.mjs",
+    "merge_command": "node support/scripts/mergeCatalogUpdates.mjs",
     "workflow": [
-      "Web Step 1 — Update group: discography, wiki_url, song_uids union, publishers, dates, etc. (see docs/skills/idol-database-refresh/SKILL.md).",
+      "Web Step 1 — Update group: discography, wiki_url, song_uids union, publishers, dates, etc. (see support/docs/skills/idol-database-refresh/SKILL.md).",
       "Web Step 3 — Update group members: member_names, member_uids, member_count, past_member_* — same staging file.",
       "Run `npm run data:merge-catalog` (merge also applies songs_update.json if populated). Review diff, trim this file afterward."
     ],
-    "merge_rules_summary": "`discography[]` merges by release `uid` (deep per-disc). Arrays like `member_uids` replace when present on the patch. `song_uids` unions (append-only unique). See scripts/mergeCatalogUpdates.mjs.",
+    "merge_rules_summary": "`discography[]` merges by release `uid` (deep per-disc). Arrays like `member_uids` replace when present on the patch. `song_uids` unions (append-only unique). See support/scripts/mergeCatalogUpdates.mjs.",
     "_schema_version": 1
   },
   "groups": []
