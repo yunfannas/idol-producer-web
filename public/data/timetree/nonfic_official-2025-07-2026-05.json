@@ -1,0 +1,2392 @@
+{
+  "source_url": "https://timetreeapp.com/public_calendars/nonfic_official",
+  "slug": "nonfic_official",
+  "range": {
+    "from": "2025-07",
+    "to": "2026-05"
+  },
+  "generated_at": "2026-06-15T07:02:06.699Z",
+  "event_count": 168,
+  "events": [
+    {
+      "date": "2025-07-01",
+      "event": "HEROINES 3MAN LIVE 出張編",
+      "timetree_id": "2705898107158022919",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2705898107158022919",
+      "note": "【 HEROINES 3MAN LIVE 出張編🌟 】\n\nスペシャルな3MANが決定🍜🦀\n福岡＆札幌のみんな待っててね〜！♡\n\n2025.07.01  \n@ Zepp Fukuoka\n🎫6/11 21:00〜チケット販売\nhttps://t-dv.com/heroines250701\n\n2025.07.13  \n@ Zepp Sapporo\n🎫6/11 21:10〜チケット販売\nhttps://t-dv.com/heroines250713\n\n#のんふぃく",
+      "venue_hint": "Zepp Fukuoka",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9fed/2025-06-11/0-1749627169154.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Fukuoka",
+      "venue_uid": "e21dae68-edb3-4d6b-ad0e-0b0352bb194d"
+    },
+    {
+      "date": "2025-07-03",
+      "event": "FAVE IDOLS〜今会いたい最強アイドル〜",
+      "timetree_id": "2716651625133263573",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2716651625133263573",
+      "note": "7/3(木)は『FAVE IDOLS〜今会いたい最強アイドル〜』に出演します💖\n\nのんふぃく！に会いにきてください！♡\n恵比寿ガーデンホールで待ってるよ💎\n\nお目当て特典🌟10秒動画\n\n🎫チケット販売中\nhttps://t-dv.com/0703_fave\nVIP先着 6/13 19:00〜\n\n#FAVEIDOLSFES #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9c0b/2025-06-04/0-1749018109494.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/9c0b/2025-06-04/0-1749018109494.jpg"
+    },
+    {
+      "date": "2025-07-04",
+      "event": "iLiFE! × のんふぃく！Special 2MAN LIVE",
+      "timetree_id": "2713018498741586009",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2713018498741586009",
+      "note": "【 SPECIAL 2MAN LIVE 決定💖】\n\n2025.07.04 Fri\n『iLiFE! × のんふぃく！Special 2MAN LIVE』\n@ 品川ステラボール\n\n激アツすぎる2MANが決定✨\n新体制のんふぃく！が半端ないステージお届けしちゃうよ♡ \n絶対に会いにKiTE!❤︎\n\n🎫6月17日 21:30販売開始\nhttps://t-dv.com/nonlifi0704\n\n#iLiFE #のんふぃく",
+      "venue_hint": "品川ステラボール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2db6/2025-06-15/0-1749985453057.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "ステラボール",
+      "with": [
+        "のんふぃく！"
+      ],
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2025-07-05",
+      "event": "超NATSUZOME2025",
+      "timetree_id": "2673252226189641877",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2673252226189641877",
+      "note": "7/5(土),7/6(日)に開催される『超NATSUZOME2025』@ 海浜幕張公園Gブロック特設会場 に出演します❗️\n\nナツゾメ超５周年❤️‍🔥🌊\n今年ものんふぃく！と夏はじめちゃう？♡\n\n🎫先行抽選4/8(火)17:00〜\nhttps://ticket.rakuten.co.jp/music/jpop/idle/rtcdntz/\n\n#のんふぃく #超NATSUZOME",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dddc/2025-04-10/0-1744291948072.jpg",
+        "https://attachments.timetreeapp.com/public_event/d5ec/2025-06-20/0-1750440816088.jpg",
+        "https://attachments.timetreeapp.com/public_event/2fba/2025-06-20/0-1750440817733.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/dddc/2025-04-10/0-1744291948072.jpg"
+    },
+    {
+      "date": "2025-07-07",
+      "event": "YORU-FES vol.4 ~七夕スペシャル~",
+      "timetree_id": "2712496817031760575",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2712496817031760575",
+      "note": "7/7(月)は『YORU-FES vol.4 ~七夕スペシャル~』@ VeatsSHIBUYA に出演します🎋\n\nヒロインズ主催のため撮影可能曲あり❕\n七夕の夜はもちろんのんふぃく！に会いに来てくれるよね？♡\n\nお目当て特典🌟写メ\n\n【⏰タイムテーブル解禁📢】\n\n出演🎤 19:00〜19:30\n特典会📸 終演後\n\n🎫チケット販売中\nhttps://ticketdive.com/event/yorufes4\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b5e3/2025-05-29/0-1748522817407.jpg",
+        "https://attachments.timetreeapp.com/public_event/e83b/2025-07-03/0-1751509258730.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/b5e3/2025-05-29/0-1748522817407.jpg"
+    },
+    {
+      "date": "2025-07-10",
+      "event": "のんふぃく！定期公演 vol.9",
+      "timetree_id": "2707104364317526981",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707104364317526981",
+      "note": "【のんふぃく！定期公演】\n\n2025.07.10 Thu\n『のんふぃく！定期公演 vol.9』\n@ Veats SHIBUYA\n\n新体制初の定期公演を緊急開催🎀\nなんと！衣装はカフェデート私服☕️❤︎\n貴方のことを考えて準備するね…♡\n\n🎫明日6/30(月)21:30～販売❕\nhttps://t-dv.com/nonfic_vol9\n\n#のんふぃく",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/daba/2025-06-29/0-1751191286154.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-07-12",
+      "event": "SPARK 2025 渋谷納涼祭",
+      "timetree_id": "2707104589409044801",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707104589409044801",
+      "note": "7/12(土),7/13(日)に開催される『SPARK 2025 渋谷納涼祭』に出演決定🍧\n\nのんふぃく！と忘れられない夏過ごそう♡\n7/12(土)に出演します🫧\n\n【⏰タイムテーブル解禁📢】\n\nのんふぃく！は12日に出演します！♡\n\n🎤20:15〜20:40 \n📍ベルサール渋谷ガーデン\n\n🎫チケット販売中\nhttps://ticketdive.com/event/spark2025_summer\n\n#のんふぃく #SPARK2025",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/184c/2025-05-27/0-1748342359733.jpg",
+        "https://attachments.timetreeapp.com/public_event/17ab/2025-05-31/0-1748658328573.jpg",
+        "https://attachments.timetreeapp.com/public_event/716b/2025-06-26/0-1750977742342.jpg",
+        "https://attachments.timetreeapp.com/public_event/1d90/2025-06-26/0-1750977746124.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/184c/2025-05-27/0-1748342359733.jpg"
+    },
+    {
+      "date": "2025-07-13",
+      "event": "HEROINES 3MAN LIVE 出張編",
+      "timetree_id": "2721754954213509389",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2721754954213509389",
+      "note": "【 HEROINES 3MAN LIVE 出張編🌟 】\n\nスペシャルな3MANが決定🍜🦀\n福岡＆札幌のみんな待っててね〜！♡\n\n2025.07.01  \n@ Zepp Fukuoka\n🎫6/11 21:00〜チケット販売\nhttps://t-dv.com/heroines250701\n\n2025.07.13  \n@ Zepp Sapporo\n🎫6/11 21:10〜チケット販売\nhttps://t-dv.com/heroines250713\n\n#のんふぃく",
+      "venue_hint": "Zepp Fukuoka",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8877/2025-06-11/0-1749626831391.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Fukuoka",
+      "venue_uid": "e21dae68-edb3-4d6b-ad0e-0b0352bb194d"
+    },
+    {
+      "date": "2025-07-14",
+      "event": "HEROINES LEAGUE Ⅰ",
+      "timetree_id": "2707104824348789374",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707104824348789374",
+      "note": "7/14(月)は『HEROINES LEAGUE Ⅰ』\n@ 豊洲PIT に出演します⚔️\n\nのんふぃく！新体制初リーグ❕\nさらにパワーアップしたのんふぃく！で、てっぺん獲りにいくぞ！👊🏻🔥\n\n🎫FC先行受付中（〜6/15 23:59）\nhttps://heroines.jp/news/public/_/byzwmcfmeilap79d.html\n\n🎫一般販売（6/17 21:00〜） \nhttps://t-dv.com/heroinesleague0714\n\n【🗳️FC投票START❤️‍🔥】\n\n7/14に開催されるヒロインズリーグⅠ🏆\n当日の動員とFC投票の合計で今回のリーグの順位が決まります！\n\n新体制のんふぃく！初のリーグ！\nてっぺんしか目指してません！\n投票よろしくお願いします🔥\n\n🔗投票はこちらから(7/13 23:59〆切)\nhttps://heroines.jp/news/public/_/6i695krzobqt26se.html\n\n#のんふぃく",
+      "venue_hint": "豊洲PIT に出演します⚔️",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/00f0/2025-06-12/0-1749746556649.jpg",
+        "https://attachments.timetreeapp.com/public_event/efe6/2025-07-08/0-1751975592505.jpg",
+        "https://attachments.timetreeapp.com/public_event/e08b/2025-07-13/0-1752369644493.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-07-16",
+      "event": "緊急開催！のんふぃく！ 無銭乱舞 夏SP！",
+      "timetree_id": "2721784810913549234",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2721784810913549234",
+      "note": "【🚨無銭ライブ🚨】\n\n2025.07.16 Wed\n『緊急開催！のんふぃく！ 無銭乱舞 夏SP！』\n@ SHIBUYA WOMB\n\nこの日はなんと…！一般チケット無料❤︎\n新体制初の無銭ライブ🎤\nのんふぃく！気になってる人この機会に会いにきちゃってね♡\n\n明日7/9 22:00販売開始🎫✧₊\nhttps://t-dv.com/nonfic_free\n\n#のんふぃく",
+      "venue_hint": "SHIBUYA WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b420/2025-07-08/0-1751976151667.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-07-18",
+      "event": "ガルデラ道場",
+      "timetree_id": "2707104965956881287",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707104965956881287",
+      "note": "7/18(金)は『ガルデラ道場』に出演します❤️‍🔥\n\n新宿2会場での開催です❕\nのんふぃく！と最上級に盛り上げる準備できてる？♡\n\n【⏰タイムテーブル解禁📢】\n\n出演🎤 20:00-20:25 @ Zepp Shinjuku\n特典会📸 終演後\n\n🎫チケット販売中\nhttps://tiget.net/events/407010\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d6b1/2025-06-10/0-1749544533326.jpg",
+        "https://attachments.timetreeapp.com/public_event/8cf9/2025-07-13/0-1752369567866.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d6b1/2025-06-10/0-1749544533326.jpg"
+    },
+    {
+      "date": "2025-07-19",
+      "event": "SEKIGAHARA IDOL WARS 2025 - 関ケ原唄姫合戦-",
+      "timetree_id": "2707977932874074938",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707977932874074938",
+      "note": "『SEKIGAHARA IDOL WARS 2025 - 関ケ原唄姫合戦-』の出演日が決定⚔️❤️‍🔥\n\nのんふぃく！は7/19,7/20の2DAYS出演❕\n\n今年の夏を獲るのはのんふぃく！だ！🔥\n\n【⚔️関ケ原唄姫合戦タイムテーブル解禁❤️‍🔥】\n\nのんふぃく！2日間ともメインステージに出演します！\n今年の夏はのんふぃく！が主役だ〜🔥\n\n7/19\n🎤① 15:00-15:20\n📍豊臣\n\n🎤② 19:50-20:10\n📍徳川\n\n7/20\n🎤① 14:40-15:00\n📍徳川\n\n🎫チケット\nhttp://tiget.net/events/407817\n\n#関ケ原唄姫合戦2025 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e71f/2025-05-29/0-1748522697943.jpg",
+        "https://attachments.timetreeapp.com/public_event/f8c9/2025-06-14/0-1749885094983.jpg",
+        "https://attachments.timetreeapp.com/public_event/505d/2025-06-14/0-1749885096087.jpg",
+        "https://attachments.timetreeapp.com/public_event/394a/2025-07-13/0-1752369210737.jpg",
+        "https://attachments.timetreeapp.com/public_event/f851/2025-07-13/0-1752369212586.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/e71f/2025-05-29/0-1748522697943.jpg"
+    },
+    {
+      "date": "2025-07-21",
+      "event": "iLiVE! SUMMER -いくぞッ！武道館SP-",
+      "timetree_id": "2724039386064636443",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2724039386064636443",
+      "note": "7/21(月/祝)は『iLiVE! SUMMER -いくぞッ！武道館SP-』@ 立川ステージガーデン に出演します💞\n\niLiFE!さん武道館大成功を願って、のんふぃく！が最上級に盛り上げちゃいます！♡\n\nお目当て特典🌟写メ券\n\n\n【⏰タイムテーブル解禁📢】\n\n出演🎤 18:35〜19:00\n特典会📸 終演後\n\nお目当て特典🌟写メ券\n\n🎫一般チケット追加販売(6/22 22:00〜)\nhttp://t-dv.com/ilive250721\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cb14/2025-06-14/0-1749898798803.jpg",
+        "https://attachments.timetreeapp.com/public_event/6fa6/2025-06-21/0-1750498580223.jpg"
+      ],
+      "type": "Concert",
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172",
+      "live_catalog_match_key": "2025-07-21|ilive! summer -いくぞッ!武道館sp-"
+    },
+    {
+      "date": "2025-07-22",
+      "event": "UTAGE FES Vol.3",
+      "timetree_id": "2707105086434068761",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707105086434068761",
+      "note": "7/22(火)は『UTAGE FES Vol.3』に出演します🌙\n\nUTAGE FES初の新宿サーキット🔥\nのんふぃく！が全力で盛り上げちゃうよ♡\n\n【⏰タイムテーブル解禁📢】\n\n出演🎤 18:15-18:40 @ Zepp Shinjuku\n特典会📸 ※後日解禁\n\n🎫チケット販売中\nhttps://ticketdive.com/event/UTAGEFES_Vol3\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8372/2025-06-04/0-1749018052064.jpg",
+        "https://attachments.timetreeapp.com/public_event/95d2/2025-07-10/0-1752122426806.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/8372/2025-06-04/0-1749018052064.jpg"
+    },
+    {
+      "date": "2025-07-23",
+      "event": "HEROINES 3MAN LIVE in Tokyo",
+      "timetree_id": "2707105207381019055",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707105207381019055",
+      "note": "【 HEROINES 3MAN LIVE 】\n\n2025.07.23 wed\n『HEROINES 3MAN LIVE in Tokyo』\n@ Spotify O-WEST\n\nスペシャルな3MANが東京でも開催決定✨\nこの機会に是非会いにきてね♡\n\nお目当て特典💝写メ券\n\n🎫明日7/17 22:00販売開始✧₊\nhttps://t-dv.com/3man_tokyo\n\n#のんふぃく",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/41a4/2025-07-17/0-1752743003058.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-07-24",
+      "event": "浴衣特典会2025",
+      "timetree_id": "2747979754443262240",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2747979754443262240",
+      "note": "【🎐浴衣特典会🍧】\n\n2025.7.24 Thu\n『浴衣特典会2025』\n@ 原宿スペース\n\n今年も浴衣特典会を開催します❕\n特別かわいいのんふぃく！に会いにきてね♡\n\n【チケット追加販売】\n\n大好評につき浴衣特典会のチケットを明日22:30から追加販売します❤︎\n\nはるか・こるねのみ1部にも参加決定✧₊\n\nかわいい浴衣姿見逃さないでね♡\n\n🔗明日22:30〜販売開始\nhttps://ticketdive.com/event/yukata2025\n1部 はるか・こるねのみ追加販売\n2部3部 追加販売\n\n#のんふぃく",
+      "venue_hint": "原宿スペース",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e393/2025-07-23/0-1753247151877.jpg"
+      ],
+      "type": "Meet",
+      "venue": "原宿スペース",
+      "venue_uid": "a32eca70-3562-4966-9ad7-487737a9d545"
+    },
+    {
+      "date": "2025-07-25",
+      "event": "TOKYO GIRLS GIRLS ~ 5th Anniversary ~",
+      "timetree_id": "2747895420042496794",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2747895420042496794",
+      "note": "7/25(金)は『TOKYO GIRLS GIRLS ~ 5th Anniversary ~』に出演します⭐️\n\n出演🎤21:30-21:55\n特典会📸前20:00-21:15 G ＋ 終演後\n※にいなは前特典会のみ参加\n\nのんふぃく！トリです✨\n品川インターシティホールで待ってるよ♡\n\nお目当て特典🎁写メ券\n入場時に『のんふぃく！』と伝えてね♡\n\n🎫チケット販売中\nhttp://tiget.net/events/403996\n\n#GIRLSGIRLS #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/25cc/2025-07-17/0-1752742658266.jpg",
+        "https://attachments.timetreeapp.com/public_event/068f/2025-07-17/0-1752742659243.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/25cc/2025-07-17/0-1752742658266.jpg"
+    },
+    {
+      "date": "2025-07-26",
+      "event": "HEROINES SUMMER 2025",
+      "timetree_id": "2700001029600987216",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2700001029600987216",
+      "note": "7/26(土),7/27(日)は『HEROINES SUMMER 2025』に出演します🌺\n\nのんふぃく！は2日間出演します❕\n東武動物公園に集合だよ〜！♡\n\n【タイムテーブル解禁】\n\nDAY1\n出演🎤 15:45-16:10\n特典会📸 16:20-17:20\n\nDAY2\n出演🎤 16:40-17:05\n特典会📸 終演後\n\n🎫チケット販売中\nhttps://ticketdive.com/event/heroinessummer2025\n\n#のんふぃくく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2c63/2025-06-30/0-1751286176037.jpg",
+        "https://attachments.timetreeapp.com/public_event/4ee2/2025-07-22/0-1753184037540.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "東武動物公園 イベントステージ HOLA!",
+      "venue_uid": "7f4e8a2c-3b1d-4e9f-a6c5-8d2e1f0a9b7c",
+      "live_catalog_match_key": "2025-07-26|heroines summer 2025"
+    },
+    {
+      "date": "2025-07-29",
+      "event": "ふぃくふぇす！Vol.16",
+      "timetree_id": "2723922014574103014",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2723922014574103014",
+      "note": "【のんふぃく！主催】\n\n／\n     2025.7.29 Tue\n　『ふぃくふぇす！Vol.16』\n    @ 品川ステラボール開催決定🚀\n＼\n\nお目当て特典💖ふぃくふぇすくじ\n\n新体制初ふぃくふぇす！\nはじめましての貴方も会いにきてね♡\n\n🎫チケット明日7/20 22:30販売❕\nhttps://t-dv.com/ficfes_vol16\n\n#のんふぃく #ふぃくふぇす",
+      "venue_hint": "品川ステラボール開催決定🚀",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ce33/2025-07-19/0-1752924122309.jpg"
+      ],
+      "type": "Other",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2025-08-01",
+      "event": "TOKYO IDOL FESTIVAL 2025",
+      "timetree_id": "2707979193497307940",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707979193497307940",
+      "note": "【TIF2025出演日が決定🌟】\n\nのんふぃく！3DAYS全日出演決定‼️\n\n新体制8人で過ごす最初で最後の夏…！\nのんふぃく！といっしょに最高の夏の想い出つくろうね♡\n\n【TIFタイムテーブル解禁❤️‍🔥】\n\nのんふぃく！は3日間出演します🎤\n\n8月1日になんと…！\n初のメインステージ出演が決定‼️\n\nずっと夢見ていたTIFメインステージ。\n8人で立つ最初で最後の舞台絶対に見逃さないでね！\n\nこの夏、最高の思い出作ろうね♡\n\n🔗https://official.idolfes.com/s/tif2025/page/ticket\n\n#TIF2025 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bfbc/2025-06-15/0-1749982127593.jpg",
+        "https://attachments.timetreeapp.com/public_event/b31d/2025-06-15/0-1749982129211.jpg",
+        "https://attachments.timetreeapp.com/public_event/62e9/2025-06-15/0-1749982129998.jpg",
+        "https://attachments.timetreeapp.com/public_event/b905/2025-07-13/0-1752369736938.jpg",
+        "https://attachments.timetreeapp.com/public_event/95db/2025-07-13/0-1752369738973.jpg",
+        "https://attachments.timetreeapp.com/public_event/175a/2025-07-13/0-1752369741900.jpg"
+      ],
+      "type": "Festival",
+      "venue": "お台場・青海周辺エリア",
+      "venue_uid": "ad018e11-18ce-418e-9d3e-3b9e73413383",
+      "live_catalog_match_key": "2025-08-01|tokyo idol festival 2025"
+    },
+    {
+      "date": "2025-08-04",
+      "event": "HEROINES LEAGUE Ⅰ",
+      "timetree_id": "2707102853755718374",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707102853755718374",
+      "note": "8/4(月)は『HEROINES LEAGUE Ⅰ』\n@ 恵比寿ガーデンホール に出演します⚔️\n\n悔しい思いをしてきたのんふぃく！\nここでふぃくみん！全員の団結力を魅せましょう\n絶対てっぺん獲るぞ〜！🔥🔥🔥\n\n🎫明日7/18 21:00 販売開始\nhttps://t-dv.com/league1_0804\n\n#のんふぃく #ヒロインズリーグ",
+      "venue_hint": "恵比寿ガーデンホール に出演します⚔️",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8e6c/2025-07-17/0-1752750717478.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2025-08-07",
+      "event": "テンラン会 〜のんふぃく！編〜",
+      "timetree_id": "2707103247642806826",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707103247642806826",
+      "note": "【🍤2MAN LIVE in NAGOYA🍤】\n\n2025.08.07 Thu\nテンシンランマン主催\n『テンラン会 〜のんふぃく！編〜』\n@ NAGOYA ReNY Limited \n\nのんふぃく！も天真爛漫に最上級のステージ魅せちゃうよ♡\n\n🎫明日22:00チケット販売\nhttps://ticketdive.com/event/tenrankai_nonfic\n\n#のんふぃく",
+      "venue_hint": "NAGOYA ReNY Limited",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/42eb/2025-07-21/0-1753105834756.jpg"
+      ],
+      "type": "Other",
+      "venue": "NAGOYA Reny Limited",
+      "venue_uid": "d0e4cab0-666d-48c6-9c9b-f94e715e79f5"
+    },
+    {
+      "date": "2025-08-09",
+      "event": "IDOL SUMMER JUNGLE",
+      "timetree_id": "2707979567234959917",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707979567234959917",
+      "note": "8月9日,10日,11日に開催される『IDOL SUMMER JUNGLE』に出演します🌴💘\n\n日本最大級のアイドルフェスが今年も❕\nのんふぃく！と忘れられない夏過ごそうね♡\n\n【📢タイムテーブル解禁⏰】\n\n3日間のんふぃく！と最高の夏過ごそうね♡\n\n8/9\n🎤14:15-14:35📍MONKEY STAGE\n📸14:55-15:55\n\n8/10\n📸16:15-17:15\n🎤19:25-19:50📍TIGER STAGE\n\n8/11\n🎤10:50-11:15📍TIGER STAGE\n📸11:35-12:35\n\n#サマジャン2025 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a8dc/2025-06-20/0-1750440728236.jpg",
+        "https://attachments.timetreeapp.com/public_event/cdc1/2025-08-01/0-1754013241121.jpg",
+        "https://attachments.timetreeapp.com/public_event/92bf/2025-08-01/0-1754013242780.jpg",
+        "https://attachments.timetreeapp.com/public_event/f0e4/2025-08-01/0-1754013244581.jpg",
+        "https://attachments.timetreeapp.com/public_event/1c37/2025-08-07/0-1754575159942.jpg",
+        "https://attachments.timetreeapp.com/public_event/5de3/2025-08-07/0-1754575162607.jpg",
+        "https://attachments.timetreeapp.com/public_event/60c3/2025-08-07/0-1754575164811.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "青海R地区",
+      "venue_uid": "2d2dbaed-cbf6-4675-8469-ccd08ab2ec29",
+      "live_catalog_match_key": "2025-08-09|idol summer jungle"
+    },
+    {
+      "date": "2025-08-13",
+      "event": "NEO KASSEN2025",
+      "timetree_id": "2697116101636934063",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2697116101636934063",
+      "note": "8/13(水)はNEO JAPONISM主催フェス『NEO KASSEN2025』に出演します❤️‍🔥\n\n今年の夏も気合充分で盛り上げちゃう⚔️\n渋谷で待ってるよ〜！♡\n\n🎫チケット販売中\nhttps://ticket.rakuten.co.jp/music/jpop/idle/rtlejnk/\n\n【タイムテーブル解禁】\n\nのんふぃく！はKASSEN STAGEに出演します！\nSpotify O-EASTに駆けつけてね🔥\n\n出演🎤15:55-16:25 📍EAST\n特典会📸16:40-17:40 📍EAST3F\n\n#KASSEN #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b94e/2025-05-08/0-1746689291103.jpg",
+        "https://attachments.timetreeapp.com/public_event/8edc/2025-08-07/0-1754575307739.jpg",
+        "https://attachments.timetreeapp.com/public_event/85f3/2025-08-07/0-1754575310552.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/b94e/2025-05-08/0-1746689291103.jpg"
+    },
+    {
+      "date": "2025-08-15",
+      "event": "水瀬ぴあの生誕祭2025『おはようからおやすみまでちくっとします』",
+      "timetree_id": "2707103516053097369",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707103516053097369",
+      "note": "【水瀬ぴあの生誕祭2025】\n\n2025.8.15 Fri\n『おはようからおやすみまでちくっとします』\n@ Veats SHIBUYA\n\nはっぴーのわけっこ❤︎ by ぴあの💉🩵\n\n🎟只今より抽選開始（〜8/4 23:59）\nhttps://t-dv.com/piano_birthday2025\n※一般発売は8/6 22:00〜\n\n#ぴーちゃんうまれてはっぴー\n#水瀬ぴあの生誕祭2025",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c5d2/2025-08-02/0-1754132688497.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-08-17",
+      "event": "HEROINES FOUR MAN",
+      "timetree_id": "2752127890287905705",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2752127890287905705",
+      "note": "【HEROINES 4MAN LIVE】\n\n2025.08.17 Sun\n『HEROINES FOUR MAN』\n@ Spotify O-WEST\n\n8月も素敵な4MANが決定🪄⭐️\nのんふぃく！が1番盛り上げちゃうよ♡\n\n🎫明日7/23 21:30〜チケット販売\nhttps://t-dv.com/heroines_4man\n\n#のんふぃく",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/14d7/2025-07-23/0-1753247209847.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-08-19",
+      "event": "FICTIONAL ROAD～東名阪ツアー編～",
+      "timetree_id": "2707103635775309831",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707103635775309831",
+      "note": "【新体制初東名阪ツアー】\n\nのんふぃく！新体制初ツアー\n『FICTIONAL ROAD〜東名阪ツアー編〜』\n8人と最高の思い出つくろうね♡\n\n08.19 @ 大阪 BIG CAT\n08.21 @ 名古屋 ReNY limited\n09.04 @ 東京 Zepp Haneda\n\n【新体制初東名阪ツアー】\n\n明日はついに…！東名阪ツアー大阪⁎⁺✧🐙\n\n新体制初のツアー！新しいグッズもたくさんゲットして楽しんじゃおうね🌟\n大阪BIG CATで待ってるよ♡\n\n前物販 15:30-16:30\nOPEN 17:30 / START 18:30\n\n🎫チケット\nhttps://ticketdive.com/event/nonfic-2025tour\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1ffb/2025-08-21/0-1755756006739.jpg",
+        "https://attachments.timetreeapp.com/public_event/3c18/2025-08-21/0-1755756008027.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/1ffb/2025-08-21/0-1755756006739.jpg"
+    },
+    {
+      "date": "2025-08-21",
+      "event": "FICTIONAL ROAD～東名阪ツアー編～",
+      "timetree_id": "2726769153503283245",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2726769153503283245",
+      "note": "【新体制初東名阪ツアー】\n\nのんふぃく！新体制初ツアー\n『FICTIONAL ROAD〜東名阪ツアー編〜』\n8人と最高の思い出つくろうね♡\n\n08.19 @ 大阪 BIG CAT\n08.21 @ 名古屋 ReNY limited\n09.04 @ 東京 Zepp Haneda\n\n【新体制初東名阪ツアー】\n\n明日は…！東名阪ツアー名古屋⁎⁺✧🍤\n\n大阪で売り切れたグッズも復活🌟前物販には前物販参加券を事前にゲットして参加してください✨\n名古屋ReNY limitedで待ってるよ♡\n\n前物販 15:30-16:30\nOPEN 17:30 / START 18:30\n\n🎫チケット\nhttps://ticketdive.com/event/nonfic-2025tour\n\n#のんふぃくく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/10bf/2025-06-30/0-1751285864120.jpg",
+        "https://attachments.timetreeapp.com/public_event/5fa6/2025-08-21/0-1755755752152.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/10bf/2025-06-30/0-1751285864120.jpg"
+    },
+    {
+      "date": "2025-08-22",
+      "event": "HEROINES SUMMER",
+      "timetree_id": "2707103726640712185",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707103726640712185",
+      "note": "【 HEROINES SUMMER 】\n\n大阪＆東京でもヒロサマ開催決定🌴💖\n夏の終わりものんふぃく！と過ごそう♡\n\n2025.8.22 Fri\n@ Zepp Osaka Bayside\n🎫8/1 21:30〜\nhttps://t-dv.com/summer_osaka\n\n2025.8.24 Sun\n@ Zepp DiverCity (TOKYO)\n🎫8/1 22:00〜\nhttps://t-dv.com/summer_tokyo\n\n#ヒロインズサマー #のんふぃく",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6170/2025-07-31/0-1753956907500.jpg",
+        "https://attachments.timetreeapp.com/public_event/753c/2025-07-31/0-1753956910571.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-08-23",
+      "event": "HEROINES SUMMER extra!!!",
+      "timetree_id": "2753712153374378028",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2753712153374378028",
+      "note": "8/23(土)は『HEROINES SUMMER extra!!!』に出演します🫧\n\nのんふぃく！トリ盛り上げちゃうよ！\nGARDEN新木場FACTORYで待ってます♡\n\n出演🎤20:25-20:50\n特典会📸終演後\n\n🎫明日7/31 22:30〜チケット販売❕\nhttps://t-dv.com/summer_extra\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9bbd/2025-08-18/0-1755516650716.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/9bbd/2025-08-18/0-1755516650716.jpg"
+    },
+    {
+      "date": "2025-08-24",
+      "event": "HEROINES SUMMER",
+      "timetree_id": "2721786276998957650",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2721786276998957650",
+      "note": "【 HEROINES SUMMER 】\n\n大阪＆東京でもヒロサマ開催決定🌴💖\n夏の終わりものんふぃく！と過ごそう♡\n\n2025.8.22 Fri\n@ Zepp Osaka Bayside\n🎫8/1 21:30〜\nhttps://t-dv.com/summer_osaka\n\n2025.8.24 Sun\n@ Zepp DiverCity (TOKYO)\n🎫8/1 22:00〜\nhttps://t-dv.com/summer_tokyo\n\n#ヒロインズサマー #のんふぃく",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5d1e/2025-07-31/0-1753956968710.jpg",
+        "https://attachments.timetreeapp.com/public_event/b263/2025-07-31/0-1753956971619.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-08-25",
+      "event": "のんふぃく！定期公演vol.10",
+      "timetree_id": "2721786394531744285",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2721786394531744285",
+      "note": "【のんふぃく！定期公演】\n\n2025.08.25 Mon\n『のんふぃく！定期公演vol.10』\n@ Spotify O-WEST\n\nりほラスト定期公演🐹\nメンバー全員りほの衣装で出演します❕\nはむちゃんず集合〜！♡\n\n🎫明日7/24 21:00〜販売開始\nhttps://t-dv.com/nonfic_vol10\n\n#のんふぃく",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d9c2/2025-07-23/0-1753267794418.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-08-26",
+      "event": "Appare! Presents エンドレスサマー2025",
+      "timetree_id": "2743013684993214802",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2743013684993214802",
+      "note": "8/26(火)は『Appare! Presents エンドレスサマー2025』に出演します⛱️\n\n夏の終わりまで思い出いっぱい作ろうね♡\n詳細は後日発表です☀️\n\n【📢タイムテーブル解禁🚨】\n\n出演🎤18:45-19:10\n花火ステージ🎆 @ Spotify O-EAST \n\n🎫チケット販売中\nhttps://ticketdive.com/event/endlessummer2025\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c25f/2025-07-10/0-1752160709932.jpg",
+        "https://attachments.timetreeapp.com/public_event/256f/2025-07-10/0-1752160711828.jpg",
+        "https://attachments.timetreeapp.com/public_event/05a7/2025-08-21/0-1755756137218.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c25f/2025-07-10/0-1752160709932.jpg"
+    },
+    {
+      "date": "2025-08-30",
+      "event": "@ JAM EXPO 2025 supported by UP-T",
+      "timetree_id": "2707104261422861122",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707104261422861122",
+      "note": "8/30(土)は『@ JAM EXPO 2025 supported by UP-T』に出演します❤️‍🔥\n\nのんふぃく！が最上級にアツいステージにしちゃうよ〜！\n横浜アリーナで待ってるね♡\n\n【📢@ JAM EXPO 2025 タイムテーブル解禁】\n\nなんと...‼️\nのんふぃく！として\n初めてのメインステージ出演決定⚡️\n\nふぃくみん！の皆と掴んだメインステージ。\n8人で横浜アリーナに立てる喜びを噛み締めながら全人類楽しませちゃうよ♡\nのんふぃく！最高のステージを約束します！\n\n【特典会タイムテーブル解禁】\n\n特典会📸10:10-11:10\n📍横浜デジタルアーツ専門学校2号館2F食堂\n\n出演🎤12:15-12:40\n📍ストロベリーステージ🍓\n\n#アットジャム #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/98b1/2025-07-17/0-1752743212336.jpg",
+        "https://attachments.timetreeapp.com/public_event/652a/2025-08-07/0-1754575408996.jpg",
+        "https://attachments.timetreeapp.com/public_event/7a0d/2025-08-21/0-1755756231611.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/98b1/2025-07-17/0-1752743212336.jpg"
+    },
+    {
+      "date": "2025-09-01",
+      "event": "ふぉにコレ! vol.1",
+      "timetree_id": "2773173802393029376",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773173802393029376",
+      "note": "9/1(月)は『ふぉにコレ! vol.1』に出演します🎀\n\n女性エリア&一般エリア無料なのではじめましての方も大歓迎🌟\nZepp Hanedaで待ってるよ♡\n\n🎟️本日21:00〜先着販売\nhttp://t.livepocket.jp/e/fonycole1\n\n#ふぉにコレ #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/83f7/2025-08-21/0-1755756078133.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/83f7/2025-08-21/0-1755756078133.jpg"
+    },
+    {
+      "date": "2025-09-02",
+      "event": "ふぃくふぇす！Vol.17 〜8人体制ラスト！〜",
+      "timetree_id": "2707102345699674800",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707102345699674800",
+      "note": "【のんふぃく！主催】\n\n／\n     2025.09.02 Tue\n　『ふぃくふぇす！Vol.17 〜8人体制ラスト！〜』\n    @ Spotify O-EAST 開催決定🎀\n＼\n\nお目当て特典🌟ふぃくふぇすくじ\n\n8人ラストふぃくふぇす！見逃さないでね♡\n\n🎫明日8/14 22:00販売開始\nhttps://t-dv.com/ficfes250902\n\n#のんふぃく #ふぃくふぇす",
+      "venue_hint": "Spotify O-EAST 開催決定🎀",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a303/2025-08-13/0-1755096805607.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-09-04",
+      "event": "FICTIONAL ROAD～東名阪ツアー編～",
+      "timetree_id": "2707102461202418530",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707102461202418530",
+      "note": "【FICTIONAL ROAD～東名阪ツアー編～】\n\n8人で最初で最後のツアー。\nツアーファイナルは里帆ラストライブ❕\n\n2025.08.19 Tue @ 大阪BIGCAT\n2025.08.21 Thu @ 名古屋ReNY limited\n2025.09.04 Thu @ Zepp Haneda\n\n🎫只今より先行抽選受付開始(7/13 23:59まで)\nhttps://heroines.jp/news/public/_/9x6m6tgy6wufr4ka.html\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f1bc/2025-06-30/0-1751268593647.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/f1bc/2025-06-30/0-1751268593647.jpg"
+    },
+    {
+      "date": "2025-09-06",
+      "event": "HEROINES ViViD",
+      "timetree_id": "2773175461097654292",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773175461097654292",
+      "note": "9/6(土)は『HEROINES ViViD』@ Veats SHIBUYAに出演します🌙\n\nのんふぃく！トリです！❤︎\n9月最初の土曜日会いに来てくれますか？✨\n\n出演🎤 14:25-14:50\n特典会📸 終演後\n\n🎫明日8/16 22:00〜チケット販売\nhttps://ticketdive.com/event/HEROINES_VVD\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8484/2025-08-21/0-1755756275661.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/8484/2025-08-21/0-1755756275661.jpg"
+    },
+    {
+      "date": "2025-09-06",
+      "event": "のんふぃく！× iON! 2MAN",
+      "timetree_id": "2781519842494007746",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2781519842494007746",
+      "note": "【 のんふぃく！× iON! 💖】\n\n2025.09.06 sat\nのんふぃく！× iON! 2MAN LIVE\n@ 恵比寿リキッドルーム\n\niON!さんとのスペシャル2MAN🌟\nかわいいのんふぃく！にまばたき厳禁♡\n\n🎫チケット（明日9/2 22:30〜）\nt-dv.com/2man0906\n\n#のんふぃく",
+      "venue_hint": "恵比寿リキッドルーム",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e2bc/2025-09-01/0-1756751003465.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿リキッドルーム",
+      "venue_uid": "e528a5f1-9f74-42d6-a843-37a0464de4fe"
+    },
+    {
+      "date": "2025-09-08",
+      "event": "僕らの秋が始まるよ",
+      "timetree_id": "2784319926357084263",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784319926357084263",
+      "note": "9/8(月)は『僕らの秋を始めよう！2025』に出演します🍁\n\nのんふぃく！と最高の秋はじめちゃおう♡\nZepp Shinjukuで待ってるよ！\n\n🎫9月3日(水)19:00〜チケット販売\nt-dv.com/heroines250908\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3b39/2025-09-05/0-1757084799437.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3b39/2025-09-05/0-1757084799437.jpg"
+    },
+    {
+      "date": "2025-09-09",
+      "event": "MARQUEE Fes.",
+      "timetree_id": "2773176789450508804",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773176789450508804",
+      "note": "9/9(火)は『MARQUEE Fes.』に出演します💖\n\n9月もマーキー出演決定❕\nSpotify O-EASTで待ってるよ♡\n\n出演🎤19:25-19:50\n特典会📸終演後 ブースA(2F)\n\nお目当て特典🌟写メ\n\n🎫クレカ決済のみプレオーダー受付中\nhttps://eplus.jp/sf/word/0000131445\n※一般販売8/9 10:00〜開始\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3720/2025-08-21/0-1755756432401.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3720/2025-08-21/0-1755756432401.jpg"
+    },
+    {
+      "date": "2025-09-13",
+      "event": "#SPARK2025 in MAKUHARI",
+      "timetree_id": "2763265710570228605",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2763265710570228605",
+      "note": "9月13日(土)は『 #SPARK2025 in MAKUHARI 』に出演決定🌟\n\n今年の会場は幕張メッセ国際展示場です！❤︎\nのんふぃく！が最上級に盛り上げちゃうよ！\n\n【#SPARK2025 出演日決定】\n\nのんふぃく！は9月13日(土)に出演します🎐\nこの夏最後までのんふぃく！が楽しませるよ♡\n\n🎫本日19:00〜チケット一般販売開始\nhttps://ticketdive.com/event/spark2025makuhari\n\n#SPARK幕張 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/78a9/2025-08-07/0-1754574934991.jpg",
+        "https://attachments.timetreeapp.com/public_event/0b29/2025-08-21/0-1755755943973.jpg",
+        "https://attachments.timetreeapp.com/public_event/f66d/2025-09-01/0-1756751156850.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/78a9/2025-08-07/0-1754574934991.jpg"
+    },
+    {
+      "date": "2025-09-14",
+      "event": "クロフェス2025  6年目！クロフェスと結婚するしん！",
+      "timetree_id": "2737673376076024829",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2737673376076024829",
+      "note": "9/14(日)は『クロフェス2025  6年目！クロフェスと結婚するしん！』に出演決定💍\n\n今年もクロフェス出演だしん！♪\nのんふぃく！が最上級にもりあげるしんよ〜！💖\n\n🔗公式サイト\nhttp://kurofes-dashin.com\n\n#クロフェス2025 #クロフェス #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/48f5/2025-07-03/0-1751524097208.jpg",
+        "https://attachments.timetreeapp.com/public_event/f1b3/2025-09-01/0-1756751057191.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/48f5/2025-07-03/0-1751524097208.jpg"
+    },
+    {
+      "date": "2025-09-15",
+      "event": "iLiVE! vol.19",
+      "timetree_id": "2773172016315779150",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773172016315779150",
+      "note": "9/15(月•祝)は『iLiVE! vol.19』に出演します💗\n\nお目当て特典🍒写メ券\n\n出演🎤19:25-19:50\n特典会📸終演後\n\nのんふぃく！お目当てで写メが撮れちゃうよ📸\nKanadevia Hall で待ってます♡\n\n🎫明日8/20(水)21:00〜チケット販売\nhttps://t-dv.com/ilive250915\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/84e7/2025-08-21/0-1755755865110.jpg",
+        "https://attachments.timetreeapp.com/public_event/799f/2025-09-07/0-1757237064449.jpg"
+      ],
+      "type": "Concert",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548",
+      "live_catalog_match_key": "2025-09-15|ilive! vol.19"
+    },
+    {
+      "date": "2025-09-18",
+      "event": "#キュープリ",
+      "timetree_id": "2773180420534978628",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773180420534978628",
+      "note": "9/18日(木)は『HEROINES presents 女性限定LIVE #キュープリ -Queen &Princess -』に出演します🎀\n\nひさしぶりの女限ライブ！❤︎\n最近のんふぃく！気になってる女の子もはじめましての機会に是非遊びに来てね♡\n\n🎫チケット(9/5 21:30~)\nt-dv.com/qp250918\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/25be/2025-09-05/0-1757084326403.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/25be/2025-09-05/0-1757084326403.jpg"
+    },
+    {
+      "date": "2025-09-20",
+      "event": "ナナフェス 2025",
+      "timetree_id": "2773176035054603199",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773176035054603199",
+      "note": "9/20(土)は山田菜々presents『ナナフェス 2025』@ Zepp Nambaに出演します🎀\n\n9月も大阪遠征しちゃうよ〜❕\nのんふぃく！の半端ないステージ見逃さないでね♡\n\n出演🎤 14:45-15:10\n特典会📸 15:20-16:50 並行D\n\n🎫8/13 21:00〜前方抽選受付\nhttps://ticketdive.com/event/nanafes-2025\n※一般販売8/20 21:00〜\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a025/2025-08-21/0-1755756344161.jpg",
+        "https://attachments.timetreeapp.com/public_event/b38e/2025-09-15/0-1757951611838.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/a025/2025-08-21/0-1755756344161.jpg"
+    },
+    {
+      "date": "2025-09-21",
+      "event": "ヒロインズフェス@大阪",
+      "timetree_id": "2784693854892083711",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784693854892083711",
+      "note": "9/21(日)は『HEROINES FES in Osaka』に出演します🌟\n\n大阪ふぃくみん！会いに行っちゃうよ！❤︎\nZepp Osaka Baysideで待ってるね🐙\n\n🎫チケット（9/10 22:00〜）\nhttps://ticketdive.com/event/heroinesfes_osaka\n\n#のんふぃく",
+      "venue_hint": "大阪",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4bca/2025-09-09/0-1757412800299.jpg"
+      ],
+      "type": "Festival",
+      "venue": "大阪城音楽堂",
+      "venue_uid": "75722583-0863-4323-8fd7-b6d9c9b97277"
+    },
+    {
+      "date": "2025-09-23",
+      "event": "HEROINES LEAGUE Ⅰ【Sep. part1】",
+      "timetree_id": "2767644393288386692",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2767644393288386692",
+      "note": "9/23(火•祝)は『HEROINES LEAGUE Ⅰ【Sep. part1】』に出演します❤️‍🔥\n\n出演🎤 18:40-19:10\n特典会📸 終演後\n\n23日の順位次第で24日のタイムテーブルが決定します❕\nのんふぃく！てっぺん目指して最後まで油断せず最高のライブをお届けするよ！♡\n\n🎫FC先行受付中(8/17 23:59〆)\nhttps://heroines.jp/news/public/_/a4c5891quw1gbej9.html\n🎫一般販売(8/19 21:00〜)\nhttps://t-dv.com/heroinesleague250923\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/09be/2025-08-13/0-1755096921230.jpg",
+        "https://attachments.timetreeapp.com/public_event/2ef9/2025-09-19/0-1758280282628.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776",
+      "live_catalog_match_key": "2025-09-23|heroines league i sep. part1"
+    },
+    {
+      "date": "2025-09-24",
+      "event": "HEROINES LEAGUE Ⅰ【Sep. part2】",
+      "timetree_id": "2780638161952197399",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2780638161952197399",
+      "note": "9/24(水)は『HEROINES LEAGUE Ⅰ【Sep. part2】』に出演します❤️‍🔥\n\nヒロインズリーグの最終順位がこの日に決定🏆\nのんふぃく！てっぺん獲るぞ〜！🔥🔥🔥\n\n🎫FC先行受付中(9/11 23:59〆)\nhttps://heroines.jp/news/public/_/dj5qiyvmg1d5yien.html\n🎫一般販売(9/13 20:00〜)\nhttps://ticketdive.com/event/heroinesleague250924\n\n🗳️FC投票受付中(9/15 23:59〆)\nhttps://heroines.jp/news/public/_/2h8f4jwn7k9ro478.html\n\n#のんふぃく #ヒロインズリーグ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cfb8/2025-09-08/0-1757333372420.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "EX THEATER ROPPONGI",
+      "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e",
+      "live_catalog_match_key": "2025-09-24|heroines league i sep. part2"
+    },
+    {
+      "date": "2025-09-27",
+      "event": "Appare! × Devil ANTHEM. × のんふぃく！",
+      "timetree_id": "2773181021352249620",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773181021352249620",
+      "note": "9/27(土)は『 Appare! × Devil ANTHEM. × のんふぃく！』に出演します❤️‍🔥\n\n最高な3MAN LIVEが決定‼️\nWOMBLIVEを最上級に激アツ空間にしちゃお♡\n\n🎫チケット先行抽選受付中(9/10 23:59〆)\nhttps://ticketdive.com/event/cFgs0QTXBHiykBOZHefb\n※一般先着9/12 20:00〜\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/02ba/2025-09-07/0-1757246557561.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/02ba/2025-09-07/0-1757246557561.jpg"
+    },
+    {
+      "date": "2025-09-27",
+      "event": "あだち食と音楽の祭典",
+      "timetree_id": "2773180953144477780",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773180953144477780",
+      "note": "9/27(土),9/28(日)に開催される『あだち食と音楽の祭典』に出演決定💖\n\nなんと…入場無料！野外フェス！❤︎\nおいしい食べ物もライブもいっぱいよくばりバイキングしちゃうよ〜！🍽️\n\n出演🎤15:30-15:55\n\n🔗イベント詳細\ndplot.net/project/173905/\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2ab6/2025-09-07/0-1757236996745.jpg",
+        "https://attachments.timetreeapp.com/public_event/95e9/2025-09-15/0-1757915146436.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/2ab6/2025-09-07/0-1757236996745.jpg"
+    },
+    {
+      "date": "2025-09-28",
+      "event": "アイドル甲子園",
+      "timetree_id": "2786889033556314375",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2786889033556314375",
+      "note": "9/28(日)は『アイドル甲子園』に出演します⚾️\n\nのんふぃく！大優勝しちゃいます💖\nTACHIKAWA STAGE GARDENで待ってるよ！\n\n🎫チケット販売中❕\nhttps://t.livepocket.jp/e/idolkoushien-0928-\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3c63/2025-09-09/0-1757391060715.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3c63/2025-09-09/0-1757391060715.jpg"
+    },
+    {
+      "date": "2025-10-01",
+      "event": "定期公演💛",
+      "timetree_id": "2784694126070614853",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784694126070614853",
+      "note": "【のんふぃく！定期公演】\n\n2025.10.01 Wed\n『のんふぃく！定期公演vol.11』\n@ Veats SHIBUYA \n\nとうかリアバ🎂💛\nメンバー全員とうかの衣装で出演します♡\nリアバもとうか推しとこうか❕\n\n🎫明日9/18 21:00〜販売開始\nt-dv.com/nonfic_vol11\n\n#のんふぃく",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f2bd/2025-09-17/0-1758103355626.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-10-02",
+      "event": "🎂永月十華生誕祭💛",
+      "timetree_id": "2773177591862806954",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773177591862806954",
+      "note": "【🎂永月十華生誕祭💛】\n\n10/2(木)とうか生誕祭開催決定❕\n本日からクラウドファンディングがSTARTです♡\n\n十華にとって5回目の生誕祭！\n今年もたくさんの笑顔と幸せで溢れる生誕祭にしたいです！\n楽しみー！♡ byとうか\n\n🔗https://camp-fire.jp/projects/870620/view?utm_campaign=cp_po_share_c_msg_mypage_projects_show\n\n#永月十華生誕祭2025",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6a65/2025-08-21/0-1755756529713.jpg"
+      ],
+      "type": "Birthday",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/6a65/2025-08-21/0-1755756529713.jpg"
+    },
+    {
+      "date": "2025-10-07",
+      "event": "のんふぃく×TENRIN 2MANLIVE",
+      "timetree_id": "2784694025122105742",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784694025122105742",
+      "note": "2025.10.07 Tue\nのんふぃく！× TENRIN 2MAN LIVE\n@品川ステラボール\n\n当日ははるかリアバ🎂💗\nそしてなんと…！\niLiFE! あいす×のんふぃく！コラボ披露⛓️\nこの日限りのスペシャルステージお楽しみに♡\n\n🎫チケット(9/26 20:00~)\nt-dv.com/nonfic_tenrin2…",
+      "location_name": "Stellar Ball",
+      "venue_hint": "Stellar Ball",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3910/2025-09-26/0-1758894863770.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Stellar Ball",
+      "with": [
+        "TENRIN",
+        "のんふぃく！"
+      ],
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+    },
+    {
+      "date": "2025-10-08",
+      "event": "HEROINES LEAGUE -FINAL vol.1-",
+      "timetree_id": "2784694238813505789",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784694238813505789",
+      "note": "10月8日は『HEROINES LEAGUE -FINAL vol.1-』に出演します❤️‍🔥\n\nふぃくみん！と掴んだ決勝戦、狙うは1位のみ！\nのんふぃく！とてっぺん勝ち獲りましょう\n\n出演🎤19:30~20:00\n特典会📸終演後\n\n🎫チケット(9月25日 22:30〜)\nhttps://ticketdive.com/event/heroinesleaguefinal251008\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/812d/2025-09-24/0-1758719008190.jpg",
+        "https://attachments.timetreeapp.com/public_event/387c/2025-10-07/0-1759835615461.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/812d/2025-09-24/0-1758719008190.jpg"
+    },
+    {
+      "date": "2025-10-09",
+      "event": "TOKYO GIRLS GIRLS",
+      "timetree_id": "2707102174572071655",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707102174572071655",
+      "note": "10/9(木)は『TOKYO GIRLS GIRLS』@ 豊洲PIT に出演します💖\n\n会場にいる全員！のんふぃく！が楽しませちゃうよ♡ 会いにきてね♡\n\n出演🎤 18:35-19:00\n特典会📸 19:10-20:30 A\n\nお目当て特典🎁写メ券\n\n🎫抽選受付中(〜9/12 23:59)\ntiget.net/events/426509\n抽選結果：9/13 12:00頃\n一般先着販売：9/13 20:00〜",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1f30/2025-09-03/0-1756907425129.jpg",
+        "https://attachments.timetreeapp.com/public_event/6c89/2025-09-29/0-1759131491070.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/1f30/2025-09-03/0-1756907425129.jpg"
+    },
+    {
+      "date": "2025-10-11",
+      "event": "かがやきフェス2025",
+      "timetree_id": "2758082590560635881",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2758082590560635881",
+      "note": "10/11(土)は『かがやきフェス2025』に出演します💎\n\n北陸最大のアイドルフェス✨\n新体制初の金沢楽しんじゃうよ〜！♡\n\n出演🎤17:55-18:20\n特典会📸18:30-19:30 金沢歌舞伎座 2Fロビー\n📍金沢歌劇座\n\n🎫かがやきフェス満喫・歌劇座チケット\nhttps://eplus.jp/kagayaki-fes\n\n🔗https://kagayaki-fes.jp/\n\n#かがやきフェス #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4cf2/2025-07-31/0-1753957063874.jpg",
+        "https://attachments.timetreeapp.com/public_event/cf31/2025-09-07/0-1757237150712.jpg",
+        "https://attachments.timetreeapp.com/public_event/a27e/2025-09-07/0-1757237169098.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/4cf2/2025-07-31/0-1753957063874.jpg"
+    },
+    {
+      "date": "2025-10-12",
+      "event": "HEROINES HALLOWEEN in NAGOYA🎃",
+      "timetree_id": "2784694388625656137",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784694388625656137",
+      "note": "HEROINES HALLOWEEN in NAGOYA🎃\n\nTrick or Treat ·.⟡\nお菓子くれなきゃのんふぃく！のこと好きにさせちゃうぞ❤︎\n\n🎤18:05~18:30\n📸終演後\n\n\n2025.10.12 Sun\n『HEROINES HALLOWEEN in NAGOYA』\n🎫9/19 22:00〜\nhttps://ticketdive.com/event/heroineshalloween_nagoya\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/56c6/2025-09-18/0-1758195234232.jpg",
+        "https://attachments.timetreeapp.com/public_event/9ec1/2025-10-06/0-1759794643532.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/56c6/2025-09-18/0-1758195234232.jpg"
+    },
+    {
+      "date": "2025-10-14",
+      "event": "Idolverse Fes",
+      "timetree_id": "2782831489242254202",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2782831489242254202",
+      "note": "10/14(火)は『Idolverse Fes』に出演します🌟\n\nのんふぃく！トリです‼️\nみんなで最高の空間つくろうね♡\n\nのんふぃく！トリということで…\nお目当て特典で【15秒TikTok】撮れちゃいます‼️\n\n出演🎤 19:40-20:05\n特典会📸 終演後\n\n🎫チケット販売中\ntiget.net/events/425132\n\n#Idolversefes #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0091/2025-09-03/0-1756907363962.jpg",
+        "https://attachments.timetreeapp.com/public_event/d4ec/2025-10-10/0-1760087685855.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/0091/2025-09-03/0-1756907363962.jpg"
+    },
+    {
+      "date": "2025-10-15",
+      "event": "🎂恋星はるか生誕祭🩷",
+      "timetree_id": "2773171543022127320",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2773171543022127320",
+      "note": "【🎂恋星はるか生誕祭🩷】\n\n10/15(水)はるか生誕祭開催決定❕\n本日からクラウドファンディングがSTARTです♡\n\n今年もはるが君を幸せにします♡ byはるか\n\n🔗 https://camp-fire.jp/projects/874942/view?utm_campaign=cp_po_share_c_msg_mypage_projects_show\n\n#はるちゃんのお誕生日会2025",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cb1a/2025-08-21/0-1755755808820.jpg"
+      ],
+      "type": "Birthday",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cb1a/2025-08-21/0-1755755808820.jpg"
+    },
+    {
+      "date": "2025-10-16",
+      "event": "iLiVE! HALLOWEEN",
+      "timetree_id": "2792737361867197079",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792737361867197079",
+      "note": "10月16日は『iLiVE! HALLOWEEN』に出演します👻\n\nおばけも踊っちゃうくらい最上級に楽しいライブをお届けします♡\n\n📢タイムテーブル解禁⏰\n\n出演🎤 16:45~17:10\n特典会📸 17:20~18:20 A\n\nお目当て特典🍬写メ券\n\n🎫チケット（9/25 21:00~）\nt-dv.com/ilive251016\n\n#iLiVE #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3c98/2025-09-24/0-1758705191196.jpg",
+        "https://attachments.timetreeapp.com/public_event/fce2/2025-10-08/0-1759914948042.jpg"
+      ],
+      "type": "Concert",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3c98/2025-09-24/0-1758705191196.jpg"
+    },
+    {
+      "date": "2025-10-18",
+      "event": "iLiFE! × のんふぃく！2MAN LIVE",
+      "timetree_id": "2792738077767780994",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792738077767780994",
+      "note": "【 SPECIAL LIVE 緊急開催💖】\n\n2025.10.18 sat\niLiFE! × のんふぃく！2MAN LIVE\n@ 神田スクエアホール \n\niLiFE!さんとの激アツ2MAN LIVE再来⚡️\n最高な2連続2MAN 好きが止まらない！❤︎\n\n🎫チケット（10/13 10:00~）\nt-dv.com/2man_251018",
+      "venue_hint": "神田スクエアホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f48e/2025-10-12/0-1760273251441.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "with": [
+        "のんふぃく！"
+      ],
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2025-10-18",
+      "event": "のんふぃく！× iON! 2MAN LIVE vol.2",
+      "timetree_id": "2811680754185947619",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2811680754185947619",
+      "note": "【 のんふぃく！× iON! 💖】\n\n2025.10.18 sat\nのんふぃく！× iON! 2MAN LIVE vol.2\n@ 神田スクエアホール \n\nなんと…！衣装交換あり✨\nいつもと違うのんふぃく！にお熱になって♡\n\n🎫チケット（明日10/11 22:00~）\nt-dv.com/2man251018",
+      "venue_hint": "神田スクエアホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8926/2025-10-13/0-1760346463817.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2025-10-19",
+      "event": "Beat Rush -Vatious-",
+      "timetree_id": "2792738254171818969",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792738254171818969",
+      "note": "10/19は『Beat Rush -Vatious-』に出演します🩵\n\nのんふぃく！が最上級に盛り上げちゃいます！\nKANDA SQUARE HALLで待ってるよ♡\n\n🎫先行抽選受付中(9/27 19:00〆)\nt-dv.com/namikeshi2025\n※一般先着9/28 19:00〜販売開始\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ffdb/2025-09-17/0-1758107936863.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/ffdb/2025-09-17/0-1758107936863.jpg"
+    },
+    {
+      "date": "2025-10-19",
+      "event": "ドラマチックレコードツアー2025『星空逃避行ツアーFINAL』",
+      "timetree_id": "2792738356328286790",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792738356328286790",
+      "note": "10月19日は、ドラマチックレコードツアー2025『星空逃避行ツアーFINAL』に出演します⭐️\n\nのんふぃく！が全人類楽しませちゃうよ ✩ ‧₊˚\n恵比寿ガーデンホールで待ってます❤︎\n\n🎤出演 20:10-20:35\n📸特典会 21:05-22:15終演後\n\n🎫チケット(10/3 20:00~)\ntiget.net/events/430515",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d0ff/2025-10-03/0-1759478104853.jpg",
+        "https://attachments.timetreeapp.com/public_event/0374/2025-10-17/0-1760675892734.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d0ff/2025-10-03/0-1759478104853.jpg"
+    },
+    {
+      "date": "2025-10-23",
+      "event": "MARQUEE Fes.",
+      "timetree_id": "2707102026664134732",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2707102026664134732",
+      "note": "10/23(木)は『MARQUEE Fes.-day2-』に出演します⭐️\n\nマーキーフェスのんふぃく！が最上級に盛り上げちゃうよ♡ タイムテーブルは後日発表です❕\n\n\n🎤出演 19:35-20:00\n📸特典会 20:45-21:45 📍ホール内\n\nお目当て特典💝写メ券\n\n🎫クレカ決済のみ先行予約受付中\neplus.jp/marquee-matsur… \n※一般販売9/5 21:00〜開始\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0b46/2025-08-31/0-1756645712384.jpg",
+        "https://attachments.timetreeapp.com/public_event/dff1/2025-10-17/0-1760675784767.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44",
+      "live_catalog_match_key": "2025-10-23|marquee fes."
+    },
+    {
+      "date": "2025-10-25",
+      "event": "HEROINES HALLOWEEN in OSAKA🎃",
+      "timetree_id": "2784694539033397890",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784694539033397890",
+      "note": "HEROINES HALLOWEEN in OSAKA🎃\n\nTrick or Treat ·.⟡\nお菓子くれなきゃのんふぃく！のこと好きにさせちゃうぞ❤︎\n\n🎤17:55~18:25\n📸終演後\n\n2025.10.25 Sat\n『HEROINES HALLOWEEN in OSAKA』\n🎫9/19 22:30〜\nhttps://ticketdive.com/event/heroineshalloween_osaka\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3343/2025-09-18/0-1758195340416.jpg",
+        "https://attachments.timetreeapp.com/public_event/81f2/2025-10-17/0-1760676451989.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3343/2025-09-18/0-1758195340416.jpg"
+    },
+    {
+      "date": "2025-10-27",
+      "event": "HEROINES HALLOWEEN DAY1",
+      "timetree_id": "2784696274510563751",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784696274510563751",
+      "note": "【 👻HEROINES HALLOWEEN❤️‍🩹】\n\nのんふぃく！はDAY1＆DAY3に出演します🍬\nかわちいハロウィン衣装たのしみにしててね〜♡\n\n🎤出演 20:10-20:35\n📸特典会　終演後\n\n\n10.27 Mon\n『HEROINES HALLOWEEN DAY1』\n🎫9/29 21:30~\nt-dv.com/heroineshallow…",
+      "location_name": "Zepp DiverCity (TOKYO)",
+      "venue_hint": "Zepp DiverCity (TOKYO)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7b7e/2025-09-28/0-1759054893971.jpg",
+        "https://attachments.timetreeapp.com/public_event/6f33/2025-10-17/0-1760676029861.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-10-29",
+      "event": "HEROINES HALLOWEEN DAY3",
+      "timetree_id": "2800847510569896393",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2800847510569896393",
+      "note": "【 👻HEROINES HALLOWEEN❤️‍🩹】\n\nのんふぃく！はDAY1＆DAY3に出演します🍬\nかわちいハロウィン衣装たのしみにしててね〜♡\n\n🎤出演 19:20-19:45\n📸特典会　終演後\n\n10.29 Wed\n『HEROINES HALLOWEEN DAY3』\n🎫9/29 22:30~\nt-dv.com/heroineshallow…",
+      "location_name": "Zepp DiverCity (TOKYO)",
+      "venue_hint": "Zepp DiverCity (TOKYO)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d509/2025-09-28/0-1759055041153.jpg",
+        "https://attachments.timetreeapp.com/public_event/fa18/2025-10-17/0-1760676229107.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-10-31",
+      "event": "HEROINES HALLOWEEN -PREMIUM-",
+      "timetree_id": "2784695964467611827",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784695964467611827",
+      "note": "10月31日は『HEROINES HALLOWEEN -PREMIUM-』に出演します🎃🎀\n\nのんふぃく！とプレミアムなハロウィンナイトにしようね！❤︎\n\n🎫HEROINES FC先行抽選受付中(10/4 23:59〆)\nheroines.jp/news/public/_/…",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b062/2025-10-02/0-1759423141781.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e",
+      "live_catalog_match_key": "2025-10-31|heroines halloween -premium-"
+    },
+    {
+      "date": "2025-11-01",
+      "event": "I Dish Fes2025",
+      "timetree_id": "2792149236736477450",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792149236736477450",
+      "note": "11/1(土)は『I Dish Fes2025』@ 大阪城音楽堂 に出演します🌟\n\n入場無料！野外フェス！全力で楽しんじゃうよ♡\n全人類大阪城に集まれ〜！\n\n🔗 idishfes.com\n\n#IDishfes #アイドルフェス\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4684/2025-09-16/0-1758018125841.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/4684/2025-09-16/0-1758018125841.jpg"
+    },
+    {
+      "date": "2025-11-03",
+      "event": "小金井祭",
+      "timetree_id": "2784489962124233467",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784489962124233467",
+      "note": "11月3日は法政大学『小金井祭』に出演します💖\n\n入場無料！学生さんもふぃくみん！もみんなでいっしょにたのぴっぴな1日にしようね！❤︎\n\n🔗学園祭公式アカウント\nx.com/koganeisaihose…　\n\n🎫チケット事前抽選詳細は後日発表\n※特典会はございません",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dc91/2025-10-03/0-1759482313128.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/dc91/2025-10-03/0-1759482313128.jpg"
+    },
+    {
+      "date": "2025-11-08",
+      "event": "『 爆音祭 -バカ大声 Special Live- 』",
+      "timetree_id": "2814730763747870728",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2814730763747870728",
+      "note": "【 爆音祭 出演決定💖】\n\n2025.11.08 Sat\n『 爆音祭 -バカ大声 Special Live- 』\n@ The Garden Hall\n\nMEGAFONさんとの2MAN LIVE🌟\nのんふぃく！もバカデカボイスで盛り上げちゃいます📣♡\n\n🎫チケット(10/18 23:00~)\nticketdive.com/event/bakuonns…",
+      "venue_hint": "The Garden Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/58fb/2025-10-17/0-1760710053751.jpg"
+      ],
+      "type": "Other",
+      "venue": "The Garden Hall",
+      "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
+    },
+    {
+      "date": "2025-11-09",
+      "event": "NEO JAPONISM PRESENTS KASSEN 2025",
+      "timetree_id": "2809503343759477569",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2809503343759477569",
+      "note": "11月9日(日)は『NEO JAPONISM PRESENTS KASSEN 2025』に出演します❤️‍🔥\n\nのんふぃく！は2部に出演します！\nのんふぃく！の半端ないステージ刮目せよ⚔️\n\n🎫先行抽選受付中(10/24 23:59〆)\nt-dv.com/kassen-2025-11…\n一般販売：10/25 20:00~",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/af5b/2025-10-10/0-1760086896879.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/af5b/2025-10-10/0-1760086896879.jpg"
+    },
+    {
+      "date": "2025-11-12",
+      "event": "DRAMATIC POP!",
+      "timetree_id": "2814731654416714429",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2814731654416714429",
+      "note": "11月12日は『DRAMATIC POP!』に出演します🫧\n\nのんふぃく！とたのぴっぴな空間つくっちゃおうね♡ 会いにきてくれますか？♡\n\n出演🎤19:40~20:10\n特典会📸21:10~22:30※にいなのみ22:00まで\n\n\n🎫チケット\ntiget.net/events/436884\n先行抽選受付：10/18 20:00~10/27 23:59\n一般販売：10/31 20:00~",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cbb9/2025-10-17/0-1760710160079.jpg",
+        "https://attachments.timetreeapp.com/public_event/1f01/2025-11-10/0-1762744356217.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cbb9/2025-10-17/0-1760710160079.jpg"
+    },
+    {
+      "date": "2025-11-15",
+      "event": "HEROINES FES in NAGOYA",
+      "timetree_id": "2785598762491201595",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2785598762491201595",
+      "note": "11月15日は『HEROINES FES in NAGOYA』@ COMTEC PORTBASE に出演します🌟\n\n名古屋ふぃくみん！11月も会いにいくよ♡\nのんふぃく！と楽しもうね🍤🍤\n\n出演🎤16:05~16:30\n特典会📸16:40~17:40 A\n\n\n🎫チケット（10/31 22:30~）\nt-dv.com/heroinesfes_na…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e716/2025-10-30/0-1761860730984.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/e716/2025-10-30/0-1761860730984.jpg"
+    },
+    {
+      "date": "2025-11-17",
+      "event": "MARQUEE Fes.-day1-",
+      "timetree_id": "2784489870872955733",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784489870872955733",
+      "note": "11月17日は『MARQUEE Fes.-day1-』に出演します💖\n\n11月ものんふぃく！が最上級に盛り上げちゃうよ♡\n\nお目当て特典⭐️写メ券\n出演🎤18:55~19:20\n特典会📸19:35~20:35 ブースE 3F\n\n🎫クレカ決済のみプレオーダー受付中(10/8 23:59〆)\neplus.jp/sf/word/000013…\n※一般発売：10/11 10:00~",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b084/2025-10-03/0-1759478759440.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/b084/2025-10-03/0-1759478759440.jpg"
+    },
+    {
+      "date": "2025-11-18",
+      "event": "iLiVE! vol.21",
+      "timetree_id": "2792741707325524745",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792741707325524745",
+      "note": "11月18日は『iLiVE! vol.21』に出演します🎀\n\nのんふぃく！が最上級な時間にしちゃうよ！\n豊洲PITで待ってます❤︎\n\nなんと…！\nこの日はひさしぶりのあの衣装をお披露目しちゃうかも💭絶対に会いにきてね❤︎\n\n出演🎤16:40~17:05\n特典会📸17:15~18:15 A\n\nお目当て特典💗写メ券\n\n🎫チケット（10/31 22:00~）\nt-dv.com/ilive251118\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/71b0/2025-10-30/0-1761818711928.jpg",
+        "https://attachments.timetreeapp.com/public_event/1c60/2025-11-10/0-1762766187060.jpg"
+      ],
+      "type": "Concert",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/71b0/2025-10-30/0-1761818711928.jpg"
+    },
+    {
+      "date": "2025-11-22",
+      "event": "HEROINES FES in 仙台",
+      "timetree_id": "2814662714160203859",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2814662714160203859",
+      "note": "11月22日は『HEROINES FES in 仙台』supported by FAIR NEXT INNOVATION に出演します🌟\n\nのんふぃく！ひさしぶりの仙台❤︎\n牛タン食べれるかなぁ…(๑>◡<๑) byぴあの\n\n出演🎤14:35~15:00\n特典会📸終演後\n\nお目当て特典🎁ランダム手書きステッカー\n\nメンバー1人1人が書いた仙台限定ステッカー❤︎ \n激レア特典絶対ゲットしてね🐮💖\n\n🎫先行抽選受付中(~10/21 23:59〆)\ntiget.net/events/437446\n一般販売：10/25 12:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/96f9/2025-11-19/0-1763574979620.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/96f9/2025-11-19/0-1763574979620.jpg"
+    },
+    {
+      "date": "2025-11-23",
+      "event": "SHIGA IDOL COLLECTION 2025",
+      "timetree_id": "2784316423182109025",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2784316423182109025",
+      "note": "11/23(日)は『 UtaTen presents SHIGA IDOL COLLECTION 2025 』に出演します⭐️\n\nのんふぃく！滋賀県のみんなに会いに行っちゃうよ〜！♡\n\n出演🎤16:00~16:25\n特典会📸18:00~19:15（終演後）\n\n撮影可能曲なし❌\n\nお目当て特典💝写メ券\n\n🎫チケット先行抽選受付中\neplus.jp/sic2025/\n\n#のんふぃくか",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c6c0/2025-09-05/0-1757084381964.jpg",
+        "https://attachments.timetreeapp.com/public_event/232a/2025-11-10/0-1762744610294.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c6c0/2025-09-05/0-1757084381964.jpg"
+    },
+    {
+      "date": "2025-11-24",
+      "event": "TOKYO GIRLS GIRLS",
+      "timetree_id": "2792739803396721245",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792739803396721245",
+      "note": "11月24日は『TOKYO GIRLS GIRLS』に出演します🎤\n\n祝日月曜日会いにきてね〜🎀\nのんふぃく！が最上級なステージ魅せちゃいます♡\n\n出演🎤18:45~19:10\n特典会📸19:20~20:40 A\n\n撮影可能曲なし❌\n\n📍恵比寿ガーデンホール\n\n🎫チケット抽選販売受付中(10/23 23:59〆)\ntiget.net/events/437316\n当選発表：10/24 12:00頃\n一般先着販売：10/24 20:00~",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/315f/2025-10-17/0-1760710114930.jpg",
+        "https://attachments.timetreeapp.com/public_event/e34e/2025-11-19/0-1763574883985.jpg"
+      ],
+      "type": "Other",
+      "venue": "The Garden Hall",
+      "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce",
+      "live_catalog_match_key": "2025-11-24|tokyo girls girls"
+    },
+    {
+      "date": "2025-11-25",
+      "event": "HEROINES LEAGUE -FINAL vol.2-",
+      "timetree_id": "2814663165089827763",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2814663165089827763",
+      "note": "11月25日は『HEROINES LEAGUE -FINAL vol.2-』に出演します❤️‍🔥\n\n勝利を偶然じゃなく必然に。\nのんふぃく！は勝ち続けます！\n\n🎫HEROINES FC先行受付中\nheroines.jp/news/public/_/…\n\n🎫一般販売（11/2 21:00〜）\nt-dv.com/heroinesleague…\n\n🗳️FC投票（11/5 23:59〆）\nheroines.jp/news/public/_/…\n\n\n撮影可能曲あり⭕️当日Xより発表",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/365c/2025-10-29/0-1761732078838.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/365c/2025-10-29/0-1761732078838.jpg"
+    },
+    {
+      "date": "2025-11-29",
+      "event": "ISE GIRLS FRONTIER 2025",
+      "timetree_id": "2792741196710955534",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2792741196710955534",
+      "note": "11月29.30日は『ISE GIRLS FRONTIER 2025』に出演決定💖\n\n東海地区最大級の伊勢発ガールズフェス！\nのんふぃく！に会いに来てくれますか？♡\n\n11.29\n📸17:05~18:15 A\n🎤18:55~19:20📍赤福ステージ\nフィナーレ⭐️20:15~20:30📍赤福ステージ\n\n11.30\n⛩️14:20~14:30 伊勢コンテンツ(MC)📍伊勢シーパラダイスステージ\n🎤14:30~14:50 HEROINESコンテンツ📍伊勢シーパラダイスステージ\n\n🎤18:05~18:25📍赤福ステージ\n📸18:35~19:45 E\nフィナーレ⭐️20:20~20:30📍赤福ステージ\n\n\n全ステージ撮影可能曲なし❌\n\n🎫 前売り先行チケット\n9月27日〜先行抽選販売開始❕\n\n🔗詳細はこちら\nise-girls-frontier.com",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a517/2025-09-22/0-1758542526983.jpg",
+        "https://attachments.timetreeapp.com/public_event/c526/2025-11-10/0-1762744457170.jpg",
+        "https://attachments.timetreeapp.com/public_event/1e74/2025-11-10/0-1762744547865.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/a517/2025-09-22/0-1758542526983.jpg"
+    },
+    {
+      "date": "2025-12-01",
+      "event": "よるふぃくおん！",
+      "timetree_id": "2827460071587203185",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2827460071587203185",
+      "note": "【 iON! × 夜光性アミューズ × のんふぃく！】\n\n2025.12.01 Mon\n『よるふぃくおん！』\n@ Spotify O-EAST\n\nスペシャルな3MAN LIVEが決定🌙💞\nのんふぃく！が1番盛り上げちゃうよ〜！♡\n\n撮影可能曲あり⭕️当日Xより発表\n\n🎫チケット(11/16 22:00～)\nt-dv.com/yoruficon251201\n\n#のんふぃく",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/690a/2025-11-19/0-1763575065099.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-12-06",
+      "event": "YANFES2025",
+      "timetree_id": "2827460148007422038",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2827460148007422038",
+      "note": "12月6日は『YANFES2025』に出演します🎂⭐️\n\n今年もYANFESがやってきたよ〜💞\nこの日限りの特別なのんふぃく！と最上級に盛り上がっちゃおうね♡\n\n出演🎤19:20~19:50\n特典会📸終演後\n\n\n撮影可能曲あり⭕️当日Xより発表\n\n🎫チケット（明日11/13 22:30~）\neplus.jp/yanfes/\n\n#YANFES2025 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c37e/2025-11-12/0-1762955929863.jpg",
+        "https://attachments.timetreeapp.com/public_event/ad19/2025-12-04/0-1764831632513.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Zepp Haneda",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab",
+      "live_catalog_match_key": "2025-12-06|yanfes2025"
+    },
+    {
+      "date": "2025-12-07",
+      "event": "どれふぃく！",
+      "timetree_id": "2814663575116598257",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2814663575116598257",
+      "note": "【 ドレスコード × のんふぃく！🎀】\n\n2025.12.07 Sun\nDresscode Road to Zepp Shinjuku\n2 MAN LIVE\n『 どれふぃく！』\n@ Spotify O-WEST\n\nなんと…！衣装交換＆楽曲交換あり🏰❤︎\n特別なのんふぃく！をコンプリートして？♡\n\n撮影可能曲あり⭕️当日Xより発表\n\n🎫チケット（明日11/5 22:00~）\nt-dv.com/drefic251207\n\n#のんふぃく",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d157/2025-11-05/0-1762305695461.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-12-09",
+      "event": "MARQUEE祭",
+      "timetree_id": "2816800509251177351",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2816800509251177351",
+      "note": "12月9日は『MARQUEE祭 Vol.166』に出演します❤︎\n\nのんふぃく！が会いに来てくれた全員！たのぴっぴにしちゃうよ〜！♡\n\nお目当て特典💝写メ券\n\n出演🎤19:50~20:15\n特典会📸20:45~21:50\n\n撮影可能曲なし❌\n\n🎫プレオーダー受付中(~10/27 23:59〆)\neplus.jp/sf/detail/2029…\n一般発売：10/30 21:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8f5d/2025-10-20/0-1760956786775.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/8f5d/2025-10-20/0-1760956786775.jpg"
+    },
+    {
+      "date": "2025-12-10",
+      "event": "HEROINES LEAGUE -FINAL vol.3-",
+      "timetree_id": "2825266683228080490",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825266683228080490",
+      "note": "12月10日は『HEROINES LEAGUE -FINAL vol.3-』に出演します⚔️\n\nてっぺん獲るコード プログラム済🔥\nのんふぃく！と駆け上がる準備できてる？♡\n\n出演🎤19:30~20:00\n特典会📸終演後\n\n🎫HEROINES FC先行受付中\nhttps://x.com/nonfic_official/status/1991084042264215660?s=12\n\n🎫一般販売（11/23 21:00~）\nhttps://x.com/nonfic_official/status/1991084042264215660?s=12\n\n🗳️FC投票（11/26 23:59〆）\nhttps://x.com/nonfic_official/status/1991084042264215660?s=12\n\n撮影可能曲あり⭕️当日Xより発表",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/61cb/2025-11-19/0-1763575141738.jpg",
+        "https://attachments.timetreeapp.com/public_event/e2da/2025-12-09/0-1765268866952.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/61cb/2025-11-19/0-1763575141738.jpg"
+    },
+    {
+      "date": "2025-12-11",
+      "event": "Merry BAD TUNE. presents #バチュコリ -2025年大感謝SP-",
+      "timetree_id": "2825266798101678860",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825266798101678860",
+      "note": "12月11日は『Merry BAD TUNE. presents #バチュコリ -2025年大感謝SP-』に出演します🎀\n\n2025年が終わっちゃう前にのんふぃく！をもっと好きになってみませんか？♡\nSpotify O-EASTで待ってます\n\n撮影可能曲なし❌\n\n📢タイムテーブル解禁💖\n\n出演🎤18:35~19:00\n特典会📸19:20~20:40 C\n\n🎫チケット先行抽選受付中(11/25 23:59〆)\nt.livepocket.jp/e/btcl13\n一般先着11/27 21:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/27df/2025-11-22/0-1763815456341.jpg",
+        "https://attachments.timetreeapp.com/public_event/1826/2025-12-04/0-1764831589865.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/27df/2025-11-22/0-1763815456341.jpg"
+    },
+    {
+      "date": "2025-12-13",
+      "event": "HEROINES ONE COIN vol.2",
+      "timetree_id": "2825266605994166763",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825266605994166763",
+      "note": "12月13日は『HEROINES ONE COIN vol.2』に出演します💞\n\n一般500円でライブが観れちゃいます✨\nちょっぴりでものんふぃく！が気になっている人は全員！この機会に会いに来てね♡\n\n🎫チケット（11/26 21:00~）\nt-dv.com/onecoin_vol2\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fd3b/2025-11-25/0-1764069799540.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/fd3b/2025-11-25/0-1764069799540.jpg"
+    },
+    {
+      "date": "2025-12-15",
+      "event": "NEO START",
+      "timetree_id": "2814663425077954822",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2814663425077954822",
+      "note": "12月15日は『NEO START』に出演します❤️‍🔥\n\n大好きなNEO JAPONISMさんの周年イベントに呼んでいただけてとっても嬉しいです♡\nのんふぃく！全力で盛り上げるぞ〜！🔥\n\n出演🎤18:00~18:30\n特典会📸18:40~20:00 B\n⚠️はるかiLiFE!出演のため18:40~19:00\n\n撮影可能曲なし❌\n\n🎫チケット先行抽選受付中❕\nt-dv.com/neo-2025-12-15\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3f08/2025-11-17/0-1763379825441.jpg",
+        "https://attachments.timetreeapp.com/public_event/a325/2025-12-13/0-1765617182430.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3f08/2025-11-17/0-1763379825441.jpg"
+    },
+    {
+      "date": "2025-12-18",
+      "event": "Onephony 3rd Anniversary ふぉにコレ!vol.2 X`mas Special",
+      "timetree_id": "2847215548227275505",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2847215548227275505",
+      "note": "12月18日は『Onephony 3rd Anniversary ふぉにコレ!vol.2 X`mas Special』に出演します🔔\n\nふぉにコレ!vol.1に続き出演決定❕🎀\n会場に来てくれた全員楽しませちゃうよ♡\n\n出演🎤19:35~20:00\n特典会📸終演後 B\n\nお目当て特典🎁写メ券\nのんふぃく！お目当てで写メが撮れちゃいます♡\n貴方だけのかわいい推しメンの写真、スマホのロック画面にしちゃう〜？💭\n\n🎫チケット\nt.livepocket.jp/e/onephony1218…\n前方先行抽選 12/1 22:00~12/7 23:59\n一般/女性 12/9 21:00~\n\n#ふぉにコレ #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1dcd/2025-12-01/0-1764582541542.jpg",
+        "https://attachments.timetreeapp.com/public_event/d762/2025-12-13/0-1765602813641.jpg",
+        "https://attachments.timetreeapp.com/public_event/8be3/2025-12-13/0-1765602814517.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/1dcd/2025-12-01/0-1764582541542.jpg"
+    },
+    {
+      "date": "2025-12-21",
+      "event": "HEROINES Xmas in Osaka",
+      "timetree_id": "2825267206140348479",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825267206140348479",
+      "note": "12月21日は『HEROINES Xmas in Osaka』\n@ Zepp Osaka Bayside に出演します🎄\n\nヒロインズが大阪をクリスマスに染めちゃいます🔔💞のんふぃく！が最上級のライブをプレゼントするよ〜！♡\n\n🎫チケット（11/27 21:00~）\nt-dv.com/Xmas_oska\n\n#のんふぃく",
+      "venue_hint": "Zepp Osaka Bayside に出演します🎄",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/029a/2025-11-26/0-1764155066495.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-12-22",
+      "event": "メガよるふぃく！",
+      "timetree_id": "2827460313481104255",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2827460313481104255",
+      "note": "【 MEGAFON × よるあみ × のんふぃく！】\n\n2025.12.22 Mon\n『メガよるふぃく！』\n@ Veats SHIBUYA\n\n素敵な3MAN LIVE開催決定🌙💖📣\n夜に煌めく物語をバカデカボイスで楽しもうね♡\n\n🎫チケット（12/14 21:30~）\nt-dv.com/megayorufic\n\n#のんふぃく",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e65b/2025-12-13/0-1765634416267.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-12-24",
+      "event": "HEROINES Xmas DAY1",
+      "timetree_id": "2785599487115937906",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2785599487115937906",
+      "note": "12月24日,25日は『HEROINES Xmas』に出演します⛄️💗\n\nクリスマスライブ2DAYS🎄クリスマス衣装の特別かわいいのんふぃく！に会いにきてね♡\n\n🎫チケット\nt-dv.com/heroinesxmas25…\nDay1 : 11/28 21:00~\nDay2 : 11/28 21:30~\n\n出演🎤17:00~17:25\n特典会📸17:35~18:35 A\n\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e546/2025-11-27/0-1764242126163.jpg",
+        "https://attachments.timetreeapp.com/public_event/4b7c/2025-12-13/0-1765634309955.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548",
+      "live_catalog_match_key": "2025-12-24|heroines xmas day1"
+    },
+    {
+      "date": "2025-12-25",
+      "event": "HEROINES Xmas DAY2",
+      "timetree_id": "2785599553469827191",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2785599553469827191",
+      "note": "12月24日,25日は『HEROINES Xmas』に出演します⛄️💗\n\nクリスマスライブ2DAYS🎄クリスマス衣装の特別かわいいのんふぃく！に会いにきてね♡\n\n🎫チケット\nt-dv.com/heroinesxmas25…\nDay1 : 11/28 21:00~\nDay2 : 11/28 21:30~\n\n\nDay2\n出演🎤19:25~19:50\n特典会📸終演後\n\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bf6a/2025-11-27/0-1764242168737.jpg",
+        "https://attachments.timetreeapp.com/public_event/fc7c/2025-12-13/0-1765634350523.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548",
+      "live_catalog_match_key": "2025-12-25|heroines xmas day2"
+    },
+    {
+      "date": "2025-12-28",
+      "event": "LEADING PREMIUM 年末感謝祭'25",
+      "timetree_id": "2839843340102289533",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2839843340102289533",
+      "note": "12月28日は『LEADING PREMIUM 年末感謝祭'25』に出演します💖\n\nふぃくみん！への感謝を込めてステージから愛をお届けします！今年最後の渋谷サーキット楽しもうね♡\n\n撮影可能曲なし❌\n\n📢タイムテーブル解禁💖\n\n出演🎤16:50~17:20📍Spotify O-EAST\n特典会📸17:35~18:50 C\n\n#LEADINGPREMIUM #のんふぃく\n\n🎫チケット先行抽選受付中(11/25 23:59〆)\nticketvillage.jp/events/13604\n11/27 20:00~一般販売\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/18b8/2025-11-21/0-1763703706520.jpg",
+        "https://attachments.timetreeapp.com/public_event/25f8/2025-12-19/0-1766148504652.jpg",
+        "https://attachments.timetreeapp.com/public_event/f264/2025-12-26/0-1766749534803.jpg"
+      ],
+      "type": "Other",
+      "venue": "SHIBUYA RING",
+      "venue_uid": "66a17665-5593-4780-8be2-a083caea3c36",
+      "live_catalog_match_key": "2025-12-28|leading premium 年末感謝祭'25"
+    },
+    {
+      "date": "2025-12-30",
+      "event": "HEROINES COUNTDOWN EVE",
+      "timetree_id": "2785600429576046706",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2785600429576046706",
+      "note": "12月30日は『HEROINES COUNTDOWN EVE』に出演します💖\n\nいっしょにカウントダウンできない人も！2025年ラストまでのんふぃく！と遊び尽くそうね♡\n\n🎫チケット（12/11 21:00~）\nt-dv.com/heroinescountd…\n\n#ヒロインズカウントダウン #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c00e/2025-12-10/0-1765372559013.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548",
+      "live_catalog_match_key": "2025-12-30|heroines countdown eve"
+    },
+    {
+      "date": "2025-12-31",
+      "event": "HEROINES COUNTDOWN 2025-2026",
+      "timetree_id": "2785600359942211683",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2785600359942211683",
+      "note": "12月31日は『HEROINES COUNTDOWN 2025-2026』に出演します❤️‍🔥\n\nこの日限りのスペシャルユニットライブも実施決定❕\nのんふぃく！とスペシャルな1日にしようね♡\n\n\n📢タイムテーブル解禁💖\n\n出演🎤\n① 17:20~17:30\n② 00:25~00:40 ※にいな出演なし\n\n特典会📸\n① 21:10~21:40 ※にいなのみ参加💙\n② 01:40~02:20 ※にいな参加なし\n\n【20歳未満のお客様へのご案内】\n本公演は深夜帯を含む公演の為、20歳未満のお客様は下記URLの案内を必ずご確認ください。\nheroines.jp/news/public/_/…\n\n🎫HEROINES FC先行（〜9/24 23:59）\nhttps://heroines.jp/news/public/_/ogd1njs4m8xgz5sz.html\n🎫オフィシャル先行（9/26 21:00〜10/1 23:59）\nhttps://ticketdive.com/event/heroinescountdown251231\n\n#ヒロインズカウントダウン #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9935/2025-09-19/0-1758284588950.jpg",
+        "https://attachments.timetreeapp.com/public_event/f7cc/2025-12-26/0-1766750163778.jpg",
+        "https://attachments.timetreeapp.com/public_event/54e8/2025-12-26/0-1766750164467.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548",
+      "live_catalog_match_key": "2025-12-31|heroines countdown 2025-2026"
+    },
+    {
+      "date": "2026-01-02",
+      "event": "TV「新春ヒロインズ大運動会」",
+      "timetree_id": "2860348411923548401",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2860348411923548401",
+      "note": "【ヒロインズTV】\n\n正月特番 放送決定🎍\n『新春ヒロインズ大運動会』\n\n2026年1月2日19:00～21:00\n\n📺TOKYO MX1\n放送後TVerにて見逃し配信あり\n\nHEROINES総勢130名以上が4組に分かれて対抗します🔥\n\nお楽しみに❤︎\n\n#ヒロインズTV",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cbb7/2025-12-19/0-1766148100785.jpg",
+        "https://attachments.timetreeapp.com/public_event/56c6/2025-12-19/0-1766148101448.jpg"
+      ],
+      "type": "Media",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cbb7/2025-12-19/0-1766148100785.jpg"
+    },
+    {
+      "date": "2026-01-02",
+      "event": "謹賀新年！アイドル初夢ライブ 2026 supported by @ JAM/ダイキサウンド",
+      "timetree_id": "2837236399148517597",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2837236399148517597",
+      "note": "2026年1月2日は『謹賀新年！アイドル初夢ライブ 2026 supported by @ JAM/ダイキサウンド』に出演します🎍💖\n\n新年のライブ初めはのんふぃく！で♡\n是非遊びにきてね〜！\n\n📢タイムテーブル解禁💖\n\nのんふぃく！初夢ステージのトリを務めさせていただきます！\n新年も最上級に盛り上げちゃうよ！！！\n\n\n特典会📸18:40~19:40\n出演🎤20:10~20:35\n\n⚠️前特典会になりますのでご注意ください！\n\n🎫https://atjam.jp/ticket",
+      "venue_hint": "JAM/ダイキサウンド",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0863/2025-11-17/0-1763392933547.jpg",
+        "https://attachments.timetreeapp.com/public_event/ba57/2025-12-13/0-1765600412324.jpg",
+        "https://attachments.timetreeapp.com/public_event/4698/2025-12-19/0-1766147810734.jpg",
+        "https://attachments.timetreeapp.com/public_event/1c60/2025-12-31/0-1767165898706.jpg"
+      ],
+      "type": "Other",
+      "venue": "JAM/ダイキサウンド",
+      "venue_uid": "eca74b17-a673-40d9-a5f0-d63456b54093"
+    },
+    {
+      "date": "2026-01-04",
+      "event": "HEROINES NEW YEAR in OSAKA",
+      "timetree_id": "2825267696345434881",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825267696345434881",
+      "note": "1月4日は『HEROINES NEW YEAR in OSAKA』@ Zepp Namba に出演します❤️‍🔥\n\n2026年最初の大阪遠征が決定❕\n新年のライブ初めはのんふぃく！でしょ？♡\n\n🎫チケット（11/24 21:30~）\nt-dv.com/heroines_osaka\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d719/2025-11-23/0-1763899287050.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d719/2025-11-23/0-1763899287050.jpg"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "テンラン会 〜新年編〜DAY2",
+      "timetree_id": "2856037825081395452",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2856037825081395452",
+      "note": "1月7日は『テンラン会 〜新年編〜DAY2』@ Zepher Hallに出演します🍤\n\n2026年初の名古屋！のんふぃく！と新年会しよ♡\n\n🎫チケット（12/14 23:00~）\nt-dv.com/tenran_newyear2\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4c20/2025-12-13/0-1765634239069.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/4c20/2025-12-13/0-1765634239069.jpg"
+    },
+    {
+      "date": "2026-01-09",
+      "event": "🎂海まりん生誕祭💚",
+      "timetree_id": "2821202622785931380",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2821202622785931380",
+      "note": "【海まりん生誕祭2026】\n\n今年のテーマはマーメイド🧜‍♀️🎶\nまりんの海に溺れちゃおうっ🫧♡ byまりん\n\n🫧のんふぃく！FC先行抽選（~12/25 23:59）\nheroines.jp/news/public/_/…\n\n🫧一般販売 12/27 22:00~\nt-dv.com/marin_birthday…\n\n#おめでとうございまりん\n#海まりん生誕祭2026",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9582/2025-12-26/0-1766750321030.jpg"
+      ],
+      "type": "Birthday",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/9582/2025-12-26/0-1766750321030.jpg"
+    },
+    {
+      "date": "2026-01-10",
+      "event": "HEROINES FES in Nagoya",
+      "timetree_id": "2837237404615461777",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2837237404615461777",
+      "note": "1月10日は『HEROINES FES in Nagoya』\n@ COMTEC PORTBASE に出演します🍤\n\n2026年最初の名古屋ヒロフェスが決定したよ❕\nでら盛り上がっていくぞ〜！♡\n\n🎫チケット（12/9 20:00~）\nt-dv.com/heroinesfes260…\n\n#のんふぃく",
+      "venue_hint": "COMTEC PORTBASE に出演します🍤",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/405a/2025-12-09/0-1765268922977.jpg"
+      ],
+      "type": "Festival",
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
+    },
+    {
+      "date": "2026-01-11",
+      "event": "HEROINES 成人式2026 DAY1",
+      "timetree_id": "2837237618214586638",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2837237618214586638",
+      "note": "1月11日は『HEROINES 成人式2026 DAY1』\nに出演します🌸\n\n成人を迎えるみなさんの門出が素敵な1日になりますように✨\nのんふぃく！と盛大にお祝いしましょう♡\n\n🎫チケット（12/25 22:00~）\nt-dv.com/heroines260111\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9722/2025-12-26/0-1766750219700.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776",
+      "live_catalog_match_key": "2026-01-11|heroines 成人式2026 day1"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "GAKUSEI RUNWAY 2025 WINTER",
+      "timetree_id": "2825268455455738235",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825268455455738235",
+      "note": "【 #学生ランウェイ 出演決定💖】\n\n1月17日に開催される『GAKUSEI RUNWAY 2025 WINTER』に出演します❤︎\n\n日本最大規模の女子学生参加型イベント✨\nのんふぃく！が最上級のステージ魅せちゃいます♡\n\nスペシャルゲストとして、こるね・まりんがランウェイ出演‼️\n\nチェキ券事前販売 15:15~17:00\n特典会📸18:20~19:20 \n\n※チェキ券は特典会中も購入可能ですが、数に限りがあるため前販売にて購入を推奨します\n\n🎫チケット\ngakusei-runway.com/#ticket\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c882/2025-11-01/0-1761966244812.jpg",
+        "https://attachments.timetreeapp.com/public_event/ea98/2025-12-19/0-1766139187820.jpg",
+        "https://attachments.timetreeapp.com/public_event/c31e/2025-12-19/0-1766139188650.jpg",
+        "https://attachments.timetreeapp.com/public_event/081f/2025-12-19/0-1766139189806.jpg"
+      ],
+      "type": "Media",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c882/2025-11-01/0-1761966244812.jpg"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "ナナコロビヤオキ主催2マンライブ『 天下一舞闘会‼︎』",
+      "timetree_id": "2858097240819256160",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2858097240819256160",
+      "note": "1月20日は『天下一舞闘会！！其の二』@ BIGCAT に出演します🐙\n\nとりあえずのんふぃく！と踊らへん？♡\n\n🎫チケット（12/18 19:30~）\nt-dv.com/osakabutokai01…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3ece/2025-12-16/0-1765879739999.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3ece/2025-12-16/0-1765879739999.jpg"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "I am あむ♡おんりーわん！生誕祭",
+      "timetree_id": "2825268746179725503",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2825268746179725503",
+      "note": "【香月あむ生誕祭2026】\n\nだいすきなみんなとなんばーわんでおんりーわんな日になりますよーに🐈‍⬛💜 byあむ\n\n🐾のんふぃく！FC先行抽選（~1/10 23:59）\nheroines.jp/news/public/_/…\n\n🐾一般販売 1/12 21:00~\nt-dv.com/amu_birthday20…\n\n#香月あむ生誕祭2026",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bd79/2026-01-07/0-1767810143748.jpg"
+      ],
+      "type": "Birthday",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/bd79/2026-01-07/0-1767810143748.jpg"
+    },
+    {
+      "date": "2026-01-24",
+      "event": "HYPEIDOL! DX",
+      "timetree_id": "2872659455933041445",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2872659455933041445",
+      "note": "1月24日は『HYPEIDOL!  DX』に出演します🚀\n\nのんふぃく！と最上級の時間過ごそうね♡\nMusic restaurant APEXIAで待ってます❕\n\n📢タイムテーブル解禁🚀\n\n出演🎤18:45~19:15\n特典会📸19:20~20:40\n\nのんふぃく！トリです！\n土曜夜のライブ⭐️絶対会いに来てね♡\n\n🎫チケットはこちら\nt-dv.com/hypedx_0124",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cc2e/2026-01-05/0-1767615692307.jpg",
+        "https://attachments.timetreeapp.com/public_event/bc20/2026-01-07/0-1767810048536.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cc2e/2026-01-05/0-1767615692307.jpg"
+    },
+    {
+      "date": "2026-01-25",
+      "event": "天下一の大声祭",
+      "timetree_id": "2860465796164766562",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2860465796164766562",
+      "note": "【ナナコロ × MEGAFON × のんふぃく！】\n\n2026.01.25\n『 天下一の大声祭 』\n@ 神田スクエアホール\n\n最高の3MAN LIVEが決定🐙📣💖\n天下一のステージ バカデカボイスで盛り上がろ♡\n\n🎫チケット（12/27 22:00~）\nt-dv.com/minnade_koedas…\n\n#のんふぃく",
+      "venue_hint": "神田スクエアホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1cc9/2025-12-26/0-1766750485684.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2026-01-28",
+      "event": "shibuya luisant Vol.46",
+      "timetree_id": "2855740612396599517",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2855740612396599517",
+      "note": "1月28日は『shibuya luisant Vol.46』に出演します💖\n\n超激アツな対バンライブが決定✨\nのんふぃく！の半端ないステージ覚悟して来てね♡\n\n🎫チケット（抽選受付中~12/22 23:59）\nt-dv.com/shibuyaLuisant…\n一般先着販売：12/23 22:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b752/2025-12-13/0-1765598808760.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/b752/2025-12-13/0-1765598808760.jpg"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "緊急開催！ツアー前決起集会",
+      "timetree_id": "2831801204152879551",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2831801204152879551",
+      "note": "【📢のんふぃく！単独公演💖】\n\n2026.01.29 Thu\n『緊急開催！ツアー前決起集会』\n@ 品川ステラボール \n\n楽曲投票で上位15曲を披露しちゃいます❕\n※チケット購入時投票1/28 18:00集計〆切\n\nふぃくみん！の覚悟を見せてくれ〜！！！\n\n🎫チケット（1/21 21:00~）\nt-dv.com/nonfic_0129\n\n#のんふぃく",
+      "venue_hint": "品川ステラボール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/796e/2026-01-24/0-1769273229750.jpg"
+      ],
+      "type": "Other",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "あいす生誕祭2026 前夜祭",
+      "timetree_id": "2865399798994717610",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2865399798994717610",
+      "note": "1月30日は『あいす生誕祭2026 前夜祭』に出演します🍨💗\n\n大好きなあいすちゃんに愛伝えるよ〜！♡\nのんふぃく！と盛大にお祝いしようね🎂\n\n🎫チケット先行抽選受付中（~12/25 23:59）\nt-dv.com/ice260130\n一般販売 12/27 21:00~\n\n#あいす生誕祭2026\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e1bd/2025-12-26/0-1766750273527.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44",
+      "live_catalog_match_key": "2026-01-30|あいす生誕祭2026 前夜祭"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "ふぃくふぇす circuit 2026",
+      "timetree_id": "2858188116446824998",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2858188116446824998",
+      "note": "【のんふぃく！主催サーキット】\n\n／\n     2026.02.03 (Tue)\n   『ふぃくふぇす circuit 2026』\n     開催決定⭐️\n＼\n\nふぃくふぇす！初！渋谷サーキット🎤\n全人類最上級にたのぴっぴな1日にしようね♡\n\n#ふぃくふぇす #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0276/2025-12-19/0-1766121749945.jpg",
+        "https://attachments.timetreeapp.com/public_event/d59c/2026-01-26/0-1769429807041.jpg",
+        "https://attachments.timetreeapp.com/public_event/9fab/2026-01-26/0-1769429808662.jpg",
+        "https://attachments.timetreeapp.com/public_event/f697/2026-01-26/0-1769429809307.jpg",
+        "https://attachments.timetreeapp.com/public_event/63d6/2026-01-26/0-1769429810062.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/0276/2025-12-19/0-1766121749945.jpg"
+    },
+    {
+      "date": "2026-02-04",
+      "event": "Débutante vol.8",
+      "timetree_id": "2884016858683295928",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2884016858683295928",
+      "note": "2月4日は『Débutante vol.8』に出演します❤️‍🩹\n\nお目当て特典❤︎ハートステッカー\n \nのんふぃく！お目当てで入場するとかわいいステッカーがゲットできちゃう♡\nとびきりかわいくして待ってるね🥀♡\n\n🎫チケット（1/21 22:00~）\nhttps://livepocket.jp/e/debutante_vol8\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8e51/2026-01-24/0-1769273293657.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/8e51/2026-01-24/0-1769273293657.jpg"
+    },
+    {
+      "date": "2026-02-07",
+      "event": "HEROINES LEAGUE FINAL 最終決戦",
+      "timetree_id": "2860466055909624594",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2860466055909624594",
+      "note": "2月7日は『HEROINES LEAGUE FINAL 最終決戦』に出演します⚔️\n\n現在総合1位🔥最後もてっぺん勝ち獲ります！\n\n🎫HEROINES FC先行受付中（1/14 23:59〆）\nheroines.jp/news/public/_/…\n\n🎫一般販売（1/15 22:30~）\nt-dv.com/heroines_leagu…\n\n🗳️FC投票（1/14 23:59〆）\nheroines.jp/news/public/_/…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0f53/2026-01-07/0-1767809952910.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/0f53/2026-01-07/0-1767809952910.jpg"
+    },
+    {
+      "date": "2026-02-08",
+      "event": "umeda luisant Vol.",
+      "timetree_id": "2878521680753216240",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2878521680753216240",
+      "note": "2月8日は『umeda luisant Vol.3』に出演します💫\n\nなんばHatchまるごとのんふぃく！が激アツ空間にしちゃうよ！半端ないステージ刮目せんかい！♡\n\n🎫チケット抽選受付中（1/18 23:59〆）\nticketdive.com/event/umedaLui…\n1/19 12:00一般先着発売\n\n#のんふぃく\n\n📢タイムテーブル解禁💖\n\nのんふぃく！トリです✨\n激アツな空間いっしょに楽しもうね♡\n\n出演🎤17:10~17:40\n特典会📸終演後\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2fe8/2026-01-15/0-1768495638362.jpg",
+        "https://attachments.timetreeapp.com/public_event/b485/2026-02-06/0-1770340172772.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/2fe8/2026-01-15/0-1768495638362.jpg"
+    },
+    {
+      "date": "2026-02-09",
+      "event": "HEROINES FES -ちょっぴり早いバレンタインDAY!-",
+      "timetree_id": "2860466163283806857",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2860466163283806857",
+      "note": "2月9日は『HEROINES FES -ちょっぴり早いバレンタインDAY!-』に出演します🎀\n\nちょっぴり早いバレンタイン🍫💌\nかわいいのんふぃく！にめろめろになってね♡\n\n🎫チケット（1/20 22:00~）\nt-dv.com/heroinesfes260…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4774/2026-01-19/0-1768822792654.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44",
+      "live_catalog_match_key": "2026-02-09|heroines fes -ちょっぴり早いバレンタインday!-"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "FICTIONAL ROAD 2026@名古屋",
+      "timetree_id": "2791673692681030648",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2791673692681030648",
+      "note": "のんふぃく！5th Anniversary Tour\n『FICTIONAL ROAD 2026』\n\n🎫只今よりのんふぃく！FC抽選開始‼︎(~1/4 23:59)\nheroines.jp/news/public/_/…\n\n🎫一般発売（1/6 22:00~）\nt-dv.com/nonfic-2026tour\n\nTOUR FINAL₊✧\n05.05 @ 幕張メッセイベントホール\ncoming soon...🎟️\n\n#のんふぃく",
+      "venue_hint": "名古屋",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5ad0/2025-12-26/0-1766750568248.jpg"
+      ],
+      "type": "Other",
+      "venue": "ららぽーと名古屋みなとアクルス",
+      "venue_uid": "8d57e47c-9df5-4835-add1-2d7701d867de"
+    },
+    {
+      "date": "2026-02-12",
+      "event": "Merry BAD TUNE. presents#バチュコリ EX -Valentine SP-",
+      "timetree_id": "2878521877583513976",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2878521877583513976",
+      "note": "2月12日は『Merry BAD TUNE. presents\n#バチュコリ EX -Valentine SP-』に出演します🎀\n\nお目当て特典❤︎ハートステッカー\n\nバレンタイン目前！\nSpotify O-EASTで待ち合わせしよ…？💌♡\n\n🎫チケット（1/25 13:00~）\nlivepocket.jp/e/bcvt2026\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cc6e/2026-01-29/0-1769665298157.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cc6e/2026-01-29/0-1769665298157.jpg"
+    },
+    {
+      "date": "2026-02-13",
+      "event": "HEROINES 3MANLIVE in Sapporo",
+      "timetree_id": "2860466414262569194",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2860466414262569194",
+      "note": "【 iON! × よるあみ × のんふぃく！】\n\n2026.02.13 Fri.\n『HEROINES 3MANLIVE in Sapporo』\n@ Zepp Sapporo\n\n北海道で激アツ3MAN LIVEが決定✈️💞\nなまらめんこいのんふぃく！に会いに来てね♡\n\nお目当て特典❄️写メ券\n\n🎫チケット（1/8 21:00~）\nt-dv.com/heroines3manli…\n\n#のんふぃく",
+      "venue_hint": "Zepp Sapporo",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/62c3/2026-01-07/0-1767810000457.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Sapporo",
+      "venue_uid": "c879bbf5-4849-457b-afd6-779f5c84ea5d"
+    },
+    {
+      "date": "2026-02-14",
+      "event": "HEROINES VALENTINE DAY1",
+      "timetree_id": "2878522222263028349",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2878522222263028349",
+      "note": "2月14日は『HEROINES VALENTINE DAY1』に出演します🍫🎀\n\nバレンタイン当日も会えるよ〜💭💗\nのんふぃく！とバレンタインデートしよ♡\n\n出演🎤16:25~16:50\n特典会📸終演後 ※はるかのみ前物販15:00~16:00\n\n🎫チケット（1/24 21:00~）\nhttps://ticketdive.com/event/heroines_valentine_day1\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e6da/2026-01-24/0-1769273430594.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Stellar Ball",
+      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "live_catalog_match_key": "2026-02-14|heroines valentine day1"
+    },
+    {
+      "date": "2026-02-15",
+      "event": "HEROINES VALENTINE DAY2",
+      "timetree_id": "2878522338260699309",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2878522338260699309",
+      "note": "2月15日は『HEROINES VALENTINE DAY2』に出演します🍫💗\n\nバレンタインの次の日も会えちゃうよ💌\nのんふぃく！からの愛受け取ってくれる？♡\n\n出演🎤19:55~20:20\n特典会📸終演後\n\n🎫チケット（1/25 22:00~）\nhttps://ticketdive.com/event/heroinesvalentine260215\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1e16/2026-01-24/0-1769273484114.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776",
+      "live_catalog_match_key": "2026-02-15|heroines valentine day2"
+    },
+    {
+      "date": "2026-02-20",
+      "event": "THE HEROINES",
+      "timetree_id": "2878522513028959039",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2878522513028959039",
+      "note": "2月20日は『THE HEROINES』に出演します💖\n\nのんふぃく！が1番盛り上げちゃうよ❕\nZepp Shinjukuで待ってます♡\n\n🎫チケット（1/16 22:00~）\nt-dv.com/the_heroines\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8559/2026-01-15/0-1768495568045.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Shinjuku",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885",
+      "live_catalog_match_key": "2026-02-20|the heroines"
+    },
+    {
+      "date": "2026-02-22",
+      "event": "HEROINES CATITUDE",
+      "timetree_id": "2860466592730204248",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2860466592730204248",
+      "note": "2月22日は『HEROINES CATITUDE』に出演します🐈💞\n\nにゃんにゃんにゃんの日🐾かわいいのんふぃく！にゃんこに会いにきてにゃん♡\n\n🎫チケット（1/13 21:00~）\nhttps://ticketdive.com/event/HEROINES_CATITUDE2026\n\n#のんふぃく\n\n\n📢タイムテーブル解禁💞\n\n出演🎤20:05~20:30\n特典会📸終演後\n\n🔗本日22:00 チケット追加発売❕\nt-dv.com/HEROINES_CATIT…\n\nこの日限定の超かわいい衣装で登場します🐈\nのんふぃくねこちゃんに会いにきてにゃん♡",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f660/2026-01-12/0-1768229299830.jpg",
+        "https://attachments.timetreeapp.com/public_event/32f6/2026-02-16/0-1771247026357.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce",
+      "live_catalog_match_key": "2026-02-22|heroines catitude"
+    },
+    {
+      "date": "2026-02-24",
+      "event": "ないとぱれ〜ど ~なこお誕生日おめでとうSP~",
+      "timetree_id": "2903121985318832867",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903121985318832867",
+      "note": "2月24日は『ないとぱれ〜ど ~なこお誕生日おめでとうSP~』に出演します🎂💚\n\n夜光性アミューズなこちゃんのお誕生日👻❤\nのんふぃく！が盛大にお祝いしちゃうよ♡\n\n🎫チケット（2/10 20:00~）\nt-dv.com/nako_bitrthday\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/19c4/2026-02-16/0-1771247108837.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/19c4/2026-02-16/0-1771247108837.jpg"
+    },
+    {
+      "date": "2026-02-27",
+      "event": "HEROINES FES 2026』@ LaLa arena TOKYO-BAY",
+      "timetree_id": "2878522804163987500",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2878522804163987500",
+      "note": "【史上最大規模HEROINES FES🌟】\n\n2月27日、2月28日、3月1日に開催される『HEROINES FES 2026』@ LaLa arena TOKYO-BAY に出演します💖\n\nHEROINES全グループ新衣装お披露目♡\n伝説級にたのぴっぴな日になる予感…！\n\n🎫チケット（1/27 22:00~）\nt-dv.com/heroinesfes2026\n\n#のんふぃく",
+      "venue_hint": "LaLa arena TOKYO-BAY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c3ea/2026-02-06/0-1770339999431.jpg"
+      ],
+      "type": "Festival",
+      "venue": "LaLa arena TOKYO-BAY",
+      "venue_uid": "629bdaf0-807e-473e-a088-3c96441c1e6b"
+    },
+    {
+      "date": "2026-03-02",
+      "event": "『のんふぃく！定期公演 SP編〜みにいなのお誕生日会へようこそ！♡〜",
+      "timetree_id": "2903128993245841653",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903128993245841653",
+      "note": "【のんふぃく！定期公演】\n\n2026.03.02 Mon\n『のんふぃく！定期公演 SP編〜みにいなのお誕生日会へようこそ！♡〜』\n@ 恵比寿ガーデンホール\n\nにいなリアバ公演🎂💙\nSPゲスト虹羽みにちゃんもリアバ！🪽\nコラボ披露お楽しみに❤︎\n\n🎫チケット(2/21 22:00~)\nt-dv.com/nonfic0302\n\n#のんふぃく",
+      "venue_hint": "恵比寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5933/2026-03-05/0-1772684567251.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "Appare!ひな祭り",
+      "timetree_id": "2895511967186700864",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2895511967186700864",
+      "note": "3月3日は『Appare!ひな祭り』に出演します🌸\n\nお目当て特典❤︎ハートステッカー\nひな祭りものんふぃく！と楽しもうね🎎♡\n\n🎫チケット\nt-dv.com/appare0303\n\n#のんふぃく\n\n📢タイムテーブル解禁🌸\n\n出演🎤20:00~20:25\n特典会📸終演後 21:00~22:00\n\nのんふぃく！トリ前！盛",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cc7d/2026-02-06/0-1770339923553.jpg",
+        "https://attachments.timetreeapp.com/public_event/9ee5/2026-02-16/0-1771246857528.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cc7d/2026-02-06/0-1770339923553.jpg"
+    },
+    {
+      "date": "2026-03-05",
+      "event": "MARQUEE祭 Vol.17",
+      "timetree_id": "2882784800514394860",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2882784800514394860",
+      "note": "3月5日は『MARQUEE祭 Vol.171』に出演します💖\n\n出演🎤18:55~19:20\n特典会📸19:45~20:45\nお目当て特典💫ランダムブロマイド\n\nチケット売り切れる前にゲットしてね❕\nSpotify O-EASTで待ってるよ♡\n\n🎫先行予約受付中(~1/26 23:59)\neplus.jp/marquee-matsur… \n一般販売 1/29 21:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6c36/2026-01-19/0-1768822727432.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/6c36/2026-01-19/0-1768822727432.jpg"
+    },
+    {
+      "date": "2026-03-07",
+      "event": "IDORISE!! FESTIVAL 2026",
+      "timetree_id": "2862317307190725319",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2862317307190725319",
+      "note": "3月7日,8日に開催される『IDORISE!! FESTIVAL 2026』に出演します💫\n\n激アツライブになること間違いなし🔥\n\nのんふぃく！は3月7日に出演します❕\n\n🎫チケットはこちら\neplus.jp/idorise2026/\n\n#アイドライズ2026 #のんふぃく\n\n\n📢特典会タイムテーブル解禁＆生配信決定🎉\n\n出演🎤16:05~16:35 📍Spotify O-EAST\n特典会📸16:55~17:55 📍Spotify O-EAST 3F\n\nさらに！ニコニコにて生配信が決定📺✨\n会場に来れない方も楽しませちゃうよ♡\n\n🔗配信リンク\nsp.ch.nicovideo.jp/idol-niconama/…\n\n#アイドライズ2026 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f3f6/2025-12-22/0-1766382812048.jpg",
+        "https://attachments.timetreeapp.com/public_event/a0a3/2026-03-05/0-1772684199033.jpg",
+        "https://attachments.timetreeapp.com/public_event/112e/2026-03-05/0-1772684199808.jpg"
+      ],
+      "type": "Festival",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81",
+      "live_catalog_match_key": "2026-03-07|idorise!! festival 2026"
+    },
+    {
+      "date": "2026-03-11",
+      "event": "にいな生誕祭🎂💙",
+      "timetree_id": "2879187223072098959",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2879187223072098959",
+      "note": "【澪織にいな生誕祭2026】\n\n18才のにいなもすきにいなってね♡ byにいな\n\n⭐️のんふぃく！FC先行抽選（~3/4 23:59）\nheroines.jp/news/public/_/…\n\n⭐️一般販売 3/5 22:00~\nt-dv.com/niina0311\n\n#澪織にいな生誕祭2026",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/46fa/2026-03-05/0-1772684239205.jpg"
+      ],
+      "type": "Birthday",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/46fa/2026-03-05/0-1772684239205.jpg"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "HEROINES WHITEDAY DAY2",
+      "timetree_id": "2903129101274335734",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903129101274335734",
+      "note": "3月12日は『HEROINES WHITEDAY DAY2』に出演します🏹💗\n\nホワイトデー特別衣装の超キュートなのんふぃく！ちゃんと甘い時間過ごそうね♡\n\n出演🎤17:35~18:00\n特典会📸18:10~19:10\n\n🎫チケット（2/26 21:00~）\nt-dv.com/heroineswhited…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ed74/2026-03-05/0-1772684424370.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/ed74/2026-03-05/0-1772684424370.jpg"
+    },
+    {
+      "date": "2026-03-14",
+      "event": "IDOL STORM〜WHITE DAY SP〜",
+      "timetree_id": "2903120820971653362",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903120820971653362",
+      "note": "3月14日は『IDOL STORM〜WHITE DAY SP〜』に出演します🎀\n\nホワイトデー当日に会えちゃうよ❕\n渋谷CLUB QUATTROに愛伝えにきて♡\n\nお目当て特典❤︎ホワイトデーブロマイド\n\n🎫チケット先行抽選受付（~2/20\n23:59）\nticketdive.com/event/IDOLStor…\n一般先着販売：2/21 21:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0adc/2026-02-16/0-1771246970026.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/0adc/2026-02-16/0-1771246970026.jpg"
+    },
+    {
+      "date": "2026-03-15",
+      "event": "のんふぃく！大特典会",
+      "timetree_id": "2903483960381033037",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903483960381033037",
+      "note": "【📢緊急開催！大特典会💖】\n\n3月15日に『のんふぃく！大特典会』開催決定！\n\n今までの特別衣装5種類を着ちゃいます👗✨\n特別かわいいのんふぃく！に会いにきてね♡\n\n🎫チケット（3/6 21:00~）\nt-dv.com/nonfic0315\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bc02/2026-03-05/0-1772717574472.jpg"
+      ],
+      "type": "Meet",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/bc02/2026-03-05/0-1772717574472.jpg"
+    },
+    {
+      "date": "2026-03-17",
+      "event": "FICTIONAL ROAD 2026@大阪",
+      "timetree_id": "2791673920784058663",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2791673920784058663",
+      "note": "のんふぃく！5th Anniversary Tour\n『FICTIONAL ROAD 2026』\n\n🎫只今よりのんふぃく！FC抽選開始‼︎(~1/4 23:59)\nheroines.jp/news/public/_/…\n\n🎫一般発売（1/6 22:00~）\nt-dv.com/nonfic-2026tour\n\nTOUR FINAL₊✧\n05.05 @ 幕張メッセイベントホール\ncoming soon...🎟️\n\n#のんふぃく",
+      "venue_hint": "大阪",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c987/2025-12-26/0-1766750678008.jpg"
+      ],
+      "type": "Other",
+      "venue": "大阪城音楽堂",
+      "venue_uid": "75722583-0863-4323-8fd7-b6d9c9b97277"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "『にょんふぃく！』",
+      "timetree_id": "2915179462973605951",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2915179462973605951",
+      "note": "【のんふぃく！女性限定ライブ💖】\n\n2026.03.19 Thu\n『にょんふぃく！』\n@ duo MUSIC EXCHANGE\n\n初めての？！単独女性限定ライブ！\nかわいいふぃくみん！ちゃんめろめろにさせちゃうよ🎀会いにきてね♡\n\n🎫チケット（2/22 22:00~）\nt-dv.com/nonfic_girl0319\n\n#のんふぃく",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/907e/2026-03-05/0-1772684472201.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-03-27",
+      "event": "FICTIONAL ROAD 2026@福岡",
+      "timetree_id": "2791674113881426932",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2791674113881426932",
+      "note": "のんふぃく！5th Anniversary Tour\n『FICTIONAL ROAD 2026』\n\n🎫只今よりのんふぃく！FC抽選開始‼︎(~1/4 23:59)\nheroines.jp/news/public/_/…\n\n🎫一般発売(1/6 22:00~)\nt-dv.com/nonfic-2026tour\n\nTOUR FINAL₊✧\n05.05 @ 幕張メッセイベントホール\ncoming soon...🎟️\n\n#のんふぃく",
+      "venue_hint": "福岡",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8f25/2025-12-26/0-1766757906762.jpg"
+      ],
+      "type": "Other",
+      "venue": "福岡市民ホール 大ホール",
+      "venue_uid": "b92ea14b-0a8c-4680-9454-ddee80dca008"
+    },
+    {
+      "date": "2026-03-28",
+      "event": "『RAD JAM-JAPAN EXPO- Supported by My-th @ AICHI SKY EXPO』",
+      "timetree_id": "2903132516813523160",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903132516813523160",
+      "note": "3月28日は『RAD JAM-JAPAN EXPO- Supported by My-th @ AICHI SKY EXPO』に出演します💖\n\nのんふぃく！より盛り上がれる自信のあるふぃくみん！出てこ〜い！！！\n\n🎫チケット発売中\nw.pia.jp/t/radjam-26/ \n\n#のんふぃく",
+      "venue_hint": "AICHI SKY EXPO』",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3541/2026-03-05/0-1772684371146.jpg"
+      ],
+      "type": "Festival",
+      "venue": "AICHI SKY EXPO』",
+      "venue_uid": "1faad722-01b7-4f9e-87f3-4f27f45548fd"
+    },
+    {
+      "date": "2026-03-30",
+      "event": "『HEORINES FES -春-』",
+      "timetree_id": "2903132847500839471",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903132847500839471",
+      "note": "3月30日•31日は『HEORINES FES -春-』@ Kanadevia Hall に出演します🌸\n\nお得な新生活応援チケットもあります❕\nこの春、アイドルライフ始めちゃお♡\n\n🎫チケット（3/11 21:00〜）\nt-dv.com/heroinesfes260…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/794d/2026-03-16/0-1773637774660.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/794d/2026-03-16/0-1773637774660.jpg"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "『HEORINES FES -春-』",
+      "timetree_id": "2903132912864872986",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2903132912864872986",
+      "note": "3月30日•31日は『HEORINES FES -春-』@ Kanadevia Hall に出演します🌸\n\nお得な新生活応援チケットもあります❕\nこの春、アイドルライフ始めちゃお♡\n\n🎫チケット（3/11 21:00〜）\nt-dv.com/heroinesfes260…\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fc20/2026-03-16/0-1773637818203.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/fc20/2026-03-16/0-1773637818203.jpg"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "『超iLiVE! supported by refrear』",
+      "timetree_id": "2918962718319725558",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918962718319725558",
+      "note": "4月1日は『超iLiVE! supported by refrear』に出演します💖\n\n国立代々木競技場にのんふぃく！が登場✨\n超！！！たのぴっぴな1日にしようね♡\n\nお目当て特典🌟5秒動画撮影券\n※使用期限：4/30〆（4/23は除く）\n\n🎫チケット先行抽選受付中❤︎\nt-dv.com/cho-ilive-2026\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/455a/2026-03-16/0-1773637871223.jpg"
+      ],
+      "type": "Concert",
+      "venue": "国立代々木競技場 第一体育館",
+      "venue_uid": "46d55059-45bb-4175-bf59-e55e1d10c701",
+      "live_catalog_match_key": "2026-04-01|超ilive! supported by refrear"
+    },
+    {
+      "date": "2026-04-04",
+      "event": "歌舞伎町ゲームフェスティバル2026 DAY1",
+      "timetree_id": "2915177845457046213",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2915177845457046213",
+      "note": "4月4日は『歌舞伎町ゲームフェスティバル2026 DAY1』に出演します🎮💖\n\nのんふぃく！が全人類楽しませちゃうよ〜！♡\n\n13:30~15:00🎮ぷよぷよ決勝戦【はるか🩷】\n📍MAIN STAGE 歌舞伎町タワー前シネシティ広場\n\n14:00~15:00🎮太鼓の達人予選会【あむ💜】\n📍namco TOKYO STAGE 歌舞伎町タワー3階\n\n15:15~16:00📸のんふぃく！はるか特典会①【はるか🩷】\n📍XPLACE 歌舞伎町タワー5階\n\n15:00~16:00🎮桃太郎電鉄ゲームステージ【ぴあの🩵】\n📍カブキhall STAGE 歌舞伎町タワー2階\n\n16:20~16:45🎤のんふぃく！ライブ\n📍MAIN STAGE 歌舞伎町タワー前シネシティ広場\n\n17:00~18:00🎮太鼓の達人決勝戦【はるか🩷】【あむ💜(予選で勝ったら)】\n📍MAIN STAGE 歌舞伎町タワー前シネシティ広場\n\n18:10~18:45📸のんふぃく！はるか特典会②【はるか🩷】\n📍XPLACE 歌舞伎町タワー5階\n\n18:35~20:00📸のんふぃく！特典会（はるか以外）\n📍グレースパリルフール\n\n\n🔗イベントサイト\nkabukicho-game-fes.com\n\n#KGF2026 #のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/13cc/2026-03-05/0-1772684279269.jpg",
+        "https://attachments.timetreeapp.com/public_event/efe2/2026-04-03/0-1775209974240.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/13cc/2026-03-05/0-1772684279269.jpg"
+    },
+    {
+      "date": "2026-04-07",
+      "event": "iii!",
+      "timetree_id": "2930652200257341944",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2930652200257341944",
+      "note": "【 i-COL × iLiFE! × iON! × のんふぃく！】\n\n2026.04.07 Tue\n『iii!』@ TOYOSU PIT\n\n超豪華な4MAN LIVEが決定⏱️💖\n！担当のんふぃく！が最上級のステージ魅せちゃうよ♡ \n\n🎫チケット（3/26 22:00~）\nt-dv.com/iii260407\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a269/2026-03-26/0-1774528965482.jpg"
+      ],
+      "type": "Concert",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44",
+      "live_catalog_match_key": "2026-04-07|iii!"
+    },
+    {
+      "date": "2026-04-09",
+      "event": "いどみん生誕祭2026 渋谷編",
+      "timetree_id": "2918962805494139835",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918962805494139835",
+      "note": "4月9日は『いどみん生誕祭2026 渋谷編』に出演します🎀\n\nのんふぃく！がたくさんお世話になっているいどみん先生のお誕生日🎂今年も盛大にお祝いさせていただきます♡\n\n🎫チケット先行抽選受付中❤︎\nticketvillage.jp/events/13736\n一般販売：4/1 21:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/24bf/2026-03-21/0-1774073189007.jpg"
+      ],
+      "type": "Birthday",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/24bf/2026-03-21/0-1774073189007.jpg"
+    },
+    {
+      "date": "2026-04-12",
+      "event": "FICTIONAL ROAD 2026",
+      "timetree_id": "2791674331616135343",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2791674331616135343",
+      "note": "のんふぃく！5th Anniversary Tour\n『FICTIONAL ROAD 2026』\n\n🎫只今よりのんふぃく！FC抽選開始‼︎(~1/4 23:59)\nheroines.jp/news/public/_/…\n\n🎫一般発売(1/6 22:00~)\nt-dv.com/nonfic-2026tour\n\nTOUR FINAL₊✧\n05.05 @ 幕張メッセイベントホール\ncoming soon...🎟️\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1966/2025-12-26/0-1766757956782.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/1966/2025-12-26/0-1766757956782.jpg"
+    },
+    {
+      "date": "2026-04-18",
+      "event": "HEROINES FES -DEBUT DAY-",
+      "timetree_id": "2922055206718818381",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2922055206718818381",
+      "note": "4月18日•19日は『HEROINES FES -DEBUT DAY-』に出演します🎤💞\n\nヒロインズ新グループデビュー日❕\nのんふぃく！が盛大にお祝いしちゃうよー！♡\n\n🎫チケット（3/28 22:00~）\nticketdive.com/event/heroines…",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0404/2026-04-03/0-1775210347733.jpg"
+      ],
+      "type": "Festival",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000",
+      "live_catalog_match_key": "2026-04-18|heroines fes -debut day-"
+    },
+    {
+      "date": "2026-04-20",
+      "event": "よるふぃく！",
+      "timetree_id": "2918962973585066361",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918962973585066361",
+      "note": "【 夜光性アミューズ×のんふぃく！】\n\n2026.04.20 Mon\n『よるふぃく！』\n@ 恵比寿ガーデンホール\n\nひさしぶりの #よるふぃく 開催決定🎡✨\nなんと！当日はりなちーリアバ🎂\nのんふぃく！といっしょにお祝いしようね♡\n\n🎫チケット（3/29 20:30~）\nt-dv.com/yorufiku_0420",
+      "venue_hint": "恵比寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/416f/2026-04-03/0-1775210288421.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2026-04-21",
+      "event": "HEROINES主催 女性限定LIVE#キュープリ -Queen &Princess -",
+      "timetree_id": "2926903806019913836",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2926903806019913836",
+      "note": "4月21日は『HEROINES主催 女性限定LIVE\n#キュープリ -Queen &Princess -』に出演します🎀\n\n当日はのんふぃく！ライブ2回し❕\nかわいいふぃくみんちゃん大集合だよ〜♡\n\nお目当て特典💘かわいいデコチェキ風ステッカー\n\n🎫チケット（明日4/9 22:30~）\nt-dv.com/Qpri-260421\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e70f/2026-04-14/0-1776172971534.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/e70f/2026-04-14/0-1776172971534.jpg"
+    },
+    {
+      "date": "2026-04-21",
+      "event": "のんふぃく！×iON! 2MAN LIVE",
+      "timetree_id": "2926903926077671665",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2926903926077671665",
+      "note": "【 iON! × のんふぃく！】\n\n2026.04.21 Tue\n『のんふぃく！×iON! 2MAN LIVE』\n@ Spotify O-EAST\n\n待望の2MAN？！なんと衣装交換あります❕\nスペシャルなのんふぃく！にドンズバきゅん♡\n\n🎫チケット（4/7 22:00~）\nt-dv.com/Nonfic-iON-260…\n\n#のんふぃく",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b2fb/2026-04-07/0-1775538338238.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2026-04-23",
+      "event": "ふぃくふぇす！Vol.19 ~こるね誕生日SP~』",
+      "timetree_id": "2918963034754796505",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918963034754796505",
+      "note": "【のんふぃく！主催】\n\n／\n     2025.04.23 Thu\n　『ふぃくふぇす！Vol.19 ~こるね誕生日SP~』\n    @ Zepp DiverCity 開催決定🎂❤️\n＼\n\nお目当て特典💞ふぃくふぇすくじ\n\nこるねリアバライブ盛大にお祝いしようね🐶♡\n\n🎫チケット（4/7 22:30~）\nt-dv.com/ficfes260423\n\n#のんふぃく #ふぃくふぇす\n\n📢タイムテーブル解禁🐶\n\n出演🎤20:10~20:40\n特典会📸終演後\n\nお目当て特典💞ふぃくふぇすくじ\n\n🎫チケット販売中❤︎\nt-dv.com/ficfes260423\n\n#のんふぃく #ふぃくふぇす",
+      "venue_hint": "Zepp DiverCity 開催決定🎂❤️",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ad09/2026-04-07/0-1775538278535.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2026-04-25",
+      "event": "うみかぜアイドル祭り2026",
+      "timetree_id": "2926903661492586760",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2926903661492586760",
+      "note": "4月25日は『うみかぜアイドル祭り2026』に出演します🏝️💖\n\nみんなだいすき野外フェス❕\n最上級にたのぴっぴな日になること間違いなし♡\n\n🎫チケット（4/4 12:00~）\nl-tike.com/umikazeidolfes/\n\n🔗イベントサイト\nesfes.jp\n\n#earlysummerfesta #のんふぃく\n\n📢タイムテーブル解禁💖\n\n出演🎤16:45~17:20\n野外ステージのんふぃく！と楽しみ尽くそう♡\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1045/2026-04-14/0-1776172848310.jpg",
+        "https://attachments.timetreeapp.com/public_event/dbe6/2026-04-14/0-1776172852243.jpg",
+        "https://attachments.timetreeapp.com/public_event/26d0/2026-04-14/0-1776172855642.jpg",
+        "https://attachments.timetreeapp.com/public_event/5d7d/2026-04-14/0-1776172856917.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/1045/2026-04-14/0-1776172848310.jpg"
+    },
+    {
+      "date": "2026-05-01",
+      "event": "ヒロインズ体育祭",
+      "timetree_id": "2915178214404802677",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2915178214404802677",
+      "note": "【 #ヒロインズ体育祭 チケット受付開始🌟】\n\n5月1日は『HEROINES 体育祭』に出演します💞\n\nHEROINES全グループ大集合で体育祭を開催！\nのんふぃく！優勝目指します🏆応援よろしくね♡\n\n🎫FC先行抽選受付中（~3/8 23:59〆）\nabe.ma/4ciPEqP\n※FCは全てのプランで応募可能\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1c59/2026-03-05/0-1772684323323.jpg"
+      ],
+      "type": "Other",
+      "venue": "東京体育館",
+      "venue_uid": "f80b9805-818e-43e3-9732-604997abd74d",
+      "live_catalog_match_key": "2026-05-01|ヒロインズ体育祭"
+    },
+    {
+      "date": "2026-05-02",
+      "event": "IDOL SUMMER JUNGLE GOLDEN",
+      "timetree_id": "2936367042955987087",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2936367042955987087",
+      "note": "5月2日,3日に開催される『IDOL SUMMER JUNGLE GOLDEN』に出演決定🏝️💖\n\n幕張5周年ワンマンライブ目前！ふぃくみん！みんな一丸となってアツくなりましょう🔥🔥\n\n🎫VIPチケット抽選受付中（~4/13 23:59）\nticketdive.com/event/samajan_…\n※一般チケット販売中❕\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e416/2026-04-03/0-1775210228524.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "お台場R地区",
+      "venue_uid": "c6da72fa-6d7e-4230-a967-cfa74bf55331",
+      "live_catalog_match_key": "2026-05-02|idol summer jungle golden"
+    },
+    {
+      "date": "2026-05-05",
+      "event": "FICTIONAL ROAD 2026@幕張メッセイベントホール",
+      "timetree_id": "2791673064625949598",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2791673064625949598",
+      "note": "のんふぃく！5th Anniversary Tour\n『FICTIONAL ROAD 2026』\n\n🎫只今よりのんふぃく！FC抽選開始‼︎(~1/4 23:59)\nheroines.jp/news/public/_/…\n\n🎫一般発売(1/6 22:00~)\nt-dv.com/nonfic-2026tour\n\nTOUR FINAL₊✧\n05.05 @ 幕張メッセイベントホール\ncoming soon...🎟️\n\n#のんふぃく",
+      "venue_hint": "幕張メッセイベントホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/86c7/2026-03-05/0-1772684137116.jpg"
+      ],
+      "type": "Other",
+      "venue": "幕張メッセ",
+      "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
+    },
+    {
+      "date": "2026-05-06",
+      "event": "翌日特典会",
+      "timetree_id": "2918963611765197534",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918963611765197534",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c45e/2026-05-06/0-1778092551424.jpg"
+      ],
+      "type": "Tokutenkai",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c45e/2026-05-06/0-1778092551424.jpg"
+    },
+    {
+      "date": "2026-05-09",
+      "event": "後日特典会",
+      "timetree_id": "2944444270818249214",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2944444270818249214",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d2e6/2026-05-06/0-1778092510716.jpg"
+      ],
+      "type": "Tokutenkai",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d2e6/2026-05-06/0-1778092510716.jpg"
+    },
+    {
+      "date": "2026-05-10",
+      "event": "ヒロインズ研究生4期お披露目",
+      "timetree_id": "2944444413474916444",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2944444413474916444",
+      "note": "5月10日は『ヒロインズ研究生4期お披露目』に出演します🌸\n\nヒロインズの新しい仲間をみんなであたたかく迎え入れましょう♡のんふぃく！もフレッシュに頑張っちゃうよ〜！\n\n🎫チケット先行抽選受付中（~4/23 23:59）\nt-dv.com/heroken4thdebut\n一般販売：4/25 21:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c80f/2026-05-06/0-1778092844655.jpg"
+      ],
+      "type": "Concert",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/c80f/2026-05-06/0-1778092844655.jpg"
+    },
+    {
+      "date": "2026-05-11",
+      "event": "HEROINES FES",
+      "timetree_id": "2944444476909570609",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2944444476909570609",
+      "note": "5月11日は『HEROINES FES』に出演します⚡️\n\nビリビリ電流走っちゃうくらい最高のステージをお届けします❤️‍🔥豊洲PITで待ってるよ〜！\n\n🎫チケット（4/25 21:00~）\nhttps://ticketdive.com/event/heroinesfes260511\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2eaa/2026-05-06/0-1778092799894.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44",
+      "live_catalog_match_key": "2026-05-11|heroines fes"
+    },
+    {
+      "date": "2026-05-12",
+      "event": "ちゅらまちゅり〜1st anniversary〜",
+      "timetree_id": "2936365373035793398",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2936365373035793398",
+      "note": "5月12日は『ちゅらまちゅり〜1st anniversary〜』に出演します💖\n\nのんふぃく！アクセル全開で盛り上げちゃうよ〜！Zepp Shinjukuで待ってるね♡\n\n🎫チケット先行抽選受付中（~4/8 23:59）\nt-dv.com/chuLamachuri_1…\n一般販売：4/9 19:00~\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a75a/2026-04-03/0-1775210029489.jpg",
+        "https://attachments.timetreeapp.com/public_event/8ce1/2026-05-06/0-1778093182524.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/a75a/2026-04-03/0-1775210029489.jpg"
+    },
+    {
+      "date": "2026-05-17",
+      "event": "ヒロインズ研究生大阪2期生お披露目ライブ@大阪",
+      "timetree_id": "2918963784226589541",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918963784226589541",
+      "note": "5月17日は『ヒロインズ研究生大阪2期生 お披露目ライブ』に出演します🐙\n\nヒロ研大阪さんデビュー日❕\nのんふぃく！がたくさん盛り上げるで♡\n\n🎫チケット（一般発売 5/6 21:00~）\nt-dv.com/herokenosaka2th\n\n#のんふぃく",
+      "venue_hint": "大阪",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5928/2026-05-06/0-1778092722980.jpg"
+      ],
+      "type": "Concert",
+      "venue": "大阪城音楽堂",
+      "venue_uid": "75722583-0863-4323-8fd7-b6d9c9b97277"
+    },
+    {
+      "date": "2026-05-19",
+      "event": "MARQUEE Fes.",
+      "timetree_id": "2944444636754496377",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2944444636754496377",
+      "note": "5月19日は『MARQUEE Fes.』に出演します💖\n\nお目当て特典🎁ランダム限定ブロマイド1枚\n\n出演🎤19:25~19:50\n特典会📸終演後 20:45~21:55 ホール内\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9830/2026-05-07/0-1778128457891.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/9830/2026-05-07/0-1778128457891.jpg"
+    },
+    {
+      "date": "2026-05-20",
+      "event": "HEROINES LEAGUE I",
+      "timetree_id": "2918963877885397769",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2918963877885397769",
+      "note": "5月20日は『HEROINES LEAGUE Ⅰ』に出演します❤️‍🔥\n\n今年の #ヒロインズリーグ 遂に開幕❤︎\nのんふぃく！とてっぺん勝ち獲りましょう！\n\n🔗FC先行抽選受付中（~5/3 23:59）\nhttps://heroines.jp/news/public/_/oo4af077c7d4in5k.html\n\n🔗オフィシャル先行抽選（5/7 18:00~5/9 23:59） https://ticketdive.com/event/HEROINESLEAGUE-0520\n\n🔗一般販売（5/10 21:00~） https://ticketdive.com/event/HEROINESLEAGUE-0520\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/46f2/2026-05-07/0-1778128646231.jpg",
+        "https://attachments.timetreeapp.com/public_event/832f/2026-05-07/0-1778128647890.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/46f2/2026-05-07/0-1778128646231.jpg"
+    },
+    {
+      "date": "2026-05-23",
+      "event": "HEROINES FES in Aichi Day1@名古屋",
+      "timetree_id": "2944444823694625470",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2944444823694625470",
+      "note": "5月23日は『HEROINES FES in Aichi Day1』に出演します🍤🌟\n\nのんふぃく！が1番盛り上げちゃうよ〜！\nアイプラザ豊橋で待ってます♡\n\n🎫チケット（4/21 21:00~）\nhttps://ticketdive.com/event/heroinesaichi0523_24\n\n#のんふぃく",
+      "venue_hint": "名古屋",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/33c3/2026-05-06/0-1778093005014.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ららぽーと名古屋みなとアクルス",
+      "venue_uid": "8d57e47c-9df5-4835-add1-2d7701d867de"
+    },
+    {
+      "date": "2026-05-24",
+      "event": "恋星はるか大感謝祭",
+      "timetree_id": "2944444949649574007",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2944444949649574007",
+      "note": "【はるちゃんラストiLiFE!💗】\n\n2026.05.24 Sun\n『恋星はるか大感謝祭』\n@ 立川ステージガーデン\n\nのんふぃく！ゲスト出演決定！❤︎\n頑張ったはるちゃんをいっぱい甘やかすよ👶🏻🎀\n\n🔗チケット詳細\nhttps://heroines.jp/news/public/_/uj7avvsfa75ypumy.html\n\n#のんふぃく",
+      "venue_hint": "立川ステージガーデン",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c95b/2026-05-06/0-1778093122731.jpg"
+      ],
+      "type": "Concert",
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
+    },
+    {
+      "date": "2026-05-30",
+      "event": "HEROINES LIVE！",
+      "timetree_id": "2967594579652397698",
+      "timetree_url": "https://timetr.ee/p/nonfic_official/2967594579652397698",
+      "note": "5月30日は『HEROINES LIVE！』に出演します💖\n\nのんふぃく！今月ラストライブ❕\nGARDEN 新木場 FACTORYに大集合♡\n\n🎫チケット（5/17 21:00~）\nhttps://t-dv.com/HEROINESLIVE0530\n\n#のんふぃく",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a069/2026-05-16/0-1778932840633.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/a069/2026-05-16/0-1778932840633.jpg"
+    }
+  ],
+  "enriched_at": "2026-06-15T07:02:06.741Z",
+  "venues_resolved_at": "2026-06-15T07:07:13.449Z",
+  "venue_stats": {
+    "with_venue": 79,
+    "with_poster_only": 89,
+    "with_venue_uid": 79
+  },
+  "multi_venue_patched_at": "2026-06-15T07:07:13.533Z"
+}

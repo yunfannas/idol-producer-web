@@ -7,6 +7,18 @@
       "aliases": ["Equal Love"]
     },
     {
+      "group_key": "not-equal-me",
+      "group_name": "≠ME",
+      "file": "not-equal-me-2025-07-2026-05.json",
+      "aliases": ["NOT EQUAL ME", "Noimii", "ノイミー"]
+    },
+    {
+      "group_key": "nearly-equal-joy",
+      "group_name": "≒JOY",
+      "file": "nearly-equal-joy-2025-07-2026-05.json",
+      "aliases": ["Nearly Equal Joy", "Niajoy", "ニアジョイ"]
+    },
+    {
       "group_key": "takanenonadeshiko",
       "group_name": "高嶺のなでしこ",
       "file": "takanenonadeshiko-2025-07-2026-07.json",

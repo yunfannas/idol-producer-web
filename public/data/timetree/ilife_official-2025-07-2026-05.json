@@ -110,7 +110,7 @@
         "https://attachments.timetreeapp.com/public_event/75cb/2025-06-28/46438-1751080961753.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp Haneda (TOKYO)",
+      "venue": "Zepp Haneda",
       "with": [
         "高嶺のなでしこ"
       ],
@@ -382,7 +382,7 @@
         "https://attachments.timetreeapp.com/public_event/ab92/2025-08-16/46438-1755309627712.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp Osaka Bayside",
+      "venue": "Zepp osaka Bayside",
       "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
@@ -456,7 +456,7 @@
         "https://attachments.timetreeapp.com/public_event/0d70/2025-08-16/46438-1755309373841.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張メッセ 国際展示場 展示ホール9～11",
+      "venue": "幕張メッセ",
       "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
     },
     {
@@ -501,7 +501,7 @@
         "https://attachments.timetreeapp.com/public_event/ab2f/2025-09-10/46438-1757477950418.jpg"
       ],
       "type": "Birthday",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -530,7 +530,7 @@
         "https://attachments.timetreeapp.com/public_event/f617/2025-09-13/46438-1757766849777.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷複数会場",
+      "venue": "渋谷（複数会場フェス）",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/1f8c/2025-09-13/46438-1757766848715.jpg",
       "event_type": "Festival",
       "venue_mode": "multi_venue_festival",
@@ -543,7 +543,7 @@
         "WOMBLIVE",
         "clubasia"
       ],
-      "venue_uid": "4199ef00-7f6f-4e24-b884-b467286ecc00"
+      "venue_uid": null
     },
     {
       "date": "2025-09-21",
@@ -557,7 +557,7 @@
         "https://attachments.timetreeapp.com/public_event/34f0/2025-09-13/46438-1757766996605.jpg"
       ],
       "type": "Festival",
-      "venue": "Zepp Osaka Bayside",
+      "venue": "Zepp osaka Bayside",
       "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
@@ -573,7 +573,7 @@
         "https://attachments.timetreeapp.com/public_event/c853/2025-09-19/46438-1758291488420.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -718,7 +718,7 @@
         "https://attachments.timetreeapp.com/public_event/db26/2025-10-05/46438-1759676868773.jpg"
       ],
       "type": "Concert",
-      "venue": "Zepp Haneda (TOKYO)",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -748,7 +748,7 @@
         "https://attachments.timetreeapp.com/public_event/ff37/2025-10-14/46438-1760411315844.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "with": [
         "のんふぃく！"
       ],
@@ -827,7 +827,7 @@
         "https://attachments.timetreeapp.com/public_event/b868/2025-10-05/46438-1759674325644.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp DiverCity (TOKYO)",
+      "venue": "Zepp DiverCity",
       "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
     },
     {
@@ -1082,7 +1082,7 @@
         "https://attachments.timetreeapp.com/public_event/cdd1/2025-11-13/46438-1763021095383.jpg"
       ],
       "type": "Festival",
-      "venue": "Zepp Haneda (TOKYO)",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -1097,7 +1097,7 @@
         "https://attachments.timetreeapp.com/public_event/ea3f/2025-11-24/46438-1763990060307.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -1173,7 +1173,7 @@
         "https://attachments.timetreeapp.com/public_event/6889/2025-12-13/46438-1765612157382.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp Osaka Bayside",
+      "venue": "Zepp osaka Bayside",
       "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
@@ -1350,7 +1350,7 @@
         "https://attachments.timetreeapp.com/public_event/b11c/2025-12-17/0-1766003193342.jpg"
       ],
       "type": "Festival",
-      "venue": "Zepp Haneda (TOKYO)",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -1380,7 +1380,7 @@
         "https://attachments.timetreeapp.com/public_event/8237/2026-01-04/46438-1767494176212.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -1590,7 +1590,7 @@
         "https://attachments.timetreeapp.com/public_event/911a/2025-10-27/46438-1761561563103.jpg"
       ],
       "type": "Concert",
-      "venue": "Zepp Haneda (TOKYO)",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -1605,7 +1605,7 @@
         "https://attachments.timetreeapp.com/public_event/1f0e/2025-10-27/46438-1761561577857.jpg"
       ],
       "type": "Concert",
-      "venue": "Zepp Haneda (TOKYO)",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -1693,7 +1693,7 @@
         "https://attachments.timetreeapp.com/public_event/0b43/2026-02-16/46438-1771239839120.jpg"
       ],
       "type": "Media",
-      "venue": "Zepp DiverCity(TOKYO)",
+      "venue": "Zepp DiverCity",
       "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
     },
     {
@@ -1705,7 +1705,7 @@
       "poster_urls": [
         "https://attachments.timetreeapp.com/public_event/a0c9/2026-02-15/46438-1771122527041.jpg"
       ],
-      "type": "Media",
+      "type": "Virtual",
       "venue": null,
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/a0c9/2026-02-15/46438-1771122527041.jpg"
     },
@@ -1736,7 +1736,7 @@
         "https://attachments.timetreeapp.com/public_event/89e0/2026-02-16/46438-1771239588731.jpg"
       ],
       "type": "Birthday",
-      "venue": "Zepp DiverCity (TOKYO)",
+      "venue": "Zepp DiverCity",
       "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
     },
     {
@@ -1813,7 +1813,7 @@
       "poster_urls": [
         "https://attachments.timetreeapp.com/public_event/5e4e/2026-03-02/46438-1772420822605.jpg"
       ],
-      "type": "Media",
+      "type": "Virtual",
       "venue": null,
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/5e4e/2026-03-02/46438-1772420822605.jpg"
     },
@@ -1991,7 +1991,7 @@
       "poster_urls": [
         "https://attachments.timetreeapp.com/public_event/6729/2026-03-27/46438-1774590115447.jpg"
       ],
-      "type": "Media",
+      "type": "Virtual",
       "venue": null,
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/6729/2026-03-27/46438-1774590115447.jpg"
     },
@@ -2051,7 +2051,7 @@
         "https://attachments.timetreeapp.com/public_event/7a2c/2026-03-17/46438-1773742032194.jpg"
       ],
       "type": "Media",
-      "venue": "東急歌舞伎町タワーステージ",
+      "venue": "歌舞伎町タワーステージ",
       "venue_uid": "51ad860e-3fa6-4937-91f2-076c9499a1fa"
     },
     {
@@ -2227,7 +2227,8 @@
       ],
       "type": "Promo",
       "venue": null,
-      "venue_uid": "b30c632a-59a3-4461-ac63-9a230d27e013"
+      "venue_uid": "b30c632a-59a3-4461-ac63-9a230d27e013",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/ac8c/2026-04-15/46438-1776232462629.jpg"
     },
     {
       "date": "2026-04-17",
@@ -2339,7 +2340,7 @@
         "https://attachments.timetreeapp.com/public_event/f28f/2026-04-24/46438-1777028880298.jpg"
       ],
       "type": "Media",
-      "venue": "幕張メッセ 国際展示場 4-6ホール",
+      "venue": "幕張メッセ",
       "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
     },
     {
@@ -2353,12 +2354,13 @@
       "poster_urls": [
         "https://attachments.timetreeapp.com/public_event/1e61/2026-04-24/46438-1777028225402.jpg"
       ],
-      "type": "Media",
-      "venue": "https://asap-synergy.com/ilife/",
+      "type": "Virtual",
+      "venue": null,
       "with": [
         "ASAP SYNERGY」発売日"
       ],
-      "venue_uid": "c7df7895-ae25-4c1c-a987-48c35e79e456"
+      "venue_uid": "c7df7895-ae25-4c1c-a987-48c35e79e456",
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/1e61/2026-04-24/46438-1777028225402.jpg"
     },
     {
       "date": "2026-04-27",
@@ -2385,7 +2387,7 @@
         "https://attachments.timetreeapp.com/public_event/c06a/2026-04-12/46438-1775976134580.jpg"
       ],
       "type": "Concert",
-      "venue": "Zepp Shinjuku (TOKYO)",
+      "venue": "Zepp Shinjuku",
       "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
     },
     {
@@ -2595,7 +2597,7 @@
         "https://attachments.timetreeapp.com/public_event/4035/2026-05-03/46438-1777814924359.jpg"
       ],
       "type": "Concert",
-      "venue": "Zepp Osaka Bayside",
+      "venue": "Zepp osaka Bayside",
       "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
@@ -2666,7 +2668,14 @@
       "timetree_id": "2931165708846209204",
       "timetree_url": "https://timetr.ee/p/ilife_official/2931165708846209204",
       "type": "Other",
-      "venue": null
+      "venue": "渋谷ソラスタコンファレンス",
+      "note": "【みに・まむ・みき1周年記念特典会】\n5月23日は！3人のデビュー1周年を記念して特典会を開催します🩵🧡💜\n\nそれぞれが選んだ衣装を着て登場するのでお楽しみに👗\n\n🎫FC先行抽選受付（〜 5月19日 23:59）\nhttps://heroines.jp/news/public/_/9qh8jfm1dlf6s7nu.html\n\n🎫一般販売（5月20日 22:00〜）\nhttps://t-dv.com/MMM_1stAnniversary\n\n---------------------------------\n\n\n2026.5.23 (SAT)\n@渋谷ソラスタコンファレンス\n(東京都渋谷区道玄坂1-21-1 渋谷ソラスタ4F)\n\n虹羽みに・小熊まむ・純嶺みき １周年記念特典会\nticket 各部¥1,500\n\n<記載事項>\n※施設付近での待機・たむろは禁止となります。各部の受付開始時刻の5分前を目安にエレベーターで4階にお上がりください。（タリーズコーヒーの裏手、向かって右奥の専用入口より4階までお越しください）\n※入場はチケットに記載されている整理番号順となります。\n\n\n<schedule>\n\n1部\n開場 11:45\n特典会 12:00-13:00\n\n2部\n開場 13:30\n特典会 13:45-14:45\n\n3部\n開場 15:15\n特典会 15:30-16:30\n\n4部\n開場 17:30\n特典会 17:45-18:45\n\n5部\n開場 19:15\n特典会 19:30-20:30\n\n\n＜着用衣装＞\n虹羽みに\n1部 戦隊衣装\n2部 トキメキ衣装\n3部 TIF衣装\n4部 紫陽花衣装\n5部 新体制衣装（デビュー衣装）\n\n小熊まむ\n1部 紫陽花衣装\n2部 マリン衣装\n3部 バレンタイン衣装\n4部 お花見衣装\n5部 新体制衣装（デビュー衣装）\n\n純嶺みき\n1部 戦隊衣装\n2部 マリン衣装\n3部 LOML衣装\n4部 紫陽花衣装\n5部 新体制衣装（デビュー衣装）\n\n",
+      "location_name": "渋谷ソラスタコンファレンス",
+      "venue_hint": "渋谷ソラスタコンファレンス",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/36df/2026-05-20/46438-1779289467470.jpg"
+      ],
+      "venue_uid": "40feb22d-fe18-4c77-8a7e-2f4e95c2bbd9"
     },
     {
       "date": "2026-05-24",
@@ -2684,12 +2693,12 @@
       "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
     }
   ],
-  "enriched_at": "2026-05-18T01:55:26.097Z",
-  "venues_resolved_at": "2026-05-18T00:23:37.599Z",
+  "enriched_at": "2026-06-15T06:42:47.109Z",
+  "venues_resolved_at": "2026-06-15T06:44:43.463Z",
   "venue_stats": {
-    "with_venue": 145,
-    "with_poster_only": 31,
-    "with_venue_uid": 145
+    "with_venue": 144,
+    "with_poster_only": 33,
+    "with_venue_uid": 146
   },
-  "multi_venue_patched_at": "2026-05-18T00:18:52.583Z"
+  "multi_venue_patched_at": "2026-06-15T06:44:43.521Z"
 }

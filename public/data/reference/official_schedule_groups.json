@@ -9,6 +9,22 @@
       "list_query": "cat=L_ALL,live02,live03,live04,live05,live06,live07",
       "detail_path": "/schedule/detail/{id}"
     },
+    "not-equal-me": {
+      "group_name": "≠ME",
+      "base_url": "https://not-equal-me.jp",
+      "parser": "equal_love_monthly",
+      "list_path": "/schedule/list/{year}/{month}/",
+      "list_query": "cat=L_ALL,live02,live03,live04,live05,live06,live07",
+      "detail_path": "/schedule/detail/{id}"
+    },
+    "nearly-equal-joy": {
+      "group_name": "≒JOY",
+      "base_url": "https://nearly-equal-joy.jp",
+      "parser": "equal_love_monthly",
+      "list_path": "/schedule/list/{year}/{month}/",
+      "list_query": "cat=L_ALL,live02,live03,live04,live05,live06,live07",
+      "detail_path": "/schedule/detail/{id}"
+    },
     "takanenonadeshiko": {
       "group_name": "高嶺のなでしこ",
       "base_url": "https://takanenonadeshiko.jp",

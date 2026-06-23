@@ -22,6 +22,8 @@
     "data:schedule-gaps-csv": "node support/scripts/schedule_gaps_csv.mjs",
     "data:patch-official-details": "node support/scripts/patchOfficialScheduleDetails.mjs",
     "calendar:timetree-range": "node support/scripts/timetree_public_calendar_range.mjs",
+    "calendar:timetree-heroines": "node support/scripts/timetree_heroines_batch.mjs",
+    "calendar:timetree-probe-slugs": "node support/scripts/timetree_probe_slugs.mjs",
     "calendar:timetree-merge": "node support/scripts/timetree_merge_monthly_json.mjs",
     "calendar:timetree-enrich": "node support/scripts/timetree_enrich_events.mjs",
     "calendar:timetree-venues": "node support/scripts/timetree_resolve_venues.mjs",

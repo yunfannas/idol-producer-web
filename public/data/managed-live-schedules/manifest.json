@@ -1,6 +1,24 @@
 {
-  "generated_at": "2026-05-30T04:10:07.661Z",
+  "generated_at": "2026-06-23T05:24:51.169Z",
   "sources": [
+    {
+      "source_key": "adamlilith",
+      "label": "AdamLilith TimeTree",
+      "group_uid": "QWRhbUxpbGl0aA",
+      "group_name": "AdamLilith",
+      "group_name_romanji": "AdamLilith",
+      "aliases": [
+        "AdamLilith",
+        "adamlilith",
+        "アダムス",
+        "Adamth"
+      ],
+      "raw_file": "timetree/adamlilith-2025-07-2026-05.json",
+      "file": "groups/adamlilith.json",
+      "event_count": 146,
+      "date_start": "2025-07-02",
+      "date_end": "2026-05-31"
+    },
     {
       "source_key": "akishibu-project",
       "label": "Akishibu TimeTree",
@@ -20,6 +38,28 @@
       "date_end": "2026-05-31"
     },
     {
+      "source_key": "dress-code",
+      "label": "Dress Code TimeTree",
+      "group_uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+      "group_name": "ドレスコード",
+      "group_name_romanji": "Dress_Code",
+      "aliases": [
+        "ãƒ‰ãƒ¬ã‚¹ã‚³ãƒ¼ãƒ‰",
+        "Dress Code",
+        "Dress_Code",
+        "dresscode",
+        "ãƒ‰ãƒ¬ã‚³",
+        "Dreco",
+        "ドレスコード",
+        "ドレコ"
+      ],
+      "raw_file": "timetree/dresscode-2025-07-2026-05.json",
+      "file": "groups/dress-code.json",
+      "event_count": 170,
+      "date_start": "2025-06-30",
+      "date_end": "2026-05-29"
+    },
+    {
       "source_key": "ilife",
       "label": "iLiFE! TimeTree",
       "group_uid": "aUxpRkUh",
@@ -32,9 +72,123 @@
       ],
       "raw_file": "timetree/ilife_official-2025-07-2026-05.json",
       "file": "groups/ilife.json",
-      "event_count": 109,
+      "event_count": 110,
       "date_start": "2025-07-01",
       "date_end": "2026-05-24"
+    },
+    {
+      "source_key": "ion",
+      "label": "iON! TimeTree",
+      "group_uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+      "group_name": "iON!",
+      "group_name_romanji": "iON!",
+      "aliases": [
+        "iON!",
+        "ion",
+        "iON",
+        "ã‚ã„ãŠã‚“"
+      ],
+      "raw_file": "timetree/ion_heroines-2025-07-2026-05.json",
+      "file": "groups/ion.json",
+      "event_count": 152,
+      "date_start": "2025-07-01",
+      "date_end": "2026-05-31"
+    },
+    {
+      "source_key": "last-scene",
+      "label": "LAST SCENE TimeTree",
+      "group_uid": "44Op44K544OI44K344O844Oz",
+      "group_name": "ラストシーン",
+      "group_name_romanji": "LAST_SCENE_(HEROINES)",
+      "aliases": [
+        "ãƒ©ã‚¹ãƒˆã‚·ãƒ¼ãƒ³",
+        "LAST SCENE",
+        "LAST_SCENE_(HEROINES)",
+        "lastscene",
+        "ラストシーン"
+      ],
+      "raw_file": "timetree/lastscene_official-2025-07-2026-05.json",
+      "file": "groups/last-scene.json",
+      "event_count": 66,
+      "date_start": "2025-12-31",
+      "date_end": "2026-05-30"
+    },
+    {
+      "source_key": "megafon",
+      "label": "MEGAFON TimeTree",
+      "group_uid": "TUVHQUZPTg",
+      "group_name": "MEGAFON",
+      "group_name_romanji": "MEGAFON",
+      "aliases": [
+        "MEGAFON",
+        "megafon"
+      ],
+      "raw_file": "timetree/megafon_official-2025-07-2026-05.json",
+      "file": "groups/megafon.json",
+      "event_count": 168,
+      "date_start": "2025-06-30",
+      "date_end": "2026-05-30"
+    },
+    {
+      "source_key": "nanakorobi-yaoki",
+      "label": "Nanakorobi Yaoki TimeTree",
+      "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b",
+      "group_name": "ナナコロビヤオキ",
+      "group_name_romanji": "Nanakorobi_Yaoki",
+      "aliases": [
+        "ãƒŠãƒŠã‚³ãƒ­ãƒ“ãƒ¤ã‚ªã‚­",
+        "Nanakorobi Yaoki",
+        "Nanakorobi_Yaoki",
+        "ãƒŠãƒŠã‚³ãƒ­",
+        "Nanakoro",
+        "nanakoro78",
+        "ナナコロビヤオキ",
+        "ナナコロ"
+      ],
+      "raw_file": "timetree/nanakoro78-2025-07-2026-05.json",
+      "file": "groups/nanakorobi-yaoki.json",
+      "event_count": 167,
+      "date_start": "2025-07-03",
+      "date_end": "2026-05-31"
+    },
+    {
+      "source_key": "non-fiction",
+      "label": "Non-Fiction TimeTree",
+      "group_uid": "44Gu44KT44G144GD44GP77yB",
+      "group_name": "のんふぃく！",
+      "group_name_romanji": "Non¬Fiction",
+      "aliases": [
+        "ã®ã‚“ãµãƒãï¼",
+        "Non¬Fiction",
+        "Non-Fiction",
+        "NONFICTION",
+        "nonfic",
+        "のんふぃく！"
+      ],
+      "raw_file": "timetree/nonfic_official-2025-07-2026-05.json",
+      "file": "groups/non-fiction.json",
+      "event_count": 144,
+      "date_start": "2025-07-01",
+      "date_end": "2026-05-30"
+    },
+    {
+      "source_key": "ponkotsu-konpo",
+      "label": "Ponkotsu Konpo TimeTree",
+      "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+      "group_name": "ポンコツコンポ",
+      "group_name_romanji": "Ponkotsu_Konpo",
+      "aliases": [
+        "ãƒãƒ³ã‚³ãƒ„ã‚³ãƒ³ãƒ",
+        "Ponkotsu Konpo",
+        "Ponkotsu_Konpo",
+        "ponkotsukonpo",
+        "ポンコツコンポ"
+      ],
+      "raw_file": "timetree/ponkotsukonpo_official-2025-07-2026-05.json",
+      "file": "groups/ponkotsu-konpo.json",
+      "event_count": 187,
+      "date_start": "2025-07-05",
+      "date_end": "2026-05-31"
     },
     {
       "source_key": "takanenonadeshiko",
@@ -55,6 +209,84 @@
       "event_count": 37,
       "date_start": "2025-07-03",
       "date_end": "2026-07-31"
+    },
+    {
+      "source_key": "tenrin",
+      "label": "TENRIN TimeTree",
+      "group_uid": "VEVOUklO",
+      "group_name": "TENRIN",
+      "group_name_romanji": "TENRIN",
+      "aliases": [
+        "TENRIN",
+        "tenrin"
+      ],
+      "raw_file": "timetree/tenrin_schedule-2025-07-2026-05.json",
+      "file": "groups/tenrin.json",
+      "event_count": 202,
+      "date_start": "2025-07-01",
+      "date_end": "2026-05-27"
+    },
+    {
+      "source_key": "tenshinranman",
+      "label": "Tenshinranman TimeTree",
+      "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+      "group_name": "テンシンランマン",
+      "group_name_romanji": "Tenshinranman",
+      "aliases": [
+        "ãƒ†ãƒ³ã‚·ãƒ³ãƒ©ãƒ³ãƒžãƒ³",
+        "Tenshinranman",
+        "ãƒ†ãƒ³ãƒ©ãƒ³",
+        "Tenran",
+        "tenshinranman",
+        "テンシンランマン",
+        "テンラン"
+      ],
+      "raw_file": "timetree/tenshinranman-2025-07-2026-05.json",
+      "file": "groups/tenshinranman.json",
+      "event_count": 119,
+      "date_start": "2025-07-03",
+      "date_end": "2026-05-30"
+    },
+    {
+      "source_key": "yakousei-amuse",
+      "label": "Yakousei Amuse TimeTree",
+      "group_uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+      "group_name": "夜光性アミューズ",
+      "group_name_romanji": "Yakousei_Amuse",
+      "aliases": [
+        "å¤œå…‰æ€§ã‚¢ãƒŸãƒ¥ãƒ¼ã‚º",
+        "Yakousei Amuse",
+        "Yakousei_Amuse",
+        "ã‚ˆã‚‹ã‚ã¿",
+        "Yoruami",
+        "yoruami",
+        "夜光性アミューズ",
+        "よるあみ"
+      ],
+      "raw_file": "timetree/yoruami-2025-07-2026-05.json",
+      "file": "groups/yakousei-amuse.json",
+      "event_count": 121,
+      "date_start": "2025-07-01",
+      "date_end": "2026-05-31"
+    },
+    {
+      "source_key": "zuttomotto",
+      "label": "ZUTTOMOTTO TimeTree",
+      "group_uid": "WlVUVE9NT1RUTw",
+      "group_name": "ZUTTOMOTTO",
+      "group_name_romanji": "ZUTTOMOTTO",
+      "aliases": [
+        "ZUTTOMOTTO",
+        "ãšã£ã¨ã‚‚",
+        "Zuttomo",
+        "zuttomoofficial",
+        "ずっとも"
+      ],
+      "raw_file": "timetree/zuttomoofficial-2025-07-2026-05.json",
+      "file": "groups/zuttomotto.json",
+      "event_count": 135,
+      "date_start": "2025-06-30",
+      "date_end": "2026-05-31"
     }
   ]
 }

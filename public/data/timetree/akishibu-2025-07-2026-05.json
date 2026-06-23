@@ -161,7 +161,7 @@
       "poster_urls": [
         "https://attachments.timetreeapp.com/public_event/2cdc/2025-06-24/0-1750766655466.jpg"
       ],
-      "type": "Other",
+      "type": "Festival",
       "venue": "渋谷（複数会場フェス）",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/2cdc/2025-06-24/0-1750766655466.jpg",
       "event_type": "Festival",
@@ -528,7 +528,7 @@
         "https://attachments.timetreeapp.com/public_event/1549/2025-09-12/0-1757694380772.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張メッセ国際展示場9-11ホール",
+      "venue": "幕張メッセ",
       "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
     },
     {
@@ -623,7 +623,7 @@
         "https://attachments.timetreeapp.com/public_event/66b9/2025-09-20/0-1758382041899.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -682,7 +682,7 @@
         "https://attachments.timetreeapp.com/public_event/355d/2025-09-12/0-1757677036888.jpg"
       ],
       "type": "Other",
-      "venue": "大手町プレイスホール&カンファレンス HALL B",
+      "venue": "大手町プレイスホール&カンファレンス",
       "venue_uid": "6e2f43d6-6fce-49dc-91e6-2d950bbad525"
     },
     {
@@ -776,7 +776,7 @@
         "https://attachments.timetreeapp.com/public_event/4235/2025-10-07/0-1759843593114.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp Haneda TOKYO",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -861,7 +861,7 @@
         "https://attachments.timetreeapp.com/public_event/9b20/2025-10-15/0-1760519962320.jpg"
       ],
       "type": "Other",
-      "venue": "幕張メッセ国際展示場7-8ホール",
+      "venue": "幕張メッセ",
       "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
     },
     {
@@ -974,7 +974,7 @@
         "https://attachments.timetreeapp.com/public_event/c36a/2025-10-14/0-1760448813053.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp DiverCity (TOKYO)",
+      "venue": "Zepp DiverCity",
       "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
     },
     {
@@ -990,7 +990,7 @@
         "https://attachments.timetreeapp.com/public_event/7c5b/2025-10-28/0-1761624748584.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp DiverCity (TOKYO)",
+      "venue": "Zepp DiverCity",
       "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
     },
     {
@@ -1195,7 +1195,7 @@
         "https://attachments.timetreeapp.com/public_event/c7ab/2025-11-19/0-1763522230034.jpg"
       ],
       "type": "Other",
-      "venue": "The Garden Hall The Garden Room",
+      "venue": "The Garden Hall",
       "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
     },
     {
@@ -1209,7 +1209,7 @@
         "https://attachments.timetreeapp.com/public_event/19f3/2025-10-29/0-1761733544574.jpg"
       ],
       "type": "Taiban",
-      "venue": "恵⽐寿ガーデンホール",
+      "venue": "恵比寿ガーデンホール",
       "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
@@ -1262,7 +1262,7 @@
         "https://attachments.timetreeapp.com/public_event/23af/2025-11-25/0-1764069310034.jpg"
       ],
       "type": "Festival",
-      "venue": "ベルサール渋谷ガーデン",
+      "venue": "ベルサール渋谷ガーデン 他",
       "venue_uid": "d16beb51-bb1d-4c43-bd8d-4f406724552c"
     },
     {
@@ -1294,7 +1294,7 @@
         "https://attachments.timetreeapp.com/public_event/c8f6/2025-12-02/0-1764676581044.jpg"
       ],
       "type": "Festival",
-      "venue": "Zepp Haneda TOKYO",
+      "venue": "Zepp Haneda",
       "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
@@ -1630,7 +1630,7 @@
         "https://attachments.timetreeapp.com/public_event/9fe8/2025-12-24/0-1766578438451.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -1645,7 +1645,7 @@
         "https://attachments.timetreeapp.com/public_event/4766/2025-12-15/0-1765793651807.jpg"
       ],
       "type": "Taiban",
-      "venue": "Zepp Osaka Bayside",
+      "venue": "Zepp osaka Bayside",
       "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
@@ -1758,7 +1758,7 @@
         "https://attachments.timetreeapp.com/public_event/e884/2026-01-19/0-1768831005000.jpg"
       ],
       "type": "Taiban",
-      "venue": "The Garden Hall The Garden Room",
+      "venue": "The Garden Hall",
       "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
     },
     {
@@ -1773,8 +1773,8 @@
         "https://attachments.timetreeapp.com/public_event/6c85/2026-01-25/0-1769382632225.jpg"
       ],
       "type": "Other",
-      "venue": "白金高輪 セレネ スタジオ SELENE b2",
-      "venue_uid": "3de7431b-c160-412a-b3a0-132a4bcdf6c1"
+      "venue": "白金高輪SELENE b2",
+      "venue_uid": "8849c27a-75b7-429c-afd9-0fa8dd676eab"
     },
     {
       "date": "2026-02-02",
@@ -1911,7 +1911,7 @@
         "https://attachments.timetreeapp.com/public_event/3413/2026-01-24/0-1769253619090.jpg"
       ],
       "type": "Taiban",
-      "venue": "KANDA SQUARE HALL",
+      "venue": "神田スクエアホール",
       "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
@@ -1941,7 +1941,7 @@
         "https://attachments.timetreeapp.com/public_event/838c/2026-01-17/0-1768621275871.jpg"
       ],
       "type": "Other",
-      "venue": "Zepp Shinjuku (TOKYO)",
+      "venue": "Zepp Shinjuku",
       "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
     },
     {
@@ -2041,7 +2041,7 @@
         "https://attachments.timetreeapp.com/public_event/871e/2026-02-27/0-1772176590650.jpg"
       ],
       "type": "Festival",
-      "venue": "Spotify O-EAST、Spotify O-WEST、Spotify O-nest、Spotify O-Crest、duo MUSIC EXCHANGE、WOMB、clubasia、LOFT9 Shibuya SHIBUYA RING (※9会場連動)",
+      "venue": "duo MUSIC EXCHANGE",
       "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
     },
     {
@@ -2057,8 +2057,8 @@
         "https://attachments.timetreeapp.com/public_event/b883/2026-03-06/0-1772786620255.jpg"
       ],
       "type": "Other",
-      "venue": "白金高輪 セレネ スタジオ SELENE b2",
-      "venue_uid": "3de7431b-c160-412a-b3a0-132a4bcdf6c1"
+      "venue": "白金高輪SELENE b2",
+      "venue_uid": "8849c27a-75b7-429c-afd9-0fa8dd676eab"
     },
     {
       "date": "2026-03-12",
@@ -2243,7 +2243,7 @@
         "https://attachments.timetreeapp.com/public_event/5338/2026-03-25/0-1774429931819.jpg"
       ],
       "type": "Other",
-      "venue": "Zephyr Hall",
+      "venue": "zephyr hall",
       "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
     },
     {
@@ -2273,7 +2273,7 @@
         "https://attachments.timetreeapp.com/public_event/d850/2026-03-04/0-1772622778880.jpg"
       ],
       "type": "Other",
-      "venue": "Spotify O-WEST／duo MUSIC EXCHANGE／VeatsSHIBUYA／clubasia／SHIBUYA RING",
+      "venue": "duo MUSIC EXCHANGE",
       "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
     },
     {
@@ -2330,7 +2330,7 @@
         "https://attachments.timetreeapp.com/public_event/886e/2026-04-18/0-1776490992183.jpg"
       ],
       "type": "Other",
-      "venue": "Viblue EBISU",
+      "venue": "ViblueEBISU",
       "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
     },
     {
@@ -2396,7 +2396,7 @@
         "https://attachments.timetreeapp.com/public_event/7947/2026-04-27/0-1777277722926.jpg"
       ],
       "type": "Other",
-      "venue": "池袋harevutai",
+      "venue": "harevutai",
       "venue_uid": "479159a3-276a-4cbb-8c4f-ea39462db12e"
     },
     {
@@ -2486,7 +2486,7 @@
         "https://attachments.timetreeapp.com/public_event/d4ad/2026-05-04/0-1777879951255.jpg"
       ],
       "type": "Festival",
-      "venue": "品川インターシティホール",
+      "venue": "品川インターシティホール&貸会議室",
       "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
     },
     {
@@ -2513,7 +2513,7 @@
         "https://attachments.timetreeapp.com/public_event/342c/2026-04-27/0-1777279688916.jpg"
       ],
       "type": "Other",
-      "venue": "代官山UNIT",
+      "venue": "UNIT",
       "venue_uid": "8e4efb63-5b05-4449-9de8-9b8477b499cd"
     },
     {
@@ -2610,7 +2610,13 @@
       "timetree_id": "2915933075099566334",
       "timetree_url": "https://timetr.ee/p/akishibu/2915933075099566334",
       "type": "Other",
-      "venue": null
+      "venue": "BANANA HALL",
+      "venue_hint": "Banana Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/70e2/2026-05-25/0-1779684896824.jpg",
+        "https://attachments.timetreeapp.com/public_event/0342/2026-05-25/0-1779684897532.jpg"
+      ],
+      "venue_uid": "660478f6-c71d-4545-9730-8b2c0f95c24b"
     },
     {
       "date": "2026-05-31",
@@ -2618,15 +2624,20 @@
       "timetree_id": "2947124159343182747",
       "timetree_url": "https://timetr.ee/p/akishibu/2947124159343182747",
       "type": "Other",
-      "venue": null
+      "venue": "amHALL",
+      "venue_hint": "amHALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9d3e/2026-05-25/0-1779685090890.jpg"
+      ],
+      "venue_uid": "e68c030e-90ac-4e36-91bc-b7ae4faab299"
     }
   ],
-  "enriched_at": "2026-05-18T00:21:38.735Z",
-  "venues_resolved_at": "2026-05-16T17:58:07.318Z",
+  "enriched_at": "2026-06-15T06:42:19.634Z",
+  "venues_resolved_at": "2026-06-15T06:42:47.022Z",
   "venue_stats": {
-    "with_venue": 152,
-    "with_poster_only": 12,
-    "with_venue_uid": 152
+    "with_venue": 166,
+    "with_poster_only": 0,
+    "with_venue_uid": 166
   },
-  "multi_venue_patched_at": "2026-05-16T18:07:22.554Z"
+  "multi_venue_patched_at": "2026-06-15T06:42:47.069Z"
 }

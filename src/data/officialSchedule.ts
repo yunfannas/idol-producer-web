@@ -95,7 +95,7 @@ export function classifyOfficialMediaTab(event: OfficialScheduleEvent): MediaTab
   const text = textOfEvent(event).toLocaleLowerCase();
   const raw = text.normalize("NFKC");
 
-  if (type === "concert" || type === "festival" || type === "guestlive" || type === "tvshow") {
+  if (type === "concert" || type === "festival" || type === "guestlive" || type === "taiban" || type === "tvshow") {
     return null;
   }
   if (/\btour\b|premium tour|anniversary tour|concert|festival|ワンマン|ツアー|ライブ|コンサート/.test(raw)) {

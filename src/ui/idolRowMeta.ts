@@ -1,3 +1,8 @@
+import {
+  roleAssignmentsFromHistoryEntry,
+  type MemberRoleAssignment,
+} from "../data/memberRoles";
+
 /** Resolve display fields from raw `idols.json` rows + scenario reference date. */
 
 export function romajiFromRow(row: Record<string, unknown>): string {
@@ -49,6 +54,7 @@ export function lookupGroupUidByName(groups: Record<string, unknown>[], displayN
 }
 
 export type ActiveGroupMembership = { uid: string; name: string };
+export type ActiveGroupRoleMembership = ActiveGroupMembership & { roles: MemberRoleAssignment[] };
 
 /** Active memberships on `refIso` with stable group uid when resolvable from history + roster. */
 export function activeGroupMembershipsAtReference(
@@ -93,6 +99,53 @@ export function activeGroupMembershipsAtReference(
     if (seen.has(dedupeKey)) continue;
     seen.add(dedupeKey);
     out.push({ uid, name });
+  }
+  return out;
+}
+
+/** Active memberships plus normalized in-group role assignments on `refIso`. */
+export function activeGroupRoleMembershipsAtReference(
+  row: Record<string, unknown>,
+  refIso: string | undefined,
+  groups: Record<string, unknown>[],
+): ActiveGroupRoleMembership[] {
+  const ref = refDayOrNull(refIso);
+  if (!ref) return [];
+  const refMs = new Date(`${ref}T12:00:00Z`).getTime();
+  const hist = row.group_history;
+  if (!Array.isArray(hist)) return [];
+  const uidToName = groupNamesByUid(groups);
+  const out: ActiveGroupRoleMembership[] = [];
+  const seen = new Set<string>();
+
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const e = raw as Record<string, unknown>;
+    const start = parseIsoDay(e.start_date);
+    if (!start) continue;
+    const startMs = new Date(`${start}T12:00:00Z`).getTime();
+    if (refMs < startMs) continue;
+    const endRaw = e.end_date;
+    let active = false;
+    if (endRaw == null || endRaw === "") active = true;
+    else {
+      const end = parseIsoDay(endRaw);
+      if (end) {
+        const endMs = new Date(`${end}T12:00:00Z`).getTime();
+        if (refMs <= endMs) active = true;
+      }
+    }
+    if (!active) continue;
+
+    let uid = String(e.group_uid ?? "").trim();
+    const gname = String(e.group_name ?? "").trim();
+    if (!uid && gname) uid = lookupGroupUidByName(groups, gname) ?? "";
+    const name = gname || (uid ? uidToName.get(uid) ?? "" : "");
+    if (!name) continue;
+    const dedupeKey = uid || name;
+    if (seen.has(dedupeKey)) continue;
+    seen.add(dedupeKey);
+    out.push({ uid, name, roles: roleAssignmentsFromHistoryEntry(e) });
   }
   return out;
 }

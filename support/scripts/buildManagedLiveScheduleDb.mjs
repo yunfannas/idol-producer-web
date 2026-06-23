@@ -26,11 +26,25 @@ const TEMPLATE_DEFAULTS = {
 
 const SOURCE_CONFIGS = [
   {
+    sourceKey: "adamlilith",
+    label: "AdamLilith TimeTree",
+    rawFile: "adamlilith-2025-07-2026-05.json",
+    groupUid: "QWRhbUxpbGl0aA",
+    aliases: ["AdamLilith", "adamlilith", "アダムス", "Adamth"],
+  },
+  {
     sourceKey: "akishibu-project",
     label: "Akishibu TimeTree",
     rawFile: "akishibu-2025-07-2026-05.json",
     groupUid: "44Ki44Kt44K344OWcHJvamVjdA",
     aliases: ["Akishibu project", "アキシブproject", "akishibu"],
+  },
+  {
+    sourceKey: "dress-code",
+    label: "Dress Code TimeTree",
+    rawFile: "dresscode-2025-07-2026-05.json",
+    groupUid: "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+    aliases: ["ãƒ‰ãƒ¬ã‚¹ã‚³ãƒ¼ãƒ‰", "Dress Code", "Dress_Code", "dresscode", "ãƒ‰ãƒ¬ã‚³", "Dreco"],
   },
   {
     sourceKey: "ilife",
@@ -40,12 +54,89 @@ const SOURCE_CONFIGS = [
     aliases: ["iLiFE!", "ilife", "i life"],
   },
   {
+    sourceKey: "ion",
+    label: "iON! TimeTree",
+    rawFile: "ion_heroines-2025-07-2026-05.json",
+    groupUid: "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+    aliases: ["iON!", "ion", "iON", "ã‚ã„ãŠã‚“"],
+  },
+  {
+    sourceKey: "i-col",
+    label: "i-COL TimeTree",
+    rawFile: "i_col-2025-07-2026-05.json",
+    groupUid: "aS1DT0w",
+    aliases: ["i-COL", "I-COL", "icol", "i_col"],
+  },
+  {
+    sourceKey: "last-scene",
+    label: "LAST SCENE TimeTree",
+    rawFile: "lastscene_official-2025-07-2026-05.json",
+    groupUid: "44Op44K544OI44K344O844Oz",
+    aliases: ["ãƒ©ã‚¹ãƒˆã‚·ãƒ¼ãƒ³", "LAST SCENE", "LAST_SCENE_(HEROINES)", "lastscene"],
+  },
+  {
+    sourceKey: "megafon",
+    label: "MEGAFON TimeTree",
+    rawFile: "megafon_official-2025-07-2026-05.json",
+    groupUid: "TUVHQUZPTg",
+    aliases: ["MEGAFON", "megafon"],
+  },
+  {
+    sourceKey: "nanakorobi-yaoki",
+    label: "Nanakorobi Yaoki TimeTree",
+    rawFile: "nanakoro78-2025-07-2026-05.json",
+    groupUid: "055cd81a-8c78-44ad-b74b-3f45fc551f9b",
+    aliases: ["ãƒŠãƒŠã‚³ãƒ­ãƒ“ãƒ¤ã‚ªã‚­", "Nanakorobi Yaoki", "Nanakorobi_Yaoki", "ãƒŠãƒŠã‚³ãƒ­", "Nanakoro", "nanakoro78"],
+  },
+  {
+    sourceKey: "non-fiction",
+    label: "Non-Fiction TimeTree",
+    rawFile: "nonfic_official-2025-07-2026-05.json",
+    groupUid: "44Gu44KT44G144GD44GP77yB",
+    aliases: ["ã®ã‚“ãµãƒãï¼", "Non¬Fiction", "Non-Fiction", "NONFICTION", "nonfic"],
+  },
+  {
+    sourceKey: "ponkotsu-konpo",
+    label: "Ponkotsu Konpo TimeTree",
+    rawFile: "ponkotsukonpo_official-2025-07-2026-05.json",
+    groupUid: "44Od44Oz44Kz44OE44Kz44Oz44Od",
+    aliases: ["ãƒãƒ³ã‚³ãƒ„ã‚³ãƒ³ãƒ", "Ponkotsu Konpo", "Ponkotsu_Konpo", "ponkotsukonpo"],
+  },
+  {
     sourceKey: "takanenonadeshiko",
     label: "Takane no Nadeshiko Official Schedule",
     rawFile: "takanenonadeshiko-2025-07-2026-07.json",
     rawDir: "official_schedules",
     groupUid: "6auY5ba644Gu44Gq44Gn44GX44GT",
     aliases: ["高嶺のなでしこ", "Takane no Nadeshiko", "Takane_no_Nadeshiko", "takaneko"],
+  },
+  {
+    sourceKey: "tenrin",
+    label: "TENRIN TimeTree",
+    rawFile: "tenrin_schedule-2025-07-2026-05.json",
+    groupUid: "VEVOUklO",
+    aliases: ["TENRIN", "tenrin"],
+  },
+  {
+    sourceKey: "tenshinranman",
+    label: "Tenshinranman TimeTree",
+    rawFile: "tenshinranman-2025-07-2026-05.json",
+    groupUid: "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+    aliases: ["ãƒ†ãƒ³ã‚·ãƒ³ãƒ©ãƒ³ãƒžãƒ³", "Tenshinranman", "ãƒ†ãƒ³ãƒ©ãƒ³", "Tenran", "tenshinranman"],
+  },
+  {
+    sourceKey: "yakousei-amuse",
+    label: "Yakousei Amuse TimeTree",
+    rawFile: "yoruami-2025-07-2026-05.json",
+    groupUid: "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+    aliases: ["å¤œå…‰æ€§ã‚¢ãƒŸãƒ¥ãƒ¼ã‚º", "Yakousei Amuse", "Yakousei_Amuse", "ã‚ˆã‚‹ã‚ã¿", "Yoruami", "yoruami"],
+  },
+  {
+    sourceKey: "zuttomotto",
+    label: "ZUTTOMOTTO TimeTree",
+    rawFile: "zuttomoofficial-2025-07-2026-05.json",
+    groupUid: "WlVUVE9NT1RUTw",
+    aliases: ["ZUTTOMOTTO", "ãšã£ã¨ã‚‚", "Zuttomo", "zuttomoofficial"],
   },
 ];
 
@@ -209,6 +300,10 @@ function main() {
       const db = `${b.date} ${b.start_time}`;
       return da.localeCompare(db);
     });
+    if (!sortedEvents.length) {
+      console.warn(`Skipping managed live schedule source ${config.sourceKey} because it produced 0 events.`);
+      continue;
+    }
     const file = `groups/${config.sourceKey}.json`;
     writeJson(path.join(outputRoot, file), {
       source_key: config.sourceKey,

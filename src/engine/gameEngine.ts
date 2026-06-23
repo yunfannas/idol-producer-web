@@ -1021,6 +1021,7 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   breakdown.media_event_travel = mediaSummary.travel_cost;
   breakdown.media_event_making = mediaSummary.making_cost;
   breakdown.media_event_advertising = mediaSummary.event_advertising_cost;
+  breakdown.media_event_staffing = mediaSummary.event_staffing_cost;
   breakdown.media_fixed_admin = mediaSummary.fixed_admin_cost;
   breakdown.media_fixed_advertising = mediaSummary.fixed_advertising_cost;
   breakdown.media_event_count = mediaSummary.event_count;
@@ -1032,6 +1033,7 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   breakdown.cd_release_mv_cost = mediaSummary.cd_release_mv_cost;
 
   breakdown.media = mediaSummary.revenue;
+  breakdown.staff += mediaSummary.event_staffing_cost;
   breakdown.office += mediaSummary.fixed_admin_cost;
   breakdown.promotion += mediaSummary.fixed_advertising_cost + mediaSummary.event_advertising_cost;
   breakdown.expense_total += mediaSummary.expense;

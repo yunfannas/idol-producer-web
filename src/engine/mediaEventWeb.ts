@@ -15,6 +15,7 @@ export interface MediaDaySummary {
   travel_cost: number;
   making_cost: number;
   event_advertising_cost: number;
+  event_staffing_cost: number;
   cd_release_count: number;
   cd_release_units: number;
   cd_release_revenue: number;
@@ -162,6 +163,19 @@ function fixedDailyMediaAdvertisingCost(letterTier: string): number {
   }
 }
 
+function tvSupportStaffBaseCost(letterTier: string): number {
+  switch (String(letterTier ?? "").trim().toUpperCase()) {
+    case "S":
+      return 36_000;
+    case "A":
+      return 26_000;
+    case "B":
+      return 18_000;
+    default:
+      return 0;
+  }
+}
+
 function isCdBonusEvent(event: OfficialScheduleEvent, tab: GameplayMediaTab): boolean {
   const raw = textOfEvent(event).toLocaleLowerCase().normalize("NFKC");
   if (tab !== "live_events" && tab !== "online") return false;
@@ -227,7 +241,7 @@ export function classifyMediaEventForGameplay(event: OfficialScheduleEvent): Gam
   const type = String(event.type ?? "").trim().toLocaleLowerCase();
   const raw = textOfEvent(event).toLocaleLowerCase().normalize("NFKC");
 
-  if (type === "concert" || type === "festival" || type === "guestlive") return null;
+  if (type === "concert" || type === "festival" || type === "guestlive" || type === "taiban") return null;
   if (/\btour\b|premium tour|anniversary tour|concert|festival|ワンマン|ツアー|ライブ|コンサート/.test(raw)) return null;
   if (type === "tvshow") return "tv";
   if (/\bonline\b|showroom|youtube live|instagram live|line live|配信|オンライン|webサイン|ネットサイン/.test(raw)) return "online";
@@ -489,6 +503,7 @@ export function resolveManagedMediaDay(
     travel_cost: 0,
     making_cost: 0,
     event_advertising_cost: 0,
+    event_staffing_cost: 0,
     cd_release_count: 0,
     cd_release_units: 0,
     cd_release_revenue: 0,
@@ -524,6 +539,7 @@ export function resolveManagedMediaDay(
   let travelCost = 0;
   let makingCost = 0;
   let eventAdvertisingCost = 0;
+  let eventStaffingCost = 0;
   let cdReleaseCount = 0;
   let cdReleaseUnits = 0;
   let cdReleaseRevenue = 0;
@@ -602,6 +618,7 @@ export function resolveManagedMediaDay(
     let eventTravel = Math.round(EVENT_TRAVEL_BASE[tab] * (0.9 + coverage * 0.35) * prestige);
     let eventMaking = Math.round(EVENT_MAKING_BASE[tab] * (0.9 + coverage * 0.25) * Math.max(1, prestige - 0.05));
     let eventAdvertising = Math.round(EVENT_AD_BASE[tab] * prestige);
+    let eventStaffing = 0;
     const distributedFans = distributeFanGain(eventFanGain, participantUids, rosterUids);
     const affectedUids = effectiveParticipantUids(participantUids, rosterUids);
     const conditionDelta = -conditionCostPerEvent(
@@ -611,6 +628,17 @@ export function resolveManagedMediaDay(
       rosterUids.length,
       commercial,
     );
+    if (tab === "tv") {
+      const staffBase = tvSupportStaffBaseCost(letterTier);
+      if (staffBase > 0) {
+        const participantScale = Math.max(1, affectedUids.length);
+        const staffingMultiplier =
+          (commercial ? 1.2 : 1.0) *
+          (prestige >= 1.35 ? 1.2 : prestige >= 1.15 ? 1.1 : 1.0) *
+          (participantScale >= 5 ? 1.3 : participantScale >= 3 ? 1.15 : 1.0);
+        eventStaffing = Math.round(staffBase * staffingMultiplier);
+      }
+    }
 
     revenue += eventRevenue;
     totalFanGain += eventFanGain;
@@ -618,7 +646,8 @@ export function resolveManagedMediaDay(
     travelCost += eventTravel;
     makingCost += eventMaking;
     eventAdvertisingCost += eventAdvertising;
-    expense += eventTravel + eventMaking + eventAdvertising;
+    eventStaffingCost += eventStaffing;
+    expense += eventTravel + eventMaking + eventAdvertising + eventStaffing;
     eventsByTab[tab] += 1;
     recentCounts[tab] += 1;
 
@@ -650,6 +679,7 @@ export function resolveManagedMediaDay(
     travel_cost: travelCost,
     making_cost: makingCost,
     event_advertising_cost: eventAdvertisingCost,
+    event_staffing_cost: eventStaffingCost,
     cd_release_count: cdReleaseCount,
     cd_release_units: cdReleaseUnits,
     cd_release_revenue: cdReleaseRevenue,

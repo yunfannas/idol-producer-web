@@ -1,0 +1,25 @@
+{
+  "_comment": "HEROINES / imaginate roster on TimeTree public_calendars. group_name must match groups.json.",
+  "default_range": { "from": "2025-07", "to": "2026-05" },
+  "groups": [
+    { "slug": "akishibu", "group_name": "アキシブproject", "in_startup_allowlist": true },
+    { "slug": "ilife_official", "group_name": "iLiFE!", "in_startup_allowlist": true },
+    { "slug": "ponkotsukonpo_official", "group_name": "ポンコツコンポ", "in_startup_allowlist": true },
+    { "slug": "zuttomoofficial", "group_name": "ZUTTOMOTTO", "in_startup_allowlist": true },
+    { "slug": "nonfic_official", "group_name": "のんふぃく！", "in_startup_allowlist": true },
+    { "slug": "yoruami", "group_name": "夜光性アミューズ", "in_startup_allowlist": true },
+    { "slug": "tenrin_schedule", "group_name": "TENRIN", "in_startup_allowlist": true },
+    { "slug": "ion_heroines", "group_name": "iON!", "in_startup_allowlist": true },
+    { "slug": "dresscode", "group_name": "ドレスコード", "in_startup_allowlist": true },
+    { "slug": "adamlilith", "group_name": "AdamLilith", "in_startup_allowlist": false, "notes": "Shared HEROINES taiban roster" },
+    { "slug": "i_col", "group_name": "i-COL", "in_startup_allowlist": false, "notes": "Shared HEROINES taiban roster" },
+    { "slug": "megafon_official", "group_name": "MEGAFON", "in_startup_allowlist": false, "notes": "Shared HEROINES taiban roster" },
+    { "slug": "lastscene_official", "group_name": "ラストシーン", "in_startup_allowlist": false, "aliases": ["LAST SCENE"], "notes": "Shared HEROINES taiban roster" },
+    { "slug": "nanakoro78", "group_name": "ナナコロビヤオキ", "in_startup_allowlist": false, "aliases": ["Nanakorobi Yaoki", "ナナコロ"], "notes": "HEROINES Osaka; TimeTree title ナナコロビヤオキ【ナナコロ】" },
+    { "slug": null, "group_name": "パラディーク", "in_startup_allowlist": true, "notes": "TimeTree slug not found yet" },
+    { "slug": null, "group_name": "GILTY×GILTY", "in_startup_allowlist": false, "notes": "TimeTree slug not found yet" },
+    { "slug": null, "group_name": "Ill", "in_startup_allowlist": false, "notes": "TimeTree slug not found yet" },
+    { "slug": null, "group_name": "chuLa", "in_startup_allowlist": false, "notes": "TimeTree slug not found yet" },
+    { "slug": null, "group_name": "CAL&RES", "in_startup_allowlist": false, "notes": "TimeTree slug not found yet" }
+  ]
+}

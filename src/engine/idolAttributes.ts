@@ -6,6 +6,11 @@
  * current group popularity (same rules as `regenerate_scenario6_attributes_by_followers.ps1`).
  */
 
+import {
+  MEMBER_ROLE_DEFINITIONS,
+  roleAssignmentsFromHistoryEntry,
+  type MemberRoleAssignment,
+} from "../data/memberRoles";
 import { sha256BytesUtf8 } from "./sha256sync";
 
 export interface PhysicalAttrs {
@@ -281,6 +286,67 @@ function scandalHistoryCount(idol: Record<string, unknown>): number {
   return count;
 }
 
+function collectActiveRoleAssignments(
+  idol: Record<string, unknown>,
+  openingIso: string,
+): MemberRoleAssignment[] {
+  const hist = idol.group_history;
+  if (!Array.isArray(hist)) return [];
+  const byKey = new Map<string, MemberRoleAssignment>();
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const entry = raw as Record<string, unknown>;
+    if (!membershipActiveAtOpening(entry, openingIso)) continue;
+    for (const role of roleAssignmentsFromHistoryEntry(entry)) {
+      if (!role.key) continue;
+      const prev = byKey.get(role.key);
+      if (!prev || role.focus > prev.focus) byKey.set(role.key, role);
+    }
+  }
+  return [...byKey.values()].sort((a, b) => b.focus - a.focus || a.key.localeCompare(b.key));
+}
+
+function applyRoleBiasToAttributes(
+  baseAttrs: PersistedIdolAttributes,
+  roles: MemberRoleAssignment[],
+): PersistedIdolAttributes {
+  if (!roles.length) return baseAttrs;
+
+  const next: PersistedIdolAttributes = {
+    physical: { ...baseAttrs.physical },
+    appearance: { ...baseAttrs.appearance },
+    technical: { ...baseAttrs.technical },
+    mental: { ...baseAttrs.mental },
+    hidden: { ...(baseAttrs.hidden ?? defaultAttributes().hidden!) },
+  };
+
+  const roleBiasScalar = 3;
+
+  for (const role of roles) {
+    const definition = MEMBER_ROLE_DEFINITIONS[role.key as keyof typeof MEMBER_ROLE_DEFINITIONS];
+    if (!definition) continue;
+    const focus = Math.max(0, Math.min(1, role.focus));
+    for (const [categoryKey, categoryBias] of Object.entries(definition.attributeBias)) {
+      const category = next[categoryKey as keyof PersistedIdolAttributes];
+      if (!category || typeof category !== "object") continue;
+      for (const [statKey, weightRaw] of Object.entries(categoryBias as Record<string, unknown>)) {
+        const weight = typeof weightRaw === "number" && Number.isFinite(weightRaw) ? weightRaw : 0;
+        const prev = (category as Record<string, unknown>)[statKey];
+        const prevNum = typeof prev === "number" && Number.isFinite(prev) ? prev : 12;
+        (category as Record<string, unknown>)[statKey] = prevNum + weight * focus * roleBiasScalar;
+      }
+    }
+  }
+
+  return {
+    physical: clampPhysical(next.physical),
+    appearance: clampAppearance(next.appearance),
+    technical: clampTechnical(next.technical),
+    mental: clampMental(next.mental),
+    hidden: clampHidden(next.hidden ?? defaultAttributes().hidden!),
+  };
+}
+
 export function buildAttributesFromFollowerModel(
   idol: Record<string, unknown>,
   groupPopularity: Map<string, number>,
@@ -306,8 +372,7 @@ export function buildAttributesFromFollowerModel(
   const professionalismBase = scandalCount > 0 ? 9 : base;
   const injuryBase = scandalCount > 0 ? 6 : 4;
   const loyaltyPenalty = scandalCount > 0 ? Math.min(4, scandalCount) : 0;
-
-  return {
+  const baseline: PersistedIdolAttributes = {
     physical: clampPhysical({
       // Manual calibration set suggests dance-heavy idols tend to carry some extra physicality.
       strength: Math.round(base * 0.65 + danceCenter * 0.35) + stableRoll(uid, "strength", -2, 2),
@@ -345,6 +410,8 @@ export function buildAttributesFromFollowerModel(
       loyalty: base + stableRoll(uid, "loyalty", -2, 5) - loyaltyPenalty,
     }),
   };
+  const activeRoles = collectActiveRoleAssignments(idol, openingIso);
+  return applyRoleBiasToAttributes(baseline, activeRoles);
 }
 
 export interface AttributeAssignmentContext {

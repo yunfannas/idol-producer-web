@@ -41,6 +41,7 @@ export interface DailyBreakdown {
   media_event_travel?: number;
   media_event_making?: number;
   media_event_advertising?: number;
+  media_event_staffing?: number;
   media_fixed_admin?: number;
   media_fixed_advertising?: number;
   media_event_count?: number;
