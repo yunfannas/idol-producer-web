@@ -79,6 +79,8 @@ import { htmlEsc } from "./ui/htmlEsc";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
+import { renderTutorialOverlay, tutorialSteps } from "./ui/tutorialOverlay";
+import { annotateWikiTerms, defaultWikiEntryKey } from "./ui/wiki";
 
 const appRootElt = document.querySelector<HTMLDivElement>("#app");
 if (!appRootElt) {
@@ -87,6 +89,7 @@ if (!appRootElt) {
 const appRoot: HTMLDivElement = appRootElt;
 const UI_LANG_STORAGE_KEY = "idol-producer-ui-lang";
 const ACCOUNT_NAME_STORAGE_KEY = "idol-producer-account-name";
+const TUTORIAL_AUTO_OPEN_STORAGE_KEY = "idol-producer-tutorial-auto-open";
 
 function isUiLanguage(value: unknown): value is UiLanguage {
   return value === "en" || value === "zh-CN";
@@ -123,6 +126,26 @@ function setAccountName(next: string): void {
   try {
     if (accountName) window.localStorage.setItem(ACCOUNT_NAME_STORAGE_KEY, accountName);
     else window.localStorage.removeItem(ACCOUNT_NAME_STORAGE_KEY);
+  } catch {
+    /* ignore storage failures */
+  }
+}
+
+function readTutorialAutoOpen(): boolean {
+  try {
+    const stored = window.localStorage.getItem(TUTORIAL_AUTO_OPEN_STORAGE_KEY);
+    if (stored === "0") return false;
+    if (stored === "1") return true;
+  } catch {
+    /* ignore storage failures */
+  }
+  return true;
+}
+
+function setTutorialAutoOpen(next: boolean): void {
+  tutorialAutoOpen = next;
+  try {
+    window.localStorage.setItem(TUTORIAL_AUTO_OPEN_STORAGE_KEY, next ? "1" : "0");
   } catch {
     /* ignore storage failures */
   }
@@ -693,6 +716,10 @@ let selectedNewGameGroupUid: string | null = null;
 let openingStatus = "";
 let simulationBusy = false;
 let attentionActionUid: string | null = null;
+let tutorialAutoOpen = readTutorialAutoOpen();
+let tutorialOverlayOpen = false;
+let tutorialStepIndex = 0;
+let selectedWikiKey: string | null = defaultWikiEntryKey(uiLang);
 
 let currentView: DesktopNavId = "Inbox";
 let idolDetailUid: string | null = null;
@@ -714,6 +741,27 @@ let scheduleCalendarMonthStart: string | null = null;
 let scheduleWeekAnchorIso: string | null = null;
 let livesTab: LivesTab = "new";
 let scheduledLiveUid: string | null = null;
+
+function tutorialStepCount(): number {
+  return tutorialSteps(uiLang).length;
+}
+
+function shouldShowTutorialOverlay(): boolean {
+  return Boolean(save && !browseMode && tutorialOverlayOpen);
+}
+
+function openTutorialOverlay(stepIndex = 0): void {
+  if (!save || browseMode) return;
+  tutorialStepIndex = Math.max(0, Math.min(stepIndex, tutorialStepCount() - 1));
+  tutorialOverlayOpen = true;
+}
+
+function closeTutorialOverlay(markCompleted = true): void {
+  tutorialOverlayOpen = false;
+  if (save && markCompleted) {
+    save.tutorial.completed = true;
+  }
+}
 let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
 let trainingRosterSortKey: TrainingRosterSortKey = "started";
@@ -1022,6 +1070,7 @@ function syncFestivalLivesIfPossible(): void {
 }
 
 function paintOpening(): void {
+  tutorialOverlayOpen = false;
   const focus = captureFocus(appRoot);
   const preset = loadedScenario?.preset ??  null;
   const dbReady = loadedScenario != null;
@@ -1108,6 +1157,7 @@ function paintOpening(): void {
       const loaded = await loadFromSlot(accountName, slot);
       if (loaded && assertHydratedSave(loaded)) {
         save = loaded;
+        if (!save.tutorial) save.tutorial = { completed: true, disabled: false };
         setAccountName(String(save.account_name ??  save.player_name ??  accountName));
         save.account_name = accountName;
         save.player_name = accountName;
@@ -1121,6 +1171,7 @@ function paintOpening(): void {
           syncFestivalLivesIfPossible();
         }
         browseMode = false;
+        tutorialOverlayOpen = false;
         openingScreen = "home";
         currentView = "Inbox";
         idolDetailUid = null;
@@ -1137,6 +1188,7 @@ function paintOpening(): void {
       if (!loadedScenario) return;
       browseMode = true;
       save = null;
+      tutorialOverlayOpen = false;
       idolDetailUid = null;
       groupDetailUid = null;
       currentView = "Idols";
@@ -1185,6 +1237,10 @@ function paintOpening(): void {
           managedGroupLabel: label,
           managedGroupUid: selectedNewGameGroupUid,
         });
+        save.tutorial = {
+          completed: false,
+          disabled: !tutorialAutoOpen,
+        };
         save.account_name = accountName;
         save.player_name = accountName;
         ensureAutoBookedLivesThroughEndOfNextMonth(save);
@@ -1193,6 +1249,8 @@ function paintOpening(): void {
         resetNewLiveFormDefaults();
         syncFestivalLivesIfPossible();
         browseMode = false;
+        tutorialStepIndex = 0;
+        tutorialOverlayOpen = tutorialAutoOpen;
         openingScreen = "home";
         selectedNewGameGroupUid = null;
         currentView = "Inbox";
@@ -1282,10 +1340,20 @@ function paintGame(): void {
     slot,
     occupiedSlots: listOccupiedSlots(accountName),
     slotSummaries: listSlotSummaries(accountName),
+    tutorialOverlayHtml: shouldShowTutorialOverlay()
+      ? renderTutorialOverlay({
+          lang: uiLang,
+          stepIndex: tutorialStepIndex,
+          autoOpenEnabled: tutorialAutoOpen,
+        })
+      : "",
+    selectedWikiKey,
   });
   restoreFocus(appRoot, focus);
 
   wirePortraitFallbacks(appRoot);
+  const mainContent = document.getElementById("main-content");
+  if (mainContent) annotateWikiTerms(mainContent, uiLang);
 
   if (save && !browseMode) {
     const nextBtn = document.getElementById("btn-next-day") as HTMLButtonElement | null;
@@ -1304,6 +1372,55 @@ function paintGame(): void {
     if (!isUiLanguage(value)) return;
     setUiLanguage(value);
     paintGame();
+  });
+  document.getElementById("btn-open-tutorial")?.addEventListener("click", () => {
+    if (!save || browseMode) return;
+    openTutorialOverlay(0);
+    paintGame();
+  });
+  document.getElementById("tutorial-auto-open-toggle")?.addEventListener("change", (ev) => {
+    const checked = (ev.target as HTMLInputElement).checked;
+    setTutorialAutoOpen(checked);
+    if (save) save.tutorial.disabled = !checked;
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-tutorial-close]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      closeTutorialOverlay(true);
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-tutorial-back]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      tutorialStepIndex = Math.max(0, tutorialStepIndex - 1);
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-tutorial-next]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      const lastStepIndex = tutorialStepCount() - 1;
+      if (tutorialStepIndex >= lastStepIndex) {
+        closeTutorialOverlay(true);
+      } else {
+        tutorialStepIndex = Math.min(lastStepIndex, tutorialStepIndex + 1);
+      }
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-tutorial-nav]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      const nav = elt.getAttribute("data-tutorial-nav");
+      if (!nav || !isDesktopNavId(nav) || browseMode) return;
+      currentView = nav;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-wiki-term]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      const key = elt.getAttribute("data-wiki-term");
+      if (!key) return;
+      selectedWikiKey = key;
+      paintGame();
+    });
   });
 
   document.getElementById("main-content")?.addEventListener("click", (ev) => {
@@ -2944,6 +3061,7 @@ function paintGame(): void {
     const loaded = await loadFromSlot(accountName, slot);
     if (loaded && assertHydratedSave(loaded)) {
       save = loaded;
+      if (!save.tutorial) save.tutorial = { completed: true, disabled: false };
       setAccountName(String(save.account_name ??  save.player_name ??  accountName));
       save.account_name = accountName;
       save.player_name = accountName;
@@ -2953,6 +3071,7 @@ function paintGame(): void {
         hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
         hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
       }
+      tutorialOverlayOpen = false;
       resetNavigationHistory();
     }
     paintGame();
@@ -2960,6 +3079,7 @@ function paintGame(): void {
   document.getElementById("btn-new")?.addEventListener("click", () => {
     if (!loadedScenario) return;
     browseMode = false;
+    tutorialOverlayOpen = false;
     idolDetailUid = null;
     groupDetailUid = null;
     openingScreen = "new_game";
@@ -2978,6 +3098,7 @@ function paintGame(): void {
   });
   document.getElementById("btn-main-menu")?.addEventListener("click", () => {
     browseMode = false;
+    tutorialOverlayOpen = false;
     idolDetailUid = null;
     groupDetailUid = null;
     openingScreen = "home";

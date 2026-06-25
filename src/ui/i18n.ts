@@ -15,7 +15,7 @@ const EN: Dict = {
   common_off: "Off",
   common_yes: "Yes",
   common_no: "No",
-  common_wiki: "Wiki",
+  common_wiki: "百科",
   common_japanese: "Japanese",
   common_jpy_amount: "JPY {amount}",
   common_as_of: "(as of {date})",

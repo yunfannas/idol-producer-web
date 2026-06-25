@@ -338,6 +338,11 @@ export interface CdReleaseProject {
   released_digital_song_uids?: string[];
 }
 
+export interface SaveTutorialState {
+  completed: boolean;
+  disabled: boolean;
+}
+
 export interface GameSavePayload {
   version: typeof GAME_SAVE_VERSION;
   account_name?: string;
@@ -362,6 +367,7 @@ export interface GameSavePayload {
   training_focus_skill: Record<string, string>;
   managed_song_status: Record<string, ManagedSongStatusRow>;
   training_song_uids: string[];
+  tutorial: SaveTutorialState;
   scout: ScoutBlock;
   /** ISO date · optional until first simulated day settles in desktop; web sets at new game */
   game_start_date?: string;
@@ -509,6 +515,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     training_focus_skill: {},
     managed_song_status: {},
     training_song_uids: [],
+    tutorial: { completed: false, disabled: false },
     scout: { selected_company_uid: null, auditions: {}, subscriptions: {} },
   };
 }
@@ -662,6 +669,11 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   }
   if (p.training_focus_skill && typeof p.training_focus_skill === "object") {
     out.training_focus_skill = deepCopy(p.training_focus_skill as Record<string, string>);
+  }
+  if (p.tutorial && typeof p.tutorial === "object") {
+    const tutorial = p.tutorial as Record<string, unknown>;
+    out.tutorial.completed = tutorial.completed === true;
+    out.tutorial.disabled = tutorial.disabled === true;
   }
 
   for (const idol of out.database_snapshot.idols) {
