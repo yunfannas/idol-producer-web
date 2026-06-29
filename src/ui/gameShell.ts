@@ -434,6 +434,435 @@ function localizedLiteral(lang: UiLanguage, en: string, zh: string): string {
   return lang === "zh-CN" ? zh : en;
 }
 
+function notificationSenderLabel(lang: UiLanguage, sender: string): string {
+  if (lang !== "zh-CN") return sender;
+  switch (sender) {
+    case "Assistant":
+      return "助理";
+    case "Operations":
+      return "运营";
+    case "Management":
+      return "管理层";
+    case "Scout":
+      return "星探";
+    case "Training":
+      return "训练";
+    case "Scenario":
+      return "剧情";
+    case "News":
+      return "新闻";
+    default:
+      return sender;
+  }
+}
+
+function notificationCategoryLabel(lang: UiLanguage, category: string): string {
+  if (lang !== "zh-CN") return category;
+  switch (category) {
+    case "internal":
+      return "内部";
+    case "guidance":
+      return "指引";
+    case "background":
+      return "背景";
+    case "general":
+      return "一般";
+    case "confirmation":
+      return "确认";
+    case "decision":
+      return "决策";
+    case "news":
+      return "新闻";
+    default:
+      return category;
+  }
+}
+
+function notificationLikelihoodLabelZh(label: string): string {
+  switch (label.trim()) {
+    case "Highly likely to agree":
+      return "极有可能同意";
+    case "Likely to agree":
+      return "较可能同意";
+    case "Uncertain":
+      return "结果未定";
+    case "Unlikely":
+      return "不太可能同意";
+    default:
+      return label;
+  }
+}
+
+function localizedNotificationText(
+  row: {
+    title?: string;
+    body?: string;
+    sender?: string;
+    category?: string;
+    date?: string;
+    dedupe_key?: string;
+    report_data?: unknown;
+  },
+  lang: UiLanguage,
+): { title: string; body: string; sender: string; category: string } {
+  const title = String(row.title ?? "");
+  const body = String(row.body ?? "");
+  const sender = String(row.sender ?? "");
+  const category = String(row.category ?? "");
+  if (lang !== "zh-CN") return { title, body, sender, category };
+
+  const dedupeKey = String(row.dedupe_key ?? "");
+  const report =
+    row.report_data && typeof row.report_data === "object"
+      ? (row.report_data as Record<string, unknown>)
+      : null;
+  const reportKind = String(report?.kind ?? "");
+
+  const nameAfter = (prefix: string): string | null => (title.startsWith(prefix) ? title.slice(prefix.length).trim() : null);
+  const yen = (value: unknown): string => `¥${Number(value ?? 0).toLocaleString("ja-JP")}`;
+  const senderZh = notificationSenderLabel(lang, sender);
+  const categoryZh = notificationCategoryLabel(lang, category);
+
+  if (dedupeKey.startsWith("startup-roster|")) {
+    return {
+      title: "成员概览",
+      body: "当前管理组合的成员概览已整理完成。可直接从本邮件打开成员资料，查看履历后再安排第一周计划。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("startup-lives|")) {
+    return {
+      title: "近期演出安排",
+      body: "已为你整理好近期已排期的演出。请查看下方列表，确认时间、场地与节目安排。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("startup-staff|")) {
+    return {
+      title: "开局前员工简报",
+      body: "训练分为上午与下午两个固定时段。请先检查每周训练安排和成员状态表，再进入首周运营。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("production-started|")) {
+    return {
+      title: "制作工作已开始",
+      body: "你已正式接手当前组合。请先确认成员名单、训练计划与近期演出日历，再开始推进运营。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("daily-lives|")) {
+    return {
+      title: "今日演出安排",
+      body: "今天有待进行的演出。请查看下方场次信息，确认后开始演出。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (reportKind === "live_report" || dedupeKey.startsWith("live-report-start|")) {
+    const liveTitle = String(report?.title ?? nameAfter("Live report: ") ?? nameAfter("Festival report: ") ?? "演出");
+    const isFestival = title.startsWith("Festival report:");
+    return {
+      title: `${isFestival ? "音乐节报告" : "演出报告"}：${liveTitle}`,
+      body: "演出已结束。下方已整理本场表现、到场、收入和成员变化数据。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("training-end|")) {
+    return {
+      title: `${title.replace(/ ended$/, "")} 已结束`,
+      body: "本次训练已结束。请查看成员状态变化与歌曲准备进度。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("auto-booked-lives|")) {
+    const month = dedupeKey.split("|")[2]?.slice(0, 7) ?? "";
+    return {
+      title: `自动排期完成：${month}`,
+      body: `${month} 的默认演出已根据月度场次数参考自动建立。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("auto-book-lives|")) {
+    const month = dedupeKey.split("|")[2]?.slice(0, 7) ?? "";
+    return {
+      title: `是否为 ${month} 自动安排演出？`,
+      body: `月末提醒：确认后将按当前字母等级的月度演出参考，为 ${month} 自动生成默认演出。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("song-unlock|")) {
+    return {
+      title: "新歌曲已准备完成：タイムレスメモリー",
+      body: "这首歌现已可用于训练准备、节目单和演出排期。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("live-schedule-blocked|")) {
+    const subject = nameAfter("Live scheduling blocked: ") ?? "演出";
+    return {
+      title: `演出排期受阻：${subject}`,
+      body: "演出不能安排在未来 7 天以内。请选择至少晚于当前日期 7 天的日期。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("live-schedule-cash-blocked|")) {
+    const subject = nameAfter("Live scheduling blocked: ") ?? "演出";
+    return {
+      title: `演出排期受阻：${subject}`,
+      body: "当前现金不足以支付场地预订费用，请先补足资金后再安排这场演出。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("live-scheduled|")) {
+    const subject = nameAfter("Live scheduled: ") ?? "演出";
+    return {
+      title: `演出已排期：${subject}`,
+      body: "新的演出安排已建立，时间、场地和相关设置已记录。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (reportKind === "contract_renew_review") {
+    const idolName = nameAfter("Contract renewal review: ") ?? String(report?.idol_uid ?? "成员");
+    return {
+      title: `续约审核：${idolName}`,
+      body: `请检查 ${idolName} 的续约条件，调整薪资与到期日后再决定是否发出续约提议。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (reportKind === "contract_renew_confirm") {
+    const idolName = nameAfter("Contract renewal confirmation: ") ?? String(report?.idol_uid ?? "成员");
+    return {
+      title: `续约确认：${idolName}`,
+      body: `新薪资：${yen(report?.proposed_salary_yen)}\n新到期日：${String(report?.proposed_end_date ?? "-")}\n\n确认后将正式完成续约。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (reportKind === "contract_terminate_review") {
+    const idolName = nameAfter("Termination review: ") ?? String(report?.idol_uid ?? "成员");
+    const fee = Number(report?.termination_fee_yen ?? 0) || 0;
+    return {
+      title: `解约审核：${idolName}`,
+      body:
+        fee <= 0
+          ? `${idolName} 当前可无违约金解约，原因是当前丑闻等级为 ${String(report?.scandal_level ?? 0)}。`
+          : `请检查 ${idolName} 的解约费用，并确认是否要将其从组合中解除合同。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (title.startsWith("Renewal outlook updated: ")) {
+    const idolName = nameAfter("Renewal outlook updated: ") ?? "成员";
+    const likelihood = body.match(/"(.+?)"/)?.[1] ?? "";
+    return {
+      title: `续约评估已更新：${idolName}`,
+      body: `当前签约倾向为“${notificationLikelihoodLabelZh(likelihood)}”。请调整提议薪资或到期日后再继续。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (title.startsWith("Contract renewed: ")) {
+    const idolName = nameAfter("Contract renewed: ") ?? "成员";
+    return {
+      title: `续约完成：${idolName}`,
+      body: body
+        .replace(/^New monthly salary is /, "新月薪为 ")
+        .replace(/^New monthly salary is/, "新月薪为")
+        .replace(" through ", "，到期日为 ")
+        .replace(/\.$/, "。"),
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (title.startsWith("Termination blocked: ")) {
+    const idolName = nameAfter("Termination blocked: ") ?? "成员";
+    return {
+      title: `解约受阻：${idolName}`,
+      body: "当前现金不足以支付解约费用，暂时无法执行解约。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (title.startsWith("Contract terminated: ")) {
+    const idolName = nameAfter("Contract terminated: ") ?? "成员";
+    return {
+      title: `解约完成：${idolName}`,
+      body:
+        body.includes("without fee")
+          ? "解约已完成，无需支付费用。"
+          : `解约已完成，已支付费用。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (reportKind === "scout_subscription" || dedupeKey.startsWith("scout-subscribe|")) {
+    const companyName = String(report?.company_name ?? nameAfter("Scout subscription active: ") ?? "星探机构");
+    return {
+      title: `星探订阅已生效：${companyName}`,
+      body: `${companyName} 已正式受聘，每月会持续提供新线索。下方可查看立即获得的首条候选线索。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("scout-subscribe-blocked|")) {
+    const companyName = nameAfter("Scout subscription blocked: ") ?? "星探机构";
+    return {
+      title: `星探订阅受阻：${companyName}`,
+      body: "当前现金不足，无法启用这项月度星探服务。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (reportKind === "shortlist_signing_offer" || dedupeKey.startsWith("shortlist-sign|")) {
+    const idolName = String(report?.idol_name ?? nameAfter("Signing offer: ") ?? "成员");
+    return {
+      title: `签约报价：${idolName}`,
+      body: `开始日期：${String(report?.start_date ?? "-")}\n结束日期：${String(report?.end_date ?? "-")}\n月薪：${yen(report?.salary_yen)}\n\n确认后将把这名成员签入当前管理组合。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (title.startsWith("Signing completed: ")) {
+    const idolName = nameAfter("Signing completed: ") ?? "成员";
+    return {
+      title: `签约完成：${idolName}`,
+      body: body
+        .replace(/^Contract starts /, "合同开始于 ")
+        .replace(" and runs through ", "，结束于 ")
+        .replace(" at JPY ", "，月薪 ")
+        .replace(" per month.", "。"),
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("scout-sign|")) {
+    const idolName = nameAfter("Signing confirmation: ") ?? "成员";
+    return {
+      title: `签约确认：${idolName}`,
+      body: `${idolName} 已加入你的星探候选短名单，可进一步签约。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("goods-order-empty|")) {
+    const label = nameAfter("Goods order skipped: ") ?? "周边";
+    return {
+      title: `周边生产已跳过：${label}`,
+      body: `请先填写 ${label} 的生产数量，再提交制作。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("goods-order-blocked|")) {
+    const label = nameAfter("Goods order blocked: ") ?? "周边";
+    return {
+      title: `周边生产受阻：${label}`,
+      body: "当前现金不足，无法完成这批周边制作。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("goods-order|")) {
+    const label = nameAfter("Goods made: ") ?? "周边";
+    return {
+      title: `周边制作完成：${label}`,
+      body: `${label} 的生产已完成，库存已更新。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("birthday-goods-order-empty|")) {
+    const label = nameAfter("Birthday tee order skipped: ") ?? "生日T恤";
+    return {
+      title: `生日T恤生产已跳过：${label}`,
+      body: "请先输入生产数量，再提交这批生日T恤制作。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("birthday-goods-order-blocked|")) {
+    const label = nameAfter("Birthday tee order blocked: ") ?? "生日T恤";
+    return {
+      title: `生日T恤生产受阻：${label}`,
+      body: "当前现金不足，无法制作这批生日T恤。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("birthday-goods-order|")) {
+    const label = nameAfter("Birthday tees made: ") ?? "生日T恤";
+    return {
+      title: `生日T恤制作完成：${label}`,
+      body: "这批生日T恤已制作完成，库存已更新。",
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (dedupeKey.startsWith("hiatus|")) {
+    const idolName = nameAfter("Hiatus scheduled: ") ?? "成员";
+    const parts = dedupeKey.split("|");
+    return {
+      title: `休假已安排：${idolName}`,
+      body: `${idolName} 将从 ${parts[2] ?? "-"} 休假至 ${parts[3] ?? "-"}。期间将暂停训练与已管理演出参与。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+  if (title.startsWith("Group formed: ")) {
+    const groupName = nameAfter("Group formed: ") ?? "组合";
+    return { title: `组合成立：${groupName}`, body: `${groupName} 已正式开始活动。`, sender: senderZh, category: categoryZh };
+  }
+  if (title.startsWith("Group disbanded: ")) {
+    const groupName = nameAfter("Group disbanded: ") ?? "组合";
+    return { title: `组合解散：${groupName}`, body: `${groupName} 已结束活动。`, sender: senderZh, category: categoryZh };
+  }
+  if (title.startsWith("Member joined: ")) {
+    const idolName = nameAfter("Member joined: ") ?? "成员";
+    return { title: `成员加入：${idolName}`, body: body.replace(/ joined /, " 已加入 ").replace(/\.$/, "。"), sender: senderZh, category: categoryZh };
+  }
+  if (title.startsWith("Member left: ")) {
+    const idolName = nameAfter("Member left: ") ?? "成员";
+    return { title: `成员离开：${idolName}`, body: body.replace(/ left /, " 已离开 ").replace(/\.$/, "。"), sender: senderZh, category: categoryZh };
+  }
+  if (title.startsWith("Scandal revealed: ")) {
+    const idolName = nameAfter("Scandal revealed: ") ?? "成员";
+    return { title: `丑闻曝光：${idolName}`, body, sender: senderZh, category: categoryZh };
+  }
+  if (title.startsWith("Member update: ")) {
+    const idolName = nameAfter("Member update: ") ?? "成员";
+    return { title: `成员动态：${idolName}`, body, sender: senderZh, category: categoryZh };
+  }
+  if (title === "Scenario update") {
+    return { title: "剧情更新", body: "已应用一条预定剧情事件。", sender: senderZh, category: categoryZh };
+  }
+  if (reportKind === "weekly_news_roundup" || title === "Weekly news roundup") {
+    const windowStart = String(report?.window_start ?? "");
+    const windowEnd = String(report?.window_end ?? row.date ?? "");
+    return {
+      title: "每周新闻汇总",
+      body: `以下为 ${windowStart} 至 ${windowEnd} 期间记录到的组合与成员动态。`,
+      sender: senderZh,
+      category: categoryZh,
+    };
+  }
+
+  return { title, body, sender: senderZh, category: categoryZh };
+}
+
 function localizedMediaTabLabel(lang: UiLanguage, tab: MediaTab): string {
   switch (tab) {
     case "tv":
@@ -810,7 +1239,7 @@ function renderIdolDetailPage(
     ? `<a class="idol-detail-wiki-inline" href="${attrQuotedUrl(wikiUrl)}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "common_wiki"))}</a>`
     : "";
 
-  const ablPart = `<span class="idol-detail-inline-frame idol-detail-abl-frame">${htmlEsc("ABL")} <strong>${getAbility(attrs)}</strong></span>`;
+  const ablPart = `<span class="idol-detail-inline-frame idol-detail-abl-frame">${htmlEsc(localizedLiteral(lang, "能力", "能力"))} <strong>${getAbility(attrs)}</strong></span>`;
 
   const xPart = `<span class="idol-detail-inline-frame idol-detail-x-frame">
       <span class="idol-detail-x-prefix">${htmlEsc("X")}</span>
@@ -889,18 +1318,20 @@ function renderInbox(
 
   const list = rows
     .map((n) => {
+      const localized = localizedNotificationText(n, lang);
       const unread = !n.read ? `<span class="badge-unread" aria-hidden="true">*</span> ` : "";
       const active = n.uid === sel ? " is-active" : "";
       const attention = attentionActionUid === n.uid ? `<span class="inbox-blocker-alert" aria-hidden="true">!</span>` : "";
       return `<button type="button" class="inbox-row-btn fm-card${active}" data-inbox-uid="${htmlEsc(n.uid)}">
-        <span class="inbox-row-title">${unread}<span>${htmlEsc(n.title)}</span>${attention}</span>
-        <span class="inbox-row-meta">${htmlEsc(n.date)} - ${htmlEsc(n.sender)}</span>
+        <span class="inbox-row-title">${unread}<span>${htmlEsc(localized.title)}</span>${attention}</span>
+        <span class="inbox-row-meta">${htmlEsc(n.date)} - ${htmlEsc(localized.sender)}</span>
       </button>`;
     })
     .join("");
 
   const detail = selected
     ? (() => {
+        const localizedSelected = localizedNotificationText(selected, lang);
         const liveReport =
           selected.report_data &&
           typeof selected.report_data === "object" &&
@@ -932,7 +1363,7 @@ function renderInbox(
                   const title = liveDisplayTitleText(live);
                   const when = liveTimeRangeText(live) || formatLiveSlotLine(live) || dateIso;
                   const venueText = liveVenueCompactText(live);
-                  return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} Â· ${venueText}`)}</span></li>`;
+              return `<li><button type="button" class="text-action-btn" data-live-open-uid="${htmlEsc(uid)}">${htmlEsc(title)}</button><span class="content-muted"> ${htmlEsc(`${when} Â· ${venueText}`)}</span></li>`;
                 })
                 .join("");
               return `<div class="live-report-detail"><h4 class="content-h3">${htmlEsc(localizedLiteral(lang, "Today's lives", "今日演出"))}</h4><ul class="plain-list">${items}</ul></div>`;
@@ -1140,7 +1571,7 @@ function renderInbox(
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Proposed salary", "提议薪资"))}</span><strong>${htmlEsc(`JPY ${Number(specialReport.proposed_salary_yen ?? 0).toLocaleString("ja-JP")}`)}</strong></div>
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Proposed end", "提议到期日"))}</span><strong>${htmlEsc(String(specialReport.proposed_end_date ?? "-"))}</strong></div>
               </div>
-              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+              <div class="inbox-plain-body">${htmlEsc(localizedSelected.body).replaceAll("\n", "<br />")}</div>
             </div>`;
           }
           if (specialKind === "contract_terminate_review" && specialReport) {
@@ -1151,7 +1582,7 @@ function renderInbox(
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Scandal", "丑闻"))}</span><strong>${htmlEsc(lang === "zh-CN" ? `等级 ${String(specialReport.scandal_level ?? 0)}` : `Level ${String(specialReport.scandal_level ?? 0)}`)}</strong></div>
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Termination fee", "解约金"))}</span><strong>${htmlEsc(`JPY ${Number(specialReport.termination_fee_yen ?? 0).toLocaleString("ja-JP")}`)}</strong></div>
               </div>
-              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+              <div class="inbox-plain-body">${htmlEsc(localizedSelected.body).replaceAll("\n", "<br />")}</div>
             </div>`;
           }
           if (specialKind === "scout_subscription" && specialReport) {
@@ -1170,7 +1601,7 @@ function renderInbox(
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Immediate lead", "立即线索"))}</span><strong>${leadUid ? `<button type="button" class="text-action-btn" data-idol-detail="${htmlEsc(leadUid)}">${htmlEsc(leadName)}</button>` : htmlEsc(t(lang, "common_none"))}</strong></div>
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Profile", "档案评分"))}</span><strong>${Number.isFinite(profileScore) ? htmlEsc(String(profileScore)) : "—"}</strong></div>
               </div>
-              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}${reason ? `<br /><br /><strong>${htmlEsc(localizedLiteral(lang, "Scout read", "星探评语"))}:</strong> ${htmlEsc(reason)}` : ""}</div>
+              <div class="inbox-plain-body">${htmlEsc(localizedSelected.body).replaceAll("\n", "<br />")}${reason ? `<br /><br /><strong>${htmlEsc(localizedLiteral(lang, "Scout read", "星探评语"))}:</strong> ${htmlEsc(reason)}` : ""}</div>
             </div>`;
           }
           if (specialKind === "shortlist_signing_offer" && specialReport) {
@@ -1181,11 +1612,11 @@ function renderInbox(
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "End date", "结束日期"))}</span><strong>${htmlEsc(String(specialReport.end_date ?? "-"))}</strong></div>
                 <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Salary", "薪资"))}</span><strong>${htmlEsc(`JPY ${Number(specialReport.salary_yen ?? 0).toLocaleString("ja-JP")}`)}</strong></div>
               </div>
-              <div class="inbox-plain-body">${htmlEsc(selected.body).replaceAll("\n", "<br />")}</div>
+              <div class="inbox-plain-body">${htmlEsc(localizedSelected.body).replaceAll("\n", "<br />")}</div>
             </div>`;
           }
           if (!liveReport) {
-            const plainBody = htmlEsc(selected.body).replaceAll("\n", "<br />");
+            const plainBody = htmlEsc(localizedSelected.body).replaceAll("\n", "<br />");
             if (startupActions) return `${liveScheduleLinks}${startupActions}`;
             return `${liveScheduleLinks}${startupActions}<div class="inbox-plain-body">${plainBody}</div>`;
           }
@@ -1239,8 +1670,8 @@ function renderInbox(
         };
         return `<article class="fm-card inbox-detail-card" aria-label="${htmlEsc(localizedLiteral(lang, "Message detail", "消息详情"))}">
         <header class="fm-card-head">
-          <h3 class="content-h3 inbox-detail-h">${htmlEsc(selected.title)}${attentionActionUid === selected.uid ? ` <span class="inbox-blocker-alert" aria-hidden="true">!</span>` : ""}</h3>
-          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.created_at || selected.date)}">${htmlEsc(selected.date)} ${htmlEsc(notificationTimeLabel(selected))}</time> - ${htmlEsc(selected.sender)} - ${htmlEsc(selected.category)}</p>
+          <h3 class="content-h3 inbox-detail-h">${htmlEsc(localizedSelected.title)}${attentionActionUid === selected.uid ? ` <span class="inbox-blocker-alert" aria-hidden="true">!</span>` : ""}</h3>
+          <p class="inbox-detail-meta"><time datetime="${htmlEsc(selected.created_at || selected.date)}">${htmlEsc(selected.date)} ${htmlEsc(notificationTimeLabel(selected))}</time> - ${htmlEsc(localizedSelected.sender)} - ${htmlEsc(localizedSelected.category)}</p>
         </header>
         <div class="inbox-detail-body">${renderLiveReport()}</div>
         ${
@@ -1392,14 +1823,14 @@ function renderTraining(
 
     const primaryBadge =
       primary === "inj"
-        ? badge("INJ", "Injured", "inj")
+        ? badge(lang === "zh-CN" ? "伤" : "INJ", localizedLiteral(lang, "受伤", "受伤"), "inj")
         : primary === "ill"
-          ? badge("ILL", "Ill", "ill")
-          : badge("RDY", "Ready", "rdy");
+          ? badge(lang === "zh-CN" ? "病" : "ILL", localizedLiteral(lang, "生病", "生病"), "ill")
+          : badge(lang === "zh-CN" ? "可" : "RDY", localizedLiteral(lang, "可上阵", "可上阵"), "rdy");
     const extras = optionalBadges.map((code) => {
-      if (code === "dpr") return badge("DPR", "Depressed", "dpr");
-      if (code === "hia") return badge("HIA", "Hiatus", "hia");
-      return badge("SUS", "Suspended", "sus");
+      if (code === "dpr") return badge(lang === "zh-CN" ? "低" : "DPR", localizedLiteral(lang, "情绪低落", "情绪低落"), "dpr");
+      if (code === "hia") return badge(lang === "zh-CN" ? "休" : "HIA", localizedLiteral(lang, "休假", "休假"), "hia");
+      return badge(lang === "zh-CN" ? "停" : "SUS", localizedLiteral(lang, "停职", "停职"), "sus");
     });
     return `<div class="training-status-badges">${[primaryBadge, ...extras].join("")}</div>`;
   };
@@ -1493,7 +1924,22 @@ function renderTraining(
       };
 
       const focusOpts = FOCUS_SKILL_OPTIONS.map((opt) => {
-        const lab = opt === "" ? "- (none)" : opt;
+        const lab =
+          opt === ""
+            ? localizedLiteral(lang, "- (none)", "无")
+            : opt === "talking"
+              ? localizedLiteral(lang, "talking", "谈话")
+              : opt === "host"
+                ? localizedLiteral(lang, "host", "主持")
+                : opt === "variety"
+                  ? localizedLiteral(lang, "variety", "综艺")
+                  : opt === "acting"
+                    ? localizedLiteral(lang, "acting", "演技")
+                    : opt === "make-up"
+                      ? localizedLiteral(lang, "make-up", "妆造")
+                      : opt === "model"
+                        ? localizedLiteral(lang, "model", "模特")
+                        : opt;
         return `<option value="${htmlEsc(opt)}" ${focus === opt ? "selected" : ""}>${htmlEsc(lab)}</option>`;
       }).join("");
 
@@ -1510,19 +1956,19 @@ function renderTraining(
             ${nameLine}
           </div>
           <div class="training-member-stats">
-            <span title="Condition">C ${htmlEsc(String(cond))}</span>
-            <span title="Morale">M ${htmlEsc(String(mor))}</span>
+            <span title="${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}">${htmlEsc(localizedLiteral(lang, "状", "状"))} ${htmlEsc(String(cond))}</span>
+            <span title="${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}">${htmlEsc(localizedLiteral(lang, "气", "气"))} ${htmlEsc(String(mor))}</span>
           </div>
         </header>
-        <p class="content-muted training-bear-line" data-training-bear="${htmlEsc(uid)}">${htmlEsc(`Training load ${load}/20 - bear index ${bear}`)}${over > 0 ? htmlEsc(` - overwork +${over} vs bear`) : ""}</p>
+        <p class="content-muted training-bear-line" data-training-bear="${htmlEsc(uid)}">${htmlEsc(lang === "zh-CN" ? `训练负荷 ${load}/20 - 承受指数 ${bear}` : `Training load ${load}/20 - bear index ${bear}`)}${over > 0 ? htmlEsc(lang === "zh-CN" ? ` - 超负荷 +${over}` : ` - overwork +${over} vs bear`) : ""}</p>
         <div class="training-sliders">
-          ${slider("sing", "Sing")}
-          ${slider("dance", "Dance")}
-          ${slider("physical", "Physical")}
-          ${slider("target", "Target / misc")}
+          ${slider("sing", localizedLiteral(lang, "Sing", "唱功"))}
+          ${slider("dance", localizedLiteral(lang, "Dance", "舞蹈"))}
+          ${slider("physical", localizedLiteral(lang, "Physical", "体能"))}
+          ${slider("target", localizedLiteral(lang, "Target / misc", "重点 / 其他"))}
           <label class="training-slider training-focus-slider-row">
-            <span class="training-slider-l">${htmlEsc("Special focus")}</span>
-            <select class="fm-select training-focus-select" data-training-focus data-idol-uid="${htmlEsc(uid)}" aria-label="${htmlEsc("Special focus (weekly bonus track)")}">${focusOpts}</select>
+            <span class="training-slider-l">${htmlEsc(localizedLiteral(lang, "Special focus", "特别重点"))}</span>
+            <select class="fm-select training-focus-select" data-training-focus data-idol-uid="${htmlEsc(uid)}" aria-label="${htmlEsc(localizedLiteral(lang, "Special focus (weekly bonus track)", "特别重点（周额外加成）"))}">${focusOpts}</select>
             <span class="training-slider-v" aria-hidden="true"> </span>
           </label>
         </div>
@@ -1551,16 +1997,16 @@ function renderTraining(
       const moraleTone = trainingValueToneClass(morale);
       const statusBadges = trainingStatusBadges(r);
       const actionButton = hiatusActive
-        ? `<button type="button" class="fm-btn" disabled>${htmlEsc("Hiatus")}</button>`
-        : `<button type="button" class="fm-btn fm-btn-danger" data-training-vacation="${htmlEsc(uid)}">${htmlEsc("Off")}</button>`;
+        ? `<button type="button" class="fm-btn" disabled>${htmlEsc(localizedLiteral(lang, "Hiatus", "休假中"))}</button>`
+        : `<button type="button" class="fm-btn fm-btn-danger" data-training-vacation="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Off", "休息"))}</button>`;
       const actionCell = hiatusActive
         ? actionButton
-        : `<div class="training-vacation-controls"><input type="number" min="1" max="365" step="1" value="1" class="fm-input training-vacation-days" data-training-vacation-days="${htmlEsc(uid)}" aria-label="${htmlEsc("Off days")}" />${actionButton}</div>`;
+        : `<div class="training-vacation-controls"><input type="number" min="1" max="365" step="1" value="1" class="fm-input training-vacation-days" data-training-vacation-days="${htmlEsc(uid)}" aria-label="${htmlEsc(localizedLiteral(lang, "Off days", "休息天数"))}" />${actionButton}</div>`;
       const nameCell = `<span class="group-roster-name-wrap"><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></span>`;
       return `<tr>
         <td class="idol-list-photo">${portraitCell}</td>
         <td>${nameCell}</td>
-        <td>${romaji ? htmlEsc(romaji) : "-"}</td>
+        <td>${romaji ? htmlEsc(romaji) : htmlEsc(localizedLiteral(lang, "-", "-"))}</td>
         <td>${colorCell}</td>
         <td class="group-roster-stat">${htmlEsc(age)}</td>
         <td class="group-roster-stat">${htmlEsc(String(ability))}</td>
@@ -1588,7 +2034,7 @@ function renderTraining(
         <td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></td>
         <td>${romaji ? htmlEsc(romaji) : "-"}</td>
         <td>${htmlEsc(returnDate)}</td>
-        <td class="group-roster-stat">${htmlEsc(`${days} day${days === 1 ? "" : "s"}`)}</td>
+        <td class="group-roster-stat">${htmlEsc(lang === "zh-CN" ? `${days} 天` : `${days} day${days === 1 ? "" : "s"}`)}</td>
       </tr>`;
     })
     .filter(Boolean)
@@ -1609,7 +2055,7 @@ function renderTraining(
       const familiarity = Math.round(Number(status?.familiarity ?? 0) || 0);
       const fatigue = Math.round(Number(status?.rotation_fatigue ?? 0) || 0);
       return `<tr>
-        <td><label class="check-pill"><input type="checkbox" data-training-song-pick="${htmlEsc(uid)}" ${selectedSongUids.has(uid) ? "checked" : ""} /> <span>Prepare</span></label></td>
+        <td><label class="check-pill"><input type="checkbox" data-training-song-pick="${htmlEsc(uid)}" ${selectedSongUids.has(uid) ? "checked" : ""} /> <span>${htmlEsc(localizedLiteral(lang, "Prepare", "练习"))}</span></label></td>
         <td>${htmlEsc(title)}</td>
         <td>${htmlEsc(availableOn || "-")}</td>
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
@@ -1620,39 +2066,39 @@ function renderTraining(
     .join("");
 
   return `<section class="content-panel training-view">
-    <h2 class="content-h2">Training</h2>
-    <p class="content-muted">Daily sliders (0-5 each) for <strong>${htmlEsc(String(grp?.name_romanji ?? grp?.name ?? "group"))}</strong>. Sum caps at 20 and feeds <code>advanceOneDay</code> with the same condition/morale rules as the desktop save loop. Reference date: ${htmlEsc(String(ref ?? "-"))}.</p>
+    <h2 class="content-h2">${htmlEsc(navLabel(lang, "Training"))}</h2>
+    <p class="content-muted">${htmlEsc(lang === "zh-CN" ? `这是 ${String(grp?.name_romanji ?? grp?.name ?? "组合")} 的每日训练滑杆（每项 0-5）。总和上限为 20，并按与桌面版相同的状态 / 士气规则推进。参考日期：${String(ref ?? "-")}` : `Daily sliders (0-5 each) for ${String(grp?.name_romanji ?? grp?.name ?? "group")}. Sum caps at 20 and feeds advanceOneDay with the same condition/morale rules as the desktop save loop. Reference date: ${String(ref ?? "-")}.`)}</p>
     ${renderTrainingTabs(trainingTab, lang)}
     ${
       trainingTab === "roster"
         ? `<section class="fm-card">
-            <h3 class="content-h3">Managed roster</h3>
+            <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Managed roster", "当前阵容"))}</h3>
             <div class="table-scroll">
               <table class="fm-table group-detail-roster-table training-roster-table">
-                <thead><tr><th></th><th>NAME</th><th>${sortHeader("romaji", "ROMAJI")}</th><th>COLOR</th><th>${sortHeader("age", "AGE")}</th><th>${sortHeader("ability", "ABL")}</th><th>${sortHeader("condition", "CON")}</th><th>${sortHeader("morale", "MOR")}</th><th>${sortHeader("started", "STARTED")}</th><th>STATUS</th><th>ACTION</th></tr></thead>
-                <tbody>${rosterRows || `<tr><td colspan="11" class="content-muted">No roster members.</td></tr>`}</tbody>
+                <thead><tr><th></th><th>${htmlEsc(localizedLiteral(lang, "Name", "姓名"))}</th><th>${sortHeader("romaji", localizedLiteral(lang, "Romaji", "罗马字"))}</th><th>${htmlEsc(localizedLiteral(lang, "Color", "代表色"))}</th><th>${sortHeader("age", localizedLiteral(lang, "Age", "年龄"))}</th><th>${sortHeader("ability", localizedLiteral(lang, "Ability", "能力"))}</th><th>${sortHeader("condition", localizedLiteral(lang, "Condition", "状态"))}</th><th>${sortHeader("morale", localizedLiteral(lang, "Morale", "士气"))}</th><th>${sortHeader("started", localizedLiteral(lang, "Started", "加入日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Status", "状态标记"))}</th><th>${htmlEsc(localizedLiteral(lang, "Action", "操作"))}</th></tr></thead>
+                <tbody>${rosterRows || `<tr><td colspan="11" class="content-muted">${htmlEsc(localizedLiteral(lang, "No roster members.", "当前没有成员。"))}</td></tr>`}</tbody>
               </table>
             </div>
-            <h3 class="content-h3">Hiatus</h3>
+            <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Hiatus", "休假"))}</h3>
             <div class="table-scroll">
               <table class="fm-table training-hiatus-table">
-                <thead><tr><th>NAME</th><th>ROMAJI</th><th>RETURN DATE</th><th>DAYS</th></tr></thead>
-                <tbody>${hiatusRows || `<tr><td colspan="4" class="content-muted">No hiatus scheduled.</td></tr>`}</tbody>
+                <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Name", "姓名"))}</th><th>${htmlEsc(localizedLiteral(lang, "Romaji", "罗马字"))}</th><th>${htmlEsc(localizedLiteral(lang, "Return date", "回归日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Days", "天数"))}</th></tr></thead>
+                <tbody>${hiatusRows || `<tr><td colspan="4" class="content-muted">${htmlEsc(localizedLiteral(lang, "No hiatus scheduled.", "暂无休假安排。"))}</td></tr>`}</tbody>
               </table>
             </div>
           </section>`
         : trainingTab === "songs"
           ? `<section class="fm-card">
-              <h3 class="content-h3">Song preparation</h3>
-              <p class="content-muted">${htmlEsc("Choose the songs the group is actively preparing in training. Each training session splits a fixed familiarity budget evenly across the selected songs, while rotation fatigue reflects recent overuse on stage.")}</p>
+              <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Song preparation", "歌曲准备"))}</h3>
+              <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Choose the songs the group is actively preparing in training. Each training session splits a fixed familiarity budget evenly across the selected songs, while rotation fatigue reflects recent overuse on stage.", "选择组合当前在训练中重点准备的歌曲。每次训练会把固定熟练度平均分配给选中的歌曲，而轮换疲劳反映近期舞台上的过度使用。"))}</p>
               <div class="table-scroll">
                 <table class="fm-table">
-                  <thead><tr><th>PREPARE</th><th>SONG</th><th>AVAILABLE ON</th><th>POPULARITY</th><th>FAMILIARITY</th><th>ROTATION FATIGUE</th></tr></thead>
-                  <tbody>${songRows || `<tr><td colspan="6" class="content-muted">No managed songs found.</td></tr>`}</tbody>
+                  <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Prepare", "练习"))}</th><th>${htmlEsc(localizedLiteral(lang, "Song", "歌曲"))}</th><th>${htmlEsc(localizedLiteral(lang, "Available on", "可用日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Popularity", "人气"))}</th><th>${htmlEsc(localizedLiteral(lang, "Familiarity", "熟练度"))}</th><th>${htmlEsc(localizedLiteral(lang, "Rotation fatigue", "轮换疲劳"))}</th></tr></thead>
+                  <tbody>${songRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed songs found.", "未找到当前经营组合的歌曲。"))}</td></tr>`}</tbody>
                 </table>
               </div>
             </section>`
-          : `<div class="training-grid">${cards || `<p class="content-muted">No roster members.</p>`}</div>`
+          : `<div class="training-grid">${cards || `<p class="content-muted">${htmlEsc(localizedLiteral(lang, "No roster members.", "当前没有成员。"))}</p>`}</div>`
     }
   </section>`;
 }
@@ -1889,6 +2335,7 @@ function renderFinancesProjectionView(
   save: GameSavePayload,
   financeHistoryRange: FinanceHistoryRange,
   financeTab: FinanceTab,
+  lang: UiLanguage,
 ): string {
   const f = getActiveFinances(save);
   const grp = getPrimaryGroup(save);
@@ -1909,8 +2356,8 @@ function renderFinancesProjectionView(
     projectedWindow.reduce((sum, row) => sum + row.expense, 0) / Math.max(1, projectedWindow.length);
   const head = `
     <div class="stat-row" role="group" aria-label="Cash">
-      <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">&yen;${f.cash_yen.toLocaleString("ja-JP")}</span></div>
-      <div class="stat-block"><span class="stat-label">Last close</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "-")}</span></div>
+      <div class="stat-block"><span class="stat-label">${htmlEsc(localizedLiteral(lang, "Cash (JPY)", "现金（JPY）"))}</span><span class="stat-value">&yen;${f.cash_yen.toLocaleString("ja-JP")}</span></div>
+      <div class="stat-block"><span class="stat-label">${htmlEsc(localizedLiteral(lang, "Last close", "最近结算日"))}</span><span class="stat-value stat-value-sm">${htmlEsc(f.last_processed_date ?? "-")}</span></div>
     </div>`;
   const tableRows = ledger
     .map(
@@ -1942,15 +2389,15 @@ function renderFinancesProjectionView(
     )
     .join("");
   const historyRangeButtons: Array<[FinanceHistoryRange, string]> = [
-    ["day", "Day"],
-    ["week", "Week"],
-    ["month", "Month"],
-    ["year", "Year"],
-    ["all", "All"],
+    ["day", localizedLiteral(lang, "Day", "日")],
+    ["week", localizedLiteral(lang, "Week", "周")],
+    ["month", localizedLiteral(lang, "Month", "月")],
+    ["year", localizedLiteral(lang, "Year", "年")],
+    ["all", localizedLiteral(lang, "All", "全部")],
   ];
   const financeTabs: Array<[FinanceTab, string]> = [
-    ["finance", "Finance"],
-    ["contract", "Contract"],
+    ["finance", localizedLiteral(lang, "Finance", "财务")],
+    ["contract", localizedLiteral(lang, "Contract", "合同")],
   ];
   const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
   const contractRows = memberUids
@@ -1988,13 +2435,13 @@ function renderFinancesProjectionView(
         <td class="group-roster-stat contract-col-salary">&yen;${salary.toLocaleString("ja-JP")}</td>
         <td class="group-roster-stat contract-col-started">${htmlEsc(started)}</td>
         <td class="group-roster-stat contract-col-end">${htmlEsc(endDate)}</td>
-        <td class="contract-col-action"><div class="contract-actions"><button type="button" class="fm-btn" data-contract-renew="${htmlEsc(uid)}">Renew</button><button type="button" class="fm-btn fm-btn-danger" data-contract-terminate="${htmlEsc(uid)}">Terminate</button></div></td>
+        <td class="contract-col-action"><div class="contract-actions"><button type="button" class="fm-btn" data-contract-renew="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Renew", "续约"))}</button><button type="button" class="fm-btn fm-btn-danger" data-contract-terminate="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Terminate", "解约"))}</button></div></td>
       </tr>`;
     })
     .join("");
   return `
     <section class="content-panel finances-view">
-      <h2 class="content-h2">Finances</h2>
+      <h2 class="content-h2">${htmlEsc(navLabel(lang, "Finances"))}</h2>
       <div class="workspace-tabs finance-tabs">${financeTabs
         .map(
           ([value, label]) =>
@@ -2005,8 +2452,8 @@ function renderFinancesProjectionView(
         financeTab === "contract"
           ? `
       <div class="table-panel">
-        <h3 class="content-h3">Managed contracts</h3>
-        <p class="content-muted">Renewal and termination requests open as blocking inbox events for review and confirmation.</p>
+        <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Managed contracts", "当前合同"))}</h3>
+        <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Renewal and termination requests open as blocking inbox events for review and confirmation.", "续约与解约申请会以必处理收件箱事件形式出现，需审核并确认。"))}</p>
         <div class="table-scroll">
           <table class="fm-table group-detail-roster-table training-roster-table contract-roster-table">
             <colgroup>
@@ -2018,34 +2465,34 @@ function renderFinancesProjectionView(
               <col class="contract-col-end" />
               <col class="contract-col-action" />
             </colgroup>
-            <thead><tr><th></th><th>NAME</th><th>ROMAJI</th><th>SALARY</th><th>STARTED</th><th>CONTRACT END</th><th>ACTION</th></tr></thead>
-            <tbody>${contractRows || `<tr><td colspan="7" class="content-muted">No managed members found.</td></tr>`}</tbody>
+            <thead><tr><th></th><th>${htmlEsc(localizedLiteral(lang, "Name", "姓名"))}</th><th>${htmlEsc(localizedLiteral(lang, "Romaji", "罗马字"))}</th><th>${htmlEsc(localizedLiteral(lang, "Salary", "薪资"))}</th><th>${htmlEsc(localizedLiteral(lang, "Started", "加入日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Contract end", "合同结束"))}</th><th>${htmlEsc(localizedLiteral(lang, "Action", "操作"))}</th></tr></thead>
+            <tbody>${contractRows || `<tr><td colspan="7" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed members found.", "未找到当前经营成员。"))}</td></tr>`}</tbody>
           </table>
         </div>
       </div>`
           : `
       ${head}
-      <section class="fm-card finance-projection-card" aria-label="24 month projection">
+      <section class="fm-card finance-projection-card" aria-label="${htmlEsc(localizedLiteral(lang, "24 month projection", "24个月预测"))}">
         <div class="finance-projection-head">
           <div>
-            <h3 class="content-h3 finance-projection-title">Overall Balance Projection</h3>
-            <p class="content-muted finance-projection-copy">24-month conservative runway. Fixed monthly burden is counted, but uncertain future live income is not assumed.</p>
+            <h3 class="content-h3 finance-projection-title">${htmlEsc(localizedLiteral(lang, "Overall Balance Projection", "整体余额预测"))}</h3>
+            <p class="content-muted finance-projection-copy">${htmlEsc(localizedLiteral(lang, "24-month conservative runway. Fixed monthly burden is counted, but uncertain future live income is not assumed.", "保守口径的 24 个月现金走势。已计入固定月度负担，但不预估不确定的未来公演收入。"))}</p>
           </div>
           <div class="finance-projection-kpis">
             <div class="finance-projection-kpi">
-              <span class="finance-projection-kpi-label">Projected 24M close</span>
+              <span class="finance-projection-kpi-label">${htmlEsc(localizedLiteral(lang, "Projected 24M close", "24个月期末预测"))}</span>
               <strong class="finance-projection-kpi-value">${htmlEsc(financeMoneyShort(projectedLast?.closingBalance ?? f.cash_yen))}</strong>
             </div>
             <div class="finance-projection-kpi">
-              <span class="finance-projection-kpi-label">Avg monthly net</span>
+              <span class="finance-projection-kpi-label">${htmlEsc(localizedLiteral(lang, "Avg monthly net", "月均净额"))}</span>
               <strong class="finance-projection-kpi-value ${avgMonthlyNet >= 0 ? "is-positive" : "is-negative"}">${htmlEsc(financeMoneyShort(avgMonthlyNet))}</strong>
             </div>
             <div class="finance-projection-kpi">
-              <span class="finance-projection-kpi-label">Projected income / month</span>
+              <span class="finance-projection-kpi-label">${htmlEsc(localizedLiteral(lang, "Projected income / month", "预计月收入"))}</span>
               <strong class="finance-projection-kpi-value is-positive">${htmlEsc(financeMoneyShort(projectedIncome))}</strong>
             </div>
             <div class="finance-projection-kpi">
-              <span class="finance-projection-kpi-label">Projected expense / month</span>
+              <span class="finance-projection-kpi-label">${htmlEsc(localizedLiteral(lang, "Projected expense / month", "预计月支出"))}</span>
               <strong class="finance-projection-kpi-value is-negative">${htmlEsc(financeMoneyShort(projectedExpense))}</strong>
             </div>
           </div>
@@ -2053,17 +2500,17 @@ function renderFinancesProjectionView(
         ${renderFinanceProjectionSvg(projectionPoints)}
       </section>
       <div class="table-panel">
-        <h3 class="content-h3">Daily ledger (recent)</h3>
+        <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Daily ledger (recent)", "每日流水（最近）"))}</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Net &yen;</th><th>Tier</th><th>Income</th><th>Expense</th><th>Scout sub</th></tr></thead>
-            <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
+            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Date", "日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Net", "净额"))}</th><th>${htmlEsc(localizedLiteral(lang, "Tier", "等级"))}</th><th>${htmlEsc(localizedLiteral(lang, "Income", "收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Expense", "支出"))}</th><th>${htmlEsc(localizedLiteral(lang, "Scout sub", "星探订阅"))}</th></tr></thead>
+            <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No ledger rows yet.", "暂无流水记录。"))}</td></tr>`}</tbody>
           </table>
         </div>
       </div>
       <div class="table-panel">
         <div class="finance-history-head">
-          <h3 class="content-h3">Income / expense history</h3>
+          <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Income / expense history", "收支历史"))}</h3>
           <div class="finance-history-tabs">${historyRangeButtons
             .map(
               ([value, label]) =>
@@ -2071,11 +2518,11 @@ function renderFinancesProjectionView(
             )
             .join("")}</div>
         </div>
-        <p class="content-muted">Income &yen;${historyTotals.income.toLocaleString("ja-JP")} / Expense &yen;${historyTotals.expense.toLocaleString("ja-JP")}</p>
+        <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Income", "收入"))} &yen;${historyTotals.income.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "Expense", "支出"))} &yen;${historyTotals.expense.toLocaleString("ja-JP")}</p>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Tier</th><th>Income</th><th>Expense</th><th>Scout sub</th><th>Net</th></tr></thead>
-            <tbody>${historyTableRows || `<tr><td colspan="6" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
+            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Date", "日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Tier", "等级"))}</th><th>${htmlEsc(localizedLiteral(lang, "Income", "收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Expense", "支出"))}</th><th>${htmlEsc(localizedLiteral(lang, "Scout sub", "星探订阅"))}</th><th>${htmlEsc(localizedLiteral(lang, "Net", "净额"))}</th></tr></thead>
+            <tbody>${historyTableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No ledger rows yet.", "暂无流水记录。"))}</td></tr>`}</tbody>
           </table>
         </div>
       </div>`
@@ -2090,9 +2537,10 @@ function renderIdolsList(
   referenceIso: string | undefined,
   headline: string,
   layout: "cards" | "list",
+  lang: UiLanguage,
   note?: string,
 ): string {
-  if (!idols.length) return renderPlaceholder("Idols", "No idols in database snapshot.");
+  if (!idols.length) return renderPlaceholder(navLabel(lang, "Idols"), localizedLiteral(lang, "No idols in database snapshot.", "数据库快照中没有偶像。"));
 
   const sorted = sortIdolsByXFollowersDesc(idols);
   const rows = sorted.filter((row) => typeof row.uid === "string" && row.uid.trim());
@@ -2125,8 +2573,8 @@ function renderIdolsList(
             <span class="idol-card-name">${htmlEsc(name)}</span>
             ${romaji ? `<span class="idol-card-romaji">${htmlEsc(romaji)}</span>` : ""}
           </span>
-          <span class="idol-card-row2">${htmlEsc(`Age ${age}`)} Â· ${htmlEsc("X")} ${htmlEsc(xFollowersLabel(row))} Â· ${htmlEsc("ABL")} ${getAbility(attrs)}</span>
-          <span class="idol-card-row3"><strong>${htmlEsc("Group")}:</strong> ${htmlEsc(grpTxt)}</span>
+          <span class="idol-card-row2">${htmlEsc(lang === "zh-CN" ? `年龄 ${age}` : `Age ${age}`)} Â· ${htmlEsc("X")} ${htmlEsc(xFollowersLabel(row))} Â· ${htmlEsc(localizedLiteral(lang, "能力", "能力"))} ${getAbility(attrs)}</span>
+          <span class="idol-card-row3"><strong>${htmlEsc(localizedLiteral(lang, "Group", "组合"))}:</strong> ${htmlEsc(grpTxt)}</span>
         </span>
       </button>`;
     })
@@ -2157,13 +2605,15 @@ function renderIdolsList(
 
   const noteHtml = note ? `<p class="content-muted">${note}</p>` : "";
   const sortNote = `<p class="content-muted">${htmlEsc(
-    "Order: X followers (high â†’ low). Portraits: public/data/pictures/idols/ (basename of portrait_photo_path).",
+    lang === "zh-CN"
+      ? "排序：X 关注数从高到低。头像读取自 public/data/pictures/idols/（portrait_photo_path 的文件名部分）。"
+      : "Order: X followers (high â†’ low). Portraits: public/data/pictures/idols/ (basename of portrait_photo_path).",
   )}</p>`;
 
-  const toolbar = `<div class="idol-list-toolbar" role="toolbar" aria-label="Idol list layout">
-    <span class="idol-list-toolbar-label">${htmlEsc("View")}</span>
-    <button type="button" class="fm-btn idol-list-mode-btn ${layout === "cards" ? "is-active" : ""}" data-idol-layout="cards">${htmlEsc("Cards")}</button>
-    <button type="button" class="fm-btn idol-list-mode-btn ${layout === "list" ? "is-active" : ""}" data-idol-layout="list">${htmlEsc("List")}</button>
+  const toolbar = `<div class="idol-list-toolbar" role="toolbar" aria-label="${htmlEsc(localizedLiteral(lang, "Idol list layout", "偶像列表布局"))}">
+    <span class="idol-list-toolbar-label">${htmlEsc(localizedLiteral(lang, "View", "视图"))}</span>
+    <button type="button" class="fm-btn idol-list-mode-btn ${layout === "cards" ? "is-active" : ""}" data-idol-layout="cards">${htmlEsc(localizedLiteral(lang, "Cards", "卡片"))}</button>
+    <button type="button" class="fm-btn idol-list-mode-btn ${layout === "list" ? "is-active" : ""}" data-idol-layout="list">${htmlEsc(localizedLiteral(lang, "List", "列表"))}</button>
   </div>`;
 
   const body =
@@ -2174,13 +2624,13 @@ function renderIdolsList(
         <thead>
           <tr>
             <th></th>
-            <th>${htmlEsc("Name")}</th>
-            <th>${htmlEsc("Romaji")}</th>
-            <th>${htmlEsc("Age")}</th>
-            <th>${htmlEsc("Height cm")}</th>
-            <th>${htmlEsc("ABL")}</th>
-            <th>${htmlEsc("X followers")}</th>
-            <th>${htmlEsc("Current group(s)")}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "Name", "姓名"))}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "Romaji", "罗马字"))}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "Age", "年龄"))}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "Height cm", "身高 cm"))}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "Ability", "能力"))}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "X followers", "X 关注数"))}</th>
+            <th>${htmlEsc(localizedLiteral(lang, "Current group(s)", "当前所属组合"))}</th>
           </tr>
         </thead>
         <tbody>${tableRows}</tbody>
@@ -2190,7 +2640,7 @@ function renderIdolsList(
   return `
     <section class="content-panel idols-view">
       <h2 class="content-h2">${htmlEsc(headline)}</h2>
-      <p class="content-muted">${htmlEsc(`${sorted.length.toLocaleString()} idols Â· reference ${referenceIso ?? "â€”"}`)}.</p>
+      <p class="content-muted">${htmlEsc(lang === "zh-CN" ? `${sorted.length.toLocaleString()} 名偶像 · 参考日期 ${referenceIso ?? "â€”"}` : `${sorted.length.toLocaleString()} idols Â· reference ${referenceIso ?? "â€”"}`)}.</p>
       ${noteHtml}
       ${toolbar}
       ${sortNote}
@@ -3598,9 +4048,9 @@ function renderLivesView(
           ? (() => {
               const title = String(item.songTitle ?? item.label ?? "").trim();
               const source = groupSongs.find((song) => songCatalogMatchesPick(title, song));
-              return `Popularity ${songPopularityNum(source ?? {}).toFixed(1)}`;
+              return lang === "zh-CN" ? `人气 ${songPopularityNum(source ?? {}).toFixed(1)}` : `Popularity ${songPopularityNum(source ?? {}).toFixed(1)}`;
             })()
-          : `${item.durationMinutes}m`;
+          : lang === "zh-CN" ? `${item.durationMinutes} 分` : `${item.durationMinutes}m`;
       const selected = selectedSetlistSongIndex === index ? " is-selected-row" : "";
       return `<div class="live-program-dropzone" data-live-drop-index="${htmlEsc(String(index))}"></div>
         <div class="live-program-item${selected}" draggable="true" data-live-program-index="${htmlEsc(String(index))}" data-live-setlist-pick="${htmlEsc(String(index))}">
@@ -3640,10 +4090,10 @@ function renderLivesView(
 
   const scheduledDetail = selectedScheduled
     ? `<div class="content-muted">${[
-        `${String(selectedScheduled.title ?? selectedScheduled.live_type ?? "Live")}`,
-        `When: ${formatLiveSlotLine(selectedScheduled)}`,
-        `Venue: ${String(selectedScheduled.venue ?? "TBA")}${String(selectedScheduled.location ?? "").trim() ? ` Â· ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
-        `Program: ${Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
+        `${String(selectedScheduled.title ?? selectedScheduled.live_type ?? localizedLiteral(lang, "Live", "演出"))}`,
+        `${localizedLiteral(lang, "When", "时间")}：${formatLiveSlotLine(selectedScheduled)}`,
+        `${localizedLiteral(lang, "Venue", "场地")}：${String(selectedScheduled.venue ?? localizedLiteral(lang, "TBA", "待定"))}${String(selectedScheduled.location ?? "").trim() ? ` Â· ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
+        `${localizedLiteral(lang, "Program", "节目内容")}：${Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
           ? (selectedScheduled.program as unknown[])
               .map((raw) => {
                 if (!raw || typeof raw !== "object") return "";
@@ -3651,15 +4101,15 @@ function renderLivesView(
                 const kind = String(item.kind ?? "song");
                 const label = String(item.label ?? item.songTitle ?? "").trim();
                 const duration = Number(item.durationMinutes ?? 0) || 0;
-                return kind === "song" ? label : `${label} ${duration}m`;
+                return kind === "song" ? label : lang === "zh-CN" ? `${label} ${duration} 分` : `${label} ${duration}m`;
               })
               .filter(Boolean)
               .join(", ")
           : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
             ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(", ")
-            : "Not set"}`,
-        `Tokutenkai: ${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start ?? "")}-${String(selectedScheduled.tokutenkai_end ?? "")} Â· est ${String(selectedScheduled.tokutenkai_expected_tickets ?? "0")}` : "Off"}`,
-        `Goods: ${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line ?? "Goods")} Â· est JPY ${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}` : "Off"}`,
+            : localizedLiteral(lang, "Not set", "未设置")}`,
+        `${localizedLiteral(lang, "Tokutenkai", "特典会")}：${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start ?? "")}-${String(selectedScheduled.tokutenkai_end ?? "")} Â· ${localizedLiteral(lang, "est", "预计")} ${String(selectedScheduled.tokutenkai_expected_tickets ?? "0")}` : localizedLiteral(lang, "Off", "关闭")}`,
+        `${localizedLiteral(lang, "Goods", "周边")}：${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line ?? localizedLiteral(lang, "Goods", "周边"))} Â· ${localizedLiteral(lang, "est", "预计")} JPY ${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}` : localizedLiteral(lang, "Off", "关闭")}`,
       ].map((line) => htmlEsc(line)).join("<br />")}</div>`
     : `<p class="content-muted">${htmlEsc(t(lang, "lives_no_selected"))}</p>`;
 
@@ -3672,13 +4122,13 @@ function renderLivesView(
             const kind = String(item.kind ?? "song");
             const lineLabel = String(item.label ?? item.songTitle ?? "").trim();
             const duration = Number(item.durationMinutes ?? 0) || 0;
-            return kind === "song" ? lineLabel : `${lineLabel} ${duration}m`;
+            return kind === "song" ? lineLabel : lang === "zh-CN" ? `${lineLabel} ${duration} 分` : `${lineLabel} ${duration}m`;
           })
           .filter(Boolean)
           .join(" Â· ")
       : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
         ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(" Â· ")
-        : "Not set"
+        : localizedLiteral(lang, "Not set", "未设置")
     : "";
 
   const scheduledAvailableGoods = availableGoodsForTitle(String(selectedScheduled?.title ?? ""));
@@ -3697,7 +4147,7 @@ function renderLivesView(
     ? scheduledAvailableGoods
         .map((item) => {
           const checked = scheduledSelectedGoodsUids.includes(item.uid) ? "checked" : "";
-          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-detail-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY  ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
+          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-detail-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(lang === "zh-CN" ? `${goodsDisplayLabel(item)} / 库存 ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}` : `${goodsDisplayLabel(item)} / stock ${item.stock} / JPY  ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
         })
         .join("")
     : `<p class="content-muted">${htmlEsc(t(lang, "lives_stock_goods_hint"))}</p>`;
@@ -3706,7 +4156,7 @@ function renderLivesView(
     ? newLiveAvailableGoods
         .map((item) => {
           const checked = selectedGoodsUids.includes(item.uid) ? "checked" : "";
-          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(`${goodsDisplayLabel(item)} / stock ${item.stock} / JPY  ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
+          return `<label class="check-pill live-goods-pill"><input type="checkbox" data-live-goods-pick="${htmlEsc(item.uid)}" ${checked} /> <span>${htmlEsc(lang === "zh-CN" ? `${goodsDisplayLabel(item)} / 库存 ${item.stock} / JPY ${item.unit_price_yen.toLocaleString("ja-JP")}` : `${goodsDisplayLabel(item)} / stock ${item.stock} / JPY  ${item.unit_price_yen.toLocaleString("ja-JP")}`)}</span></label>`;
         })
         .join("")
     : `<p class="content-muted">${htmlEsc(t(lang, "lives_stock_goods_hint"))}</p>`;
@@ -3721,21 +4171,21 @@ function renderLivesView(
         <label><span>${htmlEsc(localizedLiteral(lang, "Venue", "场地"))}</span><select class="fm-select" data-live-detail-field="venue">${scheduledVenueOptions}</select></label>
         <label><span>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</span><input class="fm-input" data-live-detail-field="start_time" value="${htmlEsc(String(selectedScheduled.start_time ?? ""))}" /></label>
         <label><span>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</span><input class="fm-input" data-live-detail-field="end_time" value="${htmlEsc(String(selectedScheduled.end_time ?? ""))}" /></label>
-        <label><span>Rehearsal start</span><input class="fm-input" data-live-detail-field="rehearsal_start" value="${htmlEsc(String(selectedScheduled.rehearsal_start ?? ""))}" /></label>
-        <label><span>Rehearsal end</span><input class="fm-input" data-live-detail-field="rehearsal_end" value="${htmlEsc(String(selectedScheduled.rehearsal_end ?? ""))}" /></label>
-        <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="ticket_price" value="${htmlEsc(String(selectedScheduled.ticket_price ?? 0))}" /></label>
-        <label><span>VIP ticket price</span><input class="fm-input" data-live-detail-field="vip_ticket_price" value="${htmlEsc(String(selectedScheduled.vip_ticket_price ?? 0))}" /></label>
-        <label><span>VIP numbers</span><input class="fm-input" data-live-detail-field="vip_capacity" value="${htmlEsc(String(selectedScheduled.vip_capacity ?? 0))}" /></label>
+        <label><span>${htmlEsc(localizedLiteral(lang, "Rehearsal start", "彩排开始"))}</span><input class="fm-input" data-live-detail-field="rehearsal_start" value="${htmlEsc(String(selectedScheduled.rehearsal_start ?? ""))}" /></label>
+        <label><span>${htmlEsc(localizedLiteral(lang, "Rehearsal end", "彩排结束"))}</span><input class="fm-input" data-live-detail-field="rehearsal_end" value="${htmlEsc(String(selectedScheduled.rehearsal_end ?? ""))}" /></label>
+        <label><span>${htmlEsc(localizedLiteral(lang, "Ticket price", "票价"))}</span><input class="fm-input" data-live-detail-field="ticket_price" value="${htmlEsc(String(selectedScheduled.ticket_price ?? 0))}" /></label>
+        <label><span>${htmlEsc(localizedLiteral(lang, "VIP ticket price", "VIP票价"))}</span><input class="fm-input" data-live-detail-field="vip_ticket_price" value="${htmlEsc(String(selectedScheduled.vip_ticket_price ?? 0))}" /></label>
+        <label><span>${htmlEsc(localizedLiteral(lang, "VIP numbers", "VIP人数"))}</span><input class="fm-input" data-live-detail-field="vip_capacity" value="${htmlEsc(String(selectedScheduled.vip_capacity ?? 0))}" /></label>
       </div>
       <div class="planner-subpanel live-tokutenkai-card">
         <h4 class="content-h3">${htmlEsc(localizedLiteral(lang, "Post-live tokutenkai / cheki", "公演后特典会 / 拍立得"))}</h4>
         <label class="check-pill live-tokutenkai-toggle"><input type="checkbox" data-live-detail-toggle="tokutenkai_enabled" ${selectedScheduled.tokutenkai_enabled ? "checked" : ""} /> <span>${htmlEsc(localizedLiteral(lang, "Enable tokutenkai / cheki", "启用特典会 / 拍立得"))}</span></label>
         <div class="form-grid live-form-grid live-tokutenkai-grid">
-          <label><span>Start</span><input class="fm-input" data-live-detail-field="tokutenkai_start" value="${htmlEsc(String(selectedScheduled.tokutenkai_start ?? ""))}" /></label>
-          <label><span>End</span><input class="fm-input" data-live-detail-field="tokutenkai_end" value="${htmlEsc(String(selectedScheduled.tokutenkai_end ?? ""))}" /></label>
-          <label><span>Ticket price</span><input class="fm-input" data-live-detail-field="tokutenkai_ticket_price" value="${htmlEsc(String(selectedScheduled.tokutenkai_ticket_price ?? 0))}" /></label>
-          <label><span>Talk slot seconds</span><input class="fm-input" data-live-detail-field="tokutenkai_slot_seconds" value="${htmlEsc(String(selectedScheduled.tokutenkai_slot_seconds ?? 0))}" /></label>
-          <label><span>Expected tickets</span><input class="fm-input" data-live-detail-field="tokutenkai_expected_tickets" value="${htmlEsc(String(selectedScheduled.tokutenkai_expected_tickets ?? 0))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</span><input class="fm-input" data-live-detail-field="tokutenkai_start" value="${htmlEsc(String(selectedScheduled.tokutenkai_start ?? ""))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</span><input class="fm-input" data-live-detail-field="tokutenkai_end" value="${htmlEsc(String(selectedScheduled.tokutenkai_end ?? ""))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Ticket price", "票价"))}</span><input class="fm-input" data-live-detail-field="tokutenkai_ticket_price" value="${htmlEsc(String(selectedScheduled.tokutenkai_ticket_price ?? 0))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Talk slot seconds", "交流时长（秒）"))}</span><input class="fm-input" data-live-detail-field="tokutenkai_slot_seconds" value="${htmlEsc(String(selectedScheduled.tokutenkai_slot_seconds ?? 0))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Expected tickets", "预计张数"))}</span><input class="fm-input" data-live-detail-field="tokutenkai_expected_tickets" value="${htmlEsc(String(selectedScheduled.tokutenkai_expected_tickets ?? 0))}" /></label>
         </div>
       </div>
       <div class="planner-subpanel">
@@ -3743,13 +4193,13 @@ function renderLivesView(
         <label class="check-pill"><input type="checkbox" data-live-detail-toggle="goods_enabled" ${selectedScheduled.goods_enabled ? "checked" : ""} /> <span>${htmlEsc(localizedLiteral(lang, "Run goods booth", "开设周边摊位"))}</span></label>
         <div class="live-goods-checklist">${scheduledGoodsChecklist}</div>
         <div class="form-grid live-form-grid">
-          <label><span>Expected gross</span><input class="fm-input" value="${htmlEsc(`JPY ${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}`)}" readonly /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Expected gross", "预计总收入"))}</span><input class="fm-input" value="${htmlEsc(`JPY ${Number(selectedScheduled.goods_expected_revenue_yen ?? 0).toLocaleString("ja-JP")}`)}" readonly /></label>
         </div>
       </div>
       <div class="live-new-summary-grid">
-        <div class="live-new-summary-item">${htmlEsc(`When: ${formatLiveSlotLine(selectedScheduled) || "TBA"}`)}</div>
-        <div class="live-new-summary-item">${htmlEsc(`Venue: ${liveVenueCompactText(selectedScheduled)}`)}</div>
-        <div class="live-new-summary-item">${htmlEsc(`Program: ${scheduledProgramSummary}`)}</div>
+      <div class="live-new-summary-item">${htmlEsc(lang === "zh-CN" ? `时间：${formatLiveSlotLine(selectedScheduled) || "待定"}` : `When: ${formatLiveSlotLine(selectedScheduled) || "TBA"}`)}</div>
+        <div class="live-new-summary-item">${htmlEsc(lang === "zh-CN" ? `场地：${liveVenueCompactText(selectedScheduled)}` : `Venue: ${liveVenueCompactText(selectedScheduled)}`)}</div>
+        <div class="live-new-summary-item">${htmlEsc(lang === "zh-CN" ? `节目内容：${scheduledProgramSummary}` : `Program: ${scheduledProgramSummary}`)}</div>
       </div>
       <div class="planner-actions"><button type="button" class="fm-btn" data-live-cancel="${htmlEsc(String(selectedScheduled.uid ?? ""))}">${htmlEsc(localizedLiteral(lang, "Cancel Live", "取消公演"))}</button></div>
     </section>`
@@ -3766,24 +4216,24 @@ function renderLivesView(
           <label><span>${htmlEsc(localizedLiteral(lang, "Venue fee", "场地费"))}</span><input class="fm-input" value="${htmlEsc(selectedVenue ? `JPY ${selectedVenueFee.toLocaleString("ja-JP")}` : localizedLiteral(lang, "TBD", "待定"))}" readonly /></label>
           <label><span>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</span><input class="fm-input" data-live-form-field="startTime" value="${htmlEsc(newLiveForm.startTime)}" /></label>
           <label><span>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</span><input class="fm-input" data-live-form-field="endTime" value="${htmlEsc(newLiveForm.endTime)}" /></label>
-          <label><span>Rehearsal start</span><input class="fm-input" data-live-form-field="rehearsalStart" value="${htmlEsc(newLiveForm.rehearsalStart)}" /></label>
-          <label><span>Rehearsal end</span><input class="fm-input" data-live-form-field="rehearsalEnd" value="${htmlEsc(newLiveForm.rehearsalEnd)}" /></label>
-          <label><span>Ticket price</span><input class="fm-input" data-live-form-field="ticketPriceYen" value="${htmlEsc(String(newLiveForm.ticketPriceYen))}" /></label>
-          <label><span>VIP ticket price</span><input class="fm-input" data-live-form-field="vipTicketPriceYen" value="${htmlEsc(String(newLiveForm.vipTicketPriceYen))}" /></label>
-          <label><span>VIP numbers</span><input class="fm-input" data-live-form-field="vipCapacity" value="${htmlEsc(String(newLiveForm.vipCapacity))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Rehearsal start", "彩排开始"))}</span><input class="fm-input" data-live-form-field="rehearsalStart" value="${htmlEsc(newLiveForm.rehearsalStart)}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Rehearsal end", "彩排结束"))}</span><input class="fm-input" data-live-form-field="rehearsalEnd" value="${htmlEsc(newLiveForm.rehearsalEnd)}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Ticket price", "票价"))}</span><input class="fm-input" data-live-form-field="ticketPriceYen" value="${htmlEsc(String(newLiveForm.ticketPriceYen))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "VIP ticket price", "VIP票价"))}</span><input class="fm-input" data-live-form-field="vipTicketPriceYen" value="${htmlEsc(String(newLiveForm.vipTicketPriceYen))}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "VIP numbers", "VIP人数"))}</span><input class="fm-input" data-live-form-field="vipCapacity" value="${htmlEsc(String(newLiveForm.vipCapacity))}" /></label>
         </div>
         <div class="planner-subpanel live-tokutenkai-card live-tokutenkai-card--newlive">
           <h4 class="content-h3">${htmlEsc(localizedLiteral(lang, "Post-live tokutenkai / cheki", "公演后特典会 / 拍立得"))}</h4>
           <label class="check-pill live-tokutenkai-toggle"><input type="checkbox" data-live-toggle="tokutenkaiEnabled" ${newLiveForm.tokutenkaiEnabled ? "checked" : ""} /> <span>${htmlEsc(localizedLiteral(lang, "Enable tokutenkai / cheki", "启用特典会 / 拍立得"))}</span></label>
           <div class="form-grid live-form-grid live-tokutenkai-grid">
-            <label><span>Start</span><input class="fm-input" data-live-form-field="tokutenkaiStart" value="${htmlEsc(newLiveForm.tokutenkaiStart)}" /></label>
-            <label><span>End</span><input class="fm-input" data-live-form-field="tokutenkaiEnd" value="${htmlEsc(newLiveForm.tokutenkaiEnd)}" /></label>
-            <label><span>Ticket price</span><input class="fm-input" data-live-form-field="tokutenkaiTicketPrice" value="${htmlEsc(String(newLiveForm.tokutenkaiTicketPrice))}" /></label>
-            <label><span>Talk slot seconds</span><input class="fm-input" data-live-form-field="tokutenkaiSlotSeconds" value="${htmlEsc(String(newLiveForm.tokutenkaiSlotSeconds))}" /></label>
-            <label><span>Expected tickets</span><input class="fm-input" data-live-form-field="tokutenkaiExpectedTickets" value="${htmlEsc(String(newLiveForm.tokutenkaiExpectedTickets))}" /></label>
+            <label><span>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</span><input class="fm-input" data-live-form-field="tokutenkaiStart" value="${htmlEsc(newLiveForm.tokutenkaiStart)}" /></label>
+            <label><span>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</span><input class="fm-input" data-live-form-field="tokutenkaiEnd" value="${htmlEsc(newLiveForm.tokutenkaiEnd)}" /></label>
+            <label><span>${htmlEsc(localizedLiteral(lang, "Ticket price", "票价"))}</span><input class="fm-input" data-live-form-field="tokutenkaiTicketPrice" value="${htmlEsc(String(newLiveForm.tokutenkaiTicketPrice))}" /></label>
+            <label><span>${htmlEsc(localizedLiteral(lang, "Talk slot seconds", "交流时长（秒）"))}</span><input class="fm-input" data-live-form-field="tokutenkaiSlotSeconds" value="${htmlEsc(String(newLiveForm.tokutenkaiSlotSeconds))}" /></label>
+            <label><span>${htmlEsc(localizedLiteral(lang, "Expected tickets", "预计张数"))}</span><input class="fm-input" data-live-form-field="tokutenkaiExpectedTickets" value="${htmlEsc(String(newLiveForm.tokutenkaiExpectedTickets))}" /></label>
           </div>
           <div class="live-tokutenkai-footer">
-            <span>${htmlEsc(`Members: ${typeof grp?.member_count === "number" ? grp.member_count : "â€”"}`)}</span>
+            <span>${htmlEsc(lang === "zh-CN" ? `成员：${typeof grp?.member_count === "number" ? grp.member_count : "â€”"}` : `Members: ${typeof grp?.member_count === "number" ? grp.member_count : "â€”"}`)}</span>
             <span>${htmlEsc(tokutenkaiSummary)}</span>
           </div>
         </div>
@@ -3819,7 +4269,7 @@ function renderLivesView(
           <label class="check-pill"><input type="checkbox" data-live-toggle="goodsEnabled" ${newLiveForm.goodsEnabled ? "checked" : ""} /> <span>${htmlEsc(localizedLiteral(lang, "Run goods booth", "开设周边摊位"))}</span></label>
           <div class="live-goods-checklist">${newLiveGoodsChecklist}</div>
           <div class="form-grid live-form-grid">
-            <label><span>Expected gross</span><input class="fm-input" value="${htmlEsc(`JPY ${selectedGoodsGross.toLocaleString("ja-JP")}`)}" readonly /></label>
+            <label><span>${htmlEsc(localizedLiteral(lang, "Expected gross", "预计总收入"))}</span><input class="fm-input" value="${htmlEsc(`JPY ${selectedGoodsGross.toLocaleString("ja-JP")}`)}" readonly /></label>
           </div>
         </div>
         <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-live-schedule="1">${htmlEsc(localizedLiteral(lang, "Schedule Live", "安排公演"))}</button></div>
@@ -3866,10 +4316,10 @@ function renderLivesView(
       const slot = [String(performance.start_time ?? "").slice(0, 5), String(performance.end_time ?? "").slice(0, 5)]
         .filter(Boolean)
         .join("-");
-      const stage = String(performance.stage ?? "Stage TBA");
+      const stage = String(performance.stage ?? localizedLiteral(lang, "Stage TBA", "舞台待定"));
       const subtitle = String(performance.subtitle ?? "").trim();
-      const venue = String(festival.name ?? "Festival");
-      return `<tr><td>${htmlEsc(date)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(venue)}</td><td>${htmlEsc(stage)}</td><td>${htmlEsc(subtitle || String(performance.title ?? performance.artist_name ?? "Appearance"))}</td></tr>`;
+      const venue = String(festival.name ?? localizedLiteral(lang, "Festival", "音乐节"));
+      return `<tr><td>${htmlEsc(date)}</td><td>${htmlEsc(slot)}</td><td>${htmlEsc(venue)}</td><td>${htmlEsc(stage)}</td><td>${htmlEsc(subtitle || String(performance.title ?? performance.artist_name ?? localizedLiteral(lang, "Appearance", "出演")))}</td></tr>`;
     })
     .join("");
 
@@ -3896,9 +4346,11 @@ function renderLivesView(
           : newLiveBody;
 
   return `<section class="content-panel lives-view">
-    <h2 class="content-h2">Lives</h2>
+    <h2 class="content-h2">${htmlEsc(navLabel(lang, "Lives"))}</h2>
     <p class="content-muted">${htmlEsc(
-      `Managed group: ${label}. New Live matches the desktop planner flow: venue, setlist, tokutenkai, and goods can all be staged before scheduling.`,
+      lang === "zh-CN"
+        ? `当前经营组合：${label}。新建公演沿用桌面版排期流程，可先配置场地、节目单、特典会和周边，再正式安排。`
+        : `Managed group: ${label}. New Live matches the desktop planner flow: venue, setlist, tokutenkai, and goods can all be staged before scheduling.`,
     )}</p>
     ${renderLiveTabs(livesTab, lang)}
     ${body}
@@ -3915,7 +4367,7 @@ function renderScoutView(
   const companies = buildDefaultScoutCompanies();
   const selectedCompany =
     companies.find((company) => company.uid === save.scout.selected_company_uid) ?? companies[0] ?? null;
-  if (!selectedCompany) return renderPlaceholder("Scout", "No scout companies are configured.");
+  if (!selectedCompany) return renderPlaceholder(navLabel(lang, "Scout"), localizedLiteral(lang, "No scout companies are configured.", "未配置星探公司。"));
   const currentIso =
     save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "2020-01-01";
   const selectedCompanySubscribed = isScoutCompanySubscribed(save.scout.subscriptions, selectedCompany.uid);
@@ -3963,27 +4415,27 @@ function renderScoutView(
       const leadCount = scoutLeadRevealCount(save.scout.subscriptions, company.uid, currentIso);
       return `<button type="button" class="inbox-row-btn fm-card${active}" data-scout-company="${htmlEsc(company.uid)}">
         <span class="inbox-row-title"><span>${htmlEsc(company.name)}</span></span>
-        <span class="inbox-row-meta">${htmlEsc(`${company.city} · Lv${company.level} · ¥${company.service_fee_yen.toLocaleString("ja-JP")}/month${subscribed ? ` · ${leadCount} lead${leadCount === 1 ? "" : "s"}` : " · Unsubscribed"}`)}</span>
+        <span class="inbox-row-meta">${htmlEsc(lang === "zh-CN" ? `${company.city} · 等级${company.level} · ¥${company.service_fee_yen.toLocaleString("ja-JP")}/月${subscribed ? ` · ${leadCount} 条线索` : " · 未订阅"}` : `${company.city} · Lv${company.level} · ¥${company.service_fee_yen.toLocaleString("ja-JP")}/month${subscribed ? ` · ${leadCount} lead${leadCount === 1 ? "" : "s"}` : " · Unsubscribed"}`)}</span>
       </button>`;
     })
     .join("");
 
   const companyDetail = [
     selectedCompany.name,
-    `Base: ${selectedCompany.city}`,
-    `Level: ${selectedCompany.level}`,
-    `Retainer: ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")} / month`,
-    `Specialty: ${selectedCompany.specialty}`,
-    `Focus: ${selectedCompany.focus_note}`,
+    lang === "zh-CN" ? `据点：${selectedCompany.city}` : `Base: ${selectedCompany.city}`,
+    lang === "zh-CN" ? `等级：${selectedCompany.level}` : `Level: ${selectedCompany.level}`,
+    lang === "zh-CN" ? `顾问费：¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")} / 月` : `Retainer: ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")} / month`,
+    lang === "zh-CN" ? `专长：${selectedCompany.specialty}` : `Specialty: ${selectedCompany.specialty}`,
+    lang === "zh-CN" ? `方向：${selectedCompany.focus_note}` : `Focus: ${selectedCompany.focus_note}`,
     selectedCompanySubscribed
-      ? `Subscription: Active · ${selectedCompanyLeadLimit} lead${selectedCompanyLeadLimit === 1 ? "" : "s"} currently surfaced`
-      : "Subscription: Inactive · subscribe to receive 1 lead now and 1 more each month",
+      ? (lang === "zh-CN" ? `订阅：已启用 · 当前显示 ${selectedCompanyLeadLimit} 条线索` : `Subscription: Active · ${selectedCompanyLeadLimit} lead${selectedCompanyLeadLimit === 1 ? "" : "s"} currently surfaced`)
+      : localizedLiteral(lang, "Subscription: Inactive · subscribe to receive 1 lead now and 1 more each month", "订阅：未启用 · 订阅后会立刻获得 1 条线索，之后每月再增加 1 条"),
   ]
     .map((line) => htmlEsc(line))
     .join("<br />");
   const subscribeBtn = selectedCompanySubscribed
-    ? `<button type="button" class="fm-btn" disabled>Subscribed</button>`
-    : `<button type="button" class="fm-btn fm-btn-accent" data-scout-subscribe="${htmlEsc(selectedCompany.uid)}">Subscribe · ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")}/month</button>`;
+    ? `<button type="button" class="fm-btn" disabled>${htmlEsc(localizedLiteral(lang, "Subscribed", "已订阅"))}</button>`
+    : `<button type="button" class="fm-btn fm-btn-accent" data-scout-subscribe="${htmlEsc(selectedCompany.uid)}">${htmlEsc(lang === "zh-CN" ? `订阅 · ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")}/月` : `Subscribe · ¥${selectedCompany.service_fee_yen.toLocaleString("ja-JP")}/month`)}</button>`;
   const companyTabs = renderScoutCompanyTabs(
     companies.map((company) => ({ uid: company.uid, name: company.name })),
     selectedCompany.uid,
@@ -4003,41 +4455,41 @@ function renderScoutView(
     const rows = auditionRows
       .map((row) => {
         const active = String(row.uid) === String(selectedApplicant?.uid ?? "") ? ` class="is-selected-row"` : "";
-        const status = row.signed_idol_uid ? "Signed" : "Available";
+        const status = row.signed_idol_uid ? localizedLiteral(lang, "Signed", "已签约") : localizedLiteral(lang, "Available", "可签约");
         return `<tr${active} data-scout-applicant="${htmlEsc(String(row.uid))}"><td>${htmlEsc(row.name)}</td><td>${htmlEsc(String(row.age))}</td><td>${htmlEsc(row.birthplace)}</td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(row.background)}</td><td>${htmlEsc(status)}</td></tr>`;
       })
       .join("");
     const detail = selectedApplicant
       ? [
           selectedApplicant.name,
-          `Romaji: ${selectedApplicant.romaji || "â€”"}`,
-          `Age: ${selectedApplicant.age} Â· Height: ${selectedApplicant.height} cm`,
-          `Birthplace: ${selectedApplicant.birthplace}`,
-          `Background: ${selectedApplicant.background}`,
-          `Scout note: ${selectedApplicant.note}`,
-          `Profile score: ${selectedApplicant.profile_score}`,
-          `Status: ${selectedApplicant.signed_idol_uid ? "Signed to shortlist" : "Unsigned applicant"}`,
+          lang === "zh-CN" ? `罗马字：${selectedApplicant.romaji || "â€”"}` : `Romaji: ${selectedApplicant.romaji || "â€”"}`,
+          lang === "zh-CN" ? `年龄：${selectedApplicant.age} · 身高：${selectedApplicant.height} cm` : `Age: ${selectedApplicant.age} Â· Height: ${selectedApplicant.height} cm`,
+          lang === "zh-CN" ? `出生地：${selectedApplicant.birthplace}` : `Birthplace: ${selectedApplicant.birthplace}`,
+          lang === "zh-CN" ? `背景：${selectedApplicant.background}` : `Background: ${selectedApplicant.background}`,
+          lang === "zh-CN" ? `星探备注：${selectedApplicant.note}` : `Scout note: ${selectedApplicant.note}`,
+          lang === "zh-CN" ? `档案分：${selectedApplicant.profile_score}` : `Profile score: ${selectedApplicant.profile_score}`,
+          lang === "zh-CN" ? `状态：${selectedApplicant.signed_idol_uid ? "已加入候选" : "未签约候选"}` : `Status: ${selectedApplicant.signed_idol_uid ? "Signed to shortlist" : "Unsigned applicant"}`,
         ]
           .map((line) => htmlEsc(line))
           .join("<br />")
       : selectedCompanySubscribed
-        ? "Hold today's audition to generate applicants."
-        : "Subscribe to this scout firm before viewing applicants.";
+        ? localizedLiteral(lang, "Hold today's audition to generate applicants.", "举行今天的试镜来生成候选人。")
+        : localizedLiteral(lang, "Subscribe to this scout firm before viewing applicants.", "请先订阅这家星探公司，再查看候选人。");
     rightBody = `<section class="fm-card">
-        <div class="planner-actions">${selectedCompanySubscribed ? `<button type="button" class="fm-btn fm-btn-accent" data-scout-hold-audition="1">Hold Audition Today</button>` : subscribeBtn}</div>
+        <div class="planner-actions">${selectedCompanySubscribed ? `<button type="button" class="fm-btn fm-btn-accent" data-scout-hold-audition="1">${htmlEsc(localizedLiteral(lang, "Hold Audition Today", "举行今日试镜"))}</button>` : subscribeBtn}</div>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Applicant</th><th>Age</th><th>Birthplace</th><th>Profile</th><th>Background</th><th>Status</th></tr></thead>
-            <tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(selectedCompanySubscribed ? `No audition pool yet for ${currentIso}.` : "Subscribe to this agent to open the audition pool.")}</td></tr>`}</tbody>
+            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Applicant", "候选人"))}</th><th>${htmlEsc(localizedLiteral(lang, "Age", "年龄"))}</th><th>${htmlEsc(localizedLiteral(lang, "Birthplace", "出生地"))}</th><th>${htmlEsc(localizedLiteral(lang, "Profile", "档案分"))}</th><th>${htmlEsc(localizedLiteral(lang, "Background", "背景"))}</th><th>${htmlEsc(localizedLiteral(lang, "Status", "状态"))}</th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(selectedCompanySubscribed ? (lang === "zh-CN" ? `${currentIso} 还没有试镜池。` : `No audition pool yet for ${currentIso}.`) : localizedLiteral(lang, "Subscribe to this agent to open the audition pool.", "订阅这家星探公司后才能开启试镜池。"))}</td></tr>`}</tbody>
           </table>
         </div>
       </section>
       <section class="fm-card">
-        <h3 class="content-h3">Applicant detail</h3>
+        <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Applicant detail", "候选人详情"))}</h3>
         <div class="content-muted">${detail}</div>
         ${
           selectedApplicant
-            ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-sign-applicant="${htmlEsc(String(selectedApplicant.uid))}">${htmlEsc(selectedApplicant.signed_idol_uid ? "Already Signed" : "Sign Selected")}</button></div>`
+            ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-sign-applicant="${htmlEsc(String(selectedApplicant.uid))}">${htmlEsc(selectedApplicant.signed_idol_uid ? localizedLiteral(lang, "Already Signed", "已签约") : localizedLiteral(lang, "Sign Selected", "签下所选"))}</button></div>`
             : ""
         }
       </section>`;
@@ -4053,10 +4505,10 @@ function renderScoutView(
           const height = idol ? heightCmLabel(idol) : "â€”";
           const abl = idol ? getAbility(attrsFromRow(idol)) : "â€”";
           const xFollowers = idol ? xFollowersLabel(idol) : "â€”";
-          const groups = row.current_groups.length ? row.current_groups.join(", ") : "Independent";
+          const groups = row.current_groups.length ? row.current_groups.join(", ") : localizedLiteral(lang, "Independent", "独立");
           const shortlistAction = shortlist.has(row.idol_uid)
-            ? `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}" disabled>Shortlisted</button>`
-            : `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}">Shortlist</button>`;
+            ? `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}" disabled>${htmlEsc(localizedLiteral(lang, "Shortlisted", "已加入候选"))}</button>`
+            : `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}">${htmlEsc(localizedLiteral(lang, "Shortlist", "加入候选"))}</button>`;
           return `<tr class="idol-list-table-row${active ? " is-selected-row" : ""}" data-scout-lead="${htmlEsc(row.idol_uid)}" tabindex="0" role="button">
             <td class="idol-list-photo">${scoutPortraitCell(idol, name)}</td>
             <td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(row.idol_uid)}">${htmlEsc(name)}</button></td>
@@ -4070,43 +4522,43 @@ function renderScoutView(
           </tr>`;
         }
         const shortlistActionTransfer = shortlist.has(row.idol_uid)
-          ? `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}" disabled>Shortlisted</button>`
-          : `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}">Shortlist</button>`;
-        return `<tr${active} data-scout-lead="${htmlEsc(row.idol_uid)}"><td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(row.idol_uid)}">${htmlEsc(String(idol?.name ?? row.idol_uid))}</button></td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(String(idol?.birthplace ?? "—"))}</td><td>${htmlEsc(row.current_groups.length ? row.current_groups.join(", ") : "Independent")}</td><td>${htmlEsc(row.reason)}</td><td class="num">${shortlistActionTransfer}</td></tr>`;
+          ? `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}" disabled>${htmlEsc(localizedLiteral(lang, "Shortlisted", "已加入候选"))}</button>`
+          : `<button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(row.idol_uid)}">${htmlEsc(localizedLiteral(lang, "Shortlist", "加入候选"))}</button>`;
+        return `<tr${active} data-scout-lead="${htmlEsc(row.idol_uid)}"><td><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(row.idol_uid)}">${htmlEsc(String(idol?.name ?? row.idol_uid))}</button></td><td class="num">${htmlEsc(String(row.profile_score))}</td><td>${htmlEsc(String(idol?.birthplace ?? "—"))}</td><td>${htmlEsc(row.current_groups.length ? row.current_groups.join(", ") : localizedLiteral(lang, "Independent", "独立"))}</td><td>${htmlEsc(row.reason)}</td><td class="num">${shortlistActionTransfer}</td></tr>`;
       })
       .join("");
     const leadIdol = selectedLead ? idolsByUid.get(selectedLead.idol_uid) : null;
     const detail = selectedLead && leadIdol
       ? [
           String(leadIdol.name ?? selectedLead.idol_uid),
-          `Profile score: ${selectedLead.profile_score}/100`,
-          `Birthplace: ${String(leadIdol.birthplace ?? "â€”")}`,
-          `Current groups: ${selectedLead.current_groups.length ? selectedLead.current_groups.join(", ") : "Independent"}`,
-          `Popularity: ${num(leadIdol.popularity, 0)} Â· Fans: ${num(leadIdol.fan_count, 0).toLocaleString("ja-JP")} Â· X: ${num(leadIdol.x_followers, 0).toLocaleString("ja-JP")}`,
-          `Scout read: ${selectedLead.reason}`,
-          `Shortlist: ${shortlist.has(selectedLead.idol_uid) ? "Already tracked" : "Not yet shortlisted"}`,
+          lang === "zh-CN" ? `档案分：${selectedLead.profile_score}/100` : `Profile score: ${selectedLead.profile_score}/100`,
+          lang === "zh-CN" ? `出生地：${String(leadIdol.birthplace ?? "â€”")}` : `Birthplace: ${String(leadIdol.birthplace ?? "â€”")}`,
+          lang === "zh-CN" ? `当前所属：${selectedLead.current_groups.length ? selectedLead.current_groups.join(", ") : "独立"}` : `Current groups: ${selectedLead.current_groups.length ? selectedLead.current_groups.join(", ") : "Independent"}`,
+          lang === "zh-CN" ? `人气：${num(leadIdol.popularity, 0)} · 粉丝：${num(leadIdol.fan_count, 0).toLocaleString("ja-JP")} · X：${num(leadIdol.x_followers, 0).toLocaleString("ja-JP")}` : `Popularity: ${num(leadIdol.popularity, 0)} Â· Fans: ${num(leadIdol.fan_count, 0).toLocaleString("ja-JP")} Â· X: ${num(leadIdol.x_followers, 0).toLocaleString("ja-JP")}`,
+          lang === "zh-CN" ? `星探备注：${selectedLead.reason}` : `Scout read: ${selectedLead.reason}`,
+          lang === "zh-CN" ? `候选状态：${shortlist.has(selectedLead.idol_uid) ? "已追踪" : "尚未加入候选"}` : `Shortlist: ${shortlist.has(selectedLead.idol_uid) ? "Already tracked" : "Not yet shortlisted"}`,
         ]
           .map((line) => htmlEsc(line))
           .join("<br />")
-      : "Select a scout lead to review fit and shortlist status.";
+      : localizedLiteral(lang, "Select a scout lead to review fit and shortlist status.", "选择一条星探线索以查看适配度和候选状态。");
     rightBody =
       scoutTab === "freelancer"
         ? `<section class="fm-card scout-fullwidth-card">
-            <h3 class="content-h3">Freelancer pool</h3>
+            <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Freelancer pool", "自由人池"))}</h3>
             <div class="planner-actions">${subscribeBtn}</div>
             <div class="table-scroll">
               <table class="fm-table idol-list-table scout-idol-list-table">
-                <thead><tr><th></th><th>Name</th><th>Romaji</th><th>Age</th><th>Height cm</th><th>ABL</th><th>X followers</th><th>Current group(s)</th><th>Shortlist</th></tr></thead>
-                <tbody>${rows || `<tr><td colspan="9" class="content-muted">${htmlEsc(selectedCompanySubscribed ? "No freelancer leads in this pool yet." : "Subscribe to this agent to receive leads.")}</td></tr>`}</tbody>
+                <thead><tr><th></th><th>${htmlEsc(localizedLiteral(lang, "Name", "姓名"))}</th><th>${htmlEsc(localizedLiteral(lang, "Romaji", "罗马字"))}</th><th>${htmlEsc(localizedLiteral(lang, "Age", "年龄"))}</th><th>${htmlEsc(localizedLiteral(lang, "Height cm", "身高 cm"))}</th><th>${htmlEsc(localizedLiteral(lang, "Ability", "能力"))}</th><th>${htmlEsc(localizedLiteral(lang, "X followers", "X 关注数"))}</th><th>${htmlEsc(localizedLiteral(lang, "Current group(s)", "当前所属"))}</th><th>${htmlEsc(localizedLiteral(lang, "Shortlist", "候选"))}</th></tr></thead>
+                <tbody>${rows || `<tr><td colspan="9" class="content-muted">${htmlEsc(selectedCompanySubscribed ? localizedLiteral(lang, "No freelancer leads in this pool yet.", "这个池子里暂时没有自由人线索。") : localizedLiteral(lang, "Subscribe to this agent to receive leads.", "订阅这家星探公司后即可获得线索。"))}</td></tr>`}</tbody>
               </table>
             </div>
           </section>
           <section class="fm-card scout-fullwidth-card">
-            <h3 class="content-h3">Lead detail</h3>
+            <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Lead detail", "线索详情"))}</h3>
             <div class="content-muted">${detail}</div>
             ${
               selectedLead
-                ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? "Already Shortlisted" : "Shortlist Selected")}</button></div>`
+                ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? localizedLiteral(lang, "Already Shortlisted", "已加入候选") : localizedLiteral(lang, "Shortlist Selected", "加入所选候选"))}</button></div>`
                 : ""
             }
           </section>`
@@ -4114,17 +4566,17 @@ function renderScoutView(
             <div class="planner-actions">${subscribeBtn}</div>
             <div class="table-scroll">
               <table class="fm-table">
-                <thead><tr><th>Idol</th><th>Profile</th><th>Birthplace</th><th>Current groups</th><th>Scout read</th><th>Shortlist</th></tr></thead>
-                <tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(selectedCompanySubscribed ? "No scout leads in this pool yet." : "Subscribe to this agent to receive leads.")}</td></tr>`}</tbody>
+                <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Idol", "偶像"))}</th><th>${htmlEsc(localizedLiteral(lang, "Profile", "档案分"))}</th><th>${htmlEsc(localizedLiteral(lang, "Birthplace", "出生地"))}</th><th>${htmlEsc(localizedLiteral(lang, "Current groups", "当前所属"))}</th><th>${htmlEsc(localizedLiteral(lang, "Scout read", "星探备注"))}</th><th>${htmlEsc(localizedLiteral(lang, "Shortlist", "候选"))}</th></tr></thead>
+                <tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(selectedCompanySubscribed ? localizedLiteral(lang, "No scout leads in this pool yet.", "这个池子里暂时没有星探线索。") : localizedLiteral(lang, "Subscribe to this agent to receive leads.", "订阅这家星探公司后即可获得线索。"))}</td></tr>`}</tbody>
               </table>
             </div>
           </section>
           <section class="fm-card">
-            <h3 class="content-h3">Lead detail</h3>
+            <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Lead detail", "线索详情"))}</h3>
             <div class="content-muted">${detail}</div>
             ${
               selectedLead
-                ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? "Already Shortlisted" : "Shortlist Selected")}</button></div>`
+                ? `<div class="planner-actions"><button type="button" class="fm-btn" data-scout-shortlist="${htmlEsc(selectedLead.idol_uid)}">${htmlEsc(shortlist.has(selectedLead.idol_uid) ? localizedLiteral(lang, "Already Shortlisted", "已加入候选") : localizedLiteral(lang, "Shortlist Selected", "加入所选候选"))}</button></div>`
                 : ""
             }
           </section>`;
@@ -4132,11 +4584,11 @@ function renderScoutView(
 
   if (scoutTab === "freelancer") {
     return `<section class="content-panel scout-view">
-      <h2 class="content-h2">Scout</h2>
-      <p class="content-muted">${htmlEsc(`Managed group: ${managedGroupName || "Managed group"}. Freelancer firms now surface smaller local pools with low overlap between agencies.`)}</p>
+      <h2 class="content-h2">${htmlEsc(navLabel(lang, "Scout"))}</h2>
+      <p class="content-muted">${htmlEsc(lang === "zh-CN" ? `当前经营组合：${managedGroupName || "当前组合"}。自由人公司现在主要提供规模较小、机构之间重叠较低的本地候选池。` : `Managed group: ${managedGroupName || "Managed group"}. Freelancer firms now surface smaller local pools with low overlap between agencies.`)}</p>
       ${renderScoutTabs(scoutTab, lang)}
       <section class="fm-card scout-fullwidth-card">
-        <h3 class="content-h3">Scout firms</h3>
+        <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Scout firms", "星探公司"))}</h3>
         ${companyTabs}
         <div class="content-muted">${companyDetail}</div>
       </section>
@@ -4145,12 +4597,12 @@ function renderScoutView(
   }
 
   return `<section class="content-panel scout-view">
-    <h2 class="content-h2">Scout</h2>
-    <p class="content-muted">${htmlEsc(`Managed group: ${managedGroupName || "Managed group"}. Freelancer firms now surface smaller local pools with low overlap between agencies.`)}</p>
+    <h2 class="content-h2">${htmlEsc(navLabel(lang, "Scout"))}</h2>
+    <p class="content-muted">${htmlEsc(lang === "zh-CN" ? `当前经营组合：${managedGroupName || "当前组合"}。自由人公司现在主要提供规模较小、机构之间重叠较低的本地候选池。` : `Managed group: ${managedGroupName || "Managed group"}. Freelancer firms now surface smaller local pools with low overlap between agencies.`)}</p>
     ${renderScoutTabs(scoutTab, lang)}
     <div class="lives-planner-grid">
       <section class="fm-card">
-        <h3 class="content-h3">Scout firms</h3>
+        <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Scout firms", "星探公司"))}</h3>
         <div class="inbox-list-col scout-company-list">${companyRows}</div>
         <div class="content-muted">${companyDetail}</div>
       </section>
@@ -4248,9 +4700,12 @@ export function renderMainContent(
         return renderIdolsList(
           browseData.idols,
           refIso,
-          "Idols (browse)",
+          lang === "zh-CN" ? "偶像（浏览）" : "Idols (browse)",
           idolListLayout,
-          `${browseData.idols.length.toLocaleString()} rows in snapshot Â· default attributes when missing in JSON.`,
+          lang,
+          lang === "zh-CN"
+            ? `快照中共有 ${browseData.idols.length.toLocaleString()} 条记录 · JSON 缺失属性时会使用默认值。`
+            : `${browseData.idols.length.toLocaleString()} rows in snapshot Â· default attributes when missing in JSON.`,
         );
       }
       case "Groups": {
@@ -4304,7 +4759,7 @@ export function renderMainContent(
     case "Inbox":
       return renderInbox(save, inboxSelectedUid, simulationBusy, ctx.attentionActionUid ?? null, lang);
     case "Finances":
-      return renderFinancesProjectionView(save, financeHistoryRange, financeTab);
+      return renderFinancesProjectionView(save, financeHistoryRange, financeTab, lang);
     case "Idols": {
       const refIso = displayReferenceIso(save, browseData?.preset?.opening_date);
       const uidStr = idolDetailUid?.trim() ?? "";
@@ -4320,9 +4775,10 @@ export function renderMainContent(
       return renderIdolsList(
         save.database_snapshot.idols,
         refIso,
-        "Idols",
+        navLabel(lang, "Idols"),
         idolListLayout,
-        "Attributes from save (defaults applied where missing).",
+        lang,
+        localizedLiteral(lang, "Attributes from save (defaults applied where missing).", "属性取自存档（缺失时使用默认值）。"),
       );
     }
     case "Groups": {
@@ -4613,7 +5069,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
       <nav class="fm-side-nav" aria-label="Sections">
         <ul class="fm-side-nav-list" role="list">${navButtons}</ul>
       </nav>
-      ${renderWikiPanel(lang, selectedWikiKey ?? null, browseMode)}
+      ${renderWikiPanel(lang, selectedWikiKey ?? null, browseMode, currentView)}
     </aside>
 
     <main class="fm-content" id="main-content" role="main" aria-label="${htmlEsc(currentView)}">
@@ -4791,7 +5247,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
       <nav class="fm-side-nav" aria-label="${htmlEsc(t(lang, "shell_sections"))}">
         <ul class="fm-side-nav-list" role="list">${navButtons}</ul>
       </nav>
-      ${renderWikiPanel(lang, selectedWikiKey ?? null, browseMode)}
+      ${renderWikiPanel(lang, selectedWikiKey ?? null, browseMode, currentView)}
     </aside>
 
     <main class="fm-content" id="main-content" role="main" aria-label="${htmlEsc(navLabel(lang, currentView))}">

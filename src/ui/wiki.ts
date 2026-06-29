@@ -13,6 +13,14 @@ export interface WikiEntry {
 function enEntries(): WikiEntry[] {
   return [
     {
+      key: "group",
+      label: "Group",
+      summary: "An idol unit with its own roster, fanbase, songs, and history.",
+      description:
+        "A group is the main operating unit in the game. Group pages help you track members, releases, popularity, and where a unit sits in the market.",
+      aliases: ["Group", "group", "Groups"],
+    },
+    {
       key: "inbox",
       label: "Inbox",
       summary: "Your queue for reports, blockers, and live-start prompts.",
@@ -37,12 +45,36 @@ function enEntries(): WikiEntry[] {
       aliases: ["Schedule", "calendar"],
     },
     {
+      key: "songs",
+      label: "Songs",
+      summary: "The playable catalog tied to each group.",
+      description:
+        "Songs are the base material for releases and live setlists. The Songs and Making screens split released tracks from in-production work depending on the current reference date.",
+      aliases: ["Songs", "songs", "song"],
+    },
+    {
+      key: "discography",
+      label: "Discography",
+      summary: "Release-oriented view of a group’s catalog.",
+      description:
+        "Discography groups tracks into releases so you can inspect singles, albums, and the broader release timeline instead of only song rows.",
+      aliases: ["Discography", "discography", "CD", "single", "album"],
+    },
+    {
       key: "live",
       label: "Live",
       summary: "A booked performance for your managed group.",
       description:
         "Lives are the core revenue and exposure loop. They create attendance, fan gain, morale shifts, fatigue, and post-show sales opportunities.",
       aliases: ["Live Start", "booked lives", "live", "lives"],
+    },
+    {
+      key: "media",
+      label: "Media",
+      summary: "Official appearances outside the managed live list.",
+      description:
+        "Media covers TV, radio, online, books, and external appearances pulled from official schedule data. It gives you a forward view of publicity pressure and member commitments.",
+      aliases: ["Media", "media", "TV", "Radio", "Online", "Books", "Live Events"],
     },
     {
       key: "tokutenkai",
@@ -146,9 +178,16 @@ function enEntries(): WikiEntry[] {
 function zhEntries(): WikiEntry[] {
   const entries: WikiEntry[] = [
     {
+      key: "group",
+      label: "组合",
+      summary: "拥有成员、粉丝、歌曲和历史沿革的偶像团体单位。",
+      description: "组合是游戏里的主要经营单位。组合页面用来查看成员构成、发行目录、人气和整体市场位置。",
+      aliases: ["组合", "团体", "Group", "Groups"],
+    },
+    {
       key: "inbox",
       label: "收件箱",
-      summary: "汇总报告、阻塞事项和演出开始提示。",
+      summary: "汇总报告、必处理事项和演出开始提示。",
       description: "收件箱是运营消息入口。凡是会阻止时间继续推进的事情，例如当天演出开始或合同确认，都会先出现在这里。",
       aliases: ["收件箱", "Inbox"],
     },
@@ -167,11 +206,32 @@ function zhEntries(): WikiEntry[] {
       aliases: ["日程", "日历", "Schedule", "calendar"],
     },
     {
+      key: "songs",
+      label: "歌曲",
+      summary: "归属于各组合、可用于发行和公演的歌曲目录。",
+      description: "歌曲是发行和节目单的基础内容。歌曲与制作页面会按照当前参考日期，把已发行和制作中的内容拆开显示。",
+      aliases: ["歌曲", "歌", "Songs", "song"],
+    },
+    {
+      key: "discography",
+      label: "作品目录",
+      summary: "按发行物而不是单曲行查看组合作品。",
+      description: "作品目录会把歌曲整理进单曲、专辑等发行物中，方便你从发行时间线而不是单独歌曲条目的角度查看内容。",
+      aliases: ["作品目录", "发行目录", "Discography", "CD", "single", "album"],
+    },
+    {
       key: "live",
       label: "演出",
       summary: "你为当前团安排的实际演出。",
       description: "演出是核心循环。它会带来出勤、涨粉、士气变化、疲劳和会后销售机会。",
       aliases: ["演出", "开始演出", "Live Start", "live", "lives"],
+    },
+    {
+      key: "media",
+      label: "通告",
+      summary: "不属于自主管理公演列表的官方外部曝光行程。",
+      description: "通告涵盖电视、广播、网络、书刊和外部出演等官方行程数据，方便你提前判断宣传压力和成员档期占用。",
+      aliases: ["通告", "媒体", "电视", "广播", "网络", "书刊", "Media", "TV", "Radio", "Online", "Books", "Live Events"],
     },
     {
       key: "tokutenkai",
@@ -183,16 +243,16 @@ function zhEntries(): WikiEntry[] {
     {
       key: "goods",
       label: "周边",
-      summary: "可在支持物販的演出中销售的实体周边库存。",
-      description: "周边需要先在制作里做出来，再带去支持物販的演出售卖。库存、价格和演出类型都会影响最终收入。",
-      aliases: ["周边", "物販", "goods", "goods booth", "merch"],
+      summary: "可在支持物贩的演出中销售的实体周边库存。",
+      description: "周边需要先在制作里做出来，再带去支持物贩的演出售卖。库存、价格和演出类型都会影响最终收入。",
+      aliases: ["周边", "物贩", "goods", "goods booth", "merch"],
     },
     {
       key: "setlist",
-      label: "歌单",
+      label: "节目单",
       summary: "演出的歌曲顺序和节目流程。",
-      description: "歌单决定舞台上演什么歌、如何排序以及穿插什么段落。它会影响演出长度和歌曲熟练度推进。",
-      aliases: ["歌单", "流程", "setlist", "running order", "program"],
+      description: "节目单决定舞台上演什么歌、如何排序以及穿插什么段落。它会影响演出长度和歌曲熟练度推进。",
+      aliases: ["节目单", "歌单", "流程", "setlist", "running order", "program"],
     },
     {
       key: "shortlist",
@@ -278,15 +338,56 @@ export function defaultWikiEntryKey(lang: UiLanguage): string {
   return wikiEntries(lang)[0]?.key ?? "inbox";
 }
 
-export function renderWikiPanel(lang: UiLanguage, selectedKey: string | null, browseMode: boolean): string {
-  const entries = wikiEntries(lang);
+export function relatedWikiKeysForView(view: string, browseMode: boolean): string[] {
+  const browseMap: Record<string, string[]> = {
+    Idols: ["group", "fans", "condition", "morale"],
+    Groups: ["group", "fans", "songs", "discography"],
+    Songs: ["songs", "discography", "group"],
+  };
+  const managementMap: Record<string, string[]> = {
+    Inbox: ["inbox", "live", "scout", "shortlist"],
+    Idols: ["group", "fans", "condition", "morale", "training"],
+    Groups: ["group", "fans", "songs", "discography"],
+    Songs: ["songs", "discography", "group"],
+    Scout: ["scout", "shortlist", "fans", "condition", "morale"],
+    Training: ["training", "condition", "morale", "songs"],
+    Schedule: ["schedule", "live", "media", "festival"],
+    Media: ["media", "schedule", "fans"],
+    Finances: ["finances", "live", "goods", "tokutenkai"],
+    Making: ["songs", "discography", "goods"],
+    Lives: ["live", "setlist", "tokutenkai", "goods", "concert", "taiban", "festival"],
+  };
+  const keys = (browseMode ? browseMap : managementMap)[view] ?? ["group"];
+  return [...new Set(keys)];
+}
+
+export function defaultWikiEntryKeyForView(lang: UiLanguage, view: string, browseMode: boolean): string {
+  const allowed = new Set(relatedWikiKeysForView(view, browseMode));
+  return wikiEntries(lang).find((entry) => allowed.has(entry.key))?.key ?? defaultWikiEntryKey(lang);
+}
+
+export function normalizeWikiSelection(
+  lang: UiLanguage,
+  view: string,
+  browseMode: boolean,
+  selectedKey: string | null,
+): string {
+  const allowed = new Set(relatedWikiKeysForView(view, browseMode));
+  if (selectedKey && allowed.has(selectedKey)) return selectedKey;
+  return defaultWikiEntryKeyForView(lang, view, browseMode);
+}
+
+export function renderWikiPanel(lang: UiLanguage, selectedKey: string | null, browseMode: boolean, view: string): string {
+  const allowed = new Set(relatedWikiKeysForView(view, browseMode));
+  const entries = wikiEntries(lang).filter((entry) => allowed.has(entry.key));
   const selected = entries.find((entry) => entry.key === selectedKey) ?? entries[0] ?? null;
   const label = lang === "zh-CN" ? "游戏百科" : "Wiki";
   const browseHint =
     lang === "zh-CN"
-      ? "点击主界面中的高亮术语，或从下面的词条列表中选择。"
-      : "Click highlighted terms in the main view, or choose an entry below.";
-  const emptyHint = lang === "zh-CN" ? "暂无词条。" : "No wiki entries yet.";
+      ? "点击主界面里的高亮术语，或从下方相关词条中切换。"
+      : "Click highlighted terms in the main view, or switch from the related topics below.";
+  const emptyHint = lang === "zh-CN" ? "当前页面没有相关词条。" : "No related wiki topics for this view.";
+  const relatedLabel = lang === "zh-CN" ? "相关词条" : "Related";
   const list = entries.length
     ? entries
         .map((entry) => {
@@ -313,7 +414,10 @@ export function renderWikiPanel(lang: UiLanguage, selectedKey: string | null, br
             </article>`
           : `<p class="wiki-panel__empty">${htmlEsc(emptyHint)}</p>`
       }
-      <div class="wiki-panel__list" role="list">${list}</div>
+      <div class="wiki-panel__topics">
+        <h3 class="wiki-panel__topics-label">${htmlEsc(relatedLabel)}</h3>
+        <div class="wiki-panel__list" role="list">${list}</div>
+      </div>
     </div>
   </section>`;
 }
@@ -334,9 +438,11 @@ function shouldSkipWikiAnnotation(node: Node | null): boolean {
   return false;
 }
 
-function aliasMap(lang: UiLanguage): Map<string, string> {
+function aliasMap(lang: UiLanguage, allowedKeys?: readonly string[] | null): Map<string, string> {
   const map = new Map<string, string>();
+  const allowed = allowedKeys?.length ? new Set(allowedKeys) : null;
   for (const entry of wikiEntries(lang)) {
+    if (allowed && !allowed.has(entry.key)) continue;
     for (const alias of entry.aliases) {
       const key = alias.trim().toLowerCase();
       if (!key || map.has(key)) continue;
@@ -346,8 +452,8 @@ function aliasMap(lang: UiLanguage): Map<string, string> {
   return map;
 }
 
-export function annotateWikiTerms(root: HTMLElement, lang: UiLanguage): void {
-  const byAlias = aliasMap(lang);
+export function annotateWikiTerms(root: HTMLElement, lang: UiLanguage, allowedKeys?: readonly string[] | null): void {
+  const byAlias = aliasMap(lang, allowedKeys);
   const aliases = [...byAlias.keys()].sort((a, b) => b.length - a.length);
   if (!aliases.length) return;
   const pattern = aliases

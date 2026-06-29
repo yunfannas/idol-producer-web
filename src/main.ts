@@ -80,7 +80,7 @@ import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
 import { renderTutorialOverlay, tutorialSteps } from "./ui/tutorialOverlay";
-import { annotateWikiTerms, defaultWikiEntryKey } from "./ui/wiki";
+import { annotateWikiTerms, defaultWikiEntryKey, normalizeWikiSelection, relatedWikiKeysForView } from "./ui/wiki";
 
 const appRootElt = document.querySelector<HTMLDivElement>("#app");
 if (!appRootElt) {
@@ -1270,6 +1270,7 @@ function paintOpening(): void {
 function paintGame(): void {
   const focus = captureFocus(appRoot);
   coerceNavForMode();
+  selectedWikiKey = normalizeWikiSelection(uiLang, currentView, browseMode, selectedWikiKey);
 
   if (browseMode) {
     if (!loadedScenario) {
@@ -1353,7 +1354,7 @@ function paintGame(): void {
 
   wirePortraitFallbacks(appRoot);
   const mainContent = document.getElementById("main-content");
-  if (mainContent) annotateWikiTerms(mainContent, uiLang);
+  if (mainContent) annotateWikiTerms(mainContent, uiLang, relatedWikiKeysForView(currentView, browseMode));
 
   if (save && !browseMode) {
     const nextBtn = document.getElementById("btn-next-day") as HTMLButtonElement | null;

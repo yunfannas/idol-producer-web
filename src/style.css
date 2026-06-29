@@ -494,8 +494,7 @@ a.fm-menu-link:hover {
 }
 
 .fm-wiki {
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   padding: 0.65rem 0.65rem 0.85rem;
@@ -512,18 +511,19 @@ a.fm-menu-link:hover {
 }
 
 .fm-wiki-card {
-  flex: 1;
-  min-height: 0;
+  max-height: min(19rem, 42vh);
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.55rem;
   padding: 0.55rem;
   background: var(--bg-card);
   border-radius: 2px;
   border: 1px solid rgb(255 255 255 / 0.06);
+  overflow: hidden;
 }
 
 .wiki-panel__article {
+  flex: 0 0 auto;
   padding: 0.1rem 0.15rem;
 }
 
@@ -551,8 +551,24 @@ a.fm-menu-link:hover {
   font-size: 0.76rem;
 }
 
+.wiki-panel__topics {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wiki-panel__topics-label {
+  margin: 0;
+  padding: 0 0.15rem;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .wiki-panel__list {
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
   overflow: auto;
   display: flex;

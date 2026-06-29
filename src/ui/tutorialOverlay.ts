@@ -39,7 +39,7 @@ export function tutorialSteps(lang: UiLanguage): TutorialStep[] {
       },
       {
         view: "Inbox",
-        title: "Inbox 先处理阻塞事项",
+        title: "Inbox 先处理必处理事项",
         body: "每天先看 Inbox。关键通知、live 开演和运营报告都会在这里出现。",
         bullets: [
           "带确认要求的消息会阻止推进时间，直到你处理。",
