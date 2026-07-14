@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HEROINES 推しチャート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="hero">
+      <a class="back-link" href="../">← Idol Producer Web</a>
+      <p class="brand">HEROINES</p>
+      <h1>推しチャート</h1>
+      <div class="hero-actions">
+        <label class="name-field" for="saveName">
+          <span class="name-label">Name</span>
+          <input type="text" id="saveName" name="saveName" autocomplete="nickname" placeholder="Your name" />
+        </label>
+        <button type="button" id="confirmName" class="btn btn-secondary">Confirm</button>
+        <button type="button" id="saveNamed" class="btn">Save</button>
+        <div class="save-file-stack">
+          <button type="button" id="saveToFile" class="btn btn-secondary">Save to File (ZIP)</button>
+          <div class="export-pngs" role="group" aria-label="Also save individual PNGs">
+            <span class="export-marker" aria-hidden="true">↳ Save PNG</span>
+            <button type="button" class="btn btn-tiny btn-secondary" data-export="full" title="Save full list PNG">Full</button>
+            <button type="button" class="btn btn-tiny btn-secondary" data-export="1" title="Save sheet 1 PNG">1</button>
+            <button type="button" class="btn btn-tiny btn-secondary" data-export="2" title="Save sheet 2 PNG">2</button>
+            <button type="button" class="btn btn-tiny btn-secondary" data-export="3" title="Save sheet 3 PNG">3</button>
+            <button type="button" class="btn btn-tiny btn-secondary" data-export="4" title="Save sheet 4 PNG">4</button>
+          </div>
+        </div>
+        <button type="button" id="clearAll" class="btn btn-danger">Clear</button>
+      </div>
+      <p class="save-status" id="saveStatus" aria-live="polite"></p>
+    </header>
+
+    <main id="sheets" class="sheets"></main>
+
+    <footer class="foot">
+      <p class="foot-credit">
+        <span>Powered by</span>
+        <img class="foot-logo" src="../idol-producer-logo.png" alt="Idol Producer" width="120" height="48" />
+        <span class="foot-sep" aria-hidden="true">·</span>
+        <span>Designed by Yunfannas</span>
+      </p>
+    </footer>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

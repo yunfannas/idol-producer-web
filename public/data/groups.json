@@ -21,7 +21,7 @@
       "8bcf137a-bf77-4b30-8032-30e2f08391db",
       "2bc08c6f-1e33-4c81-aa8f-7c2474b10d4f"
     ],
-    "past_member_count": 37,
+    "past_member_count": 35,
     "past_member_names": [
       "鈴木瑛海里",
       "藤本美紀",
@@ -48,7 +48,6 @@
       "福山梨乃",
       "橘ひより",
       "藤木愛",
-      "山本未悠",
       "新居歩美",
       "星川まの",
       "甘一姫愛",
@@ -58,8 +57,7 @@
       "神崎らん",
       "古賀みれい",
       "美山ひな",
-      "平沢かえ",
-      "橘ひより"
+      "平沢かえ"
     ],
     "past_member_uids": [
       "cdaffab5-a9a3-421c-ae69-a6fd2c9b35e3",
@@ -87,7 +85,6 @@
       "f12226fb-57b9-4a3a-a075-e7dc2bdfb557",
       "779fcadd-c311-4612-8612-5d6e9b21308f",
       "595f0602-8bd7-4f78-8e12-db01ac2b8570",
-      "d69fe73e-30ec-4193-b87c-934d6bb892ce",
       "632f12f2-e91c-41de-9cef-cd05eefd91dc",
       "24f2ed8c-6a63-4270-99a7-7a66b7bd04a6",
       "b03c08ed-afa4-42cc-84f3-62ee85b6f7e3",
@@ -97,8 +94,7 @@
       "104d0903-9527-442d-822c-5a22d0b2b750",
       "3dfb8264-e501-45a7-a373-b3255445674e",
       "814c40ad-bcde-4f1a-af3b-f5154e98d601",
-      "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
-      "1626e615-f982-4e03-b2aa-21d7383ceda7"
+      "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8"
     ],
     "color": null,
     "description": "January 2025 Information Also Known As akishibu (アキシブ) Origin Akihabara, Japan Genre J-Pop Years 2012–Present Label akishibuproject (2021) King Records (2018-2019) OTODAMA RECORDS (2017) Force Music (2016) TP IDOL (2015-2016) Agency LIVE PLANET (2012-Present) Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction CAL&RES Ill i-COL Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY chuLa paradeeq Nanakorobi Yaoki MEGAFON HEROINES Kenkyuusei iL",
@@ -108,7 +104,7 @@
     "agencies": [
       "LIVE PLANET"
     ],
-    "name_romanji": "Akishibu project",
+    "name_romanji": "Akishibu_project",
     "nickname": "アキシブ",
     "nickname_romanji": "akishibu",
     "song_uids": [
@@ -157,6 +153,7 @@
       "9ad5b1b3-0fd0-48f3-b760-0ed94391da4b"
     ],
     "pictures": [
+      "picture/Akishibu_project_icon.webp",
       "picture/Akishibu_project_photo_14.webp",
       "picture/Akishibu_project_photo_15.webp",
       "picture/Akishibu_project_photo.webp",
@@ -15918,6 +15915,7 @@
       "111f469f-cdc7-4768-932e-8fd3ed0a60c7"
     ],
     "pictures": [
+      "picture/Ill_icon.webp",
       "picture/Ill_photo_11.webp",
       "picture/Ill_photo_3.webp",
       "picture/Ill_photo_13.webp",
@@ -20018,20 +20016,28 @@
   {
     "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
     "name": "ポンコツコンポ",
-    "member_count": 4,
+    "member_count": 8,
     "member_names": [
       "晴後あめ",
       "夕葉里めろん",
       "秋田こまち",
+      "一蘭",
+      "甘杉あぽろ",
+      "海苔巻うに",
+      "ショー☆タイム",
       "チャーリン"
     ],
     "member_uids": [
       "7a7792bd-49a2-49ce-91bf-4a8734bc777c",
       "16c3a7e5-e957-4ead-9682-76dcc85638a0",
       "fa030965-6a01-4c76-a45f-564818fe4be0",
+      "12c7b2f0-5e52-58e0-9cd0-00b2f329922f",
+      "84c2e5c4-4222-56d7-9d75-1cbc84f6698d",
+      "7c96de68-f00e-5140-817f-e95bd902ece6",
+      "8a813ee5-c3a3-50ba-880f-1cf94ab454d6",
       "8aa3a1f0-6da3-4dbd-a47d-06591a5b0858"
     ],
-    "past_member_count": 16,
+    "past_member_count": 15,
     "past_member_names": [
       "乱乱",
       "ひめくり暦",
@@ -20047,8 +20053,7 @@
       "紅芋たると",
       "もちみるく",
       "結目りぼん",
-      "山田花子",
-      "アリヨリノアリィ"
+      "山田花子"
     ],
     "past_member_uids": [
       "5aeec4df-dcbb-46ed-991c-09e10c93b7e8",
@@ -20065,8 +20070,7 @@
       "81ac9daa-07f1-4205-a123-6e8bec59abb3",
       "46259269-fe8c-4e40-938a-95fa7448a1fc",
       "17aefdfe-4d6c-4c4d-8e16-8e5620f13f33",
-      "b25808b4-6bbb-4257-b4db-276e2932295c",
-      "dd0e287d-11df-4840-a7f9-ac1fd37057ca"
+      "b25808b4-6bbb-4257-b4db-276e2932295c"
     ],
     "color": null,
     "description": "Ponkotsu Konpo April 2025 Information Origin Tokyo, Japan Genre J-Pop J-Rock Years 2019-2022 2023-Present Label rockfield (HEROINES) CROSS SIDE MUSIC (Ponkotsu Konpo) Agency imaginate Associated Acts HEROINES Higeki no Heroine Syndrome MOBIUS Nue Mouai Gravity iLiFE! TENRIN Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY YAMINABE AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Paste",
@@ -20079,12 +20083,12 @@
     "nickname": "",
     "nickname_romanji": "",
     "song_uids": [
-      "5b4d1ccf-1cfa-4f16-800e-a705b6a4eb19",
-      "9cccd70e-c92e-4323-90de-899eb3d7fe58",
-      "7d59660c-a512-4262-a01e-82ffc389be68",
-      "570e8dbe-c47d-4af8-80da-7220588c1fdd"
+      "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+      "7164a11c-d560-5db8-b515-86edd0d8b280",
+      "863220ef-07d9-563e-a5a5-4b136b9a4948"
     ],
     "pictures": [
+      "picture/Ponkotsu_Konpo_icon.webp",
       "picture/Ponkotsu_Konpo_photo_6.webp",
       "picture/Ponkotsu_Konpo_photo_8.webp",
       "picture/Ponkotsu_Konpo_logo.webp",
@@ -20174,25 +20178,52 @@
         "cover_image_path": null
       },
       {
-        "uid": "570e8dbe-c47d-4af8-80da-7220588c1fdd",
-        "title": "ユビキリ～この先も一緒に歩んで行こうね～;Ubiquity ~Let's Walk Together in the Future~",
-        "title_romanji": "Ubiquity ~Konosaki mo Issho ni Ayunde Ikou ne~",
-        "disc_type": "Album",
-        "release_date": "2020-01-14",
+        "uid": "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+        "title": "筋肉ボディで僕人気",
+        "title_romanji": "Kinniku Body de Boku Ninki",
+        "disc_type": "Digital Single",
+        "release_date": "2025-01-15",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
         "track_list": [],
-        "duration": null,
-        "cover_image_path": null
+        "duration": null
+      },
+      {
+        "uid": "7164a11c-d560-5db8-b515-86edd0d8b280",
+        "title": "軽いノリのイルカ",
+        "title_romanji": "Karui Nori no Iruka",
+        "disc_type": "Digital Single",
+        "release_date": "2025-01-24",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
+      },
+      {
+        "uid": "863220ef-07d9-563e-a5a5-4b136b9a4948",
+        "title": "ラブコブラ",
+        "title_romanji": "Love Cobra",
+        "disc_type": "Digital Single",
+        "release_date": "2026-02-27",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
       }
     ],
     "disc_uids": [
       "5b4d1ccf-1cfa-4f16-800e-a705b6a4eb19",
       "9cccd70e-c92e-4323-90de-899eb3d7fe58",
       "7d59660c-a512-4262-a01e-82ffc389be68",
-      "570e8dbe-c47d-4af8-80da-7220588c1fdd"
+      "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+      "7164a11c-d560-5db8-b515-86edd0d8b280",
+      "863220ef-07d9-563e-a5a5-4b136b9a4948"
     ]
   },
   {
@@ -35566,30 +35597,27 @@
   {
     "uid": "44OR44Op44OH44Kj44O844Kv",
     "name": "パラディーク",
-    "member_count": 7,
+    "member_count": 5,
     "member_names": [
       "水野めい",
       "来栖ゆる",
       "新木るの",
       "灯田にじ",
-      "浜辺しずく",
-      "新谷真由",
-      "岬ちなつ"
+      "浜辺しずく"
     ],
     "member_uids": [
       "536e98f1-ebbd-4db0-89c7-1f2f7eca9758",
       "56bb2931-869b-4e05-8707-cc4a94a84e23",
       "542e48c2-688d-425e-903f-22e5a63dc6f8",
       "56029139-a0fd-48cb-b577-e38a3aaedafc",
-      "afec82e2-d169-4816-9402-cd7dc8d15db0",
-      "1e200a41-1770-4deb-9d6e-d446bf7865d7",
-      "edda442f-caba-4a4f-b135-f39d6a0e02e0"
+      "afec82e2-d169-4816-9402-cd7dc8d15db0"
     ],
-    "past_member_count": 13,
+    "past_member_count": 15,
     "past_member_names": [
       "阿久津友理",
       "近藤真琴",
       "前田彩佳",
+      "新谷真由",
       "神田風音",
       "岩澤美潤",
       "望月愛実",
@@ -35599,12 +35627,14 @@
       "絢瀬まよ",
       "平沢ゆめ",
       "可愛ぷに",
-      "煌坂もね"
+      "煌坂もね",
+      "岬ちなつ"
     ],
     "past_member_uids": [
       "76923792-dc52-4754-b37d-af4a02c53265",
       "9bae6786-18f8-42ec-bc4d-fd7d8be849f5",
       "183d2e75-e31a-4f9c-834b-350bdd440c73",
+      "1e200a41-1770-4deb-9d6e-d446bf7865d7",
       "6b3b7b5f-39dd-4b51-90eb-016ad06bc9ff",
       "e4d387fe-8496-4a52-b208-66bb96277cc6",
       "3c28ffef-071b-4eef-a1ce-c17e24e70ec0",
@@ -35614,7 +35644,8 @@
       "55777451-1372-4994-8184-93a2d78bf894",
       "06e43ce8-6662-4290-8cad-6b69eebe6673",
       "cadac094-4ea5-4289-9ad5-0d7b884fe3d0",
-      "84f94708-21be-400d-a37a-05e75f07885b"
+      "84f94708-21be-400d-a37a-05e75f07885b",
+      "edda442f-caba-4a4f-b135-f39d6a0e02e0"
     ],
     "color": null,
     "description": "Paradeeq May 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency PLAYYTE Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa Nanakorobi Yaoki HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Mizuno Mei Kurusu Yuru Araki Runo Akarida Niji Hamabe Shizuku Former Members Akutsu Yuuri Kondo Makoto Maeda Ayaka Niiya Mayu Kanda Fuune Iwasawa Miu",
@@ -35641,6 +35672,7 @@
       "55c641ea-28f4-4d72-8943-0122b93ec31c"
     ],
     "pictures": [
+      "picture/Paradeeq_icon.webp",
       "picture/Paradeeq_photo_2.webp",
       "picture/Paradeeq_photo_12.webp",
       "picture/Paradeeq_photo_9.webp",
@@ -37250,7 +37282,7 @@
   {
     "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
     "name": "パラレルサイダー",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "小熊まな香",
       "小坂みおん",
@@ -37258,8 +37290,7 @@
       "彩音ゆの",
       "宮奈もこ",
       "宝城あいり",
-      "宇佐美あこ",
-      "Koguma Manaka"
+      "宇佐美あこ"
     ],
     "member_uids": [
       "49c29171-7208-43a5-a46e-5027f22c9220",
@@ -37268,21 +37299,16 @@
       "7a72fc17-7379-4115-9b77-e2d0c4355bcb",
       "d3bf4d5b-cb45-48da-bcd3-cb7ef6f9d4f4",
       "b869b751-6cba-4369-aa9f-738dcba7b388",
-      "87f42c82-e076-4799-808d-19d6a597bc4f",
-      ""
+      "87f42c82-e076-4799-808d-19d6a597bc4f"
     ],
-    "past_member_count": 10,
+    "past_member_count": 6,
     "past_member_names": [
       "夢月まゆ",
       "藤川笑茉",
-      "東雲リア",
-      "天白にこ",
-      "カコイマミライ",
-      "早月女みゅう",
-      "Amashiro Niko",
-      "Fujikawa Ema",
-      "Shinonome Ria",
-      "Saotome Mew"
+      "蘭月リア",
+      "七瀬にこ",
+      "雛小みらい",
+      "絢瀬まよ"
     ],
     "past_member_uids": [
       "7c6c2847-1b18-4f1e-812f-db0192242efb",
@@ -37290,8 +37316,7 @@
       "0abe2aaf-b50a-45d5-bdff-1b0683e401a8",
       "163b40d8-699f-4236-b579-c244ff8e6f9b",
       "66c1488a-14fc-45c1-9316-368e8d5709f9",
-      "55777451-1372-4994-8184-93a2d78bf894",
-      ""
+      "55777451-1372-4994-8184-93a2d78bf894"
     ],
     "color": null,
     "description": "",
@@ -37318,7 +37343,9 @@
       "a398421e-21ce-446c-913d-f9998deb95e0",
       "66360042-679d-4d5f-8a52-d04f235bddab"
     ],
-    "pictures": [],
+    "pictures": [
+      "picture/Parallel_Cider_icon.webp"
+    ],
     "wiki_url": "https://jpop.fandom.com/wiki/Parallel_Cider",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OR44Op44Os44Or44K144Kk44OA44O8",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -65646,28 +65673,34 @@
   {
     "uid": "WlVUVE9NT1RUTw",
     "name": "ZUTTOMOTTO",
-    "member_count": 8,
+    "member_count": 11,
     "member_names": [
-      "高坂りん",
       "四宮える",
       "真空せいら",
       "椎名すず",
       "望月みら",
-      "佐倉あん",
       "青羽わか",
-      "羽澄ほの"
+      "小紅ゆず",
+      "式守くるみ",
+      "神谷ひなの",
+      "美雲みつき",
+      "愛夏ひなた",
+      "広瀬りむ"
     ],
     "member_uids": [
-      "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415",
       "d7be5c70-efe9-4963-a0cb-b023b7c6fed3",
       "d8063c42-cb04-4b22-bc84-d7f39b62d7f8",
       "e23265c9-3aab-487f-be4e-c179a5c661d8",
       "e350221c-442c-4f10-b7ce-5692b42410c9",
-      "1fbb3231-5485-455b-8c1e-aa2912dcbafe",
       "86207bdc-a43b-4e11-a985-3518f376f1e5",
-      "29380032-008c-4f52-ab56-d86a028f3d70"
+      "5a4bdf44-4db3-5162-aa03-0c0469c4e622",
+      "501e6846-ba7e-5b70-9ff7-7239b40b2b27",
+      "838690c6-1ff0-52f6-ac0c-7fec9eda2d14",
+      "a702a456-fe55-5744-8323-4df3de67dd44",
+      "00abd0b2-0e6f-5a03-83c9-17bdbbda5cd6",
+      "b978e9b5-bde8-4964-a6d5-dbfa57cd2385"
     ],
-    "past_member_count": 7,
+    "past_member_count": 8,
     "past_member_names": [
       "月城のあ",
       "福丸うさ",
@@ -65675,7 +65708,8 @@
       "春音みりあ",
       "鈴都りせ",
       "楠瀬かんな",
-      "瀬奈ゆのん"
+      "瀬奈ゆのん",
+      "羽澄ほの"
     ],
     "past_member_uids": [
       "45c2f891-89ae-4dfa-a25a-72f6ccc541c7",
@@ -65684,7 +65718,8 @@
       "42cfcd67-43e4-4841-87fb-0d55ab453692",
       "426744c0-7324-4686-8ca7-f2d6a763099f",
       "d55a018a-30d3-4346-98ed-c790784b23be",
-      "7a7cbace-6bda-4dbb-b003-42194aec5e56"
+      "7a7cbace-6bda-4dbb-b003-42194aec5e56",
+      "29380032-008c-4f52-ab56-d86a028f3d70"
     ],
     "color": null,
     "description": "ZUTTOMOTTO May 2025 Information Also Known As Zuttomo (ずっとも) Origin Tokyo, Japan Genre J-Pop Years 2023-present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Kousaka Rin (2023-Present) Hasumi Hono (20",
@@ -65696,10 +65731,9 @@
     "name_romanji": "ZUTTOMOTTO",
     "nickname": "ずっとも",
     "nickname_romanji": "Zuttomo",
-    "song_uids": [
-      "a159bb73-e9d8-476b-ac16-7441d0a2424c"
-    ],
+    "song_uids": [],
     "pictures": [
+      "picture/ZUTTOMOTTO_icon.webp",
       "picture/ZUTTOMOTTO_photo_11.webp",
       "picture/ZUTTOMOTTO_photo_9.webp",
       "picture/ZUTTOMOTTO_photo_12.webp",
@@ -120634,7 +120668,7 @@
   {
     "uid": "Y2h1TGE",
     "name": "chuLa",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "はまちひよ",
       "飴色りんご",
@@ -120642,8 +120676,7 @@
       "陽咲みお",
       "紫藤らら",
       "茉野ゆに",
-      "世野つばさ",
-      "玉響せつな"
+      "世野つばさ"
     ],
     "member_uids": [
       "1626e615-f982-4e03-b2aa-21d7383ceda7",
@@ -120652,10 +120685,9 @@
       "6f73b8fa-5bb0-470e-9c3f-aa2e5733eec9",
       "341037b8-9ddc-4735-a99e-072a6500d010",
       "428478d5-a37f-40c3-89a9-0245c39e5848",
-      "f80f3a94-8d24-4f5c-9d55-84c8c16eb0dc",
-      "b7b81716-126a-4993-ad3c-697873cc0425"
+      "f80f3a94-8d24-4f5c-9d55-84c8c16eb0dc"
     ],
-    "past_member_count": 27,
+    "past_member_count": 28,
     "past_member_names": [
       "北山姫華",
       "佐倉百音",
@@ -120683,6 +120715,7 @@
       "飛鳥ことり",
       "綿森ろわ",
       "八木ほるん",
+      "玉響せつな",
       "愛川はな"
     ],
     "past_member_uids": [
@@ -120712,6 +120745,7 @@
       "41180ae4-ace4-4190-aee8-71b07018e25b",
       "6d2778d8-cc9d-445b-85c9-c4a41d242fa1",
       "acfd5917-cf02-427d-833d-1de692cd45d4",
+      "b7b81716-126a-4993-ad3c-697873cc0425",
       "e3ae5148-ebf1-4c37-b129-b02517e81f05"
     ],
     "color": null,
@@ -120766,6 +120800,7 @@
       "b3324ab1-6a1b-47ae-bce6-2e196efc81d2"
     ],
     "pictures": [
+      "picture/chuLa_icon.webp",
       "picture/ChuLa_photo_10.webp",
       "picture/ChuLa_photo_23.webp",
       "picture/ChuLa_photo_25.webp",
@@ -123942,11 +123977,11 @@
   {
     "uid": "R0lMVFkgw5cgR0lMVFk",
     "name": "GILTY × GILTY",
-    "member_count": 5,
+    "member_count": 6,
     "member_names": [
       "蒼井叶",
       "白雪姫乃",
-      "咎憐无",
+      "白空こあい",
       "恋星はるか",
       "心花りり"
     ],
@@ -123979,6 +124014,7 @@
       "510020fc-829a-49aa-b949-52f2f993f86a"
     ],
     "pictures": [
+      "picture/GILTY_x_GILTY_icon.webp",
       "picture/GILTY×GILTY_logo.webp",
       "picture/GILTY×GILTY_photo_2.webp",
       "picture/GILTY×GILTY_photo.webp"
@@ -130128,20 +130164,18 @@
   {
     "uid": "QWRhbUxpbGl0aA",
     "name": "AdamLilith",
-    "member_count": 5,
+    "member_count": 4,
     "member_names": [
       "夜宵やむ",
       "三木零",
       "都ユナ",
-      "響羽リズ",
-      "響羽凛瞳"
+      "響羽リズ"
     ],
     "member_uids": [
       "182d7023-7314-4005-8839-02396d43b492",
       "764527ed-408e-42ff-9d1c-e2f041337aac",
       "4c727bab-da18-4969-a46e-329cabcabafa",
-      "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d",
-      "39182e99-128e-4556-94b6-d4426f380be8"
+      "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d"
     ],
     "past_member_count": 0,
     "past_member_names": [],
@@ -130157,10 +130191,10 @@
     "nickname": "アダムス",
     "nickname_romanji": "Adamth",
     "song_uids": [
-      "c84cbb62-6939-4abf-865d-5781cd4f25d6",
-      "090594c9-fb91-48c6-b8c7-50cbb581a205"
+      "005c431b-30b2-592b-a08e-320563b47e88"
     ],
     "pictures": [
+      "picture/AdamLilith_icon.webp",
       "picture/AdamLilith_photo_2.webp",
       "picture/AdamLilith_photo_5.webp",
       "picture/AdamLilith_logo.webp",
@@ -130202,11 +130236,25 @@
         "track_list": [],
         "duration": null,
         "cover_image_path": null
+      },
+      {
+        "uid": "005c431b-30b2-592b-a08e-320563b47e88",
+        "title": "Hidden to ”Eden” / FAKEOUT",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2026-06-27",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
       }
     ],
     "disc_uids": [
       "c84cbb62-6939-4abf-865d-5781cd4f25d6",
-      "090594c9-fb91-48c6-b8c7-50cbb581a205"
+      "090594c9-fb91-48c6-b8c7-50cbb581a205",
+      "005c431b-30b2-592b-a08e-320563b47e88"
     ]
   },
   {
@@ -134392,7 +134440,7 @@
       "1ae94901-0ab4-41d1-a3f8-70218ce9d8d6",
       "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8"
     ],
-    "past_member_count": 10,
+    "past_member_count": 9,
     "past_member_names": [
       "千結",
       "夏目ゆら",
@@ -134402,8 +134450,7 @@
       "天鬼桃歌",
       "鳴海こま",
       "月神キラ",
-      "雅なぎ",
-      "空乃かなた。"
+      "雅なぎ"
     ],
     "past_member_uids": [
       "ba8a17b0-5c1d-4368-ae4e-866a4555d92b",
@@ -134414,8 +134461,7 @@
       "16567862-45ae-4224-be1c-9ab8687bf61c",
       "29697e00-519d-47e0-9c8e-9244accbfa58",
       "677f39d7-0ea5-4b0f-88ff-6f63375fc8d3",
-      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f",
-      "f03ec679-6183-46bc-a00d-63537e542d63"
+      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f"
     ],
     "color": null,
     "description": "August 2025 Information Origin Shinjuku, Tokyo, Japan Genre J-Rock Years 2020-Present Label CROSS SIDE MUSIC (2020-Present) imaginate (2020) Agency imaginate Associated Acts HEROINES MOBIUS Higeki no Heroine Syndrome Nue Ponkotsu Konpo iLiFE! iLiFE! Kouhosei Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY YAMINABE AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST S",
@@ -134442,6 +134488,7 @@
       "c4c9db3b-6b39-4472-a63e-ac677f7bdae2"
     ],
     "pictures": [
+      "picture/TENRIN_icon.webp",
       "picture/TENRIN_photo_7.webp",
       "picture/TENRIN_photo_2.webp",
       "picture/TENRIN_photo_8.webp",
@@ -139580,16 +139627,21 @@
     "song_uids": [
       "f48e7f93-cca2-4717-a2bf-fc589bba7557",
       "9744007b-96aa-4504-b64e-e4958b140d36",
-      "abc404ea-f911-42da-9a35-64d1492e4333"
+      "abc404ea-f911-42da-9a35-64d1492e4333",
+      "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
+      "d54b674d-b288-47c4-abd4-4c735e384e49",
+      "c5f4d5d4-ec0e-4b15-9325-4709c039c0fd"
     ],
     "pictures": [
+      "picture/i-COL_icon.webp",
       "picture/I-COL_photo.webp",
       "picture/I-COL_logo.webp",
       "picture/I-COL_photo_2.webp",
       "picture/I-COL_photo_4.webp",
       "picture/I-COL_photo_5.webp",
       "picture/I-COL_photo_3.webp",
-      "picture/I-COL_photo_6.webp"
+      "picture/I-COL_photo_6.webp",
+      "picture/I-COL_photo_7.webp"
     ],
     "agencies": [
       "imaginate"
@@ -139639,12 +139691,42 @@
         "track_list": [],
         "duration": null,
         "cover_image_path": null
+      },
+      {
+        "uid": "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
+        "title": "ホシツナギ",
+        "title_romanji": "Hoshi Tsunagi",
+        "disc_type": "Album",
+        "release_date": "2025-07-12",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "d54b674d-b288-47c4-abd4-4c735e384e49",
+        "title": "Re-COiL",
+        "title_romanji": "Re-COiL",
+        "disc_type": "Digital Single",
+        "release_date": "2026-02-02",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
       "f48e7f93-cca2-4717-a2bf-fc589bba7557",
       "9744007b-96aa-4504-b64e-e4958b140d36",
-      "abc404ea-f911-42da-9a35-64d1492e4333"
+      "abc404ea-f911-42da-9a35-64d1492e4333",
+      "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
+      "d54b674d-b288-47c4-abd4-4c735e384e49"
     ]
   },
   {
@@ -156958,6 +157040,7 @@
       "d09a7d13-965f-41bd-9129-1e1cc16a06fa"
     ],
     "pictures": [
+      "picture/NonFiction_icon.webp",
       "picture/Non¬Fiction_photo_20.webp",
       "picture/Non¬Fiction_photo_2.webp",
       "picture/Non¬Fiction_photo_8.webp",
@@ -166584,15 +166667,14 @@
   {
     "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
     "name": "夜光性アミューズ",
-    "member_count": 7,
+    "member_count": 6,
     "member_names": [
       "みぽたぽた",
       "白空こあい",
       "ふてこ",
       "炎谷莉奈",
       "水萌しゅる",
-      "琴音ふりる",
-      "紬希なこ"
+      "琴音ふりる"
     ],
     "member_uids": [
       "5bb7fcec-1731-4dae-b801-b45dc32afa4c",
@@ -166600,21 +166682,22 @@
       "4010e0a9-7ce9-43c2-9cea-bb0d2ff86bfe",
       "36d45eea-61d7-4eef-9441-2116d7df5e52",
       "adce67a7-bf82-4231-a567-d48390174962",
-      "4143870f-ecdf-4754-ac53-0c542f404e72",
-      "1ab5f013-20ae-4c7d-b68b-6e9fd8f78aba"
+      "4143870f-ecdf-4754-ac53-0c542f404e72"
     ],
-    "past_member_count": 4,
+    "past_member_count": 5,
     "past_member_names": [
       "神楽ひなこ",
       "神黎ミア",
       "麗星あられ",
-      "柊きき"
+      "柊きき",
+      "紬希なこ"
     ],
     "past_member_uids": [
       "b0a9c75a-faf2-4931-b43a-996d35aad064",
       "ac0eef2a-efb1-4104-810c-97de3aea1fba",
       "ed111452-cdbc-48d2-a29b-256f897962cf",
-      "882ffdfd-9ace-4ec8-9379-ddad88cc6eaa"
+      "882ffdfd-9ace-4ec8-9379-ddad88cc6eaa",
+      "1ab5f013-20ae-4c7d-b68b-6e9fd8f78aba"
     ],
     "color": null,
     "description": "Yakousei Amuse October 2025 Information Also Known As Yoruami (よるあみ) Origin Shibuya, Tokyo, Japan Genre J-Pop Years 2021-Present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Mipotapota (2",
@@ -166673,6 +166756,7 @@
       "75dfd613-12a0-4e6c-9960-34cb2c8b2edd"
     ],
     "pictures": [
+      "picture/Yakousei_Amuse_icon.webp",
       "picture/Yakousei_Amuse_photo_5.webp",
       "picture/Yakousei_Amuse_photo_9.webp",
       "picture/Yakousei_Amuse_photo.webp",
@@ -181970,18 +182054,17 @@
   {
     "uid": "aUxpRkUh",
     "name": "iLiFE!",
-    "member_count": 10,
+    "member_count": 9,
     "member_names": [
-      "Konoka Riri",
-      "Aisu",
-      "Fukumaru Usa",
-      "Wakaba Noa",
-      "Sonata Karen",
-      "Kohane Mini",
-      "Sumire Miki",
-      "Koguma Mamu",
-      "Konose Haruka",
-      "Ice"
+      "心花りり",
+      "あいす",
+      "福丸うさ",
+      "若葉のあ",
+      "空詩かれん",
+      "虹羽みに",
+      "純嶺みき",
+      "小熊まむ",
+      "真守みゅう"
     ],
     "member_uids": [
       "112c6285-2b64-423f-aecc-9792a019fa67",
@@ -181992,8 +182075,7 @@
       "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
       "9871efc4-1501-41eb-a430-94fd34bf4015",
       "39648c9a-5e5c-47b9-9145-4437d165330e",
-      "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
-      "0c55b7c7-bb9a-438d-9644-27b85cac8ae1"
+      "ca3b04ec-97f5-4bcf-a0d6-677a0cf53f4b"
     ],
     "past_member_count": 19,
     "past_member_names": [
@@ -182109,6 +182191,7 @@
       "99a5c6a7-6a63-4f9b-bda6-a45f12c29090"
     ],
     "pictures": [
+      "picture/iLiFE_icon.webp",
       "picture/ILiFE!_photo_7.webp",
       "picture/ILiFE!_photo_16.webp",
       "picture/ILiFE!_photo_41.webp",
@@ -184011,28 +184094,32 @@
   {
     "uid": "44Op44K544OI44K344O844Oz",
     "name": "ラストシーン",
-    "member_count": 7,
+    "member_count": 6,
     "member_names": [
       "天羽しおり",
-      "歌奏おんぷ",
       "佑月いちか",
       "優木あずさ",
-      "波音しほ",
       "宮瀬うゆ",
-      "古賀みれい"
+      "古賀みれい",
+      "椎名すず"
     ],
     "member_uids": [
       "d357345d-5fa5-43b4-aa14-d46328235f23",
-      "73a342b2-308d-4f26-8bb9-cc93c1b79385",
       "370bf602-2778-4434-96df-124715b1a7c5",
       "83a7802f-7a5c-44ae-a4d6-c72735bf08f5",
-      "1003dd6c-dc02-40b4-a8ed-02d73946cb7b",
       "9252635c-ba81-4e12-85ef-9691d898cacf",
-      "3dfb8264-e501-45a7-a373-b3255445674e"
+      "3dfb8264-e501-45a7-a373-b3255445674e",
+      "e23265c9-3aab-487f-be4e-c179a5c661d8"
     ],
-    "past_member_count": 0,
-    "past_member_names": [],
-    "past_member_uids": [],
+    "past_member_count": 2,
+    "past_member_names": [
+      "波音しほ",
+      "歌奏おんぷ"
+    ],
+    "past_member_uids": [
+      "1003dd6c-dc02-40b4-a8ed-02d73946cb7b",
+      "73a342b2-308d-4f26-8bb9-cc93c1b79385"
+    ],
     "color": null,
     "description": "LAST SCENE December 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2025-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse Non¬Fiction CAL&RES Ill i-COL Parallel Cider GILTY×GILTY AdamLilith LADYBABY Akishibu project chuLa Paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Amo Shiori Kanade Onpu Yuzuki Ichika Yuuki Azusa Hatsune Shiho Miyase Uyu Koga Mirei",
     "formed_date": "2025-12-13",
@@ -184046,14 +184133,36 @@
     "nickname_romanji": "",
     "song_uids": [],
     "pictures": [
+      "picture/LAST_SCENE_icon.webp",
       "picture/LAST_SCENE_(HEROINES)_photo_2.webp",
       "picture/LAST_SCENE_(HEROINES)_photo.webp",
       "picture/LAST_SCENE_(HEROINES)_photo_3.webp",
       "picture/LAST_SCENE_(HEROINES)_logo.webp"
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/LAST_SCENE_%28HEROINES%29",
-    "discography": [],
-    "disc_uids": []
+    "discography": [
+      {
+        "uid": "last-scene-unreleased",
+        "title": "Unreleased Songs",
+        "title_romanji": "Unreleased Songs",
+        "disc_type": "Unreleased",
+        "release_date": null,
+        "publisher": "",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "光の花",
+          "トゥルーエンド"
+        ],
+        "duration": null,
+        "cover_image_path": null,
+        "track_song_uids": []
+      }
+    ],
+    "disc_uids": [
+      "last-scene-unreleased"
+    ]
   },
   {
     "uid": "TuOCvOODrQ",
@@ -187293,20 +187402,22 @@
     "name_romanji": "Dress_Code",
     "nickname": "ドレコ",
     "nickname_romanji": "Dreco",
-    "member_count": 5,
+    "member_count": 6,
     "member_names": [
       "百宮みも",
-      "飛茉りのあ",
       "小鈴もゆ",
       "御伽りるむ",
-      "朝日まる"
+      "月野あのん",
+      "結音ちゆ",
+      "早坂わむ"
     ],
     "member_uids": [
       "95ac5102-f41d-4e12-9443-8bff871da1e4",
-      "f58df1a3-7c12-41d3-b818-35e569f7378c",
       "ff539208-2470-49b4-8ab6-121a38f412c0",
       "0905e105-9720-46ff-8ed1-604dbea12174",
-      "b1ec5e19-c08b-4d68-b1ce-8bd72fa7b0b1"
+      "811532ad-73a4-5d2d-b467-d63d7dfc5a61",
+      "4676fd9e-ed7e-5078-933c-c8759519c00e",
+      "0153e3f6-9c75-52f3-b971-e9d47ffa0cd4"
     ],
     "past_member_count": 2,
     "past_member_names": [
@@ -187323,7 +187434,8 @@
     "popularity": null,
     "fans": null,
     "song_uids": [
-      "0020b5e2-ee3d-40d7-9696-ea513d252915"
+      "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+      "6440e2e6-96ea-5363-9185-f51041b1b9b0"
     ],
     "union": null,
     "union_uid": null,
@@ -187332,6 +187444,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/Dress_Code_icon.webp",
       "picture/Dress_Code_photo_4.webp",
       "picture/Dress_Code_photo_3.webp",
       "picture/Dress_Code_photo.webp",
@@ -187353,10 +187466,38 @@
         "track_list": [],
         "duration": null,
         "cover_image_path": null
+      },
+      {
+        "uid": "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+        "title": "きゅんとしちゃってはなれない",
+        "title_romanji": "Kyun to Shichatte wa Hanarenai",
+        "disc_type": "Digital Single",
+        "release_date": "2025-12-26",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
+      },
+      {
+        "uid": "6440e2e6-96ea-5363-9185-f51041b1b9b0",
+        "title": "告白マクロナージュ",
+        "title_romanji": "Kokuhaku Macronage",
+        "disc_type": "Digital Single",
+        "release_date": "2026-02-14",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
       }
     ],
     "disc_uids": [
-      "0020b5e2-ee3d-40d7-9696-ea513d252915"
+      "0020b5e2-ee3d-40d7-9696-ea513d252915",
+      "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+      "6440e2e6-96ea-5363-9185-f51041b1b9b0"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce155"
   },
@@ -187389,9 +187530,7 @@
     "formed_date": "2023-01-14",
     "popularity": null,
     "fans": null,
-    "song_uids": [
-      "8c5c4ec9-89ff-4f21-a385-595b3bc988f1"
-    ],
+    "song_uids": [],
     "union": null,
     "union_uid": null,
     "agencies": [
@@ -187399,6 +187538,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/GAGAPIERO_icon.webp",
       "picture/GAGAPIERO_photo_3.webp",
       "picture/GAGAPIERO_photo_4.webp",
       "picture/GAGAPIERO_logo.webp",
@@ -187419,27 +187559,15 @@
         "publisher_uid": null,
         "catalog_number": "",
         "description": "",
-        "track_list": [
-          "SE",
-          "DOGMA",
-          "星屑パラドックス",
-          "ノックアウト！",
-          "後天的アザトイノセンス",
-          "ソイヤ！",
-          "Suppin Who are you?",
-          "サスペンションガール",
-          "リアコレート",
-          "乙女戦争",
-          "バグリウム",
-          "思念独奏"
-        ],
+        "track_list": [],
         "duration": null,
         "cover_image_path": "picture/GAGA_CIRCUS_cover.webp"
       }
     ],
     "disc_uids": [
       "8c5c4ec9-89ff-4f21-a385-595b3bc988f1"
-    ]
+    ],
+    "disband_date": "2025-02-07"
   },
   {
     "uid": "9b937bbf-facf-437b-9815-94152bfe5805",
@@ -187447,36 +187575,43 @@
     "name_romanji": "HEROINES_Kenkyuusei",
     "nickname": "ヒロ研",
     "nickname_romanji": "Hiroken",
-    "member_count": 10,
+    "member_count": 13,
     "member_names": [
-      "朝日まる",
-      "刻乃なう",
-      "一ノ瀬ちい",
-      "君乃まいん",
-      "秋月えむ",
       "白石あゆ",
       "広瀬りむ",
-      "茉野ゆに",
       "小菜実こゆ",
-      "綾瀬めめ"
+      "綾瀬めめ",
+      "白鳥ちな",
+      "小梅ちろ",
+      "花森ぴの",
+      "矢乃ひまり",
+      "逢坂めるむ",
+      "有舞ねおん",
+      "芽野りりあ",
+      "鳴雷びび",
+      "可愛川ここ"
     ],
     "member_uids": [
-      "b1ec5e19-c08b-4d68-b1ce-8bd72fa7b0b1",
-      "c6740f57-6323-42d5-98c3-ab61ff31e639",
-      "7b5fdeda-556a-46c7-bfca-c468f78ed409",
-      "265be622-05cf-442f-8519-1a6e5e130cec",
-      "f9420a8a-c2c5-43d3-b38f-0dad19b2080c",
       "d90025e2-ef9e-4964-a4fe-131a550f421f",
       "b978e9b5-bde8-4964-a6d5-dbfa57cd2385",
-      "428478d5-a37f-40c3-89a9-0245c39e5848",
       "2997a457-f693-42ef-b133-2945022121c4",
-      "042ff6d1-b225-433c-a0dc-523b63f51677"
+      "042ff6d1-b225-433c-a0dc-523b63f51677",
+      "58ae84f3-6ab4-578d-a1e8-580bed592b13",
+      "81817d18-ac2e-5253-9357-0295df75e5b5",
+      "d5da541e-d871-57b8-8b75-63fbfd89951a",
+      "433130f0-2754-5912-9901-08137f1921da",
+      "bb9d6079-d8f5-5eba-8f2a-17a8d02fe9cd",
+      "96a98585-285e-5eaa-aa7e-07c368e0e6eb",
+      "8bd71f23-68fb-5201-bb84-303e71c87b4e",
+      "36b446eb-69a1-561f-877d-88232f46073b",
+      "780fcbaf-12f4-5f2a-aa30-4b15967e5878"
     ],
-    "past_member_count": 16,
+    "past_member_count": 18,
     "past_member_names": [
       "永瀬玲乃",
       "千歳しの",
       "柏木羽依",
+      "有村みなみ",
       "愛川はな",
       "佐藤ねね",
       "宇野ゆり",
@@ -187485,16 +187620,18 @@
       "百瀬ゆも",
       "白熊あむ",
       "藤咲あず",
-      "Kashiwagi Ui",
-      "有村南海",
-      "Aikawa Hana",
-      "Sato Nene",
-      "Miyamizu Hiiro"
+      "朝日まる",
+      "刻乃なう",
+      "一ノ瀬ちい",
+      "君乃まいん",
+      "秋月えむ",
+      "茉野ゆに"
     ],
     "past_member_uids": [
       "733931bb-cb56-4f1d-b587-2ae62238f988",
       "cf3e4bc4-de3b-4090-a26d-dc6b74f1760c",
       "2e9c1b6b-b6be-434c-b3fa-5d56a42bfa34",
+      "32b8eb47-768f-5d15-a523-f5979a66ec45",
       "e3ae5148-ebf1-4c37-b129-b02517e81f05",
       "e91cda92-0bff-4277-8c1b-fb0bd67785b0",
       "a6505d1f-4415-4423-97ba-c94b2af88ccf",
@@ -187503,15 +187640,21 @@
       "bc97b942-7a09-41a7-8904-b4ecc407b218",
       "b482b0e2-4761-4718-bf2a-7fd076028065",
       "a883b203-68ab-4d51-8bdc-531f9172e945",
-      "",
-      "45bf5e08-a362-4182-b904-57a40c93b567"
+      "b1ec5e19-c08b-4d68-b1ce-8bd72fa7b0b1",
+      "c6740f57-6323-42d5-98c3-ab61ff31e639",
+      "7b5fdeda-556a-46c7-bfca-c468f78ed409",
+      "265be622-05cf-442f-8519-1a6e5e130cec",
+      "f9420a8a-c2c5-43d3-b38f-0dad19b2080c",
+      "428478d5-a37f-40c3-89a9-0245c39e5848"
     ],
     "color": "#FFFFFF",
     "description": "HEROINES Kenkyuusei April 2025 Information Also Known As Hiroken (ヒロ研) Origin Tokyo, Japan Genre J-Pop Years 2023-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! HEROINES Kenkyuusei Osaka Pastel Closet Current Members Asahi Maru Tokino Nau Ichinose Chii Kimino Main Akitsuki Emu",
     "formed_date": "2023-10-16",
     "popularity": null,
     "fans": null,
-    "song_uids": [],
+    "song_uids": [
+      "d5538256-f8fd-4333-95b8-d2db7071975e"
+    ],
     "union": null,
     "union_uid": null,
     "agencies": [
@@ -187519,6 +187662,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/HEROINES_Kenkyuusei_icon.webp",
       "picture/HEROINES_Kenkyuusei_photo_8.webp",
       "picture/HEROINES_Kenkyuusei_photo_6.webp",
       "picture/HEROINES_Kenkyuusei_photo_2.webp",
@@ -187530,7 +187674,27 @@
       "picture/HEROINES_Kenkyuusei_photo_3.webp"
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/HEROINES_Kenkyuusei",
-    "discography": [],
+    "discography": [
+      {
+        "uid": "hiroken-unreleased",
+        "title": "Unreleased Songs",
+        "title_romanji": "Unreleased Songs",
+        "disc_type": "Unreleased",
+        "release_date": null,
+        "publisher": "",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "星屑シンドローム"
+        ],
+        "track_song_uids": [
+          "d5538256-f8fd-4333-95b8-d2db7071975e"
+        ],
+        "duration": null,
+        "cover_image_path": null
+      }
+    ],
     "disc_uids": []
   },
   {
@@ -187539,7 +187703,7 @@
     "name_romanji": "Nanakorobi_Yaoki",
     "nickname": "ナナコロ",
     "nickname_romanji": "Nanakoro",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "苺川えくぼ",
       "歌花てんか",
@@ -187547,8 +187711,7 @@
       "熊ノ実にも",
       "水田茉莉",
       "笑乃にな",
-      "阪菜りこ",
-      "Hanna Rico"
+      "阪菜りこ"
     ],
     "member_uids": [
       "684ff24b-1111-4ff6-991b-0e4fa51505d4",
@@ -187557,8 +187720,7 @@
       "c5d56c30-a278-403d-9b2d-4630061fdba4",
       "fbbd48da-4c66-4300-a1ec-1c67038f6431",
       "b5d77294-2b5e-4939-bae1-72fc1204405c",
-      "aa8f4773-0519-4030-8d2d-c65be114e53b",
-      ""
+      "aa8f4773-0519-4030-8d2d-c65be114e53b"
     ],
     "past_member_count": 4,
     "past_member_names": [
@@ -187612,6 +187774,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/Nanakorobi_Yaoki_icon.webp",
       "picture/Nanakorobi_Yaoki_photo_4.webp",
       "picture/Nanakorobi_Yaoki_photo_3.webp",
       "picture/Nanakorobi_Yaoki_photo.webp",
@@ -187778,6 +187941,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/iON_icon.webp",
       "picture/ION!_photo_7.webp",
       "picture/ION!_photo_4.webp",
       "picture/ION!_photo_6.webp",
@@ -187864,24 +188028,22 @@
   },
   {
     "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
-    "name": "Ladybaby",
+    "name": "LADYBABY",
     "name_romanji": "LADYBABY",
     "nickname": "2016-2018",
     "nickname_romanji": "The Idol formerly known as LADYBABY",
-    "member_count": 5,
+    "member_count": 4,
     "member_names": [
       "神黎ミア",
       "來崎せな",
       "月街えい",
-      "越智きの︎",
       "越智きの"
     ],
     "member_uids": [
       "ac0eef2a-efb1-4104-810c-97de3aea1fba",
       "52d0bdde-2f09-44c3-93a8-300f47ac1769",
       "779622a4-212e-48c9-b9a6-e0234a5fa74c",
-      "5250a6ec-cf8c-423c-9ba8-e94bd5de2041",
-      "c21ad41a-6bb2-4c62-98d3-4cf1df3ff75c"
+      "5250a6ec-cf8c-423c-9ba8-e94bd5de2041"
     ],
     "past_member_count": 12,
     "past_member_names": [
@@ -187911,16 +188073,32 @@
       "d3ced00f-17d0-4c8e-8959-075da6ba9a95"
     ],
     "color": "#FFFFFF",
-    "description": "October 2025 Information Also Known As The Idol formerly known as LADYBABY (2016-2018) Origin Tokyo, Japan Genre J-Pop Metal Rock Years 2023-Present 2015-2020 Label Clearstone Records (2015-2016; 2023-Present) Raimei RECORDS (2019-2020) LDBB (2018) King Records (2016-2018) Agency imaginate (2023-Present) clearstone Co., Ltd. (2015-2020) Associated Acts trolleattroll BRATS HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY Adam",
+    "description": "October 2025 Information Also Known As The Idol formerly known as LADYBABY (2016-2018) Origin Tokyo , Japan Genre J-Pop Metal Rock Years 2023-Present 2015-2020 Label Clearstone Records (2015-2016; 2023-Present) Raimei RECORDS (2019-2020) LDBB (2018) King Records (2016-2018) Agency imaginate (2023-Present) clearstone Co., Ltd. (2015-2020) Associated Acts trolleattroll BRATS HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY Adam",
     "formed_date": "2015-01-01",
     "popularity": 39,
     "fans": 136942,
     "average_ability": 60,
     "average_rating": 12,
     "song_uids": [
-      "05e46c58-9f4c-4280-9270-86d7ea5cbfcb",
-      "d0bb8a48-dddf-462e-ba6a-2cdd2a65ab2c",
-      "4f435004-bf1a-4a68-a667-52e7b0265fb9"
+      "27d06c43-17e9-4f50-884b-343794244bae",
+      "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
+      "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
+      "e14c03e8-731f-45db-9d5d-852beb0c719c",
+      "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+      "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+      "feada45d-734d-4092-b46a-4d6a8734e6b1",
+      "e7601970-57ad-44c9-a997-82587bebafb6",
+      "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
+      "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
+      "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+      "8c7142ac-7cb6-41de-840f-374c54280297",
+      "0f99fd99-62d4-4f9a-9b77-af86d637062e",
+      "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
+      "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+      "c2810dfc-bfa9-5291-b694-7739252782c5",
+      "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+      "2e360572-a078-52c4-9493-4885383769ac",
+      "e90bad43-aaca-50f5-a58e-7befd2cc8cf2"
     ],
     "union": null,
     "union_uid": null,
@@ -187929,6 +188107,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/LADYBABY_icon.webp",
       "picture/LADYBABY_photo_4.webp",
       "picture/LADYBABY_photo.webp",
       "picture/LADYBABY_logo.webp",
@@ -187966,6 +188145,7 @@
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
     "discography": [
       {
+        "uid": "91b0da87-35d8-4392-aedb-df467b592f35",
         "title": "REBURN",
         "title_romanji": "",
         "disc_type": "Album",
@@ -187976,22 +188156,22 @@
         "description": "",
         "track_list": [
           "REBURN",
-          "ホシノナイソラ; Starless Sky",
-          "破天ニ雷鳴; Thunderstorm",
+          "Hoshi no Nai Sora (ホシノナイソラ; Starless Sky )",
+          "Haten ni Raimei (破天ニ雷鳴; Thunderstorm )",
           "LB4 Future",
           "bite me",
-          "禊Island",
+          "Misogi Island (禊Island)",
           "Riot Anthem",
-          "ダメダメ殿; No No Sir",
+          "Dame Dame Tono (ダメダメ殿; No No Sir )",
           "Gods’ Not",
           "endless end Hello"
         ],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/REBURN_cover.webp",
-        "uid": "3e7eb09d-6eed-4af1-a6f7-1d1fa837f7d1"
+        "cover_image_path": "picture/REBURN_cover.webp"
       },
       {
+        "uid": "9b53617a-e5ff-4ee5-b049-4ee22c84c668",
         "title": "ONE YEAR BEST ~2015-2016~",
         "title_romanji": "",
         "disc_type": "Best Album",
@@ -188002,21 +188182,21 @@
         "description": "",
         "track_list": [
           "OVERTURE OVERSEA",
-          "ニッポン饅頭",
-          "蓮華チャンス！",
-          "ビアちゃんロボット",
+          "Nippon Manju (ニッポン饅頭)",
+          "Renge CHANCE! (蓮華チャンス！)",
+          "Bia-chan Robot (ビアちゃんロボット)",
           "ULTRA☆LUCKY",
-          "セシボン・キブン",
+          "C'est Si Bon Kibun (セシボン・キブン)",
           "SCHOOL OF HARD KNOCKS",
-          "アゲアゲマネー ~おちんぎん大作戦~"
+          "Ageage MONEY ～Ochingin Daisakusen～ (アゲアゲマネー ~おちんぎん大作戦~)"
         ],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/ONE_YEAR_BEST_~2015-2016~_cover.webp",
-        "uid": "90cc1e7b-57e0-464d-8a1a-c324d72043ab"
+        "cover_image_path": "picture/ONE_YEAR_BEST_~2015-2016~_cover.webp"
       },
       {
-        "title": "Beside U(AsThe Idol formerly known as LADYBABY",
+        "uid": "e0d8b0b7-9194-45f3-bda8-a2fa98538bd1",
+        "title": "Beside U",
         "title_romanji": "",
         "disc_type": "Best Album",
         "release_date": "2018-03-07",
@@ -188027,36 +188207,36 @@
         "track_list": [
           "Pelo",
           "Me! Me! Me!",
-          "参拝!御朱印girl☆",
+          "Sanpai! Goshuin girl☆ (参拝!御朱印girl☆)",
           "Easter Bunny",
           "Generation Hard Knocks",
-          "オニギリック・リヴァイヴァー",
-          "渋谷 CROSSING",
-          "上々上湯",
+          "Onigirikku Revival (オニギリック・リヴァイヴァー)",
+          "Shibuya CROSSING (渋谷 CROSSING)",
+          "Jou Jou Shantan (上々上湯)",
           "Pinky! Pinky!",
           "LADY BABY BLUE"
         ],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/Beside_U(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
-        "uid": "fe08f1f7-6871-4df4-afe7-435cdd551b58"
+        "cover_image_path": "picture/Beside_U(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp"
       },
       {
+        "uid": "5365d339-502b-4219-b14b-b49758390247",
         "title": "Gotcha にっぽん！",
         "title_romanji": "Gotcha Nippon!",
         "disc_type": "Mini Album",
         "release_date": "2024-02-05",
         "publisher": "Clearstone Records",
-        "publisher_uid": "09ce84c6-00c1-4251-8cbb-1ea064b8c78f",
+        "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "eaf78d9e-c5dc-4d15-a4a8-bab142d214a4"
+        "cover_image_path": null
       },
       {
+        "uid": "27d06c43-17e9-4f50-884b-343794244bae",
         "title": "ニッポン饅頭",
         "title_romanji": "Nippon Manju",
         "disc_type": "Single",
@@ -188068,10 +188248,10 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/ニッポン饅頭_cover.webp",
-        "uid": "bae0ae93-abeb-45bf-9872-67fd20eb975c"
+        "cover_image_path": "picture/ニッポン饅頭_cover.webp"
       },
       {
+        "uid": "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
         "title": "アゲアゲマネー ～おちんぎん大作戦～",
         "title_romanji": "Ageage MONEY ～Ochingin Daisakusen～",
         "disc_type": "Single",
@@ -188083,10 +188263,10 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/アゲアゲマネー_～おちんぎん大作戦～_cover.webp",
-        "uid": "decda907-887c-4037-bda0-dbe3fde0a795"
+        "cover_image_path": "picture/アゲアゲマネー_～おちんぎん大作戦～_cover.webp"
       },
       {
+        "uid": "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
         "title": "蓮華チャンス！ / セシボン・キブン",
         "title_romanji": "Renge CHANCE! / C'est Si Bon Kibun",
         "disc_type": "Single",
@@ -188098,11 +188278,26 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/蓮華チャンス！___セシボン・キブン_cover.webp",
-        "uid": "371256ea-e548-40f7-97b6-398b73958ab7"
+        "cover_image_path": "picture/蓮華チャンス！___セシボン・キブン_cover.webp"
       },
       {
-        "title": "参拝! 御朱印girl☆)(AsThe Idol formerly known as LADYBABY",
+        "uid": "e14c03e8-731f-45db-9d5d-852beb0c719c",
+        "title": "少年勇者団",
+        "title_romanji": "Shounen Yuusha-dan",
+        "disc_type": "Single",
+        "release_date": "2016-06-23",
+        "publisher": "Clearstone Records",
+        "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "track_song_uids": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+        "title": "参拝! 御朱印girl☆",
         "title_romanji": "Sanpai! Goshuin girl☆",
         "disc_type": "Single",
         "release_date": "2016-11-30",
@@ -188113,11 +188308,11 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/参拝!_御朱印girl☆)(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
-        "uid": "6e38fd6f-1ed1-4230-9d4b-906b45e769fb"
+        "cover_image_path": "picture/参拝!_御朱印girl☆)(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp"
       },
       {
-        "title": "Pelo(AsThe Idol formerly known as LADYBABY",
+        "uid": "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+        "title": "Pelo",
         "title_romanji": "",
         "disc_type": "Single",
         "release_date": "2017-04-12",
@@ -188128,11 +188323,11 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/Pelo(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
-        "uid": "dfead39c-1377-4558-9f7d-f4332b9b3e8f"
+        "cover_image_path": "picture/Pelo(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp"
       },
       {
-        "title": "Pinky! Pinky!(AsThe Idol formerly known as LADYBABY",
+        "uid": "feada45d-734d-4092-b46a-4d6a8734e6b1",
+        "title": "Pinky! Pinky!",
         "title_romanji": "",
         "disc_type": "Single",
         "release_date": "2017-09-27",
@@ -188143,10 +188338,27 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/Pinky!_Pinky!(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
-        "uid": "5057813c-c6d3-4d6c-b81e-8a3dc3a28bfa"
+        "cover_image_path": "picture/Pinky!_Pinky!(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp"
       },
       {
+        "uid": "e7601970-57ad-44c9-a997-82587bebafb6",
+        "title": "渋谷 CROSSING",
+        "title_romanji": "Shibuya CROSSING",
+        "disc_type": "Digital Single",
+        "release_date": "2017-10-10",
+        "publisher": "King Records",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "Shibuya CROSSING (渋谷 CROSSING)"
+        ],
+        "track_song_uids": [],
+        "duration": null,
+        "cover_image_path": "picture/渋谷_CROSSING)(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp"
+      },
+      {
+        "uid": "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
         "title": "ホシノナイソラ",
         "title_romanji": "Hoshi no Nai Sora",
         "disc_type": "Single",
@@ -188158,10 +188370,10 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/ホシノナイソラ_cover.webp",
-        "uid": "b06ec769-f302-400e-a9e5-d22d24411311"
+        "cover_image_path": "picture/ホシノナイソラ_cover.webp"
       },
       {
+        "uid": "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
         "title": "ダメダメ殿",
         "title_romanji": "Dame Dame Tono",
         "disc_type": "Single",
@@ -188173,47 +188385,11 @@
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/ダメダメ殿_cover.webp",
-        "uid": "08069511-8f08-48f3-b627-2aa18a53a870"
+        "cover_image_path": "picture/ダメダメ殿_cover.webp"
       },
       {
-        "title": "破天ニ雷鳴",
-        "title_romanji": "Haten ni Raimei",
-        "disc_type": "Single",
-        "release_date": "2019-05-28",
-        "publisher": "RAIMEI RECORDS",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "破天ニ雷鳴; Thunderstorm",
-          "God’s Not",
-          "LB4 Future"
-        ],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/破天ニ雷鳴_cover.webp",
-        "uid": "c52f21fb-6007-4031-abfa-246a9e7154a3"
-      },
-      {
-        "title": "渋谷 CROSSING)(AsThe Idol formerly known as LADYBABY",
-        "title_romanji": "Shibuya CROSSING",
-        "disc_type": "Digital Single",
-        "release_date": "2017-10-10",
-        "publisher": "King Records",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "渋谷 CROSSING"
-        ],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": "picture/渋谷_CROSSING)(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
-        "uid": "99a861c3-1625-4d09-b760-f9d26f43fc78"
-      },
-      {
-        "title": "Riot Anthem(Lyric Book",
+        "uid": "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+        "title": "Riot Anthem",
         "title_romanji": "",
         "disc_type": "Digital Single",
         "release_date": "2019-03-08",
@@ -188226,119 +188402,147 @@
         ],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": "picture/Riot_Anthem(Lyric_Book_cover.webp",
-        "uid": "4d75e042-81d5-4995-8b5e-a7f03b68654c"
+        "cover_image_path": "picture/Riot_Anthem(Lyric_Book_cover.webp"
       },
       {
+        "uid": "8c7142ac-7cb6-41de-840f-374c54280297",
+        "title": "破天ニ雷鳴",
+        "title_romanji": "Haten ni Raimei",
+        "disc_type": "Single",
+        "release_date": "2019-05-28",
+        "publisher": "RAIMEI RECORDS",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "Haten ni Raimei (破天ニ雷鳴; Thunderstorm )",
+          "God’s Not",
+          "LB4 Future"
+        ],
+        "track_song_uids": [],
+        "duration": null,
+        "cover_image_path": "picture/破天ニ雷鳴_cover.webp"
+      },
+      {
+        "uid": "0f99fd99-62d4-4f9a-9b77-af86d637062e",
         "title": "ダルマカルマ",
         "title_romanji": "Dharma Karma",
         "disc_type": "Digital Single",
         "release_date": "2024-05-12",
         "publisher": "Clearstone Records",
-        "publisher_uid": "09ce84c6-00c1-4251-8cbb-1ea064b8c78f",
+        "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "1aaa0dbf-9d4e-452d-80cf-ce850144773f"
+        "cover_image_path": null
       },
       {
+        "uid": "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
         "title": "ジャパサマ",
         "title_romanji": "Japasummer",
         "disc_type": "Digital Single",
         "release_date": "2024-08-04",
         "publisher": "Clearstone Records",
-        "publisher_uid": "09ce84c6-00c1-4251-8cbb-1ea064b8c78f",
+        "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
         "catalog_number": "",
         "description": "",
         "track_list": [],
         "track_song_uids": [],
         "duration": null,
-        "cover_image_path": null,
-        "uid": "68e85fd2-dc92-4545-ba16-d06f242be78c"
-      },
-      {
-        "title": "少年勇者団",
-        "title_romanji": "Shounen Yuusha-dan",
-        "disc_type": "Single",
-        "release_date": "2016-06-23",
-        "publisher": "Clearstone Records",
-        "publisher_uid": "09ce84c6-00c1-4251-8cbb-1ea064b8c78f",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "track_song_uids": [],
-        "duration": null,
-        "cover_image_path": null,
-        "uid": "fc3fda56-865b-4957-96ff-20186e417f82"
-      },
-      {
-        "uid": "05e46c58-9f4c-4280-9270-86d7ea5cbfcb",
-        "title": "ファースト JAPAN ワンマンライブ~世界のルールを変えちゃおう~",
-        "title_romanji": "First JAPAN One Man Live ~Sekai no Rules wo Kaechou~",
-        "disc_type": "CD",
-        "release_date": "2016-09-14",
-        "publisher": "Clearstone Records",
-        "publisher_uid": "09ce84c6-00c1-4251-8cbb-1ea064b8c78f",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "duration": null,
         "cover_image_path": null
       },
       {
-        "uid": "d0bb8a48-dddf-462e-ba6a-2cdd2a65ab2c",
-        "title": "透明飯TOUR2019 FINAL in SHIBUYA CLUB QUATTRO",
-        "title_romanji": "Toumei Han TOUR2019 FINAL in SHIBUYA CLUB QUATTRO",
-        "disc_type": "CD",
-        "release_date": "2019-07-27",
-        "publisher": "Raimei RECORDS",
-        "publisher_uid": "e71f538a-4125-4292-b652-c71364a408b1",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "duration": null,
-        "cover_image_path": null
-      },
-      {
-        "uid": "4f435004-bf1a-4a68-a667-52e7b0265fb9",
-        "title": "2020.1.13 The LASTLIVE at Liquidroom",
+        "uid": "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+        "title": "April Fish -TRUTH to BABY FISH-",
         "title_romanji": "",
-        "disc_type": "CD",
-        "release_date": "2020-08-15",
-        "publisher": "Raimei RECORDS",
-        "publisher_uid": "e71f538a-4125-4292-b652-c71364a408b1",
+        "disc_type": "Digital Single",
+        "release_date": "2025-04-01",
+        "publisher": null,
+        "publisher_uid": null,
         "catalog_number": "",
         "description": "",
         "track_list": [],
-        "duration": null,
-        "cover_image_path": null
+        "duration": null
+      },
+      {
+        "uid": "c2810dfc-bfa9-5291-b694-7739252782c5",
+        "title": "メロメロメロイック",
+        "title_romanji": "Melo Melo Meloic",
+        "disc_type": "Digital Single",
+        "release_date": "2025-12-12",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
+      },
+      {
+        "uid": "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+        "title": "Real eyes realize real lies",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2026-02-28",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
+      },
+      {
+        "uid": "2e360572-a078-52c4-9493-4885383769ac",
+        "title": "花一匁",
+        "title_romanji": "Hana Ichi Monme",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-18",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
+      },
+      {
+        "uid": "e90bad43-aaca-50f5-a58e-7befd2cc8cf2",
+        "title": "KILLER KILLER IDOL",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2026-06-30",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null
       }
     ],
     "disc_uids": [
-      "3e7eb09d-6eed-4af1-a6f7-1d1fa837f7d1",
-      "90cc1e7b-57e0-464d-8a1a-c324d72043ab",
-      "fe08f1f7-6871-4df4-afe7-435cdd551b58",
-      "eaf78d9e-c5dc-4d15-a4a8-bab142d214a4",
-      "bae0ae93-abeb-45bf-9872-67fd20eb975c",
-      "decda907-887c-4037-bda0-dbe3fde0a795",
-      "371256ea-e548-40f7-97b6-398b73958ab7",
-      "6e38fd6f-1ed1-4230-9d4b-906b45e769fb",
-      "dfead39c-1377-4558-9f7d-f4332b9b3e8f",
-      "5057813c-c6d3-4d6c-b81e-8a3dc3a28bfa",
-      "b06ec769-f302-400e-a9e5-d22d24411311",
-      "08069511-8f08-48f3-b627-2aa18a53a870",
-      "c52f21fb-6007-4031-abfa-246a9e7154a3",
-      "99a861c3-1625-4d09-b760-f9d26f43fc78",
-      "4d75e042-81d5-4995-8b5e-a7f03b68654c",
-      "1aaa0dbf-9d4e-452d-80cf-ce850144773f",
-      "68e85fd2-dc92-4545-ba16-d06f242be78c",
-      "fc3fda56-865b-4957-96ff-20186e417f82",
-      "05e46c58-9f4c-4280-9270-86d7ea5cbfcb",
-      "d0bb8a48-dddf-462e-ba6a-2cdd2a65ab2c",
-      "4f435004-bf1a-4a68-a667-52e7b0265fb9"
+      "91b0da87-35d8-4392-aedb-df467b592f35",
+      "9b53617a-e5ff-4ee5-b049-4ee22c84c668",
+      "e0d8b0b7-9194-45f3-bda8-a2fa98538bd1",
+      "5365d339-502b-4219-b14b-b49758390247",
+      "27d06c43-17e9-4f50-884b-343794244bae",
+      "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
+      "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
+      "e14c03e8-731f-45db-9d5d-852beb0c719c",
+      "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+      "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+      "feada45d-734d-4092-b46a-4d6a8734e6b1",
+      "e7601970-57ad-44c9-a997-82587bebafb6",
+      "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
+      "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
+      "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+      "8c7142ac-7cb6-41de-840f-374c54280297",
+      "0f99fd99-62d4-4f9a-9b77-af86d637062e",
+      "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
+      "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+      "c2810dfc-bfa9-5291-b694-7739252782c5",
+      "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+      "2e360572-a078-52c4-9493-4885383769ac",
+      "e90bad43-aaca-50f5-a58e-7befd2cc8cf2"
     ]
   },
   {
@@ -190736,7 +190940,7 @@
       "39182e99-128e-4556-94b6-d4426f380be8",
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
       "1f22a5cf-f0f8-4c95-a3b7-3b0049239b69",
-      "ebb7f6f2-de31-427c-be65-9fcdcfe75270"
+      "1626e615-f982-4e03-b2aa-21d7383ceda7"
     ],
     "color": "#FFFFFF",
     "description": "BLK LiLiY May 2022 Information Origin Tokyo, Japan Genre J-Pop Years 2021-2023 Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! Yakousei Amuse Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iON! HEROINES Kenkyuusei iLiFE! Kouhosei Disbanded May 9, 2023 Former Members Shikiori (2021) Ayase Ayari (2021-2022) Amane Yua (2022",
@@ -190802,7 +191006,8 @@
       "a82c3d7d-2283-4f05-99ff-40b1d7106cb6",
       "54bc2f5c-5d82-49db-a1fd-081132820e85"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce95"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce95",
+    "disband_date": "2023-05-09"
   },
   {
     "uid": "7e2b7bae-0b97-4c6c-8268-4923aa92c622",
@@ -203400,18 +203605,24 @@
   {
     "uid": "TUVHQUZPTg",
     "name": "MEGAFON",
-    "member_count": 6,
+    "member_count": 7,
     "member_names": [
-      "星野あみ",
+      "好実れん",
       "小晴のか",
+      "星野あみ",
       "明音いろは",
       "羽雲ろこ",
       "日陽きい",
       "宮代ゆき"
     ],
     "member_uids": [
+      "98b403bf-5f64-4ba7-a714-90e4fe842d50",
+      "c0ebee02-589a-4741-8c09-6785625d0e2c",
       "91431844-e2b3-4d16-a119-ee792e3c8d92",
-      ""
+      "4137617f-21fa-48f0-8f22-46ca0c0f7352",
+      "e5a678c9-6448-4c69-9b27-5e2345b7d1b5",
+      "9e0f8916-375b-40a4-842b-cf6b2fbd3c7d",
+      "2571d33a-51e8-4ca9-b577-a602318af81f"
     ],
     "past_member_count": 0,
     "past_member_names": [],
@@ -203438,6 +203649,7 @@
       "3fc80621-4c4a-4b85-8646-b2d53dabee50"
     ],
     "pictures": [
+      "picture/MEGAFON_icon.webp",
       "picture/MEGAFON_photo_3.webp",
       "picture/MEGAFON_photo.webp",
       "picture/MEGAFON_logo.webp",
@@ -207210,11 +207422,10 @@
     "nickname": "テンラン",
     "nickname_romanji": "Tenran",
     "song_uids": [
-      "9dd0af5a-f2c2-4fd7-858b-792779c63dd4",
-      "f8568bd1-baad-4325-ba35-d2f6dab63f14",
-      "acea2407-4397-48e4-be16-cfed832b85e4"
+      "f8568bd1-baad-4325-ba35-d2f6dab63f14"
     ],
     "pictures": [
+      "picture/Tenshinranman_icon.webp",
       "picture/Tenshinranman_photo_2.webp",
       "picture/Tenshinranman_photo_3.webp",
       "picture/Tenshinranman_photo.webp",
@@ -207268,28 +207479,11 @@
         ],
         "duration": null,
         "cover_image_path": "picture/爛漫_cover.webp"
-      },
-      {
-        "uid": "acea2407-4397-48e4-be16-cfed832b85e4",
-        "title": "恋のそら模様)-Misono Sorasolo",
-        "title_romanji": "Koi no Sora Moyou",
-        "disc_type": "Digital Single",
-        "release_date": "2025-12-25",
-        "publisher": "CROSS SIDE MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "恋のそら模様"
-        ],
-        "duration": null,
-        "cover_image_path": "picture/恋のそら模様)-Misono_Sorasolo_cover.webp"
       }
     ],
     "disc_uids": [
       "9dd0af5a-f2c2-4fd7-858b-792779c63dd4",
-      "f8568bd1-baad-4325-ba35-d2f6dab63f14",
-      "acea2407-4397-48e4-be16-cfed832b85e4"
+      "f8568bd1-baad-4325-ba35-d2f6dab63f14"
     ]
   },
   {
@@ -209904,7 +210098,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5oKy5pKD44Gu44OS44Ot44Kk44Oz55eH5YCZ576k",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "disband_date": "2021-04-23"
   },
   {
     "uid": "UllVVGlzdA",
@@ -211078,21 +211273,25 @@
   {
     "uid": "Q0FMJlJFUw",
     "name": "CAL&RES",
-    "member_count": 4,
+    "member_count": 5,
     "member_names": [
-      "杏仁みる",
+      "夢羽るる",
       "来夢ねお",
+      "杏仁みる",
       "九条あすな",
       "明日実まあや"
     ],
     "member_uids": [
+      "bbbf6d91-fc63-4331-b314-ae0899c1581c",
+      "4a5ab837-43a4-413a-bbe8-d7173401a088",
       "4cad7e1f-ca74-4088-9211-42fac3cda306",
-      ""
+      "6b582779-013a-4d5a-aff9-5dbce3b54fda",
+      "64bc50f9-bd2f-47a7-99e2-b39e0318924e"
     ],
-    "past_member_count": 15,
+    "past_member_count": 16,
     "past_member_names": [
+      "微少女",
       "黒崎りある",
-      "成瀬なる",
       "星宮せりか",
       "藍音紗那",
       "漆間あやみ",
@@ -211105,12 +211304,26 @@
       "澄麗ありあ",
       "美鈴りか",
       "羽宮きわみ",
-      "飛成もあ"
+      "飛成もあ",
+      "成瀬なる"
     ],
     "past_member_uids": [
+      "33628fc8-9630-4915-95b8-86b558accfca",
       "720bfe27-a27c-4df4-a184-5c0e780cf070",
-      "247628a2-c479-4b0c-8245-2a513f717c0c",
-      ""
+      "22f7a3cf-6363-41e6-903a-41e108630346",
+      "76b1dc7a-4223-4b43-9c9f-844f5f17f8c3",
+      "c04dc3d9-07ad-49a5-bf04-0bbe9569c6cf",
+      "9a08f98e-2b2a-41d1-bfdb-042c782e0d24",
+      "2454278a-da0a-4de3-9404-ee6efdfa3b99",
+      "68cfa453-ffd3-4f60-87e7-c19eb373c308",
+      "9b071326-5d71-45f8-aa00-4beaf83a3ada",
+      "36338136-318e-43cc-8a14-b17fa25f2855",
+      "219a49e6-87c7-42d9-9898-49e0e5a90800",
+      "b8314867-6b16-4a96-a5d7-6db0a69e88a5",
+      "a6aa8be5-29bb-4d24-b499-6a3eae0f3c3c",
+      "b0a6decb-f961-4c15-a15d-24662ad59f9d",
+      "1a10a730-6462-435f-8b87-944688ffa430",
+      "247628a2-c479-4b0c-8245-2a513f717c0c"
     ],
     "color": null,
     "description": "CAL&RES April 2025 Information Origin Tokyo , Japan Genre J-Pop Years 2021-Present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse Non¬Fiction i-COL Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iON! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Yumeha Ruru (2022-Present) Lime Neo (2024-Present) Ann",
@@ -211120,13 +211333,14 @@
     "agencies": [
       "imaginate"
     ],
-    "name_romanji": "",
+    "name_romanji": "CAL&RES",
     "nickname": null,
     "nickname_romanji": null,
     "song_uids": [
       "bd6cad08-a8be-49e1-b59d-9a13067114c8"
     ],
     "pictures": [
+      "picture/CALandRES_icon.webp",
       "picture/CALandRES_photo_2.webp",
       "picture/CALandRES_photo_10.webp",
       "picture/CALandRES_photo_5.webp",
@@ -241722,5 +241936,320 @@
       "68906521-f4bf-424c-b2b6-5c49f1e7a80f",
       "f58c9d10-8b2a-4f3c-9e1d-0a7b6c5d4e3f"
     ]
+  },
+  {
+    "uid": "RnVsbCBDb3Vyc2U",
+    "name": "フルコース",
+    "member_count": 7,
+    "member_names": [
+      "中川心",
+      "阿部菜々実",
+      "鈴木遥夏",
+      "小葉こな",
+      "金城まき",
+      "桜咲みはね",
+      "水上凜巳花"
+    ],
+    "member_uids": [
+      "aWRvbDo6aHR0cHM6Ly9qcG9wLmZhbmRvbS5jb20vd2lraS9OYWthZ2F3YV9Db2Nvcm8",
+      "bde2b79d-af14-4633-ac94-14d34658d8c4",
+      "892bfb87-ce64-4913-a081-0d4e7efac6f3",
+      "79073ceb-6cf5-45a4-a0eb-cc2af6d791be",
+      "ce4a1d85-d51d-4f7b-bf4b-0ce70350cc22",
+      "7f82421f-16bd-4916-8be8-b0eb5ad82cc3",
+      "61f51c3f-2c5c-49cf-a076-9e9c12d66c83"
+    ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
+    "color": null,
+    "description": "",
+    "formed_date": "2026-02-15",
+    "wiki_url": "https://jpop.fandom.com/wiki/Full_Course",
+    "name_romanji": "Full Course",
+    "nickname": "",
+    "nickname_romanji": "",
+    "song_uids": [],
+    "pictures": [
+      "picture/Full_Course_icon.webp"
+    ]
+  },
+  {
+    "uid": "82c6703f-0d5d-4b54-972d-232437a3b991",
+    "name": "ハルカエコー",
+    "wiki_url": "https://jpop.fandom.com/wiki/HARUKA_ECHO",
+    "name_romanji": "HARUKA ECHO",
+    "nickname": "ハルエ",
+    "nickname_romanji": "HARUE",
+    "member_count": 6,
+    "member_names": [
+      "雨宮るり",
+      "平沢かえ",
+      "神凪みふゆ",
+      "常盤うた",
+      "芦名ゆい",
+      "高坂りん"
+    ],
+    "member_uids": [
+      "564b1856-c864-495f-9cb3-c1d60db2756f",
+      "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "4b74646f-73d7-4f4a-ba23-16d43b578970",
+      "df39ccf7-6c9e-4c23-84e9-e2321cf7ae30",
+      "2f7a56a9-12d1-40d5-9a3a-a9583934da63",
+      "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415"
+    ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
+    "color": "#FFFFFF",
+    "description": "HARUKA ECHO April 2026 Information Also Known As HARUE (ハルエ) Origin Tokyo , Japan Genre J-Pop Years 2026-Present Agency Imaginate Associated Acts HEROINES akishibu project ZUTTOMOTTO Silent Majority Producer Bugbear Links Social Media HARUKA ECHO (ハルカエコー) is a 6-member female idol group under imaginate . They are produced by the music unit Bugbear .",
+    "formed_date": "2026-04-09",
+    "popularity": null,
+    "fans": null,
+    "songs": [],
+    "song_uids": [],
+    "union": null,
+    "union_uid": null,
+    "agencies": [
+      "Imaginate"
+    ],
+    "agency_uids": [],
+    "pictures": [
+      "picture/HARUKA_ECHO_icon.webp",
+      "picture/HARUKA_ECHO_photo.webp",
+      "picture/HARUKA_ECHO_logo.webp",
+      "picture/HARUKA_ECHO_photo_2.webp"
+    ],
+    "discography": [
+      {
+        "uid": "30f34dd6-9acb-4f6e-8023-4e65b53a89a5",
+        "title": "あの日の残響",
+        "title_romanji": "Ano Hi no Zankyou",
+        "disc_type": "Mini Album",
+        "release_date": "2026-04-18",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "track_song_uids": [],
+        "duration": null,
+        "cover_image_path": null
+      }
+    ],
+    "disc_uids": [
+      "30f34dd6-9acb-4f6e-8023-4e65b53a89a5"
+    ]
+  },
+  {
+    "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513",
+    "name": "ヒロインズ研究生大阪",
+    "name_romanji": "HEROINES Kenkyuusei Osaka",
+    "nickname": "ヒロ研大阪",
+    "nickname_romanji": "Hiroken Osaka",
+    "member_count": 10,
+    "member_names": [
+      "鹿野こなほ",
+      "千鳥もえ",
+      "不破ふわり",
+      "御堂筋ぴこ",
+      "桃谷りの",
+      "北浜そふと",
+      "汐見らう",
+      "笑門りい",
+      "小花衣はお",
+      "安良城いと"
+    ],
+    "member_uids": [
+      "8a7fba01-02aa-4275-a36d-708bf3aa097a",
+      "178ab058-0a9d-4246-8a2c-34df5813ab28",
+      "51a5090c-0415-4fe2-9005-7674baffa856",
+      "6277590b-df27-40cb-8621-bbf183ec01fd",
+      "a918cb62-a802-5af9-9e97-74267952e66b",
+      "95d18871-b43f-5535-b1ba-85c11b74a175",
+      "0dfb0c22-f373-513e-aeec-c11d21b56610",
+      "4306a822-704d-5b8a-8232-b3b4b5f08104",
+      "27ad6f67-7fc1-5a29-9144-4f33e69cee99",
+      "f4e11e27-1519-563e-b43f-a760989084bb"
+    ],
+    "past_member_count": 5,
+    "past_member_names": [
+      "白玉きなこ",
+      "糸巻まき",
+      "葛城ことか",
+      "出雲みやび",
+      "戎たらこ"
+    ],
+    "past_member_uids": [
+      "d354b12d-cdca-497b-be9a-f24f4239ad43",
+      "23925978-63ca-42c1-9e45-eafbcb9327cc",
+      "f4141c4f-592f-4db4-977d-40e03ae40d72",
+      "80be6688-7c15-4366-865b-c6464090aaa6",
+      "50cbf2f2-4e97-4c10-8604-0beb4c0a7031"
+    ],
+    "color": "#FFFFFF",
+    "description": "HEROINES Kenkyuusei Osaka July 2025 Information Also Known As Hiroken Osaka (ヒロ研大阪) Origin Osaka , Japan Genre J-Pop Years 2025-Present Agency imaginate Associated Acts HEROINES HEROINES Kenkyuusei Current Members Shikano Konaho Chidori Moe Fuwa Fuwari Midousuji Piko Former Members Shiratama Kinako Itomaki Maki Katsuragi Kotoka Izumo Miyabi Ebisu Tarako Links Social Media HEROINES Kenkyuusei Osaka (ヒロインズ研究生大阪; HEROINES Research Students Osaka ) is an Osaka-based trainee group for HEROINES . The ",
+    "formed_date": "2025-06-25",
+    "popularity": null,
+    "fans": null,
+    "songs": [],
+    "song_uids": [],
+    "union": null,
+    "union_uid": null,
+    "agencies": [
+      "imaginate"
+    ],
+    "agency_uids": [],
+    "pictures": [
+      "picture/HEROINES_Kenkyuusei_Osaka_icon.webp",
+      "picture/HEROINES_Kenkyuusei_Osaka_photo.webp",
+      "picture/HEROINES_Kenkyuusei_Osaka_logo.webp"
+    ],
+    "discography": [],
+    "disc_uids": [],
+    "wiki_url": "https://jpop.fandom.com/wiki/HEROINES_Kenkyuusei_Osaka"
+  },
+  {
+    "uid": "3470f280-df87-4c34-addb-7d4a7c52106a",
+    "name": "Pastel Closet",
+    "name_romanji": "Pastel Closet",
+    "nickname": "パスクロ",
+    "nickname_romanji": "Pasclo",
+    "member_count": 8,
+    "member_names": [
+      "篠原さくら",
+      "幸野れいあ",
+      "仁科美都",
+      "澄原夏帆",
+      "雛城ののか",
+      "花木舞花",
+      "安齋みのり",
+      "柑乃あい"
+    ],
+    "member_uids": [
+      "5b9cb32d-0671-4802-b370-c4dd851a382f",
+      "f913ca1c-985b-4d66-b938-e6c6efd41b2d",
+      "6ae09004-9be1-4c92-8e69-227d0b3b7f05",
+      "7e5d8547-5998-469e-81a6-7673b9e9ef5f",
+      "8de22631-4d6d-43be-a2e5-61bc2cc00ff1",
+      "84d03f97-9bd6-43d2-869d-28de0228af2e",
+      "f799b2bd-03e7-4a05-8e7b-f4729198069d",
+      "0ecb82fb-a9ef-4213-88dd-c802cd296a9d"
+    ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
+    "color": "#FFFFFF",
+    "description": "Pastel Closet September 2025 Information Also Known As Pasclo (パスクロ) Origin Tokyo , Japan Genre J-Pop Years 2025-Present Label UP DANCE ENTERTAINMENT Agency imaginate Associated Acts Jams Collection HEROINES Tokyo Idol Festival 2025 Current Members Shinohara Sakura (2025-Present) Yukino Reia (2025-Present) Nishina Mitsu (2025-Present) Sumihara Kaho (2025-Present) Hinaki Nonoka (2025-Present) Hanaki Maika (2025-Present) Anzai Minori (2025-Present) Kanno Ai (2025-Present) Producer UP DANCE ENTERTA",
+    "formed_date": "2025-07-27",
+    "popularity": null,
+    "fans": null,
+    "songs": [],
+    "song_uids": [],
+    "union": null,
+    "union_uid": null,
+    "agencies": [
+      "imaginate"
+    ],
+    "agency_uids": [],
+    "pictures": [
+      "picture/Pastel_Closet_icon.webp",
+      "picture/Pastel_Closet_photo.webp",
+      "picture/Pastel_Closet_logo.webp",
+      "picture/Pastel_Closet_photo_2.webp",
+      "picture/Pastel_Closet_photo_3.webp",
+      "picture/Pastel_Closet_photo_4.webp"
+    ],
+    "discography": [
+      {
+        "uid": "c76dc253-9b7f-4fa9-aedb-b5e9497338c4",
+        "title": "Pastel Note",
+        "title_romanji": "",
+        "disc_type": "Album",
+        "release_date": "2025-12-24",
+        "publisher": null,
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "track_song_uids": [],
+        "duration": null,
+        "cover_image_path": null
+      }
+    ],
+    "disc_uids": [
+      "c76dc253-9b7f-4fa9-aedb-b5e9497338c4"
+    ],
+    "wiki_url": "https://jpop.fandom.com/wiki/Pastel_Closet"
+  },
+  {
+    "uid": "TU9CSVVT",
+    "name": "MOBIUS",
+    "name_romanji": "MOBIUS",
+    "debut_date": "2019-04-01",
+    "disband_date": "2020-02-01",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES founding-era group; disbanded 2020-02."
+  },
+  {
+    "uid": "5aaE5oSb44Kw44Op44OT44OG44Kj",
+    "name": "妄愛グラビティ",
+    "name_romanji": "Mouai Gravity",
+    "debut_date": "2019-04-01",
+    "disband_date": "2020-03-01",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES founding-era group; disbanded 2020-03."
+  },
+  {
+    "uid": "6bW6",
+    "name": "鵺",
+    "name_romanji": "Nue",
+    "debut_date": "2018-10-01",
+    "disband_date": "2020-07-01",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES founding-era group; disbanded 2020-07."
+  },
+  {
+    "uid": "aUxpRkUh5YCZ6KOc55Sf",
+    "name": "iLiFE!候補生",
+    "name_romanji": "iLiFE! Kouhosei",
+    "debut_date": "2024-05-01",
+    "disband_date": "2024-10-28",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "iLiFE! trainee unit; activity ended 2024-10-28. Songs later inherited by iON!."
+  },
+  {
+    "uid": "Tm93U3RvcmFnZQ",
+    "name": "なう♡すとれーじ",
+    "name_romanji": "Now Storage",
+    "debut_date": "2026-07-01",
+    "disband_date": null,
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES group; debuted 2026-07 (produced by 美鈴りか)."
   }
 ]

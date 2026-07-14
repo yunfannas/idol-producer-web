@@ -12096,102 +12096,6 @@
     "disc_uid": null
   },
   {
-    "uid": "5b4d1ccf-1cfa-4f16-800e-a705b6a4eb19",
-    "title": "我らポンコツコンポ",
-    "title_romanji": "Warera Ponkotsu Konpo",
-    "disc_type": "Album",
-    "release_date": "2021-12-25",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
-    "group_name": "ポンコツコンポ",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "9cccd70e-c92e-4323-90de-899eb3d7fe58",
-    "title": "ポンコツコンポの『ポ』",
-    "title_romanji": "Ponkotsu Konpo no \"Po\"",
-    "disc_type": "Album",
-    "release_date": "2024-07-01",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
-    "group_name": "ポンコツコンポ",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "7d59660c-a512-4262-a01e-82ffc389be68",
-    "title": "トンコツコント",
-    "title_romanji": "Tonkotsu Konto",
-    "disc_type": "Album",
-    "release_date": "2025-08-22",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
-    "group_name": "ポンコツコンポ",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "570e8dbe-c47d-4af8-80da-7220588c1fdd",
-    "title": "ユビキリ～この先も一緒に歩んで行こうね～",
-    "title_romanji": "Ubiquity ~Konosaki mo Issho ni Ayunde Ikou ne~",
-    "disc_type": "Album",
-    "release_date": "2020-01-14",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
-    "group_name": "ポンコツコンポ",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
     "uid": "412f27e9-5fb8-482f-94e5-eb89b7327570",
     "title": "S.E.A",
     "title_romanji": "S.E.A",
@@ -32750,30 +32654,6 @@
     "cover_image_path": null,
     "group_uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
     "group_name": "ほくりくアイドル部",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "a159bb73-e9d8-476b-ac16-7441d0a2424c",
-    "title": "ZUTTOMOTTO",
-    "title_romanji": "ZUTTOMOTTO",
-    "disc_type": "Album",
-    "release_date": "2025-02-28",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "WlVUVE9NT1RUTw",
-    "group_name": "ZUTTOMOTTO",
     "albums": [
       {
         "disc_uid": null,
@@ -65952,54 +65832,6 @@
     "disc_uid": null
   },
   {
-    "uid": "c84cbb62-6939-4abf-865d-5781cd4f25d6",
-    "title": "Adam",
-    "title_romanji": "Adam",
-    "disc_type": "Album",
-    "release_date": "2024-09-20",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "QWRhbUxpbGl0aA",
-    "group_name": "AdamLilith",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "090594c9-fb91-48c6-b8c7-50cbb581a205",
-    "title": "Lilith",
-    "title_romanji": "Lilith",
-    "disc_type": "Album",
-    "release_date": "2025-10-07",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "QWRhbUxpbGl0aA",
-    "group_name": "AdamLilith",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
     "uid": "833e5f77-6dfb-4a1e-9dcf-8e520a24e9e7",
     "title": "Twinning Fate",
     "title_romanji": "Twinning Fate",
@@ -82200,54 +82032,6 @@
     "disc_uid": null
   },
   {
-    "uid": "0020b5e2-ee3d-40d7-9696-ea513d252915",
-    "title": "最カワぽっぴんプリンセス",
-    "title_romanji": "Sai Kawa Popping Princess",
-    "disc_type": "Album",
-    "release_date": "2025-04-10",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
-    "group_name": "ドレスコード",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "8c5c4ec9-89ff-4f21-a385-595b3bc988f1",
-    "title": "GAGA CIRCUS",
-    "title_romanji": "GAGA CIRCUS",
-    "disc_type": "Album",
-    "release_date": "2023-12-01",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
-    "group_name": "ガガピエロ",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
     "uid": "d5f9fea1-1970-40ab-9000-e5c1b2feea79",
     "title": "ON!START",
     "title_romanji": "ON!START",
@@ -82310,78 +82094,6 @@
     "cover_image_path": null,
     "group_uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
     "group_name": "iOn!",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "05e46c58-9f4c-4280-9270-86d7ea5cbfcb",
-    "title": "ファースト JAPAN ワンマンライブ~世界のルールを変えちゃおう~",
-    "title_romanji": "First JAPAN One Man Live ~Sekai no Rules wo Kaechou~",
-    "disc_type": "CD",
-    "release_date": "2016-09-14",
-    "publisher": "Clearstone Records",
-    "publisher_uid": "1d26cdc8-0f23-4da3-bf1b-4f91c0ac0cd3",
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
-    "group_name": "レディベイビー",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "d0bb8a48-dddf-462e-ba6a-2cdd2a65ab2c",
-    "title": "透明飯TOUR2019 FINAL in SHIBUYA CLUB QUATTRO",
-    "title_romanji": "Toumei Han TOUR2019 FINAL in SHIBUYA CLUB QUATTRO",
-    "disc_type": "CD",
-    "release_date": "2019-07-27",
-    "publisher": "Raimei RECORDS",
-    "publisher_uid": "a5ee6454-5141-43e5-9290-39dae6546d18",
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
-    "group_name": "レディベイビー",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "4f435004-bf1a-4a68-a667-52e7b0265fb9",
-    "title": "2020.1.13 The LASTLIVE at Liquidroom",
-    "title_romanji": "2020.1.13 The LASTLIVE at Liquidroom",
-    "disc_type": "CD",
-    "release_date": "2020-08-15",
-    "publisher": "Raimei RECORDS",
-    "publisher_uid": "a5ee6454-5141-43e5-9290-39dae6546d18",
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
-    "group_name": "レディベイビー",
     "albums": [
       {
         "disc_uid": null,
@@ -86846,78 +86558,6 @@
     "cover_image_path": null,
     "group_uid": "T05FUElYQ0VM",
     "group_name": "ONEPIXCEL",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "9dd0af5a-f2c2-4fd7-858b-792779c63dd4",
-    "title": "天真",
-    "title_romanji": "Tenshin",
-    "disc_type": "Mini Album",
-    "release_date": "2025-05-16",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
-    "group_name": "テンシンランマン",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
-    "title": "爛漫",
-    "title_romanji": "Ranman",
-    "disc_type": "Single",
-    "release_date": "2025-05-23",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
-    "group_name": "テンシンランマン",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
-    "uid": "acea2407-4397-48e4-be16-cfed832b85e4",
-    "title": "恋のそら模様)-Misono Sorasolo",
-    "title_romanji": "Koi no Sora Moyou",
-    "disc_type": "Single",
-    "release_date": "2025-12-25",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
-    "group_name": "テンシンランマン",
     "albums": [
       {
         "disc_uid": null,
@@ -522548,5 +522188,835 @@
     "_apple_track_ids": [
       1745148563
     ]
+  },
+  {
+    "uid": "0b84f3bd-ae57-4dd4-9f41-1b2d7e643101",
+    "group_uid": "44Op44K544OI44K344O844Oz",
+    "group_name": "ラストシーン",
+    "title": "光の花",
+    "title_romanji": "Hikari no Hana",
+    "release_date": null,
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "Unreleased song listed on the group Fandom page.",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": "last-scene-unreleased",
+        "name": "Unreleased Songs",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": "last-scene-unreleased",
+    "popularity": 1.5,
+    "signature_song": false,
+    "popularity_local": 1.5,
+    "popularity_global": null,
+    "source_confidence": "fandom_group_discography",
+    "notes": "Listed under LAST SCENE (HEROINES) unreleased songs on Jpop Wiki / Fandom as of 2026-07-13."
+  },
+  {
+    "uid": "87d6b2d4-0d1e-45a6-9380-6f7c2b643102",
+    "group_uid": "44Op44K544OI44K344O844Oz",
+    "group_name": "ラストシーン",
+    "title": "トゥルーエンド",
+    "title_romanji": "True End",
+    "release_date": null,
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "Unreleased song listed on the group Fandom page.",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": "last-scene-unreleased",
+        "name": "Unreleased Songs",
+        "track_number": 2
+      }
+    ],
+    "version": "",
+    "disc_uid": "last-scene-unreleased",
+    "popularity": 1.5,
+    "signature_song": false,
+    "popularity_local": 1.5,
+    "popularity_global": null,
+    "source_confidence": "fandom_group_discography",
+    "notes": "Listed under LAST SCENE (HEROINES) unreleased songs on Jpop Wiki / Fandom as of 2026-07-13."
+  },
+  {
+    "uid": "d5538256-f8fd-4333-95b8-d2db7071975e",
+    "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805",
+    "group_name": "ヒロインズ研究生",
+    "title": "星屑シンドローム",
+    "title_romanji": "Hoshikuzu Syndrome",
+    "release_date": null,
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "Original song mentioned on the Jpop Wiki group page without an official release.",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": "hiroken-unreleased",
+        "name": "Unreleased Songs",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": "hiroken-unreleased",
+    "popularity": 1.5,
+    "signature_song": false,
+    "popularity_local": 1.5,
+    "popularity_global": null,
+    "source_confidence": "fandom_group_trivia",
+    "notes": "Mentioned as an original song with no official release on Jpop Wiki as of 2026-07-13."
+  },
+  {
+    "uid": "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
+    "title": "ホシツナギ",
+    "title_romanji": "Hoshi Tsunagi",
+    "disc_type": "Album",
+    "release_date": "2025-07-12",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "aS1DT0w",
+    "group_name": "i-COL",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "d54b674d-b288-47c4-abd4-4c735e384e49",
+    "title": "Re-COiL",
+    "title_romanji": "Re-COiL",
+    "disc_type": "Single",
+    "release_date": "2026-02-02",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "aS1DT0w",
+    "group_name": "i-COL",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "c5f4d5d4-ec0e-4b15-9325-4709c039c0fd",
+    "title": "パラリラダンス",
+    "title_romanji": "Pararira Dance",
+    "disc_type": "Single",
+    "release_date": null,
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "aS1DT0w",
+    "group_name": "i-COL",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+    "title": "きゅんとしちゃってはなれない",
+    "title_romanji": "Kyun to Shichatte wa Hanarenai",
+    "disc_type": "Digital Single",
+    "release_date": "2025-12-26",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+    "group_name": "ドレスコード",
+    "albums": [
+      {
+        "disc_uid": "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+        "name": "きゅんとしちゃってはなれない",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+    "popularity": null
+  },
+  {
+    "uid": "6440e2e6-96ea-5363-9185-f51041b1b9b0",
+    "title": "告白マクロナージュ",
+    "title_romanji": "Kokuhaku Macronage",
+    "disc_type": "Digital Single",
+    "release_date": "2026-02-14",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+    "group_name": "ドレスコード",
+    "albums": [
+      {
+        "disc_uid": "6440e2e6-96ea-5363-9185-f51041b1b9b0",
+        "name": "告白マクロナージュ",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "6440e2e6-96ea-5363-9185-f51041b1b9b0",
+    "popularity": null
+  },
+  {
+    "uid": "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+    "title": "筋肉ボディで僕人気",
+    "title_romanji": "Kinniku Body de Boku Ninki",
+    "disc_type": "Digital Single",
+    "release_date": "2025-01-15",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+    "group_name": "ポンコツコンポ",
+    "albums": [
+      {
+        "disc_uid": "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+        "name": "筋肉ボディで僕人気",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+    "popularity": null
+  },
+  {
+    "uid": "7164a11c-d560-5db8-b515-86edd0d8b280",
+    "title": "軽いノリのイルカ",
+    "title_romanji": "Karui Nori no Iruka",
+    "disc_type": "Digital Single",
+    "release_date": "2025-01-24",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+    "group_name": "ポンコツコンポ",
+    "albums": [
+      {
+        "disc_uid": "7164a11c-d560-5db8-b515-86edd0d8b280",
+        "name": "軽いノリのイルカ",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "7164a11c-d560-5db8-b515-86edd0d8b280",
+    "popularity": null
+  },
+  {
+    "uid": "863220ef-07d9-563e-a5a5-4b136b9a4948",
+    "title": "ラブコブラ",
+    "title_romanji": "Love Cobra",
+    "disc_type": "Digital Single",
+    "release_date": "2026-02-27",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+    "group_name": "ポンコツコンポ",
+    "albums": [
+      {
+        "disc_uid": "863220ef-07d9-563e-a5a5-4b136b9a4948",
+        "name": "ラブコブラ",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "863220ef-07d9-563e-a5a5-4b136b9a4948",
+    "popularity": null
+  },
+  {
+    "uid": "005c431b-30b2-592b-a08e-320563b47e88",
+    "title": "Hidden to ”Eden” / FAKEOUT",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2026-06-27",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "QWRhbUxpbGl0aA",
+    "group_name": "AdamLilith",
+    "albums": [
+      {
+        "disc_uid": "005c431b-30b2-592b-a08e-320563b47e88",
+        "name": "Hidden to ”Eden” / FAKEOUT",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "005c431b-30b2-592b-a08e-320563b47e88",
+    "popularity": null
+  },
+  {
+    "uid": "27d06c43-17e9-4f50-884b-343794244bae",
+    "title": "ニッポン饅頭",
+    "title_romanji": "Nippon Manju",
+    "disc_type": "Single",
+    "release_date": "2015-07-29",
+    "publisher": "Clearstone Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/ニッポン饅頭_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "27d06c43-17e9-4f50-884b-343794244bae",
+        "name": "ニッポン饅頭",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "27d06c43-17e9-4f50-884b-343794244bae",
+    "popularity": null
+  },
+  {
+    "uid": "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
+    "title": "アゲアゲマネー ～おちんぎん大作戦～",
+    "title_romanji": "Ageage MONEY ～Ochingin Daisakusen～",
+    "disc_type": "Single",
+    "release_date": "2016-01-13",
+    "publisher": "Clearstone Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/アゲアゲマネー_～おちんぎん大作戦～_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
+        "name": "アゲアゲマネー ～おちんぎん大作戦～",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
+    "popularity": null
+  },
+  {
+    "uid": "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
+    "title": "蓮華チャンス！ / セシボン・キブン",
+    "title_romanji": "Renge CHANCE! / C'est Si Bon Kibun",
+    "disc_type": "Single",
+    "release_date": "2016-04-13",
+    "publisher": "Clearstone Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/蓮華チャンス！___セシボン・キブン_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
+        "name": "蓮華チャンス！ / セシボン・キブン",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
+    "popularity": null
+  },
+  {
+    "uid": "e14c03e8-731f-45db-9d5d-852beb0c719c",
+    "title": "少年勇者団",
+    "title_romanji": "Shounen Yuusha-dan",
+    "disc_type": "Single",
+    "release_date": "2016-06-23",
+    "publisher": "Clearstone Records",
+    "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "e14c03e8-731f-45db-9d5d-852beb0c719c",
+        "name": "少年勇者団",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "e14c03e8-731f-45db-9d5d-852beb0c719c",
+    "popularity": null
+  },
+  {
+    "uid": "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+    "title": "参拝! 御朱印girl☆",
+    "title_romanji": "Sanpai! Goshuin girl☆",
+    "disc_type": "Single",
+    "release_date": "2016-11-30",
+    "publisher": "King Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/参拝!_御朱印girl☆)(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+        "name": "参拝! 御朱印girl☆",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+    "popularity": null
+  },
+  {
+    "uid": "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+    "title": "Pelo",
+    "title_romanji": "",
+    "disc_type": "Single",
+    "release_date": "2017-04-12",
+    "publisher": "King Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/Pelo(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+        "name": "Pelo",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+    "popularity": null
+  },
+  {
+    "uid": "feada45d-734d-4092-b46a-4d6a8734e6b1",
+    "title": "Pinky! Pinky!",
+    "title_romanji": "",
+    "disc_type": "Single",
+    "release_date": "2017-09-27",
+    "publisher": "King Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/Pinky!_Pinky!(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "feada45d-734d-4092-b46a-4d6a8734e6b1",
+        "name": "Pinky! Pinky!",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "feada45d-734d-4092-b46a-4d6a8734e6b1",
+    "popularity": null
+  },
+  {
+    "uid": "e7601970-57ad-44c9-a997-82587bebafb6",
+    "title": "渋谷 CROSSING",
+    "title_romanji": "Shibuya CROSSING",
+    "disc_type": "Digital Single",
+    "release_date": "2017-10-10",
+    "publisher": "King Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [
+      "Shibuya CROSSING (渋谷 CROSSING)"
+    ],
+    "duration": null,
+    "cover_image_path": "picture/渋谷_CROSSING)(AsThe_Idol_formerly_known_as_LADYBABY_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "e7601970-57ad-44c9-a997-82587bebafb6",
+        "name": "渋谷 CROSSING",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "e7601970-57ad-44c9-a997-82587bebafb6",
+    "popularity": null
+  },
+  {
+    "uid": "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
+    "title": "ホシノナイソラ",
+    "title_romanji": "Hoshi no Nai Sora",
+    "disc_type": "Single",
+    "release_date": "2018-05-30",
+    "publisher": "King Records",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/ホシノナイソラ_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
+        "name": "ホシノナイソラ",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
+    "popularity": null
+  },
+  {
+    "uid": "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
+    "title": "ダメダメ殿",
+    "title_romanji": "Dame Dame Tono",
+    "disc_type": "Single",
+    "release_date": "2018-10-10",
+    "publisher": "LDBB",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": "picture/ダメダメ殿_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
+        "name": "ダメダメ殿",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
+    "popularity": null
+  },
+  {
+    "uid": "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+    "title": "Riot Anthem",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2019-03-08",
+    "publisher": "Clearstone",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [
+      "Riot Anthem"
+    ],
+    "duration": null,
+    "cover_image_path": "picture/Riot_Anthem(Lyric_Book_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+        "name": "Riot Anthem",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+    "popularity": null
+  },
+  {
+    "uid": "8c7142ac-7cb6-41de-840f-374c54280297",
+    "title": "破天ニ雷鳴",
+    "title_romanji": "Haten ni Raimei",
+    "disc_type": "Single",
+    "release_date": "2019-05-28",
+    "publisher": "RAIMEI RECORDS",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [
+      "Haten ni Raimei (破天ニ雷鳴; Thunderstorm )",
+      "God’s Not",
+      "LB4 Future"
+    ],
+    "duration": null,
+    "cover_image_path": "picture/破天ニ雷鳴_cover.webp",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "8c7142ac-7cb6-41de-840f-374c54280297",
+        "name": "破天ニ雷鳴",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "8c7142ac-7cb6-41de-840f-374c54280297",
+    "popularity": null
+  },
+  {
+    "uid": "0f99fd99-62d4-4f9a-9b77-af86d637062e",
+    "title": "ダルマカルマ",
+    "title_romanji": "Dharma Karma",
+    "disc_type": "Digital Single",
+    "release_date": "2024-05-12",
+    "publisher": "Clearstone Records",
+    "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "0f99fd99-62d4-4f9a-9b77-af86d637062e",
+        "name": "ダルマカルマ",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "0f99fd99-62d4-4f9a-9b77-af86d637062e",
+    "popularity": null
+  },
+  {
+    "uid": "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
+    "title": "ジャパサマ",
+    "title_romanji": "Japasummer",
+    "disc_type": "Digital Single",
+    "release_date": "2024-08-04",
+    "publisher": "Clearstone Records",
+    "publisher_uid": "4ea89ff6-8fa3-45d8-a08e-46b2844365ea",
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
+        "name": "ジャパサマ",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
+    "popularity": null
+  },
+  {
+    "uid": "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+    "title": "April Fish -TRUTH to BABY FISH-",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2025-04-01",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+        "name": "April Fish -TRUTH to BABY FISH-",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+    "popularity": null
+  },
+  {
+    "uid": "c2810dfc-bfa9-5291-b694-7739252782c5",
+    "title": "メロメロメロイック",
+    "title_romanji": "Melo Melo Meloic",
+    "disc_type": "Digital Single",
+    "release_date": "2025-12-12",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "c2810dfc-bfa9-5291-b694-7739252782c5",
+        "name": "メロメロメロイック",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "c2810dfc-bfa9-5291-b694-7739252782c5",
+    "popularity": null
+  },
+  {
+    "uid": "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+    "title": "Real eyes realize real lies",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2026-02-28",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+        "name": "Real eyes realize real lies",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+    "popularity": null
+  },
+  {
+    "uid": "2e360572-a078-52c4-9493-4885383769ac",
+    "title": "花一匁",
+    "title_romanji": "Hana Ichi Monme",
+    "disc_type": "Digital Single",
+    "release_date": "2026-05-18",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "2e360572-a078-52c4-9493-4885383769ac",
+        "name": "花一匁",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "2e360572-a078-52c4-9493-4885383769ac",
+    "popularity": null
+  },
+  {
+    "uid": "e90bad43-aaca-50f5-a58e-7befd2cc8cf2",
+    "title": "KILLER KILLER IDOL",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2026-06-30",
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "albums": [
+      {
+        "disc_uid": "e90bad43-aaca-50f5-a58e-7befd2cc8cf2",
+        "name": "KILLER KILLER IDOL",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "e90bad43-aaca-50f5-a58e-7befd2cc8cf2",
+    "popularity": null
+  },
+  {
+    "uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
+    "title": "爛漫",
+    "title_romanji": "Ranman",
+    "disc_type": "Digital Single",
+    "release_date": "2025-05-23",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [
+      "どえりゃNagoya!! (Doerya Nagoya!!)",
+      "ハッピーストレージ (Happy Storage)",
+      "Cinder"
+    ],
+    "duration": null,
+    "cover_image_path": "picture/爛漫_cover.webp",
+    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+    "group_name": "テンシンランマン",
+    "albums": [
+      {
+        "disc_uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
+        "name": "爛漫",
+        "track_number": null
+      }
+    ],
+    "disc_uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
+    "popularity": null
   }
 ]

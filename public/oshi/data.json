@@ -1,0 +1,3161 @@
+{
+  "title": "HEROINES 推しチャート",
+  "subtitle": "各グループの推しメン＆推し曲を選ぼう",
+  "generated_at": "2026-07-13T22:18:01",
+  "groups": [
+    {
+      "name": "iLiFE!",
+      "name_romanji": "iLiFE!",
+      "uid": "aUxpRkUh",
+      "logo_url": "../data/pictures/groups/iLiFE_icon.webp",
+      "members": [
+        {
+          "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+          "name": "心花りり",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%BF%83%E8%8A%B1%E3%82%8A%E3%82%8A_portrait.jpg"
+        },
+        {
+          "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
+          "name": "あいす",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E3%81%82%E3%81%84%E3%81%99__iLiFE%21_portrait.jpg"
+        },
+        {
+          "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
+          "name": "福丸うさ",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%A6%8F%E4%B8%B8%E3%81%86%E3%81%95_portrait.jpg"
+        },
+        {
+          "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
+          "name": "若葉のあ",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E8%8B%A5%E8%91%89%E3%81%AE%E3%81%82_portrait.jpg"
+        },
+        {
+          "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
+          "name": "空詩かれん",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E7%A9%BA%E8%A9%A9%E3%81%8B%E3%82%8C%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
+          "name": "虹羽みに",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E8%99%B9%E7%BE%BD%E3%81%BF%E3%81%AB_portrait.jpg"
+        },
+        {
+          "uid": "9871efc4-1501-41eb-a430-94fd34bf4015",
+          "name": "純嶺みき",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E7%B4%94%E5%B6%BA%E3%81%BF%E3%81%8D_portrait.jpg"
+        },
+        {
+          "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
+          "name": "小熊まむ",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E7%86%8A%E3%81%BE%E3%82%80_portrait.jpg"
+        },
+        {
+          "uid": "ca3b04ec-97f5-4bcf-a0d6-677a0cf53f4b",
+          "name": "真守みゅう",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E7%9C%9F%E5%AE%88%E3%81%BF%E3%82%85%E3%81%86_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "49155c0f-a033-4ddb-b074-24418eb35ddb",
+          "title": "BRAVE GROOVE",
+          "popularity": 4.5
+        },
+        {
+          "uid": "e9e8658b-3520-4fa7-adf9-7bb323570736",
+          "title": "くりてぃかる♡ぷりちー",
+          "popularity": 4.5
+        },
+        {
+          "uid": "c6715452-cdcb-4e2e-a81c-4d5f47bbdc72",
+          "title": "アイドルライフスターターパック",
+          "popularity": 4.5
+        },
+        {
+          "uid": "485ad780-e10a-46bc-851d-890863a09e8e",
+          "title": "メロメラ",
+          "popularity": 4.5
+        },
+        {
+          "uid": "67b9f1d0-d254-4e11-9885-8f6a0bd3cb33",
+          "title": "会いにKiTE!(2025ver.)",
+          "popularity": 4.5
+        },
+        {
+          "uid": "ebd4f6c5-d331-479b-a76d-191dd698b037",
+          "title": "君セン!",
+          "popularity": 4.5
+        },
+        {
+          "uid": "9e1194d4-f672-48ac-a550-0a2977e34c5b",
+          "title": "#ラブコード",
+          "popularity": 4
+        },
+        {
+          "uid": "9ea93c03-7447-4ab7-91f5-5a4723d76757",
+          "title": "sweet timer",
+          "popularity": 4
+        },
+        {
+          "uid": "24259d73-297e-4392-9d16-778ed9ca739b",
+          "title": "ころころガール",
+          "popularity": 4
+        },
+        {
+          "uid": "e1cffbd9-bc1d-41c5-95ae-74ec77a2d9b6",
+          "title": "アイドルライフエクストラパック",
+          "popularity": 4
+        },
+        {
+          "uid": "c385c5c9-1e0c-40ae-b8bb-31626d95c87a",
+          "title": "ガンバッテンダー",
+          "popularity": 4
+        },
+        {
+          "uid": "41a496b7-fa28-4191-8359-67bc5e23dd7c",
+          "title": "キスハグ侵略者!",
+          "popularity": 4
+        },
+        {
+          "uid": "0614b55f-3092-4e61-882b-17171d3e4d6c",
+          "title": "キュンとクラフト",
+          "popularity": 4
+        },
+        {
+          "uid": "3757b1e7-49d8-4989-bfe3-13f1a3ee3617",
+          "title": "サイクロンライフ",
+          "popularity": 4
+        },
+        {
+          "uid": "99e8670f-e25a-4f9d-9cad-65afb2362ab6",
+          "title": "ユメクライミング",
+          "popularity": 4
+        },
+        {
+          "uid": "94b48bf0-5aef-43bc-95a1-ba195da21c20",
+          "title": "会いにKiTE! (2026 support ver.)",
+          "popularity": 4
+        },
+        {
+          "uid": "f49f3aaf-0665-4b3e-ba1f-7bfa97b710bd",
+          "title": "初恋リバイバル",
+          "popularity": 4
+        },
+        {
+          "uid": "65553d74-822a-4b4b-9519-74049a12d686",
+          "title": "Dokkoi!ロマンティック",
+          "popularity": 3.5
+        },
+        {
+          "uid": "04317233-10d9-4898-89bb-c23208a0f72d",
+          "title": "HUNGRY!!!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "d6d12614-c30d-487f-b85b-1e01a5f75917",
+          "title": "LOML",
+          "popularity": 3.5
+        },
+        {
+          "uid": "63001882-6275-47b5-abc1-3e46f9fed287",
+          "title": "のびしろグリッター",
+          "popularity": 3.5
+        },
+        {
+          "uid": "7eeee327-67e4-41a0-929c-b053737ac31a",
+          "title": "むげんだいすき",
+          "popularity": 3.5
+        },
+        {
+          "uid": "3d50def7-8cae-49cf-af54-61b821d49ca2",
+          "title": "アイドルライフブースターパック",
+          "popularity": 3.5
+        },
+        {
+          "uid": "025c7e58-77e8-45cf-adc6-e506a1b7606b",
+          "title": "ナイナイ恋煩い♡",
+          "popularity": 3.5
+        },
+        {
+          "uid": "77455140-32f5-4836-b4fe-47a2b905140a",
+          "title": "ヒラリラリア",
+          "popularity": 3.5
+        },
+        {
+          "uid": "1f0478b2-4580-4f4f-b7a2-824f5ced8885",
+          "title": "メッセージ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "0644e63e-406a-4141-b1ef-80b192409cac",
+          "title": "ライフステージ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "1b13efcb-25a2-46c1-9c66-2c980234ab3d",
+          "title": "会いにKiTE!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "245a2fe6-1bc6-4193-980a-9ed35dd7495d",
+          "title": "完全勝利Love&Good!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "853a7ee5-6c3c-493c-92ed-786e6c2d0313",
+          "title": "星色トラベラー",
+          "popularity": 3.5
+        },
+        {
+          "uid": "8bca7b95-3512-4994-81f3-baed8e4c5158",
+          "title": "青春のパズルは埋まらない",
+          "popularity": 3.5
+        },
+        {
+          "uid": "55191238-b677-4582-993e-67c55b7109cb",
+          "title": "Hands Up!",
+          "popularity": 3
+        },
+        {
+          "uid": "6c2dbca9-43a8-4ab0-a5c1-c2cd3b688671",
+          "title": "Quest×Quest",
+          "popularity": 3
+        },
+        {
+          "uid": "0f8e1b82-65c3-4ef7-8a97-19e862270898",
+          "title": "Sleeping face",
+          "popularity": 3
+        },
+        {
+          "uid": "5a275843-954b-4b32-8d91-9bf66ccfd2a9",
+          "title": "To be alive(空詩かれんソロ曲)",
+          "popularity": 3
+        },
+        {
+          "uid": "ea1aaa35-0767-4363-acf5-0de9cde4a134",
+          "title": "i (あいすソロ曲)",
+          "popularity": 3
+        },
+        {
+          "uid": "52797fc1-a4c2-4a28-b3e3-c203ee671a6d",
+          "title": "sweet timer (空詩かれん solo ver.)",
+          "popularity": 3
+        },
+        {
+          "uid": "f8459938-3db5-4d27-8a98-291b0f8e2b59",
+          "title": "かわいくてあいらびゅー(福丸うさソロ曲)",
+          "popularity": 3
+        },
+        {
+          "uid": "f9a8dc71-560b-48fd-8c74-c819f4587a32",
+          "title": "みんなのあいす屋さん (あいすソロ曲)",
+          "popularity": 3
+        },
+        {
+          "uid": "330e8a57-ed24-41f0-b0cf-0eb7efedbaaa",
+          "title": "らぶりー属性♡(心花りりソロ曲)",
+          "popularity": 3
+        }
+      ]
+    },
+    {
+      "name": "夜光性アミューズ",
+      "name_romanji": "Yakousei Amuse",
+      "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+      "logo_url": "../data/pictures/groups/Yakousei_Amuse_icon.webp",
+      "members": [
+        {
+          "uid": "5bb7fcec-1731-4dae-b801-b45dc32afa4c",
+          "name": "みぽたぽた",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E3%81%BF%E3%81%BD%E3%81%9F%E3%81%BD%E3%81%9F_portrait.jpg"
+        },
+        {
+          "uid": "5b65a555-8b8d-4f69-aeed-06457bd8e84b",
+          "name": "白空こあい",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%A9%BA%E3%81%93%E3%81%82%E3%81%84_portrait.jpg"
+        },
+        {
+          "uid": "4010e0a9-7ce9-43c2-9cea-bb0d2ff86bfe",
+          "name": "ふてこ",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E3%81%B5%E3%81%A6%E3%81%93_portrait.jpg"
+        },
+        {
+          "uid": "36d45eea-61d7-4eef-9441-2116d7df5e52",
+          "name": "炎谷莉奈",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E7%82%8E%E8%B0%B7%E8%8E%89%E5%A5%88_portrait.jpg"
+        },
+        {
+          "uid": "adce67a7-bf82-4231-a567-d48390174962",
+          "name": "水萌しゅる",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B4%E8%90%8C%E3%81%97%E3%82%85%E3%82%8B_portrait.jpg"
+        },
+        {
+          "uid": "4143870f-ecdf-4754-ac53-0c542f404e72",
+          "name": "琴音ふりる",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%90%B4%E9%9F%B3%E3%81%B5%E3%82%8A%E3%82%8B_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "66e0442d-b6a1-4f8d-bba2-0885b51d8044",
+          "title": "まっしぐら恋心",
+          "popularity": 4
+        },
+        {
+          "uid": "b74356f1-2abf-4047-90fa-2477831e352b",
+          "title": "らぶめろでぃ",
+          "popularity": 4
+        },
+        {
+          "uid": "0c9efdca-e53f-4a05-b06a-fb5d2d290a94",
+          "title": "夜光性イントロデュース",
+          "popularity": 4
+        },
+        {
+          "uid": "e73a14a9-ee28-472d-b00d-cbdf24198897",
+          "title": "極彩色パレード",
+          "popularity": 4
+        },
+        {
+          "uid": "90bde5e4-1a3a-47b0-8b14-621f179e533f",
+          "title": "DENPA DANCE",
+          "popularity": 3.5
+        },
+        {
+          "uid": "dff53bb6-624b-4c63-8c3c-0bae207983d7",
+          "title": "エキゾチックテレパシー",
+          "popularity": 3.5
+        },
+        {
+          "uid": "84656c08-a65c-4691-8478-2617cf4f5b7a",
+          "title": "キュンタヒー",
+          "popularity": 3.5
+        },
+        {
+          "uid": "9a6306ba-607f-46e7-a149-45f14739519a",
+          "title": "スターリーナイト・ダンス",
+          "popularity": 3.5
+        },
+        {
+          "uid": "3b2ee3c6-c0fd-409f-aff7-c600f44bca33",
+          "title": "ハイシャウトダウナー",
+          "popularity": 3.5
+        },
+        {
+          "uid": "572f8bc4-6b34-4f5f-90c6-7d7c3a20451e",
+          "title": "ヘッドライナーガール",
+          "popularity": 3.5
+        },
+        {
+          "uid": "f2dd022a-3e25-4a86-8077-d4adebaf3d01",
+          "title": "HappyNight,HappyLand",
+          "popularity": 3
+        },
+        {
+          "uid": "693fdae1-05f0-4e97-89f6-434f34d86fa4",
+          "title": "N.P.C",
+          "popularity": 3
+        },
+        {
+          "uid": "36599ed9-0142-43c6-bd20-1f011adcef1e",
+          "title": "S.I.G",
+          "popularity": 3
+        },
+        {
+          "uid": "80006f7c-2a3e-4539-a19c-7a504aa0a4b6",
+          "title": "えっと干支がーる",
+          "popularity": 3
+        },
+        {
+          "uid": "07b6dd71-f0fb-45f2-8cd8-0f206b637007",
+          "title": "じぇらしーく・ぱーく",
+          "popularity": 3
+        },
+        {
+          "uid": "b4cc8da8-641b-4aab-b7ec-57afc817f668",
+          "title": "もしかして探し",
+          "popularity": 3
+        },
+        {
+          "uid": "abc53aef-d50a-4891-bd95-2a74695a811b",
+          "title": "ショーパレジャンキー",
+          "popularity": 3
+        },
+        {
+          "uid": "01466147-320c-4ba5-8579-b2fc1a01899a",
+          "title": "デジタルタトゥー (2025 Remix)",
+          "popularity": 3
+        },
+        {
+          "uid": "bd92ec13-05be-4dbb-9d3e-04998860ff21",
+          "title": "トワイライトアドベンチャー",
+          "popularity": 3
+        },
+        {
+          "uid": "29df5be7-abbe-45ba-a78a-9878da43a01c",
+          "title": "ファンシーポップコーン",
+          "popularity": 3
+        },
+        {
+          "uid": "d444e4fd-4d24-4dc4-ba2a-ebc82df6a9b0",
+          "title": "可惜夜プラネット",
+          "popularity": 3
+        },
+        {
+          "uid": "045ec258-9ca2-4eb7-a701-4e480a80cec8",
+          "title": "宵闇エクスプレス",
+          "popularity": 3
+        },
+        {
+          "uid": "be44c8ce-14d3-450c-b6c1-f8f820ca0c98",
+          "title": "溺愛失調症",
+          "popularity": 3
+        },
+        {
+          "uid": "9e6dced0-3a3d-4027-b2ab-31049bb8e69e",
+          "title": "CALL MY NAME",
+          "popularity": 2.5
+        },
+        {
+          "uid": "b4a7dfbf-5431-42b0-b3b6-c41496bbd4a8",
+          "title": "あとらくちょん!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "460bc3ce-8ed4-470f-b64f-b97b8bea0967",
+          "title": "はにトラ!?",
+          "popularity": 2.5
+        },
+        {
+          "uid": "80b88761-68b9-4199-b950-a23021047ee6",
+          "title": "クレイジーバンケット",
+          "popularity": 2.5
+        },
+        {
+          "uid": "b49a7f74-134d-4f39-ae00-ae0e9139bc02",
+          "title": "サディスティック・スイーツ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2dac1da4-77e8-4548-81cc-d5cf9f699f36",
+          "title": "シンギュラミューズ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e548ebfa-ce70-4fff-bf36-0732940d4069",
+          "title": "タイムストレッチ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2bb7d85b-848a-4e98-8001-6212d8000a97",
+          "title": "デジタルタトゥー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d8c7edad-e0c2-4700-9ac8-88142fe107b4",
+          "title": "ネオンライトセンセーション",
+          "popularity": 2.5
+        },
+        {
+          "uid": "73fa3884-5b6e-4df4-93c8-4227e03ccffa",
+          "title": "リテラシックレイジー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "37b0e5df-f582-45cd-b77b-c9ed0c11dff6",
+          "title": "ワルレリジョナー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "69aa8216-7180-4821-83cd-c643be0ed35a",
+          "title": "恋花火",
+          "popularity": 2.5
+        },
+        {
+          "uid": "75dfd613-12a0-4e6c-9960-34cb2c8b2edd",
+          "title": "恋花火 (2025 Remix)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "ed733abb-5c82-41ef-9c5f-6d01c6d90469",
+          "title": "えっと干支がーる (Hmt2 Remix)",
+          "popularity": 2
+        },
+        {
+          "uid": "1e5a6d3e-c1b7-4fc0-a55e-9f971291af14",
+          "title": "まっしぐら恋心",
+          "popularity": 2
+        },
+        {
+          "uid": "9a7255e1-b3ee-42a2-a72e-535807aef022",
+          "title": "らぶめろでぃ",
+          "popularity": 2
+        },
+        {
+          "uid": "0990f947-1f3a-470a-bc2d-b808a748ca10",
+          "title": "わたしお姫様になりたい",
+          "popularity": 2
+        }
+      ]
+    },
+    {
+      "name": "のんふぃく！",
+      "name_romanji": "Non¬Fiction",
+      "uid": "44Gu44KT44G144GD44GP77yB",
+      "logo_url": "../data/pictures/groups/NonFiction_icon.webp",
+      "members": [
+        {
+          "uid": "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
+          "name": "恋星はるか",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E6%81%8B%E6%98%9F%E3%81%AF%E3%82%8B%E3%81%8B_portrait.jpg"
+        },
+        {
+          "uid": "68dcb082-3324-4335-b88a-47bd03e9c254",
+          "name": "水瀬ぴあの",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B4%E7%80%AC%E3%81%B4%E3%81%82%E3%81%AE_portrait.jpg"
+        },
+        {
+          "uid": "169b9632-7c7f-476a-8d85-1fbb8284a72a",
+          "name": "永月十華",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B8%E6%9C%88%E5%8D%81%E8%8F%AF_portrait.jpg"
+        },
+        {
+          "uid": "83e5cfe9-c078-46c8-bc74-51bd1c6f9835",
+          "name": "海まりん",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E6%B5%B7%E3%81%BE%E3%82%8A%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
+          "name": "こるね",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E3%81%93%E3%82%8B%E3%81%AD__NonFiction_portrait.jpg"
+        },
+        {
+          "uid": "b7362fff-f7d2-4fba-a5f7-febe07305d84",
+          "name": "澪織にいな",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E6%BE%AA%E7%B9%94%E3%81%AB%E3%81%84%E3%81%AA_portrait.jpg"
+        },
+        {
+          "uid": "ad732d26-4b39-4b95-a642-5db433ed09ae",
+          "name": "香月あむ",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E9%A6%99%E6%9C%88%E3%81%82%E3%82%80_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "e8ac5db6-32b9-46fb-9da0-41ea1ad5ddf3",
+          "title": "I LOVE YOU=NONFICTION",
+          "popularity": 4
+        },
+        {
+          "uid": "ff8e75ef-7068-424b-b992-4d8d1ed6d226",
+          "title": "ビリビリラブゲーム",
+          "popularity": 4
+        },
+        {
+          "uid": "c9929f31-85aa-415e-902a-57473523a799",
+          "title": "プラトニックチョロイン",
+          "popularity": 4
+        },
+        {
+          "uid": "1d3e5a38-8a64-455a-a02f-854d3a198746",
+          "title": "うれぴっぴ!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "c518a369-a207-405b-8218-d7ffede23ec1",
+          "title": "てっぺんコード",
+          "popularity": 3.5
+        },
+        {
+          "uid": "d27dc440-fe9d-48c7-8ed6-e4dd97845816",
+          "title": "ぷろふぃ〜る",
+          "popularity": 3.5
+        },
+        {
+          "uid": "97364ef1-1b3e-4f19-9cd0-88a47d1bbb1c",
+          "title": "らぶげっちゅ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "8d8f1281-f6f1-41d9-83ac-4f1657f4ce1b",
+          "title": "全人類あいうぉんちゅー",
+          "popularity": 3.5
+        },
+        {
+          "uid": "770d6fa6-1858-44a3-8305-9ebd3c669364",
+          "title": "Honey Up RUSH!!",
+          "popularity": 3
+        },
+        {
+          "uid": "a23c5ae5-aba8-461c-b704-a6fac4df701e",
+          "title": "NonFiction",
+          "popularity": 3
+        },
+        {
+          "uid": "ac46a82d-41bb-4cce-9bfa-bd3aa2ab0e7d",
+          "title": "ちゅきらぶ!",
+          "popularity": 3
+        },
+        {
+          "uid": "e79b88c1-0804-4f9c-8f94-1f515fbf3261",
+          "title": "はなまるフュージョン",
+          "popularity": 3
+        },
+        {
+          "uid": "b6dd18c5-9b89-4f5c-9e8a-2eaa9818291f",
+          "title": "よくばりバイキング",
+          "popularity": 3
+        },
+        {
+          "uid": "7da50c38-d00b-4b67-b760-b518b3eec93b",
+          "title": "アイリス",
+          "popularity": 3
+        },
+        {
+          "uid": "97da23c4-5f48-487f-9578-ecff9cb7a945",
+          "title": "ノーテンキ超キュートガール",
+          "popularity": 3
+        },
+        {
+          "uid": "a6ec4b7e-9cce-44f4-bdaa-3e309e2f039d",
+          "title": "ミラクルダンスを踊りたい",
+          "popularity": 3
+        },
+        {
+          "uid": "7337de69-f678-42d3-bb4d-0aecbaee9a62",
+          "title": "禁制ヒロインサバイバル",
+          "popularity": 3
+        },
+        {
+          "uid": "ad5a1b20-52e5-456b-9026-20e429f7fcf5",
+          "title": "絶対優勝!おぎゃりマスター",
+          "popularity": 3
+        },
+        {
+          "uid": "acf05941-58db-4ba0-ad9c-663e1919216c",
+          "title": "Day by day",
+          "popularity": 2.5
+        },
+        {
+          "uid": "30aeba52-718f-4c1a-911a-9ebfa6990e5f",
+          "title": "GiveME☆Summer",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a73be8cc-0d25-424f-b6ab-0367a1e15f7b",
+          "title": "Palette",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d54a608a-8aae-414a-8e42-65c3a1cfff6c",
+          "title": "おんりーびーと!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "82fcdd5a-d5e8-4a70-95c7-e1b295aa4003",
+          "title": "ふゅーちゃーちゅぅな〜!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e0e49183-4689-4226-bb2b-573dd17857ec",
+          "title": "ふゅーちゃーちゅーな～",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f9791fa2-7c3c-4c6d-aa12-0aed6ae8ed8a",
+          "title": "ツヨカワ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f075c479-3963-4550-bf88-daf3223ba0a3",
+          "title": "レイトショー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2933dc4b-19b3-44ac-9709-e10514eeda49",
+          "title": "一方通行ステップアップ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f217526c-c68c-4819-9c24-738ed220621a",
+          "title": "奇跡的 無敵 キラメキ ランデブー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4370e5d7-5a95-4f6f-ba9e-4549be2aa56b",
+          "title": "ひっぱれ大団円",
+          "popularity": 2
+        },
+        {
+          "uid": "0421bd11-501d-41b6-b88b-84c9f306c232",
+          "title": "キミノヒーロー",
+          "popularity": 2
+        },
+        {
+          "uid": "6cc2b95a-c594-4416-bd08-5f8ddefc433b",
+          "title": "ストラテジー",
+          "popularity": 2
+        },
+        {
+          "uid": "d09a7d13-965f-41bd-9129-1e1cc16a06fa",
+          "title": "ルンルンパーティー日常",
+          "popularity": 2
+        },
+        {
+          "uid": "886fd46e-1602-4266-8b1f-edf79b11234f",
+          "title": "年中無休エンジョイ宣言",
+          "popularity": 2
+        }
+      ]
+    },
+    {
+      "name": "i-COL",
+      "name_romanji": "I-COL",
+      "uid": "aS1DT0w",
+      "logo_url": "../data/pictures/groups/i-COL_icon.webp",
+      "members": [
+        {
+          "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
+          "name": "あいす",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E3%81%82%E3%81%84%E3%81%99__i-COL_portrait.jpg"
+        },
+        {
+          "uid": "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
+          "name": "こるね",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E3%81%93%E3%82%8B%E3%81%AD__i-COL_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "d54b674d-b288-47c4-abd4-4c735e384e49",
+          "title": "Re-COiL",
+          "popularity": null
+        },
+        {
+          "uid": "9744007b-96aa-4504-b64e-e4958b140d36",
+          "title": "Ri-Di-Dong",
+          "popularity": null
+        },
+        {
+          "uid": "abc404ea-f911-42da-9a35-64d1492e4333",
+          "title": "アクマデモ",
+          "popularity": null
+        },
+        {
+          "uid": "f48e7f93-cca2-4717-a2bf-fc589bba7557",
+          "title": "シークレットゲーム",
+          "popularity": null
+        },
+        {
+          "uid": "c5f4d5d4-ec0e-4b15-9325-4709c039c0fd",
+          "title": "パラリラダンス",
+          "popularity": null
+        },
+        {
+          "uid": "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
+          "title": "ホシツナギ",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "ドレスコード",
+      "name_romanji": "Dress Code",
+      "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+      "logo_url": "../data/pictures/groups/Dress_Code_icon.webp",
+      "members": [
+        {
+          "uid": "95ac5102-f41d-4e12-9443-8bff871da1e4",
+          "name": "百宮みも",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E7%99%BE%E5%AE%AE%E3%81%BF%E3%82%82_portrait.jpg"
+        },
+        {
+          "uid": "ff539208-2470-49b4-8ab6-121a38f412c0",
+          "name": "小鈴もゆ",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E9%88%B4%E3%82%82%E3%82%86_portrait.jpg"
+        },
+        {
+          "uid": "0905e105-9720-46ff-8ed1-604dbea12174",
+          "name": "御伽りるむ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%BE%A1%E4%BC%BD%E3%82%8A%E3%82%8B%E3%82%80_portrait.jpg"
+        },
+        {
+          "uid": "811532ad-73a4-5d2d-b467-d63d7dfc5a61",
+          "name": "月野あのん",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E6%9C%88%E9%87%8E%E3%81%82%E3%81%AE%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "4676fd9e-ed7e-5078-933c-c8759519c00e",
+          "name": "結音ちゆ",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%B5%90%E9%9F%B3%E3%81%A1%E3%82%86_portrait.jpg"
+        },
+        {
+          "uid": "0153e3f6-9c75-52f3-b971-e9d47ffa0cd4",
+          "name": "早坂わむ",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E6%97%A9%E5%9D%82%E3%82%8F%E3%82%80_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
+          "title": "きゅんとしちゃってはなれない",
+          "popularity": null
+        },
+        {
+          "uid": "6440e2e6-96ea-5363-9185-f51041b1b9b0",
+          "title": "告白マクロナージュ",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "MEGAFON",
+      "name_romanji": "MEGAFON",
+      "uid": "TUVHQUZPTg",
+      "logo_url": "../data/pictures/groups/MEGAFON_icon.webp",
+      "members": [
+        {
+          "uid": "98b403bf-5f64-4ba7-a714-90e4fe842d50",
+          "name": "好実れん",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": null
+        },
+        {
+          "uid": "c0ebee02-589a-4741-8c09-6785625d0e2c",
+          "name": "小晴のか",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": null
+        },
+        {
+          "uid": "91431844-e2b3-4d16-a119-ee792e3c8d92",
+          "name": "星野あみ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E6%98%9F%E9%87%8E%E3%81%82%E3%81%BF_portrait.jpg"
+        },
+        {
+          "uid": "4137617f-21fa-48f0-8f22-46ca0c0f7352",
+          "name": "明音いろは",
+          "color": "水色",
+          "color_hex": "#89cff0",
+          "portrait_url": null
+        },
+        {
+          "uid": "e5a678c9-6448-4c69-9b27-5e2345b7d1b5",
+          "name": "羽雲ろこ",
+          "color": "水色",
+          "color_hex": "#87ceeb",
+          "portrait_url": null
+        },
+        {
+          "uid": "9e0f8916-375b-40a4-842b-cf6b2fbd3c7d",
+          "name": "日陽きい",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/9e0f8916-375b-40a4-842b-cf6b2fbd3c7d_portrait.jpg"
+        },
+        {
+          "uid": "2571d33a-51e8-4ca9-b577-a602318af81f",
+          "name": "宮代ゆき",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/2571d33a-51e8-4ca9-b577-a602318af81f_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "a2fc2d86-4d5b-44f5-953e-880de7e67dfb",
+          "title": "さいきょうセンセーション",
+          "popularity": null
+        },
+        {
+          "uid": "5bb40788-5ba4-4056-a085-b70df0cdc046",
+          "title": "ときめきめいく",
+          "popularity": null
+        },
+        {
+          "uid": "8465de8d-0dc0-44eb-aba4-6f588d6aed9c",
+          "title": "めろめろ♡ふぁんたじー)-Hoshino Amisolo",
+          "popularity": null
+        },
+        {
+          "uid": "3fc80621-4c4a-4b85-8646-b2d53dabee50",
+          "title": "スノードロップ)-Miyashiro Yukisolo",
+          "popularity": null
+        },
+        {
+          "uid": "83b3f908-bb9c-429d-8150-ad1d377616ff",
+          "title": "ダイスキステキラッキーデイズ)-Koharu Nokasolo",
+          "popularity": null
+        },
+        {
+          "uid": "2c9af4ef-f478-4898-b446-382ca7f23add",
+          "title": "バカデカボイス",
+          "popularity": null
+        },
+        {
+          "uid": "0774e6e6-5e97-412c-9f11-16dd4eb3e10d",
+          "title": "バカデカボイスでスキって叫べ！",
+          "popularity": null
+        },
+        {
+          "uid": "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
+          "title": "夏に恋してる",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "iON!",
+      "name_romanji": "iON!",
+      "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+      "logo_url": "../data/pictures/groups/iON_icon.webp",
+      "members": [
+        {
+          "uid": "a6505d1f-4415-4423-97ba-c94b2af88ccf",
+          "name": "宇野ゆり",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%AE%87%E9%87%8E%E3%82%86%E3%82%8A_portrait.jpg"
+        },
+        {
+          "uid": "77eb107b-63bf-4b8a-bc26-f3bfa1d5a5fa",
+          "name": "花丸ぺこ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E8%8A%B1%E4%B8%B8%E3%81%BA%E3%81%93_portrait.jpg"
+        },
+        {
+          "uid": "ff887239-556d-461e-b681-ced1d95ee805",
+          "name": "儚寧この",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E5%84%9A%E5%AF%A7%E3%81%93%E3%81%AE_portrait.jpg"
+        },
+        {
+          "uid": "99ff9cae-be29-4220-9c67-cd163a4d309e",
+          "name": "栗栖むぎ",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E6%A0%97%E6%A0%96%E3%82%80%E3%81%8E_portrait.jpg"
+        },
+        {
+          "uid": "443535e3-690d-4238-9eb3-c35a916b72fa",
+          "name": "伽久耶くらら",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E4%BC%BD%E4%B9%85%E8%80%B6%E3%81%8F%E3%82%89%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "426744c0-7324-4686-8ca7-f2d6a763099f",
+          "name": "鈴都りせ",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E9%88%B4%E9%83%BD%E3%82%8A%E3%81%9B_portrait.jpg"
+        },
+        {
+          "uid": "f826d7d2-49c0-4ee1-be99-48263b332aaa",
+          "name": "名雲めんま",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E5%90%8D%E9%9B%B2%E3%82%81%E3%82%93%E3%81%BE_portrait.jpg"
+        },
+        {
+          "uid": "e4a905f9-a1b9-4e78-bb08-4124ff4b6e5f",
+          "name": "透明くりあ",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E9%80%8F%E6%98%8E%E3%81%8F%E3%82%8A%E3%81%82_portrait.jpg"
+        },
+        {
+          "uid": "668dfc7d-ba0a-4534-b201-5c2060689f05",
+          "name": "大須かのん",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E5%A4%A7%E9%A0%88%E3%81%8B%E3%81%AE%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "684ff24b-1111-4ff6-991b-0e4fa51505d4",
+          "name": "苺川えくぼ",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E8%8B%BA%E5%B7%9D%E3%81%88%E3%81%8F%E3%81%BC_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "d5f9fea1-1970-40ab-9000-e5c1b2feea79",
+          "title": "ON!START",
+          "popularity": null
+        },
+        {
+          "uid": "259b4ee1-2368-4e33-b7dc-ff23eff37717",
+          "title": "エゴキュート",
+          "popularity": null
+        },
+        {
+          "uid": "54d440e0-c036-4a8a-9a35-bc0fb03e480c",
+          "title": "バチモリーナ！！！",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "GILTY × GILTY",
+      "name_romanji": "GILTY×GILTY",
+      "uid": "R0lMVFkgw5cgR0lMVFk",
+      "logo_url": "../data/pictures/groups/GILTY_x_GILTY_icon.webp",
+      "members": [
+        {
+          "uid": "cd75a82c-2306-43ec-b145-c41985bbdb3b",
+          "name": "蒼井叶",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E8%92%BC%E4%BA%95%E5%8F%B6_portrait.jpg"
+        },
+        {
+          "uid": "6aa79975-867a-4cc3-9cd5-73a27075dc64",
+          "name": "白雪姫乃",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E9%9B%AA%E5%A7%AB%E4%B9%83_portrait.jpg"
+        },
+        {
+          "uid": "5b65a555-8b8d-4f69-aeed-06457bd8e84b",
+          "name": "白空こあい",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%A9%BA%E3%81%93%E3%81%82%E3%81%84_portrait.jpg"
+        },
+        {
+          "uid": "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
+          "name": "恋星はるか",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E6%81%8B%E6%98%9F%E3%81%AF%E3%82%8B%E3%81%8B_portrait.jpg"
+        },
+        {
+          "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+          "name": "心花りり",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%BF%83%E8%8A%B1%E3%82%8A%E3%82%8A_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "510020fc-829a-49aa-b949-52f2f993f86a",
+          "title": "HEAD SHOT",
+          "popularity": null
+        },
+        {
+          "uid": "52171d08-3360-4490-aad7-16ae08ad1cfe",
+          "title": "JUDGEMENT",
+          "popularity": null
+        },
+        {
+          "uid": "f13ddf8e-2858-4382-a10d-3fa793972033",
+          "title": "大罪",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "Ill",
+      "name_romanji": "Ill",
+      "uid": "SWxs",
+      "logo_url": "../data/pictures/groups/Ill_icon.webp",
+      "members": [
+        {
+          "uid": "cd75a82c-2306-43ec-b145-c41985bbdb3b",
+          "name": "蒼井叶",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E8%92%BC%E4%BA%95%E5%8F%B6_portrait.jpg"
+        },
+        {
+          "uid": "6aa79975-867a-4cc3-9cd5-73a27075dc64",
+          "name": "白雪姫乃",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E9%9B%AA%E5%A7%AB%E4%B9%83_portrait.jpg"
+        },
+        {
+          "uid": "4a18b973-7f6e-4211-890d-f2f51b6ace01",
+          "name": "紫ノ色",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E7%B4%AB%E3%83%8E%E8%89%B2_portrait.jpg"
+        },
+        {
+          "uid": "9aa4c489-6ec3-43e4-b0d6-be4bf1ccff84",
+          "name": "森緑藻",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E6%A3%AE%E7%B7%91%E8%97%BB_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "b6fb02e3-3d64-4f31-8d19-17938997cca0",
+          "title": "アンラッキー終末期",
+          "popularity": 3.5
+        },
+        {
+          "uid": "88a94032-4f53-4f63-9520-f6b10c3fac51",
+          "title": "ショートケーカーズ",
+          "popularity": 3
+        },
+        {
+          "uid": "b90786a3-86c7-4f86-b775-dd07825a5ea4",
+          "title": "ジェラ",
+          "popularity": 3
+        },
+        {
+          "uid": "06f91bc1-59fb-486c-bfb9-1a5c6cac912e",
+          "title": "BADとLIP",
+          "popularity": 2.5
+        },
+        {
+          "uid": "b6cd6977-bd52-4717-89c5-49dfe07bd197",
+          "title": "チョコレイト・カノン",
+          "popularity": 2.5
+        },
+        {
+          "uid": "111f469f-cdc7-4768-932e-8fd3ed0a60c7",
+          "title": "ピンクゾンビーズ",
+          "popularity": 2
+        }
+      ]
+    },
+    {
+      "name": "TENRIN",
+      "name_romanji": "TENRIN",
+      "uid": "VEVOUklO",
+      "logo_url": "../data/pictures/groups/TENRIN_icon.webp",
+      "members": [
+        {
+          "uid": "52311409-c4f5-4de1-950b-cc18afd1698d",
+          "name": "のもあちゃちゃ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E3%81%AE%E3%82%82%E3%81%82%E3%81%A1%E3%82%83%E3%81%A1%E3%82%83_portrait.jpg"
+        },
+        {
+          "uid": "bfcaec9e-eb04-4d51-ba11-99cbf2511c2d",
+          "name": "白洲あやん",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E6%B4%B2%E3%81%82%E3%82%84%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "163b40d8-699f-4236-b579-c244ff8e6f9b",
+          "name": "七瀬にこ",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E4%B8%83%E7%80%AC%E3%81%AB%E3%81%93_portrait.jpg"
+        },
+        {
+          "uid": "1ae94901-0ab4-41d1-a3f8-70218ce9d8d6",
+          "name": "蓮花うらら",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E8%93%AE%E8%8A%B1%E3%81%86%E3%82%89%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8",
+          "name": "霞あげは",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E9%9C%9E%E3%81%82%E3%81%92%E3%81%AF_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "106d0386-96d6-44e4-897a-2ae028a79695",
+          "title": "Artifact",
+          "popularity": null
+        },
+        {
+          "uid": "c756d54e-332b-4ba1-8dde-456426a4f489",
+          "title": "IZAYOI",
+          "popularity": null
+        },
+        {
+          "uid": "74c70238-4f26-4fc3-b60e-401b97d38e48",
+          "title": "REINCARNATION",
+          "popularity": null
+        },
+        {
+          "uid": "704d20ee-5b46-461f-8e5d-680c16a5423d",
+          "title": "STEP IN TIME",
+          "popularity": null
+        },
+        {
+          "uid": "26f67e66-39f1-41b2-bb96-cc25228367e6",
+          "title": "StayLOUD",
+          "popularity": null
+        },
+        {
+          "uid": "2b82dfa7-f8e3-42c7-81de-50f186468b96",
+          "title": "T.E.N.R.I.N",
+          "popularity": null
+        },
+        {
+          "uid": "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
+          "title": "らぶみーきるみー)-No More ChachaSolo",
+          "popularity": null
+        },
+        {
+          "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
+          "title": "アーティファクト",
+          "popularity": null
+        },
+        {
+          "uid": "5e824791-98f6-4edc-baeb-d37555a4f338",
+          "title": "インダストリアル)-Narumi KomaSolo",
+          "popularity": null
+        },
+        {
+          "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
+          "title": "マツリカ舞う風",
+          "popularity": null
+        },
+        {
+          "uid": "75fbcdf8-895e-4d9a-90a1-e2314942cd56",
+          "title": "人生はっぴーふぁっきんまいらいふ)-No More ChachaSolo",
+          "popularity": null
+        },
+        {
+          "uid": "cce5a698-c53f-445f-b22a-bbaa5849de46",
+          "title": "天生輪廻",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "AdamLilith",
+      "name_romanji": "AdamLilith",
+      "uid": "QWRhbUxpbGl0aA",
+      "logo_url": "../data/pictures/groups/AdamLilith_icon.webp",
+      "members": [
+        {
+          "uid": "182d7023-7314-4005-8839-02396d43b492",
+          "name": "夜宵やむ",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E5%A4%9C%E5%AE%B5%E3%82%84%E3%82%80_portrait.jpg"
+        },
+        {
+          "uid": "764527ed-408e-42ff-9d1c-e2f041337aac",
+          "name": "三木零",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E4%B8%89%E6%9C%A8%E9%9B%B6_portrait.jpg"
+        },
+        {
+          "uid": "4c727bab-da18-4969-a46e-329cabcabafa",
+          "name": "都ユナ",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E9%83%BD%E3%83%A6%E3%83%8A_portrait.jpg"
+        },
+        {
+          "uid": "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d",
+          "name": "響羽リズ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E9%9F%BF%E7%BE%BD%E3%83%AA%E3%82%BA_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "005c431b-30b2-592b-a08e-320563b47e88",
+          "title": "Hidden to ”Eden” / FAKEOUT",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "ガガピエロ",
+      "name_romanji": "GAGAPIERO",
+      "uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
+      "logo_url": "../data/pictures/groups/GAGAPIERO_icon.webp",
+      "members": [
+        {
+          "uid": "745c0b3c-80b4-4149-a804-ad21ee879425",
+          "name": "胡桃兎愛",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E8%83%A1%E6%A1%83%E5%85%8E%E6%84%9B_portrait.jpg"
+        },
+        {
+          "uid": "1626e615-f982-4e03-b2aa-21d7383ceda7",
+          "name": "波沫ひよ",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E3%81%AF%E3%81%BE%E3%81%A1%E3%81%B2%E3%82%88_portrait.jpg"
+        },
+        {
+          "uid": "768812a4-c458-4440-96e7-fcecb28dabb1",
+          "name": "屑紫つみき",
+          "color": "紫",
+          "color_hex": "#8e24aa",
+          "portrait_url": "../data/pictures/idols/%E5%B1%91%E7%B4%AB%E3%81%A4%E3%81%BF%E3%81%8D_portrait.jpg"
+        },
+        {
+          "uid": "52912178-1e2b-4359-89a4-43de011830fc",
+          "name": "紅守ある",
+          "color": "赤",
+          "color_hex": "#e53935",
+          "portrait_url": "../data/pictures/idols/%E7%B4%85%E5%AE%88%E3%81%82%E3%82%8B_portrait.jpg"
+        },
+        {
+          "uid": "4cad7e1f-ca74-4088-9211-42fac3cda306",
+          "name": "杏仁みる",
+          "color": "白",
+          "color_hex": "#f5f5f5",
+          "portrait_url": "../data/pictures/idols/%E6%9D%8F%E4%BB%81%E3%81%BF%E3%82%8B_portrait.jpg"
+        }
+      ],
+      "songs": []
+    },
+    {
+      "name": "LADYBABY",
+      "name_romanji": "LADYBABY",
+      "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+      "logo_url": "../data/pictures/groups/LADYBABY_icon.webp",
+      "members": [
+        {
+          "uid": "ac0eef2a-efb1-4104-810c-97de3aea1fba",
+          "name": "神黎ミア",
+          "color": "白",
+          "color_hex": "#f5f5f5",
+          "portrait_url": "../data/pictures/idols/%E7%A5%9E%E9%BB%8E%E3%83%9F%E3%82%A2_portrait.jpg"
+        },
+        {
+          "uid": "52d0bdde-2f09-44c3-93a8-300f47ac1769",
+          "name": "來崎せな",
+          "color": "緑",
+          "color_hex": "#43a047",
+          "portrait_url": "../data/pictures/idols/%E4%BE%86%E5%B4%8E%E3%81%9B%E3%81%AA_portrait.jpg"
+        },
+        {
+          "uid": "779622a4-212e-48c9-b9a6-e0234a5fa74c",
+          "name": "月街えい",
+          "color": "紫",
+          "color_hex": "#8e24aa",
+          "portrait_url": "../data/pictures/idols/%E6%9C%88%E8%A1%97%E3%81%88%E3%81%84_portrait.jpg"
+        },
+        {
+          "uid": "5250a6ec-cf8c-423c-9ba8-e94bd5de2041",
+          "name": "越智きの",
+          "color": "黄",
+          "color_hex": "#fdd835",
+          "portrait_url": "../data/pictures/idols/5250a6ec-cf8c-423c-9ba8-e94bd5de2041_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
+          "title": "April Fish -TRUTH to BABY FISH-",
+          "popularity": null
+        },
+        {
+          "uid": "e90bad43-aaca-50f5-a58e-7befd2cc8cf2",
+          "title": "KILLER KILLER IDOL",
+          "popularity": null
+        },
+        {
+          "uid": "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
+          "title": "Pelo",
+          "popularity": null
+        },
+        {
+          "uid": "feada45d-734d-4092-b46a-4d6a8734e6b1",
+          "title": "Pinky! Pinky!",
+          "popularity": null
+        },
+        {
+          "uid": "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
+          "title": "Real eyes realize real lies",
+          "popularity": null
+        },
+        {
+          "uid": "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
+          "title": "Riot Anthem",
+          "popularity": null
+        },
+        {
+          "uid": "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
+          "title": "アゲアゲマネー ～おちんぎん大作戦～",
+          "popularity": null
+        },
+        {
+          "uid": "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
+          "title": "ジャパサマ",
+          "popularity": null
+        },
+        {
+          "uid": "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
+          "title": "ダメダメ殿",
+          "popularity": null
+        },
+        {
+          "uid": "0f99fd99-62d4-4f9a-9b77-af86d637062e",
+          "title": "ダルマカルマ",
+          "popularity": null
+        },
+        {
+          "uid": "27d06c43-17e9-4f50-884b-343794244bae",
+          "title": "ニッポン饅頭",
+          "popularity": null
+        },
+        {
+          "uid": "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
+          "title": "ホシノナイソラ",
+          "popularity": null
+        },
+        {
+          "uid": "c2810dfc-bfa9-5291-b694-7739252782c5",
+          "title": "メロメロメロイック",
+          "popularity": null
+        },
+        {
+          "uid": "8aef21bc-4730-404a-a3a5-a890da6e8b13",
+          "title": "参拝! 御朱印girl☆",
+          "popularity": null
+        },
+        {
+          "uid": "e14c03e8-731f-45db-9d5d-852beb0c719c",
+          "title": "少年勇者団",
+          "popularity": null
+        },
+        {
+          "uid": "e7601970-57ad-44c9-a997-82587bebafb6",
+          "title": "渋谷 CROSSING",
+          "popularity": null
+        },
+        {
+          "uid": "8c7142ac-7cb6-41de-840f-374c54280297",
+          "title": "破天ニ雷鳴",
+          "popularity": null
+        },
+        {
+          "uid": "2e360572-a078-52c4-9493-4885383769ac",
+          "title": "花一匁",
+          "popularity": null
+        },
+        {
+          "uid": "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
+          "title": "蓮華チャンス！ / セシボン・キブン",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "ハルカエコー",
+      "name_romanji": "HARUKA ECHO",
+      "uid": "82c6703f-0d5d-4b54-972d-232437a3b991",
+      "logo_url": "../data/pictures/groups/HARUKA_ECHO_icon.webp",
+      "members": [
+        {
+          "uid": "564b1856-c864-495f-9cb3-c1d60db2756f",
+          "name": "雨宮るり",
+          "color": "青",
+          "color_hex": "#1e88e5",
+          "portrait_url": "../data/pictures/idols/%E9%9B%A8%E5%AE%AE%E3%82%8B%E3%82%8A__HARUKA_ECHO_portrait.jpg"
+        },
+        {
+          "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+          "name": "平沢かえ",
+          "color": "黄",
+          "color_hex": "#fdd835",
+          "portrait_url": "../data/pictures/idols/%E5%B9%B3%E6%B2%A2%E3%81%8B%E3%81%88__HARUKA_ECHO_portrait.jpg"
+        },
+        {
+          "uid": "4b74646f-73d7-4f4a-ba23-16d43b578970",
+          "name": "神凪みふゆ",
+          "color": "紫",
+          "color_hex": "#8e24aa",
+          "portrait_url": "../data/pictures/idols/%E7%A5%9E%E5%87%AA%E3%81%BF%E3%81%B5%E3%82%86__HARUKA_ECHO_portrait.jpg"
+        },
+        {
+          "uid": "df39ccf7-6c9e-4c23-84e9-e2321cf7ae30",
+          "name": "常盤うた",
+          "color": "ピンク",
+          "color_hex": "#ff5ca8",
+          "portrait_url": "../data/pictures/idols/%E5%B8%B8%E7%9B%A4%E3%81%86%E3%81%9F__HARUKA_ECHO_portrait.jpg"
+        },
+        {
+          "uid": "2f7a56a9-12d1-40d5-9a3a-a9583934da63",
+          "name": "芦名ゆい",
+          "color": "白",
+          "color_hex": "#f5f5f5",
+          "portrait_url": "../data/pictures/idols/%E8%8A%A6%E5%90%8D%E3%82%86%E3%81%84__HARUKA_ECHO_portrait.jpg"
+        },
+        {
+          "uid": "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415",
+          "name": "高坂りん",
+          "color": "赤",
+          "color_hex": "#e53935",
+          "portrait_url": "../data/pictures/idols/%E9%AB%98%E5%9D%82%E3%82%8A%E3%82%93__HARUKA_ECHO_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "title": "残響"
+        }
+      ]
+    },
+    {
+      "name": "CAL&RES",
+      "name_romanji": "CAL&RES",
+      "uid": "Q0FMJlJFUw",
+      "logo_url": "../data/pictures/groups/CALandRES_icon.webp",
+      "members": [
+        {
+          "uid": "bbbf6d91-fc63-4331-b314-ae0899c1581c",
+          "name": "夢羽るる",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E5%A4%A2%E7%BE%BD%E3%82%8B%E3%82%8B_portrait.jpg"
+        },
+        {
+          "uid": "4a5ab837-43a4-413a-bbe8-d7173401a088",
+          "name": "来夢ねお",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E6%9D%A5%E5%A4%A2%E3%81%AD%E3%81%8A_portrait.jpg"
+        },
+        {
+          "uid": "4cad7e1f-ca74-4088-9211-42fac3cda306",
+          "name": "杏仁みる",
+          "color": "白",
+          "color_hex": "#f5f5f5",
+          "portrait_url": "../data/pictures/idols/%E6%9D%8F%E4%BB%81%E3%81%BF%E3%82%8B_portrait.jpg"
+        },
+        {
+          "uid": "6b582779-013a-4d5a-aff9-5dbce3b54fda",
+          "name": "九条あすな",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E4%B9%9D%E6%9D%A1%E3%81%82%E3%81%99%E3%81%AA_portrait.jpg"
+        },
+        {
+          "uid": "64bc50f9-bd2f-47a7-99e2-b39e0318924e",
+          "name": "明日実まあや",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E6%98%8E%E6%97%A5%E5%AE%9F%E3%81%BE%E3%81%82%E3%82%84_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "bd6cad08-a8be-49e1-b59d-9a13067114c8",
+          "title": "天使になりたい",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "ポンコツコンポ",
+      "name_romanji": "Ponkotsu Konpo",
+      "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+      "logo_url": "../data/pictures/groups/Ponkotsu_Konpo_icon.webp",
+      "members": [
+        {
+          "uid": "7a7792bd-49a2-49ce-91bf-4a8734bc777c",
+          "name": "晴後あめ",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E6%99%B4%E5%BE%8C%E3%81%82%E3%82%81_portrait.jpg"
+        },
+        {
+          "uid": "16c3a7e5-e957-4ead-9682-76dcc85638a0",
+          "name": "夕葉里めろん",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E5%A4%95%E8%91%89%E9%87%8C%E3%82%81%E3%82%8D%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "fa030965-6a01-4c76-a45f-564818fe4be0",
+          "name": "秋田こまち",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%A7%8B%E7%94%B0%E3%81%93%E3%81%BE%E3%81%A1_portrait.jpg"
+        },
+        {
+          "uid": "12c7b2f0-5e52-58e0-9cd0-00b2f329922f",
+          "name": "一蘭",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E4%B8%80%E8%98%AD_portrait.jpg"
+        },
+        {
+          "uid": "84c2e5c4-4222-56d7-9d75-1cbc84f6698d",
+          "name": "甘杉あぽろ",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E7%94%98%E6%9D%89%E3%81%82%E3%81%BD%E3%82%8D_portrait.jpg"
+        },
+        {
+          "uid": "7c96de68-f00e-5140-817f-e95bd902ece6",
+          "name": "海苔巻うに",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E6%B5%B7%E8%8B%94%E5%B7%BB%E3%81%86%E3%81%AB_portrait.jpg"
+        },
+        {
+          "uid": "8a813ee5-c3a3-50ba-880f-1cf94ab454d6",
+          "name": "ショー☆タイム",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E3%82%B7%E3%83%A7%E3%83%BC%E2%98%86%E3%82%BF%E3%82%A4%E3%83%A0_portrait.jpg"
+        },
+        {
+          "uid": "8aa3a1f0-6da3-4dbd-a47d-06591a5b0858",
+          "name": "チャーリン",
+          "color": "茶",
+          "color_hex": "#8d6e63",
+          "portrait_url": "../data/pictures/idols/%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AA%E3%83%B3_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "863220ef-07d9-563e-a5a5-4b136b9a4948",
+          "title": "ラブコブラ",
+          "popularity": null
+        },
+        {
+          "uid": "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+          "title": "筋肉ボディで僕人気",
+          "popularity": null
+        },
+        {
+          "uid": "7164a11c-d560-5db8-b515-86edd0d8b280",
+          "title": "軽いノリのイルカ",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "ZUTTOMOTTO",
+      "name_romanji": "ZUTTOMOTTO",
+      "uid": "WlVUVE9NT1RUTw",
+      "logo_url": "../data/pictures/groups/ZUTTOMOTTO_icon.webp",
+      "members": [
+        {
+          "uid": "d7be5c70-efe9-4963-a0cb-b023b7c6fed3",
+          "name": "四宮える",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%9B%9B%E5%AE%AE%E3%81%88%E3%82%8B_portrait.jpg"
+        },
+        {
+          "uid": "d8063c42-cb04-4b22-bc84-d7f39b62d7f8",
+          "name": "真空せいら",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E7%9C%9F%E7%A9%BA%E3%81%9B%E3%81%84%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "e23265c9-3aab-487f-be4e-c179a5c661d8",
+          "name": "椎名すず",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E6%A4%8E%E5%90%8D%E3%81%99%E3%81%9A_portrait.jpg"
+        },
+        {
+          "uid": "e350221c-442c-4f10-b7ce-5692b42410c9",
+          "name": "望月みら",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E6%9C%9B%E6%9C%88%E3%81%BF%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "86207bdc-a43b-4e11-a985-3518f376f1e5",
+          "name": "青羽わか",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E9%9D%92%E7%BE%BD%E3%82%8F%E3%81%8B_portrait.jpg"
+        },
+        {
+          "uid": "5a4bdf44-4db3-5162-aa03-0c0469c4e622",
+          "name": "小紅ゆず",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E7%B4%85%E3%82%86%E3%81%9A_portrait.jpg"
+        },
+        {
+          "uid": "501e6846-ba7e-5b70-9ff7-7239b40b2b27",
+          "name": "式守くるみ",
+          "color": "ピンク",
+          "color_hex": "#f4c2c2",
+          "portrait_url": "../data/pictures/idols/%E5%BC%8F%E5%AE%88%E3%81%8F%E3%82%8B%E3%81%BF_portrait.jpg"
+        },
+        {
+          "uid": "838690c6-1ff0-52f6-ac0c-7fec9eda2d14",
+          "name": "神谷ひなの",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E7%A5%9E%E8%B0%B7%E3%81%B2%E3%81%AA%E3%81%AE_portrait.jpg"
+        },
+        {
+          "uid": "a702a456-fe55-5744-8323-4df3de67dd44",
+          "name": "美雲みつき",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%BE%8E%E9%9B%B2%E3%81%BF%E3%81%A4%E3%81%8D_portrait.jpg"
+        },
+        {
+          "uid": "00abd0b2-0e6f-5a03-83c9-17bdbbda5cd6",
+          "name": "愛夏ひなた",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E6%84%9B%E5%A4%8F%E3%81%B2%E3%81%AA%E3%81%9F_portrait.jpg"
+        },
+        {
+          "uid": "b978e9b5-bde8-4964-a6d5-dbfa57cd2385",
+          "name": "広瀬りむ",
+          "color": "ミント",
+          "color_hex": "#98ff98",
+          "portrait_url": "../data/pictures/idols/%E5%BA%83%E7%80%AC%E3%82%8A%E3%82%80_portrait.jpg"
+        }
+      ],
+      "songs": []
+    },
+    {
+      "name": "パラレルサイダー",
+      "name_romanji": null,
+      "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
+      "logo_url": "../data/pictures/groups/Parallel_Cider_icon.webp",
+      "members": [
+        {
+          "uid": "49c29171-7208-43a5-a46e-5027f22c9220",
+          "name": "小熊まな香",
+          "color": "水色",
+          "color_hex": "#a3e0ff",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E7%86%8A%E3%81%BE%E3%81%AA%E9%A6%99_portrait.jpg"
+        },
+        {
+          "uid": "fa2e9768-6b00-468a-be74-6d6535d98ba9",
+          "name": "小坂みおん",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E5%9D%82%E3%81%BF%E3%81%8A%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "93b80c0e-5df8-440d-9045-79cc1d2b5baa",
+          "name": "葉月みつは",
+          "color": "ミント",
+          "color_hex": "#98ff98",
+          "portrait_url": "../data/pictures/idols/%E8%91%89%E6%9C%88%E3%81%BF%E3%81%A4%E3%81%AF_portrait.jpg"
+        },
+        {
+          "uid": "7a72fc17-7379-4115-9b77-e2d0c4355bcb",
+          "name": "彩音ゆの",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E5%BD%A9%E9%9F%B3%E3%82%86%E3%81%AE_portrait.jpg"
+        },
+        {
+          "uid": "d3bf4d5b-cb45-48da-bcd3-cb7ef6f9d4f4",
+          "name": "宮奈もこ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%AE%AE%E5%A5%88%E3%82%82%E3%81%93_portrait.jpg"
+        },
+        {
+          "uid": "b869b751-6cba-4369-aa9f-738dcba7b388",
+          "name": "宝城あいり",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E5%AE%9D%E5%9F%8E%E3%81%82%E3%81%84%E3%82%8A_portrait.jpg"
+        },
+        {
+          "uid": "87f42c82-e076-4799-808d-19d6a597bc4f",
+          "name": "宇佐美あこ",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E5%AE%87%E4%BD%90%E7%BE%8E%E3%81%82%E3%81%93_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "a47bf368-664f-48a0-9690-0b20dd2af167",
+          "title": "パラレルサイダー",
+          "popularity": 4
+        },
+        {
+          "uid": "c68dedb5-81b8-4c47-b786-6eec67da40a8",
+          "title": "フェイクフェイス",
+          "popularity": 3.5
+        },
+        {
+          "uid": "314cf507-aea3-45b8-914f-e2f16d44062b",
+          "title": "Look back",
+          "popularity": 3
+        },
+        {
+          "uid": "55b4f79a-bc8c-4330-b54e-e519ca78fbaf",
+          "title": "星空 Goodbye",
+          "popularity": 3
+        },
+        {
+          "uid": "5d6dc868-aac2-4e46-a9bf-4c032e67d613",
+          "title": "流星トワイライト",
+          "popularity": 3
+        },
+        {
+          "uid": "77585a42-d37b-4a77-9db3-c948366254b2",
+          "title": "Let′s take five",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f84671b4-1212-4ded-bfa5-05f13d844296",
+          "title": "Narrative",
+          "popularity": 2.5
+        },
+        {
+          "uid": "572ae673-a8b8-4f29-ab41-416801afe9fe",
+          "title": "サマーサイダー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4d38ad95-b8d3-474a-a4b7-32e472301971",
+          "title": "青い鳥の在り処",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2953c6d3-40f1-4d88-adc8-c07683f9c41f",
+          "title": "ANSWER",
+          "popularity": 1.5
+        },
+        {
+          "uid": "a398421e-21ce-446c-913d-f9998deb95e0",
+          "title": "Sunny Days",
+          "popularity": 1.5
+        },
+        {
+          "uid": "21cff527-26bf-4e54-b8aa-0ae03f990f56",
+          "title": "ideal world",
+          "popularity": 1.5
+        },
+        {
+          "uid": "66360042-679d-4d5f-8a52-d04f235bddab",
+          "title": "グラデーション",
+          "popularity": 1.5
+        }
+      ]
+    },
+    {
+      "name": "アキシブproject",
+      "name_romanji": "Akishibu project",
+      "uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "logo_url": "../data/pictures/groups/Akishibu_project_icon.webp",
+      "members": [
+        {
+          "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
+          "name": "葵ふう",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E8%91%B5%E3%81%B5%E3%81%86_portrait.jpg"
+        },
+        {
+          "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
+          "name": "如月なな",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%A6%82%E6%9C%88%E3%81%AA%E3%81%AA_portrait.jpg"
+        },
+        {
+          "uid": "45484495-8792-48db-bab0-560ee4107464",
+          "name": "清見るん",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E6%B8%85%E8%A6%8B%E3%82%8B%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+          "name": "茉井良菜",
+          "color": "ミント",
+          "color_hex": "#98ff98",
+          "portrait_url": "../data/pictures/idols/%E8%8C%89%E4%BA%95%E8%89%AF%E8%8F%9C_portrait.jpg"
+        },
+        {
+          "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+          "name": "水琴まなみ",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B4%E7%90%B4%E3%81%BE%E3%81%AA%E3%81%BF_portrait.jpg"
+        },
+        {
+          "uid": "8bcf137a-bf77-4b30-8032-30e2f08391db",
+          "name": "天川ほたる",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/akishibu_amakawa_hotaru.jpg"
+        },
+        {
+          "uid": "2bc08c6f-1e33-4c81-aa8f-7c2474b10d4f",
+          "name": "夢咲ありさ",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/akishibu_yumesaki_arisa.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "b39e38da-4d24-48f9-92e6-fc117f3df6d5",
+          "title": "New World",
+          "popularity": 4
+        },
+        {
+          "uid": "c3e640e0-8522-47fd-9071-8c2e68b111b7",
+          "title": "Summer☆Summer",
+          "popularity": 4
+        },
+        {
+          "uid": "f340fa8d-6305-410c-ad86-f4726cf93573",
+          "title": "アキシブウェイ",
+          "popularity": 4
+        },
+        {
+          "uid": "d3b51910-0f40-4e75-9413-4f3762fbf110",
+          "title": "タイムレスメモリー",
+          "popularity": 4
+        },
+        {
+          "uid": "d05c8e2e-8d08-47e3-9177-5f9aaf95cb54",
+          "title": "Acting Girl",
+          "popularity": 3.5
+        },
+        {
+          "uid": "720921c4-a3c9-4f29-8ef0-4fc4fc80f34d",
+          "title": "Candid Love",
+          "popularity": 3.5
+        },
+        {
+          "uid": "50059980-a741-4f21-8ae6-55a2aae5689f",
+          "title": "Restart",
+          "popularity": 3.5
+        },
+        {
+          "uid": "6dd4301a-795a-4caf-9c02-9981e9d5363c",
+          "title": "アバンチュっ!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "bc8dbc71-3750-48dc-b4ff-182b2f15047e",
+          "title": "セツナツリ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "8dc9966e-f5e6-4e6c-9251-e6a82a7d09ef",
+          "title": "真夏のセレナーデ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "7f3b3360-bca5-46d9-b695-bfb4db988a5b",
+          "title": "Eternal Blue ~キミと僕と空と海の物語~",
+          "popularity": 3
+        },
+        {
+          "uid": "992cb743-c5e4-4a49-8e5f-1a0c55e89987",
+          "title": "Hola! Hola! Summer",
+          "popularity": 3
+        },
+        {
+          "uid": "44cf2ff1-7f83-4e81-9c7a-bffbb54efbcf",
+          "title": "Shine on you",
+          "popularity": 3
+        },
+        {
+          "uid": "11cba1bd-7673-4ba4-bd8d-91f3d1a051b4",
+          "title": "キライだ。",
+          "popularity": 3
+        },
+        {
+          "uid": "3f4e3946-9c42-49a9-bb55-4ce5c06c84e3",
+          "title": "ユメハナビ",
+          "popularity": 3
+        },
+        {
+          "uid": "3a2cda96-fbc0-4e07-bfc1-f329c680b325",
+          "title": "三百六十五歩のマーチ ~365 Steps, All Cast 2017",
+          "popularity": 3
+        },
+        {
+          "uid": "b0fb9964-715a-4b80-abb2-6721b793b2ea",
+          "title": "小さな決意",
+          "popularity": 3
+        },
+        {
+          "uid": "9a32cd14-7af0-4839-b01f-4c0a9b442fdc",
+          "title": "常夏トロピケーション",
+          "popularity": 3
+        },
+        {
+          "uid": "ad63da7d-7a74-4d36-9270-c301b45252e4",
+          "title": "新宇宙世紀アイドルちゃん",
+          "popularity": 3
+        },
+        {
+          "uid": "c2ca0088-591e-459d-a0ff-76ffb71a4c00",
+          "title": "真夏のセレナーデ",
+          "popularity": 3
+        },
+        {
+          "uid": "e19271c6-220c-4402-996e-49ee8dde1bd5",
+          "title": "観測史上",
+          "popularity": 3
+        },
+        {
+          "uid": "0bff0f17-56d6-434a-8611-dbb193d20bac",
+          "title": "Be yourself",
+          "popularity": 2.5
+        },
+        {
+          "uid": "6575b72a-6558-43f3-b775-f07760db2e06",
+          "title": "Creaction",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a3e79185-ac50-4897-8b12-6af2549f8548",
+          "title": "Next Gate",
+          "popularity": 2.5
+        },
+        {
+          "uid": "be6f95f3-8329-42e5-82f9-3966077ceb73",
+          "title": "The First Summer",
+          "popularity": 2.5
+        },
+        {
+          "uid": "019047d3-7e7c-40a1-a346-e7ca2a570127",
+          "title": "Winter story",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8ca7cb73-e41f-47c8-8f6a-da0f326b2ae3",
+          "title": "あてんしょん・ぷりーず",
+          "popularity": 2.5
+        },
+        {
+          "uid": "88255528-41de-4ec0-81ef-f4416686965e",
+          "title": "つよくてニューゲーム+",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1f29fd12-83d9-42d9-b1c4-3fc35d32f8be",
+          "title": "ときめきらいど!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "79af2b24-cfb3-49e8-8d66-2d2c7beb2cc9",
+          "title": "ナツラブ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cb3a2723-6cd8-43a4-86e7-7711c1f45854",
+          "title": "夏のかけら",
+          "popularity": 2.5
+        },
+        {
+          "uid": "697f1045-525c-4b1a-ac73-715f090c195c",
+          "title": "私だけにフォーカスして♡",
+          "popularity": 2.5
+        },
+        {
+          "uid": "09c3f517-9102-46ba-8c89-69c31de6398f",
+          "title": "AKISHIBU SHIP",
+          "popularity": 2
+        },
+        {
+          "uid": "c55be4f9-a66e-4b6a-96e3-e80aef397f03",
+          "title": "LOVE&PARADISE",
+          "popularity": 2
+        },
+        {
+          "uid": "8bb84512-65ec-43df-81f4-7a33773d8922",
+          "title": "PureMagic",
+          "popularity": 2
+        },
+        {
+          "uid": "42e70315-6134-4365-b836-6547b37b18e4",
+          "title": "WAY TO DREAM",
+          "popularity": 2
+        },
+        {
+          "uid": "a3c7ca04-3d60-4bba-9b98-5ea107a8da16",
+          "title": "WHITE",
+          "popularity": 2
+        },
+        {
+          "uid": "dfa2942a-0902-4383-8462-d4b296b00166",
+          "title": "flower×flower",
+          "popularity": 2
+        },
+        {
+          "uid": "f1832d50-d32e-48c4-bbef-866ee4d41853",
+          "title": "ガチ恋レボリューション",
+          "popularity": 2
+        },
+        {
+          "uid": "9ad5b1b3-0fd0-48f3-b760-0ed94391da4b",
+          "title": "ニャンダフルステージ",
+          "popularity": 2
+        }
+      ]
+    },
+    {
+      "name": "chuLa",
+      "name_romanji": "ChuLa",
+      "uid": "Y2h1TGE",
+      "logo_url": "../data/pictures/groups/chuLa_icon.webp",
+      "members": [
+        {
+          "uid": "1626e615-f982-4e03-b2aa-21d7383ceda7",
+          "name": "はまちひよ",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E3%81%AF%E3%81%BE%E3%81%A1%E3%81%B2%E3%82%88_portrait.jpg"
+        },
+        {
+          "uid": "8a973257-5010-479a-a4c5-21d235f6b818",
+          "name": "飴色りんご",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E9%A3%B4%E8%89%B2%E3%82%8A%E3%82%93%E3%81%94_portrait.jpg"
+        },
+        {
+          "uid": "cf9e4e5b-55be-4281-b6e7-88e242351b6e",
+          "name": "明鏡みらの",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E6%98%8E%E9%8F%A1%E3%81%BF%E3%82%89%E3%81%AE_portrait.jpg"
+        },
+        {
+          "uid": "6f73b8fa-5bb0-470e-9c3f-aa2e5733eec9",
+          "name": "陽咲みお",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E9%99%BD%E5%92%B2%E3%81%BF%E3%81%8A_portrait.jpg"
+        },
+        {
+          "uid": "341037b8-9ddc-4735-a99e-072a6500d010",
+          "name": "紫藤らら",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E7%B4%AB%E8%97%A4%E3%82%89%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "428478d5-a37f-40c3-89a9-0245c39e5848",
+          "name": "茉野ゆに",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E8%8C%89%E9%87%8E%E3%82%86%E3%81%AB_portrait.jpg"
+        },
+        {
+          "uid": "f80f3a94-8d24-4f5c-9d55-84c8c16eb0dc",
+          "name": "世野つばさ",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E4%B8%96%E9%87%8E%E3%81%A4%E3%81%B0%E3%81%95_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "906ede86-4d33-43f1-93a5-0330cfa9c8b4",
+          "title": "Shooting STAR",
+          "popularity": 4
+        },
+        {
+          "uid": "5949ba1d-d93b-43fa-8ef5-a6bb7c082154",
+          "title": "ちゅららんレーサー",
+          "popularity": 4
+        },
+        {
+          "uid": "0899e987-aedd-41c4-8ed7-391ef6835ad3",
+          "title": "トキメキCherry",
+          "popularity": 4
+        },
+        {
+          "uid": "3c666d31-f214-4029-bc0c-99e29c5f38ae",
+          "title": "完全無敵あいうえお",
+          "popularity": 4
+        },
+        {
+          "uid": "07b79004-1655-4c9a-ba9e-19373a8c11fe",
+          "title": "ケ・セラ・セラ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "b3324ab1-6a1b-47ae-bce6-2e196efc81d2",
+          "title": "ジュリセン☆ちゅら無双",
+          "popularity": 3.5
+        },
+        {
+          "uid": "24938a10-5043-4885-9471-6e48dd7be415",
+          "title": "史上最強うぇぽん",
+          "popularity": 3.5
+        },
+        {
+          "uid": "5a418ee1-4d64-492b-a4fe-0ee141645366",
+          "title": "夏の君にテヘヘのへ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "24935ca0-348a-4a21-8b73-bf137b86d567",
+          "title": "涙色星",
+          "popularity": 3.5
+        },
+        {
+          "uid": "73fd1cb2-087f-455d-a775-df7bdaf8612d",
+          "title": "閃光8",
+          "popularity": 3.5
+        },
+        {
+          "uid": "603bad56-3376-4192-a117-e059be92b388",
+          "title": "DA・DA・DA・ダイスキ!!",
+          "popularity": 3
+        },
+        {
+          "uid": "64624453-ed6e-4ee6-bf74-e7d463429cfe",
+          "title": "FIGHTING DREAMER",
+          "popularity": 3
+        },
+        {
+          "uid": "0363fda4-d35d-4134-8d98-dd73f7008e71",
+          "title": "SNOW SNOW SNOW",
+          "popularity": 3
+        },
+        {
+          "uid": "f7174b20-2619-4938-9e5d-3bde37cc6ba8",
+          "title": "しゃなりら -五星ノ華 ゴセイノハナ-",
+          "popularity": 3
+        },
+        {
+          "uid": "243e4d7c-a269-4d7e-8232-604cdef30915",
+          "title": "どきゅーとこみゅにけーしょん",
+          "popularity": 3
+        },
+        {
+          "uid": "b5cce794-a8b5-46a7-a094-e5ad734342f7",
+          "title": "ぶっとび!!ちゅらランチャー",
+          "popularity": 3
+        },
+        {
+          "uid": "32cb25e7-33a1-47a3-988e-50852b958211",
+          "title": "キミキミキミ",
+          "popularity": 3
+        },
+        {
+          "uid": "2da1260b-c56e-4e6f-9e8c-345fedd95b23",
+          "title": "ギュッと溢れ出す愛情",
+          "popularity": 3
+        },
+        {
+          "uid": "f6584c91-bffc-4066-a633-9f9aa3fcc0a2",
+          "title": "スッと君が消えていく感情",
+          "popularity": 3
+        },
+        {
+          "uid": "5a0be81c-1a8e-4035-afac-a6f9dc197174",
+          "title": "ビバ☆ジャパン",
+          "popularity": 3
+        },
+        {
+          "uid": "128de126-8913-4cd9-b4d6-f722a9bb5e12",
+          "title": "ポポポポペット",
+          "popularity": 3
+        },
+        {
+          "uid": "ea099b54-2a76-4f42-9b8f-2a06401cff5c",
+          "title": "全力ハリケーン",
+          "popularity": 3
+        },
+        {
+          "uid": "a7e6a983-2fba-4961-9b30-01d64305cba3",
+          "title": "#超ジャングルのチキチキあどべんちゃー!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "333f9fb1-1fd9-4ea1-9557-d3c9d73a85e7",
+          "title": "HERO☆ストラックアウト",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c639e07e-c7ce-4105-8cff-53fad9e17b4b",
+          "title": "We are the chuLa",
+          "popularity": 2.5
+        },
+        {
+          "uid": "18424c00-295a-4d7c-8599-610b5f7fb85e",
+          "title": "おちゅらけ戦隊ちゅらレンジャー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "6f959710-f712-442f-b5ec-823fa3162782",
+          "title": "シンガロング・ワールド",
+          "popularity": 2.5
+        },
+        {
+          "uid": "685c262c-6a7e-45c9-a97d-3b14cd5ac9d0",
+          "title": "タランちゅら",
+          "popularity": 2.5
+        },
+        {
+          "uid": "404bec4c-59bd-41f1-ba45-2da35427f9a2",
+          "title": "ツラみ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "936b1beb-a7e5-4813-a9ce-6a25adccc576",
+          "title": "ビバジャパン",
+          "popularity": 2.5
+        },
+        {
+          "uid": "7c50e587-cb17-40dd-b591-2df63c3f7322",
+          "title": "プールサイドサマー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "adc1dd01-b3d8-40a2-a171-8b84f6099653",
+          "title": "夢模様",
+          "popularity": 2.5
+        },
+        {
+          "uid": "063ac1b5-53bc-47b1-ad50-851a83313807",
+          "title": "青春ゾンビちゃん",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d3b4f4ca-3cc8-4208-a1a7-608c05a8b439",
+          "title": "Pump it up!!",
+          "popularity": 2
+        },
+        {
+          "uid": "c55c0247-37d8-49cb-91de-28f54775d251",
+          "title": "chuLa流キミ誕祭",
+          "popularity": 2
+        },
+        {
+          "uid": "efd14ffa-e920-4bd7-9811-5a774cb2d96f",
+          "title": "cross road",
+          "popularity": 2
+        },
+        {
+          "uid": "d57be0b0-91b7-42c3-b249-6f416c12dc4f",
+          "title": "ぐるぐるぐるぐるりん地球",
+          "popularity": 2
+        },
+        {
+          "uid": "445088c0-8261-40ff-baf3-fe3e9bf3ef4f",
+          "title": "ちゃむあらん",
+          "popularity": 2
+        },
+        {
+          "uid": "338891bd-2a61-4099-8592-bc22d97e6bff",
+          "title": "完全無敵あいうえお (Instrument)",
+          "popularity": 2
+        }
+      ]
+    },
+    {
+      "name": "パラディーク",
+      "name_romanji": "Paradeeq",
+      "uid": "44OR44Op44OH44Kj44O844Kv",
+      "logo_url": "../data/pictures/groups/Paradeeq_icon.webp",
+      "members": [
+        {
+          "uid": "536e98f1-ebbd-4db0-89c7-1f2f7eca9758",
+          "name": "水野めい",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B4%E9%87%8E%E3%82%81%E3%81%84_portrait.jpg"
+        },
+        {
+          "uid": "56bb2931-869b-4e05-8707-cc4a94a84e23",
+          "name": "来栖ゆる",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E6%9D%A5%E6%A0%96%E3%82%86%E3%82%8B_portrait.jpg"
+        },
+        {
+          "uid": "542e48c2-688d-425e-903f-22e5a63dc6f8",
+          "name": "新木るの",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E6%96%B0%E6%9C%A8%E3%82%8B%E3%81%AE_portrait.jpg"
+        },
+        {
+          "uid": "56029139-a0fd-48cb-b577-e38a3aaedafc",
+          "name": "灯田にじ",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E7%81%AF%E7%94%B0%E3%81%AB%E3%81%98_portrait.jpg"
+        },
+        {
+          "uid": "afec82e2-d169-4816-9402-cd7dc8d15db0",
+          "name": "浜辺しずく",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E6%B5%9C%E8%BE%BA%E3%81%97%E3%81%9A%E3%81%8F_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "b0f54b5c-7783-44c3-bcb2-40f1753e4e70",
+          "title": "Brand New Future",
+          "popularity": null
+        },
+        {
+          "uid": "1a190c53-6d72-4d5f-9025-118b2db23cf3",
+          "title": "Remake Me!",
+          "popularity": null
+        },
+        {
+          "uid": "b06c4544-f96f-4d31-9fb1-f85ea759b06d",
+          "title": "ちゅ♡ちゅ♡ちゅ♡ぱにぱっ♡",
+          "popularity": null
+        },
+        {
+          "uid": "aec0aacc-6d13-49d8-956e-0abea9209858",
+          "title": "エリンジウム",
+          "popularity": null
+        },
+        {
+          "uid": "96ff6c57-969b-4bad-af39-da72cb1ed95c",
+          "title": "カラフルサマー",
+          "popularity": null
+        },
+        {
+          "uid": "4385d5da-5435-4125-aea9-7ec2a9099c48",
+          "title": "サマーラブラバー",
+          "popularity": null
+        },
+        {
+          "uid": "55c641ea-28f4-4d72-8943-0122b93ec31c",
+          "title": "シオカゼKISS",
+          "popularity": null
+        },
+        {
+          "uid": "ec9c7a7a-b561-42f8-ae6f-ed814404ac4b",
+          "title": "ジェジェジェットファイター",
+          "popularity": null
+        },
+        {
+          "uid": "c8059e71-6ddf-4b42-8876-ad98863d0a97",
+          "title": "バトルクライ",
+          "popularity": null
+        },
+        {
+          "uid": "f7f4368f-74af-4c29-957b-b0228dfe52a5",
+          "title": "パラディーク",
+          "popularity": null
+        },
+        {
+          "uid": "4221eaad-60b1-46fa-ae60-17d34f30c136",
+          "title": "ラブシーフ",
+          "popularity": null
+        },
+        {
+          "uid": "8a53d5fa-3da8-4328-a238-7d94408f0da6",
+          "title": "感情エタニティー",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "ナナコロビヤオキ",
+      "name_romanji": "Nanakorobi Yaoki",
+      "uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b",
+      "logo_url": "../data/pictures/groups/Nanakorobi_Yaoki_icon.webp",
+      "members": [
+        {
+          "uid": "684ff24b-1111-4ff6-991b-0e4fa51505d4",
+          "name": "苺川えくぼ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E8%8B%BA%E5%B7%9D%E3%81%88%E3%81%8F%E3%81%BC_portrait.jpg"
+        },
+        {
+          "uid": "e8338208-293a-43dd-80b9-446b1c836de8",
+          "name": "歌花てんか",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E6%AD%8C%E8%8A%B1%E3%81%A6%E3%82%93%E3%81%8B_portrait.jpg"
+        },
+        {
+          "uid": "5a1ed420-0abf-4f43-b5f9-985d78212ac4",
+          "name": "瀬戸内れもん",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%80%AC%E6%88%B8%E5%86%85%E3%82%8C%E3%82%82%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "c5d56c30-a278-403d-9b2d-4630061fdba4",
+          "name": "熊ノ実にも",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%86%8A%E3%83%8E%E5%AE%9F%E3%81%AB%E3%82%82_portrait.jpg"
+        },
+        {
+          "uid": "fbbd48da-4c66-4300-a1ec-1c67038f6431",
+          "name": "水田茉莉",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B4%E7%94%B0%E8%8C%89%E8%8E%89_portrait.jpg"
+        },
+        {
+          "uid": "b5d77294-2b5e-4939-bae1-72fc1204405c",
+          "name": "笑乃にな",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E7%AC%91%E4%B9%83%E3%81%AB%E3%81%AA_portrait.jpg"
+        },
+        {
+          "uid": "aa8f4773-0519-4030-8d2d-c65be114e53b",
+          "name": "阪菜りこ",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E9%98%AA%E8%8F%9C%E3%82%8A%E3%81%93_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "220d04ae-8af8-48e2-84cc-7bb24d6df6ac",
+          "title": "君とたこやきLOVE恋め",
+          "popularity": 3.5
+        },
+        {
+          "uid": "0874843b-a42d-4781-be0a-4a453f377f6e",
+          "title": "ナナコロビヤオキSE(てんかver)",
+          "popularity": 3
+        },
+        {
+          "uid": "7c27ece0-193b-4ef7-96a1-a36b5a2fee9b",
+          "title": "七転八起",
+          "popularity": 3
+        },
+        {
+          "uid": "8eff40c3-4bfd-44f0-bfee-20d37f3445ec",
+          "title": "天下一☆舞踏会",
+          "popularity": 3
+        },
+        {
+          "uid": "5d4a84a0-f033-4f2e-af48-4cb90633e0fa",
+          "title": "激甘ガチ恋なにわスタイル",
+          "popularity": 3
+        },
+        {
+          "uid": "b03aa52a-e85b-4c66-9593-34a39670ef68",
+          "title": "ちょっちょっちょけ君に夢中!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "14a91b5f-3ab0-4f22-8120-28c2ad852433",
+          "title": "ぱっぱらぱぁのぱ〜でんねん",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0fc1b5e3-2b64-40e9-bb58-361c7ab91f9b",
+          "title": "オーサカーニバル‼︎",
+          "popularity": 2.5
+        },
+        {
+          "uid": "11c9b8d3-9cb0-4e72-91d7-e25d4d2aac41",
+          "title": "一宿一飯",
+          "popularity": 2.5
+        },
+        {
+          "uid": "900d270f-d978-49db-8c31-9fb1654f776f",
+          "title": "一発逆転すーぱーどりーまー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d8dd9d02-0178-4eef-b6d1-1d113deb5d4e",
+          "title": "結局最後は踊らせたい",
+          "popularity": 2.5
+        },
+        {
+          "uid": "692279d5-0d0b-422b-9e29-3cf6ca789935",
+          "title": "WAHAHA!",
+          "popularity": 1.5
+        },
+        {
+          "uid": "54552d14-54ac-43da-b574-d394d8b0cdd4",
+          "title": "なにわギャルの日常は?",
+          "popularity": 1.5
+        },
+        {
+          "uid": "7f808ebd-190f-448a-9929-c2ca7048b639",
+          "title": "ばきゅんずきゅんきゅん(歌花てんかソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "044c8561-23e5-4525-85eb-a9cc0443710d",
+          "title": "ナナコロビヤオキSE(えくぼver)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "4ea06be0-f34b-4579-ad82-6d2fde266984",
+          "title": "ナナコロビヤオキSE(になver)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "e23c6003-e057-4759-89b6-f7bd6f83709b",
+          "title": "ナナコロビヤオキSE(にもver)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "572571f4-73df-4f6a-a547-4ba3bde7a914",
+          "title": "ナナコロビヤオキSE(りこver)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "505a4a71-9b23-4d26-a5d7-6f6ffbefcb5a",
+          "title": "ナナコロビヤオキSE(れもんver)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "a0072806-fd9b-41ba-a85c-a45f0543c8c8",
+          "title": "ナナコロビヤオキSE(茉莉ver)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "d5ef4d74-d4c1-420d-9cad-e88dfa0d497e",
+          "title": "フェアリーステップ(瀬戸内れもんソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "87f7f36e-2a9b-4ed0-9c55-8df5482f901e",
+          "title": "プライドビート(歌花てんかソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "956a966d-89fe-4de1-a361-d4d2f5bb2b35",
+          "title": "今にもナンバーワン(熊ノ実にもソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "c668a3f0-6041-4d90-b6da-4de4ec629426",
+          "title": "伝えて好きの二文字(熊ノ実にもソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "b7059e9e-f251-4f06-8d58-91667816ddc6",
+          "title": "関西エナジー",
+          "popularity": 1.5
+        }
+      ]
+    },
+    {
+      "name": "テンシンランマン",
+      "name_romanji": "Tenshinranman",
+      "uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+      "logo_url": "../data/pictures/groups/Tenshinranman_icon.webp",
+      "members": [
+        {
+          "uid": "7dff5868-8cdd-4084-bdf3-febfa8e16d6a",
+          "name": "琴音うな",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%90%B4%E9%9F%B3%E3%81%86%E3%81%AA_portrait.jpg"
+        },
+        {
+          "uid": "cfd9ec40-5872-45ec-87bb-942cf1fb831a",
+          "name": "小倉あずき",
+          "color": "Khaki",
+          "color_hex": "#000080",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E5%80%89%E3%81%82%E3%81%9A%E3%81%8D_portrait.jpg"
+        },
+        {
+          "uid": "af153998-7078-4dd3-b3cf-cbcd9a723ca4",
+          "name": "味園そら",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E5%91%B3%E5%9C%92%E3%81%9D%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "6ba6f91f-870d-47fa-9c6a-1659205fa3ba",
+          "name": "織田こゆん",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E7%B9%94%E7%94%B0%E3%81%93%E3%82%86%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "6445ef44-1628-419b-9def-6c8048f2be2c",
+          "name": "海老原てん",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E6%B5%B7%E8%80%81%E5%8E%9F%E3%81%A6%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "668dfc7d-ba0a-4534-b201-5c2060689f05",
+          "name": "大須かのん",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%A4%A7%E9%A0%88%E3%81%8B%E3%81%AE%E3%82%93_portrait.jpg"
+        },
+        {
+          "uid": "17367f34-b7e7-434b-b08d-6410fbf49aba",
+          "name": "豊田もも",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E8%B1%8A%E7%94%B0%E3%82%82%E3%82%82_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
+          "title": "爛漫",
+          "popularity": null
+        }
+      ]
+    },
+    {
+      "name": "Pastel Closet",
+      "name_romanji": "Pastel Closet",
+      "uid": "3470f280-df87-4c34-addb-7d4a7c52106a",
+      "logo_url": "../data/pictures/groups/Pastel_Closet_icon.webp",
+      "members": [
+        {
+          "uid": "5b9cb32d-0671-4802-b370-c4dd851a382f",
+          "name": "篠原さくら",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E7%AF%A0%E5%8E%9F%E3%81%95%E3%81%8F%E3%82%89_portrait.jpg"
+        },
+        {
+          "uid": "f913ca1c-985b-4d66-b938-e6c6efd41b2d",
+          "name": "幸野れいあ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%B9%B8%E9%87%8E%E3%82%8C%E3%81%84%E3%81%82_portrait.jpg"
+        },
+        {
+          "uid": "6ae09004-9be1-4c92-8e69-227d0b3b7f05",
+          "name": "仁科美都",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E4%BB%81%E7%A7%91%E7%BE%8E%E9%83%BD_portrait.jpg"
+        },
+        {
+          "uid": "7e5d8547-5998-469e-81a6-7673b9e9ef5f",
+          "name": "澄原夏帆",
+          "color": "緑",
+          "color_hex": "#50c878",
+          "portrait_url": "../data/pictures/idols/%E6%BE%84%E5%8E%9F%E5%A4%8F%E5%B8%86_portrait.jpg"
+        },
+        {
+          "uid": "8de22631-4d6d-43be-a2e5-61bc2cc00ff1",
+          "name": "雛城ののか",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E9%9B%9B%E5%9F%8E%E3%81%AE%E3%81%AE%E3%81%8B_portrait.jpg"
+        },
+        {
+          "uid": "84d03f97-9bd6-43d2-869d-28de0228af2e",
+          "name": "花木舞花",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E8%8A%B1%E6%9C%A8%E8%88%9E%E8%8A%B1_portrait.jpg"
+        },
+        {
+          "uid": "f799b2bd-03e7-4a05-8e7b-f4729198069d",
+          "name": "安齋みのり",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E5%AE%89%E9%BD%8B%E3%81%BF%E3%81%AE%E3%82%8A_portrait.jpg"
+        },
+        {
+          "uid": "0ecb82fb-a9ef-4213-88dd-c802cd296a9d",
+          "name": "柑乃あい",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E6%9F%91%E4%B9%83%E3%81%82%E3%81%84_portrait.jpg"
+        }
+      ],
+      "songs": []
+    },
+    {
+      "name": "ラストシーン",
+      "name_romanji": "LAST SCENE (HEROINES)",
+      "uid": "44Op44K544OI44K344O844Oz",
+      "logo_url": "../data/pictures/groups/LAST_SCENE_icon.webp",
+      "members": [
+        {
+          "uid": "d357345d-5fa5-43b4-aa14-d46328235f23",
+          "name": "天羽しおり",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E5%A4%A9%E7%BE%BD%E3%81%97%E3%81%8A%E3%82%8A_portrait.jpg"
+        },
+        {
+          "uid": "370bf602-2778-4434-96df-124715b1a7c5",
+          "name": "佑月いちか",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E4%BD%91%E6%9C%88%E3%81%84%E3%81%A1%E3%81%8B_portrait.jpg"
+        },
+        {
+          "uid": "83a7802f-7a5c-44ae-a4d6-c72735bf08f5",
+          "name": "優木あずさ",
+          "color": "赤",
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%84%AA%E6%9C%A8%E3%81%82%E3%81%9A%E3%81%95_portrait.jpg"
+        },
+        {
+          "uid": "9252635c-ba81-4e12-85ef-9691d898cacf",
+          "name": "宮瀬うゆ",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
+          "portrait_url": "../data/pictures/idols/%E5%AE%AE%E7%80%AC%E3%81%86%E3%82%86_portrait.jpg"
+        },
+        {
+          "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+          "name": "古賀みれい",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E5%8F%A4%E8%B3%80%E3%81%BF%E3%82%8C%E3%81%84_portrait.jpg"
+        },
+        {
+          "uid": "e23265c9-3aab-487f-be4e-c179a5c661d8",
+          "name": "椎名すず",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E6%A4%8E%E5%90%8D%E3%81%99%E3%81%9A_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "87d6b2d4-0d1e-45a6-9380-6f7c2b643102",
+          "title": "トゥルーエンド",
+          "popularity": 1.5
+        },
+        {
+          "uid": "0b84f3bd-ae57-4dd4-9f41-1b2d7e643101",
+          "title": "光の花",
+          "popularity": 1.5
+        }
+      ]
+    },
+    {
+      "name": "フルコース",
+      "name_romanji": "Full Course",
+      "uid": "RnVsbCBDb3Vyc2U",
+      "logo_url": "../data/pictures/groups/Full_Course_icon.webp",
+      "members": [
+        {
+          "uid": "aWRvbDo6aHR0cHM6Ly9qcG9wLmZhbmRvbS5jb20vd2lraS9OYWthZ2F3YV9Db2Nvcm8",
+          "name": "中川心",
+          "color": "赤",
+          "color_hex": "#e53935",
+          "portrait_url": "../data/pictures/idols/%E4%B8%AD%E5%B7%9D%E5%BF%83_portrait.jpg"
+        },
+        {
+          "uid": "bde2b79d-af14-4633-ac94-14d34658d8c4",
+          "name": "阿部菜々実",
+          "color": "白",
+          "color_hex": "#f5f5f5",
+          "portrait_url": "../data/pictures/idols/%E9%98%BF%E9%83%A8%E8%8F%9C%E3%80%85%E5%AE%9F_portrait.jpg"
+        },
+        {
+          "uid": "892bfb87-ce64-4913-a081-0d4e7efac6f3",
+          "name": "鈴木遥夏",
+          "color": "紫",
+          "color_hex": "#8e24aa",
+          "portrait_url": "../data/pictures/idols/%E9%88%B4%E6%9C%A8%E9%81%A5%E5%A4%8F_portrait.jpg"
+        },
+        {
+          "uid": "79073ceb-6cf5-45a4-a0eb-cc2af6d791be",
+          "name": "小葉こな",
+          "color": "緑",
+          "color_hex": "#43a047",
+          "portrait_url": null
+        },
+        {
+          "uid": "ce4a1d85-d51d-4f7b-bf4b-0ce70350cc22",
+          "name": "金城まき",
+          "color": "黄",
+          "color_hex": "#fdd835",
+          "portrait_url": null
+        },
+        {
+          "uid": "7f82421f-16bd-4916-8be8-b0eb5ad82cc3",
+          "name": "桜咲みはね",
+          "color": "ピンク",
+          "color_hex": "#ff5ca8",
+          "portrait_url": null
+        },
+        {
+          "uid": "61f51c3f-2c5c-49cf-a076-9e9c12d66c83",
+          "name": "水上凜巳花",
+          "color": "水色",
+          "color_hex": "#4fc3f7",
+          "portrait_url": null
+        }
+      ],
+      "songs": [
+        {
+          "title": "ターニングポイント"
+        },
+        {
+          "title": "White ROSE"
+        },
+        {
+          "title": "バンドワゴン"
+        }
+      ]
+    },
+    {
+      "name": "ヒロインズ研究生",
+      "name_romanji": "HEROINES Kenkyuusei",
+      "uid": "9b937bbf-facf-437b-9815-94152bfe5805",
+      "logo_url": "../data/pictures/groups/HEROINES_Kenkyuusei_icon.webp",
+      "members": [
+        {
+          "uid": "d90025e2-ef9e-4964-a4fe-131a550f421f",
+          "name": "白石あゆ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%9F%B3%E3%81%82%E3%82%86__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "b978e9b5-bde8-4964-a6d5-dbfa57cd2385",
+          "name": "広瀬りむ",
+          "color": "ミント",
+          "color_hex": "#98ff98",
+          "portrait_url": "../data/pictures/idols/%E5%BA%83%E7%80%AC%E3%82%8A%E3%82%80__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "2997a457-f693-42ef-b133-2945022121c4",
+          "name": "小菜実こゆ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E8%8F%9C%E5%AE%9F%E3%81%93%E3%82%86__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "042ff6d1-b225-433c-a0dc-523b63f51677",
+          "name": "綾瀬めめ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E7%B6%BE%E7%80%AC%E3%82%81%E3%82%81__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "58ae84f3-6ab4-578d-a1e8-580bed592b13",
+          "name": "白鳥ちな",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E9%B3%A5%E3%81%A1%E3%81%AA__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "81817d18-ac2e-5253-9357-0295df75e5b5",
+          "name": "小梅ちろ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E6%A2%85%E3%81%A1%E3%82%8D__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "d5da541e-d871-57b8-8b75-63fbfd89951a",
+          "name": "花森ぴの",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E8%8A%B1%E6%A3%AE%E3%81%B4%E3%81%AE__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "433130f0-2754-5912-9901-08137f1921da",
+          "name": "矢乃ひまり",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E7%9F%A2%E4%B9%83%E3%81%B2%E3%81%BE%E3%82%8A__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "bb9d6079-d8f5-5eba-8f2a-17a8d02fe9cd",
+          "name": "逢坂めるむ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E9%80%A2%E5%9D%82%E3%82%81%E3%82%8B%E3%82%80__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "96a98585-285e-5eaa-aa7e-07c368e0e6eb",
+          "name": "有舞ねおん",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E6%9C%89%E8%88%9E%E3%81%AD%E3%81%8A%E3%82%93__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "8bd71f23-68fb-5201-bb84-303e71c87b4e",
+          "name": "芽野りりあ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E8%8A%BD%E9%87%8E%E3%82%8A%E3%82%8A%E3%81%82__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "36b446eb-69a1-561f-877d-88232f46073b",
+          "name": "鳴雷びび",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E9%B3%B4%E9%9B%B7%E3%81%B3%E3%81%B3__HEROINES_Kenkyuusei_portrait.jpg"
+        },
+        {
+          "uid": "780fcbaf-12f4-5f2a-aa30-4b15967e5878",
+          "name": "可愛川ここ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%8F%AF%E6%84%9B%E5%B7%9D%E3%81%93%E3%81%93__HEROINES_Kenkyuusei_portrait.jpg"
+        }
+      ],
+      "songs": [
+        {
+          "uid": "d5538256-f8fd-4333-95b8-d2db7071975e",
+          "title": "星屑シンドローム",
+          "popularity": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ヒロインズ研究生大阪",
+      "name_romanji": "HEROINES Kenkyuusei Osaka",
+      "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513",
+      "logo_url": "../data/pictures/groups/HEROINES_Kenkyuusei_Osaka_icon.webp",
+      "members": [
+        {
+          "uid": "8a7fba01-02aa-4275-a36d-708bf3aa097a",
+          "name": "鹿野こなほ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E9%B9%BF%E9%87%8E%E3%81%93%E3%81%AA%E3%81%BB__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "178ab058-0a9d-4246-8a2c-34df5813ab28",
+          "name": "千鳥もえ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%8D%83%E9%B3%A5%E3%82%82%E3%81%88__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "51a5090c-0415-4fe2-9005-7674baffa856",
+          "name": "不破ふわり",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E4%B8%8D%E7%A0%B4%E3%81%B5%E3%82%8F%E3%82%8A__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "6277590b-df27-40cb-8621-bbf183ec01fd",
+          "name": "御堂筋ぴこ",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%BE%A1%E5%A0%82%E7%AD%8B%E3%81%B4%E3%81%93__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "a918cb62-a802-5af9-9e97-74267952e66b",
+          "name": "桃谷りの",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E6%A1%83%E8%B0%B7%E3%82%8A%E3%81%AE__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "95d18871-b43f-5535-b1ba-85c11b74a175",
+          "name": "北浜そふと",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%8C%97%E6%B5%9C%E3%81%9D%E3%81%B5%E3%81%A8__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "0dfb0c22-f373-513e-aeec-c11d21b56610",
+          "name": "汐見らう",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E6%B1%90%E8%A6%8B%E3%82%89%E3%81%86__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "4306a822-704d-5b8a-8232-b3b4b5f08104",
+          "name": "笑門りい",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E7%AC%91%E9%96%80%E3%82%8A%E3%81%84__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "27ad6f67-7fc1-5a29-9144-4f33e69cee99",
+          "name": "小花衣はお",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E8%8A%B1%E8%A1%A3%E3%81%AF%E3%81%8A__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        },
+        {
+          "uid": "f4e11e27-1519-563e-b43f-a760989084bb",
+          "name": "安良城いと",
+          "color": null,
+          "color_hex": "#eceff1",
+          "portrait_url": "../data/pictures/idols/%E5%AE%89%E8%89%AF%E5%9F%8E%E3%81%84%E3%81%A8__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
+        }
+      ],
+      "songs": []
+    }
+  ]
+}
