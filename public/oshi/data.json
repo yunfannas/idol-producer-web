@@ -1,7 +1,7 @@
 {
   "title": "HEROINES 推しチャート",
   "subtitle": "各グループの推しメン＆推し曲を選ぼう",
-  "generated_at": "2026-07-14T07:48:57",
+  "generated_at": "2026-07-14T15:20:36",
   "groups": [
     {
       "name": "iLiFE!",
@@ -921,25 +921,45 @@
           "name": "日陽きい",
           "color": "黄",
           "color_hex": "#ffff00",
-          "portrait_url": "../data/pictures/idols/9e0f8916-375b-40a4-842b-cf6b2fbd3c7d_portrait.jpg"
+          "portrait_url": "../data/pictures/idols/%E6%97%A5%E9%99%BD%E3%81%8D%E3%81%84_portrait.jpg"
         },
         {
           "uid": "2571d33a-51e8-4ca9-b577-a602318af81f",
           "name": "宮代ゆき",
           "color": "白",
           "color_hex": "#ffffff",
-          "portrait_url": "../data/pictures/idols/2571d33a-51e8-4ca9-b577-a602318af81f_portrait.jpg"
+          "portrait_url": "../data/pictures/idols/%E5%AE%AE%E4%BB%A3%E3%82%86%E3%81%8D_portrait.jpg"
         }
       ],
       "songs": [
+        {
+          "uid": "2c9af4ef-f478-4898-b446-382ca7f23add",
+          "title": "バカデカボイス",
+          "popularity": null
+        },
+        {
+          "uid": "5bb40788-5ba4-4056-a085-b70df0cdc046",
+          "title": "ときめきめいく",
+          "popularity": null
+        },
+        {
+          "uid": "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
+          "title": "夏に恋してる",
+          "popularity": null
+        },
+        {
+          "uid": "83b3f908-bb9c-429d-8150-ad1d377616ff",
+          "title": "ダイスキステキラッキーデイズ)-Koharu Nokasolo",
+          "popularity": null
+        },
         {
           "uid": "a2fc2d86-4d5b-44f5-953e-880de7e67dfb",
           "title": "さいきょうセンセーション",
           "popularity": null
         },
         {
-          "uid": "5bb40788-5ba4-4056-a085-b70df0cdc046",
-          "title": "ときめきめいく",
+          "uid": "0774e6e6-5e97-412c-9f11-16dd4eb3e10d",
+          "title": "バカデカボイスでスキって叫べ！",
           "popularity": null
         },
         {
@@ -950,26 +970,6 @@
         {
           "uid": "3fc80621-4c4a-4b85-8646-b2d53dabee50",
           "title": "スノードロップ)-Miyashiro Yukisolo",
-          "popularity": null
-        },
-        {
-          "uid": "83b3f908-bb9c-429d-8150-ad1d377616ff",
-          "title": "ダイスキステキラッキーデイズ)-Koharu Nokasolo",
-          "popularity": null
-        },
-        {
-          "uid": "2c9af4ef-f478-4898-b446-382ca7f23add",
-          "title": "バカデカボイス",
-          "popularity": null
-        },
-        {
-          "uid": "0774e6e6-5e97-412c-9f11-16dd4eb3e10d",
-          "title": "バカデカボイスでスキって叫べ！",
-          "popularity": null
-        },
-        {
-          "uid": "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
-          "title": "夏に恋してる",
           "popularity": null
         },
         {
@@ -1267,13 +1267,8 @@
       ],
       "songs": [
         {
-          "uid": "106d0386-96d6-44e4-897a-2ae028a79695",
-          "title": "Artifact",
-          "popularity": null
-        },
-        {
-          "uid": "0a04112f-c629-462b-9bc0-9ee266805df5",
-          "title": "Grudge",
+          "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
+          "title": "マツリカ舞う風",
           "popularity": null
         },
         {
@@ -1282,28 +1277,18 @@
           "popularity": null
         },
         {
-          "uid": "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
-          "title": "Past Shapes",
+          "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
+          "title": "アーティファクト",
           "popularity": null
         },
         {
-          "uid": "74c70238-4f26-4fc3-b60e-401b97d38e48",
-          "title": "REINCARNATION",
+          "uid": "106d0386-96d6-44e4-897a-2ae028a79695",
+          "title": "Artifact",
           "popularity": null
         },
         {
-          "uid": "704d20ee-5b46-461f-8e5d-680c16a5423d",
-          "title": "STEP IN TIME",
-          "popularity": null
-        },
-        {
-          "uid": "71173086-13ca-4141-83d8-eb0d962de2db",
-          "title": "SnowTears",
-          "popularity": null
-        },
-        {
-          "uid": "26f67e66-39f1-41b2-bb96-cc25228367e6",
-          "title": "StayLOUD",
+          "uid": "cce5a698-c53f-445f-b22a-bbaa5849de46",
+          "title": "天生輪廻",
           "popularity": null
         },
         {
@@ -1312,18 +1297,13 @@
           "popularity": null
         },
         {
-          "uid": "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
-          "title": "どりぃむちゃちゃらんど",
+          "uid": "74c70238-4f26-4fc3-b60e-401b97d38e48",
+          "title": "REINCARNATION",
           "popularity": null
         },
         {
-          "uid": "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
-          "title": "らぶみーきるみー)-No More ChachaSolo",
-          "popularity": null
-        },
-        {
-          "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
-          "title": "アーティファクト",
+          "uid": "26f67e66-39f1-41b2-bb96-cc25228367e6",
+          "title": "StayLOUD",
           "popularity": null
         },
         {
@@ -1332,13 +1312,8 @@
           "popularity": null
         },
         {
-          "uid": "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
-          "title": "ニコニコLouder",
-          "popularity": null
-        },
-        {
-          "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
-          "title": "マツリカ舞う風",
+          "uid": "75fbcdf8-895e-4d9a-90a1-e2314942cd56",
+          "title": "人生はっぴーふぁっきんまいらいふ)-No More ChachaSolo",
           "popularity": null
         },
         {
@@ -1347,13 +1322,38 @@
           "popularity": null
         },
         {
-          "uid": "75fbcdf8-895e-4d9a-90a1-e2314942cd56",
-          "title": "人生はっぴーふぁっきんまいらいふ)-No More ChachaSolo",
+          "uid": "704d20ee-5b46-461f-8e5d-680c16a5423d",
+          "title": "STEP IN TIME",
           "popularity": null
         },
         {
-          "uid": "cce5a698-c53f-445f-b22a-bbaa5849de46",
-          "title": "天生輪廻",
+          "uid": "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
+          "title": "らぶみーきるみー)-No More ChachaSolo",
+          "popularity": null
+        },
+        {
+          "uid": "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+          "title": "Past Shapes",
+          "popularity": null
+        },
+        {
+          "uid": "71173086-13ca-4141-83d8-eb0d962de2db",
+          "title": "SnowTears",
+          "popularity": null
+        },
+        {
+          "uid": "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
+          "title": "どりぃむちゃちゃらんど",
+          "popularity": null
+        },
+        {
+          "uid": "0a04112f-c629-462b-9bc0-9ee266805df5",
+          "title": "Grudge",
+          "popularity": null
+        },
+        {
+          "uid": "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
+          "title": "ニコニコLouder",
           "popularity": null
         },
         {
@@ -1942,13 +1942,6 @@
           "portrait_url": "../data/pictures/idols/%E5%BD%A9%E9%9F%B3%E3%82%86%E3%81%AE_portrait.jpg"
         },
         {
-          "uid": "d3bf4d5b-cb45-48da-bcd3-cb7ef6f9d4f4",
-          "name": "宮奈もこ",
-          "color": "赤",
-          "color_hex": "#ff0000",
-          "portrait_url": "../data/pictures/idols/%E5%AE%AE%E5%A5%88%E3%82%82%E3%81%93_portrait.jpg"
-        },
-        {
           "uid": "87f42c82-e076-4799-808d-19d6a597bc4f",
           "name": "宇佐美あこ",
           "color": "ピンク",
@@ -1965,58 +1958,8 @@
       ],
       "songs": [
         {
-          "uid": "a47bf368-664f-48a0-9690-0b20dd2af167",
-          "title": "パラレルサイダー",
-          "popularity": 4
-        },
-        {
-          "uid": "c68dedb5-81b8-4c47-b786-6eec67da40a8",
-          "title": "フェイクフェイス",
-          "popularity": 3.5
-        },
-        {
-          "uid": "314cf507-aea3-45b8-914f-e2f16d44062b",
-          "title": "Look back",
-          "popularity": 3
-        },
-        {
-          "uid": "55b4f79a-bc8c-4330-b54e-e519ca78fbaf",
-          "title": "星空 Goodbye",
-          "popularity": 3
-        },
-        {
-          "uid": "5d6dc868-aac2-4e46-a9bf-4c032e67d613",
-          "title": "流星トワイライト",
-          "popularity": 3
-        },
-        {
-          "uid": "77585a42-d37b-4a77-9db3-c948366254b2",
-          "title": "Let′s take five",
-          "popularity": 2.5
-        },
-        {
-          "uid": "f84671b4-1212-4ded-bfa5-05f13d844296",
-          "title": "Narrative",
-          "popularity": 2.5
-        },
-        {
-          "uid": "572ae673-a8b8-4f29-ab41-416801afe9fe",
-          "title": "サマーサイダー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "4d38ad95-b8d3-474a-a4b7-32e472301971",
-          "title": "青い鳥の在り処",
-          "popularity": 2.5
-        },
-        {
           "uid": "2953c6d3-40f1-4d88-adc8-c07683f9c41f",
           "title": "ANSWER",
-          "popularity": 1.5
-        },
-        {
-          "uid": "a398421e-21ce-446c-913d-f9998deb95e0",
-          "title": "Sunny Days",
           "popularity": 1.5
         },
         {
@@ -2025,9 +1968,59 @@
           "popularity": 1.5
         },
         {
+          "uid": "77585a42-d37b-4a77-9db3-c948366254b2",
+          "title": "Let′s take five",
+          "popularity": 2.5
+        },
+        {
+          "uid": "314cf507-aea3-45b8-914f-e2f16d44062b",
+          "title": "Look back",
+          "popularity": 3
+        },
+        {
+          "uid": "a398421e-21ce-446c-913d-f9998deb95e0",
+          "title": "Sunny Days",
+          "popularity": 1.5
+        },
+        {
+          "uid": "572ae673-a8b8-4f29-ab41-416801afe9fe",
+          "title": "サマーサイダー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a47bf368-664f-48a0-9690-0b20dd2af167",
+          "title": "パラレルサイダー",
+          "popularity": 4
+        },
+        {
+          "uid": "55b4f79a-bc8c-4330-b54e-e519ca78fbaf",
+          "title": "星空 Goodbye",
+          "popularity": 3
+        },
+        {
+          "uid": "f84671b4-1212-4ded-bfa5-05f13d844296",
+          "title": "Narrative",
+          "popularity": 2.5
+        },
+        {
           "uid": "66360042-679d-4d5f-8a52-d04f235bddab",
           "title": "グラデーション",
           "popularity": 1.5
+        },
+        {
+          "uid": "c68dedb5-81b8-4c47-b786-6eec67da40a8",
+          "title": "フェイクフェイス",
+          "popularity": 3.5
+        },
+        {
+          "uid": "5d6dc868-aac2-4e46-a9bf-4c032e67d613",
+          "title": "流星トワイライト",
+          "popularity": 3
+        },
+        {
+          "uid": "4d38ad95-b8d3-474a-a4b7-32e472301971",
+          "title": "青い鳥の在り処",
+          "popularity": 2.5
         }
       ]
     },

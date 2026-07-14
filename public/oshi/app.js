@@ -1,6 +1,10 @@
 const SAVES_KEY = "heroines-oshi-saves-v1";
 const LAST_NAME_KEY = "heroines-oshi-last-name";
+const CUSTOM_SONGS_KEY = "heroines-oshi-custom-songs-v1";
 const GAME_WEB_URL = "https://yunfannas.github.io/idol-producer-web/";
+
+/** Working custom-song DB (file + localStorage pending adds). */
+let customSongsDb = { version: 1, updated_at: null, entries: [] };
 
 function contrastInk(hex) {
   if (!hex || !hex.startsWith("#") || hex.length < 7) return "#fff6fb";
@@ -57,6 +61,134 @@ function makePh(className, label) {
 
 const CUSTOM_SONG_VALUE = "__custom__";
 
+function emptyCustomSongsDb() {
+  return {
+    version: 1,
+    updated_at: null,
+    note: "User-submitted custom 推し曲 titles. Confirm and merge into public/data/songs.json later.",
+    entries: [],
+  };
+}
+
+function normalizeCustomSongsDb(raw) {
+  const db = emptyCustomSongsDb();
+  if (!raw || typeof raw !== "object") return db;
+  db.version = Number(raw.version) || 1;
+  db.updated_at = raw.updated_at || null;
+  if (typeof raw.note === "string") db.note = raw.note;
+  const entries = Array.isArray(raw.entries) ? raw.entries : [];
+  const seen = new Set();
+  for (const row of entries) {
+    const groupName = String(row?.group_name || "").trim();
+    const title = String(row?.title || "").trim();
+    if (!groupName || !title) continue;
+    const key = `${groupName}\0${title}`.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    db.entries.push({
+      group_name: groupName,
+      group_uid: row.group_uid || null,
+      title,
+      added_at: row.added_at || null,
+      added_by: row.added_by || null,
+    });
+  }
+  return db;
+}
+
+function readLocalCustomSongs() {
+  try {
+    return normalizeCustomSongsDb(JSON.parse(localStorage.getItem(CUSTOM_SONGS_KEY) || "null"));
+  } catch {
+    return emptyCustomSongsDb();
+  }
+}
+
+function writeLocalCustomSongs(db) {
+  localStorage.setItem(CUSTOM_SONGS_KEY, JSON.stringify(db));
+}
+
+function mergeCustomSongsDb(base, extra) {
+  const out = normalizeCustomSongsDb(base);
+  const seen = new Set(out.entries.map((e) => `${e.group_name}\0${e.title}`.toLowerCase()));
+  for (const row of normalizeCustomSongsDb(extra).entries) {
+    const key = `${row.group_name}\0${row.title}`.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.entries.push(row);
+  }
+  out.updated_at = out.entries.reduce((max, e) => {
+    const t = e.added_at || "";
+    return t > max ? t : max;
+  }, out.updated_at || "") || out.updated_at;
+  return out;
+}
+
+async function loadCustomSongsDb() {
+  let fileDb = emptyCustomSongsDb();
+  try {
+    const res = await fetch("./custom_songs.json", { cache: "no-store" });
+    if (res.ok) fileDb = normalizeCustomSongsDb(await res.json());
+  } catch {
+    /* start empty */
+  }
+  return mergeCustomSongsDb(fileDb, readLocalCustomSongs());
+}
+
+function customTitlesForGroup(group) {
+  const name = group?.name || "";
+  const uid = group?.uid || "";
+  return customSongsDb.entries
+    .filter((e) => e.group_name === name || (uid && e.group_uid === uid))
+    .map((e) => e.title);
+}
+
+function songsForGroupSelect(group) {
+  const catalog = [...(group.songs || [])];
+  const seen = new Set(catalog.map((s) => String(s.title || "").trim()).filter(Boolean));
+  const out = catalog.map((s) => ({ title: s.title, source: "catalog", uid: s.uid || null }));
+  for (const title of customTitlesForGroup(group)) {
+    if (!title || seen.has(title)) continue;
+    seen.add(title);
+    out.push({ title, source: "custom", uid: null });
+  }
+  return out;
+}
+
+function persistCustomSong(group, title) {
+  const clean = String(title || "").trim();
+  if (!clean || !group?.name) return null;
+  const inCatalog = (group.songs || []).some((s) => String(s.title || "").trim() === clean);
+  if (inCatalog) return { title: clean, added: false, catalog: true };
+  const key = `${group.name}\0${clean}`.toLowerCase();
+  const exists = customSongsDb.entries.some(
+    (e) => `${e.group_name}\0${e.title}`.toLowerCase() === key,
+  );
+  if (exists) return { title: clean, added: false };
+  const row = {
+    group_name: group.name,
+    group_uid: group.uid || null,
+    title: clean,
+    added_at: new Date().toISOString(),
+    added_by: currentOwnerName() || null,
+  };
+  customSongsDb.entries.push(row);
+  customSongsDb.updated_at = row.added_at;
+  writeLocalCustomSongs(customSongsDb);
+  return { title: clean, added: true, row };
+}
+
+function downloadCustomSongsDb() {
+  const payload = {
+    ...customSongsDb,
+    updated_at: customSongsDb.updated_at || new Date().toISOString(),
+  };
+  downloadBlob(
+    new Blob([JSON.stringify(payload, null, 2) + "\n"], { type: "application/json" }),
+    "custom_songs.json",
+  );
+}
+
 function fillSelect(select, blankLabel, emptyLabel, items, getValue, getLabel, setDataset) {
   select.replaceChildren();
   const blank = document.createElement("option");
@@ -85,6 +217,23 @@ function addCustomSongOption(select) {
   }
 }
 
+function fillSongSelect(songSelect, group) {
+  const songs = songsForGroupSelect(group);
+  fillSelect(
+    songSelect,
+    "未選択",
+    "曲未登録",
+    songs,
+    (s) => s.title,
+    (s) => (s.source === "custom" ? `${s.title} · custom` : s.title),
+    (opt, s) => {
+      if (s.source === "custom") opt.dataset.customSong = "1";
+    },
+  );
+  addCustomSongOption(songSelect);
+  return songs;
+}
+
 function readableMemberStyle(hex) {
   // Member color only on the closed select background; name stays black unless bg is dark.
   const ink = contrastInk(hex);
@@ -109,7 +258,10 @@ function songValueFromRow(tr) {
 function setCustomSongVisible(songCustom, visible) {
   if (!songCustom) return;
   songCustom.hidden = !visible;
-  songCustom.parentElement?.classList.toggle("is-custom", visible);
+  const shell = songCustom.parentElement;
+  shell?.classList.toggle("is-custom", visible);
+  const saveBtn = shell?.querySelector(".btn-song-save");
+  if (saveBtn) saveBtn.hidden = !visible;
   if (!visible) return;
   songCustom.focus();
 }
@@ -347,15 +499,7 @@ function render(data, picks = null) {
     const songSelect = document.createElement("select");
     songSelect.className = "pick-select song-select";
     songSelect.setAttribute("aria-label", `${group.name} 推し曲`);
-    fillSelect(
-      songSelect,
-      "未選択",
-      "曲未登録",
-      group.songs || [],
-      (s) => s.title,
-      (s) => s.title,
-    );
-    addCustomSongOption(songSelect);
+    fillSongSelect(songSelect, group);
 
     const songCustom = document.createElement("input");
     songCustom.type = "text";
@@ -365,9 +509,18 @@ function render(data, picks = null) {
     songCustom.placeholder = "Custom title";
     songCustom.autocomplete = "off";
 
+    const songSaveBtn = document.createElement("button");
+    songSaveBtn.type = "button";
+    songSaveBtn.className = "btn-song-save";
+    songSaveBtn.hidden = true;
+    songSaveBtn.title = "Save custom song to database";
+    songSaveBtn.setAttribute("aria-label", `Save custom song for ${group.name}`);
+    songSaveBtn.textContent = "✓";
+
     songSelect.addEventListener("change", () => {
       const isCustom = songSelect.value === CUSTOM_SONG_VALUE;
       setCustomSongVisible(songCustom, isCustom);
+      songSaveBtn.hidden = !isCustom;
       if (!isCustom) {
         songCustom.value = "";
         delete tr.dataset.customSong;
@@ -376,8 +529,47 @@ function render(data, picks = null) {
     songCustom.addEventListener("input", () => {
       tr.dataset.customSong = songCustom.value;
     });
+    songCustom.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter") {
+        ev.preventDefault();
+        songSaveBtn.click();
+      }
+    });
+    songSaveBtn.addEventListener("click", () => {
+      const title = (songCustom.value || "").trim();
+      if (!title) {
+        setStatus("Enter a custom song title first", "err");
+        songCustom.focus();
+        return;
+      }
+      const result = persistCustomSong(group, title);
+      if (!result) return;
+      const prev = songSelect.value;
+      fillSongSelect(songSelect, group);
+      // Prefer the saved title as a normal pull-down option
+      if ([...songSelect.options].some((o) => o.value === result.title)) {
+        songSelect.value = result.title;
+        songCustom.value = "";
+        delete tr.dataset.customSong;
+        setCustomSongVisible(songCustom, false);
+        songSaveBtn.hidden = true;
+      } else {
+        songSelect.value = prev || CUSTOM_SONG_VALUE;
+      }
+      if (result.added) downloadCustomSongsDb();
+      if (result.catalog) {
+        setStatus(`“${result.title}” is already in the catalog list`, "ok");
+      } else if (result.added) {
+        setStatus(
+          `Saved “${result.title}” to custom_songs.json — drop into public/oshi/ to share`,
+          "ok",
+        );
+      } else {
+        setStatus(`“${result.title}” already in custom song DB`, "ok");
+      }
+    });
 
-    songShell.append(songCustom, songSelect);
+    songShell.append(songCustom, songSaveBtn, songSelect);
     songTd.appendChild(songShell);
     tr.append(groupTd, memberTd, songTd);
     tbody.appendChild(tr);
@@ -893,7 +1085,38 @@ function downloadBlob(blob, filename) {
   URL.revokeObjectURL(url);
 }
 
+function buildNamedSaveRecord(name, picks) {
+  return {
+    name,
+    saved_at: new Date().toISOString(),
+    picks,
+  };
+}
+
+function saveNamedRecord(name, record) {
+  const all = readAllSaves();
+  all[name] = {
+    saved_at: record.saved_at || new Date().toISOString(),
+    picks: record.picks || {},
+  };
+  writeAllSaves(all);
+  localStorage.setItem(LAST_NAME_KEY, name);
+}
+
+function normalizeImportedSave(raw) {
+  if (!raw || typeof raw !== "object") return null;
+  const name = String(raw.name || "").trim();
+  const picks = raw.picks;
+  if (!name || !picks || typeof picks !== "object") return null;
+  return {
+    name,
+    saved_at: raw.saved_at || new Date().toISOString(),
+    picks,
+  };
+}
+
 const data = await fetch("./data.json").then((r) => r.json());
+customSongsDb = await loadCustomSongsDb();
 
 const nameInput = document.getElementById("saveName");
 const lastName = localStorage.getItem(LAST_NAME_KEY) || "";
@@ -902,7 +1125,7 @@ if (lastName) nameInput.value = lastName;
 // Don't auto-load until Name is Confirmed — start blank unless confirmed below.
 render(data, null);
 
-function confirmOwnerName() {
+async function confirmOwnerName() {
   const name = currentOwnerName();
   if (!name) {
     setStatus("Enter a Name first", "err");
@@ -911,7 +1134,24 @@ function confirmOwnerName() {
   }
   localStorage.setItem(LAST_NAME_KEY, name);
   const all = readAllSaves();
-  const record = all[name];
+  let record = all[name];
+  if (!record?.picks) {
+    try {
+      const res = await fetch(`./saves/${encodeURIComponent(name)}.json`, { cache: "no-store" });
+      if (res.ok) {
+        record = await res.json();
+        if (record?.picks) {
+          all[name] = {
+            saved_at: record.saved_at || new Date().toISOString(),
+            picks: record.picks,
+          };
+          writeAllSaves(all);
+        }
+      }
+    } catch {
+      /* no file backup */
+    }
+  }
   if (record?.picks) {
     applyPicks(record.picks);
     setStatus(`Loaded “${name}”`, "ok");
@@ -941,14 +1181,48 @@ document.getElementById("saveNamed").addEventListener("click", () => {
     nameInput.focus();
     return;
   }
-  const all = readAllSaves();
-  all[name] = {
-    saved_at: new Date().toISOString(),
-    picks: collectPicks(),
-  };
-  writeAllSaves(all);
-  localStorage.setItem(LAST_NAME_KEY, name);
+  saveNamedRecord(name, buildNamedSaveRecord(name, collectPicks()));
   setStatus(`Saved “${name}” on this site`, "ok");
+});
+
+document.getElementById("exportSaveJson").addEventListener("click", () => {
+  const name = currentOwnerName();
+  if (!name) {
+    setStatus("Enter a Name first", "err");
+    nameInput.focus();
+    return;
+  }
+  const record = buildNamedSaveRecord(name, collectPicks());
+  saveNamedRecord(name, record);
+  downloadBlob(
+    new Blob([JSON.stringify(record, null, 2) + "\n"], { type: "application/json" }),
+    `${safeFileStem(name)}-heroines-oshi-save.json`,
+  );
+  setStatus(`Exported “${name}” save JSON`, "ok");
+});
+
+const importSaveFile = document.getElementById("importSaveFile");
+document.getElementById("importSaveJson").addEventListener("click", () => {
+  importSaveFile?.click();
+});
+
+importSaveFile?.addEventListener("change", async (ev) => {
+  const file = ev.target?.files?.[0];
+  if (!file) return;
+  try {
+    const raw = JSON.parse(await file.text());
+    const record = normalizeImportedSave(raw);
+    if (!record) throw new Error("invalid save");
+    saveNamedRecord(record.name, record);
+    nameInput.value = record.name;
+    applyPicks(record.picks);
+    setStatus(`Imported “${record.name}” from JSON`, "ok");
+  } catch (err) {
+    console.error(err);
+    setStatus("Could not import save JSON", "err");
+  } finally {
+    ev.target.value = "";
+  }
 });
 
 document.getElementById("saveToFile").addEventListener("click", async () => {

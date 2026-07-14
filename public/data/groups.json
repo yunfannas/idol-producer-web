@@ -37282,13 +37282,12 @@
   {
     "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
     "name": "パラレルサイダー",
-    "member_count": 7,
+    "member_count": 6,
     "member_names": [
       "小熊まな香",
       "小坂みおん",
       "葉月みつは",
       "彩音ゆの",
-      "宮奈もこ",
       "宇佐美あこ",
       "瀬川なつき"
     ],
@@ -37297,11 +37296,10 @@
       "fa2e9768-6b00-468a-be74-6d6535d98ba9",
       "93b80c0e-5df8-440d-9045-79cc1d2b5baa",
       "7a72fc17-7379-4115-9b77-e2d0c4355bcb",
-      "d3bf4d5b-cb45-48da-bcd3-cb7ef6f9d4f4",
       "87f42c82-e076-4799-808d-19d6a597bc4f",
       "58d3ab95-4f9d-4fab-9214-7ccdb7610c6e"
     ],
-    "past_member_count": 7,
+    "past_member_count": 8,
     "past_member_names": [
       "夢月まゆ",
       "藤川笑茉",
@@ -37309,7 +37307,8 @@
       "七瀬にこ",
       "雛小みらい",
       "絢瀬まよ",
-      "宝城あいり"
+      "宝城あいり",
+      "宮奈もこ"
     ],
     "past_member_uids": [
       "7c6c2847-1b18-4f1e-812f-db0192242efb",
@@ -37318,7 +37317,8 @@
       "163b40d8-699f-4236-b579-c244ff8e6f9b",
       "66c1488a-14fc-45c1-9316-368e8d5709f9",
       "55777451-1372-4994-8184-93a2d78bf894",
-      "b869b751-6cba-4369-aa9f-738dcba7b388"
+      "b869b751-6cba-4369-aa9f-738dcba7b388",
+      "d3bf4d5b-cb45-48da-bcd3-cb7ef6f9d4f4"
     ],
     "color": null,
     "description": "",
@@ -37369,16 +37369,30 @@
       },
       {
         "uid": "14909035-9a33-46e6-a072-8e43faf4c1e6",
-        "title": "Narrative - EP",
-        "title_romanji": "Narrative - EP",
+        "title": "Narrative",
+        "title_romanji": "Narrative",
         "disc_type": "EP",
-        "release_date": "2022-12-02",
+        "release_date": "2025-12-25",
         "publisher": null,
         "publisher_uid": null,
         "catalog_number": "",
         "description": "Generated from Apple Music JP collection references during song import.",
-        "track_list": [],
-        "track_song_uids": [],
+        "track_list": [
+          "Narrative",
+          "パラレルサイダー",
+          "流星トワイライト",
+          "グラデーション",
+          "フェイクフェイス",
+          "青い鳥の在り処"
+        ],
+        "track_song_uids": [
+          "f84671b4-1212-4ded-bfa5-05f13d844296",
+          "a47bf368-664f-48a0-9690-0b20dd2af167",
+          "5d6dc868-aac2-4e46-a9bf-4c032e67d613",
+          "66360042-679d-4d5f-8a52-d04f235bddab",
+          "c68dedb5-81b8-4c47-b786-6eec67da40a8",
+          "4d38ad95-b8d3-474a-a4b7-32e472301971"
+        ],
         "duration": null,
         "cover_image_path": null
       }

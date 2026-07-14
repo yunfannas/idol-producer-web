@@ -120101,5 +120101,29 @@
     "_apple_track_ids": [
       1652485103
     ]
+  },
+  {
+    "uid": "c5f4d5d4-ec0e-4b15-9325-4709c039c0fd",
+    "title": "パラリラダンス",
+    "title_romanji": "Pararira Dance",
+    "disc_type": "Album",
+    "release_date": null,
+    "publisher": null,
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": null,
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "aS1DT0w",
+    "group_name": "i-COL",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
   }
 ]

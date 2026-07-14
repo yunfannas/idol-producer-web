@@ -15,7 +15,7 @@
   <body>
     <div class="page-bg" aria-hidden="true"></div>
     <header class="hero">
-      <a class="back-link" href="../">← Idol Producer Web</a>
+      <a class="back-link" href="../">← Idol Producer Game</a>
       <p class="brand">HEROINES</p>
       <h1>推しチャート</h1>
       <div class="hero-actions">
@@ -26,6 +26,11 @@
         <button type="button" id="confirmName" class="btn btn-secondary">Confirm</button>
         <button type="button" id="saveNamed" class="btn">Save</button>
         <div class="save-file-stack">
+          <div class="export-pngs" role="group" aria-label="Save or move chart data">
+            <button type="button" id="exportSaveJson" class="btn btn-secondary">Export Save (JSON)</button>
+            <button type="button" id="importSaveJson" class="btn btn-secondary">Import Save (JSON)</button>
+            <input type="file" id="importSaveFile" accept="application/json,.json" hidden />
+          </div>
           <button type="button" id="saveToFile" class="btn btn-secondary">Save to File (ZIP)</button>
           <div class="export-pngs" role="group" aria-label="Also save individual PNGs">
             <span class="export-marker" aria-hidden="true">↳ Save PNG</span>

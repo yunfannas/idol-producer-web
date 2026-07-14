@@ -50,6 +50,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/Nanakorobi_Yaoki_icon.webp",
       "picture/Nanakorobi_Yaoki_photo_4.webp",
       "picture/Nanakorobi_Yaoki_photo_3.webp",
       "picture/Nanakorobi_Yaoki_photo.webp",
@@ -250,7 +251,8 @@
       "54bc2f5c-5d82-49db-a1fd-081132820e85"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "disband_date": "2023-05-09"
   },
   {
     "uid": "44G-44Gt44GN44Kx44OB44Oj",
@@ -12303,7 +12305,7 @@
   {
     "uid": "44Gu44KT44G144GD44GP77yB",
     "name": "のんふぃく！",
-    "member_count": 8,
+    "member_count": 10,
     "member_names": [
       "恋星はるか",
       "水瀬ぴあの",
@@ -12312,7 +12314,9 @@
       "こるね",
       "澪織にいな",
       "香月あむ",
-      "真白里帆"
+      "真白里帆",
+      "空詩かれん",
+      "藤城なみ"
     ],
     "member_uids": [
       "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
@@ -12322,15 +12326,13 @@
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
       "b7362fff-f7d2-4fba-a5f7-febe07305d84",
       "ad732d26-4b39-4b95-a642-5db433ed09ae",
-      "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f"
-    ],
-    "past_member_count": 1,
-    "past_member_names": [
-      "藤城なみ"
-    ],
-    "past_member_uids": [
+      "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f",
+      "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
       "1f22a5cf-f0f8-4c95-a3b7-3b0049239b69"
     ],
+    "past_member_count": 0,
+    "past_member_names": [],
+    "past_member_uids": [],
     "color": null,
     "description": "June 2025 Information Also Known As NONFIC! Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! Yakousei Amuse BLK LiLiY i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Konose Haruka (2021-Present) Minase Piano (2021-",
     "formed_date": "2021-04-05",
@@ -12375,6 +12377,7 @@
       "d09a7d13-965f-41bd-9129-1e1cc16a06fa"
     ],
     "pictures": [
+      "picture/NonFiction_icon.webp",
       "picture/Non¬Fiction_photo_20.webp",
       "picture/Non¬Fiction_photo_2.webp",
       "picture/Non¬Fiction_photo_8.webp",
@@ -26184,7 +26187,7 @@
   {
     "uid": "44Ki44Kt44K344OWcHJvamVjdA",
     "name": "アキシブproject",
-    "member_count": 8,
+    "member_count": 13,
     "member_names": [
       "古賀みれい",
       "如月なな",
@@ -26193,7 +26196,12 @@
       "清見るん",
       "美山ひな",
       "茉井良菜",
-      "葵ふう"
+      "葵ふう",
+      "宮谷優恵",
+      "神崎らん",
+      "星乃まひろ",
+      "朝倉ゆりな",
+      "夢咲ありさ"
     ],
     "member_uids": [
       "3dfb8264-e501-45a7-a373-b3255445674e",
@@ -26203,7 +26211,12 @@
       "45484495-8792-48db-bab0-560ee4107464",
       "814c40ad-bcde-4f1a-af3b-f5154e98d601",
       "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
-      "c9703d21-784d-4818-ba13-eb66993e5b12"
+      "c9703d21-784d-4818-ba13-eb66993e5b12",
+      "97a34f68-8f18-4e80-9162-12eb293338d9",
+      "104d0903-9527-442d-822c-5a22d0b2b750",
+      "10453944-5fd0-4e53-86f5-9798e95fa7e2",
+      "db20b21b-0063-43e2-a21f-62af6dcd63ce",
+      "2bc08c6f-1e33-4c81-aa8f-7c2474b10d4f"
     ],
     "past_member_count": 35,
     "past_member_names": [
@@ -26213,11 +26226,9 @@
       "児嶋七奈",
       "大谷映美里",
       "宮古かおり",
-      "宮谷優恵",
       "小此木流花",
       "山本みゆ",
       "新居歩美",
-      "星乃まひろ",
       "星川まの",
       "村山沙羅",
       "林玲奈",
@@ -26231,7 +26242,6 @@
       "真城里帆",
       "真白里帆",
       "石川夏海",
-      "神崎らん",
       "福山梨乃",
       "船木沙織",
       "苺りなはむ",
@@ -26241,7 +26251,10 @@
       "藤本美紀",
       "計良日向子",
       "鈴木瑛海里",
-      "黒崎りある"
+      "黒崎りある",
+      "山本未悠",
+      "森下かのん",
+      "横山利奈"
     ],
     "past_member_uids": [
       "1626e615-f982-4e03-b2aa-21d7383ceda7",
@@ -26250,11 +26263,9 @@
       "664b4399-4225-4ee2-904a-a8c4251824fc",
       "dcc951b3-55bf-4065-bb30-2a78b769a0b4",
       "74093774-34e3-4bf2-92e7-51d192aea08a",
-      "97a34f68-8f18-4e80-9162-12eb293338d9",
       "40c8e4f5-d8d3-4e35-84c1-a833001eb468",
       "79ea6402-0004-4864-998b-ac7a908fddd1",
       "632f12f2-e91c-41de-9cef-cd05eefd91dc",
-      "10453944-5fd0-4e53-86f5-9798e95fa7e2",
       "24f2ed8c-6a63-4270-99a7-7a66b7bd04a6",
       "cf1fd161-1b4c-430c-8fd2-57e9462a2797",
       "47fd378c-cd9e-418c-94cc-96b58897310e",
@@ -26268,7 +26279,6 @@
       "45ef7ae3-8941-440b-8366-19b064de199e",
       "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f",
       "67233ec3-7e3f-4633-a878-08b9df73faf1",
-      "104d0903-9527-442d-822c-5a22d0b2b750",
       "f12226fb-57b9-4a3a-a075-e7dc2bdfb557",
       "3b2921fc-1d12-4b81-9684-b66fe978d224",
       "10add124-4eaa-48ac-821e-7939d123331b",
@@ -26278,7 +26288,10 @@
       "1a4fccf9-b4fb-4382-b34f-8782354687f9",
       "329ab4ce-f7a9-424a-8061-4c66b9ca73c1",
       "cdaffab5-a9a3-421c-ae69-a6fd2c9b35e3",
-      "720bfe27-a27c-4df4-a184-5c0e780cf070"
+      "720bfe27-a27c-4df4-a184-5c0e780cf070",
+      "cadc6768-bb73-40de-bc9b-c727b4dceb54",
+      "fce205b2-77d1-47d1-8f72-b2c69e79ad74",
+      "f2184c71-1b83-4cfb-a7bb-fb6b17a15dce"
     ],
     "color": null,
     "description": "January 2025 Information Also Known As akishibu (アキシブ) Origin Akihabara, Japan Genre J-Pop Years 2012–Present Label akishibuproject (2021) King Records (2018-2019) OTODAMA RECORDS (2017) Force Music (2016) TP IDOL (2015-2016) Agency LIVE PLANET (2012-Present) Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction CAL&RES Ill i-COL Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY chuLa paradeeq Nanakorobi Yaoki MEGAFON HEROINES Kenkyuusei iL",
@@ -26335,6 +26348,7 @@
       "9ad5b1b3-0fd0-48f3-b760-0ed94391da4b"
     ],
     "pictures": [
+      "picture/Akishibu_project_icon.webp",
       "picture/Akishibu_project_photo_14.webp",
       "picture/Akishibu_project_photo_15.webp",
       "picture/Akishibu_project_photo.webp",
@@ -37060,7 +37074,7 @@
   {
     "uid": "44OR44Op44OH44Kj44O844Kv",
     "name": "パラディーク",
-    "member_count": 7,
+    "member_count": 20,
     "member_names": [
       "水野めい",
       "来栖ゆる",
@@ -37068,7 +37082,20 @@
       "灯田にじ",
       "浜辺しずく",
       "岬ちなつ",
-      "煌坂もね"
+      "煌坂もね",
+      "阿久津友理",
+      "絢瀬まよ",
+      "可愛ぷに",
+      "岩澤美潤",
+      "近藤真琴",
+      "月城ろあ",
+      "小森ねる",
+      "新谷真由",
+      "神田風音",
+      "前田彩佳",
+      "朝日まる",
+      "平沢ゆめ",
+      "望月愛実"
     ],
     "member_uids": [
       "536e98f1-ebbd-4db0-89c7-1f2f7eca9758",
@@ -37077,38 +37104,27 @@
       "56029139-a0fd-48cb-b577-e38a3aaedafc",
       "afec82e2-d169-4816-9402-cd7dc8d15db0",
       "edda442f-caba-4a4f-b135-f39d6a0e02e0",
-      "84f94708-21be-400d-a37a-05e75f07885b"
+      "84f94708-21be-400d-a37a-05e75f07885b",
+      "76923792-dc52-4754-b37d-af4a02c53265",
+      "55777451-1372-4994-8184-93a2d78bf894",
+      "cadac094-4ea5-4289-9ad5-0d7b884fe3d0",
+      "e4d387fe-8496-4a52-b208-66bb96277cc6",
+      "9bae6786-18f8-42ec-bc4d-fd7d8be849f5",
+      "704f1ba3-4718-4b38-b758-b2b4ac6a72c7",
+      "475dc395-9acd-4fc1-b761-9cff1e532725",
+      "1e200a41-1770-4deb-9d6e-d446bf7865d7",
+      "6b3b7b5f-39dd-4b51-90eb-016ad06bc9ff",
+      "183d2e75-e31a-4f9c-834b-350bdd440c73",
+      "b1ec5e19-c08b-4d68-b1ce-8bd72fa7b0b1",
+      "06e43ce8-6662-4290-8cad-6b69eebe6673",
+      "3c28ffef-071b-4eef-a1ce-c17e24e70ec0"
     ],
-    "past_member_count": 13,
+    "past_member_count": 1,
     "past_member_names": [
-      "阿久津友理",
-      "近藤真琴",
-      "前田彩佳",
-      "神田風音",
-      "岩澤美潤",
-      "望月愛実",
-      "小森ねる",
-      "姫野あいな",
-      "月城ろあ",
-      "絢瀬まよ",
-      "平沢ゆめ",
-      "可愛ぷに",
-      "新谷真由"
+      "姫野あいな"
     ],
     "past_member_uids": [
-      "76923792-dc52-4754-b37d-af4a02c53265",
-      "9bae6786-18f8-42ec-bc4d-fd7d8be849f5",
-      "183d2e75-e31a-4f9c-834b-350bdd440c73",
-      "6b3b7b5f-39dd-4b51-90eb-016ad06bc9ff",
-      "e4d387fe-8496-4a52-b208-66bb96277cc6",
-      "3c28ffef-071b-4eef-a1ce-c17e24e70ec0",
-      "475dc395-9acd-4fc1-b761-9cff1e532725",
-      "8e1d6d1e-b366-4ad4-aafa-b33ebb60ad67",
-      "704f1ba3-4718-4b38-b758-b2b4ac6a72c7",
-      "55777451-1372-4994-8184-93a2d78bf894",
-      "06e43ce8-6662-4290-8cad-6b69eebe6673",
-      "cadac094-4ea5-4289-9ad5-0d7b884fe3d0",
-      "1e200a41-1770-4deb-9d6e-d446bf7865d7"
+      "8e1d6d1e-b366-4ad4-aafa-b33ebb60ad67"
     ],
     "color": null,
     "description": "Paradeeq May 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency PLAYYTE Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa Nanakorobi Yaoki HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Mizuno Mei Kurusu Yuru Araki Runo Akarida Niji Hamabe Shizuku Former Members Akutsu Yuuri Kondo Makoto Maeda Ayaka Niiya Mayu Kanda Fuune Iwasawa Miu",
@@ -37133,6 +37149,7 @@
       "55c641ea-28f4-4d72-8943-0122b93ec31c"
     ],
     "pictures": [
+      "picture/Paradeeq_icon.webp",
       "picture/Paradeeq_photo_2.webp",
       "picture/Paradeeq_photo_12.webp",
       "picture/Paradeeq_photo_9.webp",
@@ -37437,7 +37454,9 @@
     "nickname": "",
     "nickname_romanji": "",
     "song_uids": [],
-    "pictures": [],
+    "pictures": [
+      "picture/Parallel_Cider_icon.webp"
+    ],
     "wiki_url": "https://jpop.fandom.com/wiki/Parallel_Cider",
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OR44Op44Os44Or44K144Kk44OA44O8",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
@@ -40222,6 +40241,7 @@
       "570e8dbe-c47d-4af8-80da-7220588c1fdd"
     ],
     "pictures": [
+      "picture/Ponkotsu_Konpo_icon.webp",
       "picture/Ponkotsu_Konpo_photo_6.webp",
       "picture/Ponkotsu_Konpo_photo_8.webp",
       "picture/Ponkotsu_Konpo_logo.webp",
@@ -49087,7 +49107,7 @@
   {
     "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
     "name": "煌めき☆アンフォレント",
-    "member_count": 8,
+    "member_count": 9,
     "member_names": [
       "佐藤栞",
       "陽葵なな",
@@ -49096,7 +49116,8 @@
       "甘楽ゆい",
       "橘すず",
       "鈴木Mob.",
-      "達家真姫宝"
+      "達家真姫宝",
+      "茉井良菜"
     ],
     "member_uids": [
       "6bfcc0de-a7a2-4dfc-926a-6872f0bcebcb",
@@ -49106,9 +49127,10 @@
       "d0ab09c3-73d7-4b57-a538-7676ff125005",
       "bf534d27-77ea-4767-920b-7583f07097c9",
       "3ccf3e6b-69c1-4588-8902-f850e13a8385",
-      "315645a3-374c-4709-9c5f-02e63108a7c8"
+      "315645a3-374c-4709-9c5f-02e63108a7c8",
+      "f58e36c6-38e3-49d7-9253-2225dc16f3d2"
     ],
-    "past_member_count": 23,
+    "past_member_count": 22,
     "past_member_names": [
       "瀬乃かなみ",
       "花乃木りおな",
@@ -49116,7 +49138,6 @@
       "西ひより",
       "谷麻由里",
       "二條満月",
-      "茉井良菜",
       "高橋みお",
       "日南遥",
       "藤宮もな",
@@ -49141,7 +49162,6 @@
       "e62c1a02-2d34-4dfe-bfe9-e8eff5f63b18",
       "8c3f4b04-6f04-4285-b766-6b08f6a026a3",
       "f762aabe-bde1-4933-b196-ccf5b2d20990",
-      "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
       "34eb0600-04dc-415e-b0a8-c6f621497e63",
       "68f6e5c1-d55a-4e78-885b-bfe40bf5ff72",
       "4a93fa06-5107-4f63-9e71-fbbeafac802c",
@@ -61956,6 +61976,7 @@
       "75dfd613-12a0-4e6c-9960-34cb2c8b2edd"
     ],
     "pictures": [
+      "picture/Yakousei_Amuse_icon.webp",
       "picture/Yakousei_Amuse_photo_5.webp",
       "picture/Yakousei_Amuse_photo_9.webp",
       "picture/Yakousei_Amuse_photo.webp",
@@ -80672,7 +80693,7 @@
   },
   {
     "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
-    "name": "Ladybaby",
+    "name": "LADYBABY",
     "name_romanji": "LADYBABY",
     "nickname": "2016-2018",
     "nickname_romanji": "The Idol formerly known as LADYBABY",
@@ -80721,6 +80742,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/LADYBABY_icon.webp",
       "picture/LADYBABY_photo_4.webp",
       "picture/LADYBABY_photo.webp",
       "picture/LADYBABY_logo.webp",
@@ -82933,6 +82955,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/HEROINES_Kenkyuusei_icon.webp",
       "picture/HEROINES_Kenkyuusei_photo_8.webp",
       "picture/HEROINES_Kenkyuusei_photo_6.webp",
       "picture/HEROINES_Kenkyuusei_photo_2.webp",
@@ -89006,6 +89029,7 @@
     "nickname_romanji": "",
     "song_uids": [],
     "pictures": [
+      "picture/CALandRES_icon.webp",
       "picture/CALandRES_photo_10.webp",
       "picture/CALandRES_photo_7.webp",
       "picture/CALandRES_photo_8.webp",
@@ -102008,6 +102032,7 @@
     "nickname_romanji": "Adamth",
     "song_uids": [],
     "pictures": [
+      "picture/AdamLilith_icon.webp",
       "picture/AdamLilith_photo_2.webp",
       "picture/AdamLilith_photo_5.webp",
       "picture/AdamLilith_logo.webp",
@@ -110758,7 +110783,7 @@
   {
     "uid": "R0FOR0RFTUlD",
     "name": "GANGDEMIC",
-    "member_count": 14,
+    "member_count": 13,
     "member_names": [
       "Mirei",
       "Ria",
@@ -110772,8 +110797,7 @@
       "sayo",
       "Yellow",
       "hana",
-      "Pink",
-      "Ice"
+      "Pink"
     ],
     "member_uids": [
       "8e1f88f6-f9d1-4172-9139-3f6873f8de9e",
@@ -110788,8 +110812,7 @@
       "9f7eaf22-4b93-40af-a7c8-46fe70c98ad7",
       "73524b40-0a68-4fa3-a029-ea5771a351e5",
       "a4217d3d-7923-4cc6-8206-ea9f7916e443",
-      "607cb15b-37f5-4ac7-bc98-66cea9cad81a",
-      "0c55b7c7-bb9a-438d-9644-27b85cac8ae1"
+      "607cb15b-37f5-4ac7-bc98-66cea9cad81a"
     ],
     "past_member_count": 5,
     "past_member_names": [
@@ -112718,6 +112741,7 @@
     "nickname_romanji": "GiruGiru",
     "song_uids": [],
     "pictures": [
+      "picture/GILTY_x_GILTY_icon.webp",
       "picture/GILTY×GILTY_logo.webp",
       "picture/GILTY×GILTY_photo_2.webp",
       "picture/GILTY×GILTY_photo.webp"
@@ -127222,6 +127246,7 @@
     "nickname_romanji": "",
     "song_uids": [],
     "pictures": [
+      "picture/Ill_icon.webp",
       "picture/Ill_photo_11.webp",
       "picture/Ill_photo_3.webp",
       "picture/Ill_photo_13.webp",
@@ -168665,7 +168690,7 @@
   {
     "uid": "VEVOUklO",
     "name": "TENRIN",
-    "member_count": 7,
+    "member_count": 10,
     "member_names": [
       "のもあちゃちゃ",
       "白洲あやん",
@@ -168673,7 +168698,10 @@
       "蓮花うらら",
       "霞あげは",
       "月神キラ",
-      "雅なぎ"
+      "雅なぎ",
+      "コマチ",
+      "亀田まゆ",
+      "刻乃なう"
     ],
     "member_uids": [
       "52311409-c4f5-4de1-950b-cc18afd1698d",
@@ -168682,7 +168710,10 @@
       "1ae94901-0ab4-41d1-a3f8-70218ce9d8d6",
       "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8",
       "677f39d7-0ea5-4b0f-88ff-6f63375fc8d3",
-      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f"
+      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f",
+      "0e9c6fc6-b980-4119-af0d-126503cfcfb2",
+      "8de1e458-b094-4a3d-98f2-24c04b3c70d3",
+      "c6740f57-6323-42d5-98c3-ab61ff31e639"
     ],
     "past_member_count": 9,
     "past_member_names": [
@@ -168730,6 +168761,7 @@
       "c4c9db3b-6b39-4472-a63e-ac677f7bdae2"
     ],
     "pictures": [
+      "picture/TENRIN_icon.webp",
       "picture/TENRIN_photo_7.webp",
       "picture/TENRIN_photo_2.webp",
       "picture/TENRIN_photo_8.webp",
@@ -173589,7 +173621,7 @@
   {
     "uid": "WlVUVE9NT1RUTw",
     "name": "ZUTTOMOTTO",
-    "member_count": 9,
+    "member_count": 10,
     "member_names": [
       "高坂りん",
       "四宮える",
@@ -173599,7 +173631,8 @@
       "佐倉あん",
       "青羽わか",
       "羽澄ほの",
-      "瀬奈ゆのん"
+      "瀬奈ゆのん",
+      "広瀬りむ"
     ],
     "member_uids": [
       "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415",
@@ -173610,7 +173643,8 @@
       "1fbb3231-5485-455b-8c1e-aa2912dcbafe",
       "86207bdc-a43b-4e11-a985-3518f376f1e5",
       "29380032-008c-4f52-ab56-d86a028f3d70",
-      "7a7cbace-6bda-4dbb-b003-42194aec5e56"
+      "7a7cbace-6bda-4dbb-b003-42194aec5e56",
+      "b978e9b5-bde8-4964-a6d5-dbfa57cd2385"
     ],
     "past_member_count": 7,
     "past_member_names": [
@@ -173643,6 +173677,7 @@
       "a159bb73-e9d8-476b-ac16-7441d0a2424c"
     ],
     "pictures": [
+      "picture/ZUTTOMOTTO_icon.webp",
       "picture/ZUTTOMOTTO_photo_11.webp",
       "picture/ZUTTOMOTTO_photo_9.webp",
       "picture/ZUTTOMOTTO_photo_12.webp",
@@ -173781,6 +173816,7 @@
     "nickname_romanji": "ChuLaLa",
     "song_uids": [],
     "pictures": [
+      "picture/chuLa_icon.webp",
       "picture/ChuLa_photo_10.webp",
       "picture/ChuLa_photo_23.webp",
       "picture/ChuLa_photo_25.webp",
@@ -177001,8 +177037,11 @@
     "name_romanji": "I-COL",
     "nickname": "",
     "nickname_romanji": "",
-    "song_uids": [],
+    "song_uids": [
+      "c5f4d5d4-ec0e-4b15-9325-4709c039c0fd"
+    ],
     "pictures": [
+      "picture/i-COL_icon.webp",
       "picture/I-COL_photo.webp",
       "picture/I-COL_logo.webp",
       "picture/I-COL_photo_2.webp",
@@ -177072,7 +177111,7 @@
   {
     "uid": "aUxpRkUh",
     "name": "iLiFE!",
-    "member_count": 9,
+    "member_count": 17,
     "member_names": [
       "心花りり",
       "あいす",
@@ -177082,7 +177121,14 @@
       "虹羽みに",
       "純嶺みき",
       "小熊まむ",
-      "那蘭のどか"
+      "那蘭のどか",
+      "こるね",
+      "響羽リズ",
+      "佐藤ねね",
+      "深月らむ",
+      "乃上楓",
+      "恋星はるか",
+      "琥珀しえる"
     ],
     "member_uids": [
       "112c6285-2b64-423f-aecc-9792a019fa67",
@@ -177093,40 +177139,39 @@
       "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
       "9871efc4-1501-41eb-a430-94fd34bf4015",
       "39648c9a-5e5c-47b9-9145-4437d165330e",
-      "2a3f475a-312d-43b5-ace9-5c66b2df9784"
+      "2a3f475a-312d-43b5-ace9-5c66b2df9784",
+      "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
+      "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d",
+      "e91cda92-0bff-4277-8c1b-fb0bd67785b0",
+      "398c9071-8c95-4f99-8ada-0123dfa4ce7e",
+      "7846b370-746b-4ba5-96ac-e2afa2dc87fa",
+      "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
+      "b03e7380-d849-4a97-b03f-b2fc647eb6ca"
     ],
-    "past_member_count": 14,
+    "past_member_count": 10,
     "past_member_names": [
       "双葉りつ",
       "桜餅ふゆ",
-      "琥珀しえる",
       "甘音ゆあ",
-      "深月らむ",
       "天羽しおり",
-      "響羽リズ",
       "向日えな",
       "涼芽なの",
       "華瀬まい",
       "日日にこり",
       "有栖るな",
-      "こるね",
-      "乃上楓"
+      "心咲めい"
     ],
     "past_member_uids": [
       "ef20b016-d1c5-4272-8f4a-b69994762ffa",
       "7bc4d961-6d0c-4cd9-bb6b-aafdb621e227",
-      "b03e7380-d849-4a97-b03f-b2fc647eb6ca",
       "1666ef5f-d042-4f91-bcda-18628ecd453d",
-      "398c9071-8c95-4f99-8ada-0123dfa4ce7e",
       "d357345d-5fa5-43b4-aa14-d46328235f23",
-      "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d",
       "cab00109-8eba-4131-9a66-3928f1f102dc",
       "b5dd20fc-745f-49ec-a393-86bf84e192a3",
       "5246591c-7f62-47c6-a4af-08cf23e0a9ef",
       "04e5d504-3ffe-499f-91cc-7beeb74277ff",
       "3f0de201-db1d-43a0-9414-971e6fe8cde1",
-      "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
-      "7846b370-746b-4ba5-96ac-e2afa2dc87fa"
+      "93fbcdb0-3243-44ed-871a-f1b60c4198a8"
     ],
     "color": null,
     "description": "January 2026 Information Origin Shibuya, Tokyo, Japan Genre J-Pop Years 2020-Present Label CROSS SIDE MUSIC (2020-2026) Nippon Columbia Co., LTD (2026-Present) Agency imaginate Associated Acts HEROINES iOn! Ponkotsu Konpo TENRIN Yakousei Amuse Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE Full Course HEROINES Kenkyuusei HEROINES Kenkyuusei Os",
@@ -177197,6 +177242,7 @@
       "99a5c6a7-6a63-4f9b-bda6-a45f12c29090"
     ],
     "pictures": [
+      "picture/iLiFE_icon.webp",
       "picture/ILiFE!_photo_7.webp",
       "picture/ILiFE!_photo_16.webp",
       "picture/ILiFE!_photo_41.webp",
@@ -184700,6 +184746,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/Dress_Code_icon.webp",
       "picture/Dress_Code_photo_4.webp",
       "picture/Dress_Code_photo_3.webp",
       "picture/Dress_Code_photo.webp",
@@ -184736,7 +184783,7 @@
     "name_romanji": "iON!",
     "nickname": "",
     "nickname_romanji": "",
-    "member_count": 7,
+    "member_count": 8,
     "member_names": [
       "宇野ゆり",
       "花丸ぺこ",
@@ -184744,7 +184791,8 @@
       "栗栖むぎ",
       "伽久耶くらら",
       "鈴都りせ",
-      "恋春ねね"
+      "恋春ねね",
+      "佐藤ねね"
     ],
     "member_uids": [
       "a6505d1f-4415-4423-97ba-c94b2af88ccf",
@@ -184753,7 +184801,8 @@
       "99ff9cae-be29-4220-9c67-cd163a4d309e",
       "443535e3-690d-4238-9eb3-c35a916b72fa",
       "426744c0-7324-4686-8ca7-f2d6a763099f",
-      "a5d97298-bee4-48a2-b0de-9897d297bbad"
+      "a5d97298-bee4-48a2-b0de-9897d297bbad",
+      "e91cda92-0bff-4277-8c1b-fb0bd67785b0"
     ],
     "past_member_count": 0,
     "past_member_names": [],
@@ -184775,6 +184824,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/iON_icon.webp",
       "picture/ION!_photo_7.webp",
       "picture/ION!_photo_4.webp",
       "picture/ION!_photo_6.webp",
@@ -186201,6 +186251,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/GAGAPIERO_icon.webp",
       "picture/GAGAPIERO_photo_3.webp",
       "picture/GAGAPIERO_photo_4.webp",
       "picture/GAGAPIERO_logo.webp",
@@ -186243,7 +186294,8 @@
       "8c5c4ec9-89ff-4f21-a385-595b3bc988f1"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "disband_date": "2025-02-07"
   },
   {
     "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513",
@@ -186291,6 +186343,7 @@
     ],
     "agency_uids": [],
     "pictures": [
+      "picture/HEROINES_Kenkyuusei_Osaka_icon.webp",
       "picture/HEROINES_Kenkyuusei_Osaka_photo.webp",
       "picture/HEROINES_Kenkyuusei_Osaka_logo.webp"
     ],
@@ -187773,5 +187826,61 @@
       "002ce0f5-b1cc-4282-873d-801ca2552c69"
     ],
     "letter_tier": "E"
+  },
+  {
+    "uid": "TU9CSVVT",
+    "name": "MOBIUS",
+    "name_romanji": "MOBIUS",
+    "debut_date": "2019-04-01",
+    "disband_date": "2020-02-01",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES founding-era group; disbanded 2020-02."
+  },
+  {
+    "uid": "5aaE5oSb44Kw44Op44OT44OG44Kj",
+    "name": "妄愛グラビティ",
+    "name_romanji": "Mouai Gravity",
+    "debut_date": "2019-04-01",
+    "disband_date": "2020-03-01",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES founding-era group; disbanded 2020-03."
+  },
+  {
+    "uid": "6bW6",
+    "name": "鵺",
+    "name_romanji": "Nue",
+    "debut_date": "2018-10-01",
+    "disband_date": "2020-07-01",
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES founding-era group; disbanded 2020-07."
+  },
+  {
+    "uid": "Tm93U3RvcmFnZQ",
+    "name": "なう♡すとれーじ",
+    "name_romanji": "Now Storage",
+    "debut_date": "2026-07-01",
+    "disband_date": null,
+    "member_names": [],
+    "member_uids": [],
+    "past_member_names": [],
+    "past_member_uids": [],
+    "pictures": [],
+    "song_uids": [],
+    "notes": "HEROINES group; debuted 2026-07 (produced by 美鈴りか)."
   }
 ]
