@@ -211433,22 +211433,20 @@
   {
     "uid": "Q0FMJlJFUw",
     "name": "CAL&RES",
-    "member_count": 5,
+    "member_count": 4,
     "member_names": [
       "夢羽るる",
       "来夢ねお",
-      "杏仁みる",
       "九条あすな",
       "明日実まあや"
     ],
     "member_uids": [
       "bbbf6d91-fc63-4331-b314-ae0899c1581c",
       "4a5ab837-43a4-413a-bbe8-d7173401a088",
-      "4cad7e1f-ca74-4088-9211-42fac3cda306",
       "6b582779-013a-4d5a-aff9-5dbce3b54fda",
       "64bc50f9-bd2f-47a7-99e2-b39e0318924e"
     ],
-    "past_member_count": 16,
+    "past_member_count": 17,
     "past_member_names": [
       "微少女",
       "黒崎りある",
@@ -211465,7 +211463,8 @@
       "美鈴りか",
       "羽宮きわみ",
       "飛成もあ",
-      "成瀬なる"
+      "成瀬なる",
+      "杏仁みる"
     ],
     "past_member_uids": [
       "33628fc8-9630-4915-95b8-86b558accfca",
@@ -211483,7 +211482,8 @@
       "a6aa8be5-29bb-4d24-b499-6a3eae0f3c3c",
       "b0a6decb-f961-4c15-a15d-24662ad59f9d",
       "1a10a730-6462-435f-8b87-944688ffa430",
-      "247628a2-c479-4b0c-8245-2a513f717c0c"
+      "247628a2-c479-4b0c-8245-2a513f717c0c",
+      "4cad7e1f-ca74-4088-9211-42fac3cda306"
     ],
     "color": null,
     "description": "CAL&RES April 2025 Information Origin Tokyo , Japan Genre J-Pop Years 2021-Present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse Non¬Fiction i-COL Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iON! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Yumeha Ruru (2022-Present) Lime Neo (2024-Present) Ann",
@@ -211497,7 +211497,16 @@
     "nickname": null,
     "nickname_romanji": null,
     "song_uids": [
-      "bd6cad08-a8be-49e1-b59d-9a13067114c8"
+      "85c434bc-51bb-46a4-bb05-9a278b72a0f2",
+      "eafcf354-5551-459e-b866-a8cfb438cce0",
+      "0a038229-4e7a-4622-bc0f-5b083ed29ca9",
+      "13b4d3ec-f7a5-45c3-9088-2c471e1bfa4a",
+      "298ccead-0d0e-4db6-b4f6-4525fb74bb2b",
+      "465099ed-3298-4f3e-b88f-14db452707bb",
+      "e7dff2a3-a231-4bed-b493-614a8bf7c0d3",
+      "f2d8176f-b6ac-4fbc-816c-81428d68cf4d",
+      "59c5c35f-902e-4942-8e8e-7753c11b6a9e",
+      "436783d1-7d99-4ce6-9614-9f8d706fc74f"
     ],
     "pictures": [
       "picture/CALandRES_icon.webp",
@@ -211514,7 +211523,7 @@
       "picture/CALandRES_photo_8.webp",
       "picture/CALandRES_photo_11.webp"
     ],
-    "wiki_url": null,
+    "wiki_url": "https://jpop.fandom.com/wiki/CAL%26RES",
     "popularity": 15,
     "fans": 1116,
     "idolsdiagram_url": "https://idolsdiagram.com/g/Q0FMJlJFUw",

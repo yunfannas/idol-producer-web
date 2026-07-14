@@ -21778,7 +21778,7 @@
         "end_date": null,
         "member_color": "Light Blue",
         "member_name": "はまちひよ",
-        "member_color_code": "0xadd8e6",
+        "member_color_code": "0x4fc3f7",
         "group_uid": "Y2h1TGE"
       },
       {
@@ -75154,9 +75154,9 @@
       {
         "group_name": "CAL&RES",
         "start_date": "2025-03-13",
-        "end_date": null,
+        "end_date": "2026-06-17",
         "member_color": "White",
-        "member_color_code": null,
+        "member_color_code": "0xffffff",
         "group_uid": "Q0FMJlJFUw",
         "member_name": "杏仁みる"
       },
@@ -75178,7 +75178,7 @@
       {
         "group_name": "HEROINES",
         "start_date": null,
-        "end_date": null,
+        "end_date": "2026-06-17",
         "member_color": null,
         "member_color_code": null
       }
@@ -155836,8 +155836,8 @@
         "start_date": "2026-04-09",
         "end_date": null,
         "member_name": "平沢かえ",
-        "member_color": "黄",
-        "member_color_code": "0xfdd835ff",
+        "member_color": "Yellow",
+        "member_color_code": "0xfdd835",
         "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991"
       },
       {
@@ -192644,8 +192644,8 @@
         "start_date": "2024-06-14",
         "end_date": null,
         "member_name": "熊ノ実にも",
-        "member_color": "Yellow",
-        "member_color_code": "0xffff00",
+        "member_color": "Orange",
+        "member_color_code": "0xffa500",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
       },
       {
@@ -260817,7 +260817,7 @@
   {
     "uid": "bbbf6d91-fc63-4331-b314-ae0899c1581c",
     "name": "夢羽るる",
-    "hiragana": "",
+    "hiragana": "ゆめはるる",
     "romaji": "Yumeha Ruru",
     "nickname": "",
     "past_names": {},
@@ -260835,16 +260835,18 @@
         "end_date": null,
         "member_name": "夢羽るる",
         "member_color": "Yellow",
-        "member_color_code": "0xffff00"
+        "member_color_code": "0xffff00",
+        "group_uid": "Q0FMJlJFUw"
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\夢羽るる_portrait.jpg",
+    "wiki_url": "https://jpop.fandom.com/wiki/Yumeha_Ruru"
   },
   {
     "uid": "4a5ab837-43a4-413a-bbe8-d7173401a088",
     "name": "来夢ねお",
-    "hiragana": "",
+    "hiragana": "らいむねお",
     "romaji": "Lime Neo",
     "nickname": "",
     "past_names": {},
@@ -260862,16 +260864,18 @@
         "end_date": null,
         "member_name": "来夢ねお",
         "member_color": "Blue",
-        "member_color_code": "0x0000ff"
+        "member_color_code": "0x0000ff",
+        "group_uid": "Q0FMJlJFUw"
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\来夢ねお_portrait.jpg",
+    "wiki_url": "https://jpop.fandom.com/wiki/Lime_Neo"
   },
   {
     "uid": "6b582779-013a-4d5a-aff9-5dbce3b54fda",
     "name": "九条あすな",
-    "hiragana": "",
+    "hiragana": "くじょうあすな",
     "romaji": "Kujo Asuna",
     "nickname": "",
     "past_names": {},
@@ -260889,16 +260893,18 @@
         "end_date": null,
         "member_name": "九条あすな",
         "member_color": "Red",
-        "member_color_code": "0xff0000"
+        "member_color_code": "0xff0000",
+        "group_uid": "Q0FMJlJFUw"
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\九条あすな_portrait.jpg",
+    "wiki_url": "https://jpop.fandom.com/wiki/Kujo_Asuna"
   },
   {
     "uid": "64bc50f9-bd2f-47a7-99e2-b39e0318924e",
     "name": "明日実まあや",
-    "hiragana": "",
+    "hiragana": "あすみまあや",
     "romaji": "Asumi Maaya",
     "nickname": "",
     "past_names": {},
@@ -260916,11 +260922,13 @@
         "end_date": null,
         "member_name": "明日実まあや",
         "member_color": "Orange",
-        "member_color_code": "0xffa500"
+        "member_color_code": "0xffa500",
+        "group_uid": "Q0FMJlJFUw"
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\明日実まあや_portrait.jpg",
+    "wiki_url": "https://jpop.fandom.com/wiki/Asumi_Maaya"
   },
   {
     "uid": "33628fc8-9630-4915-95b8-86b558accfca",
@@ -261444,8 +261452,8 @@
         "start_date": "2025-04-09",
         "end_date": null,
         "member_name": "明音いろは",
-        "member_color": "Baby Blue",
-        "member_color_code": "0x89cff0",
+        "member_color": "Blue",
+        "member_color_code": "0x0000ff",
         "group_uid": "TUVHQUZPTg"
       },
       {

@@ -1,7 +1,7 @@
 {
   "title": "HEROINES 推しチャート",
   "subtitle": "各グループの推しメン＆推し曲を選ぼう",
-  "generated_at": "2026-07-14T00:56:56",
+  "generated_at": "2026-07-14T07:48:57",
   "groups": [
     {
       "name": "iLiFE!",
@@ -905,8 +905,8 @@
         {
           "uid": "4137617f-21fa-48f0-8f22-46ca0c0f7352",
           "name": "明音いろは",
-          "color": "水色",
-          "color_hex": "#89cff0",
+          "color": "青",
+          "color_hex": "#0000ff",
           "portrait_url": "../data/pictures/idols/%E6%98%8E%E9%9F%B3%E3%81%84%E3%82%8D%E3%81%AF_portrait.jpg"
         },
         {
@@ -1673,13 +1673,6 @@
           "portrait_url": "../data/pictures/idols/%E6%9D%A5%E5%A4%A2%E3%81%AD%E3%81%8A_portrait.jpg"
         },
         {
-          "uid": "4cad7e1f-ca74-4088-9211-42fac3cda306",
-          "name": "杏仁みる",
-          "color": "白",
-          "color_hex": "#f5f5f5",
-          "portrait_url": "../data/pictures/idols/%E6%9D%8F%E4%BB%81%E3%81%BF%E3%82%8B_portrait.jpg"
-        },
-        {
           "uid": "6b582779-013a-4d5a-aff9-5dbce3b54fda",
           "name": "九条あすな",
           "color": "赤",
@@ -1696,9 +1689,54 @@
       ],
       "songs": [
         {
-          "uid": "bd6cad08-a8be-49e1-b59d-9a13067114c8",
+          "uid": "85c434bc-51bb-46a4-bb05-9a278b72a0f2",
           "title": "天使になりたい",
-          "popularity": null
+          "popularity": 3
+        },
+        {
+          "uid": "eafcf354-5551-459e-b866-a8cfb438cce0",
+          "title": "あいらびゅ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0a038229-4e7a-4622-bc0f-5b083ed29ca9",
+          "title": "GO MY WAY",
+          "popularity": 2.5
+        },
+        {
+          "uid": "13b4d3ec-f7a5-45c3-9088-2c471e1bfa4a",
+          "title": "アウトオブザブルー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "298ccead-0d0e-4db6-b4f6-4525fb74bb2b",
+          "title": "ジェットピース",
+          "popularity": 1.5
+        },
+        {
+          "uid": "465099ed-3298-4f3e-b88f-14db452707bb",
+          "title": "青い春",
+          "popularity": 3
+        },
+        {
+          "uid": "e7dff2a3-a231-4bed-b493-614a8bf7c0d3",
+          "title": "友情フィルハート",
+          "popularity": 1.5
+        },
+        {
+          "uid": "f2d8176f-b6ac-4fbc-816c-81428d68cf4d",
+          "title": "君と僕のストーリー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "59c5c35f-902e-4942-8e8e-7753c11b6a9e",
+          "title": "ロンリーハイ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "436783d1-7d99-4ce6-9614-9f8d706fc74f",
+          "title": "DREAMS ON THE RUN",
+          "popularity": 4
         }
       ]
     },
@@ -2262,7 +2300,7 @@
           "uid": "1626e615-f982-4e03-b2aa-21d7383ceda7",
           "name": "はまちひよ",
           "color": "水色",
-          "color_hex": "#add8e6",
+          "color_hex": "#4fc3f7",
           "portrait_url": "../data/pictures/idols/%E3%81%AF%E3%81%BE%E3%81%A1%E3%81%B2%E3%82%88_portrait.jpg"
         },
         {
@@ -2641,8 +2679,8 @@
         {
           "uid": "c5d56c30-a278-403d-9b2d-4630061fdba4",
           "name": "熊ノ実にも",
-          "color": "黄",
-          "color_hex": "#ffff00",
+          "color": "オレンジ",
+          "color_hex": "#fb8c00",
           "portrait_url": "../data/pictures/idols/%E7%86%8A%E3%83%8E%E5%AE%9F%E3%81%AB%E3%82%82_portrait.jpg"
         },
         {
