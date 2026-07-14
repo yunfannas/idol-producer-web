@@ -523212,5 +523212,83 @@
       }
     ],
     "disc_uid": null
+  },
+  {
+    "uid": "6de58cfd-12d1-436b-a512-4d09a96836e3",
+    "title": "天真",
+    "title_romanji": "Tenshin",
+    "disc_type": "Digital EP",
+    "release_date": "2025-05-16",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [
+      "でらでらデラックス (DeraDeraDeluxe)",
+      "キミノヒトミニLOVE (Kimi no hitomi ni LOVE)",
+      "StarFall",
+      "限界プレイス (Genkai Place)",
+      "チャーキーパーキーチャーム (Chaakipaakichaamu)"
+    ],
+    "duration": null,
+    "cover_image_path": "picture/天真_cover.webp",
+    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+    "group_name": "テンシンランマン",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "67a5971a-a2c5-4175-b5e4-97605e982aba",
+    "title": "恋のそら模様",
+    "title_romanji": "Koi no Sora Moyou",
+    "disc_type": "Digital Solo Single",
+    "release_date": "2025-12-25",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "味園そら solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+    "group_name": "テンシンランマン",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "586b9884-0321-486c-85fe-d521d9d0a4ba",
+    "title": "ときめきはストロボ",
+    "title_romanji": "Tokimeki wa Strobe",
+    "disc_type": "Digital Solo Single",
+    "release_date": "2026-05-02",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "海老原てん solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+    "group_name": "テンシンランマン",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
   }
 ]

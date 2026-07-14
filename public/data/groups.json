@@ -207596,7 +207596,10 @@
     "nickname": "テンラン",
     "nickname_romanji": "Tenran",
     "song_uids": [
-      "f8568bd1-baad-4325-ba35-d2f6dab63f14"
+      "6de58cfd-12d1-436b-a512-4d09a96836e3",
+      "f8568bd1-baad-4325-ba35-d2f6dab63f14",
+      "67a5971a-a2c5-4175-b5e4-97605e982aba",
+      "586b9884-0321-486c-85fe-d521d9d0a4ba"
     ],
     "pictures": [
       "picture/Tenshinranman_icon.webp",
@@ -207617,10 +207620,10 @@
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [
       {
-        "uid": "9dd0af5a-f2c2-4fd7-858b-792779c63dd4",
+        "uid": "6de58cfd-12d1-436b-a512-4d09a96836e3",
         "title": "天真",
         "title_romanji": "Tenshin",
-        "disc_type": "Mini Album",
+        "disc_type": "Digital EP",
         "release_date": "2025-05-16",
         "publisher": "CROSS SIDE MUSIC",
         "publisher_uid": null,
@@ -207653,11 +207656,41 @@
         ],
         "duration": null,
         "cover_image_path": "picture/爛漫_cover.webp"
+      },
+      {
+        "uid": "67a5971a-a2c5-4175-b5e4-97605e982aba",
+        "title": "恋のそら模様",
+        "title_romanji": "Koi no Sora Moyou",
+        "disc_type": "Digital Solo Single",
+        "release_date": "2025-12-25",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "味園そら solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "586b9884-0321-486c-85fe-d521d9d0a4ba",
+        "title": "ときめきはストロボ",
+        "title_romanji": "Tokimeki wa Strobe",
+        "disc_type": "Digital Solo Single",
+        "release_date": "2026-05-02",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "海老原てん solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
-      "9dd0af5a-f2c2-4fd7-858b-792779c63dd4",
-      "f8568bd1-baad-4325-ba35-d2f6dab63f14"
+      "6de58cfd-12d1-436b-a512-4d09a96836e3",
+      "f8568bd1-baad-4325-ba35-d2f6dab63f14",
+      "67a5971a-a2c5-4175-b5e4-97605e982aba",
+      "586b9884-0321-486c-85fe-d521d9d0a4ba"
     ]
   },
   {

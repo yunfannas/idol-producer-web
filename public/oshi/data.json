@@ -1,7 +1,7 @@
 {
   "title": "HEROINES 推しチャート",
   "subtitle": "各グループの推しメン＆推し曲を選ぼう",
-  "generated_at": "2026-07-14T15:20:36",
+  "generated_at": "2026-07-14T23:36:39",
   "groups": [
     {
       "name": "iLiFE!",
@@ -2842,15 +2842,15 @@
         {
           "uid": "cfd9ec40-5872-45ec-87bb-942cf1fb831a",
           "name": "小倉あずき",
-          "color": "Khaki",
-          "color_hex": "#000080",
+          "color": "紫",
+          "color_hex": "#800080",
           "portrait_url": "../data/pictures/idols/%E5%B0%8F%E5%80%89%E3%81%82%E3%81%9A%E3%81%8D_portrait.jpg"
         },
         {
           "uid": "af153998-7078-4dd3-b3cf-cbcd9a723ca4",
           "name": "味園そら",
-          "color": "黄",
-          "color_hex": "#ffff00",
+          "color": "青",
+          "color_hex": "#0000ff",
           "portrait_url": "../data/pictures/idols/%E5%91%B3%E5%9C%92%E3%81%9D%E3%82%89_portrait.jpg"
         },
         {
@@ -2877,15 +2877,30 @@
         {
           "uid": "17367f34-b7e7-434b-b08d-6410fbf49aba",
           "name": "豊田もも",
-          "color": "黄",
-          "color_hex": "#ffff00",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
           "portrait_url": "../data/pictures/idols/%E8%B1%8A%E7%94%B0%E3%82%82%E3%82%82_portrait.jpg"
         }
       ],
       "songs": [
         {
+          "uid": "6de58cfd-12d1-436b-a512-4d09a96836e3",
+          "title": "天真",
+          "popularity": null
+        },
+        {
           "uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
           "title": "爛漫",
+          "popularity": null
+        },
+        {
+          "uid": "67a5971a-a2c5-4175-b5e4-97605e982aba",
+          "title": "恋のそら模様",
+          "popularity": null
+        },
+        {
+          "uid": "586b9884-0321-486c-85fe-d521d9d0a4ba",
+          "title": "ときめきはストロボ",
           "popularity": null
         }
       ]

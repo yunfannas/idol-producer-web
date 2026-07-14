@@ -23105,8 +23105,8 @@
         "start_date": "2025-11-13",
         "end_date": null,
         "member_name": "豊田もも",
-        "member_color": "Honey Yellow",
-        "member_color_code": "0xffff00",
+        "member_color": "Pink",
+        "member_color_code": "0xffc0cb",
         "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz"
       },
       {
@@ -23122,7 +23122,8 @@
         "start_date": null,
         "end_date": null,
         "member_color": "Pink",
-        "member_color_code": "0xffc0cb"
+        "member_color_code": "0xffc0cb",
+        "member_name": "豊田もも"
       },
       {
         "group_name": "HEROINES Nagoya",
@@ -97626,7 +97627,7 @@
     "group_history": [
       {
         "group_name": "テンシンランマン",
-        "start_date": "2025-05-24",
+        "start_date": "2025-05-03",
         "end_date": null,
         "member_name": "海老原てん",
         "member_color": "White",
@@ -97637,8 +97638,9 @@
         "group_name": "Tenshinranman",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "White",
+        "member_color_code": "0xffffff",
+        "member_name": "海老原てん"
       },
       {
         "group_name": "HEROINES",
@@ -100208,7 +100210,8 @@
         "start_date": null,
         "end_date": null,
         "member_color": "Red",
-        "member_color_code": "0xff0000"
+        "member_color_code": "0xff0000",
+        "member_name": "大須かのん"
       },
       {
         "group_name": "HEROINES",
@@ -105298,7 +105301,7 @@
     "group_history": [
       {
         "group_name": "テンシンランマン",
-        "start_date": "2025-05-24",
+        "start_date": "2025-05-01",
         "end_date": null,
         "member_name": "織田こゆん",
         "member_color": "Green",
@@ -105317,8 +105320,9 @@
         "group_name": "Tenshinranman",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Green",
+        "member_color_code": "0x008000",
+        "member_name": "織田こゆん"
       },
       {
         "group_name": "HEROINES",
@@ -122675,7 +122679,7 @@
     "group_history": [
       {
         "group_name": "テンシンランマン",
-        "start_date": "2025-05-24",
+        "start_date": "2025-04-25",
         "end_date": null,
         "member_name": "琴音うな",
         "member_color": "Yellow",
@@ -122686,8 +122690,9 @@
         "group_name": "Tenshinranman",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Yellow",
+        "member_color_code": "0xffff00",
+        "member_name": "琴音うな"
       },
       {
         "group_name": "HEROINES",
@@ -170062,11 +170067,11 @@
     "group_history": [
       {
         "group_name": "テンシンランマン",
-        "start_date": "2025-05-24",
+        "start_date": "2025-04-29",
         "end_date": null,
         "member_name": "味園そら",
-        "member_color": "Yellow",
-        "member_color_code": "0xffff00",
+        "member_color": "Blue",
+        "member_color_code": "0x0000ff",
         "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz"
       },
       {
@@ -170081,8 +170086,9 @@
         "group_name": "Tenshinranman",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Blue",
+        "member_color_code": "0x0000ff",
+        "member_name": "味園そら"
       },
       {
         "group_name": "HEROINES",
@@ -202939,11 +202945,11 @@
     "group_history": [
       {
         "group_name": "テンシンランマン",
-        "start_date": "2025-05-24",
+        "start_date": "2025-04-27",
         "end_date": null,
         "member_name": "小倉あずき",
-        "member_color": "Khaki",
-        "member_color_code": "0x000080",
+        "member_color": "Purple",
+        "member_color_code": "0x800080",
         "group_uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz"
       },
       {
@@ -202958,8 +202964,9 @@
         "group_name": "Tenshinranman",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Purple",
+        "member_color_code": "0x800080",
+        "member_name": "小倉あずき"
       },
       {
         "group_name": "HEROINES",
