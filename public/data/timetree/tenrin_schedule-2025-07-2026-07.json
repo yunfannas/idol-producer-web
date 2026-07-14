@@ -1,0 +1,3585 @@
+{
+  "source_url": "https://timetreeapp.com/public_calendars/tenrin_schedule",
+  "slug": "tenrin_schedule",
+  "range": {
+    "from": "2025-07",
+    "to": "2026-07"
+  },
+  "generated_at": "2026-07-13T02:16:51.606Z",
+  "event_count": 247,
+  "events": [
+    {
+      "date": "2025-07-01",
+      "event": "🔥周年LIVE@Spotify O-EAST",
+      "timetree_id": "2678857723332576149",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2678857723332576149",
+      "note": "TENRIN 5th Anniversary Live\n『天生輪廻』\n\n2025.7.1(火)\n@ Spotify O-EAST\nOPEN17:00 / START18:00 \n \n🎫https://ticketdive.com/event/5thAnniversaryLiveTENRIN",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/73f8/2025-06-09/0-1749484832829.jpg",
+        "https://attachments.timetreeapp.com/public_event/43f3/2025-06-09/0-1749484975164.jpg",
+        "https://attachments.timetreeapp.com/public_event/e1a7/2025-06-09/0-1749484975840.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-07-06",
+      "event": "📸HEROINES DARKNESS",
+      "timetree_id": "2691579937320386834",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691579937320386834",
+      "note": "7/6(日)\n\n『HEROINES DARKNESS』\n@ SHIBUYA DUO\n\n🎤19:05~19:30\n📸19:40~20:55 \n\n入場特典/写メ券📸 回し特典 Pt2倍🉐\n\nチケ発6/18 22:00~\nt-dv.com/H_DKNS",
+      "venue_hint": "SHIBUYA DUO",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b57f/2025-06-17/0-1750166566081.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "SHIBUYA DUO",
+      "venue_uid": "6ad90769-edd6-4807-9774-164cd61249c7"
+    },
+    {
+      "date": "2025-07-06",
+      "event": "超NATSUZOME2025",
+      "timetree_id": "2710037768881094766",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2710037768881094766",
+      "note": "7/6(日)\n\n『超NATSUZOME2025』に参戦決定🔥\n\nOPEN 9:00 / START 10:00\n@幕張海浜公園Gブロック特設会場\n\n📍BAKUステージ\n🎤12:20-12:35\n\n📍NATSUステージ\n🎤14:00~14:15\n\n📸14:20~15:20 特典会U\n\n\n【先行抽選受付中】\n🔗 r-t.jp/natsuzome2025",
+      "venue_hint": "幕張海浜公園Gブロック特設会場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/33f1/2025-05-26/0-1748229671602.jpg",
+        "https://attachments.timetreeapp.com/public_event/fe67/2025-05-26/0-1748229676104.jpg",
+        "https://attachments.timetreeapp.com/public_event/16ef/2025-07-03/0-1751549371495.jpg",
+        "https://attachments.timetreeapp.com/public_event/ef46/2025-07-03/0-1751549372944.jpg",
+        "https://attachments.timetreeapp.com/public_event/a0a9/2025-07-03/0-1751549373831.jpg"
+      ],
+      "type": "Festival",
+      "venue": "幕張海浜公園Gブロック特設会場",
+      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+    },
+    {
+      "date": "2025-07-07",
+      "event": "YORU-FES",
+      "timetree_id": "2691782298714292443",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691782298714292443",
+      "note": "7/7(月)\n\n『YORU-FES vol.4 ~七夕スペシャル~』\n@ 渋谷Veats\n\n🎤14:55~15:20\n📸15:30~16:30 \n\nお目当て🎁\n/織姫(推しから)一言動画(5秒動画)\n\n🎫t-dv.com/yorufes4",
+      "venue_hint": "渋谷Veats",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0496/2025-06-01/0-1748775921847.jpg",
+        "https://attachments.timetreeapp.com/public_event/7598/2025-07-03/0-1751549458850.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷Veats",
+      "venue_uid": "baf62346-2b9c-4628-bf7b-9d29a7083feb"
+    },
+    {
+      "date": "2025-07-09",
+      "event": "TENRINと一緒に姫ギャルパーティー",
+      "timetree_id": "2703516591958311397",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2703516591958311397",
+      "note": "7/9(水)\n『TENRINと一緒に姫ギャルパーティー』\n@渋谷Milky Way\nOPEN18:00 START18:30\n\nTENRIN単独らいぶ！　\nそして、特別衣装はなんと、\nAVENCHUMUさんのお洋服を借りてライブしちゃいます！\nここでしか見れない特別で超~可愛いTENRINを見にきて！🍓\n\n🎫https://t-dv.com/TENRIN0709",
+      "venue_hint": "渋谷Milky Way",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7f56/2025-06-09/0-1749484189269.jpg"
+      ],
+      "type": "Concert",
+      "venue": "渋谷Milky Way",
+      "venue_uid": "ffd02468-59b2-4c68-8368-afc8fa695038"
+    },
+    {
+      "date": "2025-07-10",
+      "event": "📸HEROINES ROCK FES",
+      "timetree_id": "2716578372872094151",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2716578372872094151",
+      "note": "7/10(木)\n\n『HEROINES ROCK FES』\nに出演します🎸\n\nかれんちゃんリアバLIVE💙\nRockなTENRIN見せちゃいます🔥\n\n🎤17:30-17:55\n📸18:05-19:05(B)\n\nチケット6/26(木)21:30〜\n🎫https://ticketdive.com/event/heroinesrockfes250710",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/67f5/2025-06-25/0-1750851169323.jpg"
+      ],
+      "type": "Festival",
+      "venue": "EX THEATER ROPPONGI",
+      "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e",
+      "live_catalog_match_key": "2025-07-10|heroines rock fes"
+    },
+    {
+      "date": "2025-07-12",
+      "event": "SPARK 2025 渋谷納涼祭",
+      "timetree_id": "2703769783040262291",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2703769783040262291",
+      "note": "7/12(土)\n\n『SPARK 2025 渋谷納涼祭』\n\n@MAGNET by SHIBUYA109\n屋上イベントスペース\n🎤16:40-17:05\n📸\n\n\n🎫https://ticketdive.com/event/spark2025_summer",
+      "venue_hint": "MAGNET by SHIBUYA109",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/442c/2025-06-09/0-1749485132750.jpg",
+        "https://attachments.timetreeapp.com/public_event/b1b7/2025-07-03/0-1751560095181.jpg"
+      ],
+      "type": "Festival",
+      "venue": "MAGNET by SHIBUYA109",
+      "venue_uid": "ba3b8116-584b-4b90-be6c-35cca96e084b"
+    },
+    {
+      "date": "2025-07-12",
+      "event": "そうだ沖縄に行こう！~沖縄風SPライブ~",
+      "timetree_id": "2703516745058795907",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2703516745058795907",
+      "note": "7/12(土)\n『そうだ沖縄に行こう！\n~沖縄風SPライブ~』\n@渋谷O-CREST\n\nOPEN12:00/START12:30\n優先¥2,000/一般¥500\n\nこの日は何が起こるかわからない❗️\nみんなで沖縄を感じよう☀️🌴\n\n\nt-dv.com/tenrin_okinawa",
+      "venue_hint": "渋谷O-CREST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/18d8/2025-07-03/0-1751549654365.jpg"
+      ],
+      "type": "Other",
+      "venue": "O-Crest",
+      "venue_uid": "039a24a7-17ff-4f4d-ab1a-95dd325b6c85"
+    },
+    {
+      "date": "2025-07-13",
+      "event": "SPARK 2025 渋谷納涼祭",
+      "timetree_id": "2703516794383811099",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2703516794383811099",
+      "note": "7/13(日)\n\n『SPARK 2025 渋谷納涼祭』\n\n@渋谷asia\n🎤16:55-17:20\n📸\n　\n🎫https://ticketdive.com/event/spark2025_summer",
+      "venue_hint": "渋谷asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4c82/2025-06-09/0-1749485166697.jpg",
+        "https://attachments.timetreeapp.com/public_event/289d/2025-07-03/0-1751560154117.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷asia",
+      "venue_uid": "8f57af96-5264-4c1c-9dc9-7023a086d5ab"
+    },
+    {
+      "date": "2025-07-14",
+      "event": "🔥HEROINES LEAGUE Ⅰ🔥",
+      "timetree_id": "2722578861740834965",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2722578861740834965",
+      "note": "7月のヒロインズリーグ \n\n7/14(月)\n\n『HEROINES LEAGUE Ⅰ』\n\n熱いライブと熱い応援でバチバチに盛り上がる1日にしちゃいましょう🔥\n\n1人1人の来場が推しのチカラになる👊\n\n\nFC抽選\n🎫https://heroines.jp/news/public/_/byzwmcfmeilap79d.html\n\n🎫https://ticketdive.com/event/heroinesleague0714",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/11ad/2025-06-12/0-1749724690144.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/11ad/2025-06-12/0-1749724690144.jpg"
+    },
+    {
+      "date": "2025-07-18",
+      "event": "ガルデラ道場",
+      "timetree_id": "2717424885911306830",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717424885911306830",
+      "note": "7/18(金)\n\n『ガルデラ道場』\n@Zepp Shinjuku \n\n歌舞伎町タワーSTAGE\n🎤15:55~16:15\n📸16:30~17:30 並行物販H\n\n全員で〜はいせーの！背負い投げ〜🥋\n\nお目当て/推しメンから背負い投げ5秒動画📸\n\n🎫https://t.co/4qAkX0aobv",
+      "venue_hint": "Zepp Shinjuku",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0680/2025-06-13/0-1749804330575.jpg",
+        "https://attachments.timetreeapp.com/public_event/3a02/2025-07-03/0-1751549916915.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Shinjuku",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
+    },
+    {
+      "date": "2025-07-20",
+      "event": "SEKIGAHARA IDOL WARS 2025 - 関ケ原唄姫合戦-",
+      "timetree_id": "2720562285927777265",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2720562285927777265",
+      "note": "7/20(日)\n\n『 SEKIGAHARA IDOL WARS 2025 - 関ケ原唄姫合戦- 』\n　\n@桃配運動公園(岐阜)\n\n📍豊臣ステージ\n🎤18:35-18:55\n📸19:10-20:00\n\n\n7/21(月)\n📍徳川ステージ（メイン🌟）\n🎤12:45-13:05\n📸14:40-15:30\n\n📍戦国ステージ\n🎤16:30~16:45 \n\n※21日の特典会は1回のみ\n\n🎫https://sekigahara-idolwars.net/",
+      "venue_hint": "桃配運動公園(岐阜)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b56d/2025-06-09/0-1749484296709.jpg",
+        "https://attachments.timetreeapp.com/public_event/de99/2025-07-03/0-1751561435760.jpg",
+        "https://attachments.timetreeapp.com/public_event/8d99/2025-07-03/0-1751561513911.jpg",
+        "https://attachments.timetreeapp.com/public_event/9f93/2025-07-17/0-1752773190868.jpg",
+        "https://attachments.timetreeapp.com/public_event/0be2/2025-07-17/0-1752773191765.jpg"
+      ],
+      "type": "Festival",
+      "venue": "桃配運動公園",
+      "venue_uid": "51de93e5-b0c1-4070-bac0-2a5254c82ed5"
+    },
+    {
+      "date": "2025-07-22",
+      "event": "UTAGE FES Vol.3",
+      "timetree_id": "2703517202430869835",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2703517202430869835",
+      "note": "7/22(火)\n\n『UTAGE FES Vol.3』\n@新宿サーキット\n\n📍歌舞伎町タワーステージ\n🎤13:45~14:05\n📸14:35-15:45(⑨)\n\nお目当て/写メ📸\n\nチケット発売中\nt-dv.com/UTAGEFES_Vol3",
+      "venue_hint": "新宿サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/635c/2025-06-09/0-1749484485354.jpg",
+        "https://attachments.timetreeapp.com/public_event/ddda/2025-07-15/0-1752603879802.jpg"
+      ],
+      "type": "Festival",
+      "venue": "新宿サーキット",
+      "venue_uid": "233dfafb-949e-4bc0-bb74-37d0f087722a"
+    },
+    {
+      "date": "2025-07-23",
+      "event": "デビュタント",
+      "timetree_id": "2717425021638984585",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717425021638984585",
+      "note": "7/23(水)\n\n『デビュタント』\n@渋谷WOMB\n\n全力で盛り上げ隊❤️💜\n\n🎤18:40~19:05\n📸20:30~22:00\n\n6/23 22:00~\nt-dv.com/rarajam",
+      "venue_hint": "渋谷WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2b19/2025-07-03/0-1751549762214.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-07-24",
+      "event": "グラン・ギニュルーVol.24 真夏の暴動区(無規制)",
+      "timetree_id": "2717425077364507056",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717425077364507056",
+      "note": "7/24(木)\n『グラン・ギニュルー』\n@渋谷WOMB\n\n⚠️ライブキッズは全員集合の会⚠️\nこの日はなんとキラ最後の無規制LIVE🌟🗡️\n\n🎤19:00~19:25\n📸20:05~22:00\nお目当て特典/Pt2倍&写メ📸\n\n🎫https://ticketdive.com/event/250724m",
+      "venue_hint": "渋谷WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9384/2025-07-03/0-1751550075149.jpg",
+        "https://attachments.timetreeapp.com/public_event/49d7/2025-07-03/0-1751550076146.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-07-26",
+      "event": "📸☀️HEROINES SUMMER",
+      "timetree_id": "2707100709937791639",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2707100709937791639",
+      "note": "🌻☀️ #ヒロインズ の夏☀️🌻\n\n今年も開催🔥\nHEROINES SUMMER 🌊\n@ 東武動物公園🐯\n\n7/26(土)\n🎤12:45-13:10\n📸13:20-14:20\n\n7/27(日)\n🎤14:30-14:55\n📸15:05-16:05\n\n\nチケットはすべて入園料込み❗️\n\n🎫https://ticketdive.com/event/heroinessummer2025",
+      "venue_hint": "東武動物公園🐯",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5003/2025-06-30/0-1751283928651.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "東武動物公園🐯",
+      "venue_uid": "fd6777d8-6a57-416f-b47d-dbc93e70129c"
+    },
+    {
+      "date": "2025-07-27",
+      "event": "相合傘4",
+      "timetree_id": "2725463422216749178",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2725463422216749178",
+      "note": "7/27(日)\n『相合傘4』\n@渋谷WOMB\nOPEN18:40\nSTART19:00\n\nキラがいる間最後のマーキュロさんとの2MAN\n\n🎫https://t-dv.com/250727a",
+      "venue_hint": "渋谷WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8f87/2025-07-08/0-1751977410244.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-07-29",
+      "event": "💛🍓月神キラ卒業式🍓",
+      "timetree_id": "2681142747562033954",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2681142747562033954",
+      "note": "7/29(火)\nTENRIN主催\n『🍓月神キラ卒業式🍓』\n@渋谷Veats\n\nOPEN16:00 START17:00\n前物販13:30-15:30(キラちゃんのみチェキ撮影あり)\n\n🎫https://ticketdive.com/event/kira_lastbirthday",
+      "venue_hint": "渋谷Veats",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/71e0/2025-07-03/0-1751562039705.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷Veats",
+      "venue_uid": "baf62346-2b9c-4628-bf7b-9d29a7083feb"
+    },
+    {
+      "date": "2025-08-01",
+      "event": "Tokyo & Night!! - SUMMER",
+      "timetree_id": "2724358073753584220",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2724358073753584220",
+      "note": "8/1(金)\n『 Tokyo & Night!! - SUMMER 』\n@渋谷WWW\n\n🎤19:20-19:45\n📸終演後特典会\n\n\n🎫https://ticketdive.com/event/and_Night_summer",
+      "venue_hint": "渋谷WWW",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d3b5/2025-07-26/0-1753537605024.jpg",
+        "https://attachments.timetreeapp.com/public_event/9496/2025-07-30/0-1753864636759.jpg"
+      ],
+      "type": "Other",
+      "venue": "WWW",
+      "venue_uid": "1c36daf9-c7cc-45ab-b59b-339f6cecf98d"
+    },
+    {
+      "date": "2025-08-02",
+      "event": "SHIBUYA SUMMER LIVE",
+      "timetree_id": "2753963387385594021",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2753963387385594021",
+      "note": "8/2(土)\n『SHIBUYA SUMMER LIVE』\n@渋谷S-LABO\n🎤15:00-15:25\n📸終演後特典会\n🎫 https://t.livepocket.jp/e/schro_tenrin_summer",
+      "venue_hint": "渋谷S-LABO",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bb2f/2025-07-30/0-1753864537963.jpg"
+      ],
+      "type": "Other",
+      "venue": "S-LABO",
+      "venue_uid": "607237b2-94f3-464e-99eb-3e8cbaa7e714"
+    },
+    {
+      "date": "2025-08-03",
+      "event": "HEROINES DARKNESS",
+      "timetree_id": "2724358133027488308",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2724358133027488308",
+      "note": "8/3(日)\n\n『HEROINES DARKNESS」\n@渋谷duo MUSIC EXCHANGE\n🎤18:25-18:50\n📸19:00-20:15(②)\nお目当て特典 / 写メ券📸\n\n\n\n🎫https://ticketdive.com/event/HD_250803",
+      "venue_hint": "渋谷duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7d5b/2025-07-30/0-1753870400068.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2025-08-04",
+      "event": "🔥 HEROINES LEAGUE I",
+      "timetree_id": "2717425436623421649",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717425436623421649",
+      "note": "8/4(月)\n@恵比寿ガーデンホール\n『HEROINES LEAGUE I』\n\n最高の景色を一緒にみよう🔥\n\n🎤16:15-16:40\n📸16:50-17:50\n\nTICKET 7/18 21:00~\n\n🎫https://t-dv.com/league1_0804",
+      "venue_hint": "恵比寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/76b7/2025-07-17/0-1752756832656.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2025-08-05",
+      "event": "TENRIN SUMMER",
+      "timetree_id": "2754564940924502170",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2754564940924502170",
+      "note": "8/5(火)\n『TENRIN SUMMER』\n@恵比寿ViBlue\nOPEN18:30/START19:00\n夏のデート私服特典\n\n🎫 https://ticketdive.com/event/T_summer",
+      "venue_hint": "恵比寿ViBlue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ca60/2025-07-30/0-1753864483909.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ViBlue",
+      "venue_uid": "71d0804b-c639-4950-a2d2-0d1ab540b336"
+    },
+    {
+      "date": "2025-08-09",
+      "event": "IDOL SUMMER JUNGLE",
+      "timetree_id": "2691580335988981812",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691580335988981812",
+      "note": "8/9(土)10(日)11(月)\n\n『IDOL SUMMER JUNGLE』\n\n8/9(土)\n📍MONKEY STAGE \n🎤10:40-11:00\n📸 11:20~12:20 ⑦\n\n8/10(日)\n📍TIGER STAGE\n🎤12:10-12:35\n📸 12:55~13:55 ③\n\n8/11(月)\n1️⃣📍SNAKE STAGE\n🎤14:15-14:30\n📸14:50~15:50 K\n\n2️⃣📍KABUTOMUSHI STAGE\n📸16:30~17:30 I ※ライブ前特典会\n🎤19:20~19:35 \n   \n   \n野外フェス最高のステージにするからね😘\n\nVIP先行抽選6/20(金)19:00~\n一般販売6/21(土)19:00~ \n🎫https://ticketdive.com/event/idolsummerjungle2025",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dcaf/2025-06-20/0-1750421992772.jpg",
+        "https://attachments.timetreeapp.com/public_event/f178/2025-07-31/0-1753962438983.jpg",
+        "https://attachments.timetreeapp.com/public_event/e74d/2025-07-31/0-1753962440619.jpg",
+        "https://attachments.timetreeapp.com/public_event/d39c/2025-07-31/0-1753962442601.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "青海R地区",
+      "venue_uid": "2d2dbaed-cbf6-4675-8469-ccd08ab2ec29",
+      "live_catalog_match_key": "2025-08-09|idol summer jungle"
+    },
+    {
+      "date": "2025-08-13",
+      "event": "NEO KASSEN2025",
+      "timetree_id": "2642188481862615812",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2642188481862615812",
+      "note": "8/13(水)\n\n『NEO KASSEN2025』\nに出演します！\n@ 渋谷サーキット会場某所\n\n渋谷RING\nRINNEステージ\n🎤19:40-20:05\n📸終演後特典会\n\nHEROINES特攻隊長！🔥\n\n🎫https://ticket.rakuten.co.jp/music/jpop/idle/rtlejnk/",
+      "venue_hint": "渋谷サーキット会場某所",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f515/2025-06-18/0-1750226747638.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷サーキット",
+      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+    },
+    {
+      "date": "2025-08-15",
+      "event": "1️⃣TENRIN ×クララ・マグラ2MAN",
+      "timetree_id": "2746733337930154322",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746733337930154322",
+      "note": "8/15(金)\n『TENRIN ×クララ・マグラ2MAN』\n@渋谷Spotify O-Crest\nOPEN14:00 / START14:30\n(衣装交換&楽曲交換あり)\n\n🎫 https://ticketdive.com/event/T_K_2MAN",
+      "venue_hint": "渋谷Spotify O-Crest",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5163/2025-07-30/0-1753869954415.jpg"
+      ],
+      "type": "Other",
+      "venue": "O-Crest",
+      "venue_uid": "039a24a7-17ff-4f4d-ab1a-95dd325b6c85"
+    },
+    {
+      "date": "2025-08-15",
+      "event": "2️⃣ TENRINと夏祭り",
+      "timetree_id": "2757352228586832872",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2757352228586832872",
+      "note": "『TENRINと夏祭り』\n\n@Spotify O-Crest\nOPEN17:30 / START18:00\nライブ&浴衣特典会\n\n🎫 https://ticketdive.com/event/T_YUKATA",
+      "venue_hint": "Spotify O-Crest",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/48d4/2025-07-30/0-1753869998808.jpg"
+      ],
+      "type": "Festival",
+      "venue": "O-Crest",
+      "venue_uid": "039a24a7-17ff-4f4d-ab1a-95dd325b6c85"
+    },
+    {
+      "date": "2025-08-16",
+      "event": "HEROINES FREE LIVE",
+      "timetree_id": "2754562968561435485",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2754562968561435485",
+      "note": "8/16(土)\n『HEROINES FREE LIVE』\n@渋谷duo MUSIC EXCHANGE\n\n🎤14:20-14:45\n📸終演後特典会\n\n無料だよ🤑みんな来て‼️\n◇━━━━━━━━━━━◇\n 🆃🅸🅲🅺🅴🆃 7/27 22:30~\n t-dv.com/HEROINES_HFL",
+      "venue_hint": "渋谷duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/133e/2025-07-26/0-1753537493789.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2025-08-17",
+      "event": "1️⃣HEROINES ONE COIN",
+      "timetree_id": "2746733408134414716",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746733408134414716",
+      "note": "8/17(日)\n\n『HEROINES ONE COIN』\n@渋谷Spotify O-WEST\n\n🎤14:30-14:55\n📸15:05-16:05(C)\n\n🎫https://ticketdive.com/event/one_coin",
+      "venue_hint": "渋谷Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3bda/2025-07-22/0-1753200474690.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-08-17",
+      "event": "2️⃣グラン・ギニュルー vol.25",
+      "timetree_id": "2746733469908124016",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746733469908124016",
+      "note": "8/17(日)\n『グラン・ギニュルーvol.25』\n\n@渋谷WOMB\n🎤17:40-18:05\n📸18:15-19:15(C)\n入特/写メ📸\n\n🎫https://ticketdive.com/event/250817g",
+      "venue_hint": "渋谷WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3bcf/2025-07-31/0-1753972916188.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-08-17",
+      "event": "3️⃣ 強犬乱舞 - NO LIMIT -シュレ犬2MAN",
+      "timetree_id": "2765589337923699602",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2765589337923699602",
+      "note": "8/17(日)\n『強犬乱舞 - NO LIMIT -シュレ犬2MAN』\n@ ViBlue\n🎤20:15-20:45\n📸21:00-22:30\n\n🉐3回し特典/15秒動画&Pt1つ🉐\n\n🎫https://t.livepocket.jp/e/no_limit",
+      "venue_hint": "ViBlue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/69e5/2025-08-12/0-1754993506877.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-08-18",
+      "event": "HEROINES DARKNESS mini",
+      "timetree_id": "2754564459393237259",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2754564459393237259",
+      "note": "8/18(月)\n『HEROINES DARKNESS mini』\n@ ViBlue EBISU\n🎤18:30-19:00\n📸終演後特典会\n🎫https://t-dv.com/DARKNESS_mini",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/710c/2025-07-31/0-1753954682892.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-08-19",
+      "event": "TEN-FES PREMIUM",
+      "timetree_id": "2737992148691239045",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2737992148691239045",
+      "note": "8/19(火)\n『TEN-FES PREMIUM』\n@ shibuya club asia\n\n最高の空間を作りましょう\n\n🎤19:30-20:00\n📸終演後特典会\n\n\n🎫https://t-dv.com/TEN-FES_P",
+      "venue_hint": "shibuya club asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/107e/2025-07-06/0-1751819260522.jpg"
+      ],
+      "type": "Festival",
+      "venue": "clubasia",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3"
+    },
+    {
+      "date": "2025-08-21",
+      "event": "💙霞あげは生誕祭~a6yss~",
+      "timetree_id": "2685737394179457390",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2685737394179457390",
+      "note": "💙霞あげは生誕祭💙\n\n8/21(木)\n霞あげは生誕祭~a6yss~\n@ SHIBUYA VIDENT\n前物販15:30\nOPEN18:00/START18:30\n\n初めての生誕祭\nあなたと一緒に幸せになります🦋\n\n◇━━━━━━━━━━━◇\n  🆃🅸🅲🅺🅴🆃 8/7 22:30~\n  t-dv.com/agenyan_BDL\n◇━━━━━━━━━━━◇\n\n#TENRIN",
+      "venue_hint": "SHIBUYA VIDENT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4d5d/2025-08-06/0-1754481894496.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "SHIBUYA VIDENT",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+    },
+    {
+      "date": "2025-08-22",
+      "event": "🐙 HEROINES SUMMER",
+      "timetree_id": "2717425579464639008",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717425579464639008",
+      "note": "8/22(金) \n『HEROINES SUMMER』\n@Zepp Osaka Bayside\n🎤15:35-16:00\n📸16:10-17:10(A)\nチケット発売（8/1 21:30~）\n🎫https://ticketdive.com/event/summer_osaka",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/879c/2025-07-31/0-1753957710819.jpg",
+        "https://attachments.timetreeapp.com/public_event/e504/2025-07-31/0-1753957714820.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-08-23",
+      "event": "HEROINES SUMMER extra!!!",
+      "timetree_id": "2737992292950130732",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2737992292950130732",
+      "note": "8/23(土)\n『HEROINES SUMMER extra!!!』\n@ 新木場FACTORY\n\n🎤16:30-16:55\n📸17:05-18:05(A)\n\n🎫https://ticketdive.com/event/summer_extra",
+      "venue_hint": "新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f9a9/2025-07-31/0-1753943981390.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2025-08-24",
+      "event": "HEROINES SUMMER",
+      "timetree_id": "2717425697718846260",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717425697718846260",
+      "note": "8/24(日)\n『HEROINES SUMMER』\n@Zepp DiverCity (TOKYO)\n🎤15:55-16:20\n📸16:30-17:30(B)\n🎫https://ticketdive.com/event/summer_tokyo",
+      "venue_hint": "Zepp DiverCity (TOKYO)",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bf81/2025-07-31/0-1753957851179.jpg",
+        "https://attachments.timetreeapp.com/public_event/f950/2025-07-31/0-1753957853648.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-08-26",
+      "event": "エンドレスサマー2025",
+      "timetree_id": "2691580661081097077",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691580661081097077",
+      "note": "8/26(火)\n『エンドレスサマー2025』\n@渋谷asia\n\n📍ラムネステージ\n🎤13:55~14:15\n📸14:30~15:30(12)asiaBar2F\n\n🎫https://ticketdive.com/event/endlessummer2025",
+      "venue_hint": "渋谷asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/274d/2025-07-31/0-1753962728596.jpg",
+        "https://attachments.timetreeapp.com/public_event/d74d/2025-08-24/0-1756057706339.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷asia",
+      "venue_uid": "8f57af96-5264-4c1c-9dc9-7023a086d5ab"
+    },
+    {
+      "date": "2025-08-30",
+      "event": "@ JAM EXPO 2025",
+      "timetree_id": "2746733683507249292",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746733683507249292",
+      "note": "8/30(土)\n\n『@ JAM EXPO 2025』\n@横浜アリーナ\n\nTENRIN@ JAMに出演します🔥\n\n📍パイナップルステージ🍍\n🎤10:15~10:30\n📸12:30~13:30 (13)\n\n📍キウイステージ🥝\n🎤15:10~15:30\n\n  詳細atjam.jp/expo2025 \n◇━━━━━━━━━━━◇\n\n#TENRIN #アットジャム",
+      "venue_hint": "横浜アリーナ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cfa4/2025-07-25/0-1753466123023.jpg",
+        "https://attachments.timetreeapp.com/public_event/90dd/2025-08-24/0-1756057554587.jpg",
+        "https://attachments.timetreeapp.com/public_event/120b/2025-08-24/0-1756057555296.jpg"
+      ],
+      "type": "Festival",
+      "venue": "横浜アリーナ",
+      "venue_uid": "01544795-3b34-4d22-b4e7-bd5ef8800019"
+    },
+    {
+      "date": "2025-08-31",
+      "event": "僕らの夏は終わらない2025",
+      "timetree_id": "2758201997563576799",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2758201997563576799",
+      "note": "8/31日\n『僕らの夏は終わらない2025』\n＠ WOMBLIVE\n🎤17:20-17:50\n📸18:00-19:00(B)\n\n\nお目当て\nこの夏1番の思い出10秒動画\n\n\n🎫https://ticketdive.com/event/orenatsu2025",
+      "venue_hint": "WOMBLIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/787c/2025-07-31/0-1753971299943.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-09-03",
+      "event": "「零」MV衣装公演",
+      "timetree_id": "2766872977743856195",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766872977743856195",
+      "note": "9/3(水)\n『 「零」MV衣装公演 』\n@ ViBlue EBISU\n\nOPEN/19:00 START/19:30\n\n  🎫 t-dv.com/zero_MV",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6c67/2025-08-15/0-1755253980246.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-09-06",
+      "event": "HEROINES ViViD",
+      "timetree_id": "2691580984101224640",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691580984101224640",
+      "note": "9/6(土)\n『HEROINES ViViD』\n@ Veats SHIBUYA  \n\n🎤12:45-13:10\n📸13:20-14:20(C)\n\n入場特典 / 写メ📸\n\n🎫t-dv.com/HEROINES_VVD",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e909/2025-08-15/0-1755253839052.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-09-07",
+      "event": "1️⃣ New Generations!! - September -",
+      "timetree_id": "2766830672139829549",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766830672139829549",
+      "note": "9/7(日)\n『New Generations!! - September -』\n@Spotify O-WEST\n\n🎤13:35-14:00 \n📸14:30-16:00ATOM 4F① \n\n🎫https://t.livepocket.jp/e/new_generations_202509",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/adf3/2025-09-02/0-1756789258903.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2025-09-07",
+      "event": "2️⃣ にゃんフェス",
+      "timetree_id": "2778892227731833442",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2778892227731833442",
+      "note": "9/7(日)\n2️⃣『にゃんフェス』\n\n@ViBlue EBISU\n🎤18:50~19:20\n📸20:30~22:00\n\n🎫t.livepocket.jp/e/viblue0907\n\n②入特 / にゃんにゃん5秒動画\n回し特典/Pt2倍&ブロマイド",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/072e/2025-09-05/0-1757071814119.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-09-09",
+      "event": "超明星現象",
+      "timetree_id": "2746727782230573382",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746727782230573382",
+      "note": "9/9(火)\n『超明星現象』\n\n@渋谷サーキット\n\n📍Veats Shibuya\n💜17:25- 17:40(七瀬にこ特別企画出演)\n🎤18:40-19:05(TENRIN出演)\n📸18:55-20:05(L)\n\n🎫https://t-dv.com/chomyojo_0909",
+      "venue_hint": "渋谷サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3a5a/2025-07-15/0-1752603466743.jpg",
+        "https://attachments.timetreeapp.com/public_event/2f5b/2025-09-02/0-1756830141936.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷サーキット",
+      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+    },
+    {
+      "date": "2025-09-11",
+      "event": "1️⃣単独無銭LIVE",
+      "timetree_id": "2775701291048682242",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775701291048682242",
+      "note": "9/11(木)\n『単独無銭ライブ』\n@恵比寿ViBlue\nOPEN15:20 START15:45\n\n🎫https://ticketdive.com/event/T_11_12",
+      "venue_hint": "恵比寿ViBlue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7665/2025-08-31/0-1756622668395.jpg"
+      ],
+      "type": "Concert",
+      "venue": "恵比寿ViBlue",
+      "venue_uid": "71d0804b-c639-4950-a2d2-0d1ab540b336"
+    },
+    {
+      "date": "2025-09-11",
+      "event": "2️⃣🚹TENRIN男祭り",
+      "timetree_id": "2775701400956223490",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775701400956223490",
+      "note": "9/11(木)\n『TENRIN男祭り』\n男性限定LIVE🚹\n@恵比寿ViBlue\nOPEN19:00 START19:30\n\n特別衣装⭐️\n\n🎫https://ticketdive.com/event/T_11_12",
+      "venue_hint": "恵比寿ViBlue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e6d2/2025-08-31/0-1756622763609.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ViBlue",
+      "venue_uid": "71d0804b-c639-4950-a2d2-0d1ab540b336"
+    },
+    {
+      "date": "2025-09-12",
+      "event": "1️⃣ 単独無銭ライブ",
+      "timetree_id": "2775701348317708520",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775701348317708520",
+      "note": "9/12(金)\n『単独無銭ライブ』\n@恵比寿ViBlue\nOPEN15:20 START15:45\n\n🎫https://ticketdive.com/event/T_11_12",
+      "venue_hint": "恵比寿ViBlue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d82b/2025-08-31/0-1756622839858.jpg"
+      ],
+      "type": "Concert",
+      "venue": "恵比寿ViBlue",
+      "venue_uid": "71d0804b-c639-4950-a2d2-0d1ab540b336"
+    },
+    {
+      "date": "2025-09-12",
+      "event": "2️⃣ 🚺TENRIN女祭り",
+      "timetree_id": "2775701452546163695",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775701452546163695",
+      "note": "9/12(金)\n『TENRIN女祭り』\n女性限定LIVE🚺\n@恵比寿ViBlue\nOPEN19:00 START19:30\n\n特別衣装⭐️\n\n🎫https://ticketdive.com/event/T_11_12",
+      "venue_hint": "恵比寿ViBlue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a8e9/2025-08-31/0-1756622906782.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ViBlue",
+      "venue_uid": "71d0804b-c639-4950-a2d2-0d1ab540b336"
+    },
+    {
+      "date": "2025-09-13",
+      "event": "クロフェス2025",
+      "timetree_id": "2691581039365374507",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691581039365374507",
+      "note": "9/13(土)\n『クロフェス2025』\n@ 海の森水上競技場\n\n📍エメラルドステージ \n🎤16:15~16:30\n\n📸16:50-18:50(12)\n\n📍クリスタルステージ \n🎤19:30~19:50\n\n🔗https://kurofes-dashin.com/",
+      "venue_hint": "海の森水上競技場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/86c5/2025-08-24/0-1756060150230.jpg",
+        "https://attachments.timetreeapp.com/public_event/f3f1/2025-08-24/0-1756060151516.jpg",
+        "https://attachments.timetreeapp.com/public_event/6056/2025-08-28/0-1756341589643.jpg",
+        "https://attachments.timetreeapp.com/public_event/ba5b/2025-09-10/0-1757516337484.jpg"
+      ],
+      "type": "Festival",
+      "venue": "海の森水上競技場",
+      "venue_uid": "b42d75da-187c-4090-9454-3c24733de520"
+    },
+    {
+      "date": "2025-09-14",
+      "event": "SPARK 2025",
+      "timetree_id": "2691581095812317663",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691581095812317663",
+      "note": "9/14(日)\n『SPARK 2025』\n@幕張メッセ 国際展示場\n\n📍BOTAN Stage\n🎤13:05-13:30\n📸13:50~14:50 ブース6\n\n🎫https://t-dv.com/spark2025makuhari",
+      "venue_hint": "幕張メッセ 国際展示場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b3df/2025-08-08/0-1754638800401.jpg",
+        "https://attachments.timetreeapp.com/public_event/32c8/2025-09-02/0-1756789467479.jpg",
+        "https://attachments.timetreeapp.com/public_event/3cf3/2025-09-10/0-1757516108469.jpg"
+      ],
+      "type": "Other",
+      "venue": "幕張メッセ",
+      "venue_uid": "5d1d1ad4-30a7-47bd-85e7-6a1cf2e297a0"
+    },
+    {
+      "date": "2025-09-15",
+      "event": "iLiVE! vol.19",
+      "timetree_id": "2766830960288514869",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766830960288514869",
+      "note": "9/15(月)\n💘iLiVE!💘\n@ KanadeVia Hall\n\n🎤15:45-16:10\n📸16:20-17:20(A)\n\nお目当て入場特典🉐\nランダム浴衣アクキー👘\n\n   🎫t-dv.com/ilive250915",
+      "venue_hint": "KanadeVia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/be2f/2025-08-20/0-1755691782251.jpg",
+        "https://attachments.timetreeapp.com/public_event/7467/2025-09-08/0-1757320337948.jpg"
+      ],
+      "type": "Concert",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2025-09-18",
+      "event": "HEROINES AUTAMUN",
+      "timetree_id": "2754565791671960246",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2754565791671960246",
+      "note": "9/18(木)\n『 HEROINES AUTAMUN』\n@ Veats SHIBUYA\n\n入場特典 / 写メ📸\n\n🎤15:35-16:00\n📸16:10-17:25 (B)\n\n🎫  t-dv.com/H_AUTUMN",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3821/2025-08-25/0-1756108380137.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-09-20",
+      "event": "NAKAYOSHI FES.2025",
+      "timetree_id": "2766831114815062246",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831114815062246",
+      "note": "9/20(土)\n『NAKAYOSHI FES.2025』\n@ 渋谷サーキット\n\nNO LIMIT STAGE\n📍渋谷WOMB\n🎤16:45-17:10\n📸17:20-18:20(WOMB 4F)\n\nTENRINとNAKAYOSHIしよ🌟\n\n\n🎫https://t.pia.jp/pia/event/event.do?eventCd=2524099",
+      "venue_hint": "渋谷サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6f89/2025-09-15/0-1757949649174.jpg",
+        "https://attachments.timetreeapp.com/public_event/9e4b/2025-09-18/0-1758197427440.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷サーキット",
+      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+    },
+    {
+      "date": "2025-09-21",
+      "event": "🐙 HEROINES FES in OSAKA",
+      "timetree_id": "2766831170607694524",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831170607694524",
+      "note": "9/21(日)\n『HEROINES FES in OSAKA』\n@ Zepp Osaka Bayside\n\n🎤14:25-14:50\n📸15:00-16:00(B)\n\n🎫https://ticketdive.com/event/heroinesfes_osaka",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6a74/2025-09-09/0-1757419503527.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-09-23",
+      "event": "🔥 HEROINES LEAGUE I",
+      "timetree_id": "2766831266967634926",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831266967634926",
+      "note": "9/23(火)\n『HEROINES LEAGUE I』\n@KANDA SQUARE HALL\nOPEN 14:00 / START 15:00\n\n🎤15:25-15:50\n📸16:00-17:00(B)\n\n🎫FC先行受付開始\nhttps://heroines.jp/news/public/_/a4c5891quw1gbej9.html\n\n一般🎫8/19(火)21:00〜\nhttps://ticketdive.com/event/heroinesleague250923",
+      "venue_hint": "KANDA SQUARE HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4e0a/2025-08-13/0-1755091379338.jpg",
+        "https://attachments.timetreeapp.com/public_event/e953/2025-09-19/0-1758282336544.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2025-09-24",
+      "event": "🔥HEROINES LEAGUE I",
+      "timetree_id": "2766831331853516998",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831331853516998",
+      "note": "9/24(水)\n『HEROINES LEAGUE I』\n@EX Theater Roppongi\nOPEN 14:00 / START 15:00\n\n前日の投票数で\nタイムテーブルが決まります！\n\n\nFC投票~9/15 23:59\nhttps://heroines.jp/news/public/_/2h8f4jwn7k9ro478.html\n\nチケ発\nFC先行~9/11 23:59\n一般発売9/13 20:30~\nhttps://ticketdive.com/event/heroinesleague250924",
+      "venue_hint": "EX Theater Roppongi",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ae7a/2025-09-08/0-1757338505356.jpg",
+        "https://attachments.timetreeapp.com/public_event/c1ba/2025-09-08/0-1757338506655.jpg",
+        "https://attachments.timetreeapp.com/public_event/9f7a/2025-09-19/0-1758282373167.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "EX THEATER ROPPONGI",
+      "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e"
+    },
+    {
+      "date": "2025-09-25",
+      "event": "HEROINES ROCK FES",
+      "timetree_id": "2766831400572994207",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831400572994207",
+      "note": "9/25(木)\n『HEROINES ROCK FES』\n@渋谷WOMB\n🎤18:05-18:35\n📸18:45-20:00(A)\n入場特典/ 写メ\n🎫https://ticketdive.com/event/HR_FES",
+      "venue_hint": "渋谷WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2554/2025-09-10/0-1757513052397.jpg"
+      ],
+      "type": "Festival",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-09-26",
+      "event": "🗳️FC投票期間🗳️",
+      "timetree_id": "2799615809369719343",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2799615809369719343",
+      "note": "【入れ替え戦FC投票開始のお知らせ】\n\nHEROINES LEAGUE 入れ替え戦VOL.1のファンクラブ投票が始まりました❕\n\n当日来場される方も来れない方も全ての人にTENRINに投票して頂きたいです🙏\n\n是非TENRINを勝たせてください🔥\n\n⚠️投票期間⚠️\n10/3 23:59まで\n　https://heroines.jp/news/public/_/x4wi5zc0oj83sktn.html",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cafc/2025-09-26/0-1758908210140.jpg",
+        "https://attachments.timetreeapp.com/public_event/b0ad/2025-09-26/0-1758908211064.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/cafc/2025-09-26/0-1758908210140.jpg"
+    },
+    {
+      "date": "2025-09-27",
+      "event": "1️⃣ てんりんとあそぼ〜！",
+      "timetree_id": "2796945118660969383",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2796945118660969383",
+      "note": "9/27(土)昼間\n\nてんりんとあそぼ〜！\nShibuya Club Asia\n\nお目当て/ポイント2倍&写メ\n◇━━━━━━━━━━━◇\n 🆃🅸🅲🅺🅴🆃 9/25 22:00\n t-dv.com/TENRIN_play\n◇━━━━━━━━━━━◇",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b976/2025-09-24/0-1758689601349.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/b976/2025-09-24/0-1758689601349.jpg"
+    },
+    {
+      "date": "2025-09-27",
+      "event": "2️⃣🚺ひめゆり",
+      "timetree_id": "2766831461700780565",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831461700780565",
+      "note": "9/27(土)\n『ひめゆり』\n@渋谷音楽堂\n女性限定LIVE🚺\n\n🎤17:00-17:30\n📸終演後特典会\n\nお目当て / 写メ📷\n\n~9/7抽選 9/8 22:00~一般\n 🎫t-dv.com/250927m",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f706/2025-09-02/0-1756788692456.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-09-28",
+      "event": "アイドル甲子園 in TACHIKAWA STAGE GARDEN",
+      "timetree_id": "2766831576591155738",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2766831576591155738",
+      "note": "9/28(日)\n『アイドル甲子園 in TACHIKAWA STAGE GARDEN』\n@ TACHIKAWA STAGE GARDEN\n\n📍屋内ステージ\n\n🎤12:40-13:05\n📸13:25-14:45(B)\n\n🔗https://idolkoushien.com/",
+      "venue_hint": "TACHIKAWA STAGE GARDEN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cc51/2025-09-02/0-1756789031785.jpg",
+        "https://attachments.timetreeapp.com/public_event/de6a/2025-09-18/0-1758196072381.jpg"
+      ],
+      "type": "Other",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+    },
+    {
+      "date": "2025-10-02",
+      "event": "HEROINES FES",
+      "timetree_id": "2775725357763707073",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775725357763707073",
+      "note": "10/2(木)\n\n『HEROINES FES』\n@渋谷サーキット\n\n1️⃣📍渋谷O-EAST\n🎤11:45-12:10\n📸12:25-13:25(特典会A)\n\n2️⃣📍渋谷O-nest \n🎤19:15-19:35\n📸19:45-21:00(終演後特典会)\n🎫https://t.co/3Hnivl0rk6",
+      "venue_hint": "渋谷サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a449/2025-08-31/0-1756636471304.jpg",
+        "https://attachments.timetreeapp.com/public_event/9ca6/2025-09-25/0-1758764633614.jpg",
+        "https://attachments.timetreeapp.com/public_event/d154/2025-09-27/0-1758985667883.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷サーキット",
+      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+    },
+    {
+      "date": "2025-10-04",
+      "event": "HYPE IDOL",
+      "timetree_id": "2775725412902027956",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775725412902027956",
+      "note": "10/4(土)\n『HYPE IDOL』\n@SHIBUYA WWW X\n\n🎤21:00-21:20\n📸21:30-22:30\n\nお目当て / 写メ券📸\n\n🎫https://ticketdive.com/event/hype_1004",
+      "venue_hint": "SHIBUYA WWW X",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a2df/2025-09-26/0-1758866909851.jpg",
+        "https://attachments.timetreeapp.com/public_event/65af/2025-10-01/0-1759337783652.jpg"
+      ],
+      "type": "Other",
+      "venue": "WWW X",
+      "venue_uid": "5ab9e0c9-157d-4372-a09e-dbf9885c86d2"
+    },
+    {
+      "date": "2025-10-05",
+      "event": "1️⃣ てんりんとお月見",
+      "timetree_id": "2792349055962628111",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792349055962628111",
+      "note": "10/5(日)\n1️⃣『てんりんとお月見』\n@ViBlue EBISU\nOPEN15:30/START16:00\n前方¥3,000/一般¥500\n\n衣装:秋私服コーデ\n\nチケ発9/28 22:30~\n🎫https://t-dv.com/otukimi_panic",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1f1d/2025-09-26/0-1758907788747.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-10-05",
+      "event": "2️⃣PANIC HELLOWEEN",
+      "timetree_id": "2799612897633550563",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2799612897633550563",
+      "note": "10/5(日)\n2️⃣『PANIC HELLOWEEN』\n@ViBlue EBISU\nOPEN19:00/START19:30\n前方¥3,000/一般¥1,000\n\n衣装:???\n\nチケ発9/28 23:00~\n🎫https://t-dv.com/otukimi_panic",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/cf30/2025-09-26/0-1758907863768.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-10-06",
+      "event": "HEROINES BLACK",
+      "timetree_id": "2737992686493287055",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2737992686493287055",
+      "note": "10/6(火)\n『HEROINES BLACK』\n@恵比寿LIQUID ROOM\n\n🎤18:30-18:55\n📸19:05-20:20(2)\n\n《お目当て》\n10秒動画券(当日使用不可)\n　\n🎫https://ticketdive.com/event/HRBK_2",
+      "venue_hint": "恵比寿LIQUID ROOM",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f818/2025-09-17/0-1758116481064.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "LIQUIDROOM",
+      "venue_uid": "92bda7ee-a341-4e4c-aac6-e6850d85a020"
+    },
+    {
+      "date": "2025-10-07",
+      "event": "のんふぃく × TENRIN 2MAN",
+      "timetree_id": "2792349212712157312",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792349212712157312",
+      "note": "10/7(水)\n『のんふぃく × TENRIN 2MAN』\n@ 品川ステラボール\n入場特典  / 写メ券📸\n\n==⚠️超重要LIVE⚠️==\n\nなんと❗️この日iLiFE!空詩かれんさんとコラボします💙\n絶対に絶対に見逃せない1日になること間違いなし❤️‍🔥👊🏻\n\n  チケット発売9/26(金)20:00~\n🎫https://ticketdive.com/event/nonfic_tenrin251007",
+      "venue_hint": "品川ステラボール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b7c3/2025-09-25/0-1758808974834.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "ステラボール",
+      "with": [
+        "TENRIN",
+        "のんふぃく！"
+      ],
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2025-10-08",
+      "event": "⚠️ HEROINES LEAGUE 入れ替え決定戦 VOL.01⚠️",
+      "timetree_id": "2792349263387738492",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792349263387738492",
+      "note": "10/8(水)\n 『HEROINES LEAGUE\n 入れ替え決定戦 VOL.01』\n @Zepp  Haneda\n⚠️超重要LIVE⚠️\n\n 絶対にてっぺんとって\n 1部リーグに返り咲く\n 皆さんの力が必要です\n\n  是非TENRIN入場を\n よろしくお願いします\n\n  チケ発 0926 21:30~\n🎫https://ticketdive.com/event/heroinesleague251008",
+      "venue_hint": "Zepp  Haneda",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3178/2025-09-25/0-1758808816067.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Haneda",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
+    },
+    {
+      "date": "2025-10-10",
+      "event": "TENRIN × ネコプラ 2MAN",
+      "timetree_id": "2792349385853026407",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792349385853026407",
+      "note": "10/10(木)\n『TENRIN × ネコプラ 2MAN』\n@ViBlue EBISU\nOPEN19:00\nSTART19:30\n\nお目当て / 写メ📸\n\n 🎫t-dv.com/nekoten",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0c3b/2025-10-01/0-1759326045880.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-10-11",
+      "event": "KABUKILLING CIRCUIT!!",
+      "timetree_id": "2691581264918266350",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691581264918266350",
+      "note": "10/11(土)\n歌舞伎町サーキット\n『KABUKILLING CIRCUIT!! 』\n\n📍タワーステージ\n🎤16:05~16:30 \n📸16:40~17:50 特典会D\n\nお目当て / 写メ📸\n\n🎫tiget.net/events/426699",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/03d5/2025-09-29/0-1759138374161.jpg",
+        "https://attachments.timetreeapp.com/public_event/9417/2025-09-29/0-1759138374937.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/03d5/2025-09-29/0-1759138374161.jpg"
+    },
+    {
+      "date": "2025-10-12",
+      "event": "🍤HEROINES HALLOWEEN",
+      "timetree_id": "2784153009214243158",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2784153009214243158",
+      "note": "10/12(日)\n🎃HEROINES HALLOWEEN🎃\n@NAGOYA PORTBASE\n\n🎤15:30~15:55\n📸16:05~17:05(A)\n\n\n🎫\nhttps://ticketdive.com/event/heroineshalloween_nagoya",
+      "venue_hint": "NAGOYA PORTBASE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/05fd/2025-10-05/0-1759675112974.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "NAGOYA PORTBASE",
+      "venue_uid": "b47153f8-1bef-4993-a36a-470076eb7ea5"
+    },
+    {
+      "date": "2025-10-13",
+      "event": "1️⃣東京絶対帝都vol.64",
+      "timetree_id": "2795711652850089993",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2795711652850089993",
+      "note": "10/13(月)\n『東京絶対帝都vol.64』\n@WOMB LIVE\n\n🎤14:20-14:45\n📸14:55-15:55(C)\n\n\nお目当て / 写メ券📸\n\n🎫https://ticketdive.com/event/251013t",
+      "venue_hint": "WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ec56/2025-09-21/0-1758442799192.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-10-13",
+      "event": "2️⃣Brand New LADYBABY Presents 『TRIANGLE EVOLVER",
+      "timetree_id": "2798409727272075585",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2798409727272075585",
+      "note": "10/13(月祝)\n@ duo MUSIC EXCHANGE\nBrand New LADYBABY Presents \n 『TRIANGLE EVOLVER』\n\n🎤18:35-19:10\n📸終演後特典会\n\n\n🎫https://ticketdive.com/event/triangleevolver251013",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b45b/2025-09-25/0-1758764434614.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2025-10-14",
+      "event": "HEROINES GOLDEN",
+      "timetree_id": "2798082403368485815",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2798082403368485815",
+      "note": "10/14(火)\n『HEROINES GOLDEN』\n@SHIBUYA WWW X\n\n🎤19:25-19:50\n📸終演後特典会\n\nチケット発売（9/27 21:30~）\n🎫https://t-dv.com/heroines_golden",
+      "venue_hint": "SHIBUYA WWW X",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d894/2025-09-26/0-1758907988907.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "WWW X",
+      "venue_uid": "5ab9e0c9-157d-4372-a09e-dbf9885c86d2"
+    },
+    {
+      "date": "2025-10-16",
+      "event": "iLiVE! HALLOWEEN🎃",
+      "timetree_id": "2775725786992001867",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775725786992001867",
+      "note": "10/16(木)\n『iLiVE! HALLOWEEN🎃』\n@豊洲PIT\n\n💘お目当て特典💘\nブロマイド\n後日使える私物サイン券\n\n🎤15:25-15:50\n📸16:00-17:00(A)\n\n◇━━━━━━━━━━━◇\n 🆃🅸🅲🅺🅴🆃 9/25 21:00~\n   t-dv.com/ilive251016",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2336/2025-10-08/0-1759926936773.jpg"
+      ],
+      "type": "Concert",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-10-18",
+      "event": "HEROINES PARTY",
+      "timetree_id": "2792349728510885913",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792349728510885913",
+      "note": "10/18(土)\n『HEROINES PARTY』\n@ 白金高輪SELENE b2\n🎤13:00-13:20\n📸終演後特典会\n\n🎫t-dv.com/heroines_1018",
+      "venue_hint": "白金高輪SELENE b2",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bfd9/2025-10-10/0-1760077108600.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "白金高輪SELENE b2",
+      "venue_uid": "8849c27a-75b7-429c-afd9-0fa8dd676eab"
+    },
+    {
+      "date": "2025-10-22",
+      "event": "のもあちゃちゃ生誕前夜祭",
+      "timetree_id": "2784230059375640963",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2784230059375640963",
+      "note": "10/22(水)\n『のもあちゃちゃ生誕前夜祭』\n@Shibuya Club Asia\n\nOPEN19:45 \nSTART20:05\n\nゲスト/月神キラ\n◇━━━━━━━━━━━◇\n 🆃🅸🅲🅺🅴🆃 10/12 22:00~\n    t-dv.com/Cha_otan\n◇━━━━━━━━━━━◇",
+      "venue_hint": "Shibuya Club Asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7bfc/2025-10-11/0-1760162787893.jpg"
+      ],
+      "type": "Other",
+      "venue": "clubasia",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3"
+    },
+    {
+      "date": "2025-10-23",
+      "event": "❤️ちゃちゃ生誕祭🎂",
+      "timetree_id": "2775725874745229971",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775725874745229971",
+      "note": "10/23(木)\n『第6話 とっとこ天才！のもあどうぶつえん\n~ ちゃちゃ！を愛でたい ~』\n\n@Veats SHIBUYA\n\nOPEN17:30\nSTART18:30\n\n抽選~10/19 23:59\n一般10/20 23:00~\n🎫 t-dv.com/chacha_BDL",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ebc0/2025-10-18/0-1760791465461.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2025-10-25",
+      "event": "🐙HEROINES HALLOWEEN",
+      "timetree_id": "2784153152416170200",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2784153152416170200",
+      "note": "10/25（土）\n🎃HEROINES HALLOWEEN🎃\n@OSAKA BIGCAT\n\n🎤14:45~15:10\n📸15:20~16:20(A)\n\n🎫\nhttps://ticketdive.com/event/heroineshalloween_osaka",
+      "venue_hint": "OSAKA BIGCAT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f7c4/2025-10-05/0-1759675174379.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "OSAKA BIGCAT",
+      "venue_uid": "17235793-35ca-4652-be0f-e09837b52d75"
+    },
+    {
+      "date": "2025-10-28",
+      "event": "HEROINES HALLOWEEN-DAY2-",
+      "timetree_id": "2746734448875454619",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746734448875454619",
+      "note": "10/28(火)\n『HEROINES HALLOWEEN-DAY2-』\n@ Zepp Diver City\n\n🎤15:00-15:25\n📸15:35-16:35(A)\n\n\n Day2：9/29 22:00~\n🎫https://ticketdive.com/event/heroineshalloween2510",
+      "venue_hint": "Zepp Diver City",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6a74/2025-10-20/0-1760978774619.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-10-29",
+      "event": "HEROINES HALLOWEEN-DAY3-",
+      "timetree_id": "2800865581812465895",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2800865581812465895",
+      "note": "10/29(水)\n『HEROINES HALLOWEEN-DAY3-』\n@ Zepp Diver City\n\n🎤13:35-14:00\n📸14:10-15:10(C)\n\n\nDay3：9/29 22:30〜\n🎫https://ticketdive.com/event/heroineshalloween2510",
+      "venue_hint": "Zepp Diver City",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/21a7/2025-10-20/0-1760978708544.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2025-10-30",
+      "event": "サークルライチ主催Halloween",
+      "timetree_id": "2784230125536592660",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2784230125536592660",
+      "note": "10/30(木)\nサークルライチ主催\n『Halloween』\n@ Zepp SHINJUKU\n\nお目当て特典 / 5秒動画\n🎤18:15~18:40\n📸18:50~19:50\n\n抽選:10/2 23:29\n先着:10/3 22:00\n🎫t-dv.com/251030z",
+      "venue_hint": "Zepp SHINJUKU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2384/2025-09-25/0-1758804598560.jpg",
+        "https://attachments.timetreeapp.com/public_event/5389/2025-10-01/0-1759336516633.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Shinjuku",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
+    },
+    {
+      "date": "2025-10-31",
+      "event": "1️⃣ HEROINES HALLOWEEN PREMIUM",
+      "timetree_id": "2746734531998172006",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746734531998172006",
+      "note": "10/31(金)\n『HEROINES HALLOWEEN PREMIUM』\n@ Spotify O-EAST\n\n\n🎤13:25~13:50 \n📸14:00~15:00(D)\n\n🎫https://heroines.jp/news/public/_/3yusahrqv36qk0xr.html",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bd22/2025-10-02/0-1759422160170.jpg",
+        "https://attachments.timetreeapp.com/public_event/1dee/2025-10-25/0-1761401115436.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2025-10-31",
+      "event": "2️⃣ Hello World！",
+      "timetree_id": "2803927215887925374",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2803927215887925374",
+      "note": "10/31(金)\n『Hello World！』\n@duo MUSIC EXCHANGE\n\nハロウィン当日なんと2回し🌀\nEAST&duoの回しなので🉐\n10秒あればいけちゃうよん😘\n\n先行抽選~10/14(火)23:59\n一般発売10/18(土)12:00~\n🎫ticketvillage.jp/events/13570",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/57e3/2025-10-04/0-1759578274594.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2025-11-03",
+      "event": "東京絶対帝都 Vol.68",
+      "timetree_id": "2810302453361984421",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2810302453361984421",
+      "note": "11/3(月祝)\n『東京絶対帝都 Vol.68』\n@ WOMBLIVE\n\n🎤18:30-18:55\n📸19:05-20:05\n入特写メ\n\n🎫https://ticketdive.com/event/251103t",
+      "venue_hint": "WOMBLIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d920/2025-10-11/0-1760182158033.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-11-04",
+      "event": "グラン・ギニュルーVol.26",
+      "timetree_id": "2784230250015146634",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2784230250015146634",
+      "note": "11/4(火) \n\nマーキュロ主催『グラン・ギニュルー』Vol.26\n@恵比寿LIQUIDROOM\n\n🎤18:40~19:05 \n📸19:15~20:15\n\nお目当て特典写メ\n\n\n🎫https://ticketdive.com/event/251104e",
+      "venue_hint": "恵比寿LIQUIDROOM",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6f76/2025-10-14/0-1760463694834.jpg",
+        "https://attachments.timetreeapp.com/public_event/d826/2025-10-20/0-1760945223393.jpg"
+      ],
+      "type": "Other",
+      "venue": "LIQUIDROOM",
+      "venue_uid": "92bda7ee-a341-4e4c-aac6-e6850d85a020"
+    },
+    {
+      "date": "2025-11-05",
+      "event": "HEROINES BLACK",
+      "timetree_id": "2717426097729618731",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2717426097729618731",
+      "note": "11/5(水)\n『HEROINES BLACK』\n@SHIBUYA WOMB LIVE\n\n🎤19:10-19:35\n📸終演後特典会\n\n無規制LIVE🔥\nライブレギュ解放🔥\nダイバーキャッチあり⚠️\n\n🎫t-dv.com/HEROINES_BK",
+      "venue_hint": "SHIBUYA WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5a7c/2025-10-06/0-1759741451090.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-11-06",
+      "event": "SAWAGE",
+      "timetree_id": "2746734703092220484",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746734703092220484",
+      "note": "11/6(木)\n『SAWAGE』\n@shibuya Milkyway\n\nOPEN18:30\nSTART19:00\n\nタイムテーブル非公開⚠︎\n\n先行抽選:~11/1 23:59\n一般先着:11/2 22:00~\n🎫t-dv.com/SAWAGE",
+      "venue_hint": "shibuya Milkyway",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3456/2025-10-28/0-1761662120237.jpg"
+      ],
+      "type": "Other",
+      "venue": "shibuya Milkyway",
+      "venue_uid": "ac5e29e8-3e3e-4917-8248-50995cf4b4b4"
+    },
+    {
+      "date": "2025-11-08",
+      "event": "東京絶対帝都 vol.69",
+      "timetree_id": "2811538905508922327",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2811538905508922327",
+      "note": "11/8(土)\n『東京絶対帝都 vol.69』\n@ 渋谷音楽堂\n\n🎤20:20-20:45\n📸終演後特典会\n\nお目当て / 写メ\n\n🎫t-dv.com/251108s",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8d44/2025-10-20/0-1760945372113.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-11-09",
+      "event": "AGE FES",
+      "timetree_id": "2811538962132026333",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2811538962132026333",
+      "note": "11/9(日)\n『AGE FES』\n@キネマ倶楽部\n\n🎤19:40-20:05\n📸20:20-21:20(E)\n\nお目当て / 写メ\n🎫https://ticketdive.com/event/SnFxptH7to3hAFv10HV6",
+      "venue_hint": "キネマ倶楽部",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6743/2025-10-24/0-1761286766163.jpg"
+      ],
+      "type": "Festival",
+      "venue": "東京キネマ倶楽部",
+      "venue_uid": "ed987d96-33d9-457a-be2b-78ab8b936d7e"
+    },
+    {
+      "date": "2025-11-13",
+      "event": "🍤テンラン会",
+      "timetree_id": "2786453581174981507",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2786453581174981507",
+      "note": "11/13(木)\n『テンラン会』\n@名古屋ReNY\n\n🎤18:40-19:10\n📸終演後特典会\n\n🎫https://ticketdive.com/event/tenrankai_chuLaTENRIN",
+      "venue_hint": "名古屋ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5152/2025-09-08/0-1757339151138.jpg"
+      ],
+      "type": "Other",
+      "venue": "名古屋ReNY",
+      "venue_uid": "57d1ac71-e97e-4da9-8f09-e1a22570c1d3"
+    },
+    {
+      "date": "2025-11-15",
+      "event": "🍤 HEROINES FES in NAGOYA",
+      "timetree_id": "2813390928575512926",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2813390928575512926",
+      "note": "11/15(土)\n『HEROINES FES in NAGOYA』\n@名古屋COMTEC PORTBASE\n\n🎤13:55-14:20\n📸14:30-15:30(B)\n\n🎫https://ticketdive.com/event/heroinesfes_nagoya251115",
+      "venue_hint": "名古屋COMTEC PORTBASE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6e7e/2025-10-30/0-1761837057393.jpg"
+      ],
+      "type": "Festival",
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
+    },
+    {
+      "date": "2025-11-16",
+      "event": "iDOLEAD",
+      "timetree_id": "2813390999635411487",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2813390999635411487",
+      "note": "11/16(日)\n『iDOLEAD』\n@WOMB LIVE\n 🎤12:50~13:15\n 📸14:10~15:10\n\n先行抽選:~11/03(月)23:59\n一般先着:11/05(水)21:00~\n🎫ticketvillage.jp/events/13596",
+      "venue_hint": "WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f63b/2025-10-29/0-1761724506753.jpg",
+        "https://attachments.timetreeapp.com/public_event/5ae8/2025-11-12/0-1762946987930.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-11-18",
+      "event": "サブリミナル",
+      "timetree_id": "2811539111197589597",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2811539111197589597",
+      "note": "11/18(火)\n『サブリミナル』\n@Shibuya Milkyway\n\n🎤19:15-19:40\n📸終演後特典会\n\nお目当て / 写メ📸\n◇━━━━━━━━━━━◇\n   チケット10/14 20:00~\n   t-dv.com/kamisama3",
+      "venue_hint": "Shibuya Milkyway",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2498/2025-10-14/0-1760429570735.jpg"
+      ],
+      "type": "Other",
+      "venue": "shibuya Milkyway",
+      "venue_uid": "ac5e29e8-3e3e-4917-8248-50995cf4b4b4"
+    },
+    {
+      "date": "2025-11-21",
+      "event": "KOURiN Clash Night",
+      "timetree_id": "2811539235214770289",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2811539235214770289",
+      "note": "11/21(金)\n\n『KOURiN Clash Night』\n@WOMB LIVE\n\n🎤19:30~20:00 \n📸20:30~21:30 \n\n🎫\nt.livepocket.jp/e/l-s3s\n抽選 : 10.21(tue)21:00~10.27(mon)23:59\n先着 : 10.31(fri)22:00~11.20(thu)23:59",
+      "venue_hint": "WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fc2d/2025-10-30/0-1761809355740.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-11-22",
+      "event": "🌙HEROINES FES in SENDAI",
+      "timetree_id": "2811539286636937974",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2811539286636937974",
+      "note": "11/22(土)\n『HEROINES FES in SENDAI』\n@仙台PIT\n\nお目当て / 写メ券&ブロマイド📸\n🎤12:00-12:25\n📸12:30-13:30(A)\n            \n先行抽選~10/21 23:59\n一般先着10/25 12:00~\n🎫tiget.net/events/437446",
+      "venue_hint": "仙台PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0e41/2025-10-18/0-1760791248276.jpg",
+        "https://attachments.timetreeapp.com/public_event/1f95/2025-11-19/0-1763561616699.jpg"
+      ],
+      "type": "Festival",
+      "venue": "仙台PIT",
+      "venue_uid": "fbddc2ed-1fc4-45d2-a466-bdb6edcd7daa"
+    },
+    {
+      "date": "2025-11-23",
+      "event": "テンリン&ドレスコード合同チェキ会",
+      "timetree_id": "2816920322480849909",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2816920322480849909",
+      "note": "11/23(日)\n『テンリン&ドレスコード合同チェキ会』\n@ TIME SHARING 渋谷ワールド宇田川ビル 9A\n\n\nOPEN・チェキ販売 15:00~15:20\n1部《自由コスプレ》15:20~16:20\n\nOPEN・チェキ販売 17:20~17:40\n2部《ナース》17:40~18:40\n\nOPEN・チェキ販売19:40~20:00\n3部《私服》20:00~21:30\n\n🎫t-dv.com/TxD_CHEKI",
+      "venue_hint": "TIME SHARING 渋谷ワールド宇田川ビル 9A",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a9a9/2025-10-25/0-1761401042208.jpg",
+        "https://attachments.timetreeapp.com/public_event/1061/2025-10-29/0-1761724313123.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷ワールド宇田川ビル 9A",
+      "venue_uid": "c013c23b-34a3-4123-8eba-05c8df1a5a0d"
+    },
+    {
+      "date": "2025-11-25",
+      "event": "🔥 HEROINES LEAGUE入れ替え戦🔥",
+      "timetree_id": "2811136090525450945",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2811136090525450945",
+      "note": "⚠️⚠️超重要LIVE⚠️⚠️\n\n11/25(火)\n『HEROINES LEAGUE入れ替え戦』\n@恵比寿THE GARDEN HALL\n\n🎤19:35-20:00\n📸終演後特典会\n\nFC投票 ~11/5 23:59\n🗳️https://heroines.jp/news/public/_/4aetwh7mo5n1nw72.html\n\nFC先行 只今より開始\n🎫https://heroines.jp/news/public/_/2pg85cgw0zued418.html\n\n一般販売 11/2 21:00〜\n🎫https://ticketdive.com/event/heroinesleague251125\n\n今回も最強のLIVEを見せます🔥\n約1ヶ月間TENRINと一緒に駆け抜けて頂けると嬉しいです❗️\n今回こそ1位を一緒に取りに行きましょう🥇",
+      "venue_hint": "恵比寿THE GARDEN HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/89e4/2025-10-30/0-1761809664369.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "The Garden Hall",
+      "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
+    },
+    {
+      "date": "2025-11-26",
+      "event": "STAY TUNE！",
+      "timetree_id": "2816920593248338322",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2816920593248338322",
+      "note": "11/26(水)\n『STAY TUNE！』\n@渋谷サーキット\n\n📍渋谷WWW\n🎤15:00-15:25\n📸\n\n🎫t-dv.com/stay_tune1126",
+      "venue_hint": "渋谷サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0fb3/2025-10-29/0-1761724397141.jpg",
+        "https://attachments.timetreeapp.com/public_event/15c8/2025-11-24/0-1763967998075.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷サーキット",
+      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+    },
+    {
+      "date": "2025-11-29",
+      "event": "1️⃣ベロTEN",
+      "timetree_id": "2816920398112539414",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2816920398112539414",
+      "note": "11/29(土)\n\n『ベロTEN 』\n@渋谷音楽堂\nOPEN13:50 START14:10\n　\n 抽選:~11/20 23:59\n 先着:11/21 22:00~\n 🎫 t-dv.com/251129v",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0d80/2025-11-14/0-1763125588520.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-11-29",
+      "event": "2️⃣四銃士",
+      "timetree_id": "2816920486989840815",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2816920486989840815",
+      "note": "11/29(土)\n\n2️⃣『四銃士』\n@渋谷音楽堂\n\n🎤19:10~19:40 \n📸21:10~22:10 \n入場特典 / 写メ　\n\n抽選~11/13 23:59\n先着11/14 22:00~\n🎫https://ticketdive.com/event/251129y",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1989/2025-11-08/0-1762612352173.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-11-30",
+      "event": "1️⃣ TIF学園 「学園祭」秋",
+      "timetree_id": "2838637968972628782",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838637968972628782",
+      "note": "11/30(日)\n\n1️⃣TIF学園 「学園祭」秋\n@ベルサール渋谷ガーデン\n🎫https://ticketvillage.jp/events/13585\n\n🏫13:00~14:30 特別出し物企画\n🎤15:30~15:50 ライブ(B)\n📸16:20~17:50 特典会\n\n🏫特別衣装🏫\n\n出し物企画は30秒似顔絵選手権を行います✨️\nご参加の方は1回につき青春チケットが3枚必要となります❗️\nこの機会にアイコンや、ヘッダーをメンバーに書いてもらおう👍\n\n⬇️青春チケットはこちらから⬇️\n🔗ticketvillage.jp/events/13621",
+      "venue_hint": "ベルサール渋谷ガーデン",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5ed6/2025-11-19/0-1763560836052.jpg",
+        "https://attachments.timetreeapp.com/public_event/eca3/2025-11-27/0-1764269735808.jpg",
+        "https://attachments.timetreeapp.com/public_event/34c6/2025-11-27/0-1764269736434.jpg"
+      ],
+      "type": "Festival",
+      "venue": "ベルサール渋谷ガーデン 他",
+      "venue_uid": "d16beb51-bb1d-4c43-bd8d-4f406724552c"
+    },
+    {
+      "date": "2025-11-30",
+      "event": "2️⃣ TENRIN単独公演『メンバー内衣装交換公演💄👗』",
+      "timetree_id": "2838645182227595649",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838645182227595649",
+      "note": "《⚠️緊急企画⚠️》\n11/30(日)\nTENRIN単独公演\n『メンバー内衣装交換公演💄👗』\n@Shibuya Club Asia\n\nどのチケットでもお得🉐\n是非お待ちしております\n\n 抽選~11/23 23:59\n 一般11/24 20:00~\n🎫https://ticketdive.com/event/T_Presents",
+      "venue_hint": "Shibuya Club Asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/25df/2025-11-19/0-1763560874609.jpg"
+      ],
+      "type": "Concert",
+      "venue": "clubasia",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3"
+    },
+    {
+      "date": "2025-12-02",
+      "event": "🚺LADY FIRST",
+      "timetree_id": "2746734830196408522",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746734830196408522",
+      "note": "12/2(火)\n\n『LADY FIRST』\n@ SHIBUYA THE GAME\n⚠️🚺女性限定ライブ🚺⚠️\n\nOPEN18:30 \nSTART19:00\n\n🎫https://ticketdive.com/event/LADY_FIRST",
+      "venue_hint": "SHIBUYA THE GAME",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ab05/2025-11-08/0-1762612449288.jpg"
+      ],
+      "type": "Other",
+      "venue": "SHIBUYA THE GAME",
+      "venue_uid": "9791e31b-ec63-4b6b-8659-7f8b0e4f7d20"
+    },
+    {
+      "date": "2025-12-03",
+      "event": "OUTSIDER",
+      "timetree_id": "2746734890485334847",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2746734890485334847",
+      "note": "12/3(水)\n『OUTSIDER』\n@ Shibuya Milkyway\n⚠️ライブレギュ解放⚠️\n⚠️衣装&楽曲交換あり⚠️\n\nOPEN19:00\nSTART19:30\n\n🎫https://ticketdive.com/event/OUTSIDER",
+      "venue_hint": "Shibuya Milkyway",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6e90/2025-11-08/0-1762612585223.jpg"
+      ],
+      "type": "Other",
+      "venue": "shibuya Milkyway",
+      "venue_uid": "ac5e29e8-3e3e-4917-8248-50995cf4b4b4"
+    },
+    {
+      "date": "2025-12-06",
+      "event": "YANFES",
+      "timetree_id": "2830692914115166795",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830692914115166795",
+      "note": "12/6(土)\n『YANFES』\n @ Zepp Haneda\n\n🎤18:20-18:50\n📸終演後特典会\n\n◇━━━━━━━━━━━◇\n   🆃🅸🅲🅺🅴🆃 11/13 22:30~\neplus.jp/yanfes/",
+      "venue_hint": "Zepp Haneda",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a0df/2025-11-12/0-1762946745939.jpg",
+        "https://attachments.timetreeapp.com/public_event/49ca/2025-12-02/0-1764681143156.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Zepp Haneda",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
+    },
+    {
+      "date": "2025-12-07",
+      "event": "シュレ犬×TENRIN",
+      "timetree_id": "2846637495700734301",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2846637495700734301",
+      "note": "12/7(日)\n『シュレ犬×TENRIN』\n@ aube shibuya\n\n衣装交換あり❕\n\n🎤11:40-12:10\n📸終演後特典会\n\n🎫12/2 20:30~\nhttps://livepocket.jp/e/schro_tenrin_bug",
+      "venue_hint": "aube shibuya",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/54f3/2025-11-30/0-1764513632724.jpg"
+      ],
+      "type": "Other",
+      "venue": "aubeSHIBUYA",
+      "venue_uid": "c8dd1b99-178e-45f2-8025-08cd9a96e4c6"
+    },
+    {
+      "date": "2025-12-07",
+      "event": "相合傘5",
+      "timetree_id": "2830692965428282182",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830692965428282182",
+      "note": "12/7(日)\n\n『相合傘5』\n@渋谷音楽堂\n\n衣装交換&楽曲交換あり\n\n抽選~11/09 20:00\n一般11/17 22:00~\n\n\n🎫https://ticketdive.com/event/251207a",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2a98/2025-11-10/0-1762761255126.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-12-08",
+      "event": "TENRIN単独公演『友達100人できるかな？』",
+      "timetree_id": "2830693018419118442",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830693018419118442",
+      "note": "12/8(月)\nTENRIN単独公演\n『友達100人できるかな？』\n@ ViBlue EBISU\n\n新企画‼️\n実質無料イベやっちゃいます🉐\n\n抽選~11/22 23:59\n一般11/23 22:00~\n🎫https://ticketdive.com/event/100Frends",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4cb0/2025-11-19/0-1763559923527.jpg"
+      ],
+      "type": "Concert",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2025-12-10",
+      "event": "1️⃣🔥 HEROINES LEAGUE 入れ替え戦🔥",
+      "timetree_id": "2838634005950939213",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838634005950939213",
+      "note": "12/10(水)\n\n『HEROINES LEAGUE 入れ替え戦』\n@豊洲PIT\n\n🎫FC先行【11/21(金) ~23:59】\nhttps://heroines.jp/news/public/_/04e1wb6e41bmzjmq.html\n\n🎫一般チケット【11/23(日) 21:00~】\nhttps://ticketdive.com/event/heroinesleague251210\n\n🗳FC投票【11/26(水) ~23:59】\nhttps://heroines.jp/news/public/_/zwuo8kb975o6iaor.html\n\n\n第3回目の日程が決まりました❗️\n絶対に1部リーグを勝ち取りましょう🔥\nTENRIN入場とFC投票をお願いします🙇🏻‍♀️",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6940/2025-11-19/0-1763559542571.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2025-12-10",
+      "event": "2️⃣夢千乱舞",
+      "timetree_id": "2830693071670001702",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830693071670001702",
+      "note": "2️⃣12/10(水)\n『夢 千乱舞』\n@ 神田明神ホール\n\n入場特典 / 写メ\n\n🎤19:40-20:00\n📸終演後特典会\n\n🎫https://t.livepocket.jp/e/musenranbu2025",
+      "venue_hint": "神田明神ホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8d9d/2025-11-15/0-1763200335659.jpg",
+        "https://attachments.timetreeapp.com/public_event/71a0/2025-12-06/0-1765041414342.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田明神ホール",
+      "venue_uid": "af45c261-1dff-4816-8288-21fade952dde"
+    },
+    {
+      "date": "2025-12-13",
+      "event": "HEROIENS ONE COIN Vol.2",
+      "timetree_id": "2838638315640242266",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838638315640242266",
+      "note": "12/13(土)\n『HEROIENS ONE COIN Vol.2』\n@ 神田スクエアホール\n\n🎤19:10~19:35\n📸20:30~22:00\n　\n\n🎫t-dv.com/onecoin_vol2",
+      "venue_hint": "神田スクエアホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c02f/2025-11-27/0-1764269851269.jpg"
+      ],
+      "type": "Other",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2025-12-14",
+      "event": "1️⃣ DIAVEL Preents.「魔会」",
+      "timetree_id": "2830693780205388732",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830693780205388732",
+      "note": "12/14(日)\n\n『DIAVEL Preents.「魔会」』\n@渋谷REX\nOPEN 12:00 START 12:30\n\n🎤13:45-14:10\n📸終演後特典会\n\n📸https://ticketdive.com/event/diavel1214a",
+      "venue_hint": "渋谷REX",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b987/2025-11-14/0-1763135593103.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷REX",
+      "venue_uid": "06c2c27f-64db-4d7d-bd00-79dd7ed5ca0b"
+    },
+    {
+      "date": "2025-12-14",
+      "event": "2️⃣グラン・ギニュルー",
+      "timetree_id": "2835077740255560602",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2835077740255560602",
+      "note": "12/14(日)\n『グラン・ギニュルー』\n@渋谷音楽堂\nお目当て特典 / 写メ券\n\n🎤18:15-18:40\n📸終演後特典会\n\n抽選 ~12/01 23:59\n一般 12/02 22:00~\n🎫https://ticketdive.com/event/251214s",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/09ba/2025-11-23/0-1763883945287.jpg",
+        "https://attachments.timetreeapp.com/public_event/27e0/2025-11-23/0-1763883948011.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2025-12-16",
+      "event": "buGG CONNECT",
+      "timetree_id": "2830693836291621541",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830693836291621541",
+      "note": "12/16(火)\n『buGG CONNECT』\n@ 原宿RUIDO\n\n🎤19:25~19:50\n📸終演後物販\n\n🎫https://ticketdive.com/event/buGG1216",
+      "venue_hint": "原宿RUIDO",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/baf9/2025-11-20/0-1763616272415.jpg",
+        "https://attachments.timetreeapp.com/public_event/0e3f/2025-12-09/0-1765294786628.jpg"
+      ],
+      "type": "Other",
+      "venue": "原宿RUIDO",
+      "venue_uid": "9411f59b-ada5-451e-9f50-8a9a5f9cdd96"
+    },
+    {
+      "date": "2025-12-17",
+      "event": "🩷蓮花うらら生誕祭ふぇありーてぃる2 姫すぎて滅♡",
+      "timetree_id": "2775726246016631357",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2775726246016631357",
+      "note": "12/17(水)\n『蓮花うらら生誕祭\nふぇありーてぃる2 姫すぎて滅♡ 』\n@ SHIBUYA VIDENT \n\nこの日ははうららがお姫様です👸🏼❤\nみんなを好きすぎて滅❕にさせちゃうよ🎶\n◇━━━━━━━━━◇\n           🆃🅸🅲🅺🅴🆃\n     抽選 ~12/01 23:59\n     一般 12/01 21:00~\n    t-dv.com/urara_BDL",
+      "venue_hint": "SHIBUYA VIDENT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e3de/2025-12-06/0-1765041282972.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "SHIBUYA VIDENT",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+    },
+    {
+      "date": "2025-12-21",
+      "event": "🐙 HEROINES X′mas in OSAKA",
+      "timetree_id": "2816920792779768125",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2816920792779768125",
+      "note": "12/21(日)\n『HEROINES X′mas in OSAKA』\n@ Zepp Osaka Bayside\n　\n\n🎤13:30-13:55\n📸14:05-15:05(C)\n\n🎄クリスマス特別衣装🎄\n🎫https://ticketdive.com/event/Xmas_oska",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5895/2025-12-06/0-1765041860360.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2025-12-24",
+      "event": "HEROINES X′mas Day1",
+      "timetree_id": "2691581419788746783",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691581419788746783",
+      "note": "12/24(水)\n\n『HEROINES X′mas Day1』\n@ Kanadevia Hall\n\n🎄クリスマス特別衣装🎄\n\n🎤14:25~14:50 \n📸15:00~16:00 (A)\n\n特別な一日を過ごそうね⛄️\n◇━━━━━━━━━━━◇\n 🆃🅸🅲🅺🅴🆃 11/28 21:00~\n\n🎫https://ticketdive.com/event/heroinesxmas251224_25",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9a27/2025-12-13/0-1765632159219.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2025-12-25",
+      "event": "1️⃣Appare!クリスマス2025",
+      "timetree_id": "2839261393105765324",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2839261393105765324",
+      "note": "12/25(木)\n『Appare!クリスマス2025』\n@ 品川インターシティホール\n入場特典 / 写メ📸\n\n🎄クリスマス特別衣装🎄\n\n🎤16:40~17:00\n📸17:15~18:15(5)\nお目当て入場 / 写メ📷✨\n\n🎫https://ticketdive.com/event/apparechristmas2025",
+      "venue_hint": "品川インターシティホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7126/2025-11-20/0-1763634332794.jpg",
+        "https://attachments.timetreeapp.com/public_event/a1fa/2025-12-11/0-1765437583305.jpg",
+        "https://attachments.timetreeapp.com/public_event/1e0b/2025-12-18/0-1766055130380.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川インターシティホール&貸会議室",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
+    },
+    {
+      "date": "2025-12-25",
+      "event": "2️⃣Xmas",
+      "timetree_id": "2849368038817186533",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2849368038817186533",
+      "note": "12/25(木)\n\n『Xmas』\n@WOMB 渋谷\nクリスマス特別衣装🌲\n\nお目当て / 必殺10秒動画🎥\n\n🎤20:05-20:30\n📸終演後特典会\n\nクリスマスなんと２回ししちゃうよ⛄️\n　\n抽選1208 23:59\n一般1209 22:00\n🎫https://ticketdive.com/event/251225x",
+      "venue_hint": "WOMB 渋谷",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8369/2025-12-04/0-1764839137740.jpg",
+        "https://attachments.timetreeapp.com/public_event/b9f1/2025-12-04/0-1764839138840.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2025-12-26",
+      "event": "🍤MADMED 主催「MAD†CHRISTMAS」",
+      "timetree_id": "2830694415181071129",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830694415181071129",
+      "note": "12/26(金)\n\n『  - NAGOYA Welcome to Tea Party -\n MADMED 主催「MAD†CHRISTMAS」』\n\n@Zephyr Hall\n🎤17:45-18:10\n📸18:30-20:00(C)\n\n入場特典/写メ📸\nクリスマス特別衣装🎁🌟\n\n🎫https://ticketdive.com/event/mad_xmas2025",
+      "venue_hint": "Zephyr Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7e96/2025-11-21/0-1763707291955.jpg"
+      ],
+      "type": "Other",
+      "venue": "zephyr hall",
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
+    },
+    {
+      "date": "2025-12-28",
+      "event": "LEADING PREMIAM",
+      "timetree_id": "2830694667376181990",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2830694667376181990",
+      "note": "12/28(日)\n『LEADING PREMIAM』\n@ 渋谷asia\nお目当て/写メ📸\n　\n\n🎤17:55-18:25\n📸18:50-20:05(Asia K)\n\n抽選~11/25 23:59\n一般11/27 20:00~\n🎫ticketvillage.jp/events/13604",
+      "venue_hint": "渋谷asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f571/2025-11-20/0-1763642232738.jpg",
+        "https://attachments.timetreeapp.com/public_event/7ad5/2025-12-27/0-1766835285154.jpg",
+        "https://attachments.timetreeapp.com/public_event/7836/2025-12-27/0-1766835285917.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷asia",
+      "venue_uid": "8f57af96-5264-4c1c-9dc9-7023a086d5ab"
+    },
+    {
+      "date": "2025-12-30",
+      "event": "HEROINES COUNTDOWN eve",
+      "timetree_id": "2853744555093442879",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2853744555093442879",
+      "note": "12/30(火)\n『HEROINES COUNTDOWN eve』\n@Kanadevia Hall\n🎤15:55-16:20\n📸16:30-17:30(A)\n\n🎫https://ticketdive.com/event/heroinescountdowneve251230",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5029/2025-12-11/0-1765438361927.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2025-12-31",
+      "event": "HEROINES COUNT DOWN",
+      "timetree_id": "2691581513439166686",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2691581513439166686",
+      "note": "◤🎉 毎年恒例行事 🎉◢\n2025.12/31-2026.01.01\nHEROINES COUNT DOWN\n@ Kanadivia Hall\n\n18:05~18:15 ライブ🔥\n【各メンバーシャッフルユニットが入ります❕】\n00:10~00:40 特典会📸\n01:50~02:00 ライブ🔥\n\n\n ==🆃🅸🅲🅺🅴🆃==\nHEROINES FC先行~9/24 23:59\nhttps://heroines.jp/news/public/_/ogd1njs4m8xgz5sz.html\n\nOFFICIAL先行9/26 21:00~\nhttps://ticketdive.com/event/heroinescountdown251231",
+      "venue_hint": "Kanadivia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a97e/2025-09-19/0-1758288472704.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadivia Hall",
+      "venue_uid": "f8dcfe08-fcc0-40ea-af71-881a136e4cdb"
+    },
+    {
+      "date": "2026-01-03",
+      "event": "アイドル甲子園",
+      "timetree_id": "2838638607245033854",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838638607245033854",
+      "note": "1/3(土)\n\n『アイドル甲子園』\n@ Spotify O-EAST\n🎤16:55-17:20\n📸17:40-19:00(B)\n\nお目当て/ 10秒動画＋Pt2倍🉐\n\n 🎫12/1 21:00~\n livepocket.jp/e/aikou_0103e",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a5c5/2025-11-30/0-1764513733750.jpg",
+        "https://attachments.timetreeapp.com/public_event/4783/2026-01-01/0-1767284282137.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2026-01-04",
+      "event": "🐙 HEROINES NEW YEAR in OSAKA",
+      "timetree_id": "2838638695837123153",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838638695837123153",
+      "note": "1/4(日)\n「HEROINES NEW YEAR in OSAKA」\n@ZeppNamba\n\n🎤13:50-14:15\n📸14:25-15:25(B)\n\n🎫チケット発売(11/24 21:30~ )\nt-dv.com/heroines_osaka",
+      "venue_hint": "ZeppNamba",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9497/2025-11-23/0-1763909903016.jpg",
+        "https://attachments.timetreeapp.com/public_event/5a1e/2026-01-02/0-1767330414770.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp Namba",
+      "venue_uid": "2c51c304-bf50-4210-9899-30678048f7c0"
+    },
+    {
+      "date": "2026-01-05",
+      "event": "🐙 天下一舞闘会場",
+      "timetree_id": "2841572736282444239",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2841572736282444239",
+      "note": "1/5(月)\n『天下一舞闘会場』\n@ BANANA HALL\n\nOPEN16:30\nSTART17:00\n\n衣装交換＆楽曲交換あり\n※2DAYS撮影可能曲 SE~1曲目\n\n1月5日公演（12/17 19:30~）\n🎫t-dv.com/osakabutokai0105",
+      "venue_hint": "BANANA HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7d30/2025-12-15/0-1765820502852.jpg"
+      ],
+      "type": "Festival",
+      "venue": "BANANA HALL",
+      "venue_uid": "660478f6-c71d-4545-9730-8b2c0f95c24b"
+    },
+    {
+      "date": "2026-01-06",
+      "event": "🍤 テンラン会〜新年編〜",
+      "timetree_id": "2841573180601844386",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2841573180601844386",
+      "note": "1/6(火)\n『テンラン会〜新年編〜』\n@ Zephyr Hall\n\n激アツ対バン🔥🔥🔥\n絶対チケット勝ち取ってください❗️\n\n🎫https://ticketdive.com/event/tenran_newyear1",
+      "venue_hint": "Zephyr Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e44d/2025-12-14/0-1765683121627.jpg"
+      ],
+      "type": "Other",
+      "venue": "zephyr hall",
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "🗳️2/7(土)リーグ最終決定戦FC投票期間",
+      "timetree_id": "2874155229170679837",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874155229170679837",
+      "note": "投票はこちらから⬇️\n\nhttps://heroines.jp/news/public/_/qm630spym3h95ojj.html",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/511b/2026-01-07/0-1767794002404.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/511b/2026-01-07/0-1767794002404.jpg"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "HEROINES BLACK",
+      "timetree_id": "2838638854927073803",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838638854927073803",
+      "note": "1/7(水)\n『HEROINES BLACK』\n@SHIBUYA WOMB LIVE\nOPEN11:00 / START11:30\n\n🎤19:05-19:30\n📸終演後特典会\n\nチケ発12/21 23:00~\n予約¥3,500/当日¥4,000\n🎫t-dv.com/H_Black",
+      "venue_hint": "SHIBUYA WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e89a/2025-12-20/0-1766240750747.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-01-09",
+      "event": "雅なぎ生誕祭 QUEEN-final-",
+      "timetree_id": "2792304073620898650",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792304073620898650",
+      "note": "1/9(金)\n\n『雅なぎ生誕祭 QUEEN-final-』\n@ Shibuya Club Asia\n\nOPEN16:30 START17:00\n\n🆃🅸🅲🅺🅴🆃 12/28 22:00~\n🎫t-dv.com/Nagi_LBDL",
+      "venue_hint": "Shibuya Club Asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1fb4/2025-12-27/0-1766850272875.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "clubasia",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3"
+    },
+    {
+      "date": "2026-01-10",
+      "event": "🍤 HEROINES FES in Nagoya",
+      "timetree_id": "2848613705943138372",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2848613705943138372",
+      "note": "1/10(日)\n\n『HEROINES FES in NAGOYA』\n@NAGOYA COMTEC PORTBASE\n\n14:15~14:40 ライブ🔥\n14:50~15:50 特典会A📸\n\n🎫https://ticketdive.com/event/heroinesfes260110",
+      "venue_hint": "NAGOYA COMTEC PORTBASE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7e99/2025-12-09/0-1765294924704.jpg"
+      ],
+      "type": "Festival",
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
+    },
+    {
+      "date": "2026-01-11",
+      "event": "HEROINES 成人式",
+      "timetree_id": "2853630140394291862",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2853630140394291862",
+      "note": "1/11(日)\n『HEROINES 成人式』\n@ KANDA SQUARE HALL\n\n🎤17:25-17:50\n📸18:00-19:00\n（🩷うららのみ振袖特典会18:55-19:55）\n\n🎫 t-dv.com/heroines260111",
+      "venue_hint": "KANDA SQUARE HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/afbd/2025-12-26/0-1766755088568.jpg",
+        "https://attachments.timetreeapp.com/public_event/f194/2025-12-26/0-1766755090649.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2026-01-13",
+      "event": "🐙HEROINES LEAGUE 入れ替え戦 大阪編",
+      "timetree_id": "2855893864505197218",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2855893864505197218",
+      "note": "1/13(火)\n『HEROINES LEAGUE 入れ替え戦 大阪編』\n@ Zepp Osaka Bayside\n\nOPEN 13:30 / START 14:00\n\n🎤15:30-16:00\n📸16:10-17:10(A)\n\n\nFC抽選（12/19 23:59まで）\n🎫https://heroines.jp/news/public/_/q0jdh1t6vovmx7z4.html\n\n一般先着（12/20  22:00〜）\n🎫https://t-dv.com/heroines_league_osaka\n\nFC投票（12/22 23:59まで）\n🗳️https://heroines.jp/news/public/_/4zcazbgihrdgenbq.html",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d742/2025-12-15/0-1765784465108.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "1️⃣ 強犬乱舞 - DOG BITE - 』† The depth of Abyss †",
+      "timetree_id": "2853630290927862776",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2853630290927862776",
+      "note": "1/15(木) \n『強犬乱舞 - DOG BITE - 』† The depth of Abyss †』\n@WOMBLIVE\n\n🎤14:15-14:40\n📸14:55-16:10(3)\n\n<抽選> 2025/12/26(金) 22:00\n〜 2025/12/29(月) 23:59\n<先着> 2025/12/31(水) 20:00\n〜 2026/01/15(木) 13:30\n\n🎫https://livepocket.jp/e/dog_bite_naraku_final",
+      "venue_hint": "WOMBLIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d68b/2025-12-26/0-1766754686541.jpg",
+        "https://attachments.timetreeapp.com/public_event/c988/2026-01-14/0-1768398999958.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "2️⃣ TENRIN × MADMED 2MAN",
+      "timetree_id": "2854255163949760645",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854255163949760645",
+      "note": "1/15(木)\n『TENRIN × MADMED 2MAN』\n@ ViBlue EBISU\n\n衣装交換＆楽曲交換あり\n\nOPEN18:30\nSTART19:00\n\n12/14 22:30~\n🎫t-dv.com/TENMAD",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/16b7/2025-12-13/0-1765617050473.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2026-01-18",
+      "event": "クララ・マグラ×TENRIN ツーマン『殴り合い』",
+      "timetree_id": "2853630358791701143",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2853630358791701143",
+      "note": "1/18(日)\nクララ・マグラ×TENRIN ツーマン\n『殴り合い』\n@aube shibuya \nOPEN16:50  START17:10\n\n激アツクララ2MAN🔥\n衣装＆楽曲交換あり💄\n🎫t-dv.com/260118n",
+      "venue_hint": "aube shibuya",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3ae8/2026-01-08/0-1767869796179.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "aubeSHIBUYA",
+      "venue_uid": "c8dd1b99-178e-45f2-8025-08cd9a96e4c6"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "TEN-FES Harf Anniversary",
+      "timetree_id": "2838639004185576026",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639004185576026",
+      "note": "1/20(火)\n『TEN-FES Harf Anniversary』\n@ SHIBUYA WOMB LIVE\n\n🎤19:30-20:00\n📸終演後特典会\n\n\n新曲お披露目あり🔥\n🎫https://ticketdive.com/event/ten-fes",
+      "venue_hint": "SHIBUYA WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f0e1/2026-01-10/0-1768007172846.jpg"
+      ],
+      "type": "Festival",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "MEDiCA ROOM",
+      "timetree_id": "2853630521169986038",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2853630521169986038",
+      "note": "1/22(木)\n『MEDiCA ROOM』\n@ SHIBUYA WOMB LIVE\nお目当て特典/写メ+Pt2倍\n\n🎤18:55-19:20\n📸終演後特典会\n\n◇━━━━━━━━━━━◇\n 🆃🅸🅲🅺🅴🆃 12/22 21:00~\n t-dv.com/MEDiCAROOM122",
+      "venue_hint": "SHIBUYA WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3648/2025-12-22/0-1766394988284.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-01-24",
+      "event": "HYPE VIBE",
+      "timetree_id": "2865437986991685642",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2865437986991685642",
+      "note": "1/24(土)\n『HYPE VIBE』\n@ 代々木公園 野外ステージ\n入場特典 / 写メ📸\n　\n🎤未定\n📸未定\n\n🎫tiget.net/events/450519",
+      "venue_hint": "代々木公園 野外ステージ",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9151/2025-12-26/0-1766754825959.jpg"
+      ],
+      "type": "Other",
+      "venue": "代々木公園野外ステージ",
+      "venue_uid": "5e3f8ece-4a2d-41fc-ae42-72c3133c1b3b"
+    },
+    {
+      "date": "2026-01-25",
+      "event": "ずっとも2MAN!!!!!",
+      "timetree_id": "2877727428397810027",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2877727428397810027",
+      "note": "1/25(日)\n\n『ずっとも2MAN!!!!!』\n@ SHIBUYA VIDENT \n \n🉐お目当て🉐\nず〜っと使える写メ券(有効期限なし)\n\n🎫t-dv.com/TENMOTTO",
+      "venue_hint": "SHIBUYA VIDENT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/da12/2026-01-12/0-1768219841713.jpg"
+      ],
+      "type": "Other",
+      "venue": "SHIBUYA VIDENT",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "UTAGE FES Vol.4",
+      "timetree_id": "2838639057008640278",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639057008640278",
+      "note": "1/27(火)\n『UTAGE FES Vol.4』\n\n⚠️Zepp Shinjuku横のリストバンド交換所で\nリストバンドを受け取ってから会場に向かってください。\n\n@ 新宿LOFT\n🎤16:10-16:35\n📸16:50~17:50 \n※移動→LIVE HOUSE SHINJUKU ACE(A)\n\n\n🎫https://ticketdive.com/event/0127_UTAGEFES",
+      "venue_hint": "新宿LOFT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bb63/2025-12-09/0-1765295283845.jpg",
+        "https://attachments.timetreeapp.com/public_event/6330/2026-01-17/0-1768641132211.jpg",
+        "https://attachments.timetreeapp.com/public_event/e295/2026-01-26/0-1769435224851.jpg",
+        "https://attachments.timetreeapp.com/public_event/784f/2026-01-26/0-1769435225478.jpg"
+      ],
+      "type": "Festival",
+      "venue": "新宿LOFT",
+      "venue_uid": "5f416a84-bffc-4a57-9b3f-770a6b242071"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "東京絶対帝都",
+      "timetree_id": "2853630603034411724",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2853630603034411724",
+      "note": "1/29(木)\n『東京絶対帝都』\n@SHIBUYA WOMB LIVE\n\n🎤19:45~20:10\n📸終演後特典会\n入場特典/写メ\n\n抽選:1/11 23:59 先着:1/12 22:00\n🎫https://ticketdive.com/event/260129t",
+      "venue_hint": "SHIBUYA WOMB LIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/76b2/2026-01-05/0-1767584428179.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-01-31",
+      "event": "Heroines Party",
+      "timetree_id": "2866238967765582751",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2866238967765582751",
+      "note": "1/31(土)\n『Heroines Party』\n@恵比寿ガーデンホール\n\n🎤18:20~18:40\n📸18:50~19:50(D)\nお目当て特典/写メ券📷💭 ̖́-\n\n🎫https://ticketdive.com/event/0131heroines_party",
+      "venue_hint": "恵比寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/fa55/2025-12-30/0-1767101242576.jpg",
+        "https://attachments.timetreeapp.com/public_event/7940/2026-01-23/0-1769157611373.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "sound stock Vol.7 × iCON DOLL LOUNGE 2026",
+      "timetree_id": "2874798480441524460",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874798480441524460",
+      "note": "2/1(日)\n『sound stock Vol.7 × iCON DOLL LOUNGE 2026』\n@豊洲PIT\n\n🎤17:15-17:40\n📸17:50-18:50(C)\nお目当て/2月の挨拶5秒動画\n🎫w.pia.jp/t/soundstock/",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/59b0/2026-01-15/0-1768486108252.jpg",
+        "https://attachments.timetreeapp.com/public_event/c545/2026-01-15/0-1768486109094.jpg"
+      ],
+      "type": "Other",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "グラン・ギニュルー vol.28",
+      "timetree_id": "2854752320750404116",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854752320750404116",
+      "note": "2/2(月)\n『グラン・ギニュルー』\n@Zepp Diver City\n\n💜🩷特別セッション \n『ゼラセッション』\n🎤17:05-17:15\n📸17:25-18:25(A)\n※にこうららのみ\n\n🎤19:10-19:35\n📸終演後特典会\n\n🎫t-dv.com/260202m",
+      "venue_hint": "Zepp Diver City",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3735/2026-01-08/0-1767870028150.jpg",
+        "https://attachments.timetreeapp.com/public_event/cf92/2026-01-26/0-1769390233908.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "ふぃくふぇす ！サーキット",
+      "timetree_id": "2792303962077577477",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792303962077577477",
+      "note": "2/3（火）\n『ふぃくふぇす サーキット』\n@ 渋谷サーキット\n\nお目当て/写メ券📸\n\n🎤19:40-20:10\n📸終演後特典会\n\n  🎫t-dv.com/ficfes260203",
+      "venue_hint": "渋谷サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dd8d/2025-12-27/0-1766833605601.jpg",
+        "https://attachments.timetreeapp.com/public_event/eb31/2026-01-26/0-1769445387500.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷サーキット",
+      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "🎤カラオケ配信開始🎤",
+      "timetree_id": "2892380770713518091",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2892380770713518091",
+      "note": "【カラオケ配信第2弾💿】\n\n『Cross Fire』 & 『零』\nカラオケDAMにて全国配信開始！\n\n #TENRINと歌おう",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/367a/2026-02-01/0-1769966656243.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/367a/2026-02-01/0-1769966656243.jpg"
+    },
+    {
+      "date": "2026-02-07",
+      "event": "🔥HEROINES LEAGUE 最終決定戦",
+      "timetree_id": "2874154576000107321",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874154576000107321",
+      "note": "2/7(土)\n『HEROINES LEAGUE 最終決定戦』\n@ GARDEN新木場FACTORY\n\n本当にこれが最後のリーグ戦です！\n負けたくないので本気でやりましょう\n\nFC投票(1/14 23:59まで)\n🗳️https://heroines.jp/news/public/_/qm630spym3h95ojj.html\n\nFC抽選（1/14 23:59まで）\n🎫https://heroines.jp/news/public/_/2fyi3hhevps3g13v.html\n　　\n一般発売(1/15 22:00〜)\n🎫https://ticketdive.com/event/heroines_league0207",
+      "venue_hint": "GARDEN新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6ba0/2026-01-07/0-1767793923469.jpg",
+        "https://attachments.timetreeapp.com/public_event/60ed/2026-01-07/0-1767793924497.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2026-02-08",
+      "event": "🐙 umeda luisant Vol.3",
+      "timetree_id": "2874798641444078516",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874798641444078516",
+      "note": "2/8(日)\n『umeda luisant Vol.3』\n@なんばHatch\n🎤15:00~15:30(新曲お披露目あり)\n📸15:30~16:50\n\n抽選1/15 21:00〜\n一般先着1/19 12:00～\n🎫https://ticketdive.com/event/umedaLuisantVol3",
+      "venue_hint": "なんばHatch",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3796/2026-02-04/0-1770203242254.jpg"
+      ],
+      "type": "Other",
+      "venue": "なんばHatch",
+      "venue_uid": "bc56ea1c-1b75-45a1-8178-3c3da310146f"
+    },
+    {
+      "date": "2026-02-09",
+      "event": "HEROINES FES -ちょっぴり早いバレンタインDAY!-",
+      "timetree_id": "2854752393068593402",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854752393068593402",
+      "note": "2/9(月)\n『HEROINES FES -ちょっぴり早いバレンタインDAY!-』\n@ 豊洲PIT\n　\n🎤14:35-15:10\n📸15:20-16:20(A)\n \nちょっと早めのバレンタイン💌\n\n1/20 22:00~\n🎫https://ticketdive.com/event/heroinesfes260209",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/277b/2026-01-19/0-1768821318683.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-02-10",
+      "event": "HEROINES FREE LIVE",
+      "timetree_id": "2874795646081876395",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874795646081876395",
+      "note": "2/10(火)\n『HEROINES FREE LIVE』\n@ Veats SHIBUYA\n\n🎤14:40-15:10\n📸終演後特典会\n\n🎫t-dv.com/HFL_heroines",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c01d/2026-01-08/0-1767870654173.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "1️⃣HEROINES February",
+      "timetree_id": "2878616086357263079",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2878616086357263079",
+      "note": "2/11(水)\n『HEROINES February』\n@ 品川ステラボール\n\n🎤17:35-18:00\n📸18:10-19:10(C)\n\n🎫https://ticketdive.com/event/February_heroines",
+      "venue_hint": "品川ステラボール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/46d7/2026-01-15/0-1768496657347.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "2️⃣ シュレ犬さん2MAN",
+      "timetree_id": "2895239304031552147",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2895239304031552147",
+      "note": "『シュレ犬さんツーマン』\n@恵比寿Vblue\n前方¥3,000/一般¥0\nOPEN19:20 START19:50\n\n衣装交換あり⭐️\n一般無銭⭐️\n\nチケ発2/6 19:00~\n🎫https://ticketdive.com/event/0211_2MAN",
+      "venue_hint": "恵比寿Vblue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9de6/2026-02-05/0-1770307419840.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿Vblue",
+      "venue_uid": "68260d27-3c1c-41d0-aaf7-074fa6412f97"
+    },
+    {
+      "date": "2026-02-14",
+      "event": "HEROINES VALENTINE DAY1",
+      "timetree_id": "2874798842166690447",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874798842166690447",
+      "note": "2/14(土)\n『HEROINES VALENTINE DAY1』\n@ 品川ステラボール\n\n特別衣装で一緒に過ごそうね😘🍫\n\n🎤13:25-13:50\n📸14:00-15:00(C)\n\n🎫https://ticketdive.com/event/heroines_valentine_day1",
+      "venue_hint": "品川ステラボール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/08a6/2026-01-23/0-1769166501571.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2026-02-15",
+      "event": "HEROINES VALENTINE DAY2",
+      "timetree_id": "2874799032160272797",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2874799032160272797",
+      "note": "2/15(日)\n『HEROINES VALENTINE DAY2』\n@ 神田スクエアホール\n\n🎤14:45-15:10\n📸15:20-16:20(C)\n\nこの日はなんと！久しぶりの男装します🔥🚹\n\n 1/25 22:00~\n🎫https://ticketdive.com/event/heroinesvalentine260215",
+      "venue_hint": "神田スクエアホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1119/2026-01-24/0-1769256115493.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "神田スクエアホール",
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "🎂💜にこちゃん生誕祭",
+      "timetree_id": "2792303861884044188",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792303861884044188",
+      "note": "【七瀬にこ生誕祭】  \n\n\n 2/18(水)\n『やっほー！今日はにこのばーすでい\n-この日だけはゲラっちゃお！3-」\n@ Veats SHIBUYA\n\n笑顔いーっぱいで最高な1日にしようね🎶\n生誕祭を通して皆に日頃の感謝を伝えられますように😉💜  \n◇━━━━━━━━━━━◇\n🆃🅸🅲🅺🅴🆃 抽選~2/8 23:59\n🎫t-dv.com/NICO_BDL",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d042/2026-02-05/0-1770291520528.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-02-20",
+      "event": "💚🎓なぎちゃん卒業",
+      "timetree_id": "2838639319119086136",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639319119086136",
+      "note": "2/20(金)\n雅なぎ卒業式\n【THE LAST QUEEN】  \n@ Veats SHIBUYA\n\nTENRINの雅なぎとして、最後のライブです\n自分らしく最後まで歌い続けます、何卒見届けてください。\n◇━━━━━━━━━━━◇\n🆃🅸🅲🅺🅴🆃\n先行抽選2/13 20:00~2/13 23:59\n一般販売2/14 23:00~2/19 23:59\n\n🎫https://ticketdive.com/event/Nagi_graduation",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/bcd6/2026-02-12/0-1770901459523.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-02-22",
+      "event": "HEROINES CATITUDE",
+      "timetree_id": "2854752850004459661",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854752850004459661",
+      "note": "2/22(日)\n『HEROINES CATITUDE』\n@ 新木場FACTORY\n\n🎤17:05~17:30\n📸17:40~18:40\n入場特典 / 写メ📸 \n\n特別にゃんにゃんコスプレ😻\n\n\n🎫\nhttps://ticketdive.com/event/HEROINES_CATITUDE2026",
+      "venue_hint": "新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/161c/2026-01-12/0-1768219960948.jpg",
+        "https://attachments.timetreeapp.com/public_event/0612/2026-02-16/0-1771231766088.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2026-02-25",
+      "event": "🍤 東名阪ツアー『Blessed』in名古屋",
+      "timetree_id": "2838639468604080237",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639468604080237",
+      "note": "【 QUATTRO TOUR 】\n\n　\n東名阪ツアー『Blessed』開催決定❗️\nクアトロという大きな箱に挑戦👊🔥\n\n2/25(水)名古屋QUATTRO \n開場時刻 17:00 / 開演時刻 18:00\n\n3/4(水)梅田QUATTRO\n開場時刻 16:00 / 開演時刻 17:00\n\n3/16(月)渋谷QUATTRO\n開場時刻 17:30 / 開演時刻 18:30\n\n全国民大集合お願い致します🙇‍♀️🙏\n\n  抽選~2/6 23:59\n  一般2/7 23:00~\n 🎫t-dv.com/tenrin_blessed\n\n\n《特典内容》\nVIP→限定Tシャツ👕\nS→ピックキーホルダー🎸\n\n《GOODS》\n実用性グッズ‼️\nマルチポーチ\nタオル、パーカー\nシガレットケース\n\n《スタンプラリー》\n最後まで駆け抜けて🔥\n全員と集合記念写真を撮ろう📸",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2ff4/2026-02-02/0-1770038360126.jpg",
+        "https://attachments.timetreeapp.com/public_event/ba8d/2026-02-19/0-1771506385379.jpg",
+        "https://attachments.timetreeapp.com/public_event/0c2f/2026-02-19/0-1771506387719.jpg",
+        "https://attachments.timetreeapp.com/public_event/7ca5/2026-02-19/0-1771506388760.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/2ff4/2026-02-02/0-1770038360126.jpg"
+    },
+    {
+      "date": "2026-02-27",
+      "event": "『HEROINES FES』",
+      "timetree_id": "2838639531610915109",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639531610915109",
+      "note": "2/27(金)~3/1(日) 3Days\n\n『HEROINES FES』\n@ LaLa arena TOKYO-BAY\n\n2/27(金)\nメインステージ\n🎤14:25-14:50\n📸15:10-16:10(B)\n\n2/28(土)\n1️⃣サブステージ\n🎤11:25-11:50\n📸12:10-13:10(F)\n2️⃣メインステージ\n🎤14:00-14:25\n📸14:45-15:45(A)\n\n3/1(日)\nサブステージ\n🎤19:40-20:10\n📸20:30-21:30(F)\n\n新衣装お披露目しちゃいます😍\n\n1/27(火)22:00~\n🎫t-dv.com/heroinesfes2026",
+      "venue_hint": "LaLa arena TOKYO-BAY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d5cd/2026-01-26/0-1769425585719.jpg",
+        "https://attachments.timetreeapp.com/public_event/1d20/2026-02-26/0-1772107855248.jpg",
+        "https://attachments.timetreeapp.com/public_event/c4ad/2026-02-26/0-1772107855866.jpg",
+        "https://attachments.timetreeapp.com/public_event/d72f/2026-02-26/0-1772107856574.jpg"
+      ],
+      "type": "Festival",
+      "venue": "LaLa arena TOKYO-BAY",
+      "venue_uid": "629bdaf0-807e-473e-a088-3c96441c1e6b"
+    },
+    {
+      "date": "2026-03-02",
+      "event": "振袖チェキ会",
+      "timetree_id": "2895241230047559839",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2895241230047559839",
+      "note": "3/2(月)\n\n『振袖チェキ会』\n@EBISU Vblue\nドレコちゃんチームと振袖チェキ会開催です💘\n\nGUESTにキラちゃんあるちゃんも登場🤩⭐️\n　\n1部 OPEN16:00【WHITE DAY デート私服】 \n2部 OPEN20:00 【振袖】\n\n🎫https://ticketdive.com/event/0302_hurisode\n\n※本イベントには雅なぎは参加致しません。",
+      "venue_hint": "EBISU Vblue",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/36f1/2026-02-07/0-1770483047183.jpg"
+      ],
+      "type": "Other",
+      "venue": "EBISU Vblue",
+      "venue_uid": "9bbd2513-1679-450c-9b22-88bd4e1de700"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "Appare!ひな祭り",
+      "timetree_id": "2895241003756470783",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2895241003756470783",
+      "note": "3/3(火)\n『Appare!ひな祭り』\n@有楽町ヒューリックホール\n\n🎤14:55-15:15\n📸15:25-16:25(C)\n入場特典/織姫になりきりソロ動画(5秒)\n\n🎫 t-dv.com/appare0303",
+      "venue_hint": "有楽町ヒューリックホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/feed/2026-02-05/0-1770307622699.jpg",
+        "https://attachments.timetreeapp.com/public_event/ee46/2026-03-02/0-1772432970355.jpg"
+      ],
+      "type": "Other",
+      "venue": "有楽町ヒューリックホール",
+      "venue_uid": "fd2e0cbb-a4ca-448d-a70f-0ecbeb29faa5"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "🐙 東名阪ツアー『Blessed』in大阪",
+      "timetree_id": "2838639821949027048",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639821949027048",
+      "note": "【 QUATTRO TOUR 】\n\n　\n東名阪ツアー『Blessed』開催決定❗️\nクアトロという大きな箱に挑戦👊🔥\n\n2/25(水)名古屋QUATTRO \n開場時刻 17:00 / 開演時刻 18:00\n\n3/4(水)梅田QUATTRO\n開場時刻 16:00 / 開演時刻 17:00\n\n3/16(月)渋谷QUATTRO\n開場時刻 17:30 / 開演時刻 18:30\n\n全国民大集合お願い致します🙇‍♀️🙏\n\n  抽選~2/6 23:59\n  一般2/7 23:00~\n 🎫t-dv.com/tenrin_blessed",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d079/2026-02-02/0-1770038388390.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d079/2026-02-02/0-1770038388390.jpg"
+    },
+    {
+      "date": "2026-03-05",
+      "event": "バチュコリEx",
+      "timetree_id": "2903000364897583432",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903000364897583432",
+      "note": "3/5(木)\n『バチュコリEx』\n@ Zepp SHINJUKU\n\n🎤15:30~15:55\n📸16:05~17:25\n\nお目当て/卒業式の思い出10秒動画📸\n\n 🎫 livepocket.jp/e/bcexdd",
+      "venue_hint": "Zepp SHINJUKU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7a49/2026-02-21/0-1771666402326.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Shinjuku",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
+    },
+    {
+      "date": "2026-03-07",
+      "event": "1️⃣IDORISE!! FESTIVAL 2026",
+      "timetree_id": "2854753213315072859",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854753213315072859",
+      "note": "3/7(土)\n『IDORISE!! FESTIVAL 2026』\n@渋谷9会場サーキット\n\n🎤11:50-12:15\n📸12:30-13:30(WOMB LOUNGE 10)\n\n🎫https://eplus.jp/sf/detail/2588040001-P0030032?P6=001&P1=0402&P59=1",
+      "venue_hint": "渋谷9会場サーキット",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9f6d/2026-01-19/0-1768850266135.jpg",
+        "https://attachments.timetreeapp.com/public_event/520c/2026-03-05/0-1772735668469.jpg",
+        "https://attachments.timetreeapp.com/public_event/7d54/2026-03-05/0-1772735672691.jpg"
+      ],
+      "type": "Festival",
+      "venue": "渋谷9会場サーキット",
+      "venue_uid": "00cdbf7a-6ab6-4837-93f4-ffca15ab2d5b"
+    },
+    {
+      "date": "2026-03-07",
+      "event": "2️⃣ ななこるりん💨",
+      "timetree_id": "2907477565693019099",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2907477565693019099",
+      "note": "3/7(土)2️⃣本目\nCAL&RES×ナナコロビヤオキ×TENRIN\n『ななこるりん💨』\n@渋谷音楽堂\nお目当て/天使な写メ📸\n\n🎤19:25-20:00\n📸終演後特典会\n\n\n🎫https://ticketdive.com/event/nanakorurin_0307",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0567/2026-02-22/0-1771766334315.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "TENRIN×テンシンランマン 2MAN",
+      "timetree_id": "2898062949078581254",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2898062949078581254",
+      "note": "3/9(月)\n『TENRIN×テンシンランマン 2MAN』\n@ duo MUSIC EXCHANGE\nお目当て/写メ券📸\n\n衣装交換しちゃうよ〜👗\n\n🎫t-dv.com/tenrinranman",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/98c1/2026-02-26/0-1772087065927.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "パラサイ2MAN LIVE",
+      "timetree_id": "2883016056921440605",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2883016056921440605",
+      "note": "3/10(火)\n『パラサイ2MAN LIVE』\n\n@ 渋谷Milkyway\nお目当て/写メ券📸\n\n衣装交換、楽曲交換あり\n\n2/4 22:00~\n🎫https://ticketdive.com/event/tenrinparasai2man",
+      "venue_hint": "渋谷Milkyway",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2e28/2026-02-03/0-1770128092004.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "渋谷Milky Way",
+      "venue_uid": "ffd02468-59b2-4c68-8368-afc8fa695038"
+    },
+    {
+      "date": "2026-03-11",
+      "event": "HEROINES WHITEDAY",
+      "timetree_id": "2890522321067229523",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2890522321067229523",
+      "note": "3/11(水)\n『HEROINES WHITEDAY』\n@ 豊洲PIT\nお目当て/待受画面ソロ写メ\n\n🎤18:00-18:25\n📸18:35-19:35\n\n🎫https://ticketdive.com/event/heroineswhiteday2026",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e156/2026-02-26/0-1772086827770.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-03-13",
+      "event": "TENRIN×ポンコツ2MAN",
+      "timetree_id": "2838639881508143869",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838639881508143869",
+      "note": "3/13(金)\n\n🐼やんやんリアバ企画🐼\n『TENRIN×ポンコツ2MAN』\n@ ViBlue EBISU\n\n入特/写メ📸\n\n👗衣装交換あり👗\n\n🎫   t-dv.com/ponko2man",
+      "venue_hint": "ViBlue EBISU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/97db/2026-03-05/0-1772735444304.jpg"
+      ],
+      "type": "Other",
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
+    },
+    {
+      "date": "2026-03-16",
+      "event": "🗼東名阪ツアー『Blessed』in東京",
+      "timetree_id": "2838640011900666442",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2838640011900666442",
+      "note": "【 QUATTRO TOUR 】\n\n　\n東名阪ツアー『Blessed』開催決定❗️\nクアトロという大きな箱に挑戦👊🔥\n\n2/25(水)名古屋QUATTRO \n開場時刻 17:00 / 開演時刻 18:00\n\n3/4(水)梅田QUATTRO\n開場時刻 16:00 / 開演時刻 17:00\n\n3/16(月)渋谷QUATTRO\n開場時刻 17:30 / 開演時刻 18:30\n\n全国民大集合お願い致します🙇‍♀️🙏\n\n  抽選~2/6 23:59\n  一般2/7 23:00~\n 🎫t-dv.com/tenrin_blessed",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d732/2026-02-02/0-1770038454366.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d732/2026-02-02/0-1770038454366.jpg"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "🎂あやん生誕祭",
+      "timetree_id": "2792281826613051866",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2792281826613051866",
+      "note": "【白洲あやん生誕祭】  \n\n3/18(水)\n@ Veats SHIBUYA\n白洲あやん生誕祭🐼\n『やんだ〜らんどの大冒険\n~やんと楽しく遊ぼうの会vol.5~』\n\n沢山のはっぴーをみんなに\nお届けしちゃうよー🐼\nみんなに恩返しするぞー✊🏻\n◇━━━━━━━━━━━◇\n🆃🅸🅲🅺🅴🆃\n抽選~3/10 23:59 一般3/11 22:00~\n🐼🎫t-dv.com/yanyan_BDL",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/993c/2026-03-08/0-1772943517969.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "YORU-FES PREMIAM",
+      "timetree_id": "2898062856241856608",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2898062856241856608",
+      "note": "3/19(木)\n『YORU-FES PREMIAM』\n@ ZEPP SHINJUKU\nお目当て/写メ券📸\n\n🎤18:00-18:30\n📸18:40-19:40(1)\n\n🎫 t-dv.com/yorufes_premium",
+      "venue_hint": "ZEPP SHINJUKU",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dfb7/2026-02-14/0-1771063584248.jpg",
+        "https://attachments.timetreeapp.com/public_event/487f/2026-03-14/0-1773495403467.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Zepp Shinjuku",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "グラン・ギニュルー vol.29",
+      "timetree_id": "2895095220981776395",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2895095220981776395",
+      "note": "3/20(金)\n『グラン・ギニュルー vol.29』\n@渋谷WOMB\n\n🎤17:25~17:50\n📸終演後特典会\nお目当て / ダークなソロ写メ\n\n🎫https://ticketdive.com/event/260320g",
+      "venue_hint": "渋谷WOMB",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/09c2/2026-02-21/0-1771665978444.jpg",
+        "https://attachments.timetreeapp.com/public_event/6916/2026-02-21/0-1771666002621.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-03-21",
+      "event": "1️⃣ 東京絶対帝都 vol.80",
+      "timetree_id": "2895095274291380433",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2895095274291380433",
+      "note": "3/21(土)\n1️⃣『東京絶対帝都 vol.80』\n🎤15:10~15:35\n📸15:45~16:45\n\nお目当て / プリクラ風2SHOT写メ\n🎫https://ticketdive.com/event/260321t",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/57e7/2026-02-21/0-1771666129705.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/57e7/2026-02-21/0-1771666129705.jpg"
+    },
+    {
+      "date": "2026-03-21",
+      "event": "2️⃣女性限定ライブ ひめゆり",
+      "timetree_id": "2895095349830796084",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2895095349830796084",
+      "note": "3/21(土)\n2️⃣『女性限定ライブひめゆり』\n\n🎤19:20~19:45\n📸20:05~21:30 \nお目当て / メロがり5秒動画\n\n🎫https://ticketdive.com/event/260321h",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d8ca/2026-02-21/0-1771666288981.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/d8ca/2026-02-21/0-1771666288981.jpg"
+    },
+    {
+      "date": "2026-03-22",
+      "event": "1️⃣ BLACKBLACKBLACK",
+      "timetree_id": "2891671667292816215",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2891671667292816215",
+      "note": "3/22(日)２回し！\n\n1️⃣『BLACKBLACKBLACK』\n@ Shibuya Star Lounge\nお目当て/BLACK推しメン写メ\nOPEN12:30 START13:00\n\n🎤16:25-16:50\n📸終演後特典会\n\n🎫3/9 22:00~\nt-dv.com/BLACK_BB",
+      "venue_hint": "Shibuya Star Lounge",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/718b/2026-03-08/0-1772978054558.jpg",
+        "https://attachments.timetreeapp.com/public_event/dc79/2026-03-21/0-1774075935563.jpg"
+      ],
+      "type": "Other",
+      "venue": "Shibuya Star Lounge",
+      "venue_uid": "90de1f05-01b1-41a3-8216-590fa0785925"
+    },
+    {
+      "date": "2026-03-22",
+      "event": "2️⃣マザリ2MAN",
+      "timetree_id": "2915609732663002046",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915609732663002046",
+      "note": "3/22(日)2回し！\n\n2️⃣『マザリ2MAN』\nお目当て/呪われた5秒動画\nOPEN18:40 START19:10\n\n🎫3/9 22:00~\nt-dv.com/TM2MAN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/76b5/2026-03-08/0-1772978143171.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/76b5/2026-03-08/0-1772978143171.jpg"
+    },
+    {
+      "date": "2026-03-26",
+      "event": "TENRIN × MEGAFON 2MAN『超大声選手権』",
+      "timetree_id": "2892401697916502566",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2892401697916502566",
+      "note": "3/26(木)\nTENRIN × MEGAFON 2MAN\n『超大声選手権』\n @ duo Music Exchange\n\n来場特典 / 写メ券📸\n衣装楽曲交換あり♪ \n\n🎫https://ticketdive.com/event/MeGaTeN",
+      "venue_hint": "duo Music Exchange",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/dcb3/2026-02-01/0-1769969150615.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-03-29",
+      "event": "🍤RAD JAM Supported by My-th",
+      "timetree_id": "2903001109311046215",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903001109311046215",
+      "note": "3/29(日)\n『RAD JAM Supported by My-th』\n@Aichi Sky expo（愛知県国際展示場）\n\n📍NAGOYA Lives STAGE\n🎤11:50~12:15\n📸12:35~14:15 特典会I\n\n🎫https://t.pia.jp/pia/event/event.do?eventCd=2604455",
+      "venue_hint": "Aichi Sky expo（愛知県国際展示場）",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5494/2026-02-27/0-1772200968323.jpg",
+        "https://attachments.timetreeapp.com/public_event/9b2e/2026-03-20/0-1774006275589.jpg",
+        "https://attachments.timetreeapp.com/public_event/2351/2026-03-27/0-1774613763731.jpg"
+      ],
+      "type": "Other",
+      "venue": "AICHI SKY EXPO』",
+      "venue_uid": "1faad722-01b7-4f9e-87f3-4f27f45548fd"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "HEROINES FES -春-",
+      "timetree_id": "2903001212356706379",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903001212356706379",
+      "note": "3/31(火)\n『HEROINES FES -春-』\n@Kanadevia Hall\nSE~1曲目撮影可能🉑\nお目当て/ 入学式風写メ📸\n\n17:45~18:10 ライブ🔥\n18:20~19:20 特典会📸\n\n🌸そしてなんと大入場特典追加🌸\n後日使えるラブラブデート1分動画券🎫\n\n🎫https://ticketdive.com/event/heroinesfes260330_31",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e802/2026-03-11/0-1773201627161.jpg",
+        "https://attachments.timetreeapp.com/public_event/df6b/2026-03-25/0-1774412488723.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "超!iLiVE!",
+      "timetree_id": "2915610247597703223",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915610247597703223",
+      "note": "4/1(水)\n『超!iLiVE!』\n@ 国立代々木競技場\n\n\n🎤14:25-14:45\n📸15:20-16:30(A)\n\n🌟BIGお目当て特典🌟\n写メ券(当たりが出たらララアクキー🎯)\n後日使えるWE ARE!!!!! tiktok撮影券(15秒)\n\n◇━━━━━━━━━━━◇ \n 🆃🅸🅲🅺🅴🆃 抽選~3/15\n🎫t-dv.com/cho-ilive-2026",
+      "venue_hint": "国立代々木競技場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/5426/2026-03-10/0-1773154660495.jpg",
+        "https://attachments.timetreeapp.com/public_event/3453/2026-03-31/0-1774971630445.jpg"
+      ],
+      "type": "Other",
+      "venue": "国立代々木競技場 第一体育館",
+      "venue_uid": "46d55059-45bb-4175-bf59-e55e1d10c701"
+    },
+    {
+      "date": "2026-04-02",
+      "event": "🍤 HEROINES ROCK FES",
+      "timetree_id": "2854753439060902332",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854753439060902332",
+      "note": "4/2(木)\n『HEROINES ROCK FES』\n@ 名古屋ReNY\n\n🎤18:30~18:55 \n📸19:15~20:30 \n\nお目当て/写メ券📸\n\n 3/15 22:00~\n🎫t-dv.com/RockFes3",
+      "venue_hint": "名古屋ReNY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e8ae/2026-03-14/0-1773495289386.jpg"
+      ],
+      "type": "Festival",
+      "venue": "名古屋ReNY",
+      "venue_uid": "57d1ac71-e97e-4da9-8f09-e1a22570c1d3"
+    },
+    {
+      "date": "2026-04-03",
+      "event": "KAWAII PARTY",
+      "timetree_id": "2928654322802410387",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2928654322802410387",
+      "note": "4/3(金)\n『KAWAII PARTY』\n@ 品川ステラボール\n\nOP 12:00 / ST 12:15\n\n前方8000円 通常0円\n(入場時1ドリンク必須)\n\n🎫t-dv.com/KP_0403",
+      "venue_hint": "品川ステラボール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/acbb/2026-03-31/0-1774942010716.jpg"
+      ],
+      "type": "Other",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
+    },
+    {
+      "date": "2026-04-04",
+      "event": "歌舞伎町ゲームフェスティバル2026",
+      "timetree_id": "2883016476838379659",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2883016476838379659",
+      "note": "4/4(土)\n\n『歌舞伎町ゲームフェスティバル2026』\n@東急歌舞伎町タワー\n\n12:50~13:10 歌舞伎町タワー🎤\n14:00~15:00 太鼓の達人予選会(にこのみ)\n16:00~17:10 グレースバリ📸\n17:00~18:00 Nyaaaanvy(あげはのみ)\n\n予選会に勝った場合\n17:00~18:00 太鼓の達人決勝戦(にこのみ)\n\n⚠️あげはは特典会を早めに切り上げ\n⚠️にこは予選通過時のみ特典会を早めに切り上げ\n\n🎫kabukicho-game-fes.com",
+      "venue_hint": "東急歌舞伎町タワー",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/57c5/2026-03-02/0-1772443947628.jpg",
+        "https://attachments.timetreeapp.com/public_event/787e/2026-03-28/0-1774682360835.jpg",
+        "https://attachments.timetreeapp.com/public_event/4e3a/2026-03-28/0-1774682361485.jpg"
+      ],
+      "type": "Festival",
+      "venue": "東急歌舞伎町タワー",
+      "venue_uid": "5b500924-e2ef-4f4d-ba35-5d7bfeb4f20d"
+    },
+    {
+      "date": "2026-04-06",
+      "event": "AdamLilith×マーキュロ×TENRIN 3MANLIVE",
+      "timetree_id": "2926265665961378265",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926265665961378265",
+      "note": "4/6(月)\n『AdamLilith×マーキュロ×TENRIN 3MANLIVE』\n@ Veats SHIBUYA\nお目当て/ ブラック推しメン5秒動画🔪\n\n🎤19:00-19:30\n📸終演後特典会\n\n🎫 t-dv.com/Black3MAN",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/1d94/2026-03-29/0-1774786449838.jpg"
+      ],
+      "type": "Other",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-04-12",
+      "event": "グラン・ギニュルーVol.30",
+      "timetree_id": "2926265724539028470",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926265724539028470",
+      "note": "4/12(日)\nマーキュロ主催\n『グラン・ギニュルーVol.30』\n@ WOMBLIVE\n\n🎤18:55-19:20\n📸終演後特典会\n\n抽選:3/30 23:59\n先着:3/31 22:00\n🎫t-dv.com/20260412g",
+      "venue_hint": "WOMBLIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c6e8/2026-03-22/0-1774186514621.jpg",
+        "https://attachments.timetreeapp.com/public_event/a47c/2026-03-22/0-1774186515763.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-04-18",
+      "event": "HEROINES FES -DEBUT DAY-",
+      "timetree_id": "2926265994056614819",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926265994056614819",
+      "note": "4/18(土)\n『HEROINES FES -DEBUT DAY-』\n@ TACHIKAWA STAGE GARDEN\n\n🎤16:45~17:10\n📸17:20~18:20(B)\n\n 🆃🅸🅲🅺🅴🆃 3/28 22:00~\n🎫https://ticketdive.com/event/heroinesfes260418_19y",
+      "venue_hint": "TACHIKAWA STAGE GARDEN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/148c/2026-03-27/0-1774613630185.jpg",
+        "https://attachments.timetreeapp.com/public_event/c84b/2026-04-09/0-1775746256905.jpg"
+      ],
+      "type": "Festival",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+    },
+    {
+      "date": "2026-04-19",
+      "event": "HEROINES FES -DEBUT DAY-",
+      "timetree_id": "2926266053984829512",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926266053984829512",
+      "note": "4/19(日)\n『HEROINES FES -DEBUT DAY-』\n@ TACHIKAWA STAGE GARDEN\n\n🎤14:25~14:45\n📸14:55~15:55(B)\n\n 🆃🅸🅲🅺🅴🆃 3/28 22:00~\n🎫https://ticketdive.com/event/heroinesfes260418_19",
+      "venue_hint": "TACHIKAWA STAGE GARDEN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/359a/2026-03-27/0-1774613682033.jpg",
+        "https://attachments.timetreeapp.com/public_event/2d41/2026-04-09/0-1775746306253.jpg"
+      ],
+      "type": "Festival",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+    },
+    {
+      "date": "2026-04-20",
+      "event": "🐙バナナウーマン",
+      "timetree_id": "2926265110383870682",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926265110383870682",
+      "note": "4/20(月)\n『バナナウーマン』\n@ 大阪BANANA HALL\n\n🎤17:30-18:00\n📸終演後特典会\nSE~1曲目撮影可能🉑\nさぁみんなでバナナになろう🍌\n優先チケ写メ券テーマ/ゴリラ写メ🦍\n\n🎫t-dv.com/banana_woman",
+      "venue_hint": "大阪BANANA HALL",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/47a5/2026-03-20/0-1774005983957.jpg"
+      ],
+      "type": "Other",
+      "venue": "BANANA HALL",
+      "venue_uid": "660478f6-c71d-4545-9730-8b2c0f95c24b"
+    },
+    {
+      "date": "2026-04-21",
+      "event": "1️⃣女性限定イベント キュープリ",
+      "timetree_id": "2926265193003270396",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926265193003270396",
+      "note": "4/21(火)２回し\n1️⃣『キュープリ』\n@ Spotify O-EAST\n女の子限定LIVE🚺\nお目当て / 日頃の感謝ソロ5秒動画\n\n🎤12:50-13:15\n📸13:25-14:25(C)\n\n🎫https://ticketdive.com/event/Qpri-260421",
+      "venue_hint": "Spotify O-EAST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/aa6c/2026-04-08/0-1775646888892.jpg"
+      ],
+      "type": "Other",
+      "venue": "Spotify O-EAST",
+      "venue_uid": "c604ecf3-4340-4b16-beb0-5969fb19188e"
+    },
+    {
+      "date": "2026-04-21",
+      "event": "2️⃣あやんプロデュース公演",
+      "timetree_id": "2939820784468411036",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2939820784468411036",
+      "note": "4/21(火)２回し\n\n2️⃣『あやんプロデュース公演』\n@ Shibuya Club Asia\n無銭ライブ⭐️\nらら衣装アクキー＆アクスタ販売😘\n\nOPEN18:30 START19:00\n🎫t-dv.com/yanyan_p",
+      "venue_hint": "Shibuya Club Asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6125/2026-04-08/0-1775647005637.jpg"
+      ],
+      "type": "Other",
+      "venue": "clubasia",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3"
+    },
+    {
+      "date": "2026-04-23",
+      "event": "1️⃣ふぃくふぇす！こるちゃん誕生日SP",
+      "timetree_id": "2903002010398539976",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903002010398539976",
+      "note": "4/23(木)\n『ふぃくふぇす！こるちゃん誕生日SP』\n@ Zepp Diver City\nお目当て/ 写メ📸\n\n🎤14:00-14:20\n📸14:30-15:30(A)\n\n🎫t-dv.com/ficfes260423",
+      "venue_hint": "Zepp Diver City",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/45b9/2026-04-07/0-1775545465004.jpg",
+        "https://attachments.timetreeapp.com/public_event/c2d0/2026-04-22/0-1776843230219.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2026-04-23",
+      "event": "2️⃣東京絶対帝都-無規制編-",
+      "timetree_id": "2926266128349839504",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926266128349839504",
+      "note": "4/23(木)\n『東京絶対帝都-無規制編-』\n\n無規制公演です❗️🤩\n\nセーフティーエリアもあるので\nキラキラさん達も待っております♡😘\n\n🎤19:25-19:50\n📸終演後特典会\n\nお目当て/ 変顔写メ🤪\n\n抽選:4/5 23:59\n先着:4/6 22:00\nt-dv.com/20260423t",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3ff8/2026-03-28/0-1774701946641.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/3ff8/2026-03-28/0-1774701946641.jpg"
+    },
+    {
+      "date": "2026-04-24",
+      "event": "私立天凛高校",
+      "timetree_id": "2938749076319814086",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2938749076319814086",
+      "note": "4/24(金)\n『私立天凛高校🏫』\n@ 大塚FUTURE\nOPEN18:30\nSTART19:00\nお目当て/ お嬢様の挨拶5秒動画\n\n🎫t-dv.com/seisonatenrin",
+      "venue_hint": "大塚FUTURE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/09e9/2026-04-13/0-1776091447633.jpg"
+      ],
+      "type": "Other",
+      "venue": "大塚 FUTURE:",
+      "venue_uid": "3a42116b-caf1-4020-b4b7-cb734aaacbde"
+    },
+    {
+      "date": "2026-04-25",
+      "event": "Black 3MAN Live",
+      "timetree_id": "2941612910885782096",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2941612910885782096",
+      "note": "4/25(土)\n『Black 3MAN Live』\n@ 渋谷音楽堂\n🎤13:55-14:25\n📸終演後特典会\n（ワールド宇多川ビル7B）\nお目当て / 写メ\n\n4/17 22:00~\n🎫t-dv.com/3MAN_LIVE",
+      "venue_hint": "渋谷音楽堂",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/844c/2026-04-16/0-1776343642232.jpg"
+      ],
+      "type": "Other",
+      "venue": "渋谷音楽堂",
+      "venue_uid": "7ebe770f-7042-47a4-bd2e-7683354a3ac9"
+    },
+    {
+      "date": "2026-04-26",
+      "event": "TENRIN撮影会",
+      "timetree_id": "2939981320589984275",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2939981320589984275",
+      "note": "4/26(日)\n『TENRIN撮影会』\n@ ワールド宇多川ビル7B\nOPEN&START 17:00\n\n4/17 22:15~\n🎫t-dv.com/0426_cheki",
+      "venue_hint": "ワールド宇多川ビル7B",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/6257/2026-04-16/0-1776340110196.jpg"
+      ],
+      "type": "Other",
+      "venue": "ワールド宇多川ビル7B",
+      "venue_uid": "26efa431-7419-484a-82f3-5a1b11ed3a5f"
+    },
+    {
+      "date": "2026-04-27",
+      "event": "狼とお姫様",
+      "timetree_id": "2926266240966902414",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926266240966902414",
+      "note": "4/27(月)\n『狼とお姫様』\n@ 恵比寿ガーデンホール\n\nドレコちゃんと2MAN LIVE🩷🏰\n一般入場特典テーマ/お姫な推しメン👸\n\n衣装楽曲どちらも交換するよ😘\n\n3/29 22:00~\n🎫 t-dv.com/wolf_princess",
+      "venue_hint": "恵比寿ガーデンホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3dc4/2026-03-28/0-1774699583814.jpg"
+      ],
+      "type": "Other",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
+    },
+    {
+      "date": "2026-04-30",
+      "event": "Glitch Doll",
+      "timetree_id": "2939183694445592909",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2939183694445592909",
+      "note": "4/30(木)\n\n『Glitch Doll』\n@ 渋谷Club Asia\n🎤19:55-20:25\n📸終演後特典会\n\nお目当て / 写メ\n4/17 22:30~\n🎫t-dv.com/Glitch_Doll",
+      "venue_hint": "渋谷Club Asia",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ba8e/2026-04-16/0-1776340258058.jpg"
+      ],
+      "type": "Other",
+      "venue": "clubasia",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3"
+    },
+    {
+      "date": "2026-05-01",
+      "event": "ヒロインズ大運動会",
+      "timetree_id": "2854753623635444165",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2854753623635444165",
+      "note": "5/1(金)\n17:40開場／18:30開始 \n@東京体育館\n\nTENRIN前特典会\n📸13:45-14:15\n\n\n開場17:00\n開演17:10\n\n⋱会場の座席情報を紹介💺⋰\n詳細は画像をチェックしてね✅\n\n🎟️FC抽選先行チケットお申し込みはこちら\n▶︎abe.ma/4ciPEqP",
+      "venue_hint": "東京体育館",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/587b/2026-03-01/0-1772373546725.jpg",
+        "https://attachments.timetreeapp.com/public_event/c41d/2026-03-01/0-1772373547347.jpg",
+        "https://attachments.timetreeapp.com/public_event/7e53/2026-04-29/0-1777451563860.jpg"
+      ],
+      "type": "Other",
+      "venue": "東京体育館",
+      "venue_uid": "f80b9805-818e-43e3-9732-604997abd74d"
+    },
+    {
+      "date": "2026-05-02",
+      "event": "SUMMER JUNGLE GOLDEN",
+      "timetree_id": "2903002307783082598",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903002307783082598",
+      "note": "5/2(土)\n5/3(日)\n『SUMMER JUNGLE GOLDEN』\n@ お台場R地区\n\n\n0502\n🎤14:45~15:00 KABUTOMUSHI🪲\n📸15:30~16:30(9)特典会\n📸18:20~19:20(14)特典会\n🎤20:00~20:20 MONKEY🐒(トリ)\n\n0503\n🎤15:15~15:40 TIGER🐯(メイン)\n📸16:00~17:00(3)特典会\n\n\nバキバキの野外フェス🌴\nてんりんと一緒に楽しもうね😘\n\n🎫 t-dv.com/samajan_golden",
+      "venue_hint": "お台場R地区",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a730/2026-04-20/0-1776695850702.jpg",
+        "https://attachments.timetreeapp.com/public_event/750c/2026-04-20/0-1776695855816.jpg",
+        "https://attachments.timetreeapp.com/public_event/1428/2026-04-28/0-1777379352961.jpg",
+        "https://attachments.timetreeapp.com/public_event/b15e/2026-04-28/0-1777379354704.jpg"
+      ],
+      "type": "Other",
+      "venue": "お台場R地区",
+      "venue_uid": "c6da72fa-6d7e-4230-a967-cfa74bf55331"
+    },
+    {
+      "date": "2026-05-04",
+      "event": "HEROINES FES 7th Anniversary Live",
+      "timetree_id": "2903002417371857736",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903002417371857736",
+      "note": "5/4(月)\n『HEROINES FES 7th Anniversary Live』\n@ TACHIKAWA STAGE GARDEN\n\nSE-1曲目撮影可能🉑\n🎤18:00~18:25 \n📸18:35~19:35(D)\n\n↓チケット↓\n\n\n🎫https://ticketdive.com/event/heroinesfes260504",
+      "venue_hint": "TACHIKAWA STAGE GARDEN",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ac6d/2026-04-08/0-1775642822826.jpg",
+        "https://attachments.timetreeapp.com/public_event/4434/2026-04-27/0-1777272498481.jpg"
+      ],
+      "type": "Festival",
+      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+    },
+    {
+      "date": "2026-05-06",
+      "event": "HEROINES FES GOLDEN",
+      "timetree_id": "2926266833143906842",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926266833143906842",
+      "note": "5/6(水)\n『HEROINES FES GOLDEN』\n@ 品川インターシティホール\nお目当て特典 / 筋肉写メ💪\n🎤16:20-16:50\n📸17:00-18:00(B)\nSE〜1曲目撮影可能🉑📸\n🎫https://ticketdive.com/event/herofesgoldenlimited",
+      "venue_hint": "品川インターシティホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a216/2026-04-20/0-1776695737015.jpg",
+        "https://attachments.timetreeapp.com/public_event/ce15/2026-04-29/0-1777452193752.jpg"
+      ],
+      "type": "Festival",
+      "venue": "品川インターシティホール&貸会議室",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
+    },
+    {
+      "date": "2026-05-09",
+      "event": "🐙 MAWA LOOP OSAKA 2026",
+      "timetree_id": "2926266901603336200",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926266901603336200",
+      "note": "5/9(土)\n『MAWA LOOP OSAKA 2026』\n@大阪・心斎橋エリアライブハウス8会場\n\n🎤17:25-17:55 ANIMA(30分)\n📸18:15-19:30 サンボウルB1①\n\n\n🎫eplus.jp/mawaloop/",
+      "venue_hint": "大阪・心斎橋エリアライブハウス8会場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/93e0/2026-04-10/0-1775837540197.jpg",
+        "https://attachments.timetreeapp.com/public_event/94aa/2026-04-27/0-1777272417772.jpg",
+        "https://attachments.timetreeapp.com/public_event/00c1/2026-04-27/0-1777272422763.jpg"
+      ],
+      "type": "Other",
+      "venue": "大阪・心斎橋エリアライブハウス8会場",
+      "venue_uid": "96733ef5-e337-49e4-921f-ca89d5f8e131"
+    },
+    {
+      "date": "2026-05-10",
+      "event": "アキシブProject2MAN",
+      "timetree_id": "2926266972612903661",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2926266972612903661",
+      "note": "5/10(日)\n『アキシブProject2MAN』\n@ 代官山UNIT\nOPEN 12:00 \nSTART12:30\n衣装交換あり✨\n\n4/21 22:30~\n🎫livepocket.jp/e/tenrinproject",
+      "venue_hint": "代官山UNIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d4fc/2026-04-20/0-1776695617971.jpg"
+      ],
+      "type": "Other",
+      "venue": "UNIT",
+      "venue_uid": "8e4efb63-5b05-4449-9de8-9b8477b499cd"
+    },
+    {
+      "date": "2026-05-11",
+      "event": "🐺HEROINES FES🐺",
+      "timetree_id": "2915610656332628168",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915610656332628168",
+      "note": "5/11(月)\n『HEROINES FES』\n@ 豊洲PIT\n\n🎫https://ticketdive.com/event/heroinesfes260511",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2410/2026-04-29/0-1777452293791.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-05-17",
+      "event": "🐙 ヒロインズ研究生大阪2期生 お披露目ライブ",
+      "timetree_id": "2915610707788349608",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915610707788349608",
+      "note": "5/17（日）\n『ヒロインズ研究生大阪2期生 お披露目ライブ』\n@ Zepp Osaka Bayside \n\n🎤13:35-13:55\n📸14:05-15:05(A)\n\n\n🎫ただいまより先行抽選受付開始！(〜5/5 23:59)\nhttps://ticketdive.com/event/herokenosaka2th\n🎫一般販売(5/6 21:00)",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/439f/2026-05-03/0-1777814989535.jpg"
+      ],
+      "type": "Concert",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2026-05-20",
+      "event": "🔥HEROINES LEAGUE I🔥",
+      "timetree_id": "2915610826420044440",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915610826420044440",
+      "note": "5/20(水)\n\n『HEROINES LEAGUE I』\n@ Kanadevia Hall\n\n🎤15:45~16:10\n📸16:20~17:20(C)\n\nチケット5/15 22:00~販売開始❗️\n\nさぁ開幕！今年はもっと上に💪\n◇━━━━━━━━━━━◇ \n   公演概要＆チケット詳細\nhttps://heroines.jp/news/public/_/oo4af077c7d4in5k.html\n\n⚫︎FC先行抽選\n5/3(日)23:59〆切\nhttps://heroines.jp/topics/members/all/9hrntdzxsb75klal.html\n\n⚫︎一般チケット発売\n5/10(日)21:00~\nhttps://ticketdive.com/event/HEROINESLEAGUE-0520",
+      "venue_hint": "Kanadevia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7d24/2026-04-30/0-1777556160194.jpg",
+        "https://attachments.timetreeapp.com/public_event/f1c7/2026-04-30/0-1777556161357.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Kanadevia Hall",
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
+    },
+    {
+      "date": "2026-05-23",
+      "event": "ハルカエコー,AdamLilith,TENRIN3MAN LIVE",
+      "timetree_id": "2956096015335997646",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2956096015335997646",
+      "note": "5/23(土)\n『ハルカエコー,AdamLilith,TENRIN\n3MAN LIVE』\n @ 大塚FUTURE\n\nお目当て/写メ📸\n\n5/1 23:00~\n🎫t-dv.com/3MAN_2",
+      "venue_hint": "大塚FUTURE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/d5fa/2026-04-30/0-1777562104844.jpg"
+      ],
+      "type": "Other",
+      "venue": "大塚 FUTURE:",
+      "venue_uid": "3a42116b-caf1-4020-b4b7-cb734aaacbde"
+    },
+    {
+      "date": "2026-05-24",
+      "event": "🍤 HEROINES FES in Aichi",
+      "timetree_id": "2935507941594022099",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2935507941594022099",
+      "note": "5/24(日)\n\n『HEROINES FES in Aichi』\n@ アイプラザ豊橋\n\n🎤14:00-14:25\n📸14:35-15:35(C)\n\n4/22 21:30~\n🎫https://ticketdive.com/event/heroinesaichi0523_24",
+      "venue_hint": "アイプラザ豊橋",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/13aa/2026-04-21/0-1776786950113.jpg"
+      ],
+      "type": "Festival",
+      "venue": "アイプラザ豊橋",
+      "venue_uid": "7101a380-1529-4672-ad2d-a5703b94dcfd"
+    },
+    {
+      "date": "2026-05-26",
+      "event": "TENRIN新体制初単独LIVE白衣装お披露目公演",
+      "timetree_id": "2883016848428548191",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2883016848428548191",
+      "note": "5/26(火)\n『TENRIN新体制初単独LIVE\n白衣装お披露目公演』\n@ Spotify O-WEST\n\n前方特典/写メ券📸\n◇━━━━━━━━━━━◇ \n 🆃🅸🅲🅺🅴🆃 5/14 21:30~\n t-dv.com/TENRIN_0526",
+      "venue_hint": "Spotify O-WEST",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e64c/2026-05-15/0-1778812420326.jpg"
+      ],
+      "type": "Concert",
+      "venue": "Spotify O-WEST",
+      "venue_uid": "ce9e59f2-d7de-4702-a029-85fa82cbbaa7"
+    },
+    {
+      "date": "2026-05-27",
+      "event": "HEROINES DARKNESS",
+      "timetree_id": "2962259586386281358",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2962259586386281358",
+      "note": "5/27(水)\n『HEROINES DARKNESS』\n@ Veats SHIBUYA\n\n前方特典/写メ券📸\n🎤20:25-20:50\n📸終演後特典会\n\n 🎫5/14 22:00~\nt-dv.com/DARKNESS_0527",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/574c/2026-05-13/0-1778663249792.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-05-30",
+      "event": "グサリと刺さるラジオ",
+      "timetree_id": "2915611132436463939",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915611132436463939",
+      "note": "5/30(土)\n『グサリと刺さるラジオ』\n@ HEAVENS ROCK 埼玉新都心 VJ-3\n\nお目当て/ 心に刺さる写メ📸\n\n🎤17:30~18:00\n📸19:15~21:00\neplus.jp/kingsari/\n\n抽選~4/16 / 一般4/23 21:00~\n🎫eplus.jp/kingsari/",
+      "venue_hint": "HEAVENS ROCK 埼玉新都心 VJ-3",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2bee/2026-04-09/0-1775708461260.jpg",
+        "https://attachments.timetreeapp.com/public_event/f156/2026-05-20/0-1779270279111.jpg"
+      ],
+      "type": "Other",
+      "venue": "HEAVENS ROCK 埼玉新都心 VJ-3",
+      "venue_uid": "98b08520-dbda-41d0-a91c-cbf5a11f3009"
+    },
+    {
+      "date": "2026-06-03",
+      "event": "1️⃣HEROINES FES -June-",
+      "timetree_id": "2945676887903224182",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2945676887903224182",
+      "note": "6/3(水)2回し\n1️⃣『HEROINES FES -June-』\n@ 豊洲PIT\n\n🎤15:15~15:40\n📸15:50~16:50\n\nSE-1曲目撮影可能🉑📸\n\nお目当て/ 6月の意気込み写メ📸\n🎫https://ticketdive.com/event/HEROINESFES-0603\n\n\nヒロフェス▶︎マドロミ2MAN\nTENRINお目当てで2回しすると...\n《サイン入り色紙》をプレゼント🎁\n\nそしてどちらも主催の為\nSE-1曲目が撮影可能となります📸",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b6ba/2026-05-27/0-1779874279767.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-06-03",
+      "event": "2️⃣MADRIN",
+      "timetree_id": "2971436280980488617",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2971436280980488617",
+      "note": "6/3(水)2回し\n2️⃣『MADRIN』\n@ duo MUSIC EXCHANGE\nOPEN17:45 START18:30\n\n🎫t-dv.com/MADRIN_0603\n\n\nヒロフェス▶︎マドロミ2MAN\nTENRINお目当てで2回しすると...\n《サイン入り色紙》をプレゼント🎁\n\nそしてどちらも主催の為\nSE-1曲目が撮影可能となります📸",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/0525/2026-05-21/0-1779391002513.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-06-04",
+      "event": "HYPE IDOL！DX",
+      "timetree_id": "2962259318982623499",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2962259318982623499",
+      "note": "6/4(木) \n『HYPE IDOL！DX』\n@豊洲PIT\n今回はなんと\"一般無料\"🉐\n\n🎤16:10~16:35 \n📸16:45~17:45 並行C\n\n前方特典/写メ券📸\n🎫t-dv.com/HYPEDX_0604",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2dfe/2026-05-09/0-1778296828364.jpg"
+      ],
+      "type": "Other",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-06-06",
+      "event": "テンラン会",
+      "timetree_id": "2968456975145025854",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2968456975145025854",
+      "note": "6/6(土)\n『テンラン会』\nメインステージ争奪戦決起会🔥\n@ GARDEN 新木場FACTORY\n\nお目当て特典 / 写メ券📸\n🎤11:30-11:55\n📸12:05-13:05(C)\n\n🎫t-dv.com/tenrankai_0606",
+      "venue_hint": "GARDEN 新木場FACTORY",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/3a13/2026-05-21/0-1779391120252.jpg"
+      ],
+      "type": "Other",
+      "venue": "GARDEN新木場FACTORY",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
+    },
+    {
+      "date": "2026-06-11",
+      "event": "月神キラ生誕祭2026",
+      "timetree_id": "2956053821065577360",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2956053821065577360",
+      "note": "6/11(木)\n『月神キラ生誕祭2026』\n@恵比寿ガーデンルーム\n開場 18:00 開演  18:30\n優先 ¥3,000 / 一般 ¥1,000\n\n🎫https://ticketdive.com/event/kira2026",
+      "venue_hint": "恵比寿ガーデンルーム",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e5e9/2026-06-10/0-1781092267631.jpg",
+        "https://attachments.timetreeapp.com/public_event/4083/2026-06-10/0-1781092270325.jpg"
+      ],
+      "type": "Birthday",
+      "venue": "恵比寿ガーデンルーム",
+      "venue_uid": "43bdc0e3-991d-4a97-be9c-ac08305af777"
+    },
+    {
+      "date": "2026-06-12",
+      "event": "HEROINES ASH",
+      "timetree_id": "2976972614897812346",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2976972614897812346",
+      "note": "6/12(金)\n『HEROINES ASH』\n@ Veats SHIBUYA\n前方特典/写メ券📸\n\n🎤19:05-19:30\n📸終演後特典会\n　\n5/30 22:00~\n🎫t-dv.com/H_Ash_0612",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/71a5/2026-05-29/0-1780050789754.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-06-17",
+      "event": "🐺天狼🐺",
+      "timetree_id": "2962259967942116256",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2962259967942116256",
+      "note": "6/17(水)\n『天狼~単独公演』\n@ 五反田BLAZE\nOPEN18:00\nSTART19:00\n\n入場特典 /写メ券\n緊急開催になりますが是非ご来場ください❗️\n　\n🎫 t-dv.com/TENRIN_0617",
+      "venue_hint": "五反田BLAZE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c538/2026-06-13/0-1781330515487.jpg"
+      ],
+      "type": "Other",
+      "venue": "五反田BLAZE",
+      "venue_uid": "786c13e5-8202-437e-8178-a6b37d97da46"
+    },
+    {
+      "date": "2026-06-17",
+      "event": "🗳️HEROINES LEAGUE I FC投票期間🗳️",
+      "timetree_id": "2991574794195747688",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2991574794195747688",
+      "note": "投票フォーム\n6/24(水)23:59締め切り\n🔗https://heroines.jp/news/public/_/y9r547bu6ft0x1k8.html",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7672/2026-06-18/0-1781791505242.jpg"
+      ],
+      "type": "Taiban",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/7672/2026-06-18/0-1781791505242.jpg"
+    },
+    {
+      "date": "2026-06-19",
+      "event": "ふぃくふぇす！",
+      "timetree_id": "2941613766439911465",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2941613766439911465",
+      "note": "6/19(金)\n『ふぃくふぇす！』\n@ Zepp Haneda\n🎤14:40-15:05\n📸15:15-16:15(B)\n\n🎫t-dv.com/ficfes_0619",
+      "venue_hint": "Zepp Haneda",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7b1c/2026-06-10/0-1781092360892.jpg",
+        "https://attachments.timetreeapp.com/public_event/2dc4/2026-06-16/0-1781614561644.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Haneda",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
+    },
+    {
+      "date": "2026-06-22",
+      "event": "イグジステンス",
+      "timetree_id": "2972836642744484100",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2972836642744484100",
+      "note": "6/22(月)\n『イグジステンス』\n@ duo MUSIC EXCHANGE\n\n🎤18:50-19:15\n📸終演後特典会\n\nお目当て / 写メ📸\n\n5/26 20:00~\n🎫t-dv.com/existence_0622",
+      "venue_hint": "duo MUSIC EXCHANGE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/f288/2026-05-25/0-1779707949001.jpg"
+      ],
+      "type": "Other",
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
+    },
+    {
+      "date": "2026-06-25",
+      "event": "🔥HEROINES LEAGUE I🔥",
+      "timetree_id": "2941613886078239017",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2941613886078239017",
+      "note": "🔥6/25(木)🔥\n【HEROINES LEAGUE I】\n@ 豊洲PIT\nOPEN 13:00 \nSTART 14:00\n\n🎤16:35-17:00\n📸17:10-18:10(C)\nエンディングも出演します\n\nFC先行抽選受付開始中🔥\n5/25(月)23:59締め切り\n🔗 https://heroines.jp/#/deny?to=/topics/members/all/p3oxfj10n66r8ogd.html\n\nオフィシャル先行抽選🎫\n5/27(水)18:00から販売開始\n🔗 https://ticketdive.com/event/HEROINESLEAGUE1-0625\n\n一般チケット発売🎫\n6/2(火)21:00から販売開始\n🔗 https://ticketdive.com/event/HEROINESLEAGUE1-0625",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/b505/2026-05-21/0-1779367525428.jpg",
+        "https://attachments.timetreeapp.com/public_event/afa7/2026-05-21/0-1779367527102.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-06-27",
+      "event": "HYPE IDOL!DX",
+      "timetree_id": "2915611491787654019",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915611491787654019",
+      "note": "6/28（日）\n『HYPE IDOL DX』\n@Zepp Haneda✈️\nお目当て特典/写メ\n🎤14:55~15:20\n📸15:30~16:30\n\n撮影可能曲5曲目📸\n\n🎫t-dv.com/HYPEDX_0628",
+      "venue_hint": "Zepp Haneda✈️",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/34a4/2026-06-28/0-1782608178508.jpg",
+        "https://attachments.timetreeapp.com/public_event/d049/2026-05-08/0-1778253024598.jpg",
+        "https://attachments.timetreeapp.com/public_event/c79e/2026-06-13/0-1781330253712.jpg",
+        "https://attachments.timetreeapp.com/public_event/a6d7/2026-06-13/0-1781330254700.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp Haneda",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
+    },
+    {
+      "date": "2026-07-02",
+      "event": "🐺TENRIN 6th Anniversary LIVE🐺",
+      "timetree_id": "2903002738219335980",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2903002738219335980",
+      "note": "🐺7/2(木)🐺\n『🔥TENRIN 6th Anniversary LIVE🔥』\n@ Zepp Diver City\n\nTENRIN 過去最大規模ワンマン❕\nなんと新体制初BAND SET🥁\n\n\nFC先行抽選受付開始▶6/6（土）23:59締め切り\n🎫https://heroines.jp/news/public/_/inb5uquzcz4d2g5x.html\n\n一般先行抽選6/8(月)19:00~6/11(木)23:59締め\n一般チケット6/13(土)22:00から発売開始\n🔗https://ticketdive.com/event/TENRIN-6thAnniversaryLive\n\n※会場の仕様変更により、今回はSSチケットが最前席から最前エリアへとなっております。\nご理解いただけますようよろしくお願いいたします。",
+      "venue_hint": "Zepp Diver City",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9c52/2026-06-03/0-1780515939435.jpg",
+        "https://attachments.timetreeapp.com/public_event/2b8b/2026-06-03/0-1780515940078.jpg",
+        "https://attachments.timetreeapp.com/public_event/2e07/2026-06-03/0-1780515940740.jpg"
+      ],
+      "type": "Other",
+      "venue": "Zepp DiverCity",
+      "venue_uid": "9cf0f843-3170-4d82-b32f-d13c9793fb44"
+    },
+    {
+      "date": "2026-07-03",
+      "event": "🗳️FC投票期間🗳️",
+      "timetree_id": "3002396643414557099",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/3002396643414557099",
+      "note": "『HEROINES LEAGUE I 』\n大阪のFC投票開始❕\n　　\nFC投票 7/10 23:59まで\n🔗https://heroines.jp/news/public/_/1xdvr8zyzduzntik.html",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/8d0e/2026-07-03/0-1783081570195.jpg"
+      ],
+      "type": "Other",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/8d0e/2026-07-03/0-1783081570195.jpg"
+    },
+    {
+      "date": "2026-07-04",
+      "event": "超NATSUZOME 2026",
+      "timetree_id": "2966583195997094839",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2966583195997094839",
+      "note": "7/4(土)\n『超NATSUZOME 2026』\n@ 幕張海浜公園Gブロック特設会場\n\n📍超ステージ\n🎤11:20-11:40\n\n📍一曲入魂ステージ\n🎤11:50\n📸13:20-14:20(R)\n\n📍NATSUステージ\n🎤17:10-17:30\n\n夏満喫するしかないよね🌴\n\n🎫https://idol-spot.tstar.jp/event/rileaas/?scid=su_16699",
+      "venue_hint": "幕張海浜公園Gブロック特設会場",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/17d9/2026-05-15/0-1778812274430.jpg"
+      ],
+      "type": "Festival",
+      "venue": "幕張海浜公園Gブロック特設会場",
+      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+    },
+    {
+      "date": "2026-07-05",
+      "event": "🐙sugarland",
+      "timetree_id": "2941612585835610774",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2941612585835610774",
+      "note": "7/5(日)\n『sugarland』\n@ GORILLA HALL OSAKA\n\n🎤15:05-15:30\n📸15:50-17:05(A)\n\n抽選4/11 12:00~\n一般4/25 12:00~\n🎫eplus.jp/sugarland",
+      "venue_hint": "GORILLA HALL OSAKA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/2ed2/2026-04-10/0-1775835545804.jpg",
+        "https://attachments.timetreeapp.com/public_event/f40e/2026-07-03/0-1783082303864.jpg"
+      ],
+      "type": "Other",
+      "venue": "GORILLA HALL OSAKA",
+      "venue_uid": "132f3630-5aae-45e7-9bd5-7d3ac2001c39"
+    },
+    {
+      "date": "2026-07-08",
+      "event": "ぽんこつあいらんどっ！",
+      "timetree_id": "2992848289387037053",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2992848289387037053",
+      "note": "7/8(水)\n『ぽんこつあいらんどっ！』\n@ SHIBUYA WOMBLIVE\n\n🎤19:35~20:00\n📸特典会終演後\n\nSE-1曲目撮影可能🉑\nお目当て / 前方チケット▶︎写メ📸\n\n🎫t-dv.com/ponkotsuisland2",
+      "venue_hint": "SHIBUYA WOMBLIVE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7696/2026-06-26/0-1782460864813.jpg",
+        "https://attachments.timetreeapp.com/public_event/c4d7/2026-07-03/0-1783081411683.jpg"
+      ],
+      "type": "Other",
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
+    },
+    {
+      "date": "2026-07-11",
+      "event": "🐙🔥HEROINES LEAGUE I",
+      "timetree_id": "2962260389201231967",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2962260389201231967",
+      "note": "7/11(土)\n『HEROINES LEAGUE I』\n@ Zepp Osaka Bayside\n\n🎤15:05~15:30\n📸15:40~16:40 \n\n大阪でのリーグ戦❗️\n一緒に戦ってくれますか👊🔥\n\n●FC先行抽選\n6/18 20:00-6/21 23:59\n\n一般販売 6/23 21:00~\n🎫https://heroines.jp/news/public/_/4rjh25e2l3cozyto.html",
+      "venue_hint": "Zepp Osaka Bayside",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7d6d/2026-06-18/0-1781783770173.jpg",
+        "https://attachments.timetreeapp.com/public_event/d386/2026-06-18/0-1781783770888.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Zepp osaka Bayside",
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
+    },
+    {
+      "date": "2026-07-12",
+      "event": "1️⃣てんふぃく！",
+      "timetree_id": "2962260451176268760",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2962260451176268760",
+      "note": "7/12(日)\n『てんふぃく！』\n@ 恵比寿LIQUIDROOM\nOPEN11:50 START12:30\n\n遂にこの日が❗️\n待望の2MAN LIVEです🔥\n\n　\n抽選~6/13 23:59\n一般6/15 22:00~\n🎫t-dv.com/tenfic_0712",
+      "venue_hint": "恵比寿LIQUIDROOM",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/a0ce/2026-06-10/0-1781082231453.jpg"
+      ],
+      "type": "Other",
+      "venue": "LIQUIDROOM",
+      "venue_uid": "92bda7ee-a341-4e4c-aac6-e6850d85a020"
+    },
+    {
+      "date": "2026-07-12",
+      "event": "2️⃣NEOTEN",
+      "timetree_id": "2988560928251625837",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2988560928251625837",
+      "note": "7/12(日)2回し目\n2️⃣TENRIN×NEO JAPONISM\n『NEOTEN』\n@ LIQUIDROOM\n\nOPEN18:00\nSTART18:40\n\n 🎫t-dv.com/NEOTEN_0712",
+      "venue_hint": "LIQUIDROOM",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4632/2026-06-14/0-1781432224293.jpg"
+      ],
+      "type": "Other",
+      "venue": "LIQUIDROOM",
+      "venue_uid": "92bda7ee-a341-4e4c-aac6-e6850d85a020"
+    },
+    {
+      "date": "2026-07-13",
+      "event": "HEROINES FES",
+      "timetree_id": "2977934335300911552",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2977934335300911552",
+      "note": "7/13(月)\n『HEROINES FES』\n@ 豊洲PIT\n\n🎤16:15~16:35\n📸16:45~17:45\nSE-1曲目撮影可能🉑\nお目当て特典/写メ券🆕\n\n🎫https://ticketdive.com/event/HEROINESFES-260713",
+      "venue_hint": "豊洲PIT",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/c9aa/2026-07-07/0-1783434036350.jpg"
+      ],
+      "type": "Festival",
+      "venue": "豊洲PIT",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
+    },
+    {
+      "date": "2026-07-17",
+      "event": "iLiVE! vol.22",
+      "timetree_id": "2991881192406303335",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2991881192406303335",
+      "note": "7/17(金)\n『iLiVE! vol.22🩷』\n@ Kanadivia Hall\n\n🎤14:10~14:35 \n📸14:45~15:45 (A)\n\nお目当て / コメント入色紙＆ブロマイド\n\n 6/24 20:00~\n🎫https://ticketdive.com/event/ilive-vol22",
+      "venue_hint": "Kanadivia Hall",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/ae0e/2026-06-23/0-1782213609932.jpg"
+      ],
+      "type": "Concert",
+      "venue": "Kanadivia Hall",
+      "venue_uid": "f8dcfe08-fcc0-40ea-af71-881a136e4cdb"
+    },
+    {
+      "date": "2026-07-18",
+      "event": "関ヶ原歌姫合戦",
+      "timetree_id": "2965378774013363192",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2965378774013363192",
+      "note": "7/18(土)~7/19(日)\n『関ヶ原歌姫合戦』\n@ 桃配運動公園\n\n《DAY1》\n📍徳川ステージ\n15:30-15:50 \n📍豊臣ステージ\n19:30-19:50\n\n《DAY2》\n📍徳川ステージ\n17:10-17:30\n\n\n野外8人でぶちかまします🔥\n◇━━━━━━━━━━━◇ \n 公式HP\nsekigahara-idolwars.net",
+      "venue_hint": "桃配運動公園",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/044b/2026-05-13/0-1778668693961.jpg",
+        "https://attachments.timetreeapp.com/public_event/b0e1/2026-05-13/0-1778668696298.jpg",
+        "https://attachments.timetreeapp.com/public_event/9cda/2026-07-03/0-1783082198423.jpg",
+        "https://attachments.timetreeapp.com/public_event/ac3f/2026-07-03/0-1783082199974.jpg"
+      ],
+      "type": "Festival",
+      "venue": "桃配運動公園",
+      "venue_uid": "51de93e5-b0c1-4070-bac0-2a5254c82ed5"
+    },
+    {
+      "date": "2026-07-20",
+      "event": "🍤 HEROINES FES in NAGOYA",
+      "timetree_id": "2998520813252821405",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2998520813252821405",
+      "note": "7/20(月)\n『HEROINES FES in NAGOYA』\n@ COMTEC PORTBASE\n\n🎤15:20-15:50\n📸16:00-17:00(C)\n\n\n🎫https://ticketdive.com/event/HEROINESFESinNAGOYA-260720",
+      "venue_hint": "COMTEC PORTBASE",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/9617/2026-06-29/0-1782740537546.jpg"
+      ],
+      "type": "Festival",
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
+    },
+    {
+      "date": "2026-07-21",
+      "event": "🐺リアル6周年記念&アフターパーティー",
+      "timetree_id": "2962260505442173510",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2962260505442173510",
+      "note": "7/21(火)\n『リアル6周年記念&アフターパーティー』\n@ SHIBUYA WWW X\nOPEN17:30 START18:30\n7/8 22:00~\n🎫t-dv.com/6th_TENRIN",
+      "venue_hint": "SHIBUYA WWW X",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/94b4/2026-07-07/0-1783435454698.jpg"
+      ],
+      "type": "Concert",
+      "venue": "WWW X",
+      "venue_uid": "5ab9e0c9-157d-4372-a09e-dbf9885c86d2"
+    },
+    {
+      "date": "2026-07-22",
+      "event": "UTAGE FES Vol.5",
+      "timetree_id": "2941614046996906505",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2941614046996906505",
+      "note": "7/22(水)\n\n『UTAGE FES Vol.5』\n\n新宿サーキットライブ\n@Zepp Shinjuku\n🎤12:15-12:40\n📸未定\n\n\n\n🎫https://ticketdive.com/event/0722_UTAGEFES",
+      "venue_hint": "Zepp Shinjuku",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4085/2026-07-07/0-1783437019376.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Zepp Shinjuku",
+      "venue_uid": "fa3c4a58-fdc0-4f38-91bd-e9883cde4885"
+    },
+    {
+      "date": "2026-07-24",
+      "event": "🐺天祭 -TEN FES-",
+      "timetree_id": "2977934398458741501",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2977934398458741501",
+      "note": "7/24(金)\n\n『天祭 -TEN FES-』\n@ Veats SHIBUYA\n\nOPEN17:30 \nSTART18:30\n\n7/8 22:30~\n🎫t-dv.com/0724_TENFES",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/be9e/2026-07-07/0-1783435651992.jpg"
+      ],
+      "type": "Festival",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    },
+    {
+      "date": "2026-07-25",
+      "event": "🍜福岡遠征予定🍜",
+      "timetree_id": "2971441534170088263",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2971441534170088263",
+      "type": "Other",
+      "venue": null
+    },
+    {
+      "date": "2026-07-26",
+      "event": "GIRLS GIRLS 6th Anniversary",
+      "timetree_id": "2992849115849474627",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2992849115849474627",
+      "note": "7/26(日)\n『GIRLS GIRLS 6th Anniversary』\n@ 品川インターシティ＆グランドホール\n\n\n　\n[前方抽選]7/4(土) 23:59まで\n[先着販売]7/2(木) 20:00から\n🎫tiget.net/events/502979",
+      "venue_hint": "品川インターシティ＆グランドホール",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/e982/2026-07-03/0-1783069067618.jpg"
+      ],
+      "type": "Other",
+      "venue": "品川インターシティ＆グランドホール",
+      "venue_uid": "79fba03e-b05a-4ac4-ab2b-a1b8bcae60b1"
+    },
+    {
+      "date": "2026-07-29",
+      "event": "🔥HEROINES LEAGUE I",
+      "timetree_id": "2915611917702447524",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2915611917702447524",
+      "note": "7/29(水)\n【HEROINES LEAGUE I】\n@ KT Zepp Yokohama\n\n🎤16:10-16:35\n📸16:45-17:45(C)\n\nFC先行抽選受付開始7/11(土) 23:59〆切\n一般販売は\n7/13(月) 22:00からです⏰\nhttps://heroines.jp/news/public/_/i5zkbvmqrmejr7gx.html",
+      "venue_hint": "KT Zepp Yokohama",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/973e/2026-07-09/0-1783592025488.jpg",
+        "https://attachments.timetreeapp.com/public_event/9545/2026-07-09/0-1783592026220.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "KT Zepp Yokohama",
+      "venue_uid": "42ca9395-10f7-46c4-b970-2c44541a7678"
+    },
+    {
+      "date": "2026-07-31",
+      "event": "TOKYO IDOL FESTIVAL2026",
+      "timetree_id": "2949963890861850833",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2949963890861850833",
+      "note": "TENRIN\n『TOKYO IDOL FESTIVAL2026』\n\n【7/31】\n📍HEAT GAREGE🔥\n11:35-12:00\n📍SKY STAGE☁️\n19:05-19:20\n\n【8/1】\n📍HEAT GARAGE🔥\n10:00-10:30 ※限定Tシャツライブ\n📍TROCCO PARK🚚\n13:35-13:55\n\n\n🎫https://official.idolfes.com/s/tif2026/page/ticket?ima=0000\n\n\n\n\nTIFオリジナルTシャツを着用した方限定で\n入場できるTIF限定イベント\n『HEROINES DAY』に出演決定✨\n👕https://official.idolfes.com/s/tif2026/page/ticket?ima=0000",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/7e5c/2026-06-08/0-1780892107844.jpg",
+        "https://attachments.timetreeapp.com/public_event/b09d/2026-06-08/0-1780892108363.jpg",
+        "https://attachments.timetreeapp.com/public_event/f4b6/2026-06-10/0-1781094587859.jpg",
+        "https://attachments.timetreeapp.com/public_event/238c/2026-07-09/0-1783619724532.jpg",
+        "https://attachments.timetreeapp.com/public_event/3cf6/2026-07-09/0-1783619725254.jpg"
+      ],
+      "type": "Festival",
+      "venue": null,
+      "poster_image_url": "https://attachments.timetreeapp.com/public_event/7e5c/2026-06-08/0-1780892107844.jpg"
+    },
+    {
+      "date": "2026-08-02",
+      "event": "HEROINES FUTURE",
+      "timetree_id": "2984030355432718905",
+      "timetree_url": "https://timetr.ee/p/tenrin_schedule/2984030355432718905",
+      "note": "8/2(日)\n『HEROINES FUTURE』\n@ Veats SHIBUYA\nお目当て / 写メ📸\n\n🎤19:00-19:30\n📸終演後特典会\n\n　\n🎫t-dv.com/HEROINESFUTURE",
+      "venue_hint": "Veats SHIBUYA",
+      "poster_urls": [
+        "https://attachments.timetreeapp.com/public_event/4cd4/2026-06-22/0-1782138771558.jpg"
+      ],
+      "type": "Taiban",
+      "venue": "Veats SHIBUYA",
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
+    }
+  ],
+  "enriched_at": "2026-07-13T02:16:51.643Z",
+  "venues_resolved_at": "2026-07-13T02:17:53.412Z",
+  "venue_stats": {
+    "with_venue": 230,
+    "with_poster_only": 16,
+    "with_venue_uid": 230
+  },
+  "multi_venue_patched_at": "2026-07-13T02:17:53.464Z"
+}

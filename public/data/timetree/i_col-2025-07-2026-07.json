@@ -1,0 +1,19 @@
+{
+  "source_url": "https://timetreeapp.com/public_calendars/i_col",
+  "slug": "i_col",
+  "range": {
+    "from": "2025-07",
+    "to": "2026-07"
+  },
+  "generated_at": "2026-07-13T02:05:38.672Z",
+  "event_count": 0,
+  "events": [],
+  "enriched_at": "2026-07-13T02:05:38.700Z",
+  "venues_resolved_at": "2026-07-13T02:05:41.550Z",
+  "venue_stats": {
+    "with_venue": 0,
+    "with_poster_only": 0,
+    "with_venue_uid": 0
+  },
+  "multi_venue_patched_at": "2026-07-13T02:05:41.598Z"
+}
