@@ -5,6 +5,14 @@ const GAME_WEB_URL = "https://yunfannas.github.io/idol-producer-web/";
 
 /** Working custom-song DB (file + localStorage pending adds). */
 let customSongsDb = { version: 1, updated_at: null, entries: [] };
+let assetVersion = "";
+
+function versionedAssetUrl(src) {
+  if (!src || typeof src !== "string") return src;
+  if (/^(data:|blob:)/i.test(src)) return src;
+  const sep = src.includes("?") ? "&" : "?";
+  return assetVersion ? `${src}${sep}v=${encodeURIComponent(assetVersion)}` : src;
+}
 
 function contrastInk(hex) {
   if (!hex || !hex.startsWith("#") || hex.length < 7) return "#fff6fb";
@@ -39,7 +47,7 @@ function makeImg(src, className, alt, opts = {}) {
   if (opts.width) img.width = opts.width;
   if (opts.height) img.height = opts.height;
   if (src) {
-    img.src = src;
+    img.src = versionedAssetUrl(src);
     img.addEventListener(
       "error",
       () => {
@@ -591,7 +599,7 @@ function loadImage(src) {
     img.crossOrigin = "anonymous";
     img.onload = () => resolve(img);
     img.onerror = () => resolve(null);
-    img.src = src;
+    img.src = versionedAssetUrl(src);
   });
 }
 
@@ -1115,7 +1123,8 @@ function normalizeImportedSave(raw) {
   };
 }
 
-const data = await fetch("./data.json").then((r) => r.json());
+const data = await fetch("./data.json", { cache: "no-store" }).then((r) => r.json());
+assetVersion = String(data?.generated_at || data?.updated_at || "").trim();
 customSongsDb = await loadCustomSongsDb();
 
 const nameInput = document.getElementById("saveName");
