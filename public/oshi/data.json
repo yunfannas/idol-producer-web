@@ -1,7 +1,7 @@
 {
   "title": "HEROINES 推しチャート",
   "subtitle": "各グループの推しメン＆推し曲を選ぼう",
-  "generated_at": "2026-07-13T22:18:01",
+  "generated_at": "2026-07-13T22:38:29",
   "groups": [
     {
       "name": "iLiFE!",
@@ -582,6 +582,20 @@
           "color": "紫",
           "color_hex": "#800080",
           "portrait_url": "../data/pictures/idols/%E9%A6%99%E6%9C%88%E3%81%82%E3%82%80_portrait.jpg"
+        },
+        {
+          "uid": "9bbec1df-d20b-4fea-b60d-2c8863c5a670",
+          "name": "小枝ここあ",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E6%9E%9D%E3%81%93%E3%81%93%E3%81%82_portrait.jpg"
+        },
+        {
+          "uid": "f9913c5a-e083-4242-93e5-9096f02e0c20",
+          "name": "砂糖みるく",
+          "color": "白",
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%A0%82%E7%B3%96%E3%81%BF%E3%82%8B%E3%81%8F_portrait.jpg"
         }
       ],
       "songs": [
@@ -1339,45 +1353,59 @@
       ]
     },
     {
-      "name": "ガガピエロ",
-      "name_romanji": "GAGAPIERO",
-      "uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
-      "logo_url": "../data/pictures/groups/GAGAPIERO_icon.webp",
+      "name": "なう♡すとれーじ",
+      "name_romanji": "Now♡Storage",
+      "uid": "Tm93U3RvcmFnZQ",
+      "logo_url": "../data/pictures/groups/Now%E2%99%A1Storage_logo.webp",
       "members": [
         {
-          "uid": "745c0b3c-80b4-4149-a804-ad21ee879425",
-          "name": "胡桃兎愛",
-          "color": "ピンク",
-          "color_hex": "#ffc0cb",
-          "portrait_url": "../data/pictures/idols/%E8%83%A1%E6%A1%83%E5%85%8E%E6%84%9B_portrait.jpg"
+          "uid": "b2e5b705-4221-4e68-acfd-f9a2c1812457",
+          "name": "晴野せら",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
+          "portrait_url": "../data/pictures/idols/%E6%99%B4%E9%87%8E%E3%81%9B%E3%82%89_portrait.jpg"
         },
         {
-          "uid": "1626e615-f982-4e03-b2aa-21d7383ceda7",
-          "name": "波沫ひよ",
-          "color": "青",
-          "color_hex": "#0000ff",
-          "portrait_url": "../data/pictures/idols/%E3%81%AF%E3%81%BE%E3%81%A1%E3%81%B2%E3%82%88_portrait.jpg"
-        },
-        {
-          "uid": "768812a4-c458-4440-96e7-fcecb28dabb1",
-          "name": "屑紫つみき",
-          "color": "紫",
-          "color_hex": "#8e24aa",
-          "portrait_url": "../data/pictures/idols/%E5%B1%91%E7%B4%AB%E3%81%A4%E3%81%BF%E3%81%8D_portrait.jpg"
-        },
-        {
-          "uid": "52912178-1e2b-4359-89a4-43de011830fc",
-          "name": "紅守ある",
+          "uid": "eec7a3a0-0531-42f7-9ab3-d18db0166a33",
+          "name": "園田まのん",
           "color": "赤",
-          "color_hex": "#e53935",
-          "portrait_url": "../data/pictures/idols/%E7%B4%85%E5%AE%88%E3%81%82%E3%82%8B_portrait.jpg"
+          "color_hex": "#ff0000",
+          "portrait_url": "../data/pictures/idols/%E5%9C%92%E7%94%B0%E3%81%BE%E3%81%AE%E3%82%93_portrait.jpg"
         },
         {
-          "uid": "4cad7e1f-ca74-4088-9211-42fac3cda306",
-          "name": "杏仁みる",
+          "uid": "9bb4c1ab-71d1-4f69-83a5-a07dc2c43983",
+          "name": "白羽つくし",
           "color": "白",
-          "color_hex": "#f5f5f5",
-          "portrait_url": "../data/pictures/idols/%E6%9D%8F%E4%BB%81%E3%81%BF%E3%82%8B_portrait.jpg"
+          "color_hex": "#ffffff",
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%BE%BD%E3%81%A4%E3%81%8F%E3%81%97_portrait.jpg"
+        },
+        {
+          "uid": "b0a6decb-f961-4c15-a15d-24662ad59f9d",
+          "name": "羽宮きわみ",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E7%BE%BD%E5%AE%AE%E3%81%8D%E3%82%8F%E3%81%BF_portrait.jpg"
+        },
+        {
+          "uid": "d02b1cbd-a6f8-4ac5-9ed1-68f46389bdb4",
+          "name": "結城ぴゅれ",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E7%B5%90%E5%9F%8E%E3%81%B4%E3%82%85%E3%82%8C_portrait.jpg"
+        },
+        {
+          "uid": "733931bb-cb56-4f1d-b587-2ae62238f988",
+          "name": "永瀬玲乃",
+          "color": "紫",
+          "color_hex": "#800080",
+          "portrait_url": "../data/pictures/idols/%E6%B0%B8%E7%80%AC%E7%8E%B2%E4%B9%83_portrait.jpg"
+        },
+        {
+          "uid": "88a68f6f-0a9b-434d-854d-990c0ff7203d",
+          "name": "星心こはな",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E6%98%9F%E5%BF%83%E3%81%93%E3%81%AF%E3%81%AA_portrait.jpg"
         }
       ],
       "songs": []

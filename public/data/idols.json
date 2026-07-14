@@ -22430,7 +22430,7 @@
     },
     "birthday": "2001-10-01",
     "age": 24,
-    "height": 151,
+    "height": 151.0,
     "birthplace": "Hokkaido",
     "languages": [
       "Japanese"
@@ -22449,7 +22449,7 @@
         "group_name": "のんふぃく！",
         "start_date": "2021-04-05",
         "end_date": null,
-        "member_color": "Yellow (ZOC / Non¬Fiction)",
+        "member_color": "Yellow",
         "member_name": "永月十華",
         "member_color_code": "0xffff00",
         "group_uid": "44Gu44KT44G144GD44GP77yB"
@@ -22458,8 +22458,8 @@
         "group_name": "Non¬Fiction",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Yellow",
+        "member_color_code": "0xffff00"
       },
       {
         "group_name": "HEROINES",
@@ -31082,7 +31082,7 @@
     },
     "birthday": "1999-12-17",
     "age": 26,
-    "height": 156,
+    "height": 156.0,
     "birthplace": "Aichi",
     "languages": [
       "Japanese"
@@ -84408,7 +84408,7 @@
     },
     "birthday": "2001-10-07",
     "age": 24,
-    "height": 148,
+    "height": 148.0,
     "birthplace": "Okinawa",
     "languages": [
       "Japanese"
@@ -84425,7 +84425,7 @@
         "group_name": "iLife!",
         "start_date": "2025-10-05",
         "end_date": null,
-        "member_color": "Orange",
+        "member_color": "Orange (monogatari) Pink (Non¬Fiction / iLiFE!)",
         "member_name": "恋星はるか",
         "member_color_code": "0xffa500",
         "group_uid": "aUxpRkUh"
@@ -84451,8 +84451,8 @@
         "group_name": "Non¬Fiction",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Pink",
+        "member_color_code": "0xffc0cb"
       },
       {
         "group_name": "HEROINES",
@@ -84472,8 +84472,15 @@
         "group_name": "iLiFE!",
         "start_date": null,
         "end_date": null,
-        "member_color": "Pink",
+        "member_color": "Orange (monogatari) Pink (Non¬Fiction / iLiFE!)",
         "member_color_code": "0xffa500"
+      },
+      {
+        "group_name": "GILTY×GILTY",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
       }
     ],
     "x_followers": 105559,
@@ -102447,7 +102454,7 @@
     },
     "birthday": "1996-08-10",
     "age": 29,
-    "height": 156,
+    "height": 156.0,
     "birthplace": "Philippines",
     "languages": [
       "Japanese"
@@ -102483,8 +102490,8 @@
         "group_name": "Non¬Fiction",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Light Blue",
+        "member_color_code": "0xadd8e6"
       },
       {
         "group_name": "HEROINES",
@@ -112465,8 +112472,8 @@
         "group_name": "Now♡Storage",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Purple",
+        "member_color_code": "0x800080"
       },
       {
         "group_name": "HEROINES",
@@ -112474,6 +112481,14 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
+      },
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "永瀬玲乃",
+        "member_color": "Purple",
+        "member_color_code": "0x800080"
       }
     ],
     "x_followers": null,
@@ -112485,7 +112500,8 @@
     ],
     "data_sources": [
       "jpop_wiki"
-    ]
+    ],
+    "group_portrait_paths": {}
   },
   {
     "uid": "733fa94e-e31e-4dad-959d-18f26c03bd88",
@@ -125520,7 +125536,7 @@
     "past_names": {},
     "birthday": "2002-04-23",
     "age": 24,
-    "height": 158,
+    "height": 158.0,
     "birthplace": "Kanagawa",
     "languages": [
       "Japanese"
@@ -125581,8 +125597,8 @@
         "group_name": "Non¬Fiction",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Red",
+        "member_color_code": "0xff0000"
       },
       {
         "group_name": "HEROINES",
@@ -125631,7 +125647,9 @@
       "Non?Fiction": "fetcher\\database\\picture_fandom\\こるね__NonFiction_portrait.jpg",
       "のんふぃく！": "fetcher\\database\\picture_fandom\\こるね__NonFiction_portrait.jpg",
       "44Gu44KT44G144GD44GP77yB": "fetcher\\database\\picture_fandom\\こるね__NonFiction_portrait.jpg"
-    }
+    },
+    "portrait_source": "unknown",
+    "portrait_updated": "2026-07-13T21:47:25.025732"
   },
   {
     "uid": "80a5a0e3-1198-4b05-9a61-a8c16dc8bc1e",
@@ -129499,7 +129517,7 @@
         "group_name": "のんふぃく！",
         "start_date": "2022-08-01",
         "end_date": null,
-        "member_color": "Green (Non¬Fiction)",
+        "member_color": "Green",
         "member_name": "海まりん",
         "member_color_code": "0x008000",
         "group_uid": "44Gu44KT44G144GD44GP77yB"
@@ -167952,7 +167970,7 @@
     },
     "birthday": "2001-01-30",
     "age": 25,
-    "height": 157,
+    "height": 157.0,
     "birthplace": "Saitama",
     "languages": [
       "Japanese"
@@ -167979,8 +167997,8 @@
         "group_name": "Non¬Fiction",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Purple",
+        "member_color_code": "0x800080"
       },
       {
         "group_name": "HEROINES",
@@ -178641,7 +178659,7 @@
     },
     "birthday": "2008-03-02",
     "age": 18,
-    "height": 156,
+    "height": 156.0,
     "birthplace": "Aichi",
     "languages": [
       "Japanese"
@@ -196204,7 +196222,7 @@
     },
     "birthday": "1999-12-20",
     "age": 26,
-    "height": 156,
+    "height": 156.0,
     "birthplace": "Tokyo",
     "languages": [
       "Japanese"
@@ -196214,7 +196232,7 @@
         "group_name": "のんふぃく！",
         "start_date": "2021-04-05",
         "end_date": "2025-09-04",
-        "member_color": "Purple",
+        "member_color": "Purple (aksb project) White (Non¬Fiction)",
         "member_name": "真白里帆",
         "member_color_code": "0x800080",
         "group_uid": "44Gu44KT44G144GD44GP77yB"
@@ -196223,7 +196241,7 @@
         "group_name": "アキシブproject",
         "start_date": "2018-07-01",
         "end_date": "2020-05-31",
-        "member_color": "Purple",
+        "member_color": "Purple (aksb project) White (Non¬Fiction)",
         "member_name": "真城里帆",
         "member_color_code": "0x800080",
         "group_uid": "44Ki44Kt44K344OWcHJvamVjdA"
@@ -261188,13 +261206,13 @@
   {
     "uid": "b0a6decb-f961-4c15-a15d-24662ad59f9d",
     "name": "羽宮きわみ",
-    "hiragana": "",
+    "hiragana": "うみやきわみ",
     "romaji": "Umiya Kiwami",
-    "nickname": "",
+    "nickname": "Kiwami (きわみ)",
     "past_names": {},
     "birthday": null,
     "age": null,
-    "height": null,
+    "height": 161.0,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -261207,10 +261225,50 @@
         "member_name": "羽宮きわみ",
         "member_color": "Green",
         "member_color_code": "0x008000"
+      },
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "羽宮きわみ",
+        "member_color": "Green",
+        "member_color_code": "0x008000"
+      },
+      {
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Green",
+        "member_color_code": "0x008000"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      },
+      {
+        "group_name": "ChouChou Meteore",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
       }
     ],
-    "x_followers": null,
-    "portrait_photo_path": null
+    "x_followers": 8000,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\羽宮きわみ_portrait.jpg",
+    "portrait_source": "jpop_wiki",
+    "portrait_updated": "2026-07-13T21:19:21.066141",
+    "group_portrait_paths": {},
+    "birthday_partial": "03-26",
+    "wiki_url": "https://jpop.fandom.com/wiki/Umiya_Kiwami",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
   },
   {
     "uid": "1a10a730-6462-435f-8b87-944688ffa430",
@@ -262446,5 +262504,342 @@
       "ZUTTOMOTTO": "fetcher\\database\\picture_fandom\\愛夏ひなた_portrait.jpg",
       "WlVUVE9NT1RUTw": "fetcher\\database\\picture_fandom\\愛夏ひなた_portrait.jpg"
     }
+  },
+  {
+    "uid": "88a68f6f-0a9b-434d-854d-990c0ff7203d",
+    "name": "星心こはな",
+    "hiragana": "ほしこはな",
+    "romaji": "Hoshi Kohana",
+    "nickname": "",
+    "past_names": {},
+    "birthday": "2005-10-08",
+    "age": 20,
+    "height": 153.0,
+    "birthplace": "Osaka",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "星心こはな",
+        "member_color": "Yellow",
+        "member_color_code": "0xffff00"
+      },
+      {
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Yellow",
+        "member_color_code": "0xffff00"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      },
+      {
+        "group_name": "Secret School",
+        "start_date": null,
+        "end_date": "2025-01-26",
+        "member_color": null,
+        "member_color_code": null
+      },
+      {
+        "group_name": "Puzzle",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      }
+    ],
+    "x_followers": 8000,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\星心こはな_portrait.jpg",
+    "group_portrait_paths": {},
+    "wiki_url": "https://jpop.fandom.com/wiki/Hoshi_Kohana",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "9bb4c1ab-71d1-4f69-83a5-a07dc2c43983",
+    "name": "白羽つくし",
+    "hiragana": "しらはつくし",
+    "romaji": "Shiraha Tsukushi",
+    "nickname": "",
+    "past_names": {},
+    "birthday": "2010-10-04",
+    "age": 15,
+    "height": 143.0,
+    "birthplace": "Kanagawa",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "白羽つくし",
+        "member_color": "White",
+        "member_color_code": "0xffffff"
+      },
+      {
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "White",
+        "member_color_code": "0xffffff"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      },
+      {
+        "group_name": "Blueberry Girls",
+        "start_date": null,
+        "end_date": "2026-03-03",
+        "member_color": "Red",
+        "member_color_code": "0xff0000"
+      }
+    ],
+    "x_followers": 8000,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\白羽つくし_portrait.jpg",
+    "group_portrait_paths": {},
+    "wiki_url": "https://jpop.fandom.com/wiki/Shiraha_Tsukushi",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "9bbec1df-d20b-4fea-b60d-2c8863c5a670",
+    "name": "小枝ここあ",
+    "wiki_url": "https://jpop.fandom.com/wiki/Koeda_Cocoa",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\小枝ここあ_portrait.jpg",
+    "group_portrait_paths": {},
+    "group_history": [
+      {
+        "group_name": "のんふぃく！",
+        "group_uid": "44Gu44KT44G144GD44GP77yB",
+        "start_date": "2026-04-18",
+        "end_date": null,
+        "member_name": "小枝ここあ",
+        "member_color": "Orange",
+        "member_color_code": "0xffa500"
+      }
+    ],
+    "hiragana": "こえだここあ",
+    "romaji": "Koeda Cocoa",
+    "birthday": "2010-02-14",
+    "age": 16,
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "b2e5b705-4221-4e68-acfd-f9a2c1812457",
+    "name": "晴野せら",
+    "hiragana": "はるのせら",
+    "romaji": "Haruno Sera",
+    "nickname": "",
+    "past_names": {},
+    "birthday": null,
+    "age": null,
+    "height": null,
+    "birthplace": "",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "晴野せら",
+        "member_color": "Orange",
+        "member_color_code": "0xffa500"
+      },
+      {
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Orange",
+        "member_color_code": "0xffa500"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      },
+      {
+        "group_name": "HEROINES SCHOOL",
+        "start_date": null,
+        "end_date": "2026-02-24",
+        "member_color": "Red",
+        "member_color_code": "0xff0000"
+      }
+    ],
+    "x_followers": 8000,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\晴野せら_portrait.jpg",
+    "group_portrait_paths": {},
+    "wiki_url": "https://jpop.fandom.com/wiki/Haruno_Sera",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "d02b1cbd-a6f8-4ac5-9ed1-68f46389bdb4",
+    "name": "結城ぴゅれ",
+    "hiragana": "ゆいしろぴゅれ",
+    "romaji": "Yuishiro Pure",
+    "nickname": "",
+    "past_names": {},
+    "birthday": "2006-09-20",
+    "age": 19,
+    "height": null,
+    "birthplace": "Nara",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "結城ぴゅれ",
+        "member_color": "Light Blue",
+        "member_color_code": "0xadd8e6"
+      },
+      {
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Light Blue",
+        "member_color_code": "0xadd8e6"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      },
+      {
+        "group_name": "HEROINES SCHOOL",
+        "start_date": null,
+        "end_date": "2026-02-14",
+        "member_color": null,
+        "member_color_code": null
+      }
+    ],
+    "x_followers": 8000,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\結城ぴゅれ_portrait.jpg",
+    "group_portrait_paths": {},
+    "wiki_url": "https://jpop.fandom.com/wiki/Yuishiro_Pure",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "eec7a3a0-0531-42f7-9ab3-d18db0166a33",
+    "name": "園田まのん",
+    "hiragana": "そのだまのん",
+    "romaji": "Sonoda Manon",
+    "nickname": "",
+    "past_names": {},
+    "birthday": null,
+    "age": null,
+    "height": null,
+    "birthplace": "",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
+        "member_name": "園田まのん",
+        "member_color": "Red",
+        "member_color_code": "0xff0000"
+      },
+      {
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Red",
+        "member_color_code": "0xff0000"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      }
+    ],
+    "x_followers": 8000,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\園田まのん_portrait.jpg",
+    "group_portrait_paths": {},
+    "wiki_url": "https://jpop.fandom.com/wiki/Sonoda_Manon",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "f9913c5a-e083-4242-93e5-9096f02e0c20",
+    "name": "砂糖みるく",
+    "wiki_url": "https://jpop.fandom.com/wiki/Sato_Milk_(Non%C2%ACFiction)",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\砂糖みるく_portrait.jpg",
+    "group_portrait_paths": {},
+    "group_history": [
+      {
+        "group_name": "のんふぃく！",
+        "group_uid": "44Gu44KT44G144GD44GP77yB",
+        "start_date": "2026-04-18",
+        "end_date": null,
+        "member_name": "砂糖みるく",
+        "member_color": "White",
+        "member_color_code": "0xffffff"
+      }
+    ],
+    "hiragana": "さとうみるく",
+    "romaji": "Sato Milk",
+    "birthday": "2011-11-05",
+    "age": 14,
+    "height": 155.0,
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
   }
 ]

@@ -156966,7 +156966,7 @@
   {
     "uid": "44Gu44KT44G144GD44GP77yB",
     "name": "のんふぃく！",
-    "member_count": 7,
+    "member_count": 9,
     "member_names": [
       "恋星はるか",
       "水瀬ぴあの",
@@ -156974,7 +156974,9 @@
       "海まりん",
       "こるね",
       "澪織にいな",
-      "香月あむ"
+      "香月あむ",
+      "小枝ここあ",
+      "砂糖みるく"
     ],
     "member_uids": [
       "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
@@ -156983,7 +156985,9 @@
       "83e5cfe9-c078-46c8-bc74-51bd1c6f9835",
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
       "b7362fff-f7d2-4fba-a5f7-febe07305d84",
-      "ad732d26-4b39-4b95-a642-5db433ed09ae"
+      "ad732d26-4b39-4b95-a642-5db433ed09ae",
+      "9bbec1df-d20b-4fea-b60d-2c8863c5a670",
+      "f9913c5a-e083-4242-93e5-9096f02e0c20"
     ],
     "past_member_count": 2,
     "past_member_names": [
@@ -156995,12 +156999,12 @@
       "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f"
     ],
     "color": null,
-    "description": "June 2025 Information Also Known As NONFIC! Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! Yakousei Amuse BLK LiLiY i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Konose Haruka (2021-Present) Minase Piano (2021-",
+    "description": "June 2025 Information Also Known As NONFIC! Origin Tokyo , Japan Genre J-Pop Years 2021-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! Yakousei Amuse BLK LiLiY i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iON! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Konose Haruka (2021-Present) Minase Piano (2021-",
     "formed_date": "2021-04-05",
     "popularity": 42,
     "fans": 15566,
-    "average_ability": 60,
-    "average_rating": 12,
+    "average_ability": 60.0,
+    "average_rating": 12.0,
     "name_romanji": "Non¬Fiction",
     "nickname": "",
     "nickname_romanji": "",
@@ -157041,27 +157045,27 @@
     ],
     "pictures": [
       "picture/NonFiction_icon.webp",
+      "picture/Non¬Fiction_photo_18.webp",
+      "picture/Non¬Fiction_photo_7.webp",
+      "picture/Non¬Fiction_photo_16.webp",
+      "picture/Non¬Fiction_photo_15.webp",
       "picture/Non¬Fiction_photo_20.webp",
-      "picture/Non¬Fiction_photo_2.webp",
+      "picture/Non¬Fiction_photo_14.webp",
+      "picture/Non¬Fiction_photo.webp",
       "picture/Non¬Fiction_photo_8.webp",
       "picture/Non¬Fiction_photo_19.webp",
-      "picture/Non¬Fiction_photo.webp",
-      "picture/Non¬Fiction_photo_4.webp",
-      "picture/Non¬Fiction_photo_18.webp",
-      "picture/Non¬Fiction_photo_14.webp",
-      "picture/Non¬Fiction_logo.webp",
-      "picture/Non¬Fiction_photo_3.webp",
+      "picture/Non¬Fiction_photo_2.webp",
       "picture/Non¬Fiction_photo_17.webp",
-      "picture/Non¬Fiction_photo_15.webp",
-      "picture/Non¬Fiction_photo_13.webp",
-      "picture/Non¬Fiction_photo_7.webp",
+      "picture/Non¬Fiction_photo_4.webp",
       "picture/Non¬Fiction_photo_10.webp",
-      "picture/Non¬Fiction_photo_5.webp",
-      "picture/Non¬Fiction_photo_16.webp",
+      "picture/Non¬Fiction_photo_3.webp",
+      "picture/Non¬Fiction_photo_11.webp",
+      "picture/Non¬Fiction_photo_13.webp",
       "picture/Non¬Fiction_photo_9.webp",
       "picture/Non¬Fiction_photo_12.webp",
-      "picture/Non¬Fiction_photo_6.webp",
-      "picture/Non¬Fiction_photo_11.webp"
+      "picture/Non¬Fiction_photo_5.webp",
+      "picture/Non¬Fiction_logo.webp",
+      "picture/Non¬Fiction_photo_6.webp"
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Non%C2%ACFiction",
     "agencies": [
@@ -157170,7 +157174,8 @@
       "1641f5ae-f165-4677-b525-22ab9b38a0d7",
       "0b97cb08-d1f7-4c82-acc8-a0f7c12bf7b0",
       "a72c5c87-cf45-4b3c-96e7-8c748fc16b12"
-    ]
+    ],
+    "songs": []
   },
   {
     "uid": "RU1QaVJF",
@@ -242241,15 +242246,45 @@
   {
     "uid": "Tm93U3RvcmFnZQ",
     "name": "なう♡すとれーじ",
-    "name_romanji": "Now Storage",
+    "name_romanji": "Now♡Storage",
     "debut_date": "2026-07-01",
     "disband_date": null,
-    "member_names": [],
-    "member_uids": [],
+    "member_names": [
+      "晴野せら",
+      "園田まのん",
+      "白羽つくし",
+      "羽宮きわみ",
+      "結城ぴゅれ",
+      "永瀬玲乃",
+      "星心こはな"
+    ],
+    "member_uids": [
+      "b2e5b705-4221-4e68-acfd-f9a2c1812457",
+      "eec7a3a0-0531-42f7-9ab3-d18db0166a33",
+      "9bb4c1ab-71d1-4f69-83a5-a07dc2c43983",
+      "b0a6decb-f961-4c15-a15d-24662ad59f9d",
+      "d02b1cbd-a6f8-4ac5-9ed1-68f46389bdb4",
+      "733931bb-cb56-4f1d-b587-2ae62238f988",
+      "88a68f6f-0a9b-434d-854d-990c0ff7203d"
+    ],
     "past_member_names": [],
     "past_member_uids": [],
-    "pictures": [],
+    "pictures": [
+      "picture/Now♡Storage_logo.webp",
+      "picture/Now♡Storage_photo.webp"
+    ],
     "song_uids": [],
-    "notes": "HEROINES group; debuted 2026-07 (produced by 美鈴りか)."
+    "notes": "HEROINES group; debuted 2026-07 (produced by 美鈴りか).",
+    "formed_date": "2026-07-06",
+    "agencies": [
+      "Imaginate"
+    ],
+    "nickname": "なうすと",
+    "nickname_romanji": "NowSuto",
+    "songs": [],
+    "discography": [],
+    "disc_uids": [],
+    "member_count": 7,
+    "wiki_url": "https://jpop.fandom.com/wiki/Now%E2%99%A1Storage"
   }
 ]
