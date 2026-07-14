@@ -292,6 +292,12 @@ PORTRAIT_OVERRIDES: dict[tuple[str, str], list[str]] = {
     ],
 }
 
+NO_MEMBER_COLOR_GROUPS = {
+    "GILTY × GILTY",
+    "ヒロインズ研究生",
+    "ヒロインズ研究生大阪",
+}
+
 
 def safe_print(text) -> None:
     try:
@@ -613,12 +619,14 @@ def build_group(
                 if cand.get("name") == nm:
                     idol = cand
                     break
+        if name in NO_MEMBER_COLOR_GROUPS:
+            color_label, color_hex = None, None
         members.append(
             {
                 "uid": uid,
                 "name": nm,
                 "color": color_label,
-                "color_hex": color_hex or "#eceff1",
+                "color_hex": color_hex if color_label or color_hex else None,
                 "portrait_url": portrait_url_for_group(idol, g, idol_index),
             }
         )

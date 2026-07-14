@@ -1,7 +1,7 @@
 {
   "title": "HEROINES 推しチャート",
   "subtitle": "各グループの推しメン＆推し曲を選ぼう",
-  "generated_at": "2026-07-13T22:38:29",
+  "generated_at": "2026-07-14T00:56:56",
   "groups": [
     {
       "name": "iLiFE!",
@@ -782,8 +782,8 @@
         {
           "uid": "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
           "name": "こるね",
-          "color": "赤",
-          "color_hex": "#ff0000",
+          "color": "ピンク",
+          "color_hex": "#ffc0cb",
           "portrait_url": "../data/pictures/idols/%E3%81%93%E3%82%8B%E3%81%AD__i-COL_portrait.jpg"
         }
       ],
@@ -889,18 +889,11 @@
       "logo_url": "../data/pictures/groups/MEGAFON_icon.webp",
       "members": [
         {
-          "uid": "98b403bf-5f64-4ba7-a714-90e4fe842d50",
-          "name": "好実れん",
-          "color": "ピンク",
-          "color_hex": "#ffc0cb",
-          "portrait_url": null
-        },
-        {
           "uid": "c0ebee02-589a-4741-8c09-6785625d0e2c",
           "name": "小晴のか",
           "color": "オレンジ",
           "color_hex": "#ffa500",
-          "portrait_url": null
+          "portrait_url": "../data/pictures/idols/%E5%B0%8F%E6%99%B4%E3%81%AE%E3%81%8B_portrait.jpg"
         },
         {
           "uid": "91431844-e2b3-4d16-a119-ee792e3c8d92",
@@ -914,14 +907,14 @@
           "name": "明音いろは",
           "color": "水色",
           "color_hex": "#89cff0",
-          "portrait_url": null
+          "portrait_url": "../data/pictures/idols/%E6%98%8E%E9%9F%B3%E3%81%84%E3%82%8D%E3%81%AF_portrait.jpg"
         },
         {
           "uid": "e5a678c9-6448-4c69-9b27-5e2345b7d1b5",
           "name": "羽雲ろこ",
           "color": "水色",
           "color_hex": "#87ceeb",
-          "portrait_url": null
+          "portrait_url": "../data/pictures/idols/%E7%BE%BD%E9%9B%B2%E3%82%8D%E3%81%93_portrait.jpg"
         },
         {
           "uid": "9e0f8916-375b-40a4-842b-cf6b2fbd3c7d",
@@ -978,6 +971,11 @@
           "uid": "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
           "title": "夏に恋してる",
           "popularity": null
+        },
+        {
+          "uid": "b052f2b8-67b2-4d9a-abf6-7fd063f5670f",
+          "title": "本命スイートデイズ",
+          "popularity": null
         }
       ]
     },
@@ -997,8 +995,8 @@
         {
           "uid": "77eb107b-63bf-4b8a-bc26-f3bfa1d5a5fa",
           "name": "花丸ぺこ",
-          "color": "赤",
-          "color_hex": "#ff0000",
+          "color": "オレンジ",
+          "color_hex": "#ffa500",
           "portrait_url": "../data/pictures/idols/%E8%8A%B1%E4%B8%B8%E3%81%BA%E3%81%93_portrait.jpg"
         },
         {
@@ -1085,37 +1083,37 @@
         {
           "uid": "cd75a82c-2306-43ec-b145-c41985bbdb3b",
           "name": "蒼井叶",
-          "color": "青",
-          "color_hex": "#0000ff",
-          "portrait_url": "../data/pictures/idols/%E8%92%BC%E4%BA%95%E5%8F%B6_portrait.jpg"
+          "color": null,
+          "color_hex": null,
+          "portrait_url": "../data/pictures/idols/%E8%92%BC%E4%BA%95%E5%8F%B6__GILTY_x_GILTY_portrait.jpg"
         },
         {
           "uid": "6aa79975-867a-4cc3-9cd5-73a27075dc64",
           "name": "白雪姫乃",
-          "color": "白",
-          "color_hex": "#ffffff",
-          "portrait_url": "../data/pictures/idols/%E7%99%BD%E9%9B%AA%E5%A7%AB%E4%B9%83_portrait.jpg"
+          "color": null,
+          "color_hex": null,
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E9%9B%AA%E5%A7%AB%E4%B9%83__GILTY_x_GILTY_portrait.jpg"
         },
         {
           "uid": "5b65a555-8b8d-4f69-aeed-06457bd8e84b",
           "name": "白空こあい",
-          "color": "白",
-          "color_hex": "#ffffff",
-          "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%A9%BA%E3%81%93%E3%81%82%E3%81%84_portrait.jpg"
+          "color": null,
+          "color_hex": null,
+          "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%A9%BA%E3%81%93%E3%81%82%E3%81%84__GILTY_x_GILTY_portrait.jpg"
         },
         {
           "uid": "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
           "name": "恋星はるか",
-          "color": "ピンク",
-          "color_hex": "#ffc0cb",
-          "portrait_url": "../data/pictures/idols/%E6%81%8B%E6%98%9F%E3%81%AF%E3%82%8B%E3%81%8B_portrait.jpg"
+          "color": null,
+          "color_hex": null,
+          "portrait_url": "../data/pictures/idols/%E6%81%8B%E6%98%9F%E3%81%AF%E3%82%8B%E3%81%8B__GILTY_x_GILTY_portrait.jpg"
         },
         {
           "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
           "name": "心花りり",
-          "color": "赤",
-          "color_hex": "#ff0000",
-          "portrait_url": "../data/pictures/idols/%E5%BF%83%E8%8A%B1%E3%82%8A%E3%82%8A_portrait.jpg"
+          "color": null,
+          "color_hex": null,
+          "portrait_url": "../data/pictures/idols/%E5%BF%83%E8%8A%B1%E3%82%8A%E3%82%8A__GILTY_x_GILTY_portrait.jpg"
         }
       ],
       "songs": [
@@ -1244,6 +1242,27 @@
           "color": "青",
           "color_hex": "#0000ff",
           "portrait_url": "../data/pictures/idols/%E9%9C%9E%E3%81%82%E3%81%92%E3%81%AF_portrait.jpg"
+        },
+        {
+          "uid": "1666ef5f-d042-4f91-bcda-18628ecd453d",
+          "name": "甘音ゆあ",
+          "color": "黄",
+          "color_hex": "#ffff00",
+          "portrait_url": "../data/pictures/idols/%E7%94%98%E9%9F%B3%E3%82%86%E3%81%82_portrait.jpg"
+        },
+        {
+          "uid": "c6740f57-6323-42d5-98c3-ab61ff31e639",
+          "name": "刻乃なう",
+          "color": "水色",
+          "color_hex": "#add8e6",
+          "portrait_url": "../data/pictures/idols/%E5%88%BB%E4%B9%83%E3%81%AA%E3%81%86_portrait.jpg"
+        },
+        {
+          "uid": "28034a04-57a1-4da4-a526-637b54cc8135",
+          "name": "音瀬歩兎",
+          "color": "緑",
+          "color_hex": "#008000",
+          "portrait_url": "../data/pictures/idols/%E9%9F%B3%E7%80%AC%E6%AD%A9%E5%85%8E_portrait.jpg"
         }
       ],
       "songs": [
@@ -1253,8 +1272,18 @@
           "popularity": null
         },
         {
+          "uid": "0a04112f-c629-462b-9bc0-9ee266805df5",
+          "title": "Grudge",
+          "popularity": null
+        },
+        {
           "uid": "c756d54e-332b-4ba1-8dde-456426a4f489",
           "title": "IZAYOI",
+          "popularity": null
+        },
+        {
+          "uid": "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+          "title": "Past Shapes",
           "popularity": null
         },
         {
@@ -1268,6 +1297,11 @@
           "popularity": null
         },
         {
+          "uid": "71173086-13ca-4141-83d8-eb0d962de2db",
+          "title": "SnowTears",
+          "popularity": null
+        },
+        {
           "uid": "26f67e66-39f1-41b2-bb96-cc25228367e6",
           "title": "StayLOUD",
           "popularity": null
@@ -1275,6 +1309,11 @@
         {
           "uid": "2b82dfa7-f8e3-42c7-81de-50f186468b96",
           "title": "T.E.N.R.I.N",
+          "popularity": null
+        },
+        {
+          "uid": "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
+          "title": "どりぃむちゃちゃらんど",
           "popularity": null
         },
         {
@@ -1293,8 +1332,18 @@
           "popularity": null
         },
         {
+          "uid": "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
+          "title": "ニコニコLouder",
+          "popularity": null
+        },
+        {
           "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
           "title": "マツリカ舞う風",
+          "popularity": null
+        },
+        {
+          "uid": "cb2c6738-717e-4208-bf22-e50274ecf946",
+          "title": "人ニ、非ズ",
           "popularity": null
         },
         {
@@ -1305,6 +1354,11 @@
         {
           "uid": "cce5a698-c53f-445f-b22a-bbaa5849de46",
           "title": "天生輪廻",
+          "popularity": null
+        },
+        {
+          "uid": "1b46fdc6-772d-4c97-885d-ee34c9d278d4",
+          "title": "発見! やんだ! ぱんだ!",
           "popularity": null
         }
       ]
@@ -1857,18 +1911,18 @@
           "portrait_url": "../data/pictures/idols/%E5%AE%AE%E5%A5%88%E3%82%82%E3%81%93_portrait.jpg"
         },
         {
-          "uid": "b869b751-6cba-4369-aa9f-738dcba7b388",
-          "name": "宝城あいり",
-          "color": "黄",
-          "color_hex": "#ffff00",
-          "portrait_url": "../data/pictures/idols/%E5%AE%9D%E5%9F%8E%E3%81%82%E3%81%84%E3%82%8A_portrait.jpg"
-        },
-        {
           "uid": "87f42c82-e076-4799-808d-19d6a597bc4f",
           "name": "宇佐美あこ",
           "color": "ピンク",
           "color_hex": "#ffc0cb",
           "portrait_url": "../data/pictures/idols/%E5%AE%87%E4%BD%90%E7%BE%8E%E3%81%82%E3%81%93_portrait.jpg"
+        },
+        {
+          "uid": "58d3ab95-4f9d-4fab-9214-7ccdb7610c6e",
+          "name": "瀬川なつき",
+          "color": "青",
+          "color_hex": "#0000ff",
+          "portrait_url": "../data/pictures/idols/%E7%80%AC%E5%B7%9D%E3%81%AA%E3%81%A4%E3%81%8D_portrait.jpg"
         }
       ],
       "songs": [
@@ -3010,91 +3064,91 @@
           "uid": "d90025e2-ef9e-4964-a4fe-131a550f421f",
           "name": "白石あゆ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E7%99%BD%E7%9F%B3%E3%81%82%E3%82%86__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "b978e9b5-bde8-4964-a6d5-dbfa57cd2385",
           "name": "広瀬りむ",
-          "color": "ミント",
-          "color_hex": "#98ff98",
+          "color": null,
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%BA%83%E7%80%AC%E3%82%8A%E3%82%80__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "2997a457-f693-42ef-b133-2945022121c4",
           "name": "小菜実こゆ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%B0%8F%E8%8F%9C%E5%AE%9F%E3%81%93%E3%82%86__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "042ff6d1-b225-433c-a0dc-523b63f51677",
           "name": "綾瀬めめ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E7%B6%BE%E7%80%AC%E3%82%81%E3%82%81__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "58ae84f3-6ab4-578d-a1e8-580bed592b13",
           "name": "白鳥ちな",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E7%99%BD%E9%B3%A5%E3%81%A1%E3%81%AA__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "81817d18-ac2e-5253-9357-0295df75e5b5",
           "name": "小梅ちろ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%B0%8F%E6%A2%85%E3%81%A1%E3%82%8D__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "d5da541e-d871-57b8-8b75-63fbfd89951a",
           "name": "花森ぴの",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E8%8A%B1%E6%A3%AE%E3%81%B4%E3%81%AE__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "433130f0-2754-5912-9901-08137f1921da",
           "name": "矢乃ひまり",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E7%9F%A2%E4%B9%83%E3%81%B2%E3%81%BE%E3%82%8A__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "bb9d6079-d8f5-5eba-8f2a-17a8d02fe9cd",
           "name": "逢坂めるむ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E9%80%A2%E5%9D%82%E3%82%81%E3%82%8B%E3%82%80__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "96a98585-285e-5eaa-aa7e-07c368e0e6eb",
           "name": "有舞ねおん",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E6%9C%89%E8%88%9E%E3%81%AD%E3%81%8A%E3%82%93__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "8bd71f23-68fb-5201-bb84-303e71c87b4e",
           "name": "芽野りりあ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E8%8A%BD%E9%87%8E%E3%82%8A%E3%82%8A%E3%81%82__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "36b446eb-69a1-561f-877d-88232f46073b",
           "name": "鳴雷びび",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E9%B3%B4%E9%9B%B7%E3%81%B3%E3%81%B3__HEROINES_Kenkyuusei_portrait.jpg"
         },
         {
           "uid": "780fcbaf-12f4-5f2a-aa30-4b15967e5878",
           "name": "可愛川ここ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%8F%AF%E6%84%9B%E5%B7%9D%E3%81%93%E3%81%93__HEROINES_Kenkyuusei_portrait.jpg"
         }
       ],
@@ -3116,70 +3170,70 @@
           "uid": "8a7fba01-02aa-4275-a36d-708bf3aa097a",
           "name": "鹿野こなほ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E9%B9%BF%E9%87%8E%E3%81%93%E3%81%AA%E3%81%BB__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "178ab058-0a9d-4246-8a2c-34df5813ab28",
           "name": "千鳥もえ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%8D%83%E9%B3%A5%E3%82%82%E3%81%88__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "51a5090c-0415-4fe2-9005-7674baffa856",
           "name": "不破ふわり",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E4%B8%8D%E7%A0%B4%E3%81%B5%E3%82%8F%E3%82%8A__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "6277590b-df27-40cb-8621-bbf183ec01fd",
           "name": "御堂筋ぴこ",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%BE%A1%E5%A0%82%E7%AD%8B%E3%81%B4%E3%81%93__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "a918cb62-a802-5af9-9e97-74267952e66b",
           "name": "桃谷りの",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E6%A1%83%E8%B0%B7%E3%82%8A%E3%81%AE__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "95d18871-b43f-5535-b1ba-85c11b74a175",
           "name": "北浜そふと",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%8C%97%E6%B5%9C%E3%81%9D%E3%81%B5%E3%81%A8__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "0dfb0c22-f373-513e-aeec-c11d21b56610",
           "name": "汐見らう",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E6%B1%90%E8%A6%8B%E3%82%89%E3%81%86__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "4306a822-704d-5b8a-8232-b3b4b5f08104",
           "name": "笑門りい",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E7%AC%91%E9%96%80%E3%82%8A%E3%81%84__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "27ad6f67-7fc1-5a29-9144-4f33e69cee99",
           "name": "小花衣はお",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%B0%8F%E8%8A%B1%E8%A1%A3%E3%81%AF%E3%81%8A__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         },
         {
           "uid": "f4e11e27-1519-563e-b43f-a760989084bb",
           "name": "安良城いと",
           "color": null,
-          "color_hex": "#eceff1",
+          "color_hex": null,
           "portrait_url": "../data/pictures/idols/%E5%AE%89%E8%89%AF%E5%9F%8E%E3%81%84%E3%81%A8__HEROINES_Kenkyuusei_Osaka_portrait.jpg"
         }
       ],

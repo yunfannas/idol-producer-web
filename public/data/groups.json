@@ -37289,8 +37289,8 @@
       "葉月みつは",
       "彩音ゆの",
       "宮奈もこ",
-      "宝城あいり",
-      "宇佐美あこ"
+      "宇佐美あこ",
+      "瀬川なつき"
     ],
     "member_uids": [
       "49c29171-7208-43a5-a46e-5027f22c9220",
@@ -37298,17 +37298,18 @@
       "93b80c0e-5df8-440d-9045-79cc1d2b5baa",
       "7a72fc17-7379-4115-9b77-e2d0c4355bcb",
       "d3bf4d5b-cb45-48da-bcd3-cb7ef6f9d4f4",
-      "b869b751-6cba-4369-aa9f-738dcba7b388",
-      "87f42c82-e076-4799-808d-19d6a597bc4f"
+      "87f42c82-e076-4799-808d-19d6a597bc4f",
+      "58d3ab95-4f9d-4fab-9214-7ccdb7610c6e"
     ],
-    "past_member_count": 6,
+    "past_member_count": 7,
     "past_member_names": [
       "夢月まゆ",
       "藤川笑茉",
       "蘭月リア",
       "七瀬にこ",
       "雛小みらい",
-      "絢瀬まよ"
+      "絢瀬まよ",
+      "宝城あいり"
     ],
     "past_member_uids": [
       "7c6c2847-1b18-4f1e-812f-db0192242efb",
@@ -37316,7 +37317,8 @@
       "0abe2aaf-b50a-45d5-bdff-1b0683e401a8",
       "163b40d8-699f-4236-b579-c244ff8e6f9b",
       "66c1488a-14fc-45c1-9316-368e8d5709f9",
-      "55777451-1372-4994-8184-93a2d78bf894"
+      "55777451-1372-4994-8184-93a2d78bf894",
+      "b869b751-6cba-4369-aa9f-738dcba7b388"
     ],
     "color": null,
     "description": "",
@@ -134425,20 +134427,26 @@
   {
     "uid": "VEVOUklO",
     "name": "TENRIN",
-    "member_count": 5,
+    "member_count": 8,
     "member_names": [
       "のもあちゃちゃ",
       "白洲あやん",
       "七瀬にこ",
       "蓮花うらら",
-      "霞あげは"
+      "霞あげは",
+      "甘音ゆあ",
+      "刻乃なう",
+      "音瀬歩兎"
     ],
     "member_uids": [
       "52311409-c4f5-4de1-950b-cc18afd1698d",
       "bfcaec9e-eb04-4d51-ba11-99cbf2511c2d",
       "163b40d8-699f-4236-b579-c244ff8e6f9b",
       "1ae94901-0ab4-41d1-a3f8-70218ce9d8d6",
-      "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8"
+      "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8",
+      "1666ef5f-d042-4f91-bcda-18628ecd453d",
+      "c6740f57-6323-42d5-98c3-ab61ff31e639",
+      "28034a04-57a1-4da4-a526-637b54cc8135"
     ],
     "past_member_count": 9,
     "past_member_names": [
@@ -134474,18 +134482,25 @@
     "nickname": "",
     "nickname_romanji": "",
     "song_uids": [
+      "be379f5b-1b3c-4472-8348-d9ae89bb802d",
+      "c756d54e-332b-4ba1-8dde-456426a4f489",
       "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
+      "106d0386-96d6-44e4-897a-2ae028a79695",
       "cce5a698-c53f-445f-b22a-bbaa5849de46",
       "2b82dfa7-f8e3-42c7-81de-50f186468b96",
       "74c70238-4f26-4fc3-b60e-401b97d38e48",
       "26f67e66-39f1-41b2-bb96-cc25228367e6",
-      "704d20ee-5b46-461f-8e5d-680c16a5423d",
-      "106d0386-96d6-44e4-897a-2ae028a79695",
-      "be379f5b-1b3c-4472-8348-d9ae89bb802d",
-      "c756d54e-332b-4ba1-8dde-456426a4f489",
       "5e824791-98f6-4edc-baeb-d37555a4f338",
       "75fbcdf8-895e-4d9a-90a1-e2314942cd56",
-      "c4c9db3b-6b39-4472-a63e-ac677f7bdae2"
+      "cb2c6738-717e-4208-bf22-e50274ecf946",
+      "704d20ee-5b46-461f-8e5d-680c16a5423d",
+      "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
+      "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+      "71173086-13ca-4141-83d8-eb0d962de2db",
+      "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
+      "0a04112f-c629-462b-9bc0-9ee266805df5",
+      "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
+      "1b46fdc6-772d-4c97-885d-ee34c9d278d4"
     ],
     "pictures": [
       "picture/TENRIN_icon.webp",
@@ -134507,6 +134522,38 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/VEVOUklO",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce80",
     "discography": [
+      {
+        "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
+        "title": "マツリカ舞う風;Jasmine Dancing in the Wind",
+        "title_romanji": "Matsurika Mau Kaze",
+        "disc_type": "Digital Single",
+        "release_date": "2020-07-01",
+        "publisher": "imaginate",
+        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "マツリカ舞う風; Jasmine Dancing in the Wind"
+        ],
+        "duration": null,
+        "cover_image_path": "picture/マツリカ舞う風;Jasmine_Dancing_in_the_Wind_cover.webp"
+      },
+      {
+        "uid": "c756d54e-332b-4ba1-8dde-456426a4f489",
+        "title": "IZAYOI",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2020-07-23",
+        "publisher": "imaginate",
+        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "IZAYOI"
+        ],
+        "duration": null,
+        "cover_image_path": "picture/IZAYOI_cover.webp"
+      },
       {
         "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
         "title": "アーティファクト",
@@ -134532,6 +134579,34 @@
         ],
         "duration": null,
         "cover_image_path": "picture/アーティファクト_cover.webp"
+      },
+      {
+        "uid": "106d0386-96d6-44e4-897a-2ae028a79695",
+        "title": "Artifact",
+        "title_romanji": "",
+        "disc_type": "Single",
+        "release_date": "2020-11-03",
+        "publisher": "imaginate",
+        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
+        "title": "アーティファクト",
+        "title_romanji": "Artifact",
+        "disc_type": "Single",
+        "release_date": "2020-11-03",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": "picture/Artifact_cover.webp"
       },
       {
         "uid": "cce5a698-c53f-445f-b22a-bbaa5849de46",
@@ -134612,66 +134687,6 @@
         "cover_image_path": null
       },
       {
-        "uid": "704d20ee-5b46-461f-8e5d-680c16a5423d",
-        "title": "STEP IN TIME",
-        "title_romanji": "",
-        "disc_type": "Album",
-        "release_date": "2025-06-26",
-        "publisher": "CROSS SIDE MUSIC",
-        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "duration": null,
-        "cover_image_path": null
-      },
-      {
-        "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
-        "title": "アーティファクト",
-        "title_romanji": "Artifact",
-        "disc_type": "Single",
-        "release_date": "2020-11-03",
-        "publisher": "CROSS SIDE MUSIC",
-        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [],
-        "duration": null,
-        "cover_image_path": "picture/Artifact_cover.webp"
-      },
-      {
-        "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
-        "title": "マツリカ舞う風;Jasmine Dancing in the Wind",
-        "title_romanji": "Matsurika Mau Kaze",
-        "disc_type": "Digital Single",
-        "release_date": "2020-07-01",
-        "publisher": "imaginate",
-        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "マツリカ舞う風; Jasmine Dancing in the Wind"
-        ],
-        "duration": null,
-        "cover_image_path": "picture/マツリカ舞う風;Jasmine_Dancing_in_the_Wind_cover.webp"
-      },
-      {
-        "uid": "c756d54e-332b-4ba1-8dde-456426a4f489",
-        "title": "IZAYOI",
-        "title_romanji": "",
-        "disc_type": "Digital Single",
-        "release_date": "2020-07-23",
-        "publisher": "imaginate",
-        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "IZAYOI"
-        ],
-        "duration": null,
-        "cover_image_path": "picture/IZAYOI_cover.webp"
-      },
-      {
         "uid": "5e824791-98f6-4edc-baeb-d37555a4f338",
         "title": "インダストリアル)-Narumi KomaSolo",
         "title_romanji": "Industrial",
@@ -134700,6 +134715,34 @@
         "cover_image_path": "picture/人生はっぴーふぁっきんまいらいふ)-No_More_ChachaSolo_cover.webp"
       },
       {
+        "uid": "cb2c6738-717e-4208-bf22-e50274ecf946",
+        "title": "人ニ、非ズ",
+        "title_romanji": "Hito ni, Arazu",
+        "disc_type": "Digital Single",
+        "release_date": "2025-03-12",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "704d20ee-5b46-461f-8e5d-680c16a5423d",
+        "title": "STEP IN TIME",
+        "title_romanji": "",
+        "disc_type": "Album",
+        "release_date": "2025-06-26",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
         "uid": "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
         "title": "らぶみーきるみー)-No More ChachaSolo",
         "title_romanji": "Love Me Kill Me",
@@ -134714,34 +134757,126 @@
         "cover_image_path": "picture/らぶみーきるみー)-No_More_ChachaSolo_cover.webp"
       },
       {
-        "uid": "106d0386-96d6-44e4-897a-2ae028a79695",
-        "title": "Artifact",
+        "uid": "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+        "title": "Past Shapes",
         "title_romanji": "",
-        "disc_type": "Single",
-        "release_date": "2020-11-03",
-        "publisher": "imaginate",
-        "publisher_uid": "1d1160cb-b984-49b5-8db0-8c77b44f5bd1",
+        "disc_type": "Album",
+        "release_date": "2026-02-21",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
         "catalog_number": "",
         "description": "",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "8af6822b-966d-487f-b09e-087883c90e38",
+        "title": "SAVE YOU",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-25",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "霞あげは solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "71173086-13ca-4141-83d8-eb0d962de2db",
+        "title": "SnowTears",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-25",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "蓮花うらら solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
+        "title": "どりぃむちゃちゃらんど",
+        "title_romanji": "Dream Chacha Land",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-25",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "のもあちゃちゃ solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "0a04112f-c629-462b-9bc0-9ee266805df5",
+        "title": "Grudge",
+        "title_romanji": "",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-26",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "雅なぎ solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
+        "title": "ニコニコLouder",
+        "title_romanji": "Nico Nico Louder",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-26",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "七瀬にこ solo digital single",
+        "track_list": [],
+        "duration": null,
+        "cover_image_path": null
+      },
+      {
+        "uid": "1b46fdc6-772d-4c97-885d-ee34c9d278d4",
+        "title": "発見! やんだ! ぱんだ!",
+        "title_romanji": "Hakken! Yanda! Panda!",
+        "disc_type": "Digital Single",
+        "release_date": "2026-05-26",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+        "catalog_number": "",
+        "description": "白洲あやん solo digital single",
         "track_list": [],
         "duration": null,
         "cover_image_path": null
       }
     ],
     "disc_uids": [
+      "be379f5b-1b3c-4472-8348-d9ae89bb802d",
+      "c756d54e-332b-4ba1-8dde-456426a4f489",
+      "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
+      "106d0386-96d6-44e4-897a-2ae028a79695",
       "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
       "cce5a698-c53f-445f-b22a-bbaa5849de46",
       "2b82dfa7-f8e3-42c7-81de-50f186468b96",
       "74c70238-4f26-4fc3-b60e-401b97d38e48",
       "26f67e66-39f1-41b2-bb96-cc25228367e6",
-      "704d20ee-5b46-461f-8e5d-680c16a5423d",
-      "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
-      "be379f5b-1b3c-4472-8348-d9ae89bb802d",
-      "c756d54e-332b-4ba1-8dde-456426a4f489",
       "5e824791-98f6-4edc-baeb-d37555a4f338",
       "75fbcdf8-895e-4d9a-90a1-e2314942cd56",
+      "cb2c6738-717e-4208-bf22-e50274ecf946",
+      "704d20ee-5b46-461f-8e5d-680c16a5423d",
       "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
-      "106d0386-96d6-44e4-897a-2ae028a79695"
+      "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+      "8af6822b-966d-487f-b09e-087883c90e38",
+      "71173086-13ca-4141-83d8-eb0d962de2db",
+      "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
+      "0a04112f-c629-462b-9bc0-9ee266805df5",
+      "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
+      "1b46fdc6-772d-4c97-885d-ee34c9d278d4"
     ]
   },
   {
@@ -157003,8 +157138,8 @@
     "formed_date": "2021-04-05",
     "popularity": 42,
     "fans": 15566,
-    "average_ability": 60.0,
-    "average_rating": 12.0,
+    "average_ability": 60,
+    "average_rating": 12,
     "name_romanji": "Non¬Fiction",
     "nickname": "",
     "nickname_romanji": "",
@@ -203610,9 +203745,8 @@
   {
     "uid": "TUVHQUZPTg",
     "name": "MEGAFON",
-    "member_count": 7,
+    "member_count": 6,
     "member_names": [
-      "好実れん",
       "小晴のか",
       "星野あみ",
       "明音いろは",
@@ -203621,7 +203755,6 @@
       "宮代ゆき"
     ],
     "member_uids": [
-      "98b403bf-5f64-4ba7-a714-90e4fe842d50",
       "c0ebee02-589a-4741-8c09-6785625d0e2c",
       "91431844-e2b3-4d16-a119-ee792e3c8d92",
       "4137617f-21fa-48f0-8f22-46ca0c0f7352",
@@ -203629,9 +203762,13 @@
       "9e0f8916-375b-40a4-842b-cf6b2fbd3c7d",
       "2571d33a-51e8-4ca9-b577-a602318af81f"
     ],
-    "past_member_count": 0,
-    "past_member_names": [],
-    "past_member_uids": [],
+    "past_member_count": 1,
+    "past_member_names": [
+      "好実れん"
+    ],
+    "past_member_uids": [
+      "98b403bf-5f64-4ba7-a714-90e4fe842d50"
+    ],
     "color": null,
     "description": "December 2025 Information Origin Tokyo , Japan Genre J-Pop Years 2025-Present Label CROSS SIDE MUSIC Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse Non¬Fiction CAL&RES Ill i-COL Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Dress Code Tenshinranman iON! Pastel Closet LAST SCENE Full Course HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Konomi Ren Koharu Noka Hoshino Ami Ramune Iroha Wakumo Roko Hima",
     "formed_date": "2025-04-06",
@@ -203645,13 +203782,14 @@
     "nickname_romanji": null,
     "song_uids": [
       "2c9af4ef-f478-4898-b446-382ca7f23add",
+      "5bb40788-5ba4-4056-a085-b70df0cdc046",
       "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
+      "83b3f908-bb9c-429d-8150-ad1d377616ff",
       "a2fc2d86-4d5b-44f5-953e-880de7e67dfb",
       "0774e6e6-5e97-412c-9f11-16dd4eb3e10d",
-      "5bb40788-5ba4-4056-a085-b70df0cdc046",
-      "83b3f908-bb9c-429d-8150-ad1d377616ff",
       "8465de8d-0dc0-44eb-aba4-6f588d6aed9c",
-      "3fc80621-4c4a-4b85-8646-b2d53dabee50"
+      "3fc80621-4c4a-4b85-8646-b2d53dabee50",
+      "b052f2b8-67b2-4d9a-abf6-7fd063f5670f"
     ],
     "pictures": [
       "picture/MEGAFON_icon.webp",
@@ -203693,6 +203831,22 @@
         "cover_image_path": "picture/バカデカボイス;Ridiculously_Loud_Voice_cover.webp"
       },
       {
+        "uid": "5bb40788-5ba4-4056-a085-b70df0cdc046",
+        "title": "ときめきめいく; Heart-Throbbing Makeup)-Konomi Rensolo",
+        "title_romanji": "Tokimeki Meiku",
+        "disc_type": "Digital Single",
+        "release_date": "2025-10-06",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "ときめきめいく"
+        ],
+        "duration": null,
+        "cover_image_path": "picture/ときめきめいく;_Heart-Throbbing_Makeup)-Konomi_Rensolo_cover.webp"
+      },
+      {
         "uid": "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
         "title": "夏に恋してる",
         "title_romanji": "Natsu ni Koishiteru",
@@ -203707,6 +203861,22 @@
         ],
         "duration": null,
         "cover_image_path": "picture/夏に恋してる_cover.webp"
+      },
+      {
+        "uid": "83b3f908-bb9c-429d-8150-ad1d377616ff",
+        "title": "ダイスキステキラッキーデイズ)-Koharu Nokasolo",
+        "title_romanji": "Daisuki Suteki Lucky Days",
+        "disc_type": "Digital Single",
+        "release_date": "2025-11-15",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "ダイスキステキラッキーデイズ"
+        ],
+        "duration": null,
+        "cover_image_path": "picture/ダイスキステキラッキーデイズ)-Koharu_Nokasolo_cover.webp"
       },
       {
         "uid": "a2fc2d86-4d5b-44f5-953e-880de7e67dfb",
@@ -203741,38 +203911,6 @@
         "cover_image_path": "picture/バカデカボイスでスキって叫べ！;Shout__I_Love_You__In_A_Ridiculously_Loud_Voice_cover.webp"
       },
       {
-        "uid": "5bb40788-5ba4-4056-a085-b70df0cdc046",
-        "title": "ときめきめいく; Heart-Throbbing Makeup)-Konomi Rensolo",
-        "title_romanji": "Tokimeki Meiku",
-        "disc_type": "Digital Single",
-        "release_date": "2025-10-06",
-        "publisher": "CROSS SIDE MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "ときめきめいく"
-        ],
-        "duration": null,
-        "cover_image_path": "picture/ときめきめいく;_Heart-Throbbing_Makeup)-Konomi_Rensolo_cover.webp"
-      },
-      {
-        "uid": "83b3f908-bb9c-429d-8150-ad1d377616ff",
-        "title": "ダイスキステキラッキーデイズ)-Koharu Nokasolo",
-        "title_romanji": "Daisuki Suteki Lucky Days",
-        "disc_type": "Digital Single",
-        "release_date": "2025-11-15",
-        "publisher": "CROSS SIDE MUSIC",
-        "publisher_uid": null,
-        "catalog_number": "",
-        "description": "",
-        "track_list": [
-          "ダイスキステキラッキーデイズ"
-        ],
-        "duration": null,
-        "cover_image_path": "picture/ダイスキステキラッキーデイズ)-Koharu_Nokasolo_cover.webp"
-      },
-      {
         "uid": "8465de8d-0dc0-44eb-aba4-6f588d6aed9c",
         "title": "めろめろ♡ふぁんたじー)-Hoshino Amisolo",
         "title_romanji": "Meromero♡Fantasy",
@@ -203803,17 +203941,34 @@
         ],
         "duration": null,
         "cover_image_path": "picture/スノードロップ)-Miyashiro_Yukisolo_cover.webp"
+      },
+      {
+        "uid": "b052f2b8-67b2-4d9a-abf6-7fd063f5670f",
+        "title": "本命スイートデイズ",
+        "title_romanji": "Honmei Sweet Days",
+        "disc_type": "Digital Single",
+        "release_date": "2026-04-25",
+        "publisher": "CROSS SIDE MUSIC",
+        "publisher_uid": null,
+        "catalog_number": "",
+        "description": "",
+        "track_list": [
+          "本命スイートデイズ"
+        ],
+        "duration": null,
+        "cover_image_path": null
       }
     ],
     "disc_uids": [
       "2c9af4ef-f478-4898-b446-382ca7f23add",
+      "5bb40788-5ba4-4056-a085-b70df0cdc046",
       "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
+      "83b3f908-bb9c-429d-8150-ad1d377616ff",
       "a2fc2d86-4d5b-44f5-953e-880de7e67dfb",
       "0774e6e6-5e97-412c-9f11-16dd4eb3e10d",
-      "5bb40788-5ba4-4056-a085-b70df0cdc046",
-      "83b3f908-bb9c-429d-8150-ad1d377616ff",
       "8465de8d-0dc0-44eb-aba4-6f588d6aed9c",
-      "3fc80621-4c4a-4b85-8646-b2d53dabee50"
+      "3fc80621-4c4a-4b85-8646-b2d53dabee50",
+      "b052f2b8-67b2-4d9a-abf6-7fd063f5670f"
     ]
   },
   {

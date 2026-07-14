@@ -523018,5 +523018,199 @@
     ],
     "disc_uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
     "popularity": null
+  },
+  {
+    "uid": "cb2c6738-717e-4208-bf22-e50274ecf946",
+    "title": "人ニ、非ズ",
+    "title_romanji": "Hito ni, Arazu",
+    "disc_type": "Digital Single",
+    "release_date": "2025-03-12",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+    "title": "Past Shapes",
+    "title_romanji": "",
+    "disc_type": "Album",
+    "release_date": "2026-02-21",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "71173086-13ca-4141-83d8-eb0d962de2db",
+    "title": "SnowTears",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2026-05-25",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "蓮花うらら solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
+    "title": "どりぃむちゃちゃらんど",
+    "title_romanji": "Dream Chacha Land",
+    "disc_type": "Digital Single",
+    "release_date": "2026-05-25",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "のもあちゃちゃ solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "0a04112f-c629-462b-9bc0-9ee266805df5",
+    "title": "Grudge",
+    "title_romanji": "",
+    "disc_type": "Digital Single",
+    "release_date": "2026-05-26",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "雅なぎ solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
+    "title": "ニコニコLouder",
+    "title_romanji": "Nico Nico Louder",
+    "disc_type": "Digital Single",
+    "release_date": "2026-05-26",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "七瀬にこ solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "1b46fdc6-772d-4c97-885d-ee34c9d278d4",
+    "title": "発見! やんだ! ぱんだ!",
+    "title_romanji": "Hakken! Yanda! Panda!",
+    "disc_type": "Digital Single",
+    "release_date": "2026-05-26",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": "25d949d9-09ba-46b1-8a8c-844d402a4efd",
+    "catalog_number": "",
+    "description": "白洲あやん solo digital single",
+    "track_list": [],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "VEVOUklO",
+    "group_name": "TENRIN",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
+  },
+  {
+    "uid": "b052f2b8-67b2-4d9a-abf6-7fd063f5670f",
+    "title": "本命スイートデイズ",
+    "title_romanji": "Honmei Sweet Days",
+    "disc_type": "Digital Single",
+    "release_date": "2026-04-25",
+    "publisher": "CROSS SIDE MUSIC",
+    "publisher_uid": null,
+    "catalog_number": "",
+    "description": "",
+    "track_list": [
+      "本命スイートデイズ"
+    ],
+    "duration": null,
+    "cover_image_path": null,
+    "group_uid": "TUVHQUZPTg",
+    "group_name": "MEGAFON",
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "",
+        "track_number": null
+      }
+    ],
+    "disc_uid": null
   }
 ]

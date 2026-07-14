@@ -17006,7 +17006,13 @@
     "x_account": "ilife_riri",
     "x_url": "https://x.com/ilife_riri",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_paths": {
+      "GILTY × GILTY": "fetcher\\database\\picture_fandom\\心花りり__GILTY_x_GILTY_portrait.jpg",
+      "R0lMVFkgw5cgR0lMVFk": "fetcher\\database\\picture_fandom\\心花りり__GILTY_x_GILTY_portrait.jpg",
+      "GILTY×GILTY": "fetcher\\database\\picture_fandom\\心花りり__GILTY_x_GILTY_portrait.jpg",
+      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\心花りり__GILTY_x_GILTY_portrait.jpg"
+    }
   },
   {
     "uid": "113e6546-c0ae-4d3b-8b9d-c1e6b3f75ff8",
@@ -17889,7 +17895,7 @@
     },
     "birthday": "1998-03-01",
     "age": 28,
-    "height": 167.0,
+    "height": 167,
     "birthplace": "Kanazawa",
     "languages": [
       "Japanese"
@@ -22272,6 +22278,15 @@
         "member_name": "甘音ゆあ",
         "member_color_code": "0xffff00",
         "group_uid": "aUxpRkUh"
+      },
+      {
+        "group_name": "TENRIN",
+        "start_date": "2026-05-08",
+        "end_date": null,
+        "member_name": "甘音ゆあ",
+        "member_color": "Yellow",
+        "member_color_code": "0xffff00",
+        "group_uid": "VEVOUklO"
       }
     ],
     "x_followers": null,
@@ -22430,7 +22445,7 @@
     },
     "birthday": "2001-10-01",
     "age": 24,
-    "height": 151.0,
+    "height": 151,
     "birthplace": "Hokkaido",
     "languages": [
       "Japanese"
@@ -31082,7 +31097,7 @@
     },
     "birthday": "1999-12-17",
     "age": 26,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "Aichi",
     "languages": [
       "Japanese"
@@ -80651,7 +80666,7 @@
     },
     "birthday": "2000-08-31",
     "age": 25,
-    "height": 158.0,
+    "height": 158,
     "birthplace": "Saitama",
     "languages": [
       "Japanese"
@@ -84408,7 +84423,7 @@
     },
     "birthday": "2001-10-07",
     "age": 24,
-    "height": 148.0,
+    "height": 148,
     "birthplace": "Okinawa",
     "languages": [
       "Japanese"
@@ -84498,7 +84513,13 @@
     "x_account": "haru_nonfic",
     "x_url": "https://x.com/haru_nonfic",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_paths": {
+      "GILTY × GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
+      "R0lMVFkgw5cgR0lMVFk": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
+      "GILTY×GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
+      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg"
+    }
   },
   {
     "uid": "572525b9-60e2-443c-8525-e6ed017e6b9d",
@@ -88890,7 +88911,13 @@
     "x_url": "https://x.com/coai_yoruami",
     "x_followers_source": "x-ranker",
     "x_followers_updated_at": "2026-04-04",
-    "last_updated": "2026-05-10T05:12:07Z"
+    "last_updated": "2026-05-10T05:12:07Z",
+    "group_portrait_paths": {
+      "GILTY × GILTY": "fetcher\\database\\picture_fandom\\白空こあい__GILTY_x_GILTY_portrait.jpg",
+      "R0lMVFkgw5cgR0lMVFk": "fetcher\\database\\picture_fandom\\白空こあい__GILTY_x_GILTY_portrait.jpg",
+      "GILTY×GILTY": "fetcher\\database\\picture_fandom\\白空こあい__GILTY_x_GILTY_portrait.jpg",
+      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\白空こあい__GILTY_x_GILTY_portrait.jpg"
+    }
   },
   {
     "uid": "5b7b9739-12c1-42a2-8a8d-bdbe47418d4b",
@@ -97942,7 +97969,7 @@
     "past_names": {},
     "birthday": "2000-11-29",
     "age": 25,
-    "height": 157.0,
+    "height": 157,
     "birthplace": "Saitama",
     "languages": [
       "Japanese"
@@ -102454,7 +102481,7 @@
     },
     "birthday": "1996-08-10",
     "age": 29,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "Philippines",
     "languages": [
       "Japanese"
@@ -104037,7 +104064,13 @@
     "x_account": "hime_ill",
     "x_url": "https://x.com/hime_ill",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_paths": {
+      "GILTY × GILTY": "fetcher\\database\\picture_fandom\\白雪姫乃__GILTY_x_GILTY_portrait.jpg",
+      "R0lMVFkgw5cgR0lMVFk": "fetcher\\database\\picture_fandom\\白雪姫乃__GILTY_x_GILTY_portrait.jpg",
+      "GILTY×GILTY": "fetcher\\database\\picture_fandom\\白雪姫乃__GILTY_x_GILTY_portrait.jpg",
+      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\白雪姫乃__GILTY_x_GILTY_portrait.jpg"
+    }
   },
   {
     "uid": "6aa962e2-7ae2-4e2f-9a19-459d2787f547",
@@ -115919,7 +115952,7 @@
     "past_names": {},
     "birthday": "2002-09-03",
     "age": 23,
-    "height": 173.0,
+    "height": 173,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -116348,8 +116381,8 @@
         "start_date": "2025-04-20",
         "end_date": null,
         "member_name": "花丸ぺこ",
-        "member_color": "Red (iTRiP!) Orange",
-        "member_color_code": "0xff0000",
+        "member_color": "Orange",
+        "member_color_code": "0xffa500",
         "group_uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4"
       },
       {
@@ -125536,7 +125569,7 @@
     "past_names": {},
     "birthday": "2002-04-23",
     "age": 24,
-    "height": 158.0,
+    "height": 158,
     "birthplace": "Kanagawa",
     "languages": [
       "Japanese"
@@ -125579,9 +125612,9 @@
         "group_name": "i-COL",
         "start_date": "2021-05-14",
         "end_date": null,
-        "member_color": "Red",
+        "member_color": "Pink",
         "member_name": "こるね",
-        "member_color_code": "0xff0000",
+        "member_color_code": "0xffc0cb",
         "group_uid": "aS1DT0w"
       },
       {
@@ -130749,7 +130782,7 @@
     "past_names": {},
     "birthday": "1997-12-18",
     "age": 28,
-    "height": 158.0,
+    "height": 158,
     "birthplace": "Tokyo",
     "languages": [
       "Japanese"
@@ -132301,7 +132334,7 @@
     "past_names": {},
     "birthday": "1998-10-30",
     "age": 27,
-    "height": 154.0,
+    "height": 154,
     "birthplace": "Osaka",
     "languages": [
       "Japanese"
@@ -141941,11 +141974,12 @@
       },
       {
         "group_name": "MEGAFON",
-        "start_date": "2025-04-06",
+        "start_date": "2025-04-08",
         "end_date": null,
         "member_name": "星野あみ",
         "member_color": "Powerful Red",
-        "member_color_code": "0xff0000"
+        "member_color_code": "0xff0000",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
@@ -155784,7 +155818,7 @@
     "past_names": [],
     "birthday": "2004-07-20",
     "age": 21,
-    "height": 163.0,
+    "height": 163,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -163598,7 +163632,7 @@
     },
     "birthday": "1998-03-01",
     "age": 28,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -166320,7 +166354,7 @@
     },
     "birthday": "1998-03-01",
     "age": 28,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -167970,7 +168004,7 @@
     },
     "birthday": "2001-01-30",
     "age": 25,
-    "height": 157.0,
+    "height": 157,
     "birthplace": "Saitama",
     "languages": [
       "Japanese"
@@ -178659,7 +178693,7 @@
     },
     "birthday": "2008-03-02",
     "age": 18,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "Aichi",
     "languages": [
       "Japanese"
@@ -179825,11 +179859,12 @@
     "group_history": [
       {
         "group_name": "パラレルサイダー",
-        "start_date": "2025-06-01",
-        "end_date": null,
+        "start_date": "2025-06-27",
+        "end_date": "2026-04-06",
         "member_color": "Yellow",
         "member_color_code": "0xffff00",
-        "group_uid": "44OR44Op44Os44Or44K144Kk44OA44O8"
+        "group_uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
+        "member_name": "宝城あいり"
       },
       {
         "group_name": "HEROINES",
@@ -193584,10 +193619,12 @@
       },
       {
         "group_name": "TENRIN",
-        "start_date": null,
+        "start_date": "2026-05-09",
         "end_date": null,
+        "member_name": "刻乃なう",
         "member_color": "Light Blue",
-        "member_color_code": "0xadd8e6"
+        "member_color_code": "0xadd8e6",
+        "group_uid": "VEVOUklO"
       }
     ],
     "x_followers": null,
@@ -196222,7 +196259,7 @@
     },
     "birthday": "1999-12-20",
     "age": 26,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "Tokyo",
     "languages": [
       "Japanese"
@@ -200686,7 +200723,13 @@
     "x_account": "kanau_ill",
     "x_url": "https://x.com/kanau_ill",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_paths": {
+      "GILTY × GILTY": "fetcher\\database\\picture_fandom\\蒼井叶__GILTY_x_GILTY_portrait.jpg",
+      "R0lMVFkgw5cgR0lMVFk": "fetcher\\database\\picture_fandom\\蒼井叶__GILTY_x_GILTY_portrait.jpg",
+      "GILTY×GILTY": "fetcher\\database\\picture_fandom\\蒼井叶__GILTY_x_GILTY_portrait.jpg",
+      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\蒼井叶__GILTY_x_GILTY_portrait.jpg"
+    }
   },
   {
     "uid": "cd799945-b46a-49f7-9d1d-deea2b15578f",
@@ -224761,7 +224804,7 @@
     "past_names": {},
     "birthday": "1983-08-03",
     "age": 42,
-    "height": 180.0,
+    "height": 180,
     "birthplace": "Adelaide, South Australia, Australia",
     "languages": [
       "Japanese"
@@ -259500,7 +259543,7 @@
     "past_names": {},
     "birthday": "2010-05-10",
     "age": 15,
-    "height": 152.0,
+    "height": 152,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259547,7 +259590,7 @@
     "past_names": {},
     "birthday": "2007-02-24",
     "age": 19,
-    "height": 158.0,
+    "height": 158,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259594,7 +259637,7 @@
     "past_names": {},
     "birthday": "2007-11-12",
     "age": 18,
-    "height": 155.0,
+    "height": 155,
     "birthplace": "Nagoya, Aichi",
     "languages": [
       "Japanese"
@@ -259648,7 +259691,7 @@
     "past_names": {},
     "birthday": "2011-08-29",
     "age": 14,
-    "height": 156.0,
+    "height": 156,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259695,7 +259738,7 @@
     "past_names": {},
     "birthday": "2008-02-25",
     "age": 18,
-    "height": 158.0,
+    "height": 158,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259737,7 +259780,7 @@
     "past_names": {},
     "birthday": "2007-01-31",
     "age": 19,
-    "height": 168.0,
+    "height": 168,
     "birthplace": "Kanagawa",
     "languages": [
       "Japanese"
@@ -259779,7 +259822,7 @@
     "past_names": {},
     "birthday": "2003-09-25",
     "age": 22,
-    "height": 160.0,
+    "height": 160,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259821,7 +259864,7 @@
     "past_names": {},
     "birthday": "2004-03-27",
     "age": 22,
-    "height": 158.0,
+    "height": 158,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259863,7 +259906,7 @@
     "past_names": {},
     "birthday": "2007-08-01",
     "age": 18,
-    "height": 163.0,
+    "height": 163,
     "birthplace": "Osaka",
     "languages": [
       "Japanese"
@@ -259905,7 +259948,7 @@
     "past_names": {},
     "birthday": "2004-10-26",
     "age": 21,
-    "height": 153.0,
+    "height": 153,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -259947,7 +259990,7 @@
     "past_names": {},
     "birthday": "2003-07-24",
     "age": 22,
-    "height": 153.0,
+    "height": 153,
     "birthplace": "Osaka",
     "languages": [
       "Japanese"
@@ -259989,7 +260032,7 @@
     "past_names": {},
     "birthday": "2012-01-20",
     "age": 14,
-    "height": 163.0,
+    "height": 163,
     "birthplace": "Chiba",
     "languages": [
       "Japanese"
@@ -260038,7 +260081,7 @@
     "past_names": {},
     "birthday": null,
     "age": null,
-    "height": 151.0,
+    "height": 151,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -260079,7 +260122,7 @@
     "past_names": {},
     "birthday": "2008-04-05",
     "age": 17,
-    "height": 163.0,
+    "height": 163,
     "birthplace": "Fukuoka",
     "languages": [
       "Japanese"
@@ -260128,7 +260171,7 @@
     "past_names": {},
     "birthday": "2007-03-11",
     "age": 19,
-    "height": 159.0,
+    "height": 159,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -260168,7 +260211,7 @@
     "past_names": {},
     "birthday": "2009-08-25",
     "age": 16,
-    "height": 152.0,
+    "height": 152,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -260208,7 +260251,7 @@
     "past_names": {},
     "birthday": null,
     "age": null,
-    "height": 167.0,
+    "height": 167,
     "birthplace": "Fukuoka",
     "languages": [
       "Japanese"
@@ -260249,7 +260292,7 @@
     "past_names": {},
     "birthday": "2007-11-16",
     "age": 18,
-    "height": 151.0,
+    "height": 151,
     "birthplace": "Nara",
     "languages": [
       "Japanese"
@@ -260294,7 +260337,7 @@
     "past_names": {},
     "birthday": "2007-05-29",
     "age": 18,
-    "height": 153.0,
+    "height": 153,
     "birthplace": "Osaka",
     "languages": [
       "Japanese"
@@ -260339,7 +260382,7 @@
     "past_names": {},
     "birthday": "2008-01-04",
     "age": 18,
-    "height": 163.0,
+    "height": 163,
     "birthplace": "Osaka",
     "languages": [
       "Japanese"
@@ -261212,7 +261255,7 @@
     "past_names": {},
     "birthday": null,
     "age": null,
-    "height": 161.0,
+    "height": 161,
     "birthplace": "",
     "languages": [
       "Japanese"
@@ -261318,11 +261361,12 @@
         "end_date": "2026-07-08",
         "member_name": "好実れん",
         "member_color": "Strongest Pink",
-        "member_color_code": "0xffc0cb"
+        "member_color_code": "0xffc0cb",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
-        "start_date": null,
+        "start_date": "2025-04-06",
         "end_date": "2026-07-08",
         "member_color": null,
         "member_color_code": null
@@ -261355,11 +261399,12 @@
     "group_history": [
       {
         "group_name": "MEGAFON",
-        "start_date": "2025-04-06",
+        "start_date": "2025-04-07",
         "end_date": null,
         "member_name": "小晴のか",
         "member_color": "Mischievous Orange",
-        "member_color_code": "0xffa500"
+        "member_color_code": "0xffa500",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
@@ -261396,11 +261441,12 @@
     "group_history": [
       {
         "group_name": "MEGAFON",
-        "start_date": "2025-04-06",
+        "start_date": "2025-04-09",
         "end_date": null,
         "member_name": "明音いろは",
         "member_color": "Baby Blue",
-        "member_color_code": "0x89cff0"
+        "member_color_code": "0x89cff0",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
@@ -261437,11 +261483,12 @@
     "group_history": [
       {
         "group_name": "MEGAFON",
-        "start_date": "2025-04-06",
+        "start_date": "2025-04-10",
         "end_date": null,
         "member_name": "羽雲ろこ",
         "member_color": "Crybaby Sky Blue",
-        "member_color_code": "0x87ceeb"
+        "member_color_code": "0x87ceeb",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
@@ -261491,7 +261538,7 @@
     "past_names": {},
     "birthday": "2004-02-26",
     "age": 22,
-    "height": 152.0,
+    "height": 152,
     "birthplace": "Tokyo",
     "languages": [
       "Japanese"
@@ -261499,11 +261546,12 @@
     "group_history": [
       {
         "group_name": "MEGAFON",
-        "start_date": "2025-04-06",
+        "start_date": "2025-04-11",
         "end_date": null,
         "member_name": "日陽きい",
         "member_color": "Hungry Yellow",
-        "member_color_code": "0xffff00"
+        "member_color_code": "0xffff00",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
@@ -261539,7 +261587,7 @@
     "past_names": {},
     "birthday": "2008-01-24",
     "age": 18,
-    "height": 152.0,
+    "height": 152,
     "birthplace": "Tokyo",
     "languages": [
       "Japanese"
@@ -261547,11 +261595,12 @@
     "group_history": [
       {
         "group_name": "MEGAFON",
-        "start_date": "2025-04-06",
+        "start_date": "2025-04-12",
         "end_date": null,
         "member_name": "宮代ゆき",
         "member_color": "Considerate White",
-        "member_color_code": "0xffffff"
+        "member_color_code": "0xffffff",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "HEROINES",
@@ -262514,7 +262563,7 @@
     "past_names": {},
     "birthday": "2005-10-08",
     "age": 20,
-    "height": 153.0,
+    "height": 153,
     "birthplace": "Osaka",
     "languages": [
       "Japanese"
@@ -262577,7 +262626,7 @@
     "past_names": {},
     "birthday": "2010-10-04",
     "age": 15,
-    "height": 143.0,
+    "height": 143,
     "birthplace": "Kanagawa",
     "languages": [
       "Japanese"
@@ -262834,7 +262883,87 @@
     "romaji": "Sato Milk",
     "birthday": "2011-11-05",
     "age": 14,
-    "height": 155.0,
+    "height": 155,
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "28034a04-57a1-4da4-a526-637b54cc8135",
+    "name": "音瀬歩兎",
+    "hiragana": "おとせあると",
+    "nickname": "",
+    "past_names": {
+      "叶羽もな": "Kanaha Mona"
+    },
+    "birthday": null,
+    "age": null,
+    "height": 170,
+    "birthplace": "",
+    "blood_type": "O",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "TENRIN",
+        "start_date": "2026-05-10",
+        "end_date": null,
+        "member_name": "音瀬歩兎",
+        "member_color": "Green",
+        "member_color_code": "0x008000",
+        "group_uid": "VEVOUklO"
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\音瀬歩兎_portrait.jpg",
+    "romaji": "Otose Alto",
+    "wiki_url": "https://jpop.fandom.com/wiki/Otose_Alto",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ]
+  },
+  {
+    "uid": "58d3ab95-4f9d-4fab-9214-7ccdb7610c6e",
+    "name": "瀬川なつき",
+    "hiragana": "せがわなつき",
+    "nickname": "こあちゃん",
+    "past_names": {},
+    "birthday": null,
+    "age": null,
+    "height": null,
+    "birthplace": "",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "パラレルサイダー",
+        "start_date": "2026-06-16",
+        "end_date": null,
+        "member_name": "瀬川なつき",
+        "member_color": "Blue",
+        "member_color_code": "0x0000ff",
+        "group_uid": "44OR44Op44Os44Or44K144Kk44OA44O8"
+      },
+      {
+        "group_name": "HEROINES",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\瀬川なつき_portrait.jpg",
+    "romaji": "Segawa Natsuki",
+    "wiki_url": "https://jpop.fandom.com/wiki/Segawa_Natsuki",
     "sources": [
       "jpop_wiki"
     ],
