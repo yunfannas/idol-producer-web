@@ -10,6 +10,8 @@ const GROUP_ORDER = ["=LOVE", "≠ME", "≒JOY"];
 
 let assetVersion = "";
 let customSongsDb = { version: 1, updated_at: null, entries: [] };
+/** @type {{ version: number, groups?: string[], saves: { name: string, file?: string, saved_at?: string }[] }} */
+let onlineSaveIndex = { version: 1, saves: [] };
 /** @type {{ group: string, charts: Record<string, string[]> }} */
 let state = { group: "", charts: {} };
 /** @type {string[]} */
@@ -193,12 +195,65 @@ function chartHasPicks(charts) {
 }
 
 async function fetchOnlineSave(name) {
+  const clean = String(name || "").trim();
+  if (!clean) return null;
+  const candidates = [];
+  const fromIndex = onlineSaveIndex?.saves?.find(
+    (row) => String(row?.name || "").trim().toLowerCase() === clean.toLowerCase(),
+  );
+  if (fromIndex?.file) candidates.push(`./saves/${fromIndex.file}`);
+  const stem = safeFileStem(clean);
+  candidates.push(`./saves/${stem}.json`);
+  if (encodeURIComponent(clean) !== stem) {
+    candidates.push(`./saves/${encodeURIComponent(clean)}.json`);
+  }
+  const seen = new Set();
+  for (const url of candidates) {
+    if (!url || seen.has(url)) continue;
+    seen.add(url);
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) continue;
+      const record = normalizeImportedSave(await res.json());
+      if (record) return record;
+    } catch {
+      /* try next */
+    }
+  }
+  return null;
+}
+
+async function loadOnlineSaveIndex() {
   try {
-    const res = await fetch(`./saves/${encodeURIComponent(name)}.json`, { cache: "no-store" });
-    if (!res.ok) return null;
-    return normalizeImportedSave(await res.json());
+    const res = await fetch("./saves/index.json", { cache: "no-store" });
+    if (!res.ok) return { version: 1, saves: [] };
+    const raw = await res.json();
+    return {
+      version: Number(raw?.version) || 1,
+      groups: Array.isArray(raw?.groups) ? raw.groups : [...GROUP_ORDER],
+      saves: Array.isArray(raw?.saves) ? raw.saves : [],
+    };
   } catch {
-    return null;
+    return { version: 1, saves: [] };
+  }
+}
+
+function refreshSaveNameSuggestions() {
+  const list = document.getElementById("saveNameSuggestions");
+  if (!list) return;
+  const names = new Set();
+  for (const row of onlineSaveIndex?.saves || []) {
+    const n = String(row?.name || "").trim();
+    if (n) names.add(n);
+  }
+  for (const n of Object.keys(readAllSaves())) {
+    if (n) names.add(n);
+  }
+  list.replaceChildren();
+  for (const name of [...names].sort((a, b) => a.localeCompare(b, "en"))) {
+    const opt = document.createElement("option");
+    opt.value = name;
+    list.appendChild(opt);
   }
 }
 
@@ -288,87 +343,36 @@ function canonicalSongTitle(title) {
 }
 
 function songsForGroup(group) {
-  /** @type {Map<string, { title: string, source: string, uid: string | null, popularity: number, release_date: string, is_a_side: boolean, album_key: string, family_date: string }>} */
-  const best = new Map();
-  const consider = (rawTitle, source, uid, popularity, releaseDate, isASide, albumKey, familyDate) => {
-    const canonical = canonicalSongTitle(rawTitle);
-    if (!canonical) return;
-    const key = canonical.toLowerCase();
-    const isOriginal = String(rawTitle || "").trim() === canonical;
-    const pop = typeof popularity === "number" ? popularity : -1;
-    const prev = best.get(key);
-    if (
-      !prev ||
-      (isOriginal && prev._raw !== canonical) ||
-      (isOriginal === (prev._raw === canonical) && pop > prev.popularity)
-    ) {
-      best.set(key, {
-        title: canonical,
-        source,
-        uid: uid || null,
-        popularity: pop,
-        release_date: releaseDate || "",
-        is_a_side: Boolean(isASide || prev?.is_a_side),
-        album_key: albumKey || prev?.album_key || canonical.toLowerCase(),
-        family_date: familyDate || releaseDate || prev?.family_date || "",
-        _raw: String(rawTitle || "").trim(),
-      });
-    } else if (prev) {
-      if (isASide) prev.is_a_side = true;
-      if (albumKey && (!prev.album_key || albumKey.length > prev.album_key.length || albumKey.includes("/"))) {
-        prev.album_key = albumKey;
-      }
-      if (familyDate && familyDate > (prev.family_date || "")) prev.family_date = familyDate;
-    }
-  };
+  // Trust data.json order (oldest → newest, A-side then couplings). Customs last.
+  /** @type {{ title: string, source: string, uid: string | null }[]} */
+  const catalog = [];
+  const seen = new Set();
 
   for (const s of group?.songs || []) {
-    consider(
-      s.title,
-      "catalog",
-      s.uid || null,
-      s.popularity,
-      s.release_date || "",
-      s.is_a_side,
-      s.album_key || "",
-      s.family_date || s.release_date || "",
-    );
+    const canonical = canonicalSongTitle(s.title);
+    if (!canonical) continue;
+    const key = canonical.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    catalog.push({
+      title: canonical,
+      source: "catalog",
+      uid: s.uid || null,
+    });
   }
+
+  /** @type {{ title: string, source: string, uid: string | null }[]} */
+  const customs = [];
   for (const title of customTitlesForGroup(group)) {
-    consider(title, "custom", null, -1, "", false, title.toLowerCase(), "");
+    const canonical = canonicalSongTitle(title);
+    if (!canonical) continue;
+    const key = canonical.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    customs.push({ title: canonical, source: "custom", uid: null });
   }
 
-  const rows = [...best.values()];
-  const familyDates = new Map();
-  for (const row of rows) {
-    const fam = row.album_key || row.title.toLowerCase();
-    const date = row.release_date || row.family_date || "0000-00-00";
-    const prev = familyDates.get(fam) || "0000-00-00";
-    if (date > prev) familyDates.set(fam, date);
-  }
-  for (const row of rows) {
-    row.family_date = familyDates.get(row.album_key || row.title.toLowerCase()) || row.release_date || "0000-00-00";
-  }
-
-  // Oldest release families first; within a family, A-side then couplings.
-  // Custom titles always sit at the end of the picker list.
-  return rows
-    .sort((a, b) => {
-      const aCustom = a.source === "custom" ? 1 : 0;
-      const bCustom = b.source === "custom" ? 1 : 0;
-      if (aCustom !== bCustom) return aCustom - bCustom;
-      const fa = a.family_date || "0000-00-00";
-      const fb = b.family_date || "0000-00-00";
-      if (fa !== fb) return fa.localeCompare(fb);
-      const aSide = a.is_a_side ? 0 : 1;
-      const bSide = b.is_a_side ? 0 : 1;
-      if (aSide !== bSide) return aSide - bSide;
-      const da = a.release_date || "0000-00-00";
-      const db = b.release_date || "0000-00-00";
-      if (da !== db) return da.localeCompare(db);
-      return a.title.localeCompare(b.title, "ja");
-    })
-    .map(({ title, source, uid }) => ({ title, source, uid }));
+  return [...catalog, ...customs];
 }
 
 function persistCustomSong(group, title) {
@@ -1127,6 +1131,7 @@ async function renderBest10Png(data) {
 const data = await fetch("./data.json", { cache: "no-store" }).then((r) => r.json());
 assetVersion = String(data?.generated_at || "").trim();
 customSongsDb = await loadCustomSongsDb();
+onlineSaveIndex = await loadOnlineSaveIndex();
 knownGroupNames = [
   ...GROUP_ORDER,
   ...(data.groups || []).map((g) => g.name).filter((n) => n && !GROUP_ORDER.includes(n)),
@@ -1142,6 +1147,7 @@ state.charts = ensureChartContainers(state.charts);
 const nameInput = document.getElementById("saveName");
 const lastName = localStorage.getItem(LAST_NAME_KEY) || "";
 if (lastName) nameInput.value = lastName;
+refreshSaveNameSuggestions();
 
 spawnPetals();
 applyTheme(activeGroup(data));
@@ -1218,8 +1224,10 @@ async function confirmOwnerName() {
       }
     }
     const filled = Object.values(record.charts).filter((ranks) => ranks.some(Boolean)).length;
+    refreshSaveNameSuggestions();
     setStatus(`Loaded “${name}” (${filled} group${filled === 1 ? "" : "s"})`, "ok");
   } else {
+    refreshSaveNameSuggestions();
     setStatus(`No saved chart for “${name}” — pick and Save`, "ok");
   }
 }
@@ -1240,13 +1248,52 @@ document.getElementById("saveNamed").addEventListener("click", () => {
     return;
   }
   const record = persistCurrentNameCharts(state.group);
+  refreshSaveNameSuggestions();
+  const filled = Object.values(record?.charts || {}).filter((ranks) => ranks.some(Boolean)).length;
+  setStatus(`Saved “${name}” locally (${filled} group${filled === 1 ? "" : "s"})`, "ok");
+});
+
+document.getElementById("exportSaveJson").addEventListener("click", () => {
+  const name = currentOwnerName();
+  if (!name) {
+    setStatus("Enter a Name first", "err");
+    nameInput.focus();
+    return;
+  }
+  const record = persistCurrentNameCharts(state.group);
   const payload = onlineSavePayload(name, record);
+  const filename = `${safeFileStem(name)}.json`;
   downloadBlob(
     new Blob([JSON.stringify(payload, null, 2) + "\n"], { type: "application/json" }),
-    `${safeFileStem(name)}.json`,
+    filename,
   );
-  const filled = Object.values(payload.charts).filter((ranks) => ranks.some(Boolean)).length;
-  setStatus(`Saved “${name}” (${filled} group${filled === 1 ? "" : "s"}) · downloaded ${safeFileStem(name)}.json`, "ok");
+  setStatus(`Exported ${filename} — place in public/ikonoijoy/saves/ to publish online`, "ok");
+});
+
+const importSaveFile = document.getElementById("importSaveFile");
+document.getElementById("importSaveJson").addEventListener("click", () => {
+  importSaveFile?.click();
+});
+
+importSaveFile?.addEventListener("change", async (ev) => {
+  const file = ev.target?.files?.[0];
+  if (!file) return;
+  try {
+    const raw = JSON.parse(await file.text());
+    const record = normalizeImportedSave(raw);
+    if (!record) throw new Error("invalid save");
+    saveNamedRecord(record.name, record);
+    nameInput.value = record.name;
+    applySave(data, record, { keepGroup: false });
+    refreshSaveNameSuggestions();
+    const filled = Object.values(record.charts).filter((ranks) => ranks.some(Boolean)).length;
+    setStatus(`Imported “${record.name}” (${filled} group${filled === 1 ? "" : "s"})`, "ok");
+  } catch (err) {
+    console.error(err);
+    setStatus("Could not import save JSON", "err");
+  } finally {
+    ev.target.value = "";
+  }
 });
 
 document.getElementById("clearAll").addEventListener("click", () => {

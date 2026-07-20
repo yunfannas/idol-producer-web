@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Online IKONOIJOY best-10 saves. Each entry is available as ./saves/{name}.json with chart containers for =LOVE, ≠ME, and ≒JOY.",
+  "note": "Online IKONOIJOY best-10 saves for any user. Export Save from the page, put {Name}.json here, add an entry below, then commit. Load merges local + online by Name.",
   "groups": ["=LOVE", "≠ME", "≒JOY"],
   "saves": [
     {

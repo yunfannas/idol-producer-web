@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mochiy+Pop+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260720c" />
   </head>
   <body data-theme="equal-love">
     <div class="page-bg" aria-hidden="true">
@@ -27,10 +27,21 @@
       <div class="hero-actions">
         <label class="name-field" for="saveName">
           <span class="name-label">Name</span>
-          <input type="text" id="saveName" name="saveName" autocomplete="nickname" placeholder="Your name" />
+          <input
+            type="text"
+            id="saveName"
+            name="saveName"
+            list="saveNameSuggestions"
+            autocomplete="nickname"
+            placeholder="Your name"
+          />
+          <datalist id="saveNameSuggestions"></datalist>
         </label>
         <button type="button" id="confirmName" class="btn btn-secondary">Load</button>
         <button type="button" id="saveNamed" class="btn">Save</button>
+        <button type="button" id="exportSaveJson" class="btn btn-secondary">Export Save</button>
+        <button type="button" id="importSaveJson" class="btn btn-secondary">Import Save</button>
+        <input type="file" id="importSaveFile" accept="application/json,.json" hidden />
         <button type="button" id="savePng" class="btn btn-secondary">Download PNG</button>
         <button type="button" id="clearAll" class="btn btn-danger">Clear</button>
       </div>
@@ -74,6 +85,6 @@
         <span>Designed by Yunfannas</span>
       </p>
     </footer>
-    <script src="./app.js" type="module"></script>
+    <script src="./app.js?v=20260720c" type="module"></script>
   </body>
 </html>
