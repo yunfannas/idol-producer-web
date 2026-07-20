@@ -1049,7 +1049,7 @@ async function renderBest10Png(data) {
     const boxH = 42;
 
     ctx.fillStyle = ink;
-    ctx.font = '700 22px Georgia, "Times New Roman", serif';
+    ctx.font = '700 22px "Zen Maru Gothic", "Zen Kaku Gothic New", sans-serif';
     ctx.textAlign = "center";
     ctx.fillText(String(i + 1), padX + 10, y + 30);
     ctx.textAlign = "left";
@@ -1072,7 +1072,7 @@ async function renderBest10Png(data) {
       ctx.font = '500 16px "Zen Kaku Gothic New", sans-serif';
       ctx.fillText(song, boxX + boxW / 2, y + 31);
     } else {
-      ctx.font = '400 20px "Mochiy Pop One", "Zen Maru Gothic", sans-serif';
+      ctx.font = '700 20px "Zen Maru Gothic", "Zen Kaku Gothic New", sans-serif';
       const lines = wrapTextLines(ctx, song, boxW - 90, 2);
       const lineH = 20;
       const top = y + 28 - ((lines.length - 1) * lineH) / 2;
