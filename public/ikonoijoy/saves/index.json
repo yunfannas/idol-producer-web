@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "note": "Online IKONOIJOY best-10 saves. Each entry is available as ./saves/{name}.json with chart containers for =LOVE, ≠ME, and ≒JOY.",
+  "groups": ["=LOVE", "≠ME", "≒JOY"],
+  "saves": [
+    {
+      "name": "Yunfannas",
+      "file": "Yunfannas.json",
+      "saved_at": "2026-07-20T04:14:15.049Z"
+    }
+  ]
+}

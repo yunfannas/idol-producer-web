@@ -473,11 +473,11 @@ def songs_for_group(
     for song in out:
         song["family_date"] = family_dates.get(song["album_key"], song.get("release_date") or "0000-00-00")
 
-    # Newest release families first; within a family, couplings then A-side at bottom.
+    # Oldest release families first; within a family, A-side then couplings.
     out.sort(key=lambda s: s["title"])
-    out.sort(key=lambda s: s.get("release_date") or "0000-00-00", reverse=True)
-    out.sort(key=lambda s: 1 if s.get("is_a_side") else 0)
-    out.sort(key=lambda s: s.get("family_date") or "0000-00-00", reverse=True)
+    out.sort(key=lambda s: s.get("release_date") or "0000-00-00")
+    out.sort(key=lambda s: 0 if s.get("is_a_side") else 1)
+    out.sort(key=lambda s: s.get("family_date") or "0000-00-00")
     return out
 
 

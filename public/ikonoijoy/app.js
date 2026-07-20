@@ -6,11 +6,14 @@ const CUSTOM_SONGS_KEY = "ikonoijoy-best10-custom-songs-v1";
 const GAME_WEB_URL = "https://yunfannas.github.io/idol-producer-web/";
 const CUSTOM_SONG_VALUE = "__custom__";
 const RANK_COUNT = 10;
+const GROUP_ORDER = ["=LOVE", "≠ME", "≒JOY"];
 
 let assetVersion = "";
 let customSongsDb = { version: 1, updated_at: null, entries: [] };
 /** @type {{ group: string, charts: Record<string, string[]> }} */
 let state = { group: "", charts: {} };
+/** @type {string[]} */
+let knownGroupNames = [...GROUP_ORDER];
 
 function versionedAssetUrl(src) {
   if (!src || typeof src !== "string") return src;
@@ -170,6 +173,69 @@ function normalizeRanks(raw) {
   return ranks.slice(0, RANK_COUNT);
 }
 
+/** Ensure every known group has a 10-slot chart array (empty strings if unset). */
+function ensureChartContainers(charts, groupNames = knownGroupNames) {
+  /** @type {Record<string, string[]>} */
+  const out = {};
+  const names = [...groupNames];
+  for (const name of Object.keys(charts || {})) {
+    if (name && !names.includes(name)) names.push(name);
+  }
+  for (const name of names) {
+    if (!name) continue;
+    out[name] = normalizeRanks(charts?.[name]);
+  }
+  return out;
+}
+
+function chartHasPicks(charts) {
+  return Object.values(charts || {}).some((ranks) => Array.isArray(ranks) && ranks.some(Boolean));
+}
+
+async function fetchOnlineSave(name) {
+  try {
+    const res = await fetch(`./saves/${encodeURIComponent(name)}.json`, { cache: "no-store" });
+    if (!res.ok) return null;
+    return normalizeImportedSave(await res.json());
+  } catch {
+    return null;
+  }
+}
+
+/** Prefer local filled group charts; fill gaps from the online file. */
+function mergeSaveRecords(local, online) {
+  if (!local && !online) return null;
+  const name = local?.name || online?.name || "";
+  if (!name) return null;
+  const charts = ensureChartContainers({
+    ...(online?.charts || {}),
+    ...(local?.charts || {}),
+  });
+  for (const groupName of Object.keys(charts)) {
+    const loc = local?.charts?.[groupName];
+    const on = online?.charts?.[groupName];
+    if (loc?.some(Boolean)) charts[groupName] = normalizeRanks(loc);
+    else if (on?.some(Boolean)) charts[groupName] = normalizeRanks(on);
+    else charts[groupName] = normalizeRanks(loc || on || emptyRanks());
+  }
+  return {
+    name,
+    saved_at: local?.saved_at || online?.saved_at || new Date().toISOString(),
+    group: local?.group || online?.group || "",
+    charts,
+  };
+}
+
+function onlineSavePayload(name, record) {
+  const charts = ensureChartContainers(record?.charts || {});
+  return {
+    name,
+    saved_at: record?.saved_at || new Date().toISOString(),
+    group: record?.group || Object.keys(charts)[0] || "",
+    charts,
+  };
+}
+
 function ranksForGroup(groupName) {
   const key = groupName || state.group;
   if (!key) return emptyRanks();
@@ -284,18 +350,22 @@ function songsForGroup(group) {
     row.family_date = familyDates.get(row.album_key || row.title.toLowerCase()) || row.release_date || "0000-00-00";
   }
 
-  // Newest release families first; within a family, couplings then A-side at bottom.
+  // Oldest release families first; within a family, A-side then couplings.
+  // Custom titles always sit at the end of the picker list.
   return rows
     .sort((a, b) => {
+      const aCustom = a.source === "custom" ? 1 : 0;
+      const bCustom = b.source === "custom" ? 1 : 0;
+      if (aCustom !== bCustom) return aCustom - bCustom;
       const fa = a.family_date || "0000-00-00";
       const fb = b.family_date || "0000-00-00";
-      if (fa !== fb) return fb.localeCompare(fa);
-      const aSide = a.is_a_side ? 1 : 0;
-      const bSide = b.is_a_side ? 1 : 0;
+      if (fa !== fb) return fa.localeCompare(fb);
+      const aSide = a.is_a_side ? 0 : 1;
+      const bSide = b.is_a_side ? 0 : 1;
       if (aSide !== bSide) return aSide - bSide;
       const da = a.release_date || "0000-00-00";
       const db = b.release_date || "0000-00-00";
-      if (da !== db) return db.localeCompare(da);
+      if (da !== db) return da.localeCompare(db);
       return a.title.localeCompare(b.title, "ja");
     })
     .map(({ title, source, uid }) => ({ title, source, uid }));
@@ -429,34 +499,54 @@ function songMatchesQuery(title, query) {
 
 function fillRankSelect(select, group, query, currentValue) {
   const songs = songsForGroup(group).filter((s) => songMatchesQuery(s.title, query));
+  const catalog = songs.filter((s) => s.source !== "custom");
+  const customs = songs.filter((s) => s.source === "custom");
   select.replaceChildren();
+
   const blank = document.createElement("option");
   blank.value = "";
   blank.textContent = songs.length || !query ? "未選択" : "該当なし";
   select.appendChild(blank);
 
-  const customOpt = document.createElement("option");
-  customOpt.value = CUSTOM_SONG_VALUE;
-  customOpt.textContent = "Custom";
-  select.appendChild(customOpt);
-
-  for (const song of songs) {
+  for (const song of catalog) {
     const opt = document.createElement("option");
     opt.value = song.title;
-    opt.textContent = song.source === "custom" ? `${song.title} · custom` : song.title;
+    opt.textContent = song.title;
     select.appendChild(opt);
   }
 
+  if (customs.length) {
+    const sep = document.createElement("option");
+    sep.disabled = true;
+    sep.value = "";
+    sep.textContent = "── Custom ──";
+    select.appendChild(sep);
+    for (const song of customs) {
+      const opt = document.createElement("option");
+      opt.value = song.title;
+      opt.textContent = `${song.title} ·`;
+      opt.dataset.custom = "1";
+      select.appendChild(opt);
+    }
+  }
+
+  const customOpt = document.createElement("option");
+  customOpt.value = CUSTOM_SONG_VALUE;
+  customOpt.textContent = "＋ Custom…";
+  select.appendChild(customOpt);
+
   if (currentValue === CUSTOM_SONG_VALUE) {
     select.value = CUSTOM_SONG_VALUE;
-  } else if (currentValue && [...select.options].some((o) => o.value === currentValue)) {
+  } else if (currentValue && [...select.options].some((o) => o.value === currentValue && !o.disabled)) {
     select.value = currentValue;
   } else if (currentValue) {
     // Keep custom title even when filtered out of catalog options
     const orphan = document.createElement("option");
     orphan.value = currentValue;
-    orphan.textContent = currentValue;
-    select.appendChild(orphan);
+    orphan.textContent = `${currentValue} ·`;
+    orphan.dataset.custom = "1";
+    // Insert before the "＋ Custom…" option
+    select.insertBefore(orphan, customOpt);
     select.value = currentValue;
   } else {
     select.value = "";
@@ -666,11 +756,7 @@ function renderPreview() {
 }
 
 function buildNamedSaveRecord(name, payload) {
-  const charts = {};
-  for (const [groupName, ranks] of Object.entries(payload.charts || {})) {
-    if (!groupName) continue;
-    charts[groupName] = normalizeRanks(ranks);
-  }
+  const charts = ensureChartContainers(payload.charts || {});
   // Always include the active group snapshot (empty array is valid — don't use ||).
   if (payload.group) {
     const activeRanks = Array.isArray(payload.ranks) ? payload.ranks : charts[payload.group];
@@ -680,7 +766,7 @@ function buildNamedSaveRecord(name, payload) {
     name,
     saved_at: new Date().toISOString(),
     group: payload.group || "",
-    charts,
+    charts: ensureChartContainers(charts),
   };
 }
 
@@ -691,7 +777,7 @@ function saveNamedRecord(name, record) {
     saved_at: record.saved_at || new Date().toISOString(),
     group: record.group || all[name]?.group || "",
     // Never drop previously saved groups when writing a partial update.
-    charts: { ...prev, ...(record.charts || {}) },
+    charts: ensureChartContainers({ ...prev, ...(record.charts || {}) }),
   };
   writeAllSaves(all);
   localStorage.setItem(LAST_NAME_KEY, name);
@@ -717,7 +803,7 @@ function persistCurrentNameCharts(preferredGroup = state.group) {
   });
   saveNamedRecord(name, record);
   // Keep memory aligned with what we stored.
-  state.charts = { ...charts };
+  state.charts = ensureChartContainers(charts);
   return record;
 }
 
@@ -756,18 +842,14 @@ function normalizeImportedSave(raw) {
     name,
     saved_at: raw.saved_at || new Date().toISOString(),
     group: legacyGroup || Object.keys(charts).find((g) => charts[g].some(Boolean)) || Object.keys(charts)[0] || "",
-    charts,
+    charts: ensureChartContainers(charts),
   };
 }
 
 function applySave(data, record, { keepGroup = false } = {}) {
   if (!record) return;
   const previousGroup = state.group;
-  state.charts = {};
-  for (const [groupName, ranks] of Object.entries(record.charts || {})) {
-    if (!groupName) continue;
-    state.charts[groupName] = normalizeRanks(ranks);
-  }
+  state.charts = ensureChartContainers(record.charts || {});
 
   const groupNames = (data.groups || []).map((g) => g.name);
   if (keepGroup && previousGroup && groupNames.includes(previousGroup)) {
@@ -889,8 +971,9 @@ async function renderBest10Png(data) {
   const padX = 42;
   const headerH = 210;
   const rowH = 54;
+  const footerLogoH = 44;
   const creditH = 46;
-  const height = headerH + RANK_COUNT * rowH + creditH + 36;
+  const height = headerH + RANK_COUNT * rowH + footerLogoH + creditH + 12;
 
   const canvas = document.createElement("canvas");
   canvas.width = width * 2;
@@ -996,22 +1079,23 @@ async function renderBest10Png(data) {
     ctx.textAlign = "left";
   }
 
-  // Footer group logo (replaces text wordmark)
+  // Footer group logo — own band below ranks, above credit bar
+  const logoBandTop = headerH + RANK_COUNT * rowH + 2;
   if (logo) {
-    const maxW = 96;
-    const maxH = 72;
+    const maxW = 48;
+    const maxH = 30;
     const scale = Math.min(maxW / logo.width, maxH / logo.height);
     const lw = logo.width * scale;
     const lh = logo.height * scale;
-    ctx.globalAlpha = 0.95;
-    ctx.drawImage(logo, (width - lw) / 2, height - creditH - lh - 8, lw, lh);
+    ctx.globalAlpha = 0.92;
+    ctx.drawImage(logo, (width - lw) / 2, logoBandTop + (footerLogoH - lh) / 2, lw, lh);
     ctx.globalAlpha = 1;
   } else {
     ctx.fillStyle = accent;
-    ctx.font = '900 22px "Zen Maru Gothic", sans-serif';
+    ctx.font = '700 14px "Zen Maru Gothic", sans-serif';
     ctx.textAlign = "center";
-    ctx.globalAlpha = 0.85;
-    ctx.fillText(group?.name || "IKONOIJOY", width / 2, height - creditH - 8);
+    ctx.globalAlpha = 0.8;
+    ctx.fillText(group?.name || "IKONOIJOY", width / 2, logoBandTop + footerLogoH / 2 + 5);
     ctx.globalAlpha = 1;
   }
 
@@ -1043,12 +1127,17 @@ async function renderBest10Png(data) {
 const data = await fetch("./data.json", { cache: "no-store" }).then((r) => r.json());
 assetVersion = String(data?.generated_at || "").trim();
 customSongsDb = await loadCustomSongsDb();
+knownGroupNames = [
+  ...GROUP_ORDER,
+  ...(data.groups || []).map((g) => g.name).filter((n) => n && !GROUP_ORDER.includes(n)),
+];
 
 const preferredGroup = localStorage.getItem(LAST_GROUP_KEY) || "";
 state.group =
   (data.groups || []).find((g) => g.name === preferredGroup)?.name ||
   data.groups?.[0]?.name ||
   "";
+state.charts = ensureChartContainers(state.charts);
 
 const nameInput = document.getElementById("saveName");
 const lastName = localStorage.getItem(LAST_NAME_KEY) || "";
@@ -1060,11 +1149,25 @@ renderGroupTabs(data);
 renderRankSlots(data);
 renderPreview();
 
-// Auto-load last Name's multi-group charts (if any).
+// Auto-load last Name's charts (local + online gaps).
 if (lastName) {
   const existing = readAllSaves()[lastName];
-  const record = existing ? normalizeImportedSave({ name: lastName, ...existing }) : null;
-  if (record?.charts && Object.keys(record.charts).length) {
+  const local = existing ? normalizeImportedSave({ name: lastName, ...existing }) : null;
+  let record = local;
+  if (!chartHasPicks(local?.charts) || Object.values(local?.charts || {}).some((r) => !r.some(Boolean))) {
+    const online = await fetchOnlineSave(lastName);
+    record = mergeSaveRecords(local, online) || local;
+    if (record && chartHasPicks(record.charts)) {
+      const all = readAllSaves();
+      all[lastName] = {
+        saved_at: record.saved_at,
+        group: record.group,
+        charts: record.charts,
+      };
+      writeAllSaves(all);
+    }
+  }
+  if (record?.charts && chartHasPicks(record.charts)) {
     applySave(data, record, { keepGroup: true });
   }
 }
@@ -1086,26 +1189,18 @@ async function confirmOwnerName() {
   const viewingGroup = state.group;
   localStorage.setItem(LAST_NAME_KEY, name);
   const all = readAllSaves();
-  let record = all[name] ? normalizeImportedSave({ name, ...all[name] }) : null;
-  if (!record?.charts || !Object.keys(record.charts).length) {
-    try {
-      const res = await fetch(`./saves/${encodeURIComponent(name)}.json`, { cache: "no-store" });
-      if (res.ok) {
-        record = normalizeImportedSave(await res.json());
-        if (record) {
-          all[name] = {
-            saved_at: record.saved_at,
-            group: record.group,
-            charts: record.charts,
-          };
-          writeAllSaves(all);
-        }
-      }
-    } catch {
-      /* no file */
-    }
+  const local = all[name] ? normalizeImportedSave({ name, ...all[name] }) : null;
+  const online = await fetchOnlineSave(name);
+  let record = mergeSaveRecords(local, online) || local || online;
+  if (record?.charts) {
+    all[name] = {
+      saved_at: record.saved_at,
+      group: record.group,
+      charts: ensureChartContainers(record.charts),
+    };
+    writeAllSaves(all);
   }
-  if (record?.charts && Object.keys(record.charts).length) {
+  if (record?.charts && chartHasPicks(record.charts)) {
     // Keep current tab; restore every group's saved chart into memory.
     applySave(data, record, { keepGroup: true });
     // If current tab has no picks but another group does, jump to a filled one.
@@ -1145,9 +1240,13 @@ document.getElementById("saveNamed").addEventListener("click", () => {
     return;
   }
   const record = persistCurrentNameCharts(state.group);
-  const charts = record?.charts || {};
-  const filled = Object.values(charts).filter((ranks) => ranks.some(Boolean)).length;
-  setStatus(`Saved “${name}” (${filled} group${filled === 1 ? "" : "s"})`, "ok");
+  const payload = onlineSavePayload(name, record);
+  downloadBlob(
+    new Blob([JSON.stringify(payload, null, 2) + "\n"], { type: "application/json" }),
+    `${safeFileStem(name)}.json`,
+  );
+  const filled = Object.values(payload.charts).filter((ranks) => ranks.some(Boolean)).length;
+  setStatus(`Saved “${name}” (${filled} group${filled === 1 ? "" : "s"}) · downloaded ${safeFileStem(name)}.json`, "ok");
 });
 
 document.getElementById("clearAll").addEventListener("click", () => {

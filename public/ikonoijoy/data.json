@@ -1,7 +1,7 @@
 {
   "title": "IKONOIJOY ベスト10",
   "subtitle": "=LOVE / ≠ME / ≒JOY の好きな曲 Top 10 を作ろう",
-  "generated_at": "2026-07-19T21:12:17",
+  "generated_at": "2026-07-19T21:26:54",
   "groups": [
     {
       "name": "=LOVE",
@@ -26,494 +26,244 @@
       },
       "songs": [
         {
-          "uid": "61f56b34-c4f5-47ad-a866-f890d0da514a",
-          "title": "お姫様の作り方",
-          "title_romanji": "",
-          "popularity": 5,
-          "release_date": "2026-04-01",
-          "is_a_side": false,
-          "album_key": "劇薬中毒",
-          "family_date": "2026-04-01"
-        },
-        {
-          "uid": "848cc42b-b9b9-4278-a884-aaba55ce7862",
-          "title": "モラトリアム",
-          "title_romanji": "",
+          "uid": "f6afd094-376d-43f7-9237-81427aa7c38c",
+          "title": "=LOVE",
+          "title_romanji": "=LOVE",
           "popularity": 4.5,
-          "release_date": "2026-04-01",
-          "is_a_side": false,
-          "album_key": "劇薬中毒",
-          "family_date": "2026-04-01"
-        },
-        {
-          "uid": "ea4d3773-b178-4f25-ac34-da1877c25cdd",
-          "title": "劇薬中毒",
-          "title_romanji": "",
-          "popularity": 5,
-          "release_date": "2026-02-17",
+          "release_date": "2017-09-06",
           "is_a_side": true,
-          "album_key": "劇薬中毒",
-          "family_date": "2026-04-01"
+          "album_key": "=love",
+          "family_date": "2017-09-06"
         },
         {
-          "uid": "a1b34d3d-f86c-4bcb-99ac-9527abd3f397",
-          "title": "Queens",
-          "title_romanji": "Queens",
-          "popularity": 4,
-          "release_date": "2025-10-08",
-          "is_a_side": false,
-          "album_key": "ラブソングに襲われる",
-          "family_date": "2025-10-08"
-        },
-        {
-          "uid": "5722192e-02b8-4888-a244-a0ff477b7604",
-          "title": "木漏れ日メゾフォルテ",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2025-10-08",
-          "is_a_side": false,
-          "album_key": "ラブソングに襲われる",
-          "family_date": "2025-10-08"
-        },
-        {
-          "uid": "8aa3a785-12d6-41c7-a1dd-84144e00282e",
-          "title": "ラブソングに襲われる",
-          "title_romanji": "",
-          "popularity": 5,
-          "release_date": "2025-09-07",
-          "is_a_side": true,
-          "album_key": "ラブソングに襲われる",
-          "family_date": "2025-10-08"
-        },
-        {
-          "uid": "557b7f11-4f1f-4a3d-b0c7-b7e32a102c56",
-          "title": "内緒バナシ",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2025-08-22",
-          "is_a_side": true,
-          "album_key": "内緒バナシ",
-          "family_date": "2025-08-22"
-        },
-        {
-          "uid": "b21fd697-e51f-41e6-be37-9ddcc9910909",
-          "title": "超特急逃走中",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2025-02-26",
-          "is_a_side": false,
-          "album_key": "とくべチュ、して / 恋人以上、好き未満",
-          "family_date": "2025-02-26"
-        },
-        {
-          "uid": "856c2fe9-42fd-4c49-9158-3ef467a09b17",
-          "title": "とくべチュ、して",
-          "title_romanji": "",
-          "popularity": 5,
-          "release_date": "2025-02-10",
-          "is_a_side": true,
-          "album_key": "とくべチュ、して / 恋人以上、好き未満",
-          "family_date": "2025-02-26"
-        },
-        {
-          "uid": "a488fc03-bada-4bb5-a00a-f422f49353b2",
-          "title": "恋人以上、好き未満",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2025-01-29",
-          "is_a_side": true,
-          "album_key": "とくべチュ、して / 恋人以上、好き未満",
-          "family_date": "2025-02-26"
-        },
-        {
-          "uid": "539aafb7-01a8-4aef-be92-2934b4f3fa39",
-          "title": "仲直りシュークリーム",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2024-07-31",
-          "is_a_side": false,
-          "album_key": "絶対アイドル辞めないで",
-          "family_date": "2024-07-31"
-        },
-        {
-          "uid": "88385779-5a27-4416-9605-994a60347c06",
-          "title": "海とレモンティー",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-07-31",
-          "is_a_side": false,
-          "album_key": "絶対アイドル辞めないで",
-          "family_date": "2024-07-31"
-        },
-        {
-          "uid": "3cba4d84-94a9-47e2-b680-3ed64e988b63",
-          "title": "絶対アイドル辞めないで",
-          "title_romanji": "",
-          "popularity": 5,
-          "release_date": "2024-06-23",
-          "is_a_side": true,
-          "album_key": "絶対アイドル辞めないで",
-          "family_date": "2024-07-31"
-        },
-        {
-          "uid": "b8fc9440-ad93-4530-bbea-ea4dfbc256c9",
-          "title": "君の第3ボタン",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-03-06",
-          "is_a_side": false,
-          "album_key": "呪って呪って",
-          "family_date": "2024-03-06"
-        },
-        {
-          "uid": "63c9a9ca-344b-40d1-bbb8-08c656ff9592",
-          "title": "誰にもバレずに",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-03-06",
-          "is_a_side": false,
-          "album_key": "呪って呪って",
-          "family_date": "2024-03-06"
-        },
-        {
-          "uid": "82d16f46-f801-4490-9e92-cab0efbfed52",
-          "title": "呪って呪って",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2024-02-04",
-          "is_a_side": true,
-          "album_key": "呪って呪って",
-          "family_date": "2024-03-06"
-        },
-        {
-          "uid": "3d1b1a41-3fc8-41b1-a82d-f6f4a06a389d",
-          "title": "「ドライブ デート 都内」",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-11-29",
-          "is_a_side": false,
-          "album_key": "「ドライブ デート 都内」",
-          "family_date": "2023-11-29"
-        },
-        {
-          "uid": "bd346afd-8c83-4a1d-adfe-c041550e6752",
-          "title": "どこが好きか言って",
+          "uid": "45d29181-08fd-4396-834d-d8b050b545d5",
+          "title": "スタート!",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2023-11-29",
+          "release_date": "2017-09-06",
           "is_a_side": false,
-          "album_key": "どこが好きか言って",
-          "family_date": "2023-11-29"
+          "album_key": "=love",
+          "family_date": "2017-09-06"
         },
         {
-          "uid": "0a5ec0c3-0a2c-4c9f-b065-f78aab8d78f9",
-          "title": "狂想カタストロフィ",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-11-29",
-          "is_a_side": false,
-          "album_key": "狂想カタストロフィ",
-          "family_date": "2023-11-29"
-        },
-        {
-          "uid": "f2f81731-25f5-4ece-8eb3-e077a6f70400",
-          "title": "宝物はグリーン",
+          "uid": "65ad6468-763a-4858-9e3a-268e8060bca7",
+          "title": "記憶のどこかで",
           "title_romanji": "",
           "popularity": 3,
-          "release_date": "2023-11-29",
-          "is_a_side": true,
-          "album_key": "宝物はグリーン",
-          "family_date": "2023-11-29"
+          "release_date": "2017-09-06",
+          "is_a_side": false,
+          "album_key": "記憶のどこかで",
+          "family_date": "2017-09-06"
         },
         {
-          "uid": "929ba3e0-425d-41cd-a012-a3b2d131748a",
-          "title": "ラストノートしか知らない",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2023-10-19",
-          "is_a_side": true,
-          "album_key": "ラストノートしか知らない",
-          "family_date": "2023-10-19"
-        },
-        {
-          "uid": "ae79e03c-d11b-4a62-8318-2cffb94c0c76",
-          "title": "だからとて",
+          "uid": "f0781b84-d132-44f0-ab82-a63aeacf210f",
+          "title": "僕らの制服クリスマス",
           "title_romanji": "",
           "popularity": 4,
-          "release_date": "2023-07-19",
-          "is_a_side": false,
-          "album_key": "だからとて",
-          "family_date": "2023-07-19"
+          "release_date": "2017-12-06",
+          "is_a_side": true,
+          "album_key": "僕らの制服クリスマス",
+          "family_date": "2017-12-06"
         },
         {
-          "uid": "7cd7b1d8-d99f-49f5-97b1-25634b715054",
-          "title": "ヒロインズ",
+          "uid": "5cdb4d05-99b9-4c65-9bb8-ed155d2fd7bc",
+          "title": "ようこそ!イコラブ沼",
           "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-07-19",
+          "popularity": 3.5,
+          "release_date": "2017-12-06",
           "is_a_side": false,
-          "album_key": "ヒロインズ",
-          "family_date": "2023-07-19"
+          "album_key": "僕らの制服クリスマス",
+          "family_date": "2017-12-06"
         },
         {
-          "uid": "0b56faa7-bc12-42ad-a238-4f53e5166771",
-          "title": "ラブロケ",
+          "uid": "1cb7e964-814b-4d3f-886e-26eb3ebd5604",
+          "title": "届いてLOVE YOU",
           "title_romanji": "",
           "popularity": 3,
-          "release_date": "2023-07-19",
+          "release_date": "2017-12-06",
           "is_a_side": false,
-          "album_key": "ラブロケ",
-          "family_date": "2023-07-19"
+          "album_key": "僕らの制服クリスマス",
+          "family_date": "2017-12-06"
         },
         {
-          "uid": "53dcc774-a25d-4e78-9787-002f9bd0820a",
-          "title": "ナツマトペ",
+          "uid": "6a92d679-086d-4344-adb9-e9e6d55a354e",
+          "title": "手遅れcaution",
           "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2023-06-20",
+          "popularity": 4,
+          "release_date": "2018-05-16",
           "is_a_side": true,
-          "album_key": "ナツマトペ",
-          "family_date": "2023-06-20"
+          "album_key": "手遅れcaution",
+          "family_date": "2018-05-16"
         },
         {
-          "uid": "045789bf-9b97-4119-935c-854a26cb2a93",
-          "title": "おかえり、花便り",
+          "uid": "eda7c4bc-4f1c-41ef-a14d-bfa7f710f723",
+          "title": "「部活中に目が合うなって思ってたんだ」",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2018-05-16",
+          "is_a_side": false,
+          "album_key": "手遅れcaution",
+          "family_date": "2018-05-16"
+        },
+        {
+          "uid": "6f5d5673-c920-477e-bef7-c72eeedf3f2b",
+          "title": "樹愛羅、助けに来たぞ",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2018-05-16",
+          "is_a_side": false,
+          "album_key": "手遅れcaution",
+          "family_date": "2018-05-16"
+        },
+        {
+          "uid": "886fa232-9b9b-4047-9823-4729682f350a",
+          "title": "Want you!Want you!",
+          "title_romanji": "Want you!Want you!",
+          "popularity": 4,
+          "release_date": "2018-10-17",
+          "is_a_side": true,
+          "album_key": "want you!want you!",
+          "family_date": "2018-10-17"
+        },
+        {
+          "uid": "215e97ab-88a5-4898-80da-8f4c71dee1a8",
+          "title": "アイカツハッピーエンド",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2018-10-17",
+          "is_a_side": false,
+          "album_key": "want you!want you!",
+          "family_date": "2018-10-17"
+        },
+        {
+          "uid": "56f02b85-eae8-4d78-aa35-e900f5dfa432",
+          "title": "今、この船に乗れ!",
           "title_romanji": "",
           "popularity": 3,
-          "release_date": "2023-03-28",
-          "is_a_side": true,
-          "album_key": "おかえり、花便り",
-          "family_date": "2023-03-28"
-        },
-        {
-          "uid": "17134aa0-e94c-42de-ba8f-a0931ebf3f8d",
-          "title": "君だけの花道",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2023-03-22",
-          "is_a_side": true,
-          "album_key": "君だけの花道",
-          "family_date": "2023-03-22"
-        },
-        {
-          "uid": "e680994b-ff6d-4e10-be51-ccdf736d7160",
-          "title": "Junkies",
-          "title_romanji": "Junkies",
-          "popularity": 4,
-          "release_date": "2023-02-22",
+          "release_date": "2018-10-17",
           "is_a_side": false,
-          "album_key": "junkies",
-          "family_date": "2023-02-22"
+          "album_key": "want you!want you!",
+          "family_date": "2018-10-17"
         },
         {
-          "uid": "a25423a7-5716-49f6-bfc0-fc66c4f2dd62",
-          "title": "Kiara Tiara",
-          "title_romanji": "Kiara Tiara",
-          "popularity": 3.5,
-          "release_date": "2023-02-22",
-          "is_a_side": false,
-          "album_key": "kiara tiara",
-          "family_date": "2023-02-22"
-        },
-        {
-          "uid": "ab465502-3653-4233-82e8-fa4671054708",
-          "title": "ラブクリエイト",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-02-22",
-          "is_a_side": false,
-          "album_key": "ラブクリエイト",
-          "family_date": "2023-02-22"
-        },
-        {
-          "uid": "e12d21a6-2b1a-4ae9-bc64-5c5d5fc6926f",
-          "title": "この空がトリガー",
+          "uid": "18e6267c-0381-400a-ba66-4917e7117551",
+          "title": "探せ ダイヤモンドリリー",
           "title_romanji": "",
           "popularity": 4.5,
-          "release_date": "2023-01-29",
+          "release_date": "2019-04-24",
           "is_a_side": true,
-          "album_key": "この空がトリガー",
-          "family_date": "2023-01-29"
+          "album_key": "探せ ダイヤモンドリリー",
+          "family_date": "2019-04-24"
         },
         {
-          "uid": "c4c664e2-2b16-4328-93ff-e4d76c93e87d",
-          "title": "次に会えた時 何を話そうかな",
+          "uid": "67106e8d-5fdf-4945-a90b-9f47e50b6566",
+          "title": "いらない ツインテール",
           "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2019-04-24",
+          "is_a_side": false,
+          "album_key": "探せ ダイヤモンドリリー",
+          "family_date": "2019-04-24"
+        },
+        {
+          "uid": "21791d7d-a503-4621-b9d2-a7fbfc692d07",
+          "title": "虹の素",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2019-04-24",
+          "is_a_side": false,
+          "album_key": "探せ ダイヤモンドリリー",
+          "family_date": "2019-04-24"
+        },
+        {
+          "uid": "8ee7c67f-a34b-4e2b-ba17-00055ca8b016",
+          "title": "Sweetest girl",
+          "title_romanji": "Sweetest girl",
+          "popularity": 3.5,
+          "release_date": "2019-10-30",
+          "is_a_side": false,
+          "album_key": "sweetest girl",
+          "family_date": "2019-10-30"
+        },
+        {
+          "uid": "8ad97ea2-1eff-46c7-8ee1-859d2f5e1a20",
+          "title": "ズルいよ ズルいね",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2019-10-30",
+          "is_a_side": false,
+          "album_key": "ズルいよ ズルいね",
+          "family_date": "2019-10-30"
+        },
+        {
+          "uid": "8f96a528-2657-4a6d-a7d9-bece148508ac",
+          "title": "推しのいる世界",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2019-10-30",
+          "is_a_side": false,
+          "album_key": "推しのいる世界",
+          "family_date": "2019-10-30"
+        },
+        {
+          "uid": "b4c9fb43-75fb-4189-98c8-8d9506a07d87",
+          "title": "CAMEO",
+          "title_romanji": "CAMEO",
+          "popularity": 3.5,
+          "release_date": "2020-07-08",
+          "is_a_side": false,
+          "album_key": "cameo",
+          "family_date": "2020-07-08"
+        },
+        {
+          "uid": "a13dc171-1217-4a28-91cd-782c607a7291",
+          "title": "My Voice Is For You",
+          "title_romanji": "My Voice Is For You",
           "popularity": 3,
-          "release_date": "2022-11-19",
+          "release_date": "2020-07-08",
           "is_a_side": false,
-          "album_key": "次に会えた時 何を話そうかな",
-          "family_date": "2022-11-19"
+          "album_key": "my voice is for you",
+          "family_date": "2020-07-08"
         },
         {
-          "uid": "f10a9a40-5a73-4427-abc8-c300ee6ff343",
-          "title": "Be Selfish",
-          "title_romanji": "Be Selfish",
-          "popularity": 4,
-          "release_date": "2022-09-28",
-          "is_a_side": false,
-          "album_key": "be selfish",
-          "family_date": "2022-09-28"
-        },
-        {
-          "uid": "a615d50d-f8b8-415a-8d2e-345a5dafacc5",
-          "title": "わたし、魔法使い",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-09-28",
-          "is_a_side": false,
-          "album_key": "わたし、魔法使い",
-          "family_date": "2022-09-28"
-        },
-        {
-          "uid": "bbd02271-ec79-47f3-8084-33d73de8bf03",
-          "title": "好きって、言えなかった",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-09-28",
-          "is_a_side": false,
-          "album_key": "好きって、言えなかった",
-          "family_date": "2022-09-28"
-        },
-        {
-          "uid": "c17018a7-9f21-4abe-a9bc-35acf1f42333",
-          "title": "真夜中マーメイド",
+          "uid": "a36d4547-7e2e-4a8c-b527-556144d7b671",
+          "title": "「君と私の歌」",
           "title_romanji": "",
           "popularity": 4,
-          "release_date": "2022-09-28",
+          "release_date": "2020-07-08",
           "is_a_side": false,
-          "album_key": "真夜中マーメイド",
-          "family_date": "2022-09-28"
+          "album_key": "「君と私の歌」",
+          "family_date": "2020-07-08"
         },
         {
-          "uid": null,
-          "title": "トリプルデート",
-          "title_romanji": "Triple Date",
-          "popularity": 4,
-          "release_date": "2022-07-20",
-          "is_a_side": true,
-          "album_key": "トリプルデート",
-          "family_date": "2022-07-20"
-        },
-        {
-          "uid": "d4954232-3d5e-44b1-893f-0cd7a9863b0f",
-          "title": "僕のヒロイン",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2022-05-25",
-          "is_a_side": false,
-          "album_key": "僕のヒロイン",
-          "family_date": "2022-05-25"
-        },
-        {
-          "uid": "e6292901-5749-4a53-9fb9-387584a34683",
-          "title": "知らんけど",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-05-25",
-          "is_a_side": false,
-          "album_key": "知らんけど",
-          "family_date": "2022-05-25"
-        },
-        {
-          "uid": "84c5e732-f403-4f9b-8903-60c5477d193e",
-          "title": "笑顔のレシピ",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-05-25",
-          "is_a_side": false,
-          "album_key": "笑顔のレシピ",
-          "family_date": "2022-05-25"
-        },
-        {
-          "uid": "b0c8afd6-8218-4b70-bb89-fae9a5270d6c",
-          "title": "あの子コンプレックス",
+          "uid": "4e536701-0700-4452-abf5-b32ac01caca5",
+          "title": "しゅきぴ",
           "title_romanji": "",
           "popularity": 4.5,
-          "release_date": "2022-05-25",
-          "is_a_side": true,
-          "album_key": "あの子コンプレックス",
-          "family_date": "2022-05-25"
+          "release_date": "2020-11-25",
+          "is_a_side": false,
+          "album_key": "しゅきぴ",
+          "family_date": "2020-11-25"
         },
         {
-          "uid": "0bbe9531-e45b-4297-8a46-77a89526971f",
-          "title": "BPM170の君へ",
+          "uid": "dd48a262-4fe0-4e35-98a4-6ae880c57785",
+          "title": "流星群",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2021-12-15",
+          "release_date": "2020-11-25",
           "is_a_side": false,
-          "album_key": "bpm170の君へ",
-          "family_date": "2021-12-15"
+          "album_key": "流星群",
+          "family_date": "2020-11-25"
         },
         {
-          "uid": "a8d7aafe-d1cf-4911-a717-841be9a2e29e",
-          "title": "Poison Girl",
-          "title_romanji": "Poison Girl",
-          "popularity": 3.5,
-          "release_date": "2021-12-15",
-          "is_a_side": false,
-          "album_key": "poison girl",
-          "family_date": "2021-12-15"
-        },
-        {
-          "uid": "a3add335-da75-4897-860d-1777443f183b",
-          "title": "The 5th",
-          "title_romanji": "The 5th",
-          "popularity": 4,
-          "release_date": "2021-12-15",
-          "is_a_side": false,
-          "album_key": "the 5th",
-          "family_date": "2021-12-15"
-        },
-        {
-          "uid": "d1f0c8f3-d63d-4258-a35c-cf28be48cf22",
-          "title": "お姫様にしてよ!",
+          "uid": "2aa9fb7b-9b08-4d9b-853d-710234c0507b",
+          "title": "青春\"サブリミナル\"",
           "title_romanji": "",
           "popularity": 4.5,
-          "release_date": "2021-12-15",
+          "release_date": "2020-11-25",
           "is_a_side": false,
-          "album_key": "お姫様にしてよ!",
-          "family_date": "2021-12-15"
-        },
-        {
-          "uid": "106e3ed9-a3b4-4c12-91e2-38b3b2d9e49e",
-          "title": "ウィークエンドシトロン",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2021-08-25",
-          "is_a_side": false,
-          "album_key": "ウィークエンドシトロン",
-          "family_date": "2021-08-25"
-        },
-        {
-          "uid": "e5a71d4b-56c9-40ce-aa83-a50f545b85b0",
-          "title": "ズッ友案件",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2021-08-25",
-          "is_a_side": false,
-          "album_key": "ズッ友案件",
-          "family_date": "2021-08-25"
-        },
-        {
-          "uid": "70761e56-4ed2-4253-a93a-4ebc1a86654f",
-          "title": "夏祭り恋慕う",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2021-08-25",
-          "is_a_side": false,
-          "album_key": "夏祭り恋慕う",
-          "family_date": "2021-08-25"
-        },
-        {
-          "uid": "456abc42-c063-406d-88fc-bbe14bebd74b",
-          "title": "祝祭",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2021-08-25",
-          "is_a_side": false,
-          "album_key": "祝祭",
-          "family_date": "2021-08-25"
+          "album_key": "青春\"サブリミナル\"",
+          "family_date": "2020-11-25"
         },
         {
           "uid": "5bcfb12a-836c-4ca7-9040-7dbb35842d28",
@@ -606,244 +356,494 @@
           "family_date": "2021-05-12"
         },
         {
-          "uid": "4e536701-0700-4452-abf5-b32ac01caca5",
-          "title": "しゅきぴ",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2020-11-25",
-          "is_a_side": false,
-          "album_key": "しゅきぴ",
-          "family_date": "2020-11-25"
-        },
-        {
-          "uid": "dd48a262-4fe0-4e35-98a4-6ae880c57785",
-          "title": "流星群",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2020-11-25",
-          "is_a_side": false,
-          "album_key": "流星群",
-          "family_date": "2020-11-25"
-        },
-        {
-          "uid": "2aa9fb7b-9b08-4d9b-853d-710234c0507b",
-          "title": "青春\"サブリミナル\"",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2020-11-25",
-          "is_a_side": false,
-          "album_key": "青春\"サブリミナル\"",
-          "family_date": "2020-11-25"
-        },
-        {
-          "uid": "b4c9fb43-75fb-4189-98c8-8d9506a07d87",
-          "title": "CAMEO",
-          "title_romanji": "CAMEO",
-          "popularity": 3.5,
-          "release_date": "2020-07-08",
-          "is_a_side": false,
-          "album_key": "cameo",
-          "family_date": "2020-07-08"
-        },
-        {
-          "uid": "a13dc171-1217-4a28-91cd-782c607a7291",
-          "title": "My Voice Is For You",
-          "title_romanji": "My Voice Is For You",
-          "popularity": 3,
-          "release_date": "2020-07-08",
-          "is_a_side": false,
-          "album_key": "my voice is for you",
-          "family_date": "2020-07-08"
-        },
-        {
-          "uid": "a36d4547-7e2e-4a8c-b527-556144d7b671",
-          "title": "「君と私の歌」",
+          "uid": "106e3ed9-a3b4-4c12-91e2-38b3b2d9e49e",
+          "title": "ウィークエンドシトロン",
           "title_romanji": "",
           "popularity": 4,
-          "release_date": "2020-07-08",
+          "release_date": "2021-08-25",
           "is_a_side": false,
-          "album_key": "「君と私の歌」",
-          "family_date": "2020-07-08"
+          "album_key": "ウィークエンドシトロン",
+          "family_date": "2021-08-25"
         },
         {
-          "uid": "8ee7c67f-a34b-4e2b-ba17-00055ca8b016",
-          "title": "Sweetest girl",
-          "title_romanji": "Sweetest girl",
-          "popularity": 3.5,
-          "release_date": "2019-10-30",
-          "is_a_side": false,
-          "album_key": "sweetest girl",
-          "family_date": "2019-10-30"
-        },
-        {
-          "uid": "8ad97ea2-1eff-46c7-8ee1-859d2f5e1a20",
-          "title": "ズルいよ ズルいね",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2019-10-30",
-          "is_a_side": false,
-          "album_key": "ズルいよ ズルいね",
-          "family_date": "2019-10-30"
-        },
-        {
-          "uid": "8f96a528-2657-4a6d-a7d9-bece148508ac",
-          "title": "推しのいる世界",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2019-10-30",
-          "is_a_side": false,
-          "album_key": "推しのいる世界",
-          "family_date": "2019-10-30"
-        },
-        {
-          "uid": "67106e8d-5fdf-4945-a90b-9f47e50b6566",
-          "title": "いらない ツインテール",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2019-04-24",
-          "is_a_side": false,
-          "album_key": "探せ ダイヤモンドリリー",
-          "family_date": "2019-04-24"
-        },
-        {
-          "uid": "21791d7d-a503-4621-b9d2-a7fbfc692d07",
-          "title": "虹の素",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2019-04-24",
-          "is_a_side": false,
-          "album_key": "探せ ダイヤモンドリリー",
-          "family_date": "2019-04-24"
-        },
-        {
-          "uid": "18e6267c-0381-400a-ba66-4917e7117551",
-          "title": "探せ ダイヤモンドリリー",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2019-04-24",
-          "is_a_side": true,
-          "album_key": "探せ ダイヤモンドリリー",
-          "family_date": "2019-04-24"
-        },
-        {
-          "uid": "215e97ab-88a5-4898-80da-8f4c71dee1a8",
-          "title": "アイカツハッピーエンド",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2018-10-17",
-          "is_a_side": false,
-          "album_key": "want you!want you!",
-          "family_date": "2018-10-17"
-        },
-        {
-          "uid": "56f02b85-eae8-4d78-aa35-e900f5dfa432",
-          "title": "今、この船に乗れ!",
+          "uid": "e5a71d4b-56c9-40ce-aa83-a50f545b85b0",
+          "title": "ズッ友案件",
           "title_romanji": "",
           "popularity": 3,
-          "release_date": "2018-10-17",
+          "release_date": "2021-08-25",
           "is_a_side": false,
-          "album_key": "want you!want you!",
-          "family_date": "2018-10-17"
+          "album_key": "ズッ友案件",
+          "family_date": "2021-08-25"
         },
         {
-          "uid": "886fa232-9b9b-4047-9823-4729682f350a",
-          "title": "Want you!Want you!",
-          "title_romanji": "Want you!Want you!",
-          "popularity": 4,
-          "release_date": "2018-10-17",
-          "is_a_side": true,
-          "album_key": "want you!want you!",
-          "family_date": "2018-10-17"
-        },
-        {
-          "uid": "eda7c4bc-4f1c-41ef-a14d-bfa7f710f723",
-          "title": "「部活中に目が合うなって思ってたんだ」",
+          "uid": "70761e56-4ed2-4253-a93a-4ebc1a86654f",
+          "title": "夏祭り恋慕う",
           "title_romanji": "",
           "popularity": 4,
-          "release_date": "2018-05-16",
+          "release_date": "2021-08-25",
           "is_a_side": false,
-          "album_key": "手遅れcaution",
-          "family_date": "2018-05-16"
+          "album_key": "夏祭り恋慕う",
+          "family_date": "2021-08-25"
         },
         {
-          "uid": "6f5d5673-c920-477e-bef7-c72eeedf3f2b",
-          "title": "樹愛羅、助けに来たぞ",
+          "uid": "456abc42-c063-406d-88fc-bbe14bebd74b",
+          "title": "祝祭",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2021-08-25",
+          "is_a_side": false,
+          "album_key": "祝祭",
+          "family_date": "2021-08-25"
+        },
+        {
+          "uid": "0bbe9531-e45b-4297-8a46-77a89526971f",
+          "title": "BPM170の君へ",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2018-05-16",
+          "release_date": "2021-12-15",
           "is_a_side": false,
-          "album_key": "手遅れcaution",
-          "family_date": "2018-05-16"
+          "album_key": "bpm170の君へ",
+          "family_date": "2021-12-15"
         },
         {
-          "uid": "6a92d679-086d-4344-adb9-e9e6d55a354e",
-          "title": "手遅れcaution",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2018-05-16",
-          "is_a_side": true,
-          "album_key": "手遅れcaution",
-          "family_date": "2018-05-16"
-        },
-        {
-          "uid": "5cdb4d05-99b9-4c65-9bb8-ed155d2fd7bc",
-          "title": "ようこそ!イコラブ沼",
-          "title_romanji": "",
+          "uid": "a8d7aafe-d1cf-4911-a717-841be9a2e29e",
+          "title": "Poison Girl",
+          "title_romanji": "Poison Girl",
           "popularity": 3.5,
-          "release_date": "2017-12-06",
+          "release_date": "2021-12-15",
           "is_a_side": false,
-          "album_key": "僕らの制服クリスマス",
-          "family_date": "2017-12-06"
+          "album_key": "poison girl",
+          "family_date": "2021-12-15"
         },
         {
-          "uid": "1cb7e964-814b-4d3f-886e-26eb3ebd5604",
-          "title": "届いてLOVE YOU",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2017-12-06",
-          "is_a_side": false,
-          "album_key": "僕らの制服クリスマス",
-          "family_date": "2017-12-06"
-        },
-        {
-          "uid": "f0781b84-d132-44f0-ab82-a63aeacf210f",
-          "title": "僕らの制服クリスマス",
-          "title_romanji": "",
+          "uid": "a3add335-da75-4897-860d-1777443f183b",
+          "title": "The 5th",
+          "title_romanji": "The 5th",
           "popularity": 4,
-          "release_date": "2017-12-06",
-          "is_a_side": true,
-          "album_key": "僕らの制服クリスマス",
-          "family_date": "2017-12-06"
-        },
-        {
-          "uid": "45d29181-08fd-4396-834d-d8b050b545d5",
-          "title": "スタート!",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2017-09-06",
+          "release_date": "2021-12-15",
           "is_a_side": false,
-          "album_key": "=love",
-          "family_date": "2017-09-06"
+          "album_key": "the 5th",
+          "family_date": "2021-12-15"
         },
         {
-          "uid": "65ad6468-763a-4858-9e3a-268e8060bca7",
-          "title": "記憶のどこかで",
+          "uid": "d1f0c8f3-d63d-4258-a35c-cf28be48cf22",
+          "title": "お姫様にしてよ!",
           "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2017-09-06",
-          "is_a_side": false,
-          "album_key": "記憶のどこかで",
-          "family_date": "2017-09-06"
-        },
-        {
-          "uid": "f6afd094-376d-43f7-9237-81427aa7c38c",
-          "title": "=LOVE",
-          "title_romanji": "=LOVE",
           "popularity": 4.5,
-          "release_date": "2017-09-06",
+          "release_date": "2021-12-15",
+          "is_a_side": false,
+          "album_key": "お姫様にしてよ!",
+          "family_date": "2021-12-15"
+        },
+        {
+          "uid": "b0c8afd6-8218-4b70-bb89-fae9a5270d6c",
+          "title": "あの子コンプレックス",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2022-05-25",
           "is_a_side": true,
-          "album_key": "=love",
-          "family_date": "2017-09-06"
+          "album_key": "あの子コンプレックス",
+          "family_date": "2022-05-25"
+        },
+        {
+          "uid": "d4954232-3d5e-44b1-893f-0cd7a9863b0f",
+          "title": "僕のヒロイン",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2022-05-25",
+          "is_a_side": false,
+          "album_key": "僕のヒロイン",
+          "family_date": "2022-05-25"
+        },
+        {
+          "uid": "e6292901-5749-4a53-9fb9-387584a34683",
+          "title": "知らんけど",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-05-25",
+          "is_a_side": false,
+          "album_key": "知らんけど",
+          "family_date": "2022-05-25"
+        },
+        {
+          "uid": "84c5e732-f403-4f9b-8903-60c5477d193e",
+          "title": "笑顔のレシピ",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-05-25",
+          "is_a_side": false,
+          "album_key": "笑顔のレシピ",
+          "family_date": "2022-05-25"
+        },
+        {
+          "uid": null,
+          "title": "トリプルデート",
+          "title_romanji": "Triple Date",
+          "popularity": 4,
+          "release_date": "2022-07-20",
+          "is_a_side": true,
+          "album_key": "トリプルデート",
+          "family_date": "2022-07-20"
+        },
+        {
+          "uid": "f10a9a40-5a73-4427-abc8-c300ee6ff343",
+          "title": "Be Selfish",
+          "title_romanji": "Be Selfish",
+          "popularity": 4,
+          "release_date": "2022-09-28",
+          "is_a_side": false,
+          "album_key": "be selfish",
+          "family_date": "2022-09-28"
+        },
+        {
+          "uid": "a615d50d-f8b8-415a-8d2e-345a5dafacc5",
+          "title": "わたし、魔法使い",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-09-28",
+          "is_a_side": false,
+          "album_key": "わたし、魔法使い",
+          "family_date": "2022-09-28"
+        },
+        {
+          "uid": "bbd02271-ec79-47f3-8084-33d73de8bf03",
+          "title": "好きって、言えなかった",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-09-28",
+          "is_a_side": false,
+          "album_key": "好きって、言えなかった",
+          "family_date": "2022-09-28"
+        },
+        {
+          "uid": "c17018a7-9f21-4abe-a9bc-35acf1f42333",
+          "title": "真夜中マーメイド",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2022-09-28",
+          "is_a_side": false,
+          "album_key": "真夜中マーメイド",
+          "family_date": "2022-09-28"
+        },
+        {
+          "uid": "c4c664e2-2b16-4328-93ff-e4d76c93e87d",
+          "title": "次に会えた時 何を話そうかな",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2022-11-19",
+          "is_a_side": false,
+          "album_key": "次に会えた時 何を話そうかな",
+          "family_date": "2022-11-19"
+        },
+        {
+          "uid": "e12d21a6-2b1a-4ae9-bc64-5c5d5fc6926f",
+          "title": "この空がトリガー",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2023-01-29",
+          "is_a_side": true,
+          "album_key": "この空がトリガー",
+          "family_date": "2023-01-29"
+        },
+        {
+          "uid": "e680994b-ff6d-4e10-be51-ccdf736d7160",
+          "title": "Junkies",
+          "title_romanji": "Junkies",
+          "popularity": 4,
+          "release_date": "2023-02-22",
+          "is_a_side": false,
+          "album_key": "junkies",
+          "family_date": "2023-02-22"
+        },
+        {
+          "uid": "a25423a7-5716-49f6-bfc0-fc66c4f2dd62",
+          "title": "Kiara Tiara",
+          "title_romanji": "Kiara Tiara",
+          "popularity": 3.5,
+          "release_date": "2023-02-22",
+          "is_a_side": false,
+          "album_key": "kiara tiara",
+          "family_date": "2023-02-22"
+        },
+        {
+          "uid": "ab465502-3653-4233-82e8-fa4671054708",
+          "title": "ラブクリエイト",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-02-22",
+          "is_a_side": false,
+          "album_key": "ラブクリエイト",
+          "family_date": "2023-02-22"
+        },
+        {
+          "uid": "17134aa0-e94c-42de-ba8f-a0931ebf3f8d",
+          "title": "君だけの花道",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-03-22",
+          "is_a_side": true,
+          "album_key": "君だけの花道",
+          "family_date": "2023-03-22"
+        },
+        {
+          "uid": "045789bf-9b97-4119-935c-854a26cb2a93",
+          "title": "おかえり、花便り",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-03-28",
+          "is_a_side": true,
+          "album_key": "おかえり、花便り",
+          "family_date": "2023-03-28"
+        },
+        {
+          "uid": "53dcc774-a25d-4e78-9787-002f9bd0820a",
+          "title": "ナツマトペ",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2023-06-20",
+          "is_a_side": true,
+          "album_key": "ナツマトペ",
+          "family_date": "2023-06-20"
+        },
+        {
+          "uid": "ae79e03c-d11b-4a62-8318-2cffb94c0c76",
+          "title": "だからとて",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-07-19",
+          "is_a_side": false,
+          "album_key": "だからとて",
+          "family_date": "2023-07-19"
+        },
+        {
+          "uid": "7cd7b1d8-d99f-49f5-97b1-25634b715054",
+          "title": "ヒロインズ",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-07-19",
+          "is_a_side": false,
+          "album_key": "ヒロインズ",
+          "family_date": "2023-07-19"
+        },
+        {
+          "uid": "0b56faa7-bc12-42ad-a238-4f53e5166771",
+          "title": "ラブロケ",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-07-19",
+          "is_a_side": false,
+          "album_key": "ラブロケ",
+          "family_date": "2023-07-19"
+        },
+        {
+          "uid": "929ba3e0-425d-41cd-a012-a3b2d131748a",
+          "title": "ラストノートしか知らない",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2023-10-19",
+          "is_a_side": true,
+          "album_key": "ラストノートしか知らない",
+          "family_date": "2023-10-19"
+        },
+        {
+          "uid": "f2f81731-25f5-4ece-8eb3-e077a6f70400",
+          "title": "宝物はグリーン",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-11-29",
+          "is_a_side": true,
+          "album_key": "宝物はグリーン",
+          "family_date": "2023-11-29"
+        },
+        {
+          "uid": "3d1b1a41-3fc8-41b1-a82d-f6f4a06a389d",
+          "title": "「ドライブ デート 都内」",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-11-29",
+          "is_a_side": false,
+          "album_key": "「ドライブ デート 都内」",
+          "family_date": "2023-11-29"
+        },
+        {
+          "uid": "bd346afd-8c83-4a1d-adfe-c041550e6752",
+          "title": "どこが好きか言って",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-11-29",
+          "is_a_side": false,
+          "album_key": "どこが好きか言って",
+          "family_date": "2023-11-29"
+        },
+        {
+          "uid": "0a5ec0c3-0a2c-4c9f-b065-f78aab8d78f9",
+          "title": "狂想カタストロフィ",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-11-29",
+          "is_a_side": false,
+          "album_key": "狂想カタストロフィ",
+          "family_date": "2023-11-29"
+        },
+        {
+          "uid": "82d16f46-f801-4490-9e92-cab0efbfed52",
+          "title": "呪って呪って",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2024-02-04",
+          "is_a_side": true,
+          "album_key": "呪って呪って",
+          "family_date": "2024-03-06"
+        },
+        {
+          "uid": "b8fc9440-ad93-4530-bbea-ea4dfbc256c9",
+          "title": "君の第3ボタン",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2024-03-06",
+          "is_a_side": false,
+          "album_key": "呪って呪って",
+          "family_date": "2024-03-06"
+        },
+        {
+          "uid": "63c9a9ca-344b-40d1-bbb8-08c656ff9592",
+          "title": "誰にもバレずに",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2024-03-06",
+          "is_a_side": false,
+          "album_key": "呪って呪って",
+          "family_date": "2024-03-06"
+        },
+        {
+          "uid": "3cba4d84-94a9-47e2-b680-3ed64e988b63",
+          "title": "絶対アイドル辞めないで",
+          "title_romanji": "",
+          "popularity": 5,
+          "release_date": "2024-06-23",
+          "is_a_side": true,
+          "album_key": "絶対アイドル辞めないで",
+          "family_date": "2024-07-31"
+        },
+        {
+          "uid": "539aafb7-01a8-4aef-be92-2934b4f3fa39",
+          "title": "仲直りシュークリーム",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2024-07-31",
+          "is_a_side": false,
+          "album_key": "絶対アイドル辞めないで",
+          "family_date": "2024-07-31"
+        },
+        {
+          "uid": "88385779-5a27-4416-9605-994a60347c06",
+          "title": "海とレモンティー",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2024-07-31",
+          "is_a_side": false,
+          "album_key": "絶対アイドル辞めないで",
+          "family_date": "2024-07-31"
+        },
+        {
+          "uid": "a488fc03-bada-4bb5-a00a-f422f49353b2",
+          "title": "恋人以上、好き未満",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2025-01-29",
+          "is_a_side": true,
+          "album_key": "とくべチュ、して / 恋人以上、好き未満",
+          "family_date": "2025-02-26"
+        },
+        {
+          "uid": "856c2fe9-42fd-4c49-9158-3ef467a09b17",
+          "title": "とくべチュ、して",
+          "title_romanji": "",
+          "popularity": 5,
+          "release_date": "2025-02-10",
+          "is_a_side": true,
+          "album_key": "とくべチュ、して / 恋人以上、好き未満",
+          "family_date": "2025-02-26"
+        },
+        {
+          "uid": "b21fd697-e51f-41e6-be37-9ddcc9910909",
+          "title": "超特急逃走中",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2025-02-26",
+          "is_a_side": false,
+          "album_key": "とくべチュ、して / 恋人以上、好き未満",
+          "family_date": "2025-02-26"
+        },
+        {
+          "uid": "557b7f11-4f1f-4a3d-b0c7-b7e32a102c56",
+          "title": "内緒バナシ",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2025-08-22",
+          "is_a_side": true,
+          "album_key": "内緒バナシ",
+          "family_date": "2025-08-22"
+        },
+        {
+          "uid": "8aa3a785-12d6-41c7-a1dd-84144e00282e",
+          "title": "ラブソングに襲われる",
+          "title_romanji": "",
+          "popularity": 5,
+          "release_date": "2025-09-07",
+          "is_a_side": true,
+          "album_key": "ラブソングに襲われる",
+          "family_date": "2025-10-08"
+        },
+        {
+          "uid": "a1b34d3d-f86c-4bcb-99ac-9527abd3f397",
+          "title": "Queens",
+          "title_romanji": "Queens",
+          "popularity": 4,
+          "release_date": "2025-10-08",
+          "is_a_side": false,
+          "album_key": "ラブソングに襲われる",
+          "family_date": "2025-10-08"
+        },
+        {
+          "uid": "5722192e-02b8-4888-a244-a0ff477b7604",
+          "title": "木漏れ日メゾフォルテ",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2025-10-08",
+          "is_a_side": false,
+          "album_key": "ラブソングに襲われる",
+          "family_date": "2025-10-08"
+        },
+        {
+          "uid": "ea4d3773-b178-4f25-ac34-da1877c25cdd",
+          "title": "劇薬中毒",
+          "title_romanji": "",
+          "popularity": 5,
+          "release_date": "2026-02-17",
+          "is_a_side": true,
+          "album_key": "劇薬中毒",
+          "family_date": "2026-04-01"
+        },
+        {
+          "uid": "61f56b34-c4f5-47ad-a866-f890d0da514a",
+          "title": "お姫様の作り方",
+          "title_romanji": "",
+          "popularity": 5,
+          "release_date": "2026-04-01",
+          "is_a_side": false,
+          "album_key": "劇薬中毒",
+          "family_date": "2026-04-01"
+        },
+        {
+          "uid": "848cc42b-b9b9-4278-a884-aaba55ce7862",
+          "title": "モラトリアム",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2026-04-01",
+          "is_a_side": false,
+          "album_key": "劇薬中毒",
+          "family_date": "2026-04-01"
         }
       ]
     },
@@ -870,524 +870,54 @@
       },
       "songs": [
         {
-          "uid": "5427e64d-0cff-44f8-b349-7e06463a810a",
-          "title": "Summer haze",
-          "title_romanji": "",
-          "popularity": 2.5,
-          "release_date": "2026-06-24",
-          "is_a_side": false,
-          "album_key": "愛くださいませ/ここでファーストキッス",
-          "family_date": "2026-06-24"
-        },
-        {
-          "uid": "24d622a6-b648-4bb9-a1eb-5c5b78b254dd",
-          "title": "ここでファーストキッス",
-          "title_romanji": "",
-          "popularity": 2.5,
-          "release_date": "2026-06-24",
-          "is_a_side": false,
-          "album_key": "愛くださいませ/ここでファーストキッス",
-          "family_date": "2026-06-24"
-        },
-        {
-          "uid": "7df39e4d-5c7b-429c-a71c-b7b11555b27e",
-          "title": "愛くださいませ",
-          "title_romanji": "",
+          "uid": "36f12fc1-65fc-466d-ab7b-db0e2a8b7d82",
+          "title": "≠ME",
+          "title_romanji": "≠ME",
           "popularity": 4.5,
-          "release_date": "2026-06-09",
+          "release_date": "2019-08-04",
           "is_a_side": true,
-          "album_key": "愛くださいませ/ここでファーストキッス",
-          "family_date": "2026-06-24"
+          "album_key": "≠me",
+          "family_date": "2019-08-04"
         },
         {
-          "uid": "76dba1c8-36a0-4dd8-b1aa-265d14bcae9a",
-          "title": "きゅんかわ人生",
+          "uid": "a9501e21-7a81-46c7-ba5f-56ffac2657d0",
+          "title": "「君の音だったんだ」",
           "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2025-12-10",
+          "popularity": 4,
+          "release_date": "2019-10-30",
           "is_a_side": false,
-          "album_key": "排他的ファイター",
-          "family_date": "2025-12-10"
+          "album_key": "「君の音だったんだ」",
+          "family_date": "2019-10-30"
         },
         {
-          "uid": "c21441bc-160a-4fc7-b052-e43e473ac786",
-          "title": "はんぶんこクリスマス",
+          "uid": "2d603e1a-f824-4520-8010-e3b0486342fd",
+          "title": "空白の花",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2025-12-10",
-          "is_a_side": false,
-          "album_key": "排他的ファイター",
-          "family_date": "2025-12-10"
-        },
-        {
-          "uid": "c8d7eafd-ad41-445a-91b8-1ffe5c573746",
-          "title": "排他的ファイター",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2025-11-19",
+          "release_date": "2020-07-08",
           "is_a_side": true,
-          "album_key": "排他的ファイター",
-          "family_date": "2025-12-10"
+          "album_key": "空白の花",
+          "family_date": "2020-07-08"
         },
         {
-          "uid": "80bb8b0b-a343-466f-bf5f-f1bd7198275b",
-          "title": "君を見かけた",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2025-08-27",
-          "is_a_side": true,
-          "album_key": "君を見かけた",
-          "family_date": "2025-08-27"
-        },
-        {
-          "uid": "e3f80c1f-744e-4897-adc2-e0d5a48a57d3",
-          "title": "カフェ樂園",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2025-04-30",
-          "is_a_side": false,
-          "album_key": "モブノデレラ/神様の言うとーり!",
-          "family_date": "2025-04-30"
-        },
-        {
-          "uid": "4b1e305e-0b62-463a-82bc-7e49b3024ae8",
-          "title": "モブノデレラ",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2025-04-30",
-          "is_a_side": true,
-          "album_key": "モブノデレラ/神様の言うとーり!",
-          "family_date": "2025-04-30"
-        },
-        {
-          "uid": "0be98714-10b6-47eb-9881-896d04a2384f",
-          "title": "神様の言うとーり!",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2025-04-30",
-          "is_a_side": true,
-          "album_key": "モブノデレラ/神様の言うとーり!",
-          "family_date": "2025-04-30"
-        },
-        {
-          "uid": "d96b55ab-fe5b-4174-8505-1078a0b0206e",
-          "title": "ごめん、マジで",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-08-28",
-          "is_a_side": false,
-          "album_key": "夏が来たから",
-          "family_date": "2024-08-28"
-        },
-        {
-          "uid": "a149a9f5-d4c9-47d4-b65c-34d2f3b15f8f",
-          "title": "最強のラブソング",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-08-28",
-          "is_a_side": false,
-          "album_key": "夏が来たから",
-          "family_date": "2024-08-28"
-        },
-        {
-          "uid": "1e17339e-d81b-4254-a77a-a6fb065ba402",
-          "title": "夏が来たから",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-07-16",
-          "is_a_side": true,
-          "album_key": "夏が来たから",
-          "family_date": "2024-08-28"
-        },
-        {
-          "uid": "8f54b78d-db25-4163-9817-547a52e43a47",
-          "title": "Marcato",
-          "title_romanji": "Marcato",
-          "popularity": 3.5,
-          "release_date": "2024-03-20",
-          "is_a_side": false,
-          "album_key": "marcato",
-          "family_date": "2024-03-20"
-        },
-        {
-          "uid": "79be9a86-25cf-4f26-9d69-22da977f26d3",
-          "title": "デート前夜レクイエム",
+          "uid": "1066be27-fcca-4319-8d8e-9c083eb28d32",
+          "title": "「君と僕の歌」",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2024-03-20",
+          "release_date": "2020-07-08",
           "is_a_side": false,
-          "album_key": "デート前夜レクイエム",
-          "family_date": "2024-03-20"
+          "album_key": "「君と僕の歌」",
+          "family_date": "2020-07-08"
         },
         {
-          "uid": "6aa8a747-bbb7-4478-bd99-a2cca4262c9e",
-          "title": "偶然シンフォニー",
-          "title_romanji": "",
+          "uid": "16d00164-0dea-4ce2-a9ff-b28bfbf719e7",
+          "title": "P.I.C.",
+          "title_romanji": "P.I.C.",
           "popularity": 3.5,
-          "release_date": "2024-03-20",
+          "release_date": "2020-11-25",
           "is_a_side": false,
-          "album_key": "偶然シンフォニー",
-          "family_date": "2024-03-20"
-        },
-        {
-          "uid": "2dd7d165-9168-4399-835b-4eb12edcbb46",
-          "title": "春の恋人",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2024-03-20",
-          "is_a_side": false,
-          "album_key": "春の恋人",
-          "family_date": "2024-03-20"
-        },
-        {
-          "uid": "6b2b101a-e3ca-4cdb-a858-d994af5f5a44",
-          "title": "ラストチャンス、ラストダンス",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2024-02-29",
-          "is_a_side": true,
-          "album_key": "ラストチャンス、ラストダンス",
-          "family_date": "2024-02-29"
-        },
-        {
-          "uid": "4d307c37-95d2-4d4d-8b7f-11d8d68e239f",
-          "title": "ヒロインとオオカミ",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-12-20",
-          "is_a_side": false,
-          "album_key": "アンチコンフィチュール",
-          "family_date": "2023-12-20"
-        },
-        {
-          "uid": "5e425bd5-7c26-4db7-a7b7-4757879a15a6",
-          "title": "初恋カムバック",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-12-20",
-          "is_a_side": false,
-          "album_key": "アンチコンフィチュール",
-          "family_date": "2023-12-20"
-        },
-        {
-          "uid": "82a0ee14-1fed-4b75-be0a-991cb98089d8",
-          "title": "アンチコンフィチュール",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-11-30",
-          "is_a_side": true,
-          "album_key": "アンチコンフィチュール",
-          "family_date": "2023-12-20"
-        },
-        {
-          "uid": "d94d4092-6b71-46a3-8261-f1295dcff39f",
-          "title": "デートの後、22時",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-09-06",
-          "is_a_side": false,
-          "album_key": "想わせぶりっこ",
-          "family_date": "2023-09-06"
-        },
-        {
-          "uid": "f72bf0b1-ae11-4897-a946-ee631c2d7e16",
-          "title": "フロアキラー",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2023-09-06",
-          "is_a_side": false,
-          "album_key": "想わせぶりっこ",
-          "family_date": "2023-09-06"
-        },
-        {
-          "uid": "3a5051c5-dda3-459c-8742-ff03862b8810",
-          "title": "月下美人",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-09-06",
-          "is_a_side": false,
-          "album_key": "想わせぶりっこ",
-          "family_date": "2023-09-06"
-        },
-        {
-          "uid": "46db6b4d-bc4d-43b4-b566-dd8c4233ad4a",
-          "title": "想わせぶりっこ",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-07-30",
-          "is_a_side": true,
-          "album_key": "想わせぶりっこ",
-          "family_date": "2023-09-06"
-        },
-        {
-          "uid": "af33656a-7d7c-469c-9876-f79306c9a762",
-          "title": "2時半ろけんろー",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-04-12",
-          "is_a_side": false,
-          "album_key": "天使は何処へ",
-          "family_date": "2023-04-12"
-        },
-        {
-          "uid": "382d7563-6592-46e5-9495-4fcfcd5db13d",
-          "title": "このままでモーメンタリ",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-04-12",
-          "is_a_side": false,
-          "album_key": "天使は何処へ",
-          "family_date": "2023-04-12"
-        },
-        {
-          "uid": "a02a8dbb-8557-4286-a1b4-6efd5d6add3c",
-          "title": "マシュマロフロート",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-04-12",
-          "is_a_side": false,
-          "album_key": "天使は何処へ",
-          "family_date": "2023-04-12"
-        },
-        {
-          "uid": "91b02aad-86ee-45e2-96d1-63a7fbbce726",
-          "title": "天使は何処へ",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2023-04-12",
-          "is_a_side": true,
-          "album_key": "天使は何処へ",
-          "family_date": "2023-04-12"
-        },
-        {
-          "uid": "742e443d-0150-4a92-aa87-535e97e9b6ea",
-          "title": "ウルトラレアキッス",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-11-23",
-          "is_a_side": false,
-          "album_key": "はにかみショート",
-          "family_date": "2022-11-23"
-        },
-        {
-          "uid": "1a62fe73-5d00-412e-92bc-1748404f3aab",
-          "title": "ピオニーズ",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2022-11-23",
-          "is_a_side": false,
-          "album_key": "はにかみショート",
-          "family_date": "2022-11-23"
-        },
-        {
-          "uid": "97141fac-192a-4882-ae22-18edc2b9a32e",
-          "title": "桃色デイブレイク",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-11-23",
-          "is_a_side": false,
-          "album_key": "はにかみショート",
-          "family_date": "2022-11-23"
-        },
-        {
-          "uid": "e5deaf74-6cbe-4196-a7f7-6e2734a3fccc",
-          "title": "はにかみショート",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2022-11-23",
-          "is_a_side": true,
-          "album_key": "はにかみショート",
-          "family_date": "2022-11-23"
-        },
-        {
-          "uid": "1564fe83-dfbe-471d-90d1-f75e66e08283",
-          "title": "Want you ! Want you !",
-          "title_romanji": "",
-          "popularity": 2.5,
-          "release_date": "2022-11-19",
-          "is_a_side": false,
-          "album_key": "want you ! want you !",
-          "family_date": "2022-11-19"
-        },
-        {
-          "uid": "912b7b5a-f173-4268-8750-f7a094e5182b",
-          "title": "次に会えた時 何を話そうかな",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2022-11-19",
-          "is_a_side": false,
-          "album_key": "次に会えた時 何を話そうかな",
-          "family_date": "2022-11-19"
-        },
-        {
-          "uid": "5d863372-ff41-47f9-afca-fcd0c8c6593c",
-          "title": "こちらハッピー探検隊",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2022-08-03",
-          "is_a_side": false,
-          "album_key": "す、好きじゃない!",
-          "family_date": "2022-08-03"
-        },
-        {
-          "uid": "507babe2-a6e3-461a-bed7-e1f1d883dbad",
-          "title": "サマーチョコレート",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2022-08-03",
-          "is_a_side": false,
-          "album_key": "す、好きじゃない!",
-          "family_date": "2022-08-03"
-        },
-        {
-          "uid": "f135f5ee-4fab-4a54-8686-2d00ebdc36df",
-          "title": "僕たちのイマージュ",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-08-03",
-          "is_a_side": false,
-          "album_key": "す、好きじゃない!",
-          "family_date": "2022-08-03"
-        },
-        {
-          "uid": "b6af3fc8-b25c-41b6-a509-454f8fea527b",
-          "title": "す、好きじゃない!",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2022-07-03",
-          "is_a_side": true,
-          "album_key": "す、好きじゃない!",
-          "family_date": "2022-08-03"
-        },
-        {
-          "uid": null,
-          "title": "トリプルデート",
-          "title_romanji": "Triple Date",
-          "popularity": 4,
-          "release_date": "2022-07-20",
-          "is_a_side": true,
-          "album_key": "トリプルデート",
-          "family_date": "2022-07-20"
-        },
-        {
-          "uid": "b41c47c8-619d-4801-9a74-9610e201df28",
-          "title": "#おふしょるにっと",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2022-02-16",
-          "is_a_side": false,
-          "album_key": "チョコレートメランコリー",
-          "family_date": "2022-02-16"
-        },
-        {
-          "uid": "4056bcd7-2e5a-4e8e-87a4-02ed22b862cb",
-          "title": "君はスパークル",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2022-02-16",
-          "is_a_side": false,
-          "album_key": "チョコレートメランコリー",
-          "family_date": "2022-02-16"
-        },
-        {
-          "uid": "5b9f0177-c3ac-4b5d-9965-9f0bfa581fbe",
-          "title": "虹が架かる瞬間",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2022-02-16",
-          "is_a_side": false,
-          "album_key": "チョコレートメランコリー",
-          "family_date": "2022-02-16"
-        },
-        {
-          "uid": "659c2a60-df20-4ba3-ae1e-0d90ae487c78",
-          "title": "チョコレートメランコリー",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2022-02-16",
-          "is_a_side": true,
-          "album_key": "チョコレートメランコリー",
-          "family_date": "2022-02-16"
-        },
-        {
-          "uid": "e1ee3069-cb6d-488a-8e6f-97967110d0fe",
-          "title": "ワタシアクセント",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2021-11-10",
-          "is_a_side": false,
-          "album_key": "まほろばアスタリスク",
-          "family_date": "2021-11-10"
-        },
-        {
-          "uid": "6e8fda78-25b5-4000-856d-38f4fa3b5211",
-          "title": "好きだ!!!",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2021-11-10",
-          "is_a_side": false,
-          "album_key": "まほろばアスタリスク",
-          "family_date": "2021-11-10"
-        },
-        {
-          "uid": "e50cbc56-6c7d-4808-acee-49df7bab4ea0",
-          "title": "誰もいない森の奥で一本の木が倒れたら音はするか?",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2021-11-10",
-          "is_a_side": false,
-          "album_key": "まほろばアスタリスク",
-          "family_date": "2021-11-10"
-        },
-        {
-          "uid": "f924b6ce-19f2-4339-a506-ea19f97c7312",
-          "title": "まほろばアスタリスク",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2021-11-10",
-          "is_a_side": true,
-          "album_key": "まほろばアスタリスク",
-          "family_date": "2021-11-10"
-        },
-        {
-          "uid": "b6bfe64c-44ba-4ce3-98ce-8821f59bbc87",
-          "title": "ミラクル!",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2021-07-14",
-          "is_a_side": false,
-          "album_key": "ミラクル!",
-          "family_date": "2021-07-14"
-        },
-        {
-          "uid": "481fb97c-0aea-4744-89f7-128f05fd75ad",
-          "title": "君はこの夏、恋をする",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2021-07-14",
-          "is_a_side": false,
-          "album_key": "君はこの夏、恋をする",
-          "family_date": "2021-07-14"
-        },
-        {
-          "uid": "d352bdba-f398-42a5-acbb-4725bec51a6a",
-          "title": "薄明光線",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2021-07-14",
-          "is_a_side": false,
-          "album_key": "薄明光線",
-          "family_date": "2021-07-14"
-        },
-        {
-          "uid": "55040f81-1df3-41ae-a7a0-35c8d77ce98d",
-          "title": "超絶ヒロイン",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2021-07-14",
-          "is_a_side": false,
-          "album_key": "超絶ヒロイン",
-          "family_date": "2021-07-14"
+          "album_key": "p.i.c.",
+          "family_date": "2020-11-25"
         },
         {
           "uid": "2478adcd-5c90-42e0-bad7-e7dde3bbc36a",
@@ -1440,54 +970,524 @@
           "family_date": "2021-04-07"
         },
         {
-          "uid": "16d00164-0dea-4ce2-a9ff-b28bfbf719e7",
-          "title": "P.I.C.",
-          "title_romanji": "P.I.C.",
-          "popularity": 3.5,
-          "release_date": "2020-11-25",
-          "is_a_side": false,
-          "album_key": "p.i.c.",
-          "family_date": "2020-11-25"
-        },
-        {
-          "uid": "1066be27-fcca-4319-8d8e-9c083eb28d32",
-          "title": "「君と僕の歌」",
+          "uid": "b6bfe64c-44ba-4ce3-98ce-8821f59bbc87",
+          "title": "ミラクル!",
           "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2020-07-08",
+          "popularity": 3,
+          "release_date": "2021-07-14",
           "is_a_side": false,
-          "album_key": "「君と僕の歌」",
-          "family_date": "2020-07-08"
+          "album_key": "ミラクル!",
+          "family_date": "2021-07-14"
         },
         {
-          "uid": "2d603e1a-f824-4520-8010-e3b0486342fd",
-          "title": "空白の花",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2020-07-08",
-          "is_a_side": true,
-          "album_key": "空白の花",
-          "family_date": "2020-07-08"
-        },
-        {
-          "uid": "a9501e21-7a81-46c7-ba5f-56ffac2657d0",
-          "title": "「君の音だったんだ」",
+          "uid": "481fb97c-0aea-4744-89f7-128f05fd75ad",
+          "title": "君はこの夏、恋をする",
           "title_romanji": "",
           "popularity": 4,
-          "release_date": "2019-10-30",
+          "release_date": "2021-07-14",
           "is_a_side": false,
-          "album_key": "「君の音だったんだ」",
-          "family_date": "2019-10-30"
+          "album_key": "君はこの夏、恋をする",
+          "family_date": "2021-07-14"
         },
         {
-          "uid": "36f12fc1-65fc-466d-ab7b-db0e2a8b7d82",
-          "title": "≠ME",
-          "title_romanji": "≠ME",
+          "uid": "d352bdba-f398-42a5-acbb-4725bec51a6a",
+          "title": "薄明光線",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2021-07-14",
+          "is_a_side": false,
+          "album_key": "薄明光線",
+          "family_date": "2021-07-14"
+        },
+        {
+          "uid": "55040f81-1df3-41ae-a7a0-35c8d77ce98d",
+          "title": "超絶ヒロイン",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2021-07-14",
+          "is_a_side": false,
+          "album_key": "超絶ヒロイン",
+          "family_date": "2021-07-14"
+        },
+        {
+          "uid": "f924b6ce-19f2-4339-a506-ea19f97c7312",
+          "title": "まほろばアスタリスク",
+          "title_romanji": "",
           "popularity": 4.5,
-          "release_date": "2019-08-04",
+          "release_date": "2021-11-10",
           "is_a_side": true,
-          "album_key": "≠me",
-          "family_date": "2019-08-04"
+          "album_key": "まほろばアスタリスク",
+          "family_date": "2021-11-10"
+        },
+        {
+          "uid": "e1ee3069-cb6d-488a-8e6f-97967110d0fe",
+          "title": "ワタシアクセント",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2021-11-10",
+          "is_a_side": false,
+          "album_key": "まほろばアスタリスク",
+          "family_date": "2021-11-10"
+        },
+        {
+          "uid": "6e8fda78-25b5-4000-856d-38f4fa3b5211",
+          "title": "好きだ!!!",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2021-11-10",
+          "is_a_side": false,
+          "album_key": "まほろばアスタリスク",
+          "family_date": "2021-11-10"
+        },
+        {
+          "uid": "e50cbc56-6c7d-4808-acee-49df7bab4ea0",
+          "title": "誰もいない森の奥で一本の木が倒れたら音はするか?",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2021-11-10",
+          "is_a_side": false,
+          "album_key": "まほろばアスタリスク",
+          "family_date": "2021-11-10"
+        },
+        {
+          "uid": "659c2a60-df20-4ba3-ae1e-0d90ae487c78",
+          "title": "チョコレートメランコリー",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2022-02-16",
+          "is_a_side": true,
+          "album_key": "チョコレートメランコリー",
+          "family_date": "2022-02-16"
+        },
+        {
+          "uid": "b41c47c8-619d-4801-9a74-9610e201df28",
+          "title": "#おふしょるにっと",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-02-16",
+          "is_a_side": false,
+          "album_key": "チョコレートメランコリー",
+          "family_date": "2022-02-16"
+        },
+        {
+          "uid": "4056bcd7-2e5a-4e8e-87a4-02ed22b862cb",
+          "title": "君はスパークル",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2022-02-16",
+          "is_a_side": false,
+          "album_key": "チョコレートメランコリー",
+          "family_date": "2022-02-16"
+        },
+        {
+          "uid": "5b9f0177-c3ac-4b5d-9965-9f0bfa581fbe",
+          "title": "虹が架かる瞬間",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2022-02-16",
+          "is_a_side": false,
+          "album_key": "チョコレートメランコリー",
+          "family_date": "2022-02-16"
+        },
+        {
+          "uid": null,
+          "title": "トリプルデート",
+          "title_romanji": "Triple Date",
+          "popularity": 4,
+          "release_date": "2022-07-20",
+          "is_a_side": true,
+          "album_key": "トリプルデート",
+          "family_date": "2022-07-20"
+        },
+        {
+          "uid": "b6af3fc8-b25c-41b6-a509-454f8fea527b",
+          "title": "す、好きじゃない!",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2022-07-03",
+          "is_a_side": true,
+          "album_key": "す、好きじゃない!",
+          "family_date": "2022-08-03"
+        },
+        {
+          "uid": "5d863372-ff41-47f9-afca-fcd0c8c6593c",
+          "title": "こちらハッピー探検隊",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2022-08-03",
+          "is_a_side": false,
+          "album_key": "す、好きじゃない!",
+          "family_date": "2022-08-03"
+        },
+        {
+          "uid": "507babe2-a6e3-461a-bed7-e1f1d883dbad",
+          "title": "サマーチョコレート",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2022-08-03",
+          "is_a_side": false,
+          "album_key": "す、好きじゃない!",
+          "family_date": "2022-08-03"
+        },
+        {
+          "uid": "f135f5ee-4fab-4a54-8686-2d00ebdc36df",
+          "title": "僕たちのイマージュ",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-08-03",
+          "is_a_side": false,
+          "album_key": "す、好きじゃない!",
+          "family_date": "2022-08-03"
+        },
+        {
+          "uid": "1564fe83-dfbe-471d-90d1-f75e66e08283",
+          "title": "Want you ! Want you !",
+          "title_romanji": "",
+          "popularity": 2.5,
+          "release_date": "2022-11-19",
+          "is_a_side": false,
+          "album_key": "want you ! want you !",
+          "family_date": "2022-11-19"
+        },
+        {
+          "uid": "912b7b5a-f173-4268-8750-f7a094e5182b",
+          "title": "次に会えた時 何を話そうかな",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2022-11-19",
+          "is_a_side": false,
+          "album_key": "次に会えた時 何を話そうかな",
+          "family_date": "2022-11-19"
+        },
+        {
+          "uid": "e5deaf74-6cbe-4196-a7f7-6e2734a3fccc",
+          "title": "はにかみショート",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2022-11-23",
+          "is_a_side": true,
+          "album_key": "はにかみショート",
+          "family_date": "2022-11-23"
+        },
+        {
+          "uid": "742e443d-0150-4a92-aa87-535e97e9b6ea",
+          "title": "ウルトラレアキッス",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-11-23",
+          "is_a_side": false,
+          "album_key": "はにかみショート",
+          "family_date": "2022-11-23"
+        },
+        {
+          "uid": "1a62fe73-5d00-412e-92bc-1748404f3aab",
+          "title": "ピオニーズ",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2022-11-23",
+          "is_a_side": false,
+          "album_key": "はにかみショート",
+          "family_date": "2022-11-23"
+        },
+        {
+          "uid": "97141fac-192a-4882-ae22-18edc2b9a32e",
+          "title": "桃色デイブレイク",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2022-11-23",
+          "is_a_side": false,
+          "album_key": "はにかみショート",
+          "family_date": "2022-11-23"
+        },
+        {
+          "uid": "91b02aad-86ee-45e2-96d1-63a7fbbce726",
+          "title": "天使は何処へ",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-04-12",
+          "is_a_side": true,
+          "album_key": "天使は何処へ",
+          "family_date": "2023-04-12"
+        },
+        {
+          "uid": "af33656a-7d7c-469c-9876-f79306c9a762",
+          "title": "2時半ろけんろー",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-04-12",
+          "is_a_side": false,
+          "album_key": "天使は何処へ",
+          "family_date": "2023-04-12"
+        },
+        {
+          "uid": "382d7563-6592-46e5-9495-4fcfcd5db13d",
+          "title": "このままでモーメンタリ",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-04-12",
+          "is_a_side": false,
+          "album_key": "天使は何処へ",
+          "family_date": "2023-04-12"
+        },
+        {
+          "uid": "a02a8dbb-8557-4286-a1b4-6efd5d6add3c",
+          "title": "マシュマロフロート",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-04-12",
+          "is_a_side": false,
+          "album_key": "天使は何処へ",
+          "family_date": "2023-04-12"
+        },
+        {
+          "uid": "46db6b4d-bc4d-43b4-b566-dd8c4233ad4a",
+          "title": "想わせぶりっこ",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-07-30",
+          "is_a_side": true,
+          "album_key": "想わせぶりっこ",
+          "family_date": "2023-09-06"
+        },
+        {
+          "uid": "d94d4092-6b71-46a3-8261-f1295dcff39f",
+          "title": "デートの後、22時",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-09-06",
+          "is_a_side": false,
+          "album_key": "想わせぶりっこ",
+          "family_date": "2023-09-06"
+        },
+        {
+          "uid": "f72bf0b1-ae11-4897-a946-ee631c2d7e16",
+          "title": "フロアキラー",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-09-06",
+          "is_a_side": false,
+          "album_key": "想わせぶりっこ",
+          "family_date": "2023-09-06"
+        },
+        {
+          "uid": "3a5051c5-dda3-459c-8742-ff03862b8810",
+          "title": "月下美人",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2023-09-06",
+          "is_a_side": false,
+          "album_key": "想わせぶりっこ",
+          "family_date": "2023-09-06"
+        },
+        {
+          "uid": "82a0ee14-1fed-4b75-be0a-991cb98089d8",
+          "title": "アンチコンフィチュール",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-11-30",
+          "is_a_side": true,
+          "album_key": "アンチコンフィチュール",
+          "family_date": "2023-12-20"
+        },
+        {
+          "uid": "4d307c37-95d2-4d4d-8b7f-11d8d68e239f",
+          "title": "ヒロインとオオカミ",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-12-20",
+          "is_a_side": false,
+          "album_key": "アンチコンフィチュール",
+          "family_date": "2023-12-20"
+        },
+        {
+          "uid": "5e425bd5-7c26-4db7-a7b7-4757879a15a6",
+          "title": "初恋カムバック",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2023-12-20",
+          "is_a_side": false,
+          "album_key": "アンチコンフィチュール",
+          "family_date": "2023-12-20"
+        },
+        {
+          "uid": "6b2b101a-e3ca-4cdb-a858-d994af5f5a44",
+          "title": "ラストチャンス、ラストダンス",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2024-02-29",
+          "is_a_side": true,
+          "album_key": "ラストチャンス、ラストダンス",
+          "family_date": "2024-02-29"
+        },
+        {
+          "uid": "8f54b78d-db25-4163-9817-547a52e43a47",
+          "title": "Marcato",
+          "title_romanji": "Marcato",
+          "popularity": 3.5,
+          "release_date": "2024-03-20",
+          "is_a_side": false,
+          "album_key": "marcato",
+          "family_date": "2024-03-20"
+        },
+        {
+          "uid": "79be9a86-25cf-4f26-9d69-22da977f26d3",
+          "title": "デート前夜レクイエム",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2024-03-20",
+          "is_a_side": false,
+          "album_key": "デート前夜レクイエム",
+          "family_date": "2024-03-20"
+        },
+        {
+          "uid": "6aa8a747-bbb7-4478-bd99-a2cca4262c9e",
+          "title": "偶然シンフォニー",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2024-03-20",
+          "is_a_side": false,
+          "album_key": "偶然シンフォニー",
+          "family_date": "2024-03-20"
+        },
+        {
+          "uid": "2dd7d165-9168-4399-835b-4eb12edcbb46",
+          "title": "春の恋人",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2024-03-20",
+          "is_a_side": false,
+          "album_key": "春の恋人",
+          "family_date": "2024-03-20"
+        },
+        {
+          "uid": "1e17339e-d81b-4254-a77a-a6fb065ba402",
+          "title": "夏が来たから",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2024-07-16",
+          "is_a_side": true,
+          "album_key": "夏が来たから",
+          "family_date": "2024-08-28"
+        },
+        {
+          "uid": "d96b55ab-fe5b-4174-8505-1078a0b0206e",
+          "title": "ごめん、マジで",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2024-08-28",
+          "is_a_side": false,
+          "album_key": "夏が来たから",
+          "family_date": "2024-08-28"
+        },
+        {
+          "uid": "a149a9f5-d4c9-47d4-b65c-34d2f3b15f8f",
+          "title": "最強のラブソング",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2024-08-28",
+          "is_a_side": false,
+          "album_key": "夏が来たから",
+          "family_date": "2024-08-28"
+        },
+        {
+          "uid": "4b1e305e-0b62-463a-82bc-7e49b3024ae8",
+          "title": "モブノデレラ",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2025-04-30",
+          "is_a_side": true,
+          "album_key": "モブノデレラ/神様の言うとーり!",
+          "family_date": "2025-04-30"
+        },
+        {
+          "uid": "0be98714-10b6-47eb-9881-896d04a2384f",
+          "title": "神様の言うとーり!",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2025-04-30",
+          "is_a_side": true,
+          "album_key": "モブノデレラ/神様の言うとーり!",
+          "family_date": "2025-04-30"
+        },
+        {
+          "uid": "e3f80c1f-744e-4897-adc2-e0d5a48a57d3",
+          "title": "カフェ樂園",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2025-04-30",
+          "is_a_side": false,
+          "album_key": "モブノデレラ/神様の言うとーり!",
+          "family_date": "2025-04-30"
+        },
+        {
+          "uid": "80bb8b0b-a343-466f-bf5f-f1bd7198275b",
+          "title": "君を見かけた",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2025-08-27",
+          "is_a_side": true,
+          "album_key": "君を見かけた",
+          "family_date": "2025-08-27"
+        },
+        {
+          "uid": "c8d7eafd-ad41-445a-91b8-1ffe5c573746",
+          "title": "排他的ファイター",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2025-11-19",
+          "is_a_side": true,
+          "album_key": "排他的ファイター",
+          "family_date": "2025-12-10"
+        },
+        {
+          "uid": "76dba1c8-36a0-4dd8-b1aa-265d14bcae9a",
+          "title": "きゅんかわ人生",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2025-12-10",
+          "is_a_side": false,
+          "album_key": "排他的ファイター",
+          "family_date": "2025-12-10"
+        },
+        {
+          "uid": "c21441bc-160a-4fc7-b052-e43e473ac786",
+          "title": "はんぶんこクリスマス",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2025-12-10",
+          "is_a_side": false,
+          "album_key": "排他的ファイター",
+          "family_date": "2025-12-10"
+        },
+        {
+          "uid": "7df39e4d-5c7b-429c-a71c-b7b11555b27e",
+          "title": "愛くださいませ",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2026-06-09",
+          "is_a_side": true,
+          "album_key": "愛くださいませ/ここでファーストキッス",
+          "family_date": "2026-06-24"
+        },
+        {
+          "uid": "5427e64d-0cff-44f8-b349-7e06463a810a",
+          "title": "Summer haze",
+          "title_romanji": "",
+          "popularity": 2.5,
+          "release_date": "2026-06-24",
+          "is_a_side": false,
+          "album_key": "愛くださいませ/ここでファーストキッス",
+          "family_date": "2026-06-24"
+        },
+        {
+          "uid": "24d622a6-b648-4bb9-a1eb-5c5b78b254dd",
+          "title": "ここでファーストキッス",
+          "title_romanji": "",
+          "popularity": 2.5,
+          "release_date": "2026-06-24",
+          "is_a_side": false,
+          "album_key": "愛くださいませ/ここでファーストキッス",
+          "family_date": "2026-06-24"
         }
       ]
     },
@@ -1514,164 +1514,114 @@
       },
       "songs": [
         {
-          "uid": "ec8d7b61-08b5-4702-9447-828c513e0e15",
-          "title": "サマーツインテール",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2026-07-09",
+          "uid": "fa76ae12-8d9d-4c2a-b9f5-e95f6efe5de1",
+          "title": "≒JOY",
+          "title_romanji": "≒JOY",
+          "popularity": 3,
+          "release_date": "2022-07-03",
           "is_a_side": true,
-          "album_key": "サマーツインテール",
-          "family_date": "2026-07-09"
+          "album_key": "≒joy",
+          "family_date": "2022-07-03"
         },
         {
-          "uid": "835ae0b5-737c-40fc-bbe4-4fd31c2a8ad7",
-          "title": "「僕たちの歌」",
+          "uid": null,
+          "title": "トリプルデート",
+          "title_romanji": "Triple Date",
+          "popularity": 4,
+          "release_date": "2022-07-20",
+          "is_a_side": true,
+          "album_key": "トリプルデート",
+          "family_date": "2022-07-20"
+        },
+        {
+          "uid": "86af54db-b794-42b0-90ce-6a2d8def2c4a",
+          "title": "笑って フラジール",
           "title_romanji": "",
           "popularity": 3,
-          "release_date": "2026-04-03",
+          "release_date": "2022-09-28",
           "is_a_side": true,
-          "album_key": "「僕たちの歌」",
-          "family_date": "2026-04-03"
+          "album_key": "笑って フラジール",
+          "family_date": "2022-09-28"
         },
         {
-          "uid": "3d72a1e0-a040-4b48-8871-ffff892ae808",
-          "title": "ノンフィクション",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2026-04-03",
-          "is_a_side": true,
-          "album_key": "ノンフィクション",
-          "family_date": "2026-04-03"
-        },
-        {
-          "uid": "e5c79972-d0cf-46fc-aa54-5cfb338c23fd",
-          "title": "アマガミガール",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2026-02-18",
-          "is_a_side": false,
-          "album_key": "電話番号教えて!",
-          "family_date": "2026-02-18"
-        },
-        {
-          "uid": "a4588215-4619-44cb-9694-de9b35686f9d",
-          "title": "愛が痛かった",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2026-02-18",
-          "is_a_side": false,
-          "album_key": "電話番号教えて!",
-          "family_date": "2026-02-18"
-        },
-        {
-          "uid": "7ac8de34-8e86-4f5e-bb26-2f0e80f4bd68",
-          "title": "電話番号教えて!",
-          "title_romanji": "",
-          "popularity": 4.5,
-          "release_date": "2026-01-18",
-          "is_a_side": true,
-          "album_key": "電話番号教えて!",
-          "family_date": "2026-02-18"
-        },
-        {
-          "uid": "d44d5e11-8c68-498e-9a1d-8cb21ed858f3",
-          "title": "The rock is you!",
-          "title_romanji": "The rock is you!",
-          "popularity": 2.5,
-          "release_date": "2026-02-12",
-          "is_a_side": true,
-          "album_key": "the rock is you!",
-          "family_date": "2026-02-12"
-        },
-        {
-          "uid": "f9da22f1-778a-4c9f-9525-eb491285e476",
-          "title": "ニアジョイ音頭",
+          "uid": "644d5724-8612-40b7-8ca2-c57a3382d8be",
+          "title": "超孤独ライオン",
           "title_romanji": "",
           "popularity": 2.5,
-          "release_date": "2025-10-15",
-          "is_a_side": true,
-          "album_key": "ニアジョイ音頭",
-          "family_date": "2025-10-15"
+          "release_date": "2022-11-23",
+          "is_a_side": false,
+          "album_key": "はにかみショート",
+          "family_date": "2022-11-23"
         },
         {
-          "uid": "0cdeb0cd-a2f7-4306-9aca-be3d317fc1ef",
-          "title": "今、恋をしている",
+          "uid": "96b1c4ba-c512-46e9-9bbc-54a4cd4f5377",
+          "title": "スイートシックスティーン",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-02-22",
+          "is_a_side": true,
+          "album_key": "スイートシックスティーン",
+          "family_date": "2023-02-22"
+        },
+        {
+          "uid": "7edf488c-fc66-481f-b757-1653755ad3fc",
+          "title": "今日も君の夢を見たんだ",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2023-04-12",
+          "is_a_side": false,
+          "album_key": "天使は何処へ",
+          "family_date": "2023-04-12"
+        },
+        {
+          "uid": "1945aef5-3c64-4b95-8616-c703946c9104",
+          "title": "大空、ビュンと",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2025-08-27",
+          "release_date": "2023-07-19",
           "is_a_side": true,
-          "album_key": "今、恋をしている",
-          "family_date": "2025-08-27"
+          "album_key": "大空、ビュンと",
+          "family_date": "2023-07-19"
         },
         {
-          "uid": "a75bc5ea-db1e-4323-9114-601a69fc4973",
-          "title": "いま、月は満ちる",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2025-08-17",
-          "is_a_side": true,
-          "album_key": "いま、月は満ちる",
-          "family_date": "2025-08-17"
-        },
-        {
-          "uid": "d638f84c-d2a7-4a75-b9f9-fef5b7d03c57",
-          "title": "0120お助け屋さん",
+          "uid": "9c76baa2-78a0-4a68-947e-d862d62bf8e5",
+          "title": "その先はイグザルト",
           "title_romanji": "",
           "popularity": 2.5,
-          "release_date": "2025-06-11",
+          "release_date": "2023-09-06",
           "is_a_side": false,
-          "album_key": "ブルーハワイレモン",
-          "family_date": "2025-06-11"
+          "album_key": "想わせぶりっこ",
+          "family_date": "2023-09-06"
         },
         {
-          "uid": "8fe29dd2-be66-4100-95f2-444eeda1fa5a",
-          "title": "♡3ヶ月♡",
+          "uid": "dee8d9e4-eeb3-4cda-8e61-910e8a089c55",
+          "title": "きっと、青い",
           "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2025-06-11",
-          "is_a_side": false,
-          "album_key": "ブルーハワイレモン",
-          "family_date": "2025-06-11"
-        },
-        {
-          "uid": "7bf745eb-be5e-4e0a-8667-f654e9627c10",
-          "title": "ブルーハワイレモン",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2025-05-05",
+          "popularity": 2.5,
+          "release_date": "2023-12-12",
           "is_a_side": true,
-          "album_key": "ブルーハワイレモン",
-          "family_date": "2025-06-11"
+          "album_key": "きっと、青い",
+          "family_date": "2023-12-12"
         },
         {
-          "uid": "33e76472-62da-43ac-81a6-a69edf189f18",
-          "title": "だだだ、だって。",
+          "uid": "ee6186d2-cdd4-4c2b-b967-ee23a5bdb007",
+          "title": "無謀人",
           "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2024-10-16",
+          "popularity": 1.5,
+          "release_date": "2023-12-19",
           "is_a_side": false,
-          "album_key": "初恋シンデレラ",
-          "family_date": "2024-10-16"
+          "album_key": "無謀人",
+          "family_date": "2023-12-19"
         },
         {
-          "uid": "d8383ef0-0970-40aa-8c2f-5fe7d0a2b32e",
-          "title": "ピーチティーとピーチパイ",
-          "title_romanji": "",
-          "popularity": 4,
-          "release_date": "2024-10-16",
-          "is_a_side": false,
-          "album_key": "初恋シンデレラ",
-          "family_date": "2024-10-16"
-        },
-        {
-          "uid": "ee38f9d6-52b8-47ab-9ec3-8746b434f889",
-          "title": "初恋シンデレラ",
+          "uid": "7c17e124-c418-4874-b169-5ded6944cd00",
+          "title": "体育館ディスコ",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2024-09-04",
+          "release_date": "2024-05-04",
           "is_a_side": true,
-          "album_key": "初恋シンデレラ",
-          "family_date": "2024-10-16"
+          "album_key": "体育館ディスコ",
+          "family_date": "2024-06-12"
         },
         {
           "uid": "2af6ee7b-424c-44bd-95ae-486813f21da2",
@@ -1694,114 +1644,164 @@
           "family_date": "2024-06-12"
         },
         {
-          "uid": "7c17e124-c418-4874-b169-5ded6944cd00",
-          "title": "体育館ディスコ",
+          "uid": "ee38f9d6-52b8-47ab-9ec3-8746b434f889",
+          "title": "初恋シンデレラ",
           "title_romanji": "",
           "popularity": 3.5,
-          "release_date": "2024-05-04",
+          "release_date": "2024-09-04",
           "is_a_side": true,
-          "album_key": "体育館ディスコ",
-          "family_date": "2024-06-12"
+          "album_key": "初恋シンデレラ",
+          "family_date": "2024-10-16"
         },
         {
-          "uid": "ee6186d2-cdd4-4c2b-b967-ee23a5bdb007",
-          "title": "無謀人",
-          "title_romanji": "",
-          "popularity": 1.5,
-          "release_date": "2023-12-19",
-          "is_a_side": false,
-          "album_key": "無謀人",
-          "family_date": "2023-12-19"
-        },
-        {
-          "uid": "dee8d9e4-eeb3-4cda-8e61-910e8a089c55",
-          "title": "きっと、青い",
-          "title_romanji": "",
-          "popularity": 2.5,
-          "release_date": "2023-12-12",
-          "is_a_side": true,
-          "album_key": "きっと、青い",
-          "family_date": "2023-12-12"
-        },
-        {
-          "uid": "9c76baa2-78a0-4a68-947e-d862d62bf8e5",
-          "title": "その先はイグザルト",
-          "title_romanji": "",
-          "popularity": 2.5,
-          "release_date": "2023-09-06",
-          "is_a_side": false,
-          "album_key": "想わせぶりっこ",
-          "family_date": "2023-09-06"
-        },
-        {
-          "uid": "1945aef5-3c64-4b95-8616-c703946c9104",
-          "title": "大空、ビュンと",
-          "title_romanji": "",
-          "popularity": 3.5,
-          "release_date": "2023-07-19",
-          "is_a_side": true,
-          "album_key": "大空、ビュンと",
-          "family_date": "2023-07-19"
-        },
-        {
-          "uid": "7edf488c-fc66-481f-b757-1653755ad3fc",
-          "title": "今日も君の夢を見たんだ",
+          "uid": "33e76472-62da-43ac-81a6-a69edf189f18",
+          "title": "だだだ、だって。",
           "title_romanji": "",
           "popularity": 3,
-          "release_date": "2023-04-12",
+          "release_date": "2024-10-16",
           "is_a_side": false,
-          "album_key": "天使は何処へ",
-          "family_date": "2023-04-12"
+          "album_key": "初恋シンデレラ",
+          "family_date": "2024-10-16"
         },
         {
-          "uid": "96b1c4ba-c512-46e9-9bbc-54a4cd4f5377",
-          "title": "スイートシックスティーン",
+          "uid": "d8383ef0-0970-40aa-8c2f-5fe7d0a2b32e",
+          "title": "ピーチティーとピーチパイ",
           "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2023-02-22",
-          "is_a_side": true,
-          "album_key": "スイートシックスティーン",
-          "family_date": "2023-02-22"
-        },
-        {
-          "uid": "644d5724-8612-40b7-8ca2-c57a3382d8be",
-          "title": "超孤独ライオン",
-          "title_romanji": "",
-          "popularity": 2.5,
-          "release_date": "2022-11-23",
-          "is_a_side": false,
-          "album_key": "はにかみショート",
-          "family_date": "2022-11-23"
-        },
-        {
-          "uid": "86af54db-b794-42b0-90ce-6a2d8def2c4a",
-          "title": "笑って フラジール",
-          "title_romanji": "",
-          "popularity": 3,
-          "release_date": "2022-09-28",
-          "is_a_side": true,
-          "album_key": "笑って フラジール",
-          "family_date": "2022-09-28"
-        },
-        {
-          "uid": null,
-          "title": "トリプルデート",
-          "title_romanji": "Triple Date",
           "popularity": 4,
-          "release_date": "2022-07-20",
-          "is_a_side": true,
-          "album_key": "トリプルデート",
-          "family_date": "2022-07-20"
+          "release_date": "2024-10-16",
+          "is_a_side": false,
+          "album_key": "初恋シンデレラ",
+          "family_date": "2024-10-16"
         },
         {
-          "uid": "fa76ae12-8d9d-4c2a-b9f5-e95f6efe5de1",
-          "title": "≒JOY",
-          "title_romanji": "≒JOY",
-          "popularity": 3,
-          "release_date": "2022-07-03",
+          "uid": "7bf745eb-be5e-4e0a-8667-f654e9627c10",
+          "title": "ブルーハワイレモン",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2025-05-05",
           "is_a_side": true,
-          "album_key": "≒joy",
-          "family_date": "2022-07-03"
+          "album_key": "ブルーハワイレモン",
+          "family_date": "2025-06-11"
+        },
+        {
+          "uid": "d638f84c-d2a7-4a75-b9f9-fef5b7d03c57",
+          "title": "0120お助け屋さん",
+          "title_romanji": "",
+          "popularity": 2.5,
+          "release_date": "2025-06-11",
+          "is_a_side": false,
+          "album_key": "ブルーハワイレモン",
+          "family_date": "2025-06-11"
+        },
+        {
+          "uid": "8fe29dd2-be66-4100-95f2-444eeda1fa5a",
+          "title": "♡3ヶ月♡",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2025-06-11",
+          "is_a_side": false,
+          "album_key": "ブルーハワイレモン",
+          "family_date": "2025-06-11"
+        },
+        {
+          "uid": "a75bc5ea-db1e-4323-9114-601a69fc4973",
+          "title": "いま、月は満ちる",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2025-08-17",
+          "is_a_side": true,
+          "album_key": "いま、月は満ちる",
+          "family_date": "2025-08-17"
+        },
+        {
+          "uid": "0cdeb0cd-a2f7-4306-9aca-be3d317fc1ef",
+          "title": "今、恋をしている",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2025-08-27",
+          "is_a_side": true,
+          "album_key": "今、恋をしている",
+          "family_date": "2025-08-27"
+        },
+        {
+          "uid": "f9da22f1-778a-4c9f-9525-eb491285e476",
+          "title": "ニアジョイ音頭",
+          "title_romanji": "",
+          "popularity": 2.5,
+          "release_date": "2025-10-15",
+          "is_a_side": true,
+          "album_key": "ニアジョイ音頭",
+          "family_date": "2025-10-15"
+        },
+        {
+          "uid": "d44d5e11-8c68-498e-9a1d-8cb21ed858f3",
+          "title": "The rock is you!",
+          "title_romanji": "The rock is you!",
+          "popularity": 2.5,
+          "release_date": "2026-02-12",
+          "is_a_side": true,
+          "album_key": "the rock is you!",
+          "family_date": "2026-02-12"
+        },
+        {
+          "uid": "7ac8de34-8e86-4f5e-bb26-2f0e80f4bd68",
+          "title": "電話番号教えて!",
+          "title_romanji": "",
+          "popularity": 4.5,
+          "release_date": "2026-01-18",
+          "is_a_side": true,
+          "album_key": "電話番号教えて!",
+          "family_date": "2026-02-18"
+        },
+        {
+          "uid": "e5c79972-d0cf-46fc-aa54-5cfb338c23fd",
+          "title": "アマガミガール",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2026-02-18",
+          "is_a_side": false,
+          "album_key": "電話番号教えて!",
+          "family_date": "2026-02-18"
+        },
+        {
+          "uid": "a4588215-4619-44cb-9694-de9b35686f9d",
+          "title": "愛が痛かった",
+          "title_romanji": "",
+          "popularity": 3.5,
+          "release_date": "2026-02-18",
+          "is_a_side": false,
+          "album_key": "電話番号教えて!",
+          "family_date": "2026-02-18"
+        },
+        {
+          "uid": "835ae0b5-737c-40fc-bbe4-4fd31c2a8ad7",
+          "title": "「僕たちの歌」",
+          "title_romanji": "",
+          "popularity": 3,
+          "release_date": "2026-04-03",
+          "is_a_side": true,
+          "album_key": "「僕たちの歌」",
+          "family_date": "2026-04-03"
+        },
+        {
+          "uid": "3d72a1e0-a040-4b48-8871-ffff892ae808",
+          "title": "ノンフィクション",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2026-04-03",
+          "is_a_side": true,
+          "album_key": "ノンフィクション",
+          "family_date": "2026-04-03"
+        },
+        {
+          "uid": "ec8d7b61-08b5-4702-9447-828c513e0e15",
+          "title": "サマーツインテール",
+          "title_romanji": "",
+          "popularity": 4,
+          "release_date": "2026-07-09",
+          "is_a_side": true,
+          "album_key": "サマーツインテール",
+          "family_date": "2026-07-09"
         }
       ]
     }
