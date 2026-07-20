@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IKONOIJOY ベスト10</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mochiy+Pop+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-theme="equal-love">
+    <div class="page-bg" aria-hidden="true">
+      <div class="petals" id="petals"></div>
+    </div>
+
+    <header class="hero">
+      <a class="back-link" href="../">← Idol Producer Game</a>
+      <p class="brand">IKONOIJOY</p>
+      <h1>ベスト10</h1>
+
+      <div class="group-tabs" id="groupTabs" role="tablist" aria-label="グループ選択"></div>
+
+      <div class="hero-actions">
+        <label class="name-field" for="saveName">
+          <span class="name-label">Name</span>
+          <input type="text" id="saveName" name="saveName" autocomplete="nickname" placeholder="Your name" />
+        </label>
+        <button type="button" id="confirmName" class="btn btn-secondary">Load</button>
+        <button type="button" id="saveNamed" class="btn">Save</button>
+        <button type="button" id="savePng" class="btn btn-secondary">Download PNG</button>
+        <button type="button" id="clearAll" class="btn btn-danger">Clear</button>
+      </div>
+      <p class="save-status" id="saveStatus" aria-live="polite"></p>
+    </header>
+
+    <main class="layout">
+      <section class="picker-panel" aria-label="曲選択">
+        <div class="picker-head">
+          <h2>曲を選ぶ</h2>
+          <label class="search-field" for="songSearch">
+            <span class="visually-hidden">曲名検索</span>
+            <input type="search" id="songSearch" placeholder="曲名で検索…" autocomplete="off" />
+          </label>
+        </div>
+        <div class="rank-slots" id="rankSlots"></div>
+      </section>
+
+      <section class="preview-panel" aria-label="プレビュー">
+        <div class="chart-stage">
+          <article class="best-chart" id="bestChart">
+            <div class="chart-hashtag" id="chartHashtag">#わたしのイコラブベスト</div>
+            <div class="chart-logo-row">
+              <span class="deco-heart" aria-hidden="true">♡</span>
+              <p class="chart-group-romanji" id="chartGroupRomanji">=LOVE</p>
+              <span class="deco-heart" aria-hidden="true">♡</span>
+            </div>
+            <p class="chart-producer" id="chartProducer">Produced by Rino Sashihara</p>
+            <ol class="chart-ranks" id="chartRanks"></ol>
+            <img class="chart-footer-logo" id="chartFooterLogo" alt="" width="120" height="40" hidden />
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p class="foot-credit">
+        <span>Powered by</span>
+        <img class="foot-logo" src="../idol-producer-logo.png" alt="Idol Producer" width="120" height="48" />
+        <span class="foot-sep" aria-hidden="true">·</span>
+        <span>Designed by Yunfannas</span>
+      </p>
+    </footer>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

@@ -15,6 +15,16 @@ export interface WebPreviewBundle {
     member_uids: string[];
     member_names: string[];
     pictures: string[];
+    picture_history?: Array<{
+      path?: string;
+      timestamp?: string;
+      effective_date?: string;
+      release_date?: string;
+      label?: string;
+      note?: string;
+      source?: string;
+      kind?: string;
+    }>;
     discography: Array<{
       uid?: string;
       title?: string;
@@ -38,6 +48,20 @@ export interface WebPreviewBundle {
     birthday?: string | null;
     age?: number | null;
     portrait_photo_path?: string | null;
+    group_portrait_paths?: Record<string, string>;
+    group_portrait_history?: Record<
+      string,
+      Array<{
+        path?: string;
+        portrait_photo_path?: string;
+        timestamp?: string;
+        effective_date?: string;
+        release_date?: string;
+        label?: string;
+        note?: string;
+        source?: string;
+      }>
+    >;
     group_history_in_group: Array<{
       group_name?: string;
       member_name?: string;

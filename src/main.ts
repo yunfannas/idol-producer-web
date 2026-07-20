@@ -37,6 +37,7 @@ import {
   type SongsWorkspaceTab,
   type TrainingTab,
   type TrainingRosterSortKey,
+  type FeedbackEntry,
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
 import {
@@ -90,6 +91,7 @@ const appRoot: HTMLDivElement = appRootElt;
 const UI_LANG_STORAGE_KEY = "idol-producer-ui-lang";
 const ACCOUNT_NAME_STORAGE_KEY = "idol-producer-account-name";
 const TUTORIAL_AUTO_OPEN_STORAGE_KEY = "idol-producer-tutorial-auto-open";
+const FEEDBACK_STORAGE_KEY = "idol-producer-feedback-log";
 
 function isUiLanguage(value: unknown): value is UiLanguage {
   return value === "en" || value === "zh-CN";
@@ -149,6 +151,51 @@ function setTutorialAutoOpen(next: boolean): void {
   } catch {
     /* ignore storage failures */
   }
+}
+
+function readFeedbackEntries(): FeedbackEntry[] {
+  try {
+    const raw = window.localStorage.getItem(FEEDBACK_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
+      .map((row) => ({
+        id: String(row.id ?? ""),
+        createdAt: String(row.createdAt ?? ""),
+        type: row.type === "question" || row.type === "suggestion" ? row.type : "bug",
+        title: String(row.title ?? ""),
+        details: String(row.details ?? ""),
+        view: String(row.view ?? "Inbox"),
+        simDate: String(row.simDate ?? ""),
+        accountName: String(row.accountName ?? ""),
+        uiLanguage: row.uiLanguage === "zh-CN" ? "zh-CN" : "en",
+      }))
+      .filter((row) => row.id);
+  } catch {
+    return [];
+  }
+}
+
+function writeFeedbackEntries(entries: FeedbackEntry[]): void {
+  try {
+    window.localStorage.setItem(FEEDBACK_STORAGE_KEY, JSON.stringify(entries.slice(-200)));
+  } catch {
+    /* ignore storage failures */
+  }
+}
+
+function exportFeedbackEntries(entries: FeedbackEntry[]): void {
+  const blob = new Blob([JSON.stringify(entries, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `idol-producer-feedback-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
 }
 
 interface FocusSnapshot {
@@ -720,6 +767,10 @@ let tutorialAutoOpen = readTutorialAutoOpen();
 let tutorialOverlayOpen = false;
 let tutorialStepIndex = 0;
 let selectedWikiKey: string | null = defaultWikiEntryKey(uiLang);
+let feedbackEntries: FeedbackEntry[] = readFeedbackEntries();
+let feedbackStatusMessage: string | null = null;
+let wikiModalOpen = false;
+let feedbackModalOpen = false;
 
 let currentView: DesktopNavId = "Inbox";
 let idolDetailUid: string | null = null;
@@ -1349,6 +1400,10 @@ function paintGame(): void {
         })
       : "",
     selectedWikiKey,
+    feedbackEntries,
+    feedbackStatusMessage,
+    wikiModalOpen,
+    feedbackModalOpen,
   });
   restoreFocus(appRoot, focus);
 
@@ -1377,6 +1432,72 @@ function paintGame(): void {
   document.getElementById("btn-open-tutorial")?.addEventListener("click", () => {
     if (!save || browseMode) return;
     openTutorialOverlay(0);
+    paintGame();
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-open-wiki-modal]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      wikiModalOpen = true;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-open-feedback-modal]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      feedbackModalOpen = true;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-wiki-modal-close]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      wikiModalOpen = false;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-feedback-modal-close]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      feedbackModalOpen = false;
+      paintGame();
+    });
+  });
+  document.getElementById("btn-feedback-save")?.addEventListener("click", () => {
+    const typeEl = document.getElementById("feedback-type");
+    const titleEl = document.getElementById("feedback-title");
+    const detailsEl = document.getElementById("feedback-details");
+    if (!(typeEl instanceof HTMLSelectElement) || !(titleEl instanceof HTMLInputElement) || !(detailsEl instanceof HTMLTextAreaElement)) {
+      return;
+    }
+    const type = typeEl.value === "question" || typeEl.value === "suggestion" ? typeEl.value : "bug";
+    const title = titleEl.value.trim();
+    const details = detailsEl.value.trim();
+    if (!title && !details) {
+      feedbackStatusMessage = t(uiLang, "feedback_missing_details");
+      paintGame();
+      return;
+    }
+    const simDate =
+      isoDatePart(save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? "") || "";
+    feedbackEntries = [
+      ...feedbackEntries,
+      {
+        id: `feedback-${Date.now().toString(36)}`,
+        createdAt: new Date().toISOString(),
+        type,
+        title,
+        details,
+        view: currentView,
+        simDate,
+        accountName,
+        uiLanguage: uiLang,
+      },
+    ];
+    writeFeedbackEntries(feedbackEntries);
+    feedbackStatusMessage = t(uiLang, "feedback_saved_status");
+    feedbackModalOpen = true;
+    paintGame();
+  });
+  document.getElementById("btn-feedback-export")?.addEventListener("click", () => {
+    exportFeedbackEntries(feedbackEntries);
+    feedbackStatusMessage = t(uiLang, "feedback_exported_status");
+    feedbackModalOpen = true;
     paintGame();
   });
   document.getElementById("tutorial-auto-open-toggle")?.addEventListener("change", (ev) => {

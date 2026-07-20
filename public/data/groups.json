@@ -147935,9 +147935,13 @@
       "2d936fb8-c331-4b87-9d14-4ddefb66bf41",
       "721174f8-ee12-4cf2-a066-54e239aa1e8a",
       "b96024a6-0fe1-436b-964e-ff0ce7d85fb4",
-      "4cf88ce3-0ede-453b-9da7-99c853b7d222"
+      "4cf88ce3-0ede-453b-9da7-99c853b7d222",
+      "7df39e4d-5c7b-429c-a71c-b7b11555b27e",
+      "24d622a6-b648-4bb9-a1eb-5c5b78b254dd",
+      "5427e64d-0cff-44f8-b349-7e06463a810a"
     ],
     "pictures": [
+      "picture/NotEqualMe__2026-06-24_12th_single_ogp.png",
       "picture/≠ME_photo_14.webp",
       "picture/≠ME_photo.webp",
       "picture/≠ME_photo_2.webp",
@@ -148488,6 +148492,29 @@
       "shared-ikonoijoy-2022",
       "shared-ikonoijoy-2023",
       "shared-ikonoijoy-2024"
+    ],
+    "notes": "Official profiles and current release visuals refreshed from official sources on 2026-07-19.",
+    "picture_history": [
+      {
+        "path": "picture/NotEqualMe__2026-06-24_12th_single_ogp.png",
+        "timestamp": null,
+        "effective_date": "2026-07-19",
+        "release_date": "2026-06-24",
+        "label": "12th single special-site key visual",
+        "note": "Official current group visual captured on 2026-07-19.",
+        "source": "official_specialsite",
+        "kind": "release_visual"
+      },
+      {
+        "path": "picture/≠ME_photo_14.webp",
+        "timestamp": null,
+        "effective_date": "2026-05-06",
+        "release_date": null,
+        "label": "legacy local group visual",
+        "note": "Pre-refresh group visual retained as prior history entry.",
+        "source": "local_archive",
+        "kind": "group_photo"
+      }
     ]
   },
   {
@@ -149985,7 +150012,6 @@
       "a75bc5ea-db1e-4323-9114-601a69fc4973",
       "7c17e124-c418-4874-b169-5ded6944cd00",
       "d8383ef0-0970-40aa-8c2f-5fe7d0a2b32e",
-      "ab88bb52-1ffb-4541-bc0a-08fae8612b07",
       "7edf488c-fc66-481f-b757-1653755ad3fc",
       "3d72a1e0-a040-4b48-8871-ffff892ae808",
       "f9da22f1-778a-4c9f-9525-eb491285e476",
@@ -150002,9 +150028,11 @@
       "ee6186d2-cdd4-4c2b-b967-ee23a5bdb007",
       "8fe29dd2-be66-4100-95f2-444eeda1fa5a",
       "d638f84c-d2a7-4a75-b9f9-fef5b7d03c57",
-      "dee8d9e4-eeb3-4cda-8e61-910e8a089c55"
+      "dee8d9e4-eeb3-4cda-8e61-910e8a089c55",
+      "ec8d7b61-08b5-4702-9447-828c513e0e15"
     ],
     "pictures": [
+      "picture/NearlyEqualJoy__2026-08-05_5th_single_summer_twintail_mv.jpg",
       "picture/≒JOY_photo_11.webp",
       "picture/≒JOY_photo_6.webp",
       "picture/≒JOY_photo_15.webp",
@@ -150026,7 +150054,7 @@
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/%E2%89%92JOY",
     "idolsdiagram_url": "https://idolsdiagram.com/g/4omSSk9Z",
-    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
+    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06. Official profiles and current release visuals refreshed from official sources on 2026-07-19.",
     "discography": [
       {
         "uid": "2030128d-7c92-41e9-9873-ef00d244f43c",
@@ -150233,6 +150261,28 @@
     "shared_release_uids": [
       "shared-triple-date-2022",
       "shared-ikonoijoy-2024"
+    ],
+    "picture_history": [
+      {
+        "path": "picture/NearlyEqualJoy__2026-08-05_5th_single_summer_twintail_mv.jpg",
+        "timestamp": null,
+        "effective_date": "2026-07-19",
+        "release_date": "2026-08-05",
+        "label": "5th single \"Summer Twintail\" MV thumbnail",
+        "note": "Official current group visual captured on 2026-07-19.",
+        "source": "official_youtube",
+        "kind": "mv_thumbnail"
+      },
+      {
+        "path": "picture/≒JOY_photo_11.webp",
+        "timestamp": null,
+        "effective_date": "2026-03-30",
+        "release_date": null,
+        "label": "legacy local group visual",
+        "note": "Pre-refresh group visual retained as prior history entry.",
+        "source": "local_archive",
+        "kind": "group_photo"
+      }
     ]
   },
   {
@@ -175933,7 +175983,6 @@
       "0481bf4c-784b-47b3-9650-5fbe99d06bed",
       "c408b92d-2bb9-4a1d-b05d-6933f58ac95d",
       "f45f80ca-9525-4030-a358-ec9b8253284c",
-      "78d70ed7-c305-48d7-b4fb-eb4f52855cf9",
       "d090cceb-70a0-4a7b-ba0c-638c05eecff9",
       "98214093-e6ac-4490-865e-5d8d222c7653",
       "c633de04-ed53-41ba-9e22-fd73b57002df",
@@ -175967,6 +176016,7 @@
       "00908f24-dd65-4ff8-ad83-eb12d505249b"
     ],
     "pictures": [
+      "picture/EqualLove__2026-04-01_20th_single_special.jpeg",
       "picture/=LOVE_photo_6.webp",
       "picture/=LOVE_photo_20.webp",
       "picture/=LOVE_photo_10.webp",
@@ -176024,7 +176074,7 @@
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/%3DLOVE",
     "idolsdiagram_url": "https://idolsdiagram.com/g/PUxPVkU",
-    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
+    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06. Official profiles and current release visuals refreshed from official sources on 2026-07-19.",
     "discography": [
       {
         "title": "全部、内緒。",
@@ -176870,6 +176920,28 @@
       "shared-ikonoijoy-2022",
       "shared-ikonoijoy-2023",
       "shared-ikonoijoy-2024"
+    ],
+    "picture_history": [
+      {
+        "path": "picture/EqualLove__2026-04-01_20th_single_special.jpeg",
+        "timestamp": null,
+        "effective_date": "2026-07-19",
+        "release_date": "2026-04-01",
+        "label": "20th single special-site banner",
+        "note": "Official current group visual captured on 2026-07-19.",
+        "source": "official_homepage",
+        "kind": "release_banner"
+      },
+      {
+        "path": "picture/=LOVE_photo_6.webp",
+        "timestamp": null,
+        "effective_date": "2026-04-17",
+        "release_date": null,
+        "label": "legacy local group visual",
+        "note": "Pre-refresh group visual retained as prior history entry.",
+        "source": "local_archive",
+        "kind": "group_photo"
+      }
     ]
   },
   {

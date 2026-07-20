@@ -381,7 +381,7 @@ export function renderWikiPanel(lang: UiLanguage, selectedKey: string | null, br
   const allowed = new Set(relatedWikiKeysForView(view, browseMode));
   const entries = wikiEntries(lang).filter((entry) => allowed.has(entry.key));
   const selected = entries.find((entry) => entry.key === selectedKey) ?? entries[0] ?? null;
-  const label = lang === "zh-CN" ? "游戏百科" : "Wiki";
+  const label = lang === "zh-CN" ? "\u6e38\u620f\u767e\u79d1" : "Wiki";
   const browseHint =
     lang === "zh-CN"
       ? "点击主界面里的高亮术语，或从下方相关词条中切换。"
@@ -416,6 +416,41 @@ export function renderWikiPanel(lang: UiLanguage, selectedKey: string | null, br
       }
       <div class="wiki-panel__topics">
         <h3 class="wiki-panel__topics-label">${htmlEsc(relatedLabel)}</h3>
+        <div class="wiki-panel__list" role="list">${list}</div>
+      </div>
+    </div>
+  </section>`;
+}
+
+export function renderFullWikiPanel(lang: UiLanguage, selectedKey: string | null): string {
+  const entries = wikiEntries(lang);
+  const selected = entries.find((entry) => entry.key === selectedKey) ?? entries[0] ?? null;
+  const label = lang === "zh-CN" ? "????" : "Wiki";
+  const list = entries
+    .map((entry) => {
+      const active = selected?.key === entry.key ? " is-active" : "";
+      return `<button type="button" class="wiki-entry-btn${active}" data-wiki-term="${htmlEsc(entry.key)}">
+        <span class="wiki-entry-btn__label">${htmlEsc(entry.label)}</span>
+        <span class="wiki-entry-btn__summary">${htmlEsc(entry.summary)}</span>
+      </button>`;
+    })
+    .join("");
+
+  return `
+  <section class="fm-wiki" aria-labelledby="wiki-heading">
+    <h2 id="wiki-heading" class="fm-wiki-label">${htmlEsc(label)}</h2>
+    <div class="fm-wiki-card">
+      ${
+        selected
+          ? `<article class="wiki-panel__article">
+              <h3 class="wiki-panel__title">${htmlEsc(selected.label)}</h3>
+              <p class="wiki-panel__summary">${htmlEsc(selected.summary)}</p>
+              <p class="wiki-panel__description">${htmlEsc(selected.description)}</p>
+            </article>`
+          : ""
+      }
+      <div class="wiki-panel__topics">
+        <h3 class="wiki-panel__topics-label">${htmlEsc(lang === "zh-CN" ? "å…¨éƒ¨è¯æ¡" : "All topics")}</h3>
         <div class="wiki-panel__list" role="list">${list}</div>
       </div>
     </div>
@@ -499,3 +534,4 @@ export function annotateWikiTerms(root: HTMLElement, lang: UiLanguage, allowedKe
     textNode.parentNode?.replaceChild(frag, textNode);
   }
 }
+

@@ -17,7 +17,7 @@ const EN: Dict = {
   common_no: "No",
   common_wiki: "百科",
   common_japanese: "Japanese",
-  common_jpy_amount: "JPY {amount}",
+  common_jpy_amount: "日元 {amount}",
   common_as_of: "(as of {date})",
   opening_tagline:
     "Choose how to enter the world: start a fresh scenario, load browser save slots, or browse the database first.",
@@ -50,6 +50,8 @@ const EN: Dict = {
   opening_slot_invalid: "Slot {slot} is empty or not a valid save.",
   opening_new_production_started: "New production started.",
   opening_game_manual: "Game manual",
+  opening_oshi_chart: "HEROINES oshi chart",
+  opening_ikonoijoy_best10: "IKONOIJOY best 10",
   opening_account_name: "Account name",
   opening_enter_account_name: "Enter account name",
   opening_password_later: "Password support can be added later.",
@@ -58,6 +60,8 @@ const EN: Dict = {
   opening_autosave: "Autosave",
   opening_scenario_opening: "{name} · opening {date}",
   shell_game_manual: "Game manual",
+  shell_oshi_chart: "HEROINES oshi chart",
+  shell_ikonoijoy_best10: "IKONOIJOY best 10",
   shell_home: "Home",
   shell_main_menu: "Main menu",
   shell_slot: "Slot",
@@ -88,6 +92,25 @@ const EN: Dict = {
   shell_next: "Next",
   shell_next_event_today: "Advance to the next scheduled event today",
   shell_next_day_morning: "Advance to the next day at 08:00",
+  feedback_heading: "Internal Feedback",
+  feedback_intro: "Record tester bugs and questions locally in this browser.",
+  feedback_type: "Type",
+  feedback_type_bug: "Bug",
+  feedback_type_question: "Question",
+  feedback_type_suggestion: "Suggestion",
+  feedback_title: "Title",
+  feedback_title_placeholder: "Short summary",
+  feedback_details: "Details",
+  feedback_details_placeholder: "What happened, what you expected, and steps to reproduce.",
+  feedback_save: "Save Entry",
+  feedback_export: "Export JSON",
+  feedback_recent: "Recent entries",
+  feedback_empty: "No feedback saved yet.",
+  feedback_saved_local: "Saved only on this device/browser.",
+  feedback_context: "View: {view} · Sim date: {date}",
+  feedback_saved_status: "Feedback entry saved.",
+  feedback_exported_status: "Feedback log exported.",
+  feedback_missing_details: "Enter a title or details first.",
   nav_inbox: "Inbox",
   nav_idols: "Idols",
   nav_groups: "Groups",
@@ -266,7 +289,7 @@ const ZH_CN: Dict = {
   common_no: "\u5426",
   common_wiki: "Wiki",
   common_japanese: "\u65e5\u8bed",
-  common_jpy_amount: "JPY {amount}",
+  common_jpy_amount: "\u65e5\u5143 {amount}",
   common_as_of: "\uff08\u622a\u81f3 {date}\uff09",
   opening_tagline:
     "\u9009\u62e9\u8fdb\u5165\u8fd9\u4e2a\u4e16\u754c\u7684\u65b9\u5f0f\uff1a\u5f00\u59cb\u65b0\u5267\u672c\uff0c\u8bfb\u53d6\u6d4f\u89c8\u5668\u5b58\u6863\uff0c\u6216\u5148\u6d4f\u89c8\u6570\u636e\u5e93\u3002",
@@ -302,6 +325,8 @@ const ZH_CN: Dict = {
     "\u5b58\u6863\u69fd {slot} \u4e3a\u7a7a\uff0c\u6216\u4e0d\u662f\u6709\u6548\u5b58\u6863\u3002",
   opening_new_production_started: "\u65b0\u7684\u5236\u4f5c\u5df2\u5f00\u59cb\u3002",
   opening_game_manual: "\u6e38\u620f\u624b\u518c",
+  opening_oshi_chart: "HEROINES \u63a8\u3057\u30c1\u30e3\u30fc\u30c8",
+  opening_ikonoijoy_best10: "IKONOIJOY \u30d9\u30b9\u30c810",
   opening_account_name: "\u8d26\u53f7\u540d\u79f0",
   opening_enter_account_name: "\u8f93\u5165\u8d26\u53f7\u540d\u79f0",
   opening_password_later: "\u5bc6\u7801\u529f\u80fd\u53ef\u4ee5\u7a0d\u540e\u518d\u52a0\u5165\u3002",
@@ -310,6 +335,8 @@ const ZH_CN: Dict = {
   opening_autosave: "\u81ea\u52a8\u5b58\u6863",
   opening_scenario_opening: "{name} \u00b7 \u5f00\u59cb\u65e5\u671f {date}",
   shell_game_manual: "\u6e38\u620f\u624b\u518c",
+  shell_oshi_chart: "HEROINES \u63a8\u3057\u30c1\u30e3\u30fc\u30c8",
+  shell_ikonoijoy_best10: "IKONOIJOY \u30d9\u30b9\u30c810",
   shell_home: "\u4e3b\u9875",
   shell_main_menu: "\u4e3b\u83dc\u5355",
   shell_slot: "\u5b58\u6863\u69fd",
@@ -340,6 +367,25 @@ const ZH_CN: Dict = {
   shell_next: "\u4e0b\u4e00\u6b65",
   shell_next_event_today: "\u63a8\u8fdb\u5230\u4eca\u5929\u4e0b\u4e00\u4e2a\u5df2\u6392\u5b9a\u4e8b\u4ef6",
   shell_next_day_morning: "\u63a8\u8fdb\u5230\u6b21\u65e5 08:00",
+  feedback_heading: "\u5185\u90e8\u53cd\u9988",
+  feedback_intro: "\u5728\u5f53\u524d\u6d4f\u89c8\u5668\u672c\u5730\u8bb0\u5f55\u6d4b\u8bd5\u95ee\u9898\u4e0e\u7591\u95ee\u3002",
+  feedback_type: "\u7c7b\u578b",
+  feedback_type_bug: "\u9519\u8bef",
+  feedback_type_question: "\u95ee\u9898",
+  feedback_type_suggestion: "\u5efa\u8bae",
+  feedback_title: "\u6807\u9898",
+  feedback_title_placeholder: "\u7b80\u77ed\u6982\u8981",
+  feedback_details: "\u8be6\u60c5",
+  feedback_details_placeholder: "\u5199\u4e0b\u53d1\u751f\u4e86\u4ec0\u4e48\u3001\u4f60\u671f\u5f85\u7684\u7ed3\u679c\u3001\u4ee5\u53ca\u590d\u73b0\u6b65\u9aa4\u3002",
+  feedback_save: "\u4fdd\u5b58\u6761\u76ee",
+  feedback_export: "\u5bfc\u51fa JSON",
+  feedback_recent: "\u6700\u8fd1\u6761\u76ee",
+  feedback_empty: "\u8fd8\u6ca1\u6709\u4fdd\u5b58\u7684\u53cd\u9988\u3002",
+  feedback_saved_local: "\u53ea\u4f1a\u4fdd\u5b58\u5728\u8fd9\u53f0\u8bbe\u5907\u7684\u5f53\u524d\u6d4f\u89c8\u5668\u4e2d\u3002",
+  feedback_context: "\u5f53\u524d\u89c6\u56fe\uff1a{view} \u00b7 \u6a21\u62df\u65e5\u671f\uff1a{date}",
+  feedback_saved_status: "\u53cd\u9988\u5df2\u4fdd\u5b58\u3002",
+  feedback_exported_status: "\u53cd\u9988\u65e5\u5fd7\u5df2\u5bfc\u51fa\u3002",
+  feedback_missing_details: "\u8bf7\u5148\u586b\u5199\u6807\u9898\u6216\u8be6\u60c5\u3002",
   nav_inbox: "\u6536\u4ef6\u7bb1",
   nav_idols: "\u5076\u50cf",
   nav_groups: "\u7ec4\u5408",
@@ -577,4 +623,15 @@ export function liveTypeLabel(lang: UiLanguage, liveType: string): string {
 /** Static HTML manual next to index.html (respects Vite `base: "./"`). */
 export function gameManualHref(lang: UiLanguage): string {
   return lang === "zh-CN" ? "./game-manual.zh-CN.html" : "./game-manual.html";
+}
+
+/** Favorite member/song picker for HEROINES groups (static page under public/oshi). */
+export function oshiChartHref(): string {
+  // Use explicit index.html — Vite SPA fallback serves the main app for `/oshi/`.
+  return "./oshi/index.html";
+}
+
+/** Top-10 favorite song selector for IKONOIJOY (=LOVE / ≠ME / ≒JOY). */
+export function ikonoijoyBest10Href(): string {
+  return "./ikonoijoy/index.html";
 }

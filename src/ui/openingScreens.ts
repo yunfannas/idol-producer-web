@@ -8,7 +8,7 @@ import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } fr
 import { inferLetterTier } from "../engine/financeSystem";
 import { AUTOSAVE_SLOT, type SlotSummary } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
-import { gameManualHref, languageOptions, t, type UiLanguage } from "./i18n";
+import { gameManualHref, ikonoijoyBest10Href, languageOptions, oshiChartHref, t, type UiLanguage } from "./i18n";
 
 export type OpeningScreen = "login" | "home" | "new_game" | "load_slot";
 
@@ -45,6 +45,12 @@ export function renderOpeningLogin(
       <button type="button" class="opening-btn opening-btn-green" id="opening-login" ${disabled}>${htmlEsc(t(lang, "opening_log_in"))}</button>
     </div>
   </div>
+
+  <p class="opening-manual-row">
+    <a class="opening-manual-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_game_manual"))}</a>
+    <a class="opening-manual-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_oshi_chart"))}</a>
+    <a class="opening-manual-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_ikonoijoy_best10"))}</a>
+  </p>
 
   <div class="opening-status fm-card-opening">
     <h2 class="opening-status-h">${htmlEsc(t(lang, "opening_status"))}</h2>
@@ -84,6 +90,8 @@ export function renderOpeningHome(
 
   <p class="opening-manual-row">
     <a class="opening-manual-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_game_manual"))}</a>
+    <a class="opening-manual-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_oshi_chart"))}</a>
+    <a class="opening-manual-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_ikonoijoy_best10"))}</a>
   </p>
 
   <div class="opening-status fm-card-opening">

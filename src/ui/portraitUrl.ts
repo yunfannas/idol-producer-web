@@ -50,6 +50,46 @@ function mapPortraitRelToWebStorage(rel: string): string {
   return `data/pictures/idols/${base}`;
 }
 
+type GroupPortraitHistoryEntry = {
+  path?: unknown;
+  portrait_photo_path?: unknown;
+  timestamp?: unknown;
+  effective_date?: unknown;
+  release_date?: unknown;
+};
+
+function asTrimmedString(value: unknown): string | undefined {
+  return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function portraitHistoryDateValue(entry: GroupPortraitHistoryEntry): string {
+  return (
+    asTrimmedString(entry.timestamp) ??
+    asTrimmedString(entry.effective_date) ??
+    asTrimmedString(entry.release_date) ??
+    ""
+  );
+}
+
+function portraitHistoryPath(entry: GroupPortraitHistoryEntry): string | undefined {
+  return asTrimmedString(entry.path) ?? asTrimmedString(entry.portrait_photo_path);
+}
+
+function latestPortraitHistoryPath(history: unknown): string | undefined {
+  if (!Array.isArray(history)) return undefined;
+  const entries = history
+    .filter((entry): entry is GroupPortraitHistoryEntry => typeof entry === "object" && entry !== null)
+    .map((entry) => ({ entry, path: portraitHistoryPath(entry), date: portraitHistoryDateValue(entry) }))
+    .filter((item) => item.path);
+  if (!entries.length) return undefined;
+  entries.sort((a, b) => {
+    const dateCmp = b.date.localeCompare(a.date);
+    if (dateCmp) return dateCmp;
+    return String(b.path).localeCompare(String(a.path));
+  });
+  return entries[0]?.path;
+}
+
 /**
  * Map desktop `picture/…` (group photos, logos, single covers) to `data/pictures/groups/<basename>`.
  * Absolute `http(s)` URLs are returned unchanged.
@@ -86,6 +126,17 @@ export function avatarPlaceholderDataUrl(displayName: string): string {
 }
 
 export function idolPortraitPublicSrc(row: Record<string, unknown>): string | undefined {
+  const portraitHistory = row.group_portrait_history;
+  if (portraitHistory && typeof portraitHistory === "object") {
+    const latest = Object.values(portraitHistory as Record<string, unknown>)
+      .map((history) => latestPortraitHistoryPath(history))
+      .find(Boolean);
+    if (latest) {
+      const rel = mapPortraitRelToWebStorage(latest);
+      if (rel) return resolvePublicAssetUrl(rel);
+    }
+  }
+
   const rawPath = row.portrait_photo_path;
   if (typeof rawPath === "string") {
     let norm = rawPath.replace(/\\/g, "/").trim();

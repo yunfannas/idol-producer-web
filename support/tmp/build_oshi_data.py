@@ -234,6 +234,49 @@ def basename_of(raw: str | None) -> str | None:
     return raw.replace("\\", "/").strip().split("/")[-1] or None
 
 
+def portrait_history_date(entry: dict) -> str:
+    for key in ("timestamp", "effective_date", "release_date", "start_date", "date"):
+        value = entry.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return ""
+
+
+def portrait_history_path(entry: dict) -> str | None:
+    for key in ("path", "portrait_photo_path"):
+        value = entry.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return None
+
+
+def latest_group_portrait_path(idol: dict, group: dict | None) -> str | None:
+    history_map = idol.get("group_portrait_history")
+    if not isinstance(history_map, dict):
+        return None
+
+    group_name = str((group or {}).get("name") or "").strip()
+    group_romanji = str((group or {}).get("name_romanji") or "").strip()
+    group_uid = str((group or {}).get("uid") or "").strip()
+    candidates = []
+    for key in (group_name, group_uid, group_romanji):
+        if not key:
+            continue
+        bucket = history_map.get(key)
+        if isinstance(bucket, list):
+            for item in bucket:
+                if isinstance(item, dict):
+                    path = portrait_history_path(item)
+                    if path:
+                        candidates.append((portrait_history_date(item), path))
+
+    if not candidates:
+        return None
+
+    candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
+    return candidates[0][1]
+
+
 def public_url(kind: str, filename: str) -> str:
     """URL relative to public/oshi/index.html."""
     from urllib.parse import quote
@@ -362,6 +405,14 @@ def portrait_url_for_group(idol: dict | None, group: dict | None, idol_index: di
     group_name = str((group or {}).get("name") or "").strip()
     group_romanji = str((group or {}).get("name_romanji") or "").strip()
     group_uid = str((group or {}).get("uid") or "").strip()
+
+    history_path = latest_group_portrait_path(idol, group)
+    if history_path:
+        base = basename_of(history_path)
+        if base:
+            hit = resolve_file(idol_index, [base])
+            if hit:
+                return public_url("idols", hit)
 
     portrait_map = idol.get("group_portrait_paths")
     if isinstance(portrait_map, dict):

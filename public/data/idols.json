@@ -24122,7 +24122,7 @@
       }
     ],
     "x_followers": 153724,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\尾木波菜_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\尾木波菜__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Ogi Hana",
     "hiragana": "おぎはな",
     "nickname": "Hanyatan (はなちゃん)",
@@ -24136,7 +24136,53 @@
     "x_account": "ogi_hana_",
     "x_url": "https://x.com/ogi_hana_",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\尾木波菜__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\尾木波菜_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\尾木波菜__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\尾木波菜_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\尾木波菜__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\尾木波菜__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "1833c787-e03b-4c2a-9aa9-e928c8f7796a",
@@ -31956,7 +32002,7 @@
       }
     ],
     "x_followers": 59512,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\藤沢莉子_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\藤沢莉子__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Fujisawa Riko",
     "hiragana": "ふじさわりこ",
     "birthday_partial": null,
@@ -31971,7 +32017,53 @@
     "x_account": "fujisawa_riko",
     "x_url": "https://x.com/fujisawa_riko",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\藤沢莉子__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\藤沢莉子_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\藤沢莉子__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\藤沢莉子_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\藤沢莉子__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\藤沢莉子__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "2049fbb4-f7a3-4597-a7ac-97a4d077c7fe",
@@ -38144,7 +38236,7 @@
       }
     ],
     "x_followers": 217416,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山本杏奈_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山本杏奈__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Yamamoto Anna",
     "hiragana": "やまもとあんな",
     "nickname": "Annya (あんにゃ), Leader (リーダー), Captain (キャプテン)",
@@ -38160,7 +38252,53 @@
     "x_url": "https://x.com/yamamoto_anna_",
     "x_followers_source": "x-ranker",
     "x_followers_updated_at": "2026-04-04",
-    "notes": "Distinct person from Party chuuuN!/KissBee/KissBeeWEST member with the same name."
+    "notes": "Distinct person from Party chuuuN!/KissBee/KissBeeWEST member with the same name.",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\山本杏奈__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\山本杏奈_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-04-12",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\山本杏奈__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\山本杏奈_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-04-12",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\山本杏奈__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\山本杏奈__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "264eb19e-c3e8-446b-b5f8-13206d95d777",
@@ -51550,7 +51688,7 @@
       }
     ],
     "x_followers": 59671,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\小澤愛実_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\小澤愛実__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Ozawa Aimi",
     "hiragana": "おざわあいみ",
     "birthday_partial": null,
@@ -51566,7 +51704,53 @@
     "x_account": "ozawa_aimi__",
     "x_url": "https://x.com/ozawa_aimi__",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\小澤愛実__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\小澤愛実_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\小澤愛実__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\小澤愛実_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\小澤愛実__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\小澤愛実__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "34189066-00a1-49bd-9ebf-75a9c899a2ce",
@@ -53204,7 +53388,7 @@
       }
     ],
     "x_followers": 116898,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\永田詩央里_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\永田詩央里__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Nagata Shiori",
     "hiragana": "ながたしおり",
     "nickname": "Shiorin (しおりん)",
@@ -53218,7 +53402,53 @@
     "x_account": "nagata_shiori_",
     "x_url": "https://x.com/nagata_shiori_",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\永田詩央里__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\永田詩央里_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\永田詩央里__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\永田詩央里_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\永田詩央里__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\永田詩央里__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "35f56bf6-f0c9-4511-a798-d92011432fc7",
@@ -55627,7 +55857,7 @@
       }
     ],
     "x_followers": 124279,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\蟹沢萌子_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\蟹沢萌子__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Kanisawa Moeko",
     "hiragana": "かにさわもえこ",
     "nickname": "Kani-chan (かにちゃん) Moeko (もえこ) Moe-chan (萌ちゃん) Moepi (萌ぴ) Leader (リーダー) Captain (キャプテン)",
@@ -55641,7 +55871,53 @@
     "x_account": "kanisawa_moeko",
     "x_url": "https://x.com/kanisawa_moeko",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\蟹沢萌子__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\蟹沢萌子_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\蟹沢萌子__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\蟹沢萌子_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\蟹沢萌子__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\蟹沢萌子__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "38a4f86f-f9dd-4852-9f28-720eb983409c",
@@ -64057,7 +64333,7 @@
       }
     ],
     "x_followers": 497152,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\佐々木舞香_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\佐々木舞香__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Sasaki Maika",
     "hiragana": "ささきまいか",
     "wiki_url": "https://jpop.fandom.com/wiki/Sasaki_Maika",
@@ -64072,7 +64348,53 @@
     "x_account": "sasaki_maika",
     "x_url": "https://x.com/sasaki_maika",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\佐々木舞香__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\佐々木舞香_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\佐々木舞香__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\佐々木舞香_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\佐々木舞香__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\佐々木舞香__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "41656227-c6d7-4341-a4ea-16b6d704a879",
@@ -68066,7 +68388,7 @@
       }
     ],
     "x_followers": 60057,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\村山結香_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\村山結香__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Murayama Yuuka",
     "hiragana": "むらやまゆうか",
     "birthday_partial": null,
@@ -68081,7 +68403,53 @@
     "x_account": "murayama_yuuka",
     "x_url": "https://x.com/murayama_yuuka",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\村山結香__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\村山結香_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\村山結香__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\村山結香_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\村山結香__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\村山結香__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "4573ddb0-65a6-40fd-94eb-b8110d2e13f4",
@@ -69625,7 +69993,7 @@
       }
     ],
     "x_followers": 78125,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大信田美月_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大信田美月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Oshida Mitsuki",
     "hiragana": "おおしだみつき",
     "birthday_partial": null,
@@ -69640,7 +70008,53 @@
     "x_account": "oshida_mitsuki",
     "x_url": "https://x.com/oshida_mitsuki",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大信田美月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大信田美月_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大信田美月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大信田美月_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\大信田美月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\大信田美月__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "4697ea81-429b-4384-bb6e-84740e7ec7de",
@@ -76522,7 +76936,7 @@
       }
     ],
     "x_followers": 227991,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\瀧脇笙古_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\瀧脇笙古__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Takiwaki Shoko",
     "hiragana": "たきわきしょうこ",
     "wiki_url": "https://jpop.fandom.com/wiki/Takiwaki_Shoko",
@@ -76537,7 +76951,53 @@
     "x_account": "shoko_takiwaki",
     "x_url": "https://x.com/shoko_takiwaki",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\瀧脇笙古__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\瀧脇笙古_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\瀧脇笙古__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\瀧脇笙古_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\瀧脇笙古__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\瀧脇笙古__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "4e264053-4d9a-4246-9003-95526cd8adb3",
@@ -81089,7 +81549,7 @@
       }
     ],
     "x_followers": 85378,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\川中子奈月心_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\川中子奈月心__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Kawanago Natsumi",
     "hiragana": "かわなごなつみ",
     "nickname": "Natsumin (なつみん) Nattsuu (なっつー)",
@@ -81103,7 +81563,53 @@
     "x_account": "kawanagonatsumi",
     "x_url": "https://x.com/kawanagonatsumi",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\川中子奈月心__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\川中子奈月心_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\川中子奈月心__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\川中子奈月心_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\川中子奈月心__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\川中子奈月心__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "536d2446-ce0e-483e-a64a-e48cf7ae235e",
@@ -111174,7 +111680,7 @@
       }
     ],
     "x_followers": 117626,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\市原愛弓_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\市原愛弓__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Ichihara Ayumi",
     "hiragana": "いちはらあゆみ",
     "birthday_partial": null,
@@ -111191,7 +111697,53 @@
     "x_account": "ichihara_ayumi_",
     "x_url": "https://x.com/ichihara_ayumi_",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\市原愛弓__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\市原愛弓_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\市原愛弓__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\市原愛弓_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\市原愛弓__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\市原愛弓__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "71d421a1-06da-4a39-8663-8f725e0649a3",
@@ -125444,7 +125996,7 @@
       }
     ],
     "x_followers": 79494,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山野愛月_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山野愛月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Yamano Arisu",
     "birthday_partial": null,
     "hiragana": "やまのありす",
@@ -125459,7 +126011,53 @@
     "x_account": "yamano_arisu",
     "x_url": "https://x.com/yamano_arisu",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\山野愛月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\山野愛月_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\山野愛月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\山野愛月_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\山野愛月__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\山野愛月__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "809010d8-9dfd-425f-aab0-1fc164070df0",
@@ -139475,7 +140073,7 @@
       }
     ],
     "x_followers": 62154,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大西葵_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大西葵__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Onishi Aoi",
     "hiragana": "おおにしあおい",
     "birthday_partial": null,
@@ -139490,7 +140088,53 @@
     "x_account": "onishi_aoi",
     "x_url": "https://x.com/onishi_aoi",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大西葵__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大西葵_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大西葵__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大西葵_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\大西葵__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\大西葵__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "8e3abc7f-a8ce-423f-a06d-2232cb08a749",
@@ -153110,7 +153754,7 @@
       }
     ],
     "x_followers": 243154,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\音嶋莉沙_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\音嶋莉沙__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Otoshima Risa",
     "hiragana": "おとしまりさ",
     "wiki_url": "https://jpop.fandom.com/wiki/Otoshima_Risa",
@@ -153127,7 +153771,53 @@
     "x_account": "otoshima_risa",
     "x_url": "https://x.com/otoshima_risa",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\音嶋莉沙__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\音嶋莉沙_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\音嶋莉沙__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\音嶋莉沙_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\音嶋莉沙__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\音嶋莉沙__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "9cf0bf14-ab0b-49d6-9f20-fa56d682e0d2",
@@ -155117,7 +155807,7 @@
       }
     ],
     "x_followers": 94925,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\江角怜音_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\江角怜音__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Esumi Renon",
     "hiragana": "えすみれのん",
     "birthday_partial": null,
@@ -155132,7 +155822,53 @@
     "x_account": "esumi_renon",
     "x_url": "https://x.com/esumi_renon",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\江角怜音__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\江角怜音_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\江角怜音__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\江角怜音_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\江角怜音__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\江角怜音__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "9f166552-1741-4fdb-afa2-4566dcbbb7aa",
@@ -165415,7 +166151,7 @@
       }
     ],
     "x_followers": 84111,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\天野香乃愛_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\天野香乃愛__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Amano Konoa",
     "hiragana": "あまのこのあ",
     "birthday_partial": null,
@@ -165430,7 +166166,53 @@
     "x_account": "amano_konoa",
     "x_url": "https://x.com/amano_konoa",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\天野香乃愛__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\天野香乃愛_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\天野香乃愛__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\天野香乃愛_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\天野香乃愛__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\天野香乃愛__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "ab3a3ed6-d187-4238-8988-0e4438bd3011",
@@ -167914,7 +168696,7 @@
       }
     ],
     "x_followers": 89874,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\落合希来里_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\落合希来里__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Ochiai Kirari",
     "hiragana": "おちあいきらり",
     "nickname": "Kirarin (きらりん)",
@@ -167928,7 +168710,53 @@
     "x_account": "ochiai_kirari",
     "x_url": "https://x.com/ochiai_kirari",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\落合希来里__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\落合希来里_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\落合希来里__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\落合希来里_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\落合希来里__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\落合希来里__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "ad4b36a4-1592-4f6e-929e-e9c4eaedb420",
@@ -168287,7 +169115,7 @@
       }
     ],
     "x_followers": 352370,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\髙松瞳_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\髙松瞳__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Takamatsu Hitomi",
     "hiragana": "たかまつひとみ",
     "wiki_url": "https://jpop.fandom.com/wiki/Takamatsu_Hitomi",
@@ -168302,7 +169130,53 @@
     "x_account": "takamatsuhitomi",
     "x_url": "https://x.com/takamatsuhitomi",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙松瞳__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙松瞳_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙松瞳__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙松瞳_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\髙松瞳__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\髙松瞳__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "ada8ea1b-dbea-44ba-b292-108030607056",
@@ -169366,7 +170240,7 @@
       }
     ],
     "x_followers": 179041,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\谷崎早耶_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\谷崎早耶__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Tanizaki Saya",
     "hiragana": "たにざきさや",
     "nickname": "Sayayan (さややん)",
@@ -169380,7 +170254,53 @@
     "x_account": "tanizaki_saya",
     "x_url": "https://x.com/tanizaki_saya",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\谷崎早耶__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\谷崎早耶_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\谷崎早耶__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\谷崎早耶_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\谷崎早耶__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\谷崎早耶__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "ae52f5cb-c06d-46e7-b49e-362b0182a492",
@@ -172320,7 +173240,7 @@
       }
     ],
     "x_followers": 76490,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山田杏佳_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山田杏佳__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Yamada Momoka",
     "birthday_partial": null,
     "hiragana": "やまだももか",
@@ -172335,7 +173255,53 @@
     "x_account": "yamada_momoka__",
     "x_url": "https://x.com/yamada_momoka__",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\山田杏佳__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\山田杏佳_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\山田杏佳__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\山田杏佳_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\山田杏佳__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\山田杏佳__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "b090f6aa-5ee0-4fc4-8fc7-3163cb2e6b1c",
@@ -173103,7 +174069,7 @@
       }
     ],
     "x_followers": 358393,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Saito Kiara",
     "hiragana": "さいとうきあら",
     "wiki_url": "https://jpop.fandom.com/wiki/Saito_Kiara",
@@ -173118,7 +174084,53 @@
     "x_account": "saitou_kiara",
     "x_url": "https://x.com/saitou_kiara",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\齋藤樹愛羅__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\齋藤樹愛羅__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "b1b4e8b0-308d-4e12-9514-632bcedbd453",
@@ -176064,7 +177076,7 @@
       }
     ],
     "x_followers": 158152,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\冨田菜々風_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\冨田菜々風__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Tomita Nanaka",
     "hiragana": "とみたななか",
     "nickname": "Nanka-chan (なんかちゃん) Nanaka (ななか)",
@@ -176078,7 +177090,53 @@
     "x_account": "tomita_nanaka",
     "x_url": "https://x.com/tomita_nanaka",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\冨田菜々風__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\冨田菜々風_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\冨田菜々風__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\冨田菜々風_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\冨田菜々風__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\冨田菜々風__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "b4c71155-9c44-4071-bfe1-17b6fb588107",
@@ -179270,7 +180328,7 @@
       }
     ],
     "x_followers": 69385,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\逢田珠里依_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\逢田珠里依__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "romaji": "Aida Jurii",
     "hiragana": "あいだじゅりい",
     "birthday_partial": null,
@@ -179285,7 +180343,53 @@
     "x_account": "aida_jurii",
     "x_url": "https://x.com/aida_jurii",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\逢田珠里依__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\逢田珠里依_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\逢田珠里依__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\逢田珠里依_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\逢田珠里依__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\逢田珠里依__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "b7fb5445-8f71-4ffd-a172-9fb04d0ba235",
@@ -192248,7 +193352,7 @@
       }
     ],
     "x_followers": 124371,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\本田珠由記_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\本田珠由記__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Honda Miyuki",
     "hiragana": "ほんだみゆき",
     "nickname": "Miruten (みるてん) Omiru-chan (おみるちゃん) Miyuki-chan (珠由記ちゃん)",
@@ -192262,7 +193366,53 @@
     "x_account": "honda_miyuki_",
     "x_url": "https://x.com/honda_miyuki_",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\本田珠由記__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\本田珠由記_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\本田珠由記__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\本田珠由記_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\本田珠由記__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\本田珠由記__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "c5933a75-5631-4234-8292-14f069f9a5ce",
@@ -198536,7 +199686,7 @@
       }
     ],
     "x_followers": 89380,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\河口夏音_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\河口夏音__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Kawaguchi Natsune",
     "hiragana": "かわぐちなつね",
     "nickname": "Nacchan (なっちゃん)",
@@ -198550,7 +199700,53 @@
     "x_account": "kawaguchi_natsu",
     "x_url": "https://x.com/kawaguchi_natsu",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\河口夏音__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\河口夏音_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\河口夏音__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\河口夏音_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\河口夏音__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\河口夏音__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "cb3aa237-f318-48d1-8fe7-46e769cbf65c",
@@ -215525,7 +216721,7 @@
         "member_color_code": null
       }
     ],
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大谷映美里_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大谷映美里__EqualLove_2026-07-19_official_profile.jpg",
     "nickname": "Mirinya (みりにゃ)",
     "hiragana": "おおたにえみり",
     "romaji": "Otani Emiri",
@@ -215542,7 +216738,53 @@
     "x_url": "https://x.com/otani_emiri",
     "x_followers": 464951,
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大谷映美里__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大谷映美里_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大谷映美里__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大谷映美里_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\大谷映美里__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\大谷映美里__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "dccd1a9a-e24a-4ab9-936c-da7e35f221e9",
@@ -220321,7 +221563,7 @@
       }
     ],
     "x_followers": 470863,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\野口衣織_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\野口衣織__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Noguchi Iori",
     "hiragana": "のぐちいおり",
     "wiki_url": "https://jpop.fandom.com/wiki/Noguchi_Iori",
@@ -220336,7 +221578,53 @@
     "x_account": "noguchi_iori",
     "x_url": "https://x.com/noguchi_iori",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\野口衣織__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\野口衣織_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\野口衣織__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\野口衣織_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\野口衣織__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\野口衣織__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "e2086230-9169-4d04-a78a-4c308970e5e0",
@@ -222272,7 +223560,7 @@
       }
     ],
     "x_followers": 131275,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\????_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Sakurai Momo",
     "hiragana": "さくらいもも",
     "nickname": "Momo-kyun (ももきゅん)",
@@ -222286,7 +223574,53 @@
     "x_account": "_sakurai_momo_",
     "x_url": "https://x.com/_sakurai_momo_",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "e43d9f5e-a7c0-4f92-85f8-a0c521ac3871",
@@ -222893,7 +224227,7 @@
       }
     ],
     "x_followers": 217111,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\諸橋沙夏_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\諸橋沙夏__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Morohashi Sana",
     "hiragana": "もろはしさな",
     "wiki_url": "https://jpop.fandom.com/wiki/Morohashi_Sana",
@@ -222908,7 +224242,53 @@
     "x_account": "morohashi_sana",
     "x_url": "https://x.com/morohashi_sana",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\諸橋沙夏__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\諸橋沙夏_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\諸橋沙夏__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\諸橋沙夏_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\諸橋沙夏__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\諸橋沙夏__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "e4a905f9-a1b9-4e78-bb08-4124ff4b6e5f",
@@ -227778,7 +229158,7 @@
       }
     ],
     "x_followers": 46555,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\髙橋舞_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\髙橋舞__NearlyEqualJoy_2026-07-19_official_profile.jpg",
     "wiki_url": "https://jpop.fandom.com/wiki/Takahashi_Mai_(Amaterasu)",
     "sources": [
       "jpop_wiki"
@@ -227789,7 +229169,53 @@
     "x_account": "takahashi_mai__",
     "x_url": "https://x.com/takahashi_mai__",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≒JOY": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙橋舞__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙橋舞_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omSSk9Z": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙橋舞__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\髙橋舞_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≒JOY": "fetcher\\database\\picture_fandom\\髙橋舞__NearlyEqualJoy_2026-07-19_official_profile.jpg",
+      "4omSSk9Z": "fetcher\\database\\picture_fandom\\髙橋舞__NearlyEqualJoy_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "e95d20a2-2b53-48b3-8e65-acce13025b8c",
@@ -230188,7 +231614,7 @@
       }
     ],
     "x_followers": 182429,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\鈴木瞳美_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\鈴木瞳美__NotEqualMe_2026-07-19_official_profile.jpg",
     "romaji": "Suzuki Hitomi",
     "hiragana": "すずきひとみ",
     "birthday_partial": null,
@@ -230203,7 +231629,53 @@
     "x_account": "suzuki_hitomi_",
     "x_url": "https://x.com/suzuki_hitomi_",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "≠ME": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\鈴木瞳美__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\鈴木瞳美_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "4omgTUU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\鈴木瞳美__NotEqualMe_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\鈴木瞳美_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-31",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "≠ME": "fetcher\\database\\picture_fandom\\鈴木瞳美__NotEqualMe_2026-07-19_official_profile.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\鈴木瞳美__NotEqualMe_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "ebda6cb5-db0f-4b61-a602-46b201e39947",
@@ -241621,7 +243093,7 @@
       }
     ],
     "x_followers": 260097,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大場花菜_portrait.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大場花菜__EqualLove_2026-07-19_official_profile.jpg",
     "romaji": "Oba Hana",
     "hiragana": "おおばはな",
     "wiki_url": "https://jpop.fandom.com/wiki/Oba_Hana",
@@ -241636,7 +243108,53 @@
     "x_account": "hana_oba",
     "x_url": "https://x.com/hana_oba",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "=LOVE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大場花菜__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大場花菜_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ],
+      "PUxPVkU": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\大場花菜__EqualLove_2026-07-19_official_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-19",
+          "release_date": null,
+          "label": "official profile portrait",
+          "note": "Official current member profile portrait captured on 2026-07-19.",
+          "source": "official_profile"
+        },
+        {
+          "path": "fetcher\\database\\picture_fandom\\大場花菜_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-03-30",
+          "release_date": null,
+          "label": "legacy local portrait",
+          "note": "Pre-refresh portrait retained as prior history entry.",
+          "source": "local_archive"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "=LOVE": "fetcher\\database\\picture_fandom\\大場花菜__EqualLove_2026-07-19_official_profile.jpg",
+      "PUxPVkU": "fetcher\\database\\picture_fandom\\大場花菜__EqualLove_2026-07-19_official_profile.jpg"
+    }
   },
   {
     "uid": "f68a7bad-0f09-472c-8cd4-89f23b00c8c2",
