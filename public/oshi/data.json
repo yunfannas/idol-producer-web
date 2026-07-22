@@ -1,7 +1,7 @@
 {
   "title": "HEROINES 推しチャート",
   "subtitle": "各グループの推しメン＆推し曲を選ぼう",
-  "generated_at": "2026-07-14T23:36:39",
+  "generated_at": "2026-07-21T21:40:26",
   "groups": [
     {
       "name": "iLiFE!",
@@ -75,204 +75,369 @@
       ],
       "songs": [
         {
-          "uid": "49155c0f-a033-4ddb-b074-24418eb35ddb",
-          "title": "BRAVE GROOVE",
+          "uid": "74ba2a66-23ab-48c8-8da2-036837214031",
+          "title": "きゃわぽっぴんどぅー",
           "popularity": 4.5
         },
         {
-          "uid": "e9e8658b-3520-4fa7-adf9-7bb323570736",
+          "uid": "be633d29-1b5e-429c-995c-9b7c56cc149a",
           "title": "くりてぃかる♡ぷりちー",
-          "popularity": 4.5
+          "popularity": 4.0
         },
         {
-          "uid": "c6715452-cdcb-4e2e-a81c-4d5f47bbdc72",
-          "title": "アイドルライフスターターパック",
-          "popularity": 4.5
-        },
-        {
-          "uid": "485ad780-e10a-46bc-851d-890863a09e8e",
-          "title": "メロメラ",
-          "popularity": 4.5
-        },
-        {
-          "uid": "67b9f1d0-d254-4e11-9885-8f6a0bd3cb33",
-          "title": "会いにKiTE!(2025ver.)",
-          "popularity": 4.5
-        },
-        {
-          "uid": "ebd4f6c5-d331-479b-a76d-191dd698b037",
+          "uid": "034683eb-1c91-4c9a-bc19-c687f21299a4",
           "title": "君セン!",
-          "popularity": 4.5
+          "popularity": 4.0
         },
         {
-          "uid": "9e1194d4-f672-48ac-a550-0a2977e34c5b",
+          "uid": "24da4784-cc27-48fa-9364-dd32740d47a0",
+          "title": "BRAVE GROOVE",
+          "popularity": 3.5
+        },
+        {
+          "uid": "ef4ce04c-b29d-441e-b9ff-b62abaab2f30",
+          "title": "アイドルライフスターターパック",
+          "popularity": 3.5
+        },
+        {
+          "uid": "ab9fbec1-b89c-4650-a95f-19150f265c00",
+          "title": "会いにKiTE!(2025ver.)",
+          "popularity": 3.5
+        },
+        {
+          "uid": "aff7c488-60d9-4447-84b2-05ba755ca375",
           "title": "#ラブコード",
-          "popularity": 4
+          "popularity": 3.0
         },
         {
-          "uid": "9ea93c03-7447-4ab7-91f5-5a4723d76757",
-          "title": "sweet timer",
-          "popularity": 4
-        },
-        {
-          "uid": "24259d73-297e-4392-9d16-778ed9ca739b",
-          "title": "ころころガール",
-          "popularity": 4
-        },
-        {
-          "uid": "e1cffbd9-bc1d-41c5-95ae-74ec77a2d9b6",
-          "title": "アイドルライフエクストラパック",
-          "popularity": 4
-        },
-        {
-          "uid": "c385c5c9-1e0c-40ae-b8bb-31626d95c87a",
-          "title": "ガンバッテンダー",
-          "popularity": 4
-        },
-        {
-          "uid": "41a496b7-fa28-4191-8359-67bc5e23dd7c",
+          "uid": "227c539b-2e19-4c74-a2b6-ece05197f55b",
           "title": "キスハグ侵略者!",
-          "popularity": 4
+          "popularity": 3.0
         },
         {
-          "uid": "0614b55f-3092-4e61-882b-17171d3e4d6c",
-          "title": "キュンとクラフト",
-          "popularity": 4
-        },
-        {
-          "uid": "3757b1e7-49d8-4989-bfe3-13f1a3ee3617",
-          "title": "サイクロンライフ",
-          "popularity": 4
-        },
-        {
-          "uid": "99e8670f-e25a-4f9d-9cad-65afb2362ab6",
-          "title": "ユメクライミング",
-          "popularity": 4
-        },
-        {
-          "uid": "94b48bf0-5aef-43bc-95a1-ba195da21c20",
-          "title": "会いにKiTE! (2026 support ver.)",
-          "popularity": 4
-        },
-        {
-          "uid": "f49f3aaf-0665-4b3e-ba1f-7bfa97b710bd",
+          "uid": "893a43fa-cd85-479d-99b4-bede4ebd0b8e",
           "title": "初恋リバイバル",
-          "popularity": 4
+          "popularity": 3.0
         },
         {
-          "uid": "65553d74-822a-4b4b-9519-74049a12d686",
+          "uid": "d11866fd-6457-47e5-a450-e7321f6def30",
+          "title": "#ラブコード (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "33276c9e-5113-4055-b24a-813f3a2427f0",
           "title": "Dokkoi!ロマンティック",
-          "popularity": 3.5
+          "popularity": 2.5
         },
         {
-          "uid": "04317233-10d9-4898-89bb-c23208a0f72d",
+          "uid": "b92f2857-be19-406b-bc7f-a761664d3f51",
+          "title": "HAPPY IDOL♡(心花りりソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "edce5d58-5704-4b2e-8c2c-7a356f5ee65b",
           "title": "HUNGRY!!!",
-          "popularity": 3.5
+          "popularity": 2.5
         },
         {
-          "uid": "d6d12614-c30d-487f-b85b-1e01a5f75917",
-          "title": "LOML",
-          "popularity": 3.5
-        },
-        {
-          "uid": "63001882-6275-47b5-abc1-3e46f9fed287",
-          "title": "のびしろグリッター",
-          "popularity": 3.5
-        },
-        {
-          "uid": "7eeee327-67e4-41a0-929c-b053737ac31a",
-          "title": "むげんだいすき",
-          "popularity": 3.5
-        },
-        {
-          "uid": "3d50def7-8cae-49cf-af54-61b821d49ca2",
-          "title": "アイドルライフブースターパック",
-          "popularity": 3.5
-        },
-        {
-          "uid": "025c7e58-77e8-45cf-adc6-e506a1b7606b",
-          "title": "ナイナイ恋煩い♡",
-          "popularity": 3.5
-        },
-        {
-          "uid": "77455140-32f5-4836-b4fe-47a2b905140a",
-          "title": "ヒラリラリア",
-          "popularity": 3.5
-        },
-        {
-          "uid": "1f0478b2-4580-4f4f-b7a2-824f5ced8885",
-          "title": "メッセージ",
-          "popularity": 3.5
-        },
-        {
-          "uid": "0644e63e-406a-4141-b1ef-80b192409cac",
-          "title": "ライフステージ",
-          "popularity": 3.5
-        },
-        {
-          "uid": "1b13efcb-25a2-46c1-9c66-2c980234ab3d",
-          "title": "会いにKiTE!",
-          "popularity": 3.5
-        },
-        {
-          "uid": "245a2fe6-1bc6-4193-980a-9ed35dd7495d",
-          "title": "完全勝利Love&Good!",
-          "popularity": 3.5
-        },
-        {
-          "uid": "853a7ee5-6c3c-493c-92ed-786e6c2d0313",
-          "title": "星色トラベラー",
-          "popularity": 3.5
-        },
-        {
-          "uid": "8bca7b95-3512-4994-81f3-baed8e4c5158",
-          "title": "青春のパズルは埋まらない",
-          "popularity": 3.5
-        },
-        {
-          "uid": "55191238-b677-4582-993e-67c55b7109cb",
+          "uid": "ad419eb5-5d99-4c1e-9298-2616d2f180d7",
           "title": "Hands Up!",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "6c2dbca9-43a8-4ab0-a5c1-c2cd3b688671",
+          "uid": "dc443245-d15f-4b57-95b7-bd0b5c84573a",
+          "title": "LOML",
+          "popularity": 2.5
+        },
+        {
+          "uid": "99a719c7-4417-4a9c-b592-aa3022db01c6",
+          "title": "LOML (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "77b37a33-a65b-426a-9675-0b8d6ae407e9",
+          "title": "MY HERO -Instrumental-",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c8bfc29f-2b54-4ec3-a3d0-d907946be6a6",
+          "title": "MY HERO(純嶺みきソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0bbf7b76-6e6f-4900-8c3c-b64ea95e203d",
+          "title": "Prologue(小熊まむソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2e440b58-1de4-49ce-bed8-93f59a86ae65",
+          "title": "Purely Doll (with Noa Voice ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d50b8d8b-09db-4060-86cd-49ca88daac23",
+          "title": "Purely Doll(若葉のあソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5cbe7aa7-1d68-438a-aa2e-b5a3e7de0e13",
           "title": "Quest×Quest",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "0f8e1b82-65c3-4ef7-8a97-19e862270898",
+          "uid": "fbe9cbb4-2df6-4404-aa53-468e42944903",
           "title": "Sleeping face",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "5a275843-954b-4b32-8d91-9bf66ccfd2a9",
+          "uid": "b049aa3a-4ca2-4118-8d34-8ef7921f8b03",
+          "title": "Snow Magic(虹羽みにソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f9067b02-391d-433f-9ae1-af96049fd650",
+          "title": "Star*Rise(福丸うさソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "7096609e-46f1-4202-a842-f47578376737",
+          "title": "Starry Fanfare(福丸うさソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1572eb69-9d84-401b-9d7a-7e3822039874",
+          "title": "The prelude(空詩かれんソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e1a35b71-365d-4098-99ba-96a5393c5954",
           "title": "To be alive(空詩かれんソロ曲)",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "ea1aaa35-0767-4363-acf5-0de9cde4a134",
+          "uid": "c63e20cb-6209-47f1-99ec-067077d3ebdf",
+          "title": "fluffy(虹羽みにソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "72f68ae8-7db9-4e09-98cc-8a29e696ec2b",
           "title": "i (あいすソロ曲)",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "52797fc1-a4c2-4a28-b3e3-c203ee671a6d",
+          "uid": "649d94a8-abee-4473-a9eb-1ecb9942261a",
+          "title": "sweet timer",
+          "popularity": 2.5
+        },
+        {
+          "uid": "36a79808-89d1-4af4-898a-b1049ebfe164",
           "title": "sweet timer (空詩かれん solo ver.)",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "f8459938-3db5-4d27-8a98-291b0f8e2b59",
+          "uid": "f556cfae-9c0a-4b3f-b8dd-5174f48808ee",
+          "title": "♡♡♡(心花りりソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "ff3268ac-443f-445a-a13b-5d10aaac9226",
+          "title": "〜Beginning of Bloom〜(純嶺みきソロSE)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "99d3c2b9-451c-4429-a9a6-b2c1869219bd",
           "title": "かわいくてあいらびゅー(福丸うさソロ曲)",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "f9a8dc71-560b-48fd-8c74-c819f4587a32",
+          "uid": "48590907-bb07-4bb9-9155-6fb3d3bd8ad7",
+          "title": "ころころガール",
+          "popularity": 2.5
+        },
+        {
+          "uid": "fd3d6fd8-f638-4b39-8468-3fd2c973c3d4",
+          "title": "だいすき宣言っ!(若葉のあソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "40c9441b-87ff-413b-8643-bac81ab08b59",
+          "title": "のびしろグリッター",
+          "popularity": 2.5
+        },
+        {
+          "uid": "089f2393-92e8-4667-9dfe-a677449ef8b9",
           "title": "みんなのあいす屋さん (あいすソロ曲)",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "330e8a57-ed24-41f0-b0cf-0eb7efedbaaa",
+          "uid": "e9c0dc5a-8906-4ff2-8b90-dc70a42cdf4f",
+          "title": "むげんだいすき",
+          "popularity": 2.5
+        },
+        {
+          "uid": "de17f506-5018-4bde-8d0a-5f8d03245898",
+          "title": "むげんだいすき (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cf78b56e-7ba0-41d2-a19b-26dcb45799e8",
           "title": "らぶりー属性♡(心花りりソロ曲)",
-          "popularity": 3
+          "popularity": 2.5
+        },
+        {
+          "uid": "1d2514d2-60ad-45c6-9775-5cb018fa9191",
+          "title": "アイドルライフエクストラパック",
+          "popularity": 2.5
+        },
+        {
+          "uid": "334f4633-1a88-4fc7-b8e0-b6c18b894a46",
+          "title": "アイドルライフブースターパック",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8b3e2199-42f9-4260-b06d-4085f56a167d",
+          "title": "ガンバッテンダー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "66423f2e-bd9b-42d9-9d86-f0d30c477d43",
+          "title": "キュンとクラフト",
+          "popularity": 2.5
+        },
+        {
+          "uid": "ceba99f4-c000-44af-9981-3903ddfef45e",
+          "title": "キラメキダイアリー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c8c7a0e2-476c-45bc-9551-792507312906",
+          "title": "サイクロンライフ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1bf5defc-f11b-44d6-be1a-3448a507a1a6",
+          "title": "サイクロンライフ!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d1a0abeb-39e7-4be8-9391-8335de9487f6",
+          "title": "サイクロンライフ! (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "119aed05-c250-48fd-83a0-f42f46357d6a",
+          "title": "スター☆まむナイズ(小熊まむソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5dac75fd-6fa5-4ea6-b60e-1f92c97fa397",
+          "title": "ドラマチックミライ (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2493fdcc-458f-4725-91d1-49d2d7bc6eaf",
+          "title": "ナイナイ恋煩い♡",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c228b5a9-542e-45f2-b0b8-67dd7bdce491",
+          "title": "ヒラリラリア",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1cf028fe-0386-47b7-9526-dda6a4a8de06",
+          "title": "フクキタリズム(福丸うさソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5f3bef58-63c6-4134-a57c-430bf5d1717c",
+          "title": "メッセージ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8d456d8e-9cd8-4996-a8d1-2243de5c43e3",
+          "title": "メッセージ (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "32678ad0-8394-4922-9ebc-d6c5b05bdb13",
+          "title": "メロメラ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "94eeddc5-3ac5-47af-8c3d-680a03071fed",
+          "title": "ユメクライミング",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c70f6258-2cc7-4c5e-b130-5cca119887dd",
+          "title": "ユメクライミング (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c232feda-fbe3-475e-8c45-b7b0e4bab0b2",
+          "title": "ライフステージ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e1357783-cff8-4813-8162-f3ab7512b70b",
+          "title": "ライフステージ (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "78f39823-c125-4ec4-bf5d-a09121c21ec4",
+          "title": "会いにKiTE!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "63115fc9-ec8a-4aab-bcd2-1b340513a5bf",
+          "title": "会いにKiTE! (2023ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f1130244-ee27-4b57-b676-52c1c2cb5eb9",
+          "title": "会いにKiTE! (2026 support ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a8300b12-f32b-4393-9df7-3867ebfbf2c7",
+          "title": "初恋サマーライン♡(若葉のあソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "ca1ec42d-60dd-4a66-9c57-33294a500053",
+          "title": "初恋リバイバル (空詩かれん solo ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "3ef34aba-204d-41f2-84f4-f7bee9a56ef7",
+          "title": "完全勝利Love&Good!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5fd04486-c383-4639-bb7c-043241b1e2c9",
+          "title": "愛キョウ!最キョウ!逆キョウ上等! (あいすソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "43275083-e586-4aed-a839-2462b47276a9",
+          "title": "星色トラベラー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "14ba6e20-13a5-4df8-bfc4-d717f085f656",
+          "title": "特別ダメハート♡(心花りりソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "bf25aea2-b735-4cb6-a707-9263bd29aa9c",
+          "title": "私はかわいいよ絶対 (あいすソロ曲)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cb6486be-10fd-427d-a0aa-bff78cb07c78",
+          "title": "青春のパズルは埋まらない",
+          "popularity": 2.5
         }
       ]
     },
@@ -327,204 +492,224 @@
       ],
       "songs": [
         {
-          "uid": "66e0442d-b6a1-4f8d-bba2-0885b51d8044",
-          "title": "まっしぐら恋心",
-          "popularity": 4
-        },
-        {
-          "uid": "b74356f1-2abf-4047-90fa-2477831e352b",
-          "title": "らぶめろでぃ",
-          "popularity": 4
-        },
-        {
-          "uid": "0c9efdca-e53f-4a05-b06a-fb5d2d290a94",
+          "uid": "791a96e0-5f3e-4020-b6e9-936024faece6",
           "title": "夜光性イントロデュース",
-          "popularity": 4
+          "popularity": 4.0
         },
         {
-          "uid": "e73a14a9-ee28-472d-b00d-cbdf24198897",
-          "title": "極彩色パレード",
-          "popularity": 4
-        },
-        {
-          "uid": "90bde5e4-1a3a-47b0-8b14-621f179e533f",
-          "title": "DENPA DANCE",
+          "uid": "2300a6e8-3e90-4a22-ae8b-55bff8d38f22",
+          "title": "まっしぐら恋心",
           "popularity": 3.5
         },
         {
-          "uid": "dff53bb6-624b-4c63-8c3c-0bae207983d7",
-          "title": "エキゾチックテレパシー",
-          "popularity": 3.5
-        },
-        {
-          "uid": "84656c08-a65c-4691-8478-2617cf4f5b7a",
-          "title": "キュンタヒー",
-          "popularity": 3.5
-        },
-        {
-          "uid": "9a6306ba-607f-46e7-a149-45f14739519a",
-          "title": "スターリーナイト・ダンス",
-          "popularity": 3.5
-        },
-        {
-          "uid": "3b2ee3c6-c0fd-409f-aff7-c600f44bca33",
+          "uid": "67185a51-05fe-4353-8bfb-28294b5b1992",
           "title": "ハイシャウトダウナー",
           "popularity": 3.5
         },
         {
-          "uid": "572f8bc4-6b34-4f5f-90c6-7d7c3a20451e",
-          "title": "ヘッドライナーガール",
-          "popularity": 3.5
+          "uid": "416bddae-dd4a-470e-a496-dda912360686",
+          "title": "DENPA DANCE",
+          "popularity": 3.0
         },
         {
-          "uid": "f2dd022a-3e25-4a86-8077-d4adebaf3d01",
-          "title": "HappyNight,HappyLand",
-          "popularity": 3
+          "uid": "f8a29f6f-b9f9-4094-80f5-3159b8c9b014",
+          "title": "らぶめろでぃ",
+          "popularity": 3.0
         },
         {
-          "uid": "693fdae1-05f0-4e97-89f6-434f34d86fa4",
-          "title": "N.P.C",
-          "popularity": 3
+          "uid": "2e207674-11eb-4b31-8ca6-10561d7e5651",
+          "title": "極彩色パレード",
+          "popularity": 3.0
         },
         {
-          "uid": "36599ed9-0142-43c6-bd20-1f011adcef1e",
-          "title": "S.I.G",
-          "popularity": 3
-        },
-        {
-          "uid": "80006f7c-2a3e-4539-a19c-7a504aa0a4b6",
+          "uid": "0eb99207-fbcc-4e12-8e15-244952ce812e",
           "title": "えっと干支がーる",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "07b6dd71-f0fb-45f2-8cd8-0f206b637007",
-          "title": "じぇらしーく・ぱーく",
-          "popularity": 3
-        },
-        {
-          "uid": "b4cc8da8-641b-4aab-b7ec-57afc817f668",
-          "title": "もしかして探し",
-          "popularity": 3
-        },
-        {
-          "uid": "abc53aef-d50a-4891-bd95-2a74695a811b",
-          "title": "ショーパレジャンキー",
-          "popularity": 3
-        },
-        {
-          "uid": "01466147-320c-4ba5-8579-b2fc1a01899a",
-          "title": "デジタルタトゥー (2025 Remix)",
-          "popularity": 3
-        },
-        {
-          "uid": "bd92ec13-05be-4dbb-9d3e-04998860ff21",
-          "title": "トワイライトアドベンチャー",
-          "popularity": 3
-        },
-        {
-          "uid": "29df5be7-abbe-45ba-a78a-9878da43a01c",
+          "uid": "8da52be5-a521-4456-9aa7-30bed6e713e4",
           "title": "ファンシーポップコーン",
-          "popularity": 3
+          "popularity": 2.5
         },
         {
-          "uid": "d444e4fd-4d24-4dc4-ba2a-ebc82df6a9b0",
-          "title": "可惜夜プラネット",
-          "popularity": 3
+          "uid": "351b70dd-ed58-414e-a950-3d965f16f036",
+          "title": "ヘッドライナーガール",
+          "popularity": 2.5
         },
         {
-          "uid": "045ec258-9ca2-4eb7-a701-4e480a80cec8",
-          "title": "宵闇エクスプレス",
-          "popularity": 3
-        },
-        {
-          "uid": "be44c8ce-14d3-450c-b6c1-f8f820ca0c98",
-          "title": "溺愛失調症",
-          "popularity": 3
-        },
-        {
-          "uid": "9e6dced0-3a3d-4027-b2ab-31049bb8e69e",
+          "uid": "be211ef5-86f7-40ec-b4c4-577a4fdec5fb",
           "title": "CALL MY NAME",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "b4a7dfbf-5431-42b0-b3b6-c41496bbd4a8",
+          "uid": "4e1ec556-ecb4-4482-9164-deebc4566aa3",
+          "title": "HappyNight,HappyLand",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b0cfaaef-c45e-4d3a-b4df-564bd9d313d1",
+          "title": "N.P.C",
+          "popularity": 2.0
+        },
+        {
+          "uid": "29d59b5a-7b96-4209-97b2-60e4302b6091",
+          "title": "S.I.G",
+          "popularity": 2.0
+        },
+        {
+          "uid": "dd54fdb7-b8c7-4b84-b39f-1bb473278cd2",
           "title": "あとらくちょん!",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "460bc3ce-8ed4-470f-b64f-b97b8bea0967",
-          "title": "はにトラ!?",
-          "popularity": 2.5
-        },
-        {
-          "uid": "80b88761-68b9-4199-b950-a23021047ee6",
-          "title": "クレイジーバンケット",
-          "popularity": 2.5
-        },
-        {
-          "uid": "b49a7f74-134d-4f39-ae00-ae0e9139bc02",
-          "title": "サディスティック・スイーツ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "2dac1da4-77e8-4548-81cc-d5cf9f699f36",
-          "title": "シンギュラミューズ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "e548ebfa-ce70-4fff-bf36-0732940d4069",
-          "title": "タイムストレッチ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "2bb7d85b-848a-4e98-8001-6212d8000a97",
-          "title": "デジタルタトゥー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "d8c7edad-e0c2-4700-9ac8-88142fe107b4",
-          "title": "ネオンライトセンセーション",
-          "popularity": 2.5
-        },
-        {
-          "uid": "73fa3884-5b6e-4df4-93c8-4227e03ccffa",
-          "title": "リテラシックレイジー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "37b0e5df-f582-45cd-b77b-c9ed0c11dff6",
-          "title": "ワルレリジョナー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "69aa8216-7180-4821-83cd-c643be0ed35a",
-          "title": "恋花火",
-          "popularity": 2.5
-        },
-        {
-          "uid": "75dfd613-12a0-4e6c-9960-34cb2c8b2edd",
-          "title": "恋花火 (2025 Remix)",
-          "popularity": 2.5
-        },
-        {
-          "uid": "ed733abb-5c82-41ef-9c5f-6d01c6d90469",
+          "uid": "fea1007b-f1bb-45a0-931d-6e3a9799b873",
           "title": "えっと干支がーる (Hmt2 Remix)",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "1e5a6d3e-c1b7-4fc0-a55e-9f971291af14",
+          "uid": "70939a36-fa97-475b-ad97-e1ec0d79e1cf",
+          "title": "じぇらしーく・ぱーく",
+          "popularity": 2.0
+        },
+        {
+          "uid": "2785c9f7-f766-4544-a24b-161c94ce55ec",
+          "title": "はにトラ!?",
+          "popularity": 2.0
+        },
+        {
+          "uid": "bb1fcb1a-1823-4667-9ad8-b68c77ac1d50",
           "title": "まっしぐら恋心",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "9a7255e1-b3ee-42a2-a72e-535807aef022",
+          "uid": "a31bc4bc-e068-4a95-86aa-482eb899750f",
+          "title": "もしかして探し",
+          "popularity": 2.0
+        },
+        {
+          "uid": "45c84c92-8b06-4398-8313-2ce5e9391330",
           "title": "らぶめろでぃ",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "0990f947-1f3a-470a-bc2d-b808a748ca10",
+          "uid": "db949132-c281-490d-b9bc-e9397cf8c04e",
           "title": "わたしお姫様になりたい",
-          "popularity": 2
+          "popularity": 2.0
+        },
+        {
+          "uid": "f3323c41-89f1-432d-8dc5-71086011e721",
+          "title": "エキゾチックテレパシー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "8cbf0d94-fc0e-4dab-a6ae-d336b27549fa",
+          "title": "キュンタヒー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "1b087b9a-18a6-4f99-ba18-cb2adfea64c2",
+          "title": "クレイジーバンケット",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a743c075-4e78-4117-8035-8f318ad648bc",
+          "title": "サディスティック・スイーツ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "93e38729-2498-43f3-96eb-868e92bbd033",
+          "title": "ショーパレジャンキー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "fc01119d-a7ea-428b-a904-7775dddd5bd5",
+          "title": "シンギュラミューズ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f0228b4c-6135-42bb-b268-67f5862beacf",
+          "title": "スターリーナイト・ダンス",
+          "popularity": 2.0
+        },
+        {
+          "uid": "5d842e4e-185a-4bef-8d39-7a6e32441a94",
+          "title": "タイムストレッチ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "7324f756-e0db-4a90-89b3-dbb5a5884471",
+          "title": "テープカット",
+          "popularity": 2.0
+        },
+        {
+          "uid": "7d2befd5-518d-4077-83e0-44baede26190",
+          "title": "デジタルタトゥー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "80749b52-f800-454e-b88c-d0a1fdb83fcb",
+          "title": "デジタルタトゥー (2025 Remix)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f22fff1a-a893-45d0-9327-2d8f497c0e80",
+          "title": "トワイライトアドベンチャー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3aa22d64-a981-45ea-a004-68d3cbfd1708",
+          "title": "ネオンライトセンセーション",
+          "popularity": 2.0
+        },
+        {
+          "uid": "09431b0a-21fc-42f1-b73e-8f46b9561c47",
+          "title": "ネコシエーター",
+          "popularity": 2.0
+        },
+        {
+          "uid": "75b557b3-bb91-4c73-9519-5ae1c1916ada",
+          "title": "リテラシックレイジー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a0137e38-db46-46f8-a32f-0c62c09fcbd7",
+          "title": "ワルレリジョナー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e6655120-7a73-4ea5-b507-fd02103e447a",
+          "title": "人生で1番LOVEな日",
+          "popularity": 2.0
+        },
+        {
+          "uid": "7a863c05-3b53-45a6-8a50-9a909eac3f23",
+          "title": "可惜夜プラネット",
+          "popularity": 2.0
+        },
+        {
+          "uid": "87d79b9e-f341-426c-9ea5-ec959ca86911",
+          "title": "宵闇エクスプレス",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a6fd2af8-7a69-4b63-a31d-d52c9d289c9b",
+          "title": "恋花火",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4cf7f588-dfaa-489f-8429-877704794328",
+          "title": "恋花火 (2025 Remix)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f93115ae-1bd6-49f8-9c44-5ef96b15c01b",
+          "title": "溺愛失調症",
+          "popularity": 2.0
+        },
+        {
+          "uid": "19eac3da-227d-4e80-84d3-9b62bd4cdd7d",
+          "title": "百鬼夜光",
+          "popularity": 2.0
         }
       ]
     },
@@ -600,169 +785,169 @@
       ],
       "songs": [
         {
-          "uid": "e8ac5db6-32b9-46fb-9da0-41ea1ad5ddf3",
-          "title": "I LOVE YOU=NONFICTION",
-          "popularity": 4
-        },
-        {
-          "uid": "ff8e75ef-7068-424b-b992-4d8d1ed6d226",
+          "uid": "0f1293cc-9866-4580-bd7d-29b325a54401",
           "title": "ビリビリラブゲーム",
-          "popularity": 4
-        },
-        {
-          "uid": "c9929f31-85aa-415e-902a-57473523a799",
-          "title": "プラトニックチョロイン",
-          "popularity": 4
-        },
-        {
-          "uid": "1d3e5a38-8a64-455a-a02f-854d3a198746",
-          "title": "うれぴっぴ!",
           "popularity": 3.5
         },
         {
-          "uid": "c518a369-a207-405b-8218-d7ffede23ec1",
-          "title": "てっぺんコード",
-          "popularity": 3.5
-        },
-        {
-          "uid": "d27dc440-fe9d-48c7-8ed6-e4dd97845816",
+          "uid": "00d74f92-d559-45d9-9b8b-61370146f220",
           "title": "ぷろふぃ〜る",
-          "popularity": 3.5
+          "popularity": 3.0
         },
         {
-          "uid": "97364ef1-1b3e-4f19-9cd0-88a47d1bbb1c",
-          "title": "らぶげっちゅ",
-          "popularity": 3.5
+          "uid": "82d41f12-712f-4aab-bcf1-06bb2ee3b027",
+          "title": "プラトニックチョロイン",
+          "popularity": 3.0
         },
         {
-          "uid": "8d8f1281-f6f1-41d9-83ac-4f1657f4ce1b",
-          "title": "全人類あいうぉんちゅー",
-          "popularity": 3.5
+          "uid": "27ec5d65-0ba6-4a10-a148-e1f880d8ac32",
+          "title": "I LOVE YOU=NONFICTION",
+          "popularity": 2.5
         },
         {
-          "uid": "770d6fa6-1858-44a3-8305-9ebd3c669364",
-          "title": "Honey Up RUSH!!",
-          "popularity": 3
+          "uid": "f192117a-6e2b-4d3a-8842-3f0b5ff5a3d8",
+          "title": "うれぴっぴ!",
+          "popularity": 2.5
         },
         {
-          "uid": "a23c5ae5-aba8-461c-b704-a6fac4df701e",
-          "title": "NonFiction",
-          "popularity": 3
-        },
-        {
-          "uid": "ac46a82d-41bb-4cce-9bfa-bd3aa2ab0e7d",
-          "title": "ちゅきらぶ!",
-          "popularity": 3
-        },
-        {
-          "uid": "e79b88c1-0804-4f9c-8f94-1f515fbf3261",
-          "title": "はなまるフュージョン",
-          "popularity": 3
-        },
-        {
-          "uid": "b6dd18c5-9b89-4f5c-9e8a-2eaa9818291f",
-          "title": "よくばりバイキング",
-          "popularity": 3
-        },
-        {
-          "uid": "7da50c38-d00b-4b67-b760-b518b3eec93b",
-          "title": "アイリス",
-          "popularity": 3
-        },
-        {
-          "uid": "97da23c4-5f48-487f-9578-ecff9cb7a945",
-          "title": "ノーテンキ超キュートガール",
-          "popularity": 3
-        },
-        {
-          "uid": "a6ec4b7e-9cce-44f4-bdaa-3e309e2f039d",
-          "title": "ミラクルダンスを踊りたい",
-          "popularity": 3
-        },
-        {
-          "uid": "7337de69-f678-42d3-bb4d-0aecbaee9a62",
-          "title": "禁制ヒロインサバイバル",
-          "popularity": 3
-        },
-        {
-          "uid": "ad5a1b20-52e5-456b-9026-20e429f7fcf5",
-          "title": "絶対優勝!おぎゃりマスター",
-          "popularity": 3
-        },
-        {
-          "uid": "acf05941-58db-4ba0-ad9c-663e1919216c",
+          "uid": "f24d3838-e66b-4780-ba07-b856766ba7ec",
           "title": "Day by day",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "30aeba52-718f-4c1a-911a-9ebfa6990e5f",
+          "uid": "133d7e66-dd03-4192-9401-70cebec6b5e5",
           "title": "GiveME☆Summer",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "a73be8cc-0d25-424f-b6ab-0367a1e15f7b",
+          "uid": "401e33cf-ddc4-48f3-9f73-3bdd114188ed",
+          "title": "Honey Up RUSH!!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a2e0768e-fbbc-4be7-b23d-a71146979278",
+          "title": "NonFiction",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3919adcd-1aa6-4788-9f82-9e8592e4d5fa",
           "title": "Palette",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "d54a608a-8aae-414a-8e42-65c3a1cfff6c",
+          "uid": "a7297acf-5999-458d-b3ed-43bf9d80a410",
           "title": "おんりーびーと!",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "82fcdd5a-d5e8-4a70-95c7-e1b295aa4003",
-          "title": "ふゅーちゃーちゅぅな〜!",
-          "popularity": 2.5
+          "uid": "0f390cd4-7978-4197-8383-bebd4274b8e8",
+          "title": "ちゅきらぶ!",
+          "popularity": 2.0
         },
         {
-          "uid": "e0e49183-4689-4226-bb2b-573dd17857ec",
-          "title": "ふゅーちゃーちゅーな～",
-          "popularity": 2.5
+          "uid": "aab995f3-be49-4399-82a9-4e28815e8042",
+          "title": "てっぺんコード",
+          "popularity": 2.0
         },
         {
-          "uid": "f9791fa2-7c3c-4c6d-aa12-0aed6ae8ed8a",
-          "title": "ツヨカワ",
-          "popularity": 2.5
+          "uid": "f36b73f7-87d4-49ba-85a3-f01faab2b1b5",
+          "title": "はなまるフュージョン",
+          "popularity": 2.0
         },
         {
-          "uid": "f075c479-3963-4550-bf88-daf3223ba0a3",
-          "title": "レイトショー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "2933dc4b-19b3-44ac-9709-e10514eeda49",
-          "title": "一方通行ステップアップ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "f217526c-c68c-4819-9c24-738ed220621a",
-          "title": "奇跡的 無敵 キラメキ ランデブー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "4370e5d7-5a95-4f6f-ba9e-4549be2aa56b",
+          "uid": "c3e5acd4-b9a8-4ad6-be51-ac8c12b4d8c3",
           "title": "ひっぱれ大団円",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "0421bd11-501d-41b6-b88b-84c9f306c232",
+          "uid": "c2f0bf52-9c0d-4a9d-8257-fd3d7ed83e64",
+          "title": "ふゅーちゃーちゅぅな〜!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a7915614-2d47-4610-ad4f-284ed5667687",
+          "title": "ふゅーちゃーちゅーな～",
+          "popularity": 2.0
+        },
+        {
+          "uid": "33f9e5e2-ac52-4509-93be-baa57d653ca1",
+          "title": "よくばりバイキング",
+          "popularity": 2.0
+        },
+        {
+          "uid": "cae79b59-9a29-46ac-9157-7c8615548626",
+          "title": "らぶげっちゅ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e9232417-8ea8-45e3-b50e-e57afd801d40",
+          "title": "アイリス",
+          "popularity": 2.0
+        },
+        {
+          "uid": "36e2958f-ea55-432b-80cc-60711e230d53",
           "title": "キミノヒーロー",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "6cc2b95a-c594-4416-bd08-5f8ddefc433b",
+          "uid": "095c63e7-9788-4109-9f0c-47808b8fa629",
           "title": "ストラテジー",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "d09a7d13-965f-41bd-9129-1e1cc16a06fa",
+          "uid": "bc6c52dc-c137-4517-a57f-80d8914b59a6",
+          "title": "ツヨカワ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "024f116c-3173-4291-a579-d602de00fc13",
+          "title": "ノーテンキ超キュートガール",
+          "popularity": 2.0
+        },
+        {
+          "uid": "490295a4-213c-4ad5-a13a-3941df48a004",
+          "title": "ミラクルダンスを踊りたい",
+          "popularity": 2.0
+        },
+        {
+          "uid": "9fdd3a98-6a03-4dee-962d-ee136ce782b9",
           "title": "ルンルンパーティー日常",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "886fd46e-1602-4266-8b1f-edf79b11234f",
+          "uid": "4c508cb7-4129-4a64-bf8e-87a5d94801a0",
+          "title": "レイトショー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "bdfa2f2a-af92-431b-81fe-550e1196e292",
+          "title": "一方通行ステップアップ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e018f0fb-6ebd-4cd7-97dc-d1786c16cfc1",
+          "title": "全人類あいうぉんちゅー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d4420be0-1c6f-46dd-9506-864c11f5fe09",
+          "title": "奇跡的 無敵 キラメキ ランデブー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "6f074cdf-c56f-4784-a555-56d623f783e0",
           "title": "年中無休エンジョイ宣言",
-          "popularity": 2
+          "popularity": 2.0
+        },
+        {
+          "uid": "214a972f-37b4-47fb-b584-36ee7549084c",
+          "title": "禁制ヒロインサバイバル",
+          "popularity": 2.0
+        },
+        {
+          "uid": "33698873-0b48-409e-8e12-5d134fc29af5",
+          "title": "絶対優勝!おぎゃりマスター",
+          "popularity": 2.0
         }
       ]
     },
@@ -789,34 +974,119 @@
       ],
       "songs": [
         {
-          "uid": "d54b674d-b288-47c4-abd4-4c735e384e49",
-          "title": "Re-COiL",
-          "popularity": null
-        },
-        {
-          "uid": "9744007b-96aa-4504-b64e-e4958b140d36",
-          "title": "Ri-Di-Dong",
-          "popularity": null
-        },
-        {
-          "uid": "abc404ea-f911-42da-9a35-64d1492e4333",
-          "title": "アクマデモ",
-          "popularity": null
-        },
-        {
-          "uid": "f48e7f93-cca2-4717-a2bf-fc589bba7557",
-          "title": "シークレットゲーム",
-          "popularity": null
-        },
-        {
-          "uid": "c5f4d5d4-ec0e-4b15-9325-4709c039c0fd",
+          "uid": "76704d76-bf4d-45a3-83fc-b887bfb08064",
           "title": "パラリラダンス",
-          "popularity": null
+          "popularity": 4.5
         },
         {
-          "uid": "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
+          "uid": "88937535-a9d8-4015-9a3e-6d24c03a643a",
+          "title": "なななな!?",
+          "popularity": 4.0
+        },
+        {
+          "uid": "2f53773e-34e9-4c99-bf19-7954daa88e31",
+          "title": "シークレットゲーム",
+          "popularity": 3.5
+        },
+        {
+          "uid": "83564dc3-f458-4cbe-8f0d-1eef10263bde",
           "title": "ホシツナギ",
-          "popularity": null
+          "popularity": 3.5
+        },
+        {
+          "uid": "4196e18f-0335-466d-96cb-023a658050a6",
+          "title": "アイマイミー",
+          "popularity": 3.0
+        },
+        {
+          "uid": "79ec09d0-9f73-4f16-bb04-a541e52a0361",
+          "title": "アクマデモ",
+          "popularity": 3.0
+        },
+        {
+          "uid": "c4f20fe8-dce3-45b5-8d26-e877d3201435",
+          "title": "ダンシャリメイジン",
+          "popularity": 3.0
+        },
+        {
+          "uid": "95817761-9b01-45de-b8f2-17d23d453aa8",
+          "title": "MAGIC",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0b6b413a-e655-4040-a417-b286cef9d8a5",
+          "title": "MELTDOWN GIRL",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e23fde7c-10f4-40b4-a8e2-7187524296f0",
+          "title": "ODORE",
+          "popularity": 2.5
+        },
+        {
+          "uid": "ae3decec-aae5-4e59-8b91-d7b1fae320fb",
+          "title": "Re-COiL",
+          "popularity": 2.5
+        },
+        {
+          "uid": "56d3050c-e880-4b11-a3b8-c4b7142fca9d",
+          "title": "sing along",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1fb6be03-e616-4760-aeb1-b8201bbc33b8",
+          "title": "いいんじゃない?",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8723df55-13ff-41f7-95cb-80699062851d",
+          "title": "アクアリウマー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "9e7a5aaa-5e2f-4fd5-a11b-0140911fe1b2",
+          "title": "アリオリハベリイトオカシ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "37fec3c8-e82e-410a-b6d3-94db5cc02c45",
+          "title": "サーチライト",
+          "popularity": 2.5
+        },
+        {
+          "uid": "03a17f3d-5805-4f13-838d-aad682b4d713",
+          "title": "ハイジンライバー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "093245ec-85fa-4fdf-9eec-91c65d720800",
+          "title": "パラレルワールド",
+          "popularity": 2.5
+        },
+        {
+          "uid": "94405939-80c5-4439-8b9a-519e0b9ca8ab",
+          "title": "ポンピンパーティー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "25fcda28-30d4-4c02-83bd-7ec6938c5450",
+          "title": "ラ・タ・タ・タム",
+          "popularity": 2.5
+        },
+        {
+          "uid": "bf972357-7ba1-4008-af6e-32ffd476a93a",
+          "title": "三番線",
+          "popularity": 2.5
+        },
+        {
+          "uid": "aa6a7218-44d6-4807-b853-ce4b5e2fd6eb",
+          "title": "恋空ウェザーニュース",
+          "popularity": 2.5
+        },
+        {
+          "uid": "3aee40ad-49d3-488f-af11-c3396cb2ccd5",
+          "title": "Ri-Di-Dong",
+          "popularity": 1.5
         }
       ]
     },
@@ -871,14 +1141,59 @@
       ],
       "songs": [
         {
-          "uid": "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
-          "title": "きゅんとしちゃってはなれない",
-          "popularity": null
+          "uid": "6c84d817-cf3e-4800-b677-fd45541b31b0",
+          "title": "キラッキュアッピュア",
+          "popularity": 4.0
         },
         {
-          "uid": "6440e2e6-96ea-5363-9185-f51041b1b9b0",
-          "title": "告白マクロナージュ",
-          "popularity": null
+          "uid": "38389a56-5b88-4bf9-9343-c6bac7e7f457",
+          "title": "告白マカロナージュ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "f3347c74-0a4e-4e5b-b27e-469decb6cb63",
+          "title": "コスモキュート",
+          "popularity": 3.0
+        },
+        {
+          "uid": "d3f3ab00-c722-4d47-b386-dc25d2578a48",
+          "title": "ラブ♡タップ",
+          "popularity": 3.0
+        },
+        {
+          "uid": "a2ab429a-f5f5-45f5-a4d5-fbe8895e94bf",
+          "title": "きゅんとしちゃってはなれない",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d0dfdf15-7a32-4090-a3a2-ee2ecc32e351",
+          "title": "ねがいぼし",
+          "popularity": 2.5
+        },
+        {
+          "uid": "00d0dc1a-d70d-4c4f-9e0e-42e0ecffd33b",
+          "title": "ラブストレイト",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1d455e85-b61f-4961-a26f-d737a1249078",
+          "title": "アイドライズ・シナリオ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "35524d87-7704-4e0b-98b6-3e3b2fb3ba8b",
+          "title": "カラフルグラデーション",
+          "popularity": 1.5
+        },
+        {
+          "uid": "ad0ccf30-28b7-4024-8927-567960e0c49f",
+          "title": "ワンダフォーLOVE",
+          "popularity": 1.5
+        },
+        {
+          "uid": "99387e1f-0863-4189-bd7e-79572ad2ac77",
+          "title": "最カワぽっぴんプリンセス",
+          "popularity": 1.5
         }
       ]
     },
@@ -921,61 +1236,111 @@
           "name": "日陽きい",
           "color": "黄",
           "color_hex": "#ffff00",
-          "portrait_url": "../data/pictures/idols/%E6%97%A5%E9%99%BD%E3%81%8D%E3%81%84_portrait.jpg"
+          "portrait_url": "../data/pictures/idols/9e0f8916-375b-40a4-842b-cf6b2fbd3c7d_portrait.jpg"
         },
         {
           "uid": "2571d33a-51e8-4ca9-b577-a602318af81f",
           "name": "宮代ゆき",
           "color": "白",
           "color_hex": "#ffffff",
-          "portrait_url": "../data/pictures/idols/%E5%AE%AE%E4%BB%A3%E3%82%86%E3%81%8D_portrait.jpg"
+          "portrait_url": "../data/pictures/idols/2571d33a-51e8-4ca9-b577-a602318af81f_portrait.jpg"
         }
       ],
       "songs": [
         {
-          "uid": "2c9af4ef-f478-4898-b446-382ca7f23add",
-          "title": "バカデカボイス",
-          "popularity": null
+          "uid": "b889f6b3-5e76-448b-bb14-33df1f367d66",
+          "title": "シャウト・シャトル",
+          "popularity": 3.5
         },
         {
-          "uid": "5bb40788-5ba4-4056-a085-b70df0cdc046",
-          "title": "ときめきめいく",
-          "popularity": null
-        },
-        {
-          "uid": "7313f8e1-1acb-450a-b1ee-95bbfa3fbe3f",
+          "uid": "311098c5-1f39-433b-820d-1245199de63c",
           "title": "夏に恋してる",
-          "popularity": null
+          "popularity": 3.0
         },
         {
-          "uid": "83b3f908-bb9c-429d-8150-ad1d377616ff",
-          "title": "ダイスキステキラッキーデイズ)-Koharu Nokasolo",
-          "popularity": null
+          "uid": "ef468e5d-6d71-4376-8e87-f8956099a013",
+          "title": "超拡声♡ニュー!オーダー!",
+          "popularity": 3.0
         },
         {
-          "uid": "a2fc2d86-4d5b-44f5-953e-880de7e67dfb",
-          "title": "さいきょうセンセーション",
-          "popularity": null
+          "uid": "6f0d2852-fd13-4ffc-b962-c444fea4ab53",
+          "title": "1%",
+          "popularity": 2.5
         },
         {
-          "uid": "0774e6e6-5e97-412c-9f11-16dd4eb3e10d",
-          "title": "バカデカボイスでスキって叫べ！",
-          "popularity": null
+          "uid": "ddf51a06-464c-4251-ae4e-08c4f5d0dd31",
+          "title": "叫鳴マスタライズ",
+          "popularity": 2.5
         },
         {
-          "uid": "8465de8d-0dc0-44eb-aba4-6f588d6aed9c",
-          "title": "めろめろ♡ふぁんたじー)-Hoshino Amisolo",
-          "popularity": null
-        },
-        {
-          "uid": "3fc80621-4c4a-4b85-8646-b2d53dabee50",
-          "title": "スノードロップ)-Miyashiro Yukisolo",
-          "popularity": null
-        },
-        {
-          "uid": "b052f2b8-67b2-4d9a-abf6-7fd063f5670f",
+          "uid": "ca9b2b62-524c-4de0-ad52-b137b77a8512",
           "title": "本命スイートデイズ",
-          "popularity": null
+          "popularity": 2.5
+        },
+        {
+          "uid": "f7a6aa0f-917f-4c9b-ac5b-a141a88bcf77",
+          "title": "えんじょいなす!",
+          "popularity": 1.5
+        },
+        {
+          "uid": "e90790a6-a549-4ff1-8a18-1ebdf9849f56",
+          "title": "さいきょうセンセーション",
+          "popularity": 1.5
+        },
+        {
+          "uid": "e5b52490-2883-437b-93c0-83c6751487b4",
+          "title": "だいすきフルコース",
+          "popularity": 1.5
+        },
+        {
+          "uid": "b1341195-8b51-400d-8f20-e578620c5e02",
+          "title": "ときめきめいく",
+          "popularity": 1.5
+        },
+        {
+          "uid": "eefd1163-53b5-4749-b265-2fdb75bf5a41",
+          "title": "ほしがりんちゅ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "0e9e73e6-e11d-4c60-8ad2-fd7ca92ff0e0",
+          "title": "めろめろ♡ふぁんたじー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "408239c9-b5c5-4b0d-a3d0-0fd5487cf586",
+          "title": "カニピース",
+          "popularity": 1.5
+        },
+        {
+          "uid": "48a6939a-98b4-4449-ae5d-a0ddd848e2e3",
+          "title": "キミの言葉",
+          "popularity": 1.5
+        },
+        {
+          "uid": "7f909a98-6d00-499c-9e0c-e1128cd72a9b",
+          "title": "スノードロップ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "66bd70bb-dad5-44d2-8e6b-803509f3355d",
+          "title": "ダイスキステキラッキーデイズ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "2db50f7a-1014-4570-87b2-b2ec7daf539b",
+          "title": "バカデカボイスでスキって叫べ!",
+          "popularity": 1.5
+        },
+        {
+          "uid": "fbaa4808-e1ab-415e-87b2-0ef3ae17692f",
+          "title": "ビシバシデシベル",
+          "popularity": 1.5
+        },
+        {
+          "uid": "528d2571-9f7c-4baa-8683-2ff4407b729a",
+          "title": "ユメイッチョクセン",
+          "popularity": 1.5
         }
       ]
     },
@@ -1058,19 +1423,89 @@
       ],
       "songs": [
         {
-          "uid": "d5f9fea1-1970-40ab-9000-e5c1b2feea79",
-          "title": "ON!START",
-          "popularity": null
+          "uid": "5e98f7e9-b9e3-4e0b-bf06-10483cd1d02f",
+          "title": "バチモリーナ",
+          "popularity": 4.0
         },
         {
-          "uid": "259b4ee1-2368-4e33-b7dc-ff23eff37717",
+          "uid": "0ee8408c-c9f6-4f0a-82bf-8f74e696effc",
+          "title": "ダダダダダ!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "68249404-d8a3-4678-bc17-ce5bc0eb0821",
+          "title": "ドンズバきゅん",
+          "popularity": 3.0
+        },
+        {
+          "uid": "88e5d2f3-7e2c-4a9b-aa9a-853330377a2a",
+          "title": "愛 you ready?",
+          "popularity": 3.0
+        },
+        {
+          "uid": "9f161cf2-e3e2-4c88-88cc-1f960c5c283e",
+          "title": "Q & i",
+          "popularity": 2.5
+        },
+        {
+          "uid": "560b264c-7e3b-41bf-9333-a1255feab2e8",
+          "title": "ドキドキビート",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e2a2abf1-7b23-4547-86b8-9fbd97dd6a53",
+          "title": "苺キャンディ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "327cf70b-d1f1-4caf-9f52-9a14dd1dd77d",
+          "title": "sweet timer (iON! ver.)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "154cfec5-3d4d-46df-8ef1-23f2d707f7bb",
+          "title": "​​カラフルパーティー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "3e6073a8-7b70-4802-a114-0a10d406fc74",
+          "title": "ときめきラブコール!",
+          "popularity": 1.5
+        },
+        {
+          "uid": "5c17c5ee-7e9d-4730-8a33-91a38359ff23",
+          "title": "アイドルライフスターターパック (iON! ver.)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "c97a638a-43e4-4ced-9c5a-7ee9c1cc1b2d",
+          "title": "アイドルライフブースターパック (iON! ver.)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "91b3987d-e619-4e58-872e-0094ca1a014a",
           "title": "エゴキュート",
-          "popularity": null
+          "popularity": 1.5
         },
         {
-          "uid": "54d440e0-c036-4a8a-9a35-bc0fb03e480c",
-          "title": "バチモリーナ！！！",
-          "popularity": null
+          "uid": "a2bf3fec-d4de-404c-8180-9c3bd889eaeb",
+          "title": "オールレンジ・マグネット",
+          "popularity": 1.5
+        },
+        {
+          "uid": "1e32cfc4-1b22-4261-a066-a03a31190a00",
+          "title": "キスハグ侵略者! (iON! ver.)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "268e33ed-5d9c-4acf-8f72-9840dc084a64",
+          "title": "クローゼットランウェイ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "c807ba06-24b9-4a74-9c6b-676bf7767c8f",
+          "title": "ヨクバリコワガリ",
+          "popularity": 1.5
         }
       ]
     },
@@ -1118,19 +1553,94 @@
       ],
       "songs": [
         {
-          "uid": "510020fc-829a-49aa-b949-52f2f993f86a",
+          "uid": "bcead875-f4f9-4e2c-bbcf-b1edab76d2fe",
+          "title": "UNIVERSE",
+          "popularity": 4.0
+        },
+        {
+          "uid": "258eedda-c85e-408f-bc06-078e0e403c04",
+          "title": "スニーカーシンデレラ",
+          "popularity": 3.5
+        },
+        {
+          "uid": "a6cb575f-7cd7-4921-9801-c97667ae7aa4",
+          "title": "ユートピア",
+          "popularity": 3.5
+        },
+        {
+          "uid": "ca5b2f95-2c9c-4ae4-a2a9-695ec8e12ea6",
+          "title": "GILTY",
+          "popularity": 3.0
+        },
+        {
+          "uid": "1df5ccca-8d80-48ae-a52b-123d965550a5",
+          "title": "Gmongda Ks.",
+          "popularity": 3.0
+        },
+        {
+          "uid": "8ce61c82-a16a-41b9-9965-5ef3c9ea128a",
+          "title": "ニャンニャンBADバイバイ",
+          "popularity": 3.0
+        },
+        {
+          "uid": "88fde4f9-4374-48ef-a370-18c63a9ff9f2",
+          "title": "フェイクルーラー",
+          "popularity": 3.0
+        },
+        {
+          "uid": "634e3f13-e61d-42fd-9772-34668a656845",
+          "title": "スティグマ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4e94c6f4-3ab2-4f6f-9258-2dacddcecc98",
+          "title": "呪われてみてよ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "87588adf-8419-4358-9b38-7fe67dc41df2",
+          "title": "秘密の箱",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0a195ea1-163c-48c2-b01c-78f21762c8d3",
+          "title": "ALIVE",
+          "popularity": 2.0
+        },
+        {
+          "uid": "adf9f43a-334c-4c7b-b864-00ac8ed19309",
           "title": "HEAD SHOT",
-          "popularity": null
+          "popularity": 2.0
         },
         {
-          "uid": "52171d08-3360-4490-aad7-16ae08ad1cfe",
-          "title": "JUDGEMENT",
-          "popularity": null
+          "uid": "029ba56a-2a9c-43dc-8dcb-a33631f9a021",
+          "title": "Mani",
+          "popularity": 2.0
         },
         {
-          "uid": "f13ddf8e-2858-4382-a10d-3fa793972033",
-          "title": "大罪",
-          "popularity": null
+          "uid": "cc9eae7e-beba-424c-8fea-a6b1d47c02ad",
+          "title": "Scramble Bomaye!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "33ecd3d4-9d42-4a46-8f74-3a41075c18af",
+          "title": "TARANTULA",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a328231e-4500-4b41-9765-7ad66bf529fd",
+          "title": "サブカルラジカルニートナンバー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4688c5e1-3ae0-4d8e-b0a8-c974b8fc6662",
+          "title": "拗ラセガール",
+          "popularity": 2.0
+        },
+        {
+          "uid": "c9e32291-109b-481c-9885-93456940996b",
+          "title": "無色透明",
+          "popularity": 2.0
         }
       ]
     },
@@ -1171,34 +1681,34 @@
       ],
       "songs": [
         {
-          "uid": "b6fb02e3-3d64-4f31-8d19-17938997cca0",
+          "uid": "6f95dc49-6874-4676-b094-f04c9e09487d",
           "title": "アンラッキー終末期",
           "popularity": 3.5
         },
         {
-          "uid": "88a94032-4f53-4f63-9520-f6b10c3fac51",
+          "uid": "0aff5f80-f786-4118-9358-89651d3fe6dc",
           "title": "ショートケーカーズ",
-          "popularity": 3
+          "popularity": 3.0
         },
         {
-          "uid": "b90786a3-86c7-4f86-b775-dd07825a5ea4",
+          "uid": "09099023-8362-4ee4-949e-65db2c13ea5b",
           "title": "ジェラ",
-          "popularity": 3
+          "popularity": 3.0
         },
         {
-          "uid": "06f91bc1-59fb-486c-bfb9-1a5c6cac912e",
+          "uid": "38fa288b-12ce-484b-ba30-06fc36486988",
           "title": "BADとLIP",
           "popularity": 2.5
         },
         {
-          "uid": "b6cd6977-bd52-4717-89c5-49dfe07bd197",
-          "title": "チョコレイト・カノン",
+          "uid": "c70fc300-3538-4739-8d64-726786f1c441",
+          "title": "ピンクゾンビーズ",
           "popularity": 2.5
         },
         {
-          "uid": "111f469f-cdc7-4768-932e-8fd3ed0a60c7",
-          "title": "ピンクゾンビーズ",
-          "popularity": 2
+          "uid": "d4bd0d07-3e59-40e5-8c74-73f0bbcd11ce",
+          "title": "チョコレイト・カノン",
+          "popularity": 2.0
         }
       ]
     },
@@ -1267,99 +1777,394 @@
       ],
       "songs": [
         {
-          "uid": "be379f5b-1b3c-4472-8348-d9ae89bb802d",
-          "title": "マツリカ舞う風",
-          "popularity": null
+          "uid": "62fac47c-62e3-4859-afd5-0315e9ecc455",
+          "title": "ANARCHY",
+          "popularity": 4.0
         },
         {
-          "uid": "c756d54e-332b-4ba1-8dde-456426a4f489",
+          "uid": "7c3fffe6-62c0-48e2-8307-996db42e74da",
+          "title": "WE ARE!!!!",
+          "popularity": 3.5
+        },
+        {
+          "uid": "eb9cd2c4-d650-4b8e-8b0d-e0d57a4226be",
+          "title": "零",
+          "popularity": 3.5
+        },
+        {
+          "uid": "22f709c1-6b19-476b-9dd4-971d064a4d81",
+          "title": "Cross Fire",
+          "popularity": 3.0
+        },
+        {
+          "uid": "5a3d1475-80e6-44e0-9760-f2c8ad6b672a",
+          "title": "F××k-Wit",
+          "popularity": 3.0
+        },
+        {
+          "uid": "992c2ac9-9d91-4c58-bfd9-69d2cec65fa8",
+          "title": "黎明ハイドアウト",
+          "popularity": 3.0
+        },
+        {
+          "uid": "c4f8e395-900e-4f77-b0c1-eee81cf934d3",
+          "title": "Poker Beast",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4c3f86b7-0670-43f1-aba0-5b65706716c5",
+          "title": "僕らのシンフォニー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f15cbde5-3699-46be-9731-74f8661ba660",
+          "title": "藍乱舞幽",
+          "popularity": 2.5
+        },
+        {
+          "uid": "bf0fbd9e-f662-4671-b0ab-7fa469015119",
+          "title": "AGE↑サマ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "c37415c4-0f6e-485f-8ac5-359f22665ecf",
+          "title": "BeetRock-SE",
+          "popularity": 2.0
+        },
+        {
+          "uid": "9621d2b5-e53f-41d6-9323-642dd9c36f97",
+          "title": "Black and White",
+          "popularity": 2.0
+        },
+        {
+          "uid": "74d969c3-0f5f-4cb2-bde8-9e52c4177c27",
+          "title": "FIRE BIRD",
+          "popularity": 2.0
+        },
+        {
+          "uid": "78d2f940-3061-45ca-ba98-471209d66f5a",
+          "title": "FxxK-Wit (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "80af8c51-da5a-4dd6-ad50-694554728189",
+          "title": "Grudge(雅なぎsolo)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e75c8ec1-0abd-4b45-a8e4-3c219a68c2b5",
           "title": "IZAYOI",
-          "popularity": null
+          "popularity": 2.0
         },
         {
-          "uid": "f92f20e9-a725-4b94-8f8a-ec205b0978e1",
-          "title": "アーティファクト",
-          "popularity": null
+          "uid": "fb397baa-b052-419f-9cd5-88a817258ad9",
+          "title": "Invisible Rays",
+          "popularity": 2.0
         },
         {
-          "uid": "106d0386-96d6-44e4-897a-2ae028a79695",
-          "title": "Artifact",
-          "popularity": null
+          "uid": "0568cda4-8160-4a9f-bd72-7706fb1de146",
+          "title": "NICE VIEW",
+          "popularity": 2.0
         },
         {
-          "uid": "cce5a698-c53f-445f-b22a-bbaa5849de46",
-          "title": "天生輪廻",
-          "popularity": null
+          "uid": "81bc5205-33e7-46b2-828d-1c0609eb8298",
+          "title": "NICE VIEW (LIVE ver.)",
+          "popularity": 2.0
         },
         {
-          "uid": "2b82dfa7-f8e3-42c7-81de-50f186468b96",
-          "title": "T.E.N.R.I.N",
-          "popularity": null
+          "uid": "e2cff55b-d607-4726-8113-6c61a901c302",
+          "title": "NICEVIEW",
+          "popularity": 2.0
         },
         {
-          "uid": "74c70238-4f26-4fc3-b60e-401b97d38e48",
-          "title": "REINCARNATION",
-          "popularity": null
+          "uid": "72d54759-50f7-4040-9dcb-5715534dfd02",
+          "title": "OUTSIDER",
+          "popularity": 2.0
         },
         {
-          "uid": "26f67e66-39f1-41b2-bb96-cc25228367e6",
-          "title": "StayLOUD",
-          "popularity": null
+          "uid": "62e39b98-fc6e-4adc-8dc2-22979e85bfa9",
+          "title": "PartyTime",
+          "popularity": 2.0
         },
         {
-          "uid": "5e824791-98f6-4edc-baeb-d37555a4f338",
-          "title": "インダストリアル)-Narumi KomaSolo",
-          "popularity": null
-        },
-        {
-          "uid": "75fbcdf8-895e-4d9a-90a1-e2314942cd56",
-          "title": "人生はっぴーふぁっきんまいらいふ)-No More ChachaSolo",
-          "popularity": null
-        },
-        {
-          "uid": "cb2c6738-717e-4208-bf22-e50274ecf946",
-          "title": "人ニ、非ズ",
-          "popularity": null
-        },
-        {
-          "uid": "704d20ee-5b46-461f-8e5d-680c16a5423d",
-          "title": "STEP IN TIME",
-          "popularity": null
-        },
-        {
-          "uid": "c4c9db3b-6b39-4472-a63e-ac677f7bdae2",
-          "title": "らぶみーきるみー)-No More ChachaSolo",
-          "popularity": null
-        },
-        {
-          "uid": "be984d5d-71a1-4271-b3c9-1cfe7a6ae2bd",
+          "uid": "2cd97548-3766-40d8-822d-eeffe3676d10",
           "title": "Past Shapes",
-          "popularity": null
+          "popularity": 2.0
         },
         {
-          "uid": "71173086-13ca-4141-83d8-eb0d962de2db",
-          "title": "SnowTears",
-          "popularity": null
+          "uid": "3ef1e126-366e-4226-9225-9bd52aa47567",
+          "title": "Peek-a-Boom-Boom",
+          "popularity": 2.0
         },
         {
-          "uid": "5f8e2dac-a0a0-4925-87e1-7dc1d45dfe37",
-          "title": "どりぃむちゃちゃらんど",
-          "popularity": null
+          "uid": "9f86b1d6-1978-48a5-8428-c8e33b7d935a",
+          "title": "Peek-a-Boom-Boom (LIVE ver.)",
+          "popularity": 2.0
         },
         {
-          "uid": "0a04112f-c629-462b-9bc0-9ee266805df5",
-          "title": "Grudge",
-          "popularity": null
+          "uid": "c850ad76-bce6-4ca3-b3fa-f06ee13f7059",
+          "title": "SAVE YOU(霞あげはsolo)",
+          "popularity": 2.0
         },
         {
-          "uid": "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
-          "title": "ニコニコLouder",
-          "popularity": null
+          "uid": "0362916b-334a-4dd3-b4e5-bdbdcc0280b9",
+          "title": "SAWAGE",
+          "popularity": 2.0
         },
         {
-          "uid": "1b46fdc6-772d-4c97-885d-ee34c9d278d4",
-          "title": "発見! やんだ! ぱんだ!",
-          "popularity": null
+          "uid": "725fda08-eff3-4853-ad85-a44720d91b00",
+          "title": "STEP IN TIME",
+          "popularity": 2.0
+        },
+        {
+          "uid": "1b2f0098-e2ee-461a-858f-5a1d3d33256a",
+          "title": "STEP IN TIME (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "506d6748-7207-4fbf-9f4c-6f78694c0c75",
+          "title": "SUNSET",
+          "popularity": 2.0
+        },
+        {
+          "uid": "99d20686-e096-431c-ae4e-00d82bb68533",
+          "title": "SnowTears(蓮花うららsolo)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "af77b02d-6f04-4aef-b93c-1bc565182108",
+          "title": "Stay LOUD",
+          "popularity": 2.0
+        },
+        {
+          "uid": "617f6346-d46c-4cee-98c0-b5b9e9ff69b9",
+          "title": "Stay LOUD (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f5861830-3198-4f6b-9025-1bc3b06d5cf9",
+          "title": "White Out",
+          "popularity": 2.0
+        },
+        {
+          "uid": "52371f81-ccb0-418b-9ab6-a4056159112f",
+          "title": "jumping ソイヤ!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "2b7905d5-afd9-4397-b56a-af45b3e19279",
+          "title": "おにごっこ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "aaf21516-a1ec-40d3-b560-9187af534cc8",
+          "title": "どりぃむちゃちゃらんど(のもあちゃちゃsolo)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "80d00202-edb8-4b0b-8cfa-083b3f22b408",
+          "title": "らぶみーきるみー (のもあちゃちゃソロ曲)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "46543d96-b3eb-4e25-8631-58925def4810",
+          "title": "アドレナリン",
+          "popularity": 2.0
+        },
+        {
+          "uid": "36510137-5f87-44bf-8dde-54971231a25b",
+          "title": "アルカナモラトリアム",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e2e0b9a3-3a7b-4b3e-b16e-e89cc8fe5fe7",
+          "title": "アーティファクト",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d62f4884-27c8-4ecf-9d2f-d035dc631668",
+          "title": "インダストリアル",
+          "popularity": 2.0
+        },
+        {
+          "uid": "146375ce-bba6-4a4b-8ccb-f1bbde316a76",
+          "title": "コトノハ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b6027182-f4d0-4036-9931-a4a5691de3d6",
+          "title": "スカーレット",
+          "popularity": 2.0
+        },
+        {
+          "uid": "9fb38c30-89c9-4725-aa75-8f920316a62e",
+          "title": "ダミーハート",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3cd65dc9-8c4f-4ee2-af78-c3d67324eb67",
+          "title": "ニコニコLouder(七瀬にこsolo)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b1b29e50-d279-43f9-8a8a-3498ab84591f",
+          "title": "リザレクション",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3efcb79d-0435-47e5-bd85-b9bd5e7e4150",
+          "title": "リザレクション (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d2f1efd5-ad9c-42a2-99c6-532382e388fd",
+          "title": "人ニ、非ズ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "6e6b110b-cb98-49d6-8116-9be4310b7104",
+          "title": "人生はっぴーふぁっきんまいらいふ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e10446bc-bf07-428d-b190-cea9041eb1f3",
+          "title": "光を求めて",
+          "popularity": 2.0
+        },
+        {
+          "uid": "21545480-56bc-4be3-8dd5-fde6ddddc27e",
+          "title": "光芒一閃",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d60408f0-d9e1-4368-aa2e-df9f200f074e",
+          "title": "双流炎舞",
+          "popularity": 2.0
+        },
+        {
+          "uid": "35aa4e1e-8229-43af-9724-7dd4abd6777d",
+          "title": "周年SE",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d6ed0b92-3679-4211-9474-4b40dfcc6786",
+          "title": "周年SE〜Cross Fire (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f3bd681e-46d9-42a3-a8f4-c91c44d130f5",
+          "title": "哀歌",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3ec8e644-2578-47b8-b117-9a27ba58fea1",
+          "title": "夢現",
+          "popularity": 2.0
+        },
+        {
+          "uid": "336f9b06-3f5c-4208-b5b5-daab280dc435",
+          "title": "天花爛漫",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4eb80573-26a2-4fe6-97a7-465d2e0a4725",
+          "title": "孤独の中で",
+          "popularity": 2.0
+        },
+        {
+          "uid": "adb126c2-fcd4-4238-95d5-781c70b26857",
+          "title": "新世界へ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "57f7c356-e812-49d8-b574-6a3fd7469ce0",
+          "title": "時雨",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b85f4d65-b15f-432f-9dae-6a8102441746",
+          "title": "最果てのストレイン",
+          "popularity": 2.0
+        },
+        {
+          "uid": "0381b611-294b-4b80-a9a4-e1be42fdaafe",
+          "title": "波動",
+          "popularity": 2.0
+        },
+        {
+          "uid": "5b5ab5ae-61b0-4b09-9194-a89be93f1462",
+          "title": "流転の鐘",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3386dc48-beb3-447b-9b6d-7c44eed78fde",
+          "title": "獄上パライソ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "41bba113-0cc4-4f31-9ca0-a632adb70cb6",
+          "title": "生まれ来る者たち",
+          "popularity": 2.0
+        },
+        {
+          "uid": "40f9f7be-48e3-45bb-a582-41f6d4cfab4f",
+          "title": "発見!やんだ!ぱんだ!(白洲あやんsolo)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "62d1c3b9-9551-4e43-83cd-666baef4cd7c",
+          "title": "絶対的ブレア",
+          "popularity": 2.0
+        },
+        {
+          "uid": "730c8972-10f7-4b8c-bf32-720bc6784da2",
+          "title": "衝動",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b8c7f59b-b37a-4e74-895d-a1381963cdc4",
+          "title": "衝動 (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "40e634c9-0798-4970-9dbb-8825240bd5b0",
+          "title": "覚醒乙女",
+          "popularity": 2.0
+        },
+        {
+          "uid": "205bfe32-ee6a-46d2-8dd4-a9833a15520c",
+          "title": "輝ける者たち",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e4a2fc76-4b6e-4795-9f11-455455b6b1ca",
+          "title": "輪廻",
+          "popularity": 2.0
+        },
+        {
+          "uid": "93498ecd-6f19-417e-9baf-a0c3c7addc5f",
+          "title": "鎧袖一触",
+          "popularity": 2.0
+        },
+        {
+          "uid": "0744d8ea-e671-41ce-bfdd-08642c025dfd",
+          "title": "陰陽奇譚",
+          "popularity": 2.0
+        },
+        {
+          "uid": "43292ae2-9f9d-4cb8-96a1-c097bd3bcef5",
+          "title": "霹靂の荊",
+          "popularity": 2.0
+        },
+        {
+          "uid": "5adebb6a-d084-46ad-906f-a82cb056ab2e",
+          "title": "革命トリガー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "2a6ce4b9-79aa-48f9-8012-081fcd29cf24",
+          "title": "革命トリガー (LIVE ver.)",
+          "popularity": 2.0
         }
       ]
     },
@@ -1400,9 +2205,94 @@
       ],
       "songs": [
         {
-          "uid": "005c431b-30b2-592b-a08e-320563b47e88",
-          "title": "Hidden to ”Eden” / FAKEOUT",
-          "popularity": null
+          "uid": "8bad6cf1-2693-4744-b0bb-6c7acb5b6e02",
+          "title": "アンチディストピア",
+          "popularity": 4.0
+        },
+        {
+          "uid": "e8bb2faa-2a5c-4a3b-86c6-99226701296a",
+          "title": "Hidden to ”Eden”",
+          "popularity": 3.5
+        },
+        {
+          "uid": "57a25c54-260d-44a4-af0b-13d4dabaf625",
+          "title": "Maddest Love",
+          "popularity": 3.5
+        },
+        {
+          "uid": "33524fb3-f98f-4ed8-a387-13a107005b95",
+          "title": "Mariage",
+          "popularity": 3.0
+        },
+        {
+          "uid": "7a76df64-cbbd-4711-b61e-20ae84d6c9ee",
+          "title": "giving",
+          "popularity": 3.0
+        },
+        {
+          "uid": "1dcfd1ba-f898-400e-8492-f3ff4f2d440e",
+          "title": "ドッペルヘイター",
+          "popularity": 3.0
+        },
+        {
+          "uid": "7d87afd3-71c7-48b2-bcb3-4026ddb75157",
+          "title": "FAKE OUT",
+          "popularity": 2.5
+        },
+        {
+          "uid": "6cf2f442-1ecb-4c91-b2f6-4e51d39c3002",
+          "title": "Vertigo",
+          "popularity": 2.5
+        },
+        {
+          "uid": "30a2edc4-5c97-4306-8c55-0b7a5a72f4f9",
+          "title": "White Lady",
+          "popularity": 2.5
+        },
+        {
+          "uid": "d4284a54-45f8-442f-ad39-53b162515cd4",
+          "title": "Blah Blah Blah",
+          "popularity": 2.0
+        },
+        {
+          "uid": "1ff58f66-f4b2-4699-b031-f846b1a3c090",
+          "title": "Blood Lust",
+          "popularity": 2.0
+        },
+        {
+          "uid": "66163cc1-b120-466d-9a48-ee367221c107",
+          "title": "Break It Now",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d493bf3f-8cbb-40ef-86be-7818c43bfe9c",
+          "title": "Evil Gloria",
+          "popularity": 2.0
+        },
+        {
+          "uid": "c0206d29-6bf6-436f-a50f-52b7eb2ded04",
+          "title": "Liar Dinner",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4b63000d-280d-44b0-913b-167508b4c2c5",
+          "title": "Malum",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e4d48a47-1ea7-4672-a8e7-56f1c062d58c",
+          "title": "メランコリックワールド",
+          "popularity": 2.0
+        },
+        {
+          "uid": "6465ad58-8cb5-496b-b948-3d2635e3def7",
+          "title": "歪世界",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d17a1b1b-6271-4f37-a889-37664f5056ba",
+          "title": "蝙蝠",
+          "popularity": 2.0
         }
       ]
     },
@@ -1501,99 +2391,364 @@
       ],
       "songs": [
         {
-          "uid": "d47a09c0-55a9-5ae0-b255-a5ba8e8b1723",
-          "title": "April Fish -TRUTH to BABY FISH-",
-          "popularity": null
+          "uid": "cc51d7d5-7b63-4082-9878-28ad2267291e",
+          "title": "LADY BABY BLUE",
+          "popularity": 4.5
         },
         {
-          "uid": "e90bad43-aaca-50f5-a58e-7befd2cc8cf2",
-          "title": "KILLER KILLER IDOL",
-          "popularity": null
+          "uid": "b220e191-16dd-4019-9e93-1880e3f71113",
+          "title": "Easter Bunny",
+          "popularity": 4.0
         },
         {
-          "uid": "b5230ebc-38a4-4aa4-950b-64dd7fec656c",
-          "title": "Pelo",
-          "popularity": null
+          "uid": "194bea5c-c623-4d4e-9df8-d4bf62153bf7",
+          "title": "Me! Me! Me!",
+          "popularity": 4.0
         },
         {
-          "uid": "feada45d-734d-4092-b46a-4d6a8734e6b1",
-          "title": "Pinky! Pinky!",
-          "popularity": null
+          "uid": "b84487ab-7b3a-4d33-80a0-9b578ff75fc6",
+          "title": "Generation Hard Knocks",
+          "popularity": 3.5
         },
         {
-          "uid": "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
-          "title": "Real eyes realize real lies",
-          "popularity": null
-        },
-        {
-          "uid": "463460a7-88dd-4e11-a8a6-524a22e6ae4b",
-          "title": "Riot Anthem",
-          "popularity": null
-        },
-        {
-          "uid": "eeeec783-2f2d-42d5-b9a8-b30b682a8265",
-          "title": "アゲアゲマネー ～おちんぎん大作戦～",
-          "popularity": null
-        },
-        {
-          "uid": "27fcf814-72d3-4a78-a442-5a5fe4f5aed6",
-          "title": "ジャパサマ",
-          "popularity": null
-        },
-        {
-          "uid": "65b90e26-9fa9-4f8b-ad20-f6f7d9c05fea",
-          "title": "ダメダメ殿",
-          "popularity": null
-        },
-        {
-          "uid": "0f99fd99-62d4-4f9a-9b77-af86d637062e",
-          "title": "ダルマカルマ",
-          "popularity": null
-        },
-        {
-          "uid": "27d06c43-17e9-4f50-884b-343794244bae",
+          "uid": "269613ad-1a61-4fa3-b9ba-a3b495bd83a5",
           "title": "ニッポン饅頭",
-          "popularity": null
+          "popularity": 3.5
         },
         {
-          "uid": "23030af2-d04e-4bc5-a64f-f9538ae15aeb",
-          "title": "ホシノナイソラ",
-          "popularity": null
-        },
-        {
-          "uid": "c2810dfc-bfa9-5291-b694-7739252782c5",
+          "uid": "bca4236d-ca28-4198-ba86-7ccb9982ee82",
           "title": "メロメロメロイック",
-          "popularity": null
+          "popularity": 3.5
         },
         {
-          "uid": "8aef21bc-4730-404a-a3a5-a890da6e8b13",
-          "title": "参拝! 御朱印girl☆",
-          "popularity": null
+          "uid": "a5cceef1-eb1d-4ec7-aa26-5f7917d740db",
+          "title": "Pinky! Pinky!",
+          "popularity": 3.0
         },
         {
-          "uid": "e14c03e8-731f-45db-9d5d-852beb0c719c",
-          "title": "少年勇者団",
-          "popularity": null
-        },
-        {
-          "uid": "e7601970-57ad-44c9-a997-82587bebafb6",
+          "uid": "a952fc76-f1a7-4b25-bbaf-d38f48cd2f9c",
           "title": "渋谷 CROSSING",
-          "popularity": null
+          "popularity": 3.0
         },
         {
-          "uid": "8c7142ac-7cb6-41de-840f-374c54280297",
-          "title": "破天ニ雷鳴",
-          "popularity": null
-        },
-        {
-          "uid": "2e360572-a078-52c4-9493-4885383769ac",
+          "uid": "8765b475-9ae9-4281-a414-31a5e52c1b56",
           "title": "花一匁",
-          "popularity": null
+          "popularity": 3.0
         },
         {
-          "uid": "21ac66b0-51e1-449c-bb49-f66df13ffcb6",
-          "title": "蓮華チャンス！ / セシボン・キブン",
-          "popularity": null
+          "uid": "ad8258d1-7f1c-4d34-84e4-fe3990a5cc71",
+          "title": "4月の魚 -TRUTH to BABY FISH- (feat. DJ部長)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1249ea94-d50e-4580-82b3-80f8b87e323d",
+          "title": "Easter Bunny (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "7b7a1d43-ab1d-48b6-84f2-71231d7a0880",
+          "title": "Easter Bunny (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "b8561598-ae35-43a6-84b6-ec65a73d8872",
+          "title": "Generation Hard Knocks (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "02962c4d-7214-456e-912f-4ddbc74be942",
+          "title": "Generation Hard Knocks (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "458b4cc2-9c02-4566-a3ff-5737ab5578f0",
+          "title": "God's Not",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0872361a-f3d3-4b2d-9a8c-7fd7f327bfc7",
+          "title": "God's Not (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "543b07ea-aa0c-4643-a58c-2883b1bd0ae2",
+          "title": "Gotcha にっぽん!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0c4a97c5-5a16-4164-96aa-86dc1d6df5d8",
+          "title": "KILLER KILLER IDOL",
+          "popularity": 2.5
+        },
+        {
+          "uid": "fe8d6ceb-c304-4243-a8cd-6a3453ac0e32",
+          "title": "LADY BABY BLUE (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "abd7b7ba-6e1c-4e58-9c89-928d4888c764",
+          "title": "LB4 Future",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a5a4d7d7-a15e-44c0-af7a-db2109f109cf",
+          "title": "Me! Me! Me! (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "91c4641c-60c5-45ad-8a7b-674dfb6ff7ef",
+          "title": "OVERTURE OVERSEA",
+          "popularity": 2.5
+        },
+        {
+          "uid": "b59cf830-8113-46a7-bdcc-2aaaa55cc761",
+          "title": "Overture Oversea [Remix] (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "73ac62ec-d33f-4d48-a1dc-b555b50c80ac",
+          "title": "Pelo",
+          "popularity": 2.5
+        },
+        {
+          "uid": "694f413f-6b06-4fc7-881e-9988c9e113c0",
+          "title": "Pelo (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "aa2b014e-64bf-41ef-9163-3f228237dec4",
+          "title": "Pinky Pinky (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "13816c04-e285-470f-9feb-ac4f6c05016a",
+          "title": "Pinky! Pinky! (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "be3dc7a8-7784-4cbf-9187-f6aa94249187",
+          "title": "Real eyes realize real lies",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1c3b7165-4bc5-49e0-98da-7bff53ec9268",
+          "title": "Riot Anthem",
+          "popularity": 2.5
+        },
+        {
+          "uid": "453aca50-e6f6-4d49-ac69-7dec50a98131",
+          "title": "Riot Anthem (2024 Version)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "b66decf9-2ab8-4859-85dd-8dc19df59b97",
+          "title": "Riot Anthem (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "ce8ba1aa-7430-42fc-a631-bdbe47d13889",
+          "title": "SCHOOL OF HARD KNOCKS",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e07b125d-d687-4033-9100-e29f325c3f6e",
+          "title": "The CHAOS Session (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "9c0fd4b1-c97f-4bec-9741-b3a411749ecc",
+          "title": "ULTRA☆LUCKY",
+          "popularity": 2.5
+        },
+        {
+          "uid": "74de083c-40bf-40d1-9075-853664957f84",
+          "title": "bite me",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a6996dd9-fd1e-4c09-874f-494c4de51eab",
+          "title": "bite me -off vocal ver.-",
+          "popularity": 2.5
+        },
+        {
+          "uid": "99f96f56-84ac-492b-a216-551371ef8fa3",
+          "title": "endless end Hello",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0f4f0371-1a50-43aa-8f40-0136ba7b30ce",
+          "title": "endless end Hello (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "3c123fda-f5f3-40a8-9469-d7fcaaef44ee",
+          "title": "アゲアゲマネー -おちんぎん大作戦- (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cf0a19db-0b7c-489b-b4f5-749f10117575",
+          "title": "アゲアゲマネー ~おちんぎん大作戦~",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8bc54bdd-d583-42b8-951d-d8d2dd2dc1a3",
+          "title": "オニギリック・リヴァイヴァー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "607996d8-e670-4721-bee8-ab1755941669",
+          "title": "オニギリック・リヴァイヴァー (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "bf307348-a6c9-47df-941b-a5f4781a342f",
+          "title": "ジャパサマ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8afb47d3-a947-4a65-96f1-62b2c29524e9",
+          "title": "セシボン・キブン",
+          "popularity": 2.5
+        },
+        {
+          "uid": "681a12e4-7439-411d-be33-fb6ece3f2d8b",
+          "title": "セシボン・キブン (2024 Version)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0eb51b22-2e41-4423-a7e6-67284a9f0922",
+          "title": "セシボン・キブン (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "dedd10b5-a44c-40e0-99fe-0457d351c4a9",
+          "title": "ダメダメ殿",
+          "popularity": 2.5
+        },
+        {
+          "uid": "fdd22a8c-c117-4c41-ae30-52ba2ddcfac9",
+          "title": "ダメダメ殿 (2024 Version)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "84bac5ae-7390-48b3-a8db-a6e50a08a844",
+          "title": "ダメダメ殿 (Karaoke Ver)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "a3cd14c1-edd1-4d9f-86a0-507da758ccd1",
+          "title": "ダメダメ殿 (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "89527441-e551-4ee2-9130-c5c255883874",
+          "title": "ダルマカルマ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4a2f2440-0f2b-4b5f-8cf0-7e0a3efd686e",
+          "title": "ニッポン饅頭 (2024 Version)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f30b5e94-a2f0-4fd3-8c15-1515a176f8ca",
+          "title": "ニッポン饅頭 (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "131dd177-b4e6-42a3-a7ac-acfafb5cbeae",
+          "title": "ニッポン饅頭 [Out of Control Ver] (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1e5fe592-3de2-48c0-beef-0b58b3c465c7",
+          "title": "ビアちゃんロボット",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0c8d57e8-3750-4767-81ae-e130948ae6e2",
+          "title": "ビリビリマネー -off vocal ver.-",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cdd885f0-73c5-46c4-b4b5-65dcbc2e623a",
+          "title": "ビリビリマネー feat.Ladybeard",
+          "popularity": 2.5
+        },
+        {
+          "uid": "7c97840d-e54d-4684-aff8-4a8a0a44a745",
+          "title": "ホシノナイソラ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f7f39f30-0b3a-41f2-9302-c2c2a8501658",
+          "title": "ホシノナイソラ (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "25291ffc-72fc-4113-97ef-f9ccca4af610",
+          "title": "ホシノナイソラ -off vocal ver.-",
+          "popularity": 2.5
+        },
+        {
+          "uid": "7825b72f-f10f-48ed-8336-bbe052af34d1",
+          "title": "上々上湯",
+          "popularity": 2.5
+        },
+        {
+          "uid": "c713dd97-eb04-4b90-8adc-e409f6df38de",
+          "title": "上々上湯 (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cece4ec4-0d8c-437a-90c6-d3a375f5bf08",
+          "title": "参拝!御朱印girl☆",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4cd7bf93-9281-458c-87b2-516e4748078e",
+          "title": "参拝!御朱印girl☆ (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "1ae57369-8d85-4380-9e74-a284d98853f7",
+          "title": "参拝!御朱印girl☆ (off vocal ver.)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f79b05f6-b935-4c47-b1fa-8d3a7ddfa8a7",
+          "title": "渋谷Crossing (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "44d090e8-d745-4d14-bd6b-5bed503afe6b",
+          "title": "破天ニ雷鳴",
+          "popularity": 2.5
+        },
+        {
+          "uid": "59082dea-d922-4fa8-9b62-b9332b40060e",
+          "title": "破天ニ雷鳴 (2024 Version)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "cfc48ea4-7a1d-463e-a7c1-693aa8326577",
+          "title": "破天ニ雷鳴 (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "dd74bc5a-6f3b-450b-81de-e4790988ae3d",
+          "title": "禊island",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4989de71-203f-489c-8121-d707725ad4fd",
+          "title": "禊island (The LAST LIVE at LIQUID ROOM, Tokyo, 2020)",
+          "popularity": 2.5
+        },
+        {
+          "uid": "77901a1b-a4b5-4077-b02d-f5cd972c6cf2",
+          "title": "蓮華チャンス!",
+          "popularity": 2.5
         }
       ]
     },
@@ -1648,7 +2803,49 @@
       ],
       "songs": [
         {
-          "title": "残響"
+          "uid": "29a7404d-f462-4aa5-9c5d-acdd415b3079",
+          "title": "残響",
+          "popularity": 3.0
+        },
+        {
+          "uid": "93dc4049-98d3-4274-8f91-493bdff20ff3",
+          "title": "風鈴と反抗期",
+          "popularity": 3.0
+        },
+        {
+          "uid": "fb527a83-92e1-4970-8f8f-16df8521743b",
+          "title": "Bottom",
+          "popularity": 2.5
+        },
+        {
+          "uid": "029fac84-5478-44d6-bfaf-1ba7312fb355",
+          "title": "パトス",
+          "popularity": 2.5
+        },
+        {
+          "uid": "2259997e-b0fa-4ae2-a054-54686d9849c9",
+          "title": "匿名希望",
+          "popularity": 2.5
+        },
+        {
+          "uid": "6c856158-4f0b-44ac-8e0d-01c1deb47301",
+          "title": "かなりはるかなものがたり",
+          "popularity": 1.5
+        },
+        {
+          "uid": "4f75f49b-98c5-4786-ba7f-4dd496f2dfa0",
+          "title": "ハルカエコー STYLE",
+          "popularity": 1.5
+        },
+        {
+          "uid": "dd7791bd-e83c-4a36-871f-4df4ddd0ec2c",
+          "title": "並行世界",
+          "popularity": 1.5
+        },
+        {
+          "uid": "c90dca16-238a-4f85-a5a2-d1d57b178bd0",
+          "title": "地球はもう終わったんだ",
+          "popularity": 1.5
         }
       ]
     },
@@ -1689,54 +2886,54 @@
       ],
       "songs": [
         {
-          "uid": "85c434bc-51bb-46a4-bb05-9a278b72a0f2",
-          "title": "天使になりたい",
-          "popularity": 3
+          "uid": "bbfc1c5d-b2b3-4cb3-aa6e-cf785f81a5c6",
+          "title": "DREAMS ON THE RUN",
+          "popularity": 4.0
         },
         {
-          "uid": "eafcf354-5551-459e-b866-a8cfb438cce0",
-          "title": "あいらびゅ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "0a038229-4e7a-4622-bc0f-5b083ed29ca9",
-          "title": "GO MY WAY",
-          "popularity": 2.5
-        },
-        {
-          "uid": "13b4d3ec-f7a5-45c3-9088-2c471e1bfa4a",
-          "title": "アウトオブザブルー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "298ccead-0d0e-4db6-b4f6-4525fb74bb2b",
-          "title": "ジェットピース",
-          "popularity": 1.5
-        },
-        {
-          "uid": "465099ed-3298-4f3e-b88f-14db452707bb",
-          "title": "青い春",
-          "popularity": 3
-        },
-        {
-          "uid": "e7dff2a3-a231-4bed-b493-614a8bf7c0d3",
-          "title": "友情フィルハート",
-          "popularity": 1.5
-        },
-        {
-          "uid": "f2d8176f-b6ac-4fbc-816c-81428d68cf4d",
-          "title": "君と僕のストーリー",
-          "popularity": 1.5
-        },
-        {
-          "uid": "59c5c35f-902e-4942-8e8e-7753c11b6a9e",
+          "uid": "2ad264b9-bc78-44cf-b034-50dd99564e35",
           "title": "ロンリーハイ",
           "popularity": 3.5
         },
         {
-          "uid": "436783d1-7d99-4ce6-9614-9f8d706fc74f",
-          "title": "DREAMS ON THE RUN",
-          "popularity": 4
+          "uid": "70c6a992-10d0-43ce-bba8-4288464744b6",
+          "title": "天使になりたい",
+          "popularity": 3.0
+        },
+        {
+          "uid": "145ce815-7949-4db6-9282-91cadabeefec",
+          "title": "青い春",
+          "popularity": 3.0
+        },
+        {
+          "uid": "edb7cc7e-cfe8-4781-a319-6a1d71603840",
+          "title": "GO MY WAY",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5b941853-bc6e-444e-b1fe-849cad0d80d0",
+          "title": "あいらびゅ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "e3541741-2df8-479c-9500-073c43e46b5a",
+          "title": "アウトオブザブルー",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5a64c2af-5a12-49c2-8ded-32d3ff372e2d",
+          "title": "ジェットピース",
+          "popularity": 1.5
+        },
+        {
+          "uid": "4f12f5d6-446a-4d93-b6db-66fe6abf5e1c",
+          "title": "友情フィルハート",
+          "popularity": 1.5
+        },
+        {
+          "uid": "d9d93a92-24bc-41cb-b1cd-91772418c8fa",
+          "title": "君と僕のストーリー",
+          "popularity": 1.5
         }
       ]
     },
@@ -1805,19 +3002,169 @@
       ],
       "songs": [
         {
-          "uid": "863220ef-07d9-563e-a5a5-4b136b9a4948",
+          "uid": "34998e5e-1247-4a0f-ae89-d7790432a7c7",
+          "title": "サイコオフトン",
+          "popularity": 4.0
+        },
+        {
+          "uid": "4fb9d6da-1de5-418d-beba-eb88449a4112",
           "title": "ラブコブラ",
-          "popularity": null
+          "popularity": 3.5
         },
         {
-          "uid": "6f1f7876-ecb6-59df-9214-a29526ef35d2",
+          "uid": "fc05f693-9e14-4a8b-bddc-920de90fd69f",
+          "title": "イカのダンスは済んだのかい?",
+          "popularity": 3.0
+        },
+        {
+          "uid": "2618a72e-e230-4c3b-bc2a-3db5d806c8c6",
+          "title": "本気恋一直線",
+          "popularity": 3.0
+        },
+        {
+          "uid": "383fdd71-cea5-46e9-87fb-775f87ceb384",
           "title": "筋肉ボディで僕人気",
-          "popularity": null
+          "popularity": 3.0
         },
         {
-          "uid": "7164a11c-d560-5db8-b515-86edd0d8b280",
+          "uid": "6827df28-b7df-46b7-a408-b81609f9bb88",
+          "title": "世の中バカなのよ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "88578fba-13a7-441e-af0a-203c8f6ad2d7",
+          "title": "夏、刹那",
+          "popularity": 2.5
+        },
+        {
+          "uid": "0c6d55d4-fbc8-4dbb-b11e-292f0f9dd8be",
+          "title": "我らポンコツコンポ",
+          "popularity": 2.5
+        },
+        {
+          "uid": "8c7b4985-ed9a-4fda-8451-e22a2f429440",
+          "title": "CRY CRY GIRLでいいでしょう?",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a6ea3486-3775-41cf-a63d-c9e582c062c9",
+          "title": "Flying Moment",
+          "popularity": 2.0
+        },
+        {
+          "uid": "8a695fce-7781-49ca-b7f7-a1d4ebd4b650",
+          "title": "Milky Sweet Princess(もちみるくソロ曲)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d53c0110-a278-447a-93be-09b3227bf12b",
+          "title": "Spotlight(もちみるくソロ曲)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f41a5dad-4fb4-4eb9-bed8-ed27ce0e2046",
+          "title": "Unsent(夕葉里めろんソロ曲)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "8b373bcd-c7d5-4d8a-8457-59f97c8f6919",
+          "title": "その向こうへ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4581f908-441c-4acc-8318-210a0edf8d83",
+          "title": "ひよこ☆じゃんぷ!(秋田こまちソロ曲)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b409acfd-8569-449a-b327-3923d5bd5ef9",
+          "title": "ん、どうしよう・・・よし、うどん!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d62a4184-440c-474a-95bd-9ecfa90eacff",
+          "title": "ん、どうしよう…よし!うどん",
+          "popularity": 2.0
+        },
+        {
+          "uid": "42a456dc-e9d3-47ec-b80e-2ec752e76e5c",
+          "title": "イカのダンスは済んだのかい",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f828d899-92fc-4bad-b3ed-ad372ffc3304",
+          "title": "ゲームオーバー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b72ad5b4-f891-46b6-9e56-6df6898a66b6",
+          "title": "サニー!アドベンチャー!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "84b70868-bbbf-48da-9f6b-d3ea0c852138",
+          "title": "サニー!アドベンチャー!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "356808a4-0b55-4f8e-9658-86897f2dcb45",
+          "title": "ジュゲム言えるかな?",
+          "popularity": 2.0
+        },
+        {
+          "uid": "728350c6-cd7d-48dc-b8a7-9f1941da34aa",
+          "title": "スターリーナイト",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f44808f9-657d-4171-af44-59b910a41d30",
+          "title": "トンコツコント",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f75a8b53-fc96-4f02-9f3c-c8207cdf7689",
+          "title": "ポンコツフルロード",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f8c94178-1589-4d02-9207-a714ab764efa",
+          "title": "ポンコツフルロード",
+          "popularity": 2.0
+        },
+        {
+          "uid": "32d739e3-6a8d-4bb7-b664-89846a7edf71",
+          "title": "世の中バカなのよ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "293ee657-9cd3-4998-abbf-2993ee7dff0e",
+          "title": "人生攻略作戦",
+          "popularity": 2.0
+        },
+        {
+          "uid": "977ddd15-fda5-49cb-90ac-f99c83c11d42",
+          "title": "何でだ、みな私だけ避けだしたわ•••涙出んな",
+          "popularity": 2.0
+        },
+        {
+          "uid": "5776a393-3c8d-45ad-aa82-63530dafc97a",
+          "title": "我ら!ポンコツコンポ !",
+          "popularity": 2.0
+        },
+        {
+          "uid": "cd6e2d8e-0126-40e0-8ffd-69fc1e1beb0e",
+          "title": "我らポンコツコンポ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "35b82f13-604f-4cb3-983a-159c7b2f5384",
           "title": "軽いノリのイルカ",
-          "popularity": null
+          "popularity": 2.0
+        },
+        {
+          "uid": "cba62956-e5ca-42ab-8610-e12f523b0bb2",
+          "title": "鶏と小鳥とワニ",
+          "popularity": 2.0
         }
       ]
     },
@@ -1905,7 +3252,108 @@
           "portrait_url": "../data/pictures/idols/%E5%BA%83%E7%80%AC%E3%82%8A%E3%82%80_portrait.jpg"
         }
       ],
-      "songs": []
+      "songs": [
+        {
+          "uid": "800a80a8-b302-4c06-b0c5-4ca8320082e3",
+          "title": "夏恋センチメンタル",
+          "popularity": 4.0
+        },
+        {
+          "uid": "b12187b9-f0d2-4a3b-bfe2-85c9c12f1ca6",
+          "title": "ロマンティックガール",
+          "popularity": 3.5
+        },
+        {
+          "uid": "6ca1f919-9bdb-47d2-bf9b-ea78a45a8f0c",
+          "title": "アンソクチ",
+          "popularity": 3.0
+        },
+        {
+          "uid": "638946a6-3bd7-4c4d-94aa-c36c28d14fd0",
+          "title": "真夏の魔法",
+          "popularity": 3.0
+        },
+        {
+          "uid": "a3fb233e-7542-4b1b-a712-dc03cbef18bb",
+          "title": "PARADICE",
+          "popularity": 2.5
+        },
+        {
+          "uid": "f68c6540-fbf3-4749-94ed-213a88bc3dcd",
+          "title": "Snow White",
+          "popularity": 2.5
+        },
+        {
+          "uid": "df2fcf02-2bc8-4626-88e8-ca413308ac02",
+          "title": "Sparkle",
+          "popularity": 2.5
+        },
+        {
+          "uid": "765bc524-82b3-4004-8b3c-2f7066cdac34",
+          "title": "Hopeful",
+          "popularity": 1.5
+        },
+        {
+          "uid": "4579cc3d-68be-4149-aa45-be6850cc1a82",
+          "title": "MY CUTIE",
+          "popularity": 1.5
+        },
+        {
+          "uid": "6c09b8e0-a0bd-40c8-a7d2-cf54a97b9ce8",
+          "title": "Shall we dance?",
+          "popularity": 1.5
+        },
+        {
+          "uid": "8a1e4e3a-e979-41ad-a292-4aad30942a0f",
+          "title": "Special RINg (高坂りんソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "aafaa47e-e0f3-4708-b5cc-2a4ae0fb3fb7",
+          "title": "いい子のフリならやめたわよ?",
+          "popularity": 1.5
+        },
+        {
+          "uid": "fc8c42c7-717d-45ed-a3e2-dff5bb4e000b",
+          "title": "さよならに愛なんて少しも無くていい",
+          "popularity": 1.5
+        },
+        {
+          "uid": "b1014852-e84d-45e0-ab56-dfcf74e5bb09",
+          "title": "にゃん♪と恋のアプローチ(羽澄ほのソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "ca36fd0f-727a-461d-a0ad-bbdcc6bcc20e",
+          "title": "世界がその針を止めるなら",
+          "popularity": 1.5
+        },
+        {
+          "uid": "13321e13-9da5-4eed-96ce-892c737d2d4e",
+          "title": "変わらずに",
+          "popularity": 1.5
+        },
+        {
+          "uid": "6f01e5b9-45eb-4e92-bf2e-f7b468657bc8",
+          "title": "夢のカケラ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "be398c6b-56e9-42df-84aa-c15a814203e3",
+          "title": "必然LOVEメモリー♡(羽澄ほのソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "678c929e-7ad5-461b-a782-fc7bd728facd",
+          "title": "恋バグ症候群(椎名すずソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "42224372-f106-412b-a299-ef660d3657a0",
+          "title": "煌めきレゾナンス",
+          "popularity": 1.5
+        }
+      ]
     },
     {
       "name": "パラレルサイダー",
@@ -1958,69 +3406,69 @@
       ],
       "songs": [
         {
-          "uid": "2953c6d3-40f1-4d88-adc8-c07683f9c41f",
-          "title": "ANSWER",
-          "popularity": 1.5
+          "uid": "1edfffd6-4b9d-4360-9540-e6c82ec9732f",
+          "title": "パラレルサイダー",
+          "popularity": 3.5
         },
         {
-          "uid": "21cff527-26bf-4e54-b8aa-0ae03f990f56",
-          "title": "ideal world",
-          "popularity": 1.5
+          "uid": "62096003-329f-4bab-91ad-4282fdcd3900",
+          "title": "フェイクフェイス",
+          "popularity": 3.0
         },
         {
-          "uid": "77585a42-d37b-4a77-9db3-c948366254b2",
-          "title": "Let′s take five",
+          "uid": "73f51447-dbb2-4889-a2fb-d8ee024e8f1a",
+          "title": "流星トワイライト",
+          "popularity": 3.0
+        },
+        {
+          "uid": "ba613322-4d4d-47a3-aea1-c2dd9805ab8b",
+          "title": "Look back",
           "popularity": 2.5
         },
         {
-          "uid": "314cf507-aea3-45b8-914f-e2f16d44062b",
-          "title": "Look back",
-          "popularity": 3
-        },
-        {
-          "uid": "a398421e-21ce-446c-913d-f9998deb95e0",
-          "title": "Sunny Days",
-          "popularity": 1.5
-        },
-        {
-          "uid": "572ae673-a8b8-4f29-ab41-416801afe9fe",
+          "uid": "b8d36041-ebea-4860-a37d-05ee33ce8e7c",
           "title": "サマーサイダー",
           "popularity": 2.5
         },
         {
-          "uid": "a47bf368-664f-48a0-9690-0b20dd2af167",
-          "title": "パラレルサイダー",
-          "popularity": 4
-        },
-        {
-          "uid": "55b4f79a-bc8c-4330-b54e-e519ca78fbaf",
+          "uid": "33b730ee-5445-4fd4-a16b-025c08c04aea",
           "title": "星空 Goodbye",
-          "popularity": 3
-        },
-        {
-          "uid": "f84671b4-1212-4ded-bfa5-05f13d844296",
-          "title": "Narrative",
           "popularity": 2.5
         },
         {
-          "uid": "66360042-679d-4d5f-8a52-d04f235bddab",
+          "uid": "6f0d59fe-34f2-4c70-964f-a97def03eeea",
+          "title": "ANSWER",
+          "popularity": 1.5
+        },
+        {
+          "uid": "3c579dd6-c1f9-4b80-9575-40f16a0ac984",
+          "title": "Let′s take five",
+          "popularity": 1.5
+        },
+        {
+          "uid": "549e6b91-8396-4876-8744-f4c3e46a577e",
+          "title": "Narrative",
+          "popularity": 1.5
+        },
+        {
+          "uid": "8eeba2dd-2248-4800-8fa7-80c532b1e199",
+          "title": "Sunny Days",
+          "popularity": 1.5
+        },
+        {
+          "uid": "d225415c-7c00-4d3e-9ff4-79d392f2cac7",
+          "title": "ideal world",
+          "popularity": 1.5
+        },
+        {
+          "uid": "e72c91d4-6b06-435f-8fde-53bc88d21771",
           "title": "グラデーション",
           "popularity": 1.5
         },
         {
-          "uid": "c68dedb5-81b8-4c47-b786-6eec67da40a8",
-          "title": "フェイクフェイス",
-          "popularity": 3.5
-        },
-        {
-          "uid": "5d6dc868-aac2-4e46-a9bf-4c032e67d613",
-          "title": "流星トワイライト",
-          "popularity": 3
-        },
-        {
-          "uid": "4d38ad95-b8d3-474a-a4b7-32e472301971",
+          "uid": "77e63a43-19eb-4451-86ce-faab57bcd170",
           "title": "青い鳥の在り処",
-          "popularity": 2.5
+          "popularity": 1.5
         }
       ]
     },
@@ -2082,204 +3530,234 @@
       ],
       "songs": [
         {
-          "uid": "b39e38da-4d24-48f9-92e6-fc117f3df6d5",
-          "title": "New World",
-          "popularity": 4
-        },
-        {
-          "uid": "c3e640e0-8522-47fd-9071-8c2e68b111b7",
-          "title": "Summer☆Summer",
-          "popularity": 4
-        },
-        {
-          "uid": "f340fa8d-6305-410c-ad86-f4726cf93573",
+          "uid": "e1632a52-0af6-438a-8132-d8de58ec092c",
           "title": "アキシブウェイ",
-          "popularity": 4
+          "popularity": 4.0
         },
         {
-          "uid": "d3b51910-0f40-4e75-9413-4f3762fbf110",
-          "title": "タイムレスメモリー",
-          "popularity": 4
-        },
-        {
-          "uid": "d05c8e2e-8d08-47e3-9177-5f9aaf95cb54",
-          "title": "Acting Girl",
+          "uid": "7103700f-55fa-430a-84c4-81d79812fcc8",
+          "title": "Summer☆Summer",
           "popularity": 3.5
         },
         {
-          "uid": "720921c4-a3c9-4f29-8ef0-4fc4fc80f34d",
+          "uid": "f6d9b941-0be4-4455-9eb3-5518a96521c1",
           "title": "Candid Love",
-          "popularity": 3.5
+          "popularity": 3.0
         },
         {
-          "uid": "50059980-a741-4f21-8ae6-55a2aae5689f",
-          "title": "Restart",
-          "popularity": 3.5
+          "uid": "e20f009f-e277-44ec-b2e0-fbf6d8a9f393",
+          "title": "New World",
+          "popularity": 3.0
         },
         {
-          "uid": "6dd4301a-795a-4caf-9c02-9981e9d5363c",
+          "uid": "6d23a7a3-9318-4109-a6e7-60416dad6f16",
+          "title": "真夏のセレナーデ",
+          "popularity": 3.0
+        },
+        {
+          "uid": "c8a91c57-87b8-4a44-8abc-b9f98d4def0f",
           "title": "アバンチュっ!",
-          "popularity": 3.5
-        },
-        {
-          "uid": "bc8dbc71-3750-48dc-b4ff-182b2f15047e",
-          "title": "セツナツリ",
-          "popularity": 3.5
-        },
-        {
-          "uid": "8dc9966e-f5e6-4e6c-9251-e6a82a7d09ef",
-          "title": "真夏のセレナーデ",
-          "popularity": 3.5
-        },
-        {
-          "uid": "7f3b3360-bca5-46d9-b695-bfb4db988a5b",
-          "title": "Eternal Blue ~キミと僕と空と海の物語~",
-          "popularity": 3
-        },
-        {
-          "uid": "992cb743-c5e4-4a49-8e5f-1a0c55e89987",
-          "title": "Hola! Hola! Summer",
-          "popularity": 3
-        },
-        {
-          "uid": "44cf2ff1-7f83-4e81-9c7a-bffbb54efbcf",
-          "title": "Shine on you",
-          "popularity": 3
-        },
-        {
-          "uid": "11cba1bd-7673-4ba4-bd8d-91f3d1a051b4",
-          "title": "キライだ。",
-          "popularity": 3
-        },
-        {
-          "uid": "3f4e3946-9c42-49a9-bb55-4ce5c06c84e3",
-          "title": "ユメハナビ",
-          "popularity": 3
-        },
-        {
-          "uid": "3a2cda96-fbc0-4e07-bfc1-f329c680b325",
-          "title": "三百六十五歩のマーチ ~365 Steps, All Cast 2017",
-          "popularity": 3
-        },
-        {
-          "uid": "b0fb9964-715a-4b80-abb2-6721b793b2ea",
-          "title": "小さな決意",
-          "popularity": 3
-        },
-        {
-          "uid": "9a32cd14-7af0-4839-b01f-4c0a9b442fdc",
-          "title": "常夏トロピケーション",
-          "popularity": 3
-        },
-        {
-          "uid": "ad63da7d-7a74-4d36-9270-c301b45252e4",
-          "title": "新宇宙世紀アイドルちゃん",
-          "popularity": 3
-        },
-        {
-          "uid": "c2ca0088-591e-459d-a0ff-76ffb71a4c00",
-          "title": "真夏のセレナーデ",
-          "popularity": 3
-        },
-        {
-          "uid": "e19271c6-220c-4402-996e-49ee8dde1bd5",
-          "title": "観測史上",
-          "popularity": 3
-        },
-        {
-          "uid": "0bff0f17-56d6-434a-8611-dbb193d20bac",
-          "title": "Be yourself",
           "popularity": 2.5
         },
         {
-          "uid": "6575b72a-6558-43f3-b775-f07760db2e06",
-          "title": "Creaction",
+          "uid": "2e377f39-923a-418d-97f6-8a04953f4d6d",
+          "title": "セツナコバルトブルー",
           "popularity": 2.5
         },
         {
-          "uid": "a3e79185-ac50-4897-8b12-6af2549f8548",
-          "title": "Next Gate",
+          "uid": "6925ae98-b9e0-45ea-859e-bab2ce6947ea",
+          "title": "タイムレスメモリー",
           "popularity": 2.5
         },
         {
-          "uid": "be6f95f3-8329-42e5-82f9-3966077ceb73",
-          "title": "The First Summer",
-          "popularity": 2.5
-        },
-        {
-          "uid": "019047d3-7e7c-40a1-a346-e7ca2a570127",
-          "title": "Winter story",
-          "popularity": 2.5
-        },
-        {
-          "uid": "8ca7cb73-e41f-47c8-8f6a-da0f326b2ae3",
-          "title": "あてんしょん・ぷりーず",
-          "popularity": 2.5
-        },
-        {
-          "uid": "88255528-41de-4ec0-81ef-f4416686965e",
-          "title": "つよくてニューゲーム+",
-          "popularity": 2.5
-        },
-        {
-          "uid": "1f29fd12-83d9-42d9-b1c4-3fc35d32f8be",
-          "title": "ときめきらいど!",
-          "popularity": 2.5
-        },
-        {
-          "uid": "79af2b24-cfb3-49e8-8d66-2d2c7beb2cc9",
-          "title": "ナツラブ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "cb3a2723-6cd8-43a4-86e7-7711c1f45854",
-          "title": "夏のかけら",
-          "popularity": 2.5
-        },
-        {
-          "uid": "697f1045-525c-4b1a-ac73-715f090c195c",
-          "title": "私だけにフォーカスして♡",
-          "popularity": 2.5
-        },
-        {
-          "uid": "09c3f517-9102-46ba-8c89-69c31de6398f",
+          "uid": "4dc01d42-5879-4760-bda2-a1e5cd0a5f6f",
           "title": "AKISHIBU SHIP",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "c55be4f9-a66e-4b6a-96e3-e80aef397f03",
+          "uid": "2e69794d-d533-49fd-a96b-29d82e1d2723",
+          "title": "Acting Girl",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d2357562-7920-45bc-bfe6-e43e5d2d5574",
+          "title": "Be yourself",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b1fc1234-5dfa-4a7e-96cf-e8d6539f9b06",
+          "title": "Creaction (2019 ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "ce795373-6918-4d59-9e3a-edbcab4f106e",
+          "title": "Eternal Blue ~キミと僕と空と海の物語~",
+          "popularity": 2.0
+        },
+        {
+          "uid": "c1bc9f25-3609-4c20-a4b9-6b1aae7966b0",
+          "title": "Hola! Hola! Summer",
+          "popularity": 2.0
+        },
+        {
+          "uid": "11ecd26a-815a-4000-b4f0-17f1add23516",
           "title": "LOVE&PARADISE",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "8bb84512-65ec-43df-81f4-7a33773d8922",
-          "title": "PureMagic",
-          "popularity": 2
+          "uid": "0d45e756-c7b1-45a5-8e96-c631bbd2f21e",
+          "title": "Next Gate",
+          "popularity": 2.0
         },
         {
-          "uid": "42e70315-6134-4365-b836-6547b37b18e4",
+          "uid": "78618700-c9ea-43d0-a83b-c7d6be87066d",
+          "title": "PureMagic (清見るん)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "92191510-e530-4c30-b26d-bf82f00c2a49",
+          "title": "Restart",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+          "title": "Shine on you",
+          "popularity": 2.0
+        },
+        {
+          "uid": "ab2978d0-c404-4a64-8419-9a5951860f66",
+          "title": "Step by Step",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3b878215-c2b6-4aa0-b7fb-7eaee19ee9b6",
+          "title": "The First Summer",
+          "popularity": 2.0
+        },
+        {
+          "uid": "12f40169-b694-41a6-9933-fb14519d3a9b",
           "title": "WAY TO DREAM",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "a3c7ca04-3d60-4bba-9b98-5ea107a8da16",
-          "title": "WHITE",
-          "popularity": 2
+          "uid": "0d94c349-61f2-4074-8a17-8ca6efa98f5f",
+          "title": "WHITE (LIVE ver.)",
+          "popularity": 2.0
         },
         {
-          "uid": "dfa2942a-0902-4383-8462-d4b296b00166",
+          "uid": "d7a1f846-d841-4b67-beb0-b6c843bede4e",
+          "title": "Winter story",
+          "popularity": 2.0
+        },
+        {
+          "uid": "166776c6-2815-4031-921f-0a3ab5bbe98c",
           "title": "flower×flower",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "f1832d50-d32e-48c4-bbef-866ee4d41853",
+          "uid": "4ec65640-cf00-4686-b278-2cd17b928fff",
+          "title": "あてんしょん・ぷりーず",
+          "popularity": 2.0
+        },
+        {
+          "uid": "0c19836e-fa10-42da-9a3f-181be0f19fac",
+          "title": "つよくてニューゲーム+ (茉井良菜)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "97b2fb7a-a598-4340-9daa-09ebf4ac41dd",
+          "title": "ときめきらいど! (茉井良菜)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "8fc192b0-efd7-4a61-b52b-4ffcd40c5635",
           "title": "ガチ恋レボリューション",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "9ad5b1b3-0fd0-48f3-b760-0ed94391da4b",
-          "title": "ニャンダフルステージ",
-          "popularity": 2
+          "uid": "783ab9b5-77b8-4625-889b-f6211690d467",
+          "title": "キライだ。",
+          "popularity": 2.0
+        },
+        {
+          "uid": "1c96705e-e3b0-41ed-a7cd-5e1514d83e00",
+          "title": "セツナツリ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4331c205-7065-44d6-bd5f-5061429cd05b",
+          "title": "ナツラブ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "0270faf8-355a-43b5-ab75-6c3bc3583ff3",
+          "title": "ニャンダフルステージ (清見るん)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e906b0b2-472b-43b4-a60d-89074013b4ed",
+          "title": "ユメハナビ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b77ce1a2-0e27-45e4-be0b-ef726bbed89f",
+          "title": "三百六十五歩のマーチ ~365 Steps, All Cast 2017",
+          "popularity": 2.0
+        },
+        {
+          "uid": "981a86d3-ae0d-4aa7-aad5-e3883cd16cc5",
+          "title": "三百六十五歩のマーチ ~365 Steps, All Cast 2017 (Inst.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "e8f2eaed-616f-47ec-b971-3c093bc3720d",
+          "title": "三百六十五歩のマーチ ~365 Steps, Girls Represent 2017",
+          "popularity": 2.0
+        },
+        {
+          "uid": "79811598-ec71-44d6-9293-81d1ba6111ac",
+          "title": "乱れ髪ファイティングガール",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f7f0907c-e3c9-4213-9593-9b627a6b9da6",
+          "title": "夏のかけら",
+          "popularity": 2.0
+        },
+        {
+          "uid": "09c2315d-c68c-49ef-8b40-1ce7eb8c37a7",
+          "title": "小さな決意",
+          "popularity": 2.0
+        },
+        {
+          "uid": "40661365-21ef-4d0d-b620-65e7a6739438",
+          "title": "常夏トロピケーション",
+          "popularity": 2.0
+        },
+        {
+          "uid": "3a807ae4-2a30-439d-88d2-f0d26d28f948",
+          "title": "新宇宙世紀アイドルちゃん",
+          "popularity": 2.0
+        },
+        {
+          "uid": "6e5b9b68-362b-45c0-a27e-8d0cb9022938",
+          "title": "真夏のセレナーデ (LIVE ver.)",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d2d655cd-59fb-4b53-8a2d-14a250661f9e",
+          "title": "私だけにフォーカスして♡",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a1bcfa04-d481-430f-9d9f-f055e05b5baa",
+          "title": "虹の色",
+          "popularity": 2.0
+        },
+        {
+          "uid": "6984e8d6-cfc2-4a6e-a4cc-9ecf713380e0",
+          "title": "観測史上",
+          "popularity": 2.0
         }
       ]
     },
@@ -2341,199 +3819,199 @@
       ],
       "songs": [
         {
-          "uid": "906ede86-4d33-43f1-93a5-0330cfa9c8b4",
-          "title": "Shooting STAR",
-          "popularity": 4
-        },
-        {
-          "uid": "5949ba1d-d93b-43fa-8ef5-a6bb7c082154",
+          "uid": "8edd60e2-31d0-49a0-ac6c-fa61195ea036",
           "title": "ちゅららんレーサー",
-          "popularity": 4
+          "popularity": 4.0
         },
         {
-          "uid": "0899e987-aedd-41c4-8ed7-391ef6835ad3",
+          "uid": "c28087ee-1012-444f-865b-8294d1f546bc",
+          "title": "Shooting STAR",
+          "popularity": 3.5
+        },
+        {
+          "uid": "2556e0dd-f23d-4200-833d-dffb5e372bdf",
           "title": "トキメキCherry",
-          "popularity": 4
+          "popularity": 3.5
         },
         {
-          "uid": "3c666d31-f214-4029-bc0c-99e29c5f38ae",
+          "uid": "232f05a3-de4b-4fdb-895e-bdf0db913072",
           "title": "完全無敵あいうえお",
-          "popularity": 4
+          "popularity": 3.0
         },
         {
-          "uid": "07b79004-1655-4c9a-ba9e-19373a8c11fe",
-          "title": "ケ・セラ・セラ",
-          "popularity": 3.5
-        },
-        {
-          "uid": "b3324ab1-6a1b-47ae-bce6-2e196efc81d2",
-          "title": "ジュリセン☆ちゅら無双",
-          "popularity": 3.5
-        },
-        {
-          "uid": "24938a10-5043-4885-9471-6e48dd7be415",
-          "title": "史上最強うぇぽん",
-          "popularity": 3.5
-        },
-        {
-          "uid": "5a418ee1-4d64-492b-a4fe-0ee141645366",
-          "title": "夏の君にテヘヘのへ",
-          "popularity": 3.5
-        },
-        {
-          "uid": "24935ca0-348a-4a21-8b73-bf137b86d567",
+          "uid": "e88718c0-790c-48e3-ab49-1d7af51f5ded",
           "title": "涙色星",
-          "popularity": 3.5
+          "popularity": 3.0
         },
         {
-          "uid": "73fd1cb2-087f-455d-a775-df7bdaf8612d",
+          "uid": "37e58472-4234-4ed4-b00c-767429c4641d",
           "title": "閃光8",
-          "popularity": 3.5
+          "popularity": 3.0
         },
         {
-          "uid": "603bad56-3376-4192-a117-e059be92b388",
-          "title": "DA・DA・DA・ダイスキ!!",
-          "popularity": 3
+          "uid": "cb593f5f-bf55-4177-982d-823ae03af75d",
+          "title": "ジュリセン☆ちゅら無双",
+          "popularity": 2.5
         },
         {
-          "uid": "64624453-ed6e-4ee6-bf74-e7d463429cfe",
-          "title": "FIGHTING DREAMER",
-          "popularity": 3
+          "uid": "406fe38d-0f89-47fc-b6dc-963a5d52c695",
+          "title": "史上最強うぇぽん",
+          "popularity": 2.5
         },
         {
-          "uid": "0363fda4-d35d-4134-8d98-dd73f7008e71",
-          "title": "SNOW SNOW SNOW",
-          "popularity": 3
+          "uid": "dbfeee18-22a1-4700-b3dd-29a1278c1455",
+          "title": "夏の君にテヘヘのへ",
+          "popularity": 2.5
         },
         {
-          "uid": "f7174b20-2619-4938-9e5d-3bde37cc6ba8",
-          "title": "しゃなりら -五星ノ華 ゴセイノハナ-",
-          "popularity": 3
-        },
-        {
-          "uid": "243e4d7c-a269-4d7e-8232-604cdef30915",
-          "title": "どきゅーとこみゅにけーしょん",
-          "popularity": 3
-        },
-        {
-          "uid": "b5cce794-a8b5-46a7-a094-e5ad734342f7",
-          "title": "ぶっとび!!ちゅらランチャー",
-          "popularity": 3
-        },
-        {
-          "uid": "32cb25e7-33a1-47a3-988e-50852b958211",
-          "title": "キミキミキミ",
-          "popularity": 3
-        },
-        {
-          "uid": "2da1260b-c56e-4e6f-9e8c-345fedd95b23",
-          "title": "ギュッと溢れ出す愛情",
-          "popularity": 3
-        },
-        {
-          "uid": "f6584c91-bffc-4066-a633-9f9aa3fcc0a2",
-          "title": "スッと君が消えていく感情",
-          "popularity": 3
-        },
-        {
-          "uid": "5a0be81c-1a8e-4035-afac-a6f9dc197174",
-          "title": "ビバ☆ジャパン",
-          "popularity": 3
-        },
-        {
-          "uid": "128de126-8913-4cd9-b4d6-f722a9bb5e12",
-          "title": "ポポポポペット",
-          "popularity": 3
-        },
-        {
-          "uid": "ea099b54-2a76-4f42-9b8f-2a06401cff5c",
-          "title": "全力ハリケーン",
-          "popularity": 3
-        },
-        {
-          "uid": "a7e6a983-2fba-4961-9b30-01d64305cba3",
+          "uid": "5dacbdd4-226a-4e38-956a-fd2f5a4ae260",
           "title": "#超ジャングルのチキチキあどべんちゃー!",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "333f9fb1-1fd9-4ea1-9557-d3c9d73a85e7",
+          "uid": "79208530-02e7-47e5-8567-1938d14b1698",
+          "title": "DA・DA・DA・ダイスキ!!",
+          "popularity": 2.0
+        },
+        {
+          "uid": "5aa64357-cfd9-44d0-bdcf-691bdaac79d6",
+          "title": "FIGHTING DREAMER",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b6da9d39-7b35-4e69-b966-492274f25356",
           "title": "HERO☆ストラックアウト",
-          "popularity": 2.5
+          "popularity": 2.0
         },
         {
-          "uid": "c639e07e-c7ce-4105-8cff-53fad9e17b4b",
-          "title": "We are the chuLa",
-          "popularity": 2.5
-        },
-        {
-          "uid": "18424c00-295a-4d7c-8599-610b5f7fb85e",
-          "title": "おちゅらけ戦隊ちゅらレンジャー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "6f959710-f712-442f-b5ec-823fa3162782",
-          "title": "シンガロング・ワールド",
-          "popularity": 2.5
-        },
-        {
-          "uid": "685c262c-6a7e-45c9-a97d-3b14cd5ac9d0",
-          "title": "タランちゅら",
-          "popularity": 2.5
-        },
-        {
-          "uid": "404bec4c-59bd-41f1-ba45-2da35427f9a2",
-          "title": "ツラみ",
-          "popularity": 2.5
-        },
-        {
-          "uid": "936b1beb-a7e5-4813-a9ce-6a25adccc576",
-          "title": "ビバジャパン",
-          "popularity": 2.5
-        },
-        {
-          "uid": "7c50e587-cb17-40dd-b591-2df63c3f7322",
-          "title": "プールサイドサマー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "adc1dd01-b3d8-40a2-a171-8b84f6099653",
-          "title": "夢模様",
-          "popularity": 2.5
-        },
-        {
-          "uid": "063ac1b5-53bc-47b1-ad50-851a83313807",
-          "title": "青春ゾンビちゃん",
-          "popularity": 2.5
-        },
-        {
-          "uid": "d3b4f4ca-3cc8-4208-a1a7-608c05a8b439",
+          "uid": "f50cbdd6-d840-4bd6-b115-44e2ca80dfd4",
           "title": "Pump it up!!",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "c55c0247-37d8-49cb-91de-28f54775d251",
+          "uid": "7f789ad4-2905-4dd2-b25a-35b9a6580de4",
+          "title": "SNOW SNOW SNOW",
+          "popularity": 2.0
+        },
+        {
+          "uid": "304389be-e7ae-49c2-85ff-844a941fb08e",
+          "title": "We are the chuLa",
+          "popularity": 2.0
+        },
+        {
+          "uid": "64ae23c1-f3b1-4d71-ab95-5c355f54e969",
           "title": "chuLa流キミ誕祭",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "efd14ffa-e920-4bd7-9811-5a774cb2d96f",
+          "uid": "f0a370bc-5ece-4f41-b6d2-8763298fe4f2",
           "title": "cross road",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "d57be0b0-91b7-42c3-b249-6f416c12dc4f",
+          "uid": "64b80932-bf42-49df-b192-bba99328b79b",
+          "title": "おちゅらけ戦隊ちゅらレンジャー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "25dcc0cf-7578-4f9a-8c03-6a7379438fe8",
           "title": "ぐるぐるぐるぐるりん地球",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "445088c0-8261-40ff-baf3-fe3e9bf3ef4f",
+          "uid": "c1764994-81be-484d-b63c-a202b5431841",
+          "title": "しゃなりら -五星ノ華 ゴセイノハナ-",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4c261fb2-bcde-43aa-8963-d7b397a2a210",
           "title": "ちゃむあらん",
-          "popularity": 2
+          "popularity": 2.0
         },
         {
-          "uid": "338891bd-2a61-4099-8592-bc22d97e6bff",
+          "uid": "40cf99d4-85f6-4241-8a79-953c0ee4799a",
+          "title": "どきゅーとこみゅにけーしょん",
+          "popularity": 2.0
+        },
+        {
+          "uid": "34f551f9-13c9-4b6f-978d-e365d520a7e5",
+          "title": "ぶっとび!!ちゅらランチャー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "6eb6c400-db5a-44ca-8a97-bc298e29f730",
+          "title": "キミキミキミ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "0628308d-9ae8-49a1-ad7d-3af3220b05e9",
+          "title": "ギュッと溢れ出す愛情",
+          "popularity": 2.0
+        },
+        {
+          "uid": "7569e4e7-2f5b-4ddf-a031-7192c3101e72",
+          "title": "ケ・セラ・セラ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "2d21eda9-46a5-4983-9b0b-5a53a716ec67",
+          "title": "シンガロング・ワールド",
+          "popularity": 2.0
+        },
+        {
+          "uid": "58283ed6-72e8-4a40-9b7b-5d8a61ef1016",
+          "title": "スッと君が消えていく感情",
+          "popularity": 2.0
+        },
+        {
+          "uid": "a9b5ff3a-81c7-48bb-b040-82f307ad0d4c",
+          "title": "タランちゅら",
+          "popularity": 2.0
+        },
+        {
+          "uid": "1d408b8d-980b-4047-a06f-eb5ff56311cd",
+          "title": "ツラみ",
+          "popularity": 2.0
+        },
+        {
+          "uid": "4338068b-f0e0-474f-8d62-9a2ddd1c0d1c",
+          "title": "ビバ☆ジャパン",
+          "popularity": 2.0
+        },
+        {
+          "uid": "47216bc7-4b5f-431e-9d6a-23fa2b6f1018",
+          "title": "ビバジャパン",
+          "popularity": 2.0
+        },
+        {
+          "uid": "bf8bb266-19ad-491a-9e8c-5d14f0489ad4",
+          "title": "プールサイドサマー",
+          "popularity": 2.0
+        },
+        {
+          "uid": "cc33c87e-330f-45d6-9c82-243afa0cf07f",
+          "title": "ポポポポペット",
+          "popularity": 2.0
+        },
+        {
+          "uid": "b70a8d01-720d-406d-903d-7e52d2d5b75b",
+          "title": "全力ハリケーン",
+          "popularity": 2.0
+        },
+        {
+          "uid": "d6b4fe60-d0bb-44bd-80f4-181b1b75624e",
+          "title": "夢模様",
+          "popularity": 2.0
+        },
+        {
+          "uid": "f8586855-da6c-487a-88a4-c01d350a8e83",
           "title": "完全無敵あいうえお (Instrument)",
-          "popularity": 2
+          "popularity": 2.0
+        },
+        {
+          "uid": "2ff53662-5e6e-496a-ba78-5652607a20c0",
+          "title": "青春ゾンビちゃん",
+          "popularity": 2.0
         }
       ]
     },
@@ -2581,64 +4059,144 @@
       ],
       "songs": [
         {
-          "uid": "b0f54b5c-7783-44c3-bcb2-40f1753e4e70",
-          "title": "Brand New Future",
-          "popularity": null
+          "uid": "3772a4d7-0f31-4adc-acd8-678641acc6db",
+          "title": "PARAD-i-ERA",
+          "popularity": 3.5
         },
         {
-          "uid": "1a190c53-6d72-4d5f-9025-118b2db23cf3",
-          "title": "Remake Me!",
-          "popularity": null
-        },
-        {
-          "uid": "b06c4544-f96f-4d31-9fb1-f85ea759b06d",
+          "uid": "5e2057ba-f7d1-4e58-b97a-5f4e48ddb884",
           "title": "ちゅ♡ちゅ♡ちゅ♡ぱにぱっ♡",
-          "popularity": null
+          "popularity": 3.0
         },
         {
-          "uid": "aec0aacc-6d13-49d8-956e-0abea9209858",
-          "title": "エリンジウム",
-          "popularity": null
+          "uid": "bd998597-3e6d-4172-a4d5-d60f38541f36",
+          "title": "初恋サイン",
+          "popularity": 3.0
         },
         {
-          "uid": "96ff6c57-969b-4bad-af39-da72cb1ed95c",
-          "title": "カラフルサマー",
-          "popularity": null
+          "uid": "4e6509aa-839c-4d9a-a85b-6fa3bcab3c26",
+          "title": "ココロスター",
+          "popularity": 2.5
         },
         {
-          "uid": "4385d5da-5435-4125-aea9-7ec2a9099c48",
-          "title": "サマーラブラバー",
-          "popularity": null
-        },
-        {
-          "uid": "55c641ea-28f4-4d72-8943-0122b93ec31c",
-          "title": "シオカゼKISS",
-          "popularity": null
-        },
-        {
-          "uid": "ec9c7a7a-b561-42f8-ae6f-ed814404ac4b",
+          "uid": "ccc2639f-4611-4467-b4b6-37651cf88e89",
           "title": "ジェジェジェットファイター",
-          "popularity": null
+          "popularity": 2.5
         },
         {
-          "uid": "c8059e71-6ddf-4b42-8876-ad98863d0a97",
+          "uid": "1912803d-e3e3-4cc1-9bab-4b750089955e",
+          "title": "流星のパレード",
+          "popularity": 2.5
+        },
+        {
+          "uid": "4dfd9e7a-8dfb-4eb0-b5e4-56d30558d7d6",
+          "title": "Brand New Future",
+          "popularity": 1.5
+        },
+        {
+          "uid": "084827e5-f6e2-4a8b-99f8-d716f7694f2b",
+          "title": "GO FORWARD",
+          "popularity": 1.5
+        },
+        {
+          "uid": "0d2a97b2-179c-408a-a526-f13e95b477dc",
+          "title": "Overture",
+          "popularity": 1.5
+        },
+        {
+          "uid": "d6539ce6-13b6-4566-b43d-2f974a652e84",
+          "title": "Remake Me!",
+          "popularity": 1.5
+        },
+        {
+          "uid": "725f18bc-6b96-4819-b7e2-4c8b596f5c6a",
+          "title": "We are パラディーク",
+          "popularity": 1.5
+        },
+        {
+          "uid": "d680151a-9670-4290-bef0-f09ba6597665",
+          "title": "ぷにっと。",
+          "popularity": 1.5
+        },
+        {
+          "uid": "e559cff5-c99b-474a-a8c4-54792df157a0",
+          "title": "もういっちょ!",
+          "popularity": 1.5
+        },
+        {
+          "uid": "f037afef-7f59-4e6f-9d60-aea7b48197f2",
+          "title": "エリンジウム",
+          "popularity": 1.5
+        },
+        {
+          "uid": "66b1839f-77ad-47fb-a2e1-0a5c84686e40",
+          "title": "カラフルサマー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "de4eb284-a71a-4fbd-94e3-7fc71c3ca0ff",
+          "title": "キミルート",
+          "popularity": 1.5
+        },
+        {
+          "uid": "5951c94c-39b9-4481-9813-8ffa267c62ae",
+          "title": "サマーラブラバー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "b3b0616c-c770-402f-a1d5-7091a0bdfc96",
+          "title": "シオカゼKISS",
+          "popularity": 1.5
+        },
+        {
+          "uid": "c4c2838f-c53e-4da1-9c21-09036b5fd8a9",
+          "title": "ハピハピランチャー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "b122693c-545e-4130-8ef2-c955c5d78ea6",
+          "title": "ハピパピランチャー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "2485ad3c-8aa5-4845-93ef-51506eb479da",
           "title": "バトルクライ",
-          "popularity": null
+          "popularity": 1.5
         },
         {
-          "uid": "f7f4368f-74af-4c29-957b-b0228dfe52a5",
-          "title": "パラディーク",
-          "popularity": null
+          "uid": "31e0e3dd-8c85-4f46-8f92-7de0aaa94932",
+          "title": "パンパンパラディーナ",
+          "popularity": 1.5
         },
         {
-          "uid": "4221eaad-60b1-46fa-ae60-17d34f30c136",
+          "uid": "41a8dbf7-a3d7-4323-92db-caf0a81c46a6",
           "title": "ラブシーフ",
-          "popularity": null
+          "popularity": 1.5
         },
         {
-          "uid": "8a53d5fa-3da8-4328-a238-7d94408f0da6",
+          "uid": "e174edad-60e4-47c0-8139-66fa848dc1eb",
+          "title": "リアライズ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "ff9fc92e-e302-4ec8-9b71-473bf882a81d",
+          "title": "君色アーチ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "231ed1ba-1132-492f-a145-abc597fbf208",
           "title": "感情エタニティー",
-          "popularity": null
+          "popularity": 1.5
+        },
+        {
+          "uid": "ea5679be-a9e1-4a90-a3e1-66e7480f0052",
+          "title": "泣き虫Dreamer",
+          "popularity": 1.5
+        },
+        {
+          "uid": "ef1d4f6d-b1e8-4c3f-bfdb-8bbf5dfa1b1b",
+          "title": "群青シェード",
+          "popularity": 1.5
         }
       ]
     },
@@ -2673,7 +4231,7 @@
           "uid": "c5d56c30-a278-403d-9b2d-4630061fdba4",
           "name": "熊ノ実にも",
           "color": "オレンジ",
-          "color_hex": "#fb8c00",
+          "color_hex": "#ffa500",
           "portrait_url": "../data/pictures/idols/%E7%86%8A%E3%83%8E%E5%AE%9F%E3%81%AB%E3%82%82_portrait.jpg"
         },
         {
@@ -2700,127 +4258,127 @@
       ],
       "songs": [
         {
-          "uid": "220d04ae-8af8-48e2-84cc-7bb24d6df6ac",
+          "uid": "9ffc7ed1-d797-49e0-9e2a-75b431ab3d4c",
           "title": "君とたこやきLOVE恋め",
           "popularity": 3.5
         },
         {
-          "uid": "0874843b-a42d-4781-be0a-4a453f377f6e",
-          "title": "ナナコロビヤオキSE(てんかver)",
-          "popularity": 3
-        },
-        {
-          "uid": "7c27ece0-193b-4ef7-96a1-a36b5a2fee9b",
+          "uid": "eaf21cae-441d-44f8-9a55-ab411b3e2a2c",
           "title": "七転八起",
-          "popularity": 3
+          "popularity": 3.0
         },
         {
-          "uid": "8eff40c3-4bfd-44f0-bfee-20d37f3445ec",
+          "uid": "162e962f-c944-43d3-acd2-6a932459d90c",
           "title": "天下一☆舞踏会",
-          "popularity": 3
+          "popularity": 3.0
         },
         {
-          "uid": "5d4a84a0-f033-4f2e-af48-4cb90633e0fa",
-          "title": "激甘ガチ恋なにわスタイル",
-          "popularity": 3
-        },
-        {
-          "uid": "b03aa52a-e85b-4c66-9593-34a39670ef68",
+          "uid": "c5186fc6-8c33-40d3-9751-31afe31e6eb1",
           "title": "ちょっちょっちょけ君に夢中!",
           "popularity": 2.5
         },
         {
-          "uid": "14a91b5f-3ab0-4f22-8120-28c2ad852433",
-          "title": "ぱっぱらぱぁのぱ〜でんねん",
+          "uid": "975785b6-4c5b-45b3-9690-7e70f5fb1a95",
+          "title": "ナナコロビヤオキSE(てんかver)",
           "popularity": 2.5
         },
         {
-          "uid": "0fc1b5e3-2b64-40e9-bb58-361c7ab91f9b",
-          "title": "オーサカーニバル‼︎",
-          "popularity": 2.5
-        },
-        {
-          "uid": "11c9b8d3-9cb0-4e72-91d7-e25d4d2aac41",
+          "uid": "95fd2ef7-eb36-4548-b97b-51a823e4b4e3",
           "title": "一宿一飯",
           "popularity": 2.5
         },
         {
-          "uid": "900d270f-d978-49db-8c31-9fb1654f776f",
-          "title": "一発逆転すーぱーどりーまー",
-          "popularity": 2.5
-        },
-        {
-          "uid": "d8dd9d02-0178-4eef-b6d1-1d113deb5d4e",
-          "title": "結局最後は踊らせたい",
-          "popularity": 2.5
-        },
-        {
-          "uid": "692279d5-0d0b-422b-9e29-3cf6ca789935",
+          "uid": "7438314f-0d54-4674-9450-2b284de956a7",
           "title": "WAHAHA!",
           "popularity": 1.5
         },
         {
-          "uid": "54552d14-54ac-43da-b574-d394d8b0cdd4",
+          "uid": "18f98db8-a0bf-48e8-8c5a-55167e5cfadd",
           "title": "なにわギャルの日常は?",
           "popularity": 1.5
         },
         {
-          "uid": "7f808ebd-190f-448a-9929-c2ca7048b639",
+          "uid": "8556fe2c-8a50-489f-a689-907f9eff9e15",
           "title": "ばきゅんずきゅんきゅん(歌花てんかソロ曲)",
           "popularity": 1.5
         },
         {
-          "uid": "044c8561-23e5-4525-85eb-a9cc0443710d",
+          "uid": "91082e8a-31d2-472a-bd96-2d38ffdb3b4c",
+          "title": "ぱっぱらぱぁのぱ〜でんねん",
+          "popularity": 1.5
+        },
+        {
+          "uid": "13132bba-00bb-4965-875e-ebf684e5254d",
+          "title": "オーサカーニバル‼︎",
+          "popularity": 1.5
+        },
+        {
+          "uid": "f796fedc-a4fe-43fd-ac5a-d02ec041b5e5",
           "title": "ナナコロビヤオキSE(えくぼver)",
           "popularity": 1.5
         },
         {
-          "uid": "4ea06be0-f34b-4579-ad82-6d2fde266984",
+          "uid": "f9198470-a65d-47fd-b79e-c239182da5b2",
           "title": "ナナコロビヤオキSE(になver)",
           "popularity": 1.5
         },
         {
-          "uid": "e23c6003-e057-4759-89b6-f7bd6f83709b",
+          "uid": "a9d73120-506e-406d-828a-0a6849688dc8",
           "title": "ナナコロビヤオキSE(にもver)",
           "popularity": 1.5
         },
         {
-          "uid": "572571f4-73df-4f6a-a547-4ba3bde7a914",
+          "uid": "91ffd4c1-0424-486b-b562-7c80e65d5f1c",
           "title": "ナナコロビヤオキSE(りこver)",
           "popularity": 1.5
         },
         {
-          "uid": "505a4a71-9b23-4d26-a5d7-6f6ffbefcb5a",
+          "uid": "b417e343-fab3-42d1-93d6-b76368392ba3",
           "title": "ナナコロビヤオキSE(れもんver)",
           "popularity": 1.5
         },
         {
-          "uid": "a0072806-fd9b-41ba-a85c-a45f0543c8c8",
+          "uid": "18e623d7-dfe4-4cc2-9e86-6c05b9f8fb90",
           "title": "ナナコロビヤオキSE(茉莉ver)",
           "popularity": 1.5
         },
         {
-          "uid": "d5ef4d74-d4c1-420d-9cad-e88dfa0d497e",
+          "uid": "7473d53b-c238-47b1-97e7-aabdffad120b",
           "title": "フェアリーステップ(瀬戸内れもんソロ曲)",
           "popularity": 1.5
         },
         {
-          "uid": "87f7f36e-2a9b-4ed0-9c55-8df5482f901e",
+          "uid": "f7a1f445-3aea-4342-b03d-162fe4ad404c",
           "title": "プライドビート(歌花てんかソロ曲)",
           "popularity": 1.5
         },
         {
-          "uid": "956a966d-89fe-4de1-a361-d4d2f5bb2b35",
+          "uid": "f8c182fe-0764-4207-b718-f581c439f61e",
+          "title": "一発逆転すーぱーどりーまー",
+          "popularity": 1.5
+        },
+        {
+          "uid": "7eec0e4f-6eeb-4fc0-8c46-61b2959c57e8",
           "title": "今にもナンバーワン(熊ノ実にもソロ曲)",
           "popularity": 1.5
         },
         {
-          "uid": "c668a3f0-6041-4d90-b6da-4de4ec629426",
+          "uid": "1202bee9-2fac-4e8f-92ad-f077c9817b6a",
           "title": "伝えて好きの二文字(熊ノ実にもソロ曲)",
           "popularity": 1.5
         },
         {
-          "uid": "b7059e9e-f251-4f06-8d58-91667816ddc6",
+          "uid": "d6f8089d-3563-48d3-b21e-4f12ad61dfb1",
+          "title": "激甘ガチ恋なにわスタイル",
+          "popularity": 1.5
+        },
+        {
+          "uid": "1ab34728-8f39-41c0-bf9a-939bab101b97",
+          "title": "結局最後は踊らせたい",
+          "popularity": 1.5
+        },
+        {
+          "uid": "01359c9f-992e-485f-86e7-bb3a1428043e",
           "title": "関西エナジー",
           "popularity": 1.5
         }
@@ -2884,24 +4442,54 @@
       ],
       "songs": [
         {
-          "uid": "6de58cfd-12d1-436b-a512-4d09a96836e3",
-          "title": "天真",
-          "popularity": null
+          "uid": "5b072849-ef77-444e-a8a3-f17d30a4ea6f",
+          "title": "ハッピーストレージ",
+          "popularity": 3.5
         },
         {
-          "uid": "f8568bd1-baad-4325-ba35-d2f6dab63f14",
-          "title": "爛漫",
-          "popularity": null
+          "uid": "e041c5b5-953f-4cdb-9ec5-465a7a3d13e4",
+          "title": "Cinder",
+          "popularity": 3.0
         },
         {
-          "uid": "67a5971a-a2c5-4175-b5e4-97605e982aba",
+          "uid": "32413946-4a7a-401d-96ec-c20517d81032",
+          "title": "でらでらデラックス",
+          "popularity": 3.0
+        },
+        {
+          "uid": "33a8c6b4-44fa-41a1-93c1-43aafbaf13b1",
+          "title": "どえりゃNagoya!!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "fbe7e825-cdd8-4be9-b755-3b77da1ddc5e",
+          "title": "キミノヒトミニLOVE",
+          "popularity": 2.5
+        },
+        {
+          "uid": "002a70ab-29e6-480d-a347-d421026231de",
+          "title": "限界プレイス",
+          "popularity": 2.5
+        },
+        {
+          "uid": "80e5502a-6d2b-4e1b-adfe-883534a31852",
+          "title": "StarFall",
+          "popularity": 1.5
+        },
+        {
+          "uid": "9ba06d49-3c4b-4a8d-a3f3-f9e906361a24",
+          "title": "ときめきはストロボ(海老原てんソロ曲)",
+          "popularity": 1.5
+        },
+        {
+          "uid": "41c86e95-1e91-474b-a3eb-ca083c97ed9d",
+          "title": "チャーキーパーキーチャーム",
+          "popularity": 1.5
+        },
+        {
+          "uid": "86e85152-1cfa-4b77-b009-9a4c72bcd683",
           "title": "恋のそら模様",
-          "popularity": null
-        },
-        {
-          "uid": "586b9884-0321-486c-85fe-d521d9d0a4ba",
-          "title": "ときめきはストロボ",
-          "popularity": null
+          "popularity": 1.5
         }
       ]
     },
@@ -2968,7 +4556,48 @@
           "portrait_url": "../data/pictures/idols/%E6%9F%91%E4%B9%83%E3%81%82%E3%81%84_portrait.jpg"
         }
       ],
-      "songs": []
+      "songs": [
+        {
+          "uid": "80261c51-df0b-4907-a5d8-c70b67614222",
+          "title": "七夕センチメンタル",
+          "popularity": 3.0
+        },
+        {
+          "uid": "dd074acc-eaee-4e38-97d7-e6a2eaac7da2",
+          "title": "君のスイカになりたい!",
+          "popularity": 3.0
+        },
+        {
+          "uid": "dd18c78f-b8c1-4242-8ca8-06a5079426cb",
+          "title": "JAPONICA!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "5c387647-f8ec-4a4f-a60d-24b027c27b31",
+          "title": "鬼KawaWe!!!",
+          "popularity": 2.5
+        },
+        {
+          "uid": "9d4e851c-17de-46cf-849a-d5f9df2060ac",
+          "title": "ぱパぱパ★ぱにっく",
+          "popularity": 1.5
+        },
+        {
+          "uid": "17e88155-7edd-45d5-8914-9798b38f244e",
+          "title": "ドラマチックダイブ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "1d618c19-7010-4bee-9cb0-df3d1cf27716",
+          "title": "悪魔にだってなれるさ",
+          "popularity": 1.5
+        },
+        {
+          "uid": "ab4dd1af-53a2-48aa-8dc8-737d2349534d",
+          "title": "推しが尊いの!",
+          "popularity": 1.5
+        }
+      ]
     },
     {
       "name": "ラストシーン",

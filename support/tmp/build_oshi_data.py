@@ -707,7 +707,7 @@ def build_group(
         "uid": g.get("uid"),
         "logo_url": pick_group_logo(g, group_index),
         "members": members,
-        "songs": songs[:40],
+        "songs": songs,
     }
 
 def main():

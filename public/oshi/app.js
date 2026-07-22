@@ -753,31 +753,47 @@ function createZipStore(files) {
   return out;
 }
 
-function drawCreditBar(ctx, width, height, creditH, brandLogo, padX = 20) {
+function drawCreditBar(ctx, width, height, creditH, brandLogo, pageQr, padX = 20) {
   const cy = height - creditH;
   ctx.fillStyle = "rgba(18,19,23,0.04)";
   ctx.fillRect(0, cy, width, creditH);
-  ctx.globalAlpha = 0.75;
+
+  const qrSize = Math.min(52, creditH - 16);
+  const qrPad = 12;
+  const qrX = width - qrPad - qrSize;
+  const qrY = cy + (creditH - qrSize) / 2;
+  if (pageQr) {
+    ctx.fillStyle = "#ffffff";
+    roundRect(ctx, qrX - 3, qrY - 3, qrSize + 6, qrSize + 6, 6);
+    ctx.fill();
+    ctx.drawImage(pageQr, qrX, qrY, qrSize, qrSize);
+  }
+
+  ctx.globalAlpha = 0.9;
   ctx.fillStyle = "#5c6470";
   ctx.font = '500 11px "Zen Kaku Gothic New", sans-serif';
-  const powered = `Powered by Idol Producer  ·  ${GAME_WEB_URL}`;
+  const powered = "Powered by Idol Producer";
   const designed = "Designed by Yunfannas";
   const baseline = cy + creditH / 2 + 4;
+  let textX = padX;
   if (brandLogo) {
-    const logoH = 24;
+    const logoH = Math.min(24, creditH - 16);
     const logoW = (brandLogo.width / brandLogo.height) * logoH;
     ctx.drawImage(brandLogo, padX, cy + (creditH - logoH) / 2, logoW, logoH);
-    ctx.fillText(powered, padX + logoW + 8, baseline);
-  } else {
-    ctx.fillText(`${powered}  ·  ${designed}`, padX, baseline);
-    ctx.globalAlpha = 1;
-    return;
+    textX = padX + logoW + 10;
   }
-  ctx.fillText(designed, width - padX - ctx.measureText(designed).width, baseline);
+  ctx.fillText(powered, textX, baseline - 8);
+  ctx.font = '500 10px "Zen Kaku Gothic New", sans-serif';
+  ctx.fillText(designed, textX, baseline + 10);
+  if (!pageQr) {
+    ctx.font = '500 10px "Zen Kaku Gothic New", sans-serif';
+    const fallback = GAME_WEB_URL;
+    ctx.fillText(fallback, width - padX - ctx.measureText(fallback).width, baseline);
+  }
   ctx.globalAlpha = 1;
 }
 
-async function renderSheetTable(groups, picks, brandLogo, opts = {}) {
+async function renderSheetTable(groups, picks, brandLogo, pageQr, opts = {}) {
   const {
     width = 900,
     rowH = 108,
@@ -789,7 +805,7 @@ async function renderSheetTable(groups, picks, brandLogo, opts = {}) {
   const padX = 10;
   const padTop = 10;
   const headerH = 32;
-  const creditH = 40;
+  const creditH = 72;
   const tableW = width - padX * 2;
   const colSong = tableW - colLogo - colMember;
   const height = padTop + headerH + groups.length * rowH + creditH + 8;
@@ -904,15 +920,15 @@ async function renderSheetTable(groups, picks, brandLogo, opts = {}) {
     });
   }
 
-  drawCreditBar(ctx, width, height, creditH, brandLogo, padX + 4);
+  drawCreditBar(ctx, width, height, creditH, brandLogo, pageQr, padX + 4);
   return canvasToPngBlob(canvas);
 }
 
-async function renderFullList(groups, picks, brandLogo, owner) {
+async function renderFullList(groups, picks, brandLogo, pageQr, owner) {
   const rowH = 58;
   const padX = 28;
   const padTop = 100;
-  const creditH = 48;
+  const creditH = 72;
   const width = 980;
   const height = padTop + groups.length * rowH + creditH + 16;
   const canvas = document.createElement("canvas");
@@ -999,7 +1015,7 @@ async function renderFullList(groups, picks, brandLogo, owner) {
     });
   }
 
-  drawCreditBar(ctx, width, height, creditH, brandLogo, padX);
+  drawCreditBar(ctx, width, height, creditH, brandLogo, pageQr, padX);
   return canvasToPngBlob(canvas);
 }
 
@@ -1008,9 +1024,10 @@ async function prepareExport(data) {
   const groups = groupsFromData(data);
   const picks = collectPicks();
   const brandLogo = await loadImage("../idol-producer-logo.png");
+  const pageQr = await loadImage("./page-qr.png");
   const sheets = [[], [], [], []];
   groups.forEach((g, i) => sheets[Math.min(3, Math.floor(i / 7))].push(g));
-  return { owner, groups, picks, brandLogo, sheets };
+  return { owner, groups, picks, brandLogo, pageQr, sheets };
 }
 
 const SHEET_RENDER_OPTS = {
@@ -1021,10 +1038,10 @@ const SHEET_RENDER_OPTS = {
 };
 
 async function renderExportPng(prepared, which) {
-  const { owner, groups, picks, brandLogo, sheets } = prepared;
+  const { owner, groups, picks, brandLogo, pageQr, sheets } = prepared;
   if (which === "full") {
     return {
-      blob: await renderFullList(groups, picks, brandLogo, owner),
+      blob: await renderFullList(groups, picks, brandLogo, pageQr, owner),
       filenamePart: "00-full-list",
       label: "full list",
     };
@@ -1032,7 +1049,7 @@ async function renderExportPng(prepared, which) {
   const idx = Number(which) - 1;
   if (idx < 0 || idx > 3) throw new Error(`unknown export: ${which}`);
   return {
-    blob: await renderSheetTable(sheets[idx], picks, brandLogo, SHEET_RENDER_OPTS),
+    blob: await renderSheetTable(sheets[idx], picks, brandLogo, pageQr, SHEET_RENDER_OPTS),
     filenamePart: `0${idx + 1}-sheet-${idx + 1}`,
     label: `sheet ${idx + 1}`,
   };
