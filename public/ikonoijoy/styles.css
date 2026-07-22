@@ -604,6 +604,15 @@ textarea {
   flex: 0 0 auto;
 }
 
+.mini-logo {
+  width: 1.35rem;
+  height: 1.35rem;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 auto;
+  opacity: 0.95;
+}
+
 .chart-song-title {
   margin: 0;
   text-align: center;
@@ -634,17 +643,7 @@ textarea {
   font-size: 0.82rem;
 }
 
-.chart-footer-logo {
-  display: block;
-  margin: 1rem auto 0;
-  max-width: 4.2rem;
-  max-height: 3.4rem;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.95;
-}
-
+.chart-footer-logo,
 .chart-footer-logo[hidden] {
   display: none;
 }

@@ -422,16 +422,13 @@ function applyTheme(group) {
   }
   if (producer) producer.textContent = group?.theme?.producer || "Produced by Rino Sashihara";
   const logoUrl = group?.logo_url ? versionedAssetUrl(group.logo_url) : "";
+  if (logoUrl) document.body.dataset.groupLogo = logoUrl;
+  else delete document.body.dataset.groupLogo;
+  // Bottom group logo removed — logos sit beside each song title instead.
   if (footerLogo) {
-    if (logoUrl) {
-      footerLogo.src = logoUrl;
-      footerLogo.alt = group.name || "";
-      footerLogo.hidden = false;
-    } else {
-      footerLogo.removeAttribute("src");
-      footerLogo.alt = "";
-      footerLogo.hidden = true;
-    }
+    footerLogo.removeAttribute("src");
+    footerLogo.alt = "";
+    footerLogo.hidden = true;
   }
 }
 
@@ -726,8 +723,25 @@ function renderRankSlots(data) {
   }
 }
 
+function makeSongSideMark(logoUrl) {
+  if (logoUrl) {
+    const img = document.createElement("img");
+    img.className = "mini-logo";
+    img.src = logoUrl;
+    img.alt = "";
+    img.loading = "lazy";
+    img.decoding = "async";
+    return img;
+  }
+  const span = document.createElement("span");
+  span.className = "mini-heart";
+  span.textContent = "Love";
+  return span;
+}
+
 function renderPreview() {
   const ranks = collectRanks();
+  const logoUrl = document.body.dataset.groupLogo || "";
   const list = document.getElementById("chartRanks");
   list.replaceChildren();
   for (let i = 0; i < RANK_COUNT; i++) {
@@ -738,9 +752,6 @@ function renderPreview() {
     n.textContent = String(i + 1);
     const box = document.createElement("div");
     box.className = "chart-rank-box";
-    const left = document.createElement("span");
-    left.className = "mini-heart";
-    left.textContent = "Love";
     const title = document.createElement("p");
     title.className = "chart-song-title";
     const song = ranks[i] || "";
@@ -750,10 +761,7 @@ function renderPreview() {
       title.textContent = "—";
       title.classList.add("is-empty");
     }
-    const right = document.createElement("span");
-    right.className = "mini-heart";
-    right.textContent = "Love";
-    box.append(left, title, right);
+    box.append(makeSongSideMark(logoUrl), title, makeSongSideMark(logoUrl));
     li.append(n, box);
     list.appendChild(li);
   }
@@ -959,6 +967,14 @@ function drawOutlinedText(ctx, text, x, y, fill, stroke) {
   ctx.fillText(text, x, y);
 }
 
+function drawContainImage(ctx, img, x, y, maxW, maxH) {
+  if (!img || !img.width || !img.height) return;
+  const scale = Math.min(maxW / img.width, maxH / img.height);
+  const w = img.width * scale;
+  const h = img.height * scale;
+  ctx.drawImage(img, x + (maxW - w) / 2, y + (maxH - h) / 2, w, h);
+}
+
 function canvasToPngBlob(canvas) {
   return new Promise((resolve) => canvas.toBlob((b) => resolve(b), "image/png"));
 }
@@ -970,14 +986,16 @@ async function renderBest10Png(data) {
   const owner = currentOwnerName();
   const logo = await loadImage(group?.logo_url);
   const brandLogo = await loadImage("../idol-producer-logo.png");
+  const pageQr = await loadImage("./page-qr.png");
 
   const width = 720;
   const padX = 42;
   const headerH = 210;
   const rowH = 54;
-  const footerLogoH = 44;
-  const creditH = 46;
-  const height = headerH + RANK_COUNT * rowH + footerLogoH + creditH + 12;
+  const creditH = 72;
+  const height = headerH + RANK_COUNT * rowH + creditH + 16;
+  const markSize = 28;
+  const markPad = 8;
 
   const canvas = document.createElement("canvas");
   canvas.width = width * 2;
@@ -1061,11 +1079,20 @@ async function renderBest10Png(data) {
     ctx.fill();
     ctx.stroke();
 
-    drawHeart(ctx, boxX + 8, y + 12, 26, accent);
-    drawHeart(ctx, boxX + boxW - 34, y + 12, 26, accent);
+    const markY = y + 4 + (boxH - markSize) / 2;
+    if (logo) {
+      ctx.globalAlpha = 0.95;
+      drawContainImage(ctx, logo, boxX + markPad, markY, markSize, markSize);
+      drawContainImage(ctx, logo, boxX + boxW - markPad - markSize, markY, markSize, markSize);
+      ctx.globalAlpha = 1;
+    } else {
+      drawHeart(ctx, boxX + markPad, markY, markSize, accent);
+      drawHeart(ctx, boxX + boxW - markPad - markSize, markY, markSize, accent);
+    }
 
     const song = ranks[i] || "—";
     const empty = !ranks[i];
+    const textMaxW = boxW - markSize * 2 - markPad * 4;
     ctx.textAlign = "center";
     if (empty) {
       ctx.fillStyle = "#9a8a90";
@@ -1073,7 +1100,7 @@ async function renderBest10Png(data) {
       ctx.fillText(song, boxX + boxW / 2, y + 31);
     } else {
       ctx.font = '700 20px "Zen Maru Gothic", "Zen Kaku Gothic New", sans-serif';
-      const lines = wrapTextLines(ctx, song, boxW - 90, 2);
+      const lines = wrapTextLines(ctx, song, textMaxW, 2);
       const lineH = 20;
       const top = y + 28 - ((lines.length - 1) * lineH) / 2;
       lines.forEach((line, li) => {
@@ -1083,47 +1110,45 @@ async function renderBest10Png(data) {
     ctx.textAlign = "left";
   }
 
-  // Footer group logo — own band below ranks, above credit bar
-  const logoBandTop = headerH + RANK_COUNT * rowH + 2;
-  if (logo) {
-    const maxW = 48;
-    const maxH = 30;
-    const scale = Math.min(maxW / logo.width, maxH / logo.height);
-    const lw = logo.width * scale;
-    const lh = logo.height * scale;
-    ctx.globalAlpha = 0.92;
-    ctx.drawImage(logo, (width - lw) / 2, logoBandTop + (footerLogoH - lh) / 2, lw, lh);
-    ctx.globalAlpha = 1;
-  } else {
-    ctx.fillStyle = accent;
-    ctx.font = '700 14px "Zen Maru Gothic", sans-serif';
-    ctx.textAlign = "center";
-    ctx.globalAlpha = 0.8;
-    ctx.fillText(group?.name || "IKONOIJOY", width / 2, logoBandTop + footerLogoH / 2 + 5);
-    ctx.globalAlpha = 1;
-  }
-
-  // Credit bar
+  // Credit bar — brand + QR (no plain URL)
   const cy = height - creditH;
   ctx.fillStyle = "rgba(18,19,23,0.04)";
   ctx.fillRect(0, cy, width, creditH);
   ctx.fillStyle = "#5c6470";
   ctx.font = '500 11px "Zen Kaku Gothic New", sans-serif';
   ctx.textAlign = "left";
-  const powered = `Powered by Idol Producer  ·  ${GAME_WEB_URL}`;
+  const powered = "Powered by Idol Producer";
   const designed = "Designed by Yunfannas";
-  const baseline = cy + creditH / 2 + 4;
-  if (brandLogo) {
-    const logoH = 22;
-    const logoW = (brandLogo.width / brandLogo.height) * logoH;
-    ctx.globalAlpha = 0.85;
-    ctx.drawImage(brandLogo, 16, cy + (creditH - logoH) / 2, logoW, logoH);
-    ctx.fillText(powered, 16 + logoW + 8, baseline);
-    ctx.globalAlpha = 1;
-  } else {
-    ctx.fillText(powered, 16, baseline);
+  const qrSize = 52;
+  const qrPad = 12;
+  const qrX = width - qrPad - qrSize;
+  const qrY = cy + (creditH - qrSize) / 2;
+  if (pageQr) {
+    ctx.fillStyle = "#ffffff";
+    roundRect(ctx, qrX - 3, qrY - 3, qrSize + 6, qrSize + 6, 6);
+    ctx.fill();
+    ctx.drawImage(pageQr, qrX, qrY, qrSize, qrSize);
   }
-  ctx.fillText(designed, width - 16 - ctx.measureText(designed).width, baseline);
+  const textRightLimit = pageQr ? qrX - 14 : width - 16;
+  const baseline = cy + creditH / 2 + 4;
+  let textX = 16;
+  if (brandLogo) {
+    const logoH = 24;
+    const logoW = (brandLogo.width / brandLogo.height) * logoH;
+    ctx.globalAlpha = 0.9;
+    ctx.drawImage(brandLogo, 16, cy + (creditH - logoH) / 2, logoW, logoH);
+    ctx.globalAlpha = 1;
+    textX = 16 + logoW + 10;
+  }
+  ctx.fillStyle = "#5c6470";
+  ctx.fillText(powered, textX, baseline - 8);
+  ctx.font = '500 10px "Zen Kaku Gothic New", sans-serif';
+  ctx.fillText(designed, textX, baseline + 10);
+  if (!pageQr) {
+    ctx.textAlign = "right";
+    ctx.fillText(GAME_WEB_URL, textRightLimit, baseline);
+    ctx.textAlign = "left";
+  }
 
   return canvasToPngBlob(canvas);
 }
