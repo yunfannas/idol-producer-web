@@ -8570,7 +8570,7 @@ class IdolProfileUI(IdolUIMixin, GroupUIMixin):
             fg=self.colors['text_primary'],
             font=('Arial', 11, 'bold'),
         ).pack(anchor="w")
-        scenario_text = "Scenario 6: Latest Snapshot"
+        scenario_text = "Scenario 6: Festivals and Challenges"
         if self._startup_scenario_date is not None:
             scenario_text += f"  |  Opening Date: {self._startup_scenario_date.isoformat()}"
         tk.Button(

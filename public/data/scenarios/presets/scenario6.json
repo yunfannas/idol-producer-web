@@ -1,11 +1,11 @@
 {
   "id": "scenario6",
-  "name": "Scenario 6: Latest Snapshot",
+  "name": "Scenario 6: Festivals and Challenges",
   "scenario_number": 6,
   "opening_date": "2025-07-05",
   "data_subdir": "scenario_6",
   "startup_view": "Groups",
   "startup_group": "Akishibu project",
-  "background_en": "A time-locked snapshot of the idol industry: opening date, playable group pool, and bundled idols / groups / songs data. Scenario 6 ships a large roster plus a curated startup allowlist of recommended groups (pinned starts: =LOVE, iLiFE!, 高嶺のなでしこ, アキシブproject).",
-  "background_zh": "偶像产业在某一时间点的快照：开局日期、可选组合池，以及打包的偶像 / 组合 / 歌曲数据。剧本 6 包含大量组合及开局推荐名单（置顶推荐：=LOVE、iLiFE!、高嶺のなでしこ、アキシブproject）。"
+  "background_en": "As more groups rise across the scene, idol festivals have become the industry's biggest stages—and none loom larger than TIF (Tokyo Idol Festival). Take the challenges head-on, win the crowd, and grow your fans.",
+  "background_zh": "随着各组崭露头角，偶像音乐节愈发成为行业最大舞台——其中最负盛名的，莫过于 TIF（东京偶像节）。迎接挑战，征服观众，把每一次演出变成粉丝的增长。"
 }
