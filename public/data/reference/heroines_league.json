@@ -1,0 +1,2792 @@
+{
+  "_comment": "HEROINES League seasons, standings, schedule, and history. Season ids: 24-25 ends 2024-09-24 総入れ替え戦; 25-26 is 2025-05→2026-04-24 (includes FINAL/入れ替え + 昇格戦); 26-27 from 2026-04-25. League outcomes are intended as reference anchors for future HEROINES simulation (lineup/setlist/training/schedule → performance → standings).",
+  "seasons": [
+    {
+      "id": "24-25",
+      "label": "24-25",
+      "official_label": "HEROINES LEAGUE 2024",
+      "start_date": "2024-05-01",
+      "end_date": "2024-09-24",
+      "notes": "Inaugural season. Closed by HEROINES FES 総入れ替え戦 on 2024-09-24 (top 9 → League I for the next cycle)."
+    },
+    {
+      "id": "25-26",
+      "label": "25-26",
+      "official_label": "HEROINES LEAGUE 2025",
+      "start_date": "2025-05-01",
+      "end_date": "2026-04-24",
+      "notes": "Regular season from May 2025, FINAL / 入れ替え戦 through 2026-02-07 (incl. 2026-01-13 Osaka promotion), then 2026-04-24 昇格戦 closes the season."
+    },
+    {
+      "id": "26-27",
+      "label": "26-27",
+      "official_label": "HEROINES LEAGUE 2026",
+      "start_date": "2026-04-25",
+      "end_date": null,
+      "notes": "Regular league from May 2026 (after 25-26 昇格戦). League I scoring adds ABEMA PPV votes alongside on-site attendance + FC vote."
+    }
+  ],
+  "groups": [
+    {
+      "name": "AdamLilith",
+      "uid": "QWRhbUxpbGl0aA"
+    },
+    {
+      "name": "CAL&RES",
+      "uid": "Q0FMJlJFUw"
+    },
+    {
+      "name": "chuLa",
+      "uid": "Y2h1TGE"
+    },
+    {
+      "name": "GILTY × GILTY",
+      "uid": "R0lMVFkgw5cgR0lMVFk"
+    },
+    {
+      "name": "i-COL",
+      "uid": "aS1DT0w"
+    },
+    {
+      "name": "iLiFE!",
+      "uid": "aUxpRkUh"
+    },
+    {
+      "name": "Ill",
+      "uid": "SWxs"
+    },
+    {
+      "name": "iON!",
+      "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4"
+    },
+    {
+      "name": "LADYBABY",
+      "uid": "72612662-7c13-4de8-b694-a800f9eb1dda"
+    },
+    {
+      "name": "MEGAFON",
+      "uid": "TUVHQUZPTg"
+    },
+    {
+      "name": "TENRIN",
+      "uid": "VEVOUklO"
+    },
+    {
+      "name": "ZUTTOMOTTO",
+      "uid": "WlVUVE9NT1RUTw"
+    },
+    {
+      "name": "アキシブproject",
+      "uid": "44Ki44Kt44K344OWcHJvamVjdA"
+    },
+    {
+      "name": "テンシンランマン",
+      "uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz"
+    },
+    {
+      "name": "ドレスコード",
+      "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16"
+    },
+    {
+      "name": "ナナコロビヤオキ",
+      "uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
+    },
+    {
+      "name": "のんふぃく！",
+      "uid": "44Gu44KT44G144GD44GP77yB"
+    },
+    {
+      "name": "パラディーク",
+      "uid": "44OR44Op44OH44Kj44O844Kv"
+    },
+    {
+      "name": "パラレルサイダー",
+      "uid": "44OR44Op44Os44Or44K144Kk44OA44O8"
+    },
+    {
+      "name": "ヒロインズ研究生",
+      "uid": "9b937bbf-facf-437b-9815-94152bfe5805"
+    },
+    {
+      "name": "ヒロインズ研究生大阪",
+      "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513"
+    },
+    {
+      "name": "ポンコツコンポ",
+      "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od"
+    },
+    {
+      "name": "ラストシーン",
+      "uid": "44Op44K544OI44K344O844Oz"
+    },
+    {
+      "name": "夜光性アミューズ",
+      "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6"
+    }
+  ],
+  "schedule": [
+    {
+      "date": "2025-07-14",
+      "season_id": "25-26",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "豊洲PIT",
+      "attending_groups": [
+        "AdamLilith",
+        "MEGAFON",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "アキシブproject",
+        "テンシンランマン",
+        "ドレスコード",
+        "夜光性アミューズ"
+      ]
+    },
+    {
+      "date": "2025-07-17",
+      "season_id": "25-26",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "Veats SHIBUYA",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "テンシンランマン",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2025-07-31",
+      "season_id": "25-26",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "バナナホール",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "テンシンランマン",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "season_id": "25-26",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "恵比寿ザ・ガーデンホール",
+      "attending_groups": [
+        "AdamLilith",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "アキシブproject",
+        "ドレスコード",
+        "夜光性アミューズ"
+      ]
+    },
+    {
+      "date": "2025-08-06",
+      "season_id": "25-26",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "Veats SHIBUYA",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2025-08-21",
+      "season_id": "25-26",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "zephyr hall",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2025-09-22",
+      "season_id": "25-26",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "Veats SHIBUYA",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "テンシンランマン",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2025-09-23",
+      "season_id": "25-26",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "神田スクエアホール",
+      "attending_groups": [
+        "AdamLilith",
+        "MEGAFON",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "アキシブproject",
+        "ドレスコード",
+        "夜光性アミューズ"
+      ]
+    },
+    {
+      "date": "2025-09-24",
+      "season_id": "25-26",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "EX THEATER ROPPONGI",
+      "attending_groups": [
+        "AdamLilith",
+        "MEGAFON",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "アキシブproject",
+        "ドレスコード",
+        "夜光性アミューズ"
+      ]
+    },
+    {
+      "date": "2025-09-25",
+      "season_id": "25-26",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "EX THEATER ROPPONGI",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "テンシンランマン",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2025-10-08",
+      "season_id": "25-26",
+      "kind": "playoffs",
+      "title": "HEROINES LEAGUE FINAL / 入れ替え戦",
+      "venue": "Zepp Haneda",
+      "attending_groups": [
+        "AdamLilith",
+        "chuLa",
+        "Ill",
+        "iON!",
+        "TENRIN",
+        "アキシブproject",
+        "ドレスコード",
+        "ナナコロビヤオキ",
+        "のんふぃく！",
+        "パラディーク",
+        "パラレルサイダー",
+        "夜光性アミューズ"
+      ],
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+    },
+    {
+      "date": "2025-11-25",
+      "season_id": "25-26",
+      "kind": "playoffs",
+      "title": "HEROINES LEAGUE FINAL / 入れ替え戦",
+      "venue": "恵比寿ザ・ガーデンホール",
+      "attending_groups": [
+        "AdamLilith",
+        "chuLa",
+        "Ill",
+        "iON!",
+        "TENRIN",
+        "アキシブproject",
+        "ドレスコード",
+        "ナナコロビヤオキ",
+        "のんふぃく！",
+        "パラディーク",
+        "パラレルサイダー",
+        "夜光性アミューズ"
+      ],
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+    },
+    {
+      "date": "2025-12-10",
+      "season_id": "25-26",
+      "kind": "playoffs",
+      "title": "HEROINES LEAGUE FINAL / 入れ替え戦",
+      "venue": "豊洲PIT",
+      "attending_groups": [
+        "AdamLilith",
+        "chuLa",
+        "Ill",
+        "iON!",
+        "TENRIN",
+        "アキシブproject",
+        "ドレスコード",
+        "ナナコロビヤオキ",
+        "のんふぃく！",
+        "パラディーク",
+        "パラレルサイダー",
+        "夜光性アミューズ"
+      ],
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+    },
+    {
+      "date": "2026-01-13",
+      "season_id": "25-26",
+      "kind": "promotion",
+      "title": "HEROINES LEAGUE 入れ替え戦",
+      "venue": "Zepp Osaka Bayside",
+      "attending_groups": [
+        "Ill",
+        "iON!",
+        "TENRIN",
+        "アキシブproject",
+        "chuLa",
+        "ナナコロビヤオキ",
+        "パラレルサイダー",
+        "パラディーク"
+      ]
+    },
+    {
+      "date": "2026-02-07",
+      "season_id": "25-26",
+      "kind": "playoffs",
+      "title": "HEROINES LEAGUE FINAL / 入れ替え戦",
+      "venue": "GARDEN新木場FACTORY",
+      "attending_groups": [
+        "AdamLilith",
+        "chuLa",
+        "Ill",
+        "iON!",
+        "TENRIN",
+        "アキシブproject",
+        "ドレスコード",
+        "ナナコロビヤオキ",
+        "のんふぃく！",
+        "パラディーク",
+        "パラレルサイダー",
+        "夜光性アミューズ"
+      ],
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+    },
+    {
+      "date": "2026-04-24",
+      "season_id": "25-26",
+      "kind": "additional_promotion",
+      "title": "HEROINES LEAGUE 昇格戦",
+      "venue": "Kanadevia Hall",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "アキシブproject",
+        "テンシンランマン",
+        "ナナコロビヤオキ",
+        "ラストシーン"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "season_id": "26-27",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "Ebisu Garden Hall",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "iLiFE!",
+        "アキシブproject",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "season_id": "26-27",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "Kanadevia Hall",
+      "attending_groups": [
+        "AdamLilith",
+        "MEGAFON",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "テンシンランマン",
+        "ドレスコード",
+        "ラストシーン",
+        "夜光性アミューズ"
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "season_id": "26-27",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "Ebisu Garden Hall",
+      "attending_groups": [
+        "アキシブproject",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "season_id": "26-27",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "豊洲PIT",
+      "attending_groups": [
+        "AdamLilith",
+        "MEGAFON",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "テンシンランマン",
+        "ドレスコード",
+        "ラストシーン"
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "season_id": "26-27",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "Zepp osaka Bayside",
+      "attending_groups": [
+        "AdamLilith",
+        "MEGAFON",
+        "TENRIN",
+        "iLiFE!",
+        "iON!",
+        "のんふぃく！",
+        "テンシンランマン",
+        "ドレスコード",
+        "ラストシーン"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "season_id": "26-27",
+      "kind": "league_ii",
+      "title": "HEROINES LEAGUE II",
+      "venue": "The Garden Hall",
+      "attending_groups": [
+        "ZUTTOMOTTO",
+        "ナナコロビヤオキ",
+        "ポンコツコンポ"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "season_id": "26-27",
+      "kind": "league_i",
+      "title": "HEROINES LEAGUE I",
+      "venue": "KT Zepp Yokohama",
+      "attending_groups": [
+        "AdamLilith",
+        "TENRIN",
+        "のんふぃく！",
+        "ドレスコード",
+        "ラストシーン"
+      ]
+    }
+  ],
+  "standings_snapshots": [
+    {
+      "as_of": "2025-06-26",
+      "season_id": "25-26",
+      "phase": "regular",
+      "source": "https://idomire.com/news/20250615319/",
+      "note": "Cumulative after 2025-06-14 League I and 2025-06-26 League II (entering 2025-07-14). chuLa / iON! / テンシンランマン still unassigned guests entering Jul 14.",
+      "tables": {
+        "league_i": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 180
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 125
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 95
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 85
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 55
+          },
+          {
+            "rank": 6,
+            "group_name": "Ill",
+            "points": 35
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 35
+          },
+          {
+            "rank": 6,
+            "group_name": "ドレスコード",
+            "points": 35
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 30
+          }
+        ],
+        "league_ii": [
+          {
+            "rank": 1,
+            "group_name": "CAL&RES",
+            "points": 145
+          },
+          {
+            "rank": 1,
+            "group_name": "パラレルサイダー",
+            "points": 145
+          },
+          {
+            "rank": 3,
+            "group_name": "ナナコロビヤオキ",
+            "points": 110
+          },
+          {
+            "rank": 4,
+            "group_name": "ポンコツコンポ",
+            "points": 100
+          },
+          {
+            "rank": 5,
+            "group_name": "パラディーク",
+            "points": 70
+          },
+          {
+            "rank": 6,
+            "group_name": "ZUTTOMOTTO",
+            "points": 40
+          },
+          {
+            "rank": 7,
+            "group_name": "LADYBABY",
+            "points": 30
+          },
+          {
+            "rank": 8,
+            "group_name": "ヒロインズ研究生",
+            "points": 20
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-07-14",
+      "season_id": "25-26",
+      "phase": "regular",
+      "source": "https://idomire.com/news/20250715529/",
+      "note": "After League I MD3 (豊洲PIT). iON! joins League I; chuLa / テンシンランマン → League II.",
+      "tables": {
+        "league_i": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 270
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 180
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 165
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 105
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 90
+          },
+          {
+            "rank": 6,
+            "group_name": "ドレスコード",
+            "points": 80
+          },
+          {
+            "rank": 7,
+            "group_name": "MEGAFON",
+            "points": 75
+          },
+          {
+            "rank": 8,
+            "group_name": "Ill",
+            "points": 60
+          },
+          {
+            "rank": 8,
+            "group_name": "TENRIN",
+            "points": 60
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-08-04",
+      "season_id": "25-26",
+      "phase": "regular",
+      "source": "https://idomire.com/news/20250805560/",
+      "note": "After League I MD4 (恵比寿GH). iON! first ranked appearance.",
+      "tables": {
+        "league_i": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 360
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 250
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 205
+          },
+          {
+            "rank": 4,
+            "group_name": "MEGAFON",
+            "points": 130
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 115
+          },
+          {
+            "rank": 6,
+            "group_name": "ドレスコード",
+            "points": 110
+          },
+          {
+            "rank": 6,
+            "group_name": "アキシブproject",
+            "points": 110
+          },
+          {
+            "rank": 8,
+            "group_name": "Ill",
+            "points": 75
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 70
+          },
+          {
+            "rank": 10,
+            "group_name": "iON!",
+            "points": 20,
+            "note": "Participated pts only; makeup not yet fully applied in this snapshot table"
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-09-23",
+      "season_id": "25-26",
+      "phase": "regular",
+      "source": "https://idomire.com/news/202509231216/",
+      "note": "After League I MD5 (神田スクエア). iLiFE! 1st clinched for regular season.",
+      "tables": {
+        "league_i": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 450
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 280
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 225
+          },
+          {
+            "rank": 4,
+            "group_name": "ドレスコード",
+            "points": 180
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 170
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 155
+          },
+          {
+            "rank": 7,
+            "group_name": "アキシブproject",
+            "points": 125
+          },
+          {
+            "rank": 8,
+            "group_name": "iON!",
+            "points": 123,
+            "note": "60 participated + 63 makeup (3 missed)"
+          },
+          {
+            "rank": 9,
+            "group_name": "Ill",
+            "points": 80
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 80
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-09-24",
+      "season_id": "25-26",
+      "phase": "regular_final",
+      "source": "https://idomire.com/news/202509251235/",
+      "note": "League I regular-season cumulative after 9/24. iLiFE! 殿堂入り; AdamLilith rises into championship; MEGAFON/アキシブ tied 180 — attendance tiebreak keeps MEGAFON 6th, sends アキシブ to 入れ替え戦 as 7th.",
+      "tables": {
+        "league_i": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 540,
+            "note": "殿堂入り (won every MD)"
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 320,
+            "note": "→ 決勝リーグ"
+          },
+          {
+            "rank": 3,
+            "group_name": "ドレスコード",
+            "points": 250,
+            "note": "→ 決勝リーグ"
+          },
+          {
+            "rank": 4,
+            "group_name": "夜光性アミューズ",
+            "points": 240,
+            "note": "→ 決勝リーグ"
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 200,
+            "note": "→ 決勝リーグ (iLiFE! 殿堂入り bump)"
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 180,
+            "note": "Stay League I (attendance tiebreak)"
+          },
+          {
+            "rank": 7,
+            "group_name": "アキシブproject",
+            "points": 180,
+            "note": "→ 入れ替え戦 (attendance tiebreak lost)"
+          },
+          {
+            "rank": 8,
+            "group_name": "iON!",
+            "points": 135,
+            "note": "80 participated + 55 makeup → 入れ替え戦"
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 90,
+            "note": "→ 入れ替え戦"
+          },
+          {
+            "rank": 10,
+            "group_name": "Ill",
+            "points": 85,
+            "note": "→ 入れ替え戦"
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-09-22",
+      "season_id": "25-26",
+      "phase": "regular_final",
+      "source": "https://idomire.com/news/202509231209/",
+      "note": "League II cumulative after 9/22 (final-series Day1). Top 4 entered 入れ替え戦.",
+      "tables": {
+        "league_ii": [
+          {
+            "rank": 1,
+            "group_name": "パラディーク",
+            "points": 420
+          },
+          {
+            "rank": 1,
+            "group_name": "ナナコロビヤオキ",
+            "points": 420
+          },
+          {
+            "rank": 3,
+            "group_name": "パラレルサイダー",
+            "points": 385
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 357
+          },
+          {
+            "rank": 5,
+            "group_name": "CAL&RES",
+            "points": 330
+          },
+          {
+            "rank": 6,
+            "group_name": "ポンコツコンポ",
+            "points": 270
+          },
+          {
+            "rank": 7,
+            "group_name": "テンシンランマン",
+            "points": 195.5
+          },
+          {
+            "rank": 8,
+            "group_name": "ZUTTOMOTTO",
+            "points": 175
+          },
+          {
+            "rank": 9,
+            "group_name": "LADYBABY",
+            "points": 130
+          },
+          {
+            "rank": 10,
+            "group_name": "ヒロインズ研究生大阪",
+            "points": 86.3
+          },
+          {
+            "rank": 11,
+            "group_name": "ヒロインズ研究生",
+            "points": 85
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-10-08",
+      "season_id": "25-26",
+      "phase": "promotion",
+      "source": "https://idomire.com/news/202510081389/",
+      "note": "After 入れ替え戦 vol.01",
+      "tables": {
+        "promotion": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "chuLa",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-11-25",
+      "season_id": "25-26",
+      "phase": "promotion",
+      "source": "https://idomire.com/news/202511261509/",
+      "note": "After 入れ替え戦 vol.02",
+      "tables": {
+        "promotion": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 200
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 145
+          },
+          {
+            "rank": 3,
+            "group_name": "アキシブproject",
+            "points": 130
+          },
+          {
+            "rank": 4,
+            "group_name": "TENRIN",
+            "points": 115
+          },
+          {
+            "rank": 5,
+            "group_name": "chuLa",
+            "points": 80
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 60
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 40
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 20
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2025-12-10",
+      "season_id": "25-26",
+      "phase": "promotion",
+      "source": "https://idomire.com/news/202512121575/",
+      "note": "After 入れ替え戦 vol.03",
+      "tables": {
+        "promotion": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 250
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 225
+          },
+          {
+            "rank": 3,
+            "group_name": "アキシブproject",
+            "points": 195
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 180
+          },
+          {
+            "rank": 5,
+            "group_name": "TENRIN",
+            "points": 155
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 90
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 60
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 30
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2026-01-13",
+      "season_id": "25-26",
+      "phase": "promotion",
+      "source": "https://idomire.com/news/202601141865/",
+      "note": "Osaka edition. After this: iON! + Ill clinched League I stay.",
+      "tables": {
+        "promotion": [
+          {
+            "rank": 1,
+            "group_name": "iON!",
+            "points": 325
+          },
+          {
+            "rank": 2,
+            "group_name": "Ill",
+            "points": 290
+          },
+          {
+            "rank": 3,
+            "group_name": "chuLa",
+            "points": 230
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 225
+          },
+          {
+            "rank": 5,
+            "group_name": "TENRIN",
+            "points": 220
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 170
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 80
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 40
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2026-02-07",
+      "season_id": "25-26",
+      "phase": "promotion_final",
+      "source": "https://idomire.com/news/202602081869/",
+      "note": "Final. Top 4 → League I (chuLa promoted). アキシブ 5th → League II.",
+      "tables": {
+        "promotion": [
+          {
+            "rank": 1,
+            "group_name": "iON!",
+            "points": 390,
+            "note": "League I stay"
+          },
+          {
+            "rank": 2,
+            "group_name": "Ill",
+            "points": 340,
+            "note": "League I stay"
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 320,
+            "note": "League I stay"
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 310,
+            "note": "promoted to League I"
+          },
+          {
+            "rank": 5,
+            "group_name": "アキシブproject",
+            "points": 255,
+            "note": "→ League II"
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 210,
+            "note": "→ League II"
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 100,
+            "note": "→ League II"
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 50,
+            "note": "→ League II"
+          }
+        ]
+      }
+    },
+    {
+      "as_of": "2026-02-07",
+      "season_id": "25-26",
+      "phase": "championship_final",
+      "source": "https://idomire.com/news/202602081875/",
+      "note": "決勝リーグ final cumulative (same day as 入れ替え戦 最終決戦). iLiFE! was 殿堂入り and did not play finals.",
+      "tables": {
+        "championship": [
+          {
+            "rank": 1,
+            "group_name": "のんふぃく！",
+            "points": 400,
+            "note": "優勝"
+          },
+          {
+            "rank": 2,
+            "group_name": "夜光性アミューズ",
+            "points": 280
+          },
+          {
+            "rank": 3,
+            "group_name": "ドレスコード",
+            "points": 190
+          },
+          {
+            "rank": 4,
+            "group_name": "AdamLilith",
+            "points": 170
+          }
+        ]
+      }
+    }
+  ],
+  "history_records": [
+    {
+      "season_id": "24-25",
+      "date": "2024-09-24",
+      "title": "HEROINES FES 総入れ替え戦",
+      "venue": "渋谷サーキット / O-EAST",
+      "source": "https://ameblo.jp/nacc67/entry-12868786433.html",
+      "note": "24-25 season finale. Published points for top 10 only. Ranks 1–9 entered League I for the next cycle; rank 10 headed League II. twinpale later rebranded as Ill; ガガピエロ later disbanded.",
+      "tables": {
+        "overall": [
+          {
+            "rank": 1,
+            "group_name": "パラディーク",
+            "points": 915,
+            "note": "→ League I"
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 773,
+            "note": "→ League I"
+          },
+          {
+            "rank": 3,
+            "group_name": "iLiFE!",
+            "points": 651,
+            "note": "→ League I"
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 630,
+            "note": "→ League I"
+          },
+          {
+            "rank": 5,
+            "group_name": "ガガピエロ",
+            "points": 587,
+            "note": "→ League I"
+          },
+          {
+            "rank": 6,
+            "group_name": "twinpale",
+            "points": 584,
+            "note": "→ League I (later Ill)"
+          },
+          {
+            "rank": 7,
+            "group_name": "夜光性アミューズ",
+            "points": 581,
+            "note": "→ League I"
+          },
+          {
+            "rank": 8,
+            "group_name": "AdamLilith",
+            "points": 514,
+            "note": "→ League I"
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 346,
+            "note": "→ League I"
+          },
+          {
+            "rank": 10,
+            "group_name": "アキシブproject",
+            "points": 267,
+            "note": "→ League II"
+          }
+        ]
+      }
+    },
+    {
+      "season_id": "25-26",
+      "date": "2026-02-07",
+      "title": "HEROINES LEAGUE FINAL 最終決戦",
+      "venue": "GARDEN新木場FACTORY",
+      "source": "https://idomire.com/news/202602081875/",
+      "note": "25-26 championship league final (殿堂入り iLiFE! excluded). Season continued until 2026-04-24 昇格戦.",
+      "tables": {
+        "championship": [
+          {
+            "rank": 1,
+            "group_name": "のんふぃく！",
+            "points": 400,
+            "note": "優勝"
+          },
+          {
+            "rank": 2,
+            "group_name": "夜光性アミューズ",
+            "points": 280
+          },
+          {
+            "rank": 3,
+            "group_name": "ドレスコード",
+            "points": 190
+          },
+          {
+            "rank": 4,
+            "group_name": "AdamLilith",
+            "points": 170
+          }
+        ],
+        "promotion": [
+          {
+            "rank": 1,
+            "group_name": "iON!",
+            "points": 390
+          },
+          {
+            "rank": 2,
+            "group_name": "Ill",
+            "points": 340
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 320
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 310,
+            "note": "昇格"
+          },
+          {
+            "rank": 5,
+            "group_name": "アキシブproject",
+            "points": 255
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 210
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 100
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 50
+          }
+        ]
+      }
+    }
+  ],
+  "design_notes": {
+    "player_agency": "No SNS/FC-campaign minigame. Setlist pickup, training, and lineup/roster (core + new members) shape long-term fans and short-term vote/draw. New joins may add immediate attention/fans as well as integration costs.",
+    "scoring": "Season points come from matchday rank tables driven by FC vote + attendance (26-27 League I also Abema). Sim should map managed-group draw power into expected ranks, then accumulate pts against these historical baselines.",
+    "akishibu_example": "アキシブproject 25-26 regular: 15→85→105→110→125→180 (7th after tiebreak). Peak MD2 (2nd/70), collapse MD3–4, MD6 bounce (3rd/55) from 古賀みれい last League performance (her graduate special is a separate event) — one-off League draw boost, not mid-pack baseline.",
+    "akishibu_promotion": "入れ替え戦: 50→130→195→225→255 (5th). Peaked vol.2 (2nd/80) still inside I-line through vol.3; Osaka vol.4 slip (6th/30) then final 6th/30 left them 5pt short of chuLa for the last I slot.",
+    "gameplay_goals": {
+      "primary": "League I safety: finish regular season above the 入れ替え線 (avoid bottom 4) so you never play promotion matches.",
+      "recovery": "If you fall into 入れ替え戦, survive: finish top 4 to stay/promote into League I.",
+      "stretch": "Championship path: regular-season top band → 決勝リーグ (aspirational; not required for I survival).",
+      "reference_failure": "アキシブproject 25-26: lost I safety on attendance tiebreak (7th), then finished 5th in 入れ替え戦 (255) — 55 short of chuLa — demoted to II."
+    },
+    "agency_model": {
+      "avoid": "Do not simulate X/Twitter FC-vote spam or social posting loops.",
+      "long_term": "Fan/popularity stock from lives + media, compounded by setlist quality, training, and roster choices (core retention and new joins).",
+      "short_term": "Matchday vote/attendance proxy from recent readiness: active lineup strength, song familiarity vs fatigue, condition/morale, novelty of picked-up songs — not a separate campaign UI.",
+      "lineup": "Lineup/roster is a first-class lever: rest vs spotlight core, farewell last League shows, and add/rotate members.",
+      "new_members": "New members are not pure short-term pain. They can attract attention and introduce fans immediately (discovery / personal draw), while also stressing setlist familiarity, chemistry, and condition load. Net matchday effect depends on who joins and how you stage them — not automatically hurt-now/help-later."
+    }
+  },
+  "scoring_rules": {
+    "summary": "Matchday rank is decided by HEROINES FC pre-vote + on-site attendance (目当て). Season points are awarded from a fixed rank→pt table (not raw vote totals). From 26-27, League I also adds ABEMA PPV vote weight.",
+    "by_season": {
+      "25-26": {
+        "components": [
+          "attendance",
+          "fan_club_vote"
+        ],
+        "notes": [
+          "MD1 (2025-05-11) was attendance-only; FC voting started from MD2 (2025-06-14).",
+          "Venue/on-site vote is sometimes mentioned in series blurbs alongside attendance + FC.",
+          "Late joiner (iON!): missed-round pts = floor(avg(participated)*0.7 to 1 decimal) * missedCount, then floor.",
+          "入れ替え戦 / 決勝リーグ use denser 8- or 4-group tables (promotion: 100/80/65/50/40/30/20/10)."
+        ],
+        "points_tables": {
+          "field_9_may": [
+            90,
+            70,
+            55,
+            40,
+            30,
+            20,
+            15,
+            10,
+            5
+          ],
+          "field_9_jul14": [
+            90,
+            70,
+            55,
+            45,
+            40,
+            35,
+            30,
+            25,
+            20
+          ],
+          "field_10": [
+            90,
+            70,
+            55,
+            40,
+            30,
+            25,
+            20,
+            15,
+            10,
+            5
+          ],
+          "promotion_8": [
+            100,
+            80,
+            65,
+            50,
+            40,
+            30,
+            20,
+            10
+          ]
+        }
+      },
+      "26-27": {
+        "components": [
+          "attendance",
+          "fan_club_vote",
+          "abema_vote"
+        ],
+        "notes": [
+          "League I adds ABEMA PPV ticket-linked votes on top of on-site + FC."
+        ]
+      }
+    },
+    "sources": [
+      "https://idomire.com/news/20250523123/",
+      "https://idomire.com/news/20250615319/",
+      "https://idomire.com/news/20250715529/",
+      "https://idomire.com/news/20250805560/",
+      "https://idomire.com/news/202509231216/",
+      "https://idomire.com/news/202509251235/"
+    ]
+  },
+  "regular_season_rounds": {
+    "season_id": "25-26",
+    "division": "league_i",
+    "note": "Published matchday results + cumulatives for League I regular season (before Oct FINAL / 入れ替え戦). Round pts for 6/14 inferred as cumulative delta from 5/11. MD6 アキシブ spike = 古賀みれい last League show, not her graduate special.",
+    "worked_example_group": "アキシブproject",
+    "rounds": [
+      {
+        "date": "2025-05-11",
+        "round": 1,
+        "venue": null,
+        "field_size": 9,
+        "points_table": [
+          90,
+          70,
+          55,
+          40,
+          30,
+          20,
+          15,
+          10,
+          5
+        ],
+        "scoring": "attendance_only",
+        "source": "https://idomire.com/news/20250523123/",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 55
+          },
+          {
+            "rank": 4,
+            "group_name": "AdamLilith",
+            "points": 40
+          },
+          {
+            "rank": 5,
+            "group_name": "ドレスコード",
+            "points": 30
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 20
+          },
+          {
+            "rank": 7,
+            "group_name": "アキシブproject",
+            "points": 15,
+            "note": "Dropped from seeding #2"
+          },
+          {
+            "rank": 8,
+            "group_name": "TENRIN",
+            "points": 10
+          },
+          {
+            "rank": 9,
+            "group_name": "Ill",
+            "points": 5
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 55
+          },
+          {
+            "rank": 4,
+            "group_name": "AdamLilith",
+            "points": 40
+          },
+          {
+            "rank": 5,
+            "group_name": "ドレスコード",
+            "points": 30
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 20
+          },
+          {
+            "rank": 7,
+            "group_name": "アキシブproject",
+            "points": 15
+          },
+          {
+            "rank": 8,
+            "group_name": "TENRIN",
+            "points": 10
+          },
+          {
+            "rank": 9,
+            "group_name": "Ill",
+            "points": 5
+          }
+        ]
+      },
+      {
+        "date": "2025-06-14",
+        "round": 2,
+        "venue": "品川ステラボール",
+        "field_size": 9,
+        "scoring": "fc_vote + attendance",
+        "source": "https://idomire.com/news/20250615319/",
+        "note": "Round pts = cumulative delta vs 5/11. アキシブproject ranked 2nd on attendance; FC vote outside earning ranks.",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "アキシブproject",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "のんふぃく！",
+            "points": 55
+          },
+          {
+            "rank": 4,
+            "group_name": "夜光性アミューズ",
+            "points": 40
+          },
+          {
+            "rank": 5,
+            "group_name": "Ill",
+            "points": 30
+          },
+          {
+            "rank": 6,
+            "group_name": "TENRIN",
+            "points": 20
+          },
+          {
+            "rank": 7,
+            "group_name": "AdamLilith",
+            "points": 15
+          },
+          {
+            "rank": 7,
+            "group_name": "MEGAFON",
+            "points": 15
+          },
+          {
+            "rank": 9,
+            "group_name": "ドレスコード",
+            "points": 5
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 180
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 125
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 95
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 85
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 55
+          },
+          {
+            "rank": 6,
+            "group_name": "Ill",
+            "points": 35
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 35
+          },
+          {
+            "rank": 6,
+            "group_name": "ドレスコード",
+            "points": 35
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 30
+          }
+        ]
+      },
+      {
+        "date": "2025-07-14",
+        "round": 3,
+        "venue": "豊洲PIT",
+        "field_size": 9,
+        "points_table": [
+          90,
+          70,
+          55,
+          45,
+          40,
+          35,
+          30,
+          25,
+          20
+        ],
+        "scoring": "fc_vote + attendance",
+        "source": "https://idomire.com/news/20250715529/",
+        "note": "Guests chuLa / iON! / テンシンランマン unranked. After this show: iON! → League I; chuLa + テンシンランマン → League II.",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "夜光性アミューズ",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "のんふぃく！",
+            "points": 55
+          },
+          {
+            "rank": 4,
+            "group_name": "ドレスコード",
+            "points": 45
+          },
+          {
+            "rank": 5,
+            "group_name": "MEGAFON",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "AdamLilith",
+            "points": 35
+          },
+          {
+            "rank": 7,
+            "group_name": "TENRIN",
+            "points": 30
+          },
+          {
+            "rank": 8,
+            "group_name": "Ill",
+            "points": 25
+          },
+          {
+            "rank": 9,
+            "group_name": "アキシブproject",
+            "points": 20
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 270
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 180
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 165
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 105
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 90
+          },
+          {
+            "rank": 6,
+            "group_name": "ドレスコード",
+            "points": 80
+          },
+          {
+            "rank": 7,
+            "group_name": "MEGAFON",
+            "points": 75
+          },
+          {
+            "rank": 8,
+            "group_name": "Ill",
+            "points": 60
+          },
+          {
+            "rank": 8,
+            "group_name": "TENRIN",
+            "points": 60
+          }
+        ]
+      },
+      {
+        "date": "2025-08-04",
+        "round": 4,
+        "venue": "恵比寿ガーデンホール",
+        "field_size": 10,
+        "points_table": [
+          90,
+          70,
+          55,
+          40,
+          30,
+          25,
+          20,
+          15,
+          10,
+          5
+        ],
+        "scoring": "fc_vote + attendance",
+        "source": "https://idomire.com/news/20250805560/",
+        "note": "iON! first ranked League I matchday (makeup for missed MDs 1–3 applied later as season progresses).",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "MEGAFON",
+            "points": 55
+          },
+          {
+            "rank": 4,
+            "group_name": "夜光性アミューズ",
+            "points": 40
+          },
+          {
+            "rank": 5,
+            "group_name": "ドレスコード",
+            "points": 30
+          },
+          {
+            "rank": 6,
+            "group_name": "AdamLilith",
+            "points": 25
+          },
+          {
+            "rank": 7,
+            "group_name": "iON!",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "Ill",
+            "points": 15
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 10
+          },
+          {
+            "rank": 10,
+            "group_name": "アキシブproject",
+            "points": 5
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 360
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 250
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 205
+          },
+          {
+            "rank": 4,
+            "group_name": "MEGAFON",
+            "points": 130
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 115
+          },
+          {
+            "rank": 6,
+            "group_name": "ドレスコード",
+            "points": 110
+          },
+          {
+            "rank": 6,
+            "group_name": "アキシブproject",
+            "points": 110
+          },
+          {
+            "rank": 8,
+            "group_name": "Ill",
+            "points": 75
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 70
+          },
+          {
+            "rank": 10,
+            "group_name": "iON!",
+            "points": 20,
+            "note": "Participated pts only; makeup not yet fully applied in this snapshot table"
+          }
+        ]
+      },
+      {
+        "date": "2025-09-23",
+        "round": 5,
+        "venue": "神田スクエアホール",
+        "field_size": 10,
+        "points_table": [
+          90,
+          70,
+          55,
+          40,
+          30,
+          25,
+          20,
+          15,
+          10,
+          5
+        ],
+        "scoring": "fc_vote + attendance",
+        "source": "https://idomire.com/news/202509231216/",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "ドレスコード",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "AdamLilith",
+            "points": 55
+          },
+          {
+            "rank": 4,
+            "group_name": "iON!",
+            "points": 40
+          },
+          {
+            "rank": 5,
+            "group_name": "のんふぃく！",
+            "points": 30
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 25
+          },
+          {
+            "rank": 7,
+            "group_name": "夜光性アミューズ",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "アキシブproject",
+            "points": 15
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 10
+          },
+          {
+            "rank": 10,
+            "group_name": "Ill",
+            "points": 5
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 450
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 280
+          },
+          {
+            "rank": 3,
+            "group_name": "夜光性アミューズ",
+            "points": 225
+          },
+          {
+            "rank": 4,
+            "group_name": "ドレスコード",
+            "points": 180
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 170
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 155
+          },
+          {
+            "rank": 7,
+            "group_name": "アキシブproject",
+            "points": 125
+          },
+          {
+            "rank": 8,
+            "group_name": "iON!",
+            "points": 123,
+            "note": "60 participated + 63 makeup (3 missed)"
+          },
+          {
+            "rank": 9,
+            "group_name": "Ill",
+            "points": 80
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 80
+          }
+        ]
+      },
+      {
+        "date": "2025-09-24",
+        "round": 6,
+        "venue": "EX THEATER ROPPONGI",
+        "field_size": 10,
+        "points_table": [
+          90,
+          70,
+          55,
+          40,
+          30,
+          25,
+          20,
+          15,
+          10,
+          5
+        ],
+        "scoring": "fc_vote + attendance",
+        "source": "https://idomire.com/news/202509251235/",
+        "note": "Regular-season finale. Tiebreak on total attendance: MEGAFON 844 vs アキシブ 755 → Akishibu treated as 7th → 入れ替え戦. アキシブ 3rd-place bounce: 古賀みれい last League performance only (her graduate special is a separate event).",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 90
+          },
+          {
+            "rank": 2,
+            "group_name": "ドレスコード",
+            "points": 70
+          },
+          {
+            "rank": 3,
+            "group_name": "アキシブproject",
+            "points": 55,
+            "note": "古賀みれい last League performance (not the graduate special) — draw spike → 3rd / 55pt"
+          },
+          {
+            "rank": 4,
+            "group_name": "のんふぃく！",
+            "points": 40
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 30
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 25
+          },
+          {
+            "rank": 7,
+            "group_name": "iON!",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "夜光性アミューズ",
+            "points": 15
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 10
+          },
+          {
+            "rank": 10,
+            "group_name": "Ill",
+            "points": 5
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iLiFE!",
+            "points": 540,
+            "note": "殿堂入り (won every MD)"
+          },
+          {
+            "rank": 2,
+            "group_name": "のんふぃく！",
+            "points": 320,
+            "note": "→ 決勝リーグ"
+          },
+          {
+            "rank": 3,
+            "group_name": "ドレスコード",
+            "points": 250,
+            "note": "→ 決勝リーグ"
+          },
+          {
+            "rank": 4,
+            "group_name": "夜光性アミューズ",
+            "points": 240,
+            "note": "→ 決勝リーグ"
+          },
+          {
+            "rank": 5,
+            "group_name": "AdamLilith",
+            "points": 200,
+            "note": "→ 決勝リーグ (iLiFE! 殿堂入り bump)"
+          },
+          {
+            "rank": 6,
+            "group_name": "MEGAFON",
+            "points": 180,
+            "note": "Stay League I (attendance tiebreak)"
+          },
+          {
+            "rank": 7,
+            "group_name": "アキシブproject",
+            "points": 180,
+            "note": "→ 入れ替え戦 (attendance tiebreak lost)"
+          },
+          {
+            "rank": 8,
+            "group_name": "iON!",
+            "points": 135,
+            "note": "80 participated + 55 makeup → 入れ替え戦"
+          },
+          {
+            "rank": 9,
+            "group_name": "TENRIN",
+            "points": 90,
+            "note": "→ 入れ替え戦"
+          },
+          {
+            "rank": 10,
+            "group_name": "Ill",
+            "points": 85,
+            "note": "→ 入れ替え戦"
+          }
+        ]
+      }
+    ],
+    "akishibu_trajectory": [
+      {
+        "date": "2025-05-11",
+        "round": 1,
+        "rank": 7,
+        "points": 15,
+        "cumulative": 15
+      },
+      {
+        "date": "2025-06-14",
+        "round": 2,
+        "rank": 2,
+        "points": 70,
+        "cumulative": 85
+      },
+      {
+        "date": "2025-07-14",
+        "round": 3,
+        "rank": 9,
+        "points": 20,
+        "cumulative": 105
+      },
+      {
+        "date": "2025-08-04",
+        "round": 4,
+        "rank": 10,
+        "points": 5,
+        "cumulative": 110
+      },
+      {
+        "date": "2025-09-23",
+        "round": 5,
+        "rank": 8,
+        "points": 15,
+        "cumulative": 125
+      },
+      {
+        "date": "2025-09-24",
+        "round": 6,
+        "rank": 3,
+        "points": 55,
+        "cumulative": 180,
+        "note": "古賀みれい last League performance only (graduate special is separate) — bounce to 3rd/55; tied MEGAFON on pts, lost attendance tiebreak → 7th / 入れ替え戦"
+      }
+    ]
+  },
+  "promotion_rounds": {
+    "season_id": "25-26",
+    "series": "入れ替え戦",
+    "note": "Top 4 after series → League I (stay or promote). Bottom 4 → League II. Points table 100/80/65/50/40/30/20/10. Same scoring components as regular: FC vote + attendance.",
+    "points_table": [
+      100,
+      80,
+      65,
+      50,
+      40,
+      30,
+      20,
+      10
+    ],
+    "roster": {
+      "from_league_i": [
+        {
+          "group_name": "アキシブproject",
+          "seed": "I-7",
+          "note": "attendance tiebreak vs MEGAFON"
+        },
+        {
+          "group_name": "iON!",
+          "seed": "I-8"
+        },
+        {
+          "group_name": "TENRIN",
+          "seed": "I-9"
+        },
+        {
+          "group_name": "Ill",
+          "seed": "I-10"
+        }
+      ],
+      "from_league_ii": [
+        {
+          "group_name": "chuLa",
+          "seed": "II-1",
+          "note": "after League II finale 9/25"
+        },
+        {
+          "group_name": "パラディーク",
+          "seed": "II-2"
+        },
+        {
+          "group_name": "ナナコロビヤオキ",
+          "seed": "II-3"
+        },
+        {
+          "group_name": "パラレルサイダー",
+          "seed": "II-4"
+        }
+      ]
+    },
+    "worked_example_group": "アキシブproject",
+    "rounds": [
+      {
+        "date": "2025-10-08",
+        "vol": 1,
+        "venue": "Zepp Haneda",
+        "source": "https://idomire.com/news/202510081389/",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "chuLa",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "chuLa",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "date": "2025-11-25",
+        "vol": 2,
+        "venue": "恵比寿ザ・ガーデンホール",
+        "source": "https://idomire.com/news/202511261509/",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "アキシブproject",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "iON!",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "TENRIN",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "chuLa",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 200
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 145
+          },
+          {
+            "rank": 3,
+            "group_name": "アキシブproject",
+            "points": 130
+          },
+          {
+            "rank": 4,
+            "group_name": "TENRIN",
+            "points": 115
+          },
+          {
+            "rank": 5,
+            "group_name": "chuLa",
+            "points": 80
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 60
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 40
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 20
+          }
+        ]
+      },
+      {
+        "date": "2025-12-10",
+        "vol": 3,
+        "venue": "豊洲PIT",
+        "source": "https://idomire.com/news/202512121575/",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "chuLa",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "アキシブproject",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "Ill",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "TENRIN",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "Ill",
+            "points": 250
+          },
+          {
+            "rank": 2,
+            "group_name": "iON!",
+            "points": 225
+          },
+          {
+            "rank": 3,
+            "group_name": "アキシブproject",
+            "points": 195
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 180
+          },
+          {
+            "rank": 5,
+            "group_name": "TENRIN",
+            "points": 155
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 90
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 60
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 30
+          }
+        ]
+      },
+      {
+        "date": "2026-01-13",
+        "vol": 4,
+        "venue": "Zepp Osaka Bayside",
+        "source": "https://idomire.com/news/202601141865/",
+        "note": "Osaka edition. After this: iON! + Ill clinched League I stay.",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "iON!",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "ナナコロビヤオキ",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "Ill",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "アキシブproject",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iON!",
+            "points": 325
+          },
+          {
+            "rank": 2,
+            "group_name": "Ill",
+            "points": 290
+          },
+          {
+            "rank": 3,
+            "group_name": "chuLa",
+            "points": 230
+          },
+          {
+            "rank": 4,
+            "group_name": "アキシブproject",
+            "points": 225
+          },
+          {
+            "rank": 5,
+            "group_name": "TENRIN",
+            "points": 220
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 170
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 80
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 40
+          }
+        ]
+      },
+      {
+        "date": "2026-02-07",
+        "vol": 5,
+        "venue": "GARDEN新木場FACTORY",
+        "source": "https://idomire.com/news/202602081869/",
+        "note": "Final. Top 4 → League I (chuLa promoted). アキシブ 5th → League II.",
+        "results": [
+          {
+            "rank": 1,
+            "group_name": "TENRIN",
+            "points": 100
+          },
+          {
+            "rank": 2,
+            "group_name": "chuLa",
+            "points": 80
+          },
+          {
+            "rank": 3,
+            "group_name": "iON!",
+            "points": 65
+          },
+          {
+            "rank": 4,
+            "group_name": "Ill",
+            "points": 50
+          },
+          {
+            "rank": 5,
+            "group_name": "ナナコロビヤオキ",
+            "points": 40
+          },
+          {
+            "rank": 6,
+            "group_name": "アキシブproject",
+            "points": 30
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 20
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 10
+          }
+        ],
+        "cumulative": [
+          {
+            "rank": 1,
+            "group_name": "iON!",
+            "points": 390,
+            "note": "League I stay"
+          },
+          {
+            "rank": 2,
+            "group_name": "Ill",
+            "points": 340,
+            "note": "League I stay"
+          },
+          {
+            "rank": 3,
+            "group_name": "TENRIN",
+            "points": 320,
+            "note": "League I stay"
+          },
+          {
+            "rank": 4,
+            "group_name": "chuLa",
+            "points": 310,
+            "note": "promoted to League I"
+          },
+          {
+            "rank": 5,
+            "group_name": "アキシブproject",
+            "points": 255,
+            "note": "→ League II"
+          },
+          {
+            "rank": 6,
+            "group_name": "ナナコロビヤオキ",
+            "points": 210,
+            "note": "→ League II"
+          },
+          {
+            "rank": 7,
+            "group_name": "パラレルサイダー",
+            "points": 100,
+            "note": "→ League II"
+          },
+          {
+            "rank": 8,
+            "group_name": "パラディーク",
+            "points": 50,
+            "note": "→ League II"
+          }
+        ]
+      }
+    ],
+    "akishibu_trajectory": [
+      {
+        "date": "2025-10-08",
+        "vol": 1,
+        "rank": 4,
+        "points": 50,
+        "cumulative": 50
+      },
+      {
+        "date": "2025-11-25",
+        "vol": 2,
+        "rank": 2,
+        "points": 80,
+        "cumulative": 130
+      },
+      {
+        "date": "2025-12-10",
+        "vol": 3,
+        "rank": 3,
+        "points": 65,
+        "cumulative": 195
+      },
+      {
+        "date": "2026-01-13",
+        "vol": 4,
+        "rank": 6,
+        "points": 30,
+        "cumulative": 225
+      },
+      {
+        "date": "2026-02-07",
+        "vol": 5,
+        "rank": 6,
+        "points": 30,
+        "cumulative": 255,
+        "note": "Finished 5th overall → League II"
+      }
+    ]
+  }
+}

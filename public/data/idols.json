@@ -16966,7 +16966,36 @@
         "member_color": "Red",
         "member_name": "心花りり",
         "member_color_code": "0xff0000",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "roles": [
+          {
+            "key": "leader",
+            "focus": 1
+          }
+        ],
+        "role_history": [
+          {
+            "key": "leader",
+            "focus": 1,
+            "start_date": "2021-02-25",
+            "end_date": "2025-08-26",
+            "note": "Demoted from leader after office-rule violation before Budokan."
+          }
+        ],
+        "status_history": [
+          {
+            "kind": "scandal",
+            "start_date": "2025-08-26",
+            "score": 4,
+            "summary_ja": "事務所規定に抵触する不適切な行動により、リーダーから降格処分および一定期間のペナルティ。",
+            "source_label": "公式発表（iLiFE!）",
+            "source_url": "https://www.sponichi.co.jp/entertainment/news/2025/08/26/kiji/20250826s00041000161000c.html",
+            "handling": "demote_leader",
+            "demote_roles": [
+              "leader"
+            ]
+          }
+        ]
       },
       {
         "group_name": "Yumeiro H!L!T",
@@ -42330,7 +42359,19 @@
         "member_color": "Pink",
         "member_name": "那蘭のどか",
         "member_color_code": "0xffc0cb",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "status_history": [
+          {
+            "kind": "scandal",
+            "start_date": "2025-08-25",
+            "score": 5,
+            "summary_ja": "重大な規約違反が判明。8月27日の日本武道館公演をもってグループを脱退。",
+            "source_label": "公式発表（iLiFE!）",
+            "source_url": "https://natalie.mu/music/news/637455",
+            "handling": "terminate_after_live",
+            "handling_effective_date": "2025-08-27"
+          }
+        ]
       },
       {
         "group_name": "ZOCX",
@@ -90307,11 +90348,13 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2025-05-01",
-            "summary_ja": "2025年5月、Xの暴露アカウントに春野莉々が男性と遊園地でデートをしていたとする証拠写真数点が流出した。春野はこの直前に自身のXでディズニーシーを訪れていたことを写真付きで報告しており、そのときと同一の格好をしていた。ポストでは同行者の存在についてはいっさい触れていなかった。 流出騒ぎを受け、公式HPで春野莉々が無期限での活動休止となったことを報告した。「今後の活動について本人と深く熟考し協議した結果、本人の意思を尊重」したとのみ説明しており、騒動の中身についてはまったく触れられていなかった。春野は自身のXで「この度は、私の軽率な行動により、日頃から応援してくださっている皆さま、関係者の皆さまに多大なご心配とご迷惑をおかけし…",
-            "source_label": "アイドル走り書き（高嶺のなでしこ）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce120",
-            "score": 4
+            "start_date": "2025-05-26",
+            "summary_ja": "男性との私的写真がSNS上で拡散。公式が無期限活動休止を発表し、各種SNS更新も休止。本人は軽率な行動を謝罪。",
+            "source_label": "公式発表（高嶺のなでしこ）",
+            "source_url": "https://www.sponichi.co.jp/entertainment/news/2025/05/26/articles/20250526s00041000307000c.html",
+            "score": 4,
+            "handling": "suspend_activities",
+            "indefinite_suspend": true
           }
         ]
       }
@@ -123426,11 +123469,32 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2025-12-01",
-            "summary_ja": "2025年12月、配信者のポケカメンが、自身のXに籾山ひめりが男性と写した画像やプリクラなどを数点投稿した。するとこれについて、運営は公式HPで釈明。籾山本人に聞き取り調査をした結果、流出したのは「数年前の画像」であり、「画像に写っていた方とは現在一切の関係が無い」と説明した。しかしながら男性との間柄を巡って「事前の報告・相談がなく事務所との信頼関係を毀損する行為」があったと認定し、一時活動を休止する措置を取った。男性と籾山との詳しい関係性については明言を避けた。",
-            "source_label": "アイドル走り書き（高嶺のなでしこ）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce120",
-            "score": 4
+            "start_date": "2025-12-22",
+            "end_date": "2026-02-14",
+            "summary_ja": "過去の私的写真がSNS上に掲載され、事前の報告・相談がなく事務所との信頼関係を毀損する行為が確認されたとして一時活動休止。2026年2月14日のZepp Sapporo公演で活動を再開。",
+            "source_label": "高嶺のなでしこ公式",
+            "source_url": "https://takanenonadeshiko.jp/%E7%B1%BE%E5%B1%B1%E3%81%B2%E3%82%81%E3%82%8A%E3%81%AE%E6%B4%BB%E5%8B%95%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%94%E5%A0%B1%E5%91%8A/",
+            "evidence_url": "https://www.oricon.co.jp/news/2433740/full/",
+            "score": 4,
+            "handling": "suspend_activities",
+            "handling_id": "takanen-momiyama-himeri-suspend-2025",
+            "handling_effective_date": "2025-12-22",
+            "indefinite_suspend": false
+          }
+        ],
+        "roles": [
+          {
+            "key": "leader",
+            "focus": 1
+          }
+        ],
+        "role_history": [
+          {
+            "key": "leader",
+            "focus": 1,
+            "start_date": "2022-08-05",
+            "end_date": null,
+            "note": "高嶺のなでしこ captain."
           }
         ]
       },
@@ -123471,7 +123535,8 @@
     ],
     "data_sources": [
       "jpop_wiki",
-      "neverless_wiki"
+      "neverless_wiki",
+      "official_group_notice"
     ],
     "jpop_wiki_url": "https://jpop.fandom.com/wiki/Momiyama_Himeri",
     "x_account": "himeri_momiyama",

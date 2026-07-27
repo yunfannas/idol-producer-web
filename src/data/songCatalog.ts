@@ -3,6 +3,10 @@
  * - {@link SongCatalogTitles.title_variant} — e.g. LIVE / remaster subtitles
  * - {@link SongCatalogTitles.title_listed} — original storefront title for fuzzy matching saves
  * - {@link SongCatalogTitles.solo_track} + {@link SongCatalogTitles.solo_member_*} — member solo under the group's catalog
+ *
+ * Streaming / preview links (pilot: アキシブproject; optional elsewhere):
+ * - `apple_music_url`, `spotify_url` — open-in-app / storefront pages
+ * - `apple_preview_url`, `spotify_preview_url` — ~30s audio clips for in-game preview
  */
 
 export type SongCatalogTitles = {
@@ -11,6 +15,15 @@ export type SongCatalogTitles = {
   solo_track?: unknown;
   solo_member_uid?: unknown;
   solo_member_name?: unknown;
+};
+
+/** Optional storefront + preview URLs on a song row. */
+export type SongStreamingLinks = {
+  apple_music_url?: string | null;
+  apple_preview_url?: string | null;
+  spotify_url?: string | null;
+  spotify_preview_url?: string | null;
+  youtube_url?: string | null;
 };
 
 export function trimCatalogStr(x: unknown): string {

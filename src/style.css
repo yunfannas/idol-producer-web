@@ -2239,6 +2239,25 @@ text.idol-radar-val.attr-tone-low {
   box-shadow: inset 0 0 0 1px rgb(83 52 131 / 0.45);
 }
 
+.league-you-tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent, #c4a3ff);
+}
+
+.league-table-card + .league-table-card,
+.league-table-card + .fm-card,
+.league-history-card + .league-history-card {
+  margin-top: 0.85rem;
+}
+
+.league-panel-tabs {
+  margin: 0.75rem 0 0.85rem;
+}
+
 .songs-expand {
   margin-top: 1rem;
   padding: 0.75rem 0.9rem;
@@ -2952,6 +2971,38 @@ text.idol-radar-val.attr-tone-low {
   white-space: nowrap;
 }
 
+.songs-preview-cell {
+  width: 5.5rem;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.song-preview-controls {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.song-preview-controls .fm-btn {
+  min-width: 1.85rem;
+  padding: 0.15rem 0.35rem;
+  line-height: 1.2;
+  font-size: 0.75rem;
+}
+
+.song-preview-controls.is-playing .song-preview-play,
+.song-preview-controls.is-paused .song-preview-play {
+  border-color: color-mix(in srgb, var(--accent, #4ea1ff) 55%, transparent);
+}
+
+.song-preview-controls.is-unavailable .song-preview-play {
+  opacity: 0.55;
+}
+
+.song-preview-na {
+  font-size: 0.8rem;
+}
+
 .songs-making-workshop-table .making-actions-cell {
   white-space: nowrap;
   vertical-align: middle;
@@ -3205,6 +3256,43 @@ text.idol-radar-val.attr-tone-low {
 .opening-preset {
   margin: 0.85rem 0 0;
   font-size: 0.92rem;
+}
+
+.opening-scenario-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.opening-scenario-meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.opening-scenario-meta-row {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.35rem 0.85rem;
+  align-items: baseline;
+}
+
+.opening-scenario-meta-row--stack {
+  grid-template-columns: 1fr;
+}
+
+.opening-scenario-meta dt {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.opening-scenario-meta dd {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.45;
 }
 
 .opening-actions {
@@ -3601,6 +3689,104 @@ code {
   margin: 0.5rem 0 0;
   font-size: 0.82rem;
   line-height: 1.45;
+}
+
+.training-role-table {
+  min-width: 980px;
+}
+
+.training-role-benchmark {
+  margin: 0.85rem 0 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at top left, rgb(45 212 191 / 0.12), transparent 45%),
+    rgb(0 0 0 / 0.14);
+}
+
+.training-role-benchmark-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.training-role-benchmark-head h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.training-role-benchmark-head span {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.training-role-benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.65rem;
+}
+
+.training-role-benchmark-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.7rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 0.045);
+}
+
+.training-role-benchmark-label {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.training-role-benchmark-score {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--accent-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.training-role-benchmark-meter {
+  height: 0.38rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.1);
+}
+
+.training-role-benchmark-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--cyan));
+}
+
+.training-role-table th,
+.training-role-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.training-role-table th:first-child,
+.training-role-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 9rem;
+  text-align: left;
+  background: var(--bg-card);
+}
+
+.training-role-table .training-role-select {
+  width: 4.25rem;
+  min-width: 4.25rem;
+  padding-inline: 0.35rem;
+  text-align: center;
 }
 
 /* ---- Schedule week strip ---- */

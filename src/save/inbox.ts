@@ -132,6 +132,9 @@ export function addNotification(
     requiresConfirmation?: boolean;
     relatedEventUid?: string;
     reportData?: Record<string, unknown>;
+    choiceKind?: string;
+    choiceStatus?: string;
+    choiceOptions?: Record<string, string>[];
   },
 ): NotificationRow {
   const {
@@ -147,6 +150,9 @@ export function addNotification(
     requiresConfirmation = false,
     relatedEventUid = "",
     reportData,
+    choiceKind = "",
+    choiceStatus = "",
+    choiceOptions = [],
   } = params;
 
   const day = isoDate && /^\d{4}-\d{2}-\d{2}$/.test(isoDate) ? isoDate : new Date().toISOString().slice(0, 10);
@@ -170,9 +176,17 @@ export function addNotification(
     read: !unread,
     dedupe_key: dedupeKey,
     requires_confirmation: Boolean(requiresConfirmation),
-    choice_kind: "",
-    choice_status: "",
-    choice_options: [],
+    choice_kind: String(choiceKind ?? ""),
+    choice_status: String(choiceStatus ?? ""),
+    choice_options: Array.isArray(choiceOptions)
+      ? choiceOptions
+          .filter((row) => row && typeof row === "object")
+          .map((row) => ({
+            value: String(row.value ?? "").trim(),
+            label: String(row.label ?? row.value ?? "").trim(),
+          }))
+          .filter((row) => row.value)
+      : [],
     related_event_uid: relatedEventUid ? String(relatedEventUid) : "",
     report_data: reportData,
   };

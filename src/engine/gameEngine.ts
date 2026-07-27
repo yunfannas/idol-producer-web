@@ -36,6 +36,8 @@ import {
 } from "./livePerformanceWeb";
 import { formatLiveSlotLine } from "./liveScheduleWeb";
 import { applyScenarioEventsForDate } from "./scenarioRuntimeWeb";
+import { processCareerDecisionsForDate } from "./careerDecision";
+import { accrueMonthlyTenureReputation } from "./reputationModel";
 import { buildDefaultScoutCompanies } from "./scoutWeb";
 import { totalMonthlyScoutRetainersYen } from "./scoutWeb";
 import {
@@ -1064,6 +1066,12 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   next.finances = finances;
   next.turn_number = (typeof next.turn_number === "number" ? next.turn_number : 0) + 1;
   next.current_date = combineIsoDateTime(targetIso, SIMULATION_DAY_START_TIME);
+  processCareerDecisionsForDate(next, targetIso);
+  accrueMonthlyTenureReputation(
+    getPrimaryGroup(next) as Record<string, unknown> | null,
+    next.database_snapshot.idols as Record<string, unknown>[],
+    targetIso,
+  );
   applyScenarioEventsForDate(next, targetIso);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
   refreshStartupUpcomingLivesNotification(next, targetIso);

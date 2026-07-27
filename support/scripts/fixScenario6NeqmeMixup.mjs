@@ -53,7 +53,8 @@ function matchesGroup(history, group) {
 function isActiveOn(history, openingDate) {
   const start = isoDay(history.start_date);
   const end = isoDay(history.end_date ?? history.leave_date);
-  if (start && compareIso(start, openingDate) > 0) return false;
+  if (!start) return false;
+  if (compareIso(start, openingDate) > 0) return false;
   if (end && compareIso(end, openingDate) < 0) return false;
   return true;
 }

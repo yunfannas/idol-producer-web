@@ -355,7 +355,8 @@
     ],
     "shared_release_uids": [
       "shared-heroines-album-2025"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TElOSyBTVEFSVA",
@@ -467,7 +468,8 @@
       "e348dad2-84e9-4148-8e8a-63e58b998b12"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce127",
-    "producers": "Shimizu Misa"
+    "producers": "Shimizu Misa",
+    "reputation": 3
   },
   {
     "uid": "QmlT",
@@ -1388,7 +1390,8 @@
       "6900b34d-2197-4d42-b84d-d25666c4ca94",
       "f4607680-ccec-415c-9955-19f4e2b16ea1",
       "68e5f749-7d5e-4069-9046-829ab08be89d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
@@ -1851,7 +1854,8 @@
       "46d51ee2-d999-4691-9d41-f553aa34818e",
       "24d02262-3c17-4ad6-97cf-d5556dd80b18",
       "4136767a-8f10-402c-a95f-60e392b9fa58"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QlBNMTVR/#google_vignette",
@@ -2052,7 +2056,8 @@
       "48a15952-9072-4b4a-ab64-ccdd40a6933a",
       "64973eba-9549-403a-b2f0-0b1aa544b7b7",
       "3697c3f4-a9ba-4d7e-8ece-f0e0cc5e8d9d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkxVRUdPQVRT",
@@ -2556,7 +2561,8 @@
       "5c285081-7a31-485d-aebd-5de11e3d7e59",
       "c8f5911e-7bcc-4347-9928-e4a0dd80cd6a",
       "a845594c-7b24-441e-8780-b3e94855b8e1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SElCQU5B",
@@ -2778,7 +2784,8 @@
       "4dc406e9-16d6-4ae5-88da-463e91fe31eb",
       "6667e4a5-b922-4e5f-bf0f-58fec60649c6",
       "bb86a045-da06-43bf-812d-d9becf95d2be"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KG44KL44KB44KL44Oi77yB",
@@ -3699,7 +3706,8 @@
       "78dc9361-328b-4a7b-996b-a44705936585",
       "d468145f-4fd6-4ffd-aab0-2140ecf64c19",
       "328d63b6-9584-464d-8801-1a6188e12b55"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6aKo55S35aG-",
@@ -4731,7 +4739,8 @@
       "0c46c867-73be-4f14-85f1-aaaf8fadf639",
       "e07c700b-4c32-4eda-9fc2-72f54a60d9b5",
       "30f49979-0780-4016-9f8e-e79cab1009e4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K344Oz44OH44Os44Op5a6j6KiA77yB",
@@ -5700,7 +5709,8 @@
       "cd2232e3-24b9-4116-8e60-d4872a35112c",
       "9d2d4241-ae17-4478-9545-e40cc754d649",
       "ab4ca015-3497-4ab8-8954-259d93ee5cd8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S29sb2tvbA",
@@ -6035,7 +6045,8 @@
       "759984e3-a9fb-45fa-af27-e0f1f41a5d4d",
       "34d4fd4b-eabe-4aa6-9928-b8bb207eb1e9",
       "a19f3313-7881-4bdb-b0b0-58214eba4fbc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UXV1Ymk",
@@ -6592,7 +6603,8 @@
       "12976e89-b837-4ac4-a155-a8a1a3f4272a",
       "d95cd53b-869d-47c1-9893-f12c89582629",
       "13eb27bd-98a5-42bd-9bbc-c59af8e621bf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2lPTg",
@@ -6926,7 +6938,8 @@
       "9aa9c646-fba2-4289-9da2-625607fd361a",
       "610ddf63-d774-4926-a2eb-778c5f1024c7",
       "f70b6ba7-eb7c-43ca-99ba-182b8233bcb3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFQQQ",
@@ -7151,7 +7164,8 @@
       "e9ea96d6-935a-4423-8a59-44cc4595145a",
       "55f3ef0c-36bf-4edc-baf2-b34de1b21a29"
     ],
-    "producers": "Oomori Seiko"
+    "producers": "Oomori Seiko",
+    "reputation": 3
   },
   {
     "uid": "bHlyaWNhbCBzY2hvb2w",
@@ -8148,7 +8162,8 @@
       "320a2fa1-5052-4dc4-a7b7-b4b06b354abf",
       "2ffbfc16-93a6-48be-a20f-d09577d1ffe2",
       "c294dc57-bd8f-46ba-b16d-d899646c3619"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
@@ -8724,7 +8739,8 @@
       "32834d4e-7064-4f32-9603-8522314636b5",
       "ef155baf-385b-49e3-833b-53d71d8ac54e",
       "8d2d2421-fd1f-46ea-bb64-95b8d4aebb38"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGluUQ",
@@ -9410,7 +9426,8 @@
       "c9053212-3a15-4ffd-9483-b45505cbc760",
       "e3c0dbbb-352f-4307-bdf3-95ebe083ee82",
       "aac1b785-df3c-45e3-931f-cc6d6cf29774"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0lUVUFTSU9O",
@@ -10022,7 +10039,8 @@
       "48f57f9c-1d8f-4177-9ffd-8721f074876d",
       "59663709-cf22-47ac-8c3a-dcaea9b8c8f0",
       "175b789d-6d64-4201-b2d7-fa8435ba530b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VEhFIE9SQ0hFU1RSQSBUT0tZTw",
@@ -10607,7 +10625,8 @@
       "e47463fc-3a01-4964-985c-dac4d3ee32ea",
       "bb90e361-df52-40f8-a71b-3dfc672d3fa6",
       "04a0d02e-d63b-4247-aea0-5d0db8e6e76f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6KGb5pif44Go44Kr44Op44OG44Ki",
@@ -10889,7 +10908,8 @@
       "56772a2e-1c22-40e1-9ca7-d36317133af8",
       "c32013ce-2340-429e-8f0d-7603df9dd1de",
       "614a6475-54a2-4cc3-9ee6-650f236372e8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
@@ -11658,7 +11678,8 @@
       "34621867-b12a-4680-9762-70b5b3b7b0fe",
       "7fa45fb1-220d-4827-8e3c-4339e6bac849",
       "4a1e00ba-1326-4798-af1b-45f45c61dd6e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM",
@@ -11701,7 +11722,8 @@
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce30",
     "discography": [],
     "disc_uids": [],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44Of44O844Og44OI44O844Kt44On44O8",
@@ -12254,7 +12276,8 @@
       "be2faa33-6eeb-487e-a6ac-61ebeaae2a55",
       "e94247d3-8f6e-4b34-8afb-58e849a77442",
       "43f4da69-0613-4485-bb8d-05e9e55cde98"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UmluZ3dhbmRlcnVuZw",
@@ -13422,7 +13445,8 @@
       "a6070ecf-abea-4a2f-98a7-fd0ab777353a",
       "1cd09efd-7229-424b-8d24-b681979fb3eb",
       "a4d4959d-8422-41ee-90ae-a8025559514c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
@@ -13716,7 +13740,8 @@
       "41edd874-0d6d-4d31-bf66-a79cb9aee060",
       "6b2e10f0-3d85-4310-987c-701aa942eae8",
       "5e711703-0ae1-481c-a341-06b065145ad2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TEVJV0FO",
@@ -14762,7 +14787,8 @@
       "43e62622-aff7-4eb7-af7f-f5265bee87e5",
       "cf872620-6095-4bb8-8b78-7908b276b1ee",
       "19ddf87f-a594-4b5d-8e83-99236a264033"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RUdSe-OBiOOBkOOCi30",
@@ -14898,7 +14924,8 @@
     ],
     "disc_uids": [
       "51540dc5-de41-454a-b0fe-18ba416f066c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "55yf44Gj55m944Gq44Kt44Oj44Oz44OQ44K5",
@@ -15200,7 +15227,8 @@
       "76e03855-5820-423f-8a3e-e186bc32a89e",
       "cbc3f290-bedb-4291-9d32-ac7312eedcc5"
     ],
-    "producers": "Aoki Hayato"
+    "producers": "Aoki Hayato",
+    "reputation": 3
   },
   {
     "uid": "I-ODkOODkOODkOODkOODs-ODkw",
@@ -15878,7 +15906,8 @@
       "4b516cd8-f61b-4359-9af0-77b7ea97357b",
       "116d49f7-6d86-47d8-89e2-070d77a766ba",
       "2e0102e7-968e-4a73-a9a5-d744ff87f204"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SWxs",
@@ -16049,7 +16078,8 @@
       "03b1ab37-2f48-4f64-be96-7cec231f0b73",
       "61fc17d0-8125-4c31-93f6-7f5af16a51d6",
       "85e51b25-2bb3-4dcf-9fba-a115d5768624"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kv44Oe44Oq44OH44OR44O844OI",
@@ -16629,7 +16659,8 @@
       "118c5d32-f775-417e-a751-cf14b11d1c65",
       "21b392de-00ff-4977-a67d-e2c250d49905",
       "9fb61bc8-a490-4272-960f-ea8685e4a7bb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
@@ -16725,7 +16756,8 @@
       "024d94bb-42df-42fc-be3a-bfc07ef49e59",
       "7dd8728d-c584-42d2-921c-020bafe547b6",
       "c2dd776a-dd2d-4d63-9e15-58832bad3ffc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GN44Gu44Ob44CC",
@@ -17041,7 +17073,8 @@
       "ba2d3ce4-34a7-4354-abac-fe6f04edccaa",
       "8e30b289-595a-4df1-afd8-39cf2dd1d97d",
       "41422fb5-da32-4828-b787-d88b04f167e5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Op44Kk44K544Oc44O844Or",
@@ -17246,7 +17279,8 @@
       "62824b0b-edd7-484c-88a6-b53bd9dc1cb8",
       "5f93994d-a0ab-402f-a825-abeb9901371d",
       "7a5525b6-4e16-409f-a565-8b41e3a571e4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGFsZXR0ZSBQYXJhZGU",
@@ -17528,7 +17562,8 @@
       "d7604543-f91e-41f2-a6b4-4026f734fa7f",
       "50a04bb6-77d9-48ec-bc1f-7292c2b0a694",
       "17455194-bae4-442b-bedb-6a1fb3e71c8a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U3dlZXQgQWxsZXk",
@@ -17743,7 +17778,8 @@
       "6eefd4e5-4395-4c4a-98ba-9b2a0331e784",
       "9cf6a52a-a643-43e4-8e82-896f378be943",
       "52d60c51-1e08-45b6-bdfc-cf576b4784cb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kv44Op44Op44O744Oe44Kw44Op",
@@ -18227,7 +18263,8 @@
       "c4597573-ad21-4cf8-a28f-46c9b954f1b1",
       "da8f2b9d-cb3c-4df1-a20d-144f08b57254",
       "a147a596-db94-4541-94f2-0cea8cc3b0ac"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "dWlqaW4",
@@ -18666,7 +18703,8 @@
       "06ae740d-aefa-431b-9b4b-c7db5ef02f48",
       "4c2d8519-47fe-47f7-9dd5-43409a79cd11",
       "b91350ce-c805-492d-9bc7-f69e90412ddf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UEFOREFNSUM",
@@ -18798,7 +18836,8 @@
       "864bb24b-3097-4495-b91d-4b6db7af1314",
       "2d81bd57-58e3-4417-bc1c-a680444cdc0b",
       "36d1eaef-abb7-4507-887d-ccf40f1a9699"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44G_44GG44G_44GK",
@@ -18878,7 +18917,8 @@
     "disc_uids": [
       "c1c82f18-86f0-4fc0-b26d-e31d770b0150",
       "8b5a0091-4614-4049-896c-be5afc1bd2ba"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs",
@@ -19623,7 +19663,8 @@
       "52277c29-b997-45a4-8047-05afd26119c4",
       "baadd7c3-1bb1-4826-92ca-3a7f71e8db3b",
       "8c89e25b-b1c4-4714-8ff7-4b07db6bf850"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WU9MT1o",
@@ -19883,7 +19924,8 @@
       "d566e44b-a800-4203-a0e6-d7edbac8d685",
       "10cf38e3-92e7-4ddd-80b3-49db495349e2"
     ],
-    "producers": "uijin member Ary"
+    "producers": "uijin member Ary",
+    "reputation": 3
   },
   {
     "uid": "emFua2E",
@@ -20014,7 +20056,8 @@
       "b980cbe0-d8a1-4e7e-9ffb-d068995f6417",
       "c3ef6308-bd12-4c19-aa7e-078fdc1c281e",
       "22858e71-b5b7-451f-813b-71a8ba53ef6b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
@@ -20257,7 +20300,8 @@
       "6f1f7876-ecb6-59df-9214-a29526ef35d2",
       "7164a11c-d560-5db8-b515-86edd0d8b280",
       "863220ef-07d9-563e-a5a5-4b136b9a4948"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVE",
@@ -20452,7 +20496,8 @@
       "72039e04-8a1e-4763-be0b-50869246dfaa",
       "28c5b3b0-f506-4ebc-8e6b-174948a562d0"
     ],
-    "producers": "singer and songwriter INSHOW-HA"
+    "producers": "singer and songwriter INSHOW-HA",
+    "reputation": 3
   },
   {
     "uid": "QXNJcw",
@@ -20664,7 +20709,8 @@
       "04b6bbf6-cdc0-424c-9e8a-3a41b0b0c3ac",
       "aea401a4-d21e-40cb-99c1-a58468a7124b",
       "3473bf9b-3eb8-42dc-8fed-b7e45bc3daca"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VG9oa2Vp",
@@ -20813,7 +20859,8 @@
       "5d90027b-df48-4c44-b832-0c55bff53108",
       "b98de236-106c-4069-8c55-b8875ac84920",
       "7a233fc2-e26b-49ec-badd-e008e2432aaa"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5pyI5YiKUEFN",
@@ -21679,7 +21726,8 @@
       "eab4ff97-fa23-421b-a980-d5d27898ab4e",
       "30b20478-2cf7-4665-95c7-6e27fd0823d8",
       "34145fcf-4f59-4613-84e9-7180636c8a83"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QU9BTw",
@@ -22093,7 +22141,8 @@
       "025a187f-14d3-4003-a579-3278193b57f2",
       "dbfc7ad6-31ee-4948-b3f8-f0b99ab05fa9",
       "2dc0d7e1-4124-4722-9309-50f2ed0e7e22"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Rk9LQUxJVEU",
@@ -22396,7 +22445,8 @@
       "1c8fd6c1-a8c6-4e3c-b5e9-879a7f4865de",
       "0857c14f-2c26-4279-8a30-201b9cfcad36",
       "281b83a0-4034-4b57-8953-68025334329f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWVsdHkgQmVhUg",
@@ -22484,7 +22534,8 @@
     "disc_uids": [
       "cbfdf141-9c52-4ac0-8d9c-389970b7df84",
       "8a2c6fe3-1607-4453-8697-1331d3481bcb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RlJVSVRQT0NIRVRURQ",
@@ -22849,7 +22900,8 @@
       "a9e25899-f264-4ae6-a2fc-25ea8ba7af9f",
       "99d05169-bf96-45ad-be4a-e6ba06c1a74c",
       "e3eaea3f-1dfe-437b-aed1-fe5f26b21956"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TlVBTkNF",
@@ -23279,7 +23331,8 @@
       "d9732c91-6733-485c-a08f-6dbe900f777b",
       "7522ec59-e993-47f3-9279-c59bace6d2a3",
       "4134818d-d27f-4798-ad36-ecdb2d6deb28"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Oq44Or44ON44O844OJ",
@@ -23539,7 +23592,8 @@
       "dea19c4f-3215-4f0c-ae52-ea8bbac153b3",
       "2dbb4dec-c58c-4466-b8b7-8e9bbcaa5aa3",
       "043616c8-c83e-4a48-a924-65ca00b0eb1c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Oz44K544Oq44Ol44O844Og",
@@ -24088,7 +24142,8 @@
       "2e896a4c-7dcb-4d09-8979-87319f131272",
       "8eeccb06-0404-4c6c-a65e-6ce08c0d59d3",
       "a2ada392-6cbb-497b-9f2a-97e163c65f72"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TXlEZWFyRGFybGluJw",
@@ -24630,7 +24685,8 @@
       "922a4a64-4fcc-4c47-9add-a6d093ab6de9",
       "1ab2ecad-16c7-4ea7-b164-c0757d477d11",
       "ee2a7807-8e82-427f-928d-8d123a3d431a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QUlCRUNL",
@@ -25583,7 +25639,8 @@
       "07ae98e8-51c8-43f3-bc0d-b60b032668f5",
       "8162c7ef-1ab4-4d75-8c07-5e48b523ea58",
       "437eae50-7a0d-41a7-a2ef-323328d6ab5c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "576O5ZGz44GX44GE5puW5pin",
@@ -25843,7 +25900,8 @@
       "46e64b3b-bf28-465b-8f54-2e76c280a275",
       "e94af5e1-4e9f-480d-bc0b-1ed67b9184ce",
       "b858c29d-95bd-42a3-8aa4-34b107a95044"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TElOS0wgUExBTkVU",
@@ -26084,7 +26142,8 @@
       "29913485-3feb-4289-9574-83ac330461b2",
       "dd04e814-c33c-4b50-8a01-2207c88370ac",
       "bdf92372-18ac-4c7d-8721-8a8cab7f0592"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFHTUFa",
@@ -26371,7 +26430,8 @@
       "58ab8847-fed2-4671-a4c2-292445955ce3",
       "f9c3b08c-33f7-47d5-9eea-5ea3228bfa89",
       "1dd43bdc-2739-4707-a21c-e36705657349"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVpBVE9Z",
@@ -26596,7 +26656,8 @@
       "3dc15624-7c39-4704-83a2-a5caac6fcb6f",
       "2a088b8e-2ce6-41bf-91a6-238ece491e54",
       "ce48e9fb-d879-448d-bef4-c240ebf72871"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RmluZ2VyIFJ1bnM",
@@ -26827,7 +26888,8 @@
       "509944cb-594a-45ad-bfa6-e62e2da02051",
       "518018d7-b626-4dde-9bff-102db17d6bef",
       "90f6db7a-ae92-44a1-8f10-b4c8d45d67d4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6Iqx6a2B6YGT5Lit",
@@ -27121,7 +27183,8 @@
       "ba686a0c-086b-426f-afd1-421d2792a672",
       "4766663a-db87-429d-bf2c-b401538ddd19",
       "421e85af-155a-4a2c-9c94-dc8039e7fb04"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gz44Gj44GP44GI44KT44GY44GH44KL",
@@ -27366,7 +27429,8 @@
       "81f4cf7c-f853-4376-8af4-66d4c7107b9c",
       "fa7cf545-7c75-48b6-95cb-7f3cf31ace44",
       "60b6ca68-80f0-4f4d-9c42-fe51c70bb4aa"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6bO044Or56We",
@@ -27402,7 +27466,8 @@
     "pictures": [],
     "idolsdiagram_url": "https://idolsdiagram.com/g/6bO044Or56We",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI",
@@ -27439,7 +27504,8 @@
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
     "discography": [],
     "disc_uids": [],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44OL44Kh44OU44Oz",
@@ -27467,7 +27533,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OL44Kh44OU44Oz",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QkxBQ0tOQVpBUkVORQ",
@@ -27996,7 +28063,8 @@
       "0fdffdac-75ae-45f1-81a0-c9cfadbd088d",
       "7a1408ca-fa4b-4e19-9630-f347bb3622e0",
       "c97e9560-d790-474b-bfe1-09e7d6574d95"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og",
@@ -28709,7 +28777,8 @@
       "815472f3-1057-4f71-8b64-2a63ad927490",
       "893b56da-6946-4f01-b19a-4c36a23a1b3b",
       "43e5f7cb-086b-47c2-aec3-3127fa1103b7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "IzJpMg",
@@ -29317,7 +29386,8 @@
       "d1ebc218-15b3-4d5a-8780-0c1ffa9ea221",
       "8834950f-30ac-40ba-b213-723af8729888",
       "6e8f33a5-5012-46f6-a171-659c108ebd0e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1RBaU5Z",
@@ -29751,7 +29821,8 @@
       "626225a6-7e9e-408a-b9e4-901a9bf442c2",
       "48139a4c-8e17-4fa2-9cf1-f75e1431e7f9",
       "3a5e3b7d-7d5c-46cc-a208-cd251c258e26"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "ZGlpZw",
@@ -29906,7 +29977,8 @@
       "e646ee9b-de02-4720-a34f-2f1cccbdd212",
       "8bc1ded0-d5ec-400e-861a-13f169d1ec55"
     ],
-    "producers": "Sakurai, along with Kominami Yasuha and MOSAIC"
+    "producers": "Sakurai, along with Kominami Yasuha and MOSAIC",
+    "reputation": 3
   },
   {
     "uid": "44Kt44Oz44Kw44K144Oq",
@@ -30252,7 +30324,8 @@
       "e8406ea1-71e0-42f1-89e3-01ff5bbbdd1a",
       "40b7a68e-ec46-4d6f-b9dc-017667516bb3",
       "d0d65cb3-0fcc-4b8f-be01-bdc42d09f743"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QXhlbGlnaHQ",
@@ -30534,7 +30607,8 @@
       "961411c4-fb76-4910-967d-223070c65648",
       "422a01aa-76c7-4c4c-98c9-907f75350916",
       "de5e45ca-fd15-4e7a-8741-993bfc133f1b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GC44Gj44Go44Gb44G244KT44Gm44GD44O844KT",
@@ -30806,7 +30880,8 @@
       "41a72034-f06b-4636-a725-a98a8f5e7726",
       "20922d97-94ea-496e-b0f7-741b8008e06b",
       "7840d0eb-3716-4039-850d-58bfb7defb33"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "I01vb292ZSE",
@@ -31008,7 +31083,8 @@
       "94f48f14-1681-4dec-9e0e-7488ff57f316",
       "390fda33-2d6b-414e-957c-ca4b53581df8",
       "e993438e-59d7-4430-baf4-17b0e8e14160"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5aSq6Zm944Go6LiK44KM5pyI5aSc44Gr5ZSE44GI",
@@ -31209,7 +31285,8 @@
       "5191fb80-68f9-458e-9be8-33b3874e8fc9",
       "14edf9b4-2ea6-437e-bd8b-0a96d7ad1f74",
       "a7b5dac7-d48a-4a83-8cca-4676d5d89d56"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz",
@@ -31525,7 +31602,8 @@
       "ae365f76-6467-4e33-9772-37628db45737",
       "b615dbe9-4569-48a2-a25c-642732f453d2",
       "0d24978b-dd15-4317-a03e-ff71d795ea27"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QWxjdXRl77yB",
@@ -31899,7 +31977,8 @@
       "e35296ca-0b44-4ebe-8b90-9d925579e233",
       "16a7a599-446d-4eb7-9e84-c66abb37c670",
       "ff534a08-949e-48c4-996f-09e3ec5564cf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "aGFrYW5haQ",
@@ -32035,7 +32114,8 @@
       "729190aa-8eb0-4301-8663-772c199340b7",
       "cf7d979b-bee7-48d4-8b36-e40f4d72ca9d",
       "81ab5f2c-f01a-4217-9d1b-fdae8c04c0c1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Op44OK44Kt44Ol44Op",
@@ -32259,7 +32339,8 @@
       "a2ec6955-208b-49d7-8530-13d76b28b3c2",
       "3c7f1314-ce35-4163-ae57-231760ef32ac",
       "66d6c439-a741-4548-944c-c89cd45cad79"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6",
@@ -33773,7 +33854,8 @@
       "77783100-f0bc-479c-8959-24f43e89e28d",
       "3e12092c-4c98-449f-811a-c163f62690c9",
       "2a3d8ae6-ff61-4139-be56-f97593a24519"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2FuZHll4pmhU3lydXA",
@@ -34099,7 +34181,8 @@
       "dbb0afb6-8e31-46c2-98e1-f20931c787f7",
       "4d441fc7-d62c-4984-9314-f72d8834366f",
       "207da06c-04d5-47ab-bd3e-40a9394e233a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UFJTTUlO",
@@ -34497,7 +34580,8 @@
       "ccc991cc-8166-4091-8669-cb6d4aa58f41",
       "f2004684-4c3b-4f86-af1a-5c4a9dca254b"
     ],
-    "producers": "Ary"
+    "producers": "Ary",
+    "reputation": 3
   },
   {
     "uid": "6YCP6Imy44OJ44Ot44OD44OX",
@@ -34723,7 +34807,8 @@
       "53f0435a-2684-4b2b-99d2-080e14f6676e",
       "87e48e0c-9f7b-4fee-bcff-daddc8306640",
       "56e10205-2149-472e-8673-7578d99b6f34"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kr44Op44OV44Or44K544Kv44Oq44O844Og",
@@ -35104,7 +35189,8 @@
       "a9abe2ff-262c-4d29-853a-cbdabfed8b47",
       "8f10e8e7-9c4b-4be5-989f-1b8eb7f14832",
       "a32f136e-85dd-424d-af9e-6dafce204544"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RmluYWxseQ",
@@ -35625,7 +35711,8 @@
       "8aafb87b-5427-4a26-8df1-a9eae8268593",
       "2b785ae6-fc68-4363-9b80-6181730b436e",
       "e2056266-a21c-454e-af89-646314e17cdf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OR44Op44OH44Kj44O844Kv",
@@ -35972,7 +36059,8 @@
       "ec9c7a7a-b561-42f8-ae6f-ed814404ac4b",
       "8a53d5fa-3da8-4328-a238-7d94408f0da6",
       "55c641ea-28f4-4d72-8943-0122b93ec31c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bG9ubGl1bQ",
@@ -36189,7 +36277,8 @@
       "b08ebc95-6bef-4d1f-9e1b-6fec0589ea55",
       "d19894cb-347f-4b3d-8cc2-a816bc73a929",
       "709f0c7f-6e05-4e8f-a3f2-38d8759ffacc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SGVsbHphcG9wcGluJw",
@@ -36551,7 +36640,8 @@
       "17a56ef6-8bd2-4acb-a4e5-3991361d911a",
       "e887abe2-749b-45ec-81c6-6ba9678fe193",
       "85341962-8215-48ad-a738-322eb3befb77"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "c2VsZmlzaA",
@@ -36789,7 +36879,8 @@
       "70db70e5-9903-4a24-a863-2416a500bbe3",
       "182eb053-5982-447a-850b-390609165552",
       "35b6f9ce-e746-4d27-9363-78150e60d6aa"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "MeOBpOi2s-OCiuOBquOBhOizveOBr-aKleOBkuOCieOCjOOBnw",
@@ -36957,7 +37048,8 @@
       "5d42bfd2-3050-4846-a53a-a245cd972700",
       "266a354f-9b9e-49ef-b7e2-6ccfeba32d20",
       "7d0b5b32-52f3-4a3b-8e74-06507156e3b8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "LkxpTklYTGlORS4",
@@ -37081,7 +37173,8 @@
       "00b4f96b-7f81-40f1-9d16-173321d6aa5f",
       "c76768e6-c27f-4cf0-99ae-eb8b21e0f47c",
       "feb90077-a089-4210-9b67-223f7221fdbc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Or44O844K444Ol44OW44OD44Kv",
@@ -37227,7 +37320,8 @@
       "18b9a7c1-ac88-4091-bc1e-7ba162d3aa8f",
       "dbb963c2-96a8-4c12-89ac-4d89e69e4c5b",
       "509df913-c857-41ef-8366-6ff751f00ee1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2hhbGNh",
@@ -37326,7 +37420,8 @@
       "b9f6cdd5-083c-4ea9-9fe1-1897aff4de97",
       "177ff6a6-78f5-4654-9d22-b39e19a4c1f7"
     ],
-    "producers": "photographer Asukai Rina"
+    "producers": "photographer Asukai Rina",
+    "reputation": 3
   },
   {
     "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
@@ -37449,7 +37544,8 @@
     "disc_uids": [
       "9639c05f-958d-455e-9a88-86a6021a40ee",
       "14909035-9a33-46e6-a072-8e43faf4c1e6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44G944GR44Gj44Go44OV44Kh44Oz44OI44Og",
@@ -37569,7 +37665,8 @@
       "5a4a4e9e-9f93-47b9-9f62-de5c74443331",
       "9c313fad-e17d-4a3f-85f0-2d91532efefa",
       "2662a5d6-c86a-49d5-bc41-5198160d740d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "a29sbWU",
@@ -37808,7 +37905,8 @@
       "12fcc469-41ec-4269-9a0b-5b6f33924e65",
       "9d74945d-a0bb-44f5-85a1-f65677f6008d",
       "ab00d83f-7672-4fc5-bf92-11f2b8d06336"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUlHTUEgU0hFTFRFUg",
@@ -38243,7 +38341,8 @@
       "8f5cada5-0ee3-433f-88bf-c189d774de78",
       "e6ce153c-dd33-4252-a488-ef30ffba6e89",
       "7bb2dee7-656e-48a3-b9f1-b5928d12839a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkVMTFJJTkflsJHlpbPjg4_jg7zjg4g",
@@ -38558,7 +38657,8 @@
       "d087a741-ecdc-4387-9d9a-2af64137e5c6",
       "d9c39ee7-e9c0-4c3d-9e68-5b245eb52602",
       "76eea798-0b74-43bb-abf5-85dd6817aeb9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGF5cmluJ3M",
@@ -38985,7 +39085,8 @@
       "801525f1-91c1-46af-b9d0-48ccae8466eb",
       "7cd143ad-b397-4686-a605-51b9ae412a71",
       "c499e0ea-ca6c-47a5-973f-a5c4a6a76e20"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "YWlyYXR0aWM",
@@ -39407,7 +39508,8 @@
       "eba99638-f8f2-4b4c-a73c-6a0780b54381",
       "30a106e6-6ea8-4242-9d1f-9c46594ff56a",
       "ad345ec8-81a6-4a26-8748-b0ba9e83c2c5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K344Oj44OL44Og44OL77yd44OR44Os44O844OJ",
@@ -42920,7 +43022,8 @@
       "4c54314f-a2b5-4441-8326-2e21b266eb5d",
       "c6999c69-4265-489c-9767-d23226536091",
       "5b3f7f85-5d0f-49c1-a0df-ac9d1de6861c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "OURheXpHbGl0Y2hDbHViVG9reW8",
@@ -43183,7 +43286,8 @@
       "ba09e8c7-56f3-452e-85d8-6a2ae027606e",
       "bfc540e1-7e0c-47a2-b63e-5bb29c6fd6de",
       "bfc77f15-1c3e-4e73-b90d-cd10622dcbbc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8",
@@ -43485,7 +43589,8 @@
       "5f5e29dd-2018-4b58-aa43-07142a289e38",
       "cd3131be-f714-42cb-870e-a7518c1555d2",
       "898fac51-6b4b-4829-a42a-55c40ad58ff2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Or44Or44ON44O844K444Ol",
@@ -44102,7 +44207,8 @@
       "ac6eed47-1b7c-4cd2-b45b-051dc2cab7bf",
       "a71b1001-7b4d-4c68-8040-cd579e3473a2",
       "4e9c32df-c84c-4d9a-a8db-6e5f89cb79df"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "556s44GN44KC44Gb44Ga",
@@ -44516,7 +44622,8 @@
       "9004875c-1d33-4de1-baab-142849d16167",
       "1ddddb49-3746-44ef-b9af-5b8c78f7f003",
       "a7b74607-259c-4607-a09b-a74b9e839297"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TElUIE1PT04",
@@ -44925,7 +45032,8 @@
       "a83d8443-7ff8-4423-aecf-3cee8e3f39cc",
       "ca6afc53-cb90-460e-82a9-fdd4b50fb8f2",
       "cfc5488e-d843-44dc-af1d-3abd50ebac76"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RlIyUE9OIQ",
@@ -45259,7 +45367,8 @@
       "15a2a622-781f-4057-9313-5a7361d19c63",
       "ff81aaa3-7099-46d0-97c5-0ed1c2186374",
       "eec1b9de-fc15-413f-b0e4-e675e1fe16bf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "cG9uZGVyb3NhIG1heSBibG9vbQ",
@@ -45581,7 +45690,8 @@
       "fa3611de-83f6-46ad-a170-50165b405e7a",
       "f35513cc-9664-431d-b418-8d302ccab621"
     ],
-    "producers": "Funasoko Haruki"
+    "producers": "Funasoko Haruki",
+    "reputation": 3
   },
   {
     "uid": "U1BSSVNF",
@@ -46197,7 +46307,8 @@
       "a864ae36-5d62-4399-aba3-588c035dc8af",
       "b9e560bd-68a2-429e-b063-5f24ac349786",
       "d29a2836-364f-4c8a-81cd-4d4341b282d6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6ISz5YaF44OR44K544OG44Or",
@@ -46282,7 +46393,8 @@
     ],
     "disc_uids": [
       "2c75256a-3710-4247-9394-86f559b3e2ef"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Vy7jg4Djg5bjg6vjg7TjgqPjg7w",
@@ -46484,7 +46596,8 @@
       "9c99531f-e8b5-4a3e-8edf-2f201437239a",
       "32a32237-67e2-4051-82ca-c580f09aaa85",
       "2dc9dfc7-4a71-48af-9438-979e94fed21c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6ZmQ44KK44Gq44GP55m944GP",
@@ -46703,7 +46816,8 @@
       "10a684fb-058e-48f6-8674-5ec26339a6b9",
       "e9f38c73-b81d-4945-bdb4-8568abf96c4a",
       "383de04e-7e71-4c2d-9773-c09a7d466213"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VEhFIEVOQ09SRQ",
@@ -47065,7 +47179,8 @@
       "c717d0eb-80bf-4aa5-a735-a864c6afe579",
       "f3da91f7-329f-458a-8a5a-8c39826442d9",
       "4dcb7d58-bc7a-4e9c-a2dc-b0c0bf688eba"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kv44Op44Kk44K744Kr44Kk",
@@ -47365,7 +47480,8 @@
       "1b95d974-bf11-4c9d-b9e1-3bacfdf4607f",
       "06537b95-a0de-4e0b-a2f8-2e7828e1cac1",
       "58610c29-665d-4353-ab25-b40847e2da31"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
@@ -47461,7 +47577,8 @@
       "a1f29761-44fa-4e4e-b0e5-7c7c7c32429d",
       "19db212a-e4fd-4a48-9b56-779ed9fb3900",
       "fbd71a98-24c4-4609-a26f-73f37e67b154"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VGFzayBoYXZlIEZ1bg",
@@ -48115,7 +48232,8 @@
       "dab1ca68-da21-462d-9f25-cdee1d828e1b",
       "15932c64-fd14-4f16-b0ec-45c19bce299d",
       "283220f3-f0ab-4582-aac2-49089de8a26d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "dGlwVG9lLg",
@@ -48576,7 +48694,8 @@
       "299e1edb-9dad-4577-be49-902d3a7cde91",
       "e66b7d0c-26bb-4271-9ed8-258c8c1b654a",
       "7b33eaa8-bea2-417f-adab-b34c371438c1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Kk44OJ44Or44Kr44Os44OD44K4",
@@ -49477,7 +49596,8 @@
       "fbe07169-2fd0-4f89-bccb-114aeced06ce",
       "5d01388d-bcc6-4042-9781-5a224b06400f",
       "be109d07-4326-4b3b-8bc7-7944f39e79e4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "I-OCuOODpeODvOODreODg-OCrw",
@@ -49884,7 +50004,8 @@
       "34d86eeb-ccea-4ad5-a410-6eb2683bdc57",
       "af0ca8fd-ae17-4ac4-92dd-bd8e3d8bf5ab",
       "5736936e-db00-4462-b0a7-31ec6d3057b1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GV44Go44KK44Oi44Oz44K544K_44O8",
@@ -50443,7 +50564,8 @@
       "335a4dc5-9365-4e5a-9e27-eb09e3ee5dd8",
       "21d1744d-aaf3-4680-8306-53e2f7dcf0c8",
       "2daeeb4d-69ae-42f3-be21-02b33a4bd2d4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U09NT1NPTU8",
@@ -50830,7 +50952,8 @@
       "6abb9ff3-b007-4595-b772-43c7194a60ca",
       "651b6d6d-4568-4cc9-b3ec-1ec2b7941eff",
       "91dce7a3-b372-40df-94f2-9b23b31c501e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "LkJQTQ",
@@ -51103,7 +51226,8 @@
       "8363e6cd-9b2a-4b63-b2e9-5ae2bd6eff33",
       "059abb8f-c19f-46a6-b7d5-59d5d68bc45c",
       "99331037-a201-4346-80fe-d264eeb9bc1c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5aSp5L2_44Gr44Gv44Gq44KM44Gq44GE",
@@ -51207,7 +51331,8 @@
       "298ccead-0d0e-4db6-b4f6-4525fb74bb2b",
       "e7dff2a3-a231-4bed-b493-614a8bf7c0d3",
       "f2d8176f-b6ac-4fbc-816c-81428d68cf4d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go",
@@ -51664,7 +51789,8 @@
       "68b4a9cb-d271-44bf-8ebb-9a0bf08be6b6",
       "192c7271-d49c-44f2-8475-5c08cf4edbb2",
       "935f7df8-8bf6-438f-942d-cc5c715263d9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VE9LWU_jgabjgbXjgabjgbU",
@@ -52023,7 +52149,8 @@
       "420fa7c3-1ba6-4ca1-b74b-0c917dc2631c",
       "46f45cf7-ed65-459b-834a-afcc48fe6e3e",
       "4ff4d5a8-2ff3-4baf-b415-00ac4f9c82ac"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Rmxvd2Vy77yKSG91cg",
@@ -52188,7 +52315,8 @@
       "4bac9653-dabf-4857-b5aa-d71a42a7ce7e",
       "0ecdf366-663c-4567-b6c9-ec253f1eb385",
       "dd9fda00-15b7-4b4e-915a-bb55a356e408"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SGlpVCBGYWN0b3J5",
@@ -52368,7 +52496,8 @@
       "f55080b6-4218-4526-b7e2-3cebfbc21f4d",
       "3a821c0f-0eeb-4abd-9781-dae5ca4028bd",
       "ca7beb1d-c086-4416-b80d-ff3d238363b2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UEFTVEVMIFJBRElP",
@@ -52654,7 +52783,8 @@
       "2fa5a115-7804-4461-bd21-065091c88574",
       "055d52ba-31b1-496d-ae4c-ae304a6f67a6",
       "67df22db-683e-4391-b611-78da88579f7d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bXkgZmF2",
@@ -53150,7 +53280,8 @@
       "4b5fcbe2-47e7-4f79-aea2-6a830345a2d9",
       "6f21bf11-4ad9-43fd-9ab3-3b976b2ad740",
       "0af0504e-1763-4df4-a69c-336a6c307651"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6YeM5ZKy44KK44GV",
@@ -53180,7 +53311,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/6YeM5ZKy44KK44GV",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "SEFQUFkgQ1JFQVRPUlM",
@@ -53541,7 +53673,8 @@
       "7603148c-5466-4109-9010-5940c6a865c2",
       "b19f1e50-8be9-4e45-b529-ef90f86a8bf2",
       "c655e2f3-c8ff-494e-aab8-4f1ecba07e83"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QmVsb3ZlZA",
@@ -53929,7 +54062,8 @@
       "79fde1dd-c9d0-47a9-979a-95b6dca47f30",
       "9e62ac59-d6eb-4457-81e2-ba0084aa0dd8",
       "66a0c312-db1a-47dd-a92d-addeb692684d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SE9ORVkgUE9QQ09STg",
@@ -54006,7 +54140,8 @@
     ],
     "disc_uids": [
       "f1cd4566-073f-47e4-b012-c8b66caa6e7c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VEhFIEhPT1BFUlM",
@@ -54243,7 +54378,8 @@
       "13ab6062-6351-458e-9978-3b2ce3f7a580",
       "2615e851-bbee-4cc4-9e08-7870a34f19f8",
       "a75b1207-d291-4186-9ecc-ca4307b70b50"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Mzc3Ng",
@@ -54827,7 +54963,8 @@
       "03d04603-b5fa-4d84-b292-e33e49123a1c",
       "6011f833-e5d3-4308-a9c4-89ce15fe1c98",
       "d20bd3e3-7477-412c-9c72-6661ce0974e7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6ZaL5q2MLeOBi-OBhOOBiy0",
@@ -55116,7 +55253,8 @@
       "a3ef3c60-7e5a-4c4b-809e-d258c9314494",
       "43cbdc69-03b6-4087-92c0-dbcc0462de72",
       "5ef2ce02-2c40-4130-b446-4bb0fd7d637d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6Zuo5qih5qeY44Gu44K944Op44Oq44K5",
@@ -55767,7 +55905,8 @@
       "f548199f-c2ea-43e4-90c7-c762e14e778e",
       "06b1d2e1-868c-47b6-934f-94ce73a95bb7",
       "175a9119-3be1-4729-b663-71d02bf25ce2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6Zu75b2x44Go5bCR5bm0Q1E",
@@ -56094,7 +56233,8 @@
       "cf4e01e3-d4d7-494a-8ff9-3c7268f4113e",
       "7b8ba89a-6776-4377-9b95-472b18dff85e",
       "c6db856e-2299-48b8-8ec8-a7d160c0896c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RU1QQVRIWQ",
@@ -56581,7 +56721,8 @@
       "78fada93-ce04-49b7-b964-9576dbd6ced5",
       "2e6e640e-a3f4-4008-aa58-d5a30b1fc3ba",
       "80789073-10b7-4beb-b934-c2a64806b94f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GL44GZ44G_6I2J44Go44K544OG44Op",
@@ -58337,7 +58478,8 @@
       "b9f40d1a-034d-4b0a-b5f4-e365bf7663a9",
       "a1502666-8e81-4812-b8ac-3fd9d63796f9",
       "adbe32ca-c861-4d0e-a8e5-46998c8ffa90"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5qOYLeOBiuOBqeOCjS0",
@@ -62698,7 +62840,8 @@
       "1ae89a69-394c-4ce5-a15d-fb429400567e",
       "22f0609f-c0d0-4e2c-b17d-a990ae8b8d2f"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce40"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce40",
+    "reputation": 3
   },
   {
     "uid": "44GC44Gf44G-44Gu44Gq44GL44GvOOODk-ODg-ODiOKBie-4jg",
@@ -63222,7 +63365,8 @@
       "473e067d-7600-4dbf-ab4a-b7de276fb5e6",
       "581c7dbb-6a5d-465d-be45-fa744f432118",
       "b54cd4cc-c044-4de8-9f05-e1be6b2cfc83"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KP44KM44KJ44GM44OX44Ov44OX44Ov44OX44O844Ov44OX44Ov",
@@ -63645,7 +63789,8 @@
       "c6638499-3da5-4acf-8c41-07f13959c64a",
       "4ff0954e-5ca1-4426-b339-8266e460aedf",
       "90fd7535-be23-4849-aa6a-a1d167d4d2b5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC",
@@ -64060,7 +64205,8 @@
       "2fbf0a6f-a643-46fd-b5e3-33b015bda8d0",
       "86c2e258-cb99-4efc-9204-71caabc746cf"
     ],
-    "name_romanji": "Tensen Tensei Shoujo."
+    "name_romanji": "Tensen Tensei Shoujo.",
+    "reputation": 3
   },
   {
     "uid": "QUZURVJT",
@@ -64453,7 +64599,8 @@
       "578a744c-4a39-42e1-88ae-fdb06fd709fd",
       "24dbe480-3cc5-4e87-b7a7-e091d92958f4",
       "6f585f38-408e-4cee-908e-195f79dd6ca0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OV44Ol44O844OB44Oj44O844K144Kk44OA44O8",
@@ -64543,7 +64690,8 @@
       "bddd2f88-1b1c-4557-be3f-60c1d3d28755",
       "9c5bf322-647d-4b52-8f07-e6db5fa1b9f8",
       "db331061-d9b9-41a9-ad78-efa0982b09b3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGlWUw",
@@ -64852,7 +65000,8 @@
       "9002dcb2-6f70-43de-8f14-e3cd6062d0af",
       "1d3754bf-a6c3-4eaf-9508-a743adbdbea2"
     ],
-    "producers": "Suzuki Sara"
+    "producers": "Suzuki Sara",
+    "reputation": 3
   },
   {
     "uid": "U2lMRU5U4oaQTk9pU0U",
@@ -65010,7 +65159,8 @@
       "e9aa06dd-ea98-4fe5-9fc8-96947372bfac",
       "a74caf91-befc-4261-a434-e3cf5964820e",
       "b52d762c-4367-47ff-9235-2e540db2d186"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SGVsbG9Zb3V0aA",
@@ -65214,7 +65364,8 @@
       "15d28866-1458-4300-ab9c-16ca793fc31c",
       "901ab0de-9f43-44c6-96d6-7c70bba4aaf7"
     ],
-    "producers": "ISAKICK, the bassist of 175R"
+    "producers": "ISAKICK, the bassist of 175R",
+    "reputation": 3
   },
   {
     "uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
@@ -65573,7 +65724,8 @@
       "242c0653-bc84-4db1-a9e9-5ed0ece528a4"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce40",
-    "producers": "Nakashin Masato"
+    "producers": "Nakashin Masato",
+    "reputation": 3
   },
   {
     "uid": "5ZCb44Go6KaL44KL44Gd44KJ",
@@ -65733,7 +65885,8 @@
       "6172b108-abdd-4129-90f7-bf7e8bab400a",
       "1809cf02-0372-4b78-b240-10d13334e96c",
       "dc9e3d45-c68b-4af7-a665-218963bb7049"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WlVUVE9NT1RUTw",
@@ -65859,7 +66012,8 @@
     ],
     "disc_uids": [
       "a159bb73-e9d8-476b-ac16-7441d0a2424c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K544Ov44Oz44K544Ov44Oz44K6",
@@ -66050,7 +66204,8 @@
       "966629bb-c401-4776-aa06-5d988bf8db91",
       "2605984e-00a0-44df-9332-59e9f2d510c2",
       "6d51937e-ef75-496e-a960-95885460e4fc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVFB",
@@ -66218,7 +66373,8 @@
       "929442c0-5a69-4d07-a2f8-b70269980028",
       "e0a7915a-afcc-4fa0-89a7-baf80ce3a208",
       "b664a14d-3f8a-40a3-af84-1ae1700f3f65"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Uk9PS0VZ4pmhUk9PS0VZUw",
@@ -66441,7 +66597,8 @@
       "da1bce2e-2323-45b9-8ea6-44f654d0baa7",
       "8474fa77-5689-4e25-af02-f4a99748c51c"
     ],
-    "producers": "Higuchi Nazuna Links"
+    "producers": "Higuchi Nazuna Links",
+    "reputation": 3
   },
   {
     "uid": "U1RBUlJZw5dOSUdIVOKGl--4jg",
@@ -66724,7 +66881,8 @@
       "0fe4ebb1-1064-42f4-a6c3-3454a930ccad",
       "d974f308-81fe-4744-96e6-f0246180a2af",
       "26a61778-d803-4d09-872b-fd0eb4130030"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kr44Of44K144Oe44OR44Os44O844OJ",
@@ -66968,7 +67126,8 @@
       "b76f340e-679c-4cef-b104-d7095c70822c",
       "7ccc50c5-ff00-4d53-a389-2b9f6ff8eff5",
       "cce53248-1243-43dd-a086-1681938de667"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QWljb25n",
@@ -67158,7 +67317,8 @@
       "3ed823e3-672f-4e85-a85a-285b55d35b48",
       "334b37bc-64eb-476a-8d28-11d5378bcd9c",
       "3c271de5-a5d8-42cd-b032-347d77f74934"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA",
@@ -71467,7 +71627,8 @@
       "6966fb18-0b99-4bed-a106-5b7b1526f269",
       "ae076477-b1ac-471f-a3d6-cb1691d7f1d0"
     ],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "R08gVE8gVEhFIEJFRFM",
@@ -71712,7 +71873,8 @@
       "b5f78574-7ede-47ed-bef9-13febce916f6",
       "f0bd917f-9452-492c-a0b1-eadc96a063c8",
       "a28f0c65-58c2-4312-a20e-6bc6fb9db03b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TmlnaHRPd2w",
@@ -72029,7 +72191,8 @@
       "17fafcc2-ecbc-4a43-8231-5f654f3cd06d",
       "b29b3d57-3109-4c70-8175-0ba5a982d8f5",
       "798c7a78-a7fb-442a-8f9c-212d7aad2b66"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WFRFRU4",
@@ -72199,7 +72362,8 @@
       "e2345830-4a7e-4a03-b290-d39ec49f409c",
       "67905fa9-67e6-4678-a730-5d595dc3ce34",
       "f0da7dd3-7339-4d20-8509-9161d5b5ca92"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OK44OK44Op44Oz44OJ",
@@ -72388,7 +72552,8 @@
       "6c04eab6-66b4-4a8e-993e-6a43d062c3f8",
       "30840cf5-3cbf-499d-b435-d8f3ddd8462c"
     ],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TydDSEFXQU5aIEhJUC1IT1AgQ09MTEVHRQ",
@@ -72541,7 +72706,8 @@
       "7c374f4b-23ed-4ca4-9cee-e3617df515ac",
       "5eee4ed2-73f5-48bd-80ce-3d204cd025ad",
       "cad24494-8a5c-40b0-9b50-a70d4f48050b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bWF5IGluIGZpbG0",
@@ -72836,7 +73002,8 @@
       "44d1f7d3-fc07-484b-88f5-cca1bae99735"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce98",
-    "producers": "Shirai Masato"
+    "producers": "Shirai Masato",
+    "reputation": 3
   },
   {
     "uid": "SElHSCBTUElSSVRT",
@@ -73042,7 +73209,8 @@
       "e51c4f36-0ff9-4d07-b530-85e9837cf401",
       "3a4a7438-a86a-4646-8810-42f3033bd53f"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce32"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce32",
+    "reputation": 3
   },
   {
     "uid": "QnVubnkgTGEgQ3Jldw",
@@ -73130,7 +73298,8 @@
     "disc_uids": [
       "fcd898ca-b423-4eb6-b43a-3ccbb1168822"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce114"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce114",
+    "reputation": 3
   },
   {
     "uid": "TUFHSUNBTCBTUEVD",
@@ -73311,7 +73480,8 @@
       "8222338f-f3ff-41df-b31b-63b9f2d44e46",
       "fa4a74aa-f7f2-49c4-82e6-cfe374d10fd1",
       "26d4ec7e-bf1c-49ef-b6a0-4d6b2c7161de"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGFuaWMgTW9uc3RlciAhbiBXb25kZXJsYW5k",
@@ -73595,7 +73765,8 @@
       "869fd8ae-2ae9-40e7-874e-7a372d493edd",
       "ef017c36-fbf2-4626-80ce-ee64797fb0c3"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce122"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce122",
+    "reputation": 3
   },
   {
     "uid": "6Iqx44GE44KN44Gv",
@@ -73870,7 +74041,8 @@
       "4887cd26-d782-4b36-b239-55746abdeb72",
       "a81bc3c0-1f9f-4b95-ba7e-e7e3fd4f2374"
     ],
-    "producers": "Shiraki Toyoji"
+    "producers": "Shiraki Toyoji",
+    "reputation": 3
   },
   {
     "uid": "44Ks44Op44OB44Ki",
@@ -74198,7 +74370,8 @@
       "fcc8422f-21e6-4852-8a12-4d691e9b67f5",
       "58dcdd13-427f-4334-b276-253c737246d2"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce140"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce140",
+    "reputation": 3
   },
   {
     "uid": "44OI44OK44Oq44Ki",
@@ -74519,7 +74692,8 @@
       "22b141f6-e93a-4a68-8458-afa2599d344a",
       "a2a34da2-3415-4a3a-8def-b675016c4524",
       "713f83be-01cc-4c29-956b-678b034137bb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkFEIElWWQ",
@@ -75023,7 +75197,8 @@
       "a116da5c-60d6-478d-bb7a-edac0a8c297a",
       "b23d473c-bd1c-45e9-9983-3571a052971e",
       "a6e0e2f9-e338-4086-b8bf-94f1cd313441"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RlVMSVQgQk9Y",
@@ -75365,7 +75540,8 @@
       "4e6f5a37-7489-4c7a-bf38-b503372001c5",
       "39a1e864-4da1-4312-a9b2-3bee562e7cb4",
       "d355b4d7-a3a9-41f8-b7b1-86e7a9e70ec9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "YWkqYWk",
@@ -75481,7 +75657,8 @@
       "e37052a0-1ea0-4ca0-b28a-77e25abb01bb",
       "4d7167b8-7630-4157-8921-83d632d39b1b",
       "a1b5b227-d39a-4604-942f-1126f6682642"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVZBQ0xVQg",
@@ -75684,7 +75861,8 @@
       "b4aaae53-4c40-4658-9f41-a687181fa30c",
       "ae475da0-4ac2-4918-baff-b426b77e13af",
       "9449afb7-0b26-499b-a7b1-93e5010398c5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWFsY29sbSBNYXNrIE1jTGFyZW4",
@@ -76369,7 +76547,8 @@
       "0ab40cf5-a0c2-4b74-bc7c-041289c821f1",
       "aa754a51-bada-45e4-a17e-e57574dce76e",
       "e47b6ba4-58ce-4483-9000-fd5373405847"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QW5nZeKYhlJldmU",
@@ -76719,7 +76898,8 @@
       "364684a0-fd08-4404-8a78-6f50be660b80",
       "f86fca98-1ea4-4dc9-92b1-da1e222e5d35",
       "b3aea460-0acc-476c-b4fa-838656c325e7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC",
@@ -77366,7 +77546,8 @@
       "6b612f10-0c03-441f-b522-ce4e2a64e9b6",
       "6858c751-acc4-4348-bfe5-2cdf382b8b4d",
       "a9741a4f-dd67-48ad-8bfd-9e61aa05709b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
@@ -78629,7 +78810,8 @@
       "31ad44cf-463a-4a66-a34f-3d6743d3ef6a",
       "9d2647b2-252c-4af1-957c-5da593e26bc0",
       "c19387ba-b14c-421f-a919-440f138634d3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GY44KF44GY44KF",
@@ -80086,7 +80268,8 @@
       "d96d421d-1dae-4896-9b74-7c9ccd7c1b11",
       "d3c54895-da49-4ee4-9d99-7e68163fcb53",
       "71a1fea1-f4c6-474b-b73d-3be4f92a6750"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44G144KP44G144KP",
@@ -80298,7 +80481,8 @@
       "510a8c82-8953-430c-aedf-64b3abaebf61",
       "738ade16-c677-4ee1-b404-f3aa7b187bfc",
       "2d4dc29a-7019-47bc-abd3-58f5559e5743"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ",
@@ -81134,7 +81318,8 @@
       "ce2b8525-3603-4fed-ac33-96332a788154",
       "3c552650-5592-43f9-a498-eb3f61dd818a",
       "cc1cf92f-a3bc-4f02-8168-103f47f4abd3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OU44Ol44O844ORISE",
@@ -81667,7 +81852,8 @@
       "9cf483e7-6846-4d93-a6e1-d67a734e878a",
       "c28c0743-8367-4d6d-a3d8-2fe28709c4e3",
       "01dab813-79c7-46af-8c78-8ce0f59018bb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S2lzc0JlZQ",
@@ -82341,7 +82527,8 @@
       "586a6011-ff4c-43c9-8234-ef0bb51505ea",
       "e136986e-fe74-4100-8df1-c2a21ddb9c13",
       "e2078843-ee60-4823-b64c-6a659c64b804"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6YO95YaF5p-Q5omA",
@@ -82515,7 +82702,8 @@
       "38f2ef5e-fada-421e-822e-2ca46559f50f",
       "77f8dcd2-b2c7-4cc3-b2e5-9ad9b5b4d297",
       "0472c78e-38ff-411b-b194-116b221e2d9c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0FZLUxB",
@@ -83020,7 +83208,8 @@
       "0614e34e-4dcd-4d04-8950-e4afe7c212ea",
       "94e6bac5-e517-4213-ba45-da0f05bceaba",
       "37c41996-1cf7-4fd7-a0f3-c6d63ef1c18d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ko44Op44OQ44Os44K3",
@@ -83259,7 +83448,8 @@
       "0e131042-2027-4d6f-975a-bc60dbc7bd70",
       "83401cce-290d-4c2e-be29-8827ab322148",
       "ccbd4046-7b97-498d-a96f-b80648d7c6f1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S2lTUyBLaVNT",
@@ -83543,7 +83733,8 @@
       "613fdfd2-a4ca-4b3b-be7d-b0db682deb48",
       "a612bc3e-1ccb-44a7-9d07-096e5d841b7a",
       "fe078469-dd91-4935-a532-248ecc8f96c2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
@@ -83771,7 +83962,8 @@
       "5277a101-e35d-4f08-9c02-f92ad979ab2f",
       "67b7599a-d861-4bf3-9203-2858b12bc5c3"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce77"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce77",
+    "reputation": 3
   },
   {
     "uid": "TWlpUw",
@@ -84086,7 +84278,8 @@
       "781175ff-483b-4e76-b82f-c1644a67e05f",
       "56ebf7a8-dc6d-42f9-a465-df520c4fd3d3"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce88"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce88",
+    "reputation": 3
   },
   {
     "uid": "44Kw44OH44Kk",
@@ -84197,7 +84390,8 @@
       "d0afb41f-58cc-4ce1-ba16-1d16678f9ef7",
       "c5585e44-039e-4c98-8d45-93fa9e06c119",
       "2af90c2c-13fc-4bb1-9b62-83cefeb38dc4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SSBNWSBNRSBNSU5F",
@@ -84448,7 +84642,8 @@
       "fb564931-5446-4219-b83f-36a0f83d34fa",
       "beb11896-47ba-4280-8b34-06ca6b0a7e6f"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce96"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce96",
+    "reputation": 3
   },
   {
     "uid": "V1TimIZFZ3JldA",
@@ -84982,7 +85177,8 @@
       "be88c9db-ef97-42bd-b9ec-84ffe76cb5e7",
       "f088725e-d1c7-44ad-ae5a-744c8ab12422"
     ],
-    "producers": "Iwaisako Yasuyuki"
+    "producers": "Iwaisako Yasuyuki",
+    "reputation": 3
   },
   {
     "uid": "TkVPVE9LWU8tVFJJQkU",
@@ -85136,7 +85332,8 @@
       "3df4577d-d18e-4fa7-a8fc-388d4a51619e",
       "7c9021d7-2cce-4586-ae1f-cb2c1d8bee6b",
       "09ec93f7-5de5-4c2d-a803-65184ebf64d1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OP44OL44O844K544OR44Kk44K5UmUu",
@@ -85352,7 +85549,8 @@
       "5db4f376-b4ed-4f76-893b-b4aed666a6fb",
       "9457983f-4386-4410-b9fa-a97ae9049eb0",
       "55070220-a8d0-4d4a-a881-8e663f0cb56b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R0FOR0RFTUlD",
@@ -85745,7 +85943,8 @@
       "b0d78c34-cf57-4f55-bfe0-2199163be55e",
       "3f9d001f-b01b-47e5-bef0-624fc6d7bc0f",
       "14900ab5-4738-41af-92c9-900b022dd5e1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KR44KT44KJ",
@@ -85872,7 +86071,8 @@
       "b440abb7-71f7-414d-931f-b3baa74a2404",
       "cabbef5e-1984-420b-a8f4-3946c2920836"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce45"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce45",
+    "reputation": 3
   },
   {
     "uid": "UmFSYUphTQ",
@@ -85996,7 +86196,8 @@
       "ff28d014-3579-4cd0-b7d1-ff5bdcc0c8c0",
       "80dc2b34-1ab9-4087-b57a-00bfd3b4d0fc",
       "22948b42-57c6-4e79-a14b-624f13cb2a98"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2hhcm0gUG9jaGU",
@@ -86128,7 +86329,8 @@
       "8219f45c-326e-40c8-9df8-8ddcf02daaf5",
       "b7842f45-ef29-4d2f-9a60-0014dda07378",
       "624b84c0-d2e2-4379-b511-94f45e22b848"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Oy44OJ44Or44Oe44Oo44OK44Kr",
@@ -86528,7 +86730,8 @@
       "4e298f8f-9b13-4cd7-aa9c-b4f1718347e6",
       "fee18178-0fd8-4cf6-9fd5-7197472cf4b7"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce108"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce108",
+    "reputation": 3
   },
   {
     "uid": "QmVhdXR5IEJveA",
@@ -86671,7 +86874,8 @@
       "636bed72-de01-4665-a3af-4a53a34e7bd4",
       "6c5873c9-1a7c-45a8-87c0-a2692907b0cb",
       "cd85f890-eb9a-4c3a-b0a8-aba81ac9b8e3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5oKq6a2U44Gu44Kt44OD44K5",
@@ -86829,7 +87033,8 @@
       "ae51c115-a528-4c5e-bad6-61dbbd0961e2",
       "fc99055e-67f6-4965-9e69-ac430c3d2fdc",
       "20f796b3-347f-40a7-88ab-7609811afe10"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5pS-6Kqy5b6M44OX44Oq44Oz44K744K5",
@@ -87706,7 +87911,8 @@
       "33b0d280-c702-4b1a-8479-00959519b20f",
       "f211ff96-901d-49fd-b000-836854b5cc2f",
       "db11e43d-5d34-4a08-994f-0345011161f9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Oe44K444Kr44Or44O744OR44Oz44OB44Op44Kk44Oz",
@@ -88167,7 +88373,8 @@
       "9d0810f1-da92-4af4-a391-efbb27613918",
       "1b5bfe80-cb30-4fd3-bb7d-7432d412b28e",
       "603318e6-fcaf-420d-8521-7ca9e6c24813"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUVMTE9XIE1FTExPVw",
@@ -88309,7 +88516,8 @@
       "30ef65bc-bc7b-4ae8-b7b2-94b001bcb2aa",
       "3d5c363c-5b18-43fb-b621-f6acd99b9132",
       "f21a2198-5962-487e-bad3-d4f19577f33e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0FLQS1TQU1B",
@@ -88665,7 +88873,8 @@
       "3d4622d8-ecd5-45b7-9058-60e43e9e07ce",
       "c62618e6-00b9-4dcf-8101-220f7c0b82d4",
       "619faf7b-ae5f-4ec2-b8fd-6e27dc22bc49"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5rWq5rGf5aWz5a2Q55m657WE5ZCI",
@@ -88880,7 +89089,8 @@
       "8a87e193-c5ee-4df5-92e6-1f0bf3cfdcb1",
       "d0f2de21-2951-40d0-8f1b-d437d96dfb08",
       "938586cc-ba41-4e4f-89a9-437c75596781"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
@@ -89052,7 +89262,8 @@
       "2d7c808f-df29-49e2-bf8f-4de6ad5e20db",
       "021ba5b4-1e4c-40d5-b031-eab621bbbc01",
       "cb4d5b35-d875-45e6-ac06-6e4681356093"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5pif5q20MTPlpJw",
@@ -89095,7 +89306,8 @@
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce58",
     "discography": [],
     "disc_uids": [],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "YW1iaXRpb3Vz",
@@ -89309,7 +89521,8 @@
       "84fa2fde-3bbe-42c7-9ef3-da3c5e4934f0",
       "ca195f4d-7380-4ff7-b09d-cc5da6280f40",
       "1decd0b7-f210-4541-8806-0e614a2099c3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "ZmFuY3lsYWJv",
@@ -89487,7 +89700,8 @@
       "a1939ae4-9b66-4f67-b6da-e87e9780e0a5",
       "a225b45b-92ce-493a-8765-ab22bca4e2fa",
       "75a8ee71-ad01-45f8-983b-d1a1c2bd9d55"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UklSWURBWQ",
@@ -89611,7 +89825,8 @@
       "4fcfffc1-6c3c-49e3-a145-4542baab34c2",
       "93e9d70c-1da6-4d6b-b1e3-5ae8bffd47cc",
       "4ff3b775-d666-408d-843e-e3022ddf04f7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VU5CUw",
@@ -90224,7 +90439,8 @@
       "af8d1e22-5e30-419e-a11d-5095e610dbc1",
       "72239f71-2216-47d0-a49e-e1ff0fb62e8e",
       "30f2157a-1364-44c1-9dc9-ae4e226ea6eb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "57WC44KP44KJ44Gq44GE44Gn44CB5aSc",
@@ -90719,7 +90935,8 @@
       "7adacc86-a396-454f-b3ac-a017061cdc02"
     ],
     "song_uids": [],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce55"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce55",
+    "reputation": 3
   },
   {
     "uid": "44ON44Kz44OX44OpcGl4eC4",
@@ -91263,7 +91480,8 @@
       "a040cc5b-8fff-48c9-b90a-e1d05b29548d",
       "5958d5a1-bd6c-4ad4-9e64-ff72f00ac5fa"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce34"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce34",
+    "reputation": 3
   },
   {
     "uid": "44Ov44OD44OE4peO44GV44O844GP44KL",
@@ -92127,7 +92345,8 @@
       "589b2853-ad9b-488e-93b9-8ed0816b8b69",
       "fc481c66-8c61-4dec-8aa1-0ddff381b686"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce85"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce85",
+    "reputation": 3
   },
   {
     "uid": "T1PimIZV",
@@ -92600,7 +92819,8 @@
       "8a7d5888-381b-4acd-80aa-744ecbdd6673",
       "44485717-f65f-4389-9e96-5c4b3954fde1",
       "4af83d33-ecef-4fd1-91af-3500a08bf021"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44G144GH44GC44KK44O844Gm44GE44KL44Ga77yB",
@@ -92743,7 +92963,8 @@
       "64d7d146-efe6-4987-9767-a14417fd9ffe",
       "6304de4e-6168-4608-a425-2e8a74552a3b"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce49"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce49",
+    "reputation": 3
   },
   {
     "uid": "aWRlYWwgcGVjbw",
@@ -93155,7 +93376,8 @@
       "b17649d2-95cd-47a1-b01c-ad20398c5139",
       "868a95e8-f948-4630-89ad-b007864a21e5",
       "49694e1f-3663-4455-a0e0-f9e0b69ebb3f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K144Kv44Ok44Kz44OO44OP44OK",
@@ -93350,7 +93572,8 @@
       "b019b23d-0236-4766-bbe9-c6bd9bb71727",
       "4a631e62-883b-4bc1-9134-7652ef91e76e"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce37"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce37",
+    "reputation": 3
   },
   {
     "uid": "UE9QUGlORyBFTU8",
@@ -94138,7 +94361,8 @@
       "4b33cf4d-bc69-4561-aee9-ab256afb3c19",
       "ff5894b1-e665-4d24-b3d3-7d3ee60bf30e"
     ],
-    "producers": "Iguchi Ichiro from SCRAMBLES"
+    "producers": "Iguchi Ichiro from SCRAMBLES",
+    "reputation": 3
   },
   {
     "uid": "U0FJwrJSaXVt",
@@ -94650,7 +94874,8 @@
       "66dda1b5-72cb-40b0-9af1-d67249889c48"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce117",
-    "producers": "Yuzuriha Miyuu"
+    "producers": "Yuzuriha Miyuu",
+    "reputation": 3
   },
   {
     "uid": "44Gq44KT44Kt44OL77yB",
@@ -94869,7 +95094,8 @@
       "722e7e09-68df-462a-803f-208f4427c558",
       "4201b519-ed97-4e23-a9c6-bd2ab00f99dc",
       "2310e94b-0c7a-4adf-96ef-dc6a90eb5d8d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0FOREFMIFRFTEVQSE9ORQ",
@@ -95164,7 +95390,8 @@
       "98fe85b1-2fab-4ef6-813b-1cbcf245e1ac",
       "0b8e8c5c-e5a7-4ace-b296-f43e8b7ab34f",
       "ed71e14b-18b6-44ae-aa5f-457fa393abbd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0FpTlQgU0VY",
@@ -95279,7 +95506,8 @@
       "e120f54a-bcfc-4bdf-8de7-1578150115d7",
       "5ddc11af-7060-43e4-96c4-4bce615a2545",
       "884edcbf-c652-4b0a-8b7b-2f9fa4955fe4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5oSb5LmZ5aWz4piGRE9MTA",
@@ -95633,7 +95861,8 @@
       "563c9cc8-d7b7-4786-a16f-ebcb1a8d9bf6",
       "80ea4322-bd9e-4d3a-ad77-290fb8483580",
       "ec712601-312a-46d2-bc06-8a4d3163b45d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KB44KN44KT55WRYSBnbyBnbw",
@@ -96026,7 +96255,8 @@
       "26f8d520-9f91-4ed0-9985-ac23ab851a8e",
       "845ea60d-5d40-4a34-a3e0-9366680a470b",
       "4cba5b21-48c4-4810-af9f-eab19f61d59b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OU44Ol44Ki44Oq44O844Oi44Oz44K544K_44O8",
@@ -96266,7 +96496,8 @@
       "c8d22553-6840-4b5d-8475-fa3dc89b5cb4",
       "695b063a-2dc0-48e6-8a03-f821f4f2c4be"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce38"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce38",
+    "reputation": 3
   },
   {
     "uid": "TmFOb01vUmFM",
@@ -96454,7 +96685,8 @@
       "cdfae90f-8f79-4a99-af2d-bb43ef05a2d3",
       "bf6777db-cb05-42b0-9f74-84ae04617d85",
       "2166950a-31ec-4323-9979-cf0cd8a0675e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RFJFQU1JTkcgTU9OU1RFUg",
@@ -96664,7 +96896,8 @@
       "291a06c8-193c-4780-b127-136e88f40690",
       "434edef7-3fab-42b3-834c-a0badd44f23e",
       "46b5d016-f847-43a4-b7e0-2cbc283e0391"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q1VCzqNMSUM",
@@ -97030,7 +97263,8 @@
       "13592e42-d290-40de-8d7d-85ea6f924961",
       "60f3b748-5980-4027-818c-dd0378c40a2c"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce73"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce73",
+    "reputation": 3
   },
   {
     "uid": "44Oh44Kk44OT44O8TUU",
@@ -97189,7 +97423,8 @@
       "d5bb57e8-36da-4be6-9dd6-768a76bc555c",
       "eaeba4e7-b170-4e86-87f0-ac9ae5293156"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce51"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce51",
+    "reputation": 3
   },
   {
     "uid": "UGlua3lTcGljZQ",
@@ -97388,7 +97623,8 @@
       "b7f6b846-4fac-4f07-98a4-09304c3a88f6"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce60",
-    "producers": "Kamoike Ayano"
+    "producers": "Kamoike Ayano",
+    "reputation": 3
   },
   {
     "uid": "bWV0YXJpdW0",
@@ -97705,7 +97941,8 @@
       "ffc0d7f7-1939-42f0-baf9-46e667f15458",
       "70ded1d7-a59d-40e5-9b90-fdc16520202b",
       "f387dc82-d751-422f-a81d-563d7675a314"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGF5bg",
@@ -97861,7 +98098,8 @@
       "e83087ad-40ac-467e-bf6c-bf9228f0e3f0",
       "ebad0895-2126-4ce2-9f11-e35e2e428805"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce73"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce73",
+    "reputation": 3
   },
   {
     "uid": "44O744O744O744O744O744O744O744O744O7",
@@ -98437,7 +98675,8 @@
       "c3656c8e-6521-4a03-9eb0-51e05bceaa91",
       "00db9272-f4be-4b29-8d60-e470e1a80bbc",
       "f847e077-baf0-49fb-ae9c-03ecfa0d06dc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Oq44K55Y2B55Wq",
@@ -99632,7 +99871,8 @@
       "5a781804-304e-4822-8dea-55290b553c1d",
       "e8fbe2e8-0b78-4a17-a201-9e969f4f624d",
       "e0441cb8-f0cc-4351-b39a-731de0297a87"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K544OB44O844Og44Ks44O844Or44K6",
@@ -99960,7 +100200,8 @@
       "14fd1712-b726-4215-a028-8fed2588f318",
       "c35aae24-cbc1-45e8-a6f1-d4106174c718",
       "3fcb347b-1df2-4574-9cae-273eacb94321"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TkFOT05J",
@@ -100375,7 +100616,8 @@
       "473e220f-27f0-477d-b53c-02f13d137d6b",
       "dd7be245-4dca-4a0a-9779-677974e92065"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce92"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce92",
+    "reputation": 3
   },
   {
     "uid": "WE9YTyBFWFRSRU1F",
@@ -100697,7 +100939,8 @@
       "fc28620b-733f-4d07-abc8-f6b5c1136a52",
       "45ff396d-ad60-4388-9419-7e0003fcecf7",
       "aeb58f85-f3f5-49c2-b4b8-dd2b0af10cf9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S1JEOA",
@@ -101188,7 +101431,8 @@
       "900a2765-add4-49d4-b17c-e1ac0b5e3cc8",
       "9e9a59b8-9ee2-4e71-b009-7c1b32143866",
       "e4f92041-628f-4d54-8721-274b954cf97a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "aVNQWQ",
@@ -101603,7 +101847,8 @@
       "f5bd1a58-74c3-47fa-9752-745a35a1a5ff",
       "c38d4642-b6cd-41b8-a076-65a094b6a79b",
       "94ba2329-42ee-49f0-835b-918dd5285e72"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RG9yb3RoeSBMaXR0bGUgSGFwcHk",
@@ -102109,7 +102354,8 @@
       "d26fa257-d02d-41b0-a919-7209d13cf32e",
       "1bb679b6-711d-4371-9e71-38676fa89fa6",
       "f25bf226-77eb-4a39-9f8d-7e9de65e1b8d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UEFSQURJU0VT",
@@ -102500,7 +102746,8 @@
       "b614e832-c7c8-4709-bffa-a953ebe0fd13",
       "d4a6fe8f-c0df-405c-8384-95bfccd596d4",
       "ac707161-fd8b-4640-8dc9-ac5ee0b8ab43"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1RBUk1BUklF",
@@ -103543,7 +103790,8 @@
       "f89c102a-4290-42b4-86ce-8ba322511e0c",
       "8e876a28-6f1c-44c6-ae2b-46bc5ec16351",
       "562053b8-457c-46ae-8946-4084e579fca7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Kk44Kx44Gm44KL44OP44O844OE",
@@ -103911,7 +104159,8 @@
       "f4e82f20-690f-4572-aadc-c1cd64675bb1",
       "491f24ec-be00-476c-b474-d5f4e3ce84c5",
       "5ea92d85-c7c7-49e0-92c4-6e113087a8ad"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "OGJpdEJSQUlO",
@@ -104090,7 +104339,8 @@
       "54229bc1-e806-4242-b594-fe9ad14c569c",
       "c6932b45-e142-4793-a3a5-b41b8d64c606"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce47"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce47",
+    "reputation": 3
   },
   {
     "uid": "eXVtZWdpd2EgbGFzdCBnaXJs",
@@ -104373,7 +104623,8 @@
       "27c8e87a-f930-4b16-944a-af6a8b8538e4",
       "a7a6cd1e-32a6-42b0-a58f-3648365616c2"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce88"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce88",
+    "reputation": 3
   },
   {
     "uid": "QkFCWS1DUkFZT07jgJwxMzYx44Cc",
@@ -104790,7 +105041,8 @@
       "71937ce0-48a6-4b5c-b3be-8da03e0b37ea",
       "a3289a47-0a6f-427a-8944-8dd9697ac99d"
     ],
-    "producers": "Ishiwata Hinako"
+    "producers": "Ishiwata Hinako",
+    "reputation": 3
   },
   {
     "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
@@ -105003,7 +105255,8 @@
       "d6f50e7e-a5b7-4392-a135-9d15ba2a5779",
       "59214db8-a7a5-489c-b0c2-ce131186e72b"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce61"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce61",
+    "reputation": 3
   },
   {
     "uid": "44Gk44G844G_5aSn6Z2p5ZG9",
@@ -105638,7 +105891,8 @@
       "89c4559f-fd5c-4e2d-938c-d847b4d4e0cc",
       "2a09c53e-5a70-4db7-ac3c-3679514afd11",
       "c5aeee2e-d061-4a22-91e1-7f5712724302"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "OTYz",
@@ -105849,7 +106103,8 @@
       "3c872f6c-03cf-487a-ada4-e6fe80f7998d",
       "d05fa319-27dc-4865-9922-1826c284ffc1",
       "08bde860-8b7b-444f-90e2-aefa5cf22f5a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkFOWkFJIEpBUEFO",
@@ -106238,7 +106493,8 @@
       "20ed7981-9388-490e-b84f-9d36169478d1",
       "f823f5bc-d75a-44ca-b177-58ab465e4cfd"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce22"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce22",
+    "reputation": 3
   },
   {
     "uid": "SllB4piGUE9OIDIuMA",
@@ -106510,7 +106766,8 @@
       "94a9ee45-07b3-4dfb-ab7b-393cee3e87ec",
       "8c120c53-d3d3-47bf-94c9-1c0fd5325cf6",
       "3cbd6bdc-0175-49db-84c3-59feec3f0d85"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UkVBRFkgVE8gS0lTUw",
@@ -106962,7 +107219,8 @@
       "c89daeab-d0f2-4b26-9d43-3fc74f307a27",
       "307dacd3-455f-4240-8269-1540b47c51eb",
       "a3ae0918-b91d-495b-8c4b-6c6ad9726e16"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SlVHUyBNQUZJQQ",
@@ -107359,7 +107617,8 @@
       "a2b311ab-c11f-4298-a468-69c40052966f",
       "c68b22d9-2dfd-4a1a-b599-c027655dcc2d",
       "3ef5d740-7aad-4bc8-854e-6415fa111e55"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "I1BFWEFDT0E",
@@ -107734,7 +107993,8 @@
       "adc2c31a-8616-4e3f-9582-95acff3f1553",
       "38ba10d1-81e2-4847-a990-e7831d2e9d8f"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce94"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce94",
+    "reputation": 3
   },
   {
     "uid": "44Kv44Ot44K544OO44Ko44K344K5",
@@ -108011,7 +108271,8 @@
       "3419f7cb-b0d0-4165-b429-476244ef79d1",
       "feda80ef-61a0-4bf2-a562-b60854b06d33",
       "d445c882-cfc3-4066-b3a2-873c4993fc83"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFOQUNMRQ",
@@ -108284,7 +108545,8 @@
       "c8b75f19-eb15-49ff-9c77-a09da2814227",
       "689b9b74-8bdb-4471-8b3c-dc0553bb8d10",
       "dc7579f4-5491-49e8-a1e9-d8029d493b77"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Mm8gTG92ZSB0byBTd2VldCBCdWxsZXQ",
@@ -108638,7 +108900,8 @@
       "27a59956-6d1c-47f9-a44b-0f61afaac3ae",
       "b561652b-4b42-4fc5-ba17-6af7c231a63d",
       "a3a926c3-27aa-47a5-820f-fabc1c0daba9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2h1LVo",
@@ -109014,7 +109277,8 @@
       "fb26b5ea-dea7-4bc8-a922-062ff5768dfc",
       "9e5bd124-9c16-4ca4-9d2e-be6433030895"
     ],
-    "producers": "PaniCrew 's YOHEY"
+    "producers": "PaniCrew 's YOHEY",
+    "reputation": 3
   },
   {
     "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or",
@@ -109035,7 +109299,8 @@
     "wiki_url": "https://jpop.fandom.com/wiki/Girlz_Can%27t",
     "discography": [],
     "disc_uids": [],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TUVXTQ",
@@ -109615,7 +109880,8 @@
       "ee8523cc-92a5-42f2-b8e1-8c47f66eacf1"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce92",
-    "producers": "Yayoi Links"
+    "producers": "Yayoi Links",
+    "reputation": 3
   },
   {
     "uid": "SEFNSURBU1lTVEVN",
@@ -110029,7 +110295,8 @@
       "d470eee9-6678-44a9-a4aa-3316db5afea2",
       "304e6482-e942-4c86-89c7-4eec010f52a3",
       "c5f4c1f2-1236-4248-ad6b-f0b5e4a73549"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFHSUNPVVI",
@@ -110169,7 +110436,8 @@
       "77f0d16b-b7a2-4f5a-ba1b-75c4e1b56c6f",
       "6ed3d025-e2d0-4e89-b5c7-afc86e7efa9f"
     ],
-    "producers": "Popteen"
+    "producers": "Popteen",
+    "reputation": 3
   },
   {
     "uid": "5aSW56We55Sw44GE44Gj44Gh44KH44KB",
@@ -110685,7 +110953,8 @@
       "2004430d-8cbb-45a6-970a-fe86f4378a1d",
       "844b1068-281d-401d-a04c-ebbe0485996c",
       "88754b09-4318-465c-8b9a-a5b4216b50d5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "ZXQt44Ki44Oz44OJLQ",
@@ -110938,7 +111207,8 @@
       "b33b80ab-6ddf-4107-8ec8-2e9469db6535",
       "5005ce3a-4ca5-457c-a4a5-9bdbf123ccd4"
     ],
-    "producers": "Kikuchi Kazuhito"
+    "producers": "Kikuchi Kazuhito",
+    "reputation": 3
   },
   {
     "uid": "44Kw44O844Kw44O844Or44Or",
@@ -111099,7 +111369,8 @@
       "decb3f99-2b0a-4f4a-92bd-f3159c2ca316",
       "2412e76b-f0a2-4181-a7a9-afcf47e8427c",
       "9fc65630-32a5-4ca5-a2b2-b86ed98092ca"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TklMS0xZ",
@@ -111258,7 +111529,8 @@
       "b82f62ee-e5e7-4c48-b671-2a9ce64b7db6",
       "b015394d-26d0-4be6-bdd2-d87a1d34217a"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce65"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce65",
+    "reputation": 3
   },
   {
     "uid": "Rml2ZSBlbW90aW9u",
@@ -111323,7 +111595,8 @@
     ],
     "disc_uids": [
       "c243cfcb-a9a6-45c0-b7fc-d70a1cdfe063"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RU1PRQ",
@@ -111508,7 +111781,8 @@
       "dfbc1888-4ecf-4b25-9c1a-dc5c97cb3db0",
       "f38aee30-446d-4529-915c-c8d304278037"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce84"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce84",
+    "reputation": 3
   },
   {
     "uid": "T0xOZXc",
@@ -111623,7 +111897,8 @@
       "abd88590-cd0f-46dc-b56c-82180f632b23",
       "d5ce7207-7f14-42ac-bafe-45b53d555abf",
       "51a4fe23-8907-4cf5-8ccf-1a7ac6434871"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVJDQU5BIFBST0pFQ1Q",
@@ -111978,7 +112253,8 @@
       "b6be1856-7bb2-4c03-a86c-01e44ad65b4a",
       "137022de-2957-4f40-abe9-e2ef74925119"
     ],
-    "producers": "Lantis and DEARSTAGE, and Mia_REGINA directs some of their songs and dances"
+    "producers": "Lantis and DEARSTAGE, and Mia_REGINA directs some of their songs and dances",
+    "reputation": 3
   },
   {
     "uid": "TWHigJlTY2Fy4oCZUGllY2U",
@@ -112189,7 +112465,8 @@
       "03d1642a-f341-4916-b36b-1e8ed4c66e71",
       "4a08c1f6-a033-4814-8360-3ab1d020d3b2",
       "fc6d885a-7d5f-4bb3-91b4-d52c431e1c60"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5p2x5Lqs5aWz5a2Q5rWB",
@@ -113919,7 +114196,8 @@
       "c7a75fe4-ade2-4347-8e70-c6037434791c",
       "b515fe40-8b0e-47d3-8f38-1e7bbb40c51d",
       "89c4fa65-22d4-4ad6-837d-fab6bb303df5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkFCWUJFQVJE",
@@ -114026,7 +114304,8 @@
       "b377bd18-c005-41dc-b696-a2c9db65e18d",
       "4a0aec15-b34d-410b-9cc6-ea78f86679e6",
       "062417c2-ccf6-4930-b972-f8281e70c8d3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gw44Gj44Gm44KT5bCR5aWz6ZqK",
@@ -114502,7 +114781,8 @@
       "f695f547-3348-45de-a465-bd576327f3ac",
       "71d1bfab-a70d-44f9-865d-b5423eff783f",
       "6c2e1b47-ba1e-42ec-bff8-12e5253d49df"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RkVT4piGVElWRQ",
@@ -115110,7 +115390,8 @@
       "bf557cd4-9200-45fc-a6a9-42ddaa229a53",
       "eabb13ee-2861-4002-9504-c8d443b5525f",
       "04ab5b5a-0598-475d-a7a5-43c26106549c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VEVBTSBTSEFDSEk",
@@ -115906,7 +116187,8 @@
       "05bbab3d-1e4e-4da3-914c-b57a8c971749",
       "7448dba8-012a-4b44-8da5-e14774ce6ad2",
       "39a9708a-9040-4da5-aadc-9953f6a56baf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S0xQNDg",
@@ -116081,7 +116363,8 @@
       "3a3592ae-1673-477c-89a6-8d650ae04ae0",
       "58f76aa0-4cbb-4994-bf5c-8ce5c9619141",
       "7f6bb2a6-bae2-442e-9c43-e96a485686d0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "V0hJVEUgU0NPUlBJT04",
@@ -116333,7 +116616,8 @@
       "12615af9-a2c0-4ef7-b82a-8b84906bb6b2",
       "5000400a-22a2-4f39-902b-f4ca40329d8b"
     ],
-    "producers": "Akimoto Yasushi"
+    "producers": "Akimoto Yasushi",
+    "reputation": 3
   },
   {
     "uid": "44K_44Kk44OI44Or5pyq5a6a",
@@ -116600,7 +116884,8 @@
       "44e77585-1ddd-4cda-85d0-c6cd574a57bc",
       "3e5af4de-8bd4-47a2-ac38-52ca0a5388ff"
     ],
-    "producers": "Matsui Koudai"
+    "producers": "Matsui Koudai",
+    "reputation": 3
   },
   {
     "uid": "VXRhR2Uh",
@@ -116995,7 +117280,8 @@
       "a656aa8c-a878-4d72-8411-82f44ac21002",
       "15a67b7a-3c77-4e34-99ae-e92d445d13e3",
       "614fe05a-3d00-453a-be39-33ead3ffbc92"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OP44Or44OL44K344Kq44Oz",
@@ -117167,7 +117453,8 @@
       "94d77813-f10c-4026-b709-b188b4a5f34a",
       "5960fa4f-f005-43ff-945d-2baad70ceb0a",
       "a3c518c6-ac6e-48fe-9597-379ba2c259a5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TkVDUk9OT01JRE9M",
@@ -117612,7 +117899,8 @@
       "5217cb20-a047-4a1d-a752-6288e27cdb71",
       "5cd6cc31-07dd-41a0-8918-0c21da9bdd83",
       "fe935191-79ff-4051-b8a2-7cdef10193df"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1VQRVLimIZHaVJMUw",
@@ -118851,7 +119139,8 @@
       "46f095f2-63dd-4ad2-841a-d8d675a88279",
       "37b20f47-ff71-432a-9a83-2a79d09a4cbc",
       "5c5dc9a9-2e40-4447-81f3-0d15515d331e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44G-44Gt44GN44Kx44OB44Oj",
@@ -119186,7 +119475,8 @@
       "6ab3ecb8-fe4c-4dfd-8821-379ced9216f0",
       "0399476e-0a3f-4ba1-8c22-5efaf2e340d6",
       "7315a776-b03b-4efc-8312-14ab7538e6f8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5Luu6Z2i44Op44Kk44OA44O8R0lSTFM",
@@ -119502,7 +119792,8 @@
       "e1bf66f6-cf90-407f-818f-a10afae32915",
       "beb30a1f-0c11-44cb-96fd-003b84026681",
       "6b1f76b9-20c2-42d5-a479-453eb1d52e31"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "ZmlzaGJvd2w",
@@ -120205,7 +120496,8 @@
       "09076635-3b86-4d1f-9697-5f6215580fe3",
       "9316d50d-c226-4a42-a801-a45e9c0e55f6"
     ],
-    "producers": "Yamamoto Sho"
+    "producers": "Yamamoto Sho",
+    "reputation": 3
   },
   {
     "uid": "UElHR1M",
@@ -120749,7 +121041,8 @@
       "7276b873-e535-4665-b9e6-67adc7623894",
       "658e4443-bff2-4cee-ab4d-e41dbf86b8ec"
     ],
-    "producers": "Pour Lui"
+    "producers": "Pour Lui",
+    "reputation": 3
   },
   {
     "uid": "Y2h1TGE",
@@ -121358,7 +121651,8 @@
       "20b765a0-d96a-40b6-bd92-2785fa755605",
       "17d90f9c-442e-41bc-a60b-950af2d55fcf",
       "7f093f78-3495-4945-843f-f38607c97cab"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RGFuY2luZyBEb2xscw",
@@ -121528,7 +121822,8 @@
       "848cf0a6-f8dd-4828-baff-bf34f667e5f3",
       "2da6185c-c89c-439c-a85a-fc1cd471d2b8",
       "d4dc4b00-0f68-4810-9e58-015088ce1fc7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gq44G_44Gg6Imy44Gu5raI44GX44GU44KA",
@@ -122074,7 +122369,8 @@
       "b43ed736-a998-410c-87b5-eac75d132404",
       "8707212b-6647-4190-bc8d-11f904f9f188",
       "18f39500-10b4-4afb-8146-ead9ba5cb2d8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OZ44Ot44OG44Kj44Kr",
@@ -122609,7 +122905,8 @@
       "9ee50a52-ec47-4697-bd52-1f76027445b5",
       "0b42dc06-8613-4d0a-ad98-efb911a9b1bd",
       "faf0b819-2dfe-409e-a3de-ee0d0612bd02"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWFpc29uIGJvb2sgZ2lybA",
@@ -122967,7 +123264,8 @@
       "70f938dc-c458-428c-b8a4-4558b0bfc040",
       "5a02d100-0f93-43de-ba75-b3852ad7a2de"
     ],
-    "producers": "Sakurai Kenta"
+    "producers": "Sakurai Kenta",
+    "reputation": 3
   },
   {
     "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
@@ -123842,7 +124140,8 @@
       "ab7eead4-8788-47b9-aa6b-2a88a10b6a32",
       "036ed423-f46c-42dc-b5ca-6ec09f14a41d",
       "4c10688a-6e69-4621-b20c-e138839731fd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFaRQ",
@@ -124058,7 +124357,8 @@
       "cbc6195d-26a7-4036-bad8-8621622432d9",
       "b11cdbd9-97d6-4567-a49f-69c1ba3d9a61",
       "0b93078f-3728-459b-a575-0574f4a33aea"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R0lMVFkgw5cgR0lMVFk",
@@ -124180,7 +124480,8 @@
       "f13ddf8e-2858-4382-a10d-3fa793972033",
       "52171d08-3360-4490-aad7-16ae08ad1cfe",
       "510020fc-829a-49aa-b949-52f2f993f86a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVNQ",
@@ -124591,7 +124892,8 @@
       "7162af92-e0b9-41b9-9e88-c3c6f315e470",
       "d815890e-b82d-44c2-a491-258695f355b7",
       "4e85cd47-600e-4695-8f61-c087c8e5a071"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "dWtrYQ",
@@ -124952,7 +125254,8 @@
       "5601815b-e406-475a-b014-93831ba24d43",
       "45c2ace6-236b-4b49-8f8e-1dba80930b98",
       "17062d98-501e-458e-80d7-a70ad1ef76b7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SU5VV0FTSQ",
@@ -125500,7 +125803,8 @@
       "dff8b1d3-857b-43bd-9927-ec5d5c34b132",
       "8b9b4def-fa06-4939-8c4a-74059c38540f",
       "42952a26-2be5-4a42-b7b9-7e9c8fb9b5d0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5paw56ugIOWkp-mYquKYhuaYpeWkj-eni-WGrA",
@@ -125651,7 +125955,8 @@
       "f7465a1e-1726-429e-afbb-6b9485166616",
       "8ced4a56-c612-40ee-9b94-dfc1bfa2a24d",
       "d651a7bb-d049-4642-b7d7-8fe272e2a397"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Op44OVw5fjg6njg5U",
@@ -125921,7 +126226,8 @@
       "ab785feb-ffb0-499b-9451-cb2e22c5758b",
       "962b1857-583b-4ea7-9fc3-960a811f6430"
     ],
-    "producers": "Sakuma Nobuyuki"
+    "producers": "Sakuma Nobuyuki",
+    "reputation": 3
   },
   {
     "uid": "Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw",
@@ -126083,7 +126389,8 @@
       "b1d41678-372f-46d7-9f62-2b4ef679641d",
       "0c8e3734-17e0-4e7a-a3a0-f9e4e84d9402",
       "4c8089e7-a055-4f42-b86b-353323123cd1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TmVnaWNjbw",
@@ -126841,7 +127148,8 @@
       "575bbc73-e1ea-4410-b541-bac91a4ea85b",
       "8bbaa45d-533f-4f77-96f8-19718bc3ef70",
       "e6b2bece-df3b-4423-afa3-77fb05fe5b7a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Oi44OO44Kv44Ot44O844Oz",
@@ -127581,7 +127889,8 @@
       "f586d403-076f-4c5c-a29f-658b6f6a43e2",
       "2e4975f4-cfd0-4dba-a651-b85b04468303"
     ],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5omL57695YWI44K744Oz44K744O844K344On44Oz",
@@ -128135,7 +128444,8 @@
       "65020b36-97d5-4969-bf46-2a2d4e797320",
       "4af9dd2f-5977-4e5b-8088-050e89c47751",
       "3c8df38d-5280-4320-b1d4-c5231c7483e9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KK44KT44GU5aiY",
@@ -129024,7 +129334,8 @@
       "67c455da-df6c-479e-b450-3802b55017f0",
       "4b548bdd-dca5-4984-a227-ea88651a011d",
       "422cf6e5-0cdf-4033-abbd-8cf054ae359f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGVlbCB0aGUgQXBwbGU",
@@ -129360,7 +129671,8 @@
       "9a4f6144-386b-4679-9f16-a1247b8f176a",
       "d55b3b29-9913-4c88-b82f-fb2e1a54b59f",
       "eeff3817-d615-449d-8b5a-feb3f9f83063"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "576k6Z2S44Gu5LiW55WM",
@@ -130047,7 +130359,8 @@
       "5a7ff6af-9c03-425e-b83e-0c51e6ce6ba0",
       "07d71d7c-091f-44c2-8c35-b2c7497097f4",
       "6ce0d7e4-2a14-48ad-b160-1760d3d71f6a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWlycm9yLE1pcnJvcg",
@@ -130260,7 +130573,8 @@
       "094b6967-331a-45d4-a285-0beb01f7d5eb",
       "2dc6a3f3-d555-4dea-8327-899942d4a6b8",
       "b0d06d79-f944-4155-9460-d53bb792d668"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QWRhbUxpbGl0aA",
@@ -130373,7 +130687,8 @@
       "c84cbb62-6939-4abf-865d-5781cd4f25d6",
       "090594c9-fb91-48c6-b8c7-50cbb581a205",
       "005c431b-30b2-592b-a08e-320563b47e88"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UkVJUklF",
@@ -130642,7 +130957,8 @@
       "4d7ce456-c06b-473c-8aed-7bee444f5c67",
       "b881528a-174f-4c2c-b3fe-d6a59a0ea790",
       "89598a1b-ca8a-4fdb-abe9-e23b1f11560c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "cGlucG9ucGFucG9u",
@@ -131016,7 +131332,8 @@
       "742d5565-bf22-44b6-9f56-02674b60deee",
       "560ffec3-dc4b-4aa1-8354-de93fdf85800"
     ],
-    "producers": "french cries"
+    "producers": "french cries",
+    "reputation": 3
   },
   {
     "uid": "5pyA57WC5pyq5p2l5bCR5aWz",
@@ -131468,7 +131785,8 @@
       "f1cb1e76-826e-4b2f-acf3-0cf2b7031d48",
       "3fe032fe-fe78-42e0-8edc-c84b3a59f61f",
       "a47ea21d-b9d3-45cb-bc75-50ea500268bd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SmFtc0NvbGxlY3Rpb24",
@@ -131854,7 +132172,8 @@
       "bbdfb705-bec5-455f-bb70-bba405270767",
       "f8ff7026-1798-44cf-81d3-e5733e0f1fe4",
       "a87bef6a-22c4-463d-8d82-fa2f573b2b6e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R0FORyBQQVJBREU",
@@ -132759,7 +133078,8 @@
       "eacf5a2c-25ce-429d-b2f0-4db2cb84ba06",
       "69031da8-79ac-4043-a96d-717f7b2ba723",
       "47602437-b4fa-407c-ba09-29e3ff2db3b0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RXhXSFla",
@@ -133305,7 +133625,8 @@
       "ae344adc-ca30-4d82-b3cf-bb4d549b83f4",
       "2b4453bd-4f40-4edc-b501-7bade261e091",
       "65624cb7-317a-4a53-a692-9d80b3b2e9c9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFEIEpBTUlF",
@@ -133780,7 +134101,8 @@
       "be269e8f-6a96-4df2-a20c-ddb87de33ad5",
       "fff3d05c-7f51-444c-a17a-1d47f313abda",
       "13faa8c2-1455-4ff8-850d-05bf8578e244"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QXBwYXJlIQ",
@@ -134538,7 +134860,8 @@
       "8b8dff1c-3cc2-4fb6-938e-d57bbee7bb54",
       "59fd2953-c257-4dd9-aef4-c3640f776bc1",
       "02c74370-9b8f-43fd-a2d6-b236c9f742b9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VEVOUklO",
@@ -135052,7 +135375,8 @@
       "0a04112f-c629-462b-9bc0-9ee266805df5",
       "b4e1cd46-b9de-43ca-9ebe-1a1607f05380",
       "1b46fdc6-772d-4c97-885d-ee34c9d278d4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q1k4RVI",
@@ -135337,7 +135661,8 @@
       "f37cf0fe-2906-428b-8cbc-12663bc988d6",
       "eca442c2-5798-478c-8f74-08d7ab10c956",
       "0ba2fa05-eb4f-4110-96f1-d61308540133"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SVJPTkJVTk5Z",
@@ -135489,7 +135814,8 @@
       "f2c2dca9-8758-4604-a869-a60d99515298",
       "41db970f-6603-4ac8-8ad8-a9d08d13985b",
       "c00cdc13-b80c-4ff2-99c1-962535e5e603"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OO44O844K544Oq44O844OW44K5",
@@ -135817,7 +136143,8 @@
       "395b7bfc-beb7-48c7-9f72-9eb4b5210cff",
       "649db680-f50b-41d6-92a6-9daa683d0b44",
       "7e7bd808-125c-4a6f-94fc-d872a91ff9f0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SXNpbGllbA",
@@ -136048,7 +136375,8 @@
       "538f3476-19c2-452b-b280-2eec408b8dda",
       "8504a045-7bc3-451d-98a1-51749e525737",
       "1dc1b801-50f6-4daf-918d-25b88e21c8ac"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TkFOSU1PTk8",
@@ -136331,7 +136659,8 @@
       "108e5db6-83d6-45d4-87cb-79678dd50162",
       "e39c1549-2d59-4580-a477-95c1a8425d3d"
     ],
-    "producers": "Koyubi Chan"
+    "producers": "Koyubi Chan",
+    "reputation": 3
   },
   {
     "uid": "44Oe44O844Kt44Ol44Ot",
@@ -137209,7 +137538,8 @@
       "3f59fe8e-c9ea-48c2-ab09-39ab06b0290d",
       "078f7983-a32e-4c9c-bbee-8acfb8a38f3d",
       "8a5cb024-0c8a-49e2-ab27-bb562bc647fb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "T25lcGhvbnk",
@@ -137400,7 +137730,8 @@
       "3b51269f-b460-4716-a1ca-0651ecf81207",
       "dee00c39-c373-443b-aa76-90b7424b0bb5"
     ],
-    "producers": "former Maneki Kecak member, Fukase Mio"
+    "producers": "former Maneki Kecak member, Fukase Mio",
+    "reputation": 3
   },
   {
     "uid": "44OJ44Op44Oe44OB44OD44Kv44Os44Kz44O844OJ",
@@ -137684,7 +138015,8 @@
       "b6fd2e02-7a83-487a-bf19-258baf11aeb9",
       "4ca40784-bcee-4cad-9dd7-f43d412cc389",
       "7a6a3728-6bf7-4d1d-acd3-cf6691f29e20"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Oe44K244Oq",
@@ -138079,7 +138411,8 @@
       "9ec44e1f-4737-43da-98bc-19799d6bb4f2",
       "f6f5a894-c29e-4cf4-a83d-3c95d6aaf28e",
       "2e1d5e5c-d64a-4c42-97a9-f67f86fab13b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TkdUNDg",
@@ -138485,7 +138818,8 @@
       "2a3b79fb-0ca5-474d-b98d-91e0f8f4272b",
       "79c11058-16e0-4216-b291-28a22cde1134",
       "0ac8a5a7-d59e-4911-97ec-4dfd999c889f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q1lOSE4",
@@ -139178,7 +139512,8 @@
       "99c53340-3863-4a28-8e3c-d973c8cf5c41",
       "b8009f8a-3519-48aa-bb85-d9fd87a9661b",
       "fb67893b-af56-4518-b9f4-bc3bd89c5cfa"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TkVPIEpBUE9OSVNN",
@@ -139907,7 +140242,8 @@
       "2ef3946c-96b1-429b-99d7-96208488feda",
       "2fefabbb-8ee7-47d6-a679-5bc04a4bbd05",
       "db246eb8-cbfd-4017-87a8-b18c5398f510"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "aS1DT0w",
@@ -140054,7 +140390,8 @@
       "abc404ea-f911-42da-9a35-64d1492e4333",
       "1a4c870f-cdb9-41a9-89df-75e7e462af0d",
       "d54b674d-b288-47c4-abd4-4c735e384e49"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RGV2aWwgQU5USEVNLg",
@@ -140819,7 +141156,8 @@
       "be17cc67-4e2c-418c-ab3a-5c23eaabdeee",
       "f89d85a1-e99e-4fb0-9f2c-f2295b591488",
       "ebfd02c6-d117-4c78-aa75-208b342a63bf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5Y-v5oaQ44Gq44Ki44Kk44Oc44Oq44O8",
@@ -141284,7 +141622,8 @@
       "11a7a970-d116-4392-93a4-1aba71234b72",
       "497f7bfe-acd4-4a9d-ab6e-6d613d6f47b0",
       "70a65725-0746-496d-aaf1-2af5c70451fd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5ZCb44Gr44CB6IO444Kt44Ol44Oz44CC",
@@ -141401,7 +141740,8 @@
     ],
     "disc_uids": [
       "9879681f-ce3a-43e9-a5fa-600919c83949"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K444Ko44Oh44Kk",
@@ -141980,7 +142320,8 @@
       "1b508d25-9d13-4270-ae5e-e96afa935a5f",
       "e6fbe426-30dd-4629-b2d8-2d30c98210a4",
       "cf6fcc36-6f85-4bd3-9dc2-fc680b824053"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWVycnkgQkFEIFRVTkUu",
@@ -142081,7 +142422,8 @@
       "66386695-008a-422f-82ac-ece81c823f51",
       "7611c5dc-bade-4256-ba24-a18555b41c08",
       "c95c4278-a5e3-454d-9990-5f0fd4fef14d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6LGG5p-044Gu5aSn576k",
@@ -142724,7 +143066,8 @@
       "008f9766-9080-4a93-94b1-0c5443bab4f4",
       "89a3ede2-a679-4532-8ab2-65123b2af90d",
       "2136fc3d-ca95-4ccf-898b-82cfe719c121"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UkFZ",
@@ -143541,7 +143884,8 @@
       "2892cdb2-da5b-41fe-92ab-25864a55a86f",
       "45de3d55-e716-4373-9a98-fb829e200689",
       "f4dd861e-2506-4df3-aacc-d51abd3eefd5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUFETUVE",
@@ -144158,7 +144502,8 @@
       "9bb9a2d2-eba5-400c-86ed-d71f0c6e43c4",
       "90c9386f-bcba-47bd-900f-55fa8e96df71",
       "136513d8-8c47-4c45-bbc3-3d4dec351c6a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUU6SQ",
@@ -144410,7 +144755,8 @@
       "ce77c7da-d762-4a89-9b21-d75d0d0522be",
       "19982497-5eb9-404d-a955-a8d2d6551945",
       "3187e937-5aec-403b-a6c5-671dc5369252"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo",
@@ -145413,7 +145759,8 @@
       "3e48b121-71a3-4aa4-ab76-63c6d26df836",
       "ec0b1431-005e-4ea9-82ad-995f720ce3d7",
       "c60991ec-e3e4-470f-af6e-e8c7282d89e7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OV44Kh44Oz44OI44Og44K344O844K_",
@@ -145504,7 +145851,8 @@
       "f2d66548-cddd-4cfa-9d8b-2fc0d2bd4a65",
       "2fdc13ed-a774-4baa-ae74-7fb6f585f942",
       "dd637b58-1e62-4cc3-931c-2643ae25c38a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
@@ -145929,7 +146277,8 @@
       "ec15d56e-917a-42b7-bd23-e3892e4f4e5f",
       "ef3d8616-8c18-47e3-b81a-a07f874b99bc",
       "a813fe2c-1058-43e5-9d8d-40f0096a3d3a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5pel5ZCR5Z2CNDY",
@@ -146522,7 +146871,8 @@
       "a643b66c-421c-4672-93a6-3ae5e5d4a860",
       "d5352d82-2029-404c-933a-e4a384645db4",
       "3ee5b46b-1e05-4402-a01b-b722f2e8a52c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QmlTSA",
@@ -146590,7 +146940,8 @@
     ],
     "disc_uids": [
       "39ccb72f-94e2-4f65-b91c-102397c81986"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg",
@@ -147937,7 +148288,8 @@
       "0825a039-b359-4013-91b3-72d27cde1abb",
       "8f640082-85db-4f62-8c10-a4ab9dbaa93b",
       "48337f5e-b438-4220-a88a-269612456274"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "4omgTUU",
@@ -148693,7 +149045,8 @@
         "source": "local_archive",
         "kind": "group_photo"
       }
-    ]
+    ],
+    "reputation": 5
   },
   {
     "uid": "QmlsbGxpZQ",
@@ -149184,7 +149537,8 @@
       "20fda52e-9312-484f-a3b4-43f5b0efb2e0",
       "54859afd-f1f6-4cbe-826f-c06204303fc5",
       "885e67f8-a018-46b4-8512-35b5f01bed12"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1dFRVQgU1RFQURZ",
@@ -149538,7 +149892,8 @@
       "f7f9d139-5e0f-4d4e-ab5a-04941b98934b",
       "7974718a-d489-41a4-ab58-33c26ed58745",
       "504566c6-66a5-4226-8a99-4283380adce3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QnVvbm8h",
@@ -150125,7 +150480,8 @@
       "fae24dba-42ad-41ce-b882-b15c1968db8d",
       "b785783a-2952-4973-81da-0ade78d3d13e",
       "4b100096-2a79-4ec6-811d-c66da5581a9f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "4omSSk9Z",
@@ -150461,7 +150817,8 @@
         "source": "local_archive",
         "kind": "group_photo"
       }
-    ]
+    ],
+    "reputation": 4.5
   },
   {
     "uid": "Tk1CNDg",
@@ -151722,7 +152079,8 @@
       "1e5bd43b-e2ed-4728-8e36-144557c7eed2",
       "dc9ed8bf-8cfe-4b98-b5c2-c5da96531110",
       "cf072081-d50f-4f3a-9971-5a8a6bc3db9c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "aeKYhlJpcw",
@@ -152872,7 +153230,8 @@
       "376c8998-f6aa-4896-be77-a6ce2d20f287",
       "ad8a0ef9-05de-4b75-847e-25476ce63f49",
       "6feb8485-92c9-41f5-81fd-506900e0f173"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
@@ -154270,7 +154629,8 @@
       "b4ef8ee0-9019-49cf-b208-7fa89a211e31",
       "b60feb6c-ade2-4d1c-aa26-bcf4df52a3ae",
       "984b99a4-493b-43d2-a118-de978e559e85"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVZBTQ",
@@ -154960,7 +155320,8 @@
       "bea49c24-09eb-411a-844f-57b5b7864bbf",
       "a42e9c8d-6355-4c84-bff8-ac58149d42f3",
       "4b4d8537-3c1d-4895-92c6-9bb8897e55a6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
@@ -155462,7 +155823,8 @@
       "da68e4fd-ae0a-4663-ad69-11f78629d890",
       "a038bf50-6a85-4870-b303-c499e2ef2189",
       "e1148e5c-9b6a-447c-b118-aac5b22b7355"
-    ]
+    ],
+    "reputation": 4
   },
   {
     "uid": "Q2hlcnJ5IEJ1bGxldA",
@@ -155648,7 +156010,8 @@
       "3a31f239-283f-44f6-a701-e2c5a1a7b9b2",
       "08494287-1752-4245-9bf8-e342cc053ef4",
       "43f7aa45-b14a-4c7e-890a-e20485bfce07"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGFzc0NvZGU",
@@ -156546,7 +156909,8 @@
       "47629143-8f98-46fd-bb9c-56d08a84e2eb",
       "3090d69c-9d82-4b24-94e3-ffd3713f68b9",
       "344a4c2e-953a-4774-afce-fbcb27156c63"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GE44GO44Gq44KK5p2x5YyX55Sj",
@@ -157338,7 +157702,8 @@
       "96687e82-5a48-445f-9713-ddb61b0f98d5",
       "89bc8bdc-1f88-4ab7-82fd-841df73c2408",
       "349453c8-0d0f-4c39-a02d-31de50a64ba6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gu44KT44G144GD44GP77yB",
@@ -157552,7 +157917,8 @@
       "0b97cb08-d1f7-4c82-acc8-a0f7c12bf7b0",
       "a72c5c87-cf45-4b3c-96e7-8c748fc16b12"
     ],
-    "songs": []
+    "songs": [],
+    "reputation": 3
   },
   {
     "uid": "RU1QaVJF",
@@ -157633,7 +157999,8 @@
     ],
     "disc_uids": [
       "2c31a439-1536-424a-9f51-749004af90a5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Wk9DWA",
@@ -157838,7 +158205,8 @@
       "946a5c46-e32d-475a-8ca9-c9cbe45667b5",
       "66193a44-07a6-4314-b801-785336da41b3",
       "b5a7e13b-3f69-4c6f-b26b-96c38bb7048c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R0VOSUM",
@@ -158370,7 +158738,8 @@
       "33f2c034-c41e-48a2-bf6a-fa756ef0f686",
       "31420e7f-f819-411c-a110-73f3ac4b2c60",
       "3379603c-3987-4225-b99a-ea4a8e6a3a87"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gn44KT44Gx57WELmluYw",
@@ -159883,7 +160252,8 @@
       "b7f6c8d9-f0c7-4980-8280-6bd70549f77b",
       "168aa7cb-8125-4233-b681-50838d426c37",
       "eb0661be-1ec4-4b5c-b008-193b5d402679"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R2lybHPCsg",
@@ -161194,7 +161564,8 @@
       "6aaf0b12-05a7-4faa-8bc6-100cf97cd2c4",
       "34eaf7c1-6349-4346-99a0-1e681076d745",
       "c23f2574-90a8-4c16-bd6e-748770b25d3c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5riF56uc5Lq6MjU",
@@ -161555,7 +161926,8 @@
       "b8ab25f4-3d0b-494d-8e39-310cbf1366c7",
       "065f4a4b-d6bb-4604-9484-69aeb04689e1",
       "cf12e267-f91d-4231-954d-28596279babe"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0tFNDg",
@@ -163022,7 +163394,8 @@
       "71d5864d-3e1d-438d-9c6c-e51d6b10d9ca",
       "7ded8e16-28de-4ef6-947a-bb7d45c19b70",
       "d9b09d6f-8e76-4cb4-a0d7-3bcbd4ed131a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SEtUNDg",
@@ -163707,7 +164080,8 @@
       "a098d3c9-94d1-4bf6-a89e-03d461f25107",
       "36327389-a5a5-4118-8379-27bf312d0610",
       "8ca9e80b-2f16-4898-9afe-92dd7dc54aa7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QnJva2VuIEJ5IFRoZSBTY3JlYW0",
@@ -163984,7 +164358,8 @@
       "95e1e543-e5d1-4569-a5d8-52ce1c75e18a",
       "7ffd2198-ac43-44de-8eb8-521abd5934d9",
       "82ba57a7-2ff6-4223-b3df-d0d464ed49fd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OV44Kj44Ot44K944OV44Kj44O844Gu44OA44Oz44K5",
@@ -165528,7 +165903,8 @@
       "c0f0d653-7c4f-4b9e-851e-9fd30b56bfe2",
       "649fbe5c-36e2-4dc8-b213-a8064addbbf1",
       "27811034-5b59-4e2d-a8e8-dd05a2eaaf03"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S0FRUklZT1RFUlJPUg",
@@ -165871,7 +166247,8 @@
       "2eea64cf-8e88-4a0e-8000-0d31868ca039",
       "4746338e-e6ad-47d6-a8e3-eed0d62b2270",
       "5ab5596d-a8e4-42d6-ab14-45701b0e993f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "4oSDLXV0ZQ",
@@ -167044,7 +167421,8 @@
       "187f7137-bbe0-4b27-910c-560260e7e115",
       "9a607f76-3daa-42ed-80d7-4ca26d461936",
       "e7ee09a6-bf5a-445b-a1fc-94cdd8b4eab9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
@@ -167388,7 +167766,8 @@
       "83e8d45c-ff06-4e53-b3eb-d4bff9f7d14b",
       "0c0864a5-a646-400c-b7fc-0ca009b3277f",
       "ac970863-f7c6-454e-bb9e-258bdc0f968c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KP44O844GZ44Gf",
@@ -167909,7 +168288,8 @@
       "a62e2046-a0db-4ba0-a753-4c6de2a3d65d",
       "c3679798-d6a4-4036-b204-9d21a42fa69e",
       "af48e788-e1ef-4aa5-8edf-f0ded198fbaf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QU1FRlVSQVNTSEk",
@@ -168657,7 +169037,8 @@
       "71fb581c-7bb9-4438-b1f8-628b0d126064",
       "017a23b9-0638-49e5-959e-ad734551aa65",
       "893c3e44-55ba-4197-8dcb-af0dc811b7a3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q1NS",
@@ -168882,7 +169263,8 @@
       "61e0afd1-a44a-47df-bb2d-e87199f4b4fe",
       "9d679360-a891-4042-98bc-cbdcf27c70f4",
       "66cbafd4-4637-4b61-b3b4-d66d1eff4576"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bG9s",
@@ -170182,7 +170564,8 @@
       "7de79473-2382-446a-9a05-edcb58cdd751",
       "9b0bc97e-769c-41ea-8ce8-ee8c666f9280",
       "dc270f52-680e-4ee0-b3aa-e5082d1be05f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Um9ja2V0IFB1bmNo",
@@ -170305,7 +170688,8 @@
     ],
     "disc_uids": [
       "e599e289-2d84-43d3-ab1d-f0cf347df1a1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "ZmVtbWUgZmF0YWxl",
@@ -170594,7 +170978,8 @@
       "02a8ff35-68ec-43d9-9524-53a3d1e7a714",
       "502ebcd1-3308-486b-ae32-51e36a5c4af4",
       "7c0f93f3-7b62-4337-b26b-5da3db984bbf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1RVNDg",
@@ -171104,7 +171489,8 @@
       "3b168a27-45fb-41e2-a31d-b08ced7b628b",
       "6a1e3c63-6a5a-4a42-80ee-a361d57732dc",
       "c7f2f140-998e-463a-84a9-af9ec9957c78"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5oiR5YSY44Op44Kt44Ki",
@@ -171525,7 +171911,8 @@
       "a14ae6e5-e778-4c68-8a43-a7d0d1b1f5b9",
       "faa1eaef-2519-4248-8dce-8251e352cb1c",
       "dc222a91-be30-4176-a527-2f275b55b274"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QG9uZWZpdmU",
@@ -171686,7 +172073,8 @@
     "disc_uids": [
       "c1a06be8-d1e1-479c-87a0-e238fac04a7f",
       "948cb9fc-39e4-41f2-82ff-598b76b85dc3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "eW9zdWdhbGE",
@@ -172216,7 +172604,8 @@
       "20c9cab1-edf5-4342-8bdb-85da93558570",
       "c535a114-cf40-44fa-8d87-725ebb62a2c1",
       "78d3db06-2f15-4a5a-9ebc-6051223e5955"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
@@ -173333,7 +173722,8 @@
       "cc589f39-673f-485d-b07a-6f395fd2a25f",
       "af7df006-ceb1-4cf8-8015-510fd629875d",
       "2e2d797a-380d-4d17-b576-0a0f8f128951"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gc44KT44G25ZCb44Gu44Gb44GE44Gg44CC",
@@ -173524,7 +173914,8 @@
       "c4e4bd61-4637-4d07-87a7-a83417ecf2e4",
       "a0d40e6a-3c94-40c8-8e4e-84fa592a43fa",
       "e7f13615-ba90-4d85-8e5d-24c51ccd79af"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TEUgU1NFUkFGSU0",
@@ -174669,7 +175060,8 @@
       "99ade82b-f97c-4c6c-bc2b-2f550fdc5aec",
       "07944e2b-1b62-4bbf-8773-2412239c3641",
       "7df8cf6c-13b8-45d0-b2ff-6923dcf06543"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkFCWU1PTlNURVI",
@@ -174788,7 +175180,8 @@
     ],
     "disc_uids": [
       "98381eab-e994-48e4-b22b-f3f49f77e8ae"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkFCWU1FVEFM",
@@ -176002,7 +176395,8 @@
       "3a43ec7f-964d-4420-80e8-c87800b72437",
       "6d4895d7-eaf0-4918-a570-31cd0c6506a4",
       "312ccfb4-5521-41d8-a307-1cb3ea1de1c9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "PUxPVkU",
@@ -177120,7 +177514,8 @@
         "source": "local_archive",
         "kind": "group_photo"
       }
-    ]
+    ],
+    "reputation": 4.5
   },
   {
     "uid": "5LmD5pyo5Z2CNDY",
@@ -178436,7 +178831,8 @@
       "8c31726a-acb4-4d36-b9cb-9393fdf5295f",
       "27d864e7-5aaf-4287-8afa-8c5955b956fc",
       "bc7a4219-8ee3-446b-bbc7-7d36b788b02e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RlJVSVRTIFpJUFBFUg",
@@ -178984,7 +179380,8 @@
       "fe3fbc50-bf50-4929-8d12-6ba6501b3e3d",
       "402b86bc-946e-44da-97a9-9c1898f8d7ca"
     ],
-    "producers": "Kimura Misa"
+    "producers": "Kimura Misa",
+    "reputation": 3
   },
   {
     "uid": "QUtCNDg",
@@ -182453,7 +182850,8 @@
       "8f0160a6-78c7-48f7-9dda-f7cdca76f9b4",
       "9ea86221-9933-4516-a53c-c776f4aa326c",
       "52866ee1-6be0-45b3-b2a8-2bcab3967316"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "aUxpRkUh",
@@ -183059,7 +183457,8 @@
     ],
     "shared_release_uids": [
       "shared-heroines-album-2025"
-    ]
+    ],
+    "reputation": 2
   },
   {
     "uid": "5qu75Z2CNDY",
@@ -183607,7 +184006,8 @@
       "ba06ae2f-59a2-4291-a0d1-cd07caf0e7af",
       "5a59e2d2-2e85-4109-98d5-afeed658c72c",
       "497a31d8-dbc7-463f-aa79-b9f46afd7340"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q1VUSUUgU1RSRUVU",
@@ -183858,7 +184258,8 @@
       "52bc85d9-007a-4c5f-87c2-973aa4ed0613",
       "b3967802-0e3a-4296-b737-b8cd602aa339"
     ],
-    "producers": "Kimura Misa"
+    "producers": "Kimura Misa",
+    "reputation": 3
   },
   {
     "uid": "Q0FORFkgVFVORQ",
@@ -184248,7 +184649,8 @@
       "5845f615-dc2a-4cd5-bdd2-63971f88cd7d",
       "d350348c-e05f-4a01-9e6e-a15577816bf6",
       "d3821ab7-bdeb-4ff2-9a60-3e8dc35efdee"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GY44O844GP44KJ44KA77yB",
@@ -184508,7 +184910,8 @@
       "ee38f526-5ec0-4806-983c-4a58e52194d8",
       "5678abc4-776b-45a7-9c91-9bc1555cb77d"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce74"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce74",
+    "reputation": 3
   },
   {
     "uid": "44Op44K544OI44K344O844Oz",
@@ -184581,7 +184984,8 @@
     ],
     "disc_uids": [
       "last-scene-unreleased"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TuOCvOODrQ",
@@ -185090,7 +185494,8 @@
       "c5fa20ce-af20-4a1e-85cd-56006805e9b9",
       "92578827-2827-415d-bf1c-998053785b66",
       "aa5cc7e4-c616-4c69-979e-c16b8fa7c3ea"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2hlY2ttYXRl",
@@ -185519,7 +185924,8 @@
       "aa14da07-fcc2-4707-a2e9-077670d66130",
       "6f196618-fe3c-481a-b114-758bb432143a"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce32"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce32",
+    "reputation": 3
   },
   {
     "uid": "VklMTEFJTlMgSE9VU0U",
@@ -185859,7 +186265,8 @@
       "7446d5f9-7126-407a-bfcb-f73eebae08a9",
       "ae1eed58-9c1e-467d-921d-7e6f7448d836",
       "596011d5-79d5-4598-84a3-5f088094b1ee"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WUFNSU5BQkU",
@@ -186124,7 +186531,8 @@
       "d10d0aeb-5c33-41ce-9f06-ef136fce8970",
       "a8baebc4-5c9a-4421-978c-28f0fd764589",
       "59c563cb-560e-40d9-9dec-f31322f4eb63"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GC44GS44KC44KT77yB",
@@ -186376,7 +186784,8 @@
       "f075d7a8-ec66-4cb7-999a-19d16957a3ee",
       "a2401468-3824-46d6-b41f-abff9d2b7f32"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce98"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce98",
+    "reputation": 3
   },
   {
     "uid": "44OK44OI4piG44Kr44Oz/#google_vignette",
@@ -186657,7 +187066,8 @@
       "1d8e5a6d-cd52-4283-ae73-ac2d8c042935",
       "ead9ee47-cebf-4a1e-b049-49717b06e68d"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce2"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce2",
+    "reputation": 3
   },
   {
     "uid": "44Oq44Oq44K344OD44Kv5a2m5ZyS",
@@ -187108,7 +187518,8 @@
       "4f99241d-215f-4ec7-bd83-f800d3149b67",
       "4d19bf0d-6769-45d7-a918-b8388b9b8720",
       "ed06eda9-c829-4e50-93d9-767282a63350"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGltbSdz",
@@ -187645,7 +188056,8 @@
       "fec57bdf-93c4-4b00-943d-a16b4e4cc291",
       "a81fb531-2ae3-4229-b784-3bca52280ed4",
       "1d4fed45-bdca-41ac-8066-726ca91fa7f0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TG92ZSBDb2NjaGk",
@@ -187813,7 +188225,8 @@
       "17539e10-b45a-4fb6-b9f1-c2579386738b",
       "a22dc6a7-335e-4d26-bb41-3e22dfe80cae"
     ],
-    "producers": "Tsunku"
+    "producers": "Tsunku",
+    "reputation": 3
   },
   {
     "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
@@ -187927,7 +188340,8 @@
       "3aa84ad9-b0a6-5e1a-8da6-7c018825677f",
       "6440e2e6-96ea-5363-9185-f51041b1b9b0"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce155"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce155",
+    "reputation": 3
   },
   {
     "uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
@@ -188007,7 +188421,8 @@
     "disc_uids": [
       "8c5c4ec9-89ff-4f21-a385-595b3bc988f1"
     ],
-    "disband_date": "2025-02-07"
+    "disband_date": "2025-02-07",
+    "reputation": 3
   },
   {
     "uid": "9b937bbf-facf-437b-9815-94152bfe5805",
@@ -188135,7 +188550,8 @@
         "cover_image_path": null
       }
     ],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b",
@@ -188322,7 +188738,8 @@
       "4db50a0f-b8aa-49b0-9a3e-1f09bfbd1b0a",
       "f4bb9933-ff9f-4b8c-bb79-52b8bc94eb9f"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce148"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce148",
+    "reputation": 3
   },
   {
     "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
@@ -188478,7 +188895,8 @@
       "54d440e0-c036-4a8a-9a35-bc0fb03e480c"
     ],
     "idolsdiagram_url": "https://idolsdiagram.com/g/aU9OIQ/",
-    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce163"
+    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce163",
+    "reputation": 3
   },
   {
     "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
@@ -189050,7 +189468,8 @@
       "71227cfb-5f78-5b34-9ec4-25ffc36a56c0",
       "2e360572-a078-52c4-9493-4885383769ac",
       "e90bad43-aaca-50f5-a58e-7befd2cc8cf2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "a7805041-7cce-4541-86b5-a3fe06d3d4ea",
@@ -189269,7 +189688,8 @@
     "wiki_url": "https://jpop.fandom.com/wiki/AMAKAZE",
     "notes": "Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the best available official/fandom sources. Trainee group under KABUKIMONO'DOGs / Kabukitai; member pages may be sparse or incomplete, so partial profile data is expected.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "743724ff-5c2d-4e42-85ab-95e7e5c42954",
@@ -191027,7 +191447,8 @@
       "a5e7243b-a0d8-4131-98d6-57833da026fe",
       "85d87e9b-808f-4b21-a342-f0dfed83c52a",
       "28103455-7eac-45b5-8d69-4f5b0369944a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "d8f8e543-16c7-4f7e-8903-ded7ec8c5380",
@@ -191144,7 +191565,8 @@
     "union_uid": "S0FCVUtJTU9OTydET0dz",
     "discography": [],
     "disc_uids": [],
-    "song_uids": []
+    "song_uids": [],
+    "reputation": 3
   },
   {
     "uid": "acdd5738-2636-426a-b896-b9435d4327a5",
@@ -191217,7 +191639,8 @@
     "union": "HEROINES",
     "union_uid": "fee7ff92-ea8d-4849-b489-0d18f5f0eb81",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "764d49a4-9186-44f0-9c88-ab913d7c95ca",
@@ -191419,7 +191842,8 @@
     "wiki_url": "https://jpop.fandom.com/wiki/SUIGETSU",
     "notes": "Trainee group under KABUKIMONO'DOGs / Kabukitai; member pages may be sparse or incomplete, so partial profile data is expected.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "15c6385c-b09a-4dbc-89f1-fc96cef74fff",
@@ -191519,7 +191943,8 @@
       "54bc2f5c-5d82-49db-a1fd-081132820e85"
     ],
     "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce95",
-    "disband_date": "2023-05-09"
+    "disband_date": "2023-05-09",
+    "reputation": 3
   },
   {
     "uid": "7e2b7bae-0b97-4c6c-8268-4923aa92c622",
@@ -191687,7 +192112,8 @@
       "0b8c42ff-df75-43dd-bd20-d277dcea3afc",
       "c7181aa0-c013-4ce2-b76e-1d8dc648719a",
       "febe18f3-fa06-4aec-8472-cf91b8051a14"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "4d9e63bf-672e-4b0a-86e6-40c8e5cc6689",
@@ -191727,7 +192153,8 @@
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Yumeiro_H!L!T",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5qyF5Z2CNDY",
@@ -192110,7 +192537,8 @@
       "764070f4-ca2e-4fae-86d4-d988606050fd",
       "c2a0233b-9416-473b-9b4f-4791c433adff"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%dd%b0%ba%e4%34%36"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%dd%b0%ba%e4%34%36",
+    "reputation": 3
   },
   {
     "uid": "SVoqT05F",
@@ -192182,7 +192610,8 @@
     ],
     "disc_uids": [
       "a4e52974-f053-4f8a-b1d1-9733431a20db"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Oi44O844OL44Oz44Kw5aiY44CC",
@@ -196683,7 +197112,8 @@
       "c195535c-b96b-4203-8f0f-3048b4e8d24a",
       "7590f967-6b5d-4350-899b-1d8402bdb3ee",
       "eefe5be1-0a51-4004-ad53-d63584ff0387"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SnVpY2U9SnVpY2U",
@@ -197582,7 +198012,8 @@
       "72315ef3-030d-492c-9bb4-3397cfc7af76",
       "52a81125-f327-4858-b262-9376c9902673",
       "81d1907b-c7cd-47e8-b25e-867c726198e4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "56We5a6_",
@@ -198583,7 +199014,8 @@
       "31baf0c5-aa63-45df-852f-8291f43a0708",
       "753407e3-b1b7-4910-958e-9541f9be4710",
       "e1e3f84e-abf2-4731-8e9a-ba5264f79c44"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGlLaQ",
@@ -198674,7 +199106,8 @@
       "0da4e81d-a6ff-4b52-9b68-0609a3d5ffd9",
       "43c22637-f731-4f2d-87fc-3a821a0700e5",
       "8aa711b6-30eb-47f3-8615-267191d4817b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Oz44K444Ol44Or44Og",
@@ -200265,7 +200698,8 @@
       "62a59f3f-0c36-40a2-9fe7-b391b9dcb4b5",
       "8c8d94d5-2417-457d-91bd-05ec7bf2b9bf",
       "06fcbe3e-c70e-450c-b2da-3cab53782246"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QmVycnl65bel5oi_",
@@ -202521,7 +202955,8 @@
       "4528a27c-be34-4183-bf2e-1f81da30f264",
       "6ed971ca-1407-45fc-867f-bfddc6e75a57",
       "8e3e0d3f-03e3-43e6-a2a1-81c596310e36"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkVZT09PT09ORFM",
@@ -202939,7 +203374,8 @@
       "ebacf94b-693a-4e97-9d77-87f9476dafae",
       "6bc6a63d-1e36-4553-bce0-d88d1fec2f33",
       "d20090e9-6e39-45f2-adfa-392275c76cc2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gk44Gw44GN44OV44Kh44Kv44OI44Oq44O8",
@@ -203640,7 +204076,8 @@
       "2e4213db-e443-45e2-88a7-ea42d8c0073e",
       "99ea1a39-fdfa-414e-93e2-d445e8a0cbc9",
       "4a1b8d5a-d4c9-4959-abf0-6ea1360c53e4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UHJldHR5IENodXU",
@@ -203982,7 +204419,8 @@
       "096b9acc-ff45-4f43-bbf2-7b508bc5df83",
       "5ef8897c-f902-4489-a3c0-40e04e8650aa"
     ],
-    "producers": "social media personality, Yurinya"
+    "producers": "social media personality, Yurinya",
+    "reputation": 3
   },
   {
     "uid": "TU9SRSBTVEFS",
@@ -204112,7 +204550,8 @@
       "2555df6f-83eb-48d1-9fd6-a3a89cfcc526",
       "79ffd3d5-c398-423e-9849-cf93017a2901"
     ],
-    "producers": "Kimura Misa"
+    "producers": "Kimura Misa",
+    "reputation": 3
   },
   {
     "uid": "TUVHQUZPTg",
@@ -204351,7 +204790,8 @@
       "8465de8d-0dc0-44eb-aba4-6f588d6aed9c",
       "3fc80621-4c4a-4b85-8646-b2d53dabee50",
       "b052f2b8-67b2-4d9a-abf6-7fd063f5670f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5bm95LiW6ISF5ZqH",
@@ -204379,7 +204819,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5bm95LiW6ISF5ZqH",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QeW_nFA",
@@ -204407,7 +204848,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/QeW_nFA",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "T0NIQSBOT1JNQQ",
@@ -204633,7 +205075,8 @@
       "3fcebb53-f48f-4cde-8726-9ad8d8e17829",
       "61b3a351-2a23-479b-b6b0-206fb6880b50",
       "7a206433-05ac-4489-a032-6d41f61680e8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Kk44OJ44Oq44Oz44KwISEh",
@@ -204661,7 +205104,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44Kk44OJ44Oq44Oz44KwISEh",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "RFJBV-KZoU1F",
@@ -204689,7 +205133,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/RFJBV-KZoU1F",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TU5MNDg",
@@ -205023,7 +205468,8 @@
       "4c957a5f-939a-4b3b-a1a3-f23bb062063d",
       "0d574fde-78ec-4de5-89ff-82f7587d0225",
       "9d8fab7d-8fdc-4940-bef3-44995a2e2322"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ot44O844K444O844Kv44Ot44OL44Kv44Or",
@@ -205101,7 +205547,8 @@
       "960896c8-675e-405c-9e35-d408d0b3c205",
       "6cf9f7d2-9bec-49d0-b41b-22ea7b392a35",
       "9625f8c1-f836-4d02-9d0c-035fab0e90d5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "55yJ5p2R44Gh44GC44GN",
@@ -205665,7 +206112,8 @@
       "21dd3a92-59f1-44fc-a30f-40cb6d5c9eee",
       "829720a9-0ce4-4066-bc29-d6d9d11f82a5",
       "bd5f4022-c973-4889-a572-20f63da3bcd6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TVlFUkE",
@@ -205789,7 +206237,8 @@
       "36a1f4d1-8dc0-402f-82e4-8143d09452d2",
       "6b6ad9d1-6418-417f-bd1e-26a2210329f4",
       "5e7fe464-8afc-4996-be78-903c389bb4ed"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QnV6eQ",
@@ -205826,7 +206275,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/QnV6eQ",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44OP44Ot44OX44Ot56CU5L-u55Sf",
@@ -206429,7 +206879,8 @@
       "43ea21b5-e2cb-495e-9381-a69f05655722",
       "002c1edf-46f9-4c63-9df0-02d3f7aa96df",
       "9dd270ec-3d31-42d3-ad2f-a6327b5e36c8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Op44K544OI44Ki44Kk44OJ44OrMuacn-eUnw",
@@ -206457,7 +206908,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Op44K544OI44Ki44Kk44OJ44OrMuacn-eUnw",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "c29yYSB0b2Igc2FrYW5h",
@@ -206710,7 +207162,8 @@
       "1b4f2017-aa93-48f6-858c-9f9458062fb7",
       "9e1ae23f-ca84-4b9b-855a-a6c0e6c07be9",
       "00d4aa28-0762-47d5-a824-97ebbda118ae"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44GV44GP44KJ5a2m6Zmi",
@@ -206851,7 +207304,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44GV44GP44KJ5a2m6Zmi",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5rih44KK5buK5LiL6LWw44KK6ZqKNw",
@@ -206879,7 +207333,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5rih44KK5buK5LiL6LWw44KK6ZqKNw",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "UHJpem1teeKYhg",
@@ -207260,7 +207715,8 @@
       "dacefa80-c688-4334-818a-7f36dc1e360c",
       "49a5e89f-5864-45f3-8efb-590ba1bf7ac8",
       "3034f3f3-8ff9-41d5-afbe-9f7dfc25b9f7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OV44Kn44Ki44Oq44O844K6",
@@ -207288,7 +207744,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OV44Kn44Ki44Oq44O844K6",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "MjbmmYLjga7jg57jgrnjgqvjg6zjgqTjg4k",
@@ -207316,7 +207773,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/MjbmmYLjga7jg57jgrnjgqvjg6zjgqTjg4k",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "R1BQ",
@@ -207402,7 +207860,8 @@
       "b5884c85-be27-4d15-823f-d1f5a9ae0dfb",
       "85309a00-50ad-4547-9008-b94f93c168b5"
     ],
-    "producers": "SM ENTERTAINMENT JAPAN"
+    "producers": "SM ENTERTAINMENT JAPAN",
+    "reputation": 3
   },
   {
     "uid": "UmVhbFJvbWFudGlj",
@@ -207568,7 +208027,8 @@
       "6bffa036-43a8-4b46-a8e2-6b9f5bcec6c5",
       "2c8a123c-fea7-408d-934f-c56428fa5e08"
     ],
-    "producers": "lyricist Nakamura Kanata"
+    "producers": "lyricist Nakamura Kanata",
+    "reputation": 3
   },
   {
     "uid": "UElHTU9OWg",
@@ -207663,7 +208123,8 @@
       "ac541976-27b3-42d4-b79e-21ab4e070553",
       "8a315503-9f18-4448-bfb6-aea9e98cff02"
     ],
-    "producers": "Pour Lui"
+    "producers": "Pour Lui",
+    "reputation": 3
   },
   {
     "uid": "T05FUElYQ0VM",
@@ -207925,7 +208386,8 @@
       "abea0670-23f6-4bbc-88ff-fa31253c6186",
       "81920a6d-c700-47a0-bbca-efa83ad17590",
       "6cd2b972-9390-4418-a6aa-942ab83fb770"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
@@ -208065,7 +208527,8 @@
       "f8568bd1-baad-4325-ba35-d2f6dab63f14",
       "67a5971a-a2c5-4175-b5e4-97605e982aba",
       "586b9884-0321-486c-85fe-d521d9d0a4ba"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U3RyYWlnaHQgQW5nZWxp",
@@ -208147,7 +208610,8 @@
     "disc_uids": [
       "2dbf7c33-0c74-470c-b3b9-5338e4cdecb9",
       "2447335b-a1db-4ce3-94a5-f65440ce86c4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "6ISH55Sw44KC44Gq44KK",
@@ -208604,7 +209068,8 @@
       "27aa8aab-dce3-4932-9b16-cded1bf79eaf",
       "425d7d90-6e5a-458a-ac75-9efc1fcc84e7",
       "e421dc4f-6d82-4e55-974f-6402fcf4519f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SmV3ZWw",
@@ -208954,7 +209419,8 @@
       "caad0225-eca2-481f-b5a3-27c983212435",
       "109f2d9c-59ea-44b2-8fe2-04812b57e7da",
       "e2983b7a-27a8-49ba-a355-8f3c758f44e2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RElBVkVM",
@@ -209154,7 +209620,8 @@
       "82bfeace-1788-439d-9748-667775c8ff7e",
       "78d2404b-7f33-468e-bb15-a561357abad8",
       "2a2610ba-cfd7-4d53-89f6-6372cbdf3f2c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWlsa3lXYXk",
@@ -209447,7 +209914,8 @@
       "23e8b347-40bc-4b0c-a290-4f7d1a30e691",
       "f65f1c87-baf5-4c1e-aed0-1baf56971409",
       "8b7f442a-3592-4fba-bcd0-0cef0f39ff95"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "MzY1wrA",
@@ -209479,7 +209947,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/MzY1wrA",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Q2h1bmluZyBDYW5keQ",
@@ -209641,7 +210110,8 @@
       "60186fa1-0ff7-42d0-a4a5-fbc4921647c3",
       "f9e8ea33-86a1-45ed-9cc1-036e2fac49bc",
       "023d48b1-ac07-4b33-abbd-8eec99a9805e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WElOWElO",
@@ -209826,7 +210296,8 @@
       "4298046a-e2d8-453c-87f5-bb17f293c13d",
       "0e728b37-5542-4f0e-a9f9-4e03373baad8",
       "715b393f-98ae-4ceb-9c12-7880339c38f4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R2VuMWVz",
@@ -209854,7 +210325,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/R2VuMWVz",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44OV44Os44Oz44OB44O744Kt44K5",
@@ -209882,7 +210354,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OV44Os44Oz44OB44O744Kt44K5",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TUlTUyBNRVJDWQ",
@@ -210266,7 +210739,8 @@
       "90245b89-e154-444c-b5d1-569d9b85305f",
       "dee27979-6944-440c-9ace-365572d9e464",
       "d0bfe928-a919-4d15-8f0a-9ada9ea4d6f8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VG9pIFRvaSBUb2k",
@@ -210439,7 +210913,8 @@
       "6e8e38a6-8532-4fbf-b59f-c6c836487af1",
       "54456ae9-6795-4787-b8c6-b3a7ca375b43"
     ],
-    "producers": "MMA fighter Asakura Mikuru, ABEMA and ASOBISYSTEM in 2024"
+    "producers": "MMA fighter Asakura Mikuru, ABEMA and ASOBISYSTEM in 2024",
+    "reputation": 3
   },
   {
     "uid": "YW1pbmk",
@@ -210595,7 +211070,8 @@
       "951ac449-0c92-43be-91d3-8dea9c7a60cd",
       "cf235d1d-b902-4cea-8d59-a4952ed2bdc1"
     ],
-    "producers": "YU-KA and formed by member Pan Luna Leafy"
+    "producers": "YU-KA and formed by member Pan Luna Leafy",
+    "reputation": 3
   },
   {
     "uid": "44K744Kv44OI",
@@ -210623,7 +211099,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44K744Kv44OI",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44OP44OD44OU44O844GP44KL44GP44KL",
@@ -210651,7 +211128,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OP44OD44OU44O844GP44KL44GP44KL",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5oKy5pKD44Gu44OS44Ot44Kk44Oz55eH5YCZ576k",
@@ -210694,7 +211172,8 @@
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
     "disc_uids": [],
-    "disband_date": "2021-04-23"
+    "disband_date": "2021-04-23",
+    "reputation": 3
   },
   {
     "uid": "UllVVGlzdA",
@@ -211184,7 +211663,8 @@
       "f68d0a29-89ec-4337-8b2f-aa5558612b6c",
       "af3acfa6-a582-4dd2-8020-0993749a179c",
       "aa8d2ed2-a4ce-47cf-a9f2-1ee86f8f9be8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K244O744Kz44Kk44Oz44Ot44OD44Kr44O844K6",
@@ -211212,7 +211692,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44K244O744Kz44Kk44Oz44Ot44OD44Kr44O844K6",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44KK44Oz44Gt",
@@ -211567,7 +212048,8 @@
       "9c57161d-6a34-4a0e-8772-5b16155cac72",
       "bf69b0b4-dca7-4354-a477-71aad5b3ab91",
       "78958f24-c4d9-4447-a9f6-043c1542e189"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWFkZSBpbiBNYWlkZW4",
@@ -211751,7 +212233,8 @@
       "e233b7a6-6b94-447f-a9a1-48bed5ac3d54",
       "114753b1-a5ce-4128-acf7-233809dcc69c",
       "b8a4c1d2-ff0d-4358-ad3c-774607a6be07"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ku44Of44OD44Kv",
@@ -211779,7 +212262,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ku44Of44OD44Kv",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QnVzdGVycw",
@@ -211807,7 +212291,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/QnVzdGVycw",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44Of44K944Op44OJ44Ko44K444K944Oz",
@@ -211835,7 +212320,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Of44K944Op44OJ44Ko44K444K944Oz",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U09M",
@@ -211863,7 +212349,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/U09M",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Q0FMJlJFUw",
@@ -211983,7 +212470,8 @@
     ],
     "disc_uids": [
       "bd6cad08-a8be-49e1-b59d-9a13067114c8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gt44GK44Gh",
@@ -212186,7 +212674,8 @@
       "ebd82bd0-1120-44ef-8656-e0862bafdef3",
       "505eafc5-342b-4abe-9e7b-2596672d5a8e"
     ],
-    "producers": "DaijiroNakagawa and Muroi Yu"
+    "producers": "DaijiroNakagawa and Muroi Yu",
+    "reputation": 3
   },
   {
     "uid": "56We5qeY44Gu6KiA44GG6YCa44KK",
@@ -212214,7 +212703,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/56We5qeY44Gu6KiA44GG6YCa44KK",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "57W25pyb44Kt44ON44Oe",
@@ -212354,7 +212844,8 @@
       "8ffd9fbb-1d2a-416b-ba09-fbc0a81fb1b4",
       "a39a7f2c-ea68-4b2d-b90d-c65e31040e68",
       "b4579d91-f5c1-4d1b-a0dd-988ce140cd68"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TFVOQVJTT0xBUg",
@@ -212382,7 +212873,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/TFVOQVJTT0xBUg",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "RXNwZWNpYQ",
@@ -212655,7 +213147,8 @@
       "bd145d2e-9f51-4c0b-bb00-99f7f03d1c3b",
       "8021e0c3-2b27-4507-9235-5bb65a6aa30c",
       "6004114a-7ed4-4f99-abc2-3aab66aaa8ca"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WnNhc3o",
@@ -212725,7 +213218,8 @@
       "c1e89aa8-a068-4a45-9c97-91c5d082f75e",
       "5a235b8d-0ad2-49a7-9639-fa078aced154"
     ],
-    "producers": "Utsu-P"
+    "producers": "Utsu-P",
+    "reputation": 3
   },
   {
     "uid": "44Kz44Os44Gj44Gm5oGL44Gn44GZ44GL77yf",
@@ -212888,7 +213382,8 @@
       "05dce6e3-b6de-40c7-b98c-c90015a29da0",
       "6208f350-8225-4e84-8f19-49f54522f22f"
     ],
-    "producers": "Korekore"
+    "producers": "Korekore",
+    "reputation": 3
   },
   {
     "uid": "44OX44Op44Oz44Kv44K544K_44O844K6",
@@ -212916,7 +213411,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OX44Op44Oz44Kv44K544K_44O844K6",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5Y-v5oaQR2lybCdz",
@@ -213012,7 +213508,8 @@
       "f3efdef0-5e10-4524-97f5-d2f210e8a57a",
       "aa0b84f3-804a-4971-9223-494481116f53",
       "fad24692-c726-4523-8d93-80705d0832d3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1BBQ0UgR0lSTFMgUExBTkVU",
@@ -213147,7 +213644,8 @@
       "8b241284-0ca3-4258-8e23-93b4c6f5aa95",
       "7f5c0993-70eb-42f0-b2c7-9936a7e71703",
       "d7339490-4d25-4380-a42d-f70d343c1abb"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Um9vdCBtaW1p",
@@ -213315,7 +213813,8 @@
       "ce79a26b-7f61-45cb-9a05-51eb468c357e",
       "002ce0f5-b1cc-4282-873d-801ca2552c69"
     ],
-    "producers": "Kurosaki Nanako"
+    "producers": "Kurosaki Nanako",
+    "reputation": 3
   },
   {
     "uid": "bG9nIHlvdQ",
@@ -213453,7 +213952,8 @@
       "f35bd7d3-582f-4982-95aa-c5d284e0cc92",
       "8d616286-3597-4398-86e8-62e58571945c",
       "57587033-bc9f-4a7a-864d-692771ee93e0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44KB44Gj77yB",
@@ -213485,7 +213985,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44KB44Gj77yB",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "REVBRExJRlQgTE9MSVRB",
@@ -213644,7 +214145,8 @@
       "e7ee09e5-d0bd-45a0-bcb1-3137ffcfc0dd",
       "d65accc6-7916-4c18-b3d1-dd6dbe3c3692",
       "a023e725-9579-44a4-bef1-0401ab5f8d30"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Kk44OJ44Or44ON44OD44K144Oz44K5",
@@ -213672,7 +214174,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44Kk44OJ44Or44ON44OD44K144Oz44K5",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44OZ44Kk44OT44O844Os44Kk44K6SkFQQU4",
@@ -213700,7 +214203,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OZ44Kk44OT44O844Os44Kk44K6SkFQQU4",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Q0FSUlkgTE9PU0U",
@@ -213766,7 +214270,8 @@
     ],
     "disc_uids": [
       "815066ca-2691-48ca-9f49-4ded4bc0c5bc"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5ZCJ5bed5Y-L",
@@ -213794,7 +214299,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5ZCJ5bed5Y-L",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5p2x5Lqs44OR44OV44Kp44O844Oe44Oz44K544OJ44O844Or",
@@ -213822,7 +214328,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5p2x5Lqs44OR44OV44Kp44O844Oe44Oz44K544OJ44O844Or",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QmVGb3JV",
@@ -214034,7 +214541,8 @@
       "299f8366-3a51-4265-ba1b-75eea4b91b3d",
       "e6a7c377-676b-499c-9427-a633d912ded6",
       "c3e82329-954d-40c9-a65f-26741b32e4ce"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UkUtR0U",
@@ -214106,7 +214614,8 @@
     ],
     "disc_uids": [
       "ed4fd91d-dab4-458a-8dc7-9c9d67517ead"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44K544OI44Os44Kk44Or",
@@ -214134,7 +214643,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ki44K544OI44Os44Kk44Or",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "UEFTU1BP4piG",
@@ -215032,7 +215542,8 @@
       "aa13f78e-89ae-4fa6-9de7-70687e151df0",
       "2063611b-68ec-4a43-92a9-057194b1d435",
       "2edf25a9-d928-47aa-ab76-aa55a5357343"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5ZCJ55Sw5Yec6Z-z",
@@ -215469,7 +215980,8 @@
       "1dee645d-4e3d-4f0a-951e-6841f825b6dc",
       "e67e71e5-b2c0-4b16-ba7b-d74e6c0adbee",
       "ebacca81-2443-46d0-9a2d-89998b8a206e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bWlzY2FzdA",
@@ -215776,7 +216288,8 @@
       "edf11dd0-e27e-4f23-ba5e-cf355623da41",
       "cb263344-0113-4fb8-a5d1-8ef428381ad8",
       "b552ef15-8ec5-4e3b-8715-a5448a3243c6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UmV2LmZyb20gRFZM",
@@ -216020,7 +216533,8 @@
       "3caddfaf-ba4d-4c75-b591-31b273806101",
       "b270624a-ea25-4cb7-9a0c-2b64303f77b4",
       "fe263c4c-efa2-4ee3-bd4e-09605302e4d6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TkVLSVJV",
@@ -216048,7 +216562,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/TkVLSVJV",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "VklOSUk",
@@ -216141,7 +216656,8 @@
       "b891f8ac-3665-4602-899d-4d9beb1495ad",
       "7def99fb-1231-4094-87f9-5f477b9edd21",
       "d18dcf8f-ec04-4651-aa62-304f67b68cb5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWVNZVE",
@@ -216225,7 +216741,8 @@
     "disc_uids": [
       "01a7cf55-0800-45ac-ad19-3152d69a123f",
       "8f8056c8-e716-49c9-bfff-0ac430e39f8b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q1VSRSdU",
@@ -216292,7 +216809,8 @@
     ],
     "disc_uids": [
       "b087ad0c-3cd3-4573-9fe6-73072ef830ca"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U3VnYXLimaFIb2xpYw",
@@ -216320,7 +216838,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/U3VnYXLimaFIb2xpYw",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Qk5TSQ",
@@ -216410,7 +216929,8 @@
     "disc_uids": [
       "406a2851-146d-46af-892b-51b10ef45165",
       "80939a95-2c51-41ce-a38f-5d2a6d5bac19"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OS44Kk44Op44Ku44Oq44Kq",
@@ -216543,7 +217063,8 @@
       "f275d97a-bcf4-4f83-ad78-99a11f7c7063",
       "23cf9adc-f55a-41c4-b569-2f4aaadd8758",
       "2aea5eff-d141-43bc-b2fb-d5d6820fa005"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "54m55pKu44GM44KL44Ga",
@@ -216571,7 +217092,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/54m55pKu44GM44KL44Ga",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "56-g5bSO44KK44GV",
@@ -216599,7 +217121,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/56-g5bSO44KK44GV",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Q2hlZWt5IFBhcmFkZQ",
@@ -216734,7 +217257,8 @@
       "de22aa13-0f22-46d5-b304-d9718a1e995b",
       "553f0f9c-ecee-4555-9931-4189a68b130b",
       "9be27aba-ce8c-470b-905e-2c5e772e91b4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SURPTEFURVI",
@@ -216974,7 +217498,8 @@
       "0b5e1f82-e679-4a30-beb0-33373f14ba0f",
       "2994f3bf-f46f-4de6-820d-4649d4d97a92"
     ],
-    "producers": "Kimura Misa"
+    "producers": "Kimura Misa",
+    "reputation": 3
   },
   {
     "uid": "44OV44Kh44O844K544OI44OX44Os44Kk44Oq44K544OI",
@@ -217002,7 +217527,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OV44Kh44O844K544OI44OX44Os44Kk44Oq44K544OI",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "UmVGTGlB",
@@ -217030,7 +217556,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/UmVGTGlB",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5q2m6Jek5b2p5pyq",
@@ -217058,7 +217585,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5q2m6Jek5b2p5pyq",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44Gt44KC44G644KNIGZyb20g44Gn44KT44Gx57WELmluYw",
@@ -217086,7 +217614,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gt44KC44G644KNIGZyb20g44Gn44KT44Gx57WELmluYw",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44G_44GO44Gm44KE44GY44KL44GXIOOBsuOBoOOCiuOBpuOBr-ODvOOBqA",
@@ -217114,7 +217643,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44G_44GO44Gm44KE44GY44KL44GXIOOBsuOBoOOCiuOBpuOBr-ODvOOBqA",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Q1JPV04gUE9Q",
@@ -217467,7 +217997,8 @@
       "03e399f4-980f-420f-9264-b8884d012723",
       "bd71b149-415c-4381-b323-2f2f55cece82",
       "c9ca4740-5fca-4da5-8a74-dbabbd84e01f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5LmZ5aWz5paw5YWa",
@@ -217495,7 +218026,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5LmZ5aWz5paw5YWa",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "5a-65baL55Sx6IqZ",
@@ -217985,7 +218517,8 @@
       "eeee9bc0-3ff9-4c12-8482-bb2efdad764a",
       "5cd02d58-18b3-4f20-8239-6bb7899893a8",
       "1daf85cd-6956-4016-8a6b-7eed9d7aeabd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Qi5PLkwuVA",
@@ -218482,7 +219015,8 @@
       "c64e3de6-1521-4d88-a28e-b35aabeaaf2d",
       "38a6c76b-6a95-486e-a434-354630ccc9c5",
       "729923e0-9458-4439-9dc8-faeac0e8f60a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "V0hZQERPTEw",
@@ -218787,7 +219321,8 @@
       "b56247d5-cf84-45df-a86b-9bad1e479775",
       "eb47139c-722a-403f-a9ff-db264834d5fc",
       "e80089c1-049f-47ce-87f5-3c821e6ac640"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "cHJlZGlh",
@@ -219363,7 +219898,8 @@
       "d089c2b3-c1d2-46a6-8959-91362a27d1d4",
       "3b45bf41-1614-4bf7-8053-49b8e5138880",
       "74170885-0a61-4663-a356-9a120e15c2c2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R0VN",
@@ -219623,7 +220159,8 @@
       "e7ea06f1-68bb-4dd0-a17f-d58953ccbb96",
       "3364aaef-6a2e-4b44-81c9-2db29377df1c",
       "a4b5a830-c368-475c-a027-2ffea714e7a0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "5oG15q-U5a-_44Oe44K544Kr44OD44OE",
@@ -219651,7 +220188,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/5oG15q-U5a-_44Oe44K544Kr44OD44OE",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "S09UTw",
@@ -220151,7 +220689,8 @@
       "a44f0952-d1c0-4caa-94ed-40c82f6cda78",
       "cb1b2050-205a-404b-b4c5-730b3ec7706a",
       "c31423e8-c209-4777-a045-985663ff8fa4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SE82TEE",
@@ -220282,7 +220821,8 @@
       "55aedfaa-7741-4df3-a578-0fef9e2017e4",
       "cbbc46bd-b53b-4732-947d-ddceec434eb0"
     ],
-    "producers": "Ichigo Rinahamu"
+    "producers": "Ichigo Rinahamu",
+    "reputation": 3
   },
   {
     "uid": "5bqD54Cs5oSb6I-c",
@@ -220352,7 +220892,8 @@
     "disc_uids": [
       "e4e082f0-7a48-4a6f-ac55-7359f096e376",
       "df5d4734-16dc-4e9b-a24c-ba9772b43698"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44K344Ol44O844Kv44Oq44O844Og44Ot44Kx44OD44OE",
@@ -220380,7 +220921,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44K344Ol44O844Kv44Oq44O844Og44Ot44Kx44OD44OE",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44G_44KT44Gq44Gu44GT44Gp44KC44Gh44KD44KT",
@@ -220712,7 +221254,8 @@
       "54ebf628-eae2-44b3-a3c5-bd638f34968c",
       "3b43582a-f261-424c-b974-2ab5edeb6de8",
       "52bc9cfe-624d-49aa-90f9-ba6e579d3b7c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OQ44OL44Op44OT44O844Oz44K6",
@@ -220740,7 +221283,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44OQ44OL44Op44OT44O844Oz44K6",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "REVTVVJBQkJJVFM",
@@ -221027,7 +221571,8 @@
       "23648d85-8a56-48a2-b4e0-e6b8868e3de4",
       "097e210b-5812-4f94-967f-65f5aeeaf8d8",
       "7bc3be15-8c07-4772-8f6a-68acd937c877"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SEFMTENB",
@@ -221658,7 +222203,8 @@
       "c0002239-a67c-48fe-ba25-db5d44429810",
       "d12e572f-0835-463f-a95d-25b8c4c0d84f",
       "b1b727bf-2486-4ad3-a9a2-2c63372c5149"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGlYTWlY",
@@ -222079,7 +222625,8 @@
       "cba412f4-49a0-4966-a024-31d1100409fd",
       "534c5666-4abf-4d34-876d-d39a12aa30cb",
       "46a739ef-dbc6-4638-a2f1-cb9b0a1773f9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Gv44Gh44G_44Gk44Ot44Kx44OD44OI",
@@ -222107,7 +222654,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Gv44Gh44G_44Gk44Ot44Kx44OD44OI",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "44Ot44OD44Kr44K444Oj44Od44OL44Kr",
@@ -222135,7 +222683,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/44Ot44OD44Kr44K444Oj44Od44OL44Kr",
     "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "WDIx",
@@ -222409,7 +222958,8 @@
       "223573b5-f3f2-4193-aefd-5bc9fb76ae6c",
       "95b1e21c-3d82-462a-a77f-639920d0fe0d",
       "85a73749-8b81-4db5-a335-4435fb146404"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U2lhbeKYhkRyZWFt",
@@ -222615,7 +223165,8 @@
       "2837cc52-9767-4fe0-88b8-706b74625895",
       "c6321e6b-9ded-492d-a982-e5d69fb52432",
       "bc8910de-951b-4a25-bf16-f2a265373e85"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "M0IganVuaW9y",
@@ -222728,7 +223279,8 @@
       "c822e565-8978-4178-95fb-872ec9c4b57b",
       "bf390920-2885-4a49-8c46-0053b4f079e8",
       "d6614b89-4eda-4b6b-95c3-ffbbe34ef1e6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "cmF5bWF5",
@@ -222964,7 +223516,8 @@
       "6a612567-904a-4936-ada2-d134b60c3132",
       "bf9b7e76-3870-4df6-8425-48474873e2bf",
       "6c8ac6b3-12e4-4a2b-9912-e3412d3d09cd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "T24gdGhlIHRyZWF0IFN1cGVyIFNlYXNvbg",
@@ -223251,7 +223804,8 @@
       "3db71d41-9626-4aee-87dd-3177453e6936",
       "a63e4974-7dda-4650-a76d-e8c7fa0350bd"
     ],
-    "producers": "Ary"
+    "producers": "Ary",
+    "reputation": 3
   },
   {
     "uid": "TkVMTg",
@@ -223645,7 +224199,8 @@
       "2ebd723c-1485-4431-9350-88174ba7bbcd",
       "d6853be4-af24-4302-bf8f-b4be5eadc747",
       "3468e83f-bebb-4817-9b2a-5d3a52315880"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "54Kt6YW444GP44KN44Gr44GP44KL44Gj",
@@ -223715,7 +224270,8 @@
     ],
     "disc_uids": [
       "15ab87a2-e1bb-4332-baea-dd6c8c158c7e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGUgU2lhbmE",
@@ -223868,7 +224424,8 @@
       "eeeacd26-8cb4-4022-a8f9-e263e4815aa9",
       "85ecf016-6f1a-4637-a8f0-348b853a386c",
       "60ab6418-79a4-4ec3-80fa-9359911edcce"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGluayBCYWJpZXM",
@@ -223970,7 +224527,8 @@
       "efffdf84-bf0d-4546-aec8-7045d99a3fb1",
       "edd0c119-27ba-46c6-9ae2-8b69661fe17c",
       "9787ab5c-f962-4a47-8585-e15323b7f07a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "ZXllcw",
@@ -224063,7 +224621,8 @@
       "d4ddcaec-70e7-4014-a765-ee8849e74339",
       "5ecceb00-69bc-4368-a4e4-a3d25b698344",
       "3b6ab50b-2616-42e4-bc83-b3153e5b7cc8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGFzdCBJZG9s",
@@ -224293,7 +224852,8 @@
       "022fc329-794d-4751-a384-a1bcdeaab7a2",
       "8507bddf-801e-428a-a004-38c4e861fdd3",
       "4fc19d91-eed3-4e32-b8a3-6bb51f17ced1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RnVqdW4gQnVuZ2FrdSBTaG91am8gS2FnZWtpZGFu",
@@ -224318,7 +224878,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TGEgTHVjZQ",
@@ -224463,7 +225024,8 @@
       "73bb6163-fb8b-4383-bd87-e66178f410e8",
       "15897886-3ffd-4ef1-b685-6c667fc5a28f",
       "d9c7366d-66c9-4f0c-9e3e-0b9754186ba3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "R29vZCBUZWFycw",
@@ -224590,7 +225152,8 @@
       "c88e2e52-5622-446a-bc61-a8a377da42db",
       "3a051146-59aa-4c40-b9da-306aef7e6208",
       "a9f88184-b0e1-423f-95d9-d1b1fa1fe90d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
@@ -224713,7 +225276,8 @@
       "647a457a-e6ef-4ad4-a2a9-a51121ab33bd",
       "526d00ee-0542-444a-acc7-a59a38465625",
       "ac02e068-2326-4fd3-8156-33d16874998c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U29tZWRheSBTb21ld2hlcmU",
@@ -224845,7 +225409,8 @@
       "cefd9303-db89-462a-b222-1423c8d9aa84",
       "d2000d0b-79f3-45a3-b5d7-6f5d32b4a566",
       "48a015d3-fe55-4326-b1da-9759087e6da5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
@@ -225332,7 +225897,8 @@
       "422a4f5a-44f0-4ca5-8dc4-5f12cf068d7e",
       "591fc660-a1e6-4210-9140-f2725b89af89",
       "ebf1192b-bff1-4cad-b9a1-12cf8fed532c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9uIFVuZGVy",
@@ -225846,7 +226412,8 @@
       "93a03482-e5ec-4694-98c9-5673d8cf79ab",
       "d913c64e-0156-430c-a5c4-313b3de33e58",
       "ea66ae8c-cefe-4510-a58a-baaeb3abfc4e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44Or44OX44K544GK44Go44KB",
@@ -225936,7 +226503,8 @@
       "2acf7f13-e7e0-4802-b067-8fe7306fc0cb",
       "7604f4bd-d848-44e6-9753-2ac276e08b19",
       "0463d1f8-3513-42b0-afe2-5cd168d4cea1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QXN0cmFpbg",
@@ -225990,7 +226558,8 @@
     ],
     "disc_uids": [
       "ab5d24c1-84bf-4afa-ac02-b4d82feecc59"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2lyY2xlIEx5Y2hlZQ",
@@ -226181,7 +226750,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U2hpcmF5dXJpIHRvIEFtZQ",
@@ -226402,7 +226972,8 @@
       "a01d3542-9914-4401-b06b-5d70eaa56cf5",
       "6582b0b9-9784-4fe4-9fd6-df56e49cee6d",
       "bea5879b-7edc-41c7-bba6-7ae193e84aa4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U2VjdA",
@@ -226723,7 +227294,8 @@
       "7b8b7995-fe7f-4e97-a1cf-4c422438b73f",
       "e35ee334-8bac-4284-942d-eb7318164156",
       "3bdd979f-8ce7-4b08-bb09-41bf486cf5ec"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2VyaXNpZXI",
@@ -226913,7 +227485,8 @@
       "8855d204-e6b5-4159-9983-68b30bd66252",
       "0a0fcb92-feea-4c51-b349-bfc828b44b37",
       "5790b58b-8b21-4455-a444-45615527e666"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "I0RPIFJFIE1JIEZBIFNPTCBMQSBTRUVE",
@@ -227029,7 +227602,8 @@
       "1d9a0d8a-baf2-4589-b9b9-f3d502128f87",
       "73c25ea5-c50e-41fc-8238-a84767725a3c",
       "d815c894-0b5f-4135-b3d3-48f0166c9cec"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "V2FnYW1hbWEgbmEgTGFzdCBOb3Rl",
@@ -227210,7 +227784,8 @@
       "d0c7490c-5306-4d64-9022-34c1454fb37a",
       "2ad9d966-e3a6-470e-86c7-5d1e2e990fe5",
       "0fd0f020-f16b-48eb-80e2-4023d485e80b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S0FNTyBnYSBORUdJIHdvIFNob3R0ZWt1cnUhISE",
@@ -227294,7 +227869,8 @@
     "disc_uids": [
       "40d8f546-2f86-41a7-90a9-e3fe419d95a1",
       "e613e86e-cf22-4975-9ca5-80d478faff4d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bWFpIG1haQ",
@@ -227361,7 +227937,8 @@
     ],
     "disc_uids": [
       "19fb6cf3-86f7-4fb4-b044-65ed8ad66155"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U3VraWlybyBEcm9w",
@@ -227803,7 +228380,8 @@
       "83dd6152-7d58-42c6-8282-bb2ccdfae99c",
       "47f4c7a4-6781-45cb-bec5-622728242471",
       "c2aff64e-2c4b-4807-b655-4d1cd8aea704"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VG9yaWtvIE5hcnUgUHJlbHVkZQ",
@@ -227834,7 +228412,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QW1hdGVyYXN1",
@@ -227917,7 +228496,8 @@
     "disc_uids": [
       "93c17860-12f0-4824-9480-3bada39eb7cd",
       "7f8aebe3-49fd-40ff-9a64-8f2a53459922"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VU5MQU1F",
@@ -228075,7 +228655,8 @@
       "f25799bf-de31-499d-b746-6e72886f62bf",
       "4100a6e0-8fc7-436b-bc2c-143c4bd11c01",
       "edf1872d-7f76-4060-8ed8-1b9b8a1227d2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Tm9lbGxpTA",
@@ -228356,7 +228937,8 @@
       "64e0e3fd-72ac-4cb9-ab16-46602e8e15ef",
       "eebf1127-7d75-44b8-add4-812f8bad8f7c",
       "7240b5c2-7c4b-49f3-a3d7-f7ce51eff121"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U29sZW5uZWwgQ29tcGFueQ",
@@ -228500,7 +229082,8 @@
       "819f3531-c096-4083-87e9-8250df719484",
       "78e13bed-ec16-4330-af3f-7b793912c426",
       "f3a3b4ff-9cbc-48d1-90b2-6c058087d7a6"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q09MT1Ineg",
@@ -228675,7 +229258,8 @@
       "59412f9e-ae39-40e0-bda4-420e84da1b69",
       "45c5aeea-72ba-4db3-b831-45dd14234ddd",
       "1889c115-bdc2-41cf-ab6d-29cfe4e56270"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "MzcuMuKEgyAtTmFuYWRvbmlidS0",
@@ -228777,7 +229361,8 @@
       "d555ee5b-1512-489b-a31a-f82ffdd62e85",
       "830b11ed-45dc-417b-b3d3-44ce681b8b07",
       "2b5c32c7-1a5c-4dbe-b527-1993057feba8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SnVuam91IG5vIEFmaWxpYQ",
@@ -228995,7 +229580,8 @@
       "7e0d99d2-bce4-4fda-b443-b3fa7a5b1aa7",
       "7677ac9a-5be2-47ee-9057-7468e6250225",
       "b94eafd2-2168-4db1-ba5a-d86cba937879"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SG91a2FnbyBQcmluY2Vzcw",
@@ -229702,7 +230288,8 @@
       "a08ea179-8ee8-490c-b75a-fdb2a6108865",
       "6336fd0f-1e95-4092-94cb-2eded74f4d98",
       "669956c9-2e65-43b6-b832-db2b4a2b9214"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S2FrZWRhc2hpIG5vIEhpa291IFNob3Vqbw",
@@ -229727,7 +230314,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QXJ0ZW1pcyBubyBUc3ViYXNh",
@@ -229998,7 +230586,8 @@
       "d49ade2a-46a3-4e70-823b-333ff909e38a",
       "fd6736c0-5826-4927-b448-ff3cf65c97e9",
       "9db23185-1da8-4462-a891-b9742220c879"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "I1BlbnRhcHJpc20",
@@ -230023,7 +230612,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "S0FUQUNPVE8gKiBCQU5L",
@@ -230272,7 +230862,8 @@
       "18fbcc22-29fa-40da-9832-e18c6bf2da73",
       "c4d41ccd-b47b-4b57-b8c9-27a36e461601",
       "874e3b92-d1e2-4e7b-a478-1f61a92d34d7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWluaWNodQ",
@@ -230297,7 +230888,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Qk9LVSBoYSBLSU1JIG5vIEtBS0VSQS4",
@@ -230400,7 +230992,8 @@
       "06ba3805-41f7-43c2-8cb9-261214d699c1",
       "642475a1-4cca-464b-ab0f-95a0ac59aa5d",
       "59e9c7d3-3115-47bb-8ebd-c487d696fae7"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "NDg2NC4",
@@ -230648,7 +231241,8 @@
       "795a68aa-52b9-41a2-97db-5dca567660f8",
       "5bedfaf6-0731-4edf-8bb5-419450c4900e",
       "1e05f651-13df-48e7-934c-52e249d8ef2f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QVVHTUVOVEFM",
@@ -230683,7 +231277,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "MUV5ZWxpbmU",
@@ -230719,7 +231314,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "RXVyZWth",
@@ -230793,7 +231389,8 @@
     "disc_uids": [
       "ed2605bd-3672-4e6c-b030-6fa2d646cc01",
       "3d9ed1f5-3040-460f-afe2-dcc4d575309c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SEFLVVNVTEE",
@@ -230838,7 +231435,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "SEFDSw",
@@ -230865,7 +231463,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TUlOT1JJVFkgQUxFUlQ",
@@ -230943,7 +231542,8 @@
     "disc_uids": [
       "fe07330b-feef-4e53-89f6-bec639129558",
       "7d3e8b80-dd2f-4738-af00-ea9ae7f54b52"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SGFyZSBOb2NoaSBLb2kgTW95b3U",
@@ -230975,7 +231575,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "SGlyYWdhbmEgU0FZLUxB",
@@ -231008,7 +231609,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "SGlrdXRlQW1hdGE",
@@ -231041,7 +231643,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U3BvcG9wb3Bvbnk",
@@ -231079,7 +231682,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "JkNoIWxs",
@@ -231231,7 +231835,8 @@
       "e74805ba-3864-4bdc-9441-8eb66ac79ca2",
       "83e3302b-d678-4df6-b430-b43999034a66",
       "5e0f13e0-9407-4b91-a7ce-3bfd56f1eba4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Y1VUZSEgY0VOVEktbUVOVEFM",
@@ -231258,7 +231863,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U3RhcmxldA",
@@ -231296,7 +231902,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TEFSTU9PTg",
@@ -231321,7 +231928,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TG92ZWx54piGRE9MTA",
@@ -231746,7 +232354,8 @@
       "0ca9bd4f-e772-4dab-8948-9d09969bee36",
       "f60be5a0-35a1-4bb8-b5c2-e9a9a096bcad",
       "d02a24ce-44fd-4be9-8b64-f706a4f1dbb0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VG9reW8gWXVtZSBQaXlvZ3VtaQ",
@@ -231777,7 +232386,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "R1JBQ2lBUw",
@@ -231806,7 +232416,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "bW9tb2dyYWNp",
@@ -231878,7 +232489,8 @@
     ],
     "disc_uids": [
       "51268389-96ac-461d-8373-6744fb573a23"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TW9tb2lybyBLYWt1bWVp",
@@ -232060,7 +232672,8 @@
       "f2c0ae95-b772-4fc4-ad4a-753f3c3a4e4b",
       "843fe2fe-7c87-47c9-944d-cb7e5fa88fed",
       "fc320dc1-932b-44b8-ad79-919a672f90ab"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUVUUk9QT0xJUw",
@@ -232103,7 +232716,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "Qi5MLlQuIElET0wgQ09MTEVHRQ",
@@ -232134,7 +232748,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U3Vydml2ZS1aRVJP",
@@ -232607,7 +233222,8 @@
       "d9eaeeb6-825d-40d0-bab7-40c758ba0fa0",
       "d089fa8f-831a-4ded-a82d-ff846f51b6e4",
       "b5ef95f3-802c-4e9b-8f05-9690ed820dd1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "WWFuY2hhbiBHYWt1ZW4gT25nYWt1YnU",
@@ -232882,7 +233498,8 @@
       "88e13760-61fc-40ff-b763-95acc313ac05",
       "69356973-8afa-4360-b8c9-92cec900ee4a",
       "f2995a8e-4b75-4d86-8357-ac56b4ec493a"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QWxjdXRlIQ",
@@ -233240,7 +233857,8 @@
       "9c3eb21a-3078-4a2f-b257-762eb5eca9fd",
       "e2c60ecd-10e9-4ced-9979-827b6b016af3"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce132"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce132",
+    "reputation": 3
   },
   {
     "uid": "WjUtQzE",
@@ -233306,7 +233924,8 @@
     "discography": [],
     "disc_uids": [],
     "union": "Zero Project",
-    "union_uid": "WmVybyBQcm9qZWN0"
+    "union_uid": "WmVybyBQcm9qZWN0",
+    "reputation": 3
   },
   {
     "uid": "UHJpbmNlc3NHYXJkZW4tMkdOLQ",
@@ -233349,7 +233968,8 @@
     "pictures": [],
     "discography": [],
     "disc_uids": [],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce94"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce94",
+    "reputation": 3
   },
   {
     "uid": "cm9zw6kgY29sbGFnZQ",
@@ -233389,7 +234009,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U3RhdGlvbuKZqg",
@@ -233747,7 +234368,8 @@
       "e2286b41-da0b-4d7a-92d6-31424ffffcb4",
       "56efec2b-cc6d-4aab-b83d-1d52150e6aa4",
       "839f1bfd-63cd-4114-8df0-bfbf1eae5332"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S2F0YW1vbWkgSm9zaGk",
@@ -233781,7 +234403,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "aW5mby5tQHRl",
@@ -233814,7 +234437,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "V29uZGVyIFdlZWQgVGVu",
@@ -233912,7 +234536,8 @@
       "07a7af1c-6a2f-4d6c-9784-f344dda6c338",
       "23620747-792d-4437-8326-c1016e3afd40",
       "3b789eb0-addb-484c-b44f-b74defa1a39e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "YnVHRw",
@@ -234192,7 +234817,8 @@
       "394fa608-b4b0-43b1-9052-56b1dd416407",
       "bf10c2d3-e24e-413b-a8f8-50dee5957cae",
       "30c186cf-a87b-418f-ab47-d49999c393c4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QkFDSyBUSEUgUklQUEVS",
@@ -234293,7 +234919,8 @@
       "5c3501e9-68d9-4306-b038-a1ab5b48c4fc",
       "141578bf-6db8-4461-b8d1-b7daf7d7d058",
       "6bd89192-2a0c-4a39-9982-c49ad15af3bf"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UGFydHkgY2h1dXVOIQ",
@@ -234355,7 +234982,8 @@
     "disc_uids": [
       "318b00cb-41fd-4900-a75f-edda3bb0ec7e"
     ],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce138"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce138",
+    "reputation": 3
   },
   {
     "uid": "S2lzc0JlZVdFU1Q",
@@ -234726,7 +235354,8 @@
       "e04db53d-6712-41dd-9973-d28766f84d60",
       "77ff8bf7-6d05-4adb-a324-b3adeabce012",
       "8374f6c1-e39f-4337-83ba-92cca73d0e08"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U3V0ZW5la28gQ2F0cw",
@@ -234968,7 +235597,8 @@
       "e3c10307-9a2b-4a4e-a2ee-6832374fe06e",
       "e06fbe76-9459-4f9c-a671-e48465dbc8ee",
       "f18489df-260f-41dd-90a3-e2d9b41530e4"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TTNMT0dJTg",
@@ -234999,7 +235629,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U3VyZW5lc3M",
@@ -235136,7 +235767,8 @@
       "dd263433-5969-424a-ba6e-d379d5c3137d",
       "fa016cfc-112d-40d9-af53-f754dc4c2c9c",
       "05d3a42a-b668-47c1-be82-ca60840c1657"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S29yZTpjdA",
@@ -235196,7 +235828,8 @@
     ],
     "disc_uids": [
       "48916cd3-2704-4066-a6ea-32544bc6b136"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUlST0tVTk9ST0NL",
@@ -235234,7 +235867,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "VHN1a2kgdG8gVGFpeW91",
@@ -235296,7 +235930,8 @@
     "disc_uids": [
       "4b02c925-7409-4692-baaf-ed11193588a9",
       "46a9ffec-9ad9-4251-b9bc-1a756b9f656d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "THVuYSBCeSBTbmFw",
@@ -235329,7 +235964,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "WW9rdWJhcmkgU2Vuc2F0aW9u",
@@ -235452,7 +236088,8 @@
       "fd8af91f-8f5b-4dfe-8c12-013ea3662b14",
       "83c6824c-2a9a-4fc5-a723-ceb48df28a24",
       "048bea97-f02c-4386-a3b2-e3b8829bff9b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "aHVza3k",
@@ -235786,7 +236423,8 @@
       "30921664-d0a1-4612-a790-7c5f40b83500",
       "feb4a8d4-3920-41fc-aeaf-ea97766f5267",
       "4e9b4801-a98e-456e-a938-59d2480f12d2"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UExBTkNLIFNUQVJT",
@@ -236721,7 +237359,8 @@
       "fc9af1fd-6f84-4cef-8e72-97a1cbd5df38",
       "0684f130-cc7e-4c64-b045-2d9cec07c159",
       "40f16c20-c1d9-45c2-804e-8f1a86759293"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Y2h1dXVt",
@@ -236799,7 +237438,8 @@
     "disc_uids": [
       "00b4a7f5-9b08-4f46-83df-357649ab83bb",
       "be924ab5-9cde-4bb2-bb83-10f042483071"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Qm9rdXNla2E",
@@ -237038,7 +237678,8 @@
       "8841ec57-8a5f-4156-b46f-90ee07694783",
       "e410770d-61a6-4396-ad0f-b6b248a48f55",
       "9de4165c-2eb9-46a6-867c-32a5922b6fdd"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0tJUk1JU0g",
@@ -237094,7 +237735,8 @@
     ],
     "disc_uids": [
       "5e2cd2b0-a537-4061-9e16-9d588ab2bc0b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TFVDWQ",
@@ -237346,7 +237988,8 @@
       "964932fe-a725-483d-aa65-efa17ba39590",
       "d6b96775-f55b-4b5e-9baa-0a6e552b51c9",
       "31974c84-5563-4792-a950-cdc1ee64b8f1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TUVMVFkgSFo",
@@ -237397,7 +238040,8 @@
     ],
     "disc_uids": [
       "21cbcd83-fc13-4316-8c35-f556ecf474b9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "cG9zdGFsZ2lh",
@@ -237596,7 +238240,8 @@
       "f8174ab5-8387-4834-92a1-c97148f38c98",
       "909f0251-8790-4821-864d-4ccc9e6aaf75",
       "8a9ce38f-ca31-4f3a-b4f3-18d44632413c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWFnTWVsbA",
@@ -237685,7 +238330,8 @@
       "635778dd-ff6d-4e8a-b12c-bf6c0b3a35a9",
       "c3d58953-3b52-4d8b-8ca7-4e4c06a25fba",
       "a3fa4340-f46b-4f71-a81b-5424368c9cad"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "Q2h14piGT2ghIERvbGx5",
@@ -237831,7 +238477,8 @@
       "bc1e6160-e384-4bd3-87d5-e9aa6b7d8b1e",
       "c798919f-87c3-42b2-9c52-7aef80a83207",
       "b2131bcd-1489-4d11-80c1-28803f96f433"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "SmVsbm8h",
@@ -237866,7 +238513,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U3RlbGxh4piGQmVhdHM",
@@ -238213,7 +238861,8 @@
       "a09ec755-b8d1-4ca3-bfcc-c9c67f83d6e1",
       "84e77ecd-f296-49b2-82ec-1ded90d75352",
       "cae5b6e1-4d83-4e96-8436-6bfe0f3f9fd3"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TG92ZUtlbg",
@@ -238289,7 +238938,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QkVMTFJJTkcgU2hvdWpvIEhlYXJ0ICcyMg",
@@ -238915,7 +239565,8 @@
       "aca698a6-439b-4ca7-87d6-d0edacbbef59",
       "33a3aad0-395d-47c8-92ff-2f12fe94aa20",
       "4622abc3-6883-429f-a2a1-b465b14daca8"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "VEhFUkUgVEhFUkUgVEhFUkVT",
@@ -239074,7 +239725,8 @@
       "35a3367d-c190-4657-8de4-d0eb1807af02",
       "5f28ee20-e7cf-4c0c-9f62-d040ef4cdd85",
       "c9a6b240-3071-4514-80cb-c35fd76759f1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U2V2ZW4gQ29sb3Jz",
@@ -239157,7 +239809,8 @@
       "a57512e4-89dd-442e-9142-fae02b99d1ad",
       "cbde7e7c-6490-4540-b9a9-8eda26381889",
       "f37beab8-dbd1-42ef-803b-ec8ff64c0154"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U2hvam90YWk",
@@ -239272,7 +239925,8 @@
       "4d3c5bd9-d493-454b-ac10-7b37b0e06c9e",
       "7570fe84-6e3e-43b3-ba8b-97ce2ce4023b",
       "77d33590-00a2-407a-b88d-fb9e050c957e"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "bWlnbm9u",
@@ -239425,7 +240079,8 @@
       "71139d17-6a57-4a95-852b-092d1b38d94d",
       "e2db2d81-abee-481e-ab9d-c080ebb08098",
       "f0dd057d-00f5-4b20-9171-fee2f6a29f6b"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U0hBTklNVU5JIFBBUkFERQ",
@@ -239826,7 +240481,8 @@
       "ada54e5e-dbd6-4be8-9014-71b6d2fd3370",
       "6e4648b5-bfad-4ba3-9c30-78098163f81e",
       "9f39a620-5cdd-42c4-8650-df2504e1d7d1"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UElQ",
@@ -239875,7 +240531,8 @@
     ],
     "disc_uids": [
       "0bd8eb22-5583-46c7-a2d2-a0e4692e20b0"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QUxMT1ZFUg",
@@ -240082,7 +240739,8 @@
       "8fc872b0-be91-49a0-827c-9cf5e4e6b6ce",
       "2c7f8af0-3067-4dd1-92b0-799d2f2121ae",
       "83176239-721b-43f8-9c4b-bb593f7e0a7c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QnViYmxlIEJvYmJkaWUgR3VtISE",
@@ -240127,7 +240785,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "R29vZGJ5ZSBmb3IgRmlyc3Qga2lzcw",
@@ -240332,7 +240991,8 @@
       "2d40e9e4-6cfc-4280-976f-023d2e1c30fd",
       "2728caba-22ff-4d7e-9a77-131d3bd2a028",
       "6e399bb0-803d-485f-896e-ba0908888882"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "UmF5ZHJvaWQ",
@@ -240359,7 +241019,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "TmVvbiBSYWlu",
@@ -240403,7 +241064,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "MTAwLVlPS0FJ",
@@ -240535,7 +241197,8 @@
       "d01fef9b-b83a-4fcf-8c6c-ca48883f64a3",
       "5ce09310-36a3-414c-99df-d7c61148151e",
       "bd788f3e-9f24-473d-a052-769dd8199e08"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "S2l0dG8gWnV0dG8gU2Vpc2h1bi4",
@@ -240577,7 +241240,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "S2l0c3VuZWJp",
@@ -240673,7 +241337,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "U2VuZ29rdSBBbmltYWwgR29rdXJha3UgSm91ZG8",
@@ -241066,7 +241731,8 @@
       "7906d52b-a2e2-4cde-8e70-bc0e3c5c92b2",
       "29bf146d-0328-49be-915e-3eef43e28ec1",
       "b5ad7898-cc41-4d11-a17a-1ad01f6f7026"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "YXN0cmFpYSo",
@@ -241093,7 +241759,8 @@
     "song_uids": [],
     "pictures": [],
     "discography": [],
-    "disc_uids": []
+    "disc_uids": [],
+    "reputation": 3
   },
   {
     "uid": "QkFCWSBUTyBLSVNT",
@@ -241208,7 +241875,8 @@
     "pictures": [],
     "discography": [],
     "disc_uids": [],
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce36"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce36",
+    "reputation": 3
   },
   {
     "uid": "TUlMTElPTu-8hFBBUkFERQ",
@@ -241277,7 +241945,8 @@
     "disc_uids": [
       "3757397d-65a4-4bb9-9040-4bfd6f4f8d4c",
       "6f1f1555-44a5-4123-9050-d96b7c03b840"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TWVjaGEgSGlnaA",
@@ -241483,7 +242152,8 @@
       "f092db2f-9d0b-42b3-8168-72b3427ac072",
       "26250b84-5d6c-41d9-ba37-36260c58b3ec",
       "6399ffa7-34e9-4021-9412-0141cf213178"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U3RyYXdiZXJyeSBTeW5kcm9tZQ",
@@ -241538,7 +242208,8 @@
     ],
     "disc_uids": [
       "d1d4133a-c261-4afd-b0de-d398fa063904"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RE9QSU5HIEJFUlJZ",
@@ -241640,7 +242311,8 @@
       "fbddec67-b6b4-458b-a0be-39baec27861a",
       "81797f41-4fd3-40d5-859e-8cd04ec79b4d",
       "a78e552d-d223-498a-8599-3257ad23d033"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "T2Rvcm8",
@@ -241957,7 +242629,8 @@
       "9d1d4bbe-9cdf-44ff-b3cb-56d60cb1026c",
       "0ac0512c-8cdd-4fb1-ad86-312e804f1bfd",
       "07283adb-1ed9-48ad-b615-822d919f6801"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "QnVnTUVNRQ",
@@ -242055,7 +242728,8 @@
       "a3e99933-c4d4-4b48-ab99-46b758b5201d",
       "e3674b53-1eef-480f-a2c7-94045524252a",
       "89fe65b8-cab3-4362-9094-c93481479e55"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RkFOVEFTSUE",
@@ -242130,7 +242804,8 @@
     "disc_uids": [
       "b9bdec17-339b-4179-855d-859c0356bbed",
       "51d8a4f0-e141-4e91-8a41-fcc89203df15"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RklMTCBNRSBUUkFY",
@@ -242244,7 +242919,8 @@
       "c2a4bdef-1ddb-40b7-a043-834f91a83dfb",
       "1e3c53f3-2a82-4e14-83ec-40e564923fdb",
       "e57f721f-0788-4a07-bd1b-4ca6882110c9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "NDAzRVJST1I",
@@ -242299,7 +242975,8 @@
     ],
     "disc_uids": [
       "e16a89a6-a1b3-47bb-a358-cd104e4156f9"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "TmVtdWxlYXA",
@@ -242350,7 +243027,8 @@
     ],
     "disc_uids": [
       "8ab0e10a-d6d0-4992-b986-0d35ab013c4c"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "U1VEREVOREVBVEg",
@@ -242402,7 +243080,8 @@
     ],
     "disc_uids": [
       "0d7b880f-5cb3-43bf-b3b3-d558d2891c4d"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44OX44OG44Kj44OR",
@@ -242539,7 +243218,8 @@
       "c88792e5-129a-429c-948b-4a67dfedf101",
       "68906521-f4bf-424c-b2b6-5c49f1e7a80f",
       "f58c9d10-8b2a-4f3c-9e1d-0a7b6c5d4e3f"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "RnVsbCBDb3Vyc2U",
@@ -242576,7 +243256,8 @@
     "song_uids": [],
     "pictures": [
       "picture/Full_Course_icon.webp"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "82c6703f-0d5d-4b54-972d-232437a3b991",
@@ -242653,7 +243334,8 @@
     ],
     "disc_uids": [
       "30f34dd6-9acb-4f6e-8023-4e65b53a89a5"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513",
@@ -242721,7 +243403,8 @@
     ],
     "discography": [],
     "disc_uids": [],
-    "wiki_url": "https://jpop.fandom.com/wiki/HEROINES_Kenkyuusei_Osaka"
+    "wiki_url": "https://jpop.fandom.com/wiki/HEROINES_Kenkyuusei_Osaka",
+    "reputation": 3
   },
   {
     "uid": "3470f280-df87-4c34-addb-7d4a7c52106a",
@@ -242803,7 +243486,8 @@
     "disc_uids": [
       "c76dc253-9b7f-4fa9-aedb-b5e9497338c4"
     ],
-    "wiki_url": "https://jpop.fandom.com/wiki/Pastel_Closet"
+    "wiki_url": "https://jpop.fandom.com/wiki/Pastel_Closet",
+    "reputation": 3
   },
   {
     "uid": "TU9CSVVT",
@@ -242818,7 +243502,8 @@
     "pictures": [],
     "song_uids": [],
     "notes": "HEROINES founding-era group; disbanded 2020-02.",
-    "description": "MOBIUS was one of the original groups in the 2019 HEROINES launch lineup, and its members later fed into TENRIN."
+    "description": "MOBIUS was one of the original groups in the 2019 HEROINES launch lineup, and its members later fed into TENRIN.",
+    "reputation": 3
   },
   {
     "uid": "5aaE5oSb44Kw44Op44OT44OG44Kj",
@@ -242833,7 +243518,8 @@
     "pictures": [],
     "song_uids": [],
     "notes": "HEROINES founding-era group; disbanded 2020-03.",
-    "description": "Mouai Gravity was one of the original groups that formed the foundation of the 2019 HEROINES collective."
+    "description": "Mouai Gravity was one of the original groups that formed the foundation of the 2019 HEROINES collective.",
+    "reputation": 3
   },
   {
     "uid": "6bW6",
@@ -242849,7 +243535,8 @@
     "song_uids": [],
     "wiki_url": "https://jpop.fandom.com/wiki/Nue",
     "notes": "HEROINES founding-era group; disbanded 2020-07.",
-    "description": "Nue was one of the original groups from the inaugural HEROINES launch roster in 2019."
+    "description": "Nue was one of the original groups from the inaugural HEROINES launch roster in 2019.",
+    "reputation": 3
   },
   {
     "uid": "aUxpRkUh5YCZ6KOc55Sf",
@@ -242863,7 +243550,8 @@
     "past_member_uids": [],
     "pictures": [],
     "song_uids": [],
-    "notes": "iLiFE! trainee unit; activity ended 2024-10-28. Songs later inherited by iON!."
+    "notes": "iLiFE! trainee unit; activity ended 2024-10-28. Songs later inherited by iON!.",
+    "reputation": 3
   },
   {
     "uid": "Tm93U3RvcmFnZQ",
@@ -242908,6 +243596,7 @@
     "disc_uids": [],
     "member_count": 7,
     "wiki_url": "https://jpop.fandom.com/wiki/Now%E2%99%A1Storage",
-    "description": "Now♡Storage is a HEROINES group that debuted in July 2026."
+    "description": "Now♡Storage is a HEROINES group that debuted in July 2026.",
+    "reputation": 3
   }
 ]

@@ -8,7 +8,7 @@ Scenario 6 playable groups (91)
 6. Broken By The Scream | tier=C | members=4
 7. CUTIE STREET | tier=B | members=8
 8. CANDY TUNE | tier=B | members=5
-9. ≠ME | tier=B | members=16
+9. ≠ME | tier=B | members=12
 10. AVAM | tier=C | members=7
 11. GENIC | tier=D | members=7
 12. わーすた | tier=D | members=4
@@ -58,7 +58,7 @@ Scenario 6 playable groups (91)
 60. ふわふわ | tier=D | members=3
 61. KRD8 | tier=D | members=8
 62. STARMARIE | tier=D | members=3
-63. BANZAI JAPAN | tier=D | members=12
+63. BANZAI JAPAN | tier=D | members=11
 64. iON! | tier=E | members=7
 65. AsIs | tier=E | members=7
 66. こみっきゅおん！ | tier=E | members=7
@@ -66,7 +66,7 @@ Scenario 6 playable groups (91)
 68. hakanai | tier=E | members=5
 69. Melty BeaR | tier=E | members=6
 70. 点染テンセイ少女。 | tier=E | members=10
-71. GANGDEMIC | tier=E | members=14
+71. GANGDEMIC | tier=E | members=13
 72. SPRISE | tier=E | members=5
 73. 脳内パステル | tier=E | members=6
 74. Alcute！ | tier=E | members=8

@@ -46,5 +46,6 @@ export const ZH_WIKI_TERM_OVERRIDES: ZhWikiTermOverride[] = [
   { key: "taiban", label: "拼盘", aliases: ["拼盘", "对盘", "Taiban", "taiban"] },
   { key: "concert", label: "公演", aliases: ["公演", "单独公演", "Concert", "concert", "one-man"] },
   { key: "festival", label: "音乐节", aliases: ["音乐节", "Festival", "festival"] },
+  { key: "league", label: "联赛", aliases: ["联赛", "League", "league", "HEROINES League", "入れ替え戦", "昇格戦"] },
   { key: "finances", label: "财务", aliases: ["财务", "现金", "票价", "Finances", "cash on hand", "ticket price"] },
 ];

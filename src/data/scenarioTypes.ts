@@ -35,6 +35,10 @@ export interface ScenarioPreset {
   data_subdir: string;
   startup_view?: string;
   startup_group?: string;
+  /** Short landing-screen background blurb (English). */
+  background_en?: string;
+  /** Short landing-screen background blurb (Simplified Chinese). */
+  background_zh?: string;
 }
 
 export interface ScenarioManifest {

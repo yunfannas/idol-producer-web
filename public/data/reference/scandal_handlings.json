@@ -1,0 +1,96 @@
+{
+  "_comment": "Scandal handling catalog. When a managed-group scandal fires as idol_status_update, the player chooses an action. historical_action is the real-life default path; options are the available player choices.",
+  "handlings": [
+    {
+      "id": "ilife-nodoka-budokan-2025",
+      "idol_uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
+      "idol_name": "那蘭のどか",
+      "group_uid": "aUxpRkUh",
+      "group_name": "iLiFE!",
+      "scandal_date": "2025-08-25",
+      "score": 5.0,
+      "summary_ja": "重大な規約違反が判明。8月27日の日本武道館公演をもってグループを脱退。",
+      "historical_action": "terminate_after_live",
+      "effective_date": "2025-08-27",
+      "allow_perform_until": "2025-08-27",
+      "options": [
+        { "value": "terminate_after_live", "label": "Terminate after live" },
+        { "value": "terminate_now", "label": "Terminate immediately" },
+        { "value": "suspend_activities", "label": "Suspend from activities" },
+        { "value": "keep_with_penalty", "label": "Keep with heavy penalty" }
+      ],
+      "note": "iLiFE! Budokan (日本武道館) 2025-08-27. Historical: announce 8/25, final show then exit."
+    },
+    {
+      "id": "ilife-riri-demote-2025",
+      "idol_uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+      "idol_name": "心花りり",
+      "group_uid": "aUxpRkUh",
+      "group_name": "iLiFE!",
+      "scandal_date": "2025-08-26",
+      "score": 4.0,
+      "summary_ja": "事務所規定に抵触する不適切な行動により、リーダーから降格処分および一定期間のペナルティ。",
+      "historical_action": "demote_leader",
+      "demote_roles": ["leader"],
+      "options": [
+        { "value": "demote_leader", "label": "Keep with heavy penalty (demote leader)" },
+        { "value": "suspend_activities", "label": "Suspend from activities" },
+        { "value": "terminate_now", "label": "Terminate" },
+        { "value": "keep_with_penalty", "label": "Keep with heavy penalty (no demotion)" }
+      ],
+      "note": "Announced the day before Budokan. Historical: keep with heavy penalty via leader demotion + timed form penalty; she remains in the group."
+    },
+    {
+      "id": "takanen-haruno-riri-suspend-2025",
+      "idol_uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+      "idol_name": "春野莉々",
+      "group_uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+      "group_name": "高嶺のなでしこ",
+      "scandal_date": "2025-05-26",
+      "score": 4.0,
+      "summary_ja": "男性との私的写真流出を受け、無期限活動休止を発表。後に2025-07-31でグループ活動終了。",
+      "historical_action": "suspend_activities",
+      "effective_date": "2025-05-26",
+      "options": [
+        { "value": "suspend_activities", "label": "Suspend indefinitely" },
+        { "value": "terminate_now", "label": "Terminate" },
+        { "value": "keep_with_penalty", "label": "Keep with heavy penalty" }
+      ],
+      "indefinite_suspend": true,
+      "follow_on_leave": {
+        "leave_date": "2025-07-31",
+        "historical_action": "let_go",
+        "decision_lead_days": 56,
+        "options": [
+          { "value": "let_go", "label": "Accept her leave (historical)" },
+          { "value": "keep_suspended", "label": "Keep under indefinite suspension" },
+          { "value": "reinstate_with_penalty", "label": "Reinstate with heavy penalty" },
+          { "value": "terminate_now", "label": "Terminate now" }
+        ],
+        "note": "Suspended 2025-05-26 with no return date. Before reinstatement she chose to leave on 2025-07-31 — a major managed-group decision at scenario start."
+      },
+      "note": "高嶺のなでしこ. Historical: indefinite hiatus (無期限活動休止) on 2025-05-26 after photo leak; left the group 2025-07-31 before any return date was set."
+    },
+    {
+      "id": "takanen-momiyama-himeri-suspend-2025",
+      "idol_uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+      "idol_name": "籾山ひめり",
+      "group_uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+      "group_name": "高嶺のなでしこ",
+      "scandal_date": "2025-12-22",
+      "score": 4.0,
+      "summary_ja": "過去の私的写真流出を受け、事前報告・相談がなく事務所との信頼関係を毀損したとして一時活動休止。2026年2月14日のZepp Sapporo公演で復帰。",
+      "historical_action": "suspend_activities",
+      "effective_date": "2025-12-22",
+      "suspension_end_date": "2026-02-14",
+      "indefinite_suspend": false,
+      "options": [
+        { "value": "suspend_activities", "label": "Suspend for some time" },
+        { "value": "demote_leader", "label": "Keep with heavy penalty (demote captain)" },
+        { "value": "terminate_now", "label": "Terminate" },
+        { "value": "keep_with_penalty", "label": "Keep with heavy penalty" }
+      ],
+      "note": "高嶺のなでしこ captain. Historical handling: temporary activity suspension (一時活動休止) from 2025-12-22 through return at the 2026-02-14 Zepp Sapporo tour show — not indefinite like 春野莉々."
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import {
   hasPendingEventsToday,
   isoDatePart,
 } from "./engine/gameEngine";
+import { applyAttributesToAllIdols, normalizePersistedAttributes } from "./engine/idolAttributes";
 import {
   ensureBirthdayTeeInventoryRow,
   estimateLiveGoodsGrossYen,
@@ -30,12 +31,14 @@ import {
   type FinanceHistoryRange,
   type LiveProgramItem,
   type LivesTab,
+  type LeaguePanelTab,
   type MakingTab,
   type MediaTab,
   type NewLiveFormState,
   type ScoutTab,
   type SongsWorkspaceTab,
   type TrainingTab,
+  type RoleBenchmarkKey,
   type TrainingRosterSortKey,
   type FeedbackEntry,
   BROWSE_NAV_ITEMS,
@@ -65,7 +68,18 @@ import {
   recommendScoutLeads,
 } from "./engine/scoutWeb";
 import { normalizeFestivalCatalog, syncManagedTif2025Lives } from "./engine/festivalWeb";
-import { ensureAutoBookedLivesThroughEndOfNextMonth, maybeSeedMonthEndAutoBookPrompt, preloadManagedLiveSchedules } from "./engine/monthlyLiveScheduler";
+import {
+  ensureAutoBookedLivesThroughEndOfNextMonth,
+  maybeSeedMonthEndAutoBookPrompt,
+  preloadManagedLiveSchedules,
+} from "./engine/monthlyLiveScheduler";
+import { preloadHeroinesLeague } from "./data/heroinesLeague";
+import {
+  preloadCareerDecisions,
+  noteCareerRecruitSigned,
+} from "./engine/careerDecision";
+import { preloadScandalHandlings } from "./engine/scandalHandling";
+import { resolveNotificationChoice } from "./engine/scenarioRuntimeWeb";
 import { suggestManagedSetlistTitles } from "./engine/songStatusSystem";
 import { scheduleIdolVacation } from "./engine/idolStatusSystem";
 import {
@@ -77,11 +91,21 @@ import {
 } from "./ui/openingScreens";
 import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, listSlotSummaries, loadFromSlot, normalizeAccountName, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
+import {
+  mergePreviewInput,
+  prefetchSongPreviewsInRoot,
+  previewInputFromControlsEl,
+  stopSongPreview,
+  syncSongPreviewUi,
+  toggleSongPreview,
+  unlockSongPreviewAudio,
+} from "./ui/songPreviewPlayer";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
 import { renderTutorialOverlay, tutorialSteps } from "./ui/tutorialOverlay";
 import { annotateWikiTerms, defaultWikiEntryKey, normalizeWikiSelection, relatedWikiKeysForView } from "./ui/wiki";
+import { roleAssignmentsFromHistoryEntry } from "./data/memberRoles";
 
 const appRootElt = document.querySelector<HTMLDivElement>("#app");
 if (!appRootElt) {
@@ -221,6 +245,13 @@ function focusSelectorFor(el: Element): string | null {
   if (trainingUid && trainingField) {
     return `[data-idol-uid="${cssAttr(trainingUid)}"][data-field="${cssAttr(trainingField)}"]`;
   }
+  const roleUid = el.getAttribute("data-training-role");
+  const roleKey = el.getAttribute("data-role-key");
+  if (roleUid && roleKey) {
+    return `[data-training-role="${cssAttr(roleUid)}"][data-role-key="${cssAttr(roleKey)}"]`;
+  }
+  const announcedLeaderUid = el.getAttribute("data-training-announced-leader");
+  if (announcedLeaderUid) return `[data-training-announced-leader="${cssAttr(announcedLeaderUid)}"]`;
   const liveToggle = el.getAttribute("data-live-toggle");
   if (liveToggle) return `[data-live-toggle="${cssAttr(liveToggle)}"]`;
   return null;
@@ -327,16 +358,33 @@ function selectedInboxNotification(): Record<string, unknown> | null {
 function activeScandalLevel(idol: Record<string, unknown>): number {
   const refIso = save?.current_date ??  save?.game_start_date ??  save?.scenario_context?.startup_date ??  currentIsoForNewLive();
   const refDate = isoDatePart(refIso);
-  const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+  const history: Record<string, unknown>[] = [];
+  if (Array.isArray(idol.status_history)) {
+    for (const raw of idol.status_history) {
+      if (raw && typeof raw === "object") history.push(raw as Record<string, unknown>);
+    }
+  }
+  if (Array.isArray(idol.group_history)) {
+    for (const raw of idol.group_history) {
+      if (!raw || typeof raw !== "object") continue;
+      const statuses = (raw as Record<string, unknown>).status_history;
+      if (!Array.isArray(statuses)) continue;
+      for (const s of statuses) {
+        if (s && typeof s === "object") history.push(s as Record<string, unknown>);
+      }
+    }
+  }
   let maxLevel = 0;
-  for (const raw of history) {
-    if (!raw || typeof raw !== "object") continue;
-    const row = raw as Record<string, unknown>;
+  for (const row of history) {
     if (String(row.kind ??  "").trim().toLowerCase() !== "scandal") continue;
     const start = String(row.start_date ??  "").split("T")[0];
     const end = String(row.end_date ??  "").split("T")[0];
     if (start && /^\d{4}-\d{2}-\d{2}$/.test(start) && start > refDate) continue;
     if (end && /^\d{4}-\d{2}-\d{2}$/.test(end) && end < refDate) continue;
+    const score = Number(row.score ?? 0) || 0;
+    if (score >= 5) maxLevel = Math.max(maxLevel, 3);
+    else if (score >= 4) maxLevel = Math.max(maxLevel, 2);
+    else if (score >= 1) maxLevel = Math.max(maxLevel, 1);
     const explicit = Number(row.level ??  row.severity ??  row.rank ??  0) || 0;
     if (explicit > maxLevel) maxLevel = explicit;
     const text = `${String(row.status ??  "")} ${String(row.summary ??  "")} ${String(row.title ??  "")}`.toLowerCase();
@@ -421,6 +469,7 @@ function addIdolToManagedGroup(idolUid: string, startDateIso: string, endDateIso
   idol.contract_salary_yen = salaryYen;
   idol.contract_start_date = startDateIso;
   idol.contract_end_date = endDateIso;
+  noteCareerRecruitSigned(save, idolUid, startDateIso);
 }
 
 function shortlistSigningTerms(idol: Record<string, unknown>): { startDate: string; endDate: string; salaryYen: number } {
@@ -791,6 +840,7 @@ let scheduleCalendarMonthStart: string | null = null;
 /** Schedule: selected day used to drive the week strip; null = current week of next simulation day. */
 let scheduleWeekAnchorIso: string | null = null;
 let livesTab: LivesTab = "new";
+let leaguePanelTab: LeaguePanelTab = "current";
 let scheduledLiveUid: string | null = null;
 
 function tutorialStepCount(): number {
@@ -817,6 +867,7 @@ let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
 let trainingRosterSortKey: TrainingRosterSortKey = "started";
 let trainingRosterSortDir: "asc" | "desc" = "asc";
+let trainingRoleBenchmarkPreferences: RoleBenchmarkKey[] = [];
 let mediaTab: MediaTab = "tv";
 let financeTab: FinanceTab = "finance";
 let financeHistoryRange: FinanceHistoryRange = "month";
@@ -860,6 +911,7 @@ interface NavigationSnapshot {
   selectedCdProjectUid: string | null;
   inboxSelectedUid: string | null;
   livesTab: LivesTab;
+  leaguePanelTab: LeaguePanelTab;
   scheduledLiveUid: string | null;
   scoutTab: ScoutTab;
   trainingTab: TrainingTab;
@@ -890,11 +942,13 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     selectedCdProjectUid,
     inboxSelectedUid,
     livesTab,
+    leaguePanelTab,
     scheduledLiveUid,
     scoutTab,
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    roleBenchmarkPreferences: trainingRoleBenchmarkPreferences,
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -918,6 +972,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.selectedCdProjectUid === b.selectedCdProjectUid &&
     a.inboxSelectedUid === b.inboxSelectedUid &&
     a.livesTab === b.livesTab &&
+    a.leaguePanelTab === b.leaguePanelTab &&
     a.scheduledLiveUid === b.scheduledLiveUid &&
     a.scoutTab === b.scoutTab &&
     a.trainingTab === b.trainingTab &&
@@ -945,6 +1000,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   selectedCdProjectUid = snapshot.selectedCdProjectUid;
   inboxSelectedUid = snapshot.inboxSelectedUid;
   livesTab = snapshot.livesTab;
+  leaguePanelTab = snapshot.leaguePanelTab ?? "current";
   scheduledLiveUid = snapshot.scheduledLiveUid;
   scoutTab = snapshot.scoutTab;
   trainingTab = snapshot.trainingTab;
@@ -1050,6 +1106,226 @@ function songsListForDiscographyCheck(): Record<string, unknown>[] | null {
   return null;
 }
 
+/** Prefer live catalog (with preview URLs), then save snapshot. */
+function findSongRowByUid(uid: string): Record<string, unknown> | null {
+  const needle = uid.trim();
+  if (!needle) return null;
+  const pools: Array<Record<string, unknown>[] | null | undefined> = [
+    loadedScenario?.songs,
+    save?.database_snapshot?.songs,
+  ];
+  for (const pool of pools) {
+    if (!pool?.length) continue;
+    const hit = pool.find((row) => String(row.uid ?? "").trim() === needle);
+    if (hit) return hit;
+  }
+  return null;
+}
+
+function managedIdolHistoryEntryForRoleEdit(idol: Record<string, unknown>): Record<string, unknown> | null {
+  if (!save) return null;
+  const group = getPrimaryGroup(save);
+  const groupUid = String(group?.uid ?? "").trim();
+  const groupNames = new Set(
+    [String(group?.name ?? "").trim(), String(group?.name_romanji ?? "").trim()].filter(Boolean),
+  );
+  const ref = isoDatePart(save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "");
+  const history = Array.isArray(idol.group_history) ? idol.group_history : [];
+  const matches = history
+    .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+    .filter((entry) => {
+      const uid = String(entry.group_uid ?? "").trim();
+      const name = String(entry.group_name ?? "").trim();
+      return uid === groupUid || (name && groupNames.has(name));
+    });
+  const active = matches.find((entry) => {
+    const start = String(entry.start_date ?? "").split("T")[0];
+    const end = String(entry.end_date ?? "").split("T")[0];
+    if (start && /^\d{4}-\d{2}-\d{2}$/.test(start) && ref && start > ref) return false;
+    if (end && /^\d{4}-\d{2}-\d{2}$/.test(end) && ref && end <= ref) return false;
+    return true;
+  });
+  return active ?? matches[0] ?? null;
+}
+
+function refreshRoleGeneratedAttributes(idol: Record<string, unknown>): void {
+  if (!save) return;
+  delete idol.attributes;
+  const ref = isoDatePart(save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "");
+  applyAttributesToAllIdols(
+    [idol],
+    save.database_snapshot.groups,
+    ref || undefined,
+    loadedScenario?.role_attribute_model as Parameters<typeof applyAttributesToAllIdols>[3],
+  );
+}
+
+function setManagedMemberRoleFocus(idolUid: string, roleKey: string, scaleValue: number): void {
+  if (!save) return;
+  const idol = save.database_snapshot.idols.find((row) => String((row as { uid?: unknown }).uid ?? "") === idolUid) as
+    | Record<string, unknown>
+    | undefined;
+  if (!idol) return;
+  const entry = managedIdolHistoryEntryForRoleEdit(idol);
+  if (!entry) return;
+  const roleMap: Record<string, number> = {};
+  for (const role of roleAssignmentsFromHistoryEntry(entry)) {
+    if (role.key) roleMap[role.key] = Math.max(0, Math.min(1, Number(role.focus) || 0));
+  }
+  const scale = Math.max(0, Math.min(5, Math.round(scaleValue)));
+  if (scale > 0) roleMap[roleKey] = scale / 5;
+  else delete roleMap[roleKey];
+  if (Object.keys(roleMap).length) entry.roles = roleMap;
+  else delete entry.roles;
+  refreshRoleGeneratedAttributes(idol);
+}
+
+function setManagedMemberAnnouncedLeader(idolUid: string, checked: boolean): void {
+  if (!save) return;
+  const idol = save.database_snapshot.idols.find((row) => String((row as { uid?: unknown }).uid ?? "") === idolUid) as
+    | Record<string, unknown>
+    | undefined;
+  if (!idol) return;
+  const entry = managedIdolHistoryEntryForRoleEdit(idol);
+  if (!entry) return;
+  if (checked) entry.announced_leader = true;
+  else delete entry.announced_leader;
+}
+
+const ROLE_BENCHMARK_KEYS: RoleBenchmarkKey[] = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"];
+
+const AUTO_ROLE_PLANS: Array<{
+  role: string;
+  slots: number[];
+  weights: Partial<Record<RoleBenchmarkKey, number>>;
+}> = [
+  { role: "leader", slots: [5, 3, 1], weights: { teamwork: 1 } },
+  { role: "center", slots: [5, 3], weights: { singing: 0.45, dancing: 0.45, fashion: 0.1 } },
+  { role: "lead_singer", slots: [5, 4, 2], weights: { singing: 1 } },
+  { role: "lead_dancer", slots: [5, 4, 2], weights: { dancing: 1 } },
+  { role: "host", slots: [5, 3, 2], weights: { teamwork: 0.35, content: 0.3, streaming: 0.35 } },
+  { role: "content", slots: [5, 3, 2], weights: { content: 0.75, fashion: 0.25 } },
+  { role: "streaming", slots: [5, 3, 2], weights: { streaming: 0.85, teamwork: 0.15 } },
+  { role: "style", slots: [5, 3, 2], weights: { fashion: 1 } },
+  { role: "call_leader", slots: [5, 3], weights: { teamwork: 0.55, dancing: 0.25, streaming: 0.2 } },
+];
+
+function roleBenchmarkStatScore(idol: Record<string, unknown>, key: RoleBenchmarkKey): number {
+  const a = normalizePersistedAttributes(idol.attributes);
+  const avg = (values: number[]) => values.reduce((sum, value) => sum + value, 0) / Math.max(1, values.length);
+  switch (key) {
+    case "singing":
+      return avg([a.technical.pitch, a.technical.tone, a.technical.breath, a.technical.power]);
+    case "dancing":
+      return avg([a.technical.rhythm, a.technical.grace, a.physical.agility, a.physical.stamina]);
+    case "teamwork":
+      return avg([a.mental.teamwork, a.mental.determination, a.hidden?.professionalism ?? 12]);
+    case "content":
+      return avg([a.mental.talking, a.mental.humor, a.mental.clever]);
+    case "streaming":
+      return avg([a.mental.talking, a.mental.humor, a.mental.teamwork]);
+    case "fashion":
+      return avg([a.mental.fashion, a.appearance.cute, a.appearance.pretty]);
+    default:
+      return 0;
+  }
+}
+
+function benchmarkPreferenceWeight(key: RoleBenchmarkKey, preferences: RoleBenchmarkKey[]): number {
+  if (!preferences.length) return 1;
+  return preferences.includes(key) ? 2.4 : 0.65;
+}
+
+function autoAssignManagedRoles(preferences: RoleBenchmarkKey[]): void {
+  if (!save) return;
+  const group = getPrimaryGroup(save);
+  const memberUids = Array.isArray(group?.member_uids)
+    ? (group!.member_uids as unknown[]).map((uid) => String(uid))
+    : [...save.shortlist];
+  const members = memberUids
+    .map((uid) => {
+      const idol = save?.database_snapshot.idols.find((row) => String((row as { uid?: unknown }).uid ?? "") === uid) as
+        | Record<string, unknown>
+        | undefined;
+      if (!idol) return null;
+      const entry = managedIdolHistoryEntryForRoleEdit(idol);
+      if (!entry) return null;
+      return { uid, idol, entry, assignedCount: 0, roles: {} as Record<string, number> };
+    })
+    .filter((row): row is NonNullable<typeof row> => Boolean(row));
+  if (!members.length) return;
+
+  for (const plan of AUTO_ROLE_PLANS) {
+    const ranked = members
+      .map((member) => {
+        const rawScore = ROLE_BENCHMARK_KEYS.reduce((sum, key) => {
+          const roleNeed = Number(plan.weights[key] ?? 0);
+          if (roleNeed <= 0) return sum;
+          return sum + roleBenchmarkStatScore(member.idol, key) * roleNeed * benchmarkPreferenceWeight(key, preferences);
+        }, 0);
+        return {
+          member,
+          score: rawScore - member.assignedCount * 1.15,
+        };
+      })
+      .sort((a, b) => b.score - a.score || a.member.uid.localeCompare(b.member.uid));
+    plan.slots.forEach((scale, index) => {
+      const pick = ranked[index]?.member;
+      if (!pick) return;
+      pick.roles[plan.role] = Math.max(0, Math.min(1, scale / 5));
+      pick.assignedCount += 1;
+    });
+  }
+
+  for (const member of members) {
+    if (Object.keys(member.roles).length) member.entry.roles = member.roles;
+    else delete member.entry.roles;
+    delete member.idol.attributes;
+  }
+  const ref = isoDatePart(save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "");
+  applyAttributesToAllIdols(
+    members.map((member) => member.idol),
+    save.database_snapshot.groups,
+    ref || undefined,
+    loadedScenario?.role_attribute_model as Parameters<typeof applyAttributesToAllIdols>[3],
+  );
+}
+
+/** Stable song-preview click binding (not recreated each paintGame). */
+function bindSongPreviewControlsOnce(): void {
+  const handle = (ev: Event) => {
+    const t = ev.target as HTMLElement | null;
+    if (!t) return;
+    const songPreviewBtn = t.closest<HTMLElement>("[data-song-preview-action]");
+    if (!songPreviewBtn) return;
+    // Unlock Web Audio as early as possible in the gesture.
+    if (ev.type === "pointerdown" && songPreviewBtn.getAttribute("data-song-preview-action") === "play") {
+      unlockSongPreviewAudio();
+      return;
+    }
+    if (ev.type !== "click") return;
+    if (currentView !== "Songs" && currentView !== "Making") return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    const action = songPreviewBtn.getAttribute("data-song-preview-action");
+    const controls = songPreviewBtn.closest<HTMLElement>(".song-preview-controls");
+    if (action === "stop") {
+      stopSongPreview();
+      return;
+    }
+    if (action === "play" && controls) {
+      const fromDom = previewInputFromControlsEl(controls);
+      const row = findSongRowByUid(String(fromDom.uid ?? ""));
+      const input = mergePreviewInput(fromDom, row);
+      void toggleSongPreview(input);
+    }
+  };
+  appRoot.addEventListener("pointerdown", handle, true);
+  appRoot.addEventListener("click", handle, true);
+}
+
+bindSongPreviewControlsOnce();
+
 /** Drop stale discography selection when bucket keys change (group / data). */
 function ensureSongsDiscographyKey(): void {
   const songs = songsListForDiscographyCheck();
@@ -1127,7 +1403,7 @@ function paintOpening(): void {
   const dbReady = loadedScenario != null;
   appRoot.innerHTML =
     openingScreen === "login"
-      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang)
+      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang, preset)
       : openingScreen === "home"
         ? renderOpeningHome(
             preset,
@@ -1150,9 +1426,15 @@ function paintOpening(): void {
   restoreFocus(appRoot, focus);
 
   if (openingScreen === "login") {
-    document.getElementById("account-name")?.addEventListener("input", (ev) => {
+    const accountInput = document.getElementById("account-name") as HTMLInputElement | null;
+    const loginBtn = document.getElementById("opening-login") as HTMLButtonElement | null;
+    const syncLoginEnabled = () => {
+      if (loginBtn) loginBtn.disabled = !(loadedScenario != null && accountName.trim());
+    };
+    accountInput?.addEventListener("input", (ev) => {
       setAccountName((ev.target as HTMLInputElement).value);
-      paintOpening();
+      // Update button state in-place — do not re-render (breaks IME / caret).
+      syncLoginEnabled();
     });
 
     document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
@@ -1252,6 +1534,11 @@ function paintOpening(): void {
     const startBtn = document.getElementById("new-game-start") as HTMLButtonElement | null;
     const nameInput = document.getElementById("producer-name") as HTMLInputElement | null;
 
+    nameInput?.addEventListener("input", (ev) => {
+      setAccountName((ev.target as HTMLInputElement).value);
+      if (startBtn) startBtn.disabled = !selectedNewGameGroupUid || !accountName.trim();
+    });
+
     document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
       const value = (ev.target as HTMLSelectElement).value;
       if (!isUiLanguage(value)) return;
@@ -1265,7 +1552,7 @@ function paintOpening(): void {
         tr.classList.add("is-selected");
         const uid = tr.getAttribute("data-group-uid");
         selectedNewGameGroupUid = uid && uid.length ? uid : null;
-        if (startBtn) startBtn.disabled = !selectedNewGameGroupUid;
+        if (startBtn) startBtn.disabled = !selectedNewGameGroupUid || !accountName.trim();
       });
     });
 
@@ -1276,7 +1563,7 @@ function paintOpening(): void {
     });
 
     document.getElementById("new-game-start")?.addEventListener("click", () => {
-      if (!loadedScenario || !selectedNewGameGroupUid || !nameInput || !accountName) return;
+      if (!loadedScenario || !selectedNewGameGroupUid || !nameInput || !accountName.trim()) return;
       const row = rows.find((r) => r.uid === selectedNewGameGroupUid);
       const label =
         row?.nameRomanji && row.nameRomanji !== "—" && row.nameRomanji.trim()
@@ -1288,6 +1575,8 @@ function paintOpening(): void {
           managedGroupLabel: label,
           managedGroupUid: selectedNewGameGroupUid,
         });
+        hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
+        hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
         save.tutorial = {
           completed: false,
           disabled: !tutorialAutoOpen,
@@ -1370,6 +1659,7 @@ function paintGame(): void {
     selectedCdProjectUid,
     inboxSelectedUid,
     livesTab,
+    leaguePanelTab,
     scheduledLiveUid,
     newLiveForm,
     selectedLiveSongTitle,
@@ -1406,6 +1696,10 @@ function paintGame(): void {
     feedbackModalOpen,
   });
   restoreFocus(appRoot, focus);
+  syncSongPreviewUi(appRoot);
+  if (currentView === "Songs" || currentView === "Making") {
+    prefetchSongPreviewsInRoot(appRoot);
+  }
 
   wirePortraitFallbacks(appRoot);
   const mainContent = document.getElementById("main-content");
@@ -1580,12 +1874,22 @@ function paintGame(): void {
     const livesTabPick = t.closest<HTMLElement>("[data-lives-tab]");
     if (livesTabPick && save && !browseMode && currentView === "Lives") {
       const tab = livesTabPick.getAttribute("data-lives-tab");
-      if (tab === "new" || tab === "scheduled" || tab === "live" || tab === "past" || tab === "festival") {
+      if (tab === "new" || tab === "scheduled" || tab === "live" || tab === "past" || tab === "festival" || tab === "league") {
         navigate(() => {
           livesTab = tab;
           if (tab === "live" && !scheduledLiveUid) {
             scheduledLiveUid = selectedScheduledLiveRecord()?.uid ? String(selectedScheduledLiveRecord()!.uid) : null;
           }
+        });
+      }
+      return;
+    }
+    const leaguePanelPick = t.closest<HTMLElement>("[data-league-panel-tab]");
+    if (leaguePanelPick && save && !browseMode && currentView === "Lives" && livesTab === "league") {
+      const tab = leaguePanelPick.getAttribute("data-league-panel-tab");
+      if (tab === "current" || tab === "history") {
+        navigate(() => {
+          leaguePanelTab = tab;
         });
       }
       return;
@@ -1787,7 +2091,7 @@ function paintGame(): void {
     const trainingTabPick = t.closest<HTMLElement>("[data-training-tab]");
     if (trainingTabPick && save && !browseMode && currentView === "Training") {
       const tab = trainingTabPick.getAttribute("data-training-tab");
-      if (tab === "assignments" || tab === "roster" || tab === "songs") {
+      if (tab === "assignments" || tab === "roster" || tab === "roles" || tab === "songs") {
         navigate(() => {
           trainingTab = tab;
         });
@@ -2067,15 +2371,27 @@ function paintGame(): void {
         row.requires_confirmation = false;
         row.read = true;
         row.choice_status = "completed";
+        const careerId = noteCareerRecruitSigned(save, idolUid, currentIsoForNewLive());
         addNotification(save, {
           title: `Signing completed: ${String(report.idol_name ?? idolUid)}`,
-          body: `Contract starts ${String(report.start_date ?? "-")} and runs through ${String(report.end_date ?? "-")} at JPY ${Number(report.salary_yen ?? 0).toLocaleString("ja-JP")} per month.`,
+          body:
+            `Contract starts ${String(report.start_date ?? "-")} and runs through ${String(report.end_date ?? "-")} at JPY ${Number(report.salary_yen ?? 0).toLocaleString("ja-JP")} per month.` +
+            (careerId ? `\nCareer window resolved (${careerId}): historical destination join suppressed.` : ""),
           sender: "Management",
           category: "internal",
           level: "normal",
           isoDate: currentIsoForNewLive(),
           unread: true,
         });
+        paintGame();
+      }
+      return;
+    }
+    const notificationChoiceBtn = t.closest<HTMLElement>("[data-notification-choice]");
+    if (notificationChoiceBtn && save && !browseMode && currentView === "Inbox") {
+      const uid = String(notificationChoiceBtn.getAttribute("data-notification-uid") ?? "").trim();
+      const value = String(notificationChoiceBtn.getAttribute("data-notification-choice") ?? "").trim();
+      if (uid && value && resolveNotificationChoice(save, uid, value, currentIsoForNewLive())) {
         paintGame();
       }
       return;
@@ -2890,6 +3206,25 @@ function paintGame(): void {
       }
       return;
     }
+    const roleSelect = t.closest<HTMLSelectElement>("[data-training-role]");
+    if (roleSelect && save && !browseMode && currentView === "Training") {
+      const uid = String(roleSelect.getAttribute("data-training-role") ?? "").trim();
+      const roleKey = String(roleSelect.getAttribute("data-role-key") ?? "").trim();
+      if (uid && roleKey) {
+        setManagedMemberRoleFocus(uid, roleKey, Number(roleSelect.value) || 0);
+        paintGame();
+      }
+      return;
+    }
+    const announcedLeaderPick = t.closest<HTMLInputElement>("[data-training-announced-leader]");
+    if (announcedLeaderPick && save && !browseMode && currentView === "Training") {
+      const uid = String(announcedLeaderPick.getAttribute("data-training-announced-leader") ?? "").trim();
+      if (uid) {
+        setManagedMemberAnnouncedLeader(uid, announcedLeaderPick.checked);
+        paintGame();
+      }
+      return;
+    }
     const focusSel = t.closest<HTMLSelectElement>("[data-training-focus]");
     if (focusSel && save && !browseMode && currentView === "Training") {
       const uid = focusSel.getAttribute("data-idol-uid");
@@ -3231,7 +3566,7 @@ function paintGame(): void {
 
 appRoot.innerHTML = `<p class="fm-loading">Loading scenario…</p>`;
 
-Promise.all([loadDefaultScenario(), preloadManagedLiveSchedules()])
+Promise.all([loadDefaultScenario(), preloadManagedLiveSchedules(), preloadHeroinesLeague(), preloadCareerDecisions(), preloadScandalHandlings()])
   .then(([ls]) => {
     loadedScenario = ls;
     openingStatus = `Loaded ${ls.preset.data_subdir} (${ls.idols.length} idols, ${ls.songs.length.toLocaleString()} song rows).`;

@@ -1,0 +1,48 @@
+{
+  "_comment": "Group reputation (1-5, fractional allowed) starting values. Default is 3; these curated overrides set distinct starting points. Applied onto groups.json / scenario_6 groups as `reputation`. From there reputation is dynamic in-engine: up with accrued member tenure and well-handled (special-live) graduations; down with scandals + handling and core members leaving without recognition.",
+  "scale": {
+    "1": "Fragile brand — little public trust buffer; scandals hit hard",
+    "2": "Low reputation — indie / volatile fanbase; soft keeps look weak",
+    "3": "Average reputation — normal industry goodwill",
+    "4": "Strong reputation — established act; some scandal resilience",
+    "5": "Elite reputation — national-scale trust; soft handling still costly at high severity"
+  },
+  "overrides": [
+    {
+      "group_uid": "aUxpRkUh",
+      "group_name": "iLiFE!",
+      "reputation": 2,
+      "note": "High visibility but low public-trust buffer; Budokan-era scandals read as brand-fragile."
+    },
+    {
+      "group_uid": "PUxPVkU",
+      "group_name": "=LOVE",
+      "reputation": 4.5,
+      "note": "Long-tenured academy flagship; the Nonno scandal was handled properly, so strong mainstream goodwill holds just below elite."
+    },
+    {
+      "group_uid": "4omgTUU",
+      "group_name": "≠ME",
+      "reputation": 5,
+      "note": "As of scenario 6: long tenure and only the minor Mirei scandal — elite public trust."
+    },
+    {
+      "group_uid": "4omSSk9Z",
+      "group_name": "≒JOY",
+      "reputation": 4.5,
+      "note": "Mid-to-long tenure with no scandal on record; strong brand just below elite."
+    },
+    {
+      "group_uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+      "group_name": "高嶺のなでしこ",
+      "reputation": 4,
+      "note": "Rising mainstream profile; suspension culture is visible but brand still solid."
+    },
+    {
+      "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "group_name": "アキシブproject",
+      "reputation": 3,
+      "note": "Long-running LIVE PLANET act with deep historical tenure (past members included), and only the single Kanon scandal — average, not fragile."
+    }
+  ]
+}

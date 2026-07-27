@@ -5,8 +5,12 @@
  * This keeps scenario-local group membership aligned with the scenario database
  * instead of trusting stale copied text from canonical groups.json.
  *
+ * Undated group_history rows (missing start_date) are NEVER treated as active —
+ * that bug previously inflated iLiFE! / Akishibu / Paradeeq rosters.
+ *
  * Usage:
- *   node scripts/refreshScenario6GroupMembers.mjs
+ *   node support/scripts/refreshScenario6GroupMembers.mjs
+ *   node support/scripts/refreshScenario6GroupMembers.mjs --allowlist-only
  */
 
 import fs from "node:fs";
@@ -20,6 +24,8 @@ const groupsPath = path.join(scenarioDir, "groups.json");
 const idolsPath = path.join(scenarioDir, "idols.json");
 const groupsUpdatePath = path.join(scenarioDir, "groups_update.json");
 const allowlistPath = path.join(scenarioDir, "startup_allowlist.json");
+
+const allowlistOnly = process.argv.includes("--allowlist-only");
 
 const preset = JSON.parse(fs.readFileSync(presetPath, "utf8"));
 const openingDate = String(preset.opening_date ?? "").slice(0, 10);
@@ -44,10 +50,12 @@ function compareIso(a, b) {
   return a.localeCompare(b);
 }
 
+/** Require start_date; undated alias rows must not count as active. */
 function isActiveOn(history) {
   const start = isoDay(history.start_date);
   const end = isoDay(history.end_date ?? history.leave_date);
-  if (start && compareIso(start, openingDate) > 0) return false;
+  if (!start) return false;
+  if (compareIso(start, openingDate) > 0) return false;
   if (end && compareIso(end, openingDate) < 0) return false;
   return true;
 }
@@ -138,9 +146,11 @@ function buildGroupMembership(group) {
   group.past_member_count = orderedPast.length;
 }
 
+let refreshedCount = 0;
 for (const group of groups) {
-  if (!allowedNames.has(group.name)) continue;
+  if (allowlistOnly && !allowedNames.has(group.name)) continue;
   buildGroupMembership(group);
+  refreshedCount += 1;
 }
 
 if (Array.isArray(groupsUpdate.groups)) {
@@ -164,13 +174,17 @@ fs.writeFileSync(groupsPath, `${JSON.stringify(groups, null, 2)}\n`, "utf8");
 fs.writeFileSync(groupsUpdatePath, `${JSON.stringify(groupsUpdate, null, 2)}\n`, "utf8");
 
 const iLife = groups.find((group) => group.name === "iLiFE!");
+const akishibu = groups.find((group) => group.name === "アキシブproject");
 console.log(
   JSON.stringify(
     {
       opening_date: openingStamp,
-      refreshed_groups: [...allowedNames].length,
+      scope: allowlistOnly ? "allowlist" : "all_groups",
+      refreshed_groups: refreshedCount,
+      ilife_member_count: iLife?.member_count ?? null,
       ilife_member_names: iLife?.member_names ?? [],
-      ilife_past_member_names: iLife?.past_member_names ?? [],
+      akishibu_member_count: akishibu?.member_count ?? null,
+      akishibu_member_names: akishibu?.member_names ?? [],
     },
     null,
     2,

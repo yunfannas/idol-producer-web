@@ -30,7 +30,8 @@ import {
   type ManagedSongStatusRow,
 } from "../engine/songStatusSystem";
 import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
-import { buildFilteredSnapshotWithFutureEvents } from "../engine/scenarioRuntimeWeb";
+import { buildFilteredSnapshotWithFutureEvents, applyScenarioEventsForDate } from "../engine/scenarioRuntimeWeb";
+import { syncOpenHiatusToIdolTopLevel } from "../engine/scandalHandling";
 import { buildDefaultScoutCompanies, normalizeScoutSubscriptions } from "../engine/scoutWeb";
 import { addNotification, type NotificationRow } from "./inbox";
 
@@ -225,7 +226,10 @@ export function createGameSaveFromLoadedScenario(
 
   for (const uid of memberUids) {
     const row = snap.idols.find((i) => String(i.uid ?? "") === uid);
-    if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
+    if (row) {
+      ensureIdolSimulationDefaults(row as Record<string, unknown>);
+      syncOpenHiatusToIdolTopLevel(row as Record<string, unknown>, opening);
+    }
   }
   backfillGroupMemberFanCounts(snap.idols, g);
 
@@ -316,6 +320,9 @@ export function createGameSaveFromLoadedScenario(
     dedupeKey: `production-started|${gid}|${opening}`,
   });
 
+  // Open due scenario gates (e.g. 春野莉々 post-suspension leave) on day one.
+  applyScenarioEventsForDate(save, opening);
+
   return normalizeGameSavePayload(save);
 }
 
@@ -328,6 +335,33 @@ export interface ScoutBlock {
   selected_company_uid: string | null;
   auditions: Record<string, unknown>;
   subscriptions: Record<string, { company_uid: string; subscribed_at: string }>;
+}
+
+export type CareerOutcomeStatus =
+  | "pending"
+  | "acknowledged"
+  | "retained"
+  | "released"
+  | "recruited"
+  | "expired"
+  | "locked";
+
+export type CareerDecisionKind = "graduation" | "outbound_transfer" | "contested_recruit";
+
+export interface CareerOutcomeRow {
+  decision_id: string;
+  idol_uid: string;
+  kind: CareerDecisionKind;
+  status: CareerOutcomeStatus;
+  decided_at?: string;
+  effective_date?: string;
+  suppressed_event_uids: string[];
+  promises?: string[];
+}
+
+export interface CareerDecisionsBlock {
+  outcomes: CareerOutcomeRow[];
+  seeded_inbox_keys: string[];
 }
 
 export interface CdReleaseProject {
@@ -369,6 +403,7 @@ export interface GameSavePayload {
   training_song_uids: string[];
   tutorial: SaveTutorialState;
   scout: ScoutBlock;
+  career_decisions: CareerDecisionsBlock;
   /** ISO date · optional until first simulated day settles in desktop; web sets at new game */
   game_start_date?: string;
   current_date?: string;
@@ -517,6 +552,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     training_song_uids: [],
     tutorial: { completed: false, disabled: false },
     scout: { selected_company_uid: null, auditions: {}, subscriptions: {} },
+    career_decisions: { outcomes: [], seeded_inbox_keys: [] },
   };
 }
 
@@ -702,6 +738,46 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   );
   ensureManagedContracts(out);
 
+  {
+    const rawCareer = (p as { career_decisions?: unknown }).career_decisions;
+    const outcomes: CareerOutcomeRow[] = [];
+    const seeded: string[] = [];
+    if (rawCareer && typeof rawCareer === "object") {
+      const block = rawCareer as Record<string, unknown>;
+      if (Array.isArray(block.outcomes)) {
+        for (const item of block.outcomes) {
+          if (!item || typeof item !== "object") continue;
+          const row = item as Record<string, unknown>;
+          const decisionId = String(row.decision_id ?? "").trim();
+          const idolUid = String(row.idol_uid ?? "").trim();
+          const kind = String(row.kind ?? "").trim() as CareerDecisionKind;
+          const status = String(row.status ?? "").trim() as CareerOutcomeStatus;
+          if (!decisionId || !idolUid) continue;
+          if (!["graduation", "outbound_transfer", "contested_recruit"].includes(kind)) continue;
+          outcomes.push({
+            decision_id: decisionId,
+            idol_uid: idolUid,
+            kind,
+            status: status || "pending",
+            decided_at: String(row.decided_at ?? "").split("T")[0] || undefined,
+            effective_date: String(row.effective_date ?? "").split("T")[0] || undefined,
+            suppressed_event_uids: Array.isArray(row.suppressed_event_uids)
+              ? row.suppressed_event_uids.map((x) => String(x)).filter(Boolean)
+              : [],
+            promises: Array.isArray(row.promises) ? row.promises.map((x) => String(x)).filter(Boolean) : undefined,
+          });
+        }
+      }
+      if (Array.isArray(block.seeded_inbox_keys)) {
+        for (const key of block.seeded_inbox_keys) {
+          const text = String(key ?? "").trim();
+          if (text) seeded.push(text);
+        }
+      }
+    }
+    out.career_decisions = { outcomes, seeded_inbox_keys: seeded };
+  }
+
   out.version = GAME_SAVE_VERSION;
   return out;
 }
@@ -709,6 +785,7 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
 /**
  * Replace save snapshot songs with the in-memory scenario catalog when the save still
  * has the old disc-only `songs.json` (few rows per group) but catalog has per-track rows.
+ * Also overlay streaming/preview URL fields onto existing rows when the catalog is richer.
  */
 export function hydrateSnapshotSongsFromScenario(
   save: GameSavePayload,
@@ -729,9 +806,40 @@ export function hydrateSnapshotSongsFromScenario(
   const merged = catalog.filter((s) =>
     groupUids.has(String((s as { group_uid?: unknown }).group_uid ?? "").trim()),
   );
-  if (merged.length <= save.database_snapshot.songs.length) return false;
-  save.database_snapshot.songs = merged;
-  return true;
+  if (merged.length > save.database_snapshot.songs.length) {
+    save.database_snapshot.songs = merged;
+    return true;
+  }
+
+  // Same row count: still copy streaming / Apple id fields so previews keep working.
+  const byUid = new Map(
+    merged
+      .map((row) => [String((row as { uid?: unknown }).uid ?? "").trim(), row] as const)
+      .filter(([uid]) => Boolean(uid)),
+  );
+  let patched = 0;
+  const STREAM_KEYS = [
+    "apple_music_url",
+    "apple_preview_url",
+    "spotify_url",
+    "spotify_preview_url",
+    "_apple_track_ids",
+  ] as const;
+  for (const row of save.database_snapshot.songs) {
+    const uid = String((row as { uid?: unknown }).uid ?? "").trim();
+    const fresh = uid ? byUid.get(uid) : undefined;
+    if (!fresh) continue;
+    for (const key of STREAM_KEYS) {
+      const next = (fresh as Record<string, unknown>)[key];
+      if (next == null || next === "") continue;
+      const cur = (row as Record<string, unknown>)[key];
+      if (cur == null || cur === "" || JSON.stringify(cur) !== JSON.stringify(next)) {
+        (row as Record<string, unknown>)[key] = next;
+        patched += 1;
+      }
+    }
+  }
+  return patched > 0;
 }
 
 /**

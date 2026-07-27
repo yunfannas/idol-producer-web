@@ -18,6 +18,8 @@ Use this skill when changing the gameplay equations or doing balance passes.
 | Song status / setlist logic | `src/engine/songStatusSystem.ts` |
 | Idol condition / morale / training | `src/engine/idolStatusSystem.ts` |
 | Live performance / fans / tokutenkai | `src/engine/livePerformanceWeb.ts` |
+| Scandal consequence evaluation | `src/engine/scandalConsequenceModel.ts` |
+| Scandal handling (apply + inbox) | `src/engine/scandalHandling.ts` |
 | Daily finance model | `src/engine/financeSystem.ts` |
 | Day progression / event application | `src/engine/gameEngine.ts` |
 | Official schedule media classification | `src/data/officialSchedule.ts` |
@@ -210,6 +212,57 @@ Use these as design targets unless the user explicitly changes direction.
 - Media-heavy groups should gain fans more steadily than live-heavy indie groups.
 - Lives should remain the main spike source for performance drama and event-day revenue.
 - Media should be lower-variance, steadier, and more reliable than lives.
+
+## Scandal consequence evaluation
+
+File: `src/engine/scandalConsequenceModel.ts`
+
+Two layers stay aligned:
+
+1. **Raw deltas** (`computeScandalConsequences`) — cash, fans, morale, salary cut, timed form/sales mult, roster effect.
+2. **Axes + utility** (`evaluateScandalOption`) — brand / fans / finance / roster / live / team scored 0–100, then weighted into utility.
+
+Weight rules:
+- Higher scandal `score` raises **brand** weight and lowers **roster** soft-keep value.
+- Imminent prestige lives (Budokan-scale) raise **live** weight and amplify terminate-now / keep shocks.
+
+UI and apply path both call `evaluateScandalHandlingOptions` so the ranked preview matches the applied deltas.
+
+`demote_leader` is a **keep-with-heavy-penalty** class action (心花りり historical path): same cost band as soft keep (PR / fans / long form penalty), plus stripping leader as the accountability signal. It is not a cheap mid option.
+
+`suspend_activities` splits by catalog:
+- **indefinite** (春野莉々): no return date until review / later leave
+- **suspend for some time** (籾山ひめり): `suspension_end_date` drives a timed hiatus (e.g. 2025-12-22 → 2026-02-14)
+
+When an indefinitely suspended member then schedules a leave **before** any return date
+(春野莉々 → 2025-07-31), that leave is a **major post-suspension decision**
+(`follow_on_leave` / `subtype: post_suspension_leave`): accept leave, keep suspended,
+reinstate with heavy penalty, or terminate — not a locked auto-exit.
+
+### Reputation + agency harshness
+
+- Group **`reputation`** (1–5, **default 3**) on the group row, stored as a float.
+  Starting values: default 3, with curated overrides in
+  `public/data/reference/group_reputation.json` (fractional allowed — e.g.
+  iLiFE! = 2, アキシブ = 3, 高嶺のなでしこ = 4, =LOVE = 4.5, ≒JOY = 4.5, ≠ME = 5).
+  Seed via
+  `support/tmp/seed_group_reputation.mjs`.
+- Agency **`harshness`** (1–5) in `public/data/reference/agencies.json`
+  (Imaginate = 5). Resolved from `group.agencies[]`.
+- Scandal weights/axes: low reputation punishes soft keep; high harshness rewards
+  firm terminate / suspend paths.
+- **Dynamic reputation** (`src/engine/reputationModel.ts`): reputation moves during
+  play and is logged to `group.reputation_log`.
+  - **Down** — scandals + handling (`reputationDeltaForScandalHandling`, applied in
+    `applyScandalHandlingChoice`): base dent scales with score; soft keep /
+    acknowledge deepen it, firm cuts (esp. at harsh agencies) limit it. Also a
+    **core member** (leader / dominant fan share / roster fan leader) leaving
+    **without recognition**, or any scandal exit (`applyDepartureReputation` in
+    `scenarioRuntimeWeb.ts`).
+  - **Up** — accrued member tenure (`accrueMonthlyTenureReputation`, once/month in
+    `gameEngine` daily close; ceiling ~3.0→4.5 by avg tenure years) and a
+    **proper sendoff** on departure: a special/farewell live (`hasProperSendoffLive`)
+    within ~30d before / 14d after the leave date.
 
 ## Recommended workflow for future changes
 

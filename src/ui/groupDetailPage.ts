@@ -453,6 +453,7 @@ export function renderGroupDetailPage(
           <div><dt>${htmlEsc(t(lang, "group_tier"))}</dt><dd>${htmlEsc(tier)}</dd></div>
           <div><dt>${htmlEsc(t(lang, "group_fans"))}</dt><dd>${fans.toLocaleString("ja-JP")}</dd></div>
           <div><dt>${htmlEsc(t(lang, "group_popularity"))}</dt><dd>${String(pop)}</dd></div>
+          <div><dt>${htmlEsc(lang === "zh-CN" ? "声誉" : "Reputation")}</dt><dd>${htmlEsc(String(Math.round(Number(g.reputation ?? 0)) || "—"))}/5</dd></div>
           <div><dt>${htmlEsc("Agencies")}</dt><dd>${htmlEsc(agencies || "—")}</dd></div>
           <div><dt>${htmlEsc("Producers")}</dt><dd>${htmlEsc(producers || "—")}</dd></div>
           <div><dt>${htmlEsc(t(lang, "group_union"))}</dt><dd>${htmlEsc(union)}</dd></div>

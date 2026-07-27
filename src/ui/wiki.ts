@@ -113,8 +113,24 @@ function enEntries(): WikiEntry[] {
       label: "Scout",
       summary: "Discover freelancers, transfers, and auditions.",
       description:
-        "Scout is where you find roster upgrades. Different sources expose different lead quality, costs, and signing conditions.",
+        "Scout is where you find roster upgrades. Different sources expose different lead quality, costs, and signing conditions. Open Career Decision recruit windows are pinned into Scout leads so you can divert historical destinations by signing first.",
       aliases: ["Scout", "audition", "freelancers", "transfer targets"],
+    },
+    {
+      key: "career_decision",
+      label: "Career Decision",
+      summary: "Historical member exits and contested recruit windows you can override.",
+      description:
+        "Career Decisions use history as the default path. Locked graduations always fire. Negotiable outbound transfers use Departure decision inbox notices that open 5 weeks before the historical leave date (keep / allow leave); retaining suppresses the historical leave and destination join. Contested recruits stay on the Scout → shortlist → signing-offer path — sign them during the open window to change who they join.",
+      aliases: ["Career Decision", "transfer", "graduation", "retain", "recruit window", "Departure decision"],
+    },
+    {
+      key: "scandal_handling",
+      label: "Scandal Handling",
+      summary: "When a managed member's scandal becomes public, you choose the operational response.",
+      description:
+        "Scandals arrive as scheduled status events. When you manage the affected group, Scandal handling is a gameplay decision with real costs: cash (PR), group/idol fans, teammate morale, salary cuts, role demotion, activity suspension (hiatus / off-stage), roster exit timing, and timed live/sales form penalties. Each group has Reputation (1-5, default 3) and its agency has Harshness (1-5) — e.g. iLiFE! reputation 2 under Imaginate harshness 5 — which reshape soft-keep vs firm-cut scores. Reputation is dynamic: it slowly rises with accrued member tenure and well-handled graduations (a special/farewell live near the leave), and falls with scandals + their handling (soft keeps hurt most) and core members leaving without recognition. Scenario 6 cases include iLiFE! at Budokan (那蘭のどか terminate after live; 心花りり keep with heavy penalty via leader demotion) and 高嶺のなでしこ: 春野莉々 (indefinite suspension from May, then a major leave decision on 2025-07-31 before any return date) vs 籾山ひめり (suspend for some time, return 2026-02-14). =LOVE and アキシブproject have no post-start member scandal in the historical timeline.",
+      aliases: ["Scandal", "scandal handling", "terminate", "demote", "leader demotion", "规约违反"],
     },
     {
       key: "fans",
@@ -163,6 +179,14 @@ function enEntries(): WikiEntry[] {
       description:
         "Festival appearances are catalog-driven external events. They matter for exposure, scheduling pressure, and managed live planning around existing commitments.",
       aliases: ["Festival", "festival"],
+    },
+    {
+      key: "league",
+      label: "League",
+      summary: "HEROINES League standings and schedule for HEROINES openings.",
+      description:
+        "HEROINES League is the collective's seasonal ranking series (League I / II, then FINAL and promotion). The League tab under Lives shows current-season tables, upcoming dates, and History finals (e.g. 24-25 総入れ替え戦). For HEROINES openings your arrangement goal is: stay safe in League I and avoid 入れ替え戦, or if you fall in, recover to finish top 4 and survive. Lineup, setlist, training, and scheduling should move those standings.",
+      aliases: ["League", "league", "HEROINES League", "入れ替え戦", "昇格戦", "総入れ替え戦"],
     },
     {
       key: "finances",
@@ -265,8 +289,25 @@ function zhEntries(): WikiEntry[] {
       key: "scout",
       label: "星探",
       summary: "寻找自由人、转会目标和试镜候选人。",
-      description: "星探用来补强阵容。不同来源的候选人质量、成本和签约难度都不同。",
+      description:
+        "星探用来补强阵容。不同来源的候选人质量、成本和签约难度都不同。开放中的生涯决定招募窗口会置顶进星探线索，抢先签约可改写历史去向。",
       aliases: ["星探", "试镜", "自由人", "转会目标", "Scout", "audition", "freelancers", "transfer targets"],
+    },
+    {
+      key: "career_decision",
+      label: "生涯决定",
+      summary: "可用玩家选择改写的历史离团与争夺招募窗口。",
+      description:
+        "生涯决定以历史路径为默认。锁定毕业总会发生。可协商的外流转会在历史离团日前 5 周打开「离团决定」收件箱（挽留 / 允许离团）；挽留会压制历史离团与目标团入团。争夺招募仍走星探→候选名单→签约提案——在窗口期内签约即可改写她加入的团体。",
+      aliases: ["生涯决定", "转会", "毕业", "挽留", "招募窗口", "离团决定", "Career Decision"],
+    },
+    {
+      key: "scandal_handling",
+      label: "丑闻处理",
+      summary: "经营团成员丑闻曝光时，由你决定运营应对。",
+      description:
+        "丑闻作为日程状态事件到达。经营团时「丑闻处理」是带真实代价的玩法选择：公关现金、组合/个人粉丝、队友士气、降薪、职位降格、活动休止（停演/休止）、离团时机，以及一段时间的演出/物贩表现惩罚。每个组合有声誉 Reputation（1-5，默认 3），所属事务所有严厉度 Harshness（1-5）——例如 iLiFE! 声誉 2、Imaginate 严厉度 5——会改变软性留任与强硬切割的评分。声誉是动态的：随成员在团年资累积、以及处理得当的毕业（离团前后有专场/毕业公演）而缓慢上升；随丑闻及其处理（软性留任伤害最大）、核心成员无仪式离团而下降。情景 6 包含 iLiFE! 武道馆事件（那兰のどか演出后脱退；心花りり以领袖降格作为重罚留任）、高嶺のなでしこ・春野莉々（5 月无期限休止后，在未设定复归日前于 2025-07-31 离团——经营团时为重大决定）与籾山ひめり（限期休止，2026-02-14 复归）；=LOVE 与アキシブproject在开局后没有史实成员丑闻。",
+      aliases: ["丑闻", "丑闻处理", "解约", "降格", "领袖降格", "Scandal", "scandal handling"],
     },
     {
       key: "fans",
@@ -311,6 +352,14 @@ function zhEntries(): WikiEntry[] {
       aliases: ["音乐节", "Festival", "festival"],
     },
     {
+      key: "league",
+      label: "联赛",
+      summary: "HEROINES 联赛积分榜与赛程（仅 HEROINES 开局可见）。",
+      description:
+        "HEROINES League 是集体内的赛季排名系列（League I / II，之后是 FINAL 与升降级）。在 Live 的联赛页可查看当前赛季积分榜、即将场次，以及 History 历史决赛（如 24-25 总入れ替え戦）。HEROINES 开局的排期目标是：稳住 League I、尽量避开入れ替え戦；若掉进升降级，则力争前四保级/升回 I。阵容、歌单、训练与排期应能拉动这些名次。",
+      aliases: ["联赛", "League", "league", "HEROINES League", "入れ替え戦", "昇格戦", "総入れ替え戦"],
+    },
+    {
       key: "finances",
       label: "财务",
       summary: "查看现金流和各项成本收入。",
@@ -345,17 +394,17 @@ export function relatedWikiKeysForView(view: string, browseMode: boolean): strin
     Songs: ["songs", "discography", "group"],
   };
   const managementMap: Record<string, string[]> = {
-    Inbox: ["inbox", "live", "scout", "shortlist"],
-    Idols: ["group", "fans", "condition", "morale", "training"],
+    Inbox: ["inbox", "live", "scout", "shortlist", "career_decision", "scandal_handling"],
+    Idols: ["group", "fans", "condition", "morale", "training", "career_decision", "scandal_handling"],
     Groups: ["group", "fans", "songs", "discography"],
     Songs: ["songs", "discography", "group"],
-    Scout: ["scout", "shortlist", "fans", "condition", "morale"],
+    Scout: ["scout", "shortlist", "career_decision", "fans", "condition", "morale"],
     Training: ["training", "condition", "morale", "songs"],
     Schedule: ["schedule", "live", "media", "festival"],
     Media: ["media", "schedule", "fans"],
     Finances: ["finances", "live", "goods", "tokutenkai"],
     Making: ["songs", "discography", "goods"],
-    Lives: ["live", "setlist", "tokutenkai", "goods", "concert", "taiban", "festival"],
+    Lives: ["live", "setlist", "tokutenkai", "goods", "concert", "taiban", "festival", "league"],
   };
   const keys = (browseMode ? browseMap : managementMap)[view] ?? ["group"];
   return [...new Set(keys)];

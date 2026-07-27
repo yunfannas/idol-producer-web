@@ -9,6 +9,7 @@ import { normalizePersistedAttributes } from "./idolAttributes";
 import { sha256BytesUtf8 } from "./sha256sync";
 import { ensureIdolSimulationDefaults } from "./idolStatusSystem";
 import { managedSetlistEffect, type ManagedSongStatusRow } from "./songStatusSystem";
+import { activeScandalPenaltyMults } from "./scandalHandling";
 
 function clamp(n: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, n));
@@ -171,13 +172,15 @@ function memberLiveComponentScores(idol: Record<string, unknown>, refIso: string
   return { vocal, dance, stage, teamwork };
 }
 
-function memberStatusMultiplier(idol: Record<string, unknown>): number {
+function memberStatusMultiplier(idol: Record<string, unknown>, refIso?: string): number {
   const condition = num(idol.condition, 90);
   const morale = num(idol.morale, 70);
   let mult = 1.0;
   mult += (condition - 70) / 200.0;
   mult += (morale - 50) / 250.0;
-  return clamp(mult, 0.5, 1.18);
+  const scandal = activeScandalPenaltyMults(idol, refIso ?? "");
+  mult *= scandal.performance;
+  return clamp(mult, 0.45, 1.18);
 }
 
 function memberMoodScore(idol: Record<string, unknown>): number {
@@ -208,7 +211,7 @@ function idolLiveReadinessScore(idol: Record<string, unknown>, liveType: string,
     base = comp.vocal * 0.28 + comp.dance * 0.24 + comp.stage * 0.28 + comp.teamwork * 0.2;
   }
   let score = (base / 20.0) * 100.0;
-  score *= memberStatusMultiplier(idol);
+  score *= memberStatusMultiplier(idol, refIso);
   return clamp(score, 20, 100);
 }
 
@@ -245,6 +248,8 @@ function memberTokutenkaiSalesScore(
   score += tenureAdj;
   score += roleBias.sales;
   score += deterministicNoise(`tokuten:${live.uid}|${live.start_date}|${idol.uid}`) * 0.22;
+  const scandal = activeScandalPenaltyMults(idol, refIso);
+  score *= scandal.sales;
   return clamp(score, 3.8, 9.9);
 }
 
@@ -260,7 +265,7 @@ function idolLivePerformanceRating(
   const moodScore = memberMoodScore(idol);
   const conditionScore = memberConditionScore(idol);
   const fatigueScore = memberFatigueScore(idol);
-  const statusMult = memberStatusMultiplier(idol);
+  const statusMult = memberStatusMultiplier(idol, refIso);
   const attributeStrength = avgFloat(comp.vocal, comp.dance, comp.stage, comp.teamwork);
   const maturity = maturityDriveBonus(idol, refIso);
   const roleBias = akishibuRoleBias(group, idol);

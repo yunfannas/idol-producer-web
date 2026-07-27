@@ -12,6 +12,37 @@ import { gameManualHref, ikonoijoyBest10Href, languageOptions, oshiChartHref, t,
 
 export type OpeningScreen = "login" | "home" | "new_game" | "load_slot";
 
+function scenarioBackground(preset: ScenarioPreset, lang: UiLanguage): string {
+  if (lang === "zh-CN") {
+    return String(preset.background_zh ?? preset.background_en ?? "").trim();
+  }
+  return String(preset.background_en ?? preset.background_zh ?? "").trim();
+}
+
+function renderScenarioInfoCard(preset: ScenarioPreset | null, lang: UiLanguage): string {
+  if (!preset) return "";
+  const background = scenarioBackground(preset, lang);
+  const startDate = String(preset.opening_date ?? "").trim();
+  return `
+  <div class="fm-card-opening opening-scenario-card" aria-label="${htmlEsc(t(lang, "opening_scenario_card"))}">
+    <h2 class="opening-status-h">${htmlEsc(preset.name)}</h2>
+    <dl class="opening-scenario-meta">
+      <div class="opening-scenario-meta-row">
+        <dt>${htmlEsc(t(lang, "opening_scenario_start_date"))}</dt>
+        <dd>${htmlEsc(startDate || t(lang, "common_not_set"))}</dd>
+      </div>
+      ${
+        background
+          ? `<div class="opening-scenario-meta-row opening-scenario-meta-row--stack">
+        <dt>${htmlEsc(t(lang, "opening_scenario_background"))}</dt>
+        <dd>${htmlEsc(background)}</dd>
+      </div>`
+          : ""
+      }
+    </dl>
+  </div>`;
+}
+
 function renderLanguageSelect(lang: UiLanguage): string {
   return `<label class="opening-label opening-slot-row" for="lang-select-opening">${htmlEsc(t(lang, "language"))}</label>
     <select id="lang-select-opening" class="opening-input" style="max-width: 14rem">
@@ -26,6 +57,7 @@ export function renderOpeningLogin(
   status: string,
   accountName: string,
   lang: UiLanguage,
+  preset: ScenarioPreset | null = null,
 ): string {
   const disabled = dbReady && accountName.trim() ? "" : "disabled";
 
@@ -36,6 +68,8 @@ export function renderOpeningLogin(
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
     <p class="opening-tagline">${htmlEsc(t(lang, "opening_tagline"))}</p>
   </div>
+
+  ${renderScenarioInfoCard(preset, lang)}
 
   <div class="fm-card-opening producer-block">
     <label class="opening-label" for="account-name">${htmlEsc(t(lang, "opening_account_name"))}</label>
@@ -66,12 +100,12 @@ export function renderOpeningHome(
   status: string,
   canResume: boolean,
   slot: number,
-  occupiedSlots: number[],
+  _occupiedSlots: number[],
   slotSummaries: SlotSummary[],
   lang: UiLanguage,
 ): string {
-  const disabled = dbReady ? "" : "disabled";
   const slotSummaryMap = new Map(slotSummaries.map((row) => [row.slot, row.label] as const));
+  const disabled = dbReady ? "" : "disabled";
 
   return `
 <section class="opening-screen" aria-label="${htmlEsc(t(lang, "shell_home"))}">
@@ -80,6 +114,8 @@ export function renderOpeningHome(
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
     <p class="opening-tagline">${htmlEsc(t(lang, "opening_tagline"))}</p>
   </div>
+
+  ${renderScenarioInfoCard(presetHint, lang)}
 
   <div class="opening-actions">
     ${canResume ? `<button type="button" class="opening-btn opening-btn-green" id="opening-resume">${htmlEsc(t(lang, "opening_resume"))}</button>` : ""}
@@ -211,9 +247,6 @@ export function renderNewGameScreen(
   preset: ScenarioPreset | null,
   lang: UiLanguage,
 ): string {
-  const scenarioMeta = preset
-    ? `${preset.name} · opening ${preset.opening_date}`
-    : "";
   const tableRows = rows
     .map(
       (r) => `
@@ -233,12 +266,13 @@ export function renderNewGameScreen(
   <div class="opening-hero fm-card-opening">
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc(t(lang, "opening_new_game_title"))}</h1>
-    ${scenarioMeta ? `<p class="opening-tagline">${htmlEsc(scenarioMeta)}</p>` : ""}
   </div>
+
+  ${renderScenarioInfoCard(preset, lang)}
 
   <div class="fm-card-opening producer-block">
     <label class="opening-label" for="producer-name">${htmlEsc(t(lang, "opening_producer_account"))}</label>
-    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(accountName)}" readonly />
+    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc(t(lang, "opening_enter_account_name"))}" autocomplete="username" />
   </div>
 
   <div class="fm-card-opening opening-table-wrap">

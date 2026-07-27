@@ -1,0 +1,118 @@
+{
+  "_comment": "Agency harshness (1-5) for scandal handling culture. Resolve via group.agencies[] with case-insensitive match. Default harshness is 3 when unknown.",
+  "scale": {
+    "1": "Protective / soft — prefers warnings and quiet keeps",
+    "2": "Lenient — suspends lightly, rarely terminates first",
+    "3": "Standard industry — case-by-case firmness",
+    "4": "Strict — demotions, timed suspensions, and cuts are normal",
+    "5": "Harsh — Imaginate-class; public hard cuts and indefinite pauses are expected"
+  },
+  "default_harshness": 3,
+  "agencies": [
+    {
+      "id": "imaginate",
+      "names": ["imaginate", "Imaginate"],
+      "harshness": 5,
+      "note": "iLiFE! / HEROINES-facing office. Public terminate / demote / suspend culture is hard."
+    },
+    {
+      "id": "yoyogi-animation-academy",
+      "names": ["Yoyogi Animation Academy", "代々木アニメーション学院"],
+      "harshness": 4,
+      "note": "=LOVE / ≠ME / ≒JOY academy line. Structured brand protection."
+    },
+    {
+      "id": "twin-planet-entertainment",
+      "names": ["TWIN PLANET ENTERTAINMENT", "TWIN PLANET", "Twin Planet"],
+      "harshness": 3,
+      "note": "高嶺のなでしこ. Timed and indefinite suspensions both used."
+    },
+    {
+      "id": "live-planet",
+      "names": ["LIVE PLANET", "Live Planet"],
+      "harshness": 4,
+      "note": "アキシブproject and LIVE PLANET roster. Contract cuts for rule breaks are documented."
+    },
+    {
+      "id": "wack",
+      "names": ["WACK"],
+      "harshness": 5,
+      "note": "Extremely visible discipline / graduation culture."
+    },
+    {
+      "id": "stardust-planet",
+      "names": ["STARDUST PLANET", "STARDUST PROMOTION", "Stardust Promotion", "スタダ"],
+      "harshness": 3
+    },
+    {
+      "id": "amuse",
+      "names": ["AMUSE", "Amuse"],
+      "harshness": 3
+    },
+    {
+      "id": "asobisystem",
+      "names": ["ASOBISYSTEM", "Asobisystem"],
+      "harshness": 3
+    },
+    {
+      "id": "kawaii-lab",
+      "names": ["KAWAII LAB.", "KAWAII LAB"],
+      "harshness": 3
+    },
+    {
+      "id": "kabukimonodogs",
+      "names": ["KABUKIMONO'DOGs", "KABUKIMONO'DOGS"],
+      "harshness": 3
+    },
+    {
+      "id": "avex",
+      "names": ["Avex", "Avex Management"],
+      "harshness": 3
+    },
+    {
+      "id": "dearstage",
+      "names": ["DEARSTAGE", "Dear Stage"],
+      "harshness": 3
+    },
+    {
+      "id": "aqbirec",
+      "names": ["AQBIRec"],
+      "harshness": 3
+    },
+    {
+      "id": "rize-production",
+      "names": ["RIZE PRODUCTION"],
+      "harshness": 3
+    },
+    {
+      "id": "playyte",
+      "names": ["PLAYYTE"],
+      "harshness": 3
+    },
+    {
+      "id": "origami",
+      "names": ["ORIGAMI"],
+      "harshness": 3
+    },
+    {
+      "id": "ekoms",
+      "names": ["ekoms"],
+      "harshness": 3
+    },
+    {
+      "id": "comrized",
+      "names": ["COMRIZED"],
+      "harshness": 3
+    },
+    {
+      "id": "sova",
+      "names": ["SOVA LLC.", "SOVA"],
+      "harshness": 3
+    },
+    {
+      "id": "scot",
+      "names": ["SCOT"],
+      "harshness": 3
+    }
+  ]
+}

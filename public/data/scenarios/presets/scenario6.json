@@ -1,9 +1,11 @@
 {
   "id": "scenario6",
-  "name": "Scenario 6",
+  "name": "Scenario 6: Latest Snapshot",
   "scenario_number": 6,
   "opening_date": "2025-07-05",
   "data_subdir": "scenario_6",
   "startup_view": "Groups",
-  "startup_group": "Akishibu project"
+  "startup_group": "Akishibu project",
+  "background_en": "A time-locked snapshot of the idol industry: opening date, playable group pool, and bundled idols / groups / songs data. Scenario 6 ships a large roster plus a curated startup allowlist of recommended groups (pinned starts: =LOVE, iLiFE!, 高嶺のなでしこ, アキシブproject).",
+  "background_zh": "偶像产业在某一时间点的快照：开局日期、可选组合池，以及打包的偶像 / 组合 / 歌曲数据。剧本 6 包含大量组合及开局推荐名单（置顶推荐：=LOVE、iLiFE!、高嶺のなでしこ、アキシブproject）。"
 }

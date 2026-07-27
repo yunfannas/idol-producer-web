@@ -159,7 +159,8 @@
       "f4bb9933-ff9f-4b8c-bb79-52b8bc94eb9f"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "15c6385c-b09a-4dbc-89f1-fc96cef74fff",
@@ -252,7 +253,8 @@
     ],
     "songs": [],
     "letter_tier": "F",
-    "disband_date": "2023-05-09"
+    "disband_date": "2023-05-09",
+    "reputation": 3
   },
   {
     "uid": "44G-44Gt44GN44Kx44OB44Oj",
@@ -502,7 +504,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44G144GH44GC44KK44O844Gm44GE44KL44Ga77yB",
@@ -589,7 +592,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44G144KP44G144KP",
@@ -800,12 +804,13 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
     "name": "ほくりくアイドル部",
-    "member_count": 19,
+    "member_count": 17,
     "member_names": [
       "中宮果杏",
       "佐古真莉亜",
@@ -813,10 +818,8 @@
       "加藤千夏",
       "南葵",
       "吉池千晴",
-      "園木美紗",
       "土井颯愛",
       "山崎真央",
-      "廣嶋那須菜",
       "有松来未",
       "松井祐香里",
       "林風奈",
@@ -834,10 +837,8 @@
       "84d7f739-35ec-4233-938e-773a59eaea42",
       "766230e3-fd90-4b39-a294-05f2852fd5df",
       "70a9b535-f4a8-4d3e-b40c-6a75a222410d",
-      "c2e95e44-1052-4927-89bc-9af1d1a58a90",
       "3e630b85-159d-45c9-9afb-dec1a53deaf9",
       "6a1499f6-53e5-4b51-9c3f-0a6ddff28d35",
-      "576a508f-6dfb-437b-82a6-7dd494ffd84f",
       "0068ba91-34f0-436e-906a-bd4198bb2b4b",
       "8e16783d-732c-4a50-9914-32d8f24f716d",
       "e0a87171-2dba-46a5-bf3b-db8f814c0d50",
@@ -1149,7 +1150,8 @@
       "242c0653-bc84-4db1-a9e9-5ed0ece528a4"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44G944GR44Gj44Go44OV44Kh44Oz44OI44Og",
@@ -1238,7 +1240,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GC44GS44KC44KT77yB",
@@ -1481,7 +1484,8 @@
       "a2401468-3824-46d6-b41f-abff9d2b7f32"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44GC44Gf44G-44Gu44Gq44GL44GvOOODk-ODg-ODiOKBie-4jg",
@@ -1972,7 +1976,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GC44Gj44Go44Gb44G244KT44Gm44GD44O844KT",
@@ -2245,7 +2250,8 @@
       "7840d0eb-3716-4039-850d-58bfb7defb33"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GE44GO44Gq44KK5p2x5YyX55Sj",
@@ -3039,7 +3045,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
@@ -3167,7 +3174,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og",
@@ -3751,7 +3759,8 @@
       "43e5f7cb-086b-47c2-aec3-3127fa1103b7"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44GL44GZ44G_6I2J44Go44K544OG44Op",
@@ -5473,7 +5482,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GN44Gu44Ob44CC",
@@ -5744,7 +5754,8 @@
       "41422fb5-da32-4828-b787-d88b04f167e5"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
@@ -6138,7 +6149,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
@@ -6252,7 +6264,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44GV44GP44KJ5a2m6Zmi",
@@ -6382,7 +6395,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44GV44Go44KK44Oi44Oz44K544K_44O8",
@@ -6880,7 +6894,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz",
@@ -7173,7 +7188,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GY44KF44GY44KF",
@@ -8587,7 +8603,8 @@
       "71a1fea1-f4c6-474b-b73d-3be4f92a6750"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44GY44O844GP44KJ44KA77yB",
@@ -8818,7 +8835,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44G_44GG44G_44GK",
@@ -8895,7 +8913,8 @@
       "8b5a0091-4614-4049-896c-be5afc1bd2ba"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go",
@@ -9298,7 +9317,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Gc44KT44G25ZCb44Gu44Gb44GE44Gg44CC",
@@ -9383,7 +9403,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44Gk44G844G_5aSn6Z2p5ZG9",
@@ -10002,7 +10023,8 @@
       "c5aeee2e-d061-4a22-91e1-7f5712724302"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Gn44KT44Gx57WELmluYw",
@@ -11395,7 +11417,8 @@
     "ended_date": "2025-01-05",
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44Gq44G_44Gg6Imy44Gu5raI44GX44GU44KA",
@@ -11872,7 +11895,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Gq44KT44Kt44OL77yB",
@@ -12070,7 +12094,8 @@
       "2310e94b-0c7a-4adf-96ef-dc6a90eb5d8d"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
@@ -12300,12 +12325,13 @@
     "letter_tier": "D",
     "average_ability": 60,
     "average_rating": 12,
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce77"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce77",
+    "reputation": 3
   },
   {
     "uid": "44Gu44KT44G144GD44GP77yB",
     "name": "のんふぃく！",
-    "member_count": 10,
+    "member_count": 8,
     "member_names": [
       "恋星はるか",
       "水瀬ぴあの",
@@ -12314,9 +12340,7 @@
       "こるね",
       "澪織にいな",
       "香月あむ",
-      "真白里帆",
-      "空詩かれん",
-      "藤城なみ"
+      "真白里帆"
     ],
     "member_uids": [
       "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
@@ -12326,13 +12350,15 @@
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
       "b7362fff-f7d2-4fba-a5f7-febe07305d84",
       "ad732d26-4b39-4b95-a642-5db433ed09ae",
-      "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f",
-      "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
+      "c902fb0f-ef3e-4508-8a88-d08e96c5ce8f"
+    ],
+    "past_member_count": 1,
+    "past_member_names": [
+      "藤城なみ"
+    ],
+    "past_member_uids": [
       "1f22a5cf-f0f8-4c95-a3b7-3b0049239b69"
     ],
-    "past_member_count": 0,
-    "past_member_names": [],
-    "past_member_uids": [],
     "color": null,
     "description": "June 2025 Information Also Known As NONFIC! Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency imaginate Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! Yakousei Amuse BLK LiLiY i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE HEROINES Kenkyuusei HEROINES Kenkyuusei Osaka Current Members Konose Haruka (2021-Present) Minase Piano (2021-",
     "formed_date": "2021-04-05",
@@ -12511,7 +12537,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44Gw44Gj44Gm44KT5bCR5aWz6ZqK",
@@ -12989,7 +13016,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44Gz44Gj44GP44GI44KT44GY44GH44KL",
@@ -13200,7 +13228,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44K144Kv44Ok44Kz44OO44OP44OK",
@@ -13389,7 +13418,8 @@
       "4a631e62-883b-4bc1-9134-7652ef91e76e"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44K344Oj44OL44Og44OL77yd44OR44Os44O844OJ",
@@ -16868,7 +16898,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs",
@@ -17563,7 +17594,8 @@
       "8c89e25b-b1c4-4714-8ff7-4b07db6bf850"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44K344Oz44OH44Os44Op5a6j6KiA77yB",
@@ -18464,7 +18496,8 @@
       "ab4ca015-3497-4ab8-8954-259d93ee5cd8"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44K444Ko44Oh44Kk",
@@ -19011,7 +19044,8 @@
       "cf6fcc36-6f85-4bd3-9dc2-fc680b824053"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44K544OB44O844Og44Ks44O844Or44K6",
@@ -19286,7 +19320,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6",
@@ -20765,7 +20800,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44K544Ov44Oz44K544Ov44Oz44K6",
@@ -20940,7 +20976,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44KB44KN44KT55WRYSBnbyBnbw",
@@ -21267,7 +21304,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg",
@@ -22434,7 +22472,8 @@
       "48337f5e-b438-4220-a88a-269612456274"
     ],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM",
@@ -22477,7 +22516,8 @@
     "disc_uids": [],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44KG44KL44KB44KL44Oi77yB",
@@ -23244,7 +23284,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44KK44KT44GU5aiY",
@@ -24098,20 +24139,18 @@
       "422cf6e5-0cdf-4033-abbd-8cf054ae359f"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44KP44KM44KJ44GM44OX44Ov44OX44Ov44OX44O844Ov44OX44Ov",
     "name": "われらがプワプワプーワプワ",
-    "member_count": 8,
+    "member_count": 5,
     "member_names": [
       "来海りか子",
       "松倉みゆ",
       "柴田あいこ",
       "桃園ゆな",
-      "澪月潤",
-      "間ちおり",
-      "音羽まろ",
       "黒咲はな"
     ],
     "member_uids": [
@@ -24119,9 +24158,6 @@
       "3265fc38-4f92-4398-bf38-3a0bc55cfd09",
       "c8684206-3dde-495c-8fe0-ab429ffc49e8",
       "53f38787-9a53-40d0-8422-606847d3d106",
-      "409c4778-6036-4537-9b72-a7dcf1334887",
-      "6fe09f4e-8014-472d-8448-581d6d7f15e5",
-      "3d76751d-671e-488c-acd1-39802c18ab86",
       "2bafd82a-339b-40d3-9029-ca08ff96045e"
     ],
     "past_member_count": 15,
@@ -24496,7 +24532,8 @@
       "90fd7535-be23-4849-aa6a-a1d167d4d2b5"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44KP44O844GZ44Gf",
@@ -25019,7 +25056,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44KR44KT44KJ",
@@ -25148,7 +25186,8 @@
     "letter_tier": "E",
     "average_ability": 60,
     "average_rating": 12,
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce45"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce45",
+    "reputation": 3
   },
   {
     "uid": "44K_44Kk44OI44Or5pyq5a6a",
@@ -25417,7 +25456,8 @@
     "letter_tier": "C",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Matsui Koudai"
+    "producers": "Matsui Koudai",
+    "reputation": 3
   },
   {
     "uid": "44Ki44Kk44OJ44Or44Kr44Os44OD44K4",
@@ -26182,12 +26222,13 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Ki44Kt44K344OWcHJvamVjdA",
     "name": "アキシブproject",
-    "member_count": 13,
+    "member_count": 8,
     "member_names": [
       "古賀みれい",
       "如月なな",
@@ -26196,12 +26237,7 @@
       "清見るん",
       "美山ひな",
       "茉井良菜",
-      "葵ふう",
-      "宮谷優恵",
-      "神崎らん",
-      "星乃まひろ",
-      "朝倉ゆりな",
-      "夢咲ありさ"
+      "葵ふう"
     ],
     "member_uids": [
       "3dfb8264-e501-45a7-a373-b3255445674e",
@@ -26211,14 +26247,9 @@
       "45484495-8792-48db-bab0-560ee4107464",
       "814c40ad-bcde-4f1a-af3b-f5154e98d601",
       "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
-      "c9703d21-784d-4818-ba13-eb66993e5b12",
-      "97a34f68-8f18-4e80-9162-12eb293338d9",
-      "104d0903-9527-442d-822c-5a22d0b2b750",
-      "10453944-5fd0-4e53-86f5-9798e95fa7e2",
-      "db20b21b-0063-43e2-a21f-62af6dcd63ce",
-      "2bc08c6f-1e33-4c81-aa8f-7c2474b10d4f"
+      "c9703d21-784d-4818-ba13-eb66993e5b12"
     ],
-    "past_member_count": 35,
+    "past_member_count": 38,
     "past_member_names": [
       "はまちひよ",
       "ゆりんご",
@@ -26254,7 +26285,10 @@
       "黒崎りある",
       "山本未悠",
       "森下かのん",
-      "横山利奈"
+      "横山利奈",
+      "神崎らん",
+      "宮谷優恵",
+      "星乃まひろ"
     ],
     "past_member_uids": [
       "1626e615-f982-4e03-b2aa-21d7383ceda7",
@@ -26291,7 +26325,10 @@
       "720bfe27-a27c-4df4-a184-5c0e780cf070",
       "cadc6768-bb73-40de-bc9b-c727b4dceb54",
       "fce205b2-77d1-47d1-8f72-b2c69e79ad74",
-      "f2184c71-1b83-4cfb-a7bb-fb6b17a15dce"
+      "f2184c71-1b83-4cfb-a7bb-fb6b17a15dce",
+      "104d0903-9527-442d-822c-5a22d0b2b750",
+      "97a34f68-8f18-4e80-9162-12eb293338d9",
+      "10453944-5fd0-4e53-86f5-9798e95fa7e2"
     ],
     "color": null,
     "description": "January 2025 Information Also Known As akishibu (アキシブ) Origin Akihabara, Japan Genre J-Pop Years 2012–Present Label akishibuproject (2021) King Records (2018-2019) OTODAMA RECORDS (2017) Force Music (2016) TP IDOL (2015-2016) Agency LIVE PLANET (2012-Present) Associated Acts HEROINES Ponkotsu Konpo TENRIN iLiFE! Yakousei Amuse BLK LiLiY Non¬Fiction CAL&RES Ill i-COL Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY chuLa paradeeq Nanakorobi Yaoki MEGAFON HEROINES Kenkyuusei iL",
@@ -26549,7 +26586,8 @@
     "letter_tier": "D",
     "shared_release_uids": [
       "shared-heroines-album-2025"
-    ]
+    ],
+    "reputation": 3
   },
   {
     "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
@@ -27682,7 +27720,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ",
@@ -28435,7 +28474,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Ki44Oq44K55Y2B55Wq",
@@ -29610,7 +29650,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Ki44Oz44K544Oq44Ol44O844Og",
@@ -30073,7 +30114,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Kk44Kx44Gm44KL44OP44O844OE",
@@ -30398,7 +30440,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Ko44Op44OQ44Os44K3",
@@ -30626,7 +30669,8 @@
       "ccbd4046-7b97-498d-a96f-b80648d7c6f1"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8",
@@ -30885,7 +30929,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Kr44Of44K144Oe44OR44Os44O844OJ",
@@ -31098,7 +31143,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Kr44Op44OV44Or44K544Kv44Oq44O844Og",
@@ -31395,7 +31441,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Ks44Op44OB44Ki",
@@ -31692,7 +31739,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Kt44Oz44Kw44K144Oq",
@@ -31983,7 +32031,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Kv44Oe44Oq44OH44OR44O844OI",
@@ -32454,7 +32503,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Kv44Op44Kk44K744Kr44Kk",
@@ -32738,7 +32788,8 @@
       "58610c29-665d-4353-ab25-b40847e2da31"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Kv44Op44Op44O744Oe44Kw44Op",
@@ -33193,7 +33244,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Kv44Ot44K544OO44Ko44K344K5",
@@ -33420,7 +33472,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Kw44O844Kw44O844Or44Or",
@@ -33549,7 +33602,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Kw44OH44Kk",
@@ -33610,7 +33664,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44O744O744O744O744O744O744O744O744O7",
@@ -34154,7 +34209,8 @@
       "f847e077-baf0-49fb-ae9c-03ecfa0d06dc"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44OI44OK44Oq44Ki",
@@ -34452,7 +34508,8 @@
       "713f83be-01cc-4c29-956b-678b034137bb"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OJ44Op44Oe44OB44OD44Kv44Os44Kz44O844OJ",
@@ -34478,14 +34535,14 @@
     ],
     "past_member_count": 3,
     "past_member_names": [
-      "?????",
       "早川明日美",
-      "白鷺あいら"
+      "白鷺あいら",
+      "金子いちか"
     ],
     "past_member_uids": [
-      "370bf602-2778-4434-96df-124715b1a7c5",
       "51db9a5a-66fa-48ee-b795-37c8de3b6970",
-      "1b233717-fcf9-4d65-bf9a-2a608842ad7e"
+      "1b233717-fcf9-4d65-bf9a-2a608842ad7e",
+      "247dec91-10af-44ac-aeab-2552cfe6296f"
     ],
     "color": null,
     "description": "",
@@ -34695,7 +34752,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44OK44OI4piG44Kr44Oz/#google_vignette",
@@ -34953,7 +35011,8 @@
       "ead9ee47-cebf-4a1e-b049-49717b06e68d"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44OK44OK44Op44Oz44OJ",
@@ -35138,7 +35197,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OL44Kh44OU44Oz",
@@ -35170,7 +35230,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44ON44Kz44OX44OpcGl4eC4",
@@ -35693,7 +35754,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OO44O844K544Oq44O844OW44K5",
@@ -35950,7 +36012,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44OP44OL44O844K544OR44Kk44K5UmUu",
@@ -36119,7 +36182,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OP44Or44OL44K344Kq44Oz",
@@ -36270,7 +36334,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
@@ -37069,12 +37134,13 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44OR44Op44OH44Kj44O844Kv",
     "name": "パラディーク",
-    "member_count": 20,
+    "member_count": 7,
     "member_names": [
       "水野めい",
       "来栖ゆる",
@@ -37082,20 +37148,7 @@
       "灯田にじ",
       "浜辺しずく",
       "岬ちなつ",
-      "煌坂もね",
-      "阿久津友理",
-      "絢瀬まよ",
-      "可愛ぷに",
-      "岩澤美潤",
-      "近藤真琴",
-      "月城ろあ",
-      "小森ねる",
-      "新谷真由",
-      "神田風音",
-      "前田彩佳",
-      "朝日まる",
-      "平沢ゆめ",
-      "望月愛実"
+      "煌坂もね"
     ],
     "member_uids": [
       "536e98f1-ebbd-4db0-89c7-1f2f7eca9758",
@@ -37104,27 +37157,38 @@
       "56029139-a0fd-48cb-b577-e38a3aaedafc",
       "afec82e2-d169-4816-9402-cd7dc8d15db0",
       "edda442f-caba-4a4f-b135-f39d6a0e02e0",
-      "84f94708-21be-400d-a37a-05e75f07885b",
-      "76923792-dc52-4754-b37d-af4a02c53265",
-      "55777451-1372-4994-8184-93a2d78bf894",
+      "84f94708-21be-400d-a37a-05e75f07885b"
+    ],
+    "past_member_count": 13,
+    "past_member_names": [
+      "姫野あいな",
+      "可愛ぷに",
+      "平沢ゆめ",
+      "絢瀬まよ",
+      "月城ろあ",
+      "岩澤美潤",
+      "小森ねる",
+      "新谷真由",
+      "神田風音",
+      "前田彩佳",
+      "望月愛実",
+      "近藤真琴",
+      "阿久津友理"
+    ],
+    "past_member_uids": [
+      "8e1d6d1e-b366-4ad4-aafa-b33ebb60ad67",
       "cadac094-4ea5-4289-9ad5-0d7b884fe3d0",
-      "e4d387fe-8496-4a52-b208-66bb96277cc6",
-      "9bae6786-18f8-42ec-bc4d-fd7d8be849f5",
+      "06e43ce8-6662-4290-8cad-6b69eebe6673",
+      "55777451-1372-4994-8184-93a2d78bf894",
       "704f1ba3-4718-4b38-b758-b2b4ac6a72c7",
+      "e4d387fe-8496-4a52-b208-66bb96277cc6",
       "475dc395-9acd-4fc1-b761-9cff1e532725",
       "1e200a41-1770-4deb-9d6e-d446bf7865d7",
       "6b3b7b5f-39dd-4b51-90eb-016ad06bc9ff",
       "183d2e75-e31a-4f9c-834b-350bdd440c73",
-      "b1ec5e19-c08b-4d68-b1ce-8bd72fa7b0b1",
-      "06e43ce8-6662-4290-8cad-6b69eebe6673",
-      "3c28ffef-071b-4eef-a1ce-c17e24e70ec0"
-    ],
-    "past_member_count": 1,
-    "past_member_names": [
-      "姫野あいな"
-    ],
-    "past_member_uids": [
-      "8e1d6d1e-b366-4ad4-aafa-b33ebb60ad67"
+      "3c28ffef-071b-4eef-a1ce-c17e24e70ec0",
+      "9bae6786-18f8-42ec-bc4d-fd7d8be849f5",
+      "76923792-dc52-4754-b37d-af4a02c53265"
     ],
     "color": null,
     "description": "Paradeeq May 2025 Information Origin Tokyo, Japan Genre J-Pop Years 2021-Present Agency PLAYYTE Associated Acts HEROINES Ponkotsu Konpo TENRIN ILiFE! BLK LiLiY Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith GAGAPIERO ZUTTOMOTTO LADYBABY akishibu project chuLa Nanakorobi Yaoki HEROINES Kenkyuusei iLiFE! Kouhosei Current Members Mizuno Mei Kurusu Yuru Araki Runo Akarida Niji Hamabe Shizuku Former Members Akutsu Yuuri Kondo Makoto Maeda Ayaka Niiya Mayu Kanda Fuune Iwasawa Miu",
@@ -37404,7 +37468,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
@@ -37497,7 +37562,8 @@
       "14909035-9a33-46e6-a072-8e43faf4c1e6"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OU44Ol44Ki44Oq44O844Oi44Oz44K544K_44O8",
@@ -37690,7 +37756,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44OU44Ol44O844ORISE",
@@ -38135,7 +38202,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OV44Kh44Oz44OI44Og44K344O844K_",
@@ -38202,7 +38270,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "A"
+    "letter_tier": "A",
+    "reputation": 3
   },
   {
     "uid": "44OV44Kj44Ot44K944OV44Kj44O844Gu44OA44Oz44K5",
@@ -39605,7 +39674,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44OV44Ol44O844OB44Oj44O844K144Kk44OA44O8",
@@ -39668,7 +39738,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44OZ44Ot44OG44Kj44Kr",
@@ -40167,7 +40238,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
@@ -40354,7 +40426,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "44Oe44K244Oq",
@@ -40727,7 +40800,8 @@
       "2e1d5e5c-d64a-4c42-97a9-f67f86fab13b"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "44Oe44K444Kr44Or44O744OR44Oz44OB44Op44Kk44Oz",
@@ -41136,7 +41210,8 @@
       "603318e6-fcaf-420d-8521-7ca9e6c24813"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Oe44O844Kt44Ol44Ot",
@@ -41971,7 +42046,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Of44O844Og44OI44O844Kt44On44O8",
@@ -42464,7 +42540,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Oh44Kk44OT44O8TUU",
@@ -42624,7 +42701,8 @@
     "letter_tier": "E",
     "average_ability": 60,
     "average_rating": 12,
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce51"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce51",
+    "reputation": 3
   },
   {
     "uid": "44Oi44OO44Kv44Ot44O844Oz",
@@ -43361,7 +43439,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI",
@@ -43398,7 +43477,8 @@
     "disc_uids": [],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Op44Kk44K544Oc44O844Or",
@@ -43551,7 +43631,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Op44OK44Kt44Ol44Op",
@@ -43738,7 +43819,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Op44OVw5fjg6njg5U",
@@ -43995,7 +44077,8 @@
       "962b1857-583b-4ea7-9fc3-960a811f6430"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Oq44Oq44K344OD44Kv5a2m5ZyS",
@@ -44404,7 +44487,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Oq44Or44ON44O844OJ",
@@ -44641,7 +44725,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "44Or44O844K444Ol44OW44OD44Kv",
@@ -44766,7 +44851,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Or44Or44ON44O844K444Ol",
@@ -45341,7 +45427,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Ov44OD44OE4peO44GV44O844GP44KL",
@@ -46160,7 +46247,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "44Oy44OJ44Or44Oe44Oo44OK44Kr",
@@ -46537,7 +46625,8 @@
       "fee18178-0fd8-4cf6-9fd5-7197472cf4b7"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "4d9e63bf-672e-4b0a-86e6-40c8e5cc6689",
@@ -46574,7 +46663,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "4oSDLXV0ZQ",
@@ -47589,7 +47679,8 @@
       "e7ee09a6-bf5a-445b-a1fc-94cdd8b4eab9"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "4omSSk9Z",
@@ -47904,7 +47995,8 @@
     "shared_release_uids": [
       "shared-triple-date-2022",
       "shared-ikonoijoy-2024"
-    ]
+    ],
+    "reputation": 4.5
   },
   {
     "uid": "4omgTUU",
@@ -48632,7 +48724,8 @@
       "shared-ikonoijoy-2022",
       "shared-ikonoijoy-2023",
       "shared-ikonoijoy-2024"
-    ]
+    ],
+    "reputation": 5
   },
   {
     "uid": "54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC",
@@ -49049,7 +49142,8 @@
     "letter_tier": "E",
     "average_ability": 60,
     "average_rating": 12,
-    "name_romanji": "Tensen Tensei Shoujo."
+    "name_romanji": "Tensen Tensei Shoujo.",
+    "reputation": 3
   },
   {
     "uid": "54Kt6YW444GP44KN44Gr44GP44KL44Gj",
@@ -49102,12 +49196,13 @@
       "15ab87a2-e1bb-4332-baea-dd6c8c158c7e"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
     "name": "煌めき☆アンフォレント",
-    "member_count": 9,
+    "member_count": 8,
     "member_names": [
       "佐藤栞",
       "陽葵なな",
@@ -49116,8 +49211,7 @@
       "甘楽ゆい",
       "橘すず",
       "鈴木Mob.",
-      "達家真姫宝",
-      "茉井良菜"
+      "達家真姫宝"
     ],
     "member_uids": [
       "6bfcc0de-a7a2-4dfc-926a-6872f0bcebcb",
@@ -49127,10 +49221,9 @@
       "d0ab09c3-73d7-4b57-a538-7676ff125005",
       "bf534d27-77ea-4767-920b-7583f07097c9",
       "3ccf3e6b-69c1-4588-8902-f850e13a8385",
-      "315645a3-374c-4709-9c5f-02e63108a7c8",
-      "f58e36c6-38e3-49d7-9253-2225dc16f3d2"
+      "315645a3-374c-4709-9c5f-02e63108a7c8"
     ],
-    "past_member_count": 22,
+    "past_member_count": 23,
     "past_member_names": [
       "瀬乃かなみ",
       "花乃木りおな",
@@ -49153,7 +49246,8 @@
       "如月愛花",
       "達家まきほ",
       "姫ノ愛花",
-      "日向りり"
+      "日向りり",
+      "茉井良菜"
     ],
     "past_member_uids": [
       "498bc0a5-f3e9-412e-b21b-131ae5fc7b17",
@@ -49177,7 +49271,8 @@
       "527450a7-c0f8-4451-a92c-ffcb50428d3b",
       "6133f9ca-3848-421d-b0e7-154158d7fa2f",
       "e6c4e3c2-d1ab-486e-b774-1b5a0dfa23d8",
-      "8e6e6c7d-bcd5-4a31-816d-4d8b5840d300"
+      "8e6e6c7d-bcd5-4a31-816d-4d8b5840d300",
+      "f58e36c6-38e3-49d7-9253-2225dc16f3d2"
     ],
     "color": null,
     "description": "February 2026 Information Also Known As Kirafore (キラフォレ) Origin Mie, Japan Genre J-Pop Years 2015-2023 2025-Present Label Nippon Columbia (2020-Present) Cafe au records(♭) (2017; 2025-Present) OTODAMA RECORDS (2017) rockfield (2019) Agency TOY Planet* Associated Acts Star☆FioreNerd Star★Shiμ'ne!!! Star☆ShiNew’ Star★Cosμ’n Star♩dropTune° Current Members Sato Shiori (2025-Present) Himari Nana (2025-Present) Koori Ria (2025-Present) Tsukino Mimi (2025-Present) Tsuzura Yui (2025-Present) Tachibana",
@@ -49573,7 +49668,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "556s44GN44KC44Gb44Ga",
@@ -49966,7 +50062,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "55yf44Gj55m944Gq44Kt44Oj44Oz44OQ44K5",
@@ -50253,7 +50350,8 @@
       "cbc3f290-bedb-4291-9d32-ac7312eedcc5"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC",
@@ -50894,7 +50992,8 @@
       "a9741a4f-dd67-48ad-8bfd-9e61aa05709b"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "56We5a6_",
@@ -51845,17 +51944,17 @@
       "e1e3f84e-abf2-4731-8e9a-ba5264f79c44"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
     "name": "私立恵比寿中学",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "中山莉子",
       "仲村悠菜",
       "小久保柚乃",
-      "松野莉奈",
       "桜井えま",
       "桜木心菜",
       "真山りか",
@@ -51865,13 +51964,12 @@
       "fe556ecf-cfe7-42cb-8231-ec4b821ceb9a",
       "f55585a1-f4f5-47de-90d7-a32eba1641e9",
       "be2e2675-ae79-45ae-b291-97a575b3c5b0",
-      "44852c90-644c-40ab-9797-39b16f7d5e49",
       "e2656cb2-18fb-4739-9d78-2e22bdd72c7a",
       "2a44b27d-e1d6-45a8-86aa-f1a0e5d24a33",
       "60927aad-1c82-42ac-a7ac-127c6725d272",
       "bd78cfd7-7686-48c1-9739-b123ca737cce"
     ],
-    "past_member_count": 12,
+    "past_member_count": 13,
     "past_member_names": [
       "七木奏音",
       "宇野愛海",
@@ -51884,7 +51982,8 @@
       "柏木ひなた",
       "瑞季",
       "矢野妃菜喜",
-      "鈴木裕乃"
+      "鈴木裕乃",
+      "松野莉奈"
     ],
     "past_member_uids": [
       "d9a05a9e-0ec8-47fa-a5bc-623ac7661a8a",
@@ -51898,7 +51997,8 @@
       "45798502-58b6-4e4e-a44e-59d22bf13961",
       "2f6caf6c-19a1-4145-8e0e-5c365c6329aa",
       "f84c1edb-8492-4675-92c1-e9877fa92a51",
-      "97ec85d1-44b3-4f49-8781-a3929e9ec343"
+      "97ec85d1-44b3-4f49-8781-a3929e9ec343",
+      "44852c90-644c-40ab-9797-39b16f7d5e49"
     ],
     "color": null,
     "description": "Shiritsu Ebisu Chugaku Promoting SCHOOL DAYS (February 2025) Information Also Known As Ebichu (エビ中／えびちゅう) Origin Tokyo, Japan Genre J-Pop Rock Years 2009-Present Label STARDUST DIGITAL (2010-2011) DefSTAR Records (2012-2015) SME Records (2015-Present) Agency STARDUST PLANET ( Stardust Promotion ) Associated Acts Momoiro Clover Z TEAM SHACHI Cho Tokimeki♡Sendenbu Batten Shoujo-tai ukka Iginari Tohokusan AMEFURASSHI Namie Yoshihatsu Kumiai Stapla Kenkyusei (Trainee Group) Current Members Mayama R",
@@ -53068,7 +53168,8 @@
       "984b99a4-493b-43d2-a118-de978e559e85"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "576O5ZGz44GX44GE5puW5pin",
@@ -53283,7 +53384,8 @@
       "b858c29d-95bd-42a3-8aa4-34b107a95044"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "576k6Z2S44Gu5LiW55WM",
@@ -53937,7 +54039,8 @@
       "6ce0d7e4-2a14-48ad-b160-1760d3d71f6a"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
@@ -54450,7 +54553,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "57WC44KP44KJ44Gq44GE44Gn44CB5aSc",
@@ -54946,7 +55050,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA",
@@ -59255,7 +59360,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5LmD5pyo5Z2CNDY",
@@ -60408,7 +60514,8 @@
       "bc7a4219-8ee3-446b-bbc7-7d36b788b02e"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "5Luu6Z2i44Op44Kk44OA44O8R0lSTFM",
@@ -60703,7 +60810,8 @@
       "6b1f76b9-20c2-42d5-a479-453eb1d52e31"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "5Y-v5oaQ44Gq44Ki44Kk44Oc44Oq44O8",
@@ -61140,7 +61248,8 @@
       "70a65725-0746-496d-aaf1-2af5c70451fd"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "5ZCb44Go6KaL44KL44Gd44KJ",
@@ -61287,7 +61396,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5ZCb44Gr44CB6IO444Kt44Ol44Oz44CC",
@@ -61398,7 +61508,8 @@
       "9879681f-ce3a-43e9-a5fa-600919c83949"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "5aSW56We55Sw44GE44Gj44Gh44KH44KB",
@@ -61884,7 +61995,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
@@ -62230,7 +62342,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
@@ -62921,7 +63034,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "5aSq6Zm944Go6LiK44KM5pyI5aSc44Gr5ZSE44GI",
@@ -63111,7 +63225,8 @@
       "a7b5dac7-d48a-4a83-8cca-4676d5d89d56"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5oKq6a2U44Gu44Kt44OD44K5",
@@ -63261,7 +63376,8 @@
       "20f796b3-347f-40a7-88ab-7609811afe10"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5oSb5LmZ5aWz4piGRE9MTA",
@@ -63622,7 +63738,8 @@
       "ec712601-312a-46d2-bc06-8a4d3163b45d"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5oiR5YSY44Op44Kt44Ki",
@@ -63995,7 +64112,8 @@
       "dc222a91-be30-4176-a527-2f275b55b274"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "5omL57695YWI44K744Oz44K744O844K344On44Oz",
@@ -64553,7 +64671,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "5p2x5Lqs5aWz5a2Q5rWB",
@@ -66131,7 +66250,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "5pS-6Kqy5b6M44OX44Oq44Oz44K744K5",
@@ -66914,7 +67034,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5paw56ugIOWkp-mYquKYhuaYpeWkj-eni-WGrA",
@@ -67059,7 +67180,8 @@
       "d651a7bb-d049-4642-b7d7-8fe272e2a397"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "5pel5ZCR5Z2CNDY",
@@ -67523,7 +67645,8 @@
       "3ee5b46b-1e05-4402-a01b-b722f2e8a52c"
     ],
     "songs": [],
-    "letter_tier": "A"
+    "letter_tier": "A",
+    "reputation": 3
   },
   {
     "uid": "5pif5q20MTPlpJw",
@@ -67566,7 +67689,8 @@
     "disc_uids": [],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5pyA57WC5pyq5p2l5bCR5aWz",
@@ -67989,7 +68113,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "5pyI5YiKUEFN",
@@ -68831,7 +68956,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
@@ -68976,7 +69102,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5qOYLeOBiuOBqeOCjS0",
@@ -73291,7 +73418,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "5qu75Z2CNDY",
@@ -73704,7 +73832,8 @@
       "497a31d8-dbc7-463f-aa79-b9f46afd7340"
     ],
     "songs": [],
-    "letter_tier": "A"
+    "letter_tier": "A",
+    "reputation": 3
   },
   {
     "uid": "5qyF5Z2CNDY",
@@ -73952,7 +74081,8 @@
       "c2a0233b-9416-473b-9b4f-4791c433adff"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5riF56uc5Lq6MjU",
@@ -74289,7 +74419,8 @@
       "cf12e267-f91d-4231-954d-28596279babe"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "6ISz5YaF44OR44K544OG44Or",
@@ -74394,7 +74525,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "6Iqx44GE44KN44Gv",
@@ -74645,7 +74777,8 @@
       "a81bc3c0-1f9f-4b95-ba7e-e7e3fd4f2374"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6Iqx6a2B6YGT5Lit",
@@ -74939,7 +75072,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
@@ -75921,7 +76055,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "6KGb5pif44Go44Kr44Op44OG44Ki",
@@ -76205,7 +76340,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "6LGG5p-044Gu5aSn576k",
@@ -76757,7 +76893,8 @@
       "2136fc3d-ca95-4ccf-898b-82cfe719c121"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo",
@@ -77620,7 +77757,8 @@
       "c60991ec-e3e4-470f-af6e-e8c7282d89e7"
     ],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "6YCP6Imy44OJ44Ot44OD44OX",
@@ -77795,7 +77933,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6YO95YaF5p-Q5omA",
@@ -77952,7 +78091,8 @@
       "0472c78e-38ff-411b-b194-116b221e2d9c"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6YeM5ZKy44KK44GV",
@@ -77986,7 +78126,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6ZaL5q2MLeOBi-OBhOOBiy0",
@@ -78227,7 +78368,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6ZmQ44KK44Gq44GP55m944GP",
@@ -78412,7 +78554,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6Zu75b2x44Go5bCR5bm0Q1E",
@@ -78675,7 +78818,8 @@
       "c6db856e-2299-48b8-8ec8-a7d160c0896c"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6Zuo5qih5qeY44Gu44K944Op44Oq44K5",
@@ -79295,7 +79439,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "6aKo55S35aG-",
@@ -80187,7 +80332,8 @@
       "30f49979-0780-4016-9f8e-e79cab1009e4"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
@@ -80689,7 +80835,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 4
   },
   {
     "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
@@ -81155,7 +81302,8 @@
       "4f435004-bf1a-4a68-a667-52e7b0265fb9"
     ],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "743724ff-5c2d-4e42-85ab-95e7e5c42954",
@@ -81412,9 +81560,8 @@
       "63c777db-2619-4684-a15f-dc576fb98a30",
       "46c8e76f-f212-4f97-9467-a41465d635e8"
     ],
-    "past_member_count": 7,
+    "past_member_count": 6,
     "past_member_names": [
-      "Ice",
       "Sana",
       "えれな",
       "こまち",
@@ -81423,7 +81570,6 @@
       "まちる"
     ],
     "past_member_uids": [
-      "0c55b7c7-bb9a-438d-9644-27b85cac8ae1",
       "7f1e21fd-eeca-4174-98bd-d925bcc3024d",
       "5276f0d2-69ae-4ef2-9047-5552f80e364e",
       "2de406ee-b453-4e65-83e2-777608b91ad3",
@@ -82702,7 +82848,8 @@
       "28103455-7eac-45b5-8d69-4f5b0369944a"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "764d49a4-9186-44f0-9c88-ab913d7c95ca",
@@ -82882,7 +83029,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "9b937bbf-facf-437b-9815-94152bfe5805",
@@ -82970,7 +83118,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "I-OCuOODpeODvOODreODg-OCrw",
@@ -83339,7 +83488,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "I-ODkOODkOODkOODkOODs-ODkw",
@@ -83969,7 +84119,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "I01vb292ZSE",
@@ -84155,7 +84306,8 @@
       "e993438e-59d7-4430-baf4-17b0e8e14160"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "I1BFWEFDT0E",
@@ -84506,7 +84658,8 @@
       "38ba10d1-81e2-4847-a990-e7831d2e9d8f"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "IzJpMg",
@@ -85080,7 +85233,8 @@
       "6e8f33a5-5012-46f6-a171-659c108ebd0e"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "LkJQTQ",
@@ -85338,7 +85492,8 @@
       "99331037-a201-4346-80fe-d264eeb9bc1c"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "LkxpTklYTGlORS4",
@@ -85441,7 +85596,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "MeOBpOi2s-OCiuOBquOBhOizveOBr-aKleOBkuOCieOCjOOBnw",
@@ -85576,7 +85732,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "MjIvNw",
@@ -86373,7 +86530,8 @@
       }
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Mm8gTG92ZSB0byBTd2VldCBCdWxsZXQ",
@@ -86685,7 +86843,8 @@
       "a3a926c3-27aa-47a5-820f-fabc1c0daba9"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Mzc3Ng",
@@ -87243,7 +87402,8 @@
       "d20bd3e3-7477-412c-9c72-6661ce0974e7"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "OGJpdEJSQUlO",
@@ -87413,7 +87573,8 @@
       "c6932b45-e142-4793-a3a5-b41b8d64c606"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "OTYz",
@@ -87612,7 +87773,8 @@
       "08bde860-8b7b-444f-90e2-aefa5cf22f5a"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "OURheXpHbGl0Y2hDbHViVG9reW8",
@@ -87861,7 +88023,8 @@
       "bfc77f15-1c3e-4e73-b90d-cd10622dcbbc"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "PUxPVkU",
@@ -88959,7 +89122,8 @@
       "shared-ikonoijoy-2022",
       "shared-ikonoijoy-2023",
       "shared-ikonoijoy-2024"
-    ]
+    ],
+    "reputation": 4.5
   },
   {
     "uid": "Q0FMJlJFUw",
@@ -89070,7 +89234,8 @@
       "bd6cad08-a8be-49e1-b59d-9a13067114c8"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "Q0FORFkgVFVORQ",
@@ -89458,7 +89623,8 @@
     "songs": [],
     "letter_tier": "B",
     "average_ability": 0,
-    "average_rating": 0
+    "average_rating": 0,
+    "reputation": 3
   },
   {
     "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
@@ -89665,7 +89831,8 @@
     "letter_tier": "E",
     "average_ability": 60,
     "average_rating": 12,
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce61"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce61",
+    "reputation": 3
   },
   {
     "uid": "Q1JPV04gUE9Q",
@@ -89999,7 +90166,8 @@
       "c9ca4740-5fca-4da5-8a74-dbabbd84e01f"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "Q1NS",
@@ -90200,7 +90368,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "Q1VCzqNMSUM",
@@ -90546,7 +90715,8 @@
       "60f3b748-5980-4027-818c-dd0378c40a2c"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Q1VUSUUgU1RSRUVU",
@@ -90799,7 +90969,8 @@
     "letter_tier": "B",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Kimura Misa"
+    "producers": "Kimura Misa",
+    "reputation": 3
   },
   {
     "uid": "Q1k4RVI",
@@ -91071,7 +91242,8 @@
       "0ba2fa05-eb4f-4110-96f1-d61308540133"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "Q1lOSE4",
@@ -91766,7 +91938,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "Q2FuZHll4pmhU3lydXA",
@@ -92067,7 +92240,8 @@
       "207da06c-04d5-47ab-bd3e-40a9394e233a"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "Q2h1LVo",
@@ -92404,7 +92578,8 @@
       "9e5bd124-9c16-4ca4-9d2e-be6433030895"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Q2hhbGNh",
@@ -92494,7 +92669,8 @@
       "177ff6a6-78f5-4654-9d22-b39e19a4c1f7"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "Q2hhcm0gUG9jaGU",
@@ -92600,7 +92776,8 @@
       "624b84c0-d2e2-4379-b511-94f45e22b848"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "Q2hlY2ttYXRl",
@@ -92995,7 +93172,8 @@
       "6f196618-fe3c-481a-b114-758bb432143a"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Q2hlcnJ5IEJ1bGxldA",
@@ -93167,7 +93345,8 @@
       "43f7aa45-b14a-4c7e-890a-e20485bfce07"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
@@ -93290,7 +93469,8 @@
       "ac02e068-2326-4fd3-8156-33d16874998c"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Q2lPTg",
@@ -93605,7 +93785,8 @@
       "f70b6ba7-eb7c-43ca-99ba-182b8233bcb3"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "QG9uZWZpdmU",
@@ -93727,7 +93908,8 @@
       "948cb9fc-39e4-41f2-82ff-598b76b85dc3"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "QU1FRlVSQVNTSEk",
@@ -94437,7 +94619,8 @@
       "893c3e44-55ba-4197-8dcb-af0dc811b7a3"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "QU9BTw",
@@ -94829,7 +95012,8 @@
       "2dc0d7e1-4124-4722-9309-50f2ed0e7e22"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "QUZURVJT",
@@ -95186,7 +95370,8 @@
       "6f585f38-408e-4cee-908e-195f79dd6ca0"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QUlCRUNL",
@@ -96136,7 +96321,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "QUtCNDg",
@@ -99522,7 +99708,8 @@
       "52866ee1-6be0-45b3-b2a8-2bcab3967316"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "QVE",
@@ -99707,7 +99894,8 @@
       "28c5b3b0-f506-4ebc-8e6b-174948a562d0"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QVFB",
@@ -99866,7 +100054,8 @@
       "b664a14d-3f8a-40a3-af84-1ae1700f3f65"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QVJDQU5BIFBST0pFQ1Q",
@@ -100223,7 +100412,8 @@
     "letter_tier": "D",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Lantis and DEARSTAGE, and Mia_REGINA directs some of their songs and dances"
+    "producers": "Lantis and DEARSTAGE, and Mia_REGINA directs some of their songs and dances",
+    "reputation": 3
   },
   {
     "uid": "QVNQ",
@@ -100568,7 +100758,8 @@
       "4e85cd47-600e-4695-8f61-c087c8e5a071"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "QVZBQ0xVQg",
@@ -100748,7 +100939,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QVZBTQ",
@@ -101440,7 +101632,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "QVpBVE9Z",
@@ -101669,7 +101862,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "QW5nZeKYhlJldmU",
@@ -102001,7 +102195,8 @@
       "b3aea460-0acc-476c-b4fa-838656c325e7"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QWRhbUxpbGl0aA",
@@ -102081,7 +102276,8 @@
       "090594c9-fb91-48c6-b8c7-50cbb581a205"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "QWljb25n",
@@ -102267,7 +102463,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QWxjdXRl77yB",
@@ -102643,7 +102840,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "QXBwYXJlIQ",
@@ -103348,7 +103546,8 @@
       "02c74370-9b8f-43fd-a2d6-b236c9f742b9"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "QXNJcw",
@@ -103562,7 +103761,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "QXhlbGlnaHQ",
@@ -103825,7 +104025,8 @@
       "de5e45ca-fd15-4e7a-8741-993bfc133f1b"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QkFCWS1DUkFZT07jgJwxMzYx44Cc",
@@ -104208,7 +104409,8 @@
       "a3289a47-0a6f-427a-8944-8dd9697ac99d"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "QkFCWU1FVEFM",
@@ -105248,7 +105450,8 @@
       "312ccfb4-5521-41d8-a307-1cb3ea1de1c9"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "QkFCWU1PTlNURVI",
@@ -105314,7 +105517,8 @@
       "98381eab-e994-48e4-b22b-f3f49f77e8ae"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "QkFCWUJFQVJE",
@@ -105408,7 +105612,8 @@
       "062417c2-ccf6-4930-b972-f8281e70c8d3"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "QkFEIElWWQ",
@@ -105895,7 +106100,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QkFOWkFJIEpBUEFO",
@@ -106277,7 +106483,8 @@
     "letter_tier": "D",
     "average_ability": 60,
     "average_rating": 12,
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce22"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce22",
+    "reputation": 3
   },
   {
     "uid": "QkVMTFJJTkflsJHlpbPjg4_jg7zjg4g",
@@ -106520,7 +106727,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QkxBQ0tOQVpBUkVORQ",
@@ -107017,7 +107225,8 @@
       "c97e9560-d790-474b-bfe1-09e7d6574d95"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QkxVRUdPQVRT",
@@ -107496,7 +107705,8 @@
       "a845594c-7b24-441e-8780-b3e94855b8e1"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "QlBNMTVR/#google_vignette",
@@ -107687,7 +107897,8 @@
       "3697c3f4-a9ba-4d7e-8ece-f0e0cc5e8d9d"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "Qm9rdSBnYSBNaXRha2F0dGEgQW96b3Jh",
@@ -108016,7 +108227,8 @@
       }
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "QmVhdXR5IEJveA",
@@ -108141,7 +108353,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "QmVsb3ZlZA",
@@ -108502,7 +108715,8 @@
       "66a0c312-db1a-47dd-a92d-addeb692684d"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "QmlT",
@@ -108510,7 +108724,7 @@
     "member_count": 0,
     "member_names": [],
     "member_uids": [],
-    "past_member_count": 32,
+    "past_member_count": 33,
     "past_member_names": [
       "MEW",
       "YUINA",
@@ -108543,7 +108757,8 @@
       "ムロパナコ",
       "ワキサカユリカ",
       "古正寺恵巳",
-      "花宮ハナ"
+      "花宮ハナ",
+      "苺りなはむ"
     ],
     "past_member_uids": [
       "a79a6e66-a0f1-4bb2-8add-4e54719b6eca",
@@ -108577,7 +108792,8 @@
       "8ec8846c-102f-45bf-a339-9333f8e739f6",
       "ed1b5576-1d90-43a5-a3f2-dfbe649b9346",
       "8b48c998-d708-4024-92bd-984a5bbfa152",
-      "7fcc2cca-8c86-41ac-9b4c-8e09d0930818"
+      "7fcc2cca-8c86-41ac-9b4c-8e09d0930818",
+      "10add124-4eaa-48ac-821e-7939d123331b"
     ],
     "color": null,
     "description": "BiS June 2019 Information Also Known As Brand-new idol Society Origin Tokyo, Japan Genre J-Pop, Rock, Punk Years 2010-2014 2016-2019 2019-2025 (disbanded 2025-01-12) Label NIPPON CROWN Agency WACK Final Line-Up Toggy Nano3 Hyuga Iko Mugennokanata Kurenai World's End Former Members Yokoyama Rina Nakayama Yukiko Terashima Yufu Wakisaka Yurika Michibayashi Rio Hirano Nozomi Kamiya Saki Tentenko First Summer Uika Koshouji Megumi Pour Lui MOMOLAND Gamiya Saki PERi UBU KiKA FRONT FRONTALE AYA EiGHTPRiNCE GO ZEELA PAN LUNA",
@@ -109249,7 +109465,8 @@
       "68e5f749-7d5e-4069-9046-829ab08be89d"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "QmlTSA",
@@ -109317,7 +109534,8 @@
       "39ccb72f-94e2-4f65-b91c-102397c81986"
     ],
     "songs": [],
-    "letter_tier": "A"
+    "letter_tier": "A",
+    "reputation": 3
   },
   {
     "uid": "QmlsbGxpZQ",
@@ -109724,7 +109942,8 @@
       "885e67f8-a018-46b4-8512-35b5f01bed12"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "QnJva2VuIEJ5IFRoZSBTY3JlYW0",
@@ -110003,7 +110222,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "QnVubnkgTGEgQ3Jldw",
@@ -110095,7 +110315,8 @@
     "letter_tier": "E",
     "average_ability": 60,
     "average_rating": 12,
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce114"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce114",
+    "reputation": 3
   },
   {
     "uid": "QnVvbm8h",
@@ -110585,7 +110806,8 @@
       "4b100096-2a79-4ec6-811d-c66da5581a9f"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "R08gVE8gVEhFIEJFRFM",
@@ -110778,7 +111000,8 @@
       "a28f0c65-58c2-4312-a20e-6bc6fb9db03b"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "R0FOR0RFTUlD",
@@ -111185,7 +111408,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "R0FORyBQQVJBREU",
@@ -111938,7 +112162,8 @@
       "47602437-b4fa-407c-ba09-29e3ff2db3b0"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "R0VN",
@@ -112171,7 +112396,8 @@
       "a4b5a830-c368-475c-a027-2ffea714e7a0"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "R0VOSUM",
@@ -112705,7 +112931,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "R0lMVFkgw5cgR0lMVFk",
@@ -112808,7 +113035,8 @@
       "510020fc-829a-49aa-b949-52f2f993f86a"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "R29vZCBUZWFycw",
@@ -112935,7 +113163,8 @@
       "a9f88184-b0e1-423f-95d9-d1b1fa1fe90d"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "R2lybHPCsg",
@@ -114133,7 +114362,8 @@
       "c23f2574-90a8-4c16-bd6e-748770b25d3c"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "RElBVkVM",
@@ -114323,7 +114553,8 @@
       "2a2610ba-cfd7-4d53-89f6-6372cbdf3f2c"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "RFJFQU1JTkcgTU9OU1RFUg",
@@ -114524,7 +114755,8 @@
       "46b5d016-f847-43a4-b7e0-2cbc283e0391"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "RG9yb3RoeSBMaXR0bGUgSGFwcHk",
@@ -115028,7 +115260,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "RGFuY2luZyBEb2xscw",
@@ -115188,7 +115421,8 @@
       "d4dc4b00-0f68-4810-9e58-015088ce1fc7"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "RGV2aWwgQU5USEVNLg",
@@ -115961,7 +116195,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "RU1PRQ",
@@ -116135,7 +116370,8 @@
       "f38aee30-446d-4529-915c-c8d304278037"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "RU1QQVRIWQ",
@@ -116594,7 +116830,8 @@
       "80789073-10b7-4beb-b934-c2a64806b94f"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "RU1QaVJF",
@@ -116675,7 +116912,8 @@
       "2c31a439-1536-424a-9f51-749004af90a5"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "RUdSe-OBiOOBkOOCi30",
@@ -116763,7 +117001,8 @@
       "51540dc5-de41-454a-b0fe-18ba416f066c"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "RXhXSFla",
@@ -117245,7 +117484,8 @@
       "65624cb7-317a-4a53-a692-9d80b3b2e9c9"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "Rk9LQUxJVEU",
@@ -117548,7 +117788,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "RkVT4piGVElWRQ",
@@ -118154,7 +118395,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "RlIyUE9OIQ",
@@ -118471,7 +118713,8 @@
       "eec1b9de-fc15-413f-b0e4-e675e1fe16bf"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "RlJVSVRQT0NIRVRURQ",
@@ -118817,7 +119060,8 @@
       "e3eaea3f-1dfe-437b-aed1-fe5f26b21956"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "RlJVSVRTIFpJUFBFUg",
@@ -119367,7 +119611,8 @@
     "letter_tier": "A",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Kimura Misa"
+    "producers": "Kimura Misa",
+    "reputation": 3
   },
   {
     "uid": "RlVMSVQgQk9Y",
@@ -119711,7 +119956,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "Rml2ZSBlbW90aW9u",
@@ -119774,7 +120020,8 @@
       "c243cfcb-a9a6-45c0-b7fc-d70a1cdfe063"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "RmluYWxseQ",
@@ -120297,7 +120544,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "RmluZ2VyIFJ1bnM",
@@ -120515,7 +120763,8 @@
       "90f6db7a-ae92-44a1-8f10-b4c8d45d67d4"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "Rmxvd2Vy77yKSG91cg",
@@ -120658,7 +120907,8 @@
       "dd9fda00-15b7-4b4e-915a-bb55a356e408"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "S0FRUklZT1RFUlJPUg",
@@ -120930,7 +121180,8 @@
       "5ab5596d-a8e4-42d6-ab14-45701b0e993f"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "S0xQNDg",
@@ -121119,7 +121370,8 @@
       "7f6bb2a6-bae2-442e-9c43-e96a485686d0"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "S1JEOA",
@@ -121638,7 +121890,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "S29sb2tvbA",
@@ -121957,7 +122210,8 @@
       "a19f3313-7881-4bdb-b0b0-58214eba4fbc"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "S2lTUyBLaVNT",
@@ -122215,7 +122469,8 @@
       "fe078469-dd91-4935-a532-248ecc8f96c2"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "S2lzc0JlZQ",
@@ -122843,7 +123098,8 @@
       "e2078843-ee60-4823-b64c-6a659c64b804"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "S2lzc0JlZVdFU1Q",
@@ -123202,7 +123458,8 @@
       "8374f6c1-e39f-4337-83ba-92cca73d0e08"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "SE9ORVkgUE9QQ09STg",
@@ -123267,7 +123524,8 @@
       "f1cd4566-073f-47e4-b012-c8b66caa6e7c"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "SEFNSURBU1lTVEVN",
@@ -123656,7 +123914,8 @@
       "c5f4c1f2-1236-4248-ad6b-f0b5e4a73549"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "SEFOQQ",
@@ -123894,7 +124153,8 @@
       }
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "SEFQUFkgQ1JFQVRPUlM",
@@ -124229,7 +124489,8 @@
       "c655e2f3-c8ff-494e-aab8-4f1ecba07e83"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "SElCQU5B",
@@ -124433,7 +124694,8 @@
       "bb86a045-da06-43bf-812d-d9becf95d2be"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "SElHSCBTUElSSVRT",
@@ -124629,7 +124891,8 @@
       "3a4a7438-a86a-4646-8810-42f3033bd53f"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "SEtUNDg",
@@ -125312,7 +125575,8 @@
       "8ca9e80b-2f16-4898-9afe-92dd7dc54aa7"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "SG9uZXkgU3F1YXNo",
@@ -125357,7 +125621,8 @@
       "708ebc70-dbb3-4070-ba59-2ef6c75cd9a1"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "SGVsbG9Zb3V0aA",
@@ -125563,7 +125828,8 @@
     "letter_tier": "E",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "ISAKICK, the bassist of 175R"
+    "producers": "ISAKICK, the bassist of 175R",
+    "reputation": 3
   },
   {
     "uid": "SGVsbHphcG9wcGluJw",
@@ -125903,7 +126169,8 @@
       "85341962-8215-48ad-a738-322eb3befb77"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "SGlpVCBGYWN0b3J5",
@@ -126040,7 +126307,8 @@
       "ca7beb1d-c086-4416-b80d-ff3d238363b2"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "SSBNWSBNRSBNSU5F",
@@ -126274,7 +126542,8 @@
       "beb11896-47ba-4280-8b34-06ca6b0a7e6f"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "SU5VV0FTSQ",
@@ -126794,7 +127063,8 @@
       "42952a26-2be5-4a42-b7b9-7e9c8fb9b5d0"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "SURPTEFURVI",
@@ -127020,7 +127290,8 @@
       "2994f3bf-f46f-4de6-820d-4649d4d97a92"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "SVJPTkJVTk5Z",
@@ -127161,7 +127432,8 @@
       "c00cdc13-b80c-4ff2-99c1-962535e5e603"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "SVoqT05F",
@@ -127215,7 +127487,8 @@
       "a4e52974-f053-4f8a-b1d1-9733431a20db"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "SWxs",
@@ -127379,7 +127652,8 @@
       "85e51b25-2bb3-4dcf-9fba-a115d5768624"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "SXNpbGllbA",
@@ -127584,7 +127858,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "SlVHUyBNQUZJQQ",
@@ -127977,7 +128252,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "SmFtc0NvbGxlY3Rpb24",
@@ -128361,7 +128637,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "T0xOZXc",
@@ -128474,7 +128751,8 @@
       "51a4fe23-8907-4cf5-8ccf-1a7ac6434871"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "T1PimIZV",
@@ -128927,7 +129205,8 @@
       "4af83d33-ecef-4fd1-91af-3500a08bf021"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "T24gdGhlIHRyZWF0IFN1cGVyIFNlYXNvbg",
@@ -129197,7 +129476,8 @@
       "a63e4974-7dda-4650-a76d-e8c7fa0350bd"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "T25lcGhvbnk",
@@ -129388,7 +129668,8 @@
     "letter_tier": "D",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "former Maneki Kecak member, Fukase Mio"
+    "producers": "former Maneki Kecak member, Fukase Mio",
+    "reputation": 3
   },
   {
     "uid": "TEUgU1NFUkFGSU0",
@@ -130384,7 +130665,8 @@
       "7df8cf6c-13b8-45d0-b2ff-6923dcf06543"
     ],
     "songs": [],
-    "letter_tier": "S"
+    "letter_tier": "S",
+    "reputation": 3
   },
   {
     "uid": "TEVJV0FO",
@@ -131432,7 +131714,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "TElOS0wgUExBTkVU",
@@ -131662,7 +131945,8 @@
       "bdf92372-18ac-4c7d-8721-8a8cab7f0592"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TElOSyBTVEFSVA",
@@ -131757,7 +132041,8 @@
       "e348dad2-84e9-4148-8e8a-63e58b998b12"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TElUIE1PT04",
@@ -132168,7 +132453,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "TG92ZSBDb2NjaGk",
@@ -132328,7 +132614,8 @@
       "a22dc6a7-335e-4d26-bb41-3e22dfe80cae"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TGEgTHVjZQ",
@@ -132459,7 +132746,8 @@
       "d9c7366d-66c9-4f0c-9e3e-0b9754186ba3"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TGF5bg",
@@ -132608,7 +132896,8 @@
       "ebad0895-2126-4ce2-9f11-e35e2e428805"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
@@ -133093,7 +133382,8 @@
       "ebf1192b-bff1-4cad-b9a1-12cf8fed532c"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9uIFVuZGVy",
@@ -133590,7 +133880,8 @@
       "ea66ae8c-cefe-4510-a58a-baaeb3abfc4e"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TGUgU2lhbmE",
@@ -133719,7 +134010,8 @@
       "60ab6418-79a4-4ec3-80fa-9359911edcce"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TGlWUw",
@@ -134015,7 +134307,8 @@
       "1d3754bf-a6c3-4eaf-9508-a743adbdbea2"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TGluUQ",
@@ -134699,7 +134992,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
@@ -135003,7 +135297,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "THljb3Jpcw",
@@ -135030,7 +135325,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TUFEIEpBTUlF",
@@ -135480,7 +135776,8 @@
       "13faa8c2-1455-4ff8-850d-05bf8578e244"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "TUFETUVE",
@@ -136045,7 +136342,8 @@
       "136513d8-8c47-4c45-bbc3-3d4dec351c6a"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TUFHSUNBTCBTUEVD",
@@ -136209,7 +136507,8 @@
       "26d4ec7e-bf1c-49ef-b6a0-4d6b2c7161de"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TUFHSUNPVVI",
@@ -136339,7 +136638,8 @@
       "6ed3d025-e2d0-4e89-b5c7-afc86e7efa9f"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TUFHTUFa",
@@ -136607,7 +136907,8 @@
       "1dd43bdc-2739-4707-a21c-e36705657349"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TUFOQUNMRQ",
@@ -136867,7 +137168,8 @@
       "dc7579f4-5491-49e8-a1e9-d8029d493b77"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TUFQQQ",
@@ -137081,7 +137383,8 @@
       "55f3ef0c-36bf-4edc-baf2-b34de1b21a29"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TUFaRQ",
@@ -137279,7 +137582,8 @@
       "0b93078f-3728-459b-a575-0574f4a33aea"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TUU6SQ",
@@ -137505,7 +137809,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "TUVMTE9XIE1FTExPVw",
@@ -137636,7 +137941,8 @@
       "f21a2198-5962-487e-bad3-d4f19577f33e"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TUVXTQ",
@@ -138182,7 +138488,8 @@
       "ee8523cc-92a5-42f2-b8e1-8c47f66eacf1"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TUlHTUEgU0hFTFRFUg",
@@ -138592,7 +138899,8 @@
       "7bb2dee7-656e-48a3-b9f1-b5928d12839a"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TUlTUyBNRVJDWQ",
@@ -138939,7 +139247,8 @@
       "d0bfe928-a919-4d15-8f0a-9ada9ea4d6f8"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TWFpc29uIGJvb2sgZ2lybA",
@@ -139282,7 +139591,8 @@
       "5a02d100-0f93-43de-ba75-b3852ad7a2de"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "TWFsY29sbSBNYXNrIE1jTGFyZW4",
@@ -139930,7 +140240,8 @@
       "e47b6ba4-58ce-4483-9000-fd5373405847"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TWHigJlTY2Fy4oCZUGllY2U",
@@ -140130,7 +140441,8 @@
       "fc6d885a-7d5f-4bb3-91b4-d52c431e1c60"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TWVsdHkgQmVhUg",
@@ -140220,7 +140532,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "TWVycnkgQkFEIFRVTkUu",
@@ -140323,7 +140636,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "TWlpUw",
@@ -140621,7 +140935,8 @@
       "56ebf7a8-dc6d-42f9-a465-df520c4fd3d3"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TWlycm9yLE1pcnJvcg",
@@ -140824,7 +141139,8 @@
       "b0d06d79-f944-4155-9460-d53bb792d668"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TXlEZWFyRGFybGluJw",
@@ -141368,7 +141684,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "Tk1CNDg",
@@ -142595,7 +142912,8 @@
       "cf072081-d50f-4f3a-9971-5a8a6bc3db9c"
     ],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "TkFOSU1PTk8",
@@ -142880,7 +143198,8 @@
     "letter_tier": "D",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Koyubi Chan"
+    "producers": "Koyubi Chan",
+    "reputation": 3
   },
   {
     "uid": "TkFOT05J",
@@ -143273,7 +143592,8 @@
       "dd7be245-4dca-4a0a-9779-677974e92065"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TkVDUk9OT01JRE9M",
@@ -143702,7 +144022,8 @@
       "fe935191-79ff-4051-b8a2-7cdef10193df"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "TkVPIEpBUE9OSVNN",
@@ -144429,7 +144750,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "TkVPVE9LWU8tVFJJQkU",
@@ -144583,7 +144905,8 @@
       "09ec93f7-5de5-4c2d-a803-65184ebf64d1"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TkdUNDg",
@@ -144988,7 +145311,8 @@
       "0ac8a5a7-d59e-4911-97ec-4dfd999c889f"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "TklMS0xZ",
@@ -145142,7 +145466,8 @@
       "b015394d-26d0-4be6-bdd2-d87a1d34217a"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TlVBTkNF",
@@ -145557,7 +145882,8 @@
       "4134818d-d27f-4798-ad36-ecdb2d6deb28"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw",
@@ -145692,7 +146018,8 @@
       "4c8089e7-a055-4f42-b86b-353323123cd1"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "TmFOb01vUmFM",
@@ -145870,7 +146197,8 @@
       "2166950a-31ec-4323-9979-cf0cd8a0675e"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TmVnaWNjbw",
@@ -146626,7 +146954,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "TmlnaHRPd2w",
@@ -146923,7 +147252,8 @@
       "798c7a78-a7fb-442a-8f9c-212d7aad2b66"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TuOCvOODrQ",
@@ -147458,7 +147788,8 @@
       "aa5cc7e4-c616-4c69-979e-c16b8fa7c3ea"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "TydDSEFXQU5aIEhJUC1IT1AgQ09MTEVHRQ",
@@ -147608,7 +147939,8 @@
       "cad24494-8a5c-40b0-9b50-a70d4f48050b"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "U09NT1NPTU8",
@@ -147965,7 +148297,8 @@
       "91dce7a3-b372-40df-94f2-9b23b31c501e"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "U0FJwrJSaXVt",
@@ -148444,7 +148777,8 @@
       "66dda1b5-72cb-40b0-9af1-d67249889c48"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "U0FLQS1TQU1B",
@@ -148780,7 +149114,8 @@
       "619faf7b-ae5f-4ec2-b8fd-6e27dc22bc49"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "U0FOREFMIFRFTEVQSE9ORQ",
@@ -149067,7 +149402,8 @@
       "ed71e14b-18b6-44ae-aa5f-457fa393abbd"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U0FZLUxB",
@@ -149570,7 +149906,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U0FpTlQgU0VY",
@@ -149695,7 +150032,8 @@
       "884edcbf-c652-4b0a-8b7b-2f9fa4955fe4"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "U0lUVUFTSU9O",
@@ -150305,7 +150643,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U0tFNDg",
@@ -151736,7 +152075,8 @@
       "d9b09d6f-8e76-4cb4-a0d7-3bcbd4ed131a"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "U1BSSVNF",
@@ -152354,7 +152694,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U1RBUk1BUklF",
@@ -153399,7 +153740,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U1RBUlJZw5dOSUdIVOKGl--4jg",
@@ -153684,7 +154026,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U1RBaU5Z",
@@ -154116,7 +154459,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U1RVNDg",
@@ -154186,7 +154530,7 @@
       "2af9fa92-97c8-4c30-8d42-2f9b4fc6597f",
       "73892138-e24b-4189-8887-6d17f829419a"
     ],
-    "past_member_count": 50,
+    "past_member_count": 51,
     "past_member_names": [
       "三島遥香",
       "中廣弥生",
@@ -154237,7 +154581,8 @@
       "長谷川乃彩",
       "門田桃奈",
       "門脇実優菜",
-      "黒岩唯"
+      "黒岩唯",
+      "百宮みも"
     ],
     "past_member_uids": [
       "42c244c1-6581-426a-8f6a-5d86f10b85fe",
@@ -154289,7 +154634,8 @@
       "b2dba00f-f71c-416b-85ea-dfcc429d24fa",
       "d4e10654-4e8f-4b47-b93a-874066fdba19",
       "ec27fea6-71c3-4365-a710-55e5668d8a71",
-      "da9951c0-b2d7-4def-a26f-7914191a5894"
+      "da9951c0-b2d7-4def-a26f-7914191a5894",
+      "95ac5102-f41d-4e12-9443-8bff871da1e4"
     ],
     "color": null,
     "description": "",
@@ -154560,7 +154906,8 @@
       "c7f2f140-998e-463a-84a9-af9ec9957c78"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "U1VQRVLimIZHaVJMUw",
@@ -155658,7 +156005,8 @@
       "5c5dc9a9-2e40-4447-81f3-0d15515d331e"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "U1dFRVQgU1RFQURZ",
@@ -156014,7 +156362,8 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "U29tZWRheSBTb21ld2hlcmU",
@@ -156143,7 +156492,8 @@
       "48a015d3-fe55-4326-b1da-9759087e6da5"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U2hvam90YWk",
@@ -156252,7 +156602,8 @@
       "77d33590-00a2-407a-b88d-fb9e050c957e"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U2lMRU5U4oaQTk9pU0U",
@@ -156404,7 +156755,8 @@
       "b52d762c-4367-47ff-9235-2e540db2d186"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "U3RhcuKYhUNvc8684oCZbg",
@@ -156449,7 +156801,8 @@
       "d90250de-e174-4db5-be07-21a8f088e1ab"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U3RhcuKYhkZpb3JlTmVyZA",
@@ -156572,7 +156925,8 @@
       "a66bc01d-644f-4561-83e7-933f30498158"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U3RhcuKZqWRyb3BUdW5lwrA",
@@ -156617,7 +156971,8 @@
       "d5fa7c1f-1323-48c4-806e-7dbdcbb20700"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U3dlZXQgQWxsZXk",
@@ -156834,7 +157189,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "UE9QUGlORyBFTU8",
@@ -157573,7 +157929,8 @@
       "ff5894b1-e665-4d24-b3d3-7d3ee60bf30e"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UEFOREFNSUM",
@@ -157687,7 +158044,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UEFSQURJU0VT",
@@ -157978,7 +158336,8 @@
       "ac707161-fd8b-4640-8dc9-ac5ee0b8ab43"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "UEFTVEVMIFJBRElP",
@@ -158250,7 +158609,8 @@
       "67df22db-683e-4391-b611-78da88579f7d"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "UElHR1M",
@@ -158758,7 +159118,8 @@
       "658e4443-bff2-4cee-ab4d-e41dbf86b8ec"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "UFJTTUlO",
@@ -159158,7 +159519,8 @@
     "letter_tier": "D",
     "average_ability": 60,
     "average_rating": 12,
-    "producers": "Ary"
+    "producers": "Ary",
+    "reputation": 3
   },
   {
     "uid": "UGF5cmluJ3M",
@@ -159565,7 +159927,8 @@
       "c499e0ea-ca6c-47a5-973f-a5c4a6a76e20"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "UGFsZXR0ZSBQYXJhZGU",
@@ -159834,7 +160197,8 @@
       "17455194-bae4-442b-bedb-6a1fb3e71c8a"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "UGFuaWMgTW9uc3RlciAhbiBXb25kZXJsYW5k",
@@ -160119,7 +160483,8 @@
       "ef017c36-fbf2-4626-80ce-ee64797fb0c3"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UGFydHkgY2h1dXVOIQ",
@@ -160164,7 +160529,8 @@
       "318b00cb-41fd-4900-a75f-edda3bb0ec7e"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UGFzc0NvZGU",
@@ -160943,7 +161309,8 @@
       "344a4c2e-953a-4774-afce-fbcb27156c63"
     ],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "UGVlbCB0aGUgQXBwbGU",
@@ -161259,7 +161626,8 @@
       "eeff3817-d615-449d-8b5a-feb3f9f83063"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "UGVyZnVtZQ",
@@ -162112,7 +162480,8 @@
       }
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UGlYTWlY",
@@ -162510,7 +162879,8 @@
       "46a739ef-dbc6-4638-a2f1-cb9b0a1773f9"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UGltbSdz",
@@ -162998,7 +163368,8 @@
       "1d4fed45-bdca-41ac-8066-726ca91fa7f0"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "UGlua3lTcGljZQ",
@@ -163193,7 +163564,8 @@
       "b7f6b846-4fac-4f07-98a4-09304c3a88f6"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "UXV1Ymk",
@@ -163717,7 +164089,8 @@
       "13eb27bd-98a5-42bd-9bbc-c59af8e621bf"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "Uk9PS0VZ4pmhUk9PS0VZUw",
@@ -163919,7 +164292,8 @@
       "8474fa77-5689-4e25-af02-f4a99748c51c"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "UkFZ",
@@ -164648,7 +165022,8 @@
       "f4dd861e-2506-4df3-aacc-d51abd3eefd5"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "UkVBRFkgVE8gS0lTUw",
@@ -165091,7 +165466,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "UkVJUklF",
@@ -165362,7 +165738,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "UklSWURBWQ",
@@ -165469,7 +165846,8 @@
       "4ff3b775-d666-408d-843e-e3022ddf04f7"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "Um9ja2V0IFB1bmNo",
@@ -165530,7 +165908,8 @@
       "e599e289-2d84-43d3-ab1d-f0cf347df1a1"
     ],
     "songs": [],
-    "letter_tier": "B"
+    "letter_tier": "B",
+    "reputation": 3
   },
   {
     "uid": "UmFSYUphTQ",
@@ -165656,7 +166035,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "UmluZ3dhbmRlcnVuZw",
@@ -166826,7 +167206,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "V0hJVEUgU0NPUlBJT04",
@@ -167045,7 +167426,8 @@
       "5000400a-22a2-4f39-902b-f4ca40329d8b"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "V1TimIZFZ3JldA",
@@ -167545,7 +167927,8 @@
       "f088725e-d1c7-44ad-ae5a-744c8ab12422"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "VE9LWU_jgabjgbXjgabjgbU",
@@ -167889,7 +168272,8 @@
       "4ff4d5a8-2ff3-4baf-b415-00ac4f9c82ac"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "VEVBTSBTSEFDSEk",
@@ -168685,12 +169069,13 @@
     "songs": [],
     "letter_tier": "C",
     "average_ability": 0,
-    "average_rating": 0
+    "average_rating": 0,
+    "reputation": 3
   },
   {
     "uid": "VEVOUklO",
     "name": "TENRIN",
-    "member_count": 10,
+    "member_count": 7,
     "member_names": [
       "のもあちゃちゃ",
       "白洲あやん",
@@ -168698,10 +169083,7 @@
       "蓮花うらら",
       "霞あげは",
       "月神キラ",
-      "雅なぎ",
-      "コマチ",
-      "亀田まゆ",
-      "刻乃なう"
+      "雅なぎ"
     ],
     "member_uids": [
       "52311409-c4f5-4de1-950b-cc18afd1698d",
@@ -168710,10 +169092,7 @@
       "1ae94901-0ab4-41d1-a3f8-70218ce9d8d6",
       "fb71c955-3afd-4a4e-a6dc-4a7c9e76f4a8",
       "677f39d7-0ea5-4b0f-88ff-6f63375fc8d3",
-      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f",
-      "0e9c6fc6-b980-4119-af0d-126503cfcfb2",
-      "8de1e458-b094-4a3d-98f2-24c04b3c70d3",
-      "c6740f57-6323-42d5-98c3-ab61ff31e639"
+      "5c928cde-06b0-4777-83af-b2c6a6ac9c4f"
     ],
     "past_member_count": 9,
     "past_member_names": [
@@ -169007,7 +169386,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "VEhFIE9SQ0hFU1RSQSBUT0tZTw",
@@ -169559,7 +169939,8 @@
       "04a0d02e-d63b-4247-aea0-5d0db8e6e76f"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "VEhFIEVOQ09SRQ",
@@ -169889,7 +170270,8 @@
       "4dcb7d58-bc7a-4e9c-a2dc-b0c0bf688eba"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "VEhFIEhPT1BFUlM",
@@ -170114,7 +170496,8 @@
       "a75b1207-d291-4186-9ecc-ca4307b70b50"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "VG9oa2Vp",
@@ -170254,7 +170637,8 @@
       "7a233fc2-e26b-49ec-badd-e008e2432aaa"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "VG9pIFRvaSBUb2k",
@@ -170414,7 +170798,8 @@
       "54456ae9-6795-4787-b8c6-b3a7ca375b43"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "VGFzayBoYXZlIEZ1bg",
@@ -171000,7 +171385,8 @@
       "283220f3-f0ab-4582-aac2-49089de8a26d"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "VU5CUw",
@@ -171560,7 +171946,8 @@
       "30f2157a-1364-44c1-9dc9-ae4e226ea6eb"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "VXRhR2Uh",
@@ -171955,7 +172342,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "VklMTEFJTlMgSE9VU0U",
@@ -172271,7 +172659,8 @@
       "596011d5-79d5-4598-84a3-5f088094b1ee"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "Vy7jg4Djg5bjg6vjg7TjgqPjg7w",
@@ -172478,7 +172867,8 @@
       "2dc9dfc7-4a71-48af-9438-979e94fed21c"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "WE9YTyBFWFRSRU1F",
@@ -172784,7 +173174,8 @@
       "aeb58f85-f3f5-49c2-b4b8-dd2b0af10cf9"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "WFRFRU4",
@@ -172950,7 +173341,8 @@
       "f0da7dd3-7339-4d20-8509-9161d5b5ca92"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "WU9MT1o",
@@ -173191,7 +173583,8 @@
       "10cf38e3-92e7-4ddd-80b3-49db495349e2"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "WUFNSU5BQkU",
@@ -173206,17 +173599,19 @@
       "720bfe27-a27c-4df4-a184-5c0e780cf070"
     ],
     "past_member_names": [
-      "あいす"
+      "あいす",
+      "Ice"
     ],
     "past_member_uids": [
-      "890b101f-f7b0-4111-b495-5137a2aca824"
+      "890b101f-f7b0-4111-b495-5137a2aca824",
+      "0c55b7c7-bb9a-438d-9644-27b85cac8ae1"
     ],
     "color": null,
     "description": "YAMINABE Mini Album by Sokoninaru Released March 9, 2016 Genre J-Rock, Progressive rock Format CD digital download Label KOGA RECORDS Sokoninaru Release Chronology Previous I'm NOT a pirolian 1st Mini Album (2015) Next METALIN 3rd Mini Album (2017) YAMINABE is Sokoninaru 's second mini album. It was released on March 9, 2016, and peaked at #228 on the Oricon album chart.",
     "formed_date": null,
     "popularity": null,
     "fans": null,
-    "past_member_count": 1,
+    "past_member_count": 2,
     "name_romanji": "YAMINABE",
     "nickname": "",
     "nickname_romanji": "",
@@ -173438,7 +173833,8 @@
       "59c563cb-560e-40d9-9dec-f31322f4eb63"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Wk9DWA",
@@ -173469,7 +173865,7 @@
       "永月十華",
       "藍染カレン",
       "西井万理那",
-      "鎮目のどか",
+      "那蘭のどか",
       "雅雀り子",
       "香椎かてぃ"
     ],
@@ -173616,12 +174012,13 @@
       "b5a7e13b-3f69-4c6f-b26b-96c38bb7048c"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "WlVUVE9NT1RUTw",
     "name": "ZUTTOMOTTO",
-    "member_count": 10,
+    "member_count": 9,
     "member_names": [
       "高坂りん",
       "四宮える",
@@ -173631,8 +174028,7 @@
       "佐倉あん",
       "青羽わか",
       "羽澄ほの",
-      "瀬奈ゆのん",
-      "広瀬りむ"
+      "瀬奈ゆのん"
     ],
     "member_uids": [
       "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415",
@@ -173643,8 +174039,7 @@
       "1fbb3231-5485-455b-8c1e-aa2912dcbafe",
       "86207bdc-a43b-4e11-a985-3518f376f1e5",
       "29380032-008c-4f52-ab56-d86a028f3d70",
-      "7a7cbace-6bda-4dbb-b003-42194aec5e56",
-      "b978e9b5-bde8-4964-a6d5-dbfa57cd2385"
+      "7a7cbace-6bda-4dbb-b003-42194aec5e56"
     ],
     "past_member_count": 7,
     "past_member_names": [
@@ -173721,7 +174116,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "Y2h1TGE",
@@ -174290,7 +174686,8 @@
       "7f093f78-3495-4945-843f-f38607c97cab"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "YW1iaXRpb3Vz",
@@ -174517,7 +174914,8 @@
       "1decd0b7-f210-4541-8806-0e614a2099c3"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "YWkqYWk",
@@ -174611,7 +175009,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "YWlyYXR0aWM",
@@ -175014,7 +175413,8 @@
       "ad345ec8-81a6-4a26-8748-b0ba9e83c2c5"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "ZGlpZw",
@@ -175156,7 +175556,8 @@
       "8bc1ded0-d5ec-400e-861a-13f169d1ec55"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "ZXQt44Ki44Oz44OJLQ",
@@ -175394,7 +175795,8 @@
       "5005ce3a-4ca5-457c-a4a5-9bdbf123ccd4"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "ZmFuY3lsYWJv",
@@ -175564,7 +175966,8 @@
     ],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "ZmVtbWUgZmF0YWxl",
@@ -175832,7 +176235,8 @@
       "7c0f93f3-7b62-4337-b26b-5da3db984bbf"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "ZmlzaGJvd2w",
@@ -176490,7 +176894,8 @@
       "9316d50d-c226-4a42-a801-a45e9c0e55f6"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "a29sbWU",
@@ -176716,7 +177121,8 @@
       "ab00d83f-7672-4fc5-bf92-11f2b8d06336"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "a7805041-7cce-4541-86b5-a3fe06d3d4ea",
@@ -176875,7 +177281,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "aGFrYW5haQ",
@@ -177013,17 +177420,17 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "aS1DT0w",
     "name": "i-COL",
-    "member_count": 2,
+    "member_count": 1,
     "member_names": [
-      "???"
+      "こるね"
     ],
     "member_uids": [
-      "890b101f-f7b0-4111-b495-5137a2aca824",
       "80a3fd87-890f-4a88-ad12-e2a19d32e5c9"
     ],
     "past_member_count": 0,
@@ -177106,12 +177513,13 @@
       "abc404ea-f911-42da-9a35-64d1492e4333"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "aUxpRkUh",
     "name": "iLiFE!",
-    "member_count": 17,
+    "member_count": 9,
     "member_names": [
       "心花りり",
       "あいす",
@@ -177121,14 +177529,7 @@
       "虹羽みに",
       "純嶺みき",
       "小熊まむ",
-      "那蘭のどか",
-      "こるね",
-      "響羽リズ",
-      "佐藤ねね",
-      "深月らむ",
-      "乃上楓",
-      "恋星はるか",
-      "琥珀しえる"
+      "那蘭のどか"
     ],
     "member_uids": [
       "112c6285-2b64-423f-aecc-9792a019fa67",
@@ -177139,16 +177540,9 @@
       "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
       "9871efc4-1501-41eb-a430-94fd34bf4015",
       "39648c9a-5e5c-47b9-9145-4437d165330e",
-      "2a3f475a-312d-43b5-ace9-5c66b2df9784",
-      "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
-      "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d",
-      "e91cda92-0bff-4277-8c1b-fb0bd67785b0",
-      "398c9071-8c95-4f99-8ada-0123dfa4ce7e",
-      "7846b370-746b-4ba5-96ac-e2afa2dc87fa",
-      "572222f7-0714-4c3e-bae1-7c8fb52ce31f",
-      "b03e7380-d849-4a97-b03f-b2fc647eb6ca"
+      "2a3f475a-312d-43b5-ace9-5c66b2df9784"
     ],
-    "past_member_count": 10,
+    "past_member_count": 15,
     "past_member_names": [
       "双葉りつ",
       "桜餅ふゆ",
@@ -177159,7 +177553,12 @@
       "華瀬まい",
       "日日にこり",
       "有栖るな",
-      "心咲めい"
+      "心咲めい",
+      "こるね",
+      "響羽リズ",
+      "深月らむ",
+      "琥珀しえる",
+      "乃上楓"
     ],
     "past_member_uids": [
       "ef20b016-d1c5-4272-8f4a-b69994762ffa",
@@ -177171,7 +177570,12 @@
       "5246591c-7f62-47c6-a4af-08cf23e0a9ef",
       "04e5d504-3ffe-499f-91cc-7beeb74277ff",
       "3f0de201-db1d-43a0-9414-971e6fe8cde1",
-      "93fbcdb0-3243-44ed-871a-f1b60c4198a8"
+      "93fbcdb0-3243-44ed-871a-f1b60c4198a8",
+      "80a3fd87-890f-4a88-ad12-e2a19d32e5c9",
+      "fb37960e-8a38-4e0a-8bd4-c5e6ea7ee92d",
+      "398c9071-8c95-4f99-8ada-0123dfa4ce7e",
+      "b03e7380-d849-4a97-b03f-b2fc647eb6ca",
+      "7846b370-746b-4ba5-96ac-e2afa2dc87fa"
     ],
     "color": null,
     "description": "January 2026 Information Origin Shibuya, Tokyo, Japan Genre J-Pop Years 2020-Present Label CROSS SIDE MUSIC (2020-2026) Nippon Columbia Co., LTD (2026-Present) Agency imaginate Associated Acts HEROINES iOn! Ponkotsu Konpo TENRIN Yakousei Amuse Non¬Fiction i-COL CAL&RES Ill Parallel Cider GILTY×GILTY AdamLilith ZUTTOMOTTO LADYBABY akishibu project chuLa paradeeq Nanakorobi Yaoki Dress Code MEGAFON Tenshinranman iOn! Pastel Closet LAST SCENE Full Course HEROINES Kenkyuusei HEROINES Kenkyuusei Os",
@@ -177695,19 +178099,21 @@
     "average_rating": 12,
     "shared_release_uids": [
       "shared-heroines-album-2025"
-    ]
+    ],
+    "reputation": 2
   },
   {
     "uid": "aVNQWQ",
     "name": "iSPY",
-    "member_count": 6,
+    "member_count": 7,
     "member_names": [
       "三葉みゆ",
       "日南りり",
       "桜みりん",
       "瀬乃かな",
       "萩田こころ",
-      "香月まかは"
+      "香月まかは",
+      "楠城ひめか"
     ],
     "member_uids": [
       "898fb5c2-200d-49a0-8db1-361a741137c0",
@@ -177715,20 +178121,19 @@
       "8ab6f936-90bb-4949-b48d-19fcf16f71de",
       "61ff3479-ead5-4762-a8b5-6a2c30270bb5",
       "96fb5c98-9bea-483d-9653-e6f8ee7cd27a",
-      "6664bb5e-262f-491f-8490-bd63f0a8eb4f"
+      "6664bb5e-262f-491f-8490-bd63f0a8eb4f",
+      "de0b9e46-f710-4112-9e48-d07a21370b15"
     ],
-    "past_member_count": 5,
+    "past_member_count": 4,
     "past_member_names": [
       "夏川みずき",
       "宮田くるみ",
-      "楠城ひめか",
       "藍波ももか",
       "辻ゆうか"
     ],
     "past_member_uids": [
       "dc14a727-2c50-4c2d-9cc6-1d618e0b810c",
       "269db768-46da-4c2c-936d-008e47ad21e4",
-      "de0b9e46-f710-4112-9e48-d07a21370b15",
       "e3eaa1b9-b9f3-45b9-9ce5-0a32dede2131",
       "57f188cc-0bd2-4a3c-b514-d66b915f0ca4"
     ],
@@ -178091,7 +178496,8 @@
       "94ba2329-42ee-49f0-835b-918dd5285e72"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "aWRlYWwgcGVjbw",
@@ -178503,7 +178909,8 @@
     "songs": [],
     "letter_tier": "E",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "acdd5738-2636-426a-b896-b9435d4327a5",
@@ -178535,7 +178942,7 @@
       "428478d5-a37f-40c3-89a9-0245c39e5848",
       "a883b203-68ab-4d51-8bdc-531f9172e945"
     ],
-    "past_member_count": 10,
+    "past_member_count": 11,
     "past_member_names": [
       "あずきはな",
       "千歳しの",
@@ -178546,7 +178953,8 @@
       "永瀬玲乃",
       "犬飼うた",
       "白熊あむ",
-      "百瀬ゆも"
+      "百瀬ゆも",
+      "柏木羽依"
     ],
     "past_member_uids": [
       "6803e306-02b8-45c3-98c2-667032fd5f3e",
@@ -178558,7 +178966,8 @@
       "733931bb-cb56-4f1d-b587-2ae62238f988",
       "f9c2b2aa-6bcd-46c9-a851-86c7dc598d27",
       "b482b0e2-4761-4718-bf2a-7fd076028065",
-      "bc97b942-7a09-41a7-8904-b4ecc407b218"
+      "bc97b942-7a09-41a7-8904-b4ecc407b218",
+      "2e9c1b6b-b6be-434c-b3fa-5d56a42bfa34"
     ],
     "color": null,
     "description": "Research trainee unit under the HEROINES umbrella.",
@@ -178576,7 +178985,8 @@
     "discography": [],
     "disc_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "aeKYhlJpcw",
@@ -179598,7 +180008,8 @@
       "6feb8485-92c9-41f5-81fd-506900e0f173"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "bG9s",
@@ -180828,7 +181239,8 @@
       "dc270f52-680e-4ee0-b3aa-e5082d1be05f"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "bG9ubGl1bQ",
@@ -181016,7 +181428,8 @@
       "709f0c7f-6e05-4e8f-a3f2-38d8759ffacc"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "bHlyaWNhbCBzY2hvb2w",
@@ -181986,7 +182399,8 @@
       "c294dc57-bd8f-46ba-b16d-d899646c3619"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "bWF5IGluIGZpbG0",
@@ -182260,7 +182674,8 @@
       "44d1f7d3-fc07-484b-88f5-cca1bae99735"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "bWV0YXJpdW0",
@@ -182543,7 +182958,8 @@
       "f387dc82-d751-422f-a81d-563d7675a314"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "bWlzY2FzdA",
@@ -182818,7 +183234,8 @@
       "b552ef15-8ec5-4e3b-8715-a5448a3243c6"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "bXkgZmF2",
@@ -183301,7 +183718,8 @@
       "0af0504e-1763-4df4-a69c-336a6c307651"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "c2VsZmlzaA",
@@ -183523,23 +183941,20 @@
       "35b6f9ce-e746-4d27-9363-78150e60d6aa"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "cG9uZGVyb3NhIG1heSBibG9vbQ",
     "name": "ponderosa may bloom",
-    "member_count": 4,
+    "member_count": 2,
     "member_names": [
       "日和咲かなめ",
-      "明瀬美砂",
-      "白河あやな",
-      "花丘くれは"
+      "明瀬美砂"
     ],
     "member_uids": [
       "3455687f-48e1-4943-a384-ff48f7df30f1",
-      "101f6f1c-f293-4113-ab54-f17af3a2453b",
-      "5269c1c6-d900-4d3f-9dc1-eee8a2bc46ce",
-      "c6709716-22aa-483a-a78c-4776a3f950bf"
+      "101f6f1c-f293-4113-ab54-f17af3a2453b"
     ],
     "past_member_count": 3,
     "past_member_names": [
@@ -183825,7 +184240,8 @@
       "f35513cc-9664-431d-b418-8d302ccab621"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "cGlucG9ucGFucG9u",
@@ -184175,7 +184591,8 @@
       "560ffec3-dc4b-4aa1-8354-de93fdf85800"
     ],
     "songs": [],
-    "letter_tier": "C"
+    "letter_tier": "C",
+    "reputation": 3
   },
   {
     "uid": "cHJlZGlh",
@@ -184703,7 +185120,8 @@
       "74170885-0a61-4663-a356-9a120e15c2c2"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
@@ -184775,7 +185193,8 @@
     ],
     "songs": [],
     "letter_tier": "E",
-    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce155"
+    "notes": "neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce155",
+    "reputation": 3
   },
   {
     "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
@@ -184783,7 +185202,7 @@
     "name_romanji": "iON!",
     "nickname": "",
     "nickname_romanji": "",
-    "member_count": 8,
+    "member_count": 7,
     "member_names": [
       "宇野ゆり",
       "花丸ぺこ",
@@ -184791,8 +185210,7 @@
       "栗栖むぎ",
       "伽久耶くらら",
       "鈴都りせ",
-      "恋春ねね",
-      "佐藤ねね"
+      "恋春ねね"
     ],
     "member_uids": [
       "a6505d1f-4415-4423-97ba-c94b2af88ccf",
@@ -184801,8 +185219,7 @@
       "99ff9cae-be29-4220-9c67-cd163a4d309e",
       "443535e3-690d-4238-9eb3-c35a916b72fa",
       "426744c0-7324-4686-8ca7-f2d6a763099f",
-      "a5d97298-bee4-48a2-b0de-9897d297bbad",
-      "e91cda92-0bff-4277-8c1b-fb0bd67785b0"
+      "a5d97298-bee4-48a2-b0de-9897d297bbad"
     ],
     "past_member_count": 0,
     "past_member_names": [],
@@ -184909,7 +185326,8 @@
     "idolsdiagram_url": "https://idolsdiagram.com/g/aU9OIQ/",
     "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.\nneverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce163",
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "d8f8e543-16c7-4f7e-8903-ded7ec8c5380",
@@ -184987,7 +185405,8 @@
     "disc_uids": [],
     "song_uids": [],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "dGlwVG9lLg",
@@ -185434,7 +185853,8 @@
       "7b33eaa8-bea2-417f-adab-b34c371438c1"
     ],
     "songs": [],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "dWlqaW4",
@@ -185847,7 +186267,8 @@
       "b91350ce-c805-492d-9bc7-f69e90412ddf"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "dWtrYQ",
@@ -186210,7 +186631,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
@@ -186295,7 +186717,8 @@
     ],
     "songs": [],
     "letter_tier": "F",
-    "disband_date": "2025-02-07"
+    "disband_date": "2025-02-07",
+    "reputation": 3
   },
   {
     "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513",
@@ -186350,7 +186773,8 @@
     "discography": [],
     "disc_uids": [],
     "wiki_url": "https://jpop.fandom.com/wiki/HEROINES_Kenkyuusei_Osaka",
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "eW9zdWdhbGE",
@@ -186882,7 +187306,8 @@
     "songs": [],
     "letter_tier": "D",
     "average_ability": 60,
-    "average_rating": 12
+    "average_rating": 12,
+    "reputation": 3
   },
   {
     "uid": "eXVtZWdpd2EgbGFzdCBnaXJs",
@@ -187149,7 +187574,8 @@
       "a7a6cd1e-32a6-42b0-a58f-3648365616c2"
     ],
     "songs": [],
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "emFua2E",
@@ -187269,7 +187695,8 @@
       "22858e71-b5b7-451f-813b-71a8ba53ef6b"
     ],
     "songs": [],
-    "letter_tier": "D"
+    "letter_tier": "D",
+    "reputation": 3
   },
   {
     "uid": "QW1ha2FyYSE",
@@ -187296,7 +187723,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "RGVhcjg",
@@ -187323,7 +187751,8 @@
       "b03c08ed-afa4-42cc-84f3-62ee85b6f7e3"
     ],
     "past_member_count": 1,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "U+KGkmdleHRl",
@@ -187350,7 +187779,8 @@
       "11b5da1b-931d-4deb-85f4-8a747c9dad74"
     ],
     "past_member_count": 1,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "V29uZGVyIFdlZWQ",
@@ -187377,7 +187807,8 @@
       "cdaffab5-a9a3-421c-ae69-a6fd2c9b35e3"
     ],
     "past_member_count": 1,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "ZW1wZXJpY2U",
@@ -187404,7 +187835,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "aUxpRkUh5YCZ6KOc55Sf",
@@ -187431,7 +187863,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "bWVtZSB0b2t5by4",
@@ -187458,7 +187891,8 @@
       "d429d78b-e041-45ad-8c74-95a03ff38d29"
     ],
     "past_member_count": 1,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Kr44Kq44K544OU44OU44K5",
@@ -187475,17 +187909,14 @@
     "songs": [],
     "song_uids": [],
     "pictures": [],
-    "member_names": [
-      "小此木流花"
-    ],
-    "member_uids": [
-      "40c8e4f5-d8d3-4e35-84c1-a833001eb468"
-    ],
-    "member_count": 1,
+    "member_names": [],
+    "member_uids": [],
+    "member_count": 0,
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Kt44Op44Kt44Op44Ky44Oq44Op",
@@ -187512,7 +187943,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44OB44Oj44OB44Oj44OB44Oj5YC25qW96YOo",
@@ -187539,7 +187971,8 @@
       "61bcc034-d8b6-4b45-909b-f3805966743d"
     ],
     "past_member_count": 1,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44OW44Op44OD44KvRFBH",
@@ -187566,7 +187999,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "44Oi44Om44Or44OP44Or",
@@ -187593,7 +188027,8 @@
       "f58e36c6-38e3-49d7-9253-2225dc16f3d2"
     ],
     "past_member_count": 1,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5aWz5aG+44Kq44O844Or44K544K/44O844K6",
@@ -187622,7 +188057,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "5ouz6YqD5bCR5aWz",
@@ -187649,7 +188085,8 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "6IGW4piG44Oc44OK44OX44Ot5a2m5ZyS",
@@ -187676,17 +188113,18 @@
     "past_member_names": [],
     "past_member_uids": [],
     "past_member_count": 0,
-    "letter_tier": "F"
+    "letter_tier": "F",
+    "reputation": 3
   },
   {
     "uid": "Um9vdCBtaW1p",
     "name": "Root mimi",
     "member_count": 7,
     "member_names": [
-      "貫井夢生",
+      "Pastel Orange",
       "黒嵜菜々子",
       "反田葉月",
-      "才川水希",
+      "才川水綺",
       "朝比奈麗桜",
       "天宮さくら",
       "小田垣有咲"
@@ -187825,7 +188263,8 @@
       "ce79a26b-7f61-45cb-9a05-51eb468c357e",
       "002ce0f5-b1cc-4282-873d-801ca2552c69"
     ],
-    "letter_tier": "E"
+    "letter_tier": "E",
+    "reputation": 3
   },
   {
     "uid": "TU9CSVVT",
@@ -187839,7 +188278,10 @@
     "past_member_uids": [],
     "pictures": [],
     "song_uids": [],
-    "notes": "HEROINES founding-era group; disbanded 2020-02."
+    "notes": "HEROINES founding-era group; disbanded 2020-02.",
+    "reputation": 3,
+    "member_count": 0,
+    "past_member_count": 0
   },
   {
     "uid": "5aaE5oSb44Kw44Op44OT44OG44Kj",
@@ -187853,7 +188295,10 @@
     "past_member_uids": [],
     "pictures": [],
     "song_uids": [],
-    "notes": "HEROINES founding-era group; disbanded 2020-03."
+    "notes": "HEROINES founding-era group; disbanded 2020-03.",
+    "reputation": 3,
+    "member_count": 0,
+    "past_member_count": 0
   },
   {
     "uid": "6bW6",
@@ -187867,7 +188312,10 @@
     "past_member_uids": [],
     "pictures": [],
     "song_uids": [],
-    "notes": "HEROINES founding-era group; disbanded 2020-07."
+    "notes": "HEROINES founding-era group; disbanded 2020-07.",
+    "reputation": 3,
+    "member_count": 0,
+    "past_member_count": 0
   },
   {
     "uid": "Tm93U3RvcmFnZQ",
@@ -187881,6 +188329,9 @@
     "past_member_uids": [],
     "pictures": [],
     "song_uids": [],
-    "notes": "HEROINES group; debuted 2026-07 (produced by 美鈴りか)."
+    "notes": "HEROINES group; debuted 2026-07 (produced by 美鈴りか).",
+    "reputation": 3,
+    "member_count": 0,
+    "past_member_count": 0
   }
 ]

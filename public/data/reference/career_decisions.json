@@ -1,0 +1,99 @@
+{
+  "_comment": "Career Decision reference events. History is the default path; negotiable transfers/recruits can be overridden by the player. Graduations may be locked.",
+  "decisions": [
+    {
+      "id": "akishibu-mirei-graduation-2025",
+      "kind": "graduation",
+      "negotiable": false,
+      "idol_uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+      "idol_name": "古賀みれい",
+      "source_group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "source_group_name": "アキシブproject",
+      "announce_date": "2025-08-15",
+      "effective_date": "2025-09-29",
+      "lock_reason": "Historical graduation is locked. Player can schedule the sendoff but cannot retain her.",
+      "note": "Last League show context is separate from her graduate special.",
+      "follow_on_join": {
+        "group_uid": "44Op44K544OI44K344O844Oz",
+        "group_name": "ラストシーン",
+        "start_date": "2025-12-13"
+      }
+    },
+    {
+      "id": "akishibu-kae-transfer-2026",
+      "kind": "outbound_transfer",
+      "negotiable": true,
+      "idol_uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "idol_name": "平沢かえ",
+      "source_group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "source_group_name": "アキシブproject",
+      "announce_date": "2026-01-20",
+      "effective_date": "2026-02-24",
+      "destination": {
+        "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991",
+        "group_name": "ハルカエコー",
+        "join_date": "2026-04-09"
+      },
+      "retain": {
+        "salary_bump_yen": 30000,
+        "morale_delta": 4,
+        "promise_core_role": true
+      },
+      "note": "Player may persuade her to stay via Departure decision (managed_group_leave). Retaining suppresses leave + HARUKA ECHO join."
+    },
+    {
+      "id": "contested-yumesaki-arisa-akishibu-2026",
+      "kind": "contested_recruit",
+      "negotiable": true,
+      "idol_uid": "2bc08c6f-1e33-4c81-aa8f-7c2474b10d4f",
+      "idol_name": "夢咲ありさ",
+      "announce_date": "2025-08-04",
+      "effective_date": "2026-02-26",
+      "window_start": "2025-08-04",
+      "window_end": "2026-02-25",
+      "destination": {
+        "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+        "group_name": "アキシブproject",
+        "join_date": "2026-02-26"
+      },
+      "previous_group_name": "LINK START",
+      "note": "Open after LINK START exit. Player can sign her during the window; otherwise historical Akishibu join proceeds."
+    },
+    {
+      "id": "contested-amakawa-hotaru-akishibu-2026",
+      "kind": "contested_recruit",
+      "negotiable": true,
+      "idol_uid": "8bcf137a-bf77-4b30-8032-30e2f08391db",
+      "idol_name": "天川ほたる",
+      "announce_date": "2025-12-01",
+      "effective_date": "2026-02-25",
+      "window_start": "2025-12-01",
+      "window_end": "2026-02-24",
+      "destination": {
+        "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+        "group_name": "アキシブproject",
+        "join_date": "2026-02-25"
+      },
+      "previous_group_name": "chuLa",
+      "note": "Former chuLa member. Contested inbound window before historical Akishibu join."
+    },
+    {
+      "id": "contested-kosaka-rin-haruka-echo-2026",
+      "kind": "contested_recruit",
+      "negotiable": true,
+      "idol_uid": "bdcf63f8-cd7c-4c13-b47f-33c5c5c2d415",
+      "idol_name": "高坂りん",
+      "announce_date": "2026-02-01",
+      "effective_date": "2026-04-09",
+      "window_start": "2026-02-01",
+      "window_end": "2026-04-08",
+      "destination": {
+        "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991",
+        "group_name": "ハルカエコー",
+        "join_date": "2026-04-09"
+      },
+      "previous_group_name": "ZUTTOMOTTO",
+      "note": "Historically joins HARUKA ECHO. Player managing another group can recruit her first and suppress that join."
+    }
+  ]
+}
