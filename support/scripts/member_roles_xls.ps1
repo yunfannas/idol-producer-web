@@ -73,7 +73,7 @@ function Normalize-RoleImportValue {
   if ([string]::IsNullOrWhiteSpace($text)) { return $null }
   $num = 0.0
   if (-not [double]::TryParse($text, [ref]$num)) { return $null }
-  if ($num -lt 1) { return $null }
+  if ($num -le 0) { return $null }
   return [int][math]::Min(5, [math]::Max(1, [math]::Round($num)))
 }
 
@@ -85,7 +85,7 @@ function Get-RoleColumns {
     "lead_dancer",
     "host",
     "content",
-    "sns",
+    "streaming",
     "style",
     "call_leader"
   )
@@ -97,7 +97,21 @@ function Normalize-RoleKey {
     "performance_center" { return "center" }
     "content_lead" { return "content" }
     "youtuber" { return "content" }
-    "sns_lead" { return "sns" }
+    "youtube" { return "content" }
+    "sns" { return "content" }
+    "sns_lead" { return "content" }
+    "social_media" { return "content" }
+    "snser" { return "content" }
+    "x" { return "content" }
+    "twitter" { return "content" }
+    "instagram" { return "content" }
+    "tiktok" { return "content" }
+    "livestream" { return "streaming" }
+    "streamer" { return "streaming" }
+    "showroom" { return "streaming" }
+    "tiktok_live" { return "streaming" }
+    "instagram_live" { return "streaming" }
+    "youtube_live" { return "streaming" }
     "style_lead" { return "style" }
     "hype" { return "call_leader" }
     "hype_lead" { return "call_leader" }
@@ -311,13 +325,13 @@ function Export-Workbook {
       $lastRoleColumn = $firstRoleColumn + $roleColumns.Count - 1
       $validationRange = $rolesSheet.Range($rolesSheet.Cells.Item(2, $firstRoleColumn), $rolesSheet.Cells.Item($rowIndex - 1, $lastRoleColumn))
       $null = $validationRange.Validation.Delete()
-      $validationRange.Validation.Add(3, 1, 1, "1,2,3,4,5")
+      $validationRange.Validation.Add(3, 1, 1, "0,1,2,3,4,5")
       $validationRange.Validation.IgnoreBlank = $true
       $validationRange.Validation.InCellDropdown = $true
       $validationRange.Validation.InputTitle = "Role Weight"
-      $validationRange.Validation.InputMessage = "Select 1-5, or leave blank if the role does not apply."
+      $validationRange.Validation.InputMessage = "Select 0-5, or leave blank if the role does not apply. 0 is treated as no role."
       $validationRange.Validation.ErrorTitle = "Invalid Weight"
-      $validationRange.Validation.ErrorMessage = "Role weights must be blank or one of 1, 2, 3, 4, 5."
+      $validationRange.Validation.ErrorMessage = "Role weights must be blank or one of 0, 1, 2, 3, 4, 5."
     }
 
     $rolesSheet.Rows.Item(2).Select() | Out-Null

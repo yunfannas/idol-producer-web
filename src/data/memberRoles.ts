@@ -43,12 +43,11 @@ export const MEMBER_ROLE_DEFINITIONS = {
       hidden: { professionalism: 0.2, ambition: 0.3 },
     },
   },
-  sns: {
-    label: "SNS",
+  streaming: {
+    label: "Streaming",
     attributeBias: {
-      appearance: { cute: 0.35, pretty: 0.35 },
-      mental: { talking: 0.45, fashion: 0.75, clever: 0.25, humor: 0.2 },
-      hidden: { professionalism: 0.15, ambition: 0.25 },
+      mental: { talking: 0.85, humor: 0.45, clever: 0.35, teamwork: 0.25 },
+      hidden: { professionalism: 0.25, ambition: 0.25 },
     },
   },
   style: {
@@ -98,22 +97,27 @@ const MEMBER_ROLE_ALIASES: Record<string, string> = {
   content_lead: "content",
   youtuber: "content",
   youtube: "content",
+  x: "content",
+  twitter: "content",
+  instagram: "content",
+  tiktok: "content",
+  influencer: "content",
+  social_media: "content",
+  social_media_lead: "content",
+  social: "content",
+  snser: "content",
+  sns: "content",
+  sns_lead: "content",
   content_creator: "content",
   creator: "content",
   video_creator: "content",
-  livestream: "content",
-  streamer: "content",
-  showroom: "content",
-  tiktok_live: "content",
-  influencer: "sns",
-  social_media: "sns",
-  social_media_lead: "sns",
-  social: "sns",
-  snser: "sns",
-  sns_lead: "sns",
-  x: "sns",
-  instagram: "sns",
-  tiktok: "sns",
+  livestream: "streaming",
+  streaming: "streaming",
+  streamer: "streaming",
+  showroom: "streaming",
+  tiktok_live: "streaming",
+  instagram_live: "streaming",
+  youtube_live: "streaming",
   aori: "call_leader",
   audience_hype: "call_leader",
   hype: "call_leader",
@@ -135,14 +139,17 @@ const MEMBER_ROLE_ALIASES: Record<string, string> = {
   "ユーチューバー": "content",
   "動画担当": "content",
   "コンテンツ担当": "content",
-  "配信担当": "content",
-  "showroom担当": "content",
-  "tiktok live担当": "content",
-  "sns担当": "sns",
-  "sns更新担当": "sns",
-  "x担当": "sns",
-  "instagram担当": "sns",
-  "tiktok担当": "sns",
+  "sns担当": "content",
+  "sns更新担当": "content",
+  "x担当": "content",
+  "instagram担当": "content",
+  "tiktok担当": "content",
+  "配信担当": "streaming",
+  "showroom担当": "streaming",
+  "tiktok live担当": "streaming",
+  "instagram live担当": "streaming",
+  "youtube live担当": "streaming",
+  "配信/SNS担当": "streaming",
   "ファッション担当": "style",
   "モデル担当": "style",
   "副リーダー": "leader",
@@ -233,6 +240,36 @@ export function normalizeMemberRoleAssignments(raw: unknown): MemberRoleAssignme
 
 export function roleAssignmentsFromHistoryEntry(entry: Record<string, unknown>): MemberRoleAssignment[] {
   return normalizeMemberRoleAssignments(entry.roles ?? entry.member_roles ?? entry.role_assignments);
+}
+
+/** Prefer `role_history` windows when present; otherwise fall back to current `roles`. */
+export function activeRoleAssignmentsFromHistoryEntry(
+  entry: Record<string, unknown>,
+  asOf?: string,
+): MemberRoleAssignment[] {
+  const day = String(asOf ?? "").split("T")[0];
+  const history = Array.isArray(entry.role_history) ? entry.role_history : null;
+  if (history && history.length && /^\d{4}-\d{2}-\d{2}$/.test(day)) {
+    const active: MemberRoleAssignment[] = [];
+    for (const raw of history) {
+      if (!raw || typeof raw !== "object") continue;
+      const row = raw as Record<string, unknown>;
+      const key = String(row.key ?? row.role ?? "").trim();
+      if (!key) continue;
+      const start = String(row.start_date ?? "").split("T")[0];
+      const end = String(row.end_date ?? "").split("T")[0];
+      if (start && /^\d{4}-\d{2}-\d{2}$/.test(start) && start > day) continue;
+      if (end && /^\d{4}-\d{2}-\d{2}$/.test(end) && end <= day) continue;
+      const focus = Number(row.focus ?? 1) || 1;
+      active.push({ key, focus, label: typeof row.label === "string" ? row.label : undefined });
+    }
+    if (active.length) {
+      return active.sort((a, b) => b.focus - a.focus || a.key.localeCompare(b.key));
+    }
+    // Explicit empty history window → no roles at this date.
+    return [];
+  }
+  return roleAssignmentsFromHistoryEntry(entry);
 }
 
 export function memberRoleLabel(key: string, fallbackLabel?: string): string {

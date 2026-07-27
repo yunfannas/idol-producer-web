@@ -184,7 +184,7 @@ export function createGameSaveFromLoadedScenario(
       : "2020-01-01";
   const filtered = buildFilteredSnapshotWithFutureEvents(loaded.idols, loaded.groups, opening);
   const snap = deepSnapshot(filtered.idols, filtered.groups, loaded.songs, loaded.shared_releases ?? []);
-  applyAttributesToAllIdols(snap.idols, snap.groups, opening);
+  applyAttributesToAllIdols(snap.idols, snap.groups, opening, loaded.role_attribute_model);
 
   const g =
     (opts.managedGroupUid

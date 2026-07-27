@@ -12,6 +12,7 @@
     "data:member-roles-import": "node support/scripts/member_roles_csv.mjs import",
     "data:member-roles-xls-export": "powershell -ExecutionPolicy Bypass -File support/scripts/member_roles_xls.ps1 export",
     "data:member-roles-xls-import": "powershell -ExecutionPolicy Bypass -File support/scripts/member_roles_xls.ps1 import",
+    "data:member-role-attribute-calibrate": "node support/scripts/calibrateMemberRoleAttributes.mjs",
     "data:backfill-scenario6-tiers": "node support/scripts/backfill-scenario6-tiers-from-available-list.mjs",
     "data:scenario6-startup-allowlist": "node support/scripts/sync-scenario6-startup-allowlist.mjs",
     "data:reinterpolate-scenario6-tiers": "node support/scripts/reinterpolate-scenario6-tiers.mjs",

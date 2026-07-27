@@ -1,11 +1,11 @@
-﻿idol_uid,idol_name,group_uid,group_name,start_date,end_date,member_color,leader,performance_center,lead_singer,lead_dancer,host,youtuber,sns_lead,style_lead,call_leader,hype_lead,all_rounder,notes
-"dcc951b3-55bf-4065-bb30-2a78b769a0b4","大谷映美里","PUxPVkU","​=LOVE","2017-04-01","","Light Purple","","","","","","","","","","","","Additional member colors: Light Purple"
-"f6847b46-eae4-43ef-8f54-3865d1dc94a9","大場花菜","PUxPVkU","​=LOVE","2017-04-01","","Orange","","","","","","","","","","","","Additional member colors: Medium Blue"
-"9cf08bc4-2aee-4745-80a6-2262e61d3b32","音嶋莉沙","PUxPVkU","​=LOVE","2017-04-01","","Light Blue","","","","","","","","","","","","Additional member colors: Pink"
-"b1a65b5b-436f-4f12-b345-147bd51a18fd","齋藤樹愛羅","PUxPVkU","​=LOVE","2017-04-01","","Light Pink","","","","","","","","","","","",""
-"41558c44-2be4-4992-9684-9431a17f0243","佐々木舞香","PUxPVkU","​=LOVE","2017-04-01","","White","","","","","","","","","","","",""
-"ad9ef028-1108-471b-b29a-f24be9815af4","髙松瞳","PUxPVkU","​=LOVE","2017-04-01","","Red","","","","","","","","","","","",""
-"4e162c95-e9a1-463d-b825-73326ca6748e","瀧脇笙古","PUxPVkU","​=LOVE","2017-04-01","","Yellow","","","","","","","","","","","","Additional member colors: Orange, Light Pink"
-"e203088a-bbb9-410f-9945-c6534ed75e29","野口衣織","PUxPVkU","​=LOVE","2017-04-01","","Purple","","","","","","","","","","","",""
-"e4a0b532-8215-4024-a796-55d59cf94b25","諸橋沙夏","PUxPVkU","​=LOVE","2017-04-01","","Light Green","","","","","","","","","","","",""
-"2641cc39-6b4b-4d99-9a65-5ac99b9480e0","山本杏奈","PUxPVkU","​=LOVE","2017-09-06","","Royal Blue","","","","","","","","","","","","Additional member colors: Light Yellow; Additional member colors: Yellow"
+﻿idol_uid,idol_name,group_uid,group_name,start_date,end_date,member_color,leader,center,lead_singer,lead_dancer,host,content,streaming,style,call_leader,notes
+dcc951b3-55bf-4065-bb30-2a78b769a0b4,大谷映美里,PUxPVkU,​=LOVE,4/1/2017,,Light Purple,,1,,,,5,2,5,,Additional member colors: Light Purple
+f6847b46-eae4-43ef-8f54-3865d1dc94a9,大場花菜,PUxPVkU,​=LOVE,4/1/2017,,Orange,,,,,1,1,3,,4,Additional member colors: Medium Blue
+9cf08bc4-2aee-4745-80a6-2262e61d3b32,音嶋莉沙,PUxPVkU,​=LOVE,4/1/2017,,Light Blue,,,,,,1,2,4,,Additional member colors: Pink
+b1a65b5b-436f-4f12-b345-147bd51a18fd,齋藤樹愛羅,PUxPVkU,​=LOVE,4/1/2017,,Light Pink,,2,3,3,2,3,,,,
+41558c44-2be4-4992-9684-9431a17f0243,佐々木舞香,PUxPVkU,​=LOVE,4/1/2017,,White,3,5,5,,3,2,,,,
+ad9ef028-1108-471b-b29a-f24be9815af4,髙松瞳,PUxPVkU,​=LOVE,4/1/2017,,Red,3,3,3,,3,2,3,,,
+4e162c95-e9a1-463d-b825-73326ca6748e,瀧脇笙古,PUxPVkU,​=LOVE,4/1/2017,,Yellow,,,,,,2,4,,2,"Additional member colors: Orange, Light Pink"
+e203088a-bbb9-410f-9945-c6534ed75e29,野口衣織,PUxPVkU,​=LOVE,4/1/2017,,Purple,,4,4,4,3,1,,,,
+e4a0b532-8215-4024-a796-55d59cf94b25,諸橋沙夏,PUxPVkU,​=LOVE,4/1/2017,,Light Green,,,4,,,1,4,,,
+2641cc39-6b4b-4d99-9a65-5ac99b9480e0,山本杏奈,PUxPVkU,​=LOVE,9/6/2017,,Royal Blue,5,,,4,5,2,5,,,Additional member colors: Light Yellow; Additional member colors: Yellow

@@ -8,7 +8,7 @@
 
 import {
   MEMBER_ROLE_DEFINITIONS,
-  roleAssignmentsFromHistoryEntry,
+  activeRoleAssignmentsFromHistoryEntry,
   type MemberRoleAssignment,
 } from "../data/memberRoles";
 import { sha256BytesUtf8 } from "./sha256sync";
@@ -56,6 +56,14 @@ export interface PersistedIdolAttributes {
   technical: TechnicalAttrs;
   mental: MentalAttrs;
   hidden?: HiddenAttrs;
+}
+
+export interface RoleAttributeModel {
+  version?: number;
+  roles?: string[];
+  age_features?: string[];
+  feature_names?: string[];
+  coefficients?: Record<string, Record<string, number>>;
 }
 
 const clampStat = (n: number) => Math.max(0, Math.min(20, Math.round(n)));
@@ -277,13 +285,51 @@ function currentGroupSignal(
 }
 
 function scandalHistoryCount(idol: Record<string, unknown>): number {
-  const history = Array.isArray(idol.status_history) ? idol.status_history : [];
   let count = 0;
-  for (const raw of history) {
+  const top = Array.isArray(idol.status_history) ? idol.status_history : [];
+  for (const raw of top) {
     if (!raw || typeof raw !== "object") continue;
     if (String((raw as Record<string, unknown>).kind ?? "").trim().toLowerCase() === "scandal") count += 1;
   }
+  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const statuses = (raw as Record<string, unknown>).status_history;
+    if (!Array.isArray(statuses)) continue;
+    for (const s of statuses) {
+      if (!s || typeof s !== "object") continue;
+      if (String((s as Record<string, unknown>).kind ?? "").trim().toLowerCase() === "scandal") count += 1;
+    }
+  }
   return count;
+}
+
+function numericValue(raw: unknown): number | null {
+  if (typeof raw === "number" && Number.isFinite(raw)) return raw;
+  if (typeof raw === "string" && raw.trim() !== "" && Number.isFinite(Number(raw))) return Number(raw);
+  return null;
+}
+
+function ageAtOpening(idol: Record<string, unknown>, openingIso: string): number | null {
+  const birthday = parseIsoDay(idol.birthday);
+  if (birthday) {
+    const [by, bm, bd] = birthday.split("-").map(Number);
+    const [oy, om, od] = openingIso.split("-").map(Number);
+    let age = oy - by;
+    if (om < bm || (om === bm && od < bd)) age -= 1;
+    if (Number.isFinite(age) && age >= 0 && age <= 80) return age;
+  }
+  const age = numericValue(idol.age);
+  return age != null && age >= 0 && age <= 80 ? age : null;
+}
+
+function ageFeatureVector(age: number | null): Record<string, number> {
+  const safeAge = typeof age === "number" && Number.isFinite(age) ? age : 22;
+  return {
+    age_youth: Math.max(0, Math.min(1, (22 - safeAge) / 6)),
+    age_experience: Math.max(0, Math.min(1, (safeAge - 18) / 10)),
+    age_senior: Math.max(0, Math.min(1, (safeAge - 25) / 10)),
+  };
 }
 
 function collectActiveRoleAssignments(
@@ -297,7 +343,7 @@ function collectActiveRoleAssignments(
     if (!raw || typeof raw !== "object") continue;
     const entry = raw as Record<string, unknown>;
     if (!membershipActiveAtOpening(entry, openingIso)) continue;
-    for (const role of roleAssignmentsFromHistoryEntry(entry)) {
+    for (const role of activeRoleAssignmentsFromHistoryEntry(entry, openingIso)) {
       if (!role.key) continue;
       const prev = byKey.get(role.key);
       if (!prev || role.focus > prev.focus) byKey.set(role.key, role);
@@ -309,8 +355,10 @@ function collectActiveRoleAssignments(
 function applyRoleBiasToAttributes(
   baseAttrs: PersistedIdolAttributes,
   roles: MemberRoleAssignment[],
+  ageFeatures?: Record<string, number>,
+  model?: RoleAttributeModel | null,
 ): PersistedIdolAttributes {
-  if (!roles.length) return baseAttrs;
+  if (!roles.length && !model?.coefficients) return baseAttrs;
 
   const next: PersistedIdolAttributes = {
     physical: { ...baseAttrs.physical },
@@ -322,18 +370,39 @@ function applyRoleBiasToAttributes(
 
   const roleBiasScalar = 3;
 
-  for (const role of roles) {
-    const definition = MEMBER_ROLE_DEFINITIONS[role.key as keyof typeof MEMBER_ROLE_DEFINITIONS];
-    if (!definition) continue;
-    const focus = Math.max(0, Math.min(1, role.focus));
-    for (const [categoryKey, categoryBias] of Object.entries(definition.attributeBias)) {
+  if (model?.coefficients) {
+    const features: Record<string, number> = { ...(ageFeatures ?? {}) };
+    for (const role of roles) {
+      features[role.key] = Math.max(features[role.key] ?? 0, Math.max(0, Math.min(1, role.focus)));
+    }
+    for (const [statPath, featureWeights] of Object.entries(model.coefficients)) {
+      const [categoryKey, statKey] = statPath.split(".");
       const category = next[categoryKey as keyof PersistedIdolAttributes];
-      if (!category || typeof category !== "object") continue;
-      for (const [statKey, weightRaw] of Object.entries(categoryBias as Record<string, unknown>)) {
-        const weight = typeof weightRaw === "number" && Number.isFinite(weightRaw) ? weightRaw : 0;
-        const prev = (category as Record<string, unknown>)[statKey];
-        const prevNum = typeof prev === "number" && Number.isFinite(prev) ? prev : 12;
-        (category as Record<string, unknown>)[statKey] = prevNum + weight * focus * roleBiasScalar;
+      if (!category || typeof category !== "object" || !statKey) continue;
+      const stats = category as unknown as Record<string, unknown>;
+      let value = typeof stats[statKey] === "number" && Number.isFinite(stats[statKey]) ? (stats[statKey] as number) : 12;
+      for (const [featureKey, featureValue] of Object.entries(features)) {
+        const weight = featureWeights?.[featureKey];
+        if (!(typeof weight === "number" && Number.isFinite(weight))) continue;
+        value += weight * featureValue;
+      }
+      stats[statKey] = value;
+    }
+  } else {
+    for (const role of roles) {
+      const focus = Math.max(0, Math.min(1, role.focus));
+      const definition = MEMBER_ROLE_DEFINITIONS[role.key as keyof typeof MEMBER_ROLE_DEFINITIONS];
+      if (!definition) continue;
+      for (const [categoryKey, categoryBias] of Object.entries(definition.attributeBias)) {
+        const category = next[categoryKey as keyof PersistedIdolAttributes];
+        if (!category || typeof category !== "object") continue;
+        const stats = category as unknown as Record<string, unknown>;
+        for (const [statKey, weightRaw] of Object.entries(categoryBias as Record<string, unknown>)) {
+          const weight = typeof weightRaw === "number" && Number.isFinite(weightRaw) ? weightRaw : 0;
+          const prev = stats[statKey];
+          const prevNum = typeof prev === "number" && Number.isFinite(prev) ? prev : 12;
+          stats[statKey] = prevNum + weight * focus * roleBiasScalar;
+        }
       }
     }
   }
@@ -351,6 +420,7 @@ export function buildAttributesFromFollowerModel(
   idol: Record<string, unknown>,
   groupPopularity: Map<string, number>,
   openingIso: string,
+  roleAttributeModel?: RoleAttributeModel | null,
 ): PersistedIdolAttributes {
   const uid = String(idol.uid ?? "unknown");
   const idolSignal = popularitySignal(numericMax(idol, ["x_followers", "x_followers_count"]));
@@ -411,12 +481,14 @@ export function buildAttributesFromFollowerModel(
     }),
   };
   const activeRoles = collectActiveRoleAssignments(idol, openingIso);
-  return applyRoleBiasToAttributes(baseline, activeRoles);
+  const ageFeatures = ageFeatureVector(ageAtOpening(idol, openingIso));
+  return applyRoleBiasToAttributes(baseline, activeRoles, ageFeatures, roleAttributeModel);
 }
 
 export interface AttributeAssignmentContext {
   groups: Record<string, unknown>[];
   referenceIso: string;
+  roleAttributeModel?: RoleAttributeModel | null;
 }
 
 /** Ensure idol row has `attributes` for save + UI (mutates row). */
@@ -434,7 +506,7 @@ export function ensureIdolRowAttributes(
   const groups = ctx?.groups;
   if (ref && /^\d{4}-\d{2}-\d{2}$/.test(ref) && Array.isArray(groups) && groups.length) {
     const idx = buildGroupPopularityIndex(groups);
-    const built = buildAttributesFromFollowerModel(row, idx, ref);
+    const built = buildAttributesFromFollowerModel(row, idx, ref, ctx?.roleAttributeModel ?? null);
     row.attributes = built;
     return built;
   }
@@ -448,10 +520,12 @@ export function applyAttributesToAllIdols(
   idols: Record<string, unknown>[],
   groups?: Record<string, unknown>[],
   referenceIso?: string,
+  roleAttributeModel?: RoleAttributeModel | null,
 ): void {
   const ctx: Partial<AttributeAssignmentContext> = {};
   if (Array.isArray(groups)) ctx.groups = groups;
   if (typeof referenceIso === "string" && referenceIso) ctx.referenceIso = referenceIso;
+  if (roleAttributeModel) ctx.roleAttributeModel = roleAttributeModel;
 
   for (const row of idols) {
     if (row && typeof row === "object") ensureIdolRowAttributes(row, ctx);

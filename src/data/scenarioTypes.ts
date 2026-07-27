@@ -142,4 +142,6 @@ export interface LoadedScenario {
   startup_allowlist?: ScenarioStartupAllowlist;
   /** Optional official group/member schedule bundles for Media and Schedule views. */
   official_schedules?: OfficialScheduleBundle[];
+  /** Optional calibrated model for synthesizing missing idol attributes from roles. */
+  role_attribute_model?: Record<string, unknown>;
 }

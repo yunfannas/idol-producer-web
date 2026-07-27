@@ -29089,7 +29089,14 @@
         "member_name": "藤沢莉子",
         "member_color_code": "0x008000",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: White"
+        "notes": "Additional member colors: White",
+        "roles": {
+          "leader": 0.2,
+          "lead_singer": 0.4,
+          "lead_dancer": 0.6,
+          "content": 0.2,
+          "streaming": 0.6
+        }
       }
     ],
     "x_followers": 59512,
@@ -34411,9 +34418,11 @@
         "member_name": "山本杏奈",
         "notes": "Additional member colors: Light Yellow; Additional member colors: Yellow",
         "roles": {
-          "leader": 5,
-          "lead_dancer": 4,
-          "host": 5
+          "leader": 1,
+          "lead_dancer": 0.8,
+          "host": 1,
+          "content": 0.4,
+          "streaming": 1
         },
         "announced_leader": true
       }
@@ -46458,7 +46467,15 @@
         "member_color": "Light Yellow",
         "member_name": "小澤愛実",
         "member_color_code": "0xffff00",
-        "group_uid": "4omSSk9Z"
+        "group_uid": "4omSSk9Z",
+        "roles": {
+          "leader": 1,
+          "lead_singer": 0.6,
+          "host": 0.2,
+          "content": 0.4,
+          "streaming": 0.2,
+          "call_leader": 0.4
+        }
       },
       {
         "group_name": "Choux Cream Rockets",
@@ -57660,9 +57677,11 @@
         "member_color_code": "0xffffff",
         "group_uid": "PUxPVkU",
         "roles": {
-          "leader": 3,
-          "lead_singer": 5,
-          "host": 3
+          "leader": 0.6,
+          "center": 1,
+          "lead_singer": 1,
+          "host": 0.6,
+          "content": 0.4
         }
       }
     ],
@@ -61240,7 +61259,14 @@
         "member_color": "Light Red",
         "member_name": "村山結香",
         "member_color_code": "0xff0000",
-        "group_uid": "4omSSk9Z"
+        "group_uid": "4omSSk9Z",
+        "roles": {
+          "center": 0.2,
+          "lead_singer": 0.6,
+          "lead_dancer": 0.6,
+          "content": 0.2,
+          "streaming": 0.6
+        }
       }
     ],
     "x_followers": 60057,
@@ -62524,7 +62550,13 @@
         "member_name": "大信田美月",
         "member_color_code": "0xffffff",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Light Blue"
+        "notes": "Additional member colors: Light Blue",
+        "roles": {
+          "center": 0.2,
+          "content": 0.4,
+          "streaming": 0.2,
+          "style": 0.2
+        }
       }
     ],
     "x_followers": 78125,
@@ -68709,7 +68741,9 @@
         "group_uid": "PUxPVkU",
         "notes": "Additional member colors: Orange, Light Pink",
         "roles": {
-          "call_leader": 2
+          "content": 0.4,
+          "streaming": 0.8,
+          "call_leader": 0.4
         }
       }
     ],
@@ -100081,7 +100115,13 @@
         "member_color": "Purple",
         "member_name": "市原愛弓",
         "member_color_code": "0x800080",
-        "group_uid": "4omSSk9Z"
+        "group_uid": "4omSSk9Z",
+        "roles": {
+          "center": 0.6,
+          "content": 0.2,
+          "streaming": 0.6,
+          "style": 0.6
+        }
       },
       {
         "group_name": "STU48",
@@ -112711,7 +112751,13 @@
         "member_name": "⼭野愛⽉",
         "member_color_code": "0x9acd32",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Light Blue"
+        "notes": "Additional member colors: Light Blue",
+        "roles": {
+          "center": 0.2,
+          "content": 0.2,
+          "streaming": 0.2,
+          "style": 0.2
+        }
       }
     ],
     "x_followers": 79494,
@@ -125025,7 +125071,13 @@
         "member_name": "大西葵",
         "member_color_code": "0xffc0cb",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Medium Blue"
+        "notes": "Additional member colors: Medium Blue",
+        "roles": {
+          "center": 0.2,
+          "lead_singer": 0.8,
+          "content": 0.2,
+          "streaming": 0.8
+        }
       }
     ],
     "x_followers": 62154,
@@ -137197,7 +137249,12 @@
         "member_name": "音嶋莉沙",
         "member_color_code": "0xadd8e6",
         "group_uid": "PUxPVkU",
-        "notes": "Additional member colors: Pink"
+        "notes": "Additional member colors: Pink",
+        "roles": {
+          "content": 0.2,
+          "streaming": 0.4,
+          "style": 0.8
+        }
       },
       {
         "group_name": "HKT48",
@@ -138962,7 +139019,14 @@
         "member_color": "Royal Blue",
         "member_name": "江角怜音",
         "member_color_code": "0x4169e1",
-        "group_uid": "4omSSk9Z"
+        "group_uid": "4omSSk9Z",
+        "roles": {
+          "center": 1,
+          "lead_dancer": 0.8,
+          "host": 0.6,
+          "content": 0.2,
+          "streaming": 0.4
+        }
       }
     ],
     "x_followers": 94925,
@@ -148129,7 +148193,13 @@
         "member_name": "天野香乃愛",
         "member_color_code": "0xffb6c1",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Yellow (Penlight Color)"
+        "notes": "Additional member colors: Yellow (Penlight Color)",
+        "roles": {
+          "center": 0.6,
+          "content": 0.2,
+          "streaming": 0.8,
+          "style": 0.4
+        }
       }
     ],
     "x_followers": 84111,
@@ -150745,9 +150815,12 @@
         "member_color_code": "0xff0000",
         "group_uid": "PUxPVkU",
         "roles": {
-          "leader": 3,
-          "lead_singer": 3,
-          "host": 3
+          "leader": 0.6,
+          "center": 0.6,
+          "lead_singer": 0.6,
+          "host": 0.6,
+          "content": 0.4,
+          "streaming": 0.6
         }
       }
     ],
@@ -154337,7 +154410,13 @@
         "member_name": "⼭⽥杏佳",
         "member_color_code": "0xffb6c1",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Light Purple"
+        "notes": "Additional member colors: Light Purple",
+        "roles": {
+          "center": 0.2,
+          "content": 0.2,
+          "streaming": 0.6,
+          "style": 0.4
+        }
       }
     ],
     "x_followers": 76490,
@@ -155053,9 +155132,11 @@
         "member_color_code": "0xffb6c1",
         "group_uid": "PUxPVkU",
         "roles": {
-          "lead_singer": 3,
-          "lead_dancer": 3,
-          "host": 2
+          "center": 0.4,
+          "lead_singer": 0.6,
+          "lead_dancer": 0.6,
+          "host": 0.4,
+          "content": 0.6
         }
       }
     ],
@@ -160521,7 +160602,13 @@
         "member_name": "逢田珠里依",
         "member_color_code": "0xffff00",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Red (Penlight)"
+        "notes": "Additional member colors: Red (Penlight)",
+        "roles": {
+          "leader": 0.4,
+          "content": 0.2,
+          "streaming": 0.6,
+          "style": 0.8
+        }
       }
     ],
     "x_followers": 69385,
@@ -193142,7 +193229,13 @@
         "member_name": "大谷映美里",
         "member_color_code": "0xcbc3e3",
         "group_uid": "PUxPVkU",
-        "notes": "Additional member colors: Light Purple"
+        "notes": "Additional member colors: Light Purple",
+        "roles": {
+          "center": 0.2,
+          "content": 1,
+          "streaming": 0.4,
+          "style": 1
+        }
       },
       {
         "group_name": "akishibu project",
@@ -197477,9 +197570,11 @@
         "member_color_code": "0x800080",
         "group_uid": "PUxPVkU",
         "roles": {
-          "lead_singer": 4,
-          "lead_dancer": 4,
-          "host": 3
+          "center": 0.8,
+          "lead_singer": 0.8,
+          "lead_dancer": 0.8,
+          "host": 0.6,
+          "content": 0.2
         }
       }
     ],
@@ -199696,7 +199791,9 @@
         "member_color_code": "0x90ee90",
         "group_uid": "PUxPVkU",
         "roles": {
-          "lead_singer": 4
+          "lead_singer": 0.8,
+          "content": 0.2,
+          "streaming": 0.8
         }
       }
     ],
@@ -204026,7 +204123,12 @@
         "member_color": "Orange",
         "member_color_code": "0xffa500",
         "group_uid": "4omSSk9Z",
-        "notes": "Additional member colors: Red"
+        "notes": "Additional member colors: Red",
+        "roles": {
+          "content": 0.2,
+          "streaming": 0.6,
+          "call_leader": 0.2
+        }
       }
     ],
     "x_followers": 46555,
@@ -216189,7 +216291,10 @@
         "group_uid": "PUxPVkU",
         "notes": "Additional member colors: Medium Blue",
         "roles": {
-          "call_leader": 4
+          "host": 0.2,
+          "content": 0.2,
+          "streaming": 0.6,
+          "call_leader": 0.8
         }
       }
     ],

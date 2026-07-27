@@ -17,7 +17,7 @@ const ROLE_COLUMNS = [
   "lead_dancer",
   "host",
   "content",
-  "sns",
+  "streaming",
   "style",
   "call_leader",
 ];
@@ -26,7 +26,21 @@ const ROLE_KEY_ALIASES = {
   performance_center: "center",
   content_lead: "content",
   youtuber: "content",
-  sns_lead: "sns",
+  youtube: "content",
+  sns: "content",
+  sns_lead: "content",
+  social_media: "content",
+  snser: "content",
+  x: "content",
+  twitter: "content",
+  instagram: "content",
+  tiktok: "content",
+  livestream: "streaming",
+  streamer: "streaming",
+  showroom: "streaming",
+  tiktok_live: "streaming",
+  instagram_live: "streaming",
+  youtube_live: "streaming",
   style_lead: "style",
   hype: "call_leader",
   hype_lead: "call_leader",
@@ -139,7 +153,7 @@ function toRoleNumber(value) {
   if (!text) return 0;
   const num = Number(text);
   if (!Number.isFinite(num)) return 0;
-  if (num <= 1) return Math.max(0, Math.min(1, num));
+  if (num > 0 && num < 1) return Math.max(0, Math.min(1, num));
   if (num <= 5) return Math.max(0, Math.min(1, num / 5));
   if (num <= 100) return Math.max(0, Math.min(1, num / 100));
   return 1;
@@ -148,7 +162,7 @@ function toRoleNumber(value) {
 function fromRoleNumber(value) {
   if (!(typeof value === "number" && Number.isFinite(value))) return "";
   if (value <= 0) return "";
-  return Number(value.toFixed(2)).toString();
+  return Number((value * 5).toFixed(2)).toString();
 }
 
 function rolesFromHistoryEntry(entry) {

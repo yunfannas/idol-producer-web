@@ -197,12 +197,19 @@ export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<Load
 
   const songs = songsForScenarioGroups(groups, songsAll);
   const shared_releases = await loadSharedReleases(groups);
+  let role_attribute_model: Record<string, unknown> | undefined;
+  try {
+    const model: unknown = await fetchJson(`${base()}data/member_role_attribute_model.json`);
+    if (model && typeof model === "object") role_attribute_model = model as Record<string, unknown>;
+  } catch {
+    /* optional calibrated attribute model */
+  }
 
   const ref =
     preset.opening_date && /^\d{4}-\d{2}-\d{2}$/.test(preset.opening_date)
       ? preset.opening_date
       : "2020-01-01";
-  applyAttributesToAllIdols(idols, groups, ref);
+  applyAttributesToAllIdols(idols, groups, ref, role_attribute_model);
 
   let lives: Record<string, unknown>[] = [];
   try {
@@ -251,7 +258,7 @@ export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<Load
 
   const official_schedules = await loadOfficialScheduleBundles(groups);
 
-  return { preset, idols, groups, songs, shared_releases, lives, festivals, group_tiers, startup_allowlist, official_schedules };
+  return { preset, idols, groups, songs, shared_releases, lives, festivals, group_tiers, startup_allowlist, official_schedules, role_attribute_model };
 }
 
 export async function loadDefaultScenario(): Promise<LoadedScenario> {
