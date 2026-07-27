@@ -377,6 +377,9 @@ export interface SaveTutorialState {
   disabled: boolean;
 }
 
+const DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"] as const;
+const TRAINING_ROLE_BENCHMARK_PREFERENCE_SET = new Set<string>(DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES);
+
 export interface GameSavePayload {
   version: typeof GAME_SAVE_VERSION;
   account_name?: string;
@@ -399,6 +402,7 @@ export interface GameSavePayload {
   training_intensity: Record<string, Record<string, unknown>>;
   training_week_log: Record<string, unknown>;
   training_focus_skill: Record<string, string>;
+  training_role_benchmark_preferences: string[];
   managed_song_status: Record<string, ManagedSongStatusRow>;
   training_song_uids: string[];
   tutorial: SaveTutorialState;
@@ -548,6 +552,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     training_intensity: {},
     training_week_log: {},
     training_focus_skill: {},
+    training_role_benchmark_preferences: [...DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES],
     managed_song_status: {},
     training_song_uids: [],
     tutorial: { completed: false, disabled: false },
@@ -705,6 +710,16 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   }
   if (p.training_focus_skill && typeof p.training_focus_skill === "object") {
     out.training_focus_skill = deepCopy(p.training_focus_skill as Record<string, string>);
+  }
+  if (Array.isArray((p as { training_role_benchmark_preferences?: unknown }).training_role_benchmark_preferences)) {
+    const seen = new Set<string>();
+    out.training_role_benchmark_preferences = [];
+    for (const raw of (p as { training_role_benchmark_preferences: unknown[] }).training_role_benchmark_preferences) {
+      const key = String(raw ?? "").trim();
+      if (!TRAINING_ROLE_BENCHMARK_PREFERENCE_SET.has(key) || seen.has(key)) continue;
+      seen.add(key);
+      out.training_role_benchmark_preferences.push(key);
+    }
   }
   if (p.tutorial && typeof p.tutorial === "object") {
     const tutorial = p.tutorial as Record<string, unknown>;

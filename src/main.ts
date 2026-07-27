@@ -867,7 +867,7 @@ let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
 let trainingRosterSortKey: TrainingRosterSortKey = "started";
 let trainingRosterSortDir: "asc" | "desc" = "asc";
-let trainingRoleBenchmarkPreferences: RoleBenchmarkKey[] = [];
+let trainingRoleBenchmarkPreferences: RoleBenchmarkKey[] = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"];
 let mediaTab: MediaTab = "tv";
 let financeTab: FinanceTab = "finance";
 let financeHistoryRange: FinanceHistoryRange = "month";
@@ -1193,6 +1193,18 @@ function setManagedMemberAnnouncedLeader(idolUid: string, checked: boolean): voi
 }
 
 const ROLE_BENCHMARK_KEYS: RoleBenchmarkKey[] = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"];
+
+function roleBenchmarkPreferencesFromSave(currentSave: GameSavePayload): RoleBenchmarkKey[] {
+  const raw = Array.isArray(currentSave.training_role_benchmark_preferences)
+    ? currentSave.training_role_benchmark_preferences
+    : ROLE_BENCHMARK_KEYS;
+  const set = new Set(raw.map((item) => String(item)));
+  return ROLE_BENCHMARK_KEYS.filter((key) => set.has(key));
+}
+
+function writeRoleBenchmarkPreferencesToSave(currentSave: GameSavePayload, preferences: RoleBenchmarkKey[]): void {
+  currentSave.training_role_benchmark_preferences = ROLE_BENCHMARK_KEYS.filter((key) => preferences.includes(key));
+}
 
 const AUTO_ROLE_PLANS: Array<{
   role: string;
@@ -1624,6 +1636,10 @@ function paintGame(): void {
 
   ensureSongsGroupUid();
   ensureSongsDiscographyKey();
+  if (!browseMode && save) {
+    trainingRoleBenchmarkPreferences = roleBenchmarkPreferencesFromSave(save);
+    writeRoleBenchmarkPreferencesToSave(save, trainingRoleBenchmarkPreferences);
+  }
   if (!browseMode) syncFestivalLivesIfPossible();
   if (!browseMode && save && currentView === "Making") {
     const m = save.managing_group_uid?.trim();
@@ -1668,6 +1684,7 @@ function paintGame(): void {
     trainingTab,
     trainingRosterSortKey,
     trainingRosterSortDir,
+    roleBenchmarkPreferences: trainingRoleBenchmarkPreferences,
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -2096,6 +2113,12 @@ function paintGame(): void {
           trainingTab = tab;
         });
       }
+      return;
+    }
+    const autoAssignRolesBtn = t.closest<HTMLElement>("[data-training-roles-autoassign]");
+    if (autoAssignRolesBtn && save && !browseMode && currentView === "Training") {
+      autoAssignManagedRoles(trainingRoleBenchmarkPreferences);
+      paintGame();
       return;
     }
     const trainingSortPick = t.closest<HTMLElement>("[data-training-roster-sort]");
@@ -3221,6 +3244,20 @@ function paintGame(): void {
       const uid = String(announcedLeaderPick.getAttribute("data-training-announced-leader") ?? "").trim();
       if (uid) {
         setManagedMemberAnnouncedLeader(uid, announcedLeaderPick.checked);
+        paintGame();
+      }
+      return;
+    }
+    const benchmarkPreferencePick = t.closest<HTMLInputElement>("[data-role-benchmark-preference]");
+    if (benchmarkPreferencePick && save && !browseMode && currentView === "Training") {
+      const key = String(benchmarkPreferencePick.getAttribute("data-role-benchmark-preference") ?? "").trim();
+      if (ROLE_BENCHMARK_KEYS.includes(key as RoleBenchmarkKey)) {
+        const set = new Set(trainingRoleBenchmarkPreferences);
+        if (benchmarkPreferencePick.checked) set.add(key as RoleBenchmarkKey);
+        else set.delete(key as RoleBenchmarkKey);
+        trainingRoleBenchmarkPreferences = ROLE_BENCHMARK_KEYS.filter((item) => set.has(item));
+        writeRoleBenchmarkPreferencesToSave(save, trainingRoleBenchmarkPreferences);
+        autoAssignManagedRoles(trainingRoleBenchmarkPreferences);
         paintGame();
       }
       return;

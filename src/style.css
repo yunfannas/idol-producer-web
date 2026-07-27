@@ -3738,6 +3738,59 @@ code {
   border: 1px solid rgb(255 255 255 / 0.08);
   border-radius: 8px;
   background: rgb(255 255 255 / 0.045);
+  cursor: pointer;
+}
+
+.training-role-benchmark-card.is-selected {
+  border-color: rgb(45 212 191 / 0.42);
+  background: rgb(45 212 191 / 0.1);
+}
+
+.training-role-benchmark-pref {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+}
+
+.training-role-benchmark-pref input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.training-role-benchmark-check {
+  display: inline-grid;
+  place-items: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgb(255 255 255 / 0.34);
+  background: rgb(0 0 0 / 0.24);
+  position: relative;
+}
+
+.training-role-benchmark-card.is-selected .training-role-benchmark-check {
+  border-color: var(--accent-light);
+  background: var(--accent-light);
+}
+
+.training-role-benchmark-check::after {
+  content: "";
+  position: absolute;
+  left: 0.32rem;
+  top: 0.12rem;
+  width: 0.28rem;
+  height: 0.55rem;
+  border-right: 2px solid #031713;
+  border-bottom: 2px solid #031713;
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+.training-role-benchmark-card.is-selected .training-role-benchmark-check::after {
+  opacity: 1;
 }
 
 .training-role-benchmark-label {
@@ -3764,6 +3817,12 @@ code {
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent), var(--cyan));
+}
+
+.training-role-benchmark-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
 }
 
 .training-role-table th,

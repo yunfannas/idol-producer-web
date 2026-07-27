@@ -1821,8 +1821,10 @@ function renderTraining(
   rosterSortKey: TrainingRosterSortKey,
   rosterSortDir: "asc" | "desc",
   lang: UiLanguage,
-  roleBenchmarkPreferences: RoleBenchmarkKey[] = [],
+  roleBenchmarkPreferences?: RoleBenchmarkKey[],
 ): string {
+  const effectiveRoleBenchmarkPreferences =
+    roleBenchmarkPreferences ?? (["singing", "dancing", "teamwork", "content", "streaming", "fashion"] as RoleBenchmarkKey[]);
   const sortHeader = (key: TrainingRosterSortKey, label: string) => {
     const active = rosterSortKey === key;
     const arrow = active ? (rosterSortDir === "asc" ? " ?" : " ?") : "";
@@ -2271,15 +2273,17 @@ function renderTraining(
       ),
     },
   ];
-  const preferredBenchmarks = new Set(roleBenchmarkPreferences);
+  const preferredBenchmarks = new Set(effectiveRoleBenchmarkPreferences);
   const benchmarkCards = benchmarkItems
     .map((item) => {
       const value = Math.max(0, Math.min(5, item.value));
       const display = value.toFixed(1);
       const pct = Math.round((value / 5) * 100);
-      const checked = preferredBenchmarks.has(item.key) ? "checked" : "";
-      return `<label class="training-role-benchmark-card">
-        <span class="training-role-benchmark-pref"><input type="checkbox" data-role-benchmark-preference="${htmlEsc(item.key)}" ${checked} /> <span>${htmlEsc(localizedLiteral(lang, "Prefer", "偏重"))}</span></span>
+      const selected = preferredBenchmarks.has(item.key);
+      const checked = selected ? "checked" : "";
+      const selectedClass = selected ? " is-selected" : "";
+      return `<label class="training-role-benchmark-card${selectedClass}">
+        <span class="training-role-benchmark-pref"><input type="checkbox" data-role-benchmark-preference="${htmlEsc(item.key)}" ${checked} /> <span class="training-role-benchmark-check" aria-hidden="true"></span><span>${htmlEsc(localizedLiteral(lang, "Prefer", "偏重"))}</span></span>
         <span class="training-role-benchmark-label">${htmlEsc(item.label)}</span>
         <strong class="training-role-benchmark-score">${htmlEsc(display)}</strong>
         <span class="training-role-benchmark-meter" aria-hidden="true"><span style="width:${pct}%"></span></span>
@@ -2356,7 +2360,7 @@ function renderTraining(
                 <section class="training-role-benchmark" aria-label="${htmlEsc(localizedLiteral(lang, "Team strength benchmark", "团队强度基准"))}">
                   <div class="training-role-benchmark-head">
                     <h4>${htmlEsc(localizedLiteral(lang, "Team strength benchmark", "团队强度基准"))}</h4>
-                    <span>${htmlEsc(localizedLiteral(lang, "0-5 after current role assignment. No preference selected = equal preference.", "当前定位后的 0-5 评分。未选择偏重 = 平均偏重。"))}</span>
+                    <span>${htmlEsc(localizedLiteral(lang, "0-5 after current role assignment. All preferences are selected by default.", "当前定位后的 0-5 评分。默认选择全部偏重。"))}</span>
                   </div>
                   <div class="training-role-benchmark-grid">${benchmarkCards}</div>
                   <div class="training-role-benchmark-actions">
