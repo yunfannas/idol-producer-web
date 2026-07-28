@@ -119,6 +119,7 @@ function estimatedGroupFanReach(group: Record<string, unknown>): number {
     D: 3500,
     E: 1200,
     F: 300,
+    I: 0,
   };
   const popularityFloor = Math.round(tierFloor[tier] * (0.35 + popularity / 100));
   const followerFloor = Math.round(xFollowers * (0.12 + popularity / 500));

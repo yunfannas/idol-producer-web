@@ -107,7 +107,7 @@ export function normalizeGroupLetterTier(t: string | null | undefined): LetterTi
   const u = String(t ?? "")
     .trim()
     .toUpperCase();
-  if (u === "S" || u === "A" || u === "B" || u === "C" || u === "D" || u === "E" || u === "F") {
+  if (u === "S" || u === "A" || u === "B" || u === "C" || u === "D" || u === "E" || u === "F" || u === "I") {
     return u;
   }
   return "F";
@@ -132,7 +132,7 @@ export function inferLetterTier(popularity: number, fans: number, xFollowers = 0
 export function resolveGroupLetterTier(g: Record<string, unknown> | null | undefined): LetterTier {
   if (!g || typeof g !== "object") return "F";
   const raw = g.letter_tier;
-  if (typeof raw === "string" && /^[SABCDEF]$/i.test(raw.trim())) {
+  if (typeof raw === "string" && /^[SABCDEFI]$/i.test(raw.trim())) {
     return raw.trim().toUpperCase() as LetterTier;
   }
   const popularity =
@@ -143,6 +143,11 @@ export function resolveGroupLetterTier(g: Record<string, unknown> | null | undef
   return inferLetterTier(popularity, fans, xFollowers);
 }
 
+/** Active commercial tier used by finance (inactive `I` maps to `F`). */
+export function financeLetterTier(t: LetterTier): Exclude<LetterTier, "I"> {
+  return t === "I" ? "F" : t;
+}
+
 const LETTER_TIER_ORDER: Record<LetterTier, number> = {
   S: 0,
   A: 1,
@@ -151,6 +156,7 @@ const LETTER_TIER_ORDER: Record<LetterTier, number> = {
   D: 4,
   E: 5,
   F: 6,
+  I: 7,
 };
 
 /** Lower = higher tier grade (S is 0). */
@@ -205,7 +211,7 @@ export function baseSalaryMultiplierForGroupLetterTier(letterTier: LetterTier): 
           .base_salary_multiplier_vs_default_monthly_base_salary
       : undefined;
   if (!block || typeof block !== "object") return 1.0;
-  const raw = block[letterTier];
+  const raw = block[financeLetterTier(letterTier)];
   return Math.max(0, Number(raw ?? 1));
 }
 
@@ -336,8 +342,8 @@ export function estimateLiveGoodsUnits(
   const capacity = Math.max(0, intOr(opts.capacity, 0));
   const fans = Math.max(0, intOr(opts.groupFans, 0));
   const popularity = Math.max(0, Number(opts.groupPopularity ?? 0) || 0);
-  const tier = normalizeGroupLetterTier(opts.groupTier ?? "F");
-  const tierBoost: Record<LetterTier, number> = { S: 1.25, A: 1.18, B: 1.1, C: 1.03, D: 0.96, E: 0.88, F: 0.8 };
+  const tier = financeLetterTier(normalizeGroupLetterTier(opts.groupTier ?? "F"));
+  const tierBoost: Record<Exclude<LetterTier, "I">, number> = { S: 1.25, A: 1.18, B: 1.1, C: 1.03, D: 0.96, E: 0.88, F: 0.8 };
   const baseAudience = Math.max(capacity, Math.round(Math.min(fans, Math.max(40, capacity || 0) * 1.2)));
   const demand = Math.round(baseAudience * goodsDemandRateByLiveType(opts.liveType) * (0.75 + popularity / 200) * tierBoost[tier]);
   return Math.max(0, Math.min(stock, demand));
@@ -380,9 +386,10 @@ export function monthlyAdminTrainingCostYenForGroupLetterTier(letterTier: Letter
     "training" in monthlyBlock
       ? (monthlyBlock as { training?: Record<string, unknown> }).training
       : undefined;
-  const admin = adminBlock && typeof adminBlock === "object" ? intOr(adminBlock[letterTier], 0) : 0;
+  const key = financeLetterTier(letterTier);
+  const admin = adminBlock && typeof adminBlock === "object" ? intOr(adminBlock[key], 0) : 0;
   const training =
-    trainingBlock && typeof trainingBlock === "object" ? intOr(trainingBlock[letterTier], 0) : 0;
+    trainingBlock && typeof trainingBlock === "object" ? intOr(trainingBlock[key], 0) : 0;
   return Math.max(0, admin + training);
 }
 

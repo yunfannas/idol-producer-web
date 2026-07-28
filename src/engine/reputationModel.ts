@@ -79,15 +79,24 @@ export function adjustGroupReputation(
  * Reputation hit for a scandal + its handling.
  * A scandal always dents reputation; firm, agency-appropriate handling limits the
  * damage, while soft keeps deepen it. Returns a (usually negative) delta.
+ *
+ * Timed suspension-then-return (籾山ひめり historical) is a flat −0.5.
  */
 export function reputationDeltaForScandalHandling(args: {
   action: ScandalAction;
   score: number;
   agencyHarshness?: number;
+  /** False = timed (一時) suspend with a return window; true = indefinite. */
+  indefiniteSuspend?: boolean | null;
 }): number {
   const score = clamp(Number(args.score) || 1, 1, 5);
   const s = score / 5;
   const harsh = clamp(Number(args.agencyHarshness) || 3, 1, 5);
+
+  // Timed suspend → return is a known brand hit (籾山ひめり historical).
+  if (args.action === "suspend_activities" && args.indefiniteSuspend === false) {
+    return -0.5;
+  }
 
   // Base scandal dent scales with severity.
   let delta = -(0.12 + 0.28 * s);
@@ -112,6 +121,27 @@ export function reputationDeltaForScandalHandling(args: {
   }
   // Never positive from a scandal; clamp the per-event swing.
   return clamp(delta, -0.6, -0.02);
+}
+
+/**
+ * Post-indefinite-suspension leave decision (春野莉々).
+ * Starting 高嶺のなでしこ reputation is 4 (May suspension already baked in):
+ *   let_go (historical withdraw) → −0.5 → 3.5
+ *   reinstate_with_penalty (return) → −1.0 → 3.0
+ */
+export function reputationDeltaForPostSuspensionLeave(action: string): number {
+  switch (String(action ?? "").trim()) {
+    case "let_go":
+      return -0.5;
+    case "reinstate_with_penalty":
+      return -1.0;
+    case "keep_suspended":
+      return -0.75;
+    case "terminate_now":
+      return -0.4;
+    default:
+      return -0.5;
+  }
 }
 
 /**

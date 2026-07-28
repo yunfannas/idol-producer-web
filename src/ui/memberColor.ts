@@ -28,6 +28,7 @@ export function resolveMemberColorCss(color: string, colorCode?: unknown): strin
     bloodyred: "#ff0000",
     blue: "#3b82f6",
     royalblue: "#4169e1",
+    darkblue: "#00008b",
     navyblue: "#000080",
     yellow: "#facc15",
     orange: "#fb923c",

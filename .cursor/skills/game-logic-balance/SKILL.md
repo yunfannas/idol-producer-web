@@ -242,11 +242,14 @@ reinstate with heavy penalty, or terminate — not a locked auto-exit.
 ### Reputation + agency harshness
 
 - Group **`reputation`** (1–5, **default 3**) on the group row, stored as a float.
-  Starting values: default 3, with curated overrides in
-  `public/data/reference/group_reputation.json` (fractional allowed — e.g.
-  iLiFE! = 2, アキシブ = 3, 高嶺のなでしこ = 4, =LOVE = 4.5, ≒JOY = 4.5, ≠ME = 5).
-  Seed via
-  `support/tmp/seed_group_reputation.mjs`.
+  Starting values: default base **3**, then **interpolated** for every group from
+  historical tenure (current + past members, churn-softened) and pre-as-of scandals
+  (handling-aware; timed suspend-then-return = −0.5) via
+  `support/scripts/seedGroupReputation.mjs`. Curated anchors in
+  `public/data/reference/group_reputation.json` always win (e.g. iLiFE! = 2,
+  アキシブ = 3, 高嶺のなでしこ = 4, =LOVE = 4.5, ≒JOY = 4.5, ≠ME = 5). Reports:
+  `support/docs/reference/scenario_6_group_reputation_interpolation.csv`.
+  Seed via `node support/scripts/seedGroupReputation.mjs`.
 - Agency **`harshness`** (1–5) in `public/data/reference/agencies.json`
   (Imaginate = 5). Resolved from `group.agencies[]`.
 - Scandal weights/axes: low reputation punishes soft keep; high harshness rewards
@@ -255,9 +258,13 @@ reinstate with heavy penalty, or terminate — not a locked auto-exit.
   play and is logged to `group.reputation_log`.
   - **Down** — scandals + handling (`reputationDeltaForScandalHandling`, applied in
     `applyScandalHandlingChoice`): base dent scales with score; soft keep /
-    acknowledge deepen it, firm cuts (esp. at harsh agencies) limit it. Also a
-    **core member** (leader / dominant fan share / roster fan leader) leaving
-    **without recognition**, or any scandal exit (`applyDepartureReputation` in
+    acknowledge deepen it, firm cuts (esp. at harsh agencies) limit it. **Timed
+    suspend-then-return** (籾山ひめり historical) is a flat **−0.5**.
+    Post-indefinite-suspension leave decisions (春野莉々) use fixed deltas via
+    `reputationDeltaForPostSuspensionLeave`: historical withdraw **−0.5**
+    (4 → 3.5), reinstate/return **−1.0** (4 → 3). Also a **core member**
+    (leader / dominant fan share / roster fan leader) leaving **without
+    recognition**, or any scandal exit (`applyDepartureReputation` in
     `scenarioRuntimeWeb.ts`).
   - **Up** — accrued member tenure (`accrueMonthlyTenureReputation`, once/month in
     `gameEngine` daily close; ceiling ~3.0→4.5 by avg tenure years) and a

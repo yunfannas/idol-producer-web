@@ -276,7 +276,7 @@ function buildScheduleMonthCalendarHtml(
 /** Primary Songs workspace tabs (matches `support/reference/python-desktop/main_ui.py` show_songs_view). */
 export type SongsWorkspaceTab = "group_songs" | "disc";
 export type MakingTab = "songs" | "cd" | "goods";
-export type LivesTab = "new" | "scheduled" | "live" | "past" | "festival" | "league";
+export type LivesTab = "new" | "scheduled" | "past" | "festival" | "league";
 export type { LeaguePanelTab };
 export type ScoutTab = "freelancer" | "transfer" | "audition";
 export type TrainingTab = "assignments" | "roster" | "roles" | "songs";
@@ -1116,8 +1116,8 @@ function renderGroupHistoryTable(
         (guid ? (uidToName.get(guid) ?? `${guid.slice(0, 10)}…`) : "—");
       if (!guid && label !== "—") guid = lookupGroupUidByName(groupsSnapshot, label) ?? "";
       const groupCell = guid
-        ? `<button type="button" class="idol-history-group-link" data-group-detail="${htmlEsc(guid)}">${htmlEsc(label)}</button>`
-        : htmlEsc(label);
+        ? `<button type="button" class="idol-history-group-link" data-group-detail="${htmlEsc(guid)}" data-wiki-skip="1">${htmlEsc(label)}</button>`
+        : `<span data-wiki-skip="1">${htmlEsc(label)}</span>`;
       const col = typeof e.member_color === "string" && e.member_color ? e.member_color : "—";
       const mn = typeof e.member_name === "string" && e.member_name ? e.member_name : "—";
       const roles = memberRolesSummary(roleAssignmentsFromHistoryEntry(e));
@@ -1172,11 +1172,12 @@ function renderIdolDetailPage(
   const currentGroupsHtml =
     memberships.length > 0
       ? memberships
-          .map((m) =>
-            m.uid
-              ? `<button type="button" class="idol-detail-group-link" data-group-detail="${htmlEsc(m.uid)}">${htmlEsc(m.name)}</button>`
-              : htmlEsc(m.name),
-          )
+          .map((m) => {
+            const guid = m.uid || lookupGroupUidByName(groupsSnapshot, m.name) || "";
+            return guid
+              ? `<button type="button" class="idol-detail-group-link" data-group-detail="${htmlEsc(guid)}" data-wiki-skip="1">${htmlEsc(m.name)}</button>`
+              : `<span data-wiki-skip="1">${htmlEsc(m.name)}</span>`;
+          })
           .join(", ")
       : htmlEsc("-");
   const currentRolesText = roleMemberships
@@ -1256,7 +1257,7 @@ function renderIdolDetailPage(
       <h2 class="idol-detail-name">${htmlEsc(name)}</h2>
       ${secLine ? `<p class="idol-detail-sub">${secLine}</p>` : ""}
       <p class="idol-detail-facts">${facts.join(" - ")}</p>
-      <p class="idol-detail-current-groups"><strong>${htmlEsc(t(lang, "idol_group"))}:</strong> ${currentGroupsHtml}</p>
+      <p class="idol-detail-current-groups" data-wiki-skip="1"><strong>${htmlEsc(t(lang, "idol_group"))}:</strong> ${currentGroupsHtml}</p>
       <p class="idol-detail-current-groups"><strong>${htmlEsc(localizedLiteral(lang, "Roles", "定位"))}:</strong> ${htmlEsc(currentRolesText)}</p>
       ${linksInline}
     </div>
@@ -1283,7 +1284,7 @@ function renderIdolDetailPage(
     </dl>
   </section>
 
-  <section class="fm-card idol-detail-block">
+  <section class="fm-card idol-detail-block" data-wiki-skip="1">
     <h3 class="content-h3 idol-detail-h">${htmlEsc(t(lang, "idol_group_history"))}</h3>
     ${renderGroupHistoryTable(row, uidToName, groupsSnapshot, referenceIso, lang)}
   </section>
@@ -2322,7 +2323,6 @@ function renderTraining(
 
   return `<section class="content-panel training-view">
     <h2 class="content-h2">${htmlEsc(navLabel(lang, "Training"))}</h2>
-    <p class="content-muted">${htmlEsc(lang === "zh-CN" ? `这是 ${String(grp?.name_romanji ?? grp?.name ?? "组合")} 的每日训练滑杆（每项 0-5）。总和上限为 20，并按与桌面版相同的状态 / 士气规则推进。参考日期：${String(ref ?? "-")}` : `Daily sliders (0-5 each) for ${String(grp?.name_romanji ?? grp?.name ?? "group")}. Sum caps at 20 and feeds advanceOneDay with the same condition/morale rules as the desktop save loop. Reference date: ${String(ref ?? "-")}.`)}</p>
     ${renderTrainingTabs(trainingTab, lang)}
     ${
       trainingTab === "roster"
@@ -2898,12 +2898,30 @@ function renderFinancesProjectionView(
 
 void renderFinances;
 
+function idolListGroupLinksHtml(
+  row: Record<string, unknown>,
+  referenceIso: string | undefined,
+  groupsSnapshot: Record<string, unknown>[],
+): string {
+  const memberships = activeGroupMembershipsAtReference(row, referenceIso, groupsSnapshot);
+  if (!memberships.length) return htmlEsc("—");
+  return memberships
+    .map((m) => {
+      const guid = m.uid || lookupGroupUidByName(groupsSnapshot, m.name) || "";
+      return guid
+        ? `<button type="button" class="idol-detail-group-link" data-group-detail="${htmlEsc(guid)}" data-wiki-skip="1">${htmlEsc(m.name)}</button>`
+        : `<span data-wiki-skip="1">${htmlEsc(m.name)}</span>`;
+    })
+    .join(", ");
+}
+
 function renderIdolsList(
   idols: Record<string, unknown>[],
   referenceIso: string | undefined,
   headline: string,
   layout: "cards" | "list",
   lang: UiLanguage,
+  groupsSnapshot: Record<string, unknown>[] = [],
   note?: string,
 ): string {
   if (!idols.length) return renderPlaceholder(navLabel(lang, "Idols"), localizedLiteral(lang, "No idols in database snapshot.", "数据库快照中没有偶像。"));
@@ -2927,12 +2945,12 @@ function renderIdolsList(
       const romaji = romajiFromRow(row);
       const attrs = attrsFromRow(row);
       const age = ageLabel(row, referenceIso);
-      const grps = activeGroupsAtReference(row, referenceIso);
-      const grpTxt = grps.length ? grps.join(", ") : "—";
+      const groupsHtml = idolListGroupLinksHtml(row, referenceIso, groupsSnapshot);
       const portraitInner = portraitThumbHtml(row, name);
 
+      // Use a div (not button) so nested group-jump controls stay valid HTML.
       return `
-      <button type="button" class="fm-card idol-card-tile idol-card-with-photo idol-card-compact" data-idol-detail="${htmlEsc(uid)}">
+      <div class="fm-card idol-card-tile idol-card-with-photo idol-card-compact" data-idol-detail="${htmlEsc(uid)}" role="button" tabindex="0">
         <span class="idol-card-face" aria-hidden="true">${portraitInner}</span>
         <span class="idol-card-stack">
           <span class="idol-card-row1">
@@ -2940,9 +2958,9 @@ function renderIdolsList(
             ${romaji ? `<span class="idol-card-romaji">${htmlEsc(romaji)}</span>` : ""}
           </span>
           <span class="idol-card-row2">${htmlEsc(lang === "zh-CN" ? `年龄 ${age}` : `Age ${age}`)} · ${htmlEsc("X")} ${htmlEsc(xFollowersLabel(row))} · ${htmlEsc(localizedLiteral(lang, "Ability", "能力"))} ${getAbility(attrs)}</span>
-          <span class="idol-card-row3"><strong>${htmlEsc(localizedLiteral(lang, "Group", "组合"))}:</strong> ${htmlEsc(grpTxt)}</span>
+          <span class="idol-card-row3" data-wiki-skip="1"><strong>${htmlEsc(localizedLiteral(lang, "Group", "组合"))}:</strong> ${groupsHtml}</span>
         </span>
-      </button>`;
+      </div>`;
     })
     .join("");
 
@@ -2953,8 +2971,7 @@ function renderIdolsList(
       const romaji = romajiFromRow(row);
       const attrs = attrsFromRow(row);
       const age = ageLabel(row, referenceIso);
-      const grps = activeGroupsAtReference(row, referenceIso);
-      const grpTxt = grps.length ? grps.join(", ") : "—";
+      const groupsHtml = idolListGroupLinksHtml(row, referenceIso, groupsSnapshot);
       const ph = portraitThumbHtml(row, name);
       return `<tr class="idol-list-table-row" data-idol-detail="${htmlEsc(uid)}" tabindex="0" role="button">
         <td class="idol-list-photo">${ph}</td>
@@ -2964,7 +2981,7 @@ function renderIdolsList(
         <td class="num">${htmlEsc(heightCmLabel(row))}</td>
         <td class="num">${getAbility(attrs)}</td>
         <td class="num">${htmlEsc(xFollowersLabel(row))}</td>
-        <td>${htmlEsc(grpTxt)}</td>
+        <td data-wiki-skip="1">${groupsHtml}</td>
       </tr>`;
     })
     .join("");
@@ -2996,7 +3013,7 @@ function renderIdolsList(
             <th>${htmlEsc(localizedLiteral(lang, "Height cm", "身高 cm"))}</th>
             <th>${htmlEsc(localizedLiteral(lang, "Ability", "能力"))}</th>
             <th>${htmlEsc(localizedLiteral(lang, "X followers", "X 粉丝数"))}</th>
-            <th>${htmlEsc(localizedLiteral(lang, "Current group(s)", "当前所属组合"))}</th>
+            <th data-wiki-skip="1">${htmlEsc(localizedLiteral(lang, "Current group(s)", "当前所属组合"))}</th>
           </tr>
         </thead>
         <tbody>${tableRows}</tbody>
@@ -4202,7 +4219,6 @@ function renderLiveTabs(active: LivesTab, lang: UiLanguage, showLeague: boolean)
   const tabs: Array<[LivesTab, string]> = [
     ["new", t(lang, "lives_tab_new")],
     ["scheduled", t(lang, "lives_tab_scheduled")],
-    ["live", t(lang, "lives_tab_live")],
     ["past", t(lang, "lives_tab_past")],
     ["festival", t(lang, "lives_tab_festival")],
   ];
@@ -4671,7 +4687,8 @@ function renderLivesView(
           <tbody>${upcomingRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(t(lang, "lives_no_scheduled"))}</td></tr>`}</tbody>
         </table>
       </div>
-    </section>`;
+    </section>
+    ${liveDetailBody}`;
 
   const pastBody = `<section class="fm-card">
       <h3 class="content-h3">${htmlEsc(t(lang, "lives_recent_results"))}</h3>
@@ -4794,15 +4811,13 @@ function renderLivesView(
   const body =
     effectiveLivesTab === "scheduled"
       ? scheduledBody
-      : effectiveLivesTab === "live"
-        ? liveDetailBody
-        : effectiveLivesTab === "past"
-          ? pastBody
-          : effectiveLivesTab === "festival"
-            ? festivalBody
-            : effectiveLivesTab === "league"
-              ? leagueBody
-              : newLiveBody;
+      : effectiveLivesTab === "past"
+        ? pastBody
+        : effectiveLivesTab === "festival"
+          ? festivalBody
+          : effectiveLivesTab === "league"
+            ? leagueBody
+            : newLiveBody;
 
   return `<section class="content-panel lives-view">
     <h2 class="content-h2">${htmlEsc(navLabel(lang, "Lives"))}</h2>
@@ -5211,6 +5226,7 @@ export function renderMainContent(
           lang === "zh-CN" ? "偶像（浏览）" : "Idols (browse)",
           idolListLayout,
           lang,
+          browseData.groups,
           lang === "zh-CN"
             ? `快照中共有 ${browseData.idols.length.toLocaleString()} 条记录 · JSON 缺失属性时会使用默认值。`
             : `${browseData.idols.length.toLocaleString()} rows in snapshot · default attributes when missing in JSON.`,
@@ -5286,6 +5302,7 @@ export function renderMainContent(
         navLabel(lang, "Idols"),
         idolListLayout,
         lang,
+        save.database_snapshot.groups,
         localizedLiteral(lang, "Attributes from save (defaults applied where missing).", "来自存档的属性（缺失项已套用默认值）。"),
       );
     }

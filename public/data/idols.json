@@ -203,7 +203,7 @@
       {
         "group_name": "BANZAI JAPAN",
         "start_date": "2014-07-01",
-        "end_date": null,
+        "end_date": "2015-08-22",
         "member_color": null,
         "member_color_code": null,
         "group_uid": "QkFOWkFJIEpBUEFO"
@@ -4156,27 +4156,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-22",
-        "end_date": null,
-        "member_name": "綾瀬めめ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-22",
         "end_date": null,
         "member_name": "綾瀬めめ",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -8708,13 +8693,14 @@
       }
     ],
     "x_followers": 1864,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\石浜もも_portrait.jpg",
     "romaji": "Ishihama Momo",
-    "birthday_partial": null,
+    "birthday_partial": "09-08",
     "x_account": "comiqon_momo",
     "x_url": "https://x.com/comiqon_momo",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "hiragana": "いしはまもも"
   },
   {
     "uid": "08b0ade9-d0f1-4822-b3d8-44d804aea31e",
@@ -9174,13 +9160,6 @@
         "end_date": null,
         "member_color": "Red",
         "member_color_code": "0xff0000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 19754,
@@ -10648,13 +10627,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2023-08-07",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 5467,
@@ -12115,7 +12087,7 @@
         "group_uid": "WUFNSU5BQkU"
       },
       {
-        "group_name": "YAMINABE (HEROINES)",
+        "group_name": "YAMINABE",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -15678,13 +15650,6 @@
         "end_date": "2026-04-12",
         "member_color": "Blue",
         "member_color_code": "0x0000ff"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 4624,
@@ -16041,13 +16006,6 @@
         "group_name": "Akishibu project",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2025-06-15",
         "member_color": null,
         "member_color_code": null
       }
@@ -16944,14 +16902,6 @@
         "group_uid": "7e2b7bae-0b97-4c6c-8268-4923aa92c622"
       },
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Red",
-        "member_color_code": "0xff0000",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "GILTY × GILTY",
         "start_date": "2022-06-01",
         "end_date": null,
@@ -17007,13 +16957,6 @@
       },
       {
         "group_name": "GILTY×GILTY",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -21795,13 +21738,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "chuLa",
         "start_date": "2025-05-07",
         "end_date": null,
@@ -21939,13 +21875,6 @@
         "member_name": "紫苑おと",
         "member_color_code": "0x800080",
         "group_uid": "VEVOUklO"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -22001,13 +21930,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": "UGltbSdz"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Parallel Cider",
@@ -22215,13 +22137,6 @@
         "member_name": "天鬼桃歌",
         "member_color_code": "0xffc0cb",
         "group_uid": "VEVOUklO"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -22284,7 +22199,7 @@
         "group_uid": "WUFNSU5BQkU"
       },
       {
-        "group_name": "YAMINABE (HEROINES)",
+        "group_name": "YAMINABE",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -22376,13 +22291,6 @@
         "end_date": null,
         "member_color": "Purple",
         "member_color_code": "0x800080"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -22504,13 +22412,6 @@
         "end_date": null,
         "member_color": "Yellow",
         "member_color_code": "0xffff00"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "ZOC",
@@ -24100,13 +24001,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2021-04-23",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 75994,
@@ -25096,10 +24990,10 @@
       "美波舞緒": "Adorable Punch",
       "成瀬まお": "sweet palet"
     },
-    "birthday": "2001-07-01",
-    "age": 24,
-    "height": 156,
-    "birthplace": "",
+    "birthday": "2002-03-03",
+    "age": 23,
+    "height": 162.3,
+    "birthplace": "Tokyo",
     "languages": [
       "Japanese"
     ],
@@ -25114,12 +25008,14 @@
       }
     ],
     "x_followers": 4032,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\美波まお_portrait.jpg",
     "romaji": "Minami Mao",
     "x_account": "me_mao303",
     "x_url": "https://x.com/me_mao303",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "hiragana": "みなみまお",
+    "nickname": "Maotan (まおタン)"
   },
   {
     "uid": "192301cc-6bea-468e-92d0-5faf42acc409",
@@ -26641,13 +26537,6 @@
             "score": 2.5
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 12400,
@@ -26820,13 +26709,6 @@
         "member_name": "蓮花うらら",
         "member_color_code": "0xffc0cb",
         "group_uid": "VEVOUklO"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 13471,
@@ -31211,13 +31093,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -31235,7 +31110,7 @@
   },
   {
     "uid": "1f2e6126-0dd9-46e9-bcf1-9600c0793a88",
-    "name": "雛汰ゆら",
+    "name": "雛汰 ゆら",
     "past_names": {},
     "birthday": "2000-06-01",
     "age": 25,
@@ -31647,13 +31522,6 @@
         "member_name": "佐倉あん",
         "member_color_code": "0x98ff98",
         "group_uid": "WlVUVE9NT1RUTw"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2026-06-30",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 1780,
@@ -35909,13 +35777,6 @@
         "member_color_code": "0xadd8e6",
         "group_uid": "Q0FMJlJFUw",
         "member_name": "成瀬なる"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 6000,
@@ -37051,14 +36912,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Yellow",
-        "member_color_code": "0xffff00",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2023-07-15",
         "end_date": null,
@@ -37075,13 +36928,6 @@
         "member_name": "福丸うさ",
         "member_color_code": "0xffff00",
         "group_uid": "WlVUVE9NT1RUTw"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 138633,
@@ -37878,13 +37724,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_account": "aksb_manami",
@@ -38425,27 +38264,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-15",
-        "end_date": null,
-        "member_name": "君乃まいん",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-15",
         "end_date": null,
         "member_name": "君乃まいん",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -41208,13 +41032,6 @@
         "end_date": null,
         "member_color": "Plum",
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 2660,
@@ -41483,27 +41300,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-21",
-        "end_date": null,
-        "member_name": "小菜実こゆ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-21",
         "end_date": null,
         "member_name": "小菜実こゆ",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -42381,27 +42183,6 @@
         "member_name": "鎮目のどか",
         "member_color_code": "0x008000",
         "group_uid": "Wk9DWA"
-      },
-      {
-        "group_name": "ZOC",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "zoc",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 134564,
@@ -43613,13 +43394,6 @@
       },
       {
         "group_name": "Akishibu project",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -46259,6 +46033,14 @@
     ],
     "group_history": [
       {
+        "group_name": "I MY ME MINE",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Orange",
+        "member_color_code": "0xffa500",
+        "group_uid": "SSBNWSBNRSBNSU5F"
+      },
+      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2023-10-16",
         "end_date": "2024-05-28",
@@ -46268,26 +46050,12 @@
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       },
       {
-        "group_name": "I MY ME MINE",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Orange",
-        "member_color_code": "0xffa500",
-        "group_uid": "SSBNWSBNRSBNSU5F"
-      },
-      {
-        "group_name": "HEROINES Kenkyuusei",
+        "group_name": "ヒロインズ研究生",
         "start_date": null,
         "end_date": "2024-05-28",
         "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color_code": null,
+        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       }
     ],
     "x_followers": null,
@@ -48346,10 +48114,10 @@
     "past_names": {
       "雫月琴子": "Hi-Fi GIRLs PROJECT Osaka"
     },
-    "birthday": "2004-03-01",
-    "age": 22,
-    "height": 156,
-    "birthplace": "",
+    "birthday": null,
+    "age": null,
+    "height": 148,
+    "birthplace": "Osaka",
     "languages": [
       "Japanese"
     ],
@@ -48364,8 +48132,12 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
-    "romaji": "Kotoko"
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\ことこ_portrait.jpg",
+    "romaji": "Kotoko",
+    "hiragana": "ことこ",
+    "nickname": "ことちゃん",
+    "birthday_partial": "11-03",
+    "x_account": "nopas_kotoko"
   },
   {
     "uid": "3053dc0f-0a80-4b79-b814-91e4df2a7b61",
@@ -51668,13 +51440,6 @@
         "member_name": "紫藤らら",
         "member_color_code": "0x800080",
         "group_uid": "Y2h1TGE"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -52460,9 +52225,10 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\えちゃこ_portrait.jpg",
     "romaji": "Echako",
-    "birthday_partial": null
+    "birthday_partial": null,
+    "x_account": "echako_okopure"
   },
   {
     "uid": "34d75016-cd51-4324-b5e9-8270529df186",
@@ -53424,7 +53190,7 @@
         "start_date": "2019-02-01",
         "end_date": null,
         "member_color": "Dark Blue",
-        "member_color_code": "0x0000ff",
+        "member_color_code": "0x00008b",
         "member_name": "永田詩央里"
       }
     ],
@@ -54227,13 +53993,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -54449,13 +54208,6 @@
         "end_date": null,
         "member_color": "Yellow",
         "member_color_code": "0xffff00"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "#Pentaprism",
@@ -56785,14 +56537,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Orange",
-        "member_color_code": "0xffa500",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2025-05-11",
         "end_date": null,
@@ -56800,13 +56544,6 @@
         "member_name": "小熊まむ",
         "member_color_code": "0xffa500",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 121041,
@@ -57041,13 +56778,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Blue",
-        "member_color_code": "0x0000ff"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2020-06-05",
         "end_date": "2023-07-12",
@@ -57055,13 +56785,6 @@
         "member_name": "深月らむ",
         "member_color_code": "0x0000ff",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -59387,13 +59110,6 @@
         "group_uid": "REVTVVJBQkJJVFM"
       },
       {
-        "group_name": "usa☆usa Shoujo Club",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Paradeeq",
         "start_date": null,
         "end_date": null,
@@ -60769,13 +60485,6 @@
         "member_color_code": "0x800080"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "akishibu project",
         "start_date": null,
         "end_date": "2025-09-29",
@@ -61611,13 +61320,6 @@
         "member_color": "Purple",
         "member_color_code": "0x800080",
         "group_uid": "6Iqx44GE44KN44Gv"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "iLife!",
@@ -62700,13 +62402,6 @@
       },
       {
         "group_name": "Yakousei Amuse",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -63951,13 +63646,6 @@
         "member_color_code": "0xffc0cb"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "PLATINUM Princess Kenkyuusei",
         "start_date": null,
         "end_date": null,
@@ -64244,20 +63932,6 @@
         "end_date": null,
         "member_color": "Yellow",
         "member_color_code": "0xffff00"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "iLiFE! Kouhosei",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 15522,
@@ -65538,13 +65212,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "iON!",
         "start_date": "2025-04-20",
         "end_date": null,
@@ -65712,14 +65379,6 @@
         "group_uid": "Y2h1TGE"
       },
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-20",
-        "end_date": "2026-04-07",
-        "member_name": "茉野ゆに",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-20",
         "end_date": null,
@@ -65727,13 +65386,6 @@
         "member_color": "Pink (chuLa)",
         "member_color_code": "0xffc0cb",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 5105,
@@ -66041,13 +65693,6 @@
             "score": 2.5
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -67282,13 +66927,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "group_uid": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 23088,
@@ -68298,13 +67936,6 @@
         "end_date": null,
         "member_color": "Orange",
         "member_color_code": "0xffa500"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Tansan Chronicle",
@@ -70817,13 +70448,6 @@
         "member_color_code": "0xff0000"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Paradeeq",
         "start_date": null,
         "end_date": null,
@@ -73258,13 +72882,6 @@
         "member_name": "紫ノ色",
         "member_color_code": "0x800080",
         "group_uid": "SWxs"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 14969,
@@ -75286,13 +74903,6 @@
         "notes": "Additional member colors: Green"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Culumi",
         "start_date": null,
         "end_date": null,
@@ -75628,13 +75238,6 @@
         "group_name": "GAGAPIERO",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2026-06-17",
         "member_color": null,
         "member_color_code": null
       }
@@ -80250,13 +79853,6 @@
             "score": 2.5
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -80532,13 +80128,6 @@
         "member_name": "のもあちゃちゃ",
         "member_color_code": "0xff0000",
         "group_uid": "VEVOUklO"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 15019,
@@ -80657,13 +80246,6 @@
         "member_color": "Yellow (Chou Denpa / mistress / LADYBABY)",
         "member_color_code": "0xffff00",
         "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Chou Denpa Busters",
@@ -81010,13 +80592,6 @@
         "end_date": null,
         "member_color": "Violet",
         "member_color_code": "0xee82ee"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 5916,
@@ -81585,7 +81160,7 @@
         "end_date": null,
         "member_color": "Black",
         "member_name": "川中子奈月心",
-        "member_color_code": "0x98ff98",
+        "member_color_code": "0x000000",
         "notes": "Additional member colors: Black"
       }
     ],
@@ -81715,13 +81290,6 @@
       },
       {
         "group_name": "Paradeeq",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -82494,13 +82062,6 @@
       },
       {
         "group_name": "Paradeeq",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -83793,13 +83354,6 @@
         "end_date": null,
         "member_color": "Red",
         "member_color_code": "0xff0000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -84079,13 +83633,6 @@
       },
       {
         "group_name": "Paradeeq",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -84648,13 +84195,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 1969,
@@ -85016,27 +84556,6 @@
         "end_date": null,
         "member_color": "Pink",
         "member_color_code": "0xffc0cb"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "monogatari",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Orange",
-        "member_color_code": "0xffa500"
-      },
-      {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Orange (monogatari) Pink (Non¬Fiction / iLiFE!)",
-        "member_color_code": "0xffa500"
       },
       {
         "group_name": "GILTY×GILTY",
@@ -87845,13 +87364,6 @@
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Naniwa Cats",
         "start_date": null,
         "end_date": null,
@@ -89428,13 +88940,6 @@
         "member_color_code": null
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "PEDIOPHOBIA",
         "start_date": null,
         "end_date": null,
@@ -89571,13 +89076,6 @@
       },
       {
         "group_name": "Yakousei Amuse",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -91108,13 +90606,6 @@
         "member_color": "Green",
         "member_color_code": "0x008000",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2024-08-15",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -92709,7 +92200,7 @@
       }
     ],
     "x_followers": 112601,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\猪狩ともか_portrait.jpg",
     "romaji": "Igari Tomoka",
     "x_account": "igari_tomoka3",
     "x_url": "https://x.com/igari_tomoka3",
@@ -93409,20 +92900,6 @@
         "group_uid": "VEVOUklO"
       },
       {
-        "group_name": "toutoina.",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "NECOPLA",
         "start_date": null,
         "end_date": null,
@@ -94025,13 +93502,6 @@
         "group_uid": "VEVOUklO"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "TELLMIT",
         "start_date": null,
         "end_date": null,
@@ -94147,14 +93617,14 @@
   {
     "uid": "607cb15b-37f5-4ac7-bc98-66cea9cad81a",
     "name": "Pink",
-    "hiragana": "",
+    "hiragana": "めぐ",
     "romaji": "Megu",
-    "nickname": "",
+    "nickname": "Megu",
     "past_names": {},
     "birthday": null,
     "age": null,
     "height": null,
-    "birthplace": "",
+    "birthplace": "Kanagawa",
     "languages": [
       "Japanese"
     ],
@@ -94162,14 +93632,16 @@
       {
         "group_name": "GANGDEMIC",
         "start_date": "2022-05-19",
-        "end_date": null,
+        "end_date": "2024-06-13",
         "member_name": "Pink",
         "member_color_code": null,
         "group_uid": "R0FOR0RFTUlD"
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\Pink_portrait.jpg",
+    "birthday_partial": "12-04",
+    "x_account": "gandemi_megu"
   },
   {
     "uid": "6085b93f-a812-43cc-9f18-4f4e642735b2",
@@ -98190,13 +97662,6 @@
         "member_color": "White",
         "member_color_code": "0xffffff",
         "member_name": "海老原てん"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 4605,
@@ -100761,13 +100226,6 @@
         "member_color": "Red",
         "member_color_code": "0xff0000",
         "member_name": "大須かのん"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 7090,
@@ -100924,20 +100382,6 @@
       },
       {
         "group_name": "Ponkotsu Konpo",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "make mie",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -101752,13 +101196,6 @@
         "end_date": null,
         "member_color": "Light Blue",
         "member_color_code": "0xadd8e6"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2025-07-29",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 12928,
@@ -102178,14 +101615,6 @@
         ]
       },
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2023-10-16",
-        "end_date": "2024-05-28",
-        "member_name": "愛川はな",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "chuLa",
         "start_date": "2024-05-01",
         "end_date": "2025-01-31",
@@ -102193,6 +101622,14 @@
         "member_name": "杏希はな",
         "member_color_code": "0xffff00",
         "group_uid": "Y2h1TGE"
+      },
+      {
+        "group_name": "ヒロインズ研究生",
+        "start_date": "2023-10-16",
+        "end_date": "2024-05-28",
+        "member_name": "愛川はな",
+        "member_color_code": null,
+        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       }
     ],
     "x_followers": 4058,
@@ -102473,13 +101910,6 @@
         "member_color": "Red",
         "member_color_code": "0xff0000",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 12169,
@@ -103071,13 +102501,6 @@
         "end_date": null,
         "member_color": "Light Blue",
         "member_color_code": "0xadd8e6"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 30357,
@@ -104591,13 +104014,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2021-04-23",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 115876,
@@ -104983,13 +104399,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": null
-      },
-      {
-        "group_name": "dela",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "White",
-        "member_color_code": "0xffffff"
       },
       {
         "group_name": "Paradeeq",
@@ -105872,13 +105281,6 @@
         "member_color": "Green",
         "member_color_code": "0x008000",
         "member_name": "織田こゆん"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "SO.ON project NAGOYA",
@@ -107412,13 +106814,6 @@
         "end_date": null,
         "member_color": "Yellow",
         "member_color_code": "0xffff00"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -109894,13 +109289,6 @@
         "member_name": "陽咲みお",
         "member_color_code": "0xffa500",
         "group_uid": "Y2h1TGE"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -110886,13 +110274,6 @@
         "end_date": null,
         "member_color": "Purple",
         "member_color_code": "0x800080"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -112123,13 +111504,6 @@
         "member_color_code": "0x000000"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "akishibu project",
         "start_date": null,
         "end_date": null,
@@ -112414,13 +111788,6 @@
         "member_color": "Purple",
         "member_color_code": "0x800080",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -113084,12 +112451,19 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2023-10-16",
-        "end_date": "2024-05-28",
+        "group_name": "Now♡Storage",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Purple",
+        "member_color_code": "0x800080"
+      },
+      {
+        "group_name": "なう♡すとれーじ",
+        "start_date": "2026-07-06",
+        "end_date": null,
         "member_name": "永瀬玲乃",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
+        "member_color": "Purple",
+        "member_color_code": "0x800080"
       },
       {
         "group_name": "ヒロインズ研究生",
@@ -113099,28 +112473,6 @@
         "member_color_code": "0x800080",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805",
         "member_color": "Purple"
-      },
-      {
-        "group_name": "Now♡Storage",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Purple",
-        "member_color_code": "0x800080"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "なう♡すとれーじ",
-        "start_date": "2026-07-06",
-        "end_date": null,
-        "member_name": "永瀬玲乃",
-        "member_color": "Purple",
-        "member_color_code": "0x800080"
       }
     ],
     "x_followers": null,
@@ -113518,13 +112870,6 @@
         "group_name": "iLiFE!候補生",
         "start_date": "2000-01-01",
         "end_date": "2025-12-01",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       },
@@ -114298,13 +113643,6 @@
       },
       {
         "group_name": "GAGAPIERO",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -115540,13 +114878,6 @@
         "member_name": "三木零",
         "member_color_code": "0x0000ff",
         "group_uid": "QWRhbUxpbGl0aA"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 6564,
@@ -115651,12 +114982,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-23",
-        "end_date": "2025-04-06",
-        "member_name": "宮水ひいろ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
+        "group_name": "MEGAFON",
+        "start_date": null,
+        "end_date": null,
+        "member_color": "Considerate White",
+        "member_color_code": "0xffffff",
+        "group_uid": "TUVHQUZPTg"
       },
       {
         "group_name": "ヒロインズ研究生",
@@ -115666,21 +114997,6 @@
         "member_color": "Considerate White (MEGAFON)",
         "member_color_code": "0xffffff",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "MEGAFON",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Considerate White",
-        "member_color_code": "0xffffff",
-        "group_uid": "TUVHQUZPTg"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -115792,13 +115108,6 @@
         "end_date": null,
         "member_color": "Purple",
         "member_color_code": "0x800080"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -116785,14 +116094,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Light Blue",
-        "member_color_code": "0xadd8e6",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2025-05-09",
         "end_date": null,
@@ -116800,13 +116101,6 @@
         "member_name": "虹羽みに",
         "member_color_code": "0xadd8e6",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 148596,
@@ -116991,13 +116285,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": "44Ki44Kk44OJ44Or44Kr44Os44OD44K4"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "IDOL COLLEGE",
@@ -117562,20 +116849,6 @@
         "member_name": "心咲めい",
         "member_color_code": "0x800080",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Purple",
-        "member_color_code": "0x800080"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -119721,13 +118994,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 3275,
@@ -119819,13 +119085,6 @@
         "member_name": "瀬奈ゆのん",
         "member_color_code": "0xadd8e6",
         "group_uid": "WlVUVE9NT1RUTw"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 3448,
@@ -120412,27 +119671,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-17",
-        "end_date": "2025-04-06",
-        "member_name": "卯月ねいろ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2024-06-17",
         "end_date": "2025-04-06",
         "member_name": "卯月ねいろ",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -120786,14 +120030,6 @@
       "Japanese"
     ],
     "group_history": [
-      {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-22",
-        "end_date": null,
-        "member_name": "一ノ瀬ちい",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
       {
         "group_name": "ヒロインズ研究生",
         "start_date": "2024-06-22",
@@ -121610,13 +120846,6 @@
         "end_date": null,
         "member_color": "Pink",
         "member_color_code": "0xffc0cb"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 7264,
@@ -122604,7 +121833,7 @@
       }
     ],
     "x_followers": 107289,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\アイカ・ザ・スパイ_portrait.jpg",
     "romaji": "Aika The Spy",
     "x_account": "aika_mame96",
     "x_url": "https://x.com/aika_mame96",
@@ -123288,13 +122517,6 @@
         "member_color": "Yellow",
         "member_color_code": "0xffff00",
         "member_name": "琴音うな"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 3622,
@@ -125531,14 +124753,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Green",
-        "member_color_code": "0x008000",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2023-09-12",
         "end_date": null,
@@ -125546,13 +124760,6 @@
         "member_name": "若葉のあ",
         "member_color_code": "0x008000",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 161244,
@@ -126244,7 +125451,7 @@
     ],
     "group_history": [
       {
-        "group_name": "YAMINABE (HEROINES)",
+        "group_name": "YAMINABE",
         "start_date": null,
         "end_date": null,
         "member_color": "Orange",
@@ -126300,13 +125507,6 @@
         "end_date": null,
         "member_color": "Red",
         "member_color_code": "0xff0000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "iLiFE!",
@@ -127569,13 +126769,6 @@
       },
       {
         "group_name": "akishibu project",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -129921,13 +129114,6 @@
         "end_date": null,
         "member_color": "Red",
         "member_color_code": "0xff0000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 3815,
@@ -130229,13 +129415,6 @@
         "end_date": null,
         "member_color": "Green",
         "member_color_code": "0x008000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 41539,
@@ -131590,13 +130769,6 @@
         "end_date": null,
         "member_color": "Red",
         "member_color_code": "0xff0000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 7127,
@@ -133827,13 +132999,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -134037,13 +133202,6 @@
       },
       {
         "group_name": "Yakousei Amuse",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -134659,13 +133817,6 @@
         "member_color": "White",
         "member_color_code": "0xffffff",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "YAMINABE",
@@ -136260,22 +135411,7 @@
         "group_uid": "Y2h1TGE"
       },
       {
-        "group_name": "Comme moi",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null,
-        "group_uid": null
-      },
-      {
         "group_name": "ChuLa",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -137850,13 +136986,6 @@
         "member_name": "天川ほたる",
         "member_color_code": "0x800080",
         "group_uid": "44Ki44Kt44K344OWcHJvamVjdA"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_account": "aksb_hotaru",
@@ -139572,13 +138701,6 @@
         "member_color": "White",
         "member_color_code": "0xffffff",
         "group_uid": "44OR44Op44Os44Or44K144Kk44OA44O8"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Parallel Cider",
@@ -142694,13 +141816,6 @@
         "member_color": "Powerful Red",
         "member_color_code": "0xff0000",
         "group_uid": "TUVHQUZPTg"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 12502,
@@ -143498,13 +142613,6 @@
         "end_date": null,
         "member_color": "Pink",
         "member_color_code": "0xffc0cb"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 3242,
@@ -144621,13 +143729,6 @@
       },
       {
         "group_name": "Parallel Cider",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -146084,13 +145185,6 @@
         "end_date": null,
         "member_color": "Pink",
         "member_color_code": "0xffc0cb"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 18950,
@@ -146865,13 +145959,6 @@
         "member_color": "Pink",
         "member_color_code": "0xffc0cb",
         "group_uid": "44OK44OK44Op44Oz44OJ"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Nanaland",
@@ -149012,14 +148099,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Purple",
-        "member_color_code": "0x800080",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2025-05-10",
         "end_date": null,
@@ -149027,13 +148106,6 @@
         "member_name": "純嶺みき",
         "member_color_code": "0x800080",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 101467,
@@ -150836,13 +149908,6 @@
         "member_color": "Yellow",
         "member_color_code": "0xffff00",
         "group_uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 24854,
@@ -151677,13 +150742,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 5069,
@@ -151742,8 +150800,8 @@
     "uid": "9aaff1a2-5da3-46a9-b9cf-2d0024659119",
     "name": "りる",
     "past_names": {},
-    "birthday": "2004-03-01",
-    "age": 22,
+    "birthday": null,
+    "age": null,
     "height": 156,
     "birthplace": "",
     "languages": [
@@ -151760,8 +150818,10 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
-    "romaji": "Riru"
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\りる_portrait.jpg",
+    "romaji": "Riru",
+    "hiragana": "りる",
+    "x_account": "nopas_riru"
   },
   {
     "uid": "9ab45902-d2ea-400d-9512-7d157572eda6",
@@ -152448,13 +151508,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": null
-      },
-      {
-        "group_name": "dela",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Paradeeq",
@@ -156630,13 +155683,6 @@
       "Japanese"
     ],
     "group_history": [
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Yellow",
-        "member_color_code": "0xffff00"
-      },
       {
         "group_name": "ハルカエコー",
         "start_date": "2026-04-09",
@@ -161705,12 +160751,12 @@
         ]
       },
       {
-        "group_name": "HEROINES Kenkyuusei",
+        "group_name": "ヒロインズ研究生",
         "start_date": "2023-10-16",
         "end_date": "2025-04-06",
         "member_name": "佐藤ねね",
         "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
+        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       }
     ],
     "x_followers": null,
@@ -162038,14 +161084,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2023-10-16",
-        "end_date": "2025-04-06",
-        "member_name": "宇野ゆり",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "iON!",
         "start_date": "2025-04-20",
         "end_date": null,
@@ -162062,13 +161100,6 @@
         "member_color": "Red",
         "member_color_code": "0xff0000",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 24798,
@@ -163963,27 +162994,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-17",
-        "end_date": "2025-11-04",
-        "member_name": "藤咲あず",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-17",
         "end_date": "2025-11-04",
         "member_name": "藤咲あず",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -165679,11 +164695,12 @@
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
       },
       {
-        "group_name": "HEROINES Osaka",
+        "group_name": "ヒロインズ研究生大阪",
         "start_date": null,
         "end_date": null,
         "member_color": null,
-        "member_color_code": null
+        "member_color_code": null,
+        "group_uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513"
       }
     ],
     "x_followers": 3729,
@@ -168483,13 +167500,6 @@
             "score": 4
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 2815,
@@ -168750,14 +167760,6 @@
         "member_color": "Yellow",
         "member_name": "落合希来里",
         "member_color_code": "0xffff00"
-      },
-      {
-        "group_name": "シュレーディンガーの犬",
-        "start_date": "2024-04-01",
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null,
-        "group_uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs"
       }
     ],
     "x_followers": 89874,
@@ -168918,26 +167920,11 @@
         "group_uid": "44Gu44KT44G144GD44GP77yB"
       },
       {
-        "group_name": "Monogatari",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null,
-        "group_uid": null
-      },
-      {
         "group_name": "Non¬Fiction",
         "start_date": null,
         "end_date": null,
         "member_color": "Purple",
         "member_color_code": "0x800080"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "monogatari",
@@ -169577,13 +168564,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 40019,
@@ -170169,9 +169149,11 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
-    "romaji": "Gatsu Shiroharuno",
-    "birthday_partial": null
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\月城はるの_portrait.jpg",
+    "romaji": "Tsukishiro Haruno",
+    "birthday_partial": "01-18",
+    "hiragana": "つきしろはるの",
+    "x_account": "comiqon_haruno"
   },
   {
     "uid": "ae2d3838-4908-42e1-82fc-23289a65ea52",
@@ -170289,7 +169271,7 @@
         "group_name": "≠ME",
         "start_date": "2019-02-01",
         "end_date": null,
-        "member_color": "White",
+        "member_color": "Pink",
         "member_color_code": "0xffc0cb",
         "notes": "Additional member colors: White",
         "member_name": "谷崎早耶"
@@ -171074,13 +170056,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "member_name": "味園そら"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "#Kawaii Dake de Bazuritai",
@@ -172223,13 +171198,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 2054,
@@ -172786,13 +171754,6 @@
     ],
     "group_history": [
       {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "White",
-        "member_color_code": "0xffffff"
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2021-11-30",
         "end_date": "2022-05-25",
@@ -172800,13 +171761,6 @@
         "member_name": "琥珀しえる",
         "member_color_code": "0xffffff",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -173526,13 +172480,6 @@
       },
       {
         "group_name": "Yakousei Amuse",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -174367,23 +173314,6 @@
         "group_uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16"
       },
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-17",
-        "end_date": null,
-        "member_name": "朝日まる",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
-        "group_name": "ヒロインズ研究生",
-        "start_date": "2024-06-17",
-        "end_date": null,
-        "member_name": "朝日まる",
-        "member_color": "Yellow",
-        "member_color_code": "0xffff00",
-        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
         "group_name": "Paradeeq",
         "start_date": null,
         "end_date": null,
@@ -174396,6 +173326,15 @@
         "end_date": null,
         "member_color": "Yellow",
         "member_color_code": "0xffff00"
+      },
+      {
+        "group_name": "ヒロインズ研究生",
+        "start_date": "2024-06-17",
+        "end_date": null,
+        "member_name": "朝日まる",
+        "member_color": "Yellow",
+        "member_color_code": "0xffff00",
+        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       }
     ],
     "x_followers": 8618,
@@ -176005,7 +174944,7 @@
       }
     ],
     "x_followers": 13447,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\あっす〜_portrait.jpg",
     "romaji": "Assu〜",
     "birthday_partial": null,
     "x_account": "assu_okopure",
@@ -176874,14 +175813,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-21",
-        "end_date": "2025-04-06",
-        "member_name": "白熊あむ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2024-06-21",
         "end_date": "2025-04-06",
@@ -176889,13 +175820,6 @@
         "member_color_code": "0xadd8e6",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805",
         "member_color": "Light Blue (KEKM)"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -177134,7 +176058,7 @@
         "group_name": "≠ME",
         "start_date": "2019-02-01",
         "end_date": "2018-03-25",
-        "member_color": "Green",
+        "member_color": "Yellow",
         "member_color_code": "0xffff00",
         "notes": "Additional member colors: Green",
         "member_name": "冨田菜々風"
@@ -178066,13 +176990,6 @@
         "member_color": "Pink",
         "member_color_code": "0xffc0cb",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 4513,
@@ -179859,13 +178776,6 @@
         "end_date": null,
         "member_color": "Blue",
         "member_color_code": "0x0000ff"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 10294,
@@ -179945,10 +178855,10 @@
     "uid": "b75b93ce-41b9-4eb9-8af1-5017eb446ad5",
     "name": "森山結友",
     "past_names": {},
-    "birthday": "1994-04-01",
-    "age": 31,
+    "birthday": "2008-05-15",
+    "age": 17,
     "height": 156,
-    "birthplace": "Fukuoka, Japan",
+    "birthplace": "Fukuoka",
     "languages": [
       "Japanese"
     ],
@@ -179964,9 +178874,10 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\森山結友_portrait.jpg",
     "romaji": "Moriyama Yuu",
-    "hiragana": "もりやま ゆう"
+    "hiragana": "もりやまゆう",
+    "x_account": "yuu_moriyama"
   },
   {
     "uid": "b783cf18-0968-4b8f-8184-2b99411afd39",
@@ -180186,13 +179097,6 @@
         "member_name": "玉響せつな",
         "member_color_code": "0xffffff",
         "group_uid": "Y2h1TGE"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 6139,
@@ -181042,13 +179946,6 @@
         "member_name": "宝城あいり"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Parallel Cider",
         "start_date": null,
         "end_date": "2026-04-06",
@@ -181754,9 +180651,9 @@
   },
   {
     "uid": "b95bb4b0-449b-4c87-8023-0f4ac03d0f8f",
-    "name": "清凪",
+    "name": "根本凪",
     "past_names": {
-      "根本凪": "ねもぺろ from でんぱ組.inc",
+      "清凪": "清竜人25",
       "ねぎ": "水戸ご当地アイドル（仮）"
     },
     "birthday": "1999-03-15",
@@ -181789,7 +180686,8 @@
         "end_date": "2022-04-30",
         "member_color": "Blue (Kiyoshi Ryujin 25) Mint Green (2019-2022; Dempa) Green (2017-2019; Dempa / Nijicon)",
         "member_color_code": "0x0000ff",
-        "group_uid": "44Gn44KT44Gx57WELmluYw"
+        "group_uid": "44Gn44KT44Gx57WELmluYw",
+        "member_name": "根本凪"
       },
       {
         "group_name": "虹のコンキスタドール",
@@ -181797,12 +180695,13 @@
         "end_date": "2022-04-30",
         "member_color": null,
         "member_color_code": null,
-        "group_uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or"
+        "group_uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
+        "member_name": "根本凪"
       }
     ],
     "x_followers": 158465,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\清凪_portrait.jpg",
-    "romaji": "Kiyoshi Nagi",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\根本凪_portrait.jpg",
+    "romaji": "Nemoto Nagi",
     "birthday_partial": null,
     "nickname": "Nemo (ねも)",
     "wiki_url": "https://jpop.fandom.com/wiki/Nemoto_Nagi",
@@ -181815,7 +180714,8 @@
     "x_account": "nemoto_nagi",
     "x_url": "https://x.com/nemoto_nagi",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "hiragana": "ねもとなぎ"
   },
   {
     "uid": "b95f1b95-596b-4031-b594-86e219c821bc",
@@ -181857,12 +180757,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-19",
-        "end_date": null,
-        "member_name": "広瀬りむ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
+        "group_name": "ZUTTOMOTTO",
+        "start_date": "2026-07-07",
+        "member_color": "Mint Green",
+        "member_color_code": "0x98ff98",
+        "group_uid": "WlVUVE9NT1RUTw",
+        "member_name": "広瀬りむ"
       },
       {
         "group_name": "ヒロインズ研究生",
@@ -181872,21 +180772,6 @@
         "member_color_code": "0x98ff98",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805",
         "member_color": "Mint Green (ZUTTOMOTTO)"
-      },
-      {
-        "group_name": "ZUTTOMOTTO",
-        "start_date": "2026-07-07",
-        "member_color": "Mint Green",
-        "member_color_code": "0x98ff98",
-        "group_uid": "WlVUVE9NT1RUTw",
-        "member_name": "広瀬りむ"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -184992,14 +183877,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-19",
-        "end_date": "2025-04-06",
-        "member_name": "百瀬ゆも",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2024-06-19",
         "end_date": "2025-04-06",
@@ -185609,10 +184486,10 @@
     "uid": "bd355b21-240b-41e0-8943-4b9aebe7bbaa",
     "name": "髙木悠未",
     "past_names": {},
-    "birthday": "1994-04-01",
-    "age": 31,
-    "height": 156,
-    "birthplace": "",
+    "birthday": "1997-05-07",
+    "age": 28,
+    "height": 147,
+    "birthplace": "Fukuoka",
     "languages": [
       "Japanese"
     ],
@@ -185627,8 +184504,11 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
-    "romaji": "Takagi Yuuhitsuji"
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\髙木悠未_portrait.jpg",
+    "romaji": "Takagi Yuuhitsuji",
+    "hiragana": "たかきゆうみ",
+    "nickname": "Yuumin (ゆうみん)",
+    "x_account": "yuumi_takaki"
   },
   {
     "uid": "bd40422a-f2f2-426a-8abe-8359a0447647",
@@ -186232,13 +185112,6 @@
         "member_color": "赤",
         "member_color_code": "0xe53935ff",
         "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 4261,
@@ -186323,21 +185196,6 @@
         "member_name": "空詩かれん",
         "member_color_code": "0x0000ff",
         "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Blue",
-        "member_color_code": "0x0000ff",
-        "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "monogatari",
@@ -187386,10 +186244,10 @@
     "uid": "bebe8ec5-bab9-477e-8b25-aa3ec6bc8df9",
     "name": "長谷川あめり",
     "past_names": {},
-    "birthday": null,
-    "age": null,
-    "height": null,
-    "birthplace": "",
+    "birthday": "2002-06-08",
+    "age": 23,
+    "height": 163,
+    "birthplace": "Kanagawa",
     "languages": [
       "Japanese"
     ],
@@ -187405,9 +186263,12 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\長谷川あめり_portrait.jpg",
     "romaji": "Hasegawa Ameri",
-    "birthday_partial": null
+    "birthday_partial": null,
+    "hiragana": "はせがわあめり",
+    "nickname": "あめり",
+    "x_account": "amelie__0608"
   },
   {
     "uid": "bee0fa68-83ac-43cf-8473-bd6df0568f37",
@@ -188246,13 +187107,6 @@
             "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce80"
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Maboroshi.no",
@@ -190933,7 +189787,7 @@
       },
       {
         "group_name": "CANDY TUNE",
-        "start_date": null,
+        "start_date": "2023-02-14",
         "end_date": null,
         "member_name": "村川緋杏",
         "member_color": "Pink",
@@ -193870,13 +192724,6 @@
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Chéri Chérie",
         "start_date": null,
         "end_date": null,
@@ -194822,12 +193669,13 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2024-06-20",
+        "group_name": "TENRIN",
+        "start_date": "2026-05-09",
         "end_date": null,
         "member_name": "刻乃なう",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
+        "member_color": "Light Blue",
+        "member_color_code": "0xadd8e6",
+        "group_uid": "VEVOUklO"
       },
       {
         "group_name": "ヒロインズ研究生",
@@ -194837,15 +193685,6 @@
         "member_color_code": "0xadd8e6",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805",
         "member_color": "Light Blue (TENRIN)"
-      },
-      {
-        "group_name": "TENRIN",
-        "start_date": "2026-05-09",
-        "end_date": null,
-        "member_name": "刻乃なう",
-        "member_color": "Light Blue",
-        "member_color_code": "0xadd8e6",
-        "group_uid": "VEVOUklO"
       }
     ],
     "x_followers": null,
@@ -197517,13 +196356,6 @@
         "end_date": null,
         "member_color": "White",
         "member_color_code": "0xffffff"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 25481,
@@ -198892,7 +197724,7 @@
     "group_history": [
       {
         "group_name": "CANDY TUNE",
-        "start_date": null,
+        "start_date": "2023-01-14",
         "end_date": null,
         "member_name": "南なつ",
         "member_color": "Orange",
@@ -199550,13 +198382,6 @@
         "end_date": null,
         "member_color": "Blue",
         "member_color_code": "0x0000ff"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "I Get Chu!",
@@ -201966,13 +200791,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2021-04-23",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 106603,
@@ -203278,14 +202096,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2023-10-16",
-        "end_date": "2024-05-28",
-        "member_name": "千歳しの",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2023-10-16",
         "end_date": "2024-05-28",
@@ -203799,13 +202609,6 @@
         "member_name": "明鏡みらの",
         "member_color_code": "0x008000",
         "group_uid": "Y2h1TGE"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -204228,13 +203031,6 @@
         "member_color": "Purple",
         "member_color_code": "0x800080",
         "member_name": "小倉あずき"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 4494,
@@ -207121,13 +205917,6 @@
         "group_uid": "aUxpRkUh"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2023-07-12",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "iLiFE!",
         "start_date": null,
         "end_date": "2023-07-12",
@@ -207328,13 +206117,6 @@
       },
       {
         "group_name": "Parallel Cider",
-        "start_date": null,
-        "end_date": "2026-06-28",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": "2026-06-28",
         "member_color": null,
@@ -208760,13 +207542,6 @@
             "score": 2.5
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -210888,13 +209663,6 @@
         "end_date": "2025-11-14",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2025-11-14",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -211228,13 +209996,6 @@
         "member_name": "四宮える",
         "member_color_code": "0xff0000",
         "group_uid": "WlVUVE9NT1RUTw"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 2076,
@@ -211659,13 +210420,6 @@
         "member_name": "真空せいら",
         "member_color_code": "0x800080",
         "group_uid": "WlVUVE9NT1RUTw"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 2423,
@@ -212686,27 +211440,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-18",
-        "end_date": null,
-        "member_name": "白石あゆ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-18",
         "end_date": null,
         "member_name": "白石あゆ",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -221358,13 +220097,6 @@
         "end_date": "2025-11-12",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2025-11-12",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -221826,13 +220558,6 @@
         "end_date": null,
         "member_color": "Blue",
         "member_color_code": "0x0000ff"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "ラストシーン",
@@ -222797,13 +221522,6 @@
         "group_uid": "WlVUVE9NT1RUTw"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "fairy☆dolls",
         "start_date": null,
         "end_date": null,
@@ -223074,20 +221792,6 @@
         "member_color": "Yellow (chuLa / SAI²Rium)",
         "member_color_code": "0xffff00",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -223625,7 +222329,7 @@
       }
     ],
     "x_followers": 131275,
-    "portrait_photo_path": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
     "romaji": "Sakurai Momo",
     "hiragana": "さくらいもも",
     "nickname": "Momo-kyun (ももきゅん)",
@@ -223643,6 +222347,15 @@
     "group_portrait_history": {
       "≠ME": [
         {
+          "path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-27",
+          "release_date": null,
+          "label": "canonical portrait",
+          "note": "Normalized to short basename for reliable web loading.",
+          "source": "local_fix"
+        },
+        {
           "path": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
           "timestamp": null,
           "effective_date": "2026-07-19",
@@ -223650,19 +222363,19 @@
           "label": "official profile portrait",
           "note": "Official current member profile portrait captured on 2026-07-19.",
           "source": "official_profile"
-        },
-        {
-          "path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
-          "timestamp": null,
-          "effective_date": "2026-03-31",
-          "release_date": null,
-          "label": "legacy local portrait",
-          "note": "Pre-refresh portrait retained as prior history entry.",
-          "source": "local_archive"
         }
       ],
       "4omgTUU": [
         {
+          "path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
+          "timestamp": null,
+          "effective_date": "2026-07-27",
+          "release_date": null,
+          "label": "canonical portrait",
+          "note": "Normalized to short basename for reliable web loading.",
+          "source": "local_fix"
+        },
+        {
           "path": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
           "timestamp": null,
           "effective_date": "2026-07-19",
@@ -223670,21 +222383,12 @@
           "label": "official profile portrait",
           "note": "Official current member profile portrait captured on 2026-07-19.",
           "source": "official_profile"
-        },
-        {
-          "path": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
-          "timestamp": null,
-          "effective_date": "2026-03-31",
-          "release_date": null,
-          "label": "legacy local portrait",
-          "note": "Pre-refresh portrait retained as prior history entry.",
-          "source": "local_archive"
         }
       ]
     },
     "group_portrait_paths": {
-      "≠ME": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg",
-      "4omgTUU": "fetcher\\database\\picture_fandom\\櫻井もも__NotEqualMe_2026-07-19_official_profile.jpg"
+      "≠ME": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg",
+      "4omgTUU": "fetcher\\database\\picture_fandom\\櫻井もも_portrait.jpg"
     }
   },
   {
@@ -224377,13 +223081,6 @@
         "member_color": "White",
         "member_color_code": "0xffffff",
         "group_uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 12585,
@@ -224558,13 +223255,6 @@
         "end_date": null,
         "member_color": "White",
         "member_color_code": "0xffffff"
-      },
-      {
-        "group_name": "mi-na",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Oyasumi Sekai",
@@ -227904,13 +226594,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 10307,
@@ -228903,11 +227586,11 @@
         "group_uid": "aUxpRkUh"
       },
       {
-        "group_name": "HEROINES Kenkyuusei",
+        "group_name": "iLiFE!",
         "start_date": null,
         "end_date": null,
-        "member_color": null,
-        "member_color_code": null
+        "member_color": "Pink (iON! / iLiFE!)",
+        "member_color_code": "0xffc0cb"
       },
       {
         "group_name": "ヒロインズ研究生",
@@ -228917,20 +227600,6 @@
         "member_color": "Pink (iON! / iLiFE!)",
         "member_color_code": "0xffc0cb",
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Pink (iON! / iLiFE!)",
-        "member_color_code": "0xffc0cb"
       }
     ],
     "x_followers": null,
@@ -233983,13 +232652,6 @@
             "score": 2.5
           }
         ]
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -237868,13 +236530,6 @@
         "group_uid": "44Ki44Kt44K344OWcHJvamVjdA"
       },
       {
-        "group_name": "amorecarina",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "BUD PiNK",
         "start_date": null,
         "end_date": null,
@@ -237887,13 +236542,6 @@
         "end_date": null,
         "member_color": "Pink",
         "member_color_code": "0xffc0cb"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "portrait_photo_path": "fetcher\\database\\picture_fandom\\桜庭萌桃_portrait.jpg",
@@ -239211,13 +237859,6 @@
         "member_color": "Pink",
         "member_color_code": "0xffc0cb",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -241718,13 +240359,6 @@
         "member_color": "Green",
         "member_color_code": "0x008000",
         "group_uid": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2021-09-10",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -242100,13 +240734,6 @@
         ]
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Dress Code",
         "start_date": null,
         "end_date": "2026-05-24",
@@ -242181,13 +240808,6 @@
       },
       {
         "group_name": "akishibu project",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -242347,9 +240967,11 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\おいもちゃん_portrait.jpg",
     "romaji": "Oimochan",
-    "birthday_partial": null
+    "birthday_partial": null,
+    "hiragana": "おいもちゃん",
+    "x_account": "oimochanokopure"
   },
   {
     "uid": "f5ad768e-a8fa-43f4-85e1-e45fe806e612",
@@ -242948,7 +241570,7 @@
     "birthday": null,
     "age": null,
     "height": 146.5,
-    "birthplace": "Hiroshima, Japan",
+    "birthplace": "Hiroshima",
     "languages": [
       "Japanese"
     ],
@@ -242963,10 +241585,12 @@
       }
     ],
     "x_followers": null,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\あぐりぴこ_portrait.jpg",
     "romaji": "Aguripiko",
     "hiragana": "あぐりぴこ",
-    "birthday_partial": "10-03"
+    "birthday_partial": "10-03",
+    "nickname": "Aguri (あぐり)",
+    "x_account": "aguri_pico"
   },
   {
     "uid": "f66f33e6-0be4-4c2e-9e79-e9c8ce6f67d9",
@@ -244630,10 +243254,10 @@
       }
     ],
     "x_followers": 111969,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\mikina_portrait.jpg",
     "romaji": "Mikina",
     "birthday_partial": null,
-    "x_account": "mikina_exwhyz",
+    "x_account": "mikina_ExWHYZ",
     "x_url": "https://x.com/mikina_exwhyz",
     "x_followers_source": "x-ranker",
     "x_followers_updated_at": "2026-04-04"
@@ -245180,13 +243804,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "group_uid": "Y2h1TGE"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -245380,13 +243997,6 @@
         "member_color": "Wanwan Yellow",
         "member_color_code": "0xffff00",
         "group_uid": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 15196,
@@ -246470,27 +245080,12 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2025-04-16",
-        "end_date": null,
-        "member_name": "秋月えむ",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2025-04-16",
         "end_date": null,
         "member_name": "秋月えむ",
         "member_color_code": null,
         "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -246862,13 +245457,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -246899,14 +245487,6 @@
     ],
     "group_history": [
       {
-        "group_name": "HEROINES Kenkyuusei",
-        "start_date": "2023-10-16",
-        "end_date": "2024-05-28",
-        "member_name": "柏木羽依",
-        "member_color_code": null,
-        "group_uid": "acdd5738-2636-426a-b896-b9435d4327a5"
-      },
-      {
         "group_name": "I MY ME MINE",
         "start_date": "2025-07-01",
         "end_date": null,
@@ -246914,6 +245494,14 @@
         "member_name": "犬飼うた",
         "member_color_code": "0xffa500",
         "group_uid": "SSBNWSBNRSBNSU5F"
+      },
+      {
+        "group_name": "ヒロインズ研究生",
+        "start_date": "2023-10-16",
+        "end_date": "2024-05-28",
+        "member_name": "柏木羽依",
+        "member_color_code": null,
+        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       }
     ],
     "x_followers": 1771,
@@ -247300,13 +245888,6 @@
       },
       {
         "group_name": "Parallel Cider",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -248212,13 +246793,6 @@
         "group_uid": "QWRhbUxpbGl0aA"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": "2023-09-25",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "iLife!",
         "start_date": "2023-05-09",
         "end_date": "2023-09-25",
@@ -248230,13 +246804,6 @@
       },
       {
         "group_name": "BLK LiLiY",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "iLiFE!",
         "start_date": null,
         "end_date": null,
         "member_color": null,
@@ -248366,7 +246933,7 @@
       {
         "group_name": "KRD8",
         "start_date": "2013-12-01",
-        "end_date": null,
+        "end_date": "2015-03-22",
         "member_color": null,
         "member_color_code": null,
         "group_uid": "S1JEOA"
@@ -248503,13 +247070,6 @@
         "member_name": "霞あげは",
         "member_color_code": "0x0000ff",
         "group_uid": "VEVOUklO"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "SO.ON project TOKYO",
@@ -248969,13 +247529,6 @@
         "member_color": "Light Blue",
         "member_color_code": "0xadd8e6",
         "group_uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 5836,
@@ -250039,7 +248592,7 @@
       }
     ],
     "x_followers": 3764,
-    "portrait_photo_path": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\ある_portrait.jpg",
     "romaji": "Aru",
     "birthday_partial": null,
     "x_account": "aru_okopure",
@@ -252443,13 +250996,6 @@
         "end_date": null,
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 16266,
@@ -252696,13 +251242,6 @@
         "member_color": null,
         "member_color_code": null,
         "group_uid": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 32607,
@@ -258868,13 +257407,6 @@
         "member_color_code": "0xffc0cb"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Ulysses",
         "start_date": null,
         "end_date": null,
@@ -261148,13 +259680,6 @@
         "member_color": "青",
         "member_color_code": "0x1e88e5ff",
         "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261195,13 +259720,6 @@
         "member_color": "紫",
         "member_color_code": "0x8e24aaff",
         "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261242,13 +259760,6 @@
         "member_color": "ピンク",
         "member_color_code": "0xff5ca8ff",
         "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "SO.ON project NAGOYA",
@@ -261296,13 +259807,6 @@
         "member_color": "白",
         "member_color_code": "0xf5f5f5ff",
         "group_uid": "82c6703f-0d5d-4b54-972d-232437a3b991"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261343,13 +259847,6 @@
         "member_color": "Pink",
         "member_color_code": "0xffc0cb",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261385,13 +259882,6 @@
         "member_color": "Red",
         "member_color_code": "0xff0000",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261427,13 +259917,6 @@
         "member_color": "White",
         "member_color_code": "0xffffff",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261469,13 +259952,6 @@
         "member_color": "Emerald Green",
         "member_color_code": "0x50c878",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261511,13 +259987,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261553,13 +260022,6 @@
         "member_color": "Orange",
         "member_color_code": "0xffa500",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261595,13 +260057,6 @@
         "member_color": "Purple",
         "member_color_code": "0x800080",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -261637,13 +260092,6 @@
         "member_color": "Yellow",
         "member_color_code": "0xffff00",
         "group_uid": "3470f280-df87-4c34-addb-7d4a7c52106a"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Cap♡Chuuul",
@@ -262884,13 +261332,6 @@
         "member_color_code": "0x008000"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "ChouChou Meteore",
         "start_date": null,
         "end_date": null,
@@ -262962,13 +261403,6 @@
         "member_color": "Strongest Pink",
         "member_color_code": "0xffc0cb",
         "group_uid": "TUVHQUZPTg"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": "2025-04-06",
-        "end_date": "2026-07-08",
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -263004,13 +261438,6 @@
         "member_color": "Mischievous Orange",
         "member_color_code": "0xffa500",
         "group_uid": "TUVHQUZPTg"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -263046,13 +261473,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "group_uid": "TUVHQUZPTg"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,
@@ -263088,13 +261508,6 @@
         "member_color": "Crybaby Sky Blue",
         "member_color_code": "0x87ceeb",
         "group_uid": "TUVHQUZPTg"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Candy zoo",
@@ -263153,13 +261566,6 @@
         "group_uid": "TUVHQUZPTg"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Nanaland",
         "start_date": null,
         "end_date": "2025-03-27",
@@ -263202,18 +261608,12 @@
         "group_uid": "TUVHQUZPTg"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES Kenkyuusei",
+        "group_name": "ヒロインズ研究生",
         "start_date": null,
         "end_date": "2025-04-06",
         "member_color": null,
-        "member_color_code": null
+        "member_color_code": null,
+        "group_uid": "9b937bbf-facf-437b-9815-94152bfe5805"
       }
     ],
     "x_followers": 8000,
@@ -263308,13 +261708,6 @@
         "member_name": "真守みゅう",
         "member_color": "Pink",
         "member_color_code": "0xffc0cb"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Mamori_Mew",
@@ -263332,13 +261725,6 @@
         "start_date": "2026-05-01",
         "end_date": null,
         "member_name": "白鳥ちな",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263365,13 +261751,6 @@
         "member_name": "小梅ちろ",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Koume_Chiro",
@@ -263394,13 +261773,6 @@
         "start_date": "2026-05-03",
         "end_date": null,
         "member_name": "花森ぴの",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263427,13 +261799,6 @@
         "member_name": "矢乃ひまり",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Yano_Himari",
@@ -263456,13 +261821,6 @@
         "start_date": "2026-05-05",
         "end_date": null,
         "member_name": "逢坂めるむ",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263489,13 +261847,6 @@
         "member_name": "有舞ねおん",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Arima_Neon",
@@ -263518,13 +261869,6 @@
         "start_date": "2026-05-07",
         "end_date": null,
         "member_name": "芽野りりあ",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263551,13 +261895,6 @@
         "member_name": "鳴雷びび",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Narukami_Vivi",
@@ -263580,13 +261917,6 @@
         "start_date": "2026-05-09",
         "end_date": null,
         "member_name": "可愛川ここ",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263613,13 +261943,6 @@
         "member_name": "桃谷りの",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Momotani_Rino",
@@ -263642,13 +261965,6 @@
         "start_date": "2026-05-13",
         "end_date": null,
         "member_name": "北浜そふと",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263675,13 +261991,6 @@
         "member_name": "汐見らう",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Shiomi_Rau",
@@ -263704,13 +262013,6 @@
         "start_date": "2026-05-15",
         "end_date": null,
         "member_name": "笑門りい",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -263737,13 +262039,6 @@
         "member_name": "小花衣はお",
         "member_color": null,
         "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Kohanai_Hao",
@@ -263766,13 +262061,6 @@
         "start_date": "2026-05-16",
         "end_date": null,
         "member_name": "安良城いと",
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
         "member_color": null,
         "member_color_code": null
       }
@@ -264184,13 +262472,6 @@
         "member_color_code": "0xffff00"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "Secret School",
         "start_date": null,
         "end_date": "2025-01-26",
@@ -264245,13 +262526,6 @@
         "end_date": null,
         "member_color": "White",
         "member_color_code": "0xffffff"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       },
       {
         "group_name": "Blueberry Girls",
@@ -264331,13 +262605,6 @@
         "member_color_code": "0xffa500"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "HEROINES SCHOOL",
         "start_date": null,
         "end_date": "2026-02-24",
@@ -264387,13 +262654,6 @@
         "member_color_code": "0xadd8e6"
       },
       {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
-      },
-      {
         "group_name": "HEROINES SCHOOL",
         "start_date": null,
         "end_date": "2026-02-14",
@@ -264441,13 +262701,6 @@
         "end_date": null,
         "member_color": "Red",
         "member_color_code": "0xff0000"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": 8000,
@@ -264550,13 +262803,6 @@
         "member_color": "Blue",
         "member_color_code": "0x0000ff",
         "group_uid": "44OR44Op44Os44Or44K144Kk44OA44O8"
-      },
-      {
-        "group_name": "HEROINES",
-        "start_date": null,
-        "end_date": null,
-        "member_color": null,
-        "member_color_code": null
       }
     ],
     "x_followers": null,

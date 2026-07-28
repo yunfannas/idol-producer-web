@@ -821,7 +821,9 @@ export function ensureAutoBookedLivesInWindow(
     });
     return added;
   }
-  const tier = String(getLetterTierFromGroup(group) ?? "D").trim().toUpperCase();
+  const tierRaw = String(getLetterTierFromGroup(group) ?? "D").trim().toUpperCase();
+  if (tierRaw === "I") return 0;
+  const tier = tierRaw;
   const row = liveMatrix().get(tier) ?? liveMatrix().get("D");
   if (!row) return 0;
   const uidSet = existingUids(save);

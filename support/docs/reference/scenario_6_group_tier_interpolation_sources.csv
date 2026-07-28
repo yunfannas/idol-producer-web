@@ -1,0 +1,476 @@
+﻿group_uid,group_name,group_name_romanji,current_letter_tier,group_tiers_letter_tier,tier_assignment_mode,manual_doc_tier,manual_doc_source,authoritative_rank,authoritative_position,authoritative_source_name,authoritative_match_method,authoritative_source_file,fans,popularity,x_followers,interp_score_finance,interp_score_policy,tier_if_finance_inferLetterTier,tier_if_reinterpolate_script,tier_if_policy_authoritative_else_max_D,notes
+TEUgU1NFUkFGSU0,LE SSERAFIM,LE_SSERAFIM,S,S,authoritative_ranking_2025,,,S,5,LE SSERAFIM,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,9697819,80,,4928.9095,9857819,S,S,S,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QkFCWU1FVEFM,BABYMETAL,BABYMETAL,S,S,authoritative_ranking_2025,,,S,4,Babymetal,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,2967244,70,,1553.622,3107244,S,S,S,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5LmD5pyo5Z2CNDY,乃木坂46,Nogizaka46,S,S,authoritative_ranking_2025,,,S,1,乃木坂46,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,1322989,62,,723.4945,1446989,S,A,S,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5pel5ZCR5Z2CNDY,日向坂46,Hinatazaka46,S,S,authoritative_ranking_2025,,,S,3,日向坂46,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,347493,54,,227.7465,455493,S,B,S,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5qu75Z2CNDY,櫻坂46,Sakurazaka46,S,S,authoritative_ranking_2025,,,S,2,樱坂46,manual_position_uid,public/data/reference/idol_group_rankings_2025_mapped.json,226614,61,,174.307,348614,S,C,S,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QUtCNDg,AKB48,AKB48,A,A,authoritative_ranking_2025,,,A,10,AKB48,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,550295,59,2100563,754.2601,668295,S,A,A,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RlJVSVRTIFpJUFBFUg,FRUITS ZIPPER,FRUITS_ZIPPER,A,A,manual_available_groups_doc,A,support/docs/scenario6_available_groups.txt,A,7,Fruits Zipper,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,305959,61,1857642,585.5079,427959,S,A,A,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+PUxPVkU,=LOVE,=LOVE,A,A,manual_available_groups_doc,A,support/docs/scenario6_available_groups.txt,A,8,=LOVE,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,296768,68,3309498,878.2836,432768,S,A,A,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGVyZnVtZQ,Perfume,Perfume,A,A,authoritative_ranking_2025,,,A,6,Perfume,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,,,,0,500,F,F,A,missing_fans_and_popularity; Added to scenario 6 from Jpop Wiki ranking-source follow-up on 2026-04-22. Member UIDs linked from idols.json member-lin
+Q1VUSUUgU1RSRUVU,CUTIE STREET,CUTIE_STREET,B,B,manual_available_groups_doc,B,support/docs/scenario6_available_groups.txt,B,13,Cutie Street,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,238350,60,1110709,401.3168,358350,S,B,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg,ももいろクローバーZ,Momoiro Clover Z,B,B,authoritative_ranking_2025,,,B,14,ももいろクローバーZ,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,232986,50,,166.493,332986,S,C,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+aUxpRkUh,iLiFE!,iLiFE!,B,B,manual_available_groups_doc,B,support/docs/scenario6_available_groups.txt,B,17,iLife!,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,129753,61,1333932,392.6629,251753,S,B,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Q0FORFkgVFVORQ,CANDY TUNE,CANDY_TUNE,B,B,manual_available_groups_doc,B,support/docs/scenario6_available_groups.txt,B,20,Candy Tune,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,125972,56,646456,248.2772,237972,S,B,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Tk1CNDg,NMB48,NMB48,B,B,authoritative_ranking_2025,,,B,18,NMB48,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,91994,40,480662,182.1294,171994,S,C,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0tFNDg,SKE48,SKE48,B,B,authoritative_ranking_2025,,,B,12,SKE48,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,88903,35,786353,236.7221,158903,S,B,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SEtUNDg,HKT48,HKT48,B,B,authoritative_ranking_2025,,,B,15,HKT48,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,78998,35,567659,188.0308,148998,S,C,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+56eB56uL5oG15q-U5a-_5Lit5a2m,私立恵比寿中学,Shiritsu_Ebisu_Chugaku,B,B,authoritative_ranking_2025,,,B,16,私立恵比寿中学,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,69264,41,53490,86.33,151264,S,C,B,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+4omgTUU,≠ME,≠ME,B,B,manual_available_groups_doc,B,support/docs/scenario6_available_groups.txt,B,19,≠ME,manual_position_uid,public/data/reference/idol_group_rankings_2025_mapped.json,64622,51,1556393,394.5896,166622,S,B,B,
+SEFOQQ,HANA,HANA,B,B,authoritative_ranking_2025,,,B,11,HANA,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,,,,0,500,F,F,B,missing_fans_and_popularity; Added to scenario 6 from Jpop Wiki ranking-source follow-up on 2026-04-22. Member UIDs linked from idols.json member-lin
+44OV44Kh44Oz44OI44Og44K344O844K_,ファントムシータ,,C,C,authoritative_ranking_2025,,,C,40,ファントムシータ,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,277269,57,91590,213.9525,391269,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo,超ときめき♡宣伝部,Cho_Tokimeki♡Sendenbu,C,C,authoritative_ranking_2025,,,C,28,超ときめき♡宣伝部,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,132919,54,35024,127.4643,240919,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+aeKYhlJpcw,i☆Ris,I☆Ris,C,C,authoritative_ranking_2025,,,C,29,i☆Ris,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,71168,40,725926,220.7692,151168,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm,きゅるりんってしてみて,,C,C,authoritative_ranking_2025,,,C,24,きゅるりんってしてみて,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,69895,52,604722,207.8919,173895,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QnJva2VuIEJ5IFRoZSBTY3JlYW0,Broken By The Scream,BROKEN_BY_THE_SCREAM,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,66331,35,,68.1655,136331,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Wk9DWA,ZOCX,ZOCX,C,C,authoritative_ranking_2025,,,C,39,ZOCX,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,51416,38,560980,175.904,127416,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+ZmVtbWUgZmF0YWxl,femme fatale,Femme_fatale,C,C,authoritative_ranking_2025,,,C,34,femme fatale,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,44687,32,466869,147.7173,108687,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TkdUNDg,NGT48,NGT48,C,C,authoritative_ranking_2025,,,C,21,NGT48,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,42398,29,97797,69.7584,100398,B,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U1RVNDg,STU48,STU48,C,C,authoritative_ranking_2025,,,C,22,STU48,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,39737,32,476095,147.0875,103737,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+4omSSk9Z,≒JOY,≒JOY,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,C,32,≒JOY,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,34091,49,888105,243.6665,132091,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U1dFRVQgU1RFQURZ,SWEET STEADY,SWEET_STEADY,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,C,31,Sweet Steady,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,30769,49,360101,136.4047,128769,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6auY5ba644Gu44Gq44Gn44GX44GT,高嶺のなでしこ,Takane_no_Nadeshiko,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,C,33,高嶺のなでしこ,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,26283,40,367720,126.6855,106283,S,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+QVZBTQ,AVAM,AVAM,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,23287,42,369558,127.5551,107287,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or,虹のコンキスタドール,Niji no Conquistador,C,C,authoritative_ranking_2025,,,C,38,虹のコンキスタドール,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,20702,31,74006,56.1522,82702,B,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GE44GO44Gq44KK5p2x5YyX55Sj,いぎなり東北産,Iginari_Tohokusan,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,C,41,いぎなり東北産,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,18487,38,,47.2435,94487,C,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+6LGG5p-044Gu5aSn576k,豆柴の大群,MAMESHiBA_NO_TAiGUN,C,C,authoritative_ranking_2025,,,C,25,豆柴の大群,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,14961,21,12253,30.9311,56961,D,D,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5,夢みるアドレセンス,,C,C,authoritative_ranking_2025,,,C,36,夢みるアドレセンス,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,12063,20,25455,31.1225,52063,D,D,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TkVPIEpBUE9OSVNN,NEO JAPONISM,NEO_JAPONISM,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,11251,27,132025,59.0305,65251,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RkVT4piGVElWRQ,FES☆TIVE,FES☆TIVE,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,9894,24,128259,54.5988,57894,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SmFtc0NvbGxlY3Rpb24,JamsCollection,Jams_Collection,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,C,42,Jams Collection,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,8936,31,,35.468,70936,D,C,C,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+VEVBTSBTSEFDSEk,TEAM SHACHI,TEAM_SHACHI,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,8861,20,,24.4305,48861,E,C,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RGV2aWwgQU5USEVNLg,Devil ANTHEM.,Devil_ANTHEM.,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,8343,25,,29.1715,58343,D,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44K_44Kk44OI44Or5pyq5a6a,タイトル未定,Title_Mitei,C,C,manual_available_groups_doc,C,support/docs/scenario6_available_groups.txt,,,,,,4397,23,100548,45.3081,50397,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+MjIvNw,22/7,22/7,C,C,authoritative_ranking_2025,,,C,35,22/7,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,,,,0,500,F,F,C,missing_fans_and_popularity; Added to scenario 6 from Jpop Wiki ranking-source follow-up on 2026-04-22. Enriched from nanabunnonijyuuni.fandom.com/wi
+Qm9rdSBnYSBNaXRha2F0dGEgQW96b3Jh,僕が見たかった青空,Boku_ga_Mitakatta_Aozora,C,C,authoritative_ranking_2025,,,C,37,僕が見たかった青空,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,,,,0,500,F,F,C,missing_fans_and_popularity; Added to scenario 6 from Jpop Wiki ranking-source follow-up on 2026-04-22. Enriched from boku-ga-mitakatta-aozora.fandom
+QkFCWU1PTlNURVI,BABYMONSTER,Kawai Ruka,D,D,inferred_spotify_fans,,,,,,,,7521603,77,7646,3839.3307,7675603,S,S,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QmlsbGxpZQ,Billlie,Fukutomi Tsuki,D,D,inferred_spotify_fans,,,,,,,,702820,47,,398.41,796820,S,B,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Um9ja2V0IFB1bmNo,Rocket Punch,Rocket_Punch,D,D,inferred_spotify_fans,,,,,,,,219217,32,,141.6085,283217,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUU6SQ,ME:I,Nishimoto Meisa,D,D,inferred_spotify_fans,,,,,,,,164748,53,,135.374,270748,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+72612662-7c13-4de8-b694-a800f9eb1dda,LADYBABY,LADYBABY,D,D,inferred_spotify_fans,,,,,,,,136942,39,10868,109.6446,214942,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGFzc0NvZGU,PassCode,PassCode,D,D,inferred_spotify_fans,,,,,,,,113809,40,115776,120.0597,193809,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Q1NS,CSR,,D,D,inferred_spotify_fans,,,,,,,,99103,35,,84.5515,169103,A,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+bG9s,lol,Lol,D,D,inferred_spotify_fans,,,,,,,,61866,33,,63.933,127866,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+R2lybHPCsg,Girls²,Girls²,D,D,authoritative_ranking_2025,,,D,49,Girls²,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,37723,36,,54.8615,109723,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KP44O844GZ44Gf,わーすた,Wa-Suta,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,36404,34,191549,90.5118,104404,S,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QmVhdXR5IEJveA,Beauty Box,,D,D,inferred_spotify_fans,,,,,,,,34166,8,3020,25.687,50166,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OV44Kj44Ot44K944OV44Kj44O844Gu44OA44Oz44K5,フィロソフィーのダンス,,D,D,inferred_spotify_fans,,,,,,,,32647,35,61463,63.6161,102647,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+4oSDLXV0ZQ,℃-ute,℃-ute,D,D,inferred_spotify_fans,,,,,,,,30665,38,,53.3325,106665,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TkVDUk9OT01JRE9M,NECRONOMIDOL,NECRONOMIDOL,D,D,inferred_spotify_fans,,,,,,,,30053,23,,38.0265,76053,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5oiR5YSY44Op44Kt44Ki,我儘ラキア,WAGAMAMARAKIA,D,D,inferred_spotify_fans,,,,,,,,29384,32,,46.692,93384,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44O744O744O744O744O744O744O744O744O7,・・・・・・・・・,,D,D,inferred_spotify_fans,,,,,,,,29309,30,36130,51.8805,89309,C,C,D,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+S0FRUklZT1RFUlJPUg,KAQRIYOTERROR,KAQRIYOTERROR,D,D,inferred_spotify_fans,,,,,,,,29119,36,35762,57.7119,101119,B,C,D,
+5p2x5Lqs5aWz5a2Q5rWB,東京女子流,,D,D,inferred_spotify_fans,,,,,,,,26337,25,105529,59.2743,76337,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SE9ORVkgUE9QQ09STg,HONEY POPCORN,Honey_Popcorn,D,D,inferred_spotify_fans,,,,,,,,25691,12,,24.8455,49691,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+R0FORyBQQVJBREU,GANG PARADE,GANG_PARADE,D,D,inferred_spotify_fans,,,,,,,,24934,30,81269,58.7208,84934,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U1VQRVLimIZHaVJMUw,SUPER☆GiRLS,SUPER☆GiRLS,D,D,inferred_spotify_fans,,,,,,,,23382,24,62363,48.1636,71382,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+R0VOSUM,GENIC,GENIC,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,23050,39,,50.525,101050,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QkFCWUJFQVJE,BABYBEARD,BABYBEARD,D,D,inferred_spotify_fans,,,,,,,,22028,37,,48.014,96028,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KG44KL44KB44KL44Oi77yB,ゆるめるモ！,,D,D,inferred_spotify_fans,,,,,,,,21140,21,,31.57,63140,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Gc44KT44G25ZCb44Gu44Gb44GE44Gg44CC,ぜんぶ君のせいだ。,,D,D,inferred_spotify_fans,,,,,,,,19884,32,28077,47.5574,83884,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44G-44Gt44GN44Kx44OB44Oj,まねきケチャ,,D,D,authoritative_ranking_2025,,,D,47,まねきケチャ,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,19850,22,32066,38.3382,63850,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GV44GP44KJ5a2m6Zmi,さくら学院,Sakura_Gakuin,D,D,inferred_spotify_fans,,,,,,,,18919,25,43366,43.1327,68919,C,D,D,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+TmVnaWNjbw,Negicco,Negicco,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,18532,24,,33.266,66532,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OO44O844K544Oq44O844OW44K5,ノースリーブス,,D,D,inferred_spotify_fans,,,,,,,,18200,27,,36.1,72200,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+bHlyaWNhbCBzY2hvb2w,Lyrical School,Lyrical_school,D,D,inferred_spotify_fans,,,,,,,,18140,24,,33.07,66140,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk,バンドじゃないもん！MAXX NAKAYOSHI,,D,D,authoritative_ranking_2025,,,D,46,バンドじゃないもん！MAXX NAKAYOSHI,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,17773,24,,32.8865,65773,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UkVJUklF,REIRIE,REIRIE,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,16779,32,,40.3895,80779,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5oKq6a2U44Gu44Kt44OD44K5,悪魔のキッス,Akuma_no_Kiss,D,D,inferred_spotify_fans,,,,,,,,16721,7,261213,67.6031,30721,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5riF56uc5Lq6MjU,清竜人25,Kiyoshi Ryujin 25,D,D,inferred_spotify_fans,,,,,,,,15874,34,480566,138.0502,83874,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Gu44KT44G144GD44GP77yB,のんふぃく！,Non¬Fiction,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,D,43,のんふぃく！,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,15566,42,364888,122.7606,99566,S,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5aSc5YWJ5oCn44Ki44Of44Ol44O844K6,夜光性アミューズ,Yakousei_Amuse,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,D,45,夜光性アミューズ,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,14999,36,317519,107.0033,86999,S,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+Q1lOSE4,CYNHN,CYNHN,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,13922,28,39048,42.7706,69922,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QU1FRlVSQVNTSEk,AMEFURASSHI,AMEFURASSHI,D,D,inferred_spotify_fans,,,,,,,,13867,34,55424,52.0183,81867,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RlJVSVRQT0NIRVRURQ,FRUITPOCHETTE,FRUITPOCHETTE,D,D,inferred_spotify_fans,,,,,,,,13671,15,,21.8355,43671,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Gw44Gj44Gm44KT5bCR5aWz6ZqK,ばってん少女隊,Batten_Shoujo-tai,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,12688,25,18604,35.0648,62688,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5pyA57WC5pyq5p2l5bCR5aWz,最終未来少女,,D,D,inferred_spotify_fans,,,,,,,,11628,36,26301,47.0742,83628,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+a29sbWU,kolme,Kolme,D,D,inferred_spotify_fans,,,,,,,,11517,12,,17.7585,35517,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Q2FuZHll4pmhU3lydXA,Candye♡Syrup,Candye♡Syrup,D,D,inferred_spotify_fans,,,,,,,,11487,14,1073,19.9581,39487,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QG9uZWZpdmU,@onefive,@onefive,D,D,inferred_spotify_fans,,,,,,,,11220,32,4664,38.5428,75220,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UkFZ,RAY,RAY,D,D,inferred_spotify_fans,,,,,,,,11015,27,31614,38.8303,65015,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+aS1DT0w,i-COL,I-COL,D,D,inferred_spotify_fans,,,,,,,,10873,28,100928,53.6221,66873,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUFETUVE,MADMED,MADMED,D,D,inferred_spotify_fans,,,,,,,,10584,26,,31.292,62584,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RXhXSFla,ExWHYZ,ExWHYZ,D,D,inferred_spotify_fans,,,,,,,,10561,28,111969,55.6743,66561,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Of44O844Og44OI44O844Kt44On44O8,ミームトーキョー,,D,D,inferred_spotify_fans,,,,,,,,10481,19,46097,33.4599,48481,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUFaRQ,MAZE,MAZE,D,D,inferred_spotify_fans,,,,,,,,10189,22,6552,28.4049,54189,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TkFOSU1PTk8,NANIMONO,NANIMONO,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,10083,28,288958,90.8331,66083,S,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SXNpbGllbA,Isiliel,,D,D,inferred_spotify_fans,,,,,,,,10033,27,,32.0165,64033,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+cGlucG9ucGFucG9u,pinponpanpon,Pinponpanpon,D,D,inferred_spotify_fans,,,,,,,,10014,30,2248,35.4566,70014,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QVJDQU5BIFBST0pFQ1Q,ARCANA PROJECT,ARCANA_PROJECT,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,9405,29,61153,45.9331,67405,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. Founding member start dates use the debut date 2020-01-
+TUFEIEpBTUlF,MAD JAMIE,MAD_JAMIE,D,D,inferred_spotify_fans,,,,,,,,8896,30,7119,35.8718,68896,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5Luu6Z2i44Op44Kk44OA44O8R0lSTFM,仮面ライダーGIRLS,Kamen_Rider_Girls,D,D,inferred_spotify_fans,,,,,,,,8824,24,,28.412,56824,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+R0lMVFkgw5cgR0lMVFk,GILTY × GILTY,GILTY×GILTY,D,D,inferred_spotify_fans,,,,,,,,8563,23,571010,141.4835,54563,S,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QXBwYXJlIQ,Appare!,Appare!,D,D,inferred_spotify_fans,,,,,,,,8383,29,98062,52.8039,66383,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+eW9zdWdhbGE,yosugala,Yosugala,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,8329,32,159574,68.0793,72329,B,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+ZmlzaGJvd2w,fishbowl,Fishbowl,D,D,inferred_spotify_fans,,,,,,,,8226,21,58670,36.847,50226,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QVNQ,ASP,ASP,D,D,inferred_spotify_fans,,,,,,,,7912,23,76365,42.229,53912,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og,おやすみホログラム,Oyasumi,D,D,inferred_spotify_fans,,,,,,,,7458,15,,18.729,37458,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+S0xQNDg,KLP48,KLP48,D,D,inferred_spotify_fans,,,,,,,,7410,20,56942,35.0934,47410,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UElHR1M,PIGGS,PIGGS,D,D,inferred_spotify_fans,,,,,,,,7109,25,113267,51.2079,57109,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6aKo55S35aG-,風男塾,Fudanjuku,D,D,inferred_spotify_fans,,,,,,,,7017,22,,25.5085,51017,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+I-ODkOODkOODkOODkOODs-ODkw,#ババババンビ,,D,D,authoritative_ranking_2025,,,D,48,#ババババンビ,exact_or_alias,public/data/reference/idol_group_rankings_2025_mapped.json,6988,17,,20.494,40988,E,E,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+dWtrYQ,ukka,Ukka,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,6973,20,24818,28.4501,46973,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Y2h1TGE,chuLa,ChuLa,D,D,inferred_spotify_fans,,,,,,,,6968,26,25591,34.6022,58968,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UmluZ3dhbmRlcnVuZw,Ringwanderung,Ringwanderung,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,6722,23,13241,29.0092,52722,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+VEVOUklO,TENRIN,TENRIN,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,6542,35,122569,62.7848,76542,B,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+SWxs,Ill,Ill,D,D,authoritative_ranking_2025,,,D,50,Ill【イル】,manual_position_uid,public/data/reference/idol_group_rankings_2025_mapped.json,6472,18,242517,69.7394,42472,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kv44Oe44Oq44OH44OR44O844OI,クマリデパート,,D,D,inferred_spotify_fans,,,,,,,,6228,17,,20.114,40228,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44K344Oz44OH44Os44Op5a6j6KiA77yB,シンデレラ宣言！,Cinderella_Sengen!,D,D,inferred_spotify_fans,,,,,,,,6190,22,43519,33.7988,50190,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5omL57695YWI44K744Oz44K744O844K344On44Oz,手羽先センセーション,Tebasaki_Sensation,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,6160,22,,25.08,50160,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. Roster deduped and normalized from Tebasaki Sensation p
+THVjZSBUd2lua2xlIFdpbmvimIY,Luce Twinkle Wink☆,Luce_Twinkle_Wink☆,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,6106,20,,23.053,46106,E,D,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI,煌めき☆アンフォレント,Kirameki☆Unforent,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,6061,18,140760,49.1825,42061,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+VGFzayBoYXZlIEZ1bg,Task have Fun,Gips_(Task_have_Fun),D,D,inferred_spotify_fans,,,,,,,,6045,14,93298,35.6821,34045,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TWFsY29sbSBNYXNrIE1jTGFyZW4,Malcolm Mask McLaren,Malcolm_Mask_McLaren,D,D,inferred_spotify_fans,,,,,,,,5969,11,22413,18.4671,27969,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+R08gVE8gVEhFIEJFRFM,GO TO THE BEDS,GO_TO_THE_BEDS,D,D,inferred_spotify_fans,,,,,,,,5658,11,241891,62.2072,27658,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5pS-6Kqy5b6M44OX44Oq44Oz44K744K5,放課後プリンセス,,D,D,inferred_spotify_fans,,,,,,,,5463,10,24645,17.6605,25463,E,E,E,Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the bes
+TmlnaHRPd2w,NightOwl,NightOwl,D,D,inferred_spotify_fans,,,,,,,,5315,8,31309,16.9193,21315,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGltbSdz,Pimm's,Pimm's,D,D,inferred_spotify_fans,,,,,,,,5303,11,3814,14.4143,27303,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+V0hJVEUgU0NPUlBJT04,WHITE SCORPION,WHITE_SCORPION,D,D,inferred_spotify_fans,,,,,,,,5289,28,125024,55.6493,61289,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5Y-v5oaQ44Gq44Ki44Kk44Oc44Oq44O8,可憐なアイボリー,Karen_na_Ivory,D,D,inferred_spotify_fans,,,,,,,,5279,27,232007,76.0409,59279,A,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ki44Kt44K344OWcHJvamVjdA,アキシブproject,Akishibu project,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,5166,19,67222,35.0274,43166,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GK44GT44GV44G-44G344KM44Cc44Go44CC,おこさまぷれ〜と。,Zero_Project,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,5014,20,67400,35.987,45014,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Oe44K444Kr44Or44O744OR44Oz44OB44Op44Kk44Oz,マジカル・パンチライン,Majika,D,D,inferred_spotify_fans,,,,,,,,5007,11,70758,27.6551,27007,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QW5nZeKYhlJldmU,Ange☆Reve,Ange☆Reve,D,D,inferred_spotify_fans,,,,,,,,4959,10,10881,14.6557,24959,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TlVBTkNF,NUANCE,NUANCE,D,D,inferred_spotify_fans,,,,,,,,4924,18,12113,22.8846,40924,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+S29sb2tvbA,Kolokol,Kolokol,D,D,inferred_spotify_fans,,,,,,,,4906,17,,19.453,38906,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki,純情のアフィリア,,D,D,inferred_spotify_fans,,,,,,,,4823,21,17542,26.9199,46823,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Q2lPTg,CiON,CiON,D,D,inferred_spotify_fans,,,,,,,,4791,33,29458,41.2871,70791,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Oe44O844Kt44Ol44Ot,マーキュロ,,D,D,inferred_spotify_fans,,,,,,,,4787,29,118079,55.0093,62787,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KK44KT44GU5aiY,りんご娘,Ringo_Musume,D,D,inferred_spotify_fans,,,,,,,,4764,26,,28.382,56764,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+WFRFRU4,XTEEN,XTEEN,D,D,inferred_spotify_fans,,,,,,,,4671,9,4639,12.2633,22671,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGVlbCB0aGUgQXBwbGU,Peel the Apple,Peel_the_Apple,D,D,inferred_spotify_fans,,,,,,,,4598,19,53803,32.0596,42598,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RG9yb3RoeSBMaXR0bGUgSGFwcHk,Dorothy Little Happy,Dorothy_Little_Happy,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,4564,6,,8.282,16564,F,D,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UEFSQURJU0VT,PARADISES,PARADISES,D,D,inferred_spotify_fans,,,,,,,,4386,6,146629,37.5188,16386,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TGluUQ,LinQ,LinQ,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,4268,23,,25.134,50268,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UXV1Ymk,Quubi,Quubi,D,D,inferred_spotify_fans,,,,,,,,4241,23,21707,29.4619,50241,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ,アップアップガールズ（仮）,,D,D,inferred_spotify_fans,,,,,,,,4144,8,1165,10.305,20144,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+5paw56ugIOWkp-mYquKYhuaYpeWkj-eni-WGrA,新章 大阪☆春夏秋冬,Shunkashuutou,D,D,inferred_spotify_fans,,,,,,,,4118,25,808,27.2206,54118,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. Current/past roster refreshed from Shinshou Osaka?Syunk
+T25lcGhvbnk,Onephony,Onephony,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,4091,28,17783,33.6021,60091,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+576k6Z2S44Gu5LiW55WM,群青の世界,Gunjou_no_Sekai,D,D,inferred_spotify_fans,,,,,,,,4056,20,26202,27.2684,44056,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GY44KF44GY44KF,じゅじゅ,JUJU,D,D,inferred_spotify_fans,,,,,,,,3944,8,,9.972,19944,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0lUVUFTSU9O,SITUASION,Situasion,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,3885,19,14960,23.9345,41885,E,D,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+5ZCb44Gr44CB6IO444Kt44Ol44Oz44CC,君に、胸キュン。,,D,D,inferred_spotify_fans,,,,,,,,3882,28,46889,39.3188,59882,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+bWlzY2FzdA,miscast,Miscast,D,D,inferred_spotify_fans,,,,,,,,3864,12,,13.932,27864,E,E,E,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+VEhFIE9SQ0hFU1RSQSBUT0tZTw,THE ORCHESTRA TOKYO,THE_ORCHESTRA_TOKYO,D,D,inferred_spotify_fans,,,,,,,,3770,22,48146,33.5142,47770,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ki44Oz44K544Oq44Ol44O844Og,アンスリューム,,D,D,inferred_spotify_fans,,,,,,,,3770,18,38616,27.6082,39770,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Mzc3Ng,3776,3776,D,D,inferred_spotify_fans,,,,,,,,3719,11,,12.8595,25719,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44G144KP44G144KP,ふわふわ,FuWa_FuWa,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,3688,9,,10.844,21688,F,D,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUFQQQ,MAPA,MAPA,D,D,inferred_spotify_fans,,,,,,,,3595,25,35871,33.9717,53595,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0FLQS1TQU1B,SAKA-SAMA,SAKA-SAMA,D,D,inferred_spotify_fans,,,,,,,,3570,7,,8.785,17570,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0FpTlQgU0VY,SAiNT SEX,SAiNT_SEX,D,D,inferred_spotify_fans,,,,,,,,3502,7,180887,44.9284,17502,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44K444Ko44Oh44Kk,ジエメイ,Jiemei,D,D,inferred_spotify_fans,,,,,,,,3472,29,35665,37.869,61472,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44G_44GG44G_44GK,みうみお,Miumio,D,D,inferred_spotify_fans,,,,,,,,3402,16,,17.701,35402,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ,アップアップガールズ（２）,,D,D,inferred_spotify_fans,,,,,,,,3337,10,,11.6685,23337,F,E,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TXlEZWFyRGFybGluJw,MyDearDarlin',MyDearDarlin',D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,3255,16,,17.6275,35255,E,D,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TWHigJlTY2Fy4oCZUGllY2U,Ma’Scar’Piece,Ma'Scar'Piece,D,D,inferred_spotify_fans,,,,,,,,3223,26,70239,41.6593,55223,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TWVycnkgQkFEIFRVTkUu,Merry BAD TUNE.,Merry_BAD_TUNE.,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,3177,28,,29.5885,59177,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+TEVJV0FO,LEIWAN,LEIWAN,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,3162,17,17549,22.0908,37162,E,D,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QUlCRUNL,AIBECK,AIBECK,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,3145,15,1693,16.9111,33145,E,D,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+44Oe44K244Oq,マザリ,Mazari,D,D,inferred_spotify_fans,,,,,,,,3125,31,63964,45.3553,65125,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+IzJpMg,#2i2,2i2,D,D,inferred_spotify_fans,,,,,,,,3066,13,1196542,253.8414,29066,S,B,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. Updated from Jpop Wiki 2i2 page on 2026-04-05. Final li
+cHJlZGlh,predia,Predia,D,D,inferred_spotify_fans,,,,,,,,3054,9,,10.527,21054,F,F,F,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+5oSb5LmZ5aWz4piGRE9MTA,愛乙女☆DOLL,.DOLL,D,D,inferred_spotify_fans,,,,,,,,3010,6,24600,12.425,15010,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OU44Ol44O844ORISE,ピューパ!!,,D,D,inferred_spotify_fans,,,,,,,,2942,11,2673,13.0056,24942,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U1RBUk1BUklF,STARMARIE,STARMARIE,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,2929,5,,6.4645,12929,F,D,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6ZaL5q2MLeOBi-OBhOOBiy0,開歌-かいか-,,D,D,inferred_spotify_fans,,,,,,,,2913,12,,13.4565,26913,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6Zuo5qih5qeY44Gu44K944Op44Oq44K5,雨模様のソラリス,,D,D,inferred_spotify_fans,,,,,,,,2903,11,11926,14.8367,24903,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RGFuY2luZyBEb2xscw,Dancing Dolls,Dancing_Dolls,D,D,inferred_spotify_fans,,,,,,,,2899,25,4601,27.3697,52899,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QkVMTFJJTkflsJHlpbPjg4_jg7zjg4g,BELLRING少女ハート,,D,D,inferred_spotify_fans,,,,,,,,2880,14,11279,17.6958,30880,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QWRhbUxpbGl0aA,AdamLilith,AdamLilith,D,D,inferred_spotify_fans,,,,,,,,2827,24,96052,44.6239,50827,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+d698eb6b-e82f-48f1-a2df-6cf858315ad4,iON!,iON!,D,D,inferred_spotify_fans,,,,,,,,2824,307,164985,341.409,616824,S,B,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+44OJ44Op44Oe44OB44OD44Kv44Os44Kz44O844OJ,ドラマチックレコード,,D,D,inferred_spotify_fans,,,,,,,,2822,29,49050,40.221,60822,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+VXRhR2Uh,UtaGe!,UtaGe!,D,D,manual_available_groups_doc,D,support/docs/scenario6_available_groups.txt,,,,,,2519,27,425,28.3445,56519,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+ZGlpZw,diig,Diig,E,E,inferred_spotify_fans,,,,,,,,2804,16,30001,23.4022,34804,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGF5cmluJ3M,Payrin's,Payrin's,E,E,inferred_spotify_fans,,,,,,,,2802,14,253,15.4516,30802,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+S2lzc0JlZQ,KissBee,KissBee,E,E,inferred_spotify_fans,,,,,,,,2800,8,140706,37.5412,18800,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6KGb5pif44Go44Kr44Op44OG44Ki,衛星とカラテア,Eisei_to_Karatea,E,E,inferred_spotify_fans,,,,,,,,2737,22,74174,38.2033,46737,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+U1RBaU5Z,STAiNY,STAiNY,E,E,inferred_spotify_fans,,,,,,,,2710,15,5425,17.44,32710,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+UFJTTUlO,PRSMIN,PRSMIN,E,E,inferred_spotify_fans,,,,,,,,2671,12,33392,20.0139,26671,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+VklMTEFJTlMgSE9VU0U,VILLAINS HOUSE,VILLAINS_HOUSE,E,E,inferred_spotify_fans,,,,,,,,2529,23,,24.2645,48529,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0FZLUxB,SAY-LA,SAY-LA,E,E,inferred_spotify_fans,,,,,,,,2504,11,9825,14.217,24504,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Op44OVw5fjg6njg5U,ラフ×ラフ,Rough_x_Laugh,E,E,inferred_spotify_fans,,,,,,,,2481,23,115451,47.3307,48481,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TWlycm9yLE1pcnJvcg,"Mirror,Mirror","Mirror,Mirror",E,E,inferred_spotify_fans,,,,,,,,2436,21,39477,30.1134,44436,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GN44Gu44Ob44CC,きのホ。,Ho?,E,E,inferred_spotify_fans,,,,,,,,2377,20,24546,26.0977,42377,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kt44Oz44Kw44K144Oq,キングサリ,,E,E,inferred_spotify_fans,,,,,,,,2337,16,62429,29.6543,34337,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+YWlyYXR0aWM,airattic,Airattic,E,E,inferred_spotify_fans,,,,,,,,2331,14,16428,18.4511,30331,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ki44Kk44OJ44Or44Kr44Os44OD44K4,アイドルカレッジ,,E,E,inferred_spotify_fans,,,,,,,,2296,12,30681,19.2842,26296,E,E,E,Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the bes
+OTYz,963,963,E,E,inferred_spotify_fans,,,,,,,,2205,3,28615,9.8255,8205,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+576O5ZGz44GX44GE5puW5pin,美味しい曖昧,Aimai,E,E,inferred_spotify_fans,,,,,,,,2201,12,,13.1005,26201,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ko44Op44OQ44Os44K3,エラバレシ,Erabareshi,E,E,inferred_spotify_fans,,,,,,,,2194,11,13277,14.7524,24194,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs,シュレーディンガーの犬,Schrödinger_no_Inu,E,E,inferred_spotify_fans,,,,,,,,2162,17,199985,58.078,36162,B,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TElOS0wgUExBTkVU,LINKL PLANET,LINKL_PLANET,E,E,inferred_spotify_fans,,,,,,,,2136,17,34145,24.897,36136,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6Iqx6a2B6YGT5Lit,花魁道中,Oiran_Dochu,E,E,inferred_spotify_fans,,,,,,,,2108,21,16481,25.3502,44108,D,E,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KB44KN44KT55WRYSBnbyBnbw,めろん畑a go go,,E,E,inferred_spotify_fans,,,,,,,,2082,8,16833,12.4076,18082,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kk44Kx44Gm44KL44OP44O844OE,イケてるハーツ,,E,E,inferred_spotify_fans,,,,,,,,2080,6,4227,7.8854,14080,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUFHSUNPVVI,MAGICOUR,MAGICOUR,E,E,inferred_spotify_fans,,,,,,,,2062,2,,3.031,6062,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Op44Kk44K544Oc44O844Or,ライスボール,,E,E,inferred_spotify_fans,,,,,,,,2041,18,,19.0205,38041,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+S2lTUyBLaVNT,KiSS KiSS,KiSS_KiSS,E,E,inferred_spotify_fans,,,,,,,,2025,9,148660,39.7445,20025,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGFsZXR0ZSBQYXJhZGU,Palette Parade,Palette_Parade,E,E,inferred_spotify_fans,,,,,,,,1984,17,,17.992,35984,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QVpBVE9Z,AZATOY,AZATOY,E,E,inferred_spotify_fans,,,,,,,,1961,20,106000,42.1805,41961,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj,にっぽんワチャチャ,Nippon_Wachacha,E,E,inferred_spotify_fans,,,,,,,,1957,10,18242,14.6269,21957,E,E,E,neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce77
+QXhlbGlnaHQ,Axelight,Axelight,E,E,inferred_spotify_fans,,,,,,,,1944,16,,16.972,33944,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+YW1iaXRpb3Vz,ambitious,Ambitious,E,E,inferred_spotify_fans,,,,,,,,1932,8,73071,23.5802,17932,E,E,E,
+WU9MT1o,YOLOZ,YOLOZ,E,E,inferred_spotify_fans,,,,,,,,1932,21,23217,26.6094,43932,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Gq44G_44Gg6Imy44Gu5raI44GX44GU44KA,なみだ色の消しごむ,,E,E,inferred_spotify_fans,,,,,,,,1916,25,,25.958,51916,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QkxVRUdPQVRT,BLUEGOATS,BLUEGOATS,E,E,inferred_spotify_fans,,,,,,,,1915,21,,21.9575,43915,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44K344Oj44OL44Og44OL77yd44OR44Os44O844OJ,シャニムニ＝パレード,,E,E,inferred_spotify_fans,,,,,,,,1914,16,10941,19.1452,33914,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUFHTUFa,MAGMAZ,MAGMAZ,E,E,inferred_spotify_fans,,,,,,,,1904,16,15592,20.0704,33904,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U3dlZXQgQWxsZXk,Sweet Alley,Sweet_Alley,E,E,inferred_spotify_fans,,,,,,,,1880,17,309285,79.797,35880,A,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+TWlpUw,MiiS,MiiS,E,E,inferred_spotify_fans,,,,,,,,1876,8,2364,9.4108,17876,F,F,F,
+44GV44Go44KK44Oi44Oz44K544K_44O8,さとりモンスター,,E,E,inferred_spotify_fans,,,,,,,,1867,13,12041,16.3417,27867,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+I-OCuOODpeODvOODreODg-OCrw,#ジューロック,,E,E,inferred_spotify_fans,,,,,,,,1854,13,3704,14.6678,27854,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6YCP6Imy44OJ44Ot44OD44OX,透色ドロップ,,E,E,inferred_spotify_fans,,,,,,,,1831,12,30916,19.0987,25831,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw,"Not Secured,Loose Ends","Not_Secured,_Loose_Ends",E,E,inferred_spotify_fans,,,,,,,,1814,21,21838,26.2746,43814,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Od44Oz44Kz44OE44Kz44Oz44Od,ポンコツコンポ,Ponkotsu_Konpo,E,E,inferred_spotify_fans,,,,,,,,1811,22,24827,27.8709,45811,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+ZmFuY3lsYWJv,fancylabo,,E,E,inferred_spotify_fans,,,,,,,,1807,8,,8.9035,17807,F,F,F,
+I01vb292ZSE,#Mooove!,Mooove!,E,E,inferred_spotify_fans,,,,,,,,1789,14,,14.8945,29789,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44GC44Gj44Go44Gb44G244KT44Gm44GD44O844KT,あっとせぶんてぃーん,@17,E,E,inferred_spotify_fans,,,,,,,,1782,15,,15.891,31782,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+emFua2E,zanka,Zanka,E,E,inferred_spotify_fans,,,,,,,,1759,18,26184,24.1163,37759,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U09NT1NPTU8,SOMOSOMO,SOMOSOMO,E,E,inferred_spotify_fans,,,,,,,,1743,10,,10.8715,21743,F,E,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+OGJpdEJSQUlO,8bitBRAIN,8bitBRAIN,E,E,inferred_spotify_fans,,,,,,,,1741,6,2852,7.4409,13741,F,F,F,
+44OU44Ol44Ki44Oq44O844Oi44Oz44K544K_44O8,ピュアリーモンスター,,E,E,inferred_spotify_fans,,,,,,,,1727,7,17061,11.2757,15727,F,E,F,
+6Zu75b2x44Go5bCR5bm0Q1E,電影と少年CQ,Shounen,E,E,inferred_spotify_fans,,,,,,,,1727,8,,8.8635,17727,F,F,F,
+UklSWURBWQ,RIRYDAY,RIRYDAY,E,E,inferred_spotify_fans,,,,,,,,1724,8,172,8.8964,17724,F,F,F,
+WE9YTyBFWFRSRU1F,XOXO EXTREME,XOXO_EXTREME,E,E,inferred_spotify_fans,,,,,,,,1719,6,,6.8595,13719,F,F,F,
+RU1QQVRIWQ,EMPATHY,EMPATHY,E,E,inferred_spotify_fans,,,,,,,,1644,11,4908,12.8036,23644,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+eXVtZWdpd2EgbGFzdCBnaXJs,yumegiwa last girl,Yumegiwa_last_girl,E,E,inferred_spotify_fans,,,,,,,,1642,5,10625,7.946,11642,F,F,F,
+QkFOWkFJIEpBUEFO,BANZAI JAPAN,BANZAI_JAPAN,E,E,inferred_spotify_fans,,,,,,,,1629,4,,4.8145,9629,F,F,F,neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce22
+RmluZ2VyIFJ1bnM,Finger Runs,Finger_Runs,E,E,inferred_spotify_fans,,,,,,,,1613,9,17949,13.3963,19613,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kw44OH44Kk,グデイ,,E,E,inferred_spotify_fans,,,,,,,,1612,11,9324,13.6708,23612,E,E,E,
+44Kr44Op44OV44Or44K544Kv44Oq44O844Og,カラフルスクリーム,,E,E,inferred_spotify_fans,,,,,,,,1588,17,64699,30.7338,35588,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+S1JEOA,KRD8,KRD8,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1578,8,18600,12.509,17578,E,E,E,
+44GL44GZ44G_6I2J44Go44K544OG44Op,かすみ草とステラ,,E,E,inferred_spotify_fans,,,,,,,,1573,12,2959,13.3783,25573,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SSBNWSBNRSBNSU5F,I MY ME MINE,I_MY_ME_MINE,E,E,inferred_spotify_fans,,,,,,,,1569,9,35700,16.9245,19569,E,E,E,
+44Gz44Gj44GP44GI44KT44GY44GH44KL,びっくえんじぇる,,E,E,inferred_spotify_fans,,,,,,,,1558,20,27853,26.3496,41558,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TydDSEFXQU5aIEhJUC1IT1AgQ09MTEVHRQ,O'CHAWANZ HIP-HOP COLLEGE,O'CHAWANZ,E,E,inferred_spotify_fans,,,,,,,,1544,10,,10.772,21544,F,E,F,
+44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz,さよならステイチューン,,E,E,inferred_spotify_fans,,,,,,,,1521,15,17588,19.2781,31521,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+VU5CUw,UNBS,UNBS,E,E,inferred_spotify_fans,,,,,,,,1519,9,9629,11.6853,19519,F,E,F,
+5aSq6Zm944Go6LiK44KM5pyI5aSc44Gr5ZSE44GI,太陽と踊れ月夜に唄え,UTA,E,E,inferred_spotify_fans,,,,,,,,1513,15,21339,20.0243,31513,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OZ44Ot44OG44Kj44Kr,ベロティカ,,E,E,inferred_spotify_fans,,,,,,,,1510,25,24834,30.7218,51510,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TmFOb01vUmFM,NaNoMoRaL,NaNoMoRaL,E,E,inferred_spotify_fans,,,,,,,,1457,7,,7.7285,15457,F,F,F,
+bWF5IGluIGZpbG0,may in film,May_in_film,E,E,inferred_spotify_fans,,,,,,,,1450,9,8868,11.4986,19450,F,E,F,
+TUFOQUNMRQ,MANACLE,MANACLE,E,E,inferred_spotify_fans,,,,,,,,1445,4,,4.7225,9445,F,F,F,
+57WC44KP44KJ44Gq44GE44Gn44CB5aSc,終わらないで、夜,,E,E,inferred_spotify_fans,,,,,,,,1433,5,,5.7165,11433,F,F,F,
+RmluYWxseQ,Finally,Finally,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1431,11,25970,16.9095,23431,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+TklMS0xZ,NILKLY,NILKLY,E,E,inferred_spotify_fans,,,,,,,,1418,1,,1.709,3418,F,F,F,
+5qOYLeOBiuOBqeOCjS0,棘-おどろ-,,E,E,inferred_spotify_fans,,,,,,,,1417,13,,13.7085,27417,E,E,E,
+44OR44Op44OH44Kj44O844Kv,パラディーク,Paradeeq,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1416,18,16877,22.0834,37416,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+OURheXpHbGl0Y2hDbHViVG9reW8,9DayzGlitchClubTokyo,9DayzGlitchClubTokyo,E,E,inferred_spotify_fans,,,,,,,,1411,12,3983,13.5021,25411,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8,カイジューバイミー,,E,E,inferred_spotify_fans,,,,,,,,1404,18,14132,21.5284,37404,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OP44Or44OL44K344Kq44Oz,ハルニシオン,,E,E,inferred_spotify_fans,,,,,,,,1403,28,70421,42.7857,57403,C,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QkFCWS1DUkFZT07jgJwxMzYx44Cc,BABY-CRAYON〜1361〜,BABY-CRAYON~1361~,E,E,inferred_spotify_fans,,,,,,,,1382,6,,6.691,13382,F,F,F,
+RElBVkVM,DIAVEL,,E,E,inferred_spotify_fans,,,,,,,,1382,21,,21.691,43382,E,E,E,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+UkVBRFkgVE8gS0lTUw,READY TO KISS,READY_TO_KISS,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1351,4,4476,5.5707,9351,F,E,F,
+Rml2ZSBlbW90aW9u,Five emotion,Five_emotion,E,E,inferred_spotify_fans,,,,,,,,1342,2,,2.671,5342,F,F,F,
+Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M,CHICKEN BLOW THE IDOL,CHICKEN_BLOW_THE_IDOL,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1329,6,2032,7.0709,13329,F,E,F,neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce61
+44ON44Kz44OX44OpcGl4eC4,ネコプラpixx.,,E,E,inferred_spotify_fans,,,,,,,,1319,8,,8.6595,17319,F,F,F,
+aVNQWQ,iSPY,ISPY,E,E,inferred_spotify_fans,,,,,,,,1314,4,32604,11.1778,9314,F,E,F,
+QXNJcw,AsIs,AsIs,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1293,22,36750,29.9965,45293,D,E,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SElHSCBTUElSSVRT,HIGH SPIRITS,HIGH_SPIRITS,E,E,inferred_spotify_fans,,,,,,,,1288,11,40554,19.7548,23288,E,E,E,
+RFJFQU1JTkcgTU9OU1RFUg,DREAMING MONSTER,DREAMING_MONSTER,E,E,inferred_spotify_fans,,,,,,,,1281,7,42920,16.2245,15281,E,E,E,
+44Ov44OD44OE4peO44GV44O844GP44KL,ワッツ◎さーくる,,E,E,inferred_spotify_fans,,,,,,,,1248,8,5151,9.6542,17248,F,F,F,
+5aSW56We55Sw44GE44Gj44Gh44KH44KB,外神田いっちょめ,,E,E,inferred_spotify_fans,,,,,,,,1239,2,3722,3.3639,5239,F,F,F,Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the bes
+44Or44Or44ON44O844K444Ol,ルルネージュ,,E,E,inferred_spotify_fans,,,,,,,,1229,10,31992,17.0129,21229,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SlVHUyBNQUZJQQ,JUGS MAFIA,JUGS_MAFIA,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1221,4,2207,5.0519,9221,F,E,F,
+Q1VCzqNMSUM,CUBΣLIC,CUBΣLIC,E,E,inferred_spotify_fans,,,,,,,,1213,7,1632,7.9329,15213,F,F,F,
+bG9ubGl1bQ,lonlium,Lonlium,E,E,inferred_spotify_fans,,,,,,,,1174,14,,14.587,29174,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+T1PimIZV,OS☆U,OS☆U,E,E,inferred_spotify_fans,,,,,,,,1170,9,11608,11.9066,19170,F,E,F,
+Q2h1LVo,Chu-Z,Chu-Z,E,E,inferred_spotify_fans,,,,,,,,1152,3,5503,4.6766,7152,F,F,F,
+V1TimIZFZ3JldA,WT☆Egret,WT☆Egret,E,E,inferred_spotify_fans,,,,,,,,1151,9,,9.5755,19151,F,F,F,
+SGVsbHphcG9wcGluJw,Hellzapoppin',Hellzapoppin',E,E,inferred_spotify_fans,,,,,,,,1148,13,698,13.7136,27148,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QVE,AQ,AQ,E,E,inferred_spotify_fans,,,,,,,,1142,15,8543,17.2796,31142,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-04-01.
+44Oh44Kk44OT44O8TUU,メイビーME,Meibii ME,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1138,7,113486,30.2662,15138,D,E,D,neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce51
+44Gk44G844G_5aSn6Z2p5ZG9,つぼみ大革命,Tsubomi_Daikakumei,E,E,inferred_spotify_fans,,,,,,,,1134,6,13569,9.2808,13134,F,F,F,
+44GC44Gf44G-44Gu44Gq44GL44GvOOODk-ODg-ODiOKBie-4jg,あたまのなかは8ビット⁉︎,,E,E,inferred_spotify_fans,,,,,,,,1133,12,13852,15.3369,25133,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44G144GH44GC44KK44O844Gm44GE44KL44Ga77yB,ふぇありーているず！,,E,E,inferred_spotify_fans,,,,,,,,1124,7,23093,12.1806,15124,E,E,E,
+Q0FMJlJFUw,CAL&RES,CAL&RES,E,E,inferred_spotify_fans,,,,,,,,1116,15,39360,23.43,31116,E,E,E,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+aGFrYW5haQ,hakanai,Hakanai,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1113,16,201695,56.8955,33113,B,E,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kv44Op44Op44O744Oe44Kw44Op,クララ・マグラ,,E,E,inferred_spotify_fans,,,,,,,,1111,19,22618,24.0791,39111,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+LkJQTQ,.BPM,.BPM,E,E,inferred_spotify_fans,,,,,,,,1110,12,17134,15.9818,25110,E,E,E,
+aWRlYWwgcGVjbw,ideal peco,Ideal_peco,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1107,8,79984,24.5503,17107,E,E,E,
+UGlua3lTcGljZQ,PinkySpice,PinkySpice,E,E,inferred_spotify_fans,,,,,,,,1106,7,,7.553,15106,F,F,F,
+SElCQU5B,HIBANA,HIBANA,E,E,inferred_spotify_fans,,,,,,,,1102,23,12674,26.0858,47102,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RU1PRQ,EMOE,EMOE,E,E,inferred_spotify_fans,,,,,,,,1101,1,,1.5505,3101,F,F,F,
+bWV0YXJpdW0,metarium,Metarium,E,E,inferred_spotify_fans,,,,,,,,1084,7,51166,17.7752,15084,E,E,E,
+44K144Kv44Ok44Kz44OO44OP44OK,サクヤコノハナ,Sakuya_Konohana,E,E,inferred_spotify_fans,,,,,,,,1084,9,50792,19.7004,19084,E,E,E,
+I1BFWEFDT0E,#PEXACOA,PEXACOA,E,E,inferred_spotify_fans,,,,,,,,1071,4,12335,7.0025,9071,F,F,F,
+5pyI5YiKUEFN,月刊PAM,,E,E,inferred_spotify_fans,,,,,,,,1069,18,19608,22.4561,37069,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KP44KM44KJ44GM44OX44Ov44OX44Ov44OX44O844Ov44OX44Ov,われらがプワプワプーワプワ,Wareraga_Puwapuwapuuwapuwa,E,E,inferred_spotify_fans,,,,,,,,1065,15,5578,16.6481,31065,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QWxjdXRl77yB,Alcute！,Alcute!,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1061,13,88178,31.1661,27061,D,E,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+TGF5bg,Layn,Layn,E,E,inferred_spotify_fans,,,,,,,,1057,7,22981,12.1247,15057,E,E,E,
+VG9pIFRvaSBUb2k,Toi Toi Toi,Toi_Toi_Toi,E,E,inferred_spotify_fans,,,,,,,,1057,18,92819,37.0923,37057,D,D,D,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+QnVubnkgTGEgQ3Jldw,Bunny La Crew,Bunny_La_Crew,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,1054,9,2185,9.964,19054,F,E,F,neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce114
+44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go,ぜろから☆すた→と,,E,E,inferred_spotify_fans,,,,,,,,1053,14,11608,16.8481,29053,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUFHSUNBTCBTUEVD,MAGICAL SPEC,MAGICAL_SPEC,E,E,inferred_spotify_fans,,,,,,,,1051,15,3468,16.2191,31051,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUVXTQ,MEWM,MEWM,E,E,inferred_spotify_fans,,,,,,,,1046,3,52549,14.0328,7046,E,E,E,
+44Ki44Oq44K55Y2B55Wq,アリス十番,,E,E,inferred_spotify_fans,,,,,,,,1046,7,30170,13.557,15046,E,E,E,
+44K544OB44O844Og44Ks44O844Or44K6,スチームガールズ,,E,E,inferred_spotify_fans,,,,,,,,1046,7,112601,30.0432,15046,D,D,D,
+TkFOT05J,NANONI,NANONI,E,E,inferred_spotify_fans,,,,,,,,1045,7,,7.5225,15045,F,F,F,
+UE9QUGlORyBFTU8,POPPiNG EMO,POPPiNG_EMO,E,E,inferred_spotify_fans,,,,,,,,1044,7,8369,9.1958,15044,F,F,F,
+556s44GN44KC44Gb44Ga,瞬きもせず,,E,E,inferred_spotify_fans,,,,,,,,1039,13,42143,21.9481,27039,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0FJwrJSaXVt,SAI²Rium,SAI_²Rium,E,E,inferred_spotify_fans,,,,,,,,1031,8,42195,16.9545,17031,E,E,E,
+QUZURVJT,AFTERS,AFTERS,E,E,inferred_spotify_fans,,,,,,,,1013,14,8601,16.2267,29013,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC,点染テンセイ少女。,Tensen Tensei Shoujo.,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,999,16,5088,17.5171,32999,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+VG9oa2Vp,Tohkei,Tohkei,E,E,inferred_spotify_fans,,,,,,,,989,18,22535,23.0015,36989,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TkVPVE9LWU8tVFJJQkU,NEOTOKYO-TRIBE,NEOTOKYO-TRIBE,E,E,inferred_spotify_fans,,,,,,,,978,5,1989,5.8868,10978,F,F,F,
+c2VsZmlzaA,selfish,Selfish,E,E,inferred_spotify_fans,,,,,,,,961,17,40816,25.6437,34961,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+VE9LWU_jgabjgbXjgabjgbU,TOKYOてふてふ,TOKYO_Tefutefu,E,E,inferred_spotify_fans,,,,,,,,960,10,7798,12.0396,20960,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OP44OL44O844K544OR44Kk44K5UmUu,ハニースパイスRe.,,E,E,inferred_spotify_fans,,,,,,,,957,9,4814,10.4413,18957,F,F,F,
+TElUIE1PT04,LIT MOON,LIT_MOON,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,953,12,21911,16.8587,24953,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6Iqx44GE44KN44Gv,花いろは,Hana_Iroha,E,E,inferred_spotify_fans,,,,,,,,935,13,27567,18.9809,26935,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44K544Ov44Oz44K544Ov44Oz44K6,スワンスワンズ,,E,E,inferred_spotify_fans,,,,,,,,921,15,11002,17.6609,30921,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+R0FOR0RFTUlD,GANGDEMIC,GANGDEMIC,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,912,14,,14.456,28912,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+QU9BTw,AOAO,AOAO,E,E,inferred_spotify_fans,,,,,,,,909,19,145579,48.5703,38909,C,C,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Op44OK44Kt44Ol44Op,ラナキュラ,,E,E,inferred_spotify_fans,,,,,,,,904,15,57212,26.8944,30904,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RlIyUE9OIQ,FR2PON!,FR2PON!,E,E,inferred_spotify_fans,,,,,,,,867,13,62494,25.9323,26867,D,D,D,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Rmxvd2Vy77yKSG91cg,Flower＊Hour,Flower,E,E,inferred_spotify_fans,,,,,,,,864,12,9619,14.3558,24864,E,E,E,
+TGlWUw,LiVS,LiVS,E,E,inferred_spotify_fans,,,,,,,,842,12,,12.421,24842,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Um9vdCBtaW1p,Root mimi,Root mimi,E,E,inferred_spotify_fans,,,,,,,,827,16,216263,59.6661,32827,B,C,D,Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+LkxpTklYTGlORS4,.LiNIXLiNE.,,E,E,inferred_spotify_fans,,,,,,,,826,15,6775,16.768,30826,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U1BSSVNF,SPRISE,SPRISE,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,824,14,15401,17.4922,28824,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+44OR44Op44Os44Or44K144Kk44OA44O8,パラレルサイダー,,E,E,inferred_spotify_fans,,,,,,,,822,17,26820,22.775,34822,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SGlpVCBGYWN0b3J5,HiiT Factory,FACTORY,E,E,inferred_spotify_fans,,,,,,,,813,15,,15.4065,30813,E,E,E,
+44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6,スパンコールグッドタイムズ,,E,E,inferred_spotify_fans,,,,,,,,812,10,,10.406,20812,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+cG9uZGVyb3NhIG1heSBibG9vbQ,ponderosa may bloom,Ponderosa_may_bloom,E,E,inferred_spotify_fans,,,,,,,,811,13,1966,13.7987,26811,E,E,E,
+6ISz5YaF44OR44K544OG44Or,脳内パステル,Nounai_Pastel,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,811,14,7215,15.8485,28811,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+UEFTVEVMIFJBRElP,PASTEL RADIO,PASTEL_RADIO,E,E,inferred_spotify_fans,,,,,,,,809,16,4766,17.3577,32809,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Rk9LQUxJVEU,FOKALITE,FOKALITE,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,803,12,30863,18.5741,24803,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+44OV44Ol44O844OB44Oj44O844K144Kk44OA44O8,フューチャーサイダー,,E,E,inferred_spotify_fans,,,,,,,,802,11,3919,12.1848,22802,E,E,E,
+U2lMRU5U4oaQTk9pU0U,SiLENT←NOiSE,SiLENT←NOiSE,E,E,inferred_spotify_fans,,,,,,,,797,12,6799,13.7583,24797,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+bXkgZmF2,my fav,my fav,E,E,inferred_spotify_fans,,,,,,,,781,9,37828,16.9561,18781,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. Separated from Last Idol original-era subgroup system o
+Q2hhbGNh,Chalca,Chalca,E,E,inferred_spotify_fans,,,,,,,,755,16,22343,20.8461,32755,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Vy7jg4Djg5bjg6vjg7TjgqPjg7w,W.ダブルヴィー,W,E,E,inferred_spotify_fans,,,,,,,,749,14,43084,22.9913,28749,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Or44O844K444Ol44OW44OD44Kv,ルージュブック,,E,E,inferred_spotify_fans,,,,,,,,706,9,21492,13.6514,18706,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TWVsdHkgQmVhUg,Melty BeaR,Melty_BeaR,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,702,16,11005,18.552,32702,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SGVsbG9Zb3V0aA,HelloYouth,HelloYouth,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,672,12,,12.336,24672,E,E,E,
+WlVUVE9NT1RUTw,ZUTTOMOTTO,ZUTTOMOTTO,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,670,12,21623,16.6596,24670,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+UEFOREFNSUM,PANDAMIC,,E,E,inferred_spotify_fans,,,,,,,,638,2,,2.319,4638,F,F,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44KR44KT44KJ,ゑんら,Wyenra,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,636,7,88202,24.9584,14636,E,E,E,neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce45
+44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo,ほくりくアイドル部,Hokuriku_Idolbu,E,E,inferred_spotify_fans,,,,,,,,620,11,2232,11.7564,22620,F,E,F,
+6ZmQ44KK44Gq44GP55m944GP,限りなく白く,,E,E,inferred_spotify_fans,,,,,,,,613,14,18406,17.9877,28613,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UmFSYUphTQ,RaRaJaM,RaRaJaM,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,609,9,83849,26.0743,18609,D,E,D,
+SEFQUFkgQ1JFQVRPUlM,HAPPY CREATORS,HAPPY_CREATORS,E,E,inferred_spotify_fans,,,,,,,,601,11,27732,16.8469,22601,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OI44OK44Oq44Ki,トナリア,Tonariau_/_ONE'S_AGAIN,E,E,inferred_spotify_fans,,,,,,,,572,9,15261,12.3382,18572,E,E,E,
+VEhFIEVOQ09SRQ,THE ENCORE,THE_ENCORE,E,E,inferred_spotify_fans,,,,,,,,566,15,,15.283,30566,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Q2hhcm0gUG9jaGU,Charm Poche,Charm_Poche,E,E,inferred_spotify_fans,,,,,,,,546,9,38526,16.9782,18546,E,E,E,
+44GT44G_44Gj44GN44KF44GK44KT77yB,こみっきゅおん！,Komikkyon,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,510,18,25590,23.373,36510,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Uk9PS0VZ4pmhUk9PS0VZUw,ROOKEY♡ROOKEYS,ROOKEY♡ROOKEYS,E,E,inferred_spotify_fans,,,,,,,,506,12,19611,16.1752,24506,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kv44Op44Kk44K744Kr44Kk,クライセカイ,Kurai_Sekai,E,E,inferred_spotify_fans,,,,,,,,493,13,20393,17.3251,26493,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QVFB,AQA,AQA,E,E,inferred_spotify_fans,,,,,,,,487,12,6893,13.6221,24487,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QkFEIElWWQ,BAD IVY,,E,E,inferred_spotify_fans,,,,,,,,471,11,34635,18.1625,22471,E,E,E,
+U1RBUlJZw5dOSUdIVOKGl--4jg,STARRY×NIGHT↗︎,STARRY×NIGHT↗︎,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,451,12,18922,16.0099,24451,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+RlVMSVQgQk9Y,FULIT BOX,FULIT_BOX,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,445,10,44353,19.0931,20445,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. neverless_article: https://seesaawiki.jp/neverless/d/%a
+44Oy44OJ44Or44Oe44Oo44OK44Kr,ヲドルマヨナカ,Wodoru_Mayonaka,E,E,inferred_spotify_fans,,,,,,,,428,9,,9.214,18428,F,F,F,
+QW1ha2FyYSE,Amakara!,Amakara!,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+a7805041-7cce-4541-86b5-a3fe06d3d4ea,AMAKAZE,,E,E,inferred_spotify_fans,,,,,,,,,,33917,6.7834,500,F,F,F,missing_fans_and_popularity; Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the bes
+ZW1wZXJpY2U,emperice,emperice,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+aUxpRkUh5YCZ6KOc55Sf,iLiFE!候補生,iLiFE!候補生,E,E,inferred_spotify_fans,,,,,,,,,,21301,4.2602,500,F,F,F,missing_fans_and_popularity
+THljb3Jpcw,Lycoris,Lycoris,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+TuOCvOODrQ,Nゼロ,N_Zero,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+UGFuaWMgTW9uc3RlciAhbiBXb25kZXJsYW5k,Panic Monster !n Wonderland,Panic Monster !n Wonderland,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+UGFydHkgY2h1dXVOIQ,Party chuuuN!,Party chuuuN!,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+d8f8e543-16c7-4f7e-8903-ded7ec8c5380,Ragken!,,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+743724ff-5c2d-4e42-85ab-95e7e5c42954,Raiden,,E,E,inferred_spotify_fans,,,,,,,,,,168615,33.723,500,D,D,D,missing_fans_and_popularity; Low-profile group: detailed member info is often sparse or fragmented; partial data is acceptable after checking the bes
+764d49a4-9186-44f0-9c88-ab913d7c95ca,SUIGETSU,,E,E,inferred_spotify_fans,,,,,,,,,,20075,4.015,500,F,F,F,"missing_fans_and_popularity; Trainee group under KABUKIMONO'DOGs / Kabukitai; member pages may be sparse or incomplete, so partial profile data is ex"
+WUFNSU5BQkU,YAMINABE,YAMINABE,E,E,inferred_spotify_fans,,,,,,,,,,100928,20.1856,500,E,E,E,missing_fans_and_popularity
+4d9e63bf-672e-4b0a-86e6-40c8e5cc6689,Yumeiro H!L!T,Yumeiro_H!L!T,E,E,inferred_spotify_fans,,,,,,,,,,164149,32.8298,500,D,D,D,missing_fans_and_popularity
+44Kt44Op44Kt44Op44Ky44Oq44Op,キラキラゲリラ,キラキラゲリラ,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+d231b9f2-f247-4cf5-8d57-35365fd73f16,ドレスコード,Dress_Code,E,E,manual_available_groups_doc,E,support/docs/scenario6_available_groups.txt,,,,,,,,63843,12.7686,500,E,E,E,missing_fans_and_popularity; neverless_article: https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce155
+055cd81a-8c78-44ad-b74b-3f45fc551f9b,ナナコロビヤオキ,Nanakorobi_Yaoki,E,E,inferred_spotify_fans,,,,,,,,,,48550,9.71,500,F,F,F,missing_fans_and_popularity
+9b937bbf-facf-437b-9815-94152bfe5805,ヒロインズ研究生,HEROINES Kenkyuusei,E,E,inferred_spotify_fans,,,,,,,,,,13723,2.7446,500,F,F,F,missing_fans_and_popularity
+dff1e0bf-9b5e-4a9c-85db-5379cafb7513,ヒロインズ研究生大阪,HEROINES Kenkyuusei Osaka,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+44OW44Op44OD44KvRFBH,ブラックDPG,ブラックDPG,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+5ZCb44Go6KaL44KL44Gd44KJ,君と見るそら,,E,E,inferred_spotify_fans,,,,,,,,,,188541,37.7082,500,D,D,D,"missing_fans_and_popularity; Formed date inferred from group page statement that the original 6-member group was formed on January 1, 2024. Current/p"
+5ouz6YqD5bCR5aWz,拳銃少女,拳銃少女,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+5aWz5aG+44Kq44O844Or44K544K/44O844K6,女塾オールスターズ,女塾オールスターズ,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+6IGW4piG44Oc44OK44OX44Ot5a2m5ZyS,聖☆ボナプロ学園,聖☆ボナプロ学園,E,E,inferred_spotify_fans,,,,,,,,,,,0,500,F,F,F,missing_fans_and_popularity
+44OK44OI4piG44Kr44Oz/#google_vignette,ナト☆カン,Nato☆Kan,F,F,inferred_spotify_fans,,,,,,,,364,2,,2.182,4364,F,F,F,
+44Kr44Of44K144Oe44OR44Os44O844OJ,カミサマパレード,,F,F,inferred_spotify_fans,,,,,,,,339,12,,12.1695,24339,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44G944GR44Gj44Go44OV44Kh44Oz44OI44Og,ぽけっとファントム,,F,F,inferred_spotify_fans,,,,,,,,328,14,5275,15.219,28328,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+YWkqYWk,ai*ai,Ai*ai,F,F,inferred_spotify_fans,,,,,,,,309,10,18601,13.8747,20309,E,E,E,
+QmVsb3ZlZA,Beloved,Beloved,F,F,inferred_spotify_fans,,,,,,,,293,12,1924,12.5313,24293,E,E,E,
+RUdSe-OBiOOBkOOCi30,民族ハッピー組,Happy_People_Party,F,F,inferred_spotify_fans,,,,,,,,290,20,17223,23.5896,40290,E,E,E,Popularity/followers synced from idolsdiagram.com on 2026-05-06. Canonical current group uses Happy People Party / 民族ハッピ
+QWljb25n,Aicong,,F,F,inferred_spotify_fans,,,,,,,,271,13,35553,20.2461,26271,E,E,E,
+QVZBQ0xVQg,AVACLUB,,F,F,inferred_spotify_fans,,,,,,,,236,11,2349,11.5878,22236,F,E,F,Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TElOSyBTVEFSVA,LINK START,Link_start,F,F,inferred_spotify_fans,,,,,,,,190,1,2451,1.5852,2190,F,F,F,
+T0xOZXc,OLNew,OLNew,F,F,inferred_spotify_fans,,,,,,,,166,2,1900,2.463,4166,F,F,F,
+SVoqT05F,IZ*ONE,IZ*ONE,I,I,inactive_at_opening,,,,,,,,2511205,58,,1313.6025,2627205,S,S,D,"inactive_at_opening_no_tier_eval; Cross-market group tracked in limited scope from Kpop Wiki: all 12 members are listed in roster fields, but only the thr"
+Q2hlcnJ5IEJ1bGxldA,Cherry Bullet,Cherry Bullet,I,I,inactive_at_opening,,,,,,,,455265,39,,266.6325,533265,S,B,D,"inactive_at_opening_no_tier_eval; Cross-market group tracked in limited scope from Kpop Wiki: all members are listed in roster fields, but only the three "
+QmlTSA,BiSH,BiSH,I,I,inactive_at_opening,,,,,,,,411234,50,,255.617,511234,S,B,D,inactive_at_opening_no_tier_eval; Group details refreshed from WACKi Wiki and Jpop Wiki on 2026-04-08. Final lineup is stored in past_member_names because
+44Gn44KT44Gx57WELmluYw,でんぱ組.inc,Dempagumi.inc,I,I,inactive_at_opening,,,,,,,,76655,36,,74.3275,148655,A,C,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06. Timeline verified on 2026-04-12: formed_date set to 201
+56We5a6_,神宿,KAMIYADO,I,I,inactive_at_opening,,,,,,,,54257,48,,75.1285,150257,A,C,D,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+RU1QaVJF,EMPiRE,EMPiRE,I,I,inactive_at_opening,,,,,,,,39484,38,,57.742,115484,B,C,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QmlT,BiS,BiS,I,I,inactive_at_opening,,,,,,,,38344,29,,48.172,96344,C,C,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06. BiS roster display names aligned to WACKi BiS/Members s
+Q1k4RVI,CY8ER,CY8ER,I,I,inactive_at_opening,,,,,,,,36086,28,,46.043,92086,C,C,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QnVvbm8h,Buono!,Buono!,I,I,inactive_at_opening,,,,,,,,34930,43,,60.465,120930,B,C,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TWFpc29uIGJvb2sgZ2lybA,Maison book girl,Maison_book_girl,I,I,inactive_at_opening,,,,,,,,27706,23,,36.853,73706,D,D,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SVJPTkJVTk5Z,IRONBUNNY,IRONBUNNY,I,I,inactive_at_opening,,,,,,,,22024,28,,39.012,78024,D,D,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI,ヤなことそっとミュート,,I,I,inactive_at_opening,,,,,,,,15007,15,,22.5035,45007,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+QlBNMTVR/#google_vignette,BPM15Q,BPM15Q,I,I,inactive_at_opening,,,,,,,,14655,46,,53.3275,106655,C,C,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OL44Kh44OU44Oz,ニァピン,,I,I,inactive_at_opening,,,,,,,,12370,15,,21.185,42370,E,E,E,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM,ゆくえしれずつれづれ,,I,I,inactive_at_opening,,,,,,,,10612,18,,23.306,46612,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUlHTUEgU0hFTFRFUg,MIGMA SHELTER,MIGMA_SHELTER,I,I,inactive_at_opening,,,,,,,,8568,12,,16.284,32568,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+55yf44Gj55m944Gq44Kt44Oj44Oz44OQ44K5,真っ白なキャンバス,Masshiro_na_Canvas,I,I,inactive_at_opening,,,,,,,,8388,17,,21.194,42388,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06. Disbandment date set to 2024-11-04 based on current off
+QkxBQ0tOQVpBUkVORQ,BLACKNAZARENE,BLACKNAZARENE,I,I,inactive_at_opening,,,,,,,,7796,13,,16.898,33796,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Oi44OO44Kv44Ot44O844Oz,モノクローン,,I,I,inactive_at_opening,,,,,,,,6085,22,,25.0425,50085,D,E,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+dWlqaW4,uijin,Uijin,I,I,inactive_at_opening,,,,,,,,5817,15,,17.9085,35817,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+dGlwVG9lLg,tipToe.,TipToe.,I,I,inactive_at_opening,,,,,,,,5582,11,,13.791,27582,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+Q1JPV04gUE9Q,CROWN POP,CROWN_POP,I,I,inactive_at_opening,,,,,,,,5131,8,,10.5655,21131,F,F,F,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+R0VN,GEM,,I,I,inactive_at_opening,,,,,,,,5084,7,,9.542,19084,F,F,F,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+TUVMTE9XIE1FTExPVw,MELLOW MELLOW,MELLOW_MELLOW,I,I,inactive_at_opening,,,,,,,,4913,8,,10.4565,20913,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SU5VV0FTSQ,INUWASI,INUWASI,I,I,inactive_at_opening,,,,,,,,4695,26,,28.3475,56695,D,D,D,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC,神使轟く、激情の如く。,"Shinshi Todoroku, Gekijou no Gotoku.",I,I,inactive_at_opening,,,,,,,,4579,10,,12.2895,24579,E,E,E,inactive_at_opening_no_tier_eval; Current source page says the group is on hiatus and lists Current Members as TBA. Debut date from Jpop Wiki: 2017-09-30.
+VEhFIEhPT1BFUlM,THE HOOPERS,THE_HOOPERS,I,I,inactive_at_opening,,,,,,,,4322,11,,13.161,26322,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Oq44Or44ON44O844OJ,リルネード,,I,I,inactive_at_opening,,,,,,,,4246,16,,18.123,36246,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Gq44KT44Kt44OL77yB,なんキニ！,Nankini!,I,I,inactive_at_opening,,,,,,,,3863,8,,9.9315,19863,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+U0FOREFMIFRFTEVQSE9ORQ,SANDAL TELEPHONE,Sandal_Telephone,I,I,inactive_at_opening,,,,,,,,3767,6,,7.8835,15767,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44OK44OK44Op44Oz44OJ,ナナランド,,I,I,inactive_at_opening,,,,,,,,3212,9,,10.606,21212,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SURPTEFURVI,IDOLATER,,I,I,inactive_at_opening,,,,,,,,2617,11,,12.3085,24617,E,E,E,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk,校庭カメラガールドライ,,I,I,inactive_at_opening,,,,,,,,2589,8,,9.2945,18589,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+6YO95YaF5p-Q5omA,都内某所,TONAi_BOUSHO,I,I,inactive_at_opening,,,,,,,,2585,9,,10.2925,20585,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+SEFNSURBU1lTVEVN,HAMIDASYSTEM,HAMIDASYSTEM,I,I,inactive_at_opening,,,,,,,,2552,3,,4.276,8552,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+UGlYTWlY,PiXMiX,,I,I,inactive_at_opening,,,,,,,,2170,4,,5.085,10170,F,F,F,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+T24gdGhlIHRyZWF0IFN1cGVyIFNlYXNvbg,On the treat Super Season,On_the_treat_Super_Season,I,I,inactive_at_opening,,,,,,,,2126,2,,3.063,6126,F,F,F,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+5pif5q20MTPlpJw,星歴13夜,,I,I,inactive_at_opening,,,,,,,,2108,8,,9.054,18108,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Kw44O844Kw44O844Or44Or,グーグールル,,I,I,inactive_at_opening,,,,,,,,2065,1,,2.0325,4065,F,F,F,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+TUlTUyBNRVJDWQ,MISS MERCY,MISS_MERCY,I,I,inactive_at_opening,,,,,,,,1815,18,,18.9075,37815,E,E,E,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+44Kv44Ot44K544OO44Ko44K344K5,クロスノエシス,,I,I,inactive_at_opening,,,,,,,,1578,3,,3.789,7578,F,F,F,inactive_at_opening_no_tier_eval
+TG92ZSBDb2NjaGk,Love Cocchi,Love Cocchi,I,I,inactive_at_opening,,,,,,,,1469,3,,3.7345,7469,F,F,F,inactive_at_opening_no_tier_eval; Original Last Idol subgroup roster sourced from My_fav page on 2026-04-02. Original Last Idol-era group disbanded on 202
+Mm8gTG92ZSB0byBTd2VldCBCdWxsZXQ,2o Love to Sweet Bullet,Ai_no_Hana_(2o_Love_to_Sweet_Bullet),I,I,inactive_at_opening,,,,,,,,1247,3,,3.6235,7247,F,F,F,inactive_at_opening_no_tier_eval
+ZXQt44Ki44Oz44OJLQ,et-アンド-,Et-and-,I,I,inactive_at_opening,,,,,,,,1106,2,,2.553,5106,F,F,F,inactive_at_opening_no_tier_eval
+MeOBpOi2s-OCiuOBquOBhOizveOBr-aKleOBkuOCieOCjOOBnw,1つ足りない賽は投げられた,,I,I,inactive_at_opening,,,,,,,,857,13,,13.4285,26857,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+44Ks44Op44OB44Ki,ガラチア,,I,I,inactive_at_opening,,,,,,,,584,11,,11.292,22584,F,E,F,inactive_at_opening_no_tier_eval
+6YeM5ZKy44KK44GV,里咲りさ,RISA☆RISA,I,I,inactive_at_opening,,,,,,,,556,12,,12.278,24556,E,E,E,inactive_at_opening_no_tier_eval; Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metada
+44GC44GS44KC44KT77yB,あげもん！,Agemon!,I,I,inactive_at_opening,,,,,,,,493,1,,1.2465,2493,F,F,F,inactive_at_opening_no_tier_eval
+44Oq44Oq44K344OD44Kv5a2m5ZyS,リリシック学園,,I,I,inactive_at_opening,,,,,,,,213,3,,3.1065,6213,F,F,F,inactive_at_opening_no_tier_eval
+5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA,中2映画プロジェクトアイドル部,,I,I,inactive_at_opening,,,,,,,,185,13,,13.0925,26185,E,E,E,inactive_at_opening_no_tier_eval; Popularity/followers synced from idolsdiagram.com on 2026-05-06.
+15c6385c-b09a-4dbc-89f1-fc96cef74fff,BLK LiLiY,BLK_LiLiY,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+Q2hlY2ttYXRl,Checkmate,Checkmate!?,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+Q2hvdXggQ3JlYW0gUm9ja2V0cw,Choux Cream Rockets,Choux Cream Rockets,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Added from my fav page as an original Last Idol subgroup. Original Last Idol subgroup roster sourced from My_fav page on
+RGVhcjg,Dear8,Dear8,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+R29vZCBUZWFycw,Good Tears,Good Tears,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Added from my fav page as an original Last Idol subgroup. Original Last Idol subgroup roster sourced from My_fav page on
+SG9uZXkgU3F1YXNo,Honey Squash,Honey Squash,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+S2lzc0JlZVdFU1Q,KissBeeWEST,KissBeeWEST,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+TGEgTHVjZQ,La Luce,La Luce,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Added from my fav page as an original Last Idol subgroup. Original Last Idol subgroup roster sourced from My_fav page on
+TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u,Last Idol 2nd Generation,Last Idol 2nd Generation,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Added from the Members (Original) -> 2nd Generation section of the My_fav page on 2026-04-02. Original Last Idol-era gro
+TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9uIFVuZGVy,Last Idol 2nd Generation Under,Last Idol 2nd Generation Under,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Added from the Members (Original) -> 2nd Generation Under section of the My_fav page on 2026-04-02. Original Last Idol-e
+TGUgU2lhbmE,Le Siana,Le Siana,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,"inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Canonical group name uses a space, matching the Jpop Wiki page title."
+bWVtZSB0b2t5by4,meme tokyo.,meme tokyo.,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+TU9CSVVT,MOBIUS,MOBIUS,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; HEROINES founding-era group; disbanded 2020-02.
+U+KGkmdleHRl,S→gexte,S→gexte,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+U2hvam90YWk,Shojotai,Shojotai,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+U29tZWRheSBTb21ld2hlcmU,Someday Somewhere,Someday Somewhere,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Added from my fav page as an original Last Idol subgroup. Original Last Idol subgroup roster sourced from My_fav page on
+U3RhcuKYhUNvc8684oCZbg,Star★Cosμ’n,Star★Cosμ’n,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+U3RhcuKYhkZpb3JlTmVyZA,Star☆FioreNerd,Star☆FioreNerd,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+U3RhcuKZqWRyb3BUdW5lwrA,Star♩dropTune°,Star♩dropTune°,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+V29uZGVyIFdlZWQ,Wonder Weed,Wonder Weed,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+44Kr44Kq44K544OU44OU44K5,カオスピピス,カオスピピス,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+df3e70ea-93af-41a2-bc29-22f7087350d8,ガガピエロ,GAGAPIERO,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+44GY44O844GP44KJ44KA77yB,じーくらむ！,,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+44OB44Oj44OB44Oj44OB44Oj5YC25qW96YOo,チャチャチャ倶楽部,チャチャチャ倶楽部,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+Tm93U3RvcmFnZQ,なう♡すとれーじ,Now Storage,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; HEROINES group; debuted 2026-07 (produced by 美鈴りか).
+44Oi44Om44Or44OP44Or,モユルハル,モユルハル,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+54Kt6YW444GP44KN44Gr44GP44KL44Gj,炭酸くろにくるっ,tansankuronikuru,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; Canonical Japanese group name. English page title is Tansan Chronicle.
+5aaE5oSb44Kw44Op44OT44OG44Kj,妄愛グラビティ,Mouai Gravity,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; HEROINES founding-era group; disbanded 2020-03.
+5qyF5Z2CNDY,欅坂46,Keyakizaka46,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity
+6bW6,鵺,Nue,I,I,inactive_at_opening,,,,,,,,,,,0,500,F,F,F,inactive_at_opening_no_tier_eval; missing_fans_and_popularity; HEROINES founding-era group; disbanded 2020-07.

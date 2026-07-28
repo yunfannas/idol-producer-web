@@ -450,8 +450,9 @@ export function renderGroupDetailPage(
           <span>${htmlEsc(t(lang, "group_formed", { date: formed }))}</span>
         </p>
         <dl class="basic-dl group-detail-meta-dl">
-          <div><dt>${htmlEsc(t(lang, "group_tier"))}</dt><dd>${htmlEsc(tier)}</dd></div>
+          <div><dt>${htmlEsc(t(lang, "group_tier"))}</dt><dd>${htmlEsc(tier === "I" ? (lang === "zh-CN" ? "I（非活跃）" : "I (Inactive)") : tier)}</dd></div>
           <div><dt>${htmlEsc(t(lang, "group_fans"))}</dt><dd>${fans.toLocaleString("ja-JP")}</dd></div>
+          <div><dt>${htmlEsc(t(lang, "group_x_followers"))}</dt><dd>${(typeof g.x_followers === "number" ? g.x_followers : Number(g.x_followers ?? 0) || 0).toLocaleString("ja-JP")}</dd></div>
           <div><dt>${htmlEsc(t(lang, "group_popularity"))}</dt><dd>${String(pop)}</dd></div>
           <div><dt>${htmlEsc(lang === "zh-CN" ? "声誉" : "Reputation")}</dt><dd>${htmlEsc(String(Math.round(Number(g.reputation ?? 0)) || "—"))}/5</dd></div>
           <div><dt>${htmlEsc("Agencies")}</dt><dd>${htmlEsc(agencies || "—")}</dd></div>

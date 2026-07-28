@@ -129,7 +129,7 @@ function enEntries(): WikiEntry[] {
       label: "Scandal Handling",
       summary: "When a managed member's scandal becomes public, you choose the operational response.",
       description:
-        "Scandals arrive as scheduled status events. When you manage the affected group, Scandal handling is a gameplay decision with real costs: cash (PR), group/idol fans, teammate morale, salary cuts, role demotion, activity suspension (hiatus / off-stage), roster exit timing, and timed live/sales form penalties. Each group has Reputation (1-5, default 3) and its agency has Harshness (1-5) — e.g. iLiFE! reputation 2 under Imaginate harshness 5 — which reshape soft-keep vs firm-cut scores. Reputation is dynamic: it slowly rises with accrued member tenure and well-handled graduations (a special/farewell live near the leave), and falls with scandals + their handling (soft keeps hurt most) and core members leaving without recognition. Scenario 6 cases include iLiFE! at Budokan (那蘭のどか terminate after live; 心花りり keep with heavy penalty via leader demotion) and 高嶺のなでしこ: 春野莉々 (indefinite suspension from May, then a major leave decision on 2025-07-31 before any return date) vs 籾山ひめり (suspend for some time, return 2026-02-14). =LOVE and アキシブproject have no post-start member scandal in the historical timeline.",
+        "Scandals arrive as scheduled status events. When you manage the affected group, Scandal handling is a gameplay decision with real costs: cash (PR), group/idol fans, teammate morale, salary cuts, role demotion, activity suspension (hiatus / off-stage), roster exit timing, and timed live/sales form penalties. Each group has Reputation (1-5, default 3) and its agency has Harshness (1-5) — e.g. iLiFE! reputation 2 under Imaginate harshness 5 — which reshape soft-keep vs firm-cut scores. Reputation is dynamic: starting values are interpolated from historical tenure (including past members) and past scandals/handlings (curated anchors override), then slowly rises with accrued member tenure and well-handled graduations (a special/farewell live near the leave), and falls with scandals + their handling (soft keeps hurt most; timed suspend-then-return −0.5) and core members leaving without recognition. Scenario 6 cases include iLiFE! at Budokan (那蘭のどか terminate after live; 心花りり keep with heavy penalty via leader demotion) and 高嶺のなでしこ: 春野莉々 (indefinite suspension from May, then a major leave decision on 2025-07-31 before any return date) vs 籾山ひめり (suspend for some time, return 2026-02-14). =LOVE and アキシブproject have no post-start member scandal in the historical timeline.",
       aliases: ["Scandal", "scandal handling", "terminate", "demote", "leader demotion", "规约违反"],
     },
     {
@@ -306,7 +306,7 @@ function zhEntries(): WikiEntry[] {
       label: "丑闻处理",
       summary: "经营团成员丑闻曝光时，由你决定运营应对。",
       description:
-        "丑闻作为日程状态事件到达。经营团时「丑闻处理」是带真实代价的玩法选择：公关现金、组合/个人粉丝、队友士气、降薪、职位降格、活动休止（停演/休止）、离团时机，以及一段时间的演出/物贩表现惩罚。每个组合有声誉 Reputation（1-5，默认 3），所属事务所有严厉度 Harshness（1-5）——例如 iLiFE! 声誉 2、Imaginate 严厉度 5——会改变软性留任与强硬切割的评分。声誉是动态的：随成员在团年资累积、以及处理得当的毕业（离团前后有专场/毕业公演）而缓慢上升；随丑闻及其处理（软性留任伤害最大）、核心成员无仪式离团而下降。情景 6 包含 iLiFE! 武道馆事件（那兰のどか演出后脱退；心花りり以领袖降格作为重罚留任）、高嶺のなでしこ・春野莉々（5 月无期限休止后，在未设定复归日前于 2025-07-31 离团——经营团时为重大决定）与籾山ひめり（限期休止，2026-02-14 复归）；=LOVE 与アキシブproject在开局后没有史实成员丑闻。",
+        "丑闻作为日程状态事件到达。经营团时「丑闻处理」是带真实代价的玩法选择：公关现金、组合/个人粉丝、队友士气、降薪、职位降格、活动休止（停演/休止）、离团时机，以及一段时间的演出/物贩表现惩罚。每个组合有声誉 Reputation（1-5，默认 3），所属事务所有严厉度 Harshness（1-5）——例如 iLiFE! 声誉 2、Imaginate 严厉度 5——会改变软性留任与强硬切割的评分。声誉是动态的：初始值由历史年资（含过往成员）与过往丑闻/处理插值得到（策展锚点可覆盖）；开局后随成员在团年资累积、以及处理得当的毕业（离团前后有专场/毕业公演）而缓慢上升；随丑闻及其处理（软性留任伤害最大；限期休止复归 −0.5）、核心成员无仪式离团而下降。情景 6 包含 iLiFE! 武道馆事件（那兰のどか演出后脱退；心花りり以领袖降格作为重罚留任）、高嶺のなでしこ・春野莉々（5 月无期限休止后，在未设定复归日前于 2025-07-31 离团——经营团时为重大决定）与籾山ひめり（限期休止，2026-02-14 复归）；=LOVE 与アキシブproject在开局后没有史实成员丑闻。",
       aliases: ["丑闻", "丑闻处理", "解约", "降格", "领袖降格", "Scandal", "scandal handling"],
     },
     {
@@ -389,13 +389,15 @@ export function defaultWikiEntryKey(lang: UiLanguage): string {
 
 export function relatedWikiKeysForView(view: string, browseMode: boolean): string[] {
   const browseMap: Record<string, string[]> = {
-    Idols: ["group", "fans", "condition", "morale"],
+    // Keep "group" off Idols so membership labels ("Group" / "组合") are not wiki-annotated;
+    // group names navigate to the in-app group summary instead.
+    Idols: ["fans", "condition", "morale"],
     Groups: ["group", "fans", "songs", "discography"],
     Songs: ["songs", "discography", "group"],
   };
   const managementMap: Record<string, string[]> = {
     Inbox: ["inbox", "live", "scout", "shortlist", "career_decision", "scandal_handling"],
-    Idols: ["group", "fans", "condition", "morale", "training", "career_decision", "scandal_handling"],
+    Idols: ["fans", "condition", "morale", "training", "career_decision", "scandal_handling"],
     Groups: ["group", "fans", "songs", "discography"],
     Songs: ["songs", "discography", "group"],
     Scout: ["scout", "shortlist", "career_decision", "fans", "condition", "morale"],

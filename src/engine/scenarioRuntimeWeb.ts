@@ -25,12 +25,13 @@ import {
   hasProperSendoffLive,
   isCoreMember,
   reputationDeltaForDeparture,
+  reputationDeltaForPostSuspensionLeave,
 } from "./reputationModel";
 
 /**
  * Move group reputation when a member actually leaves.
- * A proper sendoff (special live near the leave) lifts brand; a core member
- * walking out with no recognition — or a scandal exit — pulls it down.
+ * Post-indefinite-suspension leaves (春野莉々) use fixed deltas:
+ * historical withdraw −0.5. Other leaves use sendoff / core heuristics.
  */
 function applyDepartureReputation(
   save: GameSavePayload,
@@ -38,9 +39,21 @@ function applyDepartureReputation(
   leaveDay: string,
   scandalLinked: boolean,
   isGraduation: boolean,
+  postSuspensionLeave = false,
 ): void {
   const group = getPrimaryGroup(save);
   if (!group) return;
+
+  if (postSuspensionLeave) {
+    adjustGroupReputation(
+      group as Record<string, unknown>,
+      reputationDeltaForPostSuspensionLeave("let_go"),
+      "post_suspend:let_go",
+      leaveDay,
+    );
+    return;
+  }
+
   const idolUid = String(event.idol_uid ?? "").trim();
   const idols = save.database_snapshot.idols as Record<string, unknown>[];
   const idol = idols.find((row) => String(row.uid ?? "") === idolUid) ?? null;
@@ -856,7 +869,14 @@ export function resolveManagedGroupLeaveChoices(
     }
 
     applyCareerReleaseForLeaveEvent(save, event, day);
-    applyDepartureReputation(save, event, effectiveDate, scandalLinked, career?.kind === "graduation");
+    applyDepartureReputation(
+      save,
+      event,
+      effectiveDate,
+      scandalLinked,
+      career?.kind === "graduation",
+      Boolean(postSuspend) || String(report?.subtype ?? "") === "post_suspension_leave",
+    );
     keptEvents.push(deepCopy(event));
   }
 

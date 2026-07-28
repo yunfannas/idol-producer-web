@@ -35,7 +35,7 @@ import {
   groupReputationFromGroup,
   preloadAgencies,
 } from "./agencyProfile";
-import { adjustGroupReputation, reputationDeltaForScandalHandling } from "./reputationModel";
+import { adjustGroupReputation, reputationDeltaForScandalHandling, reputationDeltaForPostSuspensionLeave } from "./reputationModel";
 import {
   computeScandalConsequences,
   daysBetweenIso,
@@ -405,7 +405,17 @@ export function applyPostSuspensionLeaveChoice(
   const match = findPostSuspensionLeaveHandling(event);
   const score = Number(match?.catalog.score ?? 4) || 4;
 
+  const applyPostSuspendRep = (choice: string) => {
+    adjustGroupReputation(
+      group as Record<string, unknown> | null,
+      reputationDeltaForPostSuspensionLeave(choice),
+      `post_suspend:${choice}`,
+      day,
+    );
+  };
+
   if (action === "let_go") {
+    // Reputation applies when the leave actually executes (applyDepartureReputation).
     return {
       suppressedUids,
       summary: `${idolName} remains on indefinite suspension and will leave ${groupName} on ${isoDay(event.effective_date) || day} (historical path).`,
@@ -415,6 +425,7 @@ export function applyPostSuspensionLeaveChoice(
   if (action === "keep_suspended") {
     ensureTopLevelScandalSuspendHiatus(idol, day, { indefinite: true });
     if (leaveUid) suppressedUids.push(leaveUid);
+    applyPostSuspendRep(action);
     return {
       suppressedUids,
       summary: `${idolName} stays signed under indefinite suspension. The ${isoDay(event.effective_date)} leave was cancelled.`,
@@ -439,6 +450,7 @@ export function applyPostSuspensionLeaveChoice(
     applySalaryCut(idol, preview.salary_cut_pct);
     setScandalPenalty(idol, preview, day, score);
     if (leaveUid) suppressedUids.push(leaveUid);
+    applyPostSuspendRep(action);
     return {
       suppressedUids,
       summary: `${idolName} was reinstated into ${groupName} under heavy penalty. Leave cancelled.\n${preview.blurb}`,
@@ -462,6 +474,7 @@ export function applyPostSuspensionLeaveChoice(
     clearOpenActivitySuspension(idol, day);
     ensurePastMembership(save, idol, day);
     if (leaveUid) suppressedUids.push(leaveUid);
+    applyPostSuspendRep(action);
     return {
       suppressedUids,
       summary: `${idolName} was terminated from ${groupName} effective ${day}.\n${preview.blurb}`,
@@ -981,9 +994,23 @@ export function applyScandalHandlingChoice(
   setScandalPenalty(idol, preview, day, score);
 
   // Reputation moves down with the scandal; firm handling limits the dent.
+  // Timed suspend-then-return (籾山ひめり) is a flat −0.5.
+  const indefiniteFromCatalog =
+    typeof catalogRow?.indefinite_suspend === "boolean"
+      ? catalogRow.indefinite_suspend
+      : catalogRow?.suspension_end_date
+        ? false
+        : action === "suspend_activities"
+          ? Boolean(preview.indefinite_suspend)
+          : null;
   adjustGroupReputation(
     group as Record<string, unknown> | null,
-    reputationDeltaForScandalHandling({ action, score, agencyHarshness: ctx.agencyHarshness }),
+    reputationDeltaForScandalHandling({
+      action,
+      score,
+      agencyHarshness: ctx.agencyHarshness,
+      indefiniteSuspend: indefiniteFromCatalog,
+    }),
     `scandal:${action}`,
     day,
   );

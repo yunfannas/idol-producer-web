@@ -1,5 +1,5 @@
 {
-  "_comment": "Group reputation (1-5, fractional allowed) starting values. Default is 3; these curated overrides set distinct starting points. Applied onto groups.json / scenario_6 groups as `reputation`. From there reputation is dynamic in-engine: up with accrued member tenure and well-handled (special-live) graduations; down with scandals + handling and core members leaving without recognition.",
+  "_comment": "Group reputation (1-5, fractional allowed). Curated overrides are manual anchors. All other groups are interpolated by support/scripts/seedGroupReputation.mjs from historical tenure (current + past members, churn-softened) and pre-as-of scandals (handling-aware dents; timed suspend-then-return = −0.5). Runtime then continues to move reputation (tenure monthly up; scandals / unrecognized core exits / post-suspension leave decisions down). Default base before interpolation is 3.",
   "scale": {
     "1": "Fragile brand — little public trust buffer; scandals hit hard",
     "2": "Low reputation — indie / volatile fanbase; soft keeps look weak",
@@ -36,7 +36,7 @@
       "group_uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
       "group_name": "高嶺のなでしこ",
       "reputation": 4,
-      "note": "Rising mainstream profile; suspension culture is visible but brand still solid."
+      "note": "Starts at 4 (Haruno May indefinite suspension already baked in). Historical Haruno withdraw → 3.5; reinstate/return → 3.0; then Himeri timed suspend-then-return → −0.5 more."
     },
     {
       "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",

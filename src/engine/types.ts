@@ -1,4 +1,4 @@
-export type LetterTier = "S" | "A" | "B" | "C" | "D" | "E" | "F";
+export type LetterTier = "S" | "A" | "B" | "C" | "D" | "E" | "F" | "I";
 
 /** Mirrors `FinanceSystem.normalize_finances` / save `finances` block. */
 export interface Finances {

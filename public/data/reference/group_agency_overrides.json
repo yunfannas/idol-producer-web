@@ -1,0 +1,90 @@
+{
+  "_comment": "Hand-curated agency_history for groups missing reliable wiki agency fields. start_date/end_date ISO; end_date null = current.",
+  "by_name": {
+    "乃木坂46": [
+      { "agency": "乃木坂46合同会社", "start_date": "2019-02-01", "end_date": null, "source": "manual" },
+      { "agency": "ソニー・ミュージックアーティスツ", "start_date": "2011-08-21", "end_date": "2019-01-31", "source": "manual" }
+    ],
+    "櫻坂46": [
+      { "agency": "Seed & Flower", "start_date": "2020-10-14", "end_date": null, "source": "manual" },
+      { "agency": "ソニー・ミュージックアーティスツ", "start_date": "2015-08-21", "end_date": "2020-10-13", "source": "manual" }
+    ],
+    "日向坂46": [
+      { "agency": "Seed & Flower", "start_date": "2019-02-11", "end_date": null, "source": "manual" },
+      { "agency": "ソニー・ミュージックアーティスツ", "start_date": "2016-05-11", "end_date": "2019-02-10", "source": "manual" }
+    ],
+    "AKB48": [
+      { "agency": "DH", "start_date": "2020-04-01", "end_date": null, "source": "manual" },
+      { "agency": "AKS", "start_date": "2005-12-08", "end_date": "2020-03-31", "source": "manual" }
+    ],
+    "SKE48": [
+      { "agency": "Zest", "start_date": "2016-04-01", "end_date": null, "source": "manual" }
+    ],
+    "NMB48": [
+      { "agency": "Showtitle", "start_date": "2011-01-01", "end_date": null, "source": "manual" }
+    ],
+    "HKT48": [
+      { "agency": "Mercury", "start_date": "2011-07-10", "end_date": null, "source": "manual" }
+    ],
+    "NGT48": [
+      { "agency": "Flora", "start_date": "2015-07-20", "end_date": null, "source": "manual" }
+    ],
+    "STU48": [
+      { "agency": "STU", "start_date": "2017-03-31", "end_date": null, "source": "manual" }
+    ],
+    "ノースリーブス": [
+      { "agency": "DH", "start_date": "2020-04-01", "end_date": null, "source": "manual" },
+      { "agency": "AKS", "start_date": "2008-11-26", "end_date": "2020-03-31", "source": "manual" }
+    ],
+    "フレンチ・キス": [
+      { "agency": "AKS", "start_date": "2010-01-01", "end_date": "2015-11-05", "source": "manual" }
+    ],
+    "Not yet": [
+      { "agency": "AKS", "start_date": "2011-01-01", "end_date": "2014-12-31", "source": "manual" }
+    ],
+    "渡り廊下走り隊7": [
+      { "agency": "AKS", "start_date": "2009-01-01", "end_date": "2014-02-20", "source": "manual" }
+    ],
+    "フィロソフィーのダンス": [
+      { "agency": "ワーナーミュージック・ジャパン", "start_date": "2015-01-01", "end_date": null, "source": "manual" }
+    ],
+    "おやすみホログラム": [
+      { "agency": "goodnight records", "start_date": "2012-01-01", "end_date": null, "source": "manual" }
+    ],
+    "めろん畑a go go": [
+      { "agency": "GOLLIPOP RECORD", "start_date": "2014-01-01", "end_date": null, "source": "manual" }
+    ],
+    "ゑんら": [
+      { "agency": "wyenra", "start_date": "2017-01-01", "end_date": null, "source": "manual" }
+    ],
+    "仮面ライダーGIRLS": [
+      { "agency": "avex management", "start_date": "2010-01-01", "end_date": null, "source": "manual" }
+    ],
+    "民族ハッピー組": [
+      { "agency": "ハップレコーズ合同会社", "start_date": null, "end_date": null, "source": "manual" },
+      { "agency": "松浦設備工業株式会社マネージメント部", "start_date": null, "end_date": null, "source": "manual" },
+      { "agency": "株式会社ミュージックバンカー", "start_date": "2015-02-01", "end_date": null, "source": "manual" }
+    ],
+    "スチームガールズ": [
+      { "agency": "アリスプロジェクト", "start_date": "2009-01-01", "end_date": null, "source": "manual" }
+    ],
+    "外神田いっちょめ": [
+      { "agency": "DEARSTAGE", "start_date": "2015-01-01", "end_date": null, "source": "manual" }
+    ],
+    "Dorothy Little Happy": [
+      { "agency": "プラチナプロダクション", "start_date": "2009-01-01", "end_date": null, "source": "manual" }
+    ],
+    "GEM": [
+      { "agency": "Avex", "start_date": "2012-01-01", "end_date": "2018-03-25", "source": "manual" }
+    ],
+    "リリシック学園": [
+      { "agency": "リリシック学園", "start_date": "2011-01-01", "end_date": null, "source": "manual" }
+    ],
+    "ピュアリーモンスター": [
+      { "agency": "ピュアリーモンスター", "start_date": "2016-01-01", "end_date": null, "source": "manual" }
+    ],
+    "清竜人25": [
+      { "agency": "アミューズ", "start_date": "2015-01-01", "end_date": "2017-01-01", "source": "manual" }
+    ]
+  }
+}

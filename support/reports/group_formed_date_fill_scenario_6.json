@@ -1,0 +1,815 @@
+{
+  "generated_at": "2026-07-28T06:19:12.565Z",
+  "stats": {
+    "label": "scenario_6",
+    "total": 475,
+    "missing_before": 119,
+    "filled_fandom": 70,
+    "filled_jawiki": 27,
+    "skipped_low": 0,
+    "still_missing": 22
+  },
+  "filled": [
+    {
+      "name": "まねきケチャ",
+      "uid": "44G-44Gt44GN44Kx44OB44Oj",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "あっとせぶんてぃーん",
+      "uid": "44GC44Gj44Go44Gb44G244KT44Gm44GD44O844KT",
+      "date": "2016-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "おこさまぷれ〜と。",
+      "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
+      "date": "2021-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "こみっきゅおん！",
+      "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
+      "date": "2021-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "さとりモンスター",
+      "uid": "44GV44Go44KK44Oi44Oz44K544K_44O8",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "りんご娘",
+      "uid": "44KK44KT44GU5aiY",
+      "date": "2000-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "ハニースパイスRe.",
+      "uid": "44OP44OL44O844K544OR44Kk44K5UmUu",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "バンドじゃないもん！MAXX NAKAYOSHI",
+      "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
+      "date": "2021-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "ワッツ◎さーくる",
+      "uid": "44Ov44OD44OE4peO44GV44O844GP44KL",
+      "date": "2021-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "神使轟く、激情の如く。",
+      "uid": "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "美味しい曖昧",
+      "uid": "576O5ZGz44GX44GE5puW5pin",
+      "date": "2020-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "仮面ライダーGIRLS",
+      "uid": "5Luu6Z2i44Op44Kk44OA44O8R0lSTFM",
+      "date": "2010-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "校庭カメラガールドライ",
+      "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "超ときめき♡宣伝部",
+      "uid": "6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": ".LiNIXLiNE.",
+      "uid": "LkxpTklYTGlORS4",
+      "date": "2022-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "22/7",
+      "uid": "MjIvNw",
+      "date": "2016-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "3776",
+      "uid": "Mzc3Ng",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "9DayzGlitchClubTokyo",
+      "uid": "OURheXpHbGl0Y2hDbHViVG9reW8",
+      "date": "2020-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "CY8ER",
+      "uid": "Q1k4RVI",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Candye♡Syrup",
+      "uid": "Q2FuZHll4pmhU3lydXA",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Chu-Z",
+      "uid": "Q2h1LVo",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Choux Cream Rockets",
+      "uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
+      "date": "2018-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Appare!",
+      "uid": "QXBwYXJlIQ",
+      "date": "2016-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "BABYBEARD",
+      "uid": "QkFCWUJFQVJE",
+      "date": "2020-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "BELLRING少女ハート",
+      "uid": "QkVMTFJJTkflsJHlpbPjg4_jg7zjg4g",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Good Tears",
+      "uid": "R29vZCBUZWFycw",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Girls²",
+      "uid": "R2lybHPCsg",
+      "date": "2019-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "FOKALITE",
+      "uid": "Rk9LQUxJVEU",
+      "date": "2024-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Flower＊Hour",
+      "uid": "Rmxvd2Vy77yKSG91cg",
+      "date": "2010-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "KissBeeWEST",
+      "uid": "S2lzc0JlZVdFU1Q",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "HANA",
+      "uid": "SEFOQQ",
+      "date": "2025-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "HIBANA",
+      "uid": "SElCQU5B",
+      "date": "2024-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Honey Squash",
+      "uid": "SG9uZXkgU3F1YXNo",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "IRONBUNNY",
+      "uid": "SVJPTkJVTk5Z",
+      "date": "2018-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Love Cocchi",
+      "uid": "TG92ZSBDb2NjaGk",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "La Luce",
+      "uid": "TGEgTHVjZQ",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "MADMED",
+      "uid": "TUFETUVE",
+      "date": "2022-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "NEO JAPONISM",
+      "uid": "TkVPIEpBUE9OSVNN",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "NEOTOKYO-TRIBE",
+      "uid": "TkVPVE9LWU8tVFJJQkU",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "NGT48",
+      "uid": "TkdUNDg",
+      "date": "2016-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "NaNoMoRaL",
+      "uid": "TmFOb01vUmFM",
+      "date": "2018-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "SITUASION",
+      "uid": "U0lUVUFTSU9O",
+      "date": "2020-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Someday Somewhere",
+      "uid": "U29tZWRheSBTb21ld2hlcmU",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Star☆FioreNerd",
+      "uid": "U3RhcuKYhkZpb3JlTmVyZA",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Star♩dropTune°",
+      "uid": "U3RhcuKZqWRyb3BUdW5lwrA",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "POPPiNG EMO",
+      "uid": "UE9QUGlORyBFTU8",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "PassCode",
+      "uid": "UGFzc0NvZGU",
+      "date": "2013-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Perfume",
+      "uid": "UGVyZnVtZQ",
+      "date": "2000-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "ROOKEY♡ROOKEYS",
+      "uid": "Uk9PS0VZ4pmhUk9PS0VZUw",
+      "date": "2024-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "READY TO KISS",
+      "uid": "UkVBRFkgVE8gS0lTUw",
+      "date": "2013-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "WT☆Egret",
+      "uid": "V1TimIZFZ3JldA",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "UNBS",
+      "uid": "VU5CUw",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "ZOCX",
+      "uid": "Wk9DWA",
+      "date": "2018-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "kolme",
+      "uid": "a29sbWU",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "lol",
+      "uid": "bG9s",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "lonlium",
+      "uid": "bG9ubGl1bQ",
+      "date": "2022-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "my fav",
+      "uid": "bXkgZmF2",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "selfish",
+      "uid": "c2VsZmlzaA",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "pinponpanpon",
+      "uid": "cGlucG9ucGFucG9u",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Dear8",
+      "uid": "RGVhcjg",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "Wonder Weed",
+      "uid": "V29uZGVyIFdlZWQ",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "iLiFE!候補生",
+      "uid": "aUxpRkUh5YCZ6KOc55Sf",
+      "date": "2024-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "meme tokyo.",
+      "uid": "bWVtZSB0b2t5by4",
+      "date": "2019-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "カオスピピス",
+      "uid": "44Kr44Kq44K544OU44OU44K5",
+      "date": "2021-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "モユルハル",
+      "uid": "44Oi44Om44Or44OP44Or",
+      "date": "2022-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "女塾オールスターズ",
+      "uid": "5aWz5aG+44Kq44O844Or44K544K/44O844K6",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "聖☆ボナプロ学園",
+      "uid": "6IGW4piG44Oc44OK44OX44Ot5a2m5ZyS",
+      "date": "2013-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "MOBIUS",
+      "uid": "TU9CSVVT",
+      "date": "2019-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "妄愛グラビティ",
+      "uid": "5aaE5oSb44Kw44Op44OT44OG44Kj",
+      "date": "2019-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "なう♡すとれーじ",
+      "uid": "Tm93U3RvcmFnZQ",
+      "date": "2026-01-01",
+      "confidence": "low",
+      "source": "jpop_fandom_years",
+      "precision": "year"
+    },
+    {
+      "name": "おやすみホログラム",
+      "uid": "44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "さよならステイチューン",
+      "uid": "44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz",
+      "date": "2020-11-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "month"
+    },
+    {
+      "name": "じゅじゅ",
+      "uid": "44GY44KF44GY44KF",
+      "date": "2014-03-29",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "day"
+    },
+    {
+      "name": "ぜんぶ君のせいだ。",
+      "uid": "44Gc44KT44G25ZCb44Gu44Gb44GE44Gg44CC",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "スワンスワンズ",
+      "uid": "44K544Ov44Oz44K544Ov44Oz44K6",
+      "date": "2022-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "day"
+    },
+    {
+      "name": "イケてるハーツ",
+      "uid": "44Kk44Kx44Gm44KL44OP44O844OE",
+      "date": "2014-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "year"
+    },
+    {
+      "name": "・・・・・・・・・",
+      "uid": "44O744O744O744O744O744O744O744O744O7",
+      "date": "2016-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "トナリア",
+      "uid": "44OI44OK44Oq44Ki",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "year"
+    },
+    {
+      "name": "ニァピン",
+      "uid": "44OL44Kh44OU44Oz",
+      "date": "2011-12-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "month"
+    },
+    {
+      "name": "ノースリーブス",
+      "uid": "44OO44O844K544Oq44O844OW44K5",
+      "date": "2008-09-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "month"
+    },
+    {
+      "name": "ピューパ!!",
+      "uid": "44OU44Ol44O844ORISE",
+      "date": "2017-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "year"
+    },
+    {
+      "name": "純情のアフィリア",
+      "uid": "57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
+      "date": "2008-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "year"
+    },
+    {
+      "name": "中2映画プロジェクトアイドル部",
+      "uid": "5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA",
+      "date": "2022-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "夢みるアドレセンス",
+      "uid": "5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "放課後プリンセス",
+      "uid": "5pS-6Kqy5b6M44OX44Oq44Oz44K744K5",
+      "date": "2011-08-07",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "day"
+    },
+    {
+      "name": "透色ドロップ",
+      "uid": "6YCP6Imy44OJ44Ot44OD44OX",
+      "date": "2020-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "里咲りさ",
+      "uid": "6YeM5ZKy44KK44GV",
+      "date": "2012-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "開歌-かいか-",
+      "uid": "6ZaL5q2MLeOBi-OBhOOBiy0",
+      "date": "2019-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "year"
+    },
+    {
+      "name": "電影と少年CQ",
+      "uid": "6Zu75b2x44Go5bCR5bm0Q1E",
+      "date": "2016-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "year"
+    },
+    {
+      "name": "2o Love to Sweet Bullet",
+      "uid": "Mm8gTG92ZSB0byBTd2VldCBCdWxsZXQ",
+      "date": "2015-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "KLP48",
+      "uid": "S0xQNDg",
+      "date": "2024-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "HiiT Factory",
+      "uid": "SGlpVCBGYWN0b3J5",
+      "date": "2023-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "ME:I",
+      "uid": "TUU6SQ",
+      "date": "2024-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    },
+    {
+      "name": "SAiNT SEX",
+      "uid": "U0FpTlQgU0VY",
+      "date": "2017-10-02",
+      "confidence": "medium",
+      "source": "ja_wikipedia_lead_結成",
+      "precision": "day"
+    },
+    {
+      "name": "Task have Fun",
+      "uid": "VGFzayBoYXZlIEZ1bg",
+      "date": "2016-05-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "month"
+    },
+    {
+      "name": "キラキラゲリラ",
+      "uid": "44Kt44Op44Kt44Op44Ky44Oq44Op",
+      "date": "2013-01-19",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "day"
+    },
+    {
+      "name": "ブラックDPG",
+      "uid": "44OW44Op44OD44KvRFBH",
+      "date": "2013-01-01",
+      "confidence": "low",
+      "source": "ja_wikipedia_活動期間",
+      "precision": "year"
+    }
+  ],
+  "low_suggestions": [],
+  "still_missing": [
+    "あたまのなかは8ビット⁉︎",
+    "めろん畑a go go",
+    "アップアップガールズ（２）",
+    "カミサマパレード",
+    "ミームトーキョー",
+    "ヤなことそっとミュート",
+    "瞬きもせず",
+    "星歴13夜",
+    "月刊PAM",
+    "棘-おどろ-",
+    "CSR",
+    "Checkmate",
+    "Beauty Box",
+    "Beloved",
+    "Isiliel",
+    "YAMINABE",
+    "Amakara!",
+    "S→gexte",
+    "emperice",
+    "チャチャチャ倶楽部",
+    "拳銃少女",
+    "鵺"
+  ]
+}

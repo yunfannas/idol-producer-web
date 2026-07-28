@@ -999,7 +999,17 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   makingTab = snapshot.makingTab;
   selectedCdProjectUid = snapshot.selectedCdProjectUid;
   inboxSelectedUid = snapshot.inboxSelectedUid;
-  livesTab = snapshot.livesTab;
+  {
+    const restored = String(snapshot.livesTab ?? "new");
+    livesTab =
+      restored === "new" ||
+      restored === "scheduled" ||
+      restored === "past" ||
+      restored === "festival" ||
+      restored === "league"
+        ? restored
+        : "scheduled";
+  }
   leaguePanelTab = snapshot.leaguePanelTab ?? "current";
   scheduledLiveUid = snapshot.scheduledLiveUid;
   scoutTab = snapshot.scoutTab;
@@ -1882,7 +1892,7 @@ function paintGame(): void {
       if (uid) {
         navigate(() => {
           currentView = "Lives";
-          livesTab = "live";
+          livesTab = "scheduled";
           scheduledLiveUid = uid;
         });
       }
@@ -1891,12 +1901,9 @@ function paintGame(): void {
     const livesTabPick = t.closest<HTMLElement>("[data-lives-tab]");
     if (livesTabPick && save && !browseMode && currentView === "Lives") {
       const tab = livesTabPick.getAttribute("data-lives-tab");
-      if (tab === "new" || tab === "scheduled" || tab === "live" || tab === "past" || tab === "festival" || tab === "league") {
+      if (tab === "new" || tab === "scheduled" || tab === "past" || tab === "festival" || tab === "league") {
         navigate(() => {
           livesTab = tab;
-          if (tab === "live" && !scheduledLiveUid) {
-            scheduledLiveUid = selectedScheduledLiveRecord()?.uid ? String(selectedScheduledLiveRecord()!.uid) : null;
-          }
         });
       }
       return;
@@ -1915,7 +1922,6 @@ function paintGame(): void {
     if (scheduledPick && save && !browseMode && currentView === "Lives") {
       navigate(() => {
         scheduledLiveUid = scheduledPick.getAttribute("data-scheduled-live");
-        if (livesTab === "live") return;
       });
       return;
     }
@@ -2941,7 +2947,25 @@ function paintGame(): void {
       return;
     }
     const tile = t.closest<HTMLElement>("[data-idol-detail]");
-    if (!tile || browseMode) return;
+    if (!tile) return;
+    // Nested group jump already handled above via [data-group-detail].
+    const uid = tile.getAttribute("data-idol-detail");
+    if (uid) {
+      navigate(() => {
+        idolDetailUid = uid;
+        groupDetailUid = null;
+        currentView = "Idols";
+      });
+    }
+  });
+
+  document.getElementById("main-content")?.addEventListener("keydown", (ev) => {
+    if (ev.key !== "Enter" && ev.key !== " ") return;
+    const t = ev.target as HTMLElement;
+    if (t.closest("[data-group-detail]")) return;
+    const tile = t.closest<HTMLElement>("[data-idol-detail][role='button']");
+    if (!tile || tile.tagName === "BUTTON") return;
+    ev.preventDefault();
     const uid = tile.getAttribute("data-idol-detail");
     if (uid) {
       navigate(() => {

@@ -11,6 +11,10 @@ export interface WebPreviewBundle {
     formed_date?: string;
     popularity?: number;
     fans?: number;
+    /** Official group X/Twitter followers (idolsdiagram snapshot; scenario vintage mid-2025). */
+    x_followers?: number;
+    x_followers_source?: string;
+    x_followers_as_of?: string;
     description: string;
     member_uids: string[];
     member_names: string[];

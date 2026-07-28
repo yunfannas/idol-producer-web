@@ -26,19 +26,19 @@ function inferLetterTier(popularity, fans, xFollowers = 0) {
   return "F";
 }
 
-const LETTER_TIER_ORDER = { S: 0, A: 1, B: 2, C: 3, D: 4, E: 5, F: 6 };
+const LETTER_TIER_ORDER = { S: 0, A: 1, B: 2, C: 3, D: 4, E: 5, F: 6, I: 7 };
 
 function normalizeTier(t) {
   const u = String(t ?? "")
     .trim()
     .toUpperCase();
-  if (/^[SABCDEF]$/.test(u)) return u;
+  if (/^[SABCDEFI]$/.test(u)) return u;
   return "F";
 }
 
 function resolveTier(g) {
   const raw = g.letter_tier;
-  if (typeof raw === "string" && /^[SABCDEF]$/i.test(raw.trim())) {
+  if (typeof raw === "string" && /^[SABCDEFI]$/i.test(raw.trim())) {
     return raw.trim().toUpperCase();
   }
   const popularity = typeof g.popularity === "number" ? g.popularity : Number(g.popularity ?? 0) || 0;

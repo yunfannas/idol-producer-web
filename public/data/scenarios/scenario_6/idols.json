@@ -145400,7 +145400,7 @@
         "end_date": null,
         "member_color": "Black",
         "member_name": "川中子奈月心",
-        "member_color_code": "0x98ff98",
+        "member_color_code": "0x000000",
         "notes": "Additional member colors: Black",
         "roles": {
           "lead_singer": 0.6,
@@ -224755,7 +224755,7 @@
         "end_date": null,
         "member_color": "Red",
         "member_name": "こるね",
-        "member_color_code": "0xffffff",
+        "member_color_code": "0xff0000",
         "group_uid": "aS1DT0w"
       },
       {
@@ -301857,7 +301857,7 @@
         "group_name": "≠ME",
         "start_date": "2019-02-01",
         "end_date": null,
-        "member_color": "White",
+        "member_color": "Pink",
         "member_color_code": "0xffc0cb",
         "notes": "Additional member colors: White",
         "member_name": "谷崎早耶",
@@ -313606,7 +313606,7 @@
         "group_name": "≠ME",
         "start_date": "2019-02-01",
         "end_date": null,
-        "member_color": "Green",
+        "member_color": "Yellow",
         "member_color_code": "0xffff00",
         "notes": "Additional member colors: Green",
         "member_name": "冨田菜々風",
@@ -338368,7 +338368,9 @@
         "group_uid": "Q0FORFkgVFVORQ",
         "group_name": "CANDY TUNE",
         "start_date": "2023-02-14",
-        "end_date": null
+        "end_date": null,
+        "member_color": "Pink",
+        "member_color_code": "0xffc0cb"
       }
     ],
     "x_followers": 154945,
@@ -352826,7 +352828,9 @@
         "group_uid": "Q0FORFkgVFVORQ",
         "group_name": "CANDY TUNE",
         "start_date": "2023-01-14",
-        "end_date": null
+        "end_date": null,
+        "member_color": "Orange",
+        "member_color_code": "0xffa500"
       }
     ],
     "x_followers": 91971,

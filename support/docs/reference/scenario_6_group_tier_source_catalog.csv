@@ -1,0 +1,9 @@
+﻿source_id,path,role,used_for_tiers,group_count
+manual_available_groups,support/docs/scenario6_available_groups.txt,Manual letter_tier anchors for curated/playable groups (reinterpolate + backfill scripts),S-F as written in doc,75
+authoritative_ranking_2025,public/data/reference/idol_group_rankings_2025_mapped.json,"Authoritative Idol Ranking 2025; policy says S-C (and listed D) must come from here, not score interpolation","S,A,B,C,(listed D)",50
+group_tier_policy,public/data/group_tier_policy.json,Policy gate: S-C authoritative-only; inferred groups capped at D/E/F; inactive→I; score uses x_followers+popularity*2000,policy gate + I,
+scenario_groups_metrics,public/data/scenarios/scenario_6/groups.json,fans / popularity / x_followers / stored letter_tier (incl. I inactive) used as inputs and current assigned tier,inputs + current_letter_tier,475
+reeval_x_followers,support/scripts/reevaluateScenario6TiersWithX.mjs,Current assignment: inactive→I; auth S–C/listed D; manual list; else infer D/E/F from x_followers+popularity*2000,S-F + I,80 inactive I
+group_tiers_static,public/data/scenarios/scenario_6/group_tiers.json,Static sort/startup tier slice built from groups.json letter_tier,startup/browse sort_key,475
+reinterpolate_script,support/scripts/reinterpolate-scenario6-tiers.mjs,Calibrates score medians from manual anchors then assigns interpolated tiers to non-manual groups,interpolated S-F via score cutpoints,
+finance_inferLetterTier,src/engine/financeSystem.ts / support/scripts/build-scenario6-group-tiers.mjs,Legacy fixed cutpoints: score=popularity+fans/2000+x_followers/5000,fallback when letter_tier missing,

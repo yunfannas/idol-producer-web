@@ -1,36 +1,32 @@
 {
-  "version": "2026-05-10",
+  "version": "2026-07-28",
   "title": "Group letter-tier assignment policy",
   "authoritative_sources": {
     "rankings_path": "reference/idol_group_rankings_2025_mapped.json",
     "groups_path": "database/groups.json"
   },
   "policy": {
-    "authoritative_only_tiers": [
-      "S",
-      "A",
-      "B",
-      "C"
-    ],
+    "authoritative_only_tiers": ["S", "A", "B", "C"],
     "listed_d_is_authoritative": true,
     "inferred_max_tier": "D",
-    "inferred_allowed_tiers": [
-      "D",
-      "E",
-      "F"
-    ],
+    "inferred_allowed_tiers": ["D", "E", "F"],
     "notes": [
       "S through C must come from the curated Idol Ranking 2025 mapping file, not from interpolation.",
       "Groups absent from the curated ranking file may only be inferred into D, E, or F.",
       "B and C are only assigned manually, not from interpolation.",
-      "Popularity and fans from idolsdiagram.com are valid inference inputs, but they are not sufficient to promote a group into S through C."
+      "Popularity and fans from idolsdiagram.com are Spotify Popularity and Spotify Followers.",
+      "Group x_followers is the sum of active members' idol x_followers (not Spotify). Do not mirror fans into x_followers.",
+      "Inactive groups (ended before opening, formed after opening, or no active members at opening) use letter_tier I and are not score-evaluated."
     ]
   },
   "inference": {
-    "effective_score_formula": "fans + popularity*2000",
+    "effective_score_formula": "inferred D/E/F from Spotify fans (groups.fans); impute max(500, popularity*500) if fans missing",
+    "fans_field": "fans (source=idolsdiagram_spotify, as_of=2025-07-01)",
+    "x_followers_field": "x_followers (source=member_x_followers_sum; separate from Spotify fans)",
     "missing_fans_imputation": "max(500, popularity*500)",
-    "d_floor_source": "minimum effective_score among authoritative listed D groups after calibration exclusions",
-    "e_floor_fraction_of_d_floor": 0.25,
+    "inactive_letter_tier": "I",
+    "d_floor_source": "minimum Spotify fans among curated bottom-of-D anchors (群青の世界, ドラマチックレコード)",
+    "e_floor_fraction_of_d_floor": 0.15,
     "f_floor_minimum": 1
   }
 }

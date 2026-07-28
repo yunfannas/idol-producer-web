@@ -1,88 +1,90 @@
-Scenario 6 playable groups (91)
+Scenario 6 playable groups (86)
 
-1. =LOVE | tier=A | members=10
-2. iLiFE! | tier=B | members=9
-3. 高嶺のなでしこ | tier=C | members=10
-4. アキシブproject | tier=D | members=8
-5. FRUITS ZIPPER | tier=A | members=7
-6. Broken By The Scream | tier=C | members=4
-7. CUTIE STREET | tier=B | members=8
-8. CANDY TUNE | tier=B | members=5
-9. ≠ME | tier=B | members=12
-10. AVAM | tier=C | members=7
-11. GENIC | tier=D | members=7
-12. わーすた | tier=D | members=4
-13. REIRIE | tier=D | members=2
-14. CYNHN | tier=D | members=4
-15. ばってん少女隊 | tier=D | members=8
-16. Negicco | tier=D | members=3
-17. SWEET STEADY | tier=C | members=7
-18. ≒JOY | tier=C | members=12
-19. いぎなり東北産 | tier=C | members=9
-20. TENRIN | tier=D | members=7
-21. yosugala | tier=D | members=4
-22. JamsCollection | tier=C | members=7
-23. ARCANA PROJECT | tier=D | members=6
-24. NANIMONO | tier=D | members=7
-25. Onephony | tier=D | members=6
-26. NEO JAPONISM | tier=C | members=7
-28. Devil ANTHEM. | tier=C | members=6
-29. FES☆TIVE | tier=C | members=9
-31. LinQ | tier=D | members=11
-32. Ringwanderung | tier=D | members=5
-33. タイトル未定 | tier=C | members=5
-34. 手羽先センセーション | tier=D | members=6
-35. Luce Twinkle Wink☆ | tier=D | members=5
-36. TEAM SHACHI | tier=C | members=4
-37. ukka | tier=D | members=7
-38. おこさまぷれ〜と。 | tier=D | members=7
-40. Dorothy Little Happy | tier=D | members=1
-41. のんふぃく！ | tier=D | members=8
-42. 夜光性アミューズ | tier=D | members=7
-43. Merry BAD TUNE. | tier=D | members=6
-44. UtaGe! | tier=D | members=7
-45. ポンコツコンポ | tier=D | members=9
-46. 衛星とカラテア | tier=D | members=5
-47. 花魁道中 | tier=D | members=5
-48. AZATOY | tier=D | members=8
-49. SITUASION | tier=D | members=5
-50. 煌めき☆アンフォレント | tier=D | members=8
-51. LEIWAN | tier=D | members=4
-52. Sweet Alley | tier=D | members=9
-53. MyDearDarlin' | tier=D | members=6
-54. AIBECK | tier=D | members=5
-55. STAiNY | tier=D | members=8
-56. PRSMIN | tier=D | members=5
-58. SAY-LA | tier=D | members=8
-59. にっぽんワチャチャ | tier=D | members=6
-60. ふわふわ | tier=D | members=3
-61. KRD8 | tier=D | members=8
-62. STARMARIE | tier=D | members=3
-63. BANZAI JAPAN | tier=D | members=11
-64. iON! | tier=E | members=7
-65. AsIs | tier=E | members=7
-66. こみっきゅおん！ | tier=E | members=7
-67. パラディーク | tier=E | members=7
-68. hakanai | tier=E | members=5
-69. Melty BeaR | tier=E | members=6
-70. 点染テンセイ少女。 | tier=E | members=10
-71. GANGDEMIC | tier=E | members=13
-72. SPRISE | tier=E | members=5
-73. 脳内パステル | tier=E | members=6
-74. Alcute！ | tier=E | members=8
-75. FOKALITE | tier=E | members=3
-76. HelloYouth | tier=E | members=8
-77. LIT MOON | tier=E | members=5
-78. STARRY×NIGHT↗︎ | tier=E | members=5
-79. ZUTTOMOTTO | tier=E | members=9
-80. Finally | tier=E | members=6
-81. FULIT BOX | tier=E | members=7
-82. Bunny La Crew | tier=E | members=7
-83. RaRaJaM | tier=E | members=2
-84. ideal peco | tier=E | members=7
-85. ゑんら | tier=E | members=3
-86. メイビーME | tier=E | members=7
-87. CHICKEN BLOW THE IDOL | tier=E | members=3
-88. JUGS MAFIA | tier=E | members=4
-89. READY TO KISS | tier=E | members=7
-91. ドレスコード | tier=E | members=6
+Excluded disbanding/ending-soon groups: TEAM SHACHI (2025-12-13), Wa-Suta (2026), ukka (2026-05-24), Alcute! (2026), RaRaJaM (2026-02-18)
+
+1. =LOVE | tier=A | members=10 | songs=121
+2. iLiFE! | tier=B | members=9 | songs=21
+3. 高嶺のなでしこ (Takane_no_Nadeshiko) | tier=C | members=10 | songs=26
+4. アキシブproject (Akishibu project) | tier=D | members=8 | songs=8
+5. FRUITS ZIPPER (FRUITS_ZIPPER) | tier=A | members=7 | songs=24
+6. Broken By The Scream (BROKEN_BY_THE_SCREAM) | tier=C | members=4 | songs=11
+7. CUTIE STREET (CUTIE_STREET) | tier=B | members=8 | songs=10
+8. CANDY TUNE (CANDY_TUNE) | tier=B | members=7 | songs=16
+9. ≠ME | tier=B | members=12 | songs=120
+10. AVAM | tier=C | members=7 | songs=34
+11. GENIC | tier=D | members=7 | songs=27
+12. REIRIE | tier=D | members=2 | songs=12
+13. CYNHN | tier=D | members=4 | songs=38
+14. ばってん少女隊 (Batten_Shoujo-tai) | tier=D | members=8 | songs=24
+15. Negicco | tier=D | members=3 | songs=35
+16. SWEET STEADY (SWEET_STEADY) | tier=C | members=7 | songs=16
+17. ≒JOY | tier=C | members=12 | songs=12
+18. いぎなり東北産 (Iginari_Tohokusan) | tier=C | members=9 | songs=40
+19. TENRIN | tier=D | members=7 | songs=12
+20. yosugala (Yosugala) | tier=D | members=4 | songs=26
+21. JamsCollection (Jams_Collection) | tier=C | members=7 | songs=15
+22. ARCANA PROJECT (ARCANA_PROJECT) | tier=D | members=6 | songs=16
+23. NANIMONO | tier=D | members=7 | songs=11
+24. Onephony | tier=D | members=6 | songs=8
+25. NEO JAPONISM (NEO_JAPONISM) | tier=C | members=7 | songs=35
+26. Devil ANTHEM. (Devil_ANTHEM.) | tier=C | members=6 | songs=32
+27. FES☆TIVE | tier=C | members=9 | songs=21
+28. LinQ | tier=D | members=11 | songs=27
+29. Ringwanderung | tier=D | members=5 | songs=47
+30. タイトル未定 (Title_Mitei) | tier=C | members=5 | songs=12
+31. 手羽先センセーション (Tebasaki_Sensation) | tier=D | members=5 | songs=20
+32. Luce Twinkle Wink☆ (Luce_Twinkle_Wink☆) | tier=D | members=5 | songs=13
+33. おこさまぷれ〜と。 (Zero_Project) | tier=D | members=7 | songs=3
+34. Dorothy Little Happy (Dorothy_Little_Happy) | tier=D | members=1 | songs=20
+35. のんふぃく！ (Non¬Fiction) | tier=D | members=8 | songs=6
+36. 夜光性アミューズ (Yakousei_Amuse) | tier=D | members=7 | songs=13
+37. Merry BAD TUNE. (Merry_BAD_TUNE.) | tier=D | members=6 | songs=3
+38. UtaGe! | tier=D | members=7 | songs=19
+39. ポンコツコンポ (Ponkotsu_Konpo) | tier=E | members=9 | songs=4
+40. 衛星とカラテア (Eisei_to_Karatea) | tier=E | members=5 | songs=13
+41. 花魁道中 (Oiran_Dochu) | tier=E | members=5 | songs=13
+42. AZATOY | tier=E | members=8 | songs=8
+43. SITUASION (Situasion) | tier=D | members=5 | songs=31
+44. 煌めき☆アンフォレント (Kirameki☆Unforent) | tier=D | members=8 | songs=16
+45. LEIWAN | tier=D | members=4 | songs=57
+46. Sweet Alley (Sweet_Alley) | tier=E | members=9 | songs=8
+47. MyDearDarlin' | tier=D | members=6 | songs=26
+48. AIBECK | tier=D | members=5 | songs=49
+49. STAiNY | tier=E | members=8 | songs=21
+50. PRSMIN | tier=E | members=5 | songs=21
+51. SAY-LA | tier=E | members=8 | songs=20
+52. にっぽんワチャチャ (Nippon_Wachacha) | tier=E | members=6 | songs=10
+53. ふわふわ (FuWa_FuWa) | tier=D | members=3 | songs=8
+54. KRD8 | tier=E | members=7 | songs=21
+55. STARMARIE | tier=D | members=3 | songs=47
+56. BANZAI JAPAN (BANZAI_JAPAN) | tier=E | members=10 | songs=12
+57. iON! | tier=D | members=7 | songs=3
+58. AsIs | tier=E | members=7 | songs=10
+59. こみっきゅおん！ (Komikkyon) | tier=E | members=7 | songs=3
+60. パラディーク (Paradeeq) | tier=E | members=7 | songs=12
+61. hakanai (Hakanai) | tier=E | members=5 | songs=3
+62. Melty BeaR (Melty_BeaR) | tier=E | members=6 | songs=2
+63. 点染テンセイ少女。 (Tensen Tensei Shoujo.) | tier=E | members=10 | songs=19
+64. GANGDEMIC | tier=E | members=12 | songs=20
+65. SPRISE | tier=E | members=5 | songs=33
+66. 脳内パステル (Nounai_Pastel) | tier=E | members=6 | songs=1
+67. FOKALITE | tier=E | members=3 | songs=14
+68. HelloYouth | tier=E | members=8 | songs=6
+69. LIT MOON (LIT_MOON) | tier=E | members=5 | songs=19
+70. STARRY×NIGHT↗︎ | tier=E | members=5 | songs=12
+71. ZUTTOMOTTO | tier=E | members=9 | songs=1
+72. Finally | tier=E | members=6 | songs=29
+73. FULIT BOX (FULIT_BOX) | tier=E | members=7 | songs=15
+74. Bunny La Crew (Bunny_La_Crew) | tier=E | members=7 | songs=1
+75. ideal peco (Ideal_peco) | tier=E | members=7 | songs=19
+76. ゑんら (Wyenra) | tier=E | members=3 | songs=4
+77. メイビーME (Meibii ME) | tier=E | members=7 | songs=5
+78. CHICKEN BLOW THE IDOL (CHICKEN_BLOW_THE_IDOL) | tier=E | members=3 | songs=9
+79. JUGS MAFIA (JUGS_MAFIA) | tier=E | members=4 | songs=17
+80. READY TO KISS (READY_TO_KISS) | tier=E | members=7 | songs=17
+81. ドレスコード (Dress_Code) | tier=E | members=6 | songs=1
+82. 私立恵比寿中学 (Shiritsu_Ebisu_Chugaku) | tier=B | members=7 | songs=68
+83. シンデレラ宣言！ (Cinderella_Sengen!) | tier=D | members=10 | songs=51
+84. Appare! | tier=D | members=6 | songs=42
+85. シュレーディンガーの犬 (Schrödinger_no_Inu) | tier=E | members=6 | songs=40
+86. 可憐なアイボリー (Karen_na_Ivory) | tier=D | members=11 | songs=23
