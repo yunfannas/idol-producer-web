@@ -224,14 +224,108 @@ function popularitySignal(value: number, floor = 1000, ceiling = 1_000_000): num
   return Math.max(0, Math.min(1, signal));
 }
 
-/** uid / name → max(follower signal, popularity/100) per group row. */
+/** Equal weight: individual X alone must not dominate a low-tier group's ability band. */
+const IDOL_SIGNAL_WEIGHT = 0.5;
+const GROUP_SIGNAL_WEIGHT = 0.5;
+
+/**
+ * Soft ceiling on the follower/group blend by letter tier.
+ * Fitted so viral outliers in low-tier groups (e.g. #2i2 / D) stay near the
+ * curated D/C manual bands (アキシブ / 高嶺のなでしこ), while A/S can still top out.
+ */
+const LETTER_TIER_COMBINED_CAP: Record<string, number> = {
+  S: 1,
+  A: 0.95,
+  B: 0.86,
+  C: 0.75,
+  D: 0.55,
+  E: 0.46,
+  I: 0.34,
+};
+
+function combinedPopularitySignal(idolSignal: number, groupSignal: number, letterTier?: string | null): number {
+  let combined = idolSignal * IDOL_SIGNAL_WEIGHT + groupSignal * GROUP_SIGNAL_WEIGHT;
+  const tier = String(letterTier ?? "")
+    .trim()
+    .toUpperCase();
+  const cap = LETTER_TIER_COMBINED_CAP[tier];
+  if (typeof cap === "number") combined = Math.min(combined, cap);
+  return Math.max(0, Math.min(1, combined));
+}
+
+/**
+ * Within an active group, higher personal X should usually mean higher ability.
+ * Returns a base-stat delta in about [-2, +2] from roster X percentile.
+ */
+export function buildWithinGroupXRankBoosts(
+  idols: Record<string, unknown>[],
+  groups: Record<string, unknown>[],
+  openingIso: string,
+): Map<string, number> {
+  const boosts = new Map<string, number>();
+  if (!Array.isArray(idols) || !Array.isArray(groups) || !/^\d{4}-\d{2}-\d{2}$/.test(openingIso)) {
+    return boosts;
+  }
+
+  const idolsByUid = new Map<string, Record<string, unknown>>();
+  for (const idol of idols) {
+    const uid = String(idol?.uid ?? "").trim();
+    if (uid) idolsByUid.set(uid, idol);
+  }
+
+  const applyRoster = (roster: { uid: string; x: number }[]) => {
+    if (roster.length < 2) return;
+    const sorted = [...roster].sort((a, b) => a.x - b.x || a.uid.localeCompare(b.uid));
+    const denom = sorted.length - 1;
+    for (let i = 0; i < sorted.length; i += 1) {
+      const percentile = i / denom; // 0 = lowest X, 1 = highest X
+      const delta = Math.round((percentile - 0.5) * 4); // -2 .. +2
+      const prev = boosts.get(sorted[i].uid) ?? 0;
+      if (Math.abs(delta) >= Math.abs(prev)) boosts.set(sorted[i].uid, delta);
+    }
+  };
+
+  for (const group of groups) {
+    if (!group || typeof group !== "object") continue;
+    const memberUids = Array.isArray((group as { member_uids?: unknown }).member_uids)
+      ? ((group as { member_uids: unknown[] }).member_uids as unknown[])
+      : [];
+    const roster: { uid: string; x: number }[] = [];
+    for (const rawUid of memberUids) {
+      const uid = String(rawUid ?? "").trim();
+      const idol = idolsByUid.get(uid);
+      if (!idol) continue;
+      const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+      const groupUid = String((group as { uid?: unknown }).uid ?? "").trim();
+      const groupName = String((group as { name?: unknown }).name ?? "").trim();
+      const activeHere = hist.some((raw) => {
+        if (!raw || typeof raw !== "object") return false;
+        const e = raw as Record<string, unknown>;
+        if (!membershipActiveAtOpening(e, openingIso)) return false;
+        const eUid = String(e.group_uid ?? "").trim();
+        const eName = String(e.group_name ?? "").trim();
+        return (groupUid && eUid === groupUid) || (groupName && eName === groupName);
+      });
+      if (!activeHere) continue;
+      roster.push({ uid, x: numericMax(idol, ["x_followers", "x_followers_count"]) });
+    }
+    applyRoster(roster);
+  }
+
+  return boosts;
+}
+
+/** uid / name → max(fan signal, popularity/100) per group row.
+ * Uses fans/popularity only — not group X. Official/group X accounts are often
+ * far above true fan scale and were letting B-tier idols outrank A-tier tops.
+ */
 export function buildGroupPopularityIndex(groups: Record<string, unknown>[]): Map<string, number> {
   const index = new Map<string, number>();
   for (const g of groups) {
     if (!g || typeof g !== "object") continue;
     const row = g as Record<string, unknown>;
-    const followers = numericMax(row, ["x_followers", "x_followers_count", "fans", "fan_count"]);
-    const followerSignal = popularitySignal(followers);
+    const fans = numericMax(row, ["fans", "fan_count"]);
+    const followerSignal = popularitySignal(fans);
     const pop = numericMax(row, ["popularity"]);
     const popSignal = pop > 0 ? Math.max(0, Math.min(1, pop / 100)) : 0;
     const signal = Math.max(followerSignal, popSignal);
@@ -241,6 +335,26 @@ export function buildGroupPopularityIndex(groups: Record<string, unknown>[]): Ma
       if (!key) continue;
       const prev = index.get(key);
       if (prev == null || signal > prev) index.set(key, signal);
+    }
+  }
+  return index;
+}
+
+/** uid / name → letter_tier (S–I) from group rows. */
+export function buildGroupLetterTierIndex(groups: Record<string, unknown>[]): Map<string, string> {
+  const index = new Map<string, string>();
+  for (const g of groups) {
+    if (!g || typeof g !== "object") continue;
+    const row = g as Record<string, unknown>;
+    const tier = String(row.letter_tier ?? "")
+      .trim()
+      .toUpperCase();
+    if (!tier) continue;
+    const uid = String(row.uid ?? "").trim();
+    const name = String(row.name ?? "").trim();
+    for (const key of [uid, name]) {
+      if (!key) continue;
+      index.set(key, tier);
     }
   }
   return index;
@@ -263,25 +377,94 @@ function membershipActiveAtOpening(entry: Record<string, unknown>, openingIso: s
   return openingIso < end;
 }
 
+/** Tenure that already ended on/before the reference date (eligible as "last group"). */
+function membershipEndedByOpening(entry: Record<string, unknown>, openingIso: string): boolean {
+  const start = parseIsoDay(entry.start_date);
+  if (!start || start > openingIso) return false;
+  const end = parseIsoDay(entry.end_date);
+  if (!end) return false;
+  return end <= openingIso;
+}
+
+function groupKeysFromEntry(entry: Record<string, unknown>): string[] {
+  return [String(entry.group_uid ?? "").trim(), String(entry.group_name ?? "").trim()].filter(Boolean);
+}
+
+function signalFromEntry(
+  entry: Record<string, unknown>,
+  groupPopularity: Map<string, number>,
+  groupLetterTiers?: Map<string, string>,
+): { signal: number; letterTier: string | null } {
+  let signal = 0;
+  let letterTier: string | null = null;
+  for (const key of groupKeysFromEntry(entry)) {
+    const s = groupPopularity.get(key);
+    if (s == null || s < signal) continue;
+    signal = s;
+    letterTier = groupLetterTiers?.get(key) ?? letterTier;
+  }
+  return { signal, letterTier };
+}
+
+/**
+ * Active group at reference date, else most recently ended group.
+ * Solo / between-groups idols keep a group-follower floor from their last unit.
+ */
+function currentGroupContext(
+  idol: Record<string, unknown>,
+  openingIso: string,
+  groupPopularity: Map<string, number>,
+  groupLetterTiers?: Map<string, string>,
+): { signal: number; letterTier: string | null } {
+  const hist = idol.group_history;
+  if (!Array.isArray(hist)) return { signal: 0, letterTier: null };
+
+  let hasActive = false;
+  let bestActive = 0;
+  let activeTier: string | null = null;
+  let latestPast: { end: string; start: string; signal: number; letterTier: string | null } | null = null;
+
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const e = raw as Record<string, unknown>;
+    if (membershipActiveAtOpening(e, openingIso)) {
+      hasActive = true;
+      const hit = signalFromEntry(e, groupPopularity, groupLetterTiers);
+      if (hit.signal >= bestActive) {
+        bestActive = hit.signal;
+        activeTier = hit.letterTier ?? activeTier;
+      }
+      continue;
+    }
+    if (!membershipEndedByOpening(e, openingIso)) continue;
+    const end = parseIsoDay(e.end_date);
+    const start = parseIsoDay(e.start_date);
+    if (!end || !start) continue;
+    const hit = signalFromEntry(e, groupPopularity, groupLetterTiers);
+    if (
+      !latestPast ||
+      end > latestPast.end ||
+      (end === latestPast.end && start > latestPast.start)
+    ) {
+      latestPast = { end, start, signal: hit.signal, letterTier: hit.letterTier };
+    }
+  }
+
+  if (hasActive) {
+    return { signal: bestActive, letterTier: activeTier };
+  }
+  if (latestPast) {
+    return { signal: latestPast.signal, letterTier: latestPast.letterTier };
+  }
+  return { signal: 0, letterTier: null };
+}
+
 function currentGroupSignal(
   idol: Record<string, unknown>,
   openingIso: string,
   groupPopularity: Map<string, number>,
 ): number {
-  const hist = idol.group_history;
-  if (!Array.isArray(hist)) return 0;
-  let best = 0;
-  for (const raw of hist) {
-    if (!raw || typeof raw !== "object") continue;
-    const e = raw as Record<string, unknown>;
-    if (!membershipActiveAtOpening(e, openingIso)) continue;
-    for (const key of [String(e.group_uid ?? "").trim(), String(e.group_name ?? "").trim()]) {
-      if (!key) continue;
-      const s = groupPopularity.get(key);
-      if (s != null && s > best) best = s;
-    }
-  }
-  return best;
+  return currentGroupContext(idol, openingIso, groupPopularity).signal;
 }
 
 function scandalHistoryCount(idol: Record<string, unknown>): number {
@@ -416,17 +599,202 @@ function applyRoleBiasToAttributes(
   };
 }
 
+/**
+ * Soft age ceilings for appearance:
+ * - over 25: cute above 15 is hard (generation soft-caps at 15)
+ * - under 20: pretty above 15 is hard (generation soft-caps at 15)
+ * Manual curated rows are not rewritten by this helper.
+ */
+export function applyAgeAppearanceConstraints(
+  attrs: PersistedIdolAttributes,
+  age: number | null,
+): PersistedIdolAttributes {
+  if (age == null || !Number.isFinite(age)) return attrs;
+  let cute = attrs.appearance.cute;
+  let pretty = attrs.appearance.pretty;
+  if (age > 25 && cute > 15) {
+    // Keep a tiny overflow so exceptional cases can still land at 16.
+    cute = Math.min(16, 15 + Math.max(0, Math.round((cute - 15) * 0.2)));
+  }
+  if (age < 20 && pretty > 15) {
+    pretty = Math.min(16, 15 + Math.max(0, Math.round((pretty - 15) * 0.2)));
+  }
+  if (cute === attrs.appearance.cute && pretty === attrs.appearance.pretty) return attrs;
+  return {
+    ...attrs,
+    appearance: clampAppearance({ cute, pretty }),
+  };
+}
+
+/**
+ * Generated ability ceilings by letter tier.
+ * Anchored to curated manuals (=LOVE tops stay above A-generated; iLiFE / 高嶺 / アキシブ maxima).
+ */
+const LETTER_TIER_ABILITY_CAP: Record<string, number> = {
+  S: 93,
+  A: 88,
+  B: 85,
+  C: 82,
+  D: 77,
+  E: 70,
+  I: 65,
+};
+
+function scaleVisibleAttributes(attrs: PersistedIdolAttributes, scale: number): PersistedIdolAttributes {
+  const scaleStat = (value: number) => clampStat(12 + (value - 12) * scale);
+  return {
+    physical: clampPhysical({
+      strength: scaleStat(attrs.physical.strength),
+      agility: scaleStat(attrs.physical.agility),
+      natural_fitness: scaleStat(attrs.physical.natural_fitness),
+      stamina: scaleStat(attrs.physical.stamina),
+    }),
+    appearance: clampAppearance({
+      cute: scaleStat(attrs.appearance.cute),
+      pretty: scaleStat(attrs.appearance.pretty),
+    }),
+    technical: clampTechnical({
+      pitch: scaleStat(attrs.technical.pitch),
+      tone: scaleStat(attrs.technical.tone),
+      breath: scaleStat(attrs.technical.breath),
+      rhythm: scaleStat(attrs.technical.rhythm),
+      power: scaleStat(attrs.technical.power),
+      grace: scaleStat(attrs.technical.grace),
+    }),
+    mental: clampMental({
+      clever: scaleStat(attrs.mental.clever),
+      humor: scaleStat(attrs.mental.humor),
+      talking: scaleStat(attrs.mental.talking),
+      determination: scaleStat(attrs.mental.determination),
+      teamwork: scaleStat(attrs.mental.teamwork),
+      fashion: scaleStat(attrs.mental.fashion),
+    }),
+    hidden: attrs.hidden ? clampHidden({ ...attrs.hidden }) : attrs.hidden,
+  };
+}
+
+const VISIBLE_STAT_PATHS = [
+  ["physical", "strength"],
+  ["physical", "agility"],
+  ["physical", "natural_fitness"],
+  ["physical", "stamina"],
+  ["appearance", "cute"],
+  ["appearance", "pretty"],
+  ["technical", "pitch"],
+  ["technical", "tone"],
+  ["technical", "breath"],
+  ["technical", "rhythm"],
+  ["technical", "power"],
+  ["technical", "grace"],
+  ["mental", "clever"],
+  ["mental", "humor"],
+  ["mental", "talking"],
+  ["mental", "determination"],
+  ["mental", "teamwork"],
+  ["mental", "fashion"],
+] as const;
+
+/** Move official ability by ~1 via single-stat steps (all-stat ±1 jumps ~5). */
+function adjustAbilityToward(
+  attrs: PersistedIdolAttributes,
+  targetAbility: number,
+  direction: 1 | -1,
+): PersistedIdolAttributes {
+  let current = normalizePersistedAttributes(attrs);
+  const goal = Math.floor(targetAbility);
+  for (let step = 0; step < 240; step += 1) {
+    const ab = getAbility(current);
+    if (direction > 0 && ab >= goal) return current;
+    if (direction < 0 && ab <= goal) return current;
+
+    const startRaw = getAbilityRaw(current);
+    let moved = false;
+    for (let i = 0; i < VISIBLE_STAT_PATHS.length; i += 1) {
+      const [cat, key] = VISIBLE_STAT_PATHS[(step + i) % VISIBLE_STAT_PATHS.length];
+      const block = { ...(current[cat] as Record<string, number>) };
+      const nextVal = clampStat(block[key] + direction);
+      if (nextVal === block[key]) continue;
+      block[key] = nextVal;
+      const candidate: PersistedIdolAttributes = {
+        ...current,
+        [cat]:
+          cat === "physical"
+            ? clampPhysical(block as PersistedIdolAttributes["physical"])
+            : cat === "appearance"
+              ? clampAppearance(block as PersistedIdolAttributes["appearance"])
+              : cat === "technical"
+                ? clampTechnical(block as PersistedIdolAttributes["technical"])
+                : clampMental(block as PersistedIdolAttributes["mental"]),
+      };
+      const nextRaw = getAbilityRaw(candidate);
+      if (direction > 0 && nextRaw > startRaw + 1e-9) {
+        current = candidate;
+        moved = true;
+        break;
+      }
+      if (direction < 0 && nextRaw < startRaw - 1e-9) {
+        current = candidate;
+        moved = true;
+        break;
+      }
+    }
+    if (!moved) break;
+  }
+  return current;
+}
+
+/** Pull generated stats down so official ability does not exceed a tier soft-cap. */
+export function fitAttributesToAbilityCap(
+  attrs: PersistedIdolAttributes,
+  letterTier?: string | null,
+): PersistedIdolAttributes {
+  const tier = String(letterTier ?? "")
+    .trim()
+    .toUpperCase();
+  const cap = LETTER_TIER_ABILITY_CAP[tier];
+  if (typeof cap !== "number") return attrs;
+  if (getAbility(attrs) <= cap) return attrs;
+
+  let lo = 0;
+  let hi = 1;
+  let best = scaleVisibleAttributes(attrs, 0.85);
+  for (let i = 0; i < 24; i += 1) {
+    const mid = (lo + hi) / 2;
+    const scaled = scaleVisibleAttributes(attrs, mid);
+    if (getAbility(scaled) > cap) {
+      hi = mid;
+    } else {
+      lo = mid;
+      best = scaled;
+    }
+  }
+  return best;
+}
+
 export function buildAttributesFromFollowerModel(
   idol: Record<string, unknown>,
   groupPopularity: Map<string, number>,
   openingIso: string,
   roleAttributeModel?: RoleAttributeModel | null,
+  groupLetterTiers?: Map<string, string>,
+  withinGroupXBoosts?: Map<string, number>,
 ): PersistedIdolAttributes {
   const uid = String(idol.uid ?? "unknown");
   const idolSignal = popularitySignal(numericMax(idol, ["x_followers", "x_followers_count"]));
-  const groupSignal = currentGroupSignal(idol, openingIso, groupPopularity);
-  const combined = Math.max(0, Math.min(1, idolSignal * 0.65 + groupSignal * 0.35));
-  const base = 7 + Math.round(combined * 12);
+  const { signal: groupSignal, letterTier } = currentGroupContext(
+    idol,
+    openingIso,
+    groupPopularity,
+    groupLetterTiers,
+  );
+  const withinBoost = withinGroupXBoosts?.get(String(idol.uid ?? "").trim()) ?? 0;
+  const combined = combinedPopularitySignal(idolSignal, groupSignal, letterTier);
+  // OLS on curated manuals (=LOVE / iLiFE! / 高嶺のなでしこ / アキシブ):
+  // ability ≈ 62.8 + 25.7 * combined ≈ 5 * (12.5 + 5.2 * combined).
+  const base = Math.max(
+    1,
+    Math.min(19, Math.round(12.5 + combined * 5.2) + Math.round(withinBoost)),
+  );
   const scandalCount = scandalHistoryCount(idol);
   const portraitPath = idol.portrait_photo_path;
   const portraitBonus =
@@ -442,6 +810,17 @@ export function buildAttributesFromFollowerModel(
   const professionalismBase = scandalCount > 0 ? 9 : base;
   const injuryBase = scandalCount > 0 ? 6 : 4;
   const loyaltyPenalty = scandalCount > 0 ? Math.min(4, scandalCount) : 0;
+  const age = ageAtOpening(idol, openingIso);
+  // Bias the appearance seed itself so younger idols lean cute and older lean pretty
+  // before rolls / role model push values around.
+  let cuteSeed = appearanceBase;
+  let prettySeed = appearanceBase;
+  if (age != null) {
+    if (age > 25) cuteSeed = Math.min(cuteSeed, 14);
+    if (age < 20) prettySeed = Math.min(prettySeed, 14);
+    if (age >= 26) prettySeed += 1;
+    if (age <= 19) cuteSeed += 1;
+  }
   const baseline: PersistedIdolAttributes = {
     physical: clampPhysical({
       // Manual calibration set suggests dance-heavy idols tend to carry some extra physicality.
@@ -451,8 +830,8 @@ export function buildAttributesFromFollowerModel(
       stamina: base + stableRoll(uid, "stamina", -2, 4),
     }),
     appearance: clampAppearance({
-      cute: appearanceBase + stableRoll(uid, "cute", -3, 4),
-      pretty: appearanceBase + stableRoll(uid, "pretty", -3, 4),
+      cute: cuteSeed + stableRoll(uid, "cute", -3, 4),
+      pretty: prettySeed + stableRoll(uid, "pretty", -3, 4),
     }),
     technical: clampTechnical({
       // Use shared vocal / dance cores so singing and dancing usually move together,
@@ -481,14 +860,19 @@ export function buildAttributesFromFollowerModel(
     }),
   };
   const activeRoles = collectActiveRoleAssignments(idol, openingIso);
-  const ageFeatures = ageFeatureVector(ageAtOpening(idol, openingIso));
-  return applyRoleBiasToAttributes(baseline, activeRoles, ageFeatures, roleAttributeModel);
+  const ageFeatures = ageFeatureVector(age);
+  const withRoles = applyRoleBiasToAttributes(baseline, activeRoles, ageFeatures, roleAttributeModel);
+  const withAge = applyAgeAppearanceConstraints(withRoles, age);
+  return fitAttributesToAbilityCap(withAge, letterTier);
 }
 
 export interface AttributeAssignmentContext {
   groups: Record<string, unknown>[];
   referenceIso: string;
   roleAttributeModel?: RoleAttributeModel | null;
+  /** Full idol list — used to rank personal X within each active group. */
+  idols?: Record<string, unknown>[];
+  withinGroupXBoosts?: Map<string, number>;
 }
 
 /** Ensure idol row has `attributes` for save + UI (mutates row). */
@@ -506,7 +890,20 @@ export function ensureIdolRowAttributes(
   const groups = ctx?.groups;
   if (ref && /^\d{4}-\d{2}-\d{2}$/.test(ref) && Array.isArray(groups) && groups.length) {
     const idx = buildGroupPopularityIndex(groups);
-    const built = buildAttributesFromFollowerModel(row, idx, ref, ctx?.roleAttributeModel ?? null);
+    const tiers = buildGroupLetterTierIndex(groups);
+    const withinBoosts =
+      ctx?.withinGroupXBoosts ??
+      (Array.isArray(ctx?.idols)
+        ? buildWithinGroupXRankBoosts(ctx.idols, groups, ref)
+        : undefined);
+    const built = buildAttributesFromFollowerModel(
+      row,
+      idx,
+      ref,
+      ctx?.roleAttributeModel ?? null,
+      tiers,
+      withinBoosts,
+    );
     row.attributes = built;
     return built;
   }
@@ -526,9 +923,156 @@ export function applyAttributesToAllIdols(
   if (Array.isArray(groups)) ctx.groups = groups;
   if (typeof referenceIso === "string" && referenceIso) ctx.referenceIso = referenceIso;
   if (roleAttributeModel) ctx.roleAttributeModel = roleAttributeModel;
+  ctx.idols = idols;
+  if (Array.isArray(groups) && typeof referenceIso === "string" && /^\d{4}-\d{2}-\d{2}$/.test(referenceIso)) {
+    ctx.withinGroupXBoosts = buildWithinGroupXRankBoosts(idols, groups, referenceIso);
+  }
 
   for (const row of idols) {
     if (row && typeof row === "object") ensureIdolRowAttributes(row, ctx);
+  }
+
+  if (Array.isArray(groups) && typeof referenceIso === "string" && /^\d{4}-\d{2}-\d{2}$/.test(referenceIso)) {
+    reconcileGeneratedAbilityOrderByX(idols, groups, referenceIso);
+  }
+}
+
+/**
+ * Soft fix: among generated members of one group, higher personal X should not
+ * end below a lower-X teammate after rolls / tier caps.
+ *
+ * Idols with concurrent memberships are only ordered in their primary group
+ * (highest group popularity among active tenures) so multi-group reconcile
+ * cannot tug the same ability both ways.
+ */
+export function reconcileGeneratedAbilityOrderByX(
+  idols: Record<string, unknown>[],
+  groups: Record<string, unknown>[],
+  openingIso: string,
+): void {
+  const idolsByUid = new Map<string, Record<string, unknown>>();
+  for (const idol of idols) {
+    const uid = String(idol?.uid ?? "").trim();
+    if (uid) idolsByUid.set(uid, idol);
+  }
+
+  const groupPopularity = buildGroupPopularityIndex(groups);
+  const primaryByIdolUid = new Map<string, { uid: string; name: string }>();
+  for (const idol of idols) {
+    const uid = String(idol?.uid ?? "").trim();
+    if (!uid) continue;
+    const primary = primaryActiveGroup(idol, openingIso, groupPopularity);
+    if (primary) primaryByIdolUid.set(uid, primary);
+  }
+
+  for (const group of groups) {
+    if (!group || typeof group !== "object") continue;
+    reconcileOneGroupAbilityByX(group, idolsByUid, openingIso, primaryByIdolUid);
+  }
+}
+
+function primaryActiveGroup(
+  idol: Record<string, unknown>,
+  openingIso: string,
+  groupPopularity: Map<string, number>,
+): { uid: string; name: string } | null {
+  let best: { uid: string; name: string; signal: number } | null = null;
+  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+  for (const raw of hist) {
+    if (!raw || typeof raw !== "object") continue;
+    const entry = raw as Record<string, unknown>;
+    if (!membershipActiveAtOpening(entry, openingIso)) continue;
+    const uid = String(entry.group_uid ?? "").trim();
+    const name = String(entry.group_name ?? "").trim();
+    if (!uid && !name) continue;
+    const { signal } = signalFromEntry(entry, groupPopularity);
+    if (!best || signal > best.signal) best = { uid, name, signal };
+  }
+  return best ? { uid: best.uid, name: best.name } : null;
+}
+
+function reconcileOneGroupAbilityByX(
+  group: Record<string, unknown>,
+  idolsByUid: Map<string, Record<string, unknown>>,
+  openingIso: string,
+  primaryByIdolUid: Map<string, { uid: string; name: string }>,
+): void {
+  const memberUids = Array.isArray(group.member_uids) ? (group.member_uids as unknown[]) : [];
+  const tier = String(group.letter_tier ?? "")
+    .trim()
+    .toUpperCase();
+  const groupUid = String(group.uid ?? "").trim();
+  const groupName = String(group.name ?? "").trim();
+  const roster: Record<string, unknown>[] = [];
+  for (const rawUid of memberUids) {
+    const uid = String(rawUid ?? "").trim();
+    const idol = idolsByUid.get(uid);
+    if (!idol || !hasPersistedAttributeBlock(idol.attributes)) continue;
+    const origin = String(idol.attributes_origin ?? "").trim();
+    // Only reorder freshly generated rows; manuals stay authoritative.
+    if (origin === "manual") continue;
+    const primary = primaryByIdolUid.get(uid);
+    if (primary) {
+      const primaryHere =
+        (groupUid && primary.uid === groupUid) || (groupName && primary.name === groupName);
+      if (!primaryHere) continue;
+    }
+    const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+    const activeHere = hist.some((raw) => {
+      if (!raw || typeof raw !== "object") return false;
+      const e = raw as Record<string, unknown>;
+      if (!membershipActiveAtOpening(e, openingIso)) return false;
+      const eUid = String(e.group_uid ?? "").trim();
+      const eName = String(e.group_name ?? "").trim();
+      return (groupUid && eUid === groupUid) || (groupName && eName === groupName);
+    });
+    if (!activeHere) continue;
+    roster.push(idol);
+  }
+  if (roster.length < 2) return;
+
+  roster.sort((a, b) => {
+    const dx =
+      numericMax(b, ["x_followers", "x_followers_count"]) - numericMax(a, ["x_followers", "x_followers_count"]);
+    if (dx !== 0) return dx;
+    return String(a.uid ?? "").localeCompare(String(b.uid ?? ""));
+  });
+
+  // Left-to-right isotonic along X-desc (uid tiebreak): try raise the left
+  // neighbor up to tier cap, otherwise lower the right idol. Enforce even on
+  // equal-X ties so non-adjacent strict-X pairs cannot invert through a tie.
+  const tierCap = LETTER_TIER_ABILITY_CAP[tier] ?? 88;
+  for (let pass = 0; pass < 12; pass += 1) {
+    let changed = false;
+    for (let i = 1; i < roster.length; i += 1) {
+      const higherX = roster[i - 1];
+      const lowerX = roster[i];
+
+      let hiAttrs = normalizePersistedAttributes(higherX.attributes);
+      let loAttrs = normalizePersistedAttributes(lowerX.attributes);
+      const loAb = getAbility(loAttrs);
+      const hiAb = getAbility(hiAttrs);
+      if (hiAb >= loAb) continue;
+
+      const raiseTarget = Math.min(loAb, tierCap);
+      if (hiAb < raiseTarget) {
+        const raised = adjustAbilityToward(hiAttrs, raiseTarget, 1);
+        if (getAbility(raised) > getAbility(hiAttrs)) {
+          hiAttrs = raised;
+          higherX.attributes = hiAttrs;
+          changed = true;
+        }
+      }
+
+      if (getAbility(hiAttrs) < getAbility(loAttrs)) {
+        const lowered = adjustAbilityToward(loAttrs, getAbility(hiAttrs), -1);
+        if (getAbility(lowered) < getAbility(loAttrs)) {
+          lowerX.attributes = lowered;
+          changed = true;
+        }
+      }
+    }
+    if (!changed) break;
   }
 }
 
@@ -573,7 +1117,7 @@ export function getWorkbookRadarDimensions(a: PersistedIdolAttributes): { key: s
 /**
  * Official ability (Python `get_ability`) — note mental sum includes **fashion** in code despite comment.
  */
-export function getAbility(a: PersistedIdolAttributes): number {
+export function getAbilityRaw(a: PersistedIdolAttributes): number {
   const p = a.physical;
   const physicalSum = p.strength + p.agility + p.natural_fitness + p.stamina;
   const physicalPart = (physicalSum / 16) * 3;
@@ -590,5 +1134,9 @@ export function getAbility(a: PersistedIdolAttributes): number {
   const mentalSum = m.clever + m.humor + m.talking + m.determination + m.teamwork + m.fashion;
   const mentalPart = mentalSum / 6;
 
-  return Math.floor(physicalPart + appearancePart + technicalPart + mentalPart);
+  return physicalPart + appearancePart + technicalPart + mentalPart;
+}
+
+export function getAbility(a: PersistedIdolAttributes): number {
+  return Math.floor(getAbilityRaw(a));
 }

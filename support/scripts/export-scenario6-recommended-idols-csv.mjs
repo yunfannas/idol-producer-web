@@ -141,8 +141,8 @@ function popularitySignal(value, floor = 1000, ceiling = 1_000_000) {
 function buildGroupPopularityIndex(groups) {
   const index = new Map();
   for (const group of groups) {
-    const followers = numericMax(group, ["x_followers", "x_followers_count", "fans", "fan_count"]);
-    const followerSignal = popularitySignal(followers);
+    const fans = numericMax(group, ["fans", "fan_count"]);
+    const followerSignal = popularitySignal(fans);
     const pop = numericMax(group, ["popularity"]);
     const popSignal = pop > 0 ? Math.max(0, Math.min(1, pop / 100)) : 0;
     const signal = Math.max(followerSignal, popSignal);
@@ -155,6 +155,18 @@ function buildGroupPopularityIndex(groups) {
   return index;
 }
 
+function buildGroupLetterTierIndex(groups) {
+  const index = new Map();
+  for (const group of groups) {
+    const tier = String(group.letter_tier ?? "").trim().toUpperCase();
+    if (!tier) continue;
+    for (const key of [String(group.uid ?? "").trim(), String(group.name ?? "").trim()]) {
+      if (key) index.set(key, tier);
+    }
+  }
+  return index;
+}
+
 function stableRoll(uid, label, low, high) {
   const digest = crypto.createHash("sha256").update(`${uid}:${label}`, "utf8").digest();
   const raw = digest.readUInt32BE(0);
@@ -162,33 +174,92 @@ function stableRoll(uid, label, low, high) {
   return low + (raw % span);
 }
 
-function currentGroupSignal(idol, openingIso, groupPopularity) {
-  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
-  let best = 0;
-  for (const entry of hist) {
-    if (!membershipActiveAtOpening(entry, openingIso)) continue;
-    for (const key of [String(entry.group_uid ?? "").trim(), String(entry.group_name ?? "").trim()]) {
-      if (!key) continue;
-      const score = groupPopularity.get(key);
-      if (score != null && score > best) best = score;
-    }
-  }
-  return best;
+function membershipEndedByOpening(entry, openingIso) {
+  const start = parseIsoDay(entry?.start_date);
+  if (!start || start > openingIso) return false;
+  const end = parseIsoDay(entry?.end_date);
+  if (!end) return false;
+  return end <= openingIso;
 }
 
-function buildAttributesFromFollowerModel(idol, groupPopularity, openingIso) {
+function currentGroupContext(idol, openingIso, groupPopularity, groupLetterTiers) {
+  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
+  let hasActive = false;
+  let bestActive = 0;
+  let activeTier = null;
+  let latestPast = null;
+  for (const entry of hist) {
+    if (!entry || typeof entry !== "object") continue;
+    const keys = [String(entry.group_uid ?? "").trim(), String(entry.group_name ?? "").trim()].filter(Boolean);
+    const resolve = () => {
+      let signal = 0;
+      let letterTier = null;
+      for (const key of keys) {
+        const next = groupPopularity.get(key);
+        if (next == null || next < signal) continue;
+        signal = next;
+        letterTier = groupLetterTiers instanceof Map ? groupLetterTiers.get(key) ?? letterTier : letterTier;
+      }
+      return { signal, letterTier };
+    };
+    if (membershipActiveAtOpening(entry, openingIso)) {
+      hasActive = true;
+      const hit = resolve();
+      if (hit.signal >= bestActive) {
+        bestActive = hit.signal;
+        activeTier = hit.letterTier ?? activeTier;
+      }
+      continue;
+    }
+    if (!membershipEndedByOpening(entry, openingIso)) continue;
+    const end = parseIsoDay(entry.end_date);
+    const start = parseIsoDay(entry.start_date);
+    if (!end || !start) continue;
+    const hit = resolve();
+    if (!latestPast || end > latestPast.end || (end === latestPast.end && start > latestPast.start)) {
+      latestPast = { end, start, signal: hit.signal, letterTier: hit.letterTier };
+    }
+  }
+  if (hasActive) return { signal: bestActive, letterTier: activeTier };
+  if (latestPast) return { signal: latestPast.signal, letterTier: latestPast.letterTier };
+  return { signal: 0, letterTier: null };
+}
+
+function currentGroupSignal(idol, openingIso, groupPopularity, groupLetterTiers) {
+  return currentGroupContext(idol, openingIso, groupPopularity, groupLetterTiers).signal;
+}
+
+function buildAttributesFromFollowerModel(idol, groupPopularity, openingIso, groupLetterTiers) {
   const uid = String(idol.uid ?? "unknown");
   const idolSignal = popularitySignal(numericMax(idol, ["x_followers", "x_followers_count"]));
-  const groupSignal = currentGroupSignal(idol, openingIso, groupPopularity);
-  const combined = Math.max(0, Math.min(1, idolSignal * 0.65 + groupSignal * 0.35));
-  const base = 7 + Math.round(combined * 12);
+  const { signal: groupSignal, letterTier } = currentGroupContext(
+    idol,
+    openingIso,
+    groupPopularity,
+    groupLetterTiers,
+  );
+  let combined = idolSignal * 0.5 + groupSignal * 0.5;
+  const tierCap = { S: 1, A: 0.95, B: 0.86, C: 0.75, D: 0.55, E: 0.46, I: 0.34 }[String(letterTier ?? "").toUpperCase()];
+  if (typeof tierCap === "number") combined = Math.min(combined, tierCap);
+  combined = Math.max(0, Math.min(1, combined));
+  // Fitted to curated manuals (=LOVE / iLiFE! / 高嶺のなでしこ / アキシブ).
+  const base = Math.round(12.5 + combined * 5.2);
   const portraitBonus =
     typeof idol.portrait_photo_path === "string" && idol.portrait_photo_path.trim() ? 1 : 0;
   const groupBonus = groupSignal > 0 ? 1 : 0;
   const appearanceBase = base + portraitBonus;
   const technicalBase = base + groupBonus;
+  const age = ageAtOpening(idol, openingIso);
+  let cuteSeed = appearanceBase;
+  let prettySeed = appearanceBase;
+  if (typeof age === "number" && Number.isFinite(age)) {
+    if (age > 25) cuteSeed = Math.min(cuteSeed, 14);
+    if (age < 20) prettySeed = Math.min(prettySeed, 14);
+    if (age >= 26) prettySeed += 1;
+    if (age <= 19) cuteSeed += 1;
+  }
 
-  return {
+  const attrs = {
     physical: clampPhysical({
       strength: base + stableRoll(uid, "strength", -3, 3),
       agility: base + stableRoll(uid, "agility", -3, 4),
@@ -196,8 +267,8 @@ function buildAttributesFromFollowerModel(idol, groupPopularity, openingIso) {
       stamina: base + stableRoll(uid, "stamina", -2, 4),
     }),
     appearance: clampAppearance({
-      cute: appearanceBase + stableRoll(uid, "cute", -3, 4),
-      pretty: appearanceBase + stableRoll(uid, "pretty", -3, 4),
+      cute: cuteSeed + stableRoll(uid, "cute", -3, 4),
+      pretty: prettySeed + stableRoll(uid, "pretty", -3, 4),
     }),
     technical: clampTechnical({
       pitch: technicalBase + stableRoll(uid, "pitch", -4, 4),
@@ -221,6 +292,33 @@ function buildAttributesFromFollowerModel(idol, groupPopularity, openingIso) {
       ambition: base + stableRoll(uid, "ambition", -2, 5),
       loyalty: base + stableRoll(uid, "loyalty", -2, 5),
     }),
+  };
+  return applyAgeAppearanceConstraints(attrs, age);
+}
+
+function ageAtOpening(idol, openingIso) {
+  const birthday = parseIsoDay(idol?.birthday);
+  if (birthday) {
+    const [by, bm, bd] = birthday.split("-").map(Number);
+    const [oy, om, od] = openingIso.split("-").map(Number);
+    let age = oy - by;
+    if (om < bm || (om === bm && od < bd)) age -= 1;
+    if (Number.isFinite(age) && age >= 0 && age <= 80) return age;
+  }
+  const age = Number(idol?.age);
+  return Number.isFinite(age) && age >= 0 && age <= 80 ? age : null;
+}
+
+function applyAgeAppearanceConstraints(attrs, age) {
+  if (typeof age !== "number" || !Number.isFinite(age)) return attrs;
+  let cute = attrs.appearance.cute;
+  let pretty = attrs.appearance.pretty;
+  if (age > 25 && cute > 15) cute = Math.min(16, 15 + Math.max(0, Math.round((cute - 15) * 0.2)));
+  if (age < 20 && pretty > 15) pretty = Math.min(16, 15 + Math.max(0, Math.round((pretty - 15) * 0.2)));
+  if (cute === attrs.appearance.cute && pretty === attrs.appearance.pretty) return attrs;
+  return {
+    ...attrs,
+    appearance: clampAppearance({ cute, pretty }),
   };
 }
 
@@ -290,6 +388,7 @@ if (!openingDate) throw new Error("scenario6 opening_date is missing or invalid"
 
 const groupsByUid = new Map(groups.map((group) => [group.uid, group]));
 const groupPopularity = buildGroupPopularityIndex(groups);
+const groupLetterTiers = buildGroupLetterTierIndex(groups);
 
 const headers = [
   "scenario_id",
@@ -368,7 +467,7 @@ TARGET_GROUPS.forEach((target, index) => {
     });
 
   for (const { idol, relevant } of related) {
-    const attributes = buildAttributesFromFollowerModel(idol, groupPopularity, openingDate);
+    const attributes = buildAttributesFromFollowerModel(idol, groupPopularity, openingDate, groupLetterTiers);
     const overall = getOverallRating(attributes);
     const ability = getAbility(attributes);
     const row = [

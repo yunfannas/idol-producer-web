@@ -1,139 +1,163 @@
 # Member Role Attribute Calibration
 
 Scenario: scenario_6
-Groups: =LOVE (PUxPVkU), ≠ME (4omgTUU), ≒JOY (4omSSk9Z)
+Groups: =LOVE (PUxPVkU), iLiFE! (aUxpRkUh), 高嶺のなでしこ (6auY5ba644Gu44Gq44Gn44GX44GT), アキシブproject (44Ki44Kt44K344OWcHJvamVjdA)
 Reference date: 2025-07-05
-Manual comparison rows: 9
-Prediction rows: 34
-- =LOVE: manual 9/10, roles 10/10
-  Missing manual attributes: 大谷映美里
-- ≠ME: manual 0/12, roles 12/12
-  Missing manual attributes: 永田詩央里, 河口夏音, 蟹沢萌子, 菅波美玲, 谷崎早耶, 尾木波菜, 冨田菜々風, 本田珠由記, 落合希来里, 鈴木瞳美, 櫻井もも, 川中子奈月心
-- ≒JOY: manual 0/12, roles 12/12
-  Missing manual attributes: 逢田珠里依, 天野香乃愛, 市原愛弓, 江角怜音, 大信田美月, 大西葵, 小澤愛実, 髙橋舞, 藤沢莉子, 村山結香, 山田杏佳, 山野愛月
-Ridge lambda: 0.05
+Manual comparison rows: 37
+Prediction rows: 37
+- =LOVE: manual 10/10, roles 10/10
+- iLiFE!: manual 9/9, roles 1/9
+- 高嶺のなでしこ: manual 10/10, roles 1/10
+- アキシブproject: manual 8/8, roles 0/8
+Ridge lambda: 6
 Prior scalar: 3
 Age features: age_youth, age_experience, age_senior
 
-Baseline MAE: 1.864
-Semantic prior MAE: 1.932
-Prior-calibrated role model MAE: 0.370
+Baseline MAE: 2.179
+Semantic prior MAE: 2.207
+Prior-calibrated role model MAE: 1.854
 
 ## Worst Stats After Learning
-- technical.breath: MAE 1.56, bias -0.22
-- mental.clever: MAE 1.00, bias +0.11
-- mental.determination: MAE 0.67, bias +0.00
-- physical.natural_fitness: MAE 0.44, bias +0.00
-- mental.talking: MAE 0.44, bias +0.00
-- physical.agility: MAE 0.33, bias +0.11
-- technical.rhythm: MAE 0.33, bias +0.11
-- technical.power: MAE 0.33, bias -0.11
+- technical.breath: MAE 2.51, bias +0.57
+- mental.fashion: MAE 2.35, bias +1.05
+- technical.pitch: MAE 2.19, bias +0.51
+- technical.grace: MAE 2.08, bias +0.51
+- technical.tone: MAE 2.05, bias +0.49
+- physical.agility: MAE 2.00, bias +0.76
+- technical.rhythm: MAE 2.00, bias +0.54
+- mental.talking: MAE 2.00, bias +0.59
 
 ## Member Fit
-- 髙松瞳: baseline 2.06 -> prior 2.22 -> learned 0.89
-- 瀧脇笙古: baseline 1.56 -> prior 1.83 -> learned 0.83
-- 佐々木舞香: baseline 1.56 -> prior 2.00 -> learned 0.56
-- 大場花菜: baseline 2.67 -> prior 3.00 -> learned 0.50
-- 齋藤樹愛羅: baseline 1.39 -> prior 1.17 -> learned 0.22
-- 野口衣織: baseline 2.78 -> prior 2.28 -> learned 0.22
-- 山本杏奈: baseline 1.83 -> prior 1.50 -> learned 0.11
-- 音嶋莉沙: baseline 1.72 -> prior 1.89 -> learned 0.00
-- 諸橋沙夏: baseline 1.22 -> prior 1.50 -> learned 0.00
+- 春野莉々: baseline 3.33 -> prior 3.33 -> learned 3.06
+- 平沢かえ: baseline 3.06 -> prior 3.06 -> learned 2.78
+- 松本ももな: baseline 2.94 -> prior 2.94 -> learned 2.67
+- 葵ふう: baseline 2.83 -> prior 2.83 -> learned 2.67
+- 如月なな: baseline 3.06 -> prior 3.06 -> learned 2.44
+- 福丸うさ: baseline 2.33 -> prior 2.33 -> learned 2.39
+- 小熊まむ: baseline 2.56 -> prior 2.56 -> learned 2.39
+- 古賀みれい: baseline 2.83 -> prior 2.83 -> learned 2.33
+- 大場花菜: baseline 2.67 -> prior 3.00 -> learned 2.28
+- 美山ひな: baseline 2.67 -> prior 2.72 -> learned 2.28
+- 野口衣織: baseline 2.78 -> prior 2.17 -> learned 2.22
+- 葉月紗蘭: baseline 2.50 -> prior 2.56 -> learned 2.22
+- 水琴まなみ: baseline 2.28 -> prior 2.28 -> learned 2.00
+- 日向端ひな: baseline 2.22 -> prior 2.22 -> learned 1.94
+- 籾山ひめり: baseline 2.56 -> prior 2.44 -> learned 1.94
+- 髙松瞳: baseline 2.06 -> prior 2.22 -> learned 1.89
+- 清見るん: baseline 2.06 -> prior 2.06 -> learned 1.78
+- 若葉のあ: baseline 2.06 -> prior 2.11 -> learned 1.72
+- 城月菜央: baseline 2.00 -> prior 2.00 -> learned 1.72
+- 大谷映美里: baseline 2.44 -> prior 2.72 -> learned 1.67
+- 音嶋莉沙: baseline 1.67 -> prior 1.72 -> learned 1.67
+- あいす: baseline 1.44 -> prior 1.44 -> learned 1.61
+- 純嶺みき: baseline 1.89 -> prior 1.89 -> learned 1.61
+- 山本杏奈: baseline 2.11 -> prior 1.78 -> learned 1.56
+- 心花りり: baseline 1.50 -> prior 1.83 -> learned 1.56
+- 那蘭のどか: baseline 1.94 -> prior 1.94 -> learned 1.56
+- 橋本桃呼: baseline 1.72 -> prior 1.72 -> learned 1.56
+- 茉井良菜: baseline 2.17 -> prior 2.28 -> learned 1.56
+- 東山恵里沙: baseline 2.11 -> prior 2.11 -> learned 1.50
+- 星谷美来: baseline 1.83 -> prior 1.83 -> learned 1.44
+- 虹羽みに: baseline 1.50 -> prior 1.56 -> learned 1.39
+- 瀧脇笙古: baseline 1.56 -> prior 1.83 -> learned 1.33
+- 齋藤樹愛羅: baseline 1.39 -> prior 1.17 -> learned 1.22
+- 佐々木舞香: baseline 1.56 -> prior 1.78 -> learned 1.22
+- 涼海すう: baseline 1.83 -> prior 1.89 -> learned 1.22
+- 諸橋沙夏: baseline 1.50 -> prior 1.78 -> learned 1.17
+- 空詩かれん: baseline 1.67 -> prior 1.67 -> learned 1.06
 
 ## Strongest Learned Role Coefficients
 ### leader
-- mental.clever: -5.15
-- mental.teamwork: +4.59
-- technical.grace: -3.98
-- mental.talking: +3.85
-- physical.strength: -3.13
-- appearance.cute: +2.52
+- mental.teamwork: +2.89
+- mental.talking: +1.31
+- mental.determination: +1.31
+- physical.agility: +0.90
+- technical.tone: +0.75
+- technical.pitch: +0.74
 
 ### center
-- technical.breath: +5.69
-- technical.grace: +3.17
-- technical.power: +2.93
-- technical.rhythm: +2.66
-- technical.pitch: +2.61
-- mental.teamwork: -2.56
+- appearance.pretty: +1.95
+- appearance.cute: +1.26
+- technical.grace: +0.85
+- technical.rhythm: +0.60
+- mental.teamwork: -0.47
+- physical.agility: -0.40
 
 ### lead_singer
-- mental.clever: +4.63
-- technical.power: -4.00
-- technical.breath: -2.72
-- technical.grace: -2.66
-- mental.talking: +2.44
-- mental.determination: -2.35
+- technical.pitch: +2.69
+- technical.breath: +2.52
+- technical.tone: +2.40
+- technical.power: +0.76
+- mental.determination: +0.73
+- physical.agility: -0.52
 
 ### lead_dancer
-- technical.breath: +8.69
-- technical.power: +7.12
-- mental.determination: +5.51
-- mental.talking: -5.36
-- physical.strength: +4.81
-- technical.grace: +4.46
+- technical.rhythm: +2.73
+- technical.grace: +2.51
+- technical.power: +2.02
+- physical.agility: +1.98
+- physical.stamina: +1.65
+- physical.natural_fitness: +1.24
 
 ### host
-- technical.breath: -10.33
-- mental.clever: +6.50
-- mental.talking: +5.08
-- mental.determination: -4.08
-- technical.pitch: -3.23
-- mental.fashion: -2.79
+- mental.talking: +2.22
+- mental.humor: +1.60
+- mental.clever: +1.08
+- mental.teamwork: +0.62
+- technical.grace: -0.54
+- mental.fashion: -0.45
 
 ### content
-- technical.breath: +6.92
-- physical.strength: -5.93
-- mental.clever: -5.38
-- appearance.cute: +4.56
-- technical.rhythm: -3.27
-- appearance.pretty: -2.88
+- mental.humor: +1.73
+- mental.talking: +1.06
+- mental.fashion: +0.76
+- technical.tone: -0.72
+- physical.strength: -0.67
+- mental.clever: +0.62
 
 ### streaming
-- mental.fashion: -5.80
-- mental.clever: +5.27
-- physical.natural_fitness: +4.16
-- technical.breath: +3.06
-- physical.agility: +2.75
-- mental.humor: +2.36
+- mental.talking: +1.25
+- technical.grace: -0.83
+- mental.determination: -0.81
+- mental.humor: +0.80
+- mental.teamwork: +0.69
+- technical.rhythm: -0.65
 
 ### style
-- technical.grace: +6.84
-- physical.agility: +4.92
-- mental.fashion: +4.53
-- technical.power: +4.33
-- technical.breath: -3.90
-- mental.determination: -3.33
+- mental.fashion: +3.47
+- appearance.cute: +2.29
+- appearance.pretty: +2.12
+- technical.grace: +0.68
+- physical.agility: +0.57
+- technical.power: +0.53
 
 ### call_leader
-- technical.breath: -6.85
-- mental.clever: -4.99
-- physical.agility: -4.95
-- technical.tone: -3.90
-- technical.pitch: -3.68
-- mental.humor: -3.33
+- mental.talking: +1.96
+- mental.determination: +1.18
+- physical.stamina: +0.87
+- technical.power: +0.80
+- mental.clever: -0.67
+- mental.humor: +0.58
 
 ### age_youth
-- technical.breath: -6.40
-- physical.strength: -4.97
-- appearance.cute: +3.49
-- mental.determination: -3.42
-- technical.rhythm: -3.40
-- technical.tone: -3.19
+- mental.fashion: -2.21
+- physical.natural_fitness: -1.66
+- mental.clever: -1.59
+- mental.determination: -1.38
+- physical.stamina: -1.25
+- mental.talking: -1.22
 
 ### age_experience
-- mental.clever: -5.91
-- appearance.cute: -3.67
-- mental.humor: -3.06
-- physical.natural_fitness: -3.02
-- mental.talking: -2.78
-- mental.fashion: +2.77
+- mental.humor: -1.98
+- mental.determination: -1.93
+- mental.clever: -1.40
+- physical.stamina: -1.38
+- physical.natural_fitness: -1.31
+- mental.talking: -1.21
 
 ### age_senior
-- technical.grace: -1.97
-- mental.teamwork: +1.95
-- mental.talking: +1.95
-- physical.natural_fitness: -1.94
-- technical.power: -1.85
-- physical.stamina: -1.58
+- mental.teamwork: +1.03
+- mental.clever: +0.82
+- mental.talking: +0.62
+- mental.determination: +0.59
 

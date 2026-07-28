@@ -1,8 +1,12 @@
 /**
- * Import manually edited Scenario 6 recommended-group idol CSV rows back into
- * `public/data/scenarios/scenario_6/idols.json`.
+ * Apply CSV attribute columns from scenario_6_recommended_group_idols.csv
+ * into scenario_6/idols.json for curated startup groups, tagged as manual.
  *
- * Run: node scripts/import-scenario6-recommended-idols-csv.mjs
+ * Default targets: iLiFE!, 高嶺のなでしこ, アキシブproject
+ *
+ * Usage:
+ *   node support/scripts/import-scenario6-recommended-idols-csv.mjs
+ *   node support/scripts/import-scenario6-recommended-idols-csv.mjs --all
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -13,9 +17,14 @@ const root = path.join(__dirname, "..", "..");
 const csvPath = path.join(root, "support", "docs", "scenario_6_recommended_group_idols.csv");
 const idolsPath = path.join(root, "public", "data", "scenarios", "scenario_6", "idols.json");
 
-function crlfSerialize(obj) {
-  return `${JSON.stringify(obj, null, 2).replace(/\n/g, "\r\n")}\r\n`;
-}
+const DEFAULT_GROUP_UIDS = new Set([
+  "aUxpRkUh", // iLiFE!
+  "6auY5ba644Gu44Gq44Gn44GX44GT", // 高嶺のなでしこ
+  "44Ki44Kt44K344OWcHJvamVjdA", // アキシブproject
+]);
+
+const DEFAULT_GROUP_NAMES = new Set(["iLiFE!", "高嶺のなでしこ", "アキシブproject"]);
+const importAll = process.argv.includes("--all");
 
 function parseCsv(text) {
   const rows = [];
@@ -83,41 +92,6 @@ function parseIntLike(value) {
   return n == null ? null : Math.round(n);
 }
 
-function parseDateish(value) {
-  const s = normalizeText(value);
-  if (!s) return null;
-  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
-  const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(s);
-  if (m) {
-    const mm = m[1].padStart(2, "0");
-    const dd = m[2].padStart(2, "0");
-    return `${m[3]}-${mm}-${dd}`;
-  }
-  return s;
-}
-
-function splitPipe(value) {
-  const s = normalizeText(value);
-  if (!s) return [];
-  return s.split("|").map((part) => part.trim()).filter(Boolean);
-}
-
-function maybeNullString(value) {
-  const s = normalizeText(value);
-  return s ? s : null;
-}
-
-function ensureHistoryEntry(idol, groupUid) {
-  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
-  let entry = hist.find((row) => row && row.group_uid === groupUid);
-  if (!entry) {
-    entry = { group_uid: groupUid };
-    hist.push(entry);
-  }
-  idol.group_history = hist;
-  return entry;
-}
-
 function buildAttributesFromCsv(record) {
   return {
     physical: {
@@ -155,6 +129,12 @@ function buildAttributesFromCsv(record) {
   };
 }
 
+function rowInDefaultTargets(record) {
+  const groupUid = normalizeText(record.group_uid);
+  const groupName = normalizeText(record.group_name);
+  return DEFAULT_GROUP_UIDS.has(groupUid) || DEFAULT_GROUP_NAMES.has(groupName);
+}
+
 if (!fs.existsSync(csvPath)) {
   throw new Error(`Missing CSV: ${path.relative(root, csvPath)}`);
 }
@@ -179,6 +159,8 @@ if (!Array.isArray(idols)) throw new Error("idols.json must be an array");
 
 const idolByUid = new Map(idols.map((idol) => [String(idol.uid), idol]));
 let updated = 0;
+let skipped = 0;
+const byGroup = new Map();
 
 for (const record of records) {
   const idolUid = normalizeText(record.idol_uid);
@@ -186,46 +168,39 @@ for (const record of records) {
   if (!idolUid || !groupUid) throw new Error(`Row ${record._row_number}: missing idol_uid or group_uid`);
 
   const statusOverride = normalizeText(record.manual_status_override).toLowerCase();
-  if (statusOverride === "omit" || statusOverride === "remove" || statusOverride === "exclude") continue;
+  if (statusOverride === "omit" || statusOverride === "remove" || statusOverride === "exclude") {
+    skipped += 1;
+    continue;
+  }
+
+  if (!importAll && !rowInDefaultTargets(record)) {
+    skipped += 1;
+    continue;
+  }
 
   const idol = idolByUid.get(idolUid);
   if (!idol) throw new Error(`Row ${record._row_number}: unknown idol_uid ${idolUid}`);
 
-  idol.name = normalizeText(record.idol_name) || idol.name;
-  idol.romaji = normalizeText(record.idol_romaji);
-  idol.hiragana = normalizeText(record.idol_hiragana);
-  idol.nickname = normalizeText(record.nickname);
-  idol.birthday = parseDateish(record.birthday);
-  const age = parseIntLike(record.age);
-  idol.age = age == null ? null : age;
-  const height = parseNumber(record.height_cm);
-  idol.height = height == null ? null : height;
-  idol.birthplace = normalizeText(record.birthplace);
-  idol.languages = splitPipe(record.languages);
-  const followers = parseIntLike(record.x_followers);
-  idol.x_followers = followers == null ? null : followers;
-  idol.wiki_url = normalizeText(record.wiki_url);
-  idol.portrait_photo_path = normalizeText(record.portrait_photo_path);
+  // Attributes only — do not rewrite roster/history/profile fields from the CSV.
   idol.attributes = buildAttributesFromCsv(record);
-
-  const entry = ensureHistoryEntry(idol, groupUid);
-  entry.group_uid = groupUid;
-  entry.group_name = normalizeText(record.group_name) && normalizeText(record.group_name) !== "#NAME?"
-    ? normalizeText(record.group_name)
-    : entry.group_name ?? "";
-  entry.start_date = parseDateish(splitPipe(record.membership_start_dates)[0] ?? record.membership_start_dates);
-  entry.end_date = parseDateish(splitPipe(record.membership_end_dates)[0] ?? record.membership_end_dates);
-  entry.member_name = maybeNullString(splitPipe(record.member_name_in_group)[0] ?? record.member_name_in_group);
-  entry.member_color = maybeNullString(splitPipe(record.member_colors)[0] ?? record.member_colors);
-  entry.member_color_code = maybeNullString(splitPipe(record.member_color_codes)[0] ?? record.member_color_codes);
-
-  const noteParts = splitPipe(record.membership_notes);
-  const manualNotes = normalizeText(record.manual_notes);
-  if (manualNotes) noteParts.push(`[manual] ${manualNotes}`);
-  entry.notes = noteParts.length ? noteParts.join("; ") : undefined;
-
+  idol.attributes_origin = "manual";
   updated += 1;
+
+  const gName = normalizeText(record.group_name) || groupUid;
+  byGroup.set(gName, (byGroup.get(gName) ?? 0) + 1);
 }
 
-fs.writeFileSync(idolsPath, crlfSerialize(idols), "utf8");
-console.log(`[import-scenario6-recommended-idols] updated ${updated} idol row(s) in ${path.relative(root, idolsPath)}`);
+fs.writeFileSync(idolsPath, `${JSON.stringify(idols, null, 2)}\n`, "utf8");
+console.log(
+  JSON.stringify(
+    {
+      updated,
+      skipped,
+      importAll,
+      byGroup: Object.fromEntries(byGroup),
+      path: path.relative(root, idolsPath),
+    },
+    null,
+    2,
+  ),
+);

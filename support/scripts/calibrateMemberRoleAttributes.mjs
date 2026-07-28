@@ -282,8 +282,8 @@ function membershipActiveAt(entry, referenceIso) {
 function buildGroupPopularityIndex(groups) {
   const index = new Map();
   for (const group of groups) {
-    const followers = numericMax(group, ["x_followers", "x_followers_count", "fans", "fan_count"]);
-    const followerSignal = popularitySignal(followers);
+    const fans = numericMax(group, ["fans", "fan_count"]);
+    const followerSignal = popularitySignal(fans);
     const popSignal = Math.max(0, Math.min(1, numericMax(group, ["popularity"]) / 100));
     const signal = Math.max(followerSignal, popSignal);
     for (const key of [group.uid, group.name]) {
@@ -294,16 +294,77 @@ function buildGroupPopularityIndex(groups) {
   return index;
 }
 
-function currentGroupSignal(idol, referenceIso, groupPopularity) {
-  let best = 0;
-  for (const entry of Array.isArray(idol.group_history) ? idol.group_history : []) {
-    if (!entry || typeof entry !== "object" || !membershipActiveAt(entry, referenceIso)) continue;
-    for (const key of [entry.group_uid, entry.group_name]) {
-      const signal = groupPopularity.get(String(key ?? "").trim());
-      if (signal != null && signal > best) best = signal;
+function buildGroupLetterTierIndex(groups) {
+  const index = new Map();
+  for (const group of groups) {
+    const tier = String(group.letter_tier ?? "").trim().toUpperCase();
+    if (!tier) continue;
+    for (const key of [group.uid, group.name]) {
+      const normalized = String(key ?? "").trim();
+      if (normalized) index.set(normalized, tier);
     }
   }
-  return best;
+  return index;
+}
+
+function membershipEndedBy(entry, referenceIso) {
+  const start = parseIsoDay(entry?.start_date);
+  if (!start || start > referenceIso) return false;
+  const end = parseIsoDay(entry?.end_date);
+  if (!end) return false;
+  return end <= referenceIso;
+}
+
+function currentGroupContext(idol, referenceIso, groupPopularity, groupLetterTiers) {
+  let hasActive = false;
+  let bestActive = 0;
+  let activeTier = null;
+  let latestPast = null;
+  for (const entry of Array.isArray(idol.group_history) ? idol.group_history : []) {
+    if (!entry || typeof entry !== "object") continue;
+    const keys = [entry.group_uid, entry.group_name]
+      .map((key) => String(key ?? "").trim())
+      .filter(Boolean);
+    const resolve = () => {
+      let signal = 0;
+      let letterTier = null;
+      for (const key of keys) {
+        const next = groupPopularity.get(key);
+        if (next == null || next < signal) continue;
+        signal = next;
+        letterTier = groupLetterTiers instanceof Map ? groupLetterTiers.get(key) ?? letterTier : letterTier;
+      }
+      return { signal, letterTier };
+    };
+    if (membershipActiveAt(entry, referenceIso)) {
+      hasActive = true;
+      const hit = resolve();
+      if (hit.signal >= bestActive) {
+        bestActive = hit.signal;
+        activeTier = hit.letterTier ?? activeTier;
+      }
+      continue;
+    }
+    if (!membershipEndedBy(entry, referenceIso)) continue;
+    const end = parseIsoDay(entry.end_date);
+    const start = parseIsoDay(entry.start_date);
+    if (!end || !start) continue;
+    const hit = resolve();
+    if (!latestPast || end > latestPast.end || (end === latestPast.end && start > latestPast.start)) {
+      latestPast = { end, start, signal: hit.signal, letterTier: hit.letterTier };
+    }
+  }
+  if (hasActive) return { signal: bestActive, letterTier: activeTier };
+  if (latestPast) return { signal: latestPast.signal, letterTier: latestPast.letterTier };
+  return { signal: 0, letterTier: null };
+}
+
+function currentGroupSignal(idol, referenceIso, groupPopularity, groupLetterTiers) {
+  return currentGroupContext(idol, referenceIso, groupPopularity, groupLetterTiers).signal;
+}
+
+function currentGroupLetterTier(idol, referenceIso, groupPopularity, groupLetterTiers) {
+  return currentGroupContext(idol, referenceIso, groupPopularity, groupLetterTiers).letterTier;
 }
 
 function scandalHistoryCount(idol) {
@@ -319,12 +380,17 @@ function scandalHistoryCount(idol) {
   return count;
 }
 
-function baselineAttributes(idol, groupPopularity, referenceIso) {
+function baselineAttributes(idol, groupPopularity, referenceIso, groupLetterTiers) {
   const uid = String(idol.uid ?? "unknown");
   const idolSignal = popularitySignal(numericMax(idol, ["x_followers", "x_followers_count"]));
-  const groupSignal = currentGroupSignal(idol, referenceIso, groupPopularity);
-  const combined = Math.max(0, Math.min(1, idolSignal * 0.65 + groupSignal * 0.35));
-  const base = 7 + Math.round(combined * 12);
+  const groupSignal = currentGroupSignal(idol, referenceIso, groupPopularity, groupLetterTiers);
+  const letterTier = currentGroupLetterTier(idol, referenceIso, groupPopularity, groupLetterTiers);
+  let combined = idolSignal * 0.5 + groupSignal * 0.5;
+  const tierCap = { S: 1, A: 0.95, B: 0.86, C: 0.75, D: 0.55, E: 0.46, I: 0.34 }[String(letterTier ?? "").toUpperCase()];
+  if (typeof tierCap === "number") combined = Math.min(combined, tierCap);
+  combined = Math.max(0, Math.min(1, combined));
+  // Fitted to curated manuals (=LOVE / iLiFE! / 高嶺のなでしこ / アキシブ).
+  const base = Math.round(12.5 + combined * 5.2);
   const scandalCount = scandalHistoryCount(idol);
   const portraitBonus = typeof idol.portrait_photo_path === "string" && idol.portrait_photo_path.trim() ? 1 : 0;
   const groupBonus = groupSignal > 0 ? 1 : 0;
@@ -338,8 +404,17 @@ function baselineAttributes(idol, groupPopularity, referenceIso) {
   const professionalismBase = scandalCount > 0 ? 9 : base;
   const injuryBase = scandalCount > 0 ? 6 : 4;
   const loyaltyPenalty = scandalCount > 0 ? Math.min(4, scandalCount) : 0;
+  const age = ageAtReference(idol, referenceIso);
+  let cuteSeed = appearanceBase;
+  let prettySeed = appearanceBase;
+  if (typeof age === "number" && Number.isFinite(age)) {
+    if (age > 25) cuteSeed = Math.min(cuteSeed, 14);
+    if (age < 20) prettySeed = Math.min(prettySeed, 14);
+    if (age >= 26) prettySeed += 1;
+    if (age <= 19) cuteSeed += 1;
+  }
 
-  return clampAttrs({
+  const attrs = clampAttrs({
     physical: {
       strength: Math.round(base * 0.65 + danceCenter * 0.35) + stableRoll(uid, "strength", -2, 2),
       agility: Math.round(base * 0.55 + danceCenter * 0.45) + stableRoll(uid, "agility", -2, 3),
@@ -347,8 +422,8 @@ function baselineAttributes(idol, groupPopularity, referenceIso) {
       stamina: base + stableRoll(uid, "stamina", -2, 4),
     },
     appearance: {
-      cute: appearanceBase + stableRoll(uid, "cute", -3, 4),
-      pretty: appearanceBase + stableRoll(uid, "pretty", -3, 4),
+      cute: cuteSeed + stableRoll(uid, "cute", -3, 4),
+      pretty: prettySeed + stableRoll(uid, "pretty", -3, 4),
     },
     technical: {
       pitch: vocalCenter + stableRoll(uid, "pitch", -2, 2),
@@ -372,6 +447,20 @@ function baselineAttributes(idol, groupPopularity, referenceIso) {
       ambition: base + stableRoll(uid, "ambition", -2, 5),
       loyalty: base + stableRoll(uid, "loyalty", -2, 5) - loyaltyPenalty,
     },
+  });
+  return applyAgeAppearanceConstraints(attrs, age);
+}
+
+function applyAgeAppearanceConstraints(attrs, age) {
+  if (typeof age !== "number" || !Number.isFinite(age)) return attrs;
+  let cute = attrs.appearance.cute;
+  let pretty = attrs.appearance.pretty;
+  if (age > 25 && cute > 15) cute = Math.min(16, 15 + Math.max(0, Math.round((cute - 15) * 0.2)));
+  if (age < 20 && pretty > 15) pretty = Math.min(16, 15 + Math.max(0, Math.round((pretty - 15) * 0.2)));
+  if (cute === attrs.appearance.cute && pretty === attrs.appearance.pretty) return attrs;
+  return clampAttrs({
+    ...attrs,
+    appearance: { ...attrs.appearance, cute, pretty },
   });
 }
 
@@ -555,6 +644,7 @@ const selectedGroups = groupLabels.map((label) => {
 const group = selectedGroups[0];
 
 const groupPopularity = buildGroupPopularityIndex(groups);
+const groupLetterTiers = buildGroupLetterTierIndex(groups);
 const allRows = selectedGroups.flatMap((groupRow) =>
   (Array.isArray(groupRow.member_uids) ? groupRow.member_uids : []).map((uid) => {
     const idol = idols.find((row) => String(row.uid ?? "") === String(uid));
@@ -572,11 +662,11 @@ const allRows = selectedGroups.flatMap((groupRow) =>
       roleFeatures,
       ageFeatures,
       features: { ...roleFeatures, ...ageFeatures },
-      baseline: baselineAttributes(idol, groupPopularity, referenceIso),
+      baseline: baselineAttributes(idol, groupPopularity, referenceIso, groupLetterTiers),
       manual: idol.attributes ?? null,
       hasManualAttributes: Boolean(idol.attributes),
       idolSignal: popularitySignal(numericMax(idol, ["x_followers", "x_followers_count"])),
-      groupSignal: currentGroupSignal(idol, referenceIso, groupPopularity),
+      groupSignal: currentGroupSignal(idol, referenceIso, groupPopularity, groupLetterTiers),
     };
   })
 ).filter(Boolean);
@@ -616,7 +706,8 @@ const model = {
   },
   feature_scale: {
     role_weight: "manual 0-5 role weights are normalized to 0.0-1.0 before applying coefficients",
-    popularity: "baseline uses idol follower signal * 0.65 + active group fan/popularity signal * 0.35",
+    popularity:
+      "baseline uses idol X signal * 0.5 + group fans/popularity signal * 0.5, capped by letter_tier; base_stat = round(12.5 + combined * 5.2) fitted to =LOVE/iLiFE!/高嶺のなでしこ/アキシブ manuals",
   },
   roles: ROLE_KEYS,
   age_features: AGE_FEATURE_KEYS,
