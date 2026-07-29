@@ -25372,7 +25372,7 @@
     "uid": "19a34330-8ef3-4c30-8558-f95dce480808",
     "name": "苑田桃",
     "past_names": {
-      "小波もも": "あいすなっつ",
+      "小波もも": "JamsCollection / あいすなっつ",
       "もも": "POMERO"
     },
     "birthday": "2001-11-11",
@@ -25403,13 +25403,24 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2022-09-01",
+            "start_date": "2022-09-30",
             "score": 5,
-            "summary_ja": "2022年9月、豊田あさ・成瀬みるあ・柚木ひるね・小波ももの四名が一斉に契約解除・脱退処分（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、各自に「重要な違反行為」があったとしつつ個別事情はメンバー保護の観点で非公表。",
+            "summary_ja": "重要な違反行為により小波もも・豊田あさ・成瀬みるあ・柚木ひるねの4名が2022年9月30日付で契約解除・脱退（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、個別事情はメンバー保護の観点で非公表。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://natalie.mu/music/news/495726"
           }
         ]
+      },
+      {
+        "group_name": "あいすなっつ",
+        "start_date": "2023-06-17",
+        "end_date": "2024-03-02",
+        "member_name": "小波もも",
+        "member_color": "Pink",
+        "member_color_code": "0xffc0cb",
+        "note": "Also known as Ice Nuts."
       }
     ],
     "x_followers": 3578,
@@ -25421,12 +25432,14 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "identity_merge_konami_momo"
     ],
     "x_account": "momo_fulitbox",
     "x_url": "https://x.com/momo_fulitbox",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "last_updated": "2026-07-29"
   },
   {
     "uid": "19b0e89b-6968-40d3-b1dc-e6ea22cea4d3",
@@ -35627,11 +35640,13 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2022-09-01",
+            "start_date": "2022-09-30",
             "score": 5,
-            "summary_ja": "2022年9月、豊田あさ・成瀬みるあ・柚木ひるね・小波ももの四名が一斉に契約解除・脱退処分（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、各自に「重要な違反行為」があったとしつつ個別事情はメンバー保護の観点で非公表。",
+            "summary_ja": "重要な違反行為により小波もも・豊田あさ・成瀬みるあ・柚木ひるねの4名が2022年9月30日付で契約解除・脱退（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、個別事情はメンバー保護の観点で非公表。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://natalie.mu/music/news/495726"
           }
         ]
       }
@@ -57303,11 +57318,13 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2022-09-01",
+            "start_date": "2022-09-30",
             "score": 5,
-            "summary_ja": "2022年9月、豊田あさ・成瀬みるあ・柚木ひるね・小波ももの四名が一斉に契約解除・脱退処分（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、各自に「重要な違反行為」があったとしつつ個別事情はメンバー保護の観点で非公表。",
+            "summary_ja": "重要な違反行為により小波もも・豊田あさ・成瀬みるあ・柚木ひるねの4名が2022年9月30日付で契約解除・脱退（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、個別事情はメンバー保護の観点で非公表。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://natalie.mu/music/news/495726"
           }
         ]
       },
@@ -60509,7 +60526,95 @@
     "x_url": "https://x.com/lastscene_mire",
     "x_followers": 11034,
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "アキシブproject": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__Akishibu_project_2024-12-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2024-12-01",
+          "release_date": null,
+          "label": "Akishibu project Dec 2024 Fandom portrait",
+          "note": "Koga_Mirei_Dec_2024_(1).jpg from jpop.fandom (Akishibu-era).",
+          "source": "fandom"
+        }
+      ],
+      "44Ki44Kt44K344OWcHJvamVjdA": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__Akishibu_project_2024-12-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2024-12-01",
+          "release_date": null,
+          "label": "Akishibu project Dec 2024 Fandom portrait",
+          "note": "Koga_Mirei_Dec_2024_(1).jpg from jpop.fandom (Akishibu-era).",
+          "source": "fandom"
+        }
+      ],
+      "Akishibu_project": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__Akishibu_project_2024-12-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2024-12-01",
+          "release_date": null,
+          "label": "Akishibu project Dec 2024 Fandom portrait",
+          "note": "Koga_Mirei_Dec_2024_(1).jpg from jpop.fandom (Akishibu-era).",
+          "source": "fandom"
+        }
+      ],
+      "ラストシーン": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2025-12-13",
+          "release_date": null,
+          "label": "LAST SCENE X profile portrait",
+          "note": "Current LAST SCENE portrait from @LASTSCENE_mire; effective on LAST SCENE join/debut.",
+          "source": "x_profile"
+        }
+      ],
+      "44Op44K544OI44K344O844Oz": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2025-12-13",
+          "release_date": null,
+          "label": "LAST SCENE X profile portrait",
+          "note": "Current LAST SCENE portrait from @LASTSCENE_mire; effective on LAST SCENE join/debut.",
+          "source": "x_profile"
+        }
+      ],
+      "LAST_SCENE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2025-12-13",
+          "release_date": null,
+          "label": "LAST SCENE X profile portrait",
+          "note": "Current LAST SCENE portrait from @LASTSCENE_mire; effective on LAST SCENE join/debut.",
+          "source": "x_profile"
+        }
+      ],
+      "LAST SCENE": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+          "timestamp": null,
+          "effective_date": "2025-12-13",
+          "release_date": null,
+          "label": "LAST SCENE X profile portrait",
+          "note": "Alias key for LAST SCENE English name.",
+          "source": "x_profile"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "アキシブproject": "fetcher\\database\\picture_fandom\\古賀みれい__Akishibu_project_2024-12-01_fandom.jpg",
+      "44Ki44Kt44K344OWcHJvamVjdA": "fetcher\\database\\picture_fandom\\古賀みれい__Akishibu_project_2024-12-01_fandom.jpg",
+      "Akishibu_project": "fetcher\\database\\picture_fandom\\古賀みれい__Akishibu_project_2024-12-01_fandom.jpg",
+      "ラストシーン": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+      "44Op44K544OI44K344O844Oz": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+      "LAST_SCENE": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg",
+      "LAST SCENE": "fetcher\\database\\picture_fandom\\古賀みれい__LAST_SCENE_2025-12-13_x_profile.jpg"
+    }
   },
   {
     "uid": "3e022111-815d-4bbf-8085-49c9a30e542f",
@@ -78345,11 +78450,13 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2024-11-01",
+            "start_date": "2024-11-16",
             "score": 5,
-            "summary_ja": "2024年11月、一宮彩夏・大場結女・神楽胡音の三名がプライベート写真・動画の流出騒動を受け契約解除・脱退（事実上の解雇）となった。",
+            "summary_ja": "日本武道館公演直後にSNSで私的交流が取り沙汰され、一宮彩夏・神楽胡音は契約違反、大場結女は信頼回復が困難として本人申し出により、2024年11月16日付で3名が脱退（契約解除を含む）。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://www.sponichi.co.jp/entertainment/news/2024/11/16/kiji/20241116s00041000331000c.html"
           }
         ]
       },
@@ -84585,7 +84692,81 @@
       "GILTY × GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
       "R0lMVFkgw5cgR0lMVFk": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
       "GILTY×GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
-      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg"
+      "GILTY_x_GILTY": "fetcher\\database\\picture_fandom\\恋星はるか__GILTY_x_GILTY_portrait.jpg",
+      "のんふぃく！": "fetcher\\database\\picture_fandom\\恋星はるか__NonFiction_2025-06-01_fandom.jpg",
+      "44Gu44KT44G144GD44GP77yB": "fetcher\\database\\picture_fandom\\恋星はるか__NonFiction_2025-06-01_fandom.jpg",
+      "Non¬Fiction": "fetcher\\database\\picture_fandom\\恋星はるか__NonFiction_2025-06-01_fandom.jpg",
+      "iLiFE!": "fetcher\\database\\picture_fandom\\恋星はるか__iLiFE_2025-10-05_fandom.jpg",
+      "aUxpRkUh": "fetcher\\database\\picture_fandom\\恋星はるか__iLiFE_2025-10-05_fandom.jpg",
+      "iLife!": "fetcher\\database\\picture_fandom\\恋星はるか__iLiFE_2025-10-05_fandom.jpg"
+    },
+    "group_portrait_history": {
+      "のんふぃく！": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋星はるか__NonFiction_2025-06-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-06-01",
+          "release_date": null,
+          "label": "のんふぃく！ Fandom dated portrait",
+          "note": "File:Konose Haruka Jun 2025 (2).jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "44Gu44KT44G144GD44GP77yB": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋星はるか__NonFiction_2025-06-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-06-01",
+          "release_date": null,
+          "label": "のんふぃく！ Fandom dated portrait",
+          "note": "File:Konose Haruka Jun 2025 (2).jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "Non¬Fiction": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋星はるか__NonFiction_2025-06-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-06-01",
+          "release_date": null,
+          "label": "のんふぃく！ Fandom dated portrait",
+          "note": "File:Konose Haruka Jun 2025 (2).jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "iLiFE!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋星はるか__iLiFE_2025-10-05_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-10-05",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "File:ILiFE Haruka Oct2025 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ],
+      "aUxpRkUh": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋星はるか__iLiFE_2025-10-05_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-10-05",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "File:ILiFE Haruka Oct2025 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ],
+      "iLife!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋星はるか__iLiFE_2025-10-05_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-10-05",
+          "release_date": null,
+          "label": "iLife! Fandom dated portrait",
+          "note": "Alias key matching group_history spelling iLife!.",
+          "source": "fandom"
+        }
+      ]
     }
   },
   {
@@ -155729,14 +155910,72 @@
     "x_followers_source": "x-ranker",
     "x_followers_updated_at": "2026-04-04",
     "group_portrait_paths": {
-      "ハルカエコー": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_portrait.jpg",
+      "ハルカエコー": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_2026-04-09_fandom.jpg",
       "82c6703f-0d5d-4b54-972d-232437a3b991": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_portrait.jpg",
       "HARUKA ECHO": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_portrait.jpg",
       "????project": "fetcher\\database\\picture_fandom\\平沢かえ_portrait.jpg",
       "Akishibu project": "fetcher\\database\\picture_fandom\\平沢かえ_portrait.jpg",
-      "44Ki44Kt44K344OWcHJvamVjdA": "fetcher\\database\\picture_fandom\\平沢かえ_portrait.jpg",
-      "アキシブproject": "fetcher\\database\\picture_fandom\\平沢かえ_portrait.jpg",
-      "Akishibu_project": "fetcher\\database\\picture_fandom\\平沢かえ_portrait.jpg"
+      "44Ki44Kt44K344OWcHJvamVjdA": "fetcher\\database\\picture_fandom\\平沢かえ__Akishibu_project_2025-03-01_fandom.jpg",
+      "アキシブproject": "fetcher\\database\\picture_fandom\\平沢かえ__Akishibu_project_2025-03-01_fandom.jpg",
+      "Akishibu_project": "fetcher\\database\\picture_fandom\\平沢かえ__Akishibu_project_2025-03-01_fandom.jpg",
+      "HARUKA_ECHO": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_2026-04-09_fandom.jpg"
+    },
+    "group_portrait_history": {
+      "アキシブproject": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\平沢かえ__Akishibu_project_2025-03-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-03-01",
+          "release_date": null,
+          "label": "アキシブproject Fandom dated portrait",
+          "note": "File:Hirasawa Kae March 2025 2.jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "44Ki44Kt44K344OWcHJvamVjdA": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\平沢かえ__Akishibu_project_2025-03-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-03-01",
+          "release_date": null,
+          "label": "アキシブproject Fandom dated portrait",
+          "note": "File:Hirasawa Kae March 2025 2.jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "Akishibu_project": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\平沢かえ__Akishibu_project_2025-03-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-03-01",
+          "release_date": null,
+          "label": "アキシブproject Fandom dated portrait",
+          "note": "File:Hirasawa Kae March 2025 2.jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "ハルカエコー": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_2026-04-09_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2026-04-09",
+          "release_date": null,
+          "label": "ハルカエコー Fandom dated portrait",
+          "note": "File:Hirasawa Kae April 2026 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ],
+      "HARUKA_ECHO": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\平沢かえ__HARUKA_ECHO_2026-04-09_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2026-04-09",
+          "release_date": null,
+          "label": "ハルカエコー Fandom dated portrait",
+          "note": "File:Hirasawa Kae April 2026 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ]
     }
   },
   {
@@ -160281,11 +160520,13 @@
         "status_history": [
           {
             "kind": "scandal",
-            "start_date": "2024-11-01",
+            "start_date": "2024-11-16",
             "score": 5,
-            "summary_ja": "2024年11月、一宮彩夏・大場結女・神楽胡音の三名がプライベート写真・動画の流出騒動を受け契約解除・脱退（事実上の解雇）となった。",
+            "summary_ja": "日本武道館公演直後にSNSで私的交流が取り沙汰され、一宮彩夏・神楽胡音は契約違反、大場結女は信頼回復が困難として本人申し出により、2024年11月16日付で3名が脱退（契約解除を含む）。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://www.sponichi.co.jp/entertainment/news/2024/11/16/kiji/20241116s00041000331000c.html"
           }
         ]
       }
@@ -160771,7 +161012,71 @@
       "jpop_wiki",
       "neverless_wiki"
     ],
-    "last_updated": "2026-05-10T05:12:23Z"
+    "last_updated": "2026-05-10T05:12:23Z",
+    "group_portrait_history": {
+      "iON!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋春ねね__iON_2025-07-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-07-01",
+          "release_date": null,
+          "label": "iON! Fandom dated portrait",
+          "note": "File:ION Nene Jul2025.jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "d698eb6b-e82f-48f1-a2df-6cf858315ad4": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋春ねね__iON_2025-07-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-07-01",
+          "release_date": null,
+          "label": "iON! Fandom dated portrait",
+          "note": "File:ION Nene Jul2025.jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "iLiFE!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋春ねね__iLiFE_2025-10-06_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-10-06",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "File:ILiFE Nene Oct2025 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ],
+      "aUxpRkUh": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋春ねね__iLiFE_2025-10-06_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-10-06",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "File:ILiFE Nene Oct2025 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ],
+      "iLife!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\恋春ねね__iLiFE_2025-10-06_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-10-06",
+          "release_date": null,
+          "label": "iLife! Fandom dated portrait",
+          "note": "Alias key matching group_history spelling iLife!.",
+          "source": "fandom"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "iON!": "fetcher\\database\\picture_fandom\\恋春ねね__iON_2025-07-01_fandom.jpg",
+      "d698eb6b-e82f-48f1-a2df-6cf858315ad4": "fetcher\\database\\picture_fandom\\恋春ねね__iON_2025-07-01_fandom.jpg",
+      "iLiFE!": "fetcher\\database\\picture_fandom\\恋春ねね__iLiFE_2025-10-06_fandom.jpg",
+      "aUxpRkUh": "fetcher\\database\\picture_fandom\\恋春ねね__iLiFE_2025-10-06_fandom.jpg",
+      "iLife!": "fetcher\\database\\picture_fandom\\恋春ねね__iLiFE_2025-10-06_fandom.jpg"
+    }
   },
   {
     "uid": "a5e4838b-3973-4358-bd35-91d980315a1c",
@@ -172353,11 +172658,13 @@
           },
           {
             "kind": "scandal",
-            "start_date": "2022-09-01",
+            "start_date": "2022-09-30",
             "score": 5,
-            "summary_ja": "2022年9月、豊田あさ・成瀬みるあ・柚木ひるね・小波ももの四名が一斉に契約解除・脱退処分（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、各自に「重要な違反行為」があったとしつつ個別事情はメンバー保護の観点で非公表。",
+            "summary_ja": "重要な違反行為により小波もも・豊田あさ・成瀬みるあ・柚木ひるねの4名が2022年9月30日付で契約解除・脱退（事実上の解雇）。運営は顧問弁護士を交えた協議の結果とし、個別事情はメンバー保護の観点で非公表。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://natalie.mu/music/news/495726"
           }
         ]
       },
@@ -185131,9 +185438,58 @@
     "x_followers_source": "x-ranker",
     "x_followers_updated_at": "2026-04-04",
     "group_portrait_paths": {
-      "ハルカエコー": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_portrait.jpg",
+      "ハルカエコー": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_2026-04-09_fandom.jpg",
       "82c6703f-0d5d-4b54-972d-232437a3b991": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_portrait.jpg",
-      "HARUKA ECHO": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_portrait.jpg"
+      "HARUKA ECHO": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_portrait.jpg",
+      "ZUTTOMOTTO": "fetcher\\database\\picture_fandom\\高坂りん__ZUTTOMOTTO_2025-04-01_fandom.jpg",
+      "WlVUVE9NT1RUTw": "fetcher\\database\\picture_fandom\\高坂りん__ZUTTOMOTTO_2025-04-01_fandom.jpg",
+      "HARUKA_ECHO": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_2026-04-09_fandom.jpg"
+    },
+    "group_portrait_history": {
+      "ZUTTOMOTTO": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\高坂りん__ZUTTOMOTTO_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "ZUTTOMOTTO Fandom dated portrait",
+          "note": "File:Kousaka Rin Apr 2025 (2).jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "WlVUVE9NT1RUTw": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\高坂りん__ZUTTOMOTTO_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "ZUTTOMOTTO Fandom dated portrait",
+          "note": "File:Kousaka Rin Apr 2025 (2).jpg (pre-transfer / scenario opening era).",
+          "source": "fandom"
+        }
+      ],
+      "ハルカエコー": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_2026-04-09_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2026-04-09",
+          "release_date": null,
+          "label": "ハルカエコー Fandom dated portrait",
+          "note": "File:HARUKA ECHO Kousaka Rin April 2026 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ],
+      "HARUKA_ECHO": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\高坂りん__HARUKA_ECHO_2026-04-09_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2026-04-09",
+          "release_date": null,
+          "label": "ハルカエコー Fandom dated portrait",
+          "note": "File:HARUKA ECHO Kousaka Rin April 2026 2.jpg (post-transfer).",
+          "source": "fandom"
+        }
+      ]
     }
   },
   {
@@ -198137,11 +198493,13 @@
           },
           {
             "kind": "scandal",
-            "start_date": "2024-11-01",
+            "start_date": "2024-11-16",
             "score": 5,
-            "summary_ja": "2024年11月、一宮彩夏・大場結女・神楽胡音の三名がプライベート写真・動画の流出騒動を受け契約解除・脱退（事実上の解雇）となった。",
+            "summary_ja": "日本武道館公演直後にSNSで私的交流が取り沙汰され、一宮彩夏・神楽胡音は契約違反、大場結女は信頼回復が困難として本人申し出により、2024年11月16日付で3名が脱退（契約解除を含む）。",
             "source_label": "アイドル走り書き（JamsCollection）",
-            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90"
+            "source_url": "https://seesaawiki.jp/neverless/d/%a4%bd%a4%ce90",
+            "handling": "terminate_now",
+            "evidence_url": "https://www.sponichi.co.jp/entertainment/news/2024/11/16/kiji/20241116s00041000331000c.html"
           }
         ]
       },
@@ -260686,33 +261044,6 @@
         "member_name": "流川雅",
         "member_color": "Mint Green",
         "member_color_code": "0x98ff98"
-      }
-    ],
-    "x_followers": 8000,
-    "portrait_photo_path": null
-  },
-  {
-    "uid": "1bc49a2f-c1e3-4a7d-ad5f-8a0ed9579ba6",
-    "name": "小波もも",
-    "hiragana": "",
-    "romaji": "Konami Momo",
-    "nickname": "",
-    "past_names": {},
-    "birthday": null,
-    "age": null,
-    "height": null,
-    "birthplace": "",
-    "languages": [
-      "Japanese"
-    ],
-    "group_history": [
-      {
-        "group_name": "Ice Nuts",
-        "start_date": "2023-06-17",
-        "end_date": "2024-03-02",
-        "member_name": "小波もも",
-        "member_color": "Pink",
-        "member_color_code": "0xffc0cb"
       }
     ],
     "x_followers": 8000,

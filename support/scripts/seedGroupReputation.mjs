@@ -132,7 +132,6 @@ function collectSignals(group, idols, asOf) {
   let stints = 0;
   let pastStints = 0;
   let activeStints = 0;
-  let scandalPenalty = 0;
   const scandalRows = [];
 
   for (const idol of idols) {
@@ -166,7 +165,6 @@ function collectSignals(group, idols, asOf) {
         ) {
           delta *= 0.45;
         }
-        scandalPenalty += -delta;
         scandalRows.push({
           idol: String(idol.name ?? ""),
           date: d,
@@ -177,6 +175,18 @@ function collectSignals(group, idols, asOf) {
       }
     }
   }
+
+  // Mass firings share one announcement day — count as one brand incident
+  // (max dent that day), not N × per-member dents.
+  const byDay = new Map();
+  for (const row of scandalRows) {
+    const key = String(row.date || "").slice(0, 10);
+    if (!key) continue;
+    const prev = byDay.get(key);
+    if (!prev || Math.abs(row.delta) > Math.abs(prev.delta)) byDay.set(key, row);
+  }
+  let scandalPenalty = 0;
+  for (const row of byDay.values()) scandalPenalty += -row.delta;
 
   const avgStintYears = stints ? memberYears / stints : 0;
   const churn = pastStints + activeStints > 0 ? pastStints / (pastStints + activeStints) : 0;
@@ -189,6 +199,7 @@ function collectSignals(group, idols, asOf) {
     churn,
     scandalPenalty,
     scandalRows,
+    scandalIncidents: byDay.size,
   };
 }
 
@@ -247,6 +258,7 @@ function seedFile(groupsPath, idolsPath, asOf, label) {
       past_stints: signals.pastStints,
       scandal_penalty: Math.round(signals.scandalPenalty * 1000) / 1000,
       scandal_count: signals.scandalRows.length,
+      scandal_incidents: signals.scandalIncidents ?? 0,
     });
   }
 
@@ -286,6 +298,7 @@ function seedFile(groupsPath, idolsPath, asOf, label) {
     "past_stints",
     "scandal_penalty",
     "scandal_count",
+    "scandal_incidents",
   ];
   const csv = [
     headers.join(","),
