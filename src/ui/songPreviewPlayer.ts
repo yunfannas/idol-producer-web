@@ -47,6 +47,50 @@ let activeBufferSource: AudioBufferSourceNode | null = null;
 let htmlFadeRaf = 0;
 let htmlFadeOutTimer = 0;
 let htmlAutoFadeArmed = false;
+let endedListener: ((uid: string) => void) | null = null;
+let playbackStartedAtMs = 0;
+let playbackOffsetSec = 0;
+let webAudioDurationSec = 0;
+
+/** Register a listener fired when the active preview finishes naturally (not on stop/pause). */
+export function setSongPreviewEndedListener(listener: ((uid: string) => void) | null): void {
+  endedListener = listener;
+}
+
+function notifyPreviewEnded(uid: string): void {
+  const fn = endedListener;
+  if (!fn || !uid) return;
+  try {
+    fn(uid);
+  } catch {
+    /* ignore listener errors */
+  }
+}
+
+/** Current media clock for progress UI (HTML path preferred; Web Audio falls back to wall clock). */
+export function getSongPreviewMediaTime(): { currentTime: number; duration: number; uid: string } | null {
+  if (!activeUid || (activeState !== "playing" && activeState !== "paused" && activeState !== "loading")) {
+    return null;
+  }
+  if (audioEl && audioEl.src && Number.isFinite(audioEl.duration) && audioEl.duration > 0) {
+    return {
+      uid: activeUid,
+      currentTime: Math.max(0, audioEl.currentTime || 0),
+      duration: audioEl.duration,
+    };
+  }
+  if (webAudioDurationSec > 0 && playbackStartedAtMs > 0) {
+    const wall = activeState === "paused"
+      ? playbackOffsetSec
+      : playbackOffsetSec + (performance.now() - playbackStartedAtMs) / 1000;
+    return {
+      uid: activeUid,
+      currentTime: Math.max(0, Math.min(webAudioDurationSec, wall)),
+      duration: webAudioDurationSec,
+    };
+  }
+  return { uid: activeUid, currentTime: 0, duration: 30 };
+}
 
 function cancelHtmlFade(): void {
   if (htmlFadeRaf) {
@@ -199,12 +243,20 @@ async function playViaAudioContext(arrayBuffer: ArrayBuffer, token: number): Pro
     }
     src.onended = () => {
       if (activeBufferSource === src) {
+        const endedUid = activeUid;
         activeBufferSource = null;
         activeState = "idle";
+        playbackStartedAtMs = 0;
+        playbackOffsetSec = 0;
+        webAudioDurationSec = 0;
         syncSongPreviewUi(document);
+        notifyPreviewEnded(endedUid);
       }
     };
     activeBufferSource = src;
+    webAudioDurationSec = dur;
+    playbackOffsetSec = 0;
+    playbackStartedAtMs = performance.now();
     src.start(0);
     return true;
   } catch {
@@ -375,16 +427,25 @@ function ensureAudio(): HTMLAudioElement {
   audioEl.volume = 0;
   audioEl.addEventListener("ended", () => {
     cancelHtmlFade();
+    const endedUid = activeUid;
     activeState = "idle";
+    playbackStartedAtMs = 0;
+    playbackOffsetSec = 0;
     syncSongPreviewUi(document);
+    notifyPreviewEnded(endedUid);
   });
   audioEl.addEventListener("pause", () => {
     if (activeState === "playing" && audioEl && !audioEl.ended) {
+      if (playbackStartedAtMs > 0) {
+        playbackOffsetSec += (performance.now() - playbackStartedAtMs) / 1000;
+        playbackStartedAtMs = 0;
+      }
       activeState = "paused";
       syncSongPreviewUi(document);
     }
   });
   audioEl.addEventListener("play", () => {
+    playbackStartedAtMs = performance.now();
     activeState = "playing";
     syncSongPreviewUi(document);
   });
@@ -481,7 +542,7 @@ async function fetchPreviewBytes(sourceUrl: string): Promise<ArrayBuffer | null>
 }
 
 async function playSourceUrl(uid: string, sourceUrl: string, token: number): Promise<boolean> {
-  const audio = ensureAudio();
+  ensureAudio();
   // Resume AudioContext during the click turn when possible (helps post-await playback).
   try {
     const ctx = ensureAudioContext();
@@ -528,6 +589,22 @@ async function playSourceUrl(uid: string, sourceUrl: string, token: number): Pro
   } catch {
     return false;
   }
+}
+
+/** Always start (or restart) a preview — does not toggle pause. */
+export async function playSongPreview(input: PreviewResolveInput): Promise<SongPreviewState> {
+  const uid = String(input.uid ?? "").trim() || cacheKey(input);
+  if (!uid) {
+    activeState = "unavailable";
+    syncSongPreviewUi(document);
+    return activeState;
+  }
+  // Force a fresh start even if the same uid is already active.
+  if (activeUid === uid && (activeState === "playing" || activeState === "paused" || activeState === "loading")) {
+    activeUid = "";
+    activeState = "idle";
+  }
+  return toggleSongPreview(input);
 }
 
 export async function toggleSongPreview(input: PreviewResolveInput): Promise<SongPreviewState> {

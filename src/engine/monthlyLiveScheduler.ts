@@ -541,6 +541,16 @@ function templateForManagedScheduleEvent(event: ManagedLiveScheduleEvent): AutoL
   return AUTO_LIVE_TEMPLATES[key] ?? AUTO_LIVE_TEMPLATES.type_4;
 }
 
+/** Day-level TimeTree TIF rows; precise stage slots come from festivals.json sync. */
+function isManagedTifFestivalDayEvent(event: ManagedLiveScheduleEvent): boolean {
+  const title = String(event.title ?? "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+  return /tokyo idol festival/.test(title) || /^tif(\s|$)/.test(title) || /\btif\b(?!\d*@)/.test(title);
+}
+
 function buildManagedScheduleLiveRow(
   save: GameSavePayload,
   group: Record<string, unknown>,
@@ -643,6 +653,8 @@ function ensureManagedScheduleLivesInWindow(
     const dateIso = String(event.date ?? "").split("T")[0];
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateIso)) continue;
     if (dateIso < startIso || dateIso > endIso) continue;
+    // Prefer festivals.json stage slots over a single TimeTree TIF day placeholder.
+    if (isManagedTifFestivalDayEvent(event)) continue;
     const live = buildManagedScheduleLiveRow(save, group, source, event);
     if (!live) continue;
     const uid = String(live.uid ?? "");

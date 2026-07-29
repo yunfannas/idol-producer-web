@@ -221,10 +221,23 @@ export function seasonForDate(isoDate: string): HeroinesLeagueSeason | null {
   return hit ?? leagueData.seasons[leagueData.seasons.length - 1] ?? null;
 }
 
+/** 26-27 regular season opens the day after 25-26 昇格戦 (2026-04-24). */
+export const LEAGUE_26_27_SCHEDULE_VISIBLE_FROM = "2026-04-25";
+
+/** Regular-season kinds where roster membership is known without assuming playoff outcomes. */
+export function isRegularLeagueKind(kind: HeroinesLeagueKind): boolean {
+  return kind === "league_i" || kind === "league_ii" || kind === "league";
+}
+
 export function upcomingLeagueSchedule(isoDate: string, limit = 24): HeroinesLeagueScheduleRow[] {
   const d = String(isoDate ?? "").split("T")[0];
   return (leagueData?.schedule ?? [])
-    .filter((row) => row.date >= d && row.kind !== "fc_vote")
+    .filter((row) => {
+      if (row.date < d || row.kind === "fc_vote") return false;
+      // Hide next-season dates until 昇格戦 closes 25-26 (2026-04-24).
+      if (row.season_id === "26-27" && d < LEAGUE_26_27_SCHEDULE_VISIBLE_FROM) return false;
+      return true;
+    })
     .slice(0, limit);
 }
 
@@ -235,6 +248,47 @@ export type LeagueTableView = {
   note?: string;
   rows: HeroinesLeagueStandingRow[];
 };
+
+/** Standings zone for FINAL / 入れ替え visual cues on League I / II tables. */
+export type LeagueStandingZone = "championship" | "promotion" | "promotion_danger" | null;
+
+/**
+ * League I: top 4 → 決勝リーグ; bottom 4 → 入れ替え戦.
+ * League II: top 4 → 入れ替え戦.
+ */
+export function standingZoneForRow(
+  tableKey: LeagueTableView["key"],
+  rank: number,
+  fieldSize: number,
+): LeagueStandingZone {
+  const r = Number(rank);
+  const n = Math.max(1, Number(fieldSize) || 0);
+  if (!Number.isFinite(r) || r < 1) return null;
+  if (tableKey === "league_i") {
+    if (r <= Math.min(4, n)) return "championship";
+    const promotionStart = Math.max(1, n - 3);
+    if (r >= promotionStart) return "promotion_danger";
+    return null;
+  }
+  if (tableKey === "league_ii") {
+    if (r <= Math.min(4, n)) return "promotion";
+    return null;
+  }
+  return null;
+}
+
+export function standingZoneClass(zone: LeagueStandingZone): string {
+  switch (zone) {
+    case "championship":
+      return "league-zone-championship";
+    case "promotion":
+      return "league-zone-promotion";
+    case "promotion_danger":
+      return "league-zone-promotion-danger";
+    default:
+      return "";
+  }
+}
 
 /** Latest applicable standings tables for the current date (may merge I/II from nearby snapshots). */
 export function standingsForDate(isoDate: string): LeagueTableView[] {

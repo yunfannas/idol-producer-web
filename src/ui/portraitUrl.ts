@@ -75,12 +75,24 @@ function portraitHistoryPath(entry: GroupPortraitHistoryEntry): string | undefin
   return asTrimmedString(entry.path) ?? asTrimmedString(entry.portrait_photo_path);
 }
 
-function latestPortraitHistoryPath(history: unknown): string | undefined {
+function normalizeAsOfDay(asOfIso: string | null | undefined): string | null {
+  if (!asOfIso) return null;
+  const day = String(asOfIso).trim().split("T")[0];
+  return /^\d{4}-\d{2}-\d{2}$/.test(day) ? day : null;
+}
+
+/** Newest portrait path in one group's history, optionally capped at `asOfDay` (inclusive). */
+function latestPortraitHistoryPath(history: unknown, asOfDay: string | null = null): string | undefined {
   if (!Array.isArray(history)) return undefined;
   const entries = history
     .filter((entry): entry is GroupPortraitHistoryEntry => typeof entry === "object" && entry !== null)
     .map((entry) => ({ entry, path: portraitHistoryPath(entry), date: portraitHistoryDateValue(entry) }))
-    .filter((item) => item.path);
+    .filter((item) => item.path)
+    .filter((item) => {
+      if (!asOfDay) return true;
+      if (!item.date) return true; // undated = available from the start
+      return item.date <= asOfDay;
+    });
   if (!entries.length) return undefined;
   entries.sort((a, b) => {
     const dateCmp = b.date.localeCompare(a.date);
@@ -125,12 +137,35 @@ export function avatarPlaceholderDataUrl(displayName: string): string {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-export function idolPortraitPublicSrc(row: Record<string, unknown>): string | undefined {
+/**
+ * Resolve idol portrait for web display.
+ * When `asOfIso` is set, prefer the newest `group_portrait_history` entry whose
+ * effective date is on/before that day (Scenario 6 opening keeps pre-transfer looks).
+ */
+export function idolPortraitPublicSrc(
+  row: Record<string, unknown>,
+  asOfIso?: string | null,
+): string | undefined {
+  const asOfDay = normalizeAsOfDay(asOfIso);
   const portraitHistory = row.group_portrait_history;
   if (portraitHistory && typeof portraitHistory === "object") {
-    const latest = Object.values(portraitHistory as Record<string, unknown>)
-      .map((history) => latestPortraitHistoryPath(history))
-      .find(Boolean);
+    const candidates = Object.values(portraitHistory as Record<string, unknown>)
+      .map((history) => {
+        const path = latestPortraitHistoryPath(history, asOfDay);
+        if (!path) return null;
+        const hist = Array.isArray(history) ? history : [];
+        const match = hist.find((e) => e && portraitHistoryPath(e as GroupPortraitHistoryEntry) === path) as
+          | GroupPortraitHistoryEntry
+          | undefined;
+        return { path, date: match ? portraitHistoryDateValue(match) : "" };
+      })
+      .filter((x): x is { path: string; date: string } => Boolean(x?.path));
+    candidates.sort((a, b) => {
+      const dateCmp = b.date.localeCompare(a.date);
+      if (dateCmp) return dateCmp;
+      return a.path.localeCompare(b.path);
+    });
+    const latest = candidates[0]?.path;
     if (latest) {
       const rel = mapPortraitRelToWebStorage(latest);
       if (rel) return resolvePublicAssetUrl(rel);
@@ -139,7 +174,7 @@ export function idolPortraitPublicSrc(row: Record<string, unknown>): string | un
 
   const rawPath = row.portrait_photo_path;
   if (typeof rawPath === "string") {
-    let norm = rawPath.replace(/\\/g, "/").trim();
+    const norm = rawPath.replace(/\\/g, "/").trim();
     if (norm) {
       if (/^https?:\/\//i.test(norm)) return norm;
       const rel = mapPortraitRelToWebStorage(norm);

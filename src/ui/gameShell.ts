@@ -29,6 +29,7 @@ import {
 } from "../engine/financeSystem";
 import {
   getBlockingNotificationForSave,
+  isoDatePart,
 } from "../engine/gameEngine";
 import {
   addMinutesToHHMM,
@@ -82,6 +83,7 @@ import {
   songCatalogMatchesPick,
 } from "../data/songCatalog";
 import { renderSongPreviewControls } from "./songPreviewPlayer";
+import { renderLiveModeView, type LiveModeSession } from "./liveMode";
 import { groupsForDirectoryListing } from "../data/scenarioBrowse";
 import {
   classifyOfficialMediaTab,
@@ -101,12 +103,16 @@ import {
   historyTables,
   isHeroinesManagedGroup,
   isManagedStandingRow,
+  isRegularLeagueKind,
   leagueKindLabel,
   seasonById,
   seasonForDate,
+  standingZoneClass,
+  standingZoneForRow,
   standingsForDate,
   upcomingLeagueSchedule,
   type LeaguePanelTab,
+  type LeagueTableView,
 } from "../data/heroinesLeague";
 import { contestedRecruitWindowsForDate } from "../engine/careerDecision";
 import {
@@ -1159,7 +1165,7 @@ function renderIdolDetailPage(
   const attrPanels = renderAttributePanels(attrs);
 
   const initial = [...(name.trim() || "?")][0] ?? "?";
-  const portraitSrc = idolPortraitPublicSrc(row);
+  const portraitSrc = idolPortraitPublicSrc(row, referenceIso);
   const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
   const portraitBig = portraitSrc
     ? `<img class="idol-detail-portrait" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" width="220" height="220" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
@@ -1408,7 +1414,7 @@ function renderInbox(
             const entryEndKey = (entry: Record<string, unknown>): string => String(entry.end_date ?? "").split("T")[0];
             const portraitCell = (row: Record<string, unknown>, name: string) => {
               const initial = [...(name.trim() || "?")][0] ?? "?";
-              const portraitSrc = idolPortraitPublicSrc(row);
+              const portraitSrc = idolPortraitPublicSrc(row, save.current_date);
               const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
               return portraitSrc
                 ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
@@ -2090,7 +2096,7 @@ function renderTraining(
       const initial = [...(name.trim() || "?")][0] ?? "?";
       const color = memberColorInTrainingGroup(r);
       const colorTrim = color.trim();
-      const portraitSrc = idolPortraitPublicSrc(r);
+      const portraitSrc = idolPortraitPublicSrc(r, ref);
       const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
       const portraitCell = portraitSrc
         ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
@@ -2773,7 +2779,7 @@ function renderFinancesProjectionView(
       const idol = row as Record<string, unknown>;
       const name = String(idol.name ?? uid);
       const romaji = romajiFromRow(idol);
-      const portraitSrc = idolPortraitPublicSrc(idol);
+      const portraitSrc = idolPortraitPublicSrc(idol, save.current_date);
       const initial = [...(name.trim() || "?")][0] ?? "?";
       const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
       const portraitCell = portraitSrc
@@ -2931,7 +2937,7 @@ function renderIdolsList(
 
   const portraitThumbHtml = (row: Record<string, unknown>, name: string) => {
     const initial = [...(name.trim() || "?")][0] ?? "?";
-    const portraitSrc = idolPortraitPublicSrc(row);
+    const portraitSrc = idolPortraitPublicSrc(row, referenceIso);
     const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
     return portraitSrc
       ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
@@ -4284,9 +4290,19 @@ function liveVenueCompactText(live: Record<string, unknown>): string {
   return city ? `${venue}, ${city}` : venue;
 }
 
+function prettyFestivalDisplayName(name: string): string {
+  const raw = String(name ?? "").trim();
+  if (/tokyo\s*idol\s*festival/i.test(raw)) return "Tokyo Idol Festival";
+  return raw;
+}
+
 function liveDisplayTitleText(live: Record<string, unknown>): string {
   const festivalName = String(live.festival_name ?? "").trim();
-  if (festivalName) return festivalName;
+  const stage = String(live.festival_stage ?? "").trim();
+  if (festivalName) {
+    const pretty = prettyFestivalDisplayName(festivalName);
+    return stage ? `${pretty} · ${stage}` : pretty;
+  }
   return String(live.title ?? live.live_type ?? "Live");
 }
 
@@ -4360,8 +4376,14 @@ function renderLivesView(
   const upcomingRows = upcoming
     .map((live) => {
       const d = String(live.start_date ?? "").split("T")[0];
-      const title = String(live.title ?? live.live_type ?? "—");
-      const cap = live.capacity != null ? String(live.capacity) : "—";
+      const title = liveDisplayTitleText(live);
+      const isFestival =
+        String(live.live_type ?? live.event_type ?? "").toLowerCase() === "festival" ||
+        Boolean(String(live.festival_uid ?? live.festival_name ?? "").trim());
+      const cap =
+        isFestival || live.capacity == null || live.capacity === ""
+          ? "—"
+          : String(live.capacity);
       const slot = liveTimeRangeText(live) || "—";
       const typ = liveTypeLabel(lang, String(live.live_type ?? live.event_type ?? ""));
       const where = liveVenueCompactText(live);
@@ -4376,7 +4398,7 @@ function renderLivesView(
       const d = String(live.date ?? live.start_date ?? "").split("T")[0];
       const venue = String(live.venue ?? "—");
       const perf = live.performance_score != null ? String(live.performance_score) : "—";
-      const title = String(live.title ?? live.live_type ?? "—");
+      const title = liveDisplayTitleText(live);
       const gross =
         (Number(live.ticket_gross_yen ?? 0) || 0) +
         (Number(live.goods_gross_yen ?? 0) || 0) +
@@ -4479,7 +4501,7 @@ function renderLivesView(
 
   const scheduledDetail = selectedScheduled
     ? `<div class="content-muted">${[
-        `${String(selectedScheduled.title ?? selectedScheduled.live_type ?? localizedLiteral(lang, "Live", "演出"))}`,
+        `${liveDisplayTitleText(selectedScheduled)}`,
         `${localizedLiteral(lang, "When", "时间")}:${formatLiveSlotLine(selectedScheduled)}`,
         `${localizedLiteral(lang, "Venue", "场地")}:${String(selectedScheduled.venue ?? localizedLiteral(lang, "TBA", "待定"))}${String(selectedScheduled.location ?? "").trim() ? ` · ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
         `${localizedLiteral(lang, "Program", "节目内容")}:${Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
@@ -4730,23 +4752,34 @@ function renderLivesView(
   const upcomingLeague = upcomingLeagueSchedule(todayIso);
   const historyRecords = historyRecordsForDate(todayIso);
 
-  const renderStandingTable = (table: { label: string; as_of: string; note?: string; rows: Array<{ rank: number; group_name: string; points: number; note?: string }> }) => {
+  const renderStandingTable = (table: LeagueTableView) => {
+    const fieldSize = table.rows.length;
     const rows = table.rows
       .map((row) => {
         const managed = isManagedStandingRow(save, row.group_name);
+        const zone = standingZoneForRow(table.key, row.rank, fieldSize);
+        const zoneCls = standingZoneClass(zone);
+        const classes = [managed ? "is-managed-row" : "", zoneCls].filter(Boolean).join(" ");
         const note = row.note ? ` (${row.note})` : "";
-        return `<tr class="${managed ? "is-managed-row" : ""}"><td>${htmlEsc(String(row.rank))}</td><td>${htmlEsc(row.group_name)}${htmlEsc(note)}${managed ? ` <span class="league-you-tag">${htmlEsc(t(lang, "lives_league_you"))}</span>` : ""}</td><td>${htmlEsc(String(row.points))}</td></tr>`;
+        return `<tr class="${classes}"><td>${htmlEsc(String(row.rank))}</td><td>${htmlEsc(row.group_name)}${htmlEsc(note)}${managed ? ` <span class="league-you-tag">${htmlEsc(t(lang, "lives_league_you"))}</span>` : ""}</td><td>${htmlEsc(String(row.points))}</td></tr>`;
       })
       .join("");
+    const zoneLegend =
+      table.key === "league_i"
+        ? `<p class="content-muted league-zone-legend">${htmlEsc(t(lang, "lives_league_zone_legend_i"))}</p>`
+        : table.key === "league_ii"
+          ? `<p class="content-muted league-zone-legend">${htmlEsc(t(lang, "lives_league_zone_legend_ii"))}</p>`
+          : "";
     return `<section class="fm-card league-table-card">
         <h3 class="content-h3">${htmlEsc(table.label)}</h3>
         <p class="content-muted">${htmlEsc(`${t(lang, "lives_league_as_of")} ${table.as_of}`)}${table.note ? ` — ${htmlEsc(table.note)}` : ""}</p>
         <div class="table-scroll">
-          <table class="fm-table">
+          <table class="fm-table league-standings-table">
             <thead><tr><th>${htmlEsc(t(lang, "lives_league_rank"))}</th><th>${htmlEsc(t(lang, "lives_league_group"))}</th><th>${htmlEsc(t(lang, "lives_league_points"))}</th></tr></thead>
             <tbody>${rows || `<tr><td colspan="3" class="content-muted">${htmlEsc(t(lang, "lives_league_no_standings"))}</td></tr>`}</tbody>
           </table>
         </div>
+        ${zoneLegend}
       </section>`;
   };
 
@@ -4755,7 +4788,10 @@ function renderLivesView(
   const upcomingLeagueRows = upcomingLeague
     .map((row) => {
       const kind = leagueKindLabel(row.kind, lang === "zh-CN" ? "zh-CN" : "en");
-      const mine = (row.attending_groups ?? []).some((name) => isManagedStandingRow(save, name));
+      // Regular season only: do not highlight FINAL / 入れ替え from historical attending_groups.
+      const mine =
+        isRegularLeagueKind(row.kind) &&
+        (row.attending_groups ?? []).some((name) => isManagedStandingRow(save, name));
       return `<tr class="${mine ? "is-managed-row" : ""}"><td>${htmlEsc(row.date)}</td><td>${htmlEsc(kind)}</td><td>${htmlEsc(row.title)}</td><td>${htmlEsc(row.venue || "-")}</td></tr>`;
     })
     .join("");
@@ -4962,7 +4998,7 @@ function renderScoutView(
   const scoutPortraitCell = (idol: Record<string, unknown> | undefined, fallbackName: string) => {
     const name = typeof idol?.name === "string" ? idol.name : fallbackName;
     const initial = [...(name.trim() || "?")][0] ?? "?";
-    const portraitSrc = idol ? idolPortraitPublicSrc(idol) : undefined;
+    const portraitSrc = idol ? idolPortraitPublicSrc(idol, currentIso) : undefined;
     const phData = attrQuotedUrl(avatarPlaceholderDataUrl(name));
     return portraitSrc
       ? `<img class="idol-thumb" src="${attrQuotedUrl(portraitSrc)}" data-fallback="${phData}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
@@ -5452,6 +5488,9 @@ export interface DesktopShellProps {
   feedbackStatusMessage?: string | null;
   wikiModalOpen?: boolean;
   feedbackModalOpen?: boolean;
+  attentionActionUid?: string | null;
+  /** Immersive live performance session; when set, chrome collapses to top bar only. */
+  liveModeSession?: LiveModeSession | null;
 }
 
 export function renderDesktopShell(p: DesktopShellProps): string {
@@ -5679,6 +5718,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     feedbackStatusMessage,
     wikiModalOpen,
     feedbackModalOpen,
+    liveModeSession,
   } = p;
   const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
@@ -5705,7 +5745,9 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     return `<option value="${s}" ${s === slot ? "selected" : ""}>${htmlEsc(label)}</option>`;
   }).join("");
 
-  const mainInner = renderMainContent({
+  const mainInner = liveModeSession
+    ? renderLiveModeView(liveModeSession, lang)
+    : renderMainContent({
     browseMode,
     browseData,
     save,
@@ -5739,6 +5781,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     scheduleWeekAnchorIso: scheduleWeekAnchorIso ?? null,
     lang,
     simulationBusy: p.simulationBusy,
+    attentionActionUid: p.attentionActionUid ?? null,
   });
 
   const cashPill = finances
@@ -5747,7 +5790,9 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
   const nextHint =
-    inboxBlock?.title === "Today's live schedule"
+    liveModeSession
+      ? t(lang, "live_mode_title")
+      : inboxBlock?.title === "Today's live schedule"
       ? localizedLiteral(lang, "Start live to proceed", "开始演出后即可继续")
       : inboxBlock
         ? `${navLabel(lang, "Inbox")}: ${inboxBlock.title}`
@@ -5755,7 +5800,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
 
   const nextDayBtn = browseMode
     ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
-    : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
+    : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy || liveModeSession ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
 
   const ver = save ? String(save.version ?? "-") : browseData ? t(lang, "shell_browse") : "-";
   const statusLeft = browseMode ? t(lang, "shell_browse") : t(lang, "shell_save_version", { version: save?.version ?? "?" });
@@ -5764,7 +5809,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     .join("");
 
   return `
-<div class="fm-app">
+<div class="fm-app${liveModeSession ? " is-live-mode" : ""}">
   <header class="fm-top-bar" role="banner">
     <div class="fm-top-bar-left">
       <details class="fm-home-dropdown">
@@ -5774,7 +5819,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
           <a class="fm-menu-action fm-menu-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_game_manual"))}</a>
           <a class="fm-menu-action fm-menu-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_oshi_chart"))}</a>
           <a class="fm-menu-action fm-menu-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_ikonoijoy_best10"))}</a>
-          <button type="button" class="fm-menu-action" id="btn-open-tutorial" ${browseMode ? "disabled" : ""}>${htmlEsc(tutorialMenuLabel(lang))}</button>
+          <button type="button" class="fm-menu-action" id="btn-open-tutorial" ${browseMode || liveModeSession ? "disabled" : ""}>${htmlEsc(tutorialMenuLabel(lang))}</button>
           <label class="fm-menu-row">${htmlEsc(t(lang, "shell_slot"))} <select id="slot-select" class="fm-select" aria-label="${htmlEsc(t(lang, "shell_slot"))}">${slotOpts}</select></label>
           <label class="fm-menu-row">${htmlEsc(t(lang, "language"))} <select id="lang-select-shell" class="fm-select" aria-label="${htmlEsc(t(lang, "language"))}">${languageSelect}</select></label>
           <button type="button" class="fm-menu-action" id="btn-save" ${browseMode ? "disabled" : ""}>${htmlEsc(t(lang, "shell_save_game"))}</button>
@@ -5783,12 +5828,12 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
           <button type="button" class="fm-menu-action danger" id="btn-clear">${htmlEsc(t(lang, "shell_clear_slot"))}</button>
         </div>
       </details>
-      <button type="button" class="fm-btn fm-btn-history" ${canGoBack ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_back"))}" aria-label="${htmlEsc(t(lang, "shell_back"))}" data-history="back">&lsaquo;</button>
-      <button type="button" class="fm-btn fm-btn-history" ${canGoForward ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_forward"))}" aria-label="${htmlEsc(t(lang, "shell_forward"))}" data-history="fwd">&rsaquo;</button>
+      <button type="button" class="fm-btn fm-btn-history" ${canGoBack && !liveModeSession ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_back"))}" aria-label="${htmlEsc(t(lang, "shell_back"))}" data-history="back">&lsaquo;</button>
+      <button type="button" class="fm-btn fm-btn-history" ${canGoForward && !liveModeSession ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_forward"))}" aria-label="${htmlEsc(t(lang, "shell_forward"))}" data-history="fwd">&rsaquo;</button>
       <h1 class="fm-game-title"><span class="fm-game-title-main">IDOL PRODUCER</span><span class="fm-game-title-sub" title="${htmlEsc(t(lang, "shell_managed_group"))}">${browseMode ? htmlEsc(t(lang, "shell_browse_database")) : titleClickable}</span></h1>
     </div>
     <div class="fm-top-bar-center">
-      <button type="button" class="fm-date-btn" id="btn-goto-schedule" data-nav="Schedule" title="${htmlEsc(t(lang, "shell_open_schedule"))}">${htmlEsc(dateLabel)}</button>
+      <button type="button" class="fm-date-btn" id="btn-goto-schedule" data-nav="Schedule" title="${htmlEsc(t(lang, "shell_open_schedule"))}" ${liveModeSession ? "disabled" : ""}>${htmlEsc(dateLabel)}</button>
     </div>
     <div class="fm-top-bar-right">
       ${nextDayBtn}
@@ -5797,22 +5842,29 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
   </header>
 
   <div class="fm-body">
-    <aside class="fm-sidebar" aria-label="${htmlEsc(t(lang, "shell_main_navigation"))}">
+    ${
+      liveModeSession
+        ? ""
+        : `<aside class="fm-sidebar" aria-label="${htmlEsc(t(lang, "shell_main_navigation"))}">
       <nav class="fm-side-nav" aria-label="${htmlEsc(t(lang, "shell_sections"))}">
         <ul class="fm-side-nav-list" role="list">${navButtons}</ul>
       </nav>
       ${renderWikiPanel(lang, selectedWikiKey ?? null, browseMode, currentView)}
       ${renderSidebarUtilityPanel(lang)}
-    </aside>
+    </aside>`
+    }
 
-    <main class="fm-content" id="main-content" role="main" aria-label="${htmlEsc(navLabel(lang, currentView))}">
+    <main class="fm-content" id="main-content" role="main" aria-label="${htmlEsc(liveModeSession ? t(lang, "live_mode_title") : navLabel(lang, currentView))}">
       <div class="fm-content-inner">
         ${mainInner}
       </div>
     </main>
   </div>
 
-  <footer class="fm-status-bar" role="contentinfo">
+  ${
+    liveModeSession
+      ? ""
+      : `<footer class="fm-status-bar" role="contentinfo">
     <span class="fm-status-item">${htmlEsc(statusLeft)}</span>
     <span class="fm-status-sep">·</span>
     <span class="fm-status-item">${htmlEsc(t(lang, "shell_view"))}: <strong>${htmlEsc(navLabel(lang, currentView))}</strong></span>
@@ -5820,7 +5872,8 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     <span class="fm-status-item">${htmlEsc(t(lang, "shell_turn"))}: <strong>${save?.turn_number ?? 0}</strong></span>
     <span class="fm-status-sep">·</span>
     <span class="fm-status-item">${htmlEsc(typeof ver === "string" ? ver : String(ver))}</span>
-  </footer>
+  </footer>`
+  }
   ${wikiModalOpen ? `<div class="tutorial-overlay" role="dialog" aria-modal="true" aria-labelledby="wiki-modal-title"><div class="tutorial-overlay__backdrop" data-wiki-modal-close="1"></div><section class="tutorial-overlay__panel wiki-modal__panel"><div class="tutorial-overlay__header"><div><p class="tutorial-overlay__eyebrow">${htmlEsc(lang === "zh-CN" ? "完整百科" : "Full Wiki")}</p><h2 class="tutorial-overlay__title" id="wiki-modal-title">${htmlEsc(lang === "zh-CN" ? "完整百科" : "Full Wiki")}</h2></div><button type="button" class="tutorial-overlay__close" aria-label="${htmlEsc(lang === "zh-CN" ? "关闭百科" : "Close wiki")}" data-wiki-modal-close="1">x</button></div><div class="wiki-modal__content">${renderFullWikiPanel(lang, selectedWikiKey ?? null)}</div></section></div>` : ""}
   ${feedbackModalOpen ? renderFeedbackModal(lang, currentView, isoDatePart(dateStr || ""), feedbackEntries ?? [], feedbackStatusMessage ?? null) : ""}
   ${tutorialOverlayHtml ?? ""}

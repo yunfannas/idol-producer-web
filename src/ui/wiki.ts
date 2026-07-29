@@ -65,8 +65,8 @@ function enEntries(): WikiEntry[] {
       label: "Live",
       summary: "A booked performance for your managed group.",
       description:
-        "Lives are the core revenue and exposure loop. They create attendance, fan gain, morale shifts, fatigue, and post-show sales opportunities.",
-      aliases: ["Live Start", "booked lives", "live", "lives"],
+        "Lives are the core revenue and exposure loop. Inbox Live Start opens immersive Live Mode (setlist, stage formation, and song-preview playback). Ending the show resolves attendance, fan gain, morale, fatigue, and post-show sales.",
+      aliases: ["Live Start", "Live Mode", "booked lives", "live", "lives"],
     },
     {
       key: "media",
@@ -247,8 +247,9 @@ function zhEntries(): WikiEntry[] {
       key: "live",
       label: "演出",
       summary: "你为当前团安排的实际演出。",
-      description: "演出是核心循环。它会带来出勤、涨粉、士气变化、疲劳和会后销售机会。",
-      aliases: ["演出", "开始演出", "Live Start", "live", "lives"],
+      description:
+        "演出是核心循环。收件箱「开始公演」会进入沉浸式公演模式（曲目单、队形与歌曲试听）。结束公演后结算出勤、涨粉、士气、疲劳和会后销售。",
+      aliases: ["演出", "开始演出", "公演模式", "Live Start", "Live Mode", "live", "lives"],
     },
     {
       key: "media",

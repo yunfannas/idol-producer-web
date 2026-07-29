@@ -92,14 +92,27 @@ import {
 import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, listSlotSummaries, loadFromSlot, normalizeAccountName, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
 import {
+  getSongPreviewMediaTime,
   mergePreviewInput,
+  playSongPreview,
   prefetchSongPreviewsInRoot,
   previewInputFromControlsEl,
+  setSongPreviewEndedListener,
   stopSongPreview,
   syncSongPreviewUi,
   toggleSongPreview,
   unlockSongPreviewAudio,
 } from "./ui/songPreviewPlayer";
+import {
+  buildLiveModeSession,
+  currentLiveModeItem,
+  hydrateLiveModePortraits,
+  liveModeItemDurationSec,
+  liveModeReactionSnapshot,
+  updateLiveModeProgressDom,
+  updateLiveModeReactionDom,
+  type LiveModeSession,
+} from "./ui/liveMode";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
@@ -787,6 +800,198 @@ function newestVisibleLiveReportUid(currentSave: GameSavePayload): string | null
   return null;
 }
 
+function clearLiveModeTimers(): void {
+  if (liveModeProgressTimer != null) {
+    window.clearInterval(liveModeProgressTimer);
+    liveModeProgressTimer = null;
+  }
+  if (liveModeBlockTimer != null) {
+    window.clearTimeout(liveModeBlockTimer);
+    liveModeBlockTimer = null;
+  }
+}
+
+function stopLiveModeProgressLoop(): void {
+  if (liveModeProgressTimer != null) {
+    window.clearInterval(liveModeProgressTimer);
+    liveModeProgressTimer = null;
+  }
+}
+
+function syncLiveModeProgressUi(): void {
+  if (!liveModeSession) return;
+  const item = currentLiveModeItem(liveModeSession);
+  if (!item) {
+    updateLiveModeProgressDom(appRoot, 0, 1);
+    updateLiveModeReactionDom(appRoot, liveModeReactionSnapshot(liveModeSession, uiLang, 0));
+    return;
+  }
+  let current = liveModeSession.itemElapsedSec;
+  let duration = liveModeItemDurationSec(liveModeSession);
+  if (item.kind === "song" && item.hasPreview) {
+    const media = getSongPreviewMediaTime();
+    duration = liveModeItemDurationSec(liveModeSession, media?.duration ?? null);
+    current = media?.currentTime ?? liveModeSession.itemElapsedSec;
+  } else if (liveModeSession.transport === "playing" && liveModeSession.itemStartedAtMs != null) {
+    current = liveModeSession.itemElapsedSec + (performance.now() - liveModeSession.itemStartedAtMs) / 1000;
+  }
+  updateLiveModeProgressDom(appRoot, current, duration);
+  const progress01 = duration > 0 ? clamp01(current / duration) : 0;
+  updateLiveModeReactionDom(appRoot, liveModeReactionSnapshot(liveModeSession, uiLang, progress01));
+}
+
+function clamp01(n: number): number {
+  return Math.max(0, Math.min(1, n));
+}
+
+function startLiveModeProgressLoop(): void {
+  stopLiveModeProgressLoop();
+  if (!liveModeSession || liveModeSession.transport !== "playing") return;
+  liveModeProgressTimer = window.setInterval(() => {
+    syncLiveModeProgressUi();
+  }, 200);
+}
+
+function exitLiveModeSession(opts?: { stopAudio?: boolean }): void {
+  clearLiveModeTimers();
+  setSongPreviewEndedListener(null);
+  if (opts?.stopAudio !== false) stopSongPreview();
+  liveModeSession = null;
+  liveModeAdvanceLock = false;
+}
+
+async function playCurrentLiveModeItem(): Promise<void> {
+  if (!liveModeSession) return;
+  const item = currentLiveModeItem(liveModeSession);
+  if (!item) return;
+  clearLiveModeTimers();
+  liveModeSession.itemElapsedSec = 0;
+  liveModeSession.itemStartedAtMs = performance.now();
+  liveModeSession.transport = "playing";
+  unlockSongPreviewAudio();
+
+  if (item.kind === "song" && item.hasPreview && item.preview) {
+    const state = await playSongPreview(item.preview);
+    if (!liveModeSession) return;
+    if (state === "unavailable" || state === "idle") {
+      // No audible preview — treat as a short silent beat then advance.
+      liveModeSession.itemStartedAtMs = performance.now();
+      const waitMs = Math.round(liveModeItemDurationSec(liveModeSession) * 1000);
+      liveModeBlockTimer = window.setTimeout(() => {
+        void advanceLiveModeItem();
+      }, waitMs);
+    }
+  } else {
+    const waitMs = Math.round(liveModeItemDurationSec(liveModeSession) * 1000);
+    liveModeBlockTimer = window.setTimeout(() => {
+      void advanceLiveModeItem();
+    }, waitMs);
+  }
+  startLiveModeProgressLoop();
+  paintGame();
+}
+
+async function pauseLiveModeItem(): Promise<void> {
+  if (!liveModeSession || liveModeSession.transport !== "playing") return;
+  if (liveModeSession.itemStartedAtMs != null) {
+    liveModeSession.itemElapsedSec += (performance.now() - liveModeSession.itemStartedAtMs) / 1000;
+    liveModeSession.itemStartedAtMs = null;
+  }
+  liveModeSession.transport = "paused";
+  clearLiveModeTimers();
+  const item = currentLiveModeItem(liveModeSession);
+  if (item?.kind === "song" && item.hasPreview && item.preview) {
+    await toggleSongPreview(item.preview);
+  }
+  paintGame();
+}
+
+async function resumeLiveModeItem(): Promise<void> {
+  if (!liveModeSession || liveModeSession.transport !== "paused") return;
+  const item = currentLiveModeItem(liveModeSession);
+  if (!item) return;
+  liveModeSession.transport = "playing";
+  liveModeSession.itemStartedAtMs = performance.now();
+  unlockSongPreviewAudio();
+  if (item.kind === "song" && item.hasPreview && item.preview) {
+    await toggleSongPreview(item.preview);
+  } else {
+    const remaining = Math.max(0.2, liveModeItemDurationSec(liveModeSession) - liveModeSession.itemElapsedSec);
+    liveModeBlockTimer = window.setTimeout(() => {
+      void advanceLiveModeItem();
+    }, Math.round(remaining * 1000));
+  }
+  startLiveModeProgressLoop();
+  paintGame();
+}
+
+async function advanceLiveModeItem(): Promise<void> {
+  if (!liveModeSession || liveModeAdvanceLock) return;
+  liveModeAdvanceLock = true;
+  try {
+    clearLiveModeTimers();
+    stopSongPreview();
+    if (liveModeSession.currentIndex >= liveModeSession.items.length - 1) {
+      await finishLiveModeSession();
+      return;
+    }
+    liveModeSession.currentIndex += 1;
+    liveModeSession.itemElapsedSec = 0;
+    liveModeSession.itemStartedAtMs = null;
+    liveModeSession.transport = "idle";
+    paintGame();
+    await playCurrentLiveModeItem();
+  } finally {
+    liveModeAdvanceLock = false;
+  }
+}
+
+async function finishLiveModeSession(): Promise<void> {
+  if (!liveModeSession || !save) return;
+  const uid = liveModeSession.notificationUid;
+  clearLiveModeTimers();
+  setSongPreviewEndedListener(null);
+  stopSongPreview();
+  liveModeSession = null;
+  runSimulationTask(() => {
+    if (!save) return;
+    attentionActionUid = null;
+    save = acknowledgeInboxNotification(save, uid);
+    currentView = "Inbox";
+    inboxSelectedUid =
+      newestVisibleLiveReportUid(save) ??
+      save.inbox.notifications.find((row) => !notificationRequiresAck(row) || !row.read)?.uid ??
+      save.inbox.notifications[0]?.uid ??
+      null;
+  });
+}
+
+function enterLiveModeFromInbox(notificationUid: string): void {
+  if (!save) return;
+  const dateIso = isoDatePart(save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "");
+  const session = buildLiveModeSession({ save, notificationUid, dateIso });
+  if (!session) {
+    runSimulationTask(() => {
+      if (!save) return;
+      attentionActionUid = null;
+      save = acknowledgeInboxNotification(save, notificationUid);
+      currentView = "Inbox";
+      inboxSelectedUid =
+        newestVisibleLiveReportUid(save) ??
+        save.inbox.notifications.find((row) => !notificationRequiresAck(row) || !row.read)?.uid ??
+        save.inbox.notifications[0]?.uid ??
+        null;
+    });
+    return;
+  }
+  liveModeSession = session;
+  setSongPreviewEndedListener(() => {
+    void advanceLiveModeItem();
+  });
+  paintGame();
+  void playCurrentLiveModeItem();
+}
+
 function runSimulationTask(task: () => void): void {
   if (simulationBusy) return;
   simulationBusy = true;
@@ -842,6 +1047,11 @@ let scheduleWeekAnchorIso: string | null = null;
 let livesTab: LivesTab = "new";
 let leaguePanelTab: LeaguePanelTab = "current";
 let scheduledLiveUid: string | null = null;
+/** Immersive live performance overlay session (null = normal shell). */
+let liveModeSession: LiveModeSession | null = null;
+let liveModeProgressTimer: number | null = null;
+let liveModeBlockTimer: number | null = null;
+let liveModeAdvanceLock = false;
 
 function tutorialStepCount(): number {
   return tutorialSteps(uiLang).length;
@@ -1721,16 +1931,22 @@ function paintGame(): void {
     feedbackStatusMessage,
     wikiModalOpen,
     feedbackModalOpen,
+    liveModeSession,
   });
   restoreFocus(appRoot, focus);
   syncSongPreviewUi(appRoot);
+  if (liveModeSession && save) {
+    hydrateLiveModePortraits(appRoot, save);
+    syncLiveModeProgressUi();
+    if (liveModeSession.transport === "playing") startLiveModeProgressLoop();
+  }
   if (currentView === "Songs" || currentView === "Making") {
     prefetchSongPreviewsInRoot(appRoot);
   }
 
   wirePortraitFallbacks(appRoot);
   const mainContent = document.getElementById("main-content");
-  if (mainContent) annotateWikiTerms(mainContent, uiLang, relatedWikiKeysForView(currentView, browseMode));
+  if (mainContent && !liveModeSession) annotateWikiTerms(mainContent, uiLang, relatedWikiKeysForView(currentView, browseMode));
 
   if (save && !browseMode) {
     const nextBtn = document.getElementById("btn-next-day") as HTMLButtonElement | null;
@@ -2624,17 +2840,23 @@ function paintGame(): void {
     if (liveStartBtn && save && !browseMode) {
       const uid = liveStartBtn.getAttribute("data-inbox-live-start");
       if (uid) {
-        runSimulationTask(() => {
-          if (!save) return;
-          attentionActionUid = null;
-          save = acknowledgeInboxNotification(save, uid);
-          currentView = "Inbox";
-          inboxSelectedUid =
-            newestVisibleLiveReportUid(save) ?? 
-            save.inbox.notifications.find((row) => !notificationRequiresAck(row) || !row.read)?.uid ?? 
-            save.inbox.notifications[0]?.uid ?? 
-            null;
-        });
+        attentionActionUid = null;
+        enterLiveModeFromInbox(uid);
+      }
+      return;
+    }
+    const liveModeAction = t.closest<HTMLElement>("[data-live-mode-action]");
+    if (liveModeAction && liveModeSession && save && !browseMode) {
+      const action = liveModeAction.getAttribute("data-live-mode-action");
+      unlockSongPreviewAudio();
+      if (action === "play") {
+        if (liveModeSession.transport === "playing") void pauseLiveModeItem();
+        else if (liveModeSession.transport === "paused") void resumeLiveModeItem();
+        else void playCurrentLiveModeItem();
+      } else if (action === "next") {
+        void advanceLiveModeItem();
+      } else if (action === "end") {
+        void finishLiveModeSession();
       }
       return;
     }
@@ -3557,6 +3779,16 @@ function paintGame(): void {
   });
   document.getElementById("btn-save")?.addEventListener("click", async () => {
     if (!save || browseMode || !accountName) return;
+    const occupied = listOccupiedSlots(accountName).includes(slot);
+    if (occupied) {
+      const existingLabel =
+        listSlotSummaries(accountName).find((row) => row.slot === slot)?.label?.trim() ||
+        t(uiLang, "opening_slot_saved");
+      const ok = window.confirm(
+        t(uiLang, "shell_overwrite_slot_confirm", { slot, label: existingLabel }),
+      );
+      if (!ok) return;
+    }
     save.account_name = accountName;
     save.player_name = accountName;
     await saveToSlot(accountName, slot, save);
@@ -3615,6 +3847,7 @@ function paintGame(): void {
     if (!Number.isNaN(v)) slot = v;
   });
   document.getElementById("btn-main-menu")?.addEventListener("click", () => {
+    exitLiveModeSession();
     browseMode = false;
     tutorialOverlayOpen = false;
     idolDetailUid = null;
