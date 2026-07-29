@@ -30478,7 +30478,7 @@
         "group_name": "GILTY × GILTY",
         "start_date": "2022-06-01",
         "end_date": null,
-        "member_color": "Red (Yumeiro H!L!T / iLiFE!)",
+        "member_color": "Red",
         "member_color_code": "0xff0000",
         "group_uid": "R0lMVFkgw5cgR0lMVFk"
       },
@@ -30486,7 +30486,7 @@
         "group_name": "iLife!",
         "start_date": "2021-02-25",
         "end_date": null,
-        "member_color": "Red (Yumeiro H!L!T / iLiFE!)",
+        "member_color": "Red",
         "member_name": "心花りり",
         "member_color_code": "0xff0000",
         "group_uid": "aUxpRkUh",
@@ -66839,7 +66839,7 @@
         "group_name": "iLife!",
         "start_date": "2023-07-15",
         "end_date": null,
-        "member_color": "Yellow (ZUTTOMOTTO / iLiFE!)",
+        "member_color": "Yellow",
         "member_name": "福丸うさ",
         "member_color_code": "0xffff00",
         "group_uid": "aUxpRkUh"
@@ -66848,7 +66848,7 @@
         "group_name": "ZUTTOMOTTO",
         "start_date": "2023-02-04",
         "end_date": "2023-09-01",
-        "member_color": "Yellow (ZUTTOMOTTO / iLiFE!)",
+        "member_color": "Yellow",
         "member_name": "福丸うさ",
         "member_color_code": "0xffff00",
         "group_uid": "WlVUVE9NT1RUTw"
@@ -204677,8 +204677,8 @@
         "start_date": "2022-07-11",
         "end_date": null,
         "member_name": "あいす",
-        "member_color": "Blue",
-        "member_color_code": "0x0000ff",
+        "member_color": "White",
+        "member_color_code": "0xffffff",
         "group_uid": "aUxpRkUh"
       },
       {
@@ -204736,6 +204736,46 @@
         "ambition": 18,
         "loyalty": 16
       }
+    },
+    "group_portrait_history": {
+      "iLiFE!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "Ice_Apr_2025_(1).jpg — iLiFE! look (not i-COL).",
+          "source": "fandom"
+        }
+      ],
+      "aUxpRkUh": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "Ice_Apr_2025_(1).jpg — iLiFE! look (not i-COL).",
+          "source": "fandom"
+        }
+      ],
+      "iLife!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "Alias key iLife!.",
+          "source": "fandom"
+        }
+      ]
+    },
+    "group_portrait_paths": {
+      "iLiFE!": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+      "aUxpRkUh": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+      "iLife!": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg"
     }
   },
   {
@@ -330421,9 +330461,9 @@
         "group_name": "iLife!",
         "start_date": "2025-01-20",
         "end_date": null,
-        "member_color": "Black",
+        "member_color": "Blue",
         "member_name": "空詩かれん",
-        "member_color_code": "0x000000",
+        "member_color_code": "0x0000ff",
         "group_uid": "aUxpRkUh"
       },
       {

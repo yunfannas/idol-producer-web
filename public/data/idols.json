@@ -16905,7 +16905,7 @@
         "group_name": "GILTY × GILTY",
         "start_date": "2022-06-01",
         "end_date": null,
-        "member_color": "Red (Yumeiro H!L!T / iLiFE!)",
+        "member_color": "Red",
         "member_color_code": "0xff0000",
         "group_uid": "R0lMVFkgw5cgR0lMVFk"
       },
@@ -36939,7 +36939,7 @@
         "group_name": "ZUTTOMOTTO",
         "start_date": "2023-02-04",
         "end_date": "2023-09-01",
-        "member_color": "Yellow (ZUTTOMOTTO / iLiFE!)",
+        "member_color": "Yellow",
         "member_name": "福丸うさ",
         "member_color_code": "0xffff00",
         "group_uid": "WlVUVE9NT1RUTw"
@@ -134011,10 +134011,10 @@
     "portrait_photo_path": "fetcher\\database\\picture_fandom\\あいす_portrait.jpg",
     "group_portrait_paths": {
       "i-COL": "fetcher\\database\\picture_fandom\\あいす__i-COL_portrait.jpg",
-      "iLiFE!": "fetcher\\database\\picture_fandom\\あいす__iLiFE!_portrait.jpg",
-      "iLife!": "fetcher\\database\\picture_fandom\\あいす__iLiFE!_portrait.jpg",
+      "iLiFE!": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+      "iLife!": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
       "aS1DT0w": "fetcher\\database\\picture_fandom\\あいす__i-COL_portrait.jpg",
-      "aUxpRkUh": "fetcher\\database\\picture_fandom\\あいす__iLiFE!_portrait.jpg"
+      "aUxpRkUh": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg"
     },
     "wiki_url": "https://jpop.fandom.com/wiki/Aisu",
     "sources": [
@@ -134026,7 +134026,42 @@
     "x_account": "ice_icol",
     "x_url": "https://x.com/ice_icol",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "group_portrait_history": {
+      "iLiFE!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "Ice_Apr_2025_(1).jpg — iLiFE! look (not i-COL).",
+          "source": "fandom"
+        }
+      ],
+      "aUxpRkUh": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "Ice_Apr_2025_(1).jpg — iLiFE! look (not i-COL).",
+          "source": "fandom"
+        }
+      ],
+      "iLife!": [
+        {
+          "path": "fetcher\\database\\picture_fandom\\あいす__iLiFE_2025-04-01_fandom.jpg",
+          "timestamp": null,
+          "effective_date": "2025-04-01",
+          "release_date": null,
+          "label": "iLiFE! Fandom dated portrait",
+          "note": "Alias key iLife!.",
+          "source": "fandom"
+        }
+      ]
+    }
   },
   {
     "uid": "891110c7-0de2-4ee3-bd4c-2aa123bc7576",

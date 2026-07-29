@@ -43,6 +43,29 @@ function idolMapByUid(idols: Record<string, unknown>[]): Map<string, Record<stri
   return m;
 }
 
+/** Display-only: "Red (Yumeiro H!L!T / iLiFE!)" → "Red". */
+function normalizeMemberColorLabel(color: string): string {
+  return color.replace(/\s*\([^)]*\)\s*$/u, "").trim();
+}
+
+function ilifeNameAliases(groupName: string): Set<string> {
+  const n = groupName.trim();
+  const set = new Set([n]);
+  if (n === "iLiFE!" || n === "iLife!" || n === "iLIFE!") {
+    set.add("iLiFE!");
+    set.add("iLife!");
+    set.add("iLIFE!");
+  }
+  return set;
+}
+
+function historyMatchesGroup(e: Record<string, unknown>, groupUid: string, groupName: string): boolean {
+  const uid = String(e.group_uid ?? "").trim();
+  const gn = String(e.group_name ?? "").trim();
+  if (uid && groupUid && uid === groupUid) return true;
+  return ilifeNameAliases(groupName).has(gn) || gn === groupName;
+}
+
 function joinDateInCurrentGroup(
   idol: Record<string, unknown>,
   groupUid: string,
@@ -50,43 +73,58 @@ function joinDateInCurrentGroup(
 ): string {
   const hist = idol.group_history;
   if (!Array.isArray(hist)) return "—";
+  let best: string | null = null;
   for (const raw of hist) {
     if (!raw || typeof raw !== "object") continue;
     const e = raw as Record<string, unknown>;
-    const uid = String(e.group_uid ?? "").trim();
-    const gn = String(e.group_name ?? "").trim();
-    if (uid === groupUid || gn === groupName) {
-      const sd = typeof e.start_date === "string" ? e.start_date.trim().split("T")[0] : "";
-      return /^\d{4}-\d{2}-\d{2}$/.test(sd) ? sd : "—";
-    }
+    if (!historyMatchesGroup(e, groupUid, groupName)) continue;
+    const sd = typeof e.start_date === "string" ? e.start_date.trim().split("T")[0] : "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(sd)) continue;
+    const end = e.end_date == null || e.end_date === "" ? null : String(e.end_date).split("T")[0];
+    // Prefer open-ended tenure; else earliest start among matches.
+    if (!end) return sd;
+    if (!best || sd < best) best = sd;
   }
-  return "—";
+  return best ?? "—";
 }
 
 function memberColorInCurrentGroup(
   idol: Record<string, unknown>,
   groupUid: string,
   groupName: string,
-): string {
+): { label: string; code: unknown } {
   const hist = idol.group_history;
-  if (!Array.isArray(hist)) {
-    return typeof idol.member_color === "string" && idol.member_color.trim()
-      ? String(idol.member_color).trim()
-      : "—";
-  }
+  const fallback = (): { label: string; code: unknown } => {
+    const raw =
+      typeof idol.member_color === "string" && idol.member_color.trim()
+        ? String(idol.member_color).trim()
+        : "—";
+    const label = raw === "—" ? raw : normalizeMemberColorLabel(raw) || "—";
+    return { label, code: idol.member_color_code };
+  };
+  if (!Array.isArray(hist)) return fallback();
+
+  type Cand = { color: string; code: unknown; open: boolean; start: string };
+  const cands: Cand[] = [];
   for (const raw of hist) {
     if (!raw || typeof raw !== "object") continue;
     const e = raw as Record<string, unknown>;
-    const uid = String(e.group_uid ?? "").trim();
-    const gn = String(e.group_name ?? "").trim();
-    if (uid === groupUid || gn === groupName) {
-      const c = typeof e.member_color === "string" ? e.member_color.trim() : "";
-      return c || "—";
-    }
+    if (!historyMatchesGroup(e, groupUid, groupName)) continue;
+    const c = typeof e.member_color === "string" ? e.member_color.trim() : "";
+    if (!c) continue;
+    const start = typeof e.start_date === "string" ? e.start_date.trim().split("T")[0] : "";
+    const end = e.end_date == null || e.end_date === "" ? null : String(e.end_date).split("T")[0];
+    cands.push({ color: c, code: e.member_color_code, open: !end, start });
   }
-  return typeof idol.member_color === "string" && idol.member_color.trim()
-    ? String(idol.member_color).trim()
-    : "—";
+  if (!cands.length) return fallback();
+  cands.sort((a, b) => {
+    if (a.open !== b.open) return a.open ? -1 : 1;
+    return b.start.localeCompare(a.start);
+  });
+  return {
+    label: normalizeMemberColorLabel(cands[0].color) || "—",
+    code: cands[0].code,
+  };
 }
 
 function membershipLinksHtml(mems: { uid: string; name: string }[]): string {
@@ -123,12 +161,15 @@ function rosterMemberRowHtml(
   groups: Record<string, unknown>[],
 ): string {
   const romaji = idol ? romajiFromRow(idol) : "";
-  const color = idol ? memberColorInCurrentGroup(idol, gid, groupName) : "—";
+  const colorInfo = idol
+    ? memberColorInCurrentGroup(idol, gid, groupName)
+    : { label: "—", code: undefined };
+  const color = colorInfo.label;
   const colorTrim = color.trim();
   const join = idol ? joinDateInCurrentGroup(idol, gid, groupName) : "—";
   const age = idol ? ageLabel(idol, refIso) : "—";
   const groupsCol = idol ? allGroupsMembershipHtml(idol, refIso, groups) : htmlEsc("—");
-  const colorCss = resolveMemberColorCss(colorTrim, idol?.member_color_code);
+  const colorCss = resolveMemberColorCss(colorTrim, colorInfo.code);
   const colorLabelStyle = colorCss ? ` style="color:${colorCss}"` : "";
   const colorCell = colorCss
     ? `<span class="group-member-color-chip" style="background:${colorCss}" title="${htmlEsc(color)}"></span><span class="group-member-color-text"${colorLabelStyle}>${htmlEsc(color)}</span>`
