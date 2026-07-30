@@ -1,0 +1,19 @@
+# Deploy Vite build to GitLab Pages.
+# Site URL: https://idol-producer-web-beaab6.gitlab.io (or yunfannas.gitlab.io/idol-producer-web)
+# Relative vite `base: "./"` works for both unique-domain and project-path Pages.
+image: node:22
+
+pages:
+  stage: deploy
+  script:
+    - npm ci
+    - npm run build
+    # GitLab Pages serves the `public/` artifact. Source `public/` is already
+    # copied into `dist` by Vite, so replace the workspace folder with the build.
+    - rm -rf public
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
