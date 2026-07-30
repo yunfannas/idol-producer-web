@@ -2175,16 +2175,17 @@ text.idol-radar-val.attr-tone-low {
 
 .group-detail-logo {
   position: absolute;
-  right: 0.4rem;
-  bottom: 0.4rem;
+  right: 0.45rem;
+  bottom: 0.45rem;
   display: block;
   width: auto;
   height: auto;
-  max-width: calc(100% - 0.8rem);
-  max-height: calc(100% - 0.8rem);
+  max-width: 28%;
+  max-height: 28%;
   object-fit: contain;
   border-radius: 3px;
   border: 2px solid rgb(0 0 0 / 0.35);
+  background: rgb(0 0 0 / 0.25);
 }
 
 .group-detail-hero-ph {

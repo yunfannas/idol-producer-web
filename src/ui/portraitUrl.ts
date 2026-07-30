@@ -199,6 +199,11 @@ export function wirePortraitFallbacks(root: ParentNode): void {
     img.addEventListener(
       "error",
       () => {
+        // Corner logos must not fall back to a letter tile — that overlaps the hero.
+        if (img.classList.contains("group-detail-logo")) {
+          img.remove();
+          return;
+        }
         if (img.src !== fb) {
           img.src = fb;
           delete img.dataset.fallback;

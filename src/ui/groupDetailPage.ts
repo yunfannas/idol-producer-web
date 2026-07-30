@@ -182,18 +182,31 @@ function rosterMemberRowHtml(
   return `<tr><td>${nameCell}</td><td>${romaji ? htmlEsc(romaji) : htmlEsc("—")}</td><td>${colorCell}</td><td class="group-roster-stat">${htmlEsc(age)}</td><td class="group-roster-stat">${htmlEsc(join)}</td><td>${groupsCol}</td></tr>`;
 }
 
+function pictureBasename(raw: string): string {
+  return raw.replace(/\\/g, "/").split("/").pop()?.trim().toLowerCase() ?? "";
+}
+
 function pickGroupHeroPicturePaths(g: Record<string, unknown>): { heroRaw: string | null; logoRaw: string | null } {
   const pics = Array.isArray(g.pictures)
-    ? (g.pictures as unknown[]).filter((x): x is string => typeof x === "string" && x.trim() !== "")
+    ? (g.pictures as unknown[]).filter((x): x is string => typeof x === "string" && x.trim() !== "").map((p) => p.trim())
     : [];
-  let logo: string | null = null;
-  let hero: string | null = null;
-  for (const p of pics) {
-    const pl = p.toLowerCase();
-    if (pl.includes("logo")) logo = p.trim();
-    else if (!hero) hero = p.trim();
+  const isLogo = (p: string) => /logo/i.test(pictureBasename(p));
+  const isIcon = (p: string) => /icon/i.test(pictureBasename(p)) && !isLogo(p);
+  const logos = pics.filter(isLogo);
+  const icons = pics.filter(isIcon);
+  const photos = pics.filter((p) => !isLogo(p) && !isIcon(p));
+
+  // Prefer a real photo as hero; fall back to brand icon, then any non-logo.
+  const hero = photos[0] ?? icons[0] ?? pics.find((p) => !isLogo(p)) ?? pics[0] ?? null;
+  const logo = logos[0] ?? null;
+
+  // Corner badge only on photo heroes — icon/logo heroes are already brand art.
+  if (!hero || !logo || isIcon(hero) || isLogo(hero)) {
+    return { heroRaw: hero, logoRaw: null };
   }
-  if (!hero && pics[0]) hero = pics[0]!.trim();
+  if (pictureBasename(hero) === pictureBasename(logo)) {
+    return { heroRaw: hero, logoRaw: null };
+  }
   return { heroRaw: hero, logoRaw: logo };
 }
 
