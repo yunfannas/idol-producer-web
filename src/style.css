@@ -3427,6 +3427,135 @@ text.idol-radar-val.attr-tone-low {
   box-shadow: inset 0 0 0 1px rgb(83 52 131 / 0.45);
 }
 
+.songs-discography-row.is-video {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.songs-discography-row.is-video:hover {
+  background: transparent;
+}
+
+.songs-discography-track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.songs-discography-track-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.2rem 0.15rem;
+}
+
+.songs-discography-track-preview {
+  min-width: 3.5rem;
+}
+
+.songs-discography-track-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  /* Light lavender — high contrast on dark card (--bg-card / --accent are too close). */
+  color: #e4d4ff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(228 212 255 / 0.55);
+  text-underline-offset: 0.15em;
+}
+
+.songs-discography-track-link:hover {
+  color: #ffffff;
+  text-decoration-color: rgb(255 255 255 / 0.75);
+}
+
+.songs-discography-track-placeholder {
+  color: rgb(255 255 255 / 0.55);
+  font-style: italic;
+}
+
+.songs-title-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.songs-title-link:hover,
+.songs-title-link.is-selected {
+  color: #e4d4ff;
+  text-decoration: underline;
+  text-decoration-color: rgb(228 212 255 / 0.55);
+  text-underline-offset: 0.15em;
+}
+
+.songs-main-table tr.is-selected-song,
+.songs-main-table tr.is-selected-song td {
+  background: rgb(83 52 131 / 0.14);
+}
+
+.songs-song-detail {
+  margin: 0 0 0.85rem;
+}
+
+.songs-song-detail-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.songs-song-detail-head .content-h3 {
+  margin: 0;
+}
+
+.songs-song-detail-meta {
+  margin: 0.25rem 0 0;
+}
+
+.songs-song-detail-actions {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.songs-song-detail-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.55rem 1rem;
+  margin: 0.85rem 0 0.35rem;
+}
+
+.songs-song-detail-facts dt {
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+
+.songs-song-detail-facts dd {
+  margin: 0.1rem 0 0;
+}
+
+.songs-song-detail-albums ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.songs-song-detail-desc {
+  margin: 0.75rem 0 0;
+}
+
 .songs-making-tbody .songs-making-divider td {
   padding-top: 0.85rem;
   padding-bottom: 0.35rem;

@@ -1,0 +1,5381 @@
+{
+  "AKB48": {
+    "singles": [
+      {
+        "title": "さよならクロール",
+        "date": "2013-05-22",
+        "peak": 1
+      },
+      {
+        "title": "真夏のSounds good !",
+        "date": "2012-05-23",
+        "peak": 1
+      },
+      {
+        "title": "Teacher Teacher",
+        "date": "2018-05-30",
+        "peak": 1
+      },
+      {
+        "title": "ラブラドール・レトリバー",
+        "date": "2014-05-21",
+        "peak": 1
+      },
+      {
+        "title": "僕たちは戦わない",
+        "date": "2015-05-20",
+        "peak": 1
+      },
+      {
+        "title": "フライングゲット",
+        "date": "2011-08-24",
+        "peak": 1
+      },
+      {
+        "title": "Everyday、カチューシャ",
+        "date": "2011-05-25",
+        "peak": 1
+      },
+      {
+        "title": "恋するフォーチュンクッキー",
+        "date": "2013-08-21",
+        "peak": 1
+      },
+      {
+        "title": "翼はいらない",
+        "date": "2016-06-01",
+        "peak": 1
+      },
+      {
+        "title": "センチメンタルトレイン",
+        "date": "2018-09-19",
+        "peak": 1
+      },
+      {
+        "title": "風は吹いている",
+        "date": "2011-10-26",
+        "peak": 1
+      },
+      {
+        "title": "GIVE ME FIVE!",
+        "date": "2012-02-15",
+        "peak": 1
+      },
+      {
+        "title": "サステナブル",
+        "date": "2019-09-18",
+        "peak": 1
+      },
+      {
+        "title": "願いごとの持ち腐れ",
+        "date": "2017-05-31",
+        "peak": 1
+      },
+      {
+        "title": "ハロウィン・ナイト",
+        "date": "2015-08-26",
+        "peak": 1
+      },
+      {
+        "title": "ギンガムチェック",
+        "date": "2012-08-29",
+        "peak": 1
+      },
+      {
+        "title": "ジワるDAYS",
+        "date": "2019-03-13",
+        "peak": 1
+      },
+      {
+        "title": "上からマリコ",
+        "date": "2011-12-07",
+        "peak": 1
+      },
+      {
+        "title": "君はメロディー",
+        "date": "2016-03-09",
+        "peak": 1
+      },
+      {
+        "title": "ハート・エレキ",
+        "date": "2013-10-30",
+        "peak": 1
+      }
+    ],
+    "albums": [
+      {
+        "title": "1830m",
+        "date": "2012-08-15",
+        "peak": 1
+      },
+      {
+        "title": "次の足跡",
+        "date": "2014-01-22",
+        "peak": 1
+      },
+      {
+        "title": "ここにいたこと",
+        "date": "2011-06-08",
+        "peak": 1
+      },
+      {
+        "title": "ここがロドスだ、ここで跳べ!",
+        "date": "2015-01-21",
+        "peak": 1
+      },
+      {
+        "title": "0と1の間",
+        "date": "2015-11-18",
+        "peak": 1
+      },
+      {
+        "title": "サムネイル",
+        "date": "2017-01-25",
+        "peak": 1
+      },
+      {
+        "title": "僕たちは、あの日の夜明けを知っている",
+        "date": "2018-01-24",
+        "peak": 1
+      },
+      {
+        "title": "神曲たち",
+        "date": "2010-04-07",
+        "peak": 1
+      },
+      {
+        "title": "なんてったってAKB48",
+        "date": "2024-12-25",
+        "peak": 1
+      },
+      {
+        "title": "SET LIST ～グレイテストソングス～完全盤",
+        "date": "2010-07-14",
+        "peak": 2
+      },
+      {
+        "title": "SET LIST～グレイテストソングス 2006-2007～",
+        "date": "2008-01-01",
+        "peak": 29
+      },
+      {
+        "title": "Team B 3rd Stage「パジャマドライブ」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 17
+      },
+      {
+        "title": "Team K 4th Stage「最終ベルが鳴る」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 22
+      },
+      {
+        "title": "Team A 4th stage「ただいま恋愛中」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 27
+      },
+      {
+        "title": "ひまわり組 1st stage「僕の太陽」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 30
+      },
+      {
+        "title": "Team K 6th Stage「RESET」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 37
+      },
+      {
+        "title": "ひまわり組 2nd Stage「夢を死なせるわけにいかない」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 31
+      },
+      {
+        "title": "Team A 6th Stage「目撃者」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 40
+      },
+      {
+        "title": "Team B 5th Stage「シアターの女神」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 43
+      },
+      {
+        "title": "Team A 5th Stage「恋愛禁止条例」～studio recordings コレクション～",
+        "date": "2013-01-01",
+        "peak": 47
+      }
+    ]
+  },
+  "乃木坂46": {
+    "singles": [
+      {
+        "title": "帰り道は遠回りしたくなる",
+        "date": "2018-11-14",
+        "peak": 1
+      },
+      {
+        "title": "ジコチューで行こう!",
+        "date": "2018-08-08",
+        "peak": 1
+      },
+      {
+        "title": "シンクロニシティ",
+        "date": "2018-04-25",
+        "peak": 1
+      },
+      {
+        "title": "Sing Out!",
+        "date": "2019-05-29",
+        "peak": 1
+      },
+      {
+        "title": "夜明けまで強がらなくてもいい",
+        "date": "2019-09-04",
+        "peak": 1
+      },
+      {
+        "title": "しあわせの保護色",
+        "date": "2020-03-25",
+        "peak": 1
+      },
+      {
+        "title": "いつかできるから今日できる",
+        "date": "2017-10-11",
+        "peak": 1
+      },
+      {
+        "title": "逃げ水",
+        "date": "2017-08-09",
+        "peak": 1
+      },
+      {
+        "title": "インフルエンサー",
+        "date": "2017-03-22",
+        "peak": 1
+      },
+      {
+        "title": "サヨナラの意味",
+        "date": "2016-11-09",
+        "peak": 1
+      },
+      {
+        "title": "裸足でSummer",
+        "date": "2016-07-27",
+        "peak": 1
+      },
+      {
+        "title": "ハルジオンが咲く頃",
+        "date": "2016-03-23",
+        "peak": 1
+      },
+      {
+        "title": "ここにはないもの",
+        "date": "2022-12-07",
+        "peak": 1
+      },
+      {
+        "title": "今、話したい誰かがいる",
+        "date": "2015-10-28",
+        "peak": 1
+      },
+      {
+        "title": "僕は僕を好きになる",
+        "date": "2021-01-27",
+        "peak": 1
+      },
+      {
+        "title": "ごめんねFingers crossed",
+        "date": "2021-06-09",
+        "peak": 1
+      },
+      {
+        "title": "好きというのはロックだぜ!",
+        "date": "2022-08-31",
+        "peak": 1
+      },
+      {
+        "title": "太陽ノック",
+        "date": "2015-07-22",
+        "peak": 1
+      },
+      {
+        "title": "おひとりさま天国",
+        "date": "2023-08-23",
+        "peak": 1
+      },
+      {
+        "title": "Same numbers",
+        "date": "2025-07-30",
+        "peak": 1
+      }
+    ],
+    "albums": [
+      {
+        "title": "今が思い出になるまで",
+        "date": "2019-04-17",
+        "peak": 1
+      },
+      {
+        "title": "生まれてから初めて見た夢",
+        "date": "2017-05-24",
+        "peak": 1
+      },
+      {
+        "title": "Time flies",
+        "date": "2021-12-15",
+        "peak": 1
+      },
+      {
+        "title": "それぞれの椅子",
+        "date": "2016-05-25",
+        "peak": 1
+      },
+      {
+        "title": "透明な色",
+        "date": "2015-01-07",
+        "peak": 1
+      },
+      {
+        "title": "My respect",
+        "date": "2026-01-14",
+        "peak": 1
+      },
+      {
+        "title": "僕だけの君～Under Super Best～",
+        "date": "2018-01-10",
+        "peak": 1
+      }
+    ]
+  },
+  "Perfume": {
+    "singles": [
+      {
+        "title": "love the world",
+        "date": "2008-07-09",
+        "peak": 1
+      },
+      {
+        "title": "レーザービーム/微かなカオリ",
+        "date": "2011-05-18",
+        "peak": 2
+      },
+      {
+        "title": "VOICE",
+        "date": "2010-08-11",
+        "peak": 2
+      },
+      {
+        "title": "Spring of Life",
+        "date": "2012-04-11",
+        "peak": 2
+      },
+      {
+        "title": "ねぇ",
+        "date": "2010-11-10",
+        "peak": 2
+      },
+      {
+        "title": "Dream Fighter",
+        "date": "2008-11-19",
+        "peak": 2
+      },
+      {
+        "title": "不自然なガール/ナチュラルに恋して",
+        "date": "2010-04-14",
+        "peak": 2
+      },
+      {
+        "title": "Spending all my time",
+        "date": "2012-08-15",
+        "peak": 2
+      },
+      {
+        "title": "ワンルーム・ディスコ",
+        "date": "2009-03-25",
+        "peak": 1
+      },
+      {
+        "title": "スパイス",
+        "date": "2011-11-02",
+        "peak": 2
+      },
+      {
+        "title": "未来のミュージアム",
+        "date": "2013-02-27",
+        "peak": 2
+      },
+      {
+        "title": "Cling Cling",
+        "date": "2014-07-16",
+        "peak": 2
+      },
+      {
+        "title": "STAR TRAIN",
+        "date": "2015-10-28",
+        "peak": 4
+      },
+      {
+        "title": "Magic of Love",
+        "date": "2013-05-22",
+        "peak": 3
+      },
+      {
+        "title": "ポリリズム",
+        "date": "2007-09-12",
+        "peak": 7
+      },
+      {
+        "title": "Relax In The City/Pick Me Up",
+        "date": "2015-04-29",
+        "peak": 2
+      },
+      {
+        "title": "Sweet Refrain",
+        "date": "2013-11-27",
+        "peak": 3
+      },
+      {
+        "title": "Baby cruising Love/マカロニ",
+        "date": "2008-01-16",
+        "peak": 3
+      },
+      {
+        "title": "TOKYO GIRL",
+        "date": "2017-02-15",
+        "peak": 2
+      },
+      {
+        "title": "If you wanna",
+        "date": "2017-08-30",
+        "peak": 2
+      }
+    ],
+    "albums": [
+      {
+        "title": "GAME",
+        "date": "2008-04-16",
+        "peak": 1
+      },
+      {
+        "title": "JPN",
+        "date": "2011-11-30",
+        "peak": 1
+      },
+      {
+        "title": "⊿",
+        "date": "2009-07-08",
+        "peak": 1
+      },
+      {
+        "title": "LEVEL3",
+        "date": "2013-10-02",
+        "peak": 1
+      },
+      {
+        "title": "Perfume Global Compilation \"LOVE THE WORLD\"",
+        "date": "2012-09-12",
+        "peak": 1
+      },
+      {
+        "title": "COSMIC EXPLORER",
+        "date": "2016-04-06",
+        "peak": 1
+      },
+      {
+        "title": "Perfume～Complete Best～(07.02)",
+        "date": "2007-02-14",
+        "peak": 24
+      },
+      {
+        "title": "Perfume The Best\"P Cubed\"",
+        "date": "2019-09-18",
+        "peak": 1
+      },
+      {
+        "title": "Future Pop",
+        "date": "2018-08-15",
+        "peak": 1
+      },
+      {
+        "title": "PLASMA",
+        "date": "2022-07-27",
+        "peak": 3
+      },
+      {
+        "title": "ネビュラロマンス 前篇",
+        "date": "2024-10-30",
+        "peak": 5
+      },
+      {
+        "title": "ネビュラロマンス 後篇",
+        "date": "2025-09-17",
+        "peak": 3
+      },
+      {
+        "title": "ポリゴンウェイヴEP",
+        "date": "2021-09-22",
+        "peak": 2
+      },
+      {
+        "title": "LEVEL3(Bonus Edition)",
+        "date": "2014-10-22",
+        "peak": 12
+      },
+      {
+        "title": "Perfume Complete\"LP\"BOX",
+        "date": "2016-02-17",
+        "peak": 19
+      }
+    ]
+  },
+  "ももいろクローバーZ": {
+    "singles": [
+      {
+        "title": "サラバ、愛しき悲しみたちよ",
+        "date": "2012-11-21",
+        "peak": 2
+      },
+      {
+        "title": "Z女戦争",
+        "date": "2012-06-27",
+        "peak": 3
+      },
+      {
+        "title": "GOUNN",
+        "date": "2013-11-06",
+        "peak": 2
+      },
+      {
+        "title": "猛烈宇宙交響曲・第七楽章「無限の愛」",
+        "date": "2012-03-07",
+        "peak": 5
+      },
+      {
+        "title": "泣いてもいいんだよ",
+        "date": "2014-05-08",
+        "peak": 1
+      },
+      {
+        "title": "青春賦",
+        "date": "2015-03-11",
+        "peak": 4
+      },
+      {
+        "title": "労働讃歌",
+        "date": "2011-11-23",
+        "peak": 7
+      },
+      {
+        "title": "MOON PRIDE",
+        "date": "2014-07-30",
+        "peak": 3
+      },
+      {
+        "title": "ザ・ゴールデン・ヒストリー",
+        "date": "2016-09-07",
+        "peak": 2
+      },
+      {
+        "title": "『Z』の誓い",
+        "date": "2015-04-29",
+        "peak": 4
+      },
+      {
+        "title": "BLAST!",
+        "date": "2017-08-02",
+        "peak": 3
+      },
+      {
+        "title": "ミライボウル",
+        "date": "2011-03-09",
+        "peak": 3
+      },
+      {
+        "title": "「泣いちゃいそう冬/鋼の意志」ももクリ 2013＜LIVE会場&キングE-SHOP＞期間限定シングル【2013年12月23日LIVE@西武ドーム】",
+        "date": "2013-12-23",
+        "peak": 2
+      },
+      {
+        "title": "ピンキージョーンズ",
+        "date": "2010-11-10",
+        "peak": 8
+      },
+      {
+        "title": "行くぜっ!怪盗少女",
+        "date": "2010-05-05",
+        "peak": 3
+      },
+      {
+        "title": "一粒の笑顔で…/Chai Maxx ZERO 「ももいろクリスマス2014 さいたまスーパーアリーナ大会～Shining Snow Story～」開催記念シングル",
+        "date": "2014-12-24",
+        "peak": 7
+      },
+      {
+        "title": "笑一笑 ～シャオイーシャオ!～",
+        "date": "2018-04-11",
+        "peak": 4
+      },
+      {
+        "title": "行くぜっ!怪盗少女 ～Special Edition～",
+        "date": "2012-09-26",
+        "peak": 7
+      },
+      {
+        "title": "stay gold",
+        "date": "2019-11-27",
+        "peak": 4
+      },
+      {
+        "title": "未来へススメ!",
+        "date": "2009-11-11",
+        "peak": 11
+      }
+    ],
+    "albums": [
+      {
+        "title": "5TH DIMENSION",
+        "date": "2013-04-10",
+        "peak": 1
+      },
+      {
+        "title": "バトル アンド ロマンス",
+        "date": "2011-07-27",
+        "peak": 2
+      },
+      {
+        "title": "入口のない出口",
+        "date": "2013-06-05",
+        "peak": 2
+      },
+      {
+        "title": "白金の夜明け",
+        "date": "2016-02-17",
+        "peak": 1
+      },
+      {
+        "title": "AMARANTHUS",
+        "date": "2016-02-17",
+        "peak": 2
+      },
+      {
+        "title": "MOMOIRO CLOVER Z BEST ALBUM「桃も十、番茶も出花」",
+        "date": "2018-05-23",
+        "peak": 1
+      },
+      {
+        "title": "MOMOIRO CLOVER Z",
+        "date": "2019-05-17",
+        "peak": 1
+      },
+      {
+        "title": "MCZ WINTER SONG COLLECTION",
+        "date": "2016-12-23",
+        "peak": 5
+      },
+      {
+        "title": "祝典",
+        "date": "2022-05-17",
+        "peak": 2
+      },
+      {
+        "title": "イドラ",
+        "date": "2024-05-08",
+        "peak": 5
+      },
+      {
+        "title": "田中将大",
+        "date": "2021-02-24",
+        "peak": 7
+      },
+      {
+        "title": "月色Chainon【ももいろクローバーZ盤】",
+        "date": "2021-01-13",
+        "peak": 6
+      }
+    ]
+  },
+  "日向坂46": {
+    "singles": [
+      {
+        "title": "ソンナコトナイヨ",
+        "date": "2020-02-19",
+        "peak": 1
+      },
+      {
+        "title": "キュン",
+        "date": "2019-03-27",
+        "peak": 1
+      },
+      {
+        "title": "こんなに好きになっちゃっていいの?",
+        "date": "2019-10-02",
+        "peak": 1
+      },
+      {
+        "title": "ドレミソラシド",
+        "date": "2019-07-17",
+        "peak": 1
+      },
+      {
+        "title": "君しか勝たん",
+        "date": "2021-05-26",
+        "peak": 1
+      },
+      {
+        "title": "絶対的第六感",
+        "date": "2024-09-18",
+        "peak": 1
+      },
+      {
+        "title": "One choice",
+        "date": "2023-04-19",
+        "peak": 1
+      },
+      {
+        "title": "クリフハンガー",
+        "date": "2026-01-28",
+        "peak": 1
+      },
+      {
+        "title": "僕なんか",
+        "date": "2022-06-01",
+        "peak": 1
+      },
+      {
+        "title": "Am I ready?",
+        "date": "2023-07-26",
+        "peak": 1
+      },
+      {
+        "title": "お願いバッハ!",
+        "date": "2025-09-17",
+        "peak": 1
+      },
+      {
+        "title": "Kind of love",
+        "date": "2026-05-20",
+        "peak": 1
+      },
+      {
+        "title": "月と星が踊るMidnight",
+        "date": "2022-10-26",
+        "peak": 1
+      },
+      {
+        "title": "君はハニーデュー",
+        "date": "2024-05-08",
+        "peak": 1
+      },
+      {
+        "title": "卒業写真だけが知ってる",
+        "date": "2025-01-29",
+        "peak": 1
+      },
+      {
+        "title": "ってか",
+        "date": "2021-10-27",
+        "peak": 1
+      },
+      {
+        "title": "Love yourself!",
+        "date": "2025-05-21",
+        "peak": 1
+      }
+    ],
+    "albums": [
+      {
+        "title": "ひなたざか",
+        "date": "2020-09-23",
+        "peak": 1
+      },
+      {
+        "title": "走り出す瞬間",
+        "date": "2018-06-20",
+        "peak": 1
+      },
+      {
+        "title": "脈打つ感情",
+        "date": "2023-11-08",
+        "peak": 1
+      }
+    ]
+  },
+  "SKE48": {
+    "singles": [
+      {
+        "title": "コケティッシュ渋滞中",
+        "date": "2015-03-31",
+        "peak": 1
+      },
+      {
+        "title": "チョコの奴隷",
+        "date": "2013-01-30",
+        "peak": 1
+      },
+      {
+        "title": "美しい稲妻",
+        "date": "2013-07-17",
+        "peak": 1
+      },
+      {
+        "title": "キスだって左利き",
+        "date": "2012-09-19",
+        "peak": 1
+      },
+      {
+        "title": "片想いFinally",
+        "date": "2012-01-25",
+        "peak": 1
+      },
+      {
+        "title": "アイシテラブル!",
+        "date": "2012-05-16",
+        "peak": 1
+      },
+      {
+        "title": "賛成カワイイ!",
+        "date": "2013-11-20",
+        "peak": 1
+      },
+      {
+        "title": "未来とは?",
+        "date": "2014-03-19",
+        "peak": 1
+      },
+      {
+        "title": "パレオはエメラルド",
+        "date": "2011-07-27",
+        "peak": 1
+      },
+      {
+        "title": "オキドキ",
+        "date": "2011-11-09",
+        "peak": 1
+      },
+      {
+        "title": "不器用太陽",
+        "date": "2014-07-30",
+        "peak": 1
+      },
+      {
+        "title": "前のめり",
+        "date": "2015-08-12",
+        "peak": 1
+      },
+      {
+        "title": "12月のカンガルー",
+        "date": "2014-12-10",
+        "peak": 1
+      },
+      {
+        "title": "FRUSTRATION",
+        "date": "2019-07-24",
+        "peak": 1
+      },
+      {
+        "title": "愛のホログラム",
+        "date": "2024-02-28",
+        "peak": 1
+      },
+      {
+        "title": "Stand by you",
+        "date": "2018-12-12",
+        "peak": 1
+      },
+      {
+        "title": "好きになっちゃった",
+        "date": "2023-07-05",
+        "peak": 1
+      },
+      {
+        "title": "いきなりパンチライン",
+        "date": "2018-07-04",
+        "peak": 1
+      },
+      {
+        "title": "無意識の色",
+        "date": "2018-01-10",
+        "peak": 1
+      },
+      {
+        "title": "チキンLINE",
+        "date": "2016-03-30",
+        "peak": 1
+      }
+    ],
+    "albums": [
+      {
+        "title": "この日のチャイムを忘れない",
+        "date": "2012-09-19",
+        "peak": 2
+      },
+      {
+        "title": "革命の丘",
+        "date": "2017-02-22",
+        "peak": 2
+      },
+      {
+        "title": "ラムネの飲み方",
+        "date": "2012-03-14",
+        "peak": 6
+      },
+      {
+        "title": "ずっと君を探している",
+        "date": "2026-07-01",
+        "peak": 9
+      },
+      {
+        "title": "時間がない",
+        "date": "2022-12-21",
+        "peak": 12
+      },
+      {
+        "title": "愛を君に、愛を僕に",
+        "date": "2022-06-08",
+        "peak": 3
+      },
+      {
+        "title": "手をつなぎながら",
+        "date": "2010-02-10",
+        "peak": 21
+      },
+      {
+        "title": "声出していこーぜ!!!",
+        "date": "2023-08-02",
+        "peak": 11
+      },
+      {
+        "title": "SKEフェスティバル",
+        "date": "2017-09-27",
+        "peak": 10
+      },
+      {
+        "title": "制服の芽",
+        "date": "2010-04-28",
+        "peak": 22
+      },
+      {
+        "title": "PARTYが始まるよ",
+        "date": "2013-10-09",
+        "peak": 21
+      },
+      {
+        "title": "逆上がり",
+        "date": "2013-10-09",
+        "peak": 22
+      },
+      {
+        "title": "会いたかった",
+        "date": "2013-10-09",
+        "peak": 23
+      },
+      {
+        "title": "パジャマドライブ",
+        "date": "2013-10-09",
+        "peak": 26
+      }
+    ]
+  },
+  "NMB48": {
+    "singles": [
+      {
+        "title": "僕らのユリイカ",
+        "date": "2013-06-19",
+        "peak": 1
+      },
+      {
+        "title": "Don't look back!",
+        "date": "2015-03-31",
+        "peak": 2
+      },
+      {
+        "title": "カモネギックス",
+        "date": "2013-10-02",
+        "peak": 1
+      },
+      {
+        "title": "らしくない",
+        "date": "2014-11-05",
+        "peak": 1
+      },
+      {
+        "title": "高嶺の林檎",
+        "date": "2014-03-26",
+        "peak": 1
+      },
+      {
+        "title": "ナギイチ",
+        "date": "2012-05-09",
+        "peak": 2
+      },
+      {
+        "title": "ドリアン少年",
+        "date": "2015-07-15",
+        "peak": 1
+      },
+      {
+        "title": "Must be now",
+        "date": "2015-10-07",
+        "peak": 1
+      },
+      {
+        "title": "北川謙二",
+        "date": "2012-11-07",
+        "peak": 1
+      },
+      {
+        "title": "ヴァージニティー",
+        "date": "2012-08-08",
+        "peak": 1
+      },
+      {
+        "title": "純情U-19",
+        "date": "2012-02-08",
+        "peak": 1
+      },
+      {
+        "title": "僕はいない",
+        "date": "2016-08-03",
+        "peak": 1
+      },
+      {
+        "title": "僕だって泣いちゃうよ",
+        "date": "2018-10-17",
+        "peak": 1
+      },
+      {
+        "title": "床の間正座娘",
+        "date": "2019-02-20",
+        "peak": 1
+      },
+      {
+        "title": "ワロタピーポー",
+        "date": "2017-12-27",
+        "peak": 1
+      },
+      {
+        "title": "オーマイガー!",
+        "date": "2011-10-19",
+        "peak": 1
+      },
+      {
+        "title": "僕以外の誰か",
+        "date": "2016-12-28",
+        "peak": 1
+      },
+      {
+        "title": "甘噛み姫",
+        "date": "2016-04-27",
+        "peak": 1
+      },
+      {
+        "title": "母校へ帰れ!",
+        "date": "2019-08-14",
+        "peak": 1
+      },
+      {
+        "title": "がんばらぬわい",
+        "date": "2024-10-09",
+        "peak": 2
+      }
+    ],
+    "albums": [
+      {
+        "title": "てっぺんとったんで!",
+        "date": "2013-02-27",
+        "peak": 1
+      },
+      {
+        "title": "世界の中心は大阪や～なんば自治区～",
+        "date": "2014-08-13",
+        "peak": 1
+      },
+      {
+        "title": "難波愛～今、思うこと～",
+        "date": "2017-08-02",
+        "peak": 1
+      },
+      {
+        "title": "NMB13",
+        "date": "2023-03-08",
+        "peak": 1
+      },
+      {
+        "title": "劇場公演CD『天使のユートピア』",
+        "date": "2024-08-14",
+        "peak": 10
+      },
+      {
+        "title": "ここにだって天使はいる",
+        "date": "2014-03-31",
+        "peak": 21
+      },
+      {
+        "title": "Team N 1st Stage「誰かのために」",
+        "date": "2014-01-01",
+        "peak": 18
+      },
+      {
+        "title": "Team N 2nd Stage「青春ガールズ」",
+        "date": "2014-01-01",
+        "peak": 24
+      },
+      {
+        "title": "Team M 1st Stage「アイドルの夜明け」",
+        "date": "2014-01-01",
+        "peak": 27
+      },
+      {
+        "title": "Team BⅡ 2nd Stage「ただいま恋愛中」",
+        "date": "2014-01-01",
+        "peak": 32
+      },
+      {
+        "title": "Team BⅡ 1st Stage「会いたかった」",
+        "date": "2014-01-01",
+        "peak": 33
+      }
+    ]
+  },
+  "HKT48": {
+    "singles": [
+      {
+        "title": "しぇからしか!",
+        "date": "2015-11-25",
+        "peak": 1
+      },
+      {
+        "title": "最高かよ",
+        "date": "2016-09-07",
+        "peak": 1
+      },
+      {
+        "title": "12秒",
+        "date": "2015-04-22",
+        "peak": 1
+      },
+      {
+        "title": "桜、みんなで食べた",
+        "date": "2014-03-12",
+        "peak": 1
+      },
+      {
+        "title": "控えめI love you!",
+        "date": "2014-09-24",
+        "peak": 1
+      },
+      {
+        "title": "メロンジュース",
+        "date": "2013-09-04",
+        "peak": 1
+      },
+      {
+        "title": "74億分の1の君へ",
+        "date": "2016-04-13",
+        "peak": 1
+      },
+      {
+        "title": "意志",
+        "date": "2019-04-10",
+        "peak": 1
+      },
+      {
+        "title": "スキ!スキ!スキップ!",
+        "date": "2013-03-20",
+        "peak": 1
+      },
+      {
+        "title": "バグっていいじゃん",
+        "date": "2017-02-15",
+        "peak": 1
+      },
+      {
+        "title": "早送りカレンダー",
+        "date": "2018-05-02",
+        "peak": 1
+      },
+      {
+        "title": "キスは待つしかないのでしょうか?",
+        "date": "2017-08-02",
+        "peak": 1
+      },
+      {
+        "title": "君はもっとできる",
+        "date": "2023-02-08",
+        "peak": 2
+      },
+      {
+        "title": "ビーサンはなぜなくなるのか?",
+        "date": "2022-06-22",
+        "peak": 1
+      },
+      {
+        "title": "僕はやっと君を心配できる",
+        "date": "2024-09-11",
+        "peak": 3
+      },
+      {
+        "title": "バケツを被れ!",
+        "date": "2023-12-20",
+        "peak": 2
+      },
+      {
+        "title": "3-2",
+        "date": "2020-04-22",
+        "peak": 1
+      },
+      {
+        "title": "君とどこかへ行きたい",
+        "date": "2021-05-12",
+        "peak": 2
+      },
+      {
+        "title": "半袖天使",
+        "date": "2025-07-23",
+        "peak": 3
+      }
+    ],
+    "albums": [
+      {
+        "title": "092",
+        "date": "2017-12-27",
+        "peak": 1
+      },
+      {
+        "title": "アウトスタンディング",
+        "date": "2021-12-01",
+        "peak": 1
+      }
+    ]
+  },
+  "超ときめき♡宣伝部": {
+    "singles": [
+      {
+        "title": "ハートな胸の内■/超最強",
+        "date": "2025-08-27",
+        "peak": 2
+      },
+      {
+        "title": "どりーむじゃんぼ!",
+        "date": "2026-05-20",
+        "peak": 2
+      },
+      {
+        "title": "世界でいちばんアイドル/ひみつのふふふ",
+        "date": "2025-04-30",
+        "peak": 2
+      },
+      {
+        "title": "最上級にかわいいの!",
+        "date": "2024-05-29",
+        "peak": 4
+      },
+      {
+        "title": "ときめき■宣伝部のVICTORY STORY/青春ハートシェイカー",
+        "date": "2019-04-10",
+        "peak": 3
+      },
+      {
+        "title": "かわいいメモリアル",
+        "date": "2023-09-27",
+        "peak": 3
+      },
+      {
+        "title": "LOVEイヤイヤ期",
+        "date": "2023-05-10",
+        "peak": 4
+      },
+      {
+        "title": "恋のシェイプアップ■",
+        "date": "2019-10-09",
+        "peak": 2
+      },
+      {
+        "title": "むてきのうた",
+        "date": "2016-06-01",
+        "peak": 4
+      },
+      {
+        "title": "STAR",
+        "date": "2022-11-09",
+        "peak": 5
+      },
+      {
+        "title": "DEADHEAT",
+        "date": "2017-11-22",
+        "peak": 5
+      },
+      {
+        "title": "トゥモロー最強説!!",
+        "date": "2020-08-26",
+        "peak": 7
+      },
+      {
+        "title": "季節外れのときめき■サマー",
+        "date": "2015-12-02",
+        "peak": 8
+      },
+      {
+        "title": "どどどどどりーまー",
+        "date": "2017-06-07",
+        "peak": 7
+      },
+      {
+        "title": "ガンバ!!",
+        "date": "2016-11-09",
+        "peak": 13
+      },
+      {
+        "title": "土っキュン■!!少女",
+        "date": "2015-06-24",
+        "peak": 13
+      }
+    ],
+    "albums": [
+      {
+        "title": "ときめきえがお",
+        "date": "2026-03-04",
+        "peak": 1
+      },
+      {
+        "title": "ときめきルールブック",
+        "date": "2024-12-04",
+        "peak": 3
+      },
+      {
+        "title": "ときめく恋と青春",
+        "date": "2024-01-24",
+        "peak": 1
+      },
+      {
+        "title": "ハートギュッと!",
+        "date": "2022-06-22",
+        "peak": 5
+      },
+      {
+        "title": "ときおとめ",
+        "date": "2018-04-11",
+        "peak": 9
+      },
+      {
+        "title": "すきすきすきすきすきすきっ!",
+        "date": "2021-09-29",
+        "peak": 15
+      },
+      {
+        "title": "ときめきがすべて",
+        "date": "2020-12-23",
+        "peak": 26
+      }
+    ]
+  },
+  "BABYMETAL": {
+    "singles": [
+      {
+        "title": "メギツネ",
+        "date": "2013-06-19",
+        "peak": 7
+      },
+      {
+        "title": "イジメ、ダメ、ゼッタイ",
+        "date": "2013-01-09",
+        "peak": 6
+      },
+      {
+        "title": "ヘドバンギャー!!",
+        "date": "2012-07-04",
+        "peak": 20
+      },
+      {
+        "title": "BxMxC",
+        "date": "2020-12-09",
+        "peak": 25
+      },
+      {
+        "title": "「Distortion」JAPAN LIMITED EDITION",
+        "date": "2018-11-23",
+        "peak": 42
+      }
+    ],
+    "albums": [
+      {
+        "title": "METAL RESISTANCE",
+        "date": "2016-04-01",
+        "peak": 2
+      },
+      {
+        "title": "BABYMETAL",
+        "date": "2014-02-26",
+        "peak": 4
+      },
+      {
+        "title": "METAL GALAXY",
+        "date": "2019-10-11",
+        "peak": 3
+      },
+      {
+        "title": "10 BABYMETAL YEARS",
+        "date": "2020-12-23",
+        "peak": 2
+      },
+      {
+        "title": "THE OTHER ONE",
+        "date": "2023-03-24",
+        "peak": 3
+      },
+      {
+        "title": "LIVE AT BUDOKAN ～RED NIGHT～",
+        "date": "2015-01-07",
+        "peak": 3
+      },
+      {
+        "title": "METAL FORTH",
+        "date": "2025-08-08",
+        "peak": 3
+      },
+      {
+        "title": "BABYMETAL -来日記念限定盤-",
+        "date": "2016-09-14",
+        "peak": 6
+      },
+      {
+        "title": "BABYMETAL",
+        "date": "2015-05-29",
+        "peak": 18
+      },
+      {
+        "title": "「LIVE AT WEMBLEY」BABYMETAL WORLD TOUR 2016 kicks off at THE SSE ARENA,WEMBLEY",
+        "date": "2016-12-28",
+        "peak": 5
+      },
+      {
+        "title": "LEGEND - METAL GALAXY[DAY-1](METAL GALAXY WORLD TOUR IN JAPAN EXTRA SHOW)",
+        "date": "2020-09-09",
+        "peak": 9
+      },
+      {
+        "title": "LEGEND - METAL GALAXY[DAY-2](METAL GALAXY WORLD TOUR IN JAPAN EXTRA SHOW)",
+        "date": "2020-09-09",
+        "peak": 10
+      },
+      {
+        "title": "BABYMETAL(完全限定生産盤)",
+        "date": "2015-06-17",
+        "peak": 20
+      },
+      {
+        "title": "10 BABYMETAL BUDOKAN",
+        "date": "2021-09-29",
+        "peak": 19
+      }
+    ]
+  },
+  "東京女子流": {
+    "singles": [
+      {
+        "title": "運命/ワンダフル スマイル(新井ひとみと松島湾子)",
+        "date": "2013-06-05",
+        "peak": 6
+      },
+      {
+        "title": "ROAD TO BUDOKAN 2012 ～Bad Flower～",
+        "date": "2012-10-17",
+        "peak": 4
+      },
+      {
+        "title": "Partition Love",
+        "date": "2014-02-12",
+        "peak": 9
+      },
+      {
+        "title": "Get The Star/Last Forever",
+        "date": "2013-09-25",
+        "peak": 4
+      },
+      {
+        "title": "Say long goodbye/ヒマワリと星屑 -English Version-",
+        "date": "2014-12-10",
+        "peak": 8
+      },
+      {
+        "title": "追憶 -Single Version-/大切な言葉",
+        "date": "2012-05-23",
+        "peak": 12
+      },
+      {
+        "title": "Stay with me",
+        "date": "2015-03-11",
+        "peak": 7
+      },
+      {
+        "title": "Limited addiction/We Will Win! -ココロのバトンでポ・ポンのポ～ン☆-",
+        "date": "2011-08-24",
+        "peak": 11
+      },
+      {
+        "title": "Liar/W.M.A.D",
+        "date": "2011-11-23",
+        "peak": 18
+      },
+      {
+        "title": "Rock you!/おんなじキモチ -YMCK REMIX-",
+        "date": "2012-03-07",
+        "peak": 16
+      },
+      {
+        "title": "ROAD TO BUDOKAN 2013 ～ちいさな奇跡～(ちいさな奇跡)",
+        "date": "2013-11-22",
+        "peak": 16
+      },
+      {
+        "title": "十字架～映画「学校の怪談-呪いの言霊-」Ver.～",
+        "date": "2014-05-21",
+        "peak": 11
+      },
+      {
+        "title": "Love like candy floss",
+        "date": "2011-02-09",
+        "peak": 20
+      },
+      {
+        "title": "ヒマワリと星屑/きっと 忘れない、、、",
+        "date": "2010-10-06",
+        "peak": 19
+      },
+      {
+        "title": "鼓動の秘密/サヨナラ、ありがとう。",
+        "date": "2011-05-18",
+        "peak": 24
+      },
+      {
+        "title": "おんなじキモチ",
+        "date": "2010-05-19",
+        "peak": 30
+      },
+      {
+        "title": "キラリ☆",
+        "date": "2010-05-05",
+        "peak": 30
+      },
+      {
+        "title": "頑張って いつだって 信じてる",
+        "date": "2010-07-21",
+        "peak": 31
+      },
+      {
+        "title": "water lily ～睡蓮～",
+        "date": "2017-07-05",
+        "peak": 17
+      },
+      {
+        "title": "光るよ/Reborn",
+        "date": "2019-02-27",
+        "peak": 25
+      }
+    ],
+    "albums": [
+      {
+        "title": "約束",
+        "date": "2013-01-30",
+        "peak": 13
+      },
+      {
+        "title": "Killing Me Softly",
+        "date": "2014-06-04",
+        "peak": 23
+      },
+      {
+        "title": "Limited addiction",
+        "date": "2012-03-14",
+        "peak": 25
+      },
+      {
+        "title": "1st BEST ALBUM「キラリ☆」",
+        "date": "2015-05-05",
+        "peak": 15
+      },
+      {
+        "title": "鼓動の秘密",
+        "date": "2011-05-04",
+        "peak": 25
+      },
+      {
+        "title": "ノクターナル",
+        "date": "2022-08-03",
+        "peak": 25
+      },
+      {
+        "title": "REFLECTION",
+        "date": "2015-12-23",
+        "peak": 41
+      },
+      {
+        "title": "東京女子流",
+        "date": "2025-07-30",
+        "peak": 39
+      },
+      {
+        "title": "STARTING OVER!“DISCOGRAPHY”CASE OF TGS",
+        "date": "2019-04-24",
+        "peak": 48
+      }
+    ]
+  },
+  "でんぱ組.inc": {
+    "singles": [
+      {
+        "title": "おつかれサマー!",
+        "date": "2015-06-17",
+        "peak": 3
+      },
+      {
+        "title": "サクラあっぱれーしょん",
+        "date": "2014-03-12",
+        "peak": 3
+      },
+      {
+        "title": "あした地球がこなごなになっても",
+        "date": "2015-09-16",
+        "peak": 2
+      },
+      {
+        "title": "プレシャスサマー!",
+        "date": "2018-09-26",
+        "peak": 2
+      },
+      {
+        "title": "おやすみポラリスさよならパラレルワールド/ギラメタスでんぱスターズ",
+        "date": "2018-04-04",
+        "peak": 3
+      },
+      {
+        "title": "でんぱーりーナイト",
+        "date": "2014-11-26",
+        "peak": 6
+      },
+      {
+        "title": "でんでんぱっしょん",
+        "date": "2013-05-29",
+        "peak": 6
+      },
+      {
+        "title": "ちゅるりちゅるりら",
+        "date": "2014-07-30",
+        "peak": 10
+      },
+      {
+        "title": "最Ψ最好調!",
+        "date": "2016-11-02",
+        "peak": 5
+      },
+      {
+        "title": "いのちのよろこび",
+        "date": "2019-06-26",
+        "peak": 5
+      },
+      {
+        "title": "W.W.D Ⅱ",
+        "date": "2013-10-02",
+        "peak": 8
+      },
+      {
+        "title": "Dear☆Stageへようこそ■ ～武道館LIVE記念限定盤～",
+        "date": "2014-05-14",
+        "peak": 9
+      },
+      {
+        "title": "W.W.D/冬へと走りだすお!",
+        "date": "2013-01-16",
+        "peak": 10
+      },
+      {
+        "title": "衝動的S/K/S/D",
+        "date": "2021-09-22",
+        "peak": 7
+      },
+      {
+        "title": "プリンセスでんぱパワー!シャインオン!/千秋万歳!電波一座!",
+        "date": "2021-05-19",
+        "peak": 6
+      },
+      {
+        "title": "ドキ+ワク=パレード!",
+        "date": "2022-03-16",
+        "peak": 9
+      },
+      {
+        "title": "でんぱれーどJAPAN/強い気持ち・強い愛",
+        "date": "2012-05-23",
+        "peak": 37
+      },
+      {
+        "title": "キラキラチューン/Sabotage",
+        "date": "2012-07-18",
+        "peak": 19
+      },
+      {
+        "title": "Future Diver",
+        "date": "2011-11-16",
+        "peak": 46
+      }
+    ],
+    "albums": [
+      {
+        "title": "GOGO DEMPA",
+        "date": "2016-04-27",
+        "peak": 3
+      },
+      {
+        "title": "WWDBEST ～電波良好!～",
+        "date": "2016-12-21",
+        "peak": 4
+      },
+      {
+        "title": "WWDD",
+        "date": "2015-02-18",
+        "peak": 3
+      },
+      {
+        "title": "WORLD WIDE DEMPA",
+        "date": "2013-12-11",
+        "peak": 5
+      },
+      {
+        "title": "ワレワレハデンパグミインクダ",
+        "date": "2019-01-01",
+        "peak": 10
+      },
+      {
+        "title": "愛が地球救うんさ!だってでんぱ組.incはファミリーでしょ",
+        "date": "2020-04-15",
+        "peak": 5
+      },
+      {
+        "title": "We need the DEMPA",
+        "date": "2024-10-08",
+        "peak": 7
+      },
+      {
+        "title": "でんぱぁかしっくれこーど",
+        "date": "2022-12-14",
+        "peak": 14
+      },
+      {
+        "title": "DEMPARK!!!",
+        "date": "2022-07-20",
+        "peak": 14
+      },
+      {
+        "title": "WORLD TOUR 2015 in FUJIYAMA",
+        "date": "2016-01-06",
+        "peak": 15
+      },
+      {
+        "title": "ONE NATION UNDER THE DEMPA",
+        "date": "2023-06-21",
+        "peak": 10
+      }
+    ]
+  },
+  "SUPER☆GiRLS": {
+    "singles": [
+      {
+        "title": "プリプリ■SUMMERキッス",
+        "date": "2012-07-04",
+        "peak": 4
+      },
+      {
+        "title": "常夏ハイタッチ",
+        "date": "2013-06-12",
+        "peak": 3
+      },
+      {
+        "title": "イッチャって♪ ヤッチャって♪",
+        "date": "2015-08-19",
+        "peak": 5
+      },
+      {
+        "title": "赤い情熱",
+        "date": "2012-10-24",
+        "peak": 2
+      },
+      {
+        "title": "ラブサマ!!!",
+        "date": "2016-08-31",
+        "peak": 2
+      },
+      {
+        "title": "女子力←パラダイス",
+        "date": "2011-10-05",
+        "peak": 2
+      },
+      {
+        "title": "ギラギラRevolution",
+        "date": "2015-02-18",
+        "peak": 3
+      },
+      {
+        "title": "アッハッハ!～超絶爆笑音頭～",
+        "date": "2014-08-13",
+        "peak": 4
+      },
+      {
+        "title": "1,000,000☆スマイル",
+        "date": "2012-04-18",
+        "peak": 5
+      },
+      {
+        "title": "空色のキセキ",
+        "date": "2014-02-12",
+        "peak": 2
+      },
+      {
+        "title": "MAX!乙女心/Happy GO Lucky!～ハピ☆ラキでゴー!～",
+        "date": "2011-06-15",
+        "peak": 5
+      },
+      {
+        "title": "花道!!ア～ンビシャス",
+        "date": "2014-05-14",
+        "peak": 3
+      },
+      {
+        "title": "恋☆煌メケーション!!!",
+        "date": "2016-12-21",
+        "peak": 7
+      },
+      {
+        "title": "コングラCHUレーション!!!!",
+        "date": "2019-02-27",
+        "peak": 6
+      },
+      {
+        "title": "ナツカレ★バケーション",
+        "date": "2019-06-12",
+        "peak": 6
+      },
+      {
+        "title": "わがまま GiRLS ROAD",
+        "date": "2018-11-14",
+        "peak": 8
+      },
+      {
+        "title": "がんばって 青春",
+        "date": "2011-04-20",
+        "peak": 5
+      },
+      {
+        "title": "スイート☆スマイル",
+        "date": "2017-04-26",
+        "peak": 11
+      },
+      {
+        "title": "リボン",
+        "date": "2023-07-12",
+        "peak": 6
+      },
+      {
+        "title": "Heart Diamond",
+        "date": "2023-12-20",
+        "peak": 5
+      }
+    ],
+    "albums": [
+      {
+        "title": "EveryBody JUMP!!",
+        "date": "2012-02-01",
+        "peak": 5
+      },
+      {
+        "title": "Celebration",
+        "date": "2013-02-20",
+        "peak": 3
+      },
+      {
+        "title": "SUPER★CASTLE",
+        "date": "2016-03-09",
+        "peak": 3
+      },
+      {
+        "title": "超絶☆HAPPY ～ミンナニサチアレ!!!!!～",
+        "date": "2022-12-21",
+        "peak": 10
+      },
+      {
+        "title": "超絶少女",
+        "date": "2010-12-22",
+        "peak": 32
+      },
+      {
+        "title": "超絶★学園 ～ときめきHighレンジ!!!～",
+        "date": "2019-12-25",
+        "peak": 20
+      },
+      {
+        "title": "超絶少女☆BEST 2010～2014",
+        "date": "2014-03-26",
+        "peak": 35
+      },
+      {
+        "title": "超絶少女☆COMPLETE 2010～2020",
+        "date": "2020-12-23",
+        "peak": 44
+      }
+    ]
+  },
+  "GANG PARADE": {
+    "singles": [
+      {
+        "title": "ブランニューパレード",
+        "date": "2019-04-17",
+        "peak": 2
+      },
+      {
+        "title": "Priority",
+        "date": "2022-11-16",
+        "peak": 3
+      },
+      {
+        "title": "Peace☆超パニック/一夏",
+        "date": "2024-08-28",
+        "peak": 6
+      },
+      {
+        "title": "シグナル",
+        "date": "2022-07-13",
+        "peak": 4
+      },
+      {
+        "title": "Sparkling Moon/グッドラック・マイフューチャー",
+        "date": "2024-12-25",
+        "peak": 1
+      },
+      {
+        "title": "PARADE GOES ON",
+        "date": "2022-03-09",
+        "peak": 2
+      },
+      {
+        "title": "GANG 2",
+        "date": "2018-05-29",
+        "peak": 5
+      },
+      {
+        "title": "CAN'T STOP",
+        "date": "2018-09-11",
+        "peak": 4
+      },
+      {
+        "title": "パショギラ/躍動/ROCKを止めるな!!",
+        "date": "2024-05-22",
+        "peak": 7
+      },
+      {
+        "title": "BREAKING THE ROAD",
+        "date": "2018-02-20",
+        "peak": 5
+      },
+      {
+        "title": "KIMI☆NO☆OKAGE",
+        "date": "2025-12-17",
+        "peak": 6
+      },
+      {
+        "title": "Beyond the Mountain",
+        "date": "2017-07-25",
+        "peak": 11
+      },
+      {
+        "title": "FOUL",
+        "date": "2017-04-25",
+        "peak": 14
+      },
+      {
+        "title": "Plastic 2 Mercy",
+        "date": "2016-12-27",
+        "peak": 10
+      },
+      {
+        "title": "QUEEN OF POP",
+        "date": "2016-03-15",
+        "peak": 13
+      },
+      {
+        "title": "UNIT",
+        "date": "2015-01-06",
+        "peak": 16
+      },
+      {
+        "title": "WE ARE the IDOL",
+        "date": "2016-07-19",
+        "peak": 22
+      },
+      {
+        "title": "Happy Lucky Kirakira Lucky",
+        "date": "2015-12-08",
+        "peak": 24
+      },
+      {
+        "title": "Plastic 2 Mercy",
+        "date": "2014-09-30",
+        "peak": 21
+      }
+    ],
+    "albums": [
+      {
+        "title": "The Night Park E.P.",
+        "date": "2023-11-15",
+        "peak": 4
+      },
+      {
+        "title": "OUR PARADE",
+        "date": "2023-05-10",
+        "peak": 1
+      },
+      {
+        "title": "LOVE PARADE",
+        "date": "2019-11-13",
+        "peak": 2
+      },
+      {
+        "title": "GANG RISE",
+        "date": "2025-06-18",
+        "peak": 5
+      },
+      {
+        "title": "GANG FINALE",
+        "date": "2026-06-17",
+        "peak": 5
+      },
+      {
+        "title": "LAST GANG PARADE",
+        "date": "2019-01-08",
+        "peak": 4
+      },
+      {
+        "title": "GANG PARADE takes themselves higher!!",
+        "date": "2017-11-21",
+        "peak": 14
+      },
+      {
+        "title": "P.O.P",
+        "date": "2015-08-04",
+        "peak": 33
+      },
+      {
+        "title": "Barely Last",
+        "date": "2016-11-08",
+        "peak": 29
+      }
+    ]
+  },
+  "PassCode": {
+    "singles": [
+      {
+        "title": "STARRY SKY",
+        "date": "2020-05-20",
+        "peak": 1
+      },
+      {
+        "title": "WILLSHINE",
+        "date": "2024-09-11",
+        "peak": 11
+      },
+      {
+        "title": "Ray",
+        "date": "2018-05-23",
+        "peak": 16
+      },
+      {
+        "title": "Tonight/Taking you out",
+        "date": "2018-09-12",
+        "peak": 12
+      },
+      {
+        "title": "ATLAS",
+        "date": "2019-09-25",
+        "peak": 18
+      },
+      {
+        "title": "bite the bullet",
+        "date": "2017-04-19",
+        "peak": 16
+      },
+      {
+        "title": "Liberator",
+        "date": "2026-03-04",
+        "peak": 10
+      },
+      {
+        "title": "SKILLAWAKE",
+        "date": "2024-12-18",
+        "peak": 8
+      },
+      {
+        "title": "Freely/FLAVOR OF BLUE",
+        "date": "2021-11-10",
+        "peak": 12
+      },
+      {
+        "title": "MISS UNLIMITED",
+        "date": "2016-10-26",
+        "peak": 43
+      }
+    ],
+    "albums": [
+      {
+        "title": "CLARITY",
+        "date": "2019-04-03",
+        "peak": 10
+      },
+      {
+        "title": "STRIVE",
+        "date": "2020-12-23",
+        "peak": 18
+      },
+      {
+        "title": "ZENITH",
+        "date": "2017-08-02",
+        "peak": 20
+      },
+      {
+        "title": "REVERBERATE ep.",
+        "date": "2022-12-21",
+        "peak": 18
+      },
+      {
+        "title": "GROUNDSWELL ep.",
+        "date": "2023-06-21",
+        "peak": 8
+      },
+      {
+        "title": "Locus",
+        "date": "2018-02-28",
+        "peak": 15
+      },
+      {
+        "title": "INSIGNIA",
+        "date": "2025-06-18",
+        "peak": 11
+      },
+      {
+        "title": "PassCode THE BEST -LINK-",
+        "date": "2021-09-29",
+        "peak": 18
+      },
+      {
+        "title": "VIRTUAL",
+        "date": "2016-05-25",
+        "peak": 43
+      }
+    ]
+  },
+  "℃-ute": {
+    "singles": [
+      {
+        "title": "ありがとう～無限のエール～/嵐を起こすんだ Exciting Fight!",
+        "date": "2015-10-28",
+        "peak": 2
+      },
+      {
+        "title": "To Tomorrow/ファイナルスコール/The Curtain Rises",
+        "date": "2017-03-29",
+        "peak": 2
+      },
+      {
+        "title": "都会の一人暮らし/愛ってもっと斬新",
+        "date": "2013-11-06",
+        "peak": 3
+      },
+      {
+        "title": "心の叫びを歌にしてみた/Love take it all",
+        "date": "2014-03-05",
+        "peak": 2
+      },
+      {
+        "title": "何故 人は争うんだろう?/Summer Wind/人生はSTEP!",
+        "date": "2016-04-20",
+        "peak": 2
+      },
+      {
+        "title": "悲しき雨降り/アダムとイブのジレンマ",
+        "date": "2013-07-10",
+        "peak": 4
+      },
+      {
+        "title": "The Middle Management～女性中間管理職～/我武者LIFE/次の角を曲がれ",
+        "date": "2015-04-01",
+        "peak": 3
+      },
+      {
+        "title": "I miss you/THE FUTURE",
+        "date": "2014-11-19",
+        "peak": 4
+      },
+      {
+        "title": "夢幻クライマックス/愛はまるで静電気/Singing～あの頃のように～",
+        "date": "2016-11-02",
+        "peak": 2
+      },
+      {
+        "title": "The Power/悲しきヘブン(Single Version)",
+        "date": "2014-07-16",
+        "peak": 3
+      },
+      {
+        "title": "Crazy 完全な大人",
+        "date": "2013-04-03",
+        "peak": 3
+      },
+      {
+        "title": "会いたい 会いたい 会いたいな",
+        "date": "2012-09-05",
+        "peak": 4
+      },
+      {
+        "title": "君は自転車 私は電車で帰宅",
+        "date": "2012-04-18",
+        "peak": 3
+      },
+      {
+        "title": "都会っ子 純情",
+        "date": "2007-10-17",
+        "peak": 3
+      },
+      {
+        "title": "江戸の手毬唄Ⅱ",
+        "date": "2008-07-30",
+        "peak": 5
+      },
+      {
+        "title": "暑中お見舞い申し上げます",
+        "date": "2009-07-01",
+        "peak": 5
+      },
+      {
+        "title": "涙の色",
+        "date": "2008-04-23",
+        "peak": 4
+      },
+      {
+        "title": "LALALA 幸せの歌",
+        "date": "2008-02-27",
+        "peak": 6
+      },
+      {
+        "title": "FOREVER LOVE",
+        "date": "2008-11-26",
+        "peak": 5
+      },
+      {
+        "title": "Bye Bye Bye!",
+        "date": "2009-04-15",
+        "peak": 4
+      }
+    ],
+    "albums": [
+      {
+        "title": "②℃-ute神聖なるベストアルバム",
+        "date": "2012-11-21",
+        "peak": 12
+      },
+      {
+        "title": "℃OMPLETE SINGLE COLLECTION",
+        "date": "2017-05-03",
+        "peak": 5
+      },
+      {
+        "title": "3rd～LOVEエスカレーション!～",
+        "date": "2008-03-12",
+        "peak": 10
+      },
+      {
+        "title": "℃maj9",
+        "date": "2015-12-23",
+        "peak": 8
+      },
+      {
+        "title": "キューティー クイーン VOL.1",
+        "date": "2006-10-25",
+        "peak": 15
+      },
+      {
+        "title": "⑧ Queen of J-POP",
+        "date": "2013-09-04",
+        "peak": 6
+      },
+      {
+        "title": "④憧れ My STAR",
+        "date": "2009-01-28",
+        "peak": 13
+      },
+      {
+        "title": "℃-uteなんです!全シングル集めちゃいましたっ!①",
+        "date": "2009-11-18",
+        "peak": 17
+      },
+      {
+        "title": "②mini～生きるという力～",
+        "date": "2007-04-18",
+        "peak": 21
+      },
+      {
+        "title": "第七章「美しくってごめんね」",
+        "date": "2012-02-08",
+        "peak": 15
+      },
+      {
+        "title": "超WONDERFUL!⑥",
+        "date": "2011-04-06",
+        "peak": 20
+      },
+      {
+        "title": "ショッキング5",
+        "date": "2010-02-24",
+        "peak": 25
+      }
+    ]
+  },
+  "フィロソフィーのダンス": {
+    "singles": [
+      {
+        "title": "「イッツ・マイ・ターン」&「ライブ・ライフ」",
+        "date": "2018-08-31",
+        "peak": 7
+      },
+      {
+        "title": "ドント・ストップ・ザ・ダンス",
+        "date": "2020-09-23",
+        "peak": 2
+      },
+      {
+        "title": "熱風は流転する",
+        "date": "2023-03-15",
+        "peak": 13
+      },
+      {
+        "title": "迷っちゃうわ",
+        "date": "2025-08-06",
+        "peak": 11
+      },
+      {
+        "title": "サンフラワー",
+        "date": "2021-12-01",
+        "peak": 19
+      },
+      {
+        "title": "シュークリーム・ファンク",
+        "date": "2023-05-31",
+        "peak": 10
+      },
+      {
+        "title": "ダブル・スタンダード",
+        "date": "2021-08-18",
+        "peak": 11
+      },
+      {
+        "title": "ラブ・ミー・モア",
+        "date": "2025-03-26",
+        "peak": 15
+      },
+      {
+        "title": "カップラーメン・プログラム",
+        "date": "2021-04-28",
+        "peak": 14
+      },
+      {
+        "title": "ライアーガール",
+        "date": "2024-07-31",
+        "peak": 10
+      },
+      {
+        "title": "ゲレンデ・ファンキー・ラブ",
+        "date": "2025-12-24",
+        "peak": 9
+      },
+      {
+        "title": "恋のシャバドゥビドゥ",
+        "date": "2024-11-13",
+        "peak": 19
+      }
+    ],
+    "albums": [
+      {
+        "title": "Red Carnival",
+        "date": "2022-10-19",
+        "peak": 8
+      },
+      {
+        "title": "愛の哲学",
+        "date": "2022-04-27",
+        "peak": 8
+      },
+      {
+        "title": "Dance to the Music～Journey with Philosophy no Dance～",
+        "date": "2026-04-01",
+        "peak": 9
+      },
+      {
+        "title": "One Summer Dream",
+        "date": "2023-09-20",
+        "peak": 11
+      },
+      {
+        "title": "NEW BERRY",
+        "date": "2024-03-13",
+        "peak": 11
+      },
+      {
+        "title": "エクセルシオール",
+        "date": "2019-04-05",
+        "peak": 18
+      },
+      {
+        "title": "ダンス・ファウンダー(リ・ボーカル・バージョン)",
+        "date": "2018-02-07",
+        "peak": 33
+      },
+      {
+        "title": "THE FOUNDER",
+        "date": "2017-11-22",
+        "peak": 38
+      },
+      {
+        "title": "愛の哲学(初回生産限定盤B)",
+        "date": "2022-04-27",
+        "peak": 46
+      }
+    ]
+  },
+  "Girls²": {
+    "singles": [
+      {
+        "title": "ダイジョウブ",
+        "date": "2019-06-26",
+        "peak": 3
+      },
+      {
+        "title": "C’mon Neo Zipang!!!/Juga Juga JUNGLE",
+        "date": "2022-04-27",
+        "peak": 5
+      },
+      {
+        "title": "走れ!月火水木金曜日!",
+        "date": "2019-08-07",
+        "peak": 11
+      },
+      {
+        "title": "Snowflakes/Unmelting Snow",
+        "date": "2025-12-24",
+        "peak": 5
+      },
+      {
+        "title": "おはようのスマイル",
+        "date": "2019-12-18",
+        "peak": 7
+      },
+      {
+        "title": "Girl meets Girl",
+        "date": "2020-02-19",
+        "peak": 17
+      }
+    ],
+    "albums": [
+      {
+        "title": "寄り道 -Take it easy baby-",
+        "date": "2024-10-30",
+        "peak": 6
+      },
+      {
+        "title": "Countdown",
+        "date": "2023-05-24",
+        "peak": 5
+      },
+      {
+        "title": "チュワパネ!",
+        "date": "2020-05-20",
+        "peak": 3
+      },
+      {
+        "title": "アクセラレイト",
+        "date": "2023-12-20",
+        "peak": 4
+      },
+      {
+        "title": "恋するカモ",
+        "date": "2019-10-30",
+        "peak": 6
+      },
+      {
+        "title": "We are Girls2 -Ⅱ-",
+        "date": "2024-03-20",
+        "peak": 5
+      },
+      {
+        "title": "We are Girls2",
+        "date": "2022-01-12",
+        "peak": 6
+      },
+      {
+        "title": "大事なモノ/#キズナプラス",
+        "date": "2020-11-18",
+        "peak": 5
+      },
+      {
+        "title": "Love Genic/Bye-Bye-Bye",
+        "date": "2022-12-21",
+        "peak": 6
+      },
+      {
+        "title": "Shangri-la",
+        "date": "2022-08-24",
+        "peak": 3
+      },
+      {
+        "title": "New Era",
+        "date": "2025-09-24",
+        "peak": 7
+      },
+      {
+        "title": "Enjoy/Good Days",
+        "date": "2021-08-25",
+        "peak": 4
+      },
+      {
+        "title": "Girls Revolution/Party Time!",
+        "date": "2021-04-28",
+        "peak": 5
+      },
+      {
+        "title": "Melty Love",
+        "date": "2026-04-01",
+        "peak": 7
+      },
+      {
+        "title": "Seven Blooms",
+        "date": "2026-06-24",
+        "peak": 14
+      },
+      {
+        "title": "私がモテてどうすんだ",
+        "date": "2020-07-29",
+        "peak": 8
+      },
+      {
+        "title": "ジャパニーズSTAR",
+        "date": "2021-01-13",
+        "peak": 19
+      }
+    ]
+  },
+  "アップアップガールズ（仮）": {
+    "singles": [
+      {
+        "title": "パーリーピーポーエイリアン/セブン☆ピース",
+        "date": "2016-04-05",
+        "peak": 5
+      },
+      {
+        "title": "Beautiful Dreamer/全力!Pump Up!!-ULTRA Mix-/イタダキを目指せ!",
+        "date": "2014-11-04",
+        "peak": 7
+      },
+      {
+        "title": "!!!!!!!!/君という仮説",
+        "date": "2016-10-11",
+        "peak": 15
+      },
+      {
+        "title": "(仮)は返すぜ☆be your soul/Party! Party!/ジャンパー!",
+        "date": "2014-04-09",
+        "peak": 17
+      },
+      {
+        "title": "It's Up To You/HAPPY NAKED!!/BIG BANG",
+        "date": "2019-12-10",
+        "peak": 21
+      },
+      {
+        "title": "一歩目のYES!/宣戦 Brand New World!",
+        "date": "2021-07-27",
+        "peak": 28
+      },
+      {
+        "title": "アゲノミクス!!/キミロス/阿破乱舞",
+        "date": "2019-02-19",
+        "peak": 20
+      },
+      {
+        "title": "アッパーディスコ/FOREVER YOUNG",
+        "date": "2017-05-09",
+        "peak": 16
+      },
+      {
+        "title": "Da Dan Dance!/ヒート ビート アイランド/5 to the 5th Power",
+        "date": "2019-06-25",
+        "peak": 20
+      },
+      {
+        "title": "愛愛ファイヤー!!/私達(with friend)",
+        "date": "2018-11-06",
+        "peak": 21
+      },
+      {
+        "title": "虹色モザイク/ENJOY!!ENJO(Y)!!",
+        "date": "2013-12-25",
+        "peak": 26
+      },
+      {
+        "title": "全力!Pump UP!!/このメロディを君と",
+        "date": "2014-07-01",
+        "peak": 22
+      },
+      {
+        "title": "上々ド根性/Be a Girl",
+        "date": "2017-11-28",
+        "peak": 43
+      },
+      {
+        "title": "サマービーム!/アップアップタイフーン",
+        "date": "2013-07-24",
+        "peak": 42
+      },
+      {
+        "title": "立ち上がループ/パリガッ/プールサイドモンスター ～情熱編～",
+        "date": "2022-12-27",
+        "peak": 26
+      },
+      {
+        "title": "チョッパー☆チョッパー/サバイバルガールズ",
+        "date": "2012-12-05",
+        "peak": 35
+      },
+      {
+        "title": "銀河上々物語/Burn the fire!!/ナチュラルボーン・アイドル",
+        "date": "2013-06-05",
+        "peak": 25
+      },
+      {
+        "title": "SAKURADRIVE/Dateline",
+        "date": "2013-03-13",
+        "peak": 39
+      },
+      {
+        "title": "Starry Night/青春ビルドアップ",
+        "date": "2013-10-30",
+        "peak": 42
+      },
+      {
+        "title": "SAMURAI GIRLS/ワイドルセブン",
+        "date": "2013-09-04",
+        "peak": 47
+      }
+    ],
+    "albums": [
+      {
+        "title": "サードアルバム(仮)",
+        "date": "2015-03-17",
+        "peak": 39
+      },
+      {
+        "title": "セカンドアルバム(仮)",
+        "date": "2014-02-19",
+        "peak": 28
+      },
+      {
+        "title": "4thアルバム(仮)",
+        "date": "2017-08-29",
+        "peak": 23
+      },
+      {
+        "title": "5th アルバム(仮)",
+        "date": "2018-06-19",
+        "peak": 41
+      }
+    ]
+  },
+  "i☆Ris": {
+    "singles": [
+      {
+        "title": "Re:Call",
+        "date": "2016-08-03",
+        "peak": 11
+      },
+      {
+        "title": "Ready Smile!!",
+        "date": "2016-06-01",
+        "peak": 9
+      },
+      {
+        "title": "Changing point",
+        "date": "2018-05-09",
+        "peak": 8
+      },
+      {
+        "title": "Goin’on",
+        "date": "2016-02-17",
+        "peak": 8
+      },
+      {
+        "title": "Endless Notes",
+        "date": "2019-02-13",
+        "peak": 12
+      },
+      {
+        "title": "アルティメット☆MAGIC",
+        "date": "2019-05-22",
+        "peak": 8
+      },
+      {
+        "title": "Shining Star",
+        "date": "2017-03-08",
+        "peak": 10
+      },
+      {
+        "title": "夢へのヒトカケラ",
+        "date": "2025-11-19",
+        "peak": 6
+      },
+      {
+        "title": "FANTASTIC ILLUSION",
+        "date": "2019-08-28",
+        "peak": 13
+      },
+      {
+        "title": "Let you know!/あっぱれ!馬鹿騒ぎ",
+        "date": "2023-08-23",
+        "peak": 9
+      },
+      {
+        "title": "ブライトファンタジー",
+        "date": "2015-10-28",
+        "peak": 21
+      },
+      {
+        "title": "Memorial",
+        "date": "2018-02-21",
+        "peak": 18
+      },
+      {
+        "title": "ドリームパレード",
+        "date": "2015-07-08",
+        "peak": 8
+      },
+      {
+        "title": "White Lyrical Kingdom/キセキ-ノ-フィラメント",
+        "date": "2024-01-24",
+        "peak": 10
+      },
+      {
+        "title": "Welcome to あざとさワールド",
+        "date": "2026-07-15",
+        "peak": 10
+      },
+      {
+        "title": "12月のSnowry/ハートビート急上昇",
+        "date": "2021-12-08",
+        "peak": 15
+      },
+      {
+        "title": "愛 for you!/希望の花を",
+        "date": "2024-06-12",
+        "peak": 13
+      },
+      {
+        "title": "Realize!",
+        "date": "2015-02-18",
+        "peak": 22
+      },
+      {
+        "title": "Make it!",
+        "date": "2014-08-20",
+        "peak": 26
+      },
+      {
+        "title": "Summer Dude",
+        "date": "2021-08-18",
+        "peak": 14
+      }
+    ],
+    "albums": [
+      {
+        "title": "ViVa i☆DOL",
+        "date": "2025-04-30",
+        "peak": 21
+      },
+      {
+        "title": "Shall we☆Carnival",
+        "date": "2020-03-13",
+        "peak": 10
+      },
+      {
+        "title": "WONDERFUL PALETTE",
+        "date": "2017-11-01",
+        "peak": 16
+      },
+      {
+        "title": "Th!s !s i☆Ris!!",
+        "date": "2016-04-20",
+        "peak": 16
+      },
+      {
+        "title": "10th Anniversary Best Album ～Best i☆Rist～",
+        "date": "2022-11-07",
+        "peak": 12
+      },
+      {
+        "title": "We are i☆Ris!!!",
+        "date": "2015-04-08",
+        "peak": 13
+      },
+      {
+        "title": "i☆Ris Coupling Best",
+        "date": "2024-03-20",
+        "peak": 25
+      }
+    ]
+  },
+  "BiS": {
+    "singles": [
+      {
+        "title": "Are you ready?",
+        "date": "2019-03-20",
+        "peak": 2
+      },
+      {
+        "title": "FiNAL DANCE/nerve",
+        "date": "2014-05-28",
+        "peak": 4
+      },
+      {
+        "title": "Hey boy hey girl",
+        "date": "2022-07-06",
+        "peak": 4
+      },
+      {
+        "title": "WHOLE LOTTA LOVE/DiPROMiSE",
+        "date": "2018-03-07",
+        "peak": 4
+      },
+      {
+        "title": "イーアーティエイチスィーナーエイチキューカーエイチケームビーネーズィーウーオム",
+        "date": "2023-07-12",
+        "peak": 3
+      },
+      {
+        "title": "DEAD or A LiME",
+        "date": "2019-11-20",
+        "peak": 5
+      },
+      {
+        "title": "DA DA DA DANCE SONG",
+        "date": "2022-02-23",
+        "peak": 3
+      },
+      {
+        "title": "STUPiG",
+        "date": "2014-01-22",
+        "peak": 7
+      },
+      {
+        "title": "TOUCH ME/LOVE",
+        "date": "2021-05-26",
+        "peak": 12
+      },
+      {
+        "title": "I can’t say NO!!!!!!!",
+        "date": "2017-10-04",
+        "peak": 5
+      },
+      {
+        "title": "Fly/Hi",
+        "date": "2013-09-18",
+        "peak": 8
+      },
+      {
+        "title": "LAZY DANCE",
+        "date": "2023-11-08",
+        "peak": 6
+      },
+      {
+        "title": "DiE",
+        "date": "2013-06-26",
+        "peak": 6
+      },
+      {
+        "title": "柏木由紀なりのBiS -ANYTiME ANYTHiNG-",
+        "date": "2021-11-30",
+        "peak": 12
+      },
+      {
+        "title": "BiSimulation",
+        "date": "2013-03-13",
+        "peak": 14
+      },
+      {
+        "title": "SOCiALiSM",
+        "date": "2017-05-31",
+        "peak": 13
+      },
+      {
+        "title": "COLD CAKE",
+        "date": "2021-01-29",
+        "peak": 9
+      },
+      {
+        "title": "イミテーションセンセーション",
+        "date": "2020-07-08",
+        "peak": 5
+      },
+      {
+        "title": "PPCC",
+        "date": "2012-07-18",
+        "peak": 31
+      },
+      {
+        "title": "IDOL",
+        "date": "2012-04-11",
+        "peak": 41
+      }
+    ],
+    "albums": [
+      {
+        "title": "NEVER MiND",
+        "date": "2024-02-28",
+        "peak": 6
+      },
+      {
+        "title": "KiLLiNG IDOLS",
+        "date": "2021-02-24",
+        "peak": 10
+      },
+      {
+        "title": "うりゃおい!!!",
+        "date": "2014-07-02",
+        "peak": 11
+      },
+      {
+        "title": "LOOKiE",
+        "date": "2020-02-05",
+        "peak": 6
+      },
+      {
+        "title": "WHO KiLLED IDOL?",
+        "date": "2014-03-05",
+        "peak": 14
+      },
+      {
+        "title": "ANTi CONFORMiST SUPERSTAR",
+        "date": "2020-08-19",
+        "peak": 7
+      },
+      {
+        "title": "Brand-new idol Society",
+        "date": "2019-08-14",
+        "peak": 9
+      },
+      {
+        "title": "BiS DiVE into ROCKS",
+        "date": "2021-12-01",
+        "peak": 14
+      },
+      {
+        "title": "Re:STUPiD",
+        "date": "2017-02-22",
+        "peak": 25
+      },
+      {
+        "title": "“プロパガンダ”と“PROPAGANDA”",
+        "date": "2020-11-25",
+        "peak": 22
+      },
+      {
+        "title": "IDOL is DEAD",
+        "date": "2012-10-24",
+        "peak": 30
+      },
+      {
+        "title": "Brand-new idol Society 2",
+        "date": "2016-11-16",
+        "peak": 24
+      }
+    ]
+  },
+  "LE SSERAFIM": {
+    "singles": [
+      {
+        "title": "FEARLESS",
+        "date": "2023-01-25",
+        "peak": 1
+      },
+      {
+        "title": "UNFORGIVEN",
+        "date": "2023-08-23",
+        "peak": 2
+      },
+      {
+        "title": "DIFFERENT",
+        "date": "2025-06-24",
+        "peak": 2
+      },
+      {
+        "title": "CRAZY",
+        "date": "2024-12-11",
+        "peak": 2
+      },
+      {
+        "title": "SPAGHETTI",
+        "date": "2025-10-27",
+        "peak": 1
+      }
+    ],
+    "albums": [
+      {
+        "title": "EASY",
+        "date": "2024-02-21",
+        "peak": 1
+      },
+      {
+        "title": "UNFORGIVEN",
+        "date": "2023-05-03",
+        "peak": 1
+      },
+      {
+        "title": "CRAZY",
+        "date": "2024-09-03",
+        "peak": 2
+      },
+      {
+        "title": "HOT",
+        "date": "2025-03-15",
+        "peak": 2
+      },
+      {
+        "title": "ANTIFRAGILE",
+        "date": "2022-10-18",
+        "peak": 1
+      },
+      {
+        "title": "'PUREFLOW'pt.1",
+        "date": "2026-06-01",
+        "peak": 2
+      },
+      {
+        "title": "FEARLESS",
+        "date": "2022-05-21",
+        "peak": 3
+      }
+    ]
+  },
+  "22/7": {
+    "singles": [
+      {
+        "title": "僕が持ってるものなら",
+        "date": "2021-02-24",
+        "peak": 2
+      },
+      {
+        "title": "僕は今夜、出て行く",
+        "date": "2023-05-24",
+        "peak": 2
+      },
+      {
+        "title": "曇り空の向こうは晴れている",
+        "date": "2022-07-27",
+        "peak": 2
+      },
+      {
+        "title": "覚醒",
+        "date": "2021-11-24",
+        "peak": 2
+      },
+      {
+        "title": "神様だって決められない",
+        "date": "2023-01-11",
+        "peak": 2
+      },
+      {
+        "title": "風は吹いてるか?",
+        "date": "2020-09-30",
+        "peak": 2
+      },
+      {
+        "title": "二つの道",
+        "date": "2026-04-22",
+        "peak": 3
+      },
+      {
+        "title": "YESとNOの間に",
+        "date": "2024-10-30",
+        "peak": 3
+      },
+      {
+        "title": "後でわかること",
+        "date": "2024-05-01",
+        "peak": 2
+      },
+      {
+        "title": "何もしてあげられない",
+        "date": "2019-08-21",
+        "peak": 4
+      },
+      {
+        "title": "ムズイ",
+        "date": "2020-02-26",
+        "peak": 2
+      },
+      {
+        "title": "ロックは死なない",
+        "date": "2025-02-26",
+        "peak": 6
+      },
+      {
+        "title": "理解者",
+        "date": "2018-08-22",
+        "peak": 14
+      },
+      {
+        "title": "シャンプーの匂いがした",
+        "date": "2018-04-11",
+        "peak": 8
+      },
+      {
+        "title": "僕は存在していなかった",
+        "date": "2017-09-20",
+        "peak": 10
+      }
+    ],
+    "albums": [
+      {
+        "title": "11という名の永遠の素数",
+        "date": "2021-07-14",
+        "peak": 2
+      },
+      {
+        "title": "旅人算",
+        "date": "2023-11-22",
+        "peak": 3
+      },
+      {
+        "title": "ABC予想",
+        "date": "2025-12-10",
+        "peak": 2
+      }
+    ]
+  },
+  "風男塾": {
+    "singles": [
+      {
+        "title": "BE HERO",
+        "date": "2014-09-24",
+        "peak": 2
+      },
+      {
+        "title": "sunny",
+        "date": "2019-11-06",
+        "peak": 4
+      },
+      {
+        "title": "もしも これが恋なら",
+        "date": "2015-09-30",
+        "peak": 8
+      },
+      {
+        "title": "Dash&Daaash!!",
+        "date": "2019-06-19",
+        "peak": 3
+      },
+      {
+        "title": "証-soul mate-",
+        "date": "2017-01-18",
+        "peak": 2
+      },
+      {
+        "title": "チェンメン天国",
+        "date": "2014-01-22",
+        "peak": 4
+      },
+      {
+        "title": "友達と呼べる君へ",
+        "date": "2016-02-24",
+        "peak": 6
+      },
+      {
+        "title": "男装レボリューション",
+        "date": "2013-09-18",
+        "peak": 6
+      },
+      {
+        "title": "下を向いて帰ろう/RIKISHI-MAN",
+        "date": "2013-05-15",
+        "peak": 7
+      },
+      {
+        "title": "ツバメ",
+        "date": "2019-01-30",
+        "peak": 7
+      },
+      {
+        "title": "Frontier",
+        "date": "2025-10-15",
+        "peak": 5
+      },
+      {
+        "title": "なんだってんだ!",
+        "date": "2026-03-25",
+        "peak": 4
+      },
+      {
+        "title": "君色々移り",
+        "date": "2018-06-13",
+        "peak": 5
+      },
+      {
+        "title": "男装★超メロ",
+        "date": "2026-06-24",
+        "peak": 3
+      },
+      {
+        "title": "Baby U",
+        "date": "2022-12-14",
+        "peak": 6
+      },
+      {
+        "title": "To Future Me",
+        "date": "2025-06-18",
+        "peak": 4
+      },
+      {
+        "title": "同じ時代に生まれた若者たち",
+        "date": "2010-11-24",
+        "peak": 11
+      },
+      {
+        "title": "新たなる幕開けのための幕開けによる狂詩曲～キミがいればオレたちも笑顔∞～",
+        "date": "2017-11-15",
+        "peak": 12
+      },
+      {
+        "title": "瞬間到来フューチャー",
+        "date": "2015-03-31",
+        "peak": 7
+      },
+      {
+        "title": "生きることは尊いに決まってんだろ",
+        "date": "2021-09-29",
+        "peak": 8
+      }
+    ],
+    "albums": [
+      {
+        "title": "Funfare",
+        "date": "2021-03-17",
+        "peak": 9
+      },
+      {
+        "title": "POWER OF WIND",
+        "date": "2014-03-19",
+        "peak": 17
+      },
+      {
+        "title": "『腐レンズ』",
+        "date": "2011-05-04",
+        "peak": 10
+      },
+      {
+        "title": "風ァイト!!!!!!",
+        "date": "2018-10-10",
+        "peak": 10
+      },
+      {
+        "title": "ONE FU ALL, ALL FU ONE",
+        "date": "2023-10-11",
+        "peak": 9
+      },
+      {
+        "title": "絆-キヅナ-",
+        "date": "2009-09-23",
+        "peak": 24
+      },
+      {
+        "title": "風男塾 15th Anniversary Best",
+        "date": "2022-09-21",
+        "peak": 10
+      },
+      {
+        "title": "音鼓-OTOKO-",
+        "date": "2012-08-29",
+        "peak": 18
+      },
+      {
+        "title": "STAR TRAVELER",
+        "date": "2016-03-30",
+        "peak": 14
+      },
+      {
+        "title": "All Time Best",
+        "date": "2017-09-27",
+        "peak": 12
+      }
+    ]
+  },
+  "アップアップガールズ（２）": {
+    "singles": [
+      {
+        "title": "世界で一番かわいいアイドル/し・て・る・も・ん",
+        "date": "2020-01-07",
+        "peak": 8
+      },
+      {
+        "title": "かかって来なさい/OVER DRIVE",
+        "date": "2018-12-25",
+        "peak": 10
+      },
+      {
+        "title": "Be lonely together",
+        "date": "2019-08-13",
+        "peak": 19
+      },
+      {
+        "title": "We are Winner!/スターティングオーバー",
+        "date": "2019-04-02",
+        "peak": 15
+      },
+      {
+        "title": "どしゃぶりのテラス席/フユトテトテ",
+        "date": "2018-01-01",
+        "peak": 24
+      },
+      {
+        "title": "だれだって、アイドル。/カスタムにきちゃん/Tell Me/starry wink*",
+        "date": "2022-05-10",
+        "peak": 19
+      },
+      {
+        "title": "全部青春!/エンジェル演じて20年",
+        "date": "2018-08-07",
+        "peak": 27
+      },
+      {
+        "title": "U(2)Zone LINE/恋はアップ(2)Summer",
+        "date": "2022-08-16",
+        "peak": 26
+      },
+      {
+        "title": "っていう初恋のお約束/ハッピースLOVE■",
+        "date": "2018-05-01",
+        "peak": 26
+      },
+      {
+        "title": "どのみちハッピー!/雨に唄えば/愛について考えるよ/エンドロール",
+        "date": "2020-10-20",
+        "peak": 19
+      },
+      {
+        "title": "Sun!×3/二の足Dancing",
+        "date": "2017-08-15",
+        "peak": 35
+      },
+      {
+        "title": "強がりライライライ/セメテセメテ/ぱーれぇ～/ガラスの純情",
+        "date": "2021-02-16",
+        "peak": 28
+      }
+    ],
+    "albums": [
+      {
+        "title": "Life Is Beautiful/シーユーだけ。/Dong-Dong-Dong!!!!!!!!/ドレス/好きな人の好きな人",
+        "date": "2023-02-22",
+        "peak": 34
+      },
+      {
+        "title": "アオハル 1st",
+        "date": "2019-11-12",
+        "peak": 24
+      },
+      {
+        "title": "2回目の青春",
+        "date": "2023-11-14",
+        "peak": 39
+      },
+      {
+        "title": "終わりよければすべてよしじゃない",
+        "date": "2026-03-10",
+        "peak": 43
+      }
+    ]
+  },
+  "ゆるめるモ！": {
+    "singles": [
+      {
+        "title": "Hamidasumo!",
+        "date": "2015-03-25",
+        "peak": 33
+      }
+    ],
+    "albums": []
+  },
+  "アリス十番": {
+    "singles": [
+      {
+        "title": "夏だね☆/負けないで☆",
+        "date": "2012-07-04",
+        "peak": 21
+      }
+    ],
+    "albums": []
+  },
+  "放課後プリンセス": {
+    "singles": [
+      {
+        "title": "アブラカタブLuv!",
+        "date": "2017-12-20",
+        "peak": 7
+      },
+      {
+        "title": "青春マーメイド",
+        "date": "2016-06-29",
+        "peak": 4
+      },
+      {
+        "title": "輝夜に願いを",
+        "date": "2018-10-10",
+        "peak": 5
+      },
+      {
+        "title": "純白アントワネット",
+        "date": "2016-02-17",
+        "peak": 2
+      },
+      {
+        "title": "秘密のティアラとジェラート",
+        "date": "2016-10-12",
+        "peak": 7
+      },
+      {
+        "title": "消えて、白雪姫",
+        "date": "2015-10-28",
+        "peak": 10
+      },
+      {
+        "title": "新時代プリンセス/プリンセスの定義",
+        "date": "2019-07-10",
+        "peak": 6
+      },
+      {
+        "title": "真夏の夜の夢",
+        "date": "2014-09-23",
+        "peak": 7
+      },
+      {
+        "title": "さよならデュアリーナ",
+        "date": "2017-07-19",
+        "peak": 9
+      },
+      {
+        "title": "サイリウムの証明",
+        "date": "2021-09-15",
+        "peak": 5
+      },
+      {
+        "title": "ライチレッドの運命",
+        "date": "2017-02-15",
+        "peak": 7
+      },
+      {
+        "title": "灼熱のミステリーアイ/絶世クレオパトラ",
+        "date": "2020-07-29",
+        "peak": 7
+      },
+      {
+        "title": "サムはフユい!(アツはナツい!(single version))",
+        "date": "2013-11-27",
+        "peak": 26
+      },
+      {
+        "title": "ジュリエット ～君を好きな100の理由～(2013 version)",
+        "date": "2013-05-15",
+        "peak": 17
+      },
+      {
+        "title": "歯みがきレイディ",
+        "date": "2023-06-28",
+        "peak": 12
+      },
+      {
+        "title": "窓辺のラプンツェル",
+        "date": "2024-12-11",
+        "peak": 43
+      }
+    ],
+    "albums": [
+      {
+        "title": "制服シンデレラ",
+        "date": "2015-08-19",
+        "peak": 6
+      },
+      {
+        "title": "My Princess Ⅱ",
+        "date": "2020-01-29",
+        "peak": 13
+      },
+      {
+        "title": "My Princess",
+        "date": "2017-03-22",
+        "peak": 22
+      },
+      {
+        "title": "～10TH ANNIVERSARY～「Princess Assemble」",
+        "date": "2021-01-20",
+        "peak": 29
+      },
+      {
+        "title": "My Princess Ⅲ～未来の鐘を鳴らせ～",
+        "date": "2022-08-17",
+        "peak": 20
+      }
+    ]
+  },
+  "TEAM SHACHI": {
+    "singles": [
+      {
+        "title": "Cherie!",
+        "date": "2016-04-07",
+        "peak": 2
+      },
+      {
+        "title": "ULTRA 超 MIRACLE SUPER VERY POWER BALL",
+        "date": "2016-08-03",
+        "peak": 8
+      },
+      {
+        "title": "シャンプーハット",
+        "date": "2014-12-10",
+        "peak": 4
+      },
+      {
+        "title": "天才バカボン",
+        "date": "2015-05-13",
+        "peak": 4
+      },
+      {
+        "title": "愛の地球祭",
+        "date": "2013-10-30",
+        "peak": 5
+      },
+      {
+        "title": "JUMP MAN",
+        "date": "2018-02-28",
+        "peak": 8
+      },
+      {
+        "title": "Rocket Queen feat.MCU/Rock Away",
+        "date": "2019-10-02",
+        "peak": 3
+      },
+      {
+        "title": "首都移転計画",
+        "date": "2013-06-19",
+        "peak": 11
+      },
+      {
+        "title": "ザ・スターダストボウリング",
+        "date": "2012-10-31",
+        "peak": 17
+      },
+      {
+        "title": "怪獣トットト/じりじり夏活委員会 feat.しまじろう【完全生産限定親子向け盤】",
+        "date": "2015-09-16",
+        "peak": 37
+      }
+    ],
+    "albums": [
+      {
+        "title": "TEAM SHACHI",
+        "date": "2019-02-13",
+        "peak": 5
+      },
+      {
+        "title": "しゃちBEST 2012-2017",
+        "date": "2017-10-18",
+        "peak": 6
+      },
+      {
+        "title": "待ち合わせに、飽きもと。",
+        "date": "2024-08-07",
+        "peak": 9
+      },
+      {
+        "title": "TEAM",
+        "date": "2022-02-16",
+        "peak": 6
+      },
+      {
+        "title": "舞いの頂点を極めし時、私達は如何なる困難をも打ち破る",
+        "date": "2022-11-23",
+        "peak": 6
+      },
+      {
+        "title": "AWAiTiNG BEAR",
+        "date": "2023-06-28",
+        "peak": 43
+      }
+    ]
+  },
+  "夢みるアドレセンス": {
+    "singles": [
+      {
+        "title": "舞いジェネ!",
+        "date": "2016-01-20",
+        "peak": 4
+      },
+      {
+        "title": "サマーヌード・アドレセンス",
+        "date": "2015-07-15",
+        "peak": 7
+      },
+      {
+        "title": "Love for You",
+        "date": "2016-07-27",
+        "peak": 10
+      },
+      {
+        "title": "証明ティンエイジャー",
+        "date": "2014-09-09",
+        "peak": 5
+      },
+      {
+        "title": "Bye Bye My Days",
+        "date": "2015-03-18",
+        "peak": 7
+      },
+      {
+        "title": "おしえてシュレディンガー/ファンタスティックパレード",
+        "date": "2016-04-27",
+        "peak": 8
+      },
+      {
+        "title": "20xx/Exceeeed!!",
+        "date": "2017-11-15",
+        "peak": 8
+      },
+      {
+        "title": "マワルセカイ",
+        "date": "2014-04-22",
+        "peak": 10
+      },
+      {
+        "title": "メロンソーダ",
+        "date": "2018-07-25",
+        "peak": 12
+      },
+      {
+        "title": "大人やらせてよ",
+        "date": "2016-11-23",
+        "peak": 13
+      },
+      {
+        "title": "桜",
+        "date": "2018-03-14",
+        "peak": 14
+      },
+      {
+        "title": "ララララ・ライフ",
+        "date": "2017-07-19",
+        "peak": 12
+      },
+      {
+        "title": "アイドルレース",
+        "date": "2017-01-18",
+        "peak": 11
+      },
+      {
+        "title": "恋のエフェクト MAGIC",
+        "date": "2017-01-18",
+        "peak": 12
+      },
+      {
+        "title": "アクセラレーター/夏が来たぜ!!",
+        "date": "2022-11-22",
+        "peak": 16
+      },
+      {
+        "title": "START DAY",
+        "date": "2021-05-19",
+        "peak": 22
+      }
+    ],
+    "albums": [
+      {
+        "title": "5",
+        "date": "2017-03-22",
+        "peak": 17
+      },
+      {
+        "title": "SEVEN STAR",
+        "date": "2019-03-13",
+        "peak": 16
+      },
+      {
+        "title": "純情マリオネット",
+        "date": "2013-11-26",
+        "peak": 26
+      },
+      {
+        "title": "泣き虫スナイパ→",
+        "date": "2013-05-28",
+        "peak": 30
+      },
+      {
+        "title": "SUPER JET SUPER",
+        "date": "2020-09-30",
+        "peak": 48
+      }
+    ]
+  },
+  "りんご娘": {
+    "singles": [
+      {
+        "title": "JAWAMEGI NIGHT!!",
+        "date": "2019-08-13",
+        "peak": 29
+      },
+      {
+        "title": "桜ダイヤモンド",
+        "date": "2023-03-29",
+        "peak": 26
+      },
+      {
+        "title": "林檎忍者",
+        "date": "2025-07-16",
+        "peak": 22
+      },
+      {
+        "title": "0と1の世界",
+        "date": "2019-11-05",
+        "peak": 48
+      },
+      {
+        "title": "硝子のリンゴたち/North End All Stars",
+        "date": "2025-03-19",
+        "peak": 41
+      },
+      {
+        "title": "Candy Apple～恋はあせらず～",
+        "date": "2023-08-09",
+        "peak": 41
+      }
+    ],
+    "albums": [
+      {
+        "title": "Eternity",
+        "date": "2021-07-21",
+        "peak": 43
+      },
+      {
+        "title": "Cool & Country",
+        "date": "2020-09-23",
+        "peak": 41
+      },
+      {
+        "title": "Diamond",
+        "date": "2024-03-27",
+        "peak": 50
+      }
+    ]
+  },
+  "Lyrical School": {
+    "singles": [
+      {
+        "title": "PRIDE",
+        "date": "2014-10-28",
+        "peak": 9
+      },
+      {
+        "title": "つれてってよ/CALL ME TIGHT",
+        "date": "2017-12-19",
+        "peak": 11
+      },
+      {
+        "title": "ワンダーグラウンド",
+        "date": "2015-07-21",
+        "peak": 21
+      },
+      {
+        "title": "RUN and RUN",
+        "date": "2016-04-27",
+        "peak": 16
+      },
+      {
+        "title": "brand new day",
+        "date": "2014-04-02",
+        "peak": 13
+      },
+      {
+        "title": "FRESH!!!",
+        "date": "2014-07-15",
+        "peak": 21
+      },
+      {
+        "title": "夏休みのBABY",
+        "date": "2017-07-18",
+        "peak": 14
+      },
+      {
+        "title": "Tokyo Burning/Cookin'feat.Young Hastle",
+        "date": "2019-01-22",
+        "peak": 22
+      },
+      {
+        "title": "パジャマパーティー/シャープペンシル feat.SUSHIBOYS",
+        "date": "2018-12-25",
+        "peak": 16
+      },
+      {
+        "title": "サマーファンデーション",
+        "date": "2016-07-06",
+        "peak": 30
+      },
+      {
+        "title": "PARADE",
+        "date": "2013-05-15",
+        "peak": 34
+      },
+      {
+        "title": "リボンをきゅっと",
+        "date": "2012-12-12",
+        "peak": 48
+      },
+      {
+        "title": "わらって.net/Myかわいい日常たち",
+        "date": "2013-12-11",
+        "peak": 40
+      },
+      {
+        "title": "マジックアワー/格好悪いふられ方 -リリスクの場合-",
+        "date": "2016-10-05",
+        "peak": 32
+      }
+    ],
+    "albums": [
+      {
+        "title": "WORLD'S END",
+        "date": "2018-06-19",
+        "peak": 10
+      },
+      {
+        "title": "BE KIND REWIND",
+        "date": "2019-09-11",
+        "peak": 12
+      },
+      {
+        "title": "NEW WORLD e.p.",
+        "date": "2023-07-19",
+        "peak": 26
+      },
+      {
+        "title": "date course",
+        "date": "2013-09-18",
+        "peak": 42
+      },
+      {
+        "title": "SPOT",
+        "date": "2015-03-10",
+        "peak": 24
+      },
+      {
+        "title": "Wonderland",
+        "date": "2021-04-07",
+        "peak": 16
+      },
+      {
+        "title": "OK!!!!!",
+        "date": "2020-04-22",
+        "peak": 17
+      },
+      {
+        "title": "L.S.",
+        "date": "2022-04-20",
+        "peak": 14
+      },
+      {
+        "title": "\"TAKE ME OUT\" ON DEC 16",
+        "date": "2018-02-14",
+        "peak": 44
+      },
+      {
+        "title": "LIFE GOES ON e.p.",
+        "date": "2025-07-30",
+        "peak": 25
+      },
+      {
+        "title": "DAY 2",
+        "date": "2024-04-24",
+        "peak": 24
+      }
+    ]
+  },
+  "Task have Fun": {
+    "singles": [
+      {
+        "title": "BABYLONIA",
+        "date": "2021-05-18",
+        "peak": 4
+      },
+      {
+        "title": "Vibes",
+        "date": "2023-11-11",
+        "peak": 19
+      },
+      {
+        "title": "星フルWISH",
+        "date": "2020-02-12",
+        "peak": 16
+      },
+      {
+        "title": "「キメ」はRock You!",
+        "date": "2018-06-09",
+        "peak": 40
+      },
+      {
+        "title": "インダ ビュリフォデイ",
+        "date": "2019-03-28",
+        "peak": 25
+      },
+      {
+        "title": "けどハニカミ",
+        "date": "2018-10-13",
+        "peak": 30
+      },
+      {
+        "title": "あしたに向かうダイアリー",
+        "date": "2020-10-29",
+        "peak": 27
+      }
+    ],
+    "albums": [
+      {
+        "title": "Violet tears",
+        "date": "2022-11-08",
+        "peak": 4
+      },
+      {
+        "title": "Have Fun Days",
+        "date": "2025-03-19",
+        "peak": 33
+      }
+    ]
+  },
+  "アイドルカレッジ": {
+    "singles": [
+      {
+        "title": "ビーマイ☆ゾンビ",
+        "date": "2015-10-07",
+        "peak": 6
+      },
+      {
+        "title": "あのコが、髪を、切らない理由。",
+        "date": "2014-07-30",
+        "peak": 13
+      },
+      {
+        "title": "#常夏女子希望!!!",
+        "date": "2015-05-13",
+        "peak": 11
+      },
+      {
+        "title": "イチズレシピ",
+        "date": "2015-12-02",
+        "peak": 9
+      },
+      {
+        "title": "AKATSUKI",
+        "date": "2018-07-11",
+        "peak": 6
+      },
+      {
+        "title": "GOES ON",
+        "date": "2020-12-09",
+        "peak": 8
+      },
+      {
+        "title": "MASQUERADE",
+        "date": "2019-12-11",
+        "peak": 11
+      },
+      {
+        "title": "虹とトキメキのFes",
+        "date": "2016-12-14",
+        "peak": 10
+      },
+      {
+        "title": "少女卒業/YOZORA",
+        "date": "2013-02-13",
+        "peak": 15
+      },
+      {
+        "title": "パンタスティック!",
+        "date": "2017-05-10",
+        "peak": 10
+      },
+      {
+        "title": "トゥルーエンド プレイヤー",
+        "date": "2014-12-03",
+        "peak": 17
+      },
+      {
+        "title": "Wonderful Story",
+        "date": "2017-10-04",
+        "peak": 9
+      },
+      {
+        "title": "愛が光る!",
+        "date": "2022-11-30",
+        "peak": 17
+      },
+      {
+        "title": "雨のち晴れ",
+        "date": "2012-07-11",
+        "peak": 16
+      },
+      {
+        "title": "RAINBOW GATE",
+        "date": "2022-06-01",
+        "peak": 16
+      },
+      {
+        "title": "無我夢中Days",
+        "date": "2021-08-04",
+        "peak": 20
+      },
+      {
+        "title": "ICHIBANBOSHI",
+        "date": "2023-07-05",
+        "peak": 23
+      },
+      {
+        "title": "ナンバーワン主義",
+        "date": "2024-07-24",
+        "peak": 26
+      },
+      {
+        "title": "Owen",
+        "date": "2025-09-17",
+        "peak": 19
+      }
+    ],
+    "albums": [
+      {
+        "title": "アイドルカレッジの伝えたいこと",
+        "date": "2013-07-24",
+        "peak": 29
+      },
+      {
+        "title": "idolcollege",
+        "date": "2016-04-20",
+        "peak": 14
+      }
+    ]
+  },
+  "predia": {
+    "singles": [
+      {
+        "title": "壊れた愛の果てに",
+        "date": "2014-08-06",
+        "peak": 6
+      },
+      {
+        "title": "美しき孤独たち",
+        "date": "2014-12-17",
+        "peak": 3
+      },
+      {
+        "title": "DRESS",
+        "date": "2022-02-23",
+        "peak": 2
+      },
+      {
+        "title": "満たしてアモーレ",
+        "date": "2015-08-26",
+        "peak": 9
+      },
+      {
+        "title": "シャララ・ナイアガラ",
+        "date": "2019-11-06",
+        "peak": 5
+      },
+      {
+        "title": "カーテンコール",
+        "date": "2018-08-22",
+        "peak": 13
+      },
+      {
+        "title": "刹那の夜の中で",
+        "date": "2016-01-27",
+        "peak": 9
+      },
+      {
+        "title": "禁断のマスカレード",
+        "date": "2017-01-25",
+        "peak": 9
+      },
+      {
+        "title": "NAKED",
+        "date": "2019-06-12",
+        "peak": 11
+      },
+      {
+        "title": "Ms.Frontier",
+        "date": "2017-10-25",
+        "peak": 11
+      },
+      {
+        "title": "ヌーベルキュイジーヌ",
+        "date": "2017-06-21",
+        "peak": 10
+      },
+      {
+        "title": "硝子のアンブレラ",
+        "date": "2021-08-04",
+        "peak": 11
+      },
+      {
+        "title": "東京マドンナ",
+        "date": "2020-09-23",
+        "peak": 9
+      },
+      {
+        "title": "Hey Now!!",
+        "date": "2013-08-27",
+        "peak": 24
+      },
+      {
+        "title": "ハニーB",
+        "date": "2011-11-23",
+        "peak": 40
+      },
+      {
+        "title": "Crazy Cat",
+        "date": "2013-04-17",
+        "peak": 29
+      }
+    ],
+    "albums": [
+      {
+        "title": "ファビュラス",
+        "date": "2018-02-14",
+        "peak": 10
+      },
+      {
+        "title": "DIAMOND",
+        "date": "2022-05-25",
+        "peak": 11
+      },
+      {
+        "title": "白夜のヴィオラにいだかれて",
+        "date": "2016-06-22",
+        "peak": 16
+      },
+      {
+        "title": "Best of predia\"THE ONE\"",
+        "date": "2018-12-19",
+        "peak": 26
+      },
+      {
+        "title": "10ct",
+        "date": "2021-01-27",
+        "peak": 18
+      },
+      {
+        "title": "孤高のダリアにくちづけを",
+        "date": "2015-02-18",
+        "peak": 23
+      }
+    ]
+  },
+  "豆柴の大群": {
+    "singles": [
+      {
+        "title": "りスタート",
+        "date": "2019-12-19",
+        "peak": 1
+      },
+      {
+        "title": "MUST CHANGE",
+        "date": "2022-12-07",
+        "peak": 3
+      },
+      {
+        "title": "ぷりぷり/Sing Along Time!",
+        "date": "2023-10-04",
+        "peak": 5
+      },
+      {
+        "title": "豆んJOY/間違いだらけのヒーロー",
+        "date": "2022-07-20",
+        "peak": 3
+      },
+      {
+        "title": "昨日は戻らない/恋のフルスイング",
+        "date": "2021-12-22",
+        "peak": 6
+      },
+      {
+        "title": "豆3(りロード/リトライ/ミステリアスパーティー)",
+        "date": "2025-06-04",
+        "peak": 6
+      },
+      {
+        "title": "柏木由紀なりの豆柴の大群 -ずっと気になるズッキーニ-",
+        "date": "2021-11-30",
+        "peak": 11
+      },
+      {
+        "title": "AAA(サマバリ/恋のかけ算 ABCDEFG/今)",
+        "date": "2020-10-07",
+        "peak": 4
+      },
+      {
+        "title": "大丈夫サンライズ",
+        "date": "2020-03-04",
+        "peak": 23
+      }
+    ],
+    "albums": [
+      {
+        "title": "NO BEAN,NO BARK",
+        "date": "2025-11-12",
+        "peak": 11
+      },
+      {
+        "title": "MAMEQUEST",
+        "date": "2023-02-22",
+        "peak": 7
+      },
+      {
+        "title": "WOW!!シーズン",
+        "date": "2021-07-14",
+        "peak": 8
+      },
+      {
+        "title": "まめジャー!",
+        "date": "2021-01-20",
+        "peak": 11
+      },
+      {
+        "title": "スタート",
+        "date": "2020-06-10",
+        "peak": 10
+      }
+    ]
+  },
+  "虹のコンキスタドール": {
+    "singles": [
+      {
+        "title": "愛をこころにサマーと数えよ",
+        "date": "2019-07-10",
+        "peak": 3
+      },
+      {
+        "title": "THE☆有頂天サマー!!",
+        "date": "2015-08-25",
+        "peak": 3
+      },
+      {
+        "title": "ずっとサマーで恋してる",
+        "date": "2018-09-12",
+        "peak": 5
+      },
+      {
+        "title": "キミは無邪気な夏の女王～This Summer Girl Is an Innocent Mistress～/じゃんぷ!/夏の夜は短すぎるけど…",
+        "date": "2017-09-05",
+        "peak": 4
+      },
+      {
+        "title": "響け!ファンファーレ",
+        "date": "2020-01-22",
+        "peak": 9
+      },
+      {
+        "title": "ぼくらのターン",
+        "date": "2020-01-22",
+        "peak": 10
+      },
+      {
+        "title": "Snowing Love",
+        "date": "2020-01-22",
+        "peak": 13
+      },
+      {
+        "title": "限りなく冒険に近いサマー",
+        "date": "2016-09-20",
+        "peak": 9
+      },
+      {
+        "title": "サマーとはキミと私なりっ!!",
+        "date": "2020-09-16",
+        "peak": 7
+      },
+      {
+        "title": "恋・ホワイトアウト",
+        "date": "2021-02-03",
+        "peak": 6
+      },
+      {
+        "title": "やるっきゃない!2015/ブランニューハッピーデイズ",
+        "date": "2015-04-08",
+        "peak": 11
+      },
+      {
+        "title": "にじいろフィロソフィー",
+        "date": "2014-12-17",
+        "peak": 20
+      },
+      {
+        "title": "ナミダ、あわ雪",
+        "date": "2022-01-19",
+        "peak": 42
+      }
+    ],
+    "albums": [
+      {
+        "title": "THE BEST OF RAINBOW",
+        "date": "2018-12-12",
+        "peak": 9
+      },
+      {
+        "title": "レインボウフェノメノン",
+        "date": "2018-01-10",
+        "peak": 7
+      },
+      {
+        "title": "レインボウスペクトラム",
+        "date": "2015-11-03",
+        "peak": 8
+      },
+      {
+        "title": "レインボウグラビティ",
+        "date": "2020-06-17",
+        "peak": 4
+      },
+      {
+        "title": "レインボウエクリプス",
+        "date": "2016-12-13",
+        "peak": 12
+      },
+      {
+        "title": "RAINBOW SUMMER SHOWER",
+        "date": "2021-07-14",
+        "peak": 16
+      },
+      {
+        "title": "Over the RAINBOW～虹の上にも7年!～",
+        "date": "2022-04-13",
+        "peak": 27
+      }
+    ]
+  },
+  "Buono!": {
+    "singles": [
+      {
+        "title": "ホントのじぶん",
+        "date": "2007-10-31",
+        "peak": 5
+      },
+      {
+        "title": "Kiss!Kiss!Kiss!",
+        "date": "2008-05-14",
+        "peak": 4
+      },
+      {
+        "title": "恋愛 ライダー",
+        "date": "2008-02-06",
+        "peak": 7
+      },
+      {
+        "title": "ガチンコでいこう!",
+        "date": "2008-08-20",
+        "peak": 6
+      },
+      {
+        "title": "ロッタラ ロッタラ",
+        "date": "2008-11-12",
+        "peak": 8
+      },
+      {
+        "title": "MY BOY",
+        "date": "2009-04-29",
+        "peak": 7
+      },
+      {
+        "title": "co・no・mi・chi",
+        "date": "2009-01-21",
+        "peak": 4
+      },
+      {
+        "title": "Bravo☆Bravo",
+        "date": "2009-12-16",
+        "peak": 4
+      },
+      {
+        "title": "Take It Easy!",
+        "date": "2009-08-26",
+        "peak": 10
+      },
+      {
+        "title": "Our Songs",
+        "date": "2010-02-03",
+        "peak": 8
+      },
+      {
+        "title": "雑草のうた",
+        "date": "2011-02-02",
+        "peak": 9
+      },
+      {
+        "title": "初恋サイダー/DEEP MIND",
+        "date": "2012-01-18",
+        "peak": 7
+      },
+      {
+        "title": "夏ダカラ!",
+        "date": "2011-07-20",
+        "peak": 13
+      }
+    ],
+    "albums": [
+      {
+        "title": "Cafe Buono!",
+        "date": "2008-02-20",
+        "peak": 11
+      },
+      {
+        "title": "Buono!2",
+        "date": "2009-02-11",
+        "peak": 7
+      },
+      {
+        "title": "We are Buono!",
+        "date": "2010-02-10",
+        "peak": 11
+      },
+      {
+        "title": "The Best Buono!",
+        "date": "2010-08-10",
+        "peak": 16
+      },
+      {
+        "title": "SHERBET",
+        "date": "2012-08-22",
+        "peak": 14
+      },
+      {
+        "title": "partenza",
+        "date": "2011-08-10",
+        "peak": 21
+      }
+    ]
+  },
+  "ExWHYZ": {
+    "singles": [
+      {
+        "title": "SUCCESS STORY",
+        "date": "2019-07-17",
+        "peak": 5
+      },
+      {
+        "title": "ピアス",
+        "date": "2019-02-27",
+        "peak": 5
+      },
+      {
+        "title": "RiGHT NOW",
+        "date": "2019-10-16",
+        "peak": 3
+      },
+      {
+        "title": "iD",
+        "date": "2025-07-30",
+        "peak": 5
+      },
+      {
+        "title": "DON'T CRY/リグレット",
+        "date": "2025-12-10",
+        "peak": 7
+      },
+      {
+        "title": "GIVE YOU MY WORD",
+        "date": "2026-04-01",
+        "peak": 4
+      },
+      {
+        "title": "HON-NO/IZA!!",
+        "date": "2021-05-12",
+        "peak": 7
+      },
+      {
+        "title": "柏木由紀なりのEMPiRE -時間が足りない-",
+        "date": "2021-11-30",
+        "peak": 14
+      }
+    ],
+    "albums": [
+      {
+        "title": "Sweet & Sour",
+        "date": "2024-07-31",
+        "peak": 5
+      },
+      {
+        "title": "the GREAT JOURNEY ALBUM",
+        "date": "2019-12-18",
+        "peak": 6
+      },
+      {
+        "title": "Dress to Kill",
+        "date": "2024-03-20",
+        "peak": 8
+      },
+      {
+        "title": "EMPiRE originals",
+        "date": "2018-09-05",
+        "peak": 8
+      },
+      {
+        "title": "xYZ",
+        "date": "2022-11-02",
+        "peak": 7
+      },
+      {
+        "title": "HOW HIGH?",
+        "date": "2023-10-18",
+        "peak": 8
+      },
+      {
+        "title": "xANADU",
+        "date": "2023-04-19",
+        "peak": 8
+      },
+      {
+        "title": "THE EMPiRE STRiKES START!!",
+        "date": "2018-04-11",
+        "peak": 7
+      },
+      {
+        "title": "BRiGHT FUTURE",
+        "date": "2021-11-10",
+        "peak": 6
+      },
+      {
+        "title": "SUPER COOL EP",
+        "date": "2020-08-05",
+        "peak": 8
+      },
+      {
+        "title": "xYZ[hYPER EDITION]",
+        "date": "2023-03-01",
+        "peak": 7
+      }
+    ]
+  },
+  "神宿": {
+    "singles": [
+      {
+        "title": "#前に進む唄",
+        "date": "2022-05-18",
+        "peak": 11
+      },
+      {
+        "title": "原宿戦隊!神宿レンジャー/限界突破フィロソフィ",
+        "date": "2016-06-28",
+        "peak": 18
+      },
+      {
+        "title": "カムチャッカ・アドベンチャー",
+        "date": "2016-12-06",
+        "peak": 41
+      },
+      {
+        "title": "HAPPY PARTY NIGHT",
+        "date": "2018-05-09",
+        "peak": 35
+      },
+      {
+        "title": "CONVERSATION FANCY",
+        "date": "2019-02-06",
+        "peak": 50
+      }
+    ],
+    "albums": [
+      {
+        "title": "kamiyado complete best 2018-2019",
+        "date": "2020-01-15",
+        "peak": 19
+      }
+    ]
+  },
+  "わーすた": {
+    "singles": [
+      {
+        "title": "Sweet Fancy Chu-n/アレグロめいてるランナップ",
+        "date": "2025-09-24",
+        "peak": 5
+      },
+      {
+        "title": "夏恋ジレンマ",
+        "date": "2024-08-21",
+        "peak": 5
+      },
+      {
+        "title": "えいきゅーむちゅーでこうしんちゅっ!■",
+        "date": "2024-02-21",
+        "peak": 6
+      },
+      {
+        "title": "メロメロ!ラヴロック",
+        "date": "2023-08-30",
+        "peak": 6
+      },
+      {
+        "title": "すまん、犬。",
+        "date": "2023-02-22",
+        "peak": 5
+      },
+      {
+        "title": "ミライバルダンス",
+        "date": "2022-03-02",
+        "peak": 5
+      },
+      {
+        "title": "遮二無二 生きる!/バスタブ・アロマティック",
+        "date": "2019-10-30",
+        "peak": 8
+      },
+      {
+        "title": "サンデー!サンシャイン!",
+        "date": "2020-08-12",
+        "peak": 7
+      },
+      {
+        "title": "春花火",
+        "date": "2021-03-03",
+        "peak": 6
+      },
+      {
+        "title": "Just be yourself",
+        "date": "2017-04-19",
+        "peak": 19
+      },
+      {
+        "title": "詠み人知らずの青春歌",
+        "date": "2021-08-18",
+        "peak": 16
+      },
+      {
+        "title": "完全なるアイドル",
+        "date": "2016-09-28",
+        "peak": 25
+      },
+      {
+        "title": "最上級ぱらどっくす",
+        "date": "2017-10-18",
+        "peak": 19
+      },
+      {
+        "title": "ゆうめいに、にゃりたい。",
+        "date": "2017-02-22",
+        "peak": 48
+      }
+    ],
+    "albums": [
+      {
+        "title": "我々はネコである。",
+        "date": "2022-08-17",
+        "peak": 6
+      },
+      {
+        "title": "What's \"standard\"!?",
+        "date": "2020-11-25",
+        "peak": 18
+      },
+      {
+        "title": "わーすたBEST",
+        "date": "2020-03-25",
+        "peak": 11
+      },
+      {
+        "title": "CAT'CH THE WORLD",
+        "date": "2019-03-06",
+        "peak": 17
+      },
+      {
+        "title": "The Legend of WASUTA",
+        "date": "2019-06-26",
+        "peak": 15
+      },
+      {
+        "title": "The World Standard",
+        "date": "2016-05-04",
+        "peak": 17
+      },
+      {
+        "title": "JUMPING SUMMER",
+        "date": "2018-06-20",
+        "peak": 23
+      },
+      {
+        "title": "パラドックス ワールド",
+        "date": "2017-10-18",
+        "peak": 32
+      },
+      {
+        "title": "GIRLS,BE AMBITIOUS!",
+        "date": "2018-10-31",
+        "peak": 23
+      }
+    ]
+  },
+  "かすみ草とステラ": {
+    "singles": [
+      {
+        "title": "大青春はじめます!",
+        "date": "2022-10-04",
+        "peak": 24
+      }
+    ],
+    "albums": []
+  },
+  "ミームトーキョー": {
+    "singles": [
+      {
+        "title": "アニモア",
+        "date": "2022-04-13",
+        "peak": 17
+      },
+      {
+        "title": "THE STRUGGLE IS REAL",
+        "date": "2021-08-25",
+        "peak": 31
+      },
+      {
+        "title": "アンチサジェスト",
+        "date": "2021-04-21",
+        "peak": 46
+      }
+    ],
+    "albums": [
+      {
+        "title": "MEME TOKYO.",
+        "date": "2023-02-08",
+        "peak": 31
+      },
+      {
+        "title": "MEMETIC INFECTION",
+        "date": "2023-06-07",
+        "peak": 40
+      }
+    ]
+  },
+  "クマリデパート": {
+    "singles": [
+      {
+        "title": "限界無限大ケン%/Furniture Girl",
+        "date": "2021-07-06",
+        "peak": 9
+      },
+      {
+        "title": "魔法少女Q",
+        "date": "2023-06-27",
+        "peak": 17
+      },
+      {
+        "title": "止まらない!ト・マンナヨ!",
+        "date": "2022-10-25",
+        "peak": 12
+      },
+      {
+        "title": "あみだ☆ふぉーちゅーん/これから",
+        "date": "2022-01-18",
+        "peak": 11
+      },
+      {
+        "title": "幸せハッシン!フロムキッチン",
+        "date": "2022-05-31",
+        "peak": 13
+      },
+      {
+        "title": "SUN 百6じゅ～GO!日ッチ☆",
+        "date": "2020-08-18",
+        "peak": 13
+      },
+      {
+        "title": "ブルーサバイバー",
+        "date": "2024-07-09",
+        "peak": 11
+      },
+      {
+        "title": "夏へのとびら/ぶどう■Grape■For■You■",
+        "date": "2023-03-07",
+        "peak": 23
+      },
+      {
+        "title": "極LOVE浄土",
+        "date": "2019-11-05",
+        "peak": 23
+      },
+      {
+        "title": "クマった!釣られちゃった■",
+        "date": "2026-02-03",
+        "peak": 8
+      },
+      {
+        "title": "愛 Eye Catch",
+        "date": "2025-09-23",
+        "peak": 33
+      },
+      {
+        "title": "サクラになっちゃうよ!",
+        "date": "2020-03-03",
+        "peak": 32
+      },
+      {
+        "title": "シャダーイクン",
+        "date": "2019-01-22",
+        "peak": 28
+      },
+      {
+        "title": "あれ?ロマンチック",
+        "date": "2018-09-25",
+        "peak": 50
+      }
+    ],
+    "albums": [
+      {
+        "title": "ミニデパ1",
+        "date": "2023-11-21",
+        "peak": 14
+      },
+      {
+        "title": "セカデパ!",
+        "date": "2021-02-09",
+        "peak": 11
+      },
+      {
+        "title": "コスモデパート",
+        "date": "2023-01-31",
+        "peak": 23
+      },
+      {
+        "title": "かなでぱ!",
+        "date": "2025-05-27",
+        "peak": 19
+      },
+      {
+        "title": "ココデパ!",
+        "date": "2019-05-28",
+        "peak": 39
+      }
+    ]
+  },
+  "純情のアフィリア": {
+    "singles": [
+      {
+        "title": "S・M・L☆",
+        "date": "2013-11-13",
+        "peak": 4
+      },
+      {
+        "title": "マジカル☆エクスプレス☆ジャーニー",
+        "date": "2014-07-23",
+        "peak": 3
+      },
+      {
+        "title": "ネプテューヌ☆サガして",
+        "date": "2013-08-07",
+        "peak": 11
+      },
+      {
+        "title": "Embrace Blade",
+        "date": "2015-11-18",
+        "peak": 7
+      },
+      {
+        "title": "いつか見た虹のその下で",
+        "date": "2016-03-02",
+        "peak": 5
+      },
+      {
+        "title": "Lost In The Sky",
+        "date": "2016-07-26",
+        "peak": 8
+      },
+      {
+        "title": "I WANT TO GROW/起・承・転・結・序・破・急",
+        "date": "2018-11-27",
+        "peak": 5
+      },
+      {
+        "title": "Never say Never",
+        "date": "2015-02-11",
+        "peak": 4
+      },
+      {
+        "title": "それだけが、生きる意味なんだ",
+        "date": "2018-03-28",
+        "peak": 7
+      },
+      {
+        "title": "ジャポネスク×ロマネスク",
+        "date": "2014-11-26",
+        "peak": 9
+      },
+      {
+        "title": "SURVIVE!!",
+        "date": "2012-11-13",
+        "peak": 9
+      },
+      {
+        "title": "非合理的かつ訂正不能な思い込み",
+        "date": "2017-04-19",
+        "peak": 6
+      },
+      {
+        "title": "魔法のチョコレート伝説",
+        "date": "2017-01-25",
+        "peak": 8
+      },
+      {
+        "title": "残酷のバベル",
+        "date": "2019-09-03",
+        "peak": 11
+      },
+      {
+        "title": "未来が私を待っている",
+        "date": "2012-03-28",
+        "peak": 6
+      },
+      {
+        "title": "この世界に魔法なんてないよ/はじめてのSEASON",
+        "date": "2017-08-30",
+        "peak": 11
+      },
+      {
+        "title": "Like? or Love?/究極アンバランス!",
+        "date": "2020-03-11",
+        "peak": 8
+      },
+      {
+        "title": "この盾に、隠れます。",
+        "date": "2023-02-28",
+        "peak": 5
+      },
+      {
+        "title": "LIMITLESS",
+        "date": "2022-10-25",
+        "peak": 5
+      },
+      {
+        "title": "ジェネレーション・ギャップ",
+        "date": "2023-09-19",
+        "peak": 5
+      }
+    ],
+    "albums": [
+      {
+        "title": "Archism",
+        "date": "2013-04-24",
+        "peak": 20
+      },
+      {
+        "title": "Realism",
+        "date": "2015-08-26",
+        "peak": 24
+      },
+      {
+        "title": "whitism",
+        "date": "2011-06-01",
+        "peak": 46
+      },
+      {
+        "title": "ジュンジョウ・ガイドストーン(Blu-ray付盤)",
+        "date": "2019-09-03",
+        "peak": 33
+      }
+    ]
+  },
+  "lol": {
+    "singles": [
+      {
+        "title": "ladi dadi",
+        "date": "2016-01-27",
+        "peak": 3
+      },
+      {
+        "title": "spank!!",
+        "date": "2016-06-29",
+        "peak": 5
+      },
+      {
+        "title": "bye bye",
+        "date": "2016-12-14",
+        "peak": 4
+      },
+      {
+        "title": "boyfriend/girlfriend",
+        "date": "2017-04-19",
+        "peak": 5
+      },
+      {
+        "title": "love & smile",
+        "date": "2018-07-11",
+        "peak": 7
+      },
+      {
+        "title": "fire!",
+        "date": "2015-08-12",
+        "peak": 12
+      },
+      {
+        "title": "ice cream/ワスレナイ",
+        "date": "2018-03-21",
+        "peak": 11
+      },
+      {
+        "title": "brave up!! feat.DJ KOO",
+        "date": "2019-07-31",
+        "peak": 13
+      },
+      {
+        "title": "サヨナラの季節/lolli-lolli",
+        "date": "2019-03-20",
+        "peak": 12
+      },
+      {
+        "title": "アイタイキモチ/nanana",
+        "date": "2017-12-06",
+        "peak": 13
+      },
+      {
+        "title": "work it out",
+        "date": "2020-08-12",
+        "peak": 21
+      }
+    ],
+    "albums": [
+      {
+        "title": "lolol",
+        "date": "2017-08-02",
+        "peak": 16
+      },
+      {
+        "title": "lml",
+        "date": "2018-10-31",
+        "peak": 4
+      },
+      {
+        "title": "lightning",
+        "date": "2020-03-18",
+        "peak": 16
+      },
+      {
+        "title": "Life is",
+        "date": "2024-01-17",
+        "peak": 37
+      },
+      {
+        "title": "AMBER",
+        "date": "2022-10-26",
+        "peak": 38
+      }
+    ]
+  },
+  "なみだ色の消しごむ": {
+    "singles": [],
+    "albums": [
+      {
+        "title": "エラーコード:7394",
+        "date": "2026-03-21",
+        "peak": 18
+      }
+    ]
+  },
+  "UNBS": {
+    "singles": [
+      {
+        "title": "Real Blade",
+        "date": "2020-09-09",
+        "peak": 4
+      },
+      {
+        "title": "ROCK ALIVE/ARCADIA CAT",
+        "date": "2019-02-06",
+        "peak": 9
+      },
+      {
+        "title": "love pain/new journey",
+        "date": "2017-12-12",
+        "peak": 19
+      },
+      {
+        "title": "灼熱ECSTASY",
+        "date": "2023-02-01",
+        "peak": 9
+      },
+      {
+        "title": "Black Jet/How many kiss?",
+        "date": "2016-11-22",
+        "peak": 34
+      }
+    ],
+    "albums": [
+      {
+        "title": "UB RISE",
+        "date": "2025-09-02",
+        "peak": 20
+      }
+    ]
+  },
+  "PiXMiX": {
+    "singles": [
+      {
+        "title": "チョコレート・リグレット",
+        "date": "2020-02-05",
+        "peak": 9
+      },
+      {
+        "title": "その先へ",
+        "date": "2019-10-23",
+        "peak": 29
+      },
+      {
+        "title": "タオルを回すための歌",
+        "date": "2020-08-26",
+        "peak": 30
+      }
+    ],
+    "albums": [
+      {
+        "title": "「まだ、旅の途中。隣には君がいる。」",
+        "date": "2022-10-19",
+        "peak": 23
+      },
+      {
+        "title": "君がいたから",
+        "date": "2021-02-03",
+        "peak": 29
+      }
+    ]
+  },
+  "AMEFURASSHI": {
+    "singles": [
+      {
+        "title": "SENSITIVE",
+        "date": "2021-11-02",
+        "peak": 7
+      },
+      {
+        "title": "AMEFURASSHI LIMITED EDITION Vol.7(雑踏の中で/バカップルになりたい!)",
+        "date": "2020-05-17",
+        "peak": 11
+      }
+    ],
+    "albums": [
+      {
+        "title": "Drop",
+        "date": "2022-05-24",
+        "peak": 13
+      },
+      {
+        "title": "Coffee",
+        "date": "2023-05-16",
+        "peak": 14
+      }
+    ]
+  },
+  "マジカル・パンチライン": {
+    "singles": [
+      {
+        "title": "もう一度",
+        "date": "2019-10-09",
+        "peak": 7
+      },
+      {
+        "title": "DEUS EX MACHINA(私が私を燃やす理由/手のひらがえし/終わらざりしミスリル/リインカーネーション)",
+        "date": "2017-12-20",
+        "peak": 10
+      },
+      {
+        "title": "パレードは続く",
+        "date": "2017-08-09",
+        "peak": 14
+      },
+      {
+        "title": "今日がまだ蒼くても",
+        "date": "2019-06-19",
+        "peak": 11
+      },
+      {
+        "title": "Melty Kiss",
+        "date": "2019-02-20",
+        "peak": 16
+      }
+    ],
+    "albums": [
+      {
+        "title": "MAGiCAL SUPERMARKET",
+        "date": "2020-02-19",
+        "peak": 8
+      },
+      {
+        "title": "MAGiCAL PUNCHLiNE",
+        "date": "2016-07-20",
+        "peak": 14
+      },
+      {
+        "title": "MAGiCAL BOX",
+        "date": "2024-06-19",
+        "peak": 6
+      },
+      {
+        "title": "MAGiCAL MYSTERY TOUR",
+        "date": "2016-12-21",
+        "peak": 28
+      },
+      {
+        "title": "キラハピ☆THE WORLD",
+        "date": "2022-02-23",
+        "peak": 26
+      }
+    ]
+  },
+  "KissBee": {
+    "singles": [
+      {
+        "title": "ラブカル☆みるみるティショん",
+        "date": "2019-05-21",
+        "peak": 7
+      },
+      {
+        "title": "時空ノイズ",
+        "date": "2022-07-12",
+        "peak": 10
+      },
+      {
+        "title": "えす・あ～る・わい/クック=ドゥードゥル=ドゥー",
+        "date": "2019-12-03",
+        "peak": 19
+      },
+      {
+        "title": "頬で探すあなたの温度",
+        "date": "2015-11-25",
+        "peak": 14
+      },
+      {
+        "title": "君と僕と夏の物語",
+        "date": "2016-05-31",
+        "peak": 8
+      },
+      {
+        "title": "あなたのいちばんめ",
+        "date": "2023-12-24",
+        "peak": 12
+      },
+      {
+        "title": "君に夢中",
+        "date": "2021-09-07",
+        "peak": 7
+      },
+      {
+        "title": "どっきんふわっふー",
+        "date": "2017-08-29",
+        "peak": 26
+      },
+      {
+        "title": "僕らのアーティファクト",
+        "date": "2024-11-08",
+        "peak": 18
+      },
+      {
+        "title": "Labyrinth～イチゴ姫の旅立ち～",
+        "date": "2017-05-02",
+        "peak": 19
+      },
+      {
+        "title": "&PEACH",
+        "date": "2017-12-05",
+        "peak": 25
+      },
+      {
+        "title": "ネオオリジナリティ",
+        "date": "2025-12-24",
+        "peak": 35
+      },
+      {
+        "title": "空ヲモウ",
+        "date": "2020-12-20",
+        "peak": 48
+      }
+    ],
+    "albums": [
+      {
+        "title": "imaginism",
+        "date": "2018-12-11",
+        "peak": 13
+      },
+      {
+        "title": "super super",
+        "date": "2023-02-14",
+        "peak": 12
+      },
+      {
+        "title": "Pop Honeycomb",
+        "date": "2018-05-08",
+        "peak": 20
+      }
+    ]
+  },
+  "LADYBABY": {
+    "singles": [
+      {
+        "title": "破天ニ雷鳴",
+        "date": "2019-05-28",
+        "peak": 13
+      },
+      {
+        "title": "Pinky! Pinky!",
+        "date": "2017-09-27",
+        "peak": 15
+      },
+      {
+        "title": "ホシノナイソラ",
+        "date": "2018-05-30",
+        "peak": 27
+      },
+      {
+        "title": "Pelo",
+        "date": "2017-04-12",
+        "peak": 22
+      },
+      {
+        "title": "参拝!御朱印girl☆",
+        "date": "2016-11-30",
+        "peak": 39
+      },
+      {
+        "title": "アゲアゲマネー ～おちんぎん大作戦～",
+        "date": "2016-01-13",
+        "peak": 31
+      },
+      {
+        "title": "蓮華チャンス!",
+        "date": "2016-04-13",
+        "peak": 32
+      }
+    ],
+    "albums": [
+      {
+        "title": "Beside U",
+        "date": "2018-03-07",
+        "peak": 49
+      }
+    ]
+  }
+}

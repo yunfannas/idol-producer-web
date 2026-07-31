@@ -1,0 +1,185 @@
+{
+  "FRUITS ZIPPER": [
+    {
+      "title": "わたしの一番かわいいところ",
+      "date": "2023-09-13",
+      "billboard": 46000
+    },
+    {
+      "title": "NEW KAWAII/フルーツバスケット",
+      "date": "2024-09-18",
+      "oricon": 56000,
+      "billboard": 40000
+    },
+    {
+      "title": "KawaiiってMagic",
+      "date": "2025-05-14",
+      "oricon": 227000,
+      "billboard": 292000
+    },
+    {
+      "title": "はちゃめちゃわちゃライフ!/JAM",
+      "date": "2025-10-15",
+      "oricon": 317000,
+      "billboard": 381000
+    },
+    {
+      "title": "ぱわーオブらぶ/センセーション",
+      "date": "2026-07-15",
+      "oricon": 536000,
+      "billboard": 728000
+    }
+  ],
+  "CUTIE STREET": [
+    {
+      "title": "かわいいだけじゃだめですか?",
+      "date": "2024-11-13",
+      "billboard": 61000
+    },
+    {
+      "title": "キューにストップできません!/ちきゅーめいくあっぷ計画",
+      "date": "2025-07-23",
+      "oricon": 379000,
+      "billboard": 506000
+    },
+    {
+      "title": "キュートなキューたい/ナイスだね",
+      "date": "2026-05-27",
+      "oricon": 441000,
+      "billboard": 533000
+    }
+  ],
+  "CANDY TUNE": [
+    {
+      "title": "キス・ミー・パティシエ",
+      "date": "2024-08-07",
+      "billboard": 28000
+    },
+    {
+      "title": "推し♡好き♡しんどい",
+      "date": "2025-04-23",
+      "billboard": 61000
+    },
+    {
+      "title": "HAPPY BOUNCE BIRTHDAY",
+      "date": "2026-04-22",
+      "billboard": 172000
+    }
+  ],
+  "SWEET STEADY": [
+    {
+      "title": "ぱじゃまぱーてぃー!/ダイヤモンドデイズ",
+      "date": "2024-12-18",
+      "billboard": 32000
+    },
+    {
+      "title": "YAKIMOCHI/ぐっじょぶ!",
+      "date": "2025-08-20",
+      "billboard": 60000
+    },
+    {
+      "title": "SWEET STEP",
+      "date": "2026-03-25",
+      "billboard": 47000
+    }
+  ],
+  "≠ME": [
+    {
+      "title": "君はこの夏、恋をする",
+      "date": "2021-07-14",
+      "oricon": 47000,
+      "billboard": 52000
+    },
+    {
+      "title": "まほろばアスタリスク",
+      "date": "2021-11-10",
+      "oricon": 59000,
+      "billboard": 66000
+    },
+    {
+      "title": "チョコレートメランコリー",
+      "date": "2022-02-16",
+      "oricon": 58000,
+      "billboard": 69000
+    },
+    {
+      "title": "す、好きじゃない!",
+      "date": "2022-08-03",
+      "oricon": 92000,
+      "billboard": 113000
+    },
+    {
+      "title": "はにかみショート",
+      "date": "2022-11-23",
+      "oricon": 125000,
+      "billboard": 145000
+    },
+    {
+      "title": "天使は何処へ",
+      "date": "2023-04-12",
+      "oricon": 130000,
+      "billboard": 159000
+    },
+    {
+      "title": "想わせぶりっこ",
+      "date": "2023-09-06",
+      "oricon": 185000,
+      "billboard": 240000
+    },
+    {
+      "title": "アンチコンフィチュール",
+      "date": "2023-12-20",
+      "oricon": 182000,
+      "billboard": 216000
+    },
+    {
+      "title": "夏が来たから",
+      "date": "2024-08-28",
+      "oricon": 190000,
+      "billboard": 229000
+    },
+    {
+      "title": "モブノデレラ/神様の言うとーり!",
+      "date": "2025-04-30",
+      "oricon": 182000,
+      "billboard": 232000
+    },
+    {
+      "title": "排他的ファイター",
+      "date": "2025-12-10",
+      "oricon": 303000,
+      "billboard": 401000
+    },
+    {
+      "title": "愛くださいませ/ここでファーストキッス",
+      "date": "2026-06-24",
+      "billboard": 431769
+    }
+  ],
+  "≒JOY": [
+    {
+      "title": "体育館ディスコ",
+      "date": "2024-06-12",
+      "oricon": 105000,
+      "billboard": 137000
+    },
+    {
+      "title": "初恋シンデレラ",
+      "date": "2024-10-16",
+      "oricon": 98000,
+      "billboard": 131000
+    },
+    {
+      "title": "ブルーハワイレモン",
+      "date": "2025-06-11",
+      "oricon": 163000,
+      "billboard": 208000
+    },
+    {
+      "title": "電話番号教えて!",
+      "date": "2026-02-18",
+      "oricon": 231000,
+      "billboard": 277000
+    }
+  ]
+}

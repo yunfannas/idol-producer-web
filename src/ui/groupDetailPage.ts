@@ -431,7 +431,12 @@ export function renderGroupDetailPage(
 
   const teamSongs = songsForDisplaySorted(ctx.songs).filter((s) => String(s.group_uid ?? "") === gid);
   const songCount = teamSongs.length;
-  const mergedDiscRows = buildGroupDiscographyReleaseRows(g, ctx.referenceIso, ctx.sharedReleases ?? []);
+  const mergedDiscRows = buildGroupDiscographyReleaseRows(
+    g,
+    ctx.referenceIso,
+    ctx.sharedReleases ?? [],
+    songsForDisplaySorted(ctx.songs),
+  );
   const discCount = mergedDiscRows.length || buildDiscBuckets(teamSongs).length;
 
   const songsBtn = gid

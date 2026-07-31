@@ -1037,6 +1037,8 @@ let makingTab: MakingTab = "songs";
 let selectedCdProjectUid: string | null = null;
 /** Selected release bucket in Discography tab; invalid keys cleared in `ensureSongsDiscographyKey`. */
 let songsDiscographyKey: string | null = null;
+/** Selected song for Songs detail panel (from track list or discography link). */
+let songsDetailUid: string | null = null;
 
 /** Inbox message selection (management mode). */
 let inboxSelectedUid: string | null = null;
@@ -1117,6 +1119,7 @@ interface NavigationSnapshot {
   songsGroupUid: string | null;
   songsWorkspaceTab: SongsWorkspaceTab;
   songsDiscographyKey: string | null;
+  songsDetailUid: string | null;
   makingTab: MakingTab;
   selectedCdProjectUid: string | null;
   inboxSelectedUid: string | null;
@@ -1148,6 +1151,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    songsDetailUid,
     makingTab,
     selectedCdProjectUid,
     inboxSelectedUid,
@@ -1178,6 +1182,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.songsGroupUid === b.songsGroupUid &&
     a.songsWorkspaceTab === b.songsWorkspaceTab &&
     a.songsDiscographyKey === b.songsDiscographyKey &&
+    a.songsDetailUid === b.songsDetailUid &&
     a.makingTab === b.makingTab &&
     a.selectedCdProjectUid === b.selectedCdProjectUid &&
     a.inboxSelectedUid === b.inboxSelectedUid &&
@@ -1206,6 +1211,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   songsGroupUid = snapshot.songsGroupUid;
   songsWorkspaceTab = snapshot.songsWorkspaceTab;
   songsDiscographyKey = snapshot.songsDiscographyKey;
+  songsDetailUid = snapshot.songsDetailUid;
   makingTab = snapshot.makingTab;
   selectedCdProjectUid = snapshot.selectedCdProjectUid;
   inboxSelectedUid = snapshot.inboxSelectedUid;
@@ -1574,6 +1580,7 @@ function ensureSongsDiscographyKey(): void {
       ? loadedScenario?.preset?.opening_date ?? null
       : save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? null,
     browseMode ? loadedScenario?.shared_releases ?? [] : save?.database_snapshot.shared_releases ?? [],
+    songs,
   );
   if (groupDiscographyRows.length) {
     if (songsDiscographyKey && !groupDiscographyRows.some((row) => row.key === songsDiscographyKey)) {
@@ -1891,6 +1898,7 @@ function paintGame(): void {
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    songsDetailUid,
     makingTab,
     selectedCdProjectUid,
     inboxSelectedUid,
@@ -2898,6 +2906,7 @@ function paintGame(): void {
           currentView = "Songs";
           songsWorkspaceTab = "group_songs";
           songsDiscographyKey = null;
+          songsDetailUid = null;
         });
       }
       return;
@@ -3127,6 +3136,24 @@ function paintGame(): void {
           } catch {
             songsDiscographyKey = raw;
           }
+        });
+      }
+      return;
+    }
+    const songDetailClose = t.closest<HTMLElement>("[data-song-detail-close]");
+    if (songDetailClose) {
+      navigate(() => {
+        songsDetailUid = null;
+      });
+      return;
+    }
+    const songDetailOpen = t.closest<HTMLElement>("[data-song-detail]");
+    if (songDetailOpen && (currentView === "Songs" || currentView === "Making")) {
+      const uid = songDetailOpen.getAttribute("data-song-detail");
+      if (uid) {
+        navigate(() => {
+          songsDetailUid = uid;
+          if (currentView === "Songs") songsWorkspaceTab = "group_songs";
         });
       }
       return;
@@ -3617,6 +3644,7 @@ function paintGame(): void {
         songsGroupUid = v;
       }
       songsDiscographyKey = null;
+      songsDetailUid = null;
       songsWorkspaceTab = "group_songs";
     });
   });

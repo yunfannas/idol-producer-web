@@ -9,6 +9,7 @@ import {
 } from "./discographyNormalize";
 import { songCatalogPrimaryTitle } from "./songCatalog";
 
+
 function normalizeSongTitleForMatch(title: string): string {
   return title
     .normalize("NFKC")
@@ -152,13 +153,28 @@ export function songsForDisplaySorted(all: Record<string, unknown>[]): Record<st
     });
 }
 
+/** Strip Apple packaging / CD type-variant suffixes so A/B/C editions share one disc bucket. */
+export function baseDiscReleaseLabel(name: string): string {
+  let s = String(name ?? "")
+    .normalize("NFKC")
+    .trim();
+  if (!s) return "";
+  s = s.replace(/\s*[-–—]\s*(Single|EP|Album|Mini Album|Best Album|Digital Single)\s*$/i, "");
+  s = s.replace(/\s*[\(（][^）)]*(TYPE|Type|タイプ)[-‐\s]?[A-Z0-9]+[^）)]*[\)）]\s*/gi, " ");
+  s = s.replace(/\s*[\(（]\s*[A-E]\s*[\)）]\s*/gi, " ");
+  s = s.replace(/\s+[ABCDE]-?Types?\b/gi, " ");
+  s = s.replace(/\s+(初回盤|通常盤|限定盤|期間限定盤)\b/gi, " ");
+  s = s.replace(/\s*(Special Edition|Deluxe Edition)\s*/gi, " ");
+  return s.replace(/\s+/g, " ").trim();
+}
+
 /** Primary disc / album label for UI (first non-empty `albums[].name`, else disc_type / stub). */
 export function primaryDiscLabel(row: Record<string, unknown>): string {
   const albums = Array.isArray(row.albums) ? row.albums : [];
   for (const raw of albums) {
     if (!raw || typeof raw !== "object") continue;
     const name = String((raw as Record<string, unknown>).name ?? "").trim();
-    if (name) return name;
+    if (name) return baseDiscReleaseLabel(name) || name;
   }
   const rdu = row.disc_uid;
   if (rdu != null && String(rdu).trim()) {
@@ -193,9 +209,15 @@ export interface DiscBucket {
   songs: Record<string, unknown>[];
 }
 
+/** One discography track line: always has a display title; `songUid` when linked to `songs.json`. */
+export interface GroupDiscographyTrackRef {
+  title: string;
+  songUid: string | null;
+}
+
 export interface GroupDiscographyTrackSection {
   label: string;
-  tracks: string[];
+  tracks: GroupDiscographyTrackRef[];
 }
 
 export interface GroupDiscographyReleaseRow {
@@ -205,6 +227,114 @@ export interface GroupDiscographyReleaseRow {
   releaseDate: string;
   trackCount: number;
   trackSections: GroupDiscographyTrackSection[];
+  /** False for video discs (DVD/BD): listed in discography but not selectable for track detail. */
+  selectable: boolean;
+}
+
+function normalizeDiscTrackTitleKey(title: string): string {
+  return String(title ?? "")
+    .normalize("NFKC")
+    .replace(/[！]/g, "!")
+    .replace(/[☆★]/g, "☆")
+    .replace(/[’']/g, "'")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function compactDiscTrackTitleKey(title: string): string {
+  return normalizeDiscTrackTitleKey(title).replace(/[\s☆・．.。、,!！？?～~―\-－_/／()（）「」『』[\]【】"'`]/g, "");
+}
+
+/** Build title→song lookup for a group's catalog (exact + compact keys). */
+export function buildSongTitleLookup(
+  songs: readonly Record<string, unknown>[] | null | undefined,
+  groupUid?: string | null,
+): Map<string, Record<string, unknown>> {
+  const lookup = new Map<string, Record<string, unknown>>();
+  const gid = String(groupUid ?? "").trim();
+  for (const row of songs ?? []) {
+    if (!row || typeof row !== "object") continue;
+    if (gid && String(row.group_uid ?? "").trim() !== gid) continue;
+    const uid = String(row.uid ?? "").trim();
+    if (!uid) continue;
+    const titles = [
+      String(row.title ?? "").trim(),
+      String(row.title_romanji ?? "").trim(),
+      songCatalogPrimaryTitle(row),
+    ].filter(Boolean);
+    for (const title of titles) {
+      const exact = normalizeDiscTrackTitleKey(title);
+      const compact = compactDiscTrackTitleKey(title);
+      if (exact && !lookup.has(`e:${exact}`)) lookup.set(`e:${exact}`, row);
+      if (compact && !lookup.has(`c:${compact}`)) lookup.set(`c:${compact}`, row);
+    }
+  }
+  return lookup;
+}
+
+function matchSongForDiscTrackTitle(
+  title: string,
+  lookup: Map<string, Record<string, unknown>>,
+  songByUid: Map<string, Record<string, unknown>>,
+  preferredUid?: string | null,
+): Record<string, unknown> | null {
+  const pref = String(preferredUid ?? "").trim();
+  if (pref && songByUid.has(pref)) {
+    // Curated track_song_uids are authoritative (compilations often point at other groups' songs).
+    return songByUid.get(pref) ?? null;
+  }
+  const exact = normalizeDiscTrackTitleKey(title);
+  const compact = compactDiscTrackTitleKey(title);
+  if (exact && lookup.has(`e:${exact}`)) return lookup.get(`e:${exact}`) ?? null;
+  if (compact && lookup.has(`c:${compact}`)) return lookup.get(`c:${compact}`) ?? null;
+  // Soft prefix: disc title "Creaction" ↔ catalog "Creaction (2019 ver.)"
+  if (compact) {
+    for (const [key, row] of lookup) {
+      if (!key.startsWith("c:")) continue;
+      const cand = key.slice(2);
+      if (cand.startsWith(compact) || compact.startsWith(cand)) return row;
+    }
+  }
+  return null;
+}
+
+function resolveTrackRefs(
+  titles: string[],
+  lookup: Map<string, Record<string, unknown>>,
+  songByUid: Map<string, Record<string, unknown>>,
+  preferredUids?: string[] | null,
+): GroupDiscographyTrackRef[] {
+  const prefs = Array.isArray(preferredUids) ? preferredUids : [];
+  return titles.map((title, index) => {
+    const preferred = prefs[index] ?? null;
+    const matched = matchSongForDiscTrackTitle(title, lookup, songByUid, preferred);
+    const songUid = matched ? String(matched.uid ?? "").trim() || null : null;
+    const display =
+      songUid && matched
+        ? songCatalogPrimaryTitle(matched) || title
+        : title;
+    return { title: display, songUid };
+  });
+}
+
+function resolveTrackRefsFromUids(
+  uids: string[],
+  songByUid: Map<string, Record<string, unknown>>,
+): GroupDiscographyTrackRef[] {
+  const out: GroupDiscographyTrackRef[] = [];
+  for (const raw of uids) {
+    const uid = String(raw ?? "").trim();
+    if (!uid) continue;
+    const matched = songByUid.get(uid);
+    if (matched) {
+      out.push({
+        title: songCatalogPrimaryTitle(matched) || uid,
+        songUid: uid,
+      });
+    }
+  }
+  return out;
 }
 
 function effectiveSharedReleaseTrackCount(
@@ -232,31 +362,66 @@ function effectiveSharedReleaseTrackCount(
   return sharedCount + Math.max(editionSongUids.length, editionTrackList.length);
 }
 
-function trackSectionsFromLocalRelease(row: Record<string, unknown>): GroupDiscographyTrackSection[] {
+function trackSectionsFromLocalRelease(
+  row: Record<string, unknown>,
+  lookup: Map<string, Record<string, unknown>>,
+  songByUid: Map<string, Record<string, unknown>>,
+): GroupDiscographyTrackSection[] {
   if (discUsesEditionTrackLayout(row)) {
     const sections: GroupDiscographyTrackSection[] = [];
     const sharedTracks = effectiveSharedTracks(row);
-    if (sharedTracks.length) sections.push({ label: "Shared tracks", tracks: sharedTracks });
+    const sharedUids = Array.isArray(row.shared_track_song_uids)
+      ? row.shared_track_song_uids.map((x) => String(x ?? "").trim())
+      : [];
+    if (sharedTracks.length) {
+      sections.push({
+        label: "Shared tracks",
+        tracks: resolveTrackRefs(sharedTracks, lookup, songByUid, sharedUids),
+      });
+    }
     for (const edition of effectiveEditionSlices(row)) {
-      if (edition.track_list.length) sections.push({ label: edition.label, tracks: edition.track_list });
+      if (!edition.track_list.length) continue;
+      sections.push({
+        label: edition.label,
+        tracks: resolveTrackRefs(edition.track_list, lookup, songByUid),
+      });
     }
     return sections;
   }
   const trackList = Array.isArray(row.track_list)
     ? row.track_list.map((x) => String(x ?? "").trim()).filter(Boolean)
     : [];
-  return trackList.length ? [{ label: "Tracks", tracks: trackList }] : [];
+  const trackSongUids = Array.isArray(row.track_song_uids)
+    ? row.track_song_uids.map((x) => String(x ?? "").trim())
+    : [];
+  if (trackList.length) {
+    return [{ label: "Tracks", tracks: resolveTrackRefs(trackList, lookup, songByUid, trackSongUids) }];
+  }
+  if (trackSongUids.some(Boolean)) {
+    return [{ label: "Tracks", tracks: resolveTrackRefsFromUids(trackSongUids.filter(Boolean), songByUid) }];
+  }
+  return [];
 }
 
 function trackSectionsFromSharedRelease(
   release: Record<string, unknown>,
   groupUid: string,
+  lookup: Map<string, Record<string, unknown>>,
+  songByUid: Map<string, Record<string, unknown>>,
 ): GroupDiscographyTrackSection[] {
   const sections: GroupDiscographyTrackSection[] = [];
   const sharedTracks = Array.isArray(release.shared_track_list)
     ? release.shared_track_list.map((x) => String(x ?? "").trim()).filter(Boolean)
     : [];
-  if (sharedTracks.length) sections.push({ label: "Shared tracks", tracks: sharedTracks });
+  const sharedUids = Array.isArray(release.shared_track_song_uids)
+    ? release.shared_track_song_uids.map((x) => String(x ?? "").trim())
+    : [];
+  if (sharedTracks.length) {
+    sections.push({
+      label: "Shared tracks",
+      tracks: resolveTrackRefs(sharedTracks, lookup, songByUid, sharedUids),
+    });
+  }
   const editions = Array.isArray(release.group_editions)
     ? release.group_editions.filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
     : [];
@@ -265,24 +430,48 @@ function trackSectionsFromSharedRelease(
   const editionTracks = Array.isArray(edition.track_list)
     ? edition.track_list.map((x) => String(x ?? "").trim()).filter(Boolean)
     : [];
-  if (!editionTracks.length) return sections;
+  const editionUids = Array.isArray(edition.track_song_uids)
+    ? edition.track_song_uids.map((x) => String(x ?? "").trim())
+    : [];
+  if (!editionTracks.length) {
+    if (editionUids.some(Boolean)) {
+      const label = String(edition.edition_label ?? edition.group_name ?? "Edition").trim() || "Edition";
+      sections.push({ label, tracks: resolveTrackRefsFromUids(editionUids.filter(Boolean), songByUid) });
+    }
+    return sections;
+  }
   const label = String(edition.edition_label ?? edition.group_name ?? "Edition").trim() || "Edition";
-  sections.push({ label, tracks: editionTracks });
+  sections.push({ label, tracks: resolveTrackRefs(editionTracks, lookup, songByUid, editionUids) });
   return sections;
 }
 
-function normalizeDiscographyTypeLabel(row: Record<string, unknown>): string {
+function sectionTrackCount(sections: GroupDiscographyTrackSection[]): number {
+  return sections.reduce((sum, section) => sum + section.tracks.length, 0);
+}
+
+/** Live / concert video products — catalog footnotes, not the main single/album structure. */
+export function isVideoDiscRelease(row: Record<string, unknown> | null | undefined): boolean {
+  if (!row || typeof row !== "object") return false;
   const raw = String(row.disc_type ?? "").trim();
+  if (/^(video|dvd\/bd|dvd|blu-?ray|bd)$/i.test(raw)) return true;
   const title = String(row.title ?? row.title_romanji ?? "").trim();
-  if (/^dvd\/bd$/i.test(raw)) return "DVD/BD";
+  if (
+    /^(cd|blu-ray|dvd)$/i.test(raw) &&
+    /(concert|tour|arena|anniversary|live|卒業コンサート|プレミアム|premium|武道館)/i.test(title)
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function normalizeDiscographyTypeLabel(row: Record<string, unknown>): string {
+  if (isVideoDiscRelease(row)) return "Video";
+  const raw = String(row.disc_type ?? "").trim();
   if (/^digital single$/i.test(raw)) return "Digital Single";
   if (/^album$/i.test(raw)) return "Album";
   if (/^single$/i.test(raw)) return "Single";
   if (/^(best album|mini album|ep)$/i.test(raw)) return raw;
-  if (/^(cd|blu-ray|dvd)$/i.test(raw) && /(concert|tour|arena|anniversary|live|卒業コンサート|プレミアム|premium)/i.test(title)) {
-    return "DVD/BD";
-  }
-  if (/^(cd|blu-ray|dvd)$/i.test(raw)) return "CD";
+  if (/^(cd)$/i.test(raw)) return "CD";
   return raw || "—";
 }
 
@@ -290,11 +479,18 @@ export function buildGroupDiscographyReleaseRows(
   group: Record<string, unknown> | null | undefined,
   referenceIso: string | null | undefined,
   sharedReleases?: Record<string, unknown>[] | null,
+  catalogSongs?: readonly Record<string, unknown>[] | null,
 ): GroupDiscographyReleaseRow[] {
   const rawDisc = Array.isArray(group?.discography)
     ? (group!.discography as unknown[]).filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
     : [];
   const groupUid = String(group?.uid ?? "").trim();
+  const lookup = buildSongTitleLookup(catalogSongs, groupUid);
+  const songByUid = new Map<string, Record<string, unknown>>();
+  for (const row of catalogSongs ?? []) {
+    const uid = String(row?.uid ?? "").trim();
+    if (uid) songByUid.set(uid, row);
+  }
   const sharedReleaseUids = Array.isArray((group as { shared_release_uids?: unknown } | null)?.shared_release_uids)
     ? ((group as { shared_release_uids: unknown[] }).shared_release_uids
         .map((uid) => String(uid ?? "").trim())
@@ -320,6 +516,7 @@ export function buildGroupDiscographyReleaseRows(
     .map((row, index) => {
       const title = String(row.title ?? row.title_romanji ?? "").trim() || "—";
       const releaseDate = String(row.release_date ?? "").split("T")[0].trim() || "—";
+      const trackSections = trackSectionsFromLocalRelease(row, lookup, songByUid);
       const trackSongUids = Array.isArray(row.track_song_uids)
         ? row.track_song_uids.map((x) => String(x ?? "").trim()).filter(Boolean)
         : [];
@@ -331,8 +528,9 @@ export function buildGroupDiscographyReleaseRows(
         title,
         discType: normalizeDiscographyTypeLabel(row),
         releaseDate,
-        trackCount: Math.max(trackSongUids.length, trackList.length),
-        trackSections: trackSectionsFromLocalRelease(row),
+        trackCount: Math.max(sectionTrackCount(trackSections), trackSongUids.length, trackList.length),
+        trackSections,
+        selectable: !isVideoDiscRelease(row),
       } satisfies GroupDiscographyReleaseRow;
     });
   const sharedRows = sharedDisc
@@ -344,17 +542,21 @@ export function buildGroupDiscographyReleaseRows(
     .map((row) => {
       const title = String(row.title ?? row.title_romanji ?? "").trim() || "—";
       const releaseDate = String(row.release_date ?? "").split("T")[0].trim() || "—";
+      const trackSections = trackSectionsFromSharedRelease(row, groupUid, lookup, songByUid);
       return {
         key: `shared:${String(row.uid ?? "").trim() || title}`,
         title,
         discType: normalizeDiscographyTypeLabel(row),
         releaseDate,
-        trackCount: effectiveSharedReleaseTrackCount(row, groupUid),
-        trackSections: trackSectionsFromSharedRelease(row, groupUid),
+        trackCount: Math.max(sectionTrackCount(trackSections), effectiveSharedReleaseTrackCount(row, groupUid)),
+        trackSections,
+        selectable: !isVideoDiscRelease(row),
       } satisfies GroupDiscographyReleaseRow;
     });
   return [...localRows, ...sharedRows]
     .sort((a, b) => {
+      // Singles/albums first; video discs listed after as additional catalog rows.
+      if (a.selectable !== b.selectable) return a.selectable ? -1 : 1;
       const ad = parseCatalogIsoToTime(a.releaseDate) ?? 0;
       const bd = parseCatalogIsoToTime(b.releaseDate) ?? 0;
       if (ad !== bd) return ad - bd;

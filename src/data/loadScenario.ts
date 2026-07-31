@@ -21,7 +21,13 @@ function base(): string {
 async function fetchJson(url: string): Promise<unknown> {
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
-  return res.json() as Promise<unknown>;
+  const text = await res.text();
+  try {
+    return JSON.parse(text) as unknown;
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    throw new Error(`Invalid JSON in ${url}: ${detail}`);
+  }
 }
 
 export async function loadManifest(): Promise<ScenarioManifest> {

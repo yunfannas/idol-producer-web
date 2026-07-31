@@ -77,6 +77,7 @@ import {
   splitSongsReleasedVsMaking,
   type DiscBucket,
   type GroupDiscographyReleaseRow,
+  type GroupDiscographyTrackRef,
 } from "../data/songDisplayPolicy";
 import {
   songCatalogDisplayLabel,
@@ -3072,14 +3073,19 @@ function songRowsHtml(
   cols: "pair" | "full",
   rowKind: "released" | "making" = "released",
   lang: UiLanguage = "en",
+  selectedSongUid: string | null = null,
 ): string {
   const hideCatalogFields = rowKind === "making";
   return rows
     .map((row) => {
+      const uid = String(row.uid ?? "").trim();
       const title =
         typeof row.title === "string" || typeof row.title_romanji === "string"
           ? songCatalogDisplayLabel(row)
           : String(row.uid ?? "—");
+      const titleCell = uid
+        ? `<td><button type="button" class="songs-title-link${selectedSongUid === uid ? " is-selected" : ""}" data-song-detail="${htmlEsc(uid)}">${htmlEsc(title)}</button></td>`
+        : `<td>${htmlEsc(title)}</td>`;
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
       const rel = hideCatalogFields ? "—" : typeof row.release_date === "string" ? row.release_date : "—";
       const gname = typeof row.group_name === "string" ? row.group_name : "";
@@ -3092,9 +3098,9 @@ function songRowsHtml(
       const relCellClass = hideCatalogFields ? " songs-making-na" : "";
       const discCell = `<td class="songs-disc-cell">${htmlEsc(disc)}</td>`;
       if (cols === "pair") {
-        return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td>${previewCell}<td class="num${relCellClass}">${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td>${discCell}${popCell}</tr>`;
+        return `<tr class="${selectedSongUid && uid === selectedSongUid ? "is-selected-song" : ""}">${titleCell}<td>${htmlEsc(romanji)}</td>${previewCell}<td class="num${relCellClass}">${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td>${discCell}${popCell}</tr>`;
       }
-      return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td>${previewCell}<td class="num${relCellClass}">${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td>${discCell}<td>${htmlEsc(gname)}</td>${popCell}</tr>`;
+      return `<tr class="${selectedSongUid && uid === selectedSongUid ? "is-selected-song" : ""}">${titleCell}<td>${htmlEsc(romanji)}</td>${previewCell}<td class="num${relCellClass}">${htmlEsc(rel)}</td><td>${htmlEsc(dtype)}</td>${discCell}<td>${htmlEsc(gname)}</td>${popCell}</tr>`;
     })
     .join("");
 }
@@ -3107,13 +3113,14 @@ function renderSongsTrackTableBodies(
   cols: "pair" | "full",
   emptyReleasedMsg: string,
   lang: UiLanguage = "en",
+  selectedSongUid: string | null = null,
 ): string {
   const ncol = cols === "pair" ? 7 : 8;
   const refShort = asOfIso ? String(asOfIso).trim().split("T")[0] : "";
   const refPretty =
     refShort && /^\d{4}-\d{2}-\d{2}$/.test(refShort) ? formatLongDate(refShort) : refShort || "—";
-  const releasedRows = songRowsHtml(released, cols, "released", lang);
-  const makingRows = songRowsHtml(making, cols, "making", lang);
+  const releasedRows = songRowsHtml(released, cols, "released", lang, selectedSongUid);
+  const makingRows = songRowsHtml(making, cols, "making", lang, selectedSongUid);
   const showMaking = making.length > 0;
   const tbReleased =
     released.length > 0
@@ -3531,49 +3538,157 @@ function resolveDiscographyBucketKey(buckets: DiscBucket[], selected: string | n
 }
 
 function resolveGroupDiscographyKey(rows: GroupDiscographyReleaseRow[], selected: string | null): string {
-  if (!rows.length) return "";
-  if (selected && rows.some((row) => row.key === selected)) return selected;
-  return rows[0]!.key;
+  const selectable = rows.filter((row) => row.selectable !== false);
+  if (!selectable.length) return "";
+  if (selected && selectable.some((row) => row.key === selected)) return selected;
+  return selectable[0]!.key;
+}
+
+function songMapByUid(songs: readonly Record<string, unknown>[]): Map<string, Record<string, unknown>> {
+  const map = new Map<string, Record<string, unknown>>();
+  for (const row of songs) {
+    const uid = String(row.uid ?? "").trim();
+    if (uid) map.set(uid, row);
+  }
+  return map;
+}
+
+function renderDiscographyTrackItem(
+  track: GroupDiscographyTrackRef,
+  songByUid: Map<string, Record<string, unknown>>,
+  lang: UiLanguage,
+): string {
+  const linked = Boolean(track.songUid && songByUid.has(track.songUid));
+  const song = linked ? songByUid.get(track.songUid!)! : null;
+  const preview = song
+    ? renderSongPreviewControls(song, lang)
+    : `<span class="song-preview-na content-muted" title="${htmlEsc(lang === "zh-CN" ? "曲库中无此曲" : "Not in song catalog")}">—</span>`;
+  const titleHtml = linked
+    ? `<button type="button" class="songs-discography-track-link" data-song-detail="${htmlEsc(track.songUid!)}">${htmlEsc(track.title)}</button>`
+    : `<span class="songs-discography-track-placeholder">${htmlEsc(track.title)}</span>`;
+  return `<li class="songs-discography-track-item"><span class="songs-discography-track-preview">${preview}</span><span class="songs-discography-track-title">${titleHtml}</span></li>`;
+}
+
+function renderSongDetailPanel(
+  song: Record<string, unknown> | null | undefined,
+  lang: UiLanguage,
+): string {
+  if (!song) return "";
+  const title = songCatalogDisplayLabel(song);
+  const romanji = String(song.title_romanji ?? "").trim() || "—";
+  const release = String(song.release_date ?? "").split("T")[0].trim() || "—";
+  const genre = String(song.genre ?? "").trim() || "—";
+  const composer = String(song.composer ?? "").trim() || "—";
+  const lyricist = String(song.lyricist ?? "").trim() || "—";
+  const arrangement = String(song.arrangement ?? "").trim() || "—";
+  const version = String(song.version ?? "").trim() || "—";
+  const description = String(song.description ?? "").trim() || "—";
+  const pop = songPopularityNum(song);
+  const albums = Array.isArray(song.albums) ? song.albums : [];
+  const albumLines = albums.length
+    ? albums
+        .map((raw) => {
+          if (!raw || typeof raw !== "object") return "";
+          const o = raw as Record<string, unknown>;
+          const name = String(o.name ?? "").trim() || "—";
+          const tn = o.track_number;
+          return tn != null && String(tn).trim() !== ""
+            ? `<li>${htmlEsc(`${name} (Track ${tn})`)}</li>`
+            : `<li>${htmlEsc(name)}</li>`;
+        })
+        .filter(Boolean)
+        .join("")
+    : `<li class="content-muted">${htmlEsc(lang === "zh-CN" ? "暂无关联发行" : "No linked releases")}</li>`;
+  return `
+    <div class="fm-card songs-song-detail">
+      <div class="songs-song-detail-head">
+        <div>
+          <h3 class="content-h3">${htmlEsc(title)}</h3>
+          <p class="content-muted songs-song-detail-meta">${htmlEsc(
+            lang === "zh-CN" ? `人气 ${pop} · 发行 ${release}` : `Popularity ${pop} · Release ${release}`,
+          )}</p>
+        </div>
+        <div class="songs-song-detail-actions">
+          ${renderSongPreviewControls(song, lang)}
+          <button type="button" class="fm-btn fm-btn-xs" data-song-detail-close="1">${htmlEsc(lang === "zh-CN" ? "关闭" : "Close")}</button>
+        </div>
+      </div>
+      <dl class="songs-song-detail-facts">
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Romanji", "罗马字"))}</dt><dd>${htmlEsc(romanji)}</dd></div>
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Genre", "曲风"))}</dt><dd>${htmlEsc(genre)}</dd></div>
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Composer", "作曲"))}</dt><dd>${htmlEsc(composer)}</dd></div>
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Lyricist", "作词"))}</dt><dd>${htmlEsc(lyricist)}</dd></div>
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Arrangement", "编曲"))}</dt><dd>${htmlEsc(arrangement)}</dd></div>
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Version", "版本"))}</dt><dd>${htmlEsc(version)}</dd></div>
+      </dl>
+      <div class="songs-song-detail-albums">
+        <h4 class="content-h4">${htmlEsc(lang === "zh-CN" ? "关联发行" : "Linked releases")}</h4>
+        <ul>${albumLines}</ul>
+      </div>
+      <p class="content-muted songs-song-detail-desc">${htmlEsc(
+        lang === "zh-CN" ? `简介：${description}` : `Description: ${description}`,
+      )}</p>
+    </div>`;
 }
 
 function renderDiscographyPanel(
   buckets: DiscBucket[],
   selectedKey: string | null,
   groupDiscographyRows?: GroupDiscographyReleaseRow[] | null,
+  catalogSongs: readonly Record<string, unknown>[] = [],
+  lang: UiLanguage = "en",
 ): string {
   const curatedRows = Array.isArray(groupDiscographyRows) ? groupDiscographyRows : [];
+  const songByUid = songMapByUid(catalogSongs);
   if (curatedRows.length) {
     const eff = resolveGroupDiscographyKey(curatedRows, selectedKey);
-    const row = curatedRows.find((item) => item.key === eff) ?? curatedRows[0]!;
     const rowsHtml = curatedRows
       .map((item) => {
+        const isVideo = item.selectable === false;
+        if (isVideo) {
+          return `<tr class="songs-discography-row is-video" aria-disabled="true">
+          <td>${htmlEsc(item.title)}</td><td class="num">${htmlEsc(item.releaseDate)}</td><td>${htmlEsc(item.discType)}</td><td class="num">${item.trackCount > 0 ? item.trackCount.toLocaleString("ja-JP") : "—"}</td>
+        </tr>`;
+        }
         const sel = item.key === eff ? " is-selected" : "";
         return `<tr class="songs-discography-row${sel}" data-songs-discography-key="${encodeURIComponent(item.key)}" tabindex="0" role="button">
           <td>${htmlEsc(item.title)}</td><td class="num">${htmlEsc(item.releaseDate)}</td><td>${htmlEsc(item.discType)}</td><td class="num">${item.trackCount.toLocaleString("ja-JP")}</td>
         </tr>`;
       })
       .join("");
-    const trackSectionHtml = row.trackSections.length
-      ? row.trackSections
+    const selectedRow = curatedRows.find((item) => item.key === eff && item.selectable !== false) ?? null;
+    const trackSectionHtml = selectedRow?.trackSections.length
+      ? selectedRow.trackSections
           .map(
             (section) => `
               <section class="songs-discography-track-section">
                 <h4 class="content-h4">${htmlEsc(section.label)}</h4>
                 <ol class="songs-discography-track-list">
-                  ${section.tracks.map((track) => `<li>${htmlEsc(track)}</li>`).join("")}
+                  ${section.tracks.map((track) => renderDiscographyTrackItem(track, songByUid, lang)).join("")}
                 </ol>
               </section>`,
           )
           .join("")
       : "";
-    const meta = `<p class="content-muted songs-discography-meta">${htmlEsc(
-      `Release: ${row.releaseDate} · Type: ${row.discType} · ${row.trackCount.toLocaleString()} track(s)`,
-    )}</p>`;
+    const detailTitle = selectedRow?.title ?? (lang === "zh-CN" ? "选择一张单曲或专辑" : "Select a single or album");
+    const meta = selectedRow
+      ? `<p class="content-muted songs-discography-meta">${htmlEsc(
+          `Release: ${selectedRow.releaseDate} · Type: ${selectedRow.discType} · ${selectedRow.trackCount.toLocaleString()} track(s)`,
+        )}</p>`
+      : `<p class="content-muted songs-discography-meta">${htmlEsc(
+          lang === "zh-CN"
+            ? "单曲和专辑可点选查看曲目；影像盘仅作目录附加项，不可点选。"
+            : "Singles and albums are selectable for track lists. Video discs are listed for catalog only and are not clickable.",
+        )}</p>`;
     return `
       <div class="songs-discography-layout">
         <div class="fm-card songs-discography-list">
           <h3 class="content-h3">${htmlEsc("Discography")}</h3>
-          <p class="content-muted">${htmlEsc("Release catalog from the group profile. Singles, albums, and live-record video titles are tracked separately here.")}</p>
+          <p class="content-muted">${htmlEsc(
+            lang === "zh-CN"
+              ? "单曲 / 专辑为主结构。影像盘列在目录中作为附加项，不可点选。"
+              : "Singles and albums are the main structure. Video discs appear in the list as additional catalog rows and are not clickable.",
+          )}</p>
           <div class="table-scroll">
             <table class="fm-table songs-discography-table">
               <thead><tr><th>Title</th><th>Release</th><th>Type</th><th>Tracks</th></tr></thead>
@@ -3582,15 +3697,19 @@ function renderDiscographyPanel(
           </div>
         </div>
         <div class="fm-card songs-discography-tracks">
-          <h3 class="content-h3">${htmlEsc(row.title)}</h3>
+          <h3 class="content-h3">${htmlEsc(detailTitle)}</h3>
           ${meta}
           ${
-            trackSectionHtml ||
-            `<p class="content-muted">${htmlEsc(
-              row.trackCount > 0
-                ? "Track-count metadata is available for this release in the group catalog."
-                : "Track-level details are not stored on this release row yet, but the release is still kept in the catalog for scheduling and overview.",
-            )}</p>`
+            selectedRow
+              ? trackSectionHtml ||
+                `<p class="content-muted">${htmlEsc(
+                  selectedRow.trackCount > 0
+                    ? "Track-count metadata is available for this release in the group catalog."
+                    : "Track-level details are not stored on this release row yet, but the release is still kept in the catalog for scheduling and overview.",
+                )}</p>`
+              : `<p class="content-muted">${htmlEsc(
+                  lang === "zh-CN" ? "没有可点选的单曲或专辑。" : "No selectable singles or albums in this catalog.",
+                )}</p>`
           }
         </div>
       </div>`;
@@ -3649,6 +3768,8 @@ interface SongsRenderOpts {
   selectedGroupUid: string;
   selectedWorkspaceTab: SongsWorkspaceTab;
   selectedDiscographyKey: string | null;
+  /** Selected song uid for the Songs detail panel (desktop song tab). */
+  selectedSongUid?: string | null;
   /** Game / browse “today” for released vs future / undated (`YYYY-MM-DD`). */
   catalogReferenceIso: string | null;
   /**
@@ -3690,11 +3811,18 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
     opts.catalogReferenceIso,
   );
   const buckets = buildDiscBuckets(teamSongs);
+  // Full catalog so compilation discs (e.g. HEROINES ALBUM) can resolve other groups' tracks + previews.
   const groupDiscographyRows = buildGroupDiscographyReleaseRows(
     groupRow,
     opts.catalogReferenceIso,
     opts.sharedReleases ?? [],
+    ordered,
   );
+  const selectedSongUid = String(opts.selectedSongUid ?? "").trim() || null;
+  const selectedSong =
+    selectedSongUid != null
+      ? ordered.find((row) => String(row.uid ?? "").trim() === selectedSongUid) ?? null
+      : null;
   const ws: SongsWorkspaceTab =
     surface === "making" ? "group_songs" : opts.selectedWorkspaceTab === "disc" ? "disc" : "group_songs";
 
@@ -3758,11 +3886,11 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
   if (!teamSongs.length) {
     mainTrackBodies = `<tbody><tr><td colspan="7" class="content-muted">${htmlEsc(localizedLiteral(lang, "No tracks for this group in snapshot.", "该组合在快照中没有歌曲。"))}</td></tr></tbody>`;
   } else if (!catalogSplitsFuture) {
-    mainTrackBodies = `<tbody>${songRowsHtml(teamSongs, "pair", "released", lang)}</tbody>`;
+    mainTrackBodies = `<tbody>${songRowsHtml(teamSongs, "pair", "released", lang, selectedSongUid)}</tbody>`;
   } else {
     const inner =
       releasedTeam.length > 0
-        ? songRowsHtml(releasedTeam, "pair", "released", lang)
+        ? songRowsHtml(releasedTeam, "pair", "released", lang, selectedSongUid)
         : `<tr><td colspan="7" class="content-muted">${htmlEsc(localizedLiteral(lang, "No tracks released as of this date - open Making in the sidebar (between Songs and Media) for in-production tracks.", "该日期尚无已发行歌曲；请打开侧边栏“制作”（位于歌曲与媒体之间）查看制作中曲目。"))}</td></tr>`;
     mainTrackBodies = `<tbody>${inner}</tbody>`;
   }
@@ -3807,6 +3935,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
           "full",
           "No released rows in this preview window.",
           lang,
+          selectedSongUid,
         );
   const truncated =
     releasedTeam.length > expReleased.length || makingTeam.length > expMaking.length
@@ -3817,8 +3946,10 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
         )}</p>`
       : "";
 
+  const songDetailHtml = renderSongDetailPanel(selectedSong, lang);
   const songsPanel = `
       ${explSongs}
+      ${songDetailHtml}
       <div class="table-scroll">
         <table class="fm-table songs-main-table">
           <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Title", "标题"))}</th><th>${htmlEsc(localizedLiteral(lang, "Romanji", "罗马字"))}</th><th>${htmlEsc(localizedLiteral(lang, "Preview", "试听"))}</th><th>${htmlEsc(localizedLiteral(lang, "Release", "发行日"))}</th><th>${htmlEsc(localizedLiteral(lang, "Type", "类型"))}</th><th>${htmlEsc(localizedLiteral(lang, "Disc", "载体"))}</th><th>${htmlEsc(localizedLiteral(lang, "Pop", "人气"))}</th></tr></thead>
@@ -3836,7 +3967,13 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
         </div>
       </details>`;
 
-  const discPanel = `${explDisc}${renderDiscographyPanel(buckets, opts.selectedDiscographyKey, groupDiscographyRows)}`;
+  const discPanel = `${explDisc}${renderDiscographyPanel(
+    buckets,
+    opts.selectedDiscographyKey,
+    groupDiscographyRows,
+    ordered,
+    lang,
+  )}`;
 
   const body = ws === "disc" ? discPanel : songsPanel;
 
@@ -5178,6 +5315,7 @@ export function renderMainContent(
     songsGroupUid: string | null;
     songsWorkspaceTab: SongsWorkspaceTab;
     songsDiscographyKey: string | null;
+    songsDetailUid: string | null;
     makingTab: MakingTab;
     selectedCdProjectUid: string | null;
     inboxSelectedUid: string | null;
@@ -5216,6 +5354,7 @@ export function renderMainContent(
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    songsDetailUid,
     makingTab,
     selectedCdProjectUid,
     inboxSelectedUid,
@@ -5303,6 +5442,7 @@ export function renderMainContent(
         selectedGroupUid: songsGroupUid ?? "",
           selectedWorkspaceTab: songsWorkspaceTab,
           selectedDiscographyKey: songsDiscographyKey,
+          selectedSongUid: songsDetailUid,
           catalogReferenceIso: browseData.preset?.opening_date ?? null,
           trackSplitSurface: "songs",
         });
@@ -5421,6 +5561,7 @@ export function renderMainContent(
         selectedGroupUid: songsGroupUid ?? "",
         selectedWorkspaceTab: songsWorkspaceTab,
         selectedDiscographyKey: songsDiscographyKey,
+        selectedSongUid: songsDetailUid,
         catalogReferenceIso:
           save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
         trackSplitSurface: "songs",
@@ -5452,6 +5593,8 @@ export interface DesktopShellProps {
   songsWorkspaceTab: SongsWorkspaceTab;
   /** Songs Discography tab: selected release bucket key. */
   songsDiscographyKey: string | null;
+  /** Songs tab: selected song detail uid. */
+  songsDetailUid: string | null;
   makingTab: MakingTab;
   selectedCdProjectUid: string | null;
   /** Selected inbox notification uid (management mode). */
@@ -5507,6 +5650,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsGroupUid,
     songsWorkspaceTab,
     songsDiscographyKey,
+    songsDetailUid,
     makingTab,
     selectedCdProjectUid,
     inboxSelectedUid,
@@ -5576,6 +5720,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     songsGroupUid: songsGroupUid ?? null,
     songsWorkspaceTab,
     songsDiscographyKey,
+    songsDetailUid: songsDetailUid ?? null,
     makingTab,
     selectedCdProjectUid,
     inboxSelectedUid: inboxSelectedUid ?? null,
@@ -5687,6 +5832,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
       songsGroupUid,
       songsWorkspaceTab,
       songsDiscographyKey,
+      songsDetailUid,
       makingTab,
       inboxSelectedUid,
     livesTab,
@@ -5758,6 +5904,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     songsGroupUid: songsGroupUid ?? null,
     songsWorkspaceTab,
     songsDiscographyKey,
+    songsDetailUid: songsDetailUid ?? null,
     makingTab,
     selectedCdProjectUid: p.selectedCdProjectUid ?? null,
     inboxSelectedUid: inboxSelectedUid ?? null,

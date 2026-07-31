@@ -26,6 +26,18 @@ export interface GroupDiscRelease {
   track_song_uids?: string[];
   duration?: unknown;
   publisher?: string;
+  /**
+   * Best (lowest) weekly Oricon physical chart rank for this release (1 = #1).
+   * Null/omit when uncharted or unknown.
+   */
+  oricon_peak_rank?: number | null;
+  /**
+   * First-week physical unit sales (full integer count, not 万).
+   * Prefer Oricon when both exist; see {@link GroupDiscRelease.first_week_sales_source}.
+   */
+  first_week_sales?: number | null;
+  /** Chart that published {@link GroupDiscRelease.first_week_sales}. */
+  first_week_sales_source?: "oricon" | "billboard" | null;
 }
 
 function normalizeStrings(arr: unknown): string[] {

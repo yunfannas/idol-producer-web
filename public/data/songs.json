@@ -227248,13 +227248,13 @@
     "youtube_url": null,
     "albums": [
       {
-        "disc_uid": null,
-        "name": "センパイ。 (feat. ハコニワリリィ, 可憐なアイボリー & 高嶺のなでしこ) [Cover] - Single",
+        "disc_uid": "e1148e5c-9b6a-447c-b118-aac5b22b7355",
+        "name": "センパイ。",
         "track_number": 1
       }
     ],
     "version": "",
-    "disc_uid": null,
+    "disc_uid": "e1148e5c-9b6a-447c-b118-aac5b22b7355",
     "popularity": 2.5,
     "signature_song": false,
     "popularity_local": 2.5,
@@ -314790,6 +314790,11 @@
         "disc_uid": null,
         "name": "天使になりたい",
         "track_number": 10
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 11
       }
     ],
     "version": "",
@@ -314802,7 +314807,9 @@
     "notes": "Apple trackId 1688704774; https://music.apple.com/jp/album/dreams-on-the-run/1688704760?i=1688704774&uo=4; Apple Music JP top songs rank 1 (visible page ranking).",
     "_apple_track_ids": [
       1688704774
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f8/9c/fa/f89cfa54-eb7c-3aff-bfc5-4a66ccf51f4f/mzaf_2666502599194224393.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/dreams-on-the-run/1688704760?i=1688704774"
   },
   {
     "uid": "59c5c35f-902e-4942-8e8e-7753c11b6a9e",
@@ -511605,6 +511612,11 @@
         "disc_uid": null,
         "name": "Lilith - EP",
         "track_number": 5
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -511617,7 +511629,9 @@
     "notes": "Apple trackId 1842790756; https://music.apple.com/jp/album/%E3%82%A2%E3%83%B3%E3%83%81%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%94%E3%82%A2/1842790749?i=1842790756&uo=4; Apple Music JP top songs rank 1 (visible page ranking).",
     "_apple_track_ids": [
       1842790756
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/d3/96/bdd39662-0181-bc73-4ea7-dc8f871aa10e/mzaf_8894197259649676463.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%A2%E3%83%B3%E3%83%81%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%94%E3%82%A2/1842790749?i=1842790756"
   },
   {
     "uid": "7d87afd3-71c7-48b2-bcb3-4026ddb75157",
@@ -511780,6 +511794,11 @@
         "disc_uid": null,
         "name": "Lilith - EP",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 5
       }
     ],
     "version": "",
@@ -511792,7 +511811,9 @@
     "notes": "Apple trackId 1842790752; https://music.apple.com/jp/album/mariage/1842790749?i=1842790752&uo=4; Apple Music JP top songs rank 4 (visible page ranking).",
     "_apple_track_ids": [
       1842790752
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ec/bf/e2/ecbfe2cb-b56c-247f-f2f3-16b0c838813f/mzaf_7705269236380892042.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/mariage/1842790749?i=1842790752"
   },
   {
     "uid": "1ff58f66-f4b2-4699-b031-f846b1a3c090",
@@ -513040,6 +513061,11 @@
         "disc_uid": "52171d08-3360-4490-aad7-16ae08ad1cfe",
         "name": "JUDGEMENT",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 8
       }
     ],
     "version": "",
@@ -513052,7 +513078,9 @@
     "notes": "Apple trackId 1756241370; https://music.apple.com/jp/album/gilty/1756241369?i=1756241370&uo=4; Apple Music JP top songs rank 6 (visible page ranking).",
     "_apple_track_ids": [
       1756241370
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/37/f8/3237f808-d97a-5a16-323c-82e1f6902398/mzaf_12440875039854383922.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/gilty/1756241369?i=1756241370"
   },
   {
     "uid": "634e3f13-e61d-42fd-9772-34668a656845",
@@ -513355,6 +513383,11 @@
         "disc_uid": null,
         "name": "ジェラ - EP",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 6
       }
     ],
     "version": "",
@@ -513367,7 +513400,9 @@
     "notes": "Apple trackId 1816126803; https://music.apple.com/jp/album/%E3%82%B8%E3%82%A7%E3%83%A9/1816126802?i=1816126803&uo=4; Apple Music JP top songs rank 3 (visible page ranking).",
     "_apple_track_ids": [
       1816126803
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b8/bd/4d/b8bd4dba-e18e-9fd8-0c57-fe942bc75e88/mzaf_15188528735031382551.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%B8%E3%82%A7%E3%83%A9/1816126802?i=1816126803"
   },
   {
     "uid": "38fa288b-12ce-484b-ba30-06fc36486988",
@@ -513460,6 +513495,11 @@
         "disc_uid": null,
         "name": "ジェラ - EP",
         "track_number": 6
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -513472,7 +513512,9 @@
     "notes": "Apple trackId 1816126996; https://music.apple.com/jp/album/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B1%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%BA/1816126802?i=1816126996&uo=4; Apple Music JP top songs rank 2 (visible page ranking).",
     "_apple_track_ids": [
       1816126996
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a7/b3/66/a7b36648-301c-6ca8-d308-6d4743c0932b/mzaf_9569710133690021331.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B1%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%BA/1816126802?i=1816126996"
   },
   {
     "uid": "6f95dc49-6874-4676-b094-f04c9e09487d",
@@ -514998,6 +515040,11 @@
         "disc_uid": null,
         "name": "ジャパサマ - Single",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 19
       }
     ],
     "version": "",
@@ -515010,7 +515057,9 @@
     "notes": "Apple trackId 1760927293; https://music.apple.com/jp/album/%E3%82%B8%E3%83%A3%E3%83%91%E3%82%B5%E3%83%9E/1760927290?i=1760927293&uo=4",
     "_apple_track_ids": [
       1760927293
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/c2/e9/c0c2e9c2-e48e-8d34-81c3-d08dad06a9c5/mzaf_8974685355295587594.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%B8%E3%83%A3%E3%83%91%E3%82%B5%E3%83%9E/1760927290?i=1760927293"
   },
   {
     "uid": "c713dd97-eb04-4b90-8adc-e409f6df38de",
@@ -517173,6 +517222,11 @@
         "disc_uid": null,
         "name": "人ニ、非ズ - Single",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 12
       }
     ],
     "version": "",
@@ -517186,7 +517240,9 @@
     "_apple_track_ids": [
       1678923495,
       1798588320
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/e3/71/67/e37167f3-939a-a944-6d39-517e88c46365/mzaf_9337750033912916598.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/anarchy/1678923491?i=1678923495"
   },
   {
     "uid": "22f709c1-6b19-476b-9dd4-971d064a4d81",
@@ -517653,6 +517709,11 @@
         "disc_uid": null,
         "name": "人ニ、非ズ - Single",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -517665,7 +517726,9 @@
     "notes": "Apple trackId 1798588319; https://music.apple.com/jp/album/%E4%BA%BA%E3%83%8B-%E9%9D%9E%E3%82%BA/1798588318?i=1798588319&uo=4",
     "_apple_track_ids": [
       1798588319
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b1/47/02/b1470281-99d6-cf6b-4a04-05c1ffd6d80c/mzaf_3248046959848898368.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E4%BA%BA%E3%83%8B-%E9%9D%9E%E3%82%BA/1798588318?i=1798588319"
   },
   {
     "uid": "e4a2fc76-4b6e-4795-9f11-455455b6b1ca",
@@ -519981,6 +520044,11 @@
         "disc_uid": "a159bb73-e9d8-476b-ac16-7441d0a2424c",
         "name": "ZUTTOMOTTO",
         "track_number": 11
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 9
       }
     ],
     "version": "",
@@ -519993,7 +520061,9 @@
     "notes": "Apple trackId 1796990730; https://music.apple.com/jp/album/%E3%82%A2%E3%83%B3%E3%82%BD%E3%82%AF%E3%83%81/1796990535?i=1796990730&uo=4; Apple Music JP top songs rank 3 (visible page ranking).",
     "_apple_track_ids": [
       1796990730
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cb/fc/51/cbfc51d5-d1f3-4496-7ffa-08d92e3907cd/mzaf_2140719130914487245.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%A2%E3%83%B3%E3%82%BD%E3%82%AF%E3%83%81/1796990535?i=1796990730"
   },
   {
     "uid": "f68c6540-fbf3-4749-94ed-213a88bc3dcd",
@@ -520051,6 +520121,11 @@
         "disc_uid": "a159bb73-e9d8-476b-ac16-7441d0a2424c",
         "name": "ZUTTOMOTTO",
         "track_number": 15
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -520063,7 +520138,9 @@
     "notes": "Apple trackId 1796990735; https://music.apple.com/jp/album/sparkle/1796990535?i=1796990735&uo=4; Apple Music JP top songs rank 6 (visible page ranking).",
     "_apple_track_ids": [
       1796990735
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e2/28/51/e228518e-f288-a979-4a1f-18b8bc37bf4b/mzaf_14819500385510862305.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/sparkle/1796990535?i=1796990735"
   },
   {
     "uid": "ca36fd0f-727a-461d-a0ad-bbdcc6bcc20e",
@@ -520862,6 +520939,11 @@
         "disc_uid": null,
         "name": "トキメキCherry - Single",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 10
       }
     ],
     "version": "",
@@ -520874,7 +520956,9 @@
     "notes": "Apple trackId 1501125182; https://music.apple.com/jp/album/%E3%83%88%E3%82%AD%E3%83%A1%E3%82%ADcherry/1501125180?i=1501125182&uo=4; Apple Music JP top songs rank 2 (visible page ranking).",
     "_apple_track_ids": [
       1501125182
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/85/58/0f/85580fa9-e311-131c-8560-914927055554/mzaf_12917523346017516627.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%88%E3%82%AD%E3%83%A1%E3%82%ADcherry/1501125180?i=1501125182"
   },
   {
     "uid": "58283ed6-72e8-4a40-9b7b-5d8a61ef1016",
@@ -522017,6 +522101,11 @@
         "disc_uid": "9744007b-96aa-4504-b64e-e4958b140d36",
         "name": "Ri-Di-Dong",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 2
       }
     ],
     "version": "",
@@ -522029,7 +522118,9 @@
     "notes": "Apple trackId 1635921358; https://music.apple.com/jp/album/%E3%83%91%E3%83%A9%E3%83%AA%E3%83%A9%E3%83%80%E3%83%B3%E3%82%B9/1635921356?i=1635921358&uo=4; Apple Music JP top songs rank 1 (visible page ranking).",
     "_apple_track_ids": [
       1635921358
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/ea/27/b7/ea27b7d0-390b-2255-2a5f-53ff8158ba8e/mzaf_8789354031871722641.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%91%E3%83%A9%E3%83%AA%E3%83%A9%E3%83%80%E3%83%B3%E3%82%B9/1635921356?i=1635921358"
   },
   {
     "uid": "88937535-a9d8-4015-9a3e-6d24c03a643a",
@@ -522787,6 +522878,11 @@
         "disc_uid": null,
         "name": "ホシツナギ - EP",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -522799,7 +522895,9 @@
     "notes": "Apple trackId 1823622296; https://music.apple.com/jp/album/%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89/1823622294?i=1823622296&uo=4",
     "_apple_track_ids": [
       1823622296
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d7/84/c3/d784c3f9-5ccb-3b3a-a310-7ecfd3d4cec9/mzaf_1207090684838205766.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89/1823622294?i=1823622296"
   },
   {
     "uid": "ef4ce04c-b29d-441e-b9ff-b62abaab2f30",
@@ -523062,6 +523160,11 @@
         "disc_uid": "d83bf1cd-82d6-4586-bfe3-14cb64db0628",
         "name": "アイドルライフエクストラパック",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -523074,7 +523177,9 @@
     "notes": "Apple trackId 1809726969; https://music.apple.com/jp/album/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%95%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9%E3%83%91%E3%83%83%E3%82%AF/1809726968?i=1809726969&uo=4",
     "_apple_track_ids": [
       1809726969
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/92/15/bd921564-984b-c5b5-c50a-784a1fa1e17e/mzaf_2382726860414574545.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%95%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9%E3%83%91%E3%83%83%E3%82%AF/1809726968?i=1809726969"
   },
   {
     "uid": "227c539b-2e19-4c74-a2b6-ece05197f55b",
@@ -523388,6 +523493,11 @@
         "disc_uid": "d83bf1cd-82d6-4586-bfe3-14cb64db0628",
         "name": "アイドルライフエクストラパック",
         "track_number": 7
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 3
       }
     ],
     "version": "",
@@ -523402,7 +523512,9 @@
       1701019012,
       1715222280,
       1809726976
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3a/88/5a/3a885a41-25ca-ff49-bc92-c3a84adc4ef3/mzaf_9656915367964840199.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%95%E3%83%96%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF/1701019011?i=1701019012"
   },
   {
     "uid": "893a43fa-cd85-479d-99b4-bede4ebd0b8e",
@@ -527099,6 +527211,11 @@
         "disc_uid": "1641f5ae-f165-4677-b525-22ab9b38a0d7",
         "name": "よくばりバイキング",
         "track_number": 15
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 14
       }
     ],
     "version": "",
@@ -527112,7 +527229,9 @@
     "_apple_track_ids": [
       1818748871,
       1838407903
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/db/ba/58dbba25-665c-cf4a-2b64-1346d4833408/mzaf_15103713308660128450.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%8E%E3%83%BC%E3%83%86%E3%83%B3%E3%82%AD%E8%B6%85%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%88%E3%82%AC%E3%83%BC%E3%83%AB/1818748863?i=1818748871"
   },
   {
     "uid": "e9232417-8ea8-45e3-b50e-e57afd801d40",
@@ -527210,6 +527329,11 @@
         "disc_uid": "bc6db628-d290-4876-8fdc-e0103da48bc1",
         "name": "FINAL EDITION",
         "track_number": 7
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -527223,7 +527347,9 @@
     "_apple_track_ids": [
       1838407683,
       1818748872
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/61/2c/cc612c08-1e74-01e2-5c49-0f1a020ad36c/mzaf_14915442189648724419.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%81%AF%E3%81%AA%E3%81%BE%E3%82%8B%E3%83%95%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3/1838407676?i=1838407683"
   },
   {
     "uid": "33698873-0b48-409e-8e12-5d134fc29af5",
@@ -527459,6 +527585,11 @@
         "disc_uid": null,
         "name": "アキシブウェイ - Single",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 4
       }
     ],
     "version": "",
@@ -529197,6 +529328,11 @@
         "disc_uid": null,
         "name": "新宇宙世紀アイドルちゃん - Single",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -529349,6 +529485,11 @@
         "disc_uid": "8c5c4ec9-89ff-4f21-a385-595b3bc988f1",
         "name": "GAGA CIRCUS",
         "track_number": 4
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 7
       }
     ],
     "version": "",
@@ -529361,7 +529502,9 @@
     "notes": "Apple trackId 1716694948; https://music.apple.com/jp/album/%E3%83%8E%E3%83%83%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88/1716694942?i=1716694948&uo=4; Apple Music JP top songs rank 1 (visible page ranking).",
     "_apple_track_ids": [
       1716694948
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3f/63/e3/3f63e3eb-f8dd-7f53-cf10-04f57ce2d391/mzaf_17707584626440185582.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%8E%E3%83%83%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88/1716694942?i=1716694948"
   },
   {
     "uid": "955699a4-298f-40e4-97be-d151c1bcfc5f",
@@ -530469,6 +530612,11 @@
         "disc_uid": "01bcd70f-7e5e-449e-8dea-3921c0f59c1e",
         "name": "ナナコロビヤオキ",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -530481,7 +530629,9 @@
     "notes": "Apple trackId 1828894173; https://music.apple.com/jp/album/%E5%90%9B%E3%81%A8%E3%81%9F%E3%81%93%E3%82%84%E3%81%8Dlove%E6%81%8B%E3%82%81/1828894171?i=1828894173&uo=4; Apple Music JP top songs rank 1 (visible page ranking).",
     "_apple_track_ids": [
       1828894173
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/56/f1/d8/56f1d847-b6a6-dceb-d04e-cb32e3190f12/mzaf_370658055338363779.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E5%90%9B%E3%81%A8%E3%81%9F%E3%81%93%E3%82%84%E3%81%8Dlove%E6%81%8B%E3%82%81/1828894171?i=1828894173"
   },
   {
     "uid": "eaf21cae-441d-44f8-9a55-ab411b3e2a2c",
@@ -530504,6 +530654,11 @@
         "disc_uid": "01bcd70f-7e5e-449e-8dea-3921c0f59c1e",
         "name": "ナナコロビヤオキ",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 13
       }
     ],
     "version": "",
@@ -530516,7 +530671,9 @@
     "notes": "Apple trackId 1828894174; https://music.apple.com/jp/album/%E4%B8%83%E8%BB%A2%E5%85%AB%E8%B5%B7/1828894171?i=1828894174&uo=4; Apple Music JP top songs rank 2 (visible page ranking).",
     "_apple_track_ids": [
       1828894174
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/33/8a/08/338a08ce-a771-ad5c-ba0f-695d2826a1f9/mzaf_6730658517729965304.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E4%B8%83%E8%BB%A2%E5%85%AB%E8%B5%B7/1828894171?i=1828894174"
   },
   {
     "uid": "162e962f-c944-43d3-acd2-6a932459d90c",
@@ -531679,6 +531836,11 @@
         "disc_uid": null,
         "name": "はじめてのパラディーク",
         "track_number": 7
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 15
       }
     ],
     "version": "",
@@ -531695,7 +531857,9 @@
       1802432219,
       1801130345,
       6785938400
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/49/ef/6c/49ef6cfc-a10f-7dd4-194b-c442c29760c8/mzaf_13065301214941429087.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%81%A1%E3%82%85-%E3%81%A1%E3%82%85-%E3%81%A1%E3%82%85-%E3%81%B1%E3%81%AB%E3%81%B1%E3%81%A3/1582602867?i=1582602873"
   },
   {
     "uid": "4dfd9e7a-8dfb-4eb0-b5e4-56d30558d7d6",
@@ -532766,6 +532930,11 @@
         "disc_uid": null,
         "name": "Present to PARAD-i-SE (TYPE-B) - Single",
         "track_number": 1
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -532778,7 +532947,9 @@
     "notes": "Apple trackId 1801130341; https://music.apple.com/jp/album/%E3%82%82%E3%81%86%E3%81%84%E3%81%A3%E3%81%A1%E3%82%87/1801130330?i=1801130341&uo=4",
     "_apple_track_ids": [
       1801130341
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/eb/ab/59/ebab5944-3e61-935c-3970-e42e75f212b3/mzaf_4423204136886264101.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%82%E3%81%86%E3%81%84%E3%81%A3%E3%81%A1%E3%82%87/1801130330?i=1801130341"
   },
   {
     "uid": "1edfffd6-4b9d-4360-9540-e6c82ec9732f",
@@ -532806,6 +532977,11 @@
         "disc_uid": null,
         "name": "Narrative - EP",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 16
       }
     ],
     "version": "",
@@ -532819,7 +532995,9 @@
     "_apple_track_ids": [
       1651341360,
       1862735949
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/30/e4/ac/30e4ac9f-14db-6a32-4d3c-bbb67dddd65d/mzaf_1617559646881731228.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%91%E3%83%A9%E3%83%AC%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%80%E3%83%BC/1651341358?i=1651341360"
   },
   {
     "uid": "ba613322-4d4d-47a3-aea1-c2dd9805ab8b",
@@ -532982,6 +533160,11 @@
         "disc_uid": null,
         "name": "Narrative - EP",
         "track_number": 3
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -532994,7 +533177,9 @@
     "notes": "Apple trackId 1862735951; https://music.apple.com/jp/album/%E6%B5%81%E6%98%9F%E3%83%88%E3%83%AF%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88/1862735737?i=1862735951&uo=4; Apple Music JP top songs rank 3 (visible page ranking).",
     "_apple_track_ids": [
       1862735951
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/2c/fa/d92cfab1-774b-7330-d0a6-55c5860eac6d/mzaf_12859027796979579996.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E6%B5%81%E6%98%9F%E3%83%88%E3%83%AF%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88/1862735737?i=1862735951"
   },
   {
     "uid": "3c579dd6-c1f9-4b80-9575-40f16a0ac984",
@@ -533272,6 +533457,11 @@
         "disc_uid": "7d59660c-a512-4262-a01e-82ffc389be68",
         "name": "トンコツコント",
         "track_number": 13
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 17
       }
     ],
     "version": "",
@@ -533286,7 +533476,9 @@
       1599051444,
       1752449372,
       1833426082
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/17/7b/5a/177b5a68-7cb3-61e2-1248-a66c305f9dce/mzaf_14014885188373341358.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%B5%E3%82%A4%E3%82%B3%E3%82%AA%E3%83%95%E3%83%88%E3%83%B3/1599051439?i=1599051444"
   },
   {
     "uid": "fc05f693-9e14-4a8b-bddc-920de90fd69f",
@@ -533536,6 +533728,11 @@
         "disc_uid": "7d59660c-a512-4262-a01e-82ffc389be68",
         "name": "トンコツコント",
         "track_number": 4
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -533549,7 +533746,9 @@
     "_apple_track_ids": [
       1789756314,
       1833426071
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0d/a6/12/0da612a5-551f-dd78-71ee-be3f838d69d3/mzaf_7589827392669699454.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E8%BB%BD%E3%81%84%E3%83%8E%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%AB%E3%82%AB/1789756313?i=1789756314"
   },
   {
     "uid": "a6ea3486-3775-41cf-a63d-c9e582c062c9",
@@ -535316,6 +535515,11 @@
         "disc_uid": null,
         "name": "NIGHT WONDER - EP",
         "track_number": 2
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 18
       }
     ],
     "version": "",
@@ -535328,7 +535532,9 @@
     "notes": "Apple trackId 1766226842; https://music.apple.com/jp/album/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%BF%E3%83%88%E3%82%A5%E3%83%BC/1766226840?i=1766226842&uo=4",
     "_apple_track_ids": [
       1766226842
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/a0/11/fda01178-ff18-6ce2-63d1-3d85ac82c137/mzaf_1507750155591032143.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%BF%E3%83%88%E3%82%A5%E3%83%BC/1766226840?i=1766226842"
   },
   {
     "uid": "f93115ae-1bd6-49f8-9c44-5ef96b15c01b",
@@ -536012,6 +536218,11 @@
         "disc_uid": "3b0b639c-338f-4f9d-8225-dbbe72051921",
         "name": "NIGHT AMUSE",
         "track_number": 10
+      },
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
       }
     ],
     "version": "",
@@ -536024,7 +536235,9 @@
     "notes": "Apple trackId 1806053093; https://music.apple.com/jp/album/%E3%81%AF%E3%81%AB%E3%83%88%E3%83%A9/1806052991?i=1806053093&uo=4",
     "_apple_track_ids": [
       1806053093
-    ]
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/d0/77/b0d077ab-0cfd-8b9c-be26-04c0b2430cdb/mzaf_12184388118273359349.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%81%AF%E3%81%AB%E3%83%88%E3%83%A9/1806052991?i=1806053093"
   },
   {
     "uid": "75b557b3-bb91-4c73-9519-5ae1c1916ada",
@@ -536696,5 +536909,170 @@
     "_apple_track_ids": [
       1475489432
     ]
+  },
+  {
+    "uid": "6164c4d2-3558-4778-89fe-5e03082e7fc6",
+    "group_uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
+    "group_name": "ガガピエロ",
+    "title": "ナイモノネダリ",
+    "title_romanji": "",
+    "release_date": "2025-02-01",
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2,
+    "signature_song": false,
+    "popularity_local": 2,
+    "popularity_global": null,
+    "source_confidence": "heroines_album_2025",
+    "notes": "HEROINES ALBUM 2025 exclusive/shared track for ガガピエロ",
+    "_apple_track_ids": []
+  },
+  {
+    "uid": "088756ce-0eaa-49ec-afac-dc8865a0ec47",
+    "group_uid": "R0lMVFkgw5cgR0lMVFk",
+    "group_name": "GILTY × GILTY",
+    "title": "メシア",
+    "title_romanji": "",
+    "release_date": "2025-02-01",
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2,
+    "signature_song": false,
+    "popularity_local": 2,
+    "popularity_global": null,
+    "source_confidence": "heroines_album_2025",
+    "notes": "HEROINES ALBUM 2025 exclusive/shared track for GILTY × GILTY",
+    "_apple_track_ids": []
+  },
+  {
+    "uid": "e4f7e8e4-0d44-4b4c-a062-c9d094833f2f",
+    "group_uid": "Y2h1TGE",
+    "group_name": "chuLa",
+    "title": "唯いchu無二のヒロイン",
+    "title_romanji": "",
+    "release_date": "2025-02-01",
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2,
+    "signature_song": false,
+    "popularity_local": 2,
+    "popularity_global": null,
+    "source_confidence": "heroines_album_2025",
+    "notes": "HEROINES ALBUM 2025 exclusive/shared track for chuLa",
+    "_apple_track_ids": []
+  },
+  {
+    "uid": "f25ea348-9056-4dbe-b1f6-dccbbd2a11fa",
+    "group_uid": "5aSp5L2_44Gr44Gv44Gq44KM44Gq44GE",
+    "group_name": "天使にはなれない",
+    "title": "きゅるりんパーク",
+    "title_romanji": "",
+    "release_date": "2025-02-01",
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2,
+    "signature_song": false,
+    "popularity_local": 2,
+    "popularity_global": null,
+    "source_confidence": "heroines_album_2025",
+    "notes": "HEROINES ALBUM 2025 exclusive/shared track for 天使にはなれない",
+    "_apple_track_ids": []
+  },
+  {
+    "uid": "7bad1ad0-28bf-4554-bf13-94685da22663",
+    "group_uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+    "group_name": "LADYBABY",
+    "title": "ドラドラバスターズ",
+    "title_romanji": "",
+    "release_date": "2025-02-01",
+    "genre": "J-Pop",
+    "duration": null,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "HEROINES ALBUM 2025",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2,
+    "signature_song": false,
+    "popularity_local": 2,
+    "popularity_global": null,
+    "source_confidence": "heroines_album_2025",
+    "notes": "HEROINES ALBUM 2025 exclusive/shared track for LADYBABY",
+    "_apple_track_ids": []
   }
 ]
