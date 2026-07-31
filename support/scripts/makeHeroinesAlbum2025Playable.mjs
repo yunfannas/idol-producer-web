@@ -113,16 +113,20 @@ async function itunesSearchSong(title, artist) {
   return bestScore >= 100 ? best : null;
 }
 
-function ensureAlbumRef(song, trackNumber) {
+function ensureAlbumRef(song, groupName, role, trackNumber) {
   if (!Array.isArray(song.albums)) song.albums = [];
-  const exists = song.albums.some((a) => String(a?.name || "").includes("HEROINES ALBUM 2025"));
-  if (!exists) {
+  const albumName = role === "exclusive" ? `${ALBUM} (${groupName} ver.)` : ALBUM;
+  const existing = song.albums.find((a) => String(a?.name || "").includes("HEROINES ALBUM 2025"));
+  if (!existing) {
     song.albums.push({
       disc_uid: null,
-      name: ALBUM,
-      track_number: trackNumber ?? (song.role === "exclusive" ? 1 : null),
+      name: albumName,
+      track_number: trackNumber ?? (role === "exclusive" ? 1 : null),
     });
+    return;
   }
+  // Keep exclusives on their group edition only.
+  if (role === "exclusive" && existing.name !== albumName) existing.name = albumName;
 }
 
 function newSongRow(group, title) {
@@ -266,7 +270,7 @@ async function main() {
       created = true;
     }
     const trackNo = spec.role === "exclusive" ? 1 : spec.track ?? null;
-    ensureAlbumRef(song, trackNo);
+    ensureAlbumRef(song, group.name, spec.role, trackNo);
     const enrich = await enrichFromItunes(song, group.name, spec.title);
     ensureSongUid(group, song.uid);
 

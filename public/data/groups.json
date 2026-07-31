@@ -60766,15 +60766,15 @@
       "a75fca81-e563-4423-918d-a22d369436cb"
     ],
     "color": null,
-    "description": "",
+    "description": "Catalog alias / pre-rename label for CAL&RES（旧名：天使にはなれない）。Canonical current group entry is CAL&RES. Digital album『天使になりたい』: https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760",
     "formed_date": "2021-01-01",
     "popularity": 15,
     "fans": 1116,
     "average_ability": 0,
     "average_rating": 0,
-    "wiki_url": "https://jpop.fandom.com/wiki/Zero_Project",
+    "wiki_url": "https://jpop.fandom.com/wiki/CAL%26RES",
     "idolsdiagram_url": "https://idolsdiagram.com/g/5aSp5L2_44Gr44Gv44Gq44KM44Gq44GE",
-    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06.",
+    "notes": "Popularity/followers synced from idolsdiagram.com on 2026-05-06. Successor/canonical group_uid=Q0FMJlJFUw (CAL&RES). Do not treat this row's roster as authoritative. Apple Music album 1688704760: https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760",
     "discography": [
       {
         "title": "Seize a Chance!",
@@ -60878,7 +60878,11 @@
       }
     ],
     "formed_date_source": "jpop_fandom_years",
-    "formed_date_precision": "year"
+    "formed_date_precision": "year",
+    "name_romanji": "Tenshi ni wa Narenai",
+    "nickname": "てんはな",
+    "nickname_romanji": "Tenhana",
+    "union": "HEROINES"
   },
   {
     "uid": "44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go",
@@ -250516,7 +250520,7 @@
       "4cad7e1f-ca74-4088-9211-42fac3cda306"
     ],
     "color": null,
-    "description": "CAL&RES is a HEROINES group that later rebranded from Tenshi ni wa Narenai.",
+    "description": "CAL&RES（コーレス）は imaginate / HEROINES 所属アイドルグループ。旧名は「天使にはなれない」（通称てんはな）。2025-04-24 に旧名義での活動を終え、2025-04-27 より CAL&RES として再始動。コンセプト曲『天使になりたい』を含むデジタルアルバム『天使になりたい』（2023-06-01 / CROSS SIDE MUSIC）収録。",
     "formed_date": "2021-08-16",
     "average_ability": null,
     "average_rating": null,
@@ -250524,8 +250528,8 @@
       "imaginate"
     ],
     "name_romanji": "CAL&RES",
-    "nickname": null,
-    "nickname_romanji": null,
+    "nickname": "コーレス",
+    "nickname_romanji": "Corres",
     "song_uids": [
       "bbfc1c5d-b2b3-4cb3-aa6e-cf785f81a5c6",
       "2ad264b9-bc78-44cf-b034-50dd99564e35",
@@ -250557,20 +250561,20 @@
     "popularity": 15,
     "fans": 1116,
     "idolsdiagram_url": "https://idolsdiagram.com/g/Q0FMJlJFUw",
-    "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
+    "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending. Apple Music artist 1688704761 (credited as 天使にはなれない): https://music.apple.com/jp/artist/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AF%E3%81%AA%E3%82%8C%E3%81%AA%E3%81%84/1688704761 Album 天使になりたい (1688704760): https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760 Former abbreviation: てんはな (Tenhana).",
     "union": "HEROINES",
     "union_uid": "HEROINES",
     "discography": [
       {
         "uid": "bd6cad08-a8be-49e1-b59d-9a13067114c8",
-        "title": "天使になりたい;I want to be an Angel",
+        "title": "天使になりたい",
         "title_romanji": "Tenshi ni Naritai",
         "disc_type": "Album",
         "release_date": "2023-06-01",
-        "publisher": null,
+        "publisher": "CROSS SIDE MUSIC",
         "publisher_uid": null,
         "catalog_number": "",
-        "description": "",
+        "description": "Digital album by 天使にはなれない (now CAL&RES). Apple Music: https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760",
         "track_list": [
           "天使になりたい",
           "あいらびゅ",

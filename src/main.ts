@@ -2895,6 +2895,7 @@ function paintGame(): void {
     if (openSongs) {
       const enc = openSongs.getAttribute("data-open-songs-for-group");
       if (enc != null && enc.length) {
+        const songEnc = openSongs.getAttribute("data-open-songs-song");
         navigate(() => {
           try {
             songsGroupUid = decodeURIComponent(enc);
@@ -2906,7 +2907,15 @@ function paintGame(): void {
           currentView = "Songs";
           songsWorkspaceTab = "group_songs";
           songsDiscographyKey = null;
-          songsDetailUid = null;
+          if (songEnc) {
+            try {
+              songsDetailUid = decodeURIComponent(songEnc);
+            } catch {
+              songsDetailUid = songEnc;
+            }
+          } else {
+            songsDetailUid = null;
+          }
         });
       }
       return;
@@ -3136,6 +3145,17 @@ function paintGame(): void {
           } catch {
             songsDiscographyKey = raw;
           }
+        });
+      }
+      return;
+    }
+    const discOpen = t.closest<HTMLElement>("[data-songs-open-disc]");
+    if (discOpen && currentView === "Songs") {
+      const raw = discOpen.getAttribute("data-songs-open-disc");
+      if (raw) {
+        navigate(() => {
+          songsWorkspaceTab = "disc";
+          songsDiscographyKey = raw;
         });
       }
       return;

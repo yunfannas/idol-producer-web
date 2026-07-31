@@ -98376,30 +98376,6 @@
     "disc_uid": null
   },
   {
-    "uid": "bd6cad08-a8be-49e1-b59d-9a13067114c8",
-    "title": "天使になりたい;I want to be an Angel",
-    "title_romanji": "Tenshi ni Naritai",
-    "disc_type": "Album",
-    "release_date": "2023-06-01",
-    "publisher": null,
-    "publisher_uid": null,
-    "catalog_number": "",
-    "description": "",
-    "track_list": [],
-    "duration": null,
-    "cover_image_path": null,
-    "group_uid": "Q0FMJlJFUw",
-    "group_name": "CAL&RES",
-    "albums": [
-      {
-        "disc_uid": null,
-        "name": "",
-        "track_number": null
-      }
-    ],
-    "disc_uid": null
-  },
-  {
     "uid": "8eea4843-13be-4880-892d-e00628f7ef63",
     "title": "待ち合わせの図書館にて;At the Library Where We Were Meeting",
     "title_romanji": "Machiawase no Toshokan nite",
@@ -120150,7 +120126,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (i-COL ver.)",
         "track_number": 1
       }
     ],
@@ -120192,7 +120168,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (iLiFE! ver.)",
         "track_number": 1
       }
     ],
@@ -120234,7 +120210,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (アキシブproject ver.)",
         "track_number": 1
       }
     ],
@@ -120277,7 +120253,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (AdamLilith ver.)",
         "track_number": 1
       }
     ],
@@ -120314,7 +120290,7 @@
     "albums": [
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (ガガピエロ ver.)",
         "track_number": 1
       }
     ],
@@ -120347,7 +120323,7 @@
     "albums": [
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (GILTY × GILTY ver.)",
         "track_number": 1
       }
     ],
@@ -120385,7 +120361,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (ZUTTOMOTTO ver.)",
         "track_number": 1
       }
     ],
@@ -120422,7 +120398,7 @@
     "albums": [
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (chuLa ver.)",
         "track_number": 1
       }
     ],
@@ -120460,7 +120436,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (Ill ver.)",
         "track_number": 1
       }
     ],
@@ -120497,7 +120473,7 @@
     "albums": [
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (天使にはなれない ver.)",
         "track_number": 1
       }
     ],
@@ -120535,7 +120511,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (TENRIN ver.)",
         "track_number": 1
       }
     ],
@@ -120577,7 +120553,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (ナナコロビヤオキ ver.)",
         "track_number": 1
       }
     ],
@@ -120624,7 +120600,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (のんふぃく！ ver.)",
         "track_number": 1
       }
     ],
@@ -120667,7 +120643,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (パラディーク ver.)",
         "track_number": 1
       }
     ],
@@ -120714,7 +120690,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (ポンコツコンポ ver.)",
         "track_number": 1
       }
     ],
@@ -120757,7 +120733,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (パラレルサイダー ver.)",
         "track_number": 1
       }
     ],
@@ -120799,7 +120775,7 @@
       },
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (夜光性アミューズ ver.)",
         "track_number": 1
       }
     ],
@@ -120836,7 +120812,7 @@
     "albums": [
       {
         "disc_uid": null,
-        "name": "HEROINES ALBUM 2025",
+        "name": "HEROINES ALBUM 2025 (LADYBABY ver.)",
         "track_number": 1
       }
     ],
@@ -121696,5 +121672,375 @@
     ],
     "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/c2/e9/c0c2e9c2-e48e-8d34-81c3-d08dad06a9c5/mzaf_8974685355295587594.plus.aac.p.m4a",
     "apple_music_url": "https://music.apple.com/jp/album/%E3%82%B8%E3%83%A3%E3%83%91%E3%82%B5%E3%83%9E/1760927290?i=1760927293"
+  },
+  {
+    "uid": "bbfc1c5d-b2b3-4cb3-aa6e-cf785f81a5c6",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "DREAMS ON THE RUN",
+    "title_romanji": "DREAMS ON THE RUN",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 259,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 10
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 4,
+    "signature_song": false,
+    "popularity_local": 4,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704774; https://music.apple.com/jp/album/dreams-on-the-run/1688704760?i=1688704774&uo=4; Apple Music JP top songs rank 1 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704774
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f8/9c/fa/f89cfa54-eb7c-3aff-bfc5-4a66ccf51f4f/mzaf_2666502599194224393.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/dreams-on-the-run/1688704760?i=1688704774"
+  },
+  {
+    "uid": "2ad264b9-bc78-44cf-b034-50dd99564e35",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "ロンリーハイ",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 183,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 9
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 3.5,
+    "signature_song": false,
+    "popularity_local": 3.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704772; https://music.apple.com/jp/album/%E3%83%AD%E3%83%B3%E3%83%AA%E3%83%BC%E3%83%8F%E3%82%A4/1688704760?i=1688704772&uo=4; Apple Music JP top songs rank 2 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704772
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/18/d6/8f/18d68f39-b712-301f-64fc-a3f6bf2c2a8e/mzaf_6135138869699409802.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%83%AD%E3%83%B3%E3%83%AA%E3%83%BC%E3%83%8F%E3%82%A4/1688704760?i=1688704772"
+  },
+  {
+    "uid": "70c6a992-10d0-43ce-bba8-4288464744b6",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "天使になりたい",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 189,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 1
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 3,
+    "signature_song": false,
+    "popularity_local": 3,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704763; https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760?i=1688704763&uo=4; Apple Music JP top songs rank 3 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704763
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/35/91/a0/3591a0a0-a1fe-6c6d-891c-3a195fc239f9/mzaf_12804361562543273398.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760?i=1688704763"
+  },
+  {
+    "uid": "145ce815-7949-4db6-9282-91cadabeefec",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "青い春",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 243,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 6
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 3,
+    "signature_song": false,
+    "popularity_local": 3,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704769; https://music.apple.com/jp/album/%E9%9D%92%E3%81%84%E6%98%A5/1688704760?i=1688704769&uo=4; Apple Music JP top songs rank 4 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704769
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/8e/39/23/8e39239c-f1a9-9a2b-8472-12cb7bcf224b/mzaf_15517396864110244586.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E9%9D%92%E3%81%84%E6%98%A5/1688704760?i=1688704769"
+  },
+  {
+    "uid": "5b941853-bc6e-444e-b1fe-849cad0d80d0",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "あいらびゅ",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 244,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 2
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2.5,
+    "signature_song": false,
+    "popularity_local": 2.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704764; https://music.apple.com/jp/album/%E3%81%82%E3%81%84%E3%82%89%E3%81%B3%E3%82%85/1688704760?i=1688704764&uo=4; Apple Music JP top songs rank 5 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704764
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/20/7c/6f/207c6fae-e3d7-c8e2-e21e-e0a5cfab2f17/mzaf_2117569021638509953.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%81%82%E3%81%84%E3%82%89%E3%81%B3%E3%82%85/1688704760?i=1688704764"
+  },
+  {
+    "uid": "e3541741-2df8-479c-9500-073c43e46b5a",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "アウトオブザブルー",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 237,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 4
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2.5,
+    "signature_song": false,
+    "popularity_local": 2.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704766; https://music.apple.com/jp/album/%E3%82%A2%E3%82%A6%E3%83%88%E3%82%AA%E3%83%96%E3%82%B6%E3%83%96%E3%83%AB%E3%83%BC/1688704760?i=1688704766&uo=4; Apple Music JP top songs rank 6 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704766
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f8/06/05/f8060556-903e-7617-a3f6-ce573bd88d21/mzaf_16368134008842950709.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%A2%E3%82%A6%E3%83%88%E3%82%AA%E3%83%96%E3%82%B6%E3%83%96%E3%83%AB%E3%83%BC/1688704760?i=1688704766"
+  },
+  {
+    "uid": "5a64c2af-5a12-49c2-8ded-32d3ff372e2d",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "ジェットピース",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 233,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 5
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 1.5,
+    "signature_song": false,
+    "popularity_local": 1.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704767; https://music.apple.com/jp/album/%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%83%94%E3%83%BC%E3%82%B9/1688704760?i=1688704767&uo=4; Apple Music JP top songs rank 9 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704767
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/9e/16/f1/9e16f1a0-873f-eb40-7e2a-3f3c7bdc6afb/mzaf_2724526527037384640.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%E3%83%94%E3%83%BC%E3%82%B9/1688704760?i=1688704767"
+  },
+  {
+    "uid": "4f12f5d6-446a-4d93-b6db-66fe6abf5e1c",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "友情フィルハート",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 162,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 7
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 1.5,
+    "signature_song": false,
+    "popularity_local": 1.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704770; https://music.apple.com/jp/album/%E5%8F%8B%E6%83%85%E3%83%95%E3%82%A3%E3%83%AB%E3%83%8F%E3%83%BC%E3%83%88/1688704760?i=1688704770&uo=4; Apple Music JP top songs rank 8 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704770
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a4/cd/39/a4cd39bd-9b16-24de-1d8c-a80ac284271a/mzaf_10633502014414789690.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E5%8F%8B%E6%83%85%E3%83%95%E3%82%A3%E3%83%AB%E3%83%8F%E3%83%BC%E3%83%88/1688704760?i=1688704770"
+  },
+  {
+    "uid": "edb7cc7e-cfe8-4781-a319-6a1d71603840",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "GO MY WAY",
+    "title_romanji": "GO MY WAY",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 238,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 3
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 2.5,
+    "signature_song": false,
+    "popularity_local": 2.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704765; https://music.apple.com/jp/album/go-my-way/1688704760?i=1688704765&uo=4; Apple Music JP top songs rank 7 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704765
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/84/8e/d8/848ed83b-06d2-70d3-9c7b-ff98a8cae4b7/mzaf_11977183848899489126.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/go-my-way/1688704760?i=1688704765"
+  },
+  {
+    "uid": "d9d93a92-24bc-41cb-b1cd-91772418c8fa",
+    "group_uid": "Q0FMJlJFUw",
+    "group_name": "CAL&RES",
+    "title": "君と僕のストーリー",
+    "title_romanji": "",
+    "release_date": "2023-06-01",
+    "genre": "J-Pop",
+    "duration": 259,
+    "lyrics": "",
+    "composer": "",
+    "lyricist": "",
+    "arrangement": "",
+    "description": "",
+    "spotify_url": null,
+    "youtube_url": null,
+    "albums": [
+      {
+        "disc_uid": null,
+        "name": "天使になりたい",
+        "track_number": 8
+      }
+    ],
+    "version": "",
+    "disc_uid": null,
+    "popularity": 1.5,
+    "signature_song": false,
+    "popularity_local": 1.5,
+    "popularity_global": null,
+    "source_confidence": "apple_music_jp_top_songs",
+    "notes": "Apple trackId 1688704771; https://music.apple.com/jp/album/%E5%90%9B%E3%81%A8%E5%83%95%E3%81%AE%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/1688704760?i=1688704771&uo=4; Apple Music JP top songs rank 10 (visible page ranking).",
+    "_apple_track_ids": [
+      1688704771
+    ],
+    "apple_preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/e0/b2/cf/e0b2cf49-c720-1a57-f984-c5d2fb4beb23/mzaf_17019937138049076744.plus.aac.p.m4a",
+    "apple_music_url": "https://music.apple.com/jp/album/%E5%90%9B%E3%81%A8%E5%83%95%E3%81%AE%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/1688704760?i=1688704771"
   }
 ]

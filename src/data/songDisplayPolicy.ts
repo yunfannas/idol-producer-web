@@ -154,7 +154,7 @@ export function songsForDisplaySorted(all: Record<string, unknown>[]): Record<st
 }
 
 /** Strip Apple packaging / CD type-variant suffixes so A/B/C editions share one disc bucket. */
-export function baseDiscReleaseLabel(name: string): string {
+export function packagingDiscReleaseLabel(name: string): string {
   let s = String(name ?? "")
     .normalize("NFKC")
     .trim();
@@ -168,13 +168,45 @@ export function baseDiscReleaseLabel(name: string): string {
   return s.replace(/\s+/g, " ").trim();
 }
 
+/** Base title for matching — also strips group compilation edition suffixes like "(アキシブproject ver.)". */
+export function baseDiscReleaseLabel(name: string): string {
+  let s = packagingDiscReleaseLabel(name);
+  if (!s) return "";
+  s = s.replace(/\s*[\(（][^）)]*?ver\.?\s*[\)）]\s*$/i, "");
+  return s.replace(/\s+/g, " ").trim();
+}
+
+/** Match a song-list Disc label to a curated / inferred discography row key. */
+export function findDiscographyKeyForDiscLabel(
+  discLabel: string,
+  curatedRows?: GroupDiscographyReleaseRow[] | null,
+  buckets?: DiscBucket[] | null,
+): string | null {
+  const raw = String(discLabel ?? "").trim();
+  if (!raw || raw === "—") return null;
+  const target = baseDiscReleaseLabel(raw).toLowerCase();
+  if (!target) return null;
+  for (const row of curatedRows ?? []) {
+    if (row.selectable === false) continue;
+    const titleBase = baseDiscReleaseLabel(row.title).toLowerCase();
+    if (titleBase === target || row.title.trim().toLowerCase() === raw.toLowerCase()) return row.key;
+  }
+  for (const bucket of buckets ?? []) {
+    const labelBase = baseDiscReleaseLabel(bucket.label).toLowerCase();
+    if (labelBase === target || bucket.label.trim().toLowerCase() === raw.toLowerCase() || bucket.key === raw) {
+      return bucket.key;
+    }
+  }
+  return null;
+}
+
 /** Primary disc / album label for UI (first non-empty `albums[].name`, else disc_type / stub). */
 export function primaryDiscLabel(row: Record<string, unknown>): string {
   const albums = Array.isArray(row.albums) ? row.albums : [];
   for (const raw of albums) {
     if (!raw || typeof raw !== "object") continue;
     const name = String((raw as Record<string, unknown>).name ?? "").trim();
-    if (name) return baseDiscReleaseLabel(name) || name;
+    if (name) return packagingDiscReleaseLabel(name) || name;
   }
   const rdu = row.disc_uid;
   if (rdu != null && String(rdu).trim()) {
@@ -213,6 +245,9 @@ export interface DiscBucket {
 export interface GroupDiscographyTrackRef {
   title: string;
   songUid: string | null;
+  /** Owning group when this track appears on another group's shared/compilation edition. */
+  originGroupUid?: string | null;
+  originGroupName?: string | null;
 }
 
 export interface GroupDiscographyTrackSection {
@@ -366,7 +401,13 @@ function trackSectionsFromLocalRelease(
   row: Record<string, unknown>,
   lookup: Map<string, Record<string, unknown>>,
   songByUid: Map<string, Record<string, unknown>>,
+  viewingGroupUid: string,
 ): GroupDiscographyTrackSection[] {
+  const releaseTitle = String(row.title ?? row.title_romanji ?? "").trim();
+  const showOrigins = isSharedCompilationAlbumTitle(releaseTitle);
+  const annotate = (tracks: GroupDiscographyTrackRef[]) =>
+    withTrackOriginGroups(tracks, songByUid, viewingGroupUid, showOrigins);
+
   if (discUsesEditionTrackLayout(row)) {
     const sections: GroupDiscographyTrackSection[] = [];
     const sharedTracks = effectiveSharedTracks(row);
@@ -376,14 +417,14 @@ function trackSectionsFromLocalRelease(
     if (sharedTracks.length) {
       sections.push({
         label: "Shared tracks",
-        tracks: resolveTrackRefs(sharedTracks, lookup, songByUid, sharedUids),
+        tracks: annotate(resolveTrackRefs(sharedTracks, lookup, songByUid, sharedUids)),
       });
     }
     for (const edition of effectiveEditionSlices(row)) {
       if (!edition.track_list.length) continue;
       sections.push({
         label: edition.label,
-        tracks: resolveTrackRefs(edition.track_list, lookup, songByUid),
+        tracks: annotate(resolveTrackRefs(edition.track_list, lookup, songByUid)),
       });
     }
     return sections;
@@ -395,10 +436,10 @@ function trackSectionsFromLocalRelease(
     ? row.track_song_uids.map((x) => String(x ?? "").trim())
     : [];
   if (trackList.length) {
-    return [{ label: "Tracks", tracks: resolveTrackRefs(trackList, lookup, songByUid, trackSongUids) }];
+    return [{ label: "Tracks", tracks: annotate(resolveTrackRefs(trackList, lookup, songByUid, trackSongUids)) }];
   }
   if (trackSongUids.some(Boolean)) {
-    return [{ label: "Tracks", tracks: resolveTrackRefsFromUids(trackSongUids.filter(Boolean), songByUid) }];
+    return [{ label: "Tracks", tracks: annotate(resolveTrackRefsFromUids(trackSongUids.filter(Boolean), songByUid)) }];
   }
   return [];
 }
@@ -409,6 +450,11 @@ function trackSectionsFromSharedRelease(
   lookup: Map<string, Record<string, unknown>>,
   songByUid: Map<string, Record<string, unknown>>,
 ): GroupDiscographyTrackSection[] {
+  const releaseTitle = String(release.title ?? release.title_romanji ?? "").trim();
+  const showOrigins = isSharedCompilationAlbumTitle(releaseTitle);
+  const annotate = (tracks: GroupDiscographyTrackRef[]) =>
+    withTrackOriginGroups(tracks, songByUid, groupUid, showOrigins);
+
   const sections: GroupDiscographyTrackSection[] = [];
   const sharedTracks = Array.isArray(release.shared_track_list)
     ? release.shared_track_list.map((x) => String(x ?? "").trim()).filter(Boolean)
@@ -419,7 +465,7 @@ function trackSectionsFromSharedRelease(
   if (sharedTracks.length) {
     sections.push({
       label: "Shared tracks",
-      tracks: resolveTrackRefs(sharedTracks, lookup, songByUid, sharedUids),
+      tracks: annotate(resolveTrackRefs(sharedTracks, lookup, songByUid, sharedUids)),
     });
   }
   const editions = Array.isArray(release.group_editions)
@@ -436,12 +482,12 @@ function trackSectionsFromSharedRelease(
   if (!editionTracks.length) {
     if (editionUids.some(Boolean)) {
       const label = String(edition.edition_label ?? edition.group_name ?? "Edition").trim() || "Edition";
-      sections.push({ label, tracks: resolveTrackRefsFromUids(editionUids.filter(Boolean), songByUid) });
+      sections.push({ label, tracks: annotate(resolveTrackRefsFromUids(editionUids.filter(Boolean), songByUid)) });
     }
     return sections;
   }
   const label = String(edition.edition_label ?? edition.group_name ?? "Edition").trim() || "Edition";
-  sections.push({ label, tracks: resolveTrackRefs(editionTracks, lookup, songByUid, editionUids) });
+  sections.push({ label, tracks: annotate(resolveTrackRefs(editionTracks, lookup, songByUid, editionUids)) });
   return sections;
 }
 
@@ -473,6 +519,36 @@ function normalizeDiscographyTypeLabel(row: Record<string, unknown>): string {
   if (/^(best album|mini album|ep)$/i.test(raw)) return raw;
   if (/^(cd)$/i.test(raw)) return "CD";
   return raw || "—";
+}
+
+/** Shared multi-group compilations (e.g. HEROINES ALBUM 2025 editions). */
+export function isSharedCompilationAlbumTitle(title: string): boolean {
+  const base = baseDiscReleaseLabel(title);
+  return /heroines\s+album\s+2025/i.test(base);
+}
+
+function withTrackOriginGroups(
+  tracks: GroupDiscographyTrackRef[],
+  songByUid: Map<string, Record<string, unknown>>,
+  viewingGroupUid: string,
+  enabled: boolean,
+): GroupDiscographyTrackRef[] {
+  if (!enabled) return tracks;
+  const gid = String(viewingGroupUid ?? "").trim();
+  return tracks.map((track) => {
+    const song = track.songUid ? songByUid.get(track.songUid) : null;
+    if (!song) return { ...track, originGroupUid: null, originGroupName: null };
+    const originGroupUid = String(song.group_uid ?? "").trim() || null;
+    const originGroupName = String(song.group_name ?? "").trim() || null;
+    if (!originGroupUid || (gid && originGroupUid === gid)) {
+      return { ...track, originGroupUid: null, originGroupName: null };
+    }
+    return {
+      ...track,
+      originGroupUid,
+      originGroupName: originGroupName || originGroupUid,
+    };
+  });
 }
 
 export function buildGroupDiscographyReleaseRows(
@@ -516,7 +592,7 @@ export function buildGroupDiscographyReleaseRows(
     .map((row, index) => {
       const title = String(row.title ?? row.title_romanji ?? "").trim() || "—";
       const releaseDate = String(row.release_date ?? "").split("T")[0].trim() || "—";
-      const trackSections = trackSectionsFromLocalRelease(row, lookup, songByUid);
+      const trackSections = trackSectionsFromLocalRelease(row, lookup, songByUid, groupUid);
       const trackSongUids = Array.isArray(row.track_song_uids)
         ? row.track_song_uids.map((x) => String(x ?? "").trim()).filter(Boolean)
         : [];
@@ -553,15 +629,75 @@ export function buildGroupDiscographyReleaseRows(
         selectable: !isVideoDiscRelease(row),
       } satisfies GroupDiscographyReleaseRow;
     });
-  return [...localRows, ...sharedRows]
-    .sort((a, b) => {
-      // Singles/albums first; video discs listed after as additional catalog rows.
-      if (a.selectable !== b.selectable) return a.selectable ? -1 : 1;
-      const ad = parseCatalogIsoToTime(a.releaseDate) ?? 0;
-      const bd = parseCatalogIsoToTime(b.releaseDate) ?? 0;
-      if (ad !== bd) return ad - bd;
-      return a.title.localeCompare(b.title, "ja");
+  return dedupeDiscographyReleaseRows([...localRows, ...sharedRows]).sort((a, b) => {
+    // Singles/albums first; video discs listed after as additional catalog rows.
+    if (a.selectable !== b.selectable) return a.selectable ? -1 : 1;
+    const ad = parseCatalogIsoToTime(a.releaseDate) ?? 0;
+    const bd = parseCatalogIsoToTime(b.releaseDate) ?? 0;
+    if (ad !== bd) return ad - bd;
+    return a.title.localeCompare(b.title, "ja");
+  });
+}
+
+function discographyReleaseDedupeKey(row: GroupDiscographyReleaseRow): string {
+  const base = baseDiscReleaseLabel(row.title) || row.title;
+  return base.normalize("NFKC").trim().toLowerCase();
+}
+
+function discographyReleaseRichness(row: GroupDiscographyReleaseRow): number {
+  const linked = row.trackSections.reduce(
+    (n, section) => n + section.tracks.filter((track) => Boolean(track.songUid)).length,
+    0,
+  );
+  // Prefer denser tracklists; break ties toward local (non-shared) rows.
+  return linked * 1000 + row.trackCount * 10 + (row.key.startsWith("shared:") ? 0 : 1);
+}
+
+function preferredDiscographyTitle(a: string, b: string): string {
+  if (a.toUpperCase() === b.toUpperCase()) {
+    if (/ALBUM/.test(a)) return a;
+    if (/ALBUM/.test(b)) return b;
+  }
+  return a;
+}
+
+/** Collapse local + shared duplicates that only differ by casing / edition suffix.
+ * Prefer local group editions over incomplete shared stubs (e.g. HEROINES ALBUM). */
+function dedupeDiscographyReleaseRows(rows: GroupDiscographyReleaseRow[]): GroupDiscographyReleaseRow[] {
+  const localBases = new Set(
+    rows.filter((row) => !row.key.startsWith("shared:")).map((row) => discographyReleaseDedupeKey(row)).filter(Boolean),
+  );
+  const filtered = rows.filter((row) => {
+    if (!row.key.startsWith("shared:")) return true;
+    const key = discographyReleaseDedupeKey(row);
+    // Drop shared when this group already has a local edition of the same release.
+    return !key || !localBases.has(key);
+  });
+
+  const best = new Map<string, GroupDiscographyReleaseRow>();
+  for (const row of filtered) {
+    const key = discographyReleaseDedupeKey(row);
+    const mapKey = key || `__raw:${row.key}`;
+    const prev = best.get(mapKey);
+    if (!prev) {
+      best.set(mapKey, row);
+      continue;
+    }
+    // Never merge different group editions into one row — only case-only duplicates.
+    const sameCaseFold = prev.title.toUpperCase() === row.title.toUpperCase();
+    if (!sameCaseFold) {
+      // Keep both when titles still differ after base key collision (shouldn't happen often).
+      best.set(`${mapKey}::${row.key}`, row);
+      continue;
+    }
+    const richer = discographyReleaseRichness(row) >= discographyReleaseRichness(prev) ? row : prev;
+    const other = richer === row ? prev : row;
+    best.set(mapKey, {
+      ...richer,
+      title: preferredDiscographyTitle(richer.title, other.title),
     });
+  }
+  return [...best.values()];
 }
 
 /** One entry per disc bucket; songs sorted by popularity within bucket. */

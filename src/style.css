@@ -763,15 +763,22 @@ a.fm-menu-link:hover {
   padding: 0;
   border: none;
   background: none;
-  color: #cbb6f5;
+  color: inherit;
   font: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
   text-decoration: underline;
   text-underline-offset: 0.12em;
+  text-decoration-color: rgb(255 255 255 / 0.35);
   cursor: pointer;
 }
 
 .wiki-term-button:hover {
-  color: #e0d3ff;
+  color: inherit;
+  text-decoration-color: rgb(255 255 255 / 0.7);
 }
 
 /* Main content */
@@ -3476,6 +3483,29 @@ text.idol-radar-val.attr-tone-low {
   text-decoration-color: rgb(255 255 255 / 0.75);
 }
 
+.songs-discography-track-origin {
+  color: rgb(255 255 255 / 0.72);
+  font-weight: inherit;
+}
+
+.songs-discography-track-origin-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #e4d4ff;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(228 212 255 / 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.songs-discography-track-origin-link:hover {
+  color: #ffffff;
+  text-decoration-color: rgb(255 255 255 / 0.75);
+}
+
 .songs-discography-track-placeholder {
   color: rgb(255 255 255 / 0.55);
   font-style: italic;
@@ -3585,6 +3615,29 @@ text.idol-radar-val.attr-tone-low {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.songs-disc-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #e4d4ff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: rgb(228 212 255 / 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.songs-disc-link:hover {
+  color: #ffffff;
+  text-decoration-color: rgb(255 255 255 / 0.7);
 }
 
 .songs-preview-cell {

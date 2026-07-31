@@ -111824,15 +111824,26 @@
       "720bfe27-a27c-4df4-a184-5c0e780cf070"
     ],
     "color": null,
-    "description": "CAL&RES (コーレス), formerly known as Tenshi ni wa Narenai, is an idol group from Tokyo formed on August 16, 2021. The group ended activities as Tenshi ni wa Narenai on April 24, 2025 and officially started activities as CAL&RES on April 27, 2025.",
+    "description": "CAL&RES（コーレス）は imaginate / HEROINES 所属アイドルグループ。旧名は「天使にはなれない」（通称てんはな）。2025-04-24 に旧名義での活動を終え、2025-04-27 より CAL&RES として再始動。コンセプト曲『天使になりたい』を含むデジタルアルバム『天使になりたい』（2023-06-01 / CROSS SIDE MUSIC）収録。",
     "formed_date": "2021-08-16",
     "agencies": [
       "imaginate"
     ],
     "name_romanji": "CAL&RES",
-    "nickname": "",
-    "nickname_romanji": "",
-    "song_uids": [],
+    "nickname": "コーレス",
+    "nickname_romanji": "Corres",
+    "song_uids": [
+      "bbfc1c5d-b2b3-4cb3-aa6e-cf785f81a5c6",
+      "2ad264b9-bc78-44cf-b034-50dd99564e35",
+      "70c6a992-10d0-43ce-bba8-4288464744b6",
+      "145ce815-7949-4db6-9282-91cadabeefec",
+      "5b941853-bc6e-444e-b1fe-849cad0d80d0",
+      "e3541741-2df8-479c-9500-073c43e46b5a",
+      "5a64c2af-5a12-49c2-8ded-32d3ff372e2d",
+      "4f12f5d6-446a-4d93-b6db-66fe6abf5e1c",
+      "edb7cc7e-cfe8-4781-a319-6a1d71603840",
+      "d9d93a92-24bc-41cb-b1cd-91772418c8fa"
+    ],
     "pictures": [
       "picture/CALandRES_icon.webp",
       "picture/CALandRES_photo_10.webp",
@@ -111852,20 +111863,20 @@
     "popularity": 15,
     "fans": 1116,
     "idolsdiagram_url": "https://idolsdiagram.com/g/Q0FMJlJFUw",
-    "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending.",
+    "notes": "Added from idolsdiagram.com popularity list on 2026-04-01 because popularity >= 10 or followers >= 2000. Detailed metadata pending. Apple Music artist 1688704761 (credited as 天使にはなれない): https://music.apple.com/jp/artist/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AF%E3%81%AA%E3%82%8C%E3%81%AA%E3%81%84/1688704761 Album 天使になりたい (1688704760): https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760 Former abbreviation: てんはな (Tenhana).",
     "union": "HEROINES",
     "union_uid": "HEROINES",
     "discography": [
       {
         "uid": "bd6cad08-a8be-49e1-b59d-9a13067114c8",
-        "title": "天使になりたい;I want to be an Angel",
+        "title": "天使になりたい",
         "title_romanji": "Tenshi ni Naritai",
         "disc_type": "Album",
         "release_date": "2023-06-01",
-        "publisher": null,
+        "publisher": "CROSS SIDE MUSIC",
         "publisher_uid": null,
         "catalog_number": "",
-        "description": "",
+        "description": "Digital album by 天使にはなれない (now CAL&RES). Apple Music: https://music.apple.com/jp/album/%E5%A4%A9%E4%BD%BF%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84/1688704760",
         "track_list": [
           "天使になりたい",
           "あいらびゅ",
