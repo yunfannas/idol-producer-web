@@ -1,3 +1,4 @@
+# Cleanup workflow trigger revision 2
 name: Clean migrated reality-data content
 
 on:
@@ -42,21 +43,13 @@ jobs:
           import json
 
           data_lab = Path('_data_lab')
-          manifest = [
-              line.strip()
-              for line in (data_lab / 'migration/game-reality-files.txt').read_text(encoding='utf-8').splitlines()
-              if line.strip()
-          ]
-
-          # False positives discovered during review. They are game maintenance,
-          # not real-world collection or analysis, and therefore stay here.
+          manifest = [line.strip() for line in (data_lab / 'migration/game-reality-files.txt').read_text(encoding='utf-8').splitlines() if line.strip()]
           protected = {
               '.cursor/skills/game-logic-balance/SKILL.md',
               '.cursor/skills/scenario-db-integrity/SKILL.md',
               '.cursor/skills/scenario-db-integrity/reference.md',
               'support/scripts/checkMainScenarioDbIntegrity.mjs',
           }
-
           destination_missing = []
           removed = []
           for rel in manifest:
@@ -70,60 +63,42 @@ jobs:
               if source.is_file() or source.is_symlink():
                   source.unlink()
                   removed.append(rel)
-
           if destination_missing:
-              raise SystemExit(
-                  'Cleanup aborted because destination copies are missing:\n'
-                  + '\n'.join(destination_missing)
-              )
+              raise SystemExit('Cleanup aborted because destination copies are missing:\n' + '\n'.join(destination_missing))
 
           for root in (Path('support'), Path('.cursor/skills')):
-              if not root.exists():
-                  continue
-              dirs = sorted((p for p in root.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True)
-              for directory in dirs:
-                  try:
-                      directory.rmdir()
-                  except OSError:
-                      pass
+              if root.exists():
+                  dirs = sorted((p for p in root.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True)
+                  for directory in dirs:
+                      try:
+                          directory.rmdir()
+                      except OSError:
+                          pass
 
           package_path = Path('package.json')
           package = json.loads(package_path.read_text(encoding='utf-8'))
-          script_keys = {
-              line.strip()
-              for line in (data_lab / 'migration/game-package-scripts.txt').read_text(encoding='utf-8').splitlines()
-              if line.strip()
-          }
+          script_keys = {line.strip() for line in (data_lab / 'migration/game-package-scripts.txt').read_text(encoding='utf-8').splitlines() if line.strip()}
           scripts = package.setdefault('scripts', {})
           for key in sorted(script_keys):
               scripts.pop(key, None)
-
-          # Poster OCR moved with the reality-data pipeline.
           package.setdefault('devDependencies', {}).pop('tesseract.js', None)
           package_path.write_text(json.dumps(package, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
           boundary = Path('support/docs/data-lab-boundary.md')
           boundary.parent.mkdir(parents=True, exist_ok=True)
           boundary.write_text(
-              '# Data Lab Boundary\n\n'
-              'Real-world research, scraping, source verification, schedule and venue collection, media analysis, '
-              'temporary evidence, and database curation tools live in `yunfannas/idol-data-lab`.\n\n'
-              'This repository retains runtime game logic and UI, saves and scenarios, balanced runtime data, '
-              'Choreographic-compatible game-facing editors and players, integrity checks, and reviewed import boundaries.\n',
+              '# Data Lab Boundary\n\nReal-world research, scraping, source verification, schedule and venue collection, media analysis, temporary evidence, and database curation tools live in `yunfannas/idol-data-lab`.\n\nThis repository retains runtime game logic and UI, saves and scenarios, balanced runtime data, Choreographic-compatible game-facing editors and players, integrity checks, and reviewed import boundaries.\n',
               encoding='utf-8',
           )
-
           summary = {
               'removedFileCount': len(removed),
               'protectedFalsePositives': sorted(protected),
               'removedPackageScripts': sorted(script_keys),
               'dataLabManifest': json.loads((data_lab / 'migration/summary.json').read_text(encoding='utf-8')),
           }
-          summary_path = Path('support/reality-data-cleanup-summary.json')
-          summary_path.write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
+          Path('support/reality-data-cleanup-summary.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
           print(json.dumps(summary, indent=2))
           PY
-
           rm -rf _data_lab
 
       - name: Refresh dependencies and validate game
