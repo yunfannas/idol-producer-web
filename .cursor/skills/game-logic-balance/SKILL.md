@@ -55,12 +55,18 @@ File: `src/engine/songStatusSystem.ts`
 - Training familiarity gain:
   - selected songs split a fixed prep budget evenly
   - `gain_per_song = max(1, round((blocksPerIdol * 6) / selectedSongCount))`
+- Live familiarity gain:
+  - each setlist performance: `+max(1, 3 - min(2, recentCount))` (recent = last 21 days)
 - Training also reduces rotation fatigue on selected songs.
 - Overnight decay:
   - `rotation_fatigue -= 5`
   - `familiarity -= 1` for songs not selected and not trained that day
 - New member dilution:
-  - if member count exceeds learned member count, familiarity drops by `12` per added member
+  - if member count exceeds learned member count, familiarity drops by `12` per added member (floor 15)
+- Formation change:
+  - fingerprint of layout + slot order stored on `formation_fingerprint`
+  - changing formation: `familiarity = min(current, round(current * 0.55 + 8))` clamped to 15–85
+  - rebuilds toward 100 via training + lives
 
 ### 2. Setlist and rotation
 

@@ -6,10 +6,18 @@
 import { songCatalogDisplayLabel, songCatalogMatchesPick } from "../data/songCatalog";
 import { songsForDisplaySorted } from "../data/songDisplayPolicy";
 import {
+  centerIdolUidsFromFormation,
+  formationSlots,
+  resolveCenterMode,
+  resolveSongFormation,
+  type SongFormationCatalog,
+  type SongStartingFormation,
+} from "../data/songStartingFormation";
+import {
   activeRoleAssignmentsFromHistoryEntry,
   roleAssignmentsFromHistoryEntry,
 } from "../data/memberRoles";
-import { isIdolOnHiatus } from "../engine/idolStatusSystem";
+import { isIdolUnavailableForStage } from "../engine/idolStatusSystem";
 import { deterministicNoise } from "../engine/livePerformanceWeb";
 import { managedSetlistEffect, type ManagedSongStatusRow } from "../engine/songStatusSystem";
 import { getPrimaryGroup, type GameSavePayload } from "../save/gameSaveSchema";
@@ -65,6 +73,8 @@ export type LiveModeSession = {
   venue: string;
   items: LiveModeProgramItem[];
   members: LiveModeMember[];
+  /** Default formation when song has no authored starting formation. */
+  defaultMembers: LiveModeMember[];
   currentIndex: number;
   /** playing | paused | idle */
   transport: "playing" | "paused" | "idle";
@@ -77,6 +87,7 @@ export type LiveModeSession = {
   setlistDelta: number;
   /** Smoothed audience heat shown on the reaction bar (0–100). */
   audienceHeat: number;
+  groupUid: string;
 };
 
 const BLOCK_DURATION_CAP_SEC = 8;
@@ -119,47 +130,8 @@ function isCenterMember(idol: Record<string, unknown>, groupUid: string, asOf: s
   return roles.some((r) => r.key === "center" || r.key === "performance_center");
 }
 
-/** Classic trapezoid stage slots: front row fewer, center near bottom-middle. */
-export function formationSlots(count: number): Array<{ x: number; y: number }> {
-  const n = Math.max(0, count);
-  if (n === 0) return [];
-  if (n === 1) return [{ x: 50, y: 62 }];
-  if (n === 2) return [{ x: 38, y: 58 }, { x: 62, y: 58 }];
-  if (n === 3) return [{ x: 28, y: 42 }, { x: 50, y: 64 }, { x: 72, y: 42 }];
-  if (n === 4) return [{ x: 22, y: 40 }, { x: 40, y: 62 }, { x: 60, y: 62 }, { x: 78, y: 40 }];
-  if (n === 5) {
-    return [
-      { x: 18, y: 34 },
-      { x: 36, y: 34 },
-      { x: 50, y: 66 },
-      { x: 64, y: 34 },
-      { x: 82, y: 34 },
-    ];
-  }
-  if (n === 6) {
-    return [
-      { x: 16, y: 32 },
-      { x: 34, y: 32 },
-      { x: 52, y: 32 },
-      { x: 32, y: 64 },
-      { x: 50, y: 64 },
-      { x: 68, y: 64 },
-    ];
-  }
-  // 7+: back row ceil(n/2), front floor(n/2) with center bias
-  const front = Math.floor(n / 2);
-  const back = n - front;
-  const slots: Array<{ x: number; y: number }> = [];
-  for (let i = 0; i < back; i++) {
-    const t = back === 1 ? 0.5 : i / (back - 1);
-    slots.push({ x: 12 + t * 76, y: 30 });
-  }
-  for (let i = 0; i < front; i++) {
-    const t = front === 1 ? 0.5 : i / (front - 1);
-    slots.push({ x: 22 + t * 56, y: 66 });
-  }
-  return slots;
-}
+/** Classic trapezoid stage slots — re-exported from shared formation module. */
+export { formationSlots } from "../data/songStartingFormation";
 
 function orderMembersForFormation(
   idols: Record<string, unknown>[],
@@ -308,11 +280,87 @@ export function todaysManagedLives(save: GameSavePayload, dateIso: string): Reco
   });
 }
 
+function membersFromFormation(
+  formation: SongStartingFormation,
+  idolsByUid: Map<string, Record<string, unknown>>,
+  groupUid: string,
+  asOf: string,
+): LiveModeMember[] | null {
+  const centerUids = new Set(centerIdolUidsFromFormation(formation));
+
+  // Prefer continuous positions when present, but center flag comes from slot center seats.
+  if (formation.positions?.length) {
+    const out: LiveModeMember[] = [];
+    for (const p of formation.positions) {
+      const idol = idolsByUid.get(p.idolUid);
+      if (!idol) continue;
+      out.push({
+        uid: p.idolUid,
+        name: idolDisplayName(idol),
+        color: idolColor(idol),
+        isCenter: centerUids.has(p.idolUid) || isCenterMember(idol, groupUid, asOf),
+        x: p.x,
+        y: p.y,
+      });
+    }
+    return out.length ? out : null;
+  }
+
+  const slots = formationSlots(formation.memberCount, formation.rowCount, resolveCenterMode(formation.centerMode));
+  if (!slots.length) return null;
+  const out: LiveModeMember[] = [];
+  for (let i = 0; i < formation.slotIdolUids.length; i++) {
+    const uid = formation.slotIdolUids[i];
+    if (!uid) continue;
+    const idol = idolsByUid.get(uid);
+    if (!idol) continue;
+    const slot = slots[i] ?? { x: 50, y: 50, row: "mid" as const };
+    out.push({
+      uid,
+      name: idolDisplayName(idol),
+      color: idolColor(idol),
+      isCenter: centerUids.has(uid) || isCenterMember(idol, groupUid, asOf),
+      x: slot.x,
+      y: slot.y,
+    });
+  }
+  return out.length ? out : null;
+}
+
+/** Apply starting formation for the current program song (or default members). */
+export function applyLiveModeFormationForCurrentItem(
+  session: LiveModeSession,
+  opts?: {
+    catalog?: SongFormationCatalog | null;
+    saveOverrides?: Record<string, SongStartingFormation> | null;
+    idols?: Record<string, unknown>[];
+  },
+): void {
+  const item = currentLiveModeItem(session);
+  if (!item || item.kind !== "song" || !item.songUid) {
+    session.members = session.defaultMembers.map((m) => ({ ...m }));
+    return;
+  }
+  const formation = resolveSongFormation({
+    songUid: item.songUid,
+    catalog: opts?.catalog,
+    saveOverrides: opts?.saveOverrides,
+  });
+  if (!formation || !opts?.idols) {
+    session.members = session.defaultMembers.map((m) => ({ ...m }));
+    return;
+  }
+  const byUid = new Map(opts.idols.map((row) => [String(row.uid ?? ""), row] as const));
+  const mapped = membersFromFormation(formation, byUid, session.groupUid, session.dateIso);
+  session.members = mapped ?? session.defaultMembers.map((m) => ({ ...m }));
+}
+
 export function buildLiveModeSession(opts: {
   save: GameSavePayload;
   notificationUid: string;
   dateIso: string;
   live?: Record<string, unknown> | null;
+  formationCatalog?: SongFormationCatalog | null;
 }): LiveModeSession | null {
   const { save, notificationUid, dateIso } = opts;
   const lives = todaysManagedLives(save, dateIso);
@@ -327,11 +375,11 @@ export function buildLiveModeSession(opts: {
   const idols = (save.database_snapshot.idols as Record<string, unknown>[]).filter((idol) => {
     const uid = String(idol.uid ?? "");
     if (!memberUids.includes(uid)) return false;
-    return !isIdolOnHiatus(idol, dateIso);
+    return !isIdolUnavailableForStage(idol, dateIso);
   });
   const ordered = orderMembersForFormation(idols, gid, dateIso);
   const slots = formationSlots(ordered.length);
-  const members: LiveModeMember[] = ordered.map((idol, i) => {
+  const defaultMembers: LiveModeMember[] = ordered.map((idol, i) => {
     const slot = slots[i] ?? { x: 50, y: 50 };
     return {
       uid: String(idol.uid ?? ""),
@@ -367,14 +415,15 @@ export function buildLiveModeSession(opts: {
   const reactionBase = rosterReactionBase(ordered, group);
   const audienceHeat = clamp(reactionBase + setlistEffect.score_delta * 0.55, 28, 92);
 
-  return {
+  const session: LiveModeSession = {
     notificationUid,
     dateIso,
     liveUid: String(live.uid ?? ""),
     liveTitle: String(live.title ?? live.live_type ?? "Live"),
     venue: String(live.venue ?? ""),
     items,
-    members,
+    members: defaultMembers.map((m) => ({ ...m })),
+    defaultMembers,
     currentIndex: 0,
     transport: "idle",
     itemElapsedSec: 0,
@@ -382,7 +431,16 @@ export function buildLiveModeSession(opts: {
     reactionBase,
     setlistDelta: setlistEffect.score_delta,
     audienceHeat,
+    groupUid: gid,
   };
+
+  applyLiveModeFormationForCurrentItem(session, {
+    catalog: opts.formationCatalog,
+    saveOverrides: save.managed_song_formations ?? null,
+    idols: save.database_snapshot.idols as Record<string, unknown>[],
+  });
+
+  return session;
 }
 
 export function currentLiveModeItem(session: LiveModeSession): LiveModeProgramItem | null {
@@ -559,6 +617,7 @@ export function renderLiveModeView(session: LiveModeSession, lang: UiLanguage): 
     })
     .join("");
 
+  const canEditFormation = Boolean(item?.kind === "song" && item.songUid);
   const playLabel =
     session.transport === "playing"
       ? localized(lang, "Pause", "暂停")
@@ -632,6 +691,7 @@ export function renderLiveModeView(session: LiveModeSession, lang: UiLanguage): 
         <div class="live-mode-controls">
           <button type="button" class="fm-btn live-mode-btn" data-live-mode-action="play" title="${htmlEsc(playLabel)}" aria-label="${htmlEsc(playLabel)}">${playGlyph}</button>
           <button type="button" class="fm-btn live-mode-btn" data-live-mode-action="next" title="${htmlEsc(t(lang, "live_mode_next"))}" aria-label="${htmlEsc(t(lang, "live_mode_next"))}">⏭</button>
+          <button type="button" class="fm-btn live-mode-btn" data-live-mode-action="edit-formation" ${canEditFormation ? "" : "disabled"} title="${htmlEsc(t(lang, "live_mode_edit_formation"))}" aria-label="${htmlEsc(t(lang, "live_mode_edit_formation"))}">${htmlEsc(t(lang, "live_mode_edit_formation"))}</button>
           <button type="button" class="fm-btn fm-btn-accent live-mode-btn live-mode-btn-end" data-live-mode-action="end" title="${htmlEsc(t(lang, "live_mode_end"))}" aria-label="${htmlEsc(t(lang, "live_mode_end"))}">${htmlEsc(t(lang, "live_mode_end"))}</button>
         </div>
       </section>

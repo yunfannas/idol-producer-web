@@ -34,11 +34,15 @@ The first version should support:
 
 - one song per analysis job;
 - fixed or mostly fixed camera footage;
+- **preferred for formation extract:** official dance practice / ダンス練習動画 (full group, opening hold) — e.g. [Takane no Nadeshiko「可愛くてごめん」](https://www.youtube.com/watch?v=oB12TDu4dVE);
 - at least 720p video where the target idol is visible for meaningful portions;
-- manually selected target idol tracks;
-- manually marked solo vocal segments;
+- **full-formation evaluation of all roster members in a live song** (preferred), plus single-idol jobs for static vocal clips;
+- portrait gallery + manual identity seeds, optionally constrained by **song starting formation**;
+- manually marked solo vocal segments (per member when attributing lines);
 - an optional reference performance, studio track, MIDI file, or annotated melody;
 - output of raw measurements, suggested scores, and confidence.
+
+Song starting formations (shared with in-game Live Mode) are specified in [`video-skill-scoring/song-starting-formations.md`](./video-skill-scoring/song-starting-formations.md).
 
 ### Non-goals for the first version
 
@@ -145,7 +149,7 @@ The game-facing `singing` and `sing_dance_stability` scores should be calibrated
 
 ### 6.1 Performer tracking and pose extraction
 
-The reviewer should select the target idol in one or more key frames. A tracker then follows that performer through the video. Pose estimation should extract normalized landmarks for shoulders, elbows, wrists, hips, knees, ankles, and body center.
+For full-formation jobs, assign every detected person at song start to a formation slot (position prior + face match to portraits), then track all members. For single-idol jobs, the reviewer selects the target in one or more key frames. Pose estimation should extract normalized landmarks for shoulders, elbows, wrists, hips, knees, ankles, and body center.
 
 Possible tools:
 
@@ -387,6 +391,8 @@ Corrections should be retained as future calibration data.
 - collect several static singing and live performance clips per idol.
 
 Deliverable: a small benchmark dataset and written scoring definitions.
+
+**Status (Phase 0):** completed audit + 13-idol benchmark shortlist — see [`video-skill-scoring/phase0-dataset-audit.md`](./video-skill-scoring/phase0-dataset-audit.md) and [`../data/video-skill-benchmark/manifest.json`](../data/video-skill-benchmark/manifest.json). Clip collection is still open.
 
 ### Phase 1: Offline feature extraction prototype
 

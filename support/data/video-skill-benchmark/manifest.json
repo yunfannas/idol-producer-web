@@ -1,0 +1,327 @@
+{
+  "schemaVersion": "0.1",
+  "phase": 0,
+  "referenceDate": "2025-07-05",
+  "labelSource": "public/data/scenarios/scenario_6/idols.json",
+  "labelFilter": "attributes_origin === \"manual\"",
+  "clipRoot": "support/data/video-skill-benchmark/clips",
+  "annotationRoot": "support/data/video-skill-benchmark/annotations",
+  "notes": [
+    "Do not commit video binaries. Register local relative paths after collection.",
+    "Singing composite = mean(pitch, tone, breath). Dancing composite = mean(rhythm, power, grace)."
+  ],
+  "idols": [
+    {
+      "uid": "41558c44-2be4-4992-9684-9431a17f0243",
+      "name": "佐々木舞香",
+      "group": "=LOVE",
+      "archetype": "elite_vocal",
+      "spike": true,
+      "manual": {
+        "pitch": 20,
+        "tone": 20,
+        "breath": 20,
+        "rhythm": 19,
+        "power": 17,
+        "grace": 17,
+        "stamina": 16,
+        "agility": 17,
+        "singingMean": 20.0,
+        "dancingMean": 17.67
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "e203088a-bbb9-410f-9945-c6534ed75e29",
+      "name": "野口衣織",
+      "group": "=LOVE",
+      "archetype": "elite_allround",
+      "spike": true,
+      "manual": {
+        "pitch": 19,
+        "tone": 19,
+        "breath": 19,
+        "rhythm": 20,
+        "power": 20,
+        "grace": 18,
+        "stamina": 19,
+        "agility": 18,
+        "singingMean": 19.0,
+        "dancingMean": 19.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "2641cc39-6b4b-4d99-9a65-5ac99b9480e0",
+      "name": "山本杏奈",
+      "group": "=LOVE",
+      "archetype": "dance_forward",
+      "spike": true,
+      "manual": {
+        "pitch": 17,
+        "tone": 17,
+        "breath": 19,
+        "rhythm": 19,
+        "power": 20,
+        "grace": 18,
+        "stamina": 18,
+        "agility": 19,
+        "singingMean": 17.67,
+        "dancingMean": 19.0
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "4e162c95-e9a1-463d-b825-73326ca6748e",
+      "name": "瀧脇笙古",
+      "group": "=LOVE",
+      "archetype": "stamina_peak",
+      "spike": false,
+      "manual": {
+        "pitch": 16,
+        "tone": 16,
+        "breath": 20,
+        "rhythm": 15,
+        "power": 16,
+        "grace": 16,
+        "stamina": 20,
+        "agility": 16,
+        "singingMean": 17.33,
+        "dancingMean": 15.67
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
+      "name": "あいす",
+      "group": "iLiFE!",
+      "archetype": "balanced_strong",
+      "spike": true,
+      "manual": {
+        "pitch": 19,
+        "tone": 15,
+        "breath": 18,
+        "rhythm": 18,
+        "power": 19,
+        "grace": 17,
+        "stamina": 18,
+        "agility": 19,
+        "singingMean": 17.33,
+        "dancingMean": 18.0
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "9871efc4-1501-41eb-a430-94fd34bf4015",
+      "name": "純嶺みき",
+      "group": "iLiFE!",
+      "archetype": "dance_over_sing",
+      "spike": false,
+      "manual": {
+        "pitch": 14,
+        "tone": 16,
+        "breath": 13,
+        "rhythm": 15,
+        "power": 19,
+        "grace": 18,
+        "stamina": 18,
+        "agility": 16,
+        "singingMean": 14.33,
+        "dancingMean": 17.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
+      "name": "空詩かれん",
+      "group": "iLiFE!",
+      "archetype": "dance_much_over_sing",
+      "spike": true,
+      "manual": {
+        "pitch": 14,
+        "tone": 15,
+        "breath": 12,
+        "rhythm": 18,
+        "power": 18,
+        "grace": 16,
+        "stamina": 17,
+        "agility": 15,
+        "singingMean": 13.67,
+        "dancingMean": 17.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+      "name": "籾山ひめり",
+      "group": "高嶺のなでしこ",
+      "archetype": "upper_mid_both",
+      "spike": false,
+      "manual": {
+        "pitch": 18,
+        "tone": 18,
+        "breath": 18,
+        "rhythm": 17,
+        "power": 18,
+        "grace": 17,
+        "stamina": 17,
+        "agility": 18,
+        "singingMean": 18.0,
+        "dancingMean": 17.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+      "name": "春野莉々",
+      "group": "高嶺のなでしこ",
+      "archetype": "sing_over_dance",
+      "spike": true,
+      "manual": {
+        "pitch": 18,
+        "tone": 17,
+        "breath": 18,
+        "rhythm": 17,
+        "power": 13,
+        "grace": 13,
+        "stamina": 12,
+        "agility": 14,
+        "singingMean": 17.67,
+        "dancingMean": 14.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+      "name": "松本ももな",
+      "group": "高嶺のなでしこ",
+      "archetype": "lower_vocal",
+      "spike": false,
+      "manual": {
+        "pitch": 12,
+        "tone": 14,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 15,
+        "grace": 16,
+        "stamina": 14,
+        "agility": 15,
+        "singingMean": 13.33,
+        "dancingMean": 15.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "dcc951b3-55bf-4065-bb30-2a78b769a0b4",
+      "name": "大谷映美里",
+      "group": "アキシブproject",
+      "archetype": "dance_lead",
+      "spike": true,
+      "manual": {
+        "pitch": 14,
+        "tone": 15,
+        "breath": 15,
+        "rhythm": 17,
+        "power": 18,
+        "grace": 19,
+        "stamina": 16,
+        "agility": 18,
+        "singingMean": 14.67,
+        "dancingMean": 18.0
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+      "name": "古賀みれい",
+      "group": "アキシブproject",
+      "archetype": "low_vocal",
+      "spike": true,
+      "manual": {
+        "pitch": 11,
+        "tone": 11,
+        "breath": 11,
+        "rhythm": 11,
+        "power": 14,
+        "grace": 17,
+        "stamina": 10,
+        "agility": 14,
+        "singingMean": 11.0,
+        "dancingMean": 14.0
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    },
+    {
+      "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "name": "平沢かえ",
+      "group": "アキシブproject",
+      "archetype": "vocal_low_stamina",
+      "spike": false,
+      "manual": {
+        "pitch": 19,
+        "tone": 18,
+        "breath": 18,
+        "rhythm": 17,
+        "power": 17,
+        "grace": 15,
+        "stamina": 12,
+        "agility": 12,
+        "singingMean": 18.33,
+        "dancingMean": 16.33
+      },
+      "clips": {
+        "staticVocal": null,
+        "liveFixed": null,
+        "danceReference": null
+      }
+    }
+  ]
+}

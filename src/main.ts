@@ -56,6 +56,7 @@ import {
   buildDiscBuckets,
   buildGroupDiscographyReleaseRows,
   isSongAvailableOn,
+  isSongHiddenFromDisplay,
   songPopularityNum,
 } from "./data/songDisplayPolicy";
 import { songCatalogDisplayLabel } from "./data/songCatalog";
@@ -80,8 +81,8 @@ import {
 } from "./engine/careerDecision";
 import { preloadScandalHandlings } from "./engine/scandalHandling";
 import { resolveNotificationChoice } from "./engine/scenarioRuntimeWeb";
-import { suggestManagedSetlistTitles } from "./engine/songStatusSystem";
-import { scheduleIdolVacation } from "./engine/idolStatusSystem";
+import { suggestManagedSetlistTitles, applyFormationChangeToSongFamiliarity } from "./engine/songStatusSystem";
+import { scheduleIdolVacation, isIdolUnavailableForStage } from "./engine/idolStatusSystem";
 import {
   type OpeningScreen,
   renderOpeningLogin,
@@ -104,6 +105,7 @@ import {
   unlockSongPreviewAudio,
 } from "./ui/songPreviewPlayer";
 import {
+  applyLiveModeFormationForCurrentItem,
   buildLiveModeSession,
   currentLiveModeItem,
   hydrateLiveModePortraits,
@@ -113,6 +115,20 @@ import {
   updateLiveModeReactionDom,
   type LiveModeSession,
 } from "./ui/liveMode";
+import {
+  bindFormationEditor,
+  createFormationEditorState,
+  formationEditorOverlayHtml,
+  renderFormationEditor,
+  type FormationEditorMember,
+  type FormationEditorState,
+} from "./ui/formationEditor";
+import {
+  loadSongFormationCatalog,
+  resolveSongFormation,
+  type SongFormationCatalog,
+  type SongStartingFormation,
+} from "./data/songStartingFormation";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
@@ -857,7 +873,231 @@ function exitLiveModeSession(opts?: { stopAudio?: boolean }): void {
   setSongPreviewEndedListener(null);
   if (opts?.stopAudio !== false) stopSongPreview();
   liveModeSession = null;
+  formationEditorState = null;
   liveModeAdvanceLock = false;
+}
+
+function liveModeRosterMembers(): FormationEditorMember[] {
+  if (!save || !liveModeSession) return [];
+  const idols = save.database_snapshot.idols as Record<string, unknown>[];
+  const byUid = new Map(idols.map((row) => [String(row.uid ?? ""), row] as const));
+  return liveModeSession.defaultMembers.map((m) => ({
+    uid: m.uid,
+    name: m.name,
+    color: m.color,
+    idol: byUid.get(m.uid),
+  }));
+}
+
+function managedTrainingSongs(): Record<string, unknown>[] {
+  if (!save) return [];
+  const payload = save;
+  const grp = getPrimaryGroup(payload);
+  const groupUidStr = String(grp?.uid ?? "").trim();
+  const ref =
+    payload.current_date ?? payload.game_start_date ?? payload.scenario_context?.startup_date ?? null;
+  const allSongs = payload.database_snapshot.songs;
+  return songsForDisplaySorted(allSongs)
+    .filter((row) => String(row.group_uid ?? "") === groupUidStr)
+    .filter((row) => !isSongHiddenFromDisplay(row, allSongs))
+    .filter((row) => isSongAvailableOn(row, ref));
+}
+
+function trainingFormationAllMembers(): FormationEditorMember[] {
+  if (!save) return [];
+  const grp = getPrimaryGroup(save);
+  const memberUids = Array.isArray(grp?.member_uids)
+    ? (grp!.member_uids as unknown[]).map((x) => String(x))
+    : [];
+  const idols = save.database_snapshot.idols as Record<string, unknown>[];
+  const byUid = new Map(idols.map((row) => [String(row.uid ?? ""), row] as const));
+  const ref =
+    save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null;
+  const out: FormationEditorMember[] = [];
+  for (const uid of memberUids) {
+    const idol = byUid.get(uid);
+    if (!idol) continue;
+    const name = String(idol.name ?? idol.name_romanji ?? uid).trim() || uid;
+    const rawColor = String(idol.color_code ?? idol.color ?? "").trim();
+    const color = /^#[0-9a-fA-F]{3,8}$/.test(rawColor) ? rawColor : "#94a3b8";
+    out.push({
+      uid,
+      name,
+      color,
+      idol,
+      unavailable: isIdolUnavailableForStage(idol, ref),
+    });
+  }
+  return out;
+}
+
+function trainingFormationMembers(): FormationEditorMember[] {
+  return trainingFormationAllMembers().filter((m) => !m.unavailable);
+}
+
+function syncTrainingFormationEditorState(): void {
+  if (!save || browseMode || currentView !== "Training" || trainingTab !== "formation") {
+    return;
+  }
+  if (liveModeSession) return;
+  const songs = managedTrainingSongs();
+  if (!trainingFormationSongUid || !songs.some((row) => String(row.uid ?? "") === trainingFormationSongUid)) {
+    trainingFormationSongUid = songs.length ? String(songs[0]!.uid ?? "").trim() || null : null;
+  }
+  if (!trainingFormationSongUid) {
+    if (!liveModeSession) formationEditorState = null;
+    return;
+  }
+  if (formationEditorState?.songUid === trainingFormationSongUid) return;
+  const song = songs.find((row) => String(row.uid ?? "") === trainingFormationSongUid) ?? null;
+  const grp = getPrimaryGroup(save);
+  const existing =
+    resolveSongFormation({
+      songUid: trainingFormationSongUid,
+      catalog: formationCatalog,
+      saveOverrides: save.managed_song_formations,
+    }) ?? null;
+  const allMembers = trainingFormationAllMembers();
+  const familiarity = save.managed_song_status?.[trainingFormationSongUid]?.familiarity ?? null;
+  formationEditorState = createFormationEditorState({
+    songUid: trainingFormationSongUid,
+    songTitle: song ? songCatalogDisplayLabel(song) : trainingFormationSongUid,
+    groupUid: String(grp?.uid ?? "").trim() || null,
+    asOfDate: save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
+    members: allMembers.filter((m) => !m.unavailable),
+    allMembers,
+    formation: existing,
+    familiarity,
+  });
+}
+
+function openTrainingFormationForSong(songUid: string): void {
+  const uid = songUid.trim();
+  if (!uid || !save || browseMode) return;
+  navigate(() => {
+    currentView = "Training";
+    trainingTab = "formation";
+    trainingFormationSongUid = uid;
+    if (!liveModeSession) {
+      formationEditorState = null;
+    }
+  });
+}
+
+function persistFormationFromEditor(formation: SongStartingFormation): void {
+  if (!save) return;
+  if (!save.managed_song_formations) save.managed_song_formations = {};
+  save.managed_song_formations[formation.songUid] = formation;
+  const famChange = applyFormationChangeToSongFamiliarity(save.managed_song_status, formation.songUid, formation);
+  if (liveModeSession) {
+    applyLiveModeFormationForCurrentItem(liveModeSession, {
+      catalog: formationCatalog,
+      saveOverrides: save.managed_song_formations,
+      idols: save.database_snapshot.idols as Record<string, unknown>[],
+    });
+  }
+  if (formationEditorState?.songUid === formation.songUid) {
+    formationEditorState = {
+      ...formationEditorState,
+      formation,
+      familiarity: save.managed_song_status?.[formation.songUid]?.familiarity ?? formationEditorState.familiarity,
+      statusMessage: famChange?.changed
+        ? `Saved. Familiarity ${famChange.before} → ${famChange.after} (formation changed).`
+        : formationEditorState.statusMessage || "Formation saved.",
+    };
+  }
+  void saveToSlot(accountName, slot, save).catch(() => undefined);
+}
+
+function openLiveModeFormationEditor(): void {
+  if (!save || !liveModeSession) return;
+  const item = currentLiveModeItem(liveModeSession);
+  const songUid = item?.kind === "song" ? String(item.songUid ?? "").trim() : "";
+  if (!songUid) {
+    return;
+  }
+  void pauseLiveModeItem();
+  const existing =
+    resolveSongFormation({
+      songUid,
+      catalog: formationCatalog,
+      saveOverrides: save.managed_song_formations,
+    }) ?? null;
+  formationEditorState = createFormationEditorState({
+    songUid,
+    songTitle: item?.songTitle || item?.label || songUid,
+    groupUid: liveModeSession.groupUid,
+    asOfDate: liveModeSession.dateIso,
+    members: liveModeRosterMembers(),
+    formation: existing,
+    familiarity: save.managed_song_status?.[songUid]?.familiarity ?? null,
+  });
+  paintGame();
+}
+
+function mountFormationEditorIfNeeded(): void {
+  if (!formationEditorState) return;
+
+  const bindCallbacks = {
+    onChange: (next: FormationEditorState) => {
+      formationEditorState = next;
+      if (liveModeSession) {
+        mountFormationEditorIfNeeded();
+      } else {
+        paintGame();
+      }
+    },
+    onSave: (formation: SongStartingFormation) => {
+      persistFormationFromEditor(formation);
+      if (liveModeSession) {
+        formationEditorState = null;
+        paintGame();
+        return;
+      }
+      if (formationEditorState) {
+        formationEditorState = {
+          ...formationEditorState,
+          formation,
+          statusMessage: uiLang === "zh-CN" ? "已保存站位" : "Formation saved",
+        };
+      }
+      paintGame();
+    },
+    onClose: () => {
+      formationEditorState = null;
+      paintGame();
+    },
+  };
+
+  if (liveModeSession) {
+    const existing = appRoot.querySelector("[data-formation-overlay]");
+    existing?.remove();
+    const wrap = document.createElement("div");
+    wrap.innerHTML = formationEditorOverlayHtml(formationEditorState, uiLang);
+    const overlay = wrap.firstElementChild;
+    if (!overlay) return;
+    appRoot.appendChild(overlay);
+    bindFormationEditor(overlay, formationEditorState, uiLang, bindCallbacks);
+    return;
+  }
+
+  if (currentView === "Training" && trainingTab === "formation") {
+    const host = appRoot.querySelector("[data-formation-editor]");
+    if (!host) return;
+    bindFormationEditor(host, formationEditorState, uiLang, {
+      onChange: bindCallbacks.onChange,
+      onSave: bindCallbacks.onSave,
+    });
+  }
+}
+
+function refreshLiveModeFormation(): void {
+  if (!liveModeSession || !save) return;
+  applyLiveModeFormationForCurrentItem(liveModeSession, {
+    catalog: formationCatalog,
+    saveOverrides: save.managed_song_formations,
+    idols: save.database_snapshot.idols as Record<string, unknown>[],
+  });
 }
 
 async function playCurrentLiveModeItem(): Promise<void> {
@@ -939,6 +1179,7 @@ async function advanceLiveModeItem(): Promise<void> {
     liveModeSession.itemElapsedSec = 0;
     liveModeSession.itemStartedAtMs = null;
     liveModeSession.transport = "idle";
+    refreshLiveModeFormation();
     paintGame();
     await playCurrentLiveModeItem();
   } finally {
@@ -953,6 +1194,7 @@ async function finishLiveModeSession(): Promise<void> {
   setSongPreviewEndedListener(null);
   stopSongPreview();
   liveModeSession = null;
+  formationEditorState = null;
   runSimulationTask(() => {
     if (!save) return;
     attentionActionUid = null;
@@ -969,27 +1211,42 @@ async function finishLiveModeSession(): Promise<void> {
 function enterLiveModeFromInbox(notificationUid: string): void {
   if (!save) return;
   const dateIso = isoDatePart(save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? "");
-  const session = buildLiveModeSession({ save, notificationUid, dateIso });
-  if (!session) {
-    runSimulationTask(() => {
-      if (!save) return;
-      attentionActionUid = null;
-      save = acknowledgeInboxNotification(save, notificationUid);
-      currentView = "Inbox";
-      inboxSelectedUid =
-        newestVisibleLiveReportUid(save) ??
-        save.inbox.notifications.find((row) => !notificationRequiresAck(row) || !row.read)?.uid ??
-        save.inbox.notifications[0]?.uid ??
-        null;
+  const open = () => {
+    if (!save) return;
+    const session = buildLiveModeSession({
+      save,
+      notificationUid,
+      dateIso,
+      formationCatalog,
     });
-    return;
+    if (!session) {
+      runSimulationTask(() => {
+        if (!save) return;
+        attentionActionUid = null;
+        save = acknowledgeInboxNotification(save, notificationUid);
+        currentView = "Inbox";
+        inboxSelectedUid =
+          newestVisibleLiveReportUid(save) ??
+          save.inbox.notifications.find((row) => !notificationRequiresAck(row) || !row.read)?.uid ??
+          save.inbox.notifications[0]?.uid ??
+          null;
+      });
+      return;
+    }
+    liveModeSession = session;
+    setSongPreviewEndedListener(() => {
+      void advanceLiveModeItem();
+    });
+    paintGame();
+    void playCurrentLiveModeItem();
+  };
+  if (formationCatalog) open();
+  else {
+    void loadSongFormationCatalog().then((cat) => {
+      formationCatalog = cat;
+      open();
+    });
   }
-  liveModeSession = session;
-  setSongPreviewEndedListener(() => {
-    void advanceLiveModeItem();
-  });
-  paintGame();
-  void playCurrentLiveModeItem();
 }
 
 function runSimulationTask(task: () => void): void {
@@ -1054,6 +1311,8 @@ let liveModeSession: LiveModeSession | null = null;
 let liveModeProgressTimer: number | null = null;
 let liveModeBlockTimer: number | null = null;
 let liveModeAdvanceLock = false;
+let formationCatalog: SongFormationCatalog | null = null;
+let formationEditorState: FormationEditorState | null = null;
 
 function tutorialStepCount(): number {
   return tutorialSteps(uiLang).length;
@@ -1077,6 +1336,7 @@ function closeTutorialOverlay(markCompleted = true): void {
 }
 let scoutTab: ScoutTab = "freelancer";
 let trainingTab: TrainingTab = "roster";
+let trainingFormationSongUid: string | null = null;
 let trainingRosterSortKey: TrainingRosterSortKey = "started";
 let trainingRosterSortDir: "asc" | "desc" = "asc";
 let trainingRoleBenchmarkPreferences: RoleBenchmarkKey[] = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"];
@@ -1128,6 +1388,7 @@ interface NavigationSnapshot {
   scheduledLiveUid: string | null;
   scoutTab: ScoutTab;
   trainingTab: TrainingTab;
+  trainingFormationSongUid: string | null;
   trainingRosterSortKey: TrainingRosterSortKey;
   trainingRosterSortDir: "asc" | "desc";
   mediaTab: MediaTab;
@@ -1160,6 +1421,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     scheduledLiveUid,
     scoutTab,
     trainingTab,
+    trainingFormationSongUid,
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences: trainingRoleBenchmarkPreferences,
@@ -1191,6 +1453,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.scheduledLiveUid === b.scheduledLiveUid &&
     a.scoutTab === b.scoutTab &&
     a.trainingTab === b.trainingTab &&
+    a.trainingFormationSongUid === b.trainingFormationSongUid &&
     a.trainingRosterSortKey === b.trainingRosterSortKey &&
     a.trainingRosterSortDir === b.trainingRosterSortDir &&
     a.mediaTab === b.mediaTab &&
@@ -1230,6 +1493,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   scheduledLiveUid = snapshot.scheduledLiveUid;
   scoutTab = snapshot.scoutTab;
   trainingTab = snapshot.trainingTab;
+  trainingFormationSongUid = snapshot.trainingFormationSongUid;
   trainingRosterSortKey = snapshot.trainingRosterSortKey;
   trainingRosterSortDir = snapshot.trainingRosterSortDir;
   mediaTab = snapshot.mediaTab;
@@ -1874,6 +2138,17 @@ function paintGame(): void {
     ensureSelectedCdProjectUid();
   }
 
+  syncTrainingFormationEditorState();
+  const formationEditorHtml =
+    !browseMode &&
+    save &&
+    currentView === "Training" &&
+    trainingTab === "formation" &&
+    formationEditorState &&
+    !liveModeSession
+      ? renderFormationEditor(formationEditorState, uiLang, { showClose: false })
+      : "";
+
   if (!browseMode && save && currentView === "Inbox" && save.inbox.notifications.length) {
     sortNotificationsInPlace(save.inbox.notifications);
     const rows = save.inbox.notifications;
@@ -1913,6 +2188,8 @@ function paintGame(): void {
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences: trainingRoleBenchmarkPreferences,
+    trainingFormationSongUid,
+    formationEditorHtml,
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -1948,6 +2225,7 @@ function paintGame(): void {
     syncLiveModeProgressUi();
     if (liveModeSession.transport === "playing") startLiveModeProgressLoop();
   }
+  mountFormationEditorIfNeeded();
   if (currentView === "Songs" || currentView === "Making") {
     prefetchSongPreviewsInRoot(appRoot);
   }
@@ -2338,11 +2616,38 @@ function paintGame(): void {
     const trainingTabPick = t.closest<HTMLElement>("[data-training-tab]");
     if (trainingTabPick && save && !browseMode && currentView === "Training") {
       const tab = trainingTabPick.getAttribute("data-training-tab");
-      if (tab === "assignments" || tab === "roster" || tab === "roles" || tab === "songs") {
+      if (
+        tab === "assignments" ||
+        tab === "roster" ||
+        tab === "roles" ||
+        tab === "songs" ||
+        tab === "formation"
+      ) {
         navigate(() => {
+          if (trainingTab === "formation" && tab !== "formation" && !liveModeSession) {
+            formationEditorState = null;
+          }
           trainingTab = tab;
         });
       }
+      return;
+    }
+    const trainingFormationSongPick = t.closest<HTMLElement>("[data-training-formation-song]");
+    if (trainingFormationSongPick && save && !browseMode && currentView === "Training") {
+      const uid = trainingFormationSongPick.getAttribute("data-training-formation-song");
+      if (uid) {
+        navigate(() => {
+          trainingTab = "formation";
+          trainingFormationSongUid = uid;
+          if (!liveModeSession) formationEditorState = null;
+        });
+      }
+      return;
+    }
+    const openTrainingFormation = t.closest<HTMLElement>("[data-open-training-formation]");
+    if (openTrainingFormation && save && !browseMode) {
+      const uid = openTrainingFormation.getAttribute("data-open-training-formation");
+      if (uid) openTrainingFormationForSong(uid);
       return;
     }
     const autoAssignRolesBtn = t.closest<HTMLElement>("[data-training-roles-autoassign]");
@@ -2865,6 +3170,8 @@ function paintGame(): void {
         void advanceLiveModeItem();
       } else if (action === "end") {
         void finishLiveModeSession();
+      } else if (action === "edit-formation") {
+        openLiveModeFormationEditor();
       }
       return;
     }
@@ -2883,7 +3190,7 @@ function paintGame(): void {
     const openTrainingView = t.closest<HTMLElement>("[data-open-training-view]");
     if (openTrainingView && save && !browseMode) {
       const tab = openTrainingView.getAttribute("data-open-training-view");
-      if (tab === "assignments" || tab === "roster") {
+      if (tab === "assignments" || tab === "roster" || tab === "formation") {
         navigate(() => {
           currentView = "Training";
           trainingTab = tab;

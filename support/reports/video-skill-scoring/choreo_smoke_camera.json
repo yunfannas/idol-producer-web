@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "0.1",
+  "videoPath": "support\\tmp\\_video_skill_smoke\\smoke.mp4",
+  "media": {
+    "durationSeconds": 3.0,
+    "width": 1280,
+    "height": 720,
+    "fps": 25.0,
+    "formatName": "mov,mp4,m4a,3gp,3g2,mj2"
+  },
+  "cameraMode": "fixed",
+  "acceptableForV1": true,
+  "metrics": {
+    "meanAbsDiff": 0.0,
+    "p95AbsDiff": 0.0,
+    "cutLikeRate": 0.0,
+    "samples": 6
+  },
+  "backend": "opencv-frame-diff",
+  "notes": "Low global motion — fixed camera."
+}

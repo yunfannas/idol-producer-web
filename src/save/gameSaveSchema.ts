@@ -29,6 +29,7 @@ import {
   normalizeTrainingSongSelection,
   type ManagedSongStatusRow,
 } from "../engine/songStatusSystem";
+import { normalizeManagedSongFormations, type SongStartingFormation } from "../data/songStartingFormation";
 import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { buildFilteredSnapshotWithFutureEvents, applyScenarioEventsForDate } from "../engine/scenarioRuntimeWeb";
 import { syncOpenHiatusToIdolTopLevel } from "../engine/scandalHandling";
@@ -405,6 +406,8 @@ export interface GameSavePayload {
   training_focus_skill: Record<string, string>;
   training_role_benchmark_preferences: string[];
   managed_song_status: Record<string, ManagedSongStatusRow>;
+  /** Player-authored starting formations keyed by song uid (overrides catalog). */
+  managed_song_formations: Record<string, SongStartingFormation>;
   training_song_uids: string[];
   tutorial: SaveTutorialState;
   scout: ScoutBlock;
@@ -555,6 +558,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     training_focus_skill: {},
     training_role_benchmark_preferences: [...DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES],
     managed_song_status: {},
+    managed_song_formations: {},
     training_song_uids: [],
     tutorial: { completed: false, disabled: false },
     scout: { selected_company_uid: null, auditions: {}, subscriptions: {} },
@@ -747,6 +751,9 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     primaryGroupUid,
     out.current_date ?? out.game_start_date ?? out.scenario_context.startup_date ?? null,
     primaryMemberCount,
+  );
+  out.managed_song_formations = normalizeManagedSongFormations(
+    (p as { managed_song_formations?: unknown }).managed_song_formations,
   );
   out.training_song_uids = normalizeTrainingSongSelection(
     (p as { training_song_uids?: unknown }).training_song_uids,
