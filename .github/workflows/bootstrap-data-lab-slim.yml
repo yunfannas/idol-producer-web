@@ -1,0 +1,65 @@
+name: Bootstrap data-lab extraction cleanup
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/bootstrap-data-lab-slim.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  slim-game-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out extraction branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/video-skill-scoring-plan
+          fetch-depth: 0
+
+      - name: Remove content now owned by idol-data-lab
+        run: |
+          set -euo pipefail
+          rm -rf \
+            support/scripts/video_skill_scoring \
+            support/data/video-skill-benchmark \
+            support/reports/video-skill-scoring \
+            support/docs/video-skill-scoring
+          rm -f support/docs/video-skill-scoring-plan.md
+
+          cat > support/docs/idol-data-lab.md <<'EOF'
+          # Idol Data Lab boundary
+
+          Real-world research, scraping, media analysis, performance timelines, evidence reports, and game-attribute suggestions are maintained in the separate private repository `yunfannas/idol-data-lab`.
+
+          This game repository retains only runtime game code and data, reviewed import/export boundaries, Choreographic-compatible runtime support, and game-facing formation/player/editor functionality.
+
+          Generated idol attributes are game-oriented estimates and are not represented as objective real-world facts.
+
+          Initial extraction review: `yunfannas/idol-data-lab` draft PR #1.
+          EOF
+
+      - name: Validate game repository
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run build
+          npm run typecheck --if-present
+
+          test -f src/data/choreographicCompat.ts
+          test -f src/ui/choreographyPlayer.ts
+          test -f src/ui/formationEditor.ts
+          test ! -e support/scripts/video_skill_scoring
+          test ! -e support/data/video-skill-benchmark
+          test ! -e support/reports/video-skill-scoring
+
+      - name: Commit slimmed game branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A support
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Move research and performance analysis tooling to idol-data-lab'
+          git push origin HEAD:agent/video-skill-scoring-plan
