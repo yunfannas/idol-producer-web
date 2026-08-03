@@ -1,0 +1,12 @@
+{
+  "removedFileCount": 164,
+  "removedPackageScripts": 34,
+  "protectedFalsePositives": [
+    ".cursor/skills/game-logic-balance/SKILL.md",
+    ".cursor/skills/scenario-db-integrity/SKILL.md",
+    ".cursor/skills/scenario-db-integrity/reference.md",
+    "support/scripts/checkMainScenarioDbIntegrity.mjs"
+  ],
+  "sourceManifest": "yunfannas/idol-data-lab@agent/initial-extraction:migration/game-reality-files.txt",
+  "sourceManifestVersion": "reality-data-extraction-0.1"
+}
