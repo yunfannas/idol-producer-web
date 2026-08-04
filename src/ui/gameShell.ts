@@ -287,7 +287,7 @@ export type MakingTab = "songs" | "cd" | "goods";
 export type LivesTab = "new" | "scheduled" | "past" | "festival" | "league";
 export type { LeaguePanelTab };
 export type ScoutTab = "freelancer" | "transfer" | "audition";
-export type TrainingTab = "assignments" | "roster" | "roles" | "songs";
+export type TrainingTab = "assignments" | "roster" | "roles" | "songs" | "formation";
 export type RoleBenchmarkKey = "singing" | "dancing" | "teamwork" | "content" | "streaming" | "fashion";
 export type FinanceHistoryRange = "day" | "week" | "month" | "year" | "all";
 export type FinanceTab = "finance" | "contract";
@@ -1824,6 +1824,73 @@ function renderInbox(
   </section>`;
 }
 
+function renderTrainingFormationPanel(
+  managedSongs: Record<string, unknown>[],
+  selectedSongUid: string | null,
+  formationEditorHtml: string,
+  save: GameSavePayload,
+  lang: UiLanguage,
+): string {
+  const formations = save.managed_song_formations ?? {};
+  const statusMap = save.managed_song_status ?? {};
+  const songButtons = managedSongs
+    .map((song) => {
+      const uid = String(song.uid ?? "").trim();
+      if (!uid) return "";
+      const title = songCatalogDisplayLabel(song);
+      const hasOverride = Boolean(formations[uid]);
+      const fam = Math.round(Number(statusMap[uid]?.familiarity ?? 0) || 0);
+      const active = uid === selectedSongUid ? " is-active" : "";
+      const badge = hasOverride
+        ? localizedLiteral(lang, "Set", "已设")
+        : localizedLiteral(lang, "Default", "默认");
+      return `<button type="button" class="training-tactics-song${active}" data-training-formation-song="${htmlEsc(uid)}">
+        <span class="training-tactics-song-title">${htmlEsc(title)}</span>
+        <span class="training-tactics-song-meta">
+          <span class="training-tactics-song-fam" title="${htmlEsc(localizedLiteral(lang, "Song familiarity", "歌曲熟练度"))}">${fam}</span>
+          <span class="training-tactics-song-badge">${htmlEsc(badge)}</span>
+        </span>
+      </button>`;
+    })
+    .filter(Boolean)
+    .join("");
+
+  const emptyPitch = `<div class="training-tactics-empty">
+      <p class="content-muted">${htmlEsc(
+        managedSongs.length
+          ? localizedLiteral(lang, "Select a song to edit its starting formation.", "选择一首歌来编辑开场站位。")
+          : localizedLiteral(lang, "No managed songs found.", "未找到当前经营组合的歌曲。"),
+      )}</p>
+    </div>`;
+
+  return `<section class="training-tactics fm-card">
+    <header class="training-tactics-head">
+      <div>
+        <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Formation tactics", "站位战术"))}</h3>
+        <p class="content-muted">${htmlEsc(
+          localizedLiteral(
+            lang,
+            "Pick a song, choose a typical prepared layout, and assign #0 (center) outward. New songs / roster or formation changes start familiarity lower; training and lives rebuild it to 100.",
+            "选歌后选用典型预设站位，#0 为中心并由近到远编号。新歌、成员变动或改队形会降低熟练度，训练与演出会重新练到 100。",
+          ),
+        )}</p>
+      </div>
+    </header>
+    <div class="training-tactics-grid">
+      <aside class="training-tactics-songs" aria-label="${htmlEsc(localizedLiteral(lang, "Songs", "歌曲"))}">
+        <h4 class="training-tactics-side-title">${htmlEsc(localizedLiteral(lang, "Song list", "曲目列表"))}</h4>
+        <div class="training-tactics-song-list">${
+          songButtons ||
+          `<p class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed songs found.", "未找到当前经营组合的歌曲。"))}</p>`
+        }</div>
+      </aside>
+      <div class="training-tactics-pitch" data-training-formation-host>
+        ${formationEditorHtml || emptyPitch}
+      </div>
+    </div>
+  </section>`;
+}
+
 function renderTraining(
   save: GameSavePayload,
   trainingTab: TrainingTab,
@@ -1831,6 +1898,8 @@ function renderTraining(
   rosterSortDir: "asc" | "desc",
   lang: UiLanguage,
   roleBenchmarkPreferences?: RoleBenchmarkKey[],
+  formationSongUid: string | null = null,
+  formationEditorHtml = "",
 ): string {
   const effectiveRoleBenchmarkPreferences =
     roleBenchmarkPreferences ?? (["singing", "dancing", "teamwork", "content", "streaming", "fashion"] as RoleBenchmarkKey[]);
@@ -2177,6 +2246,9 @@ function renderTraining(
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
         <td class="num">${htmlEsc(String(familiarity))}</td>
         <td class="num">${htmlEsc(String(fatigue))}</td>
+        <td><button type="button" class="fm-btn fm-btn-xs" data-open-training-formation="${htmlEsc(uid)}">${htmlEsc(
+          localizedLiteral(lang, "Formation", "站位"),
+        )}</button></td>
       </tr>`;
     })
     .join("");
@@ -2356,8 +2428,8 @@ function renderTraining(
               <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Choose the songs the group is actively preparing in training. Each training session splits a fixed familiarity budget evenly across the selected songs, while rotation fatigue reflects recent overuse on stage.", "选择组合正在训练中重点准备的歌曲。每次训练会把固定熟练度预算均分给已选歌曲，轮换疲劳则反映近期舞台过度使用。"))}</p>
               <div class="table-scroll">
                 <table class="fm-table">
-                  <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Prepare", "练习"))}</th><th>${htmlEsc(localizedLiteral(lang, "Song", "歌曲"))}</th><th>${htmlEsc(localizedLiteral(lang, "Available on", "可用日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Popularity", "人气"))}</th><th>${htmlEsc(localizedLiteral(lang, "Familiarity", "熟练度"))}</th><th>${htmlEsc(localizedLiteral(lang, "Rotation fatigue", "轮换疲劳"))}</th></tr></thead>
-                  <tbody>${songRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed songs found.", "未找到当前经营组合的歌曲。"))}</td></tr>`}</tbody>
+                  <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Prepare", "练习"))}</th><th>${htmlEsc(localizedLiteral(lang, "Song", "歌曲"))}</th><th>${htmlEsc(localizedLiteral(lang, "Available on", "可用日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Popularity", "人气"))}</th><th>${htmlEsc(localizedLiteral(lang, "Familiarity", "熟练度"))}</th><th>${htmlEsc(localizedLiteral(lang, "Rotation fatigue", "轮换疲劳"))}</th><th>${htmlEsc(localizedLiteral(lang, "Formation", "站位"))}</th></tr></thead>
+                  <tbody>${songRows || `<tr><td colspan="7" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed songs found.", "未找到当前经营组合的歌曲。"))}</td></tr>`}</tbody>
                 </table>
               </div>
             </section>`
@@ -2382,7 +2454,9 @@ function renderTraining(
                   </table>
                 </div>
               </section>`
-          : `<div class="training-grid">${cards || `<p class="content-muted">${htmlEsc(localizedLiteral(lang, "No roster members.", "当前没有成员。"))}</p>`}</div>`
+            : trainingTab === "formation"
+              ? renderTrainingFormationPanel(managedSongs, formationSongUid, formationEditorHtml, save, lang)
+              : `<div class="training-grid">${cards || `<p class="content-muted">${htmlEsc(localizedLiteral(lang, "No roster members.", "当前没有成员。"))}</p>`}</div>`
     }
   </section>`;
 }
@@ -3629,6 +3703,7 @@ function renderSongDetailPanel(
         .filter(Boolean)
         .join("")
     : `<li class="content-muted">${htmlEsc(lang === "zh-CN" ? "暂无关联发行" : "No linked releases")}</li>`;
+  const songUid = String(song.uid ?? "").trim();
   return `
     <div class="fm-card songs-song-detail">
       <div class="songs-song-detail-head">
@@ -3640,6 +3715,13 @@ function renderSongDetailPanel(
         </div>
         <div class="songs-song-detail-actions">
           ${renderSongPreviewControls(song, lang)}
+          ${
+            songUid
+              ? `<button type="button" class="fm-btn fm-btn-xs fm-btn-accent" data-open-training-formation="${htmlEsc(songUid)}">${htmlEsc(
+                  lang === "zh-CN" ? "站位设置" : "Formation",
+                )}</button>`
+              : ""
+          }
           <button type="button" class="fm-btn fm-btn-xs" data-song-detail-close="1">${htmlEsc(lang === "zh-CN" ? "关闭" : "Close")}</button>
         </div>
       </div>
@@ -4435,6 +4517,7 @@ function renderTrainingTabs(active: TrainingTab, lang: UiLanguage): string {
     ["assignments", t(lang, "training_tab_assignments")],
     ["roles", t(lang, "training_tab_roles")],
     ["songs", t(lang, "training_tab_songs")],
+    ["formation", t(lang, "training_tab_formation")],
   ];
   return `<div class="workspace-tabs training-tabs">${tabs
     .map(
@@ -5362,6 +5445,8 @@ export function renderMainContent(
     trainingRosterSortKey: TrainingRosterSortKey;
     trainingRosterSortDir: "asc" | "desc";
     roleBenchmarkPreferences?: RoleBenchmarkKey[];
+    trainingFormationSongUid?: string | null;
+    formationEditorHtml?: string;
     mediaTab: MediaTab;
     financeTab: FinanceTab;
     financeHistoryRange: FinanceHistoryRange;
@@ -5401,6 +5486,8 @@ export function renderMainContent(
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences,
+    trainingFormationSongUid,
+    formationEditorHtml,
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -5557,7 +5644,16 @@ export function renderMainContent(
         leaguePanelTab,
       );
     case "Training":
-      return renderTraining(save, trainingTab, trainingRosterSortKey, trainingRosterSortDir, lang, roleBenchmarkPreferences ?? []);
+      return renderTraining(
+        save,
+        trainingTab,
+        trainingRosterSortKey,
+        trainingRosterSortDir,
+        lang,
+        roleBenchmarkPreferences ?? [],
+        trainingFormationSongUid ?? null,
+        formationEditorHtml ?? "",
+      );
     case "Making":
       if (makingTab === "goods") return renderGoodsInventoryTable(save, save.goods_inventory);
       if (makingTab === "cd") {
@@ -5642,6 +5738,10 @@ export interface DesktopShellProps {
   trainingRosterSortKey: TrainingRosterSortKey;
   trainingRosterSortDir: "asc" | "desc";
   roleBenchmarkPreferences?: RoleBenchmarkKey[];
+  /** Training → Formation: selected song uid for the tactics board. */
+  trainingFormationSongUid?: string | null;
+  /** Pre-rendered formation editor HTML (embedded in Training Formation tab). */
+  formationEditorHtml?: string;
   mediaTab: MediaTab;
   financeTab: FinanceTab;
   financeHistoryRange: FinanceHistoryRange;
@@ -5697,6 +5797,8 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences,
+    trainingFormationSongUid,
+    formationEditorHtml,
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -5767,6 +5869,8 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences,
+    trainingFormationSongUid: trainingFormationSongUid ?? null,
+    formationEditorHtml: formationEditorHtml ?? "",
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -5878,6 +5982,8 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences,
+    trainingFormationSongUid,
+    formationEditorHtml,
     mediaTab,
     financeTab,
     financeHistoryRange,
@@ -5951,6 +6057,8 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     trainingRosterSortKey,
     trainingRosterSortDir,
     roleBenchmarkPreferences,
+    trainingFormationSongUid: trainingFormationSongUid ?? null,
+    formationEditorHtml: formationEditorHtml ?? "",
     mediaTab,
     financeTab,
     financeHistoryRange,

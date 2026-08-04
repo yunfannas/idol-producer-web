@@ -1,0 +1,392 @@
+{
+  "format": "idol-producer-choreographic-compat",
+  "formatVersion": "0.1",
+  "title": "高嶺のなでしこ — 可愛くてごめん (dance practice)",
+  "songUid": "9bf631e5-2a90-4ce9-a69b-c9b06ba7381b",
+  "groupUid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+  "stage": {
+    "widthMeters": 12,
+    "depthMeters": 8,
+    "audienceAt": "bottom",
+    "sideStageMeters": 2,
+    "backStageMeters": 1.5
+  },
+  "crew": [
+    {
+      "id": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+      "name": "城月菜央",
+      "color": "#f472b6",
+      "idolUid": "2fda22b6-ffe0-4265-b61c-00caa862380f"
+    },
+    {
+      "id": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+      "name": "涼海すう",
+      "color": "#38bdf8",
+      "idolUid": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8"
+    },
+    {
+      "id": "fa435849-8378-41af-b0fe-341103a45ac5",
+      "name": "橋本桃呼",
+      "color": "#a3e635",
+      "idolUid": "fa435849-8378-41af-b0fe-341103a45ac5"
+    },
+    {
+      "id": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+      "name": "葉月紗蘭",
+      "color": "#fbbf24",
+      "idolUid": "0ee225b0-bc42-4132-998e-46a0d6df1b9c"
+    },
+    {
+      "id": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+      "name": "東山恵里沙",
+      "color": "#c084fc",
+      "idolUid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453"
+    },
+    {
+      "id": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+      "name": "日向端ひな",
+      "color": "#fb7185",
+      "idolUid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25"
+    },
+    {
+      "id": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+      "name": "星谷美来",
+      "color": "#2dd4bf",
+      "idolUid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8"
+    },
+    {
+      "id": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+      "name": "松本ももな",
+      "color": "#f97316",
+      "idolUid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31"
+    },
+    {
+      "id": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+      "name": "籾山ひめり",
+      "color": "#e879f9",
+      "idolUid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9"
+    },
+    {
+      "id": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+      "name": "春野莉々",
+      "color": "#94a3b8",
+      "idolUid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70"
+    }
+  ],
+  "formations": [
+    {
+      "id": "formation-1",
+      "name": "Opening",
+      "durationSec": 10.51,
+      "transitionInSec": 0.0,
+      "notes": "Compiled by choreo-compile-0.1; camera=slight_pan; backend=opencv-hog+track; mirrorX=True.",
+      "positions": [
+        {
+          "dancerId": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+          "x": 63.75,
+          "y": 42.84722222222222,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+          "x": 25.67708333333333,
+          "y": 57.74537037037037,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "fa435849-8378-41af-b0fe-341103a45ac5",
+          "x": 57.8125,
+          "y": 58.76851851851852,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+          "x": 35.88541666666667,
+          "y": 58.80555555555556,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+          "x": 68.4375,
+          "y": 60.796296296296305,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+          "x": 64.19270833333333,
+          "y": 63.657407407407405,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+          "x": 41.71875000000001,
+          "y": 68.38425925925925,
+          "rotationDeg": 0
+        }
+      ]
+    },
+    {
+      "id": "formation-2",
+      "name": "Set 2",
+      "durationSec": 70.07,
+      "transitionInSec": 0.5,
+      "notes": null,
+      "positions": [
+        {
+          "dancerId": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+          "x": 86.06770833333333,
+          "y": 41.05092592592593,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+          "x": 63.046875,
+          "y": 43.425925925925924,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "fa435849-8378-41af-b0fe-341103a45ac5",
+          "x": 75.0,
+          "y": 45.03240740740741,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+          "x": 50.546875,
+          "y": 45.97222222222222,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+          "x": 3.671875,
+          "y": 52.59259259259259,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+          "x": 11.380208333333329,
+          "y": 54.94444444444444,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+          "x": 21.58854166666667,
+          "y": 56.347222222222214,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+          "x": 55.20833333333333,
+          "y": 65.42129629629629,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+          "x": 85.33854166666667,
+          "y": 66.22222222222223,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+          "x": 62.317708333333336,
+          "y": 66.94907407407406,
+          "rotationDeg": 0
+        }
+      ]
+    },
+    {
+      "id": "formation-3",
+      "name": "Set 3",
+      "durationSec": 127.13,
+      "transitionInSec": 0.5,
+      "notes": null,
+      "positions": [
+        {
+          "dancerId": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+          "x": 73.07291666666666,
+          "y": 42.43055555555556,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+          "x": 93.95833333333333,
+          "y": 43.0,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "fa435849-8378-41af-b0fe-341103a45ac5",
+          "x": 5.078125,
+          "y": 52.68518518518519,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+          "x": 9.296875,
+          "y": 58.48148148148148,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+          "x": 34.50520833333334,
+          "y": 60.245370370370374,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+          "x": 22.55208333333333,
+          "y": 60.63425925925926,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+          "x": 64.765625,
+          "y": 63.685185185185176,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+          "x": 50.572916666666664,
+          "y": 64.06018518518519,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+          "x": 72.31770833333334,
+          "y": 66.64814814814815,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+          "x": 80.18229166666667,
+          "y": 69.4675925925926,
+          "rotationDeg": 0
+        }
+      ]
+    },
+    {
+      "id": "formation-4",
+      "name": "Set 4",
+      "durationSec": 8.51,
+      "transitionInSec": 0.5,
+      "notes": null,
+      "positions": [
+        {
+          "dancerId": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+          "x": 66.19791666666666,
+          "y": 42.33796296296296,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+          "x": 28.07291666666667,
+          "y": 50.88888888888889,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "fa435849-8378-41af-b0fe-341103a45ac5",
+          "x": 41.87499999999999,
+          "y": 55.805555555555564,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+          "x": 81.11979166666666,
+          "y": 57.68055555555556,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+          "x": 36.09375,
+          "y": 58.08796296296297,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+          "x": 65.41666666666666,
+          "y": 62.375000000000014,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+          "x": 78.15104166666667,
+          "y": 62.708333333333336,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+          "x": 66.11979166666666,
+          "y": 62.717592592592595,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+          "x": 46.38020833333333,
+          "y": 65.31944444444446,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+          "x": 68.02083333333334,
+          "y": 66.58796296296296,
+          "rotationDeg": 0
+        }
+      ]
+    },
+    {
+      "id": "formation-5",
+      "name": "Set 5",
+      "durationSec": 3.5,
+      "transitionInSec": 0.5,
+      "notes": null,
+      "positions": [
+        {
+          "dancerId": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+          "x": 76.09375,
+          "y": 43.254629629629626,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+          "x": 64.16666666666666,
+          "y": 43.458333333333336,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "fa435849-8378-41af-b0fe-341103a45ac5",
+          "x": 27.734375,
+          "y": 58.717592592592595,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+          "x": 39.583333333333336,
+          "y": 59.245370370370374,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+          "x": 51.484375,
+          "y": 62.12500000000001,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+          "x": 76.97916666666667,
+          "y": 64.77314814814814,
+          "rotationDeg": 0
+        },
+        {
+          "dancerId": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+          "x": 64.0625,
+          "y": 68.76388888888889,
+          "rotationDeg": 0
+        }
+      ]
+    }
+  ],
+  "startingFormationIndex": 0,
+  "updatedAt": "2026-08-03T05:33:42.391528+00:00",
+  "sourceApp": "video-choreo-compile",
+  "modelVersion": "choreo-compile-0.1",
+  "mirrorXApplied": true
+}

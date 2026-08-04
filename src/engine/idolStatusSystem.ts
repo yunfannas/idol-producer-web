@@ -383,6 +383,38 @@ export function isIdolOnHiatus(idol: Record<string, unknown>, referenceIso: stri
   return Boolean(getActiveHiatusStatus(idol, referenceIso));
 }
 
+export function getActiveSuspensionStatus(
+  idol: Record<string, unknown>,
+  referenceIso: string | null | undefined,
+): Record<string, unknown> | null {
+  const refDay = isoDayOnly(referenceIso ?? "") || "2020-01-01";
+  const history = Array.isArray(idol.status_history) ? idol.status_history : [];
+  for (const raw of history) {
+    if (!raw || typeof raw !== "object") continue;
+    const entry = raw as Record<string, unknown>;
+    const kind = `${String(entry.kind ?? "")} ${String(entry.status ?? "")} ${String(entry.summary ?? "")}`.toLowerCase();
+    if (!/\bsuspend|\bsuspension\b/.test(kind)) continue;
+    const startDay = isoDayOnly(entry.start_date ?? refDay) || refDay;
+    const returnDay = isoDayOnly(entry.return_date ?? entry.end_date ?? "");
+    if (startDay > refDay) continue;
+    if (returnDay && refDay >= returnDay) continue;
+    return entry;
+  }
+  return null;
+}
+
+export function isIdolSuspended(idol: Record<string, unknown>, referenceIso: string | null | undefined): boolean {
+  return Boolean(getActiveSuspensionStatus(idol, referenceIso));
+}
+
+/** Off-stage for lives/formation: hiatus or activity suspension. */
+export function isIdolUnavailableForStage(
+  idol: Record<string, unknown>,
+  referenceIso: string | null | undefined,
+): boolean {
+  return isIdolOnHiatus(idol, referenceIso) || isIdolSuspended(idol, referenceIso);
+}
+
 export function hiatusReturnDate(idol: Record<string, unknown>, referenceIso: string | null | undefined): string | null {
   const entry = getActiveHiatusStatus(idol, referenceIso);
   if (!entry) return null;

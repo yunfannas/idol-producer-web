@@ -10,6 +10,8 @@ export interface ManagedSongStatusRow {
   familiarity: number;
   rotation_fatigue: number;
   learned_member_count: number;
+  /** Fingerprint of last learned formation (layout + slot order). Change resets familiarity progress. */
+  formation_fingerprint: string;
   last_trained_date: string | null;
   last_performed_date: string | null;
   recent_performance_dates: string[];
@@ -75,6 +77,7 @@ function defaultSongStatusRow(
     familiarity: available ? familiarity : 0,
     rotation_fatigue: 0,
     learned_member_count: Math.max(0, memberCount),
+    formation_fingerprint: "",
     last_trained_date: null,
     last_performed_date: null,
     recent_performance_dates: [],
@@ -130,6 +133,7 @@ export function normalizeManagedSongStatus(
         0,
         Math.round(stored ? num(stored.learned_member_count, base.learned_member_count) : base.learned_member_count),
       ),
+      formation_fingerprint: stored ? String(stored.formation_fingerprint ?? "") : "",
       last_trained_date: stored ? parseIsoDate(stored.last_trained_date) : null,
       last_performed_date: stored ? parseIsoDate(stored.last_performed_date) : null,
       recent_performance_dates: stored && Array.isArray(stored.recent_performance_dates)
@@ -137,7 +141,9 @@ export function normalizeManagedSongStatus(
         : [],
     };
     if (memberCount > row.learned_member_count) {
-      row.familiarity = clamp(row.familiarity - (memberCount - row.learned_member_count) * 12, 0, 100);
+      // New / returning members: familiarity drops and must be rebuilt in training/lives.
+      const added = memberCount - row.learned_member_count;
+      row.familiarity = clamp(row.familiarity - added * 12, 15, 100);
       row.learned_member_count = memberCount;
     }
     out[uid] = row;
@@ -227,9 +233,59 @@ export function registerManagedSetlistPerformance(
       return Number.isFinite(dt) && Number.isFinite(ref) && ref - dt <= 21 * 86400000;
     }).length;
     row.rotation_fatigue = clamp(row.rotation_fatigue + 10 + recentCount * 8, 0, 100);
+    // Live reps rebuild formation familiarity toward 100.
+    row.familiarity = clamp(row.familiarity + Math.max(1, 3 - Math.min(2, recentCount)), 0, 100);
     row.recent_performance_dates = [...row.recent_performance_dates, targetIso].slice(-12);
     row.last_performed_date = targetIso;
   }
+}
+
+/** Stable fingerprint for formation learning / familiarity resets. */
+export function formationFamiliarityFingerprint(formation: {
+  layoutId?: string | null;
+  centerMode?: string | null;
+  rowCount?: number | null;
+  slotIdolUids?: Array<string | null>;
+}): string {
+  const slots = (formation.slotIdolUids ?? []).map((uid) => String(uid ?? "").trim() || "-").join(",");
+  return [
+    String(formation.layoutId ?? ""),
+    String(formation.centerMode ?? "single"),
+    String(formation.rowCount ?? ""),
+    slots,
+  ].join("|");
+}
+
+/**
+ * Apply formation edit to song familiarity.
+ * First save learns the fingerprint; later changes drop familiarity so training/lives rebuild it.
+ */
+export function applyFormationChangeToSongFamiliarity(
+  statusMap: Record<string, ManagedSongStatusRow>,
+  songUid: string,
+  formation: {
+    layoutId?: string | null;
+    centerMode?: string | null;
+    rowCount?: number | null;
+    slotIdolUids?: Array<string | null>;
+  },
+): { before: number; after: number; changed: boolean } | null {
+  const uid = String(songUid ?? "").trim();
+  const row = statusMap[uid];
+  if (!row) return null;
+  const nextFp = formationFamiliarityFingerprint(formation);
+  const before = row.familiarity;
+  if (!row.formation_fingerprint) {
+    row.formation_fingerprint = nextFp;
+    return { before, after: row.familiarity, changed: false };
+  }
+  if (row.formation_fingerprint === nextFp) {
+    return { before, after: row.familiarity, changed: false };
+  }
+  // Formation change: keep some muscle memory, but force a rebuild toward 100.
+  row.familiarity = clamp(Math.min(row.familiarity, Math.round(row.familiarity * 0.55 + 8)), 15, 85);
+  row.formation_fingerprint = nextFp;
+  return { before, after: row.familiarity, changed: true };
 }
 
 export function managedSetlistEffect(
