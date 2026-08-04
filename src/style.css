@@ -1387,8 +1387,8 @@ a.fm-menu-link:hover {
 }
 
 .formation-editor.is-embedded .formation-editor-stage {
-  height: 16.5rem;
-  min-height: 14rem;
+  height: 19.5rem;
+  min-height: 17rem;
 }
 
 .formation-editor.is-embedded .formation-editor-dock {
@@ -1410,8 +1410,8 @@ a.fm-menu-link:hover {
   }
 
   .formation-editor.is-embedded .formation-editor-stage {
-    height: 14.5rem;
-    min-height: 13rem;
+    height: 17rem;
+    min-height: 15rem;
   }
 }
 
@@ -1661,8 +1661,8 @@ a.fm-menu-link:hover {
 
 .formation-editor-stage {
   position: relative;
-  min-height: 14rem;
-  height: 16.5rem;
+  min-height: 17rem;
+  height: 19.5rem;
   border-radius: 0.9rem;
   border: 1px solid color-mix(in srgb, #94a3b8 28%, transparent);
   background:
@@ -2002,8 +2002,8 @@ a.fm-menu-link:hover {
 
 @media (max-width: 900px) {
   .formation-editor-stage {
-    height: 14rem;
-    min-height: 13rem;
+    height: 17rem;
+    min-height: 15rem;
   }
 
   .formation-editor-dock-footer {

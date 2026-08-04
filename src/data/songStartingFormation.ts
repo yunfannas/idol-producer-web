@@ -9,7 +9,14 @@ export type FormationRow = "front" | "back" | "mid";
 export type FormationSource = "manual" | "video_seed" | "imported" | "default_center";
 export type FormationCenterMode = "single" | "double";
 /** Starting layout template; after apply, positions stay freely editable. */
-export type FormationLayoutKind = "rows" | "columns" | "crane_out" | "crane_in" | "pyramid";
+export type FormationLayoutKind =
+  | "rows"
+  | "column"
+  | "columns"
+  | "crane_out"
+  | "crane_in"
+  | "pyramid"
+  | "surround";
 
 export interface FormationSlotDef {
   x: number;
@@ -77,8 +84,40 @@ export type TypicalFormationPreset = {
 
 export function resolveLayoutKind(raw: unknown): FormationLayoutKind {
   const s = String(raw ?? "").trim();
-  if (s === "columns" || s === "crane_out" || s === "crane_in" || s === "pyramid") return s;
+  if (
+    s === "column" ||
+    s === "columns" ||
+    s === "crane_out" ||
+    s === "crane_in" ||
+    s === "pyramid" ||
+    s === "surround"
+  ) {
+    return s;
+  }
   return "rows";
+}
+
+/**
+ * Default center mode for a start layout.
+ * Even roster → double C for 2-row, 2-column, V out/in; surround-c2 is always double.
+ * Everything else → single C.
+ */
+export function defaultCenterModeForLayout(
+  kind: FormationLayoutKind,
+  rowCount: number,
+  memberCount: number,
+  opts?: { surroundCenters?: FormationCenterMode },
+): FormationCenterMode {
+  const n = Math.max(0, Math.floor(memberCount));
+  const resolved = resolveLayoutKind(kind);
+  if (resolved === "surround") {
+    return resolveCenterMode(opts?.surroundCenters ?? "single");
+  }
+  if (n >= 2 && n % 2 === 0) {
+    if (resolved === "columns" || resolved === "crane_out" || resolved === "crane_in") return "double";
+    if (resolved === "rows" && Math.floor(rowCount) === 2) return "double";
+  }
+  return "single";
 }
 
 /** Curated typical layouts for a roster size (startpoints — not locked geometry). */
@@ -98,7 +137,7 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
     labelZh: `经典 ${classicRows} 排`,
     kind: "rows",
     rowCount: classicRows,
-    centerMode: "single",
+    centerMode: defaultCenterModeForLayout("rows", classicRows, n),
   });
 
   if (n >= 3 && classicRows !== 1) {
@@ -119,6 +158,27 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       labelZh: "双排",
       kind: "rows",
       rowCount: 2,
+      centerMode: defaultCenterModeForLayout("rows", 2, n),
+    });
+  }
+  // Extra classic 3-row only when default classic is not already 3 (avoids duplicating deep/classic).
+  if (n >= 6 && classicRows !== 3) {
+    add({
+      id: "classic-r3-c1",
+      labelEn: "Classic 3-row",
+      labelZh: "经典 3 排",
+      kind: "rows",
+      rowCount: 3,
+      centerMode: "single",
+    });
+  }
+  if (n >= 3) {
+    add({
+      id: "cols-1-c1",
+      labelEn: "Single column",
+      labelZh: "一纵列",
+      kind: "column",
+      rowCount: Math.min(maxFormationRowCount(n), n),
       centerMode: "single",
     });
   }
@@ -129,7 +189,7 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       labelZh: "两列",
       kind: "columns",
       rowCount: Math.min(maxFormationRowCount(n), Math.ceil(n / 2)),
-      centerMode: "single",
+      centerMode: defaultCenterModeForLayout("columns", 2, n),
     });
   }
   if (n >= 5) {
@@ -139,7 +199,7 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       labelZh: "外V",
       kind: "crane_out",
       rowCount: 3,
-      centerMode: "single",
+      centerMode: defaultCenterModeForLayout("crane_out", 3, n),
     });
     add({
       id: "crane-in-c1",
@@ -147,7 +207,7 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       labelZh: "内V",
       kind: "crane_in",
       rowCount: 3,
-      centerMode: "single",
+      centerMode: defaultCenterModeForLayout("crane_in", 3, n),
     });
   }
   if (n >= 6) {
@@ -159,45 +219,23 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       rowCount: Math.min(maxFormationRowCount(n), Math.ceil((-1 + Math.sqrt(1 + 8 * n)) / 2)),
       centerMode: "single",
     });
+  }
+  if (n >= 5) {
     add({
-      id: "deep-r3-c1",
-      labelEn: "Deep 3-row",
-      labelZh: "三排纵深",
-      kind: "rows",
+      id: "surround-c1",
+      labelEn: "Single C surrounded",
+      labelZh: "单中心包围",
+      kind: "surround",
       rowCount: 3,
       centerMode: "single",
     });
   }
-  if (n >= 8) {
+  if (n >= 6) {
     add({
-      id: "flat-r2-c2",
-      labelEn: "2-row · Double C",
-      labelZh: "双排 · 双中心",
-      kind: "rows",
-      rowCount: 2,
-      centerMode: "double",
-    });
-    add({
-      id: "cols-2-c2",
-      labelEn: "2 columns · Double C",
-      labelZh: "两列 · 双中心",
-      kind: "columns",
-      rowCount: Math.min(maxFormationRowCount(n), Math.ceil(n / 2)),
-      centerMode: "double",
-    });
-    add({
-      id: "crane-out-c2",
-      labelEn: "V out · Double C",
-      labelZh: "外V · 双中心",
-      kind: "crane_out",
-      rowCount: 3,
-      centerMode: "double",
-    });
-    add({
-      id: "deep-r3-c2",
-      labelEn: "Deep 3-row · Double C",
-      labelZh: "三排 · 双中心",
-      kind: "rows",
+      id: "surround-c2",
+      labelEn: "Double C surrounded",
+      labelZh: "双中心包围",
+      kind: "surround",
       rowCount: 3,
       centerMode: "double",
     });
@@ -221,14 +259,6 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       rowCount: 5,
       centerMode: "single",
     });
-    add({
-      id: "wide-r4-c2",
-      labelEn: "Wide 4-row · Double C",
-      labelZh: "四排 · 双中心",
-      kind: "rows",
-      rowCount: 4,
-      centerMode: "double",
-    });
   }
   return out;
 }
@@ -249,7 +279,8 @@ export function applyTypicalPreset(
 ): SongStartingFormation {
   const preset = resolveTypicalPreset(formation.memberCount, presetId);
   const n = formation.memberCount;
-  const centerMode = resolveCenterMode(overrides?.centerMode ?? formation.centerMode ?? preset.centerMode);
+  // Applying a start layout uses that layout's default center (even→double for 2-row/cols/V).
+  const centerMode = resolveCenterMode(overrides?.centerMode ?? preset.centerMode);
   const slots = formationSlotsForLayout(n, preset.kind, preset.rowCount, centerMode);
   // Keep idols in center-outward order as much as possible.
   const orderedUids = [
@@ -438,8 +469,8 @@ export function formationSlots(
   const sizes = distributeFormationRowSizes(n, rows);
   const raw: FormationSlotDef[] = [];
 
-  const yBack = rows === 1 ? 58 : 26;
-  const yFront = rows === 1 ? 58 : 68;
+  const yBack = rows === 1 ? 58 : 18;
+  const yFront = rows === 1 ? 58 : 78;
 
   for (let r = 0; r < rows; r++) {
     const size = sizes[r] ?? 0;
@@ -463,12 +494,10 @@ export function formationSlots(
   return orderSlotsCenterOutward(raw, resolveCenterMode(centerMode));
 }
 
-/** Two vertical columns (stage left / stage right). */
-function buildColumnSlots(n: number): FormationSlotDef[] {
-  const leftN = Math.ceil(n / 2);
-  const rightN = n - leftN;
-  const yBack = 28;
-  const yFront = 70;
+/** Vertical column(s): one center file, or stage-left / stage-right pair. */
+function buildColumnSlots(n: number, columnCount: 1 | 2 = 2): FormationSlotDef[] {
+  const yBack = 18;
+  const yFront = 78;
   const raw: FormationSlotDef[] = [];
   const placeCol = (count: number, x: number) => {
     for (let i = 0; i < count; i++) {
@@ -483,6 +512,12 @@ function buildColumnSlots(n: number): FormationSlotDef[] {
       });
     }
   };
+  if (columnCount <= 1) {
+    placeCol(n, 50);
+    return raw;
+  }
+  const leftN = Math.ceil(n / 2);
+  const rightN = n - leftN;
   placeCol(leftN, 34);
   placeCol(rightN, 66);
   return raw;
@@ -648,27 +683,80 @@ export function distributePyramidRowSizes(memberCount: number): number[] {
   return sizes;
 }
 
-/** Pyramid: front row = 1 (center), then 2, 3, … toward upstage. */
+/**
+ * Surrounded center: one or two mid-stage centers, others on an ellipse around them.
+ * Slot order is already center-first (#0 / #0+#1), then ring from front clockwise.
+ */
+function buildSurroundSlots(n: number, centerMode: FormationCenterMode = "single"): FormationSlotDef[] {
+  const count = Math.max(0, Math.floor(n));
+  if (count <= 0) return [];
+  const mode = resolveCenterMode(centerMode);
+  const isDouble = mode === "double" && count >= 2;
+  const cx = 50;
+  const cy = 48;
+
+  if (count === 1) {
+    return [{ x: cx, y: cy, row: "mid", rowIndex: 1, isCenter: true }];
+  }
+  if (count === 2 && isDouble) {
+    return [
+      { x: 42, y: cy, row: "mid", rowIndex: 1, isCenter: true },
+      { x: 58, y: cy, row: "mid", rowIndex: 1, isCenter: true },
+    ];
+  }
+
+  const raw: FormationSlotDef[] = [];
+  if (isDouble) {
+    raw.push({ x: 42, y: cy, row: "mid", rowIndex: 1, isCenter: true });
+    raw.push({ x: 58, y: cy, row: "mid", rowIndex: 1, isCenter: true });
+  } else {
+    raw.push({ x: cx, y: cy, row: "mid", rowIndex: 1, isCenter: true });
+  }
+
+  const wingN = count - raw.length;
+  if (wingN <= 0) return raw;
+
+  const rx = Math.min(38, 22 + wingN * 1.8 + (isDouble ? 4 : 0));
+  const ry = Math.min(30, 18 + wingN * 1.2);
+  for (let i = 0; i < wingN; i++) {
+    // Offset by half-step so nobody sits exactly on the front/back axis.
+    const a = ((i + 0.5) / wingN) * Math.PI * 2;
+    const x = clampStageCoord(cx + rx * Math.sin(a));
+    const y = clampStageCoord(cy + ry * Math.cos(a));
+    const row: FormationRow = y >= 58 ? "front" : y <= 38 ? "back" : "mid";
+    const rowIndex = y >= 58 ? 2 : y <= 38 ? 0 : 1;
+    raw.push({ x, y, row, rowIndex, isCenter: false });
+  }
+  return raw;
+}
+
+/**
+ * Pyramid: front row = 1 (center), then 2, 3, … toward upstage.
+ * Uses equal inter-person spacing from the widest row so rows read as
+ * clear 1-2-3-4 stacks (bowling-pin), not nested full-width bands.
+ */
 function buildPyramidSlots(n: number): FormationSlotDef[] {
   const sizes = distributePyramidRowSizes(n);
   if (!sizes.length) return [];
   const raw: FormationSlotDef[] = [];
-  const yFront = 68;
-  const yBack = sizes.length === 1 ? 58 : 28;
+  const maxSize = Math.max(...sizes);
+  const margin = 10;
+  const usable = 100 - margin * 2;
+  const step = maxSize <= 1 ? 0 : usable / (maxSize - 1);
+  const yFront = 78;
+  const yBack = sizes.length === 1 ? 58 : 18;
   for (let r = 0; r < sizes.length; r++) {
     const size = sizes[r] ?? 0;
     if (size <= 0) continue;
     const tRow = sizes.length === 1 ? 0 : r / (sizes.length - 1); // 0 = front, 1 = back
     const y = yFront + tRow * (yBack - yFront);
-    // Narrower at front (apex), wider toward back.
-    const inset = 10 + (1 - tRow) * 18;
-    const left = inset;
-    const span = 100 - inset * 2;
     const kind: FormationRow = r === 0 ? "front" : r === sizes.length - 1 ? "back" : "mid";
+    const rowWidth = size <= 1 ? 0 : step * (size - 1);
+    const left = 50 - rowWidth / 2;
     for (let i = 0; i < size; i++) {
-      const t = size === 1 ? 0.5 : i / (size - 1);
+      const x = size === 1 ? 50 : left + i * step;
       raw.push({
-        x: left + t * span,
+        x: clampStageCoord(x),
         y,
         row: kind,
         rowIndex: r,
@@ -689,10 +777,13 @@ export function formationSlotsForLayout(
   if (n === 0) return [];
   const mode = resolveCenterMode(centerMode);
   const resolved = resolveLayoutKind(kind);
-  if (resolved === "columns") return orderSlotsCenterOutward(buildColumnSlots(n), mode);
+  if (resolved === "column") return orderSlotsCenterOutward(buildColumnSlots(n, 1), mode);
+  if (resolved === "columns") return orderSlotsCenterOutward(buildColumnSlots(n, 2), mode);
   if (resolved === "crane_out") return orderSlotsCenterOutward(buildCraneSlots(n, "out"), mode);
   if (resolved === "crane_in") return orderSlotsCenterOutwardAt(buildCraneSlots(n, "in"), mode, "back");
   if (resolved === "pyramid") return orderSlotsCenterOutward(buildPyramidSlots(n), mode);
+  // Surround slots are already ordered center-first (front-band reorder would steal the ring).
+  if (resolved === "surround") return buildSurroundSlots(n, mode);
   return formationSlots(n, rowCount, mode);
 }
 
@@ -941,10 +1032,12 @@ export function layoutIdForCount(
 ): string {
   const n = Math.max(0, count);
   const resolved = resolveLayoutKind(kind);
+  if (resolved === "column") return `cols-1-n-${n}`;
   if (resolved === "columns") return `cols-2-n-${n}`;
   if (resolved === "crane_out") return `crane-out-n-${n}`;
   if (resolved === "crane_in") return `crane-in-n-${n}`;
   if (resolved === "pyramid") return `pyramid-n-${n}`;
+  if (resolved === "surround") return `surround-n-${n}`;
   const rows = resolveRowCount(n, rowCount);
   return `rows-${rows}-n-${n}`;
 }
@@ -991,10 +1084,12 @@ function parseRowCountFromLayoutId(layoutId: string, memberCount: number): numbe
 
 function parseLayoutKindFromLayoutId(layoutId: string): FormationLayoutKind | null {
   const id = String(layoutId ?? "").trim();
+  if (/^cols-1-n-\d+$/i.test(id)) return "column";
   if (/^cols-2-n-\d+$/i.test(id)) return "columns";
   if (/^crane-out-n-\d+$/i.test(id)) return "crane_out";
   if (/^crane-in-n-\d+$/i.test(id)) return "crane_in";
   if (/^pyramid-n-\d+$/i.test(id)) return "pyramid";
+  if (/^surround-n-\d+$/i.test(id)) return "surround";
   if (/^rows-\d+-n-\d+$/i.test(id)) return "rows";
   return null;
 }
