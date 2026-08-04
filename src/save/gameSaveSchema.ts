@@ -252,9 +252,12 @@ export function createGameSaveFromLoadedScenario(
   save.scenario_runtime.official_schedules = deepCopy(loaded.official_schedules ?? []);
   save.shortlist = [];
   save.goods_inventory = defaultGoodsInventory(managedGoodsMembers(save));
-  for (const uid of memberUids) {
-    save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
-    save.training_focus_skill[uid] = "talking";
+  {
+    const policy = ensureGroupPolicy(save);
+    for (const uid of memberUids) {
+      save.training_intensity[uid] = { ...policy.training.default_intensity };
+      save.training_focus_skill[uid] = policy.training.default_focus;
+    }
   }
   save.game_start_date = opening;
   save.current_date = opening;
@@ -381,6 +384,149 @@ export interface SaveTutorialState {
 
 const DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"] as const;
 const TRAINING_ROLE_BENCHMARK_PREFERENCE_SET = new Set<string>(DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES);
+const POLICY_FOCUS_SKILL_SET = new Set(["", "talking", "host", "variety", "acting", "make-up", "model"]);
+
+export interface GroupPolicySnsFlags {
+  x: boolean;
+  tiktok: boolean;
+  instagram: boolean;
+  youtube: boolean;
+}
+
+export interface GroupPolicyTrainingDefaults {
+  default_intensity: { sing: number; dance: number; physical: number; target: number };
+  default_focus: string;
+}
+
+export interface GroupPolicy {
+  live: {
+    prerecorded_vocals_by_member: Record<string, boolean>;
+    tokutenkai_enabled: boolean;
+    goods_enabled: boolean;
+    /** null = off; otherwise target stock per SKU when auto-refill exists */
+    auto_goods_refill: number | null;
+  };
+  sns: {
+    by_member: Record<string, GroupPolicySnsFlags>;
+  };
+  stream: {
+    showroom_hours_per_week: number;
+    tiktok_hours_per_week: number;
+    instagram_hours_per_week: number;
+  };
+  training: GroupPolicyTrainingDefaults;
+}
+
+function clampPolicyLevel(v: unknown, fallback: number): number {
+  const n = typeof v === "number" && Number.isFinite(v) ? v : Number(v);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(0, Math.min(5, Math.round(n)));
+}
+
+function clampPolicyHours(v: unknown, fallback = 0): number {
+  const n = typeof v === "number" && Number.isFinite(v) ? v : Number(v);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(0, Math.min(168, Math.round(n)));
+}
+
+export function defaultGroupPolicy(): GroupPolicy {
+  const intensity = defaultAutopilotTrainingIntensity();
+  return {
+    live: {
+      prerecorded_vocals_by_member: {},
+      tokutenkai_enabled: true,
+      goods_enabled: true,
+      auto_goods_refill: null,
+    },
+    sns: { by_member: {} },
+    stream: {
+      showroom_hours_per_week: 0,
+      tiktok_hours_per_week: 0,
+      instagram_hours_per_week: 0,
+    },
+    training: {
+      default_intensity: { ...intensity },
+      default_focus: "talking",
+    },
+  };
+}
+
+export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
+  const base = defaultGroupPolicy();
+  if (!raw || typeof raw !== "object") return base;
+  const p = raw as Record<string, unknown>;
+
+  if (p.live && typeof p.live === "object") {
+    const live = p.live as Record<string, unknown>;
+    if (typeof live.tokutenkai_enabled === "boolean") base.live.tokutenkai_enabled = live.tokutenkai_enabled;
+    if (typeof live.goods_enabled === "boolean") base.live.goods_enabled = live.goods_enabled;
+    if (live.auto_goods_refill == null) {
+      base.live.auto_goods_refill = null;
+    } else {
+      const n = Number(live.auto_goods_refill);
+      base.live.auto_goods_refill = Number.isFinite(n) && n > 0 ? Math.round(n) : null;
+    }
+    if (live.prerecorded_vocals_by_member && typeof live.prerecorded_vocals_by_member === "object") {
+      const map: Record<string, boolean> = {};
+      for (const [uid, on] of Object.entries(live.prerecorded_vocals_by_member as Record<string, unknown>)) {
+        const key = String(uid ?? "").trim();
+        if (!key) continue;
+        map[key] = on === true;
+      }
+      base.live.prerecorded_vocals_by_member = map;
+    }
+  }
+
+  if (p.sns && typeof p.sns === "object") {
+    const sns = p.sns as Record<string, unknown>;
+    if (sns.by_member && typeof sns.by_member === "object") {
+      const map: Record<string, GroupPolicySnsFlags> = {};
+      for (const [uid, flags] of Object.entries(sns.by_member as Record<string, unknown>)) {
+        const key = String(uid ?? "").trim();
+        if (!key || !flags || typeof flags !== "object") continue;
+        const f = flags as Record<string, unknown>;
+        map[key] = {
+          x: f.x === true,
+          tiktok: f.tiktok === true,
+          instagram: f.instagram === true,
+          youtube: f.youtube === true,
+        };
+      }
+      base.sns.by_member = map;
+    }
+  }
+
+  if (p.stream && typeof p.stream === "object") {
+    const stream = p.stream as Record<string, unknown>;
+    base.stream.showroom_hours_per_week = clampPolicyHours(stream.showroom_hours_per_week, 0);
+    base.stream.tiktok_hours_per_week = clampPolicyHours(stream.tiktok_hours_per_week, 0);
+    base.stream.instagram_hours_per_week = clampPolicyHours(stream.instagram_hours_per_week, 0);
+  }
+
+  if (p.training && typeof p.training === "object") {
+    const training = p.training as Record<string, unknown>;
+    const intensity =
+      training.default_intensity && typeof training.default_intensity === "object"
+        ? (training.default_intensity as Record<string, unknown>)
+        : {};
+    const fallback = defaultAutopilotTrainingIntensity();
+    base.training.default_intensity = {
+      sing: clampPolicyLevel(intensity.sing, fallback.sing),
+      dance: clampPolicyLevel(intensity.dance, fallback.dance),
+      physical: clampPolicyLevel(intensity.physical, fallback.physical),
+      target: clampPolicyLevel(intensity.target, fallback.target),
+    };
+    const focus = String(training.default_focus ?? "talking");
+    base.training.default_focus = POLICY_FOCUS_SKILL_SET.has(focus) ? focus : "talking";
+  }
+
+  return base;
+}
+
+export function ensureGroupPolicy(save: GameSavePayload): GroupPolicy {
+  save.group_policy = normalizeGroupPolicy(save.group_policy);
+  return save.group_policy;
+}
 
 export interface GameSavePayload {
   version: typeof GAME_SAVE_VERSION;
@@ -409,6 +555,8 @@ export interface GameSavePayload {
   /** Player-authored starting formations keyed by song uid (overrides catalog). */
   managed_song_formations: Record<string, SongStartingFormation>;
   training_song_uids: string[];
+  /** Group default ops policy (live / SNS / stream / training). */
+  group_policy: GroupPolicy;
   tutorial: SaveTutorialState;
   scout: ScoutBlock;
   career_decisions: CareerDecisionsBlock;
@@ -560,6 +708,7 @@ export function defaultGameSavePayload(): GameSavePayload {
     managed_song_status: {},
     managed_song_formations: {},
     training_song_uids: [],
+    group_policy: defaultGroupPolicy(),
     tutorial: { completed: false, disabled: false },
     scout: { selected_company_uid: null, auditions: {}, subscriptions: {} },
     career_decisions: { outcomes: [], seeded_inbox_keys: [] },
@@ -759,6 +908,7 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     (p as { training_song_uids?: unknown }).training_song_uids,
     out.managed_song_status,
   );
+  out.group_policy = normalizeGroupPolicy((p as { group_policy?: unknown }).group_policy);
   ensureManagedContracts(out);
 
   {
@@ -953,11 +1103,14 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.managed_song_status = {};
   save.training_song_uids = [];
   applyAttributesToAllIdols(save.database_snapshot.idols, save.database_snapshot.groups, opening);
-  for (const uid of (g.member_uids?.map(String) ?? [])) {
-    save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
-    save.training_focus_skill[uid] = "talking";
-    const row = save.database_snapshot.idols.find((r) => String(r.uid ?? "") === uid);
-    if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
+  {
+    const policy = ensureGroupPolicy(save);
+    for (const uid of g.member_uids?.map(String) ?? []) {
+      save.training_intensity[uid] = { ...policy.training.default_intensity };
+      save.training_focus_skill[uid] = policy.training.default_focus;
+      const row = save.database_snapshot.idols.find((r) => String(r.uid ?? "") === uid);
+      if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
+    }
   }
   backfillGroupMemberFanCounts(save.database_snapshot.idols, groupRow);
   save.game_start_date = opening;

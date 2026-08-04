@@ -4,9 +4,9 @@
 
 import type { LoadedScenario, OfficialScheduleBundle, OfficialScheduleEvent } from "../data/scenarioTypes";
 import type { WebPreviewBundle } from "../types";
-import type { CdReleaseProject, GameSavePayload } from "../save/gameSaveSchema";
+import type { GameSavePayload, GroupPolicy } from "../save/gameSaveSchema";
 import { AUTOSAVE_SLOT, type SlotSummary } from "../persistence/saves";
-import { getActiveFinances, getPrimaryGroup } from "../save/gameSaveSchema";
+import { getActiveFinances, getPrimaryGroup, ensureGroupPolicy } from "../save/gameSaveSchema";
 import type { PersistedIdolAttributes } from "../engine/idolAttributes";
 import {
   getAbility,
@@ -118,7 +118,6 @@ import {
 } from "../data/heroinesLeague";
 import { contestedRecruitWindowsForDate } from "../engine/careerDecision";
 import {
-  defaultAutopilotTrainingIntensity,
   hiatusDaysRemaining,
   hiatusReturnDate,
   isIdolOnHiatus,
@@ -288,6 +287,7 @@ export type LivesTab = "new" | "scheduled" | "past" | "festival" | "league";
 export type { LeaguePanelTab };
 export type ScoutTab = "freelancer" | "transfer" | "audition";
 export type TrainingTab = "assignments" | "roster" | "roles" | "songs" | "formation";
+export type ScheduleTab = "calendar" | "policy";
 export type RoleBenchmarkKey = "singing" | "dancing" | "teamwork" | "content" | "streaming" | "fashion";
 export type FinanceHistoryRange = "day" | "week" | "month" | "year" | "all";
 export type FinanceTab = "finance" | "contract";
@@ -2090,10 +2090,12 @@ function renderTraining(
       const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
       const romaji = romajiFromRow(r);
       if (!save.training_intensity[uid]) {
-        save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
+        const policy = ensureGroupPolicy(save);
+        save.training_intensity[uid] = { ...policy.training.default_intensity };
       }
       if (save.training_focus_skill[uid] == null || save.training_focus_skill[uid] === undefined) {
-        save.training_focus_skill[uid] = "talking";
+        const policy = ensureGroupPolicy(save);
+        save.training_focus_skill[uid] = policy.training.default_focus;
       }
       const intensity = safeTrainingRow(save.training_intensity[uid]);
       const load = trainingLoadFromRow(intensity);
@@ -4268,11 +4270,191 @@ function renderOfficialScheduleLink(event: OfficialScheduleEvent): string {
   return `<a class="text-action-link" href="${htmlEsc(url)}" target="_blank" rel="noopener noreferrer">${htmlEsc(label)}</a>`;
 }
 
+function renderScheduleTabs(active: ScheduleTab, lang: UiLanguage): string {
+  const tabs: Array<[ScheduleTab, string]> = [
+    ["calendar", t(lang, "schedule_tab_calendar")],
+    ["policy", t(lang, "schedule_tab_policy")],
+  ];
+  return `<div class="workspace-tabs schedule-tabs" role="tablist">${tabs
+    .map(
+      ([key, label]) =>
+        `<button type="button" class="workspace-tab ${active === key ? "is-active" : ""}" data-schedule-tab="${htmlEsc(key)}">${htmlEsc(label)}</button>`,
+    )
+    .join("")}</div>`;
+}
+
+function managedRosterForPolicy(
+  save: GameSavePayload,
+): Array<{ uid: string; name: string; romaji: string }> {
+  const grp = getPrimaryGroup(save);
+  const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
+  const idols = save.database_snapshot.idols;
+  return memberUids
+    .map((uid) => {
+      const row = idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uid);
+      if (!row || typeof row !== "object") {
+        return { uid, name: uid.slice(0, 8), romaji: "" };
+      }
+      const r = row as Record<string, unknown>;
+      const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
+      return { uid, name, romaji: romajiFromRow(r) };
+    })
+    .filter(Boolean);
+}
+
+function policyFocusOptionsHtml(selected: string, lang: UiLanguage): string {
+  return FOCUS_SKILL_OPTIONS.map((opt) => {
+    const lab =
+      opt === ""
+        ? localizedLiteral(lang, "- (none)", "无")
+        : opt === "talking"
+          ? localizedLiteral(lang, "talking", "谈话")
+          : opt === "host"
+            ? localizedLiteral(lang, "host", "主持")
+            : opt === "variety"
+              ? localizedLiteral(lang, "variety", "综艺")
+              : opt === "acting"
+                ? localizedLiteral(lang, "acting", "演技")
+                : opt === "make-up"
+                  ? localizedLiteral(lang, "make-up", "妆造")
+                  : opt === "model"
+                    ? localizedLiteral(lang, "model", "模特")
+                    : opt;
+    return `<option value="${htmlEsc(opt)}" ${selected === opt ? "selected" : ""}>${htmlEsc(lab)}</option>`;
+  }).join("");
+}
+
+function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage): string {
+  const policy = ensureGroupPolicy(save);
+  const roster = managedRosterForPolicy(save);
+  const refillOn = policy.live.auto_goods_refill != null;
+  const refillQty = policy.live.auto_goods_refill ?? 50;
+  const intensity = policy.training.default_intensity;
+
+  const prerecordRows = roster
+    .map(({ uid, name, romaji }) => {
+      const on = policy.live.prerecorded_vocals_by_member[uid] === true;
+      const label = romaji ? `${name} / ${romaji}` : name;
+      return `<tr>
+        <td>${htmlEsc(label)}</td>
+        <td class="num"><input type="checkbox" data-policy-prerecord-uid="${htmlEsc(uid)}" ${on ? "checked" : ""} /></td>
+      </tr>`;
+    })
+    .join("");
+
+  const snsRows = roster
+    .map(({ uid, name, romaji }) => {
+      const flags = policy.sns.by_member[uid] ?? { x: false, tiktok: false, instagram: false, youtube: false };
+      const label = romaji ? `${name} / ${romaji}` : name;
+      const cell = (platform: keyof typeof flags, checked: boolean) =>
+        `<td class="num"><input type="checkbox" data-policy-sns-uid="${htmlEsc(uid)}" data-policy-sns-platform="${platform}" ${checked ? "checked" : ""} /></td>`;
+      return `<tr>
+        <td>${htmlEsc(label)}</td>
+        ${cell("x", flags.x)}
+        ${cell("tiktok", flags.tiktok)}
+        ${cell("instagram", flags.instagram)}
+        ${cell("youtube", flags.youtube)}
+      </tr>`;
+    })
+    .join("");
+
+  const streamRows: Array<[keyof GroupPolicy["stream"], string]> = [
+    ["showroom_hours_per_week", t(lang, "policy_stream_showroom")],
+    ["tiktok_hours_per_week", t(lang, "policy_stream_tiktok")],
+    ["instagram_hours_per_week", t(lang, "policy_stream_instagram")],
+  ];
+  const streamTable = streamRows
+    .map(
+      ([key, label]) => `<tr>
+        <td>${htmlEsc(label)}</td>
+        <td class="num"><input class="fm-input policy-stream-hours" type="number" min="0" max="168" step="1" value="${policy.stream[key]}" data-policy-stream="${key}" /></td>
+      </tr>`,
+    )
+    .join("");
+
+  const trainingSlider = (field: keyof typeof intensity, label: string) => {
+    const v = intensity[field];
+    return `<label class="training-slider"><span class="training-slider-l">${htmlEsc(label)}</span>
+      <input type="range" min="0" max="5" step="1" value="${v}" data-policy-training-slider data-field="${field}" aria-valuemin="0" aria-valuemax="5" />
+      <span class="training-slider-v" data-policy-training-val="${field}">${v}</span></label>`;
+  };
+
+  return `
+    <p class="content-muted">${htmlEsc(t(lang, "policy_lead"))}</p>
+    <section class="fm-card policy-section">
+      <h3 class="content-h3">${htmlEsc(t(lang, "policy_section_live"))}</h3>
+      <div class="policy-live-toggles">
+        <label class="check-pill"><input type="checkbox" data-policy-tokutenkai ${policy.live.tokutenkai_enabled ? "checked" : ""} /> <span>${htmlEsc(t(lang, "policy_tokutenkai"))}</span></label>
+        <label class="check-pill"><input type="checkbox" data-policy-goods ${policy.live.goods_enabled ? "checked" : ""} /> <span>${htmlEsc(t(lang, "policy_goods"))}</span></label>
+      </div>
+      <div class="policy-refill-row">
+        <span class="policy-refill-label">${htmlEsc(t(lang, "policy_auto_goods_refill"))}</span>
+        <label class="check-pill"><input type="checkbox" data-policy-refill-off ${!refillOn ? "checked" : ""} /> <span>${htmlEsc(t(lang, "policy_refill_off"))}</span></label>
+        <label class="policy-refill-qty-label">${htmlEsc(t(lang, "policy_refill_qty"))}
+          <input class="fm-input policy-refill-qty" type="number" min="1" step="1" value="${refillQty}" data-policy-refill-qty ${refillOn ? "" : "disabled"} />
+        </label>
+      </div>
+      <p class="content-muted">${htmlEsc(t(lang, "policy_auto_goods_refill_hint"))}</p>
+      <h4 class="policy-subhead">${htmlEsc(t(lang, "policy_prerecorded_vocals"))}</h4>
+      <p class="content-muted">${htmlEsc(t(lang, "policy_prerecorded_hint"))}</p>
+      <div class="policy-toolbar">
+        <button type="button" class="fm-btn" data-policy-prerecord-all="on">${htmlEsc(t(lang, "policy_select_all"))}</button>
+        <button type="button" class="fm-btn" data-policy-prerecord-all="off">${htmlEsc(t(lang, "policy_clear_all"))}</button>
+      </div>
+      <div class="table-scroll">
+        <table class="fm-table policy-table">
+          <thead><tr><th>${htmlEsc(t(lang, "policy_member"))}</th><th>${htmlEsc(t(lang, "policy_prerecorded_vocals"))}</th></tr></thead>
+          <tbody>${prerecordRows || `<tr><td colspan="2" class="content-muted">${htmlEsc(localizedLiteral(lang, "No members.", "暂无成员。"))}</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>
+    <section class="fm-card policy-section">
+      <h3 class="content-h3">${htmlEsc(t(lang, "policy_section_sns"))}</h3>
+      <p class="content-muted">${htmlEsc(t(lang, "policy_sns_hint"))}</p>
+      <div class="table-scroll">
+        <table class="fm-table policy-table">
+          <thead><tr><th>${htmlEsc(t(lang, "policy_member"))}</th><th>X</th><th>TikTok</th><th>Instagram</th><th>YouTube</th></tr></thead>
+          <tbody>${snsRows || `<tr><td colspan="5" class="content-muted">${htmlEsc(localizedLiteral(lang, "No members.", "暂无成员。"))}</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>
+    <section class="fm-card policy-section">
+      <h3 class="content-h3">${htmlEsc(t(lang, "policy_section_stream"))}</h3>
+      <p class="content-muted">${htmlEsc(t(lang, "policy_stream_hint"))}</p>
+      <div class="table-scroll">
+        <table class="fm-table policy-table">
+          <thead><tr><th>${htmlEsc(t(lang, "policy_stream_platform"))}</th><th>${htmlEsc(t(lang, "policy_stream_hours"))}</th></tr></thead>
+          <tbody>${streamTable}</tbody>
+        </table>
+      </div>
+    </section>
+    <section class="fm-card policy-section">
+      <h3 class="content-h3">${htmlEsc(t(lang, "policy_section_training"))}</h3>
+      <p class="content-muted">${htmlEsc(t(lang, "policy_training_hint"))}</p>
+      <h4 class="policy-subhead">${htmlEsc(t(lang, "policy_default_intensity"))}</h4>
+      <div class="training-sliders policy-training-sliders">
+        ${trainingSlider("sing", localizedLiteral(lang, "Sing", "唱功"))}
+        ${trainingSlider("dance", localizedLiteral(lang, "Dance", "舞蹈"))}
+        ${trainingSlider("physical", localizedLiteral(lang, "Physical", "体能"))}
+        ${trainingSlider("target", localizedLiteral(lang, "Target / misc", "重点 / 其他"))}
+        <label class="training-slider training-focus-slider-row">
+          <span class="training-slider-l">${htmlEsc(t(lang, "policy_default_focus"))}</span>
+          <select class="fm-select training-focus-select" data-policy-training-focus>${policyFocusOptionsHtml(policy.training.default_focus, lang)}</select>
+          <span class="training-slider-v" aria-hidden="true"> </span>
+        </label>
+      </div>
+      <div class="policy-toolbar">
+        <button type="button" class="fm-btn" data-policy-training-apply-all>${htmlEsc(t(lang, "policy_training_apply_all"))}</button>
+      </div>
+    </section>`;
+}
+
 function renderSchedule(
   save: GameSavePayload | null,
   bundle: OfficialScheduleBundle | null,
   scheduleCalendarMonthStart: string | null,
   scheduleWeekAnchorIso: string | null,
+  scheduleTab: ScheduleTab,
   lang: UiLanguage,
 ): string {
   if (!save) {
@@ -4282,6 +4464,19 @@ function renderSchedule(
   const cur = save.current_date ?? gameStart;
   const turn = typeof save.turn_number === "number" ? save.turn_number : 0;
   const nextIso = addCalendarDays(cur, 1);
+
+  const header = `
+    <h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Schedule", "日程"))}</h2>
+    <p class="content-lead">${htmlEsc(localizedLiteral(lang, "Last closed day:", "最近结算日："))} <strong>${htmlEsc(String(cur))}</strong> - ${htmlEsc(localizedLiteral(lang, "Next simulation day:", "下一模拟日："))} <strong>${htmlEsc(nextIso)}</strong> - ${htmlEsc(localizedLiteral(lang, "Turn", "回合"))} <strong>${htmlEsc(String(turn))}</strong></p>
+    ${renderScheduleTabs(scheduleTab, lang)}`;
+
+  if (scheduleTab === "policy") {
+    return `
+    <section class="content-panel schedule-view">
+      ${header}
+      ${renderSchedulePolicy(save, lang)}
+    </section>`;
+  }
 
   const schedulesList = (save.lives?.schedules ?? []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
@@ -4396,8 +4591,7 @@ function renderSchedule(
 
   return `
     <section class="content-panel schedule-view">
-      <h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Schedule", "日程"))}</h2>
-      <p class="content-lead">${htmlEsc(localizedLiteral(lang, "Last closed day:", "最近结算日："))} <strong>${htmlEsc(String(cur))}</strong> - ${htmlEsc(localizedLiteral(lang, "Next simulation day:", "下一模拟日："))} <strong>${htmlEsc(nextIso)}</strong> - ${htmlEsc(localizedLiteral(lang, "Turn", "回合"))} <strong>${htmlEsc(String(turn))}</strong></p>
+      ${header}
       <section class="fm-card schedule-calendar-card">
         <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Calendar", "月历"))}</h3>
         <p class="content-muted">${htmlEsc(localizedLiteral(lang, "UTC month grid. Use arrows to change month; double-click a day to show that week below; Current Week jumps back to the week of your next simulation day.", "UTC 月历网格。用箭头切换月份；双击某一天可在下方显示该周；“本周”会跳回下一模拟日所在周。"))}</p>
@@ -5455,6 +5649,7 @@ export function renderMainContent(
     /** `YYYY-MM-01` for Schedule month calendar; null = month of next simulation day. */
     scheduleCalendarMonthStart: string | null;
     scheduleWeekAnchorIso: string | null;
+    scheduleTab: ScheduleTab;
     attentionActionUid?: string | null;
     lang: UiLanguage;
     simulationBusy: boolean;
@@ -5495,6 +5690,7 @@ export function renderMainContent(
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     scheduleWeekAnchorIso,
+    scheduleTab,
     attentionActionUid,
     lang,
     simulationBusy,
@@ -5628,7 +5824,7 @@ export function renderMainContent(
       return renderGroupsManaged(save, lang);
     }
     case "Schedule":
-      return renderSchedule(save, officialScheduleBundle, scheduleCalendarMonthStart, scheduleWeekAnchorIso, lang);
+      return renderSchedule(save, officialScheduleBundle, scheduleCalendarMonthStart, scheduleWeekAnchorIso, scheduleTab, lang);
     case "Media":
       return renderMediaView(save, officialScheduleBundle, mediaTab, lang);
     case "Lives":
@@ -5751,6 +5947,7 @@ export interface DesktopShellProps {
   scheduleCalendarMonthStart: string | null;
   /** Selected day for Schedule week strip; null follows next simulation week. */
   scheduleWeekAnchorIso: string | null;
+  scheduleTab: ScheduleTab;
   canGoBack: boolean;
   canGoForward: boolean;
   simulationBusy: boolean;
@@ -5806,6 +6003,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     scheduleWeekAnchorIso,
+    scheduleTab,
     canGoBack,
     canGoForward,
     slot,
@@ -5878,6 +6076,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
     scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
     scheduleWeekAnchorIso: scheduleWeekAnchorIso ?? null,
+    scheduleTab,
     lang: "en",
     simulationBusy: p.simulationBusy,
   });
@@ -5991,6 +6190,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     scheduleWeekAnchorIso,
+    scheduleTab,
     canGoBack,
     canGoForward,
     slot,
@@ -6066,6 +6266,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
     scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
     scheduleWeekAnchorIso: scheduleWeekAnchorIso ?? null,
+    scheduleTab,
     lang,
     simulationBusy: p.simulationBusy,
     attentionActionUid: p.attentionActionUid ?? null,

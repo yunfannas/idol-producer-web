@@ -38,6 +38,7 @@ import {
   type ScoutTab,
   type SongsWorkspaceTab,
   type TrainingTab,
+  type ScheduleTab,
   type RoleBenchmarkKey,
   type TrainingRosterSortKey,
   type FeedbackEntry,
@@ -45,6 +46,7 @@ import {
 } from "./ui/gameShell";
 import {
   ensureManagedContracts,
+  ensureGroupPolicy,
   getActiveFinances,
   getPrimaryGroup,
   hydrateSnapshotGroupsFromScenario,
@@ -606,8 +608,11 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     preset.default_duration,
     liveType === "Concert" ? 6 : liveType === "Taiban" ? 3 : 5,
   );
-  const tokutenkaiStart = preset.tokutenkai_enabled ? endTime : "";
-  const tokutenkaiEnd = preset.tokutenkai_enabled ? addMinutesToHHMM(endTime, preset.tokutenkai_duration) : "";
+  const policy = save ? ensureGroupPolicy(save) : null;
+  const tokutenkaiOn = policy ? policy.live.tokutenkai_enabled : preset.tokutenkai_enabled;
+  const goodsOn = policy ? policy.live.goods_enabled : true;
+  const tokutenkaiStart = tokutenkaiOn ? endTime : "";
+  const tokutenkaiEnd = tokutenkaiOn ? addMinutesToHHMM(endTime, preset.tokutenkai_duration) : "";
   const managedUid = save?.managing_group_uid ??  "";
   const suggestedSetlist = save
     ? suggestManagedSetlistTitles(
@@ -636,14 +641,14 @@ function resetNewLiveFormDefaults(liveType: NewLiveFormState["liveType"] = "Rout
     venueName: venue,
     program: suggestedSetlist.map((title) => createSongProgramItem(title)),
     setlist: suggestedSetlist,
-    tokutenkaiEnabled: preset.tokutenkai_enabled,
+    tokutenkaiEnabled: tokutenkaiOn,
     tokutenkaiStart,
     tokutenkaiEnd,
     tokutenkaiTicketPrice: preset.tokutenkai_ticket_price,
     tokutenkaiSlotSeconds: preset.tokutenkai_slot_seconds,
-    tokutenkaiExpectedTickets: preset.tokutenkai_expected_tickets,
-    goodsEnabled: true,
-    goodsUids: initialGoodsUids,
+    tokutenkaiExpectedTickets: tokutenkaiOn ? preset.tokutenkai_expected_tickets : 0,
+    goodsEnabled: goodsOn,
+    goodsUids: goodsOn ? initialGoodsUids : [],
     ticketPriceYen: liveType === "Concert" ? 3800 : liveType === "Festival" ? 0 : 2500,
     vipTicketPriceYen: 0,
     vipCapacity: 0,
@@ -1304,6 +1309,7 @@ let inboxSelectedUid: string | null = null;
 let scheduleCalendarMonthStart: string | null = null;
 /** Schedule: selected day used to drive the week strip; null = current week of next simulation day. */
 let scheduleWeekAnchorIso: string | null = null;
+let scheduleTab: ScheduleTab = "calendar";
 let livesTab: LivesTab = "new";
 let leaguePanelTab: LeaguePanelTab = "current";
 let scheduledLiveUid: string | null = null;
@@ -1399,6 +1405,7 @@ interface NavigationSnapshot {
   selectedScoutApplicantUid: string | null;
   scheduleCalendarMonthStart: string | null;
   scheduleWeekAnchorIso: string | null;
+  scheduleTab: ScheduleTab;
 }
 
 const backHistory: NavigationSnapshot[] = [];
@@ -1433,6 +1440,7 @@ function captureNavigationSnapshot(): NavigationSnapshot {
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     scheduleWeekAnchorIso,
+    scheduleTab,
   };
 }
 
@@ -1463,7 +1471,8 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.selectedScoutLeadUid === b.selectedScoutLeadUid &&
     a.selectedScoutApplicantUid === b.selectedScoutApplicantUid &&
     a.scheduleCalendarMonthStart === b.scheduleCalendarMonthStart &&
-    a.scheduleWeekAnchorIso === b.scheduleWeekAnchorIso
+    a.scheduleWeekAnchorIso === b.scheduleWeekAnchorIso &&
+    a.scheduleTab === b.scheduleTab
   );
 }
 
@@ -1504,6 +1513,10 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   selectedScoutApplicantUid = snapshot.selectedScoutApplicantUid;
   scheduleCalendarMonthStart = snapshot.scheduleCalendarMonthStart;
   scheduleWeekAnchorIso = snapshot.scheduleWeekAnchorIso;
+  {
+    const restored = String(snapshot.scheduleTab ?? "calendar");
+    scheduleTab = restored === "policy" ? "policy" : "calendar";
+  }
 }
 
 function clearNavigationHistory(): void {
@@ -2198,6 +2211,7 @@ function paintGame(): void {
     selectedScoutApplicantUid,
     scheduleCalendarMonthStart,
     scheduleWeekAnchorIso,
+    scheduleTab,
     attentionActionUid,
     canGoBack: backHistory.length > 0,
     canGoForward: forwardHistory.length > 0,
@@ -2386,6 +2400,43 @@ function paintGame(): void {
     if (calToday && save && !browseMode && currentView === "Schedule") {
       scheduleCalendarMonthStart = null;
       scheduleWeekAnchorIso = null;
+      paintGame();
+      return;
+    }
+    const scheduleTabPick = t.closest<HTMLElement>("[data-schedule-tab]");
+    if (scheduleTabPick && save && !browseMode && currentView === "Schedule") {
+      const tab = scheduleTabPick.getAttribute("data-schedule-tab");
+      if (tab === "calendar" || tab === "policy") {
+        navigate(() => {
+          scheduleTab = tab;
+        });
+      }
+      return;
+    }
+    const policyPrerecordAll = t.closest<HTMLElement>("[data-policy-prerecord-all]");
+    if (policyPrerecordAll && save && !browseMode && currentView === "Schedule") {
+      const mode = policyPrerecordAll.getAttribute("data-policy-prerecord-all");
+      const policy = ensureGroupPolicy(save);
+      const grp = getPrimaryGroup(save);
+      const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
+      const next: Record<string, boolean> = { ...policy.live.prerecorded_vocals_by_member };
+      for (const uid of memberUids) {
+        if (mode === "on") next[uid] = true;
+        else delete next[uid];
+      }
+      policy.live.prerecorded_vocals_by_member = next;
+      paintGame();
+      return;
+    }
+    const policyTrainingApply = t.closest<HTMLElement>("[data-policy-training-apply-all]");
+    if (policyTrainingApply && save && !browseMode && currentView === "Schedule") {
+      const policy = ensureGroupPolicy(save);
+      const grp = getPrimaryGroup(save);
+      const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
+      for (const uid of memberUids) {
+        save.training_intensity[uid] = { ...policy.training.default_intensity };
+        save.training_focus_skill[uid] = policy.training.default_focus;
+      }
       paintGame();
       return;
     }
@@ -3761,25 +3812,121 @@ function paintGame(): void {
       return;
     }
     const sl = t.closest<HTMLInputElement>("[data-training-slider]");
-    if (!sl || !save || browseMode || currentView !== "Training") return;
-    const uid = sl.getAttribute("data-idol-uid");
-    const field = sl.getAttribute("data-field");
-    if (!uid || !field) return;
-    if (!["sing", "dance", "physical", "target"].includes(field)) return;
-    const v = Math.max(0, Math.min(5, Number(sl.value) || 0));
-    if (!save.training_intensity[uid]) {
-      save.training_intensity[uid] = { sing: 0, dance: 0, physical: 0, target: 0 };
+    if (sl && save && !browseMode && currentView === "Training") {
+      const uid = sl.getAttribute("data-idol-uid");
+      const field = sl.getAttribute("data-field");
+      if (!uid || !field) return;
+      if (!["sing", "dance", "physical", "target"].includes(field)) return;
+      const v = Math.max(0, Math.min(5, Number(sl.value) || 0));
+      if (!save.training_intensity[uid]) {
+        save.training_intensity[uid] = { sing: 0, dance: 0, physical: 0, target: 0 };
+      }
+      (save.training_intensity[uid] as Record<string, number>)[field] = v;
+      if (trainingRepaintTimer) clearTimeout(trainingRepaintTimer);
+      trainingRepaintTimer = window.setTimeout(() => {
+        trainingRepaintTimer = null;
+        paintGame();
+      }, 140);
+      return;
     }
-    (save.training_intensity[uid] as Record<string, number>)[field] = v;
-    if (trainingRepaintTimer) clearTimeout(trainingRepaintTimer);
-    trainingRepaintTimer = window.setTimeout(() => {
-      trainingRepaintTimer = null;
-      paintGame();
-    }, 140);
+    const policySl = t.closest<HTMLInputElement>("[data-policy-training-slider]");
+    if (policySl && save && !browseMode && currentView === "Schedule" && scheduleTab === "policy") {
+      const field = String(policySl.getAttribute("data-field") ?? "").trim();
+      const v = Math.max(0, Math.min(5, Number(policySl.value) || 0));
+      if (field === "sing" || field === "dance" || field === "physical" || field === "target") {
+        const policy = ensureGroupPolicy(save);
+        policy.training.default_intensity[field] = v;
+        const valEl = appRoot.querySelector(`[data-policy-training-val="${field}"]`);
+        if (valEl) valEl.textContent = String(v);
+      }
+      return;
+    }
   });
 
   document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const t = ev.target as HTMLElement;
+    if (save && !browseMode && currentView === "Schedule" && scheduleTab === "policy") {
+      const policy = ensureGroupPolicy(save);
+      const prerecord = t.closest<HTMLInputElement>("[data-policy-prerecord-uid]");
+      if (prerecord) {
+        const uid = String(prerecord.getAttribute("data-policy-prerecord-uid") ?? "").trim();
+        if (uid) {
+          if (prerecord.checked) policy.live.prerecorded_vocals_by_member[uid] = true;
+          else delete policy.live.prerecorded_vocals_by_member[uid];
+        }
+        return;
+      }
+      const tokutenkai = t.closest<HTMLInputElement>("[data-policy-tokutenkai]");
+      if (tokutenkai) {
+        policy.live.tokutenkai_enabled = tokutenkai.checked;
+        return;
+      }
+      const goods = t.closest<HTMLInputElement>("[data-policy-goods]");
+      if (goods) {
+        policy.live.goods_enabled = goods.checked;
+        return;
+      }
+      const refillOff = t.closest<HTMLInputElement>("[data-policy-refill-off]");
+      if (refillOff) {
+        if (refillOff.checked) {
+          policy.live.auto_goods_refill = null;
+        } else {
+          const qtyInput = appRoot.querySelector<HTMLInputElement>("[data-policy-refill-qty]");
+          const n = Math.max(1, Math.round(Number(qtyInput?.value) || 50));
+          policy.live.auto_goods_refill = n;
+        }
+        paintGame();
+        return;
+      }
+      const refillQty = t.closest<HTMLInputElement>("[data-policy-refill-qty]");
+      if (refillQty) {
+        const n = Math.round(Number(refillQty.value) || 0);
+        policy.live.auto_goods_refill = n > 0 ? n : null;
+        paintGame();
+        return;
+      }
+      const sns = t.closest<HTMLInputElement>("[data-policy-sns-uid]");
+      if (sns) {
+        const uid = String(sns.getAttribute("data-policy-sns-uid") ?? "").trim();
+        const platform = String(sns.getAttribute("data-policy-sns-platform") ?? "").trim();
+        if (uid && (platform === "x" || platform === "tiktok" || platform === "instagram" || platform === "youtube")) {
+          const flags = policy.sns.by_member[uid] ?? { x: false, tiktok: false, instagram: false, youtube: false };
+          flags[platform] = sns.checked;
+          policy.sns.by_member[uid] = flags;
+        }
+        return;
+      }
+      const stream = t.closest<HTMLInputElement>("[data-policy-stream]");
+      if (stream) {
+        const key = String(stream.getAttribute("data-policy-stream") ?? "").trim();
+        const hours = Math.max(0, Math.min(168, Math.round(Number(stream.value) || 0)));
+        if (
+          key === "showroom_hours_per_week" ||
+          key === "tiktok_hours_per_week" ||
+          key === "instagram_hours_per_week"
+        ) {
+          policy.stream[key] = hours;
+          stream.value = String(hours);
+        }
+        return;
+      }
+      const trainingSlider = t.closest<HTMLInputElement>("[data-policy-training-slider]");
+      if (trainingSlider) {
+        const field = String(trainingSlider.getAttribute("data-field") ?? "").trim();
+        const v = Math.max(0, Math.min(5, Number(trainingSlider.value) || 0));
+        if (field === "sing" || field === "dance" || field === "physical" || field === "target") {
+          policy.training.default_intensity[field] = v;
+          const valEl = appRoot.querySelector(`[data-policy-training-val="${field}"]`);
+          if (valEl) valEl.textContent = String(v);
+        }
+        return;
+      }
+      const trainingFocus = t.closest<HTMLSelectElement>("[data-policy-training-focus]");
+      if (trainingFocus) {
+        policy.training.default_focus = String(trainingFocus.value ?? "talking");
+        return;
+      }
+    }
     const contractSalaryInput = t.closest<HTMLInputElement>("[data-contract-draft-salary]");
     if (contractSalaryInput && save && !browseMode && currentView === "Inbox") {
       const uid = String(contractSalaryInput.getAttribute("data-contract-draft-salary") ??  "").trim();

@@ -5461,6 +5461,57 @@ code {
   margin-top: 0.75rem;
 }
 
+.policy-section {
+  margin-bottom: 0.85rem;
+}
+
+.policy-section .policy-subhead {
+  margin: 0.85rem 0 0.35rem;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.policy-live-toggles,
+.policy-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.55rem 0;
+}
+
+.policy-refill-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.55rem 0;
+}
+
+.policy-refill-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.policy-refill-qty-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+}
+
+.policy-refill-qty,
+.policy-stream-hours {
+  width: 5.5rem;
+}
+
+.policy-table td.num {
+  text-align: center;
+}
+
+.policy-training-sliders {
+  margin-top: 0.45rem;
+}
+
 .schedule-cal {
   margin-top: 0.5rem;
 }
