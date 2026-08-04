@@ -244,13 +244,16 @@ export function registerManagedSetlistPerformance(
 export function formationFamiliarityFingerprint(formation: {
   layoutId?: string | null;
   centerMode?: string | null;
+  centerIdolUids?: Array<string | null> | null;
   rowCount?: number | null;
   slotIdolUids?: Array<string | null>;
 }): string {
   const slots = (formation.slotIdolUids ?? []).map((uid) => String(uid ?? "").trim() || "-").join(",");
+  const centers = (formation.centerIdolUids ?? []).map((uid) => String(uid ?? "").trim() || "-").join(",");
   return [
     String(formation.layoutId ?? ""),
     String(formation.centerMode ?? "single"),
+    centers,
     String(formation.rowCount ?? ""),
     slots,
   ].join("|");
@@ -266,6 +269,7 @@ export function applyFormationChangeToSongFamiliarity(
   formation: {
     layoutId?: string | null;
     centerMode?: string | null;
+    centerIdolUids?: Array<string | null> | null;
     rowCount?: number | null;
     slotIdolUids?: Array<string | null>;
   },

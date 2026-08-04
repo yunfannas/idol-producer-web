@@ -46,10 +46,12 @@ export interface SongStartingFormation {
   /** Length = memberCount; null = empty. Index = position number: 0 = center, then outward. */
   slotIdolUids: Array<string | null>;
   /**
-   * Center seating: one front-middle seat, or two twin center seats.
-   * Who is “center” on stage = idols currently occupying those slots.
+   * Center seating mode (single vs twin). Prefer `centerIdolUids` for who is C;
+   * mode follows that list length when centers are toggled on the stage.
    */
   centerMode?: FormationCenterMode;
+  /** Explicit center idol uids (0–2). Double-click on stage sets/unsets these. */
+  centerIdolUids?: string[] | null;
   /** Ideal full-roster slots when some members are temporarily unavailable. */
   fullSlotIdolUids?: Array<string | null> | null;
   /** True when current slots are a reduced temporary lineup (hiatus/suspension). */
@@ -131,14 +133,28 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
   };
 
   const classicRows = defaultFormationRowCount(n);
-  add({
-    id: `classic-r${classicRows}-c1`,
-    labelEn: `Classic ${classicRows}-row`,
-    labelZh: `经典 ${classicRows} 排`,
-    kind: "rows",
-    rowCount: classicRows,
-    centerMode: defaultCenterModeForLayout("rows", classicRows, n),
-  });
+  // Flat 2-row is the managed-group default (even → double C, odd → single C).
+  if (n >= 2) {
+    add({
+      id: "flat-r2-c1",
+      labelEn: "Flat 2-row",
+      labelZh: "双排",
+      kind: "rows",
+      rowCount: 2,
+      centerMode: defaultCenterModeForLayout("rows", 2, n),
+    });
+  }
+  // Classic N-row when it differs from the flat 2-row default.
+  if (classicRows !== 2) {
+    add({
+      id: `classic-r${classicRows}-c1`,
+      labelEn: `Classic ${classicRows}-row`,
+      labelZh: `经典 ${classicRows} 排`,
+      kind: "rows",
+      rowCount: classicRows,
+      centerMode: defaultCenterModeForLayout("rows", classicRows, n),
+    });
+  }
 
   if (n >= 3 && classicRows !== 1) {
     add({
@@ -148,17 +164,6 @@ export function typicalFormationPresets(memberCount: number): TypicalFormationPr
       kind: "rows",
       rowCount: 1,
       centerMode: "single",
-    });
-  }
-  // Flat 2-row only when classic is not already 2-row (e.g. n≥10 classic is 3).
-  if (n >= 4 && classicRows !== 2) {
-    add({
-      id: "flat-r2-c1",
-      labelEn: "Flat 2-row",
-      labelZh: "双排",
-      kind: "rows",
-      rowCount: 2,
-      centerMode: defaultCenterModeForLayout("rows", 2, n),
     });
   }
   // Extra classic 3-row only when default classic is not already 3 (avoids duplicating deep/classic).
@@ -272,6 +277,94 @@ export function resolveTypicalPreset(
   return found ?? presets[0]!;
 }
 
+/**
+ * Default start layout for the managed/playing group:
+ * 2-row trapezoid; even roster → double C, odd → single C.
+ */
+export function defaultManagedCenterMode(memberCount: number): FormationCenterMode {
+  const n = Math.max(0, Math.floor(memberCount));
+  return n >= 2 && n % 2 === 0 ? "double" : "single";
+}
+
+export function defaultManagedRowCount(memberCount: number): number {
+  const n = Math.max(1, Math.floor(memberCount));
+  if (n <= 1) return 1;
+  return Math.min(2, maxFormationRowCount(n));
+}
+
+/**
+ * Order items into center-outward slots: higher score usually gets a better index (#0 first),
+ * but additive noise keeps the lineup from being fixed.
+ */
+export function orderByScoreWithNoise<T>(
+  items: readonly T[],
+  scoreOf: (item: T) => number,
+  opts?: { noiseRatio?: number; rng?: () => number },
+): T[] {
+  if (items.length <= 1) return [...items];
+  const rng = opts?.rng ?? Math.random;
+  const noiseRatio = opts?.noiseRatio ?? 0.3;
+  const scored = items.map((item) => ({ item, score: Number(scoreOf(item)) || 0 }));
+  let min = Infinity;
+  let max = -Infinity;
+  for (const row of scored) {
+    if (row.score < min) min = row.score;
+    if (row.score > max) max = row.score;
+  }
+  const spread = Math.max(10, max - min);
+  const noiseAmp = spread * Math.max(0, noiseRatio);
+  return scored
+    .map((row) => ({
+      item: row.item,
+      key: row.score + (rng() * 2 - 1) * noiseAmp,
+      tie: rng(),
+    }))
+    .sort((a, b) => b.key - a.key || a.tie - b.tie)
+    .map((row) => row.item);
+}
+
+/** Build a filled default formation (center-outward slots; caller should pass score-ordered uids). */
+export function buildDefaultManagedFormation(opts: {
+  songUid: string;
+  groupUid?: string | null;
+  memberUids: string[];
+  source?: FormationSource;
+}): SongStartingFormation {
+  const uids = opts.memberUids.map((u) => String(u ?? "").trim()).filter(Boolean);
+  const n = Math.max(1, uids.length || 1);
+  const rowCount = defaultManagedRowCount(n);
+  const centerMode = defaultManagedCenterMode(n);
+  const slots = formationSlotsForLayout(n, "rows", rowCount, centerMode);
+  const slotIdolUids: Array<string | null> = Array.from({ length: n }, (_, i) => uids[i] ?? null);
+  const positions = slotIdolUids
+    .map((uid, i) => {
+      if (!uid) return null;
+      const s = slots[i];
+      return s ? { idolUid: uid, x: s.x, y: s.y } : null;
+    })
+    .filter((p): p is { idolUid: string; x: number; y: number } => Boolean(p));
+  const presetId = rowCount === 2 ? "flat-r2-c1" : `classic-r${rowCount}-c1`;
+  return {
+    schemaVersion: "0.1",
+    songUid: opts.songUid,
+    groupUid: opts.groupUid ?? null,
+    layoutId: layoutIdForCount(n, rowCount, "rows"),
+    memberCount: n,
+    rowCount,
+    layoutKind: "rows",
+    presetId,
+    slotIdolUids,
+    centerMode,
+    centerIdolUids: centerIdolUidsFromSlots(slotIdolUids, centerMode, n),
+    fullSlotIdolUids: null,
+    isTemporary: false,
+    unavailableIdolUids: [],
+    source: opts.source ?? "default_center",
+    positions,
+    updatedAt: new Date().toISOString(),
+  };
+}
+
 export function applyTypicalPreset(
   formation: SongStartingFormation,
   presetId: string,
@@ -310,6 +403,7 @@ export function applyTypicalPreset(
     layoutKind: preset.kind,
     rowCount: preset.kind === "rows" ? preset.rowCount : detectRowCountFromPositions(positions, n),
     centerMode,
+    centerIdolUids: centerIdolUidsFromSlots(slotIdolUids, centerMode, n),
     layoutId: layoutIdForCount(n, preset.rowCount, preset.kind),
     slotIdolUids,
     positions,
@@ -824,6 +918,137 @@ export function centerSlotIndices(
   return [0];
 }
 
+/**
+ * Max simultaneous C seats by roster size:
+ * &lt;8 → 2, &lt;12 → 3, &lt;16 → 4, …
+ * Zero C is always allowed.
+ */
+export function maxFormationCenters(memberCount: number): number {
+  const n = Math.max(0, Math.floor(memberCount));
+  if (n <= 0) return 0;
+  if (n < 8) return Math.min(n, 2);
+  return Math.min(n, Math.floor(n / 4) + 1);
+}
+
+/** Center uids from explicit list, else from center-outward slot seats. */
+export function centerIdolUidsFromFormation(formation: SongStartingFormation): string[] {
+  const placed = new Set(
+    [
+      ...formation.slotIdolUids.filter((u): u is string => !!u),
+      ...(formation.positions ?? []).map((p) => p.idolUid),
+    ]
+      .map((u) => String(u).trim())
+      .filter(Boolean),
+  );
+  const max = maxFormationCenters(formation.memberCount || placed.size);
+  if (Array.isArray(formation.centerIdolUids)) {
+    return formation.centerIdolUids
+      .map((u) => String(u ?? "").trim())
+      .filter((u) => u && placed.has(u))
+      .slice(0, max);
+  }
+  const mode = resolveCenterMode(formation.centerMode);
+  const indices = centerSlotIndices(formation.memberCount, mode, formation.rowCount);
+  const out: string[] = [];
+  for (const index of indices) {
+    const uid = formation.slotIdolUids[index];
+    if (uid && placed.has(uid)) out.push(uid);
+    if (out.length >= max) break;
+  }
+  return out;
+}
+
+function centerIdolUidsFromSlots(
+  slotIdolUids: Array<string | null>,
+  centerMode: FormationCenterMode,
+  memberCount = slotIdolUids.length,
+): string[] {
+  const mode = resolveCenterMode(centerMode);
+  const max = maxFormationCenters(memberCount);
+  const out: string[] = [];
+  const first = slotIdolUids[0];
+  if (first) out.push(first);
+  if (mode === "double" && max >= 2) {
+    const second = slotIdolUids[1];
+    if (second) out.push(second);
+  }
+  return out.slice(0, max);
+}
+
+export type ToggleFormationCenterResult = {
+  formation: SongStartingFormation;
+  /** True when center list changed. */
+  changed: boolean;
+  /** True when set was blocked because the roster is already at max C. */
+  blockedAtMax: boolean;
+  maxCenters: number;
+  centerCount: number;
+};
+
+/** Double-click toggle: set/unset C. No replace when at max — unset someone first. */
+export function toggleFormationCenterIdol(
+  formation: SongStartingFormation,
+  idolUid: string,
+): ToggleFormationCenterResult {
+  const uid = String(idolUid ?? "").trim();
+  const maxCenters = maxFormationCenters(formation.memberCount);
+  if (!uid) {
+    return {
+      formation,
+      changed: false,
+      blockedAtMax: false,
+      maxCenters,
+      centerCount: centerIdolUidsFromFormation(formation).length,
+    };
+  }
+  const placed = new Set(
+    [
+      ...formation.slotIdolUids.filter((u): u is string => !!u),
+      ...(formation.positions ?? []).map((p) => p.idolUid),
+    ]
+      .map((u) => String(u).trim())
+      .filter(Boolean),
+  );
+  if (!placed.has(uid)) {
+    return {
+      formation,
+      changed: false,
+      blockedAtMax: false,
+      maxCenters,
+      centerCount: centerIdolUidsFromFormation(formation).length,
+    };
+  }
+
+  let centers = centerIdolUidsFromFormation(formation);
+  const idx = centers.indexOf(uid);
+  if (idx >= 0) {
+    centers = centers.filter((c) => c !== uid);
+  } else if (centers.length >= maxCenters) {
+    return {
+      formation,
+      changed: false,
+      blockedAtMax: true,
+      maxCenters,
+      centerCount: centers.length,
+    };
+  } else {
+    centers = [...centers, uid];
+  }
+  const centerMode: FormationCenterMode = centers.length >= 2 ? "double" : "single";
+  return {
+    formation: {
+      ...formation,
+      centerIdolUids: centers,
+      centerMode,
+      updatedAt: new Date().toISOString(),
+    },
+    changed: true,
+    blockedAtMax: false,
+    maxCenters,
+    centerCount: centers.length,
+  };
+}
+
 export function formationSlotsWithCenter(
   count: number,
   mode: FormationCenterMode = "single",
@@ -989,6 +1214,62 @@ export function setIdolStagePosition(
   };
 }
 
+/**
+ * Swap two placed members: stage positions, slot numbers, and C flags.
+ */
+export function swapFormationMembers(
+  formation: SongStartingFormation,
+  idolUidA: string,
+  idolUidB: string,
+): SongStartingFormation {
+  const a = String(idolUidA ?? "").trim();
+  const b = String(idolUidB ?? "").trim();
+  if (!a || !b || a === b) return formation;
+
+  const slotIdolUids = [...formation.slotIdolUids];
+  const ia = slotIdolUids.indexOf(a);
+  const ib = slotIdolUids.indexOf(b);
+  if (ia < 0 || ib < 0) return formation;
+  slotIdolUids[ia] = b;
+  slotIdolUids[ib] = a;
+
+  const posMap = new Map(placedFormationPositions(formation).map((p) => [p.idolUid, p] as const));
+  const pa = posMap.get(a);
+  const pb = posMap.get(b);
+  const positions = placedFormationPositions(formation).map((p) => {
+    if (p.idolUid === a && pb) return { idolUid: a, x: pb.x, y: pb.y };
+    if (p.idolUid === b && pa) return { idolUid: b, x: pa.x, y: pa.y };
+    return p;
+  });
+  // If either lacked a free position, seed from the other's coords or leave as mapped.
+  if (pa && !pb) {
+    positions.push({ idolUid: b, x: pa.x, y: pa.y });
+  } else if (pb && !pa) {
+    positions.push({ idolUid: a, x: pb.x, y: pb.y });
+  }
+
+  const centers = centerIdolUidsFromFormation(formation);
+  const aC = centers.includes(a);
+  const bC = centers.includes(b);
+  let centerIdolUids = centers;
+  if (aC !== bC) {
+    centerIdolUids = centers.filter((u) => u !== a && u !== b);
+    if (aC) centerIdolUids.push(b);
+    if (bC) centerIdolUids.push(a);
+  }
+
+  const centerMode: FormationCenterMode = centerIdolUids.length >= 2 ? "double" : "single";
+  return {
+    ...formation,
+    slotIdolUids,
+    positions,
+    centerIdolUids,
+    centerMode,
+    source: "manual",
+    updatedAt: new Date().toISOString(),
+  };
+}
+
 export function removeIdolStagePosition(
   formation: SongStartingFormation,
   idolUid: string,
@@ -1012,17 +1293,6 @@ export function clearFormationPositions(formation: SongStartingFormation): SongS
     videoMarks: undefined,
     updatedAt: new Date().toISOString(),
   };
-}
-
-export function centerIdolUidsFromFormation(formation: SongStartingFormation): string[] {
-  const mode = resolveCenterMode(formation.centerMode);
-  const indices = centerSlotIndices(formation.memberCount, mode, formation.rowCount);
-  const out: string[] = [];
-  for (const index of indices) {
-    const uid = formation.slotIdolUids[index];
-    if (uid) out.push(uid);
-  }
-  return out;
 }
 
 export function layoutIdForCount(
@@ -1057,6 +1327,7 @@ export function emptyFormation(opts: {
   const layoutKind = resolveLayoutKind(opts.layoutKind ?? preset.kind);
   const rowCount = resolveRowCount(memberCount, opts.rowCount ?? preset.rowCount);
   const centerMode = resolveCenterMode(opts.centerMode ?? preset.centerMode);
+  const slotIdolUids = Array.from({ length: memberCount }, () => null);
   return {
     schemaVersion: "0.1",
     songUid: opts.songUid,
@@ -1066,8 +1337,9 @@ export function emptyFormation(opts: {
     rowCount,
     layoutKind,
     presetId: preset.id,
-    slotIdolUids: Array.from({ length: memberCount }, () => null),
+    slotIdolUids,
     centerMode,
+    centerIdolUids: centerIdolUidsFromSlots(slotIdolUids, centerMode, memberCount),
     fullSlotIdolUids: null,
     isTemporary: false,
     unavailableIdolUids: [],
@@ -1195,6 +1467,13 @@ export function normalizeSongStartingFormation(
     presetId: presetIdRaw || resolveTypicalPreset(Math.max(1, memberCount)).id,
     slotIdolUids: slotIdolUids.slice(0, memberCount),
     centerMode: resolveCenterMode(row.centerMode ?? row.center_mode),
+    centerIdolUids: (() => {
+      const raw = row.centerIdolUids ?? row.center_idol_uids;
+      if (!Array.isArray(raw)) return null;
+      const max = maxFormationCenters(memberCount);
+      const list = raw.map((x) => String(x ?? "").trim()).filter(Boolean).slice(0, max);
+      return list;
+    })(),
     fullSlotIdolUids,
     isTemporary: row.isTemporary === true || row.is_temporary === true,
     unavailableIdolUids,

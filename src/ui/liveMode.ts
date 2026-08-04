@@ -7,7 +7,10 @@ import { songCatalogDisplayLabel, songCatalogMatchesPick } from "../data/songCat
 import { songsForDisplaySorted } from "../data/songDisplayPolicy";
 import {
   centerIdolUidsFromFormation,
+  defaultManagedCenterMode,
+  defaultManagedRowCount,
   formationSlots,
+  orderByScoreWithNoise,
   resolveCenterMode,
   resolveSongFormation,
   type SongFormationCatalog,
@@ -17,6 +20,7 @@ import {
   activeRoleAssignmentsFromHistoryEntry,
   roleAssignmentsFromHistoryEntry,
 } from "../data/memberRoles";
+import { getAbilityRaw, normalizePersistedAttributes } from "../engine/idolAttributes";
 import { isIdolUnavailableForStage } from "../engine/idolStatusSystem";
 import { deterministicNoise } from "../engine/livePerformanceWeb";
 import { managedSetlistEffect, type ManagedSongStatusRow } from "../engine/songStatusSystem";
@@ -138,22 +142,17 @@ function orderMembersForFormation(
   groupUid: string,
   asOf: string,
 ): Record<string, unknown>[] {
-  const scored = idols.map((idol, index) => {
-    const center = isCenterMember(idol, groupUid, asOf);
-    return { idol, center, index };
-  });
-  scored.sort((a, b) => Number(b.center) - Number(a.center) || a.index - b.index);
-  // Place center at front-middle slot: for odd layouts slot algorithm puts center-ish last in front.
-  // Reorder so center is assigned the front-most center-looking slot by putting them mid-array for n=5 etc.
-  if (scored.length >= 3) {
-    const centerIdx = scored.findIndex((s) => s.center);
-    if (centerIdx >= 0) {
-      const [center] = scored.splice(centerIdx, 1);
-      const insertAt = Math.floor(scored.length / 2);
-      scored.splice(insertAt, 0, center);
-    }
-  }
-  return scored.map((s) => s.idol);
+  return orderByScoreWithNoise(
+    idols,
+    (idol) => {
+      let score = getAbilityRaw(normalizePersistedAttributes(idol.attributes));
+      const popularity = Number(idol.popularity ?? 0) || 0;
+      score += Math.min(16, popularity * 0.12);
+      if (isCenterMember(idol, groupUid, asOf)) score += 12;
+      return score;
+    },
+    { noiseRatio: 0.32 },
+  );
 }
 
 function findSongByTitle(
@@ -378,14 +377,22 @@ export function buildLiveModeSession(opts: {
     return !isIdolUnavailableForStage(idol, dateIso);
   });
   const ordered = orderMembersForFormation(idols, gid, dateIso);
-  const slots = formationSlots(ordered.length);
+  const centerMode = defaultManagedCenterMode(ordered.length);
+  const rowCount = defaultManagedRowCount(ordered.length);
+  const slots = formationSlots(ordered.length, rowCount, centerMode);
+  const centerUids = new Set(
+    centerMode === "double" && ordered.length >= 2
+      ? [String(ordered[0]?.uid ?? ""), String(ordered[1]?.uid ?? "")]
+      : [String(ordered[0]?.uid ?? "")],
+  );
   const defaultMembers: LiveModeMember[] = ordered.map((idol, i) => {
     const slot = slots[i] ?? { x: 50, y: 50 };
+    const uid = String(idol.uid ?? "");
     return {
-      uid: String(idol.uid ?? ""),
+      uid,
       name: idolDisplayName(idol),
       color: idolColor(idol),
-      isCenter: isCenterMember(idol, gid, dateIso),
+      isCenter: centerUids.has(uid) || isCenterMember(idol, gid, dateIso),
       x: slot.x,
       y: slot.y,
     };

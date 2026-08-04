@@ -1722,10 +1722,26 @@ a.fm-menu-link:hover {
 
 .formation-editor-stage.is-free-stage .formation-editor-idol {
   cursor: grab;
+  touch-action: none;
+  user-select: none;
 }
 
 .formation-editor-stage.is-free-stage .formation-editor-idol:active {
   cursor: grabbing;
+}
+
+.formation-editor-stage.is-free-dragging {
+  cursor: grabbing;
+}
+
+.formation-editor-slot.is-dragging {
+  z-index: 5;
+  opacity: 0.92;
+}
+
+.formation-editor-idol.is-swap-target .formation-editor-face {
+  box-shadow: 0 0 0 3px color-mix(in srgb, #38bdf8 70%, transparent);
+  transform: scale(1.06);
 }
 
 .formation-editor-pos-num {
