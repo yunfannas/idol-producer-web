@@ -353,6 +353,51 @@ a.fm-menu-link:hover {
   gap: 0.5rem;
 }
 
+.app-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.app-confirm-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(7 10 18 / 0.74);
+}
+
+.app-confirm-panel {
+  position: relative;
+  z-index: 1;
+  width: min(26rem, 100%);
+  padding: 1.15rem 1.2rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  background: linear-gradient(180deg, rgb(22 33 62 / 0.98), rgb(13 26 46 / 0.98));
+  box-shadow: 0 20px 44px rgb(0 0 0 / 0.45);
+}
+
+.app-confirm-title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.app-confirm-message {
+  margin: 0.75rem 0 0;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.app-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+}
+
 .opening-manual-row {
   margin: 0.35rem 0 0;
   display: flex;

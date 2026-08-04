@@ -132,6 +132,7 @@ import {
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
+import { showAppConfirm } from "./ui/appConfirm";
 import { renderTutorialOverlay, tutorialSteps } from "./ui/tutorialOverlay";
 import { annotateWikiTerms, defaultWikiEntryKey, normalizeWikiSelection, relatedWikiKeysForView } from "./ui/wiki";
 import { roleAssignmentsFromHistoryEntry } from "./data/memberRoles";
@@ -1077,7 +1078,7 @@ function mountFormationEditorIfNeeded(): void {
     const overlay = wrap.firstElementChild;
     if (!overlay) return;
     appRoot.appendChild(overlay);
-    bindFormationEditor(overlay, formationEditorState, uiLang, bindCallbacks);
+    bindFormationEditor(overlay, formationEditorState, uiLang, bindCallbacks, { allowVideo: false });
     return;
   }
 
@@ -1087,7 +1088,7 @@ function mountFormationEditorIfNeeded(): void {
     bindFormationEditor(host, formationEditorState, uiLang, {
       onChange: bindCallbacks.onChange,
       onSave: bindCallbacks.onSave,
-    });
+    }, { allowVideo: false });
   }
 }
 
@@ -2146,7 +2147,7 @@ function paintGame(): void {
     trainingTab === "formation" &&
     formationEditorState &&
     !liveModeSession
-      ? renderFormationEditor(formationEditorState, uiLang, { showClose: false })
+      ? renderFormationEditor(formationEditorState, uiLang, { showClose: false, allowVideo: false })
       : "";
 
   if (!browseMode && save && currentView === "Inbox" && save.inbox.notifications.length) {
@@ -4139,9 +4140,13 @@ function paintGame(): void {
       const existingLabel =
         listSlotSummaries(accountName).find((row) => row.slot === slot)?.label?.trim() ||
         t(uiLang, "opening_slot_saved");
-      const ok = window.confirm(
-        t(uiLang, "shell_overwrite_slot_confirm", { slot, label: existingLabel }),
-      );
+      const ok = await showAppConfirm({
+        title: t(uiLang, "shell_overwrite_slot_title"),
+        message: t(uiLang, "shell_overwrite_slot_confirm", { slot, label: existingLabel }),
+        confirmLabel: t(uiLang, "shell_overwrite_confirm"),
+        cancelLabel: t(uiLang, "common_cancel"),
+        danger: true,
+      });
       if (!ok) return;
     }
     save.account_name = accountName;
@@ -4193,6 +4198,20 @@ function paintGame(): void {
   });
   document.getElementById("btn-clear")?.addEventListener("click", async () => {
     if (!accountName) return;
+    const occupied = listOccupiedSlots(accountName).includes(slot);
+    if (occupied) {
+      const existingLabel =
+        listSlotSummaries(accountName).find((row) => row.slot === slot)?.label?.trim() ||
+        t(uiLang, "opening_slot_saved");
+      const ok = await showAppConfirm({
+        title: t(uiLang, "shell_clear_slot_title"),
+        message: t(uiLang, "shell_clear_slot_confirm", { slot, label: existingLabel }),
+        confirmLabel: t(uiLang, "shell_clear_confirm"),
+        cancelLabel: t(uiLang, "common_cancel"),
+        danger: true,
+      });
+      if (!ok) return;
+    }
     await clearSlot(accountName, slot);
     scheduleCalendarMonthStart = null;
     paintGame();

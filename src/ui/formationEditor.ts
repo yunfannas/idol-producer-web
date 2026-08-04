@@ -278,8 +278,10 @@ function renderIdolChip(
 export function renderFormationEditor(
   state: FormationEditorState,
   lang: UiLanguage,
-  opts?: { showClose?: boolean },
+  opts?: { showClose?: boolean; allowVideo?: boolean },
 ): string {
+  const allowVideo = opts?.allowVideo !== false;
+  const editorMode = allowVideo ? state.mode : "manual";
   const centerMode = resolveCenterMode(state.formation.centerMode);
   const preset = resolveTypicalPreset(state.formation.memberCount, state.formation.presetId);
   const kind = layoutKindOf(state.formation);
@@ -373,7 +375,7 @@ export function renderFormationEditor(
     .join("");
 
   const videoPanel =
-    state.mode !== "video"
+    !allowVideo || editorMode !== "video"
       ? ""
       : `<div class="formation-editor-video-panel">
           <p class="formation-editor-video-ideal">${htmlEsc(
@@ -427,6 +429,19 @@ export function renderFormationEditor(
           )}</p>
         </div>`;
 
+  const modeTabs = allowVideo
+    ? `<div class="formation-editor-mode" role="tablist">
+          <button type="button" class="fm-btn${editorMode === "manual" ? " fm-btn-accent" : ""}" data-formation-action="mode-manual">${htmlEsc(localized(lang, "Manual", "手动"))}</button>
+          <button type="button" class="fm-btn${editorMode === "video" ? " fm-btn-accent" : ""}" data-formation-action="mode-video">${htmlEsc(localized(lang, "From video", "从视频"))}</button>
+        </div>`
+    : "";
+
+  const choreoJobBtn = allowVideo
+    ? `<button type="button" class="fm-btn" data-formation-action="export-choreo-job">${htmlEsc(
+        localized(lang, "Export choreo job", "导出编排任务"),
+      )}</button>`
+    : "";
+
   return `<div class="formation-editor${opts?.showClose === false ? " is-embedded" : ""}" data-formation-editor>
     <header class="formation-editor-header">
       <div>
@@ -437,10 +452,7 @@ export function renderFormationEditor(
         )}</p>
       </div>
       <div class="formation-editor-header-controls">
-        <div class="formation-editor-mode" role="tablist">
-          <button type="button" class="fm-btn${state.mode === "manual" ? " fm-btn-accent" : ""}" data-formation-action="mode-manual">${htmlEsc(localized(lang, "Manual", "手动"))}</button>
-          <button type="button" class="fm-btn${state.mode === "video" ? " fm-btn-accent" : ""}" data-formation-action="mode-video">${htmlEsc(localized(lang, "From video", "从视频"))}</button>
-        </div>
+        ${modeTabs}
       </div>
     </header>
     ${tempBanner}
@@ -448,7 +460,7 @@ export function renderFormationEditor(
     <div class="formation-editor-body">
       <section class="formation-editor-stage-panel">
         ${videoPanel}
-        <div class="formation-editor-stage is-free-stage${showGhosts ? " is-placing" : ""}${state.mode === "video" ? " is-video-preview" : ""}" data-formation-stage>
+        <div class="formation-editor-stage is-free-stage${showGhosts ? " is-placing" : ""}${editorMode === "video" ? " is-video-preview" : ""}" data-formation-stage>
           <div class="formation-editor-stage-glow" aria-hidden="true"></div>
           <div class="formation-editor-audience" aria-hidden="true">${htmlEsc(localized(lang, "AUDIENCE", "观众席"))}</div>
           <div class="formation-editor-upstage" aria-hidden="true">${htmlEsc(localized(lang, "UPSTAGE", "舞台后方"))}</div>
@@ -477,7 +489,7 @@ export function renderFormationEditor(
           <h3 class="formation-editor-side-title">${htmlEsc(localized(lang, "Bench", "待命"))}</h3>
           <div class="formation-editor-bench">${benchHtml}</div>
           <p class="formation-editor-hint">${htmlEsc(
-            state.mode === "video"
+            editorMode === "video"
               ? showGhosts
                 ? localized(lang, "Selected — click their position on the video frame (feet / torso center).", "已选中 — 在视频画面点击其站位（脚位/身体中心）。")
                 : localized(lang, "Select a member, pause on the opening formation, then click the video.", "选中成员，暂停在开场站位，再点击视频。")
@@ -498,9 +510,7 @@ export function renderFormationEditor(
               <input type="file" accept="application/json,.json" data-formation-action="import-json" hidden />
             </label>
             <button type="button" class="fm-btn" data-formation-action="export-choreo">${htmlEsc(localized(lang, "Export", "导出"))}</button>
-            <button type="button" class="fm-btn" data-formation-action="export-choreo-job">${htmlEsc(
-              localized(lang, "Export choreo job", "导出编排任务"),
-            )}</button>
+            ${choreoJobBtn}
             ${closeBtn}
             <button type="button" class="fm-btn fm-btn-accent" data-formation-action="save">${htmlEsc(localized(lang, "Save formation", "保存站位"))}</button>
           </div>
@@ -564,7 +574,9 @@ export function bindFormationEditor(
   state: FormationEditorState,
   _lang: UiLanguage,
   callbacks: FormationEditorCallbacks,
+  opts?: { allowVideo?: boolean },
 ): void {
+  const allowVideo = opts?.allowVideo !== false;
   root.querySelectorAll<HTMLImageElement>("img.formation-editor-face-img").forEach((img) => {
     const fb = img.dataset.fallback;
     if (!fb) return;
@@ -609,6 +621,7 @@ export function bindFormationEditor(
       return;
     }
     if (action === "load-video-file" && el instanceof HTMLInputElement) {
+      if (!allowVideo) return;
       el.addEventListener("change", () => {
         const file = el.files?.[0];
         if (!file) return;
@@ -631,6 +644,16 @@ export function bindFormationEditor(
       return;
     }
     el.addEventListener("click", () => {
+      const videoActions = new Set([
+        "mode-video",
+        "load-video-url",
+        "toggle-mirror",
+        "clear-marks",
+        "apply-video-marks",
+        "snap-video-marks",
+        "export-choreo-job",
+      ]);
+      if (!allowVideo && action && videoActions.has(action)) return;
       if (action === "mode-manual") emit({ ...state, mode: "manual", statusMessage: "" });
       else if (action === "mode-video") {
         emit({
@@ -944,6 +967,6 @@ export function bindFormationEditor(
 
 export function formationEditorOverlayHtml(state: FormationEditorState, lang: UiLanguage): string {
   return `<div class="formation-editor-overlay" data-formation-overlay>
-    ${renderFormationEditor(state, lang, { showClose: true })}
+    ${renderFormationEditor(state, lang, { showClose: true, allowVideo: false })}
   </div>`;
 }
