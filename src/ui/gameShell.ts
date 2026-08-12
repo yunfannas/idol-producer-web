@@ -243,13 +243,39 @@ function buildScheduleMonthCalendarHtml(
     if (played) tip.push(t(ctx.lang, "schedule_played_result"));
     if (mediaCount > 0) tip.push(t(ctx.lang, "schedule_media_items", { count: mediaCount }));
     const title = tip.join(" - ") || iso;
+    const sortedExtras = [...extras].sort((a, b) => {
+      const ta = String(a.start_time ?? "").slice(0, 5);
+      const tb = String(b.start_time ?? "").slice(0, 5);
+      return ta.localeCompare(tb);
+    });
+    const liveRows = sortedExtras.slice(0, 3).map((live) => {
+      const uid = String(live.uid ?? "").trim();
+      const rawType = String(live.live_type ?? live.event_type ?? "");
+      const liveTitle = liveDisplayTitleText(live);
+      const time = liveTimeRangeText(live);
+      const typeLabel = liveTypeLabel(ctx.lang, rawType);
+      const lineTitle = [time, liveTitle, typeLabel].filter(Boolean).join(" - ");
+      return `<button type="button" class="schedule-cal-live" data-live-open-uid="${htmlEsc(uid)}" title="${htmlEsc(lineTitle || liveTitle)}">
+        ${time ? `<span class="schedule-cal-live-time">${htmlEsc(time)}</span>` : ""}
+        <span class="schedule-cal-live-title">${htmlEsc(liveTitle)}</span>
+      </button>`;
+    }).join("");
+    const liveOverflow =
+      sortedExtras.length > 3
+        ? `<div class="schedule-cal-live-more">${htmlEsc(t(ctx.lang, "schedule_more_count", { count: sortedExtras.length - 3 }))}</div>`
+        : "";
 
     cells.push(`<div class="${cls}" title="${htmlEsc(title)}" data-sched-date="${htmlEsc(iso)}">
-      <span class="schedule-cal-daynum">${day}</span>
+      <div class="schedule-cal-cell-head">
+        <span class="schedule-cal-daynum">${day}</span>
+        <span class="schedule-cal-dots" aria-hidden="true">
+          ${played ? `<span class="schedule-cal-dot schedule-cal-dot--done"></span>` : ""}
+          ${mediaCount > 0 ? `<span class="schedule-cal-dot schedule-cal-dot--media"></span>` : ""}
+        </span>
+      </div>
+      ${liveRows ? `<div class="schedule-cal-live-list">${liveRows}${liveOverflow}</div>` : ""}
       <span class="schedule-cal-dots" aria-hidden="true">
         ${booked ? `<span class="schedule-cal-dot schedule-cal-dot--book"></span>` : ""}
-        ${played ? `<span class="schedule-cal-dot schedule-cal-dot--done"></span>` : ""}
-        ${mediaCount > 0 ? `<span class="schedule-cal-dot schedule-cal-dot--media"></span>` : ""}
       </span>
     </div>`);
   }
@@ -2753,6 +2779,14 @@ function renderFinanceProjectionSvg(points: FinanceMonthPoint[]): string {
 function renderFinances(save: GameSavePayload): string {
   const f = getActiveFinances(save);
   const ledger = [...f.ledger].slice(-20).reverse();
+  const audienceRow = [...f.ledger].reverse().find((row) => row.public_fans_estimate != null || row.core_fans_estimate != null);
+  const audienceShape = audienceRow
+    ? `
+    <div class="stat-row" role="group" aria-label="Audience shape">
+      <div class="stat-block"><span class="stat-label">Public / Otaku / Core</span><span class="stat-value stat-value-sm">${num(audienceRow.public_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.otaku_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.core_fans_estimate).toLocaleString("ja-JP")}</span></div>
+      <div class="stat-block"><span class="stat-label">Female / Youth / Middle+</span><span class="stat-value stat-value-sm">${num(audienceRow.female_fan_share_estimate)}% / ${num(audienceRow.youth_fan_share_estimate)}% / ${num(audienceRow.middle_plus_fan_share_estimate)}%</span></div>
+    </div>`
+    : "";
   const head = `
     <div class="stat-row" role="group" aria-label="Cash">
       <div class="stat-block"><span class="stat-label">Cash (JPY)</span><span class="stat-value">JPY ${f.cash_yen.toLocaleString("ja-JP")}</span></div>
@@ -2761,19 +2795,20 @@ function renderFinances(save: GameSavePayload): string {
   const tableRows = ledger
     .map(
       (row) =>
-        `<tr><td>${htmlEsc(row.date)}</td><td class="num">${row.net_total.toLocaleString("ja-JP")}</td><td>${htmlEsc(row.tier)}</td><td class="num muted">${row.income_total.toLocaleString("ja-JP")}</td><td class="num muted">${row.expense_total.toLocaleString("ja-JP")}</td><td class="num muted">${num(row.scout_retainers).toLocaleString("ja-JP")}</td></tr>`,
+        `<tr><td>${htmlEsc(row.date)}</td><td class="num">${row.net_total.toLocaleString("ja-JP")}</td><td>${htmlEsc(row.tier)}</td><td class="num muted">${row.income_total.toLocaleString("ja-JP")}</td><td class="num muted">${row.expense_total.toLocaleString("ja-JP")}</td><td class="num muted">${num(row.fanclub_revenue).toLocaleString("ja-JP")}</td><td class="num muted">${num(row.cd_net_profit).toLocaleString("ja-JP")}</td><td class="num muted">${num(row.cheki_net_profit).toLocaleString("ja-JP")}</td></tr>`,
     )
     .join("");
   return `
     <section class="content-panel finances-view">
       <h2 class="content-h2">Finances</h2>
       ${head}
+      ${audienceShape}
       <div class="table-panel">
         <h3 class="content-h3">Daily ledger (recent)</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>Date</th><th>Net JPY</th><th>Tier</th><th>Income</th><th>Expense</th><th>Scout sub</th></tr></thead>
-            <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
+            <thead><tr><th>Date</th><th>Net JPY</th><th>Tier</th><th>Income</th><th>Expense</th><th>Fanclub</th><th>CD net</th><th>Cheki net</th></tr></thead>
+            <tbody>${tableRows || `<tr><td colspan="8" class="content-muted">No ledger rows yet.</td></tr>`}</tbody>
           </table>
         </div>
       </div>
@@ -2804,6 +2839,14 @@ function renderFinancesProjectionView(
     projectedWindow.reduce((sum, row) => sum + row.income, 0) / Math.max(1, projectedWindow.length);
   const projectedExpense =
     projectedWindow.reduce((sum, row) => sum + row.expense, 0) / Math.max(1, projectedWindow.length);
+  const audienceRow = [...f.ledger].reverse().find((row) => row.public_fans_estimate != null || row.core_fans_estimate != null);
+  const audienceShape = audienceRow
+    ? `
+    <div class="stat-row" role="group" aria-label="Audience shape">
+      <div class="stat-block"><span class="stat-label">Public / Otaku / Core</span><span class="stat-value stat-value-sm">${num(audienceRow.public_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.otaku_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.core_fans_estimate).toLocaleString("ja-JP")}</span></div>
+      <div class="stat-block"><span class="stat-label">Female / Youth / Middle+</span><span class="stat-value stat-value-sm">${num(audienceRow.female_fan_share_estimate)}% / ${num(audienceRow.youth_fan_share_estimate)}% / ${num(audienceRow.middle_plus_fan_share_estimate)}%</span></div>
+    </div>`
+    : "";
   const head = `
     <div class="stat-row" role="group" aria-label="Cash">
       <div class="stat-block"><span class="stat-label">${htmlEsc(localizedLiteral(lang, "Cash (JPY)", "现金（日元）"))}</span><span class="stat-value">&yen;${f.cash_yen.toLocaleString("ja-JP")}</span></div>
@@ -2812,7 +2855,7 @@ function renderFinancesProjectionView(
   const tableRows = ledger
     .map(
       (row) =>
-        `<tr><td>${htmlEsc(row.date)}</td><td class="num">${row.net_total.toLocaleString("ja-JP")}</td><td>${htmlEsc(row.tier)}</td><td class="num muted">${row.income_total.toLocaleString("ja-JP")}</td><td class="num muted">${row.expense_total.toLocaleString("ja-JP")}</td><td class="num muted">${num(row.scout_retainers).toLocaleString("ja-JP")}</td></tr>`,
+        `<tr><td>${htmlEsc(row.date)}</td><td class="num">${row.net_total.toLocaleString("ja-JP")}</td><td>${htmlEsc(row.tier)}</td><td class="num muted">${row.income_total.toLocaleString("ja-JP")}</td><td class="num muted">${row.expense_total.toLocaleString("ja-JP")}</td><td class="num muted">${num(row.fanclub_revenue).toLocaleString("ja-JP")}</td><td class="num muted">${num(row.cd_net_profit).toLocaleString("ja-JP")}</td><td class="num muted">${num(row.cheki_net_profit).toLocaleString("ja-JP")}</td></tr>`,
     )
     .join("");
   const historySource = [...f.ledger].reverse();
@@ -2828,14 +2871,18 @@ function renderFinancesProjectionView(
     (acc, row) => {
       acc.income += num(row.income_total);
       acc.expense += num(row.expense_total);
+      acc.fanclub += num(row.fanclub_revenue);
+      acc.cd += num(row.cd_net_profit);
+      acc.cheki += num(row.cheki_net_profit);
+      acc.memberPay += num(row.member_monthly_income_total);
       return acc;
     },
-    { income: 0, expense: 0 },
+    { income: 0, expense: 0, fanclub: 0, cd: 0, cheki: 0, memberPay: 0 },
   );
   const historyTableRows = historyRows
     .map(
       (row) =>
-        `<tr><td>${htmlEsc(row.date)}</td><td>${htmlEsc(row.tier)}</td><td class="num">${num(row.income_total).toLocaleString("ja-JP")}</td><td class="num">${num(row.expense_total).toLocaleString("ja-JP")}</td><td class="num">${num(row.scout_retainers).toLocaleString("ja-JP")}</td><td class="num ${num(row.net_total) >= 0 ? "is-positive" : "is-negative"}">${num(row.net_total).toLocaleString("ja-JP")}</td></tr>`,
+        `<tr><td>${htmlEsc(row.date)}</td><td>${htmlEsc(row.tier)}</td><td class="num">${num(row.fanclub_revenue).toLocaleString("ja-JP")}</td><td class="num">${num(row.cd_net_profit).toLocaleString("ja-JP")}</td><td class="num">${num(row.cheki_net_profit).toLocaleString("ja-JP")}</td><td class="num">${num(row.member_monthly_income_total).toLocaleString("ja-JP")}</td><td class="num">${num(row.income_total).toLocaleString("ja-JP")}</td><td class="num">${num(row.expense_total).toLocaleString("ja-JP")}</td><td class="num ${num(row.net_total) >= 0 ? "is-positive" : "is-negative"}">${num(row.net_total).toLocaleString("ja-JP")}</td></tr>`,
     )
     .join("");
   const historyRangeButtons: Array<[FinanceHistoryRange, string]> = [
@@ -2922,6 +2969,7 @@ function renderFinancesProjectionView(
       </div>`
           : `
       ${head}
+      ${audienceShape}
       <section class="fm-card finance-projection-card" aria-label="${htmlEsc(localizedLiteral(lang, "24 month projection", "24个月预测"))}">
         <div class="finance-projection-head">
           <div>
@@ -2953,8 +3001,8 @@ function renderFinancesProjectionView(
         <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Daily ledger (recent)", "每日账本（近期）"))}</h3>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Date", "日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Net", "净额"))}</th><th>${htmlEsc(localizedLiteral(lang, "Tier", "等级"))}</th><th>${htmlEsc(localizedLiteral(lang, "Income", "收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Expense", "支出"))}</th><th>${htmlEsc(localizedLiteral(lang, "Scout sub", "星探订阅"))}</th></tr></thead>
-            <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No ledger rows yet.", "暂无流水记录。"))}</td></tr>`}</tbody>
+            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Date", "日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Net", "净额"))}</th><th>${htmlEsc(localizedLiteral(lang, "Tier", "等级"))}</th><th>${htmlEsc(localizedLiteral(lang, "Income", "收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Expense", "支出"))}</th><th>${htmlEsc(localizedLiteral(lang, "Fanclub", "粉丝俱乐部"))}</th><th>${htmlEsc(localizedLiteral(lang, "CD net", "CD净额"))}</th><th>${htmlEsc(localizedLiteral(lang, "Cheki net", "チェキ净额"))}</th></tr></thead>
+            <tbody>${tableRows || `<tr><td colspan="8" class="content-muted">${htmlEsc(localizedLiteral(lang, "No ledger rows yet.", "暂无流水记录。"))}</td></tr>`}</tbody>
           </table>
         </div>
       </div>
@@ -2968,11 +3016,11 @@ function renderFinancesProjectionView(
             )
             .join("")}</div>
         </div>
-        <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Income", "收入"))} &yen;${historyTotals.income.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "Expense", "支出"))} &yen;${historyTotals.expense.toLocaleString("ja-JP")}</p>
+        <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Income", "收入"))} &yen;${historyTotals.income.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "Expense", "支出"))} &yen;${historyTotals.expense.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "Fanclub", "粉丝俱乐部"))} &yen;${historyTotals.fanclub.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "CD net", "CD净额"))} &yen;${historyTotals.cd.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "Cheki net", "チェキ净额"))} &yen;${historyTotals.cheki.toLocaleString("ja-JP")} / ${htmlEsc(localizedLiteral(lang, "Member pay", "成员收入"))} &yen;${historyTotals.memberPay.toLocaleString("ja-JP")}</p>
         <div class="table-scroll">
           <table class="fm-table">
-            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Date", "日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Tier", "等级"))}</th><th>${htmlEsc(localizedLiteral(lang, "Income", "收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Expense", "支出"))}</th><th>${htmlEsc(localizedLiteral(lang, "Scout sub", "星探订阅"))}</th><th>${htmlEsc(localizedLiteral(lang, "Net", "净额"))}</th></tr></thead>
-            <tbody>${historyTableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No ledger rows yet.", "暂无流水记录。"))}</td></tr>`}</tbody>
+            <thead><tr><th>${htmlEsc(localizedLiteral(lang, "Date", "日期"))}</th><th>${htmlEsc(localizedLiteral(lang, "Tier", "等级"))}</th><th>${htmlEsc(localizedLiteral(lang, "Fanclub", "粉丝俱乐部"))}</th><th>${htmlEsc(localizedLiteral(lang, "CD net", "CD净额"))}</th><th>${htmlEsc(localizedLiteral(lang, "Cheki net", "チェキ净额"))}</th><th>${htmlEsc(localizedLiteral(lang, "Member pay", "成员收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Income", "收入"))}</th><th>${htmlEsc(localizedLiteral(lang, "Expense", "支出"))}</th><th>${htmlEsc(localizedLiteral(lang, "Net", "净额"))}</th></tr></thead>
+            <tbody>${historyTableRows || `<tr><td colspan="9" class="content-muted">${htmlEsc(localizedLiteral(lang, "No ledger rows yet.", "暂无流水记录。"))}</td></tr>`}</tbody>
           </table>
         </div>
       </div>`
@@ -4815,6 +4863,7 @@ function renderLivesView(
   const upcoming = futureSchedules.length ? futureSchedules : unplayedSchedules;
   const selectedScheduled =
     (scheduledLiveUid ? upcoming.find((live) => String(live.uid ?? "") === scheduledLiveUid) : null) ?? upcoming[0] ?? null;
+  const arrangeIsEditing = Boolean(scheduledLiveUid && selectedScheduled && livesTab === "new");
   const managedFestivalPerformances = festivals?.length
     ? festivalPerformancesForManagedGroup(normalizeFestivalCatalog(festivals), String(save.managing_group_uid ?? ""))
     : [];
@@ -5129,7 +5178,7 @@ function renderLivesView(
             <label><span>${htmlEsc(localizedLiteral(lang, "Expected gross", "预计总收入"))}</span><input class="fm-input" value="${htmlEsc(currencyText(lang, selectedGoodsGross))}" readonly /></label>
           </div>
         </div>
-        <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-live-schedule="1">${htmlEsc(localizedLiteral(lang, "Schedule Live", "安排公演"))}</button></div>
+        <div class="planner-actions"><button type="button" class="fm-btn fm-btn-accent" data-live-schedule="1">${htmlEsc(arrangeIsEditing ? localizedLiteral(lang, "Save Changes", "保存修改") : localizedLiteral(lang, "Schedule Live", "安排公演"))}</button></div>
       </section>
       <section class="fm-card live-new-summary-card">
         <h3 class="content-h3">${htmlEsc(t(lang, "lives_summary"))}</h3>
@@ -5305,8 +5354,8 @@ function renderLivesView(
     <h2 class="content-h2">${htmlEsc(navLabel(lang, "Lives"))}</h2>
     <p class="content-muted">${htmlEsc(
       lang === "zh-CN"
-        ? `当前经营组合：${label}。新建公演沿用桌面版排期流程，可先配置场地、节目单、特典会和周边，再正式安排。`
-        : `Managed group: ${label}. New Live matches the desktop planner flow: venue, setlist, tokutenkai, and goods can all be staged before scheduling.`,
+        ? `当前经营组合：${label}。编排页用于安排新公演；即将进行的公演会进入修改视图，可调整日期、场地、歌单、特典会和周边。`
+        : `Managed group: ${label}. Arrange is the live editor for new plans; upcoming lives open in the modification view for date, venue, setlist, tokutenkai, and goods changes.`,
     )}</p>
     ${renderLiveTabs(effectiveLivesTab, lang, showLeague)}
     ${body}

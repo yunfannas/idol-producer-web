@@ -78,11 +78,11 @@
     }
   },
   "cd_sales_model": {
-    "_note": "**Physical CD** unit economics to the **group** after manufacturing / distribution / channel cuts—**average net ¥500 per CD sold**. Each CD is bundled with an **online signing** obligation: **one allocating member spends 30 wall-clock seconds per CD** (serial meet load). **Digital sales** and **MV / streaming watch revenue** are **not** modeled here (intentionally ignored for this block). Helpers: `FinanceSystem.cd_sales_net_income_yen`, `FinanceSystem.cd_online_signing_member_seconds`.",
+    "_note": "**Physical CD** unit economics to the **group** after manufacturing / distribution / channel cuts—**average net ¥500 per CD sold**. Each CD is bundled with an **online signing** obligation: **one allocating member spends 15 wall-clock seconds per CD** (serial meet load). **Digital sales** and **MV / streaming watch revenue** are **not** modeled here (intentionally ignored for this block). Helpers: `FinanceSystem.cd_sales_net_income_yen`, `FinanceSystem.cd_online_signing_member_seconds`.",
     "average_net_income_yen_per_cd_sold": 500,
     "online_signing_event": {
-      "seconds_per_cd_allocating_member": 30,
-      "_note": "Per **sold CD**, the member handling that unit’s lane owes **30 s** of online signing time (not split across the whole group unless you fork the data model)."
+      "seconds_per_cd_allocating_member": 15,
+      "_note": "Per **sold CD**, the member handling that unit’s lane owes **15 s** of online signing time (not split across the whole group unless you fork the data model)."
     },
     "out_of_scope": [
       "digital_download_sales",

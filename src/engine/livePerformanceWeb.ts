@@ -10,6 +10,11 @@ import { sha256BytesUtf8 } from "./sha256sync";
 import { ensureIdolSimulationDefaults } from "./idolStatusSystem";
 import { managedSetlistEffect, type ManagedSongStatusRow } from "./songStatusSystem";
 import { activeScandalPenaltyMults } from "./scandalHandling";
+import {
+  estimateAudiencePurchaseUnits,
+  financeAudienceProfileForGroup,
+  resolveGroupLetterTier,
+} from "./financeSystem";
 
 function clamp(n: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, n));
@@ -468,6 +473,8 @@ export interface LiveResultPayload extends Record<string, unknown> {
   broadcast_exposure: number;
   exposure_count: number;
   tokutenkai_actual_tickets: number;
+  tokutenkai_demographic_demand: number;
+  live_ticket_demographic_demand: number;
   fan_gain: number;
   popularity_gain: number;
   member_scores: Record<string, unknown>[];
@@ -540,15 +547,29 @@ export function resolveGroupLiveResultWeb(
 
   const expectedTickets = Math.max(0, Math.trunc(num(live.tokutenkai_expected_tickets, 0)));
   const capacity = Math.max(0, Math.trunc(num(live.capacity, 0)));
+  const audienceProfile = financeAudienceProfileForGroup({
+    groupName: group.name,
+    groupRomaji: group.name_romanji,
+    letterTier: resolveGroupLetterTier(group),
+    fans: estimateGroupFans(group, members),
+  });
   let attendance = 0;
   let broadcastExposure = 0;
+  let liveTicketDemographicDemand = 0;
 
   if (capacity > 0) {
-    const demandAnchor = clamp(
+    let demandAnchor = clamp(
       (profileStrength / 100.0) * 0.8 + (performanceScore / 100.0) * 0.42 + (noveltyScore / 100.0) * 0.15,
       0.12,
       1.0,
     );
+    liveTicketDemographicDemand = estimateAudiencePurchaseUnits(audienceProfile, "live_ticket", {
+      liveType,
+      audienceSize: capacity,
+      intensity: 0.85 + profileStrength / 180.0,
+    });
+    const ticketPropensityBoost = clamp(liveTicketDemographicDemand / Math.max(1, capacity * 0.16), 0.78, 1.22);
+    demandAnchor = clamp(demandAnchor * ticketPropensityBoost, 0.1, 1.0);
     attendance = Math.max(20, Math.round(capacity * demandAnchor));
     attendance = Math.min(capacity, attendance);
   } else if (liveType === "Festival") {
@@ -586,6 +607,14 @@ export function resolveGroupLiveResultWeb(
   tokutenkaiFactor += ((topSellerStrength - 6.4) / 3.0) * 0.07;
   tokutenkaiFactor = clamp(tokutenkaiFactor, 0.42, 1.38);
   let actualTickets = Math.round(expectedTickets * tokutenkaiFactor);
+  const chekiDemand = estimateAudiencePurchaseUnits(audienceProfile, "post_live_cheki", {
+    liveType,
+    audienceSize: attendance,
+    intensity: 0.8 + audienceSatisfaction / 180.0 + Math.max(0, lineupSalesStrength - 6.0) / 9.0,
+  });
+  if (expectedTickets > 0) {
+    actualTickets = Math.min(actualTickets, Math.max(1, chekiDemand));
+  }
   if (expectedTickets > 0) actualTickets = Math.max(1, actualTickets);
 
   const exposurePool = attendance + broadcastExposure;
@@ -630,6 +659,8 @@ export function resolveGroupLiveResultWeb(
     broadcast_exposure: broadcastExposure,
     exposure_count: discoveryPool,
     tokutenkai_actual_tickets: Math.max(0, actualTickets),
+    tokutenkai_demographic_demand: Math.max(0, chekiDemand),
+    live_ticket_demographic_demand: Math.max(0, liveTicketDemographicDemand),
     fan_gain: fanGain,
     average_member_rating: Math.round(averageRating * 100) / 100,
     popularity_gain: popularityGain,

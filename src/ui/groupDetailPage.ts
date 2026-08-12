@@ -2,7 +2,12 @@
  * Group roster profile (ported from desktop `idol_producer/ui/group_ui.py` `show_group_detail_page`).
  */
 
-import { resolveGroupLetterTier } from "../engine/financeSystem";
+import {
+  financeAudienceProfileForGroup,
+  resolveGroupLetterTier,
+  type AudienceDemographicMix,
+  type FinanceAudienceProfile,
+} from "../engine/financeSystem";
 import {
   activeGroupMembershipsAtReference,
   ageLabel,
@@ -57,6 +62,444 @@ function ilifeNameAliases(groupName: string): Set<string> {
     set.add("iLIFE!");
   }
   return set;
+}
+
+function normalizeStrategyLookupName(value: unknown): string {
+  return String(value ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+}
+
+interface GroupStrategyProfile {
+  archetype: string;
+  core: string;
+  presetId: string;
+  values: Array<{ label: string; value: number }>;
+  eventMix: string;
+  benefitPolicy: string;
+  restPolicy: string;
+  exposurePolicy: string;
+  staffSignal: string;
+  memberSignal: string;
+  fanSignal: string;
+  risk: string;
+}
+
+const GROUP_STRATEGY_PROFILES: Record<string, GroupStrategyProfile> = {
+  "=love": {
+    archetype: "Mature fixed-roster IP sustain",
+    core: "Protect accumulated member/IP value; monetize efficiently through releases, signing, media, goods and concerts.",
+    presetId: "mature_ip_sustain",
+    values: [
+      { label: "Live frequency", value: 2 },
+      { label: "Online benefit", value: 5 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 0 },
+      { label: "Media / IP", value: 5 },
+      { label: "Production", value: 4 },
+      { label: "Rest protection", value: 4 },
+      { label: "Roster renewal", value: 1 },
+    ],
+    eventMix: "Major release and concert",
+    benefitPolicy: "Online signing",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "Stable member value",
+    staffSignal: "Strong cash efficiency if release/signing/goods calendar is healthy; watch large production and venue commitments.",
+    memberSignal: "Members can support major activity if recovery and individual work are protected; avoid treating stable roster as replaceable.",
+    fanSignal: "Fans value stable member attachment, high-quality releases, concerts and transparent graduation handling.",
+    risk: "Overloading a fixed roster or damaging accumulated member/IP trust.",
+  },
+  "nogizaka46": {
+    archetype: "Generational roster renewal",
+    core: "Maintain institutional continuity through auditions, generation integration, selection balance and graduation handling.",
+    presetId: "generational_renewal",
+    values: [
+      { label: "Live frequency", value: 2 },
+      { label: "Online benefit", value: 4 },
+      { label: "Shooting / handshake", value: 3 },
+      { label: "Post-live tokutenkai", value: 0 },
+      { label: "Media / IP", value: 5 },
+      { label: "Production", value: 5 },
+      { label: "Rest protection", value: 3 },
+      { label: "Roster renewal", value: 5 },
+    ],
+    eventMix: "Major release and concert",
+    benefitPolicy: "Online and release events",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "Generation integration",
+    staffSignal: "Succession planning, selection balance and brand continuity matter more than small-event volume.",
+    memberSignal: "Senior/new generation balance is sensitive; too-fast pushes or too-slow integration both create morale risk.",
+    fanSignal: "Fans expect institutional continuity but react strongly to selection, center and graduation handling.",
+    risk: "Failed succession, fan split between generations, or brand dilution.",
+  },
+  "乃木坂46": {
+    archetype: "Generational roster renewal",
+    core: "Maintain institutional continuity through auditions, generation integration, selection balance and graduation handling.",
+    presetId: "generational_renewal",
+    values: [
+      { label: "Live frequency", value: 2 },
+      { label: "Online benefit", value: 4 },
+      { label: "Shooting / handshake", value: 3 },
+      { label: "Post-live tokutenkai", value: 0 },
+      { label: "Media / IP", value: 5 },
+      { label: "Production", value: 5 },
+      { label: "Rest protection", value: 3 },
+      { label: "Roster renewal", value: 5 },
+    ],
+    eventMix: "Major release and concert",
+    benefitPolicy: "Online and release events",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "Generation integration",
+    staffSignal: "Succession planning, selection balance and brand continuity matter more than small-event volume.",
+    memberSignal: "Senior/new generation balance is sensitive; too-fast pushes or too-slow integration both create morale risk.",
+    fanSignal: "Fans expect institutional continuity but react strongly to selection, center and graduation handling.",
+    risk: "Failed succession, fan split between generations, or brand dilution.",
+  },
+  "ilife!": {
+    archetype: "High-frequency core-fan monetization",
+    core: "Convert momentum into repeat attendance and benefit revenue while managing overextension.",
+    presetId: "high_frequency_growth",
+    values: [
+      { label: "Live frequency", value: 5 },
+      { label: "Online benefit", value: 2 },
+      { label: "Shooting / handshake", value: 3 },
+      { label: "Post-live tokutenkai", value: 5 },
+      { label: "Media / IP", value: 3 },
+      { label: "Production", value: 3 },
+      { label: "Rest protection", value: 1 },
+      { label: "Roster renewal", value: 1 },
+    ],
+    eventMix: "Taiban heavy",
+    benefitPolicy: "Post-live tokutenkai heavy",
+    restPolicy: "Member discretion",
+    exposurePolicy: "Ace plus rotation",
+    staffSignal: "Cash and fan-contact opportunities rise quickly, but staff load and event conflicts become severe.",
+    memberSignal: "Members may accept the push while momentum is strong, but fatigue and absence risk compound sharply.",
+    fanSignal: "Fans want frequent lives and post-live tokutenkai chances; demand may exceed member service capacity.",
+    risk: "Overextension, illness/absence spiral, turnover, and internal ecosystem crowding.",
+  },
+  "takamine no nadeshiko": {
+    archetype: "Awareness-to-core-fandom conversion",
+    core: "Turn music/content recognition into repeat attendance, oshi attachment and spending.",
+    presetId: "awareness_conversion_push",
+    values: [
+      { label: "Live frequency", value: 3 },
+      { label: "Online benefit", value: 3 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 0 },
+      { label: "Media / IP", value: 4 },
+      { label: "Production", value: 4 },
+      { label: "Rest protection", value: 3 },
+      { label: "Roster renewal", value: 1 },
+    ],
+    eventMix: "Balanced live/media",
+    benefitPolicy: "Online and release conversion",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "New member and member identity",
+    staffSignal: "Awareness is valuable but conversion leaks if online/physical benefit access, merch and repeat-live pathways are weak.",
+    memberSignal: "Members need more identity-building chances, not just song/content reach; avoid hollow exposure.",
+    fanSignal: "Casual listeners know songs, while core fans ask for clearer ways to attach to members and spend.",
+    risk: "High awareness without durable repeat attendance, oshi attachment and spending.",
+  },
+  "高嶺のなでしこ": {
+    archetype: "Awareness-to-core-fandom conversion",
+    core: "Turn music/content recognition into repeat attendance, oshi attachment and spending.",
+    presetId: "awareness_conversion_push",
+    values: [
+      { label: "Live frequency", value: 3 },
+      { label: "Online benefit", value: 3 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 0 },
+      { label: "Media / IP", value: 4 },
+      { label: "Production", value: 4 },
+      { label: "Rest protection", value: 3 },
+      { label: "Roster renewal", value: 1 },
+    ],
+    eventMix: "Balanced live/media",
+    benefitPolicy: "Online and release conversion",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "New member and member identity",
+    staffSignal: "Awareness is valuable but conversion leaks if online/physical benefit access, merch and repeat-live pathways are weak.",
+    memberSignal: "Members need more identity-building chances, not just song/content reach; avoid hollow exposure.",
+    fanSignal: "Casual listeners know songs, while core fans ask for clearer ways to attach to members and spend.",
+    risk: "High awareness without durable repeat attendance, oshi attachment and spending.",
+  },
+  "akishibu project": {
+    archetype: "Veteran rebuild",
+    core: "Restore lost mature member equity, stabilize fan trust and rebuild live/benefit demand.",
+    presetId: "veteran_rebuild",
+    values: [
+      { label: "Live frequency", value: 4 },
+      { label: "Online benefit", value: 1 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 4 },
+      { label: "Media / IP", value: 2 },
+      { label: "Production", value: 2 },
+      { label: "Rest protection", value: 2 },
+      { label: "Roster renewal", value: 2 },
+    ],
+    eventMix: "Balanced taiban routine",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "New member nurture",
+    staffSignal: "Short-term cash needs live/post-live tokutenkai activity, but rebuilding mature member-specific demand takes months.",
+    memberSignal: "Veterans need recognition; newer members need staged exposure and protection from weak early queues.",
+    fanSignal: "Fans retain history attachment but do not automatically transfer oshi equity to replacements.",
+    risk: "Decline spiral from lost member equity, weak new-member queues and league/event underperformance.",
+  },
+  "jams collection": {
+    archetype: "Direct-monetization strong underground",
+    core: "Use live attendance, merch, benefit sessions and birthday events to support ambitious activity.",
+    presetId: "direct_monetization_underground",
+    values: [
+      { label: "Live frequency", value: 4 },
+      { label: "Online benefit", value: 2 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 4 },
+      { label: "Media / IP", value: 2 },
+      { label: "Production", value: 3 },
+      { label: "Rest protection", value: 2 },
+      { label: "Roster renewal", value: 1 },
+    ],
+    eventMix: "Live merch birthday",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "Ace plus rotation",
+    staffSignal: "Direct fan economy can fund ambition even when CD sales are not a strong proxy.",
+    memberSignal: "Members gain from strong live identity, but post-milestone roster shocks need recovery and trust handling.",
+    fanSignal: "Core fans respond to lives, merch, post-live tokutenkai and birthday events more than mass viral reach.",
+    risk: "Mistaking weak CD sales for weak business, or mishandling post-milestone roster changes.",
+  },
+  "jamscollection": {
+    archetype: "Direct-monetization strong underground",
+    core: "Use live attendance, merch, benefit sessions and birthday events to support ambitious activity.",
+    presetId: "direct_monetization_underground",
+    values: [
+      { label: "Live frequency", value: 4 },
+      { label: "Online benefit", value: 2 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 4 },
+      { label: "Media / IP", value: 2 },
+      { label: "Production", value: 3 },
+      { label: "Rest protection", value: 2 },
+      { label: "Roster renewal", value: 1 },
+    ],
+    eventMix: "Live merch birthday",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Protected weekly",
+    exposurePolicy: "Ace plus rotation",
+    staffSignal: "Direct fan economy can fund ambition even when CD sales are not a strong proxy.",
+    memberSignal: "Members gain from strong live identity, but post-milestone roster shocks need recovery and trust handling.",
+    fanSignal: "Core fans respond to lives, merch, post-live tokutenkai and birthday events more than mass viral reach.",
+    risk: "Mistaking weak CD sales for weak business, or mishandling post-milestone roster changes.",
+  },
+  "kirameki unforent": {
+    archetype: "Emotional reboot and narrative recruitment",
+    core: "Rebuild belief through member recruitment story, producer trust, recovery and identity.",
+    presetId: "emotional_reboot",
+    values: [
+      { label: "Live frequency", value: 3 },
+      { label: "Online benefit", value: 1 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 3 },
+      { label: "Media / IP", value: 2 },
+      { label: "Production", value: 2 },
+      { label: "Rest protection", value: 4 },
+      { label: "Roster renewal", value: 3 },
+    ],
+    eventMix: "Small live rebuild",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Strict recovery",
+    exposurePolicy: "Narrative casting",
+    staffSignal: "The reboot story can attract attention, but professionalism and operational discipline must support it.",
+    memberSignal: "Members with prior careers need belief, safety and clear role promises; avoid chaotic overpush.",
+    fanSignal: "Fans can buy into the revival narrative if management feels sincere and stable.",
+    risk: "Trust collapse from producer overreach, unclear boundaries or another failed reboot.",
+  },
+  "kirameki☆unforent": {
+    archetype: "Emotional reboot and narrative recruitment",
+    core: "Rebuild belief through member recruitment story, producer trust, recovery and identity.",
+    presetId: "emotional_reboot",
+    values: [
+      { label: "Live frequency", value: 3 },
+      { label: "Online benefit", value: 1 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 3 },
+      { label: "Media / IP", value: 2 },
+      { label: "Production", value: 2 },
+      { label: "Rest protection", value: 4 },
+      { label: "Roster renewal", value: 3 },
+    ],
+    eventMix: "Small live rebuild",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Strict recovery",
+    exposurePolicy: "Narrative casting",
+    staffSignal: "The reboot story can attract attention, but professionalism and operational discipline must support it.",
+    memberSignal: "Members with prior careers need belief, safety and clear role promises; avoid chaotic overpush.",
+    fanSignal: "Fans can buy into the revival narrative if management feels sincere and stable.",
+    risk: "Trust collapse from producer overreach, unclear boundaries or another failed reboot.",
+  },
+  "煌めき☆アンフォレント": {
+    archetype: "Emotional reboot and narrative recruitment",
+    core: "Rebuild belief through member recruitment story, producer trust, recovery and identity.",
+    presetId: "emotional_reboot",
+    values: [
+      { label: "Live frequency", value: 3 },
+      { label: "Online benefit", value: 1 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 3 },
+      { label: "Media / IP", value: 2 },
+      { label: "Production", value: 2 },
+      { label: "Rest protection", value: 4 },
+      { label: "Roster renewal", value: 3 },
+    ],
+    eventMix: "Small live rebuild",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Strict recovery",
+    exposurePolicy: "Narrative casting",
+    staffSignal: "The reboot story can attract attention, but professionalism and operational discipline must support it.",
+    memberSignal: "Members with prior careers need belief, safety and clear role promises; avoid chaotic overpush.",
+    fanSignal: "Fans can buy into the revival narrative if management feels sincere and stable.",
+    risk: "Trust collapse from producer overreach, unclear boundaries or another failed reboot.",
+  },
+};
+
+function strategyForGroup(g: Record<string, unknown>): GroupStrategyProfile {
+  const names = [g.name, g.name_romanji, g.group_name, g.title];
+  for (const raw of names) {
+    const name = normalizeStrategyLookupName(raw);
+    if (!name) continue;
+    if (GROUP_STRATEGY_PROFILES[name]) return GROUP_STRATEGY_PROFILES[name];
+    const compact = name.replace(/[_\s]/g, "");
+    if (GROUP_STRATEGY_PROFILES[compact]) return GROUP_STRATEGY_PROFILES[compact];
+  }
+  const tier = resolveGroupLetterTier(g);
+  if (tier === "S" || tier === "A") {
+    return {
+      archetype: "Major visibility sustain",
+      core: "Use selective concerts, release events, media and brand work while protecting member schedules.",
+      presetId: "tier_major_default",
+      values: [
+        { label: "Live frequency", value: 2 },
+        { label: "Online benefit", value: 4 },
+        { label: "Shooting / handshake", value: 3 },
+        { label: "Post-live tokutenkai", value: 0 },
+        { label: "Media / IP", value: 5 },
+        { label: "Production", value: 4 },
+        { label: "Rest protection", value: 3 },
+        { label: "Roster renewal", value: tier === "S" ? 4 : 2 },
+      ],
+      eventMix: "Major release and concert",
+      benefitPolicy: "Online and release events",
+      restPolicy: "Protected weekly",
+      exposurePolicy: "Media and member-value balance",
+      staffSignal: "Large-scale revenue depends on release timing, production quality and brand work.",
+      memberSignal: "Members need recovery around media, release and tour blocks.",
+      fanSignal: "Fans expect polish, visibility and clear member attachment.",
+      risk: "High fixed commitments without enough release or media conversion.",
+    };
+  }
+  if (tier === "B" || tier === "C") {
+    return {
+      archetype: "Balanced growth and direct monetization",
+      core: "Blend live attendance, content awareness, goods and benefit access without exhausting the roster.",
+      presetId: "tier_balanced_growth",
+      values: [
+        { label: "Live frequency", value: 4 },
+        { label: "Online benefit", value: 2 },
+        { label: "Shooting / handshake", value: 2 },
+        { label: "Post-live tokutenkai", value: 3 },
+        { label: "Media / IP", value: 3 },
+        { label: "Production", value: 3 },
+        { label: "Rest protection", value: 2 },
+        { label: "Roster renewal", value: 1 },
+      ],
+      eventMix: "Balanced live/media",
+      benefitPolicy: "Post-live tokutenkai standard",
+      restPolicy: "Protected weekly",
+      exposurePolicy: "Ace plus rotation",
+      staffSignal: "Direct fan spending can support growth, but venue and staff load must stay controlled.",
+      memberSignal: "Members benefit from momentum if recovery is respected.",
+      fanSignal: "Fans want repeated chances to attend, meet members and see visible progress.",
+      risk: "Confusing activity volume with durable fan conversion.",
+    };
+  }
+  return {
+    archetype: "Small-group rebuild",
+    core: "Build trust through repeatable lives, member storytelling and controlled benefit access.",
+    presetId: "tier_rebuild_default",
+    values: [
+      { label: "Live frequency", value: 3 },
+      { label: "Online benefit", value: 1 },
+      { label: "Shooting / handshake", value: 2 },
+      { label: "Post-live tokutenkai", value: 3 },
+      { label: "Media / IP", value: 1 },
+      { label: "Production", value: 2 },
+      { label: "Rest protection", value: 3 },
+      { label: "Roster renewal", value: 2 },
+    ],
+    eventMix: "Small live rebuild",
+    benefitPolicy: "Post-live tokutenkai standard",
+    restPolicy: "Strict recovery",
+    exposurePolicy: "Member story focus",
+    staffSignal: "Cash needs discipline; small overreach can damage trust quickly.",
+    memberSignal: "Members need clear roles, fair queues and recovery.",
+    fanSignal: "Fans respond to sincerity, reliable activity and visible member access.",
+    risk: "Losing trust through chaotic booking or weak member development.",
+  };
+}
+
+function weightedAudiencePct(profile: FinanceAudienceProfile, key: keyof AudienceDemographicMix): number {
+  const total = Math.max(1, profile.publicFans + profile.otakuFans + profile.coreFans);
+  return (
+    profile.publicFans * profile.publicDemographics[key] +
+    profile.otakuFans * profile.otakuDemographics[key] +
+    profile.coreFans * profile.coreDemographics[key]
+  ) / total;
+}
+
+function renderFanDemographicsBars(profile: FinanceAudienceProfile): string {
+  const male = Math.round(weightedAudiencePct(profile, "malePct"));
+  const female = Math.max(0, 100 - male);
+  const rows = [
+    { label: "Youth <=22", pct: weightedAudiencePct(profile, "youthPct") },
+    { label: "Young adult 23-34", pct: weightedAudiencePct(profile, "youngAdultPct") },
+    { label: "Middle aged+ >=35", pct: weightedAudiencePct(profile, "middlePlusPct") },
+  ];
+  return `
+    <div class="group-demo-bars">
+      ${rows
+        .map((row) => {
+          const pct = Math.max(0, Math.min(100, Math.round(row.pct)));
+          return `<div class="group-demo-row">
+            <div class="group-demo-label"><span>${htmlEsc(row.label)}</span><strong>${pct}%</strong></div>
+            <div class="group-demo-track" aria-label="${htmlEsc(`${row.label}: ${pct}%`)}">
+              <div class="group-demo-fill" style="width:${pct}%">
+                <span class="group-demo-male" style="width:${male}%"></span>
+                <span class="group-demo-female" style="width:${female}%"></span>
+              </div>
+            </div>
+          </div>`;
+        })
+        .join("")}
+      <div class="group-demo-legend">
+        <span><i class="group-demo-dot group-demo-dot-male"></i>Male ${male}%</span>
+        <span><i class="group-demo-dot group-demo-dot-female"></i>Female ${female}%</span>
+      </div>
+    </div>`;
+}
+
+function renderStrategyValueBars(profile: GroupStrategyProfile): string {
+  return `<div class="group-strategy-bars">${profile.values
+    .map((row) => {
+      const value = Math.max(0, Math.min(5, Math.round(row.value)));
+      return `<div class="group-strategy-row">
+        <div class="group-strategy-label"><span>${htmlEsc(row.label)}</span><strong>${value}/5</strong></div>
+        <div class="group-strategy-meter"><span style="width:${value * 20}%"></span></div>
+      </div>`;
+    })
+    .join("")}</div>`;
 }
 
 function historyMatchesGroup(e: Record<string, unknown>, groupUid: string, groupName: string): boolean {
@@ -438,6 +881,13 @@ export function renderGroupDetailPage(
     songsForDisplaySorted(ctx.songs),
   );
   const discCount = mergedDiscRows.length || buildDiscBuckets(teamSongs).length;
+  const audienceProfile = financeAudienceProfileForGroup({
+    groupName: g.name,
+    groupRomaji: g.name_romanji,
+    letterTier: tier,
+    fans,
+  });
+  const strategyProfile = strategyForGroup(g);
 
   const songsBtn = gid
     ? `<button type="button" class="group-detail-fact-link" data-open-songs-for-group="${encodeURIComponent(gid)}">${htmlEsc(
@@ -491,7 +941,11 @@ export function renderGroupDetailPage(
     <button type="button" class="fm-btn fm-btn-accent" id="btn-group-detail-back">${htmlEsc("← Groups")}</button>
     <span class="content-muted idol-detail-ref">${htmlEsc(contextLabel)}</span>
   </header>
-  <div class="fm-card group-detail-head">
+  <nav class="workspace-tabs group-detail-tabs" aria-label="Group detail tabs">
+    <a class="workspace-tab is-active" href="#group-detail-overview">${htmlEsc("Overview")}</a>
+    <a class="workspace-tab" href="#group-detail-strategy">${htmlEsc("Strategy")}</a>
+  </nav>
+  <div class="fm-card group-detail-head" id="group-detail-overview">
     <div class="group-detail-hero-cols">
       <div class="group-detail-hero-left">${heroHtml}</div>
       <div class="group-detail-hero-main">
@@ -521,6 +975,15 @@ export function renderGroupDetailPage(
         ${wikiBlock}
         ${desc}
       </div>
+      <aside class="group-detail-demo-aside" aria-label="Fan demographics">
+        <div class="group-detail-aside-title">${htmlEsc("Fan demographics")}</div>
+        ${renderFanDemographicsBars(audienceProfile)}
+        <dl class="basic-dl group-demo-layer-dl group-demo-layer-dl-compact">
+          <div><dt>${htmlEsc("Public")}</dt><dd>${audienceProfile.publicFans.toLocaleString("ja-JP")}</dd></div>
+          <div><dt>${htmlEsc("Otaku")}</dt><dd>${audienceProfile.otakuFans.toLocaleString("ja-JP")}</dd></div>
+          <div><dt>${htmlEsc("Core")}</dt><dd>${audienceProfile.coreFans.toLocaleString("ja-JP")}</dd></div>
+        </dl>
+      </aside>
     </div>
   </div>
 
@@ -552,6 +1015,34 @@ export function renderGroupDetailPage(
           <thead><tr><th>${htmlEsc(t(lang, "group_date"))}</th><th>${htmlEsc(t(lang, "group_title"))}</th><th>${htmlEsc(t(lang, "group_venue"))}</th><th>${htmlEsc(t(lang, "group_type"))}</th></tr></thead>
           <tbody>${renderLivesRows(ctx.lives, name, ctx.referenceIso)}</tbody>
         </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="fm-card group-detail-section" id="group-detail-strategy">
+    <div class="group-detail-section-head">${htmlEsc("Strategy")}</div>
+    <div class="group-detail-section-body">
+      <div class="group-strategy-grid">
+        <div>
+          <p class="group-strategy-archetype">${htmlEsc(strategyProfile.archetype)}</p>
+          <p class="content-muted group-strategy-core">${htmlEsc(strategyProfile.core)}</p>
+          ${renderStrategyValueBars(strategyProfile)}
+        </div>
+        <div class="group-strategy-side">
+          <dl class="basic-dl group-strategy-dl">
+            <div><dt>${htmlEsc("Preset")}</dt><dd>${htmlEsc(strategyProfile.presetId)}</dd></div>
+            <div><dt>${htmlEsc("Event mix")}</dt><dd>${htmlEsc(strategyProfile.eventMix)}</dd></div>
+            <div><dt>${htmlEsc("Benefit policy")}</dt><dd>${htmlEsc(strategyProfile.benefitPolicy)}</dd></div>
+            <div><dt>${htmlEsc("Rest policy")}</dt><dd>${htmlEsc(strategyProfile.restPolicy)}</dd></div>
+            <div><dt>${htmlEsc("Exposure")}</dt><dd>${htmlEsc(strategyProfile.exposurePolicy)}</dd></div>
+          </dl>
+          <div class="group-strategy-signals">
+            <p><strong>${htmlEsc("Staff")}</strong><span>${htmlEsc(strategyProfile.staffSignal)}</span></p>
+            <p><strong>${htmlEsc("Members")}</strong><span>${htmlEsc(strategyProfile.memberSignal)}</span></p>
+            <p><strong>${htmlEsc("Fans")}</strong><span>${htmlEsc(strategyProfile.fanSignal)}</span></p>
+            <p><strong>${htmlEsc("Risk")}</strong><span>${htmlEsc(strategyProfile.risk)}</span></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

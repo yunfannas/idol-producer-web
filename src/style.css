@@ -3023,6 +3023,25 @@ text.idol-radar-val.attr-tone-low {
   min-width: 0;
 }
 
+.group-detail-demo-aside {
+  flex: 0 1 20rem;
+  min-width: 16rem;
+  max-width: 23rem;
+  padding: 0.65rem 0.75rem;
+  background: rgb(255 255 255 / 0.035);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 3px;
+}
+
+.group-detail-aside-title {
+  margin-bottom: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
 .group-detail-hero-frame {
   position: relative;
   display: inline-block;
@@ -3099,6 +3118,10 @@ text.idol-radar-val.attr-tone-low {
   margin-top: 0.65rem;
 }
 
+.group-detail-tabs {
+  margin: 0.35rem 0 0.75rem;
+}
+
 .group-detail-section {
   margin-top: 0.75rem;
 }
@@ -3114,6 +3137,189 @@ text.idol-radar-val.attr-tone-low {
 
 .group-detail-section-body {
   padding: 0.75rem 0.85rem 0.95rem;
+}
+
+.group-demo-grid,
+.group-strategy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.85fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.group-demo-copy,
+.group-strategy-core {
+  margin: 0 0 0.7rem;
+}
+
+.group-demo-bars,
+.group-strategy-bars {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.group-demo-row,
+.group-strategy-row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) minmax(10rem, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.group-demo-label,
+.group-strategy-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.55rem;
+  min-width: 0;
+  font-size: 0.82rem;
+}
+
+.group-demo-label span,
+.group-strategy-label span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--text-secondary);
+}
+
+.group-demo-label strong,
+.group-strategy-label strong {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.group-demo-track,
+.group-strategy-meter {
+  position: relative;
+  height: 0.78rem;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 2px;
+}
+
+.group-demo-fill {
+  display: flex;
+  height: 100%;
+  min-width: 0.2rem;
+}
+
+.group-demo-male {
+  background: #2f80ed;
+}
+
+.group-demo-female {
+  background: #ff6fae;
+}
+
+.group-demo-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.group-demo-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+  vertical-align: -0.05rem;
+}
+
+.group-demo-dot-male {
+  background: #2f80ed;
+}
+
+.group-demo-dot-female {
+  background: #ff6fae;
+}
+
+.group-demo-layer-dl,
+.group-strategy-dl {
+  margin: 0;
+}
+
+.group-demo-layer-dl-compact {
+  margin-top: 0.65rem;
+}
+
+.group-detail-demo-aside .group-demo-bars {
+  gap: 0.48rem;
+}
+
+.group-detail-demo-aside .group-demo-row {
+  grid-template-columns: 1fr;
+  gap: 0.22rem;
+}
+
+.group-detail-demo-aside .group-demo-label {
+  font-size: 0.76rem;
+}
+
+.group-detail-demo-aside .group-demo-track {
+  height: 0.64rem;
+}
+
+.group-detail-demo-aside .group-demo-legend {
+  margin-top: 0.5rem;
+  font-size: 0.74rem;
+}
+
+.group-strategy-archetype {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.group-strategy-meter span {
+  display: block;
+  height: 100%;
+  min-width: 0.2rem;
+  background: linear-gradient(90deg, #39a96b, #f2c94c);
+}
+
+.group-strategy-side {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.group-strategy-signals {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.group-strategy-signals p {
+  margin: 0;
+  display: grid;
+  gap: 0.15rem;
+  font-size: 0.82rem;
+}
+
+.group-strategy-signals strong {
+  color: var(--text-primary);
+}
+
+.group-strategy-signals span {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 820px) {
+  .group-demo-grid,
+  .group-strategy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-demo-row,
+  .group-strategy-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
 }
 
 .group-detail-past {
@@ -3757,6 +3963,10 @@ text.idol-radar-val.attr-tone-low {
   border-color: var(--accent-light);
   background: rgb(83 52 131 / 0.35);
   color: #fff;
+}
+
+a.workspace-tab {
+  text-decoration: none;
 }
 
 .lives-planner-grid {
@@ -5550,7 +5760,7 @@ code {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.25rem 0.3rem 0.35rem;
-  min-height: 2.6rem;
+  min-height: 5.2rem;
   background: var(--bg-card-dim);
   display: flex;
   flex-direction: column;
@@ -5602,6 +5812,13 @@ code {
   font-variant-numeric: tabular-nums;
 }
 
+.schedule-cal-cell-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
 .schedule-cal-dots {
   display: flex;
   flex-wrap: wrap;
@@ -5633,6 +5850,59 @@ code {
   background: #8bc4ff;
 }
 
+.schedule-cal-live-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.schedule-cal-live {
+  appearance: none;
+  border: 1px solid rgba(236, 192, 105, 0.35);
+  border-radius: 4px;
+  background: rgba(236, 192, 105, 0.12);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.25rem;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.12rem 0.22rem;
+  text-align: left;
+  font: inherit;
+  font-size: 0.68rem;
+  line-height: 1.15;
+}
+
+.schedule-cal-live:hover,
+.schedule-cal-live:focus-visible {
+  border-color: var(--yellow);
+  background: rgba(236, 192, 105, 0.2);
+  outline: none;
+}
+
+.schedule-cal-live-time {
+  color: var(--yellow);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.schedule-cal-live-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schedule-cal-live-more {
+  color: var(--text-secondary);
+  font-size: 0.66rem;
+  line-height: 1.2;
+  padding-left: 0.1rem;
+}
+
 .schedule-cal-legend {
   margin: 0.65rem 0 0;
   padding-left: 1.1rem;
@@ -5654,12 +5924,22 @@ code {
 
 @media (max-width: 520px) {
   .schedule-cal-cell {
-    min-height: 2.2rem;
+    min-height: 4.3rem;
     padding: 0.2rem;
   }
 
   .schedule-cal-daynum {
     font-size: 0.72rem;
+  }
+
+  .schedule-cal-live {
+    display: block;
+    font-size: 0.62rem;
+    padding: 0.1rem 0.16rem;
+  }
+
+  .schedule-cal-live-time {
+    display: none;
   }
 }
 

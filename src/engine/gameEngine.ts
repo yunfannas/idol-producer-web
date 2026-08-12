@@ -14,11 +14,14 @@ import {
   addCalendarDays,
   applyDailyClose,
   buildDailyBreakdown,
+  cdOnlineSigningMemberSeconds,
   estimateLiveGoodsUnits,
   estimateVenueFee,
+  financeAudienceProfileForGroup,
   normalizeFinances,
   monthlyBaseSalaryYenForGroupLetterTier,
   isWeekendUtc,
+  type FinanceAudienceProfile,
 } from "./financeSystem";
 import {
   applyDailyStatusUpdateJson,
@@ -160,6 +163,21 @@ function readPopFans(save: GameSavePayload): { popularity: number; fans: number;
   const xFollowers =
     typeof g?.x_followers === "number" ? g.x_followers : Number(g?.x_followers ?? 0) || 0;
   return { popularity, fans, xFollowers };
+}
+
+function financeAudienceProfileForSave(
+  save: GameSavePayload,
+  group: Record<string, unknown> | null | undefined,
+  letterTier: ReturnType<typeof getLetterTierFromGroup>,
+  fans: number,
+): FinanceAudienceProfile {
+  const g = group ?? getPrimaryGroup(save);
+  return financeAudienceProfileForGroup({
+    groupName: g?.name ?? g?.group_name ?? g?.title,
+    groupRomaji: g?.name_romanji ?? g?.name_romaji ?? g?.romaji ?? g?.romanized_name,
+    letterTier,
+    fans,
+  });
 }
 
 export function getBlockingNotificationForSave(save: GameSavePayload) {
@@ -532,6 +550,39 @@ function subtractBreakdowns(a: DailyBreakdown, b: DailyBreakdown): DailyBreakdow
     "tokutenkai_idol_share",
     "salaries",
     "scout_retainers",
+    "live_ticket_revenue",
+    "live_goods_revenue",
+    "post_live_tokutenkai_revenue",
+    "online_benefit_revenue",
+    "shooting_handshake_revenue",
+    "release_sales_revenue",
+    "digital_streaming_revenue",
+    "media_appearance_revenue",
+    "commercial_ip_revenue",
+    "fanclub_revenue",
+    "birthday_special_revenue",
+    "cheki_gross_revenue",
+    "cheki_ops_cost",
+    "cheki_member_share",
+    "cheki_net_profit",
+    "cd_net_profit",
+    "member_base_compensation",
+    "member_sales_share",
+    "member_monthly_income_total",
+    "staff_payroll",
+    "office_admin_cost",
+    "promotion_cost",
+    "benefit_ops_cost",
+    "production_cost",
+    "goods_cost",
+    "live_ticket_count_estimate",
+    "fanclub_members_estimate",
+    "cd_units_sold",
+    "online_signing_member_seconds",
+    "member_hours_live",
+    "member_hours_benefit",
+    "member_hours_media",
+    "member_hours_training",
   ];
   const out = { ...a } as DailyBreakdown;
   const outNum = out as unknown as Record<string, number>;
@@ -552,9 +603,14 @@ function applyLiveFinanceSettlement(
     popularity: number;
     fans: number;
     xFollowers: number;
+    letterTier: ReturnType<typeof getLetterTierFromGroup>;
+    audienceProfile?: FinanceAudienceProfile;
     monthlySalaryTotal: number;
+    liveTicketRevenue: number;
+    liveGoodsRevenue: number;
     tokutenkaiRevenue: number;
     liveVenueFeeTotal: number;
+    memberHoursLive: number;
   },
 ): Finances {
   const base = buildDailyBreakdown({
@@ -563,9 +619,13 @@ function applyLiveFinanceSettlement(
     popularity: p.popularity,
     fans: p.fans,
     xFollowers: p.xFollowers,
+    letterTier: p.letterTier,
+    audienceProfile: p.audienceProfile,
     monthlySalaryTotal: p.monthlySalaryTotal,
     scoutRetainersMonthlyTotal: 0,
     liveCount: 0,
+    liveTicketRevenue: 0,
+    liveGoodsRevenue: 0,
     tokutenkaiRevenue: 0,
     tokutenkaiCost: 0,
     liveVenueFeeTotal: 0,
@@ -576,12 +636,17 @@ function applyLiveFinanceSettlement(
     popularity: p.popularity,
     fans: p.fans,
     xFollowers: p.xFollowers,
+    letterTier: p.letterTier,
+    audienceProfile: p.audienceProfile,
     monthlySalaryTotal: p.monthlySalaryTotal,
     scoutRetainersMonthlyTotal: 0,
     liveCount: 1,
+    liveTicketRevenue: p.liveTicketRevenue,
+    liveGoodsRevenue: p.liveGoodsRevenue,
     tokutenkaiRevenue: p.tokutenkaiRevenue,
     tokutenkaiCost: 0,
     liveVenueFeeTotal: p.liveVenueFeeTotal,
+    memberHoursLive: p.memberHoursLive,
   });
   const delta = subtractBreakdowns(full, base);
   return applyDailyClose(finances, delta);
@@ -704,6 +769,8 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
             groupFans: Number(managedGroup?.fans ?? 0) || 0,
             groupPopularity: Number(managedGroup?.popularity ?? 0) || 0,
             groupTier: getLetterTierFromGroup(managedGroup),
+            groupName: managedGroup?.name,
+            groupRomaji: managedGroup?.name_romanji,
           });
           if (goodsUnits > 0) {
             goods.stock = Math.max(0, (Number(goods.stock ?? 0) || 0) - goodsUnits);
@@ -743,15 +810,21 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
     const cap = typeof live.capacity === "number" ? live.capacity : Number(live.capacity ?? 200) || 200;
     const liveVenueFeeTotal = estimateVenueFee(cap, { isWeekendOrHoliday: isWeekendUtc(targetIso) });
     const { popularity, fans, xFollowers } = readPopFans(save);
+    const liveLetterTier = getLetterTierFromGroup(managedGroup);
     finances = applyLiveFinanceSettlement(finances, {
       targetIso,
       memberCount: mc,
       popularity,
       fans,
       xFollowers,
+      letterTier: liveLetterTier,
+      audienceProfile: financeAudienceProfileForSave(save, managedGroup, liveLetterTier, fans),
       monthlySalaryTotal,
+      liveTicketRevenue: ticketGross,
+      liveGoodsRevenue: goodsGross,
       tokutenkaiRevenue,
       liveVenueFeeTotal,
+      memberHoursLive: Math.round((mc * liveMinutes) / 60 * 100) / 100,
     });
 
     played.report_generated_same_day = false;
@@ -1009,6 +1082,7 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   }
 
   const { popularity, fans, xFollowers } = readPopFans(next);
+  const audienceProfile = financeAudienceProfileForSave(next, group as Record<string, unknown> | null, letterTier, fans);
 
   const breakdown: DailyBreakdown = buildDailyBreakdown({
     targetDateIso: targetIso,
@@ -1016,6 +1090,8 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     popularity,
     fans,
     xFollowers,
+    letterTier,
+    audienceProfile,
     monthlySalaryTotal,
     scoutRetainersMonthlyTotal,
     liveCount,
@@ -1024,7 +1100,7 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     liveVenueFeeTotal,
   });
 
-  const passiveMedia = Math.max(0, Number(breakdown.media ?? 0) || 0);
+  const passiveMedia = Math.max(0, Number(breakdown.media_appearance_revenue ?? breakdown.media ?? 0) || 0);
   breakdown.media_passive_removed = passiveMedia;
   breakdown.media_event_revenue = mediaSummary.revenue;
   breakdown.media_operating_cost = mediaSummary.expense;
@@ -1041,14 +1117,34 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   breakdown.cd_release_units = mediaSummary.cd_release_units;
   breakdown.cd_release_revenue = mediaSummary.cd_release_revenue;
   breakdown.cd_release_mv_cost = mediaSummary.cd_release_mv_cost;
+  breakdown.release_sales_revenue = mediaSummary.cd_release_revenue;
+  breakdown.cd_net_profit = mediaSummary.cd_release_revenue;
+  breakdown.cd_units_sold = mediaSummary.cd_release_units;
+  breakdown.online_signing_member_seconds = cdOnlineSigningMemberSeconds(mediaSummary.cd_release_units);
+  breakdown.member_hours_benefit =
+    Math.round((Number(breakdown.member_hours_benefit ?? 0) + (breakdown.online_signing_member_seconds ?? 0) / 3600) * 100) / 100;
+  breakdown.media_appearance_revenue = Math.max(0, mediaSummary.revenue - mediaSummary.cd_release_revenue);
+  breakdown.production_cost = mediaSummary.expense;
 
-  breakdown.media = mediaSummary.revenue;
+  breakdown.media = (breakdown.commercial_ip_revenue ?? 0) + mediaSummary.revenue;
   breakdown.staff += mediaSummary.event_staffing_cost;
+  breakdown.staff_payroll = breakdown.staff;
   breakdown.office += mediaSummary.fixed_admin_cost;
+  breakdown.office_admin_cost = breakdown.office;
   breakdown.promotion += mediaSummary.fixed_advertising_cost + mediaSummary.event_advertising_cost;
+  breakdown.promotion_cost = breakdown.promotion;
   breakdown.expense_total += mediaSummary.expense;
   breakdown.income_total += mediaSummary.revenue - passiveMedia;
   breakdown.net_total = breakdown.income_total - breakdown.expense_total;
+  {
+    const totalMemberHours =
+      Number(breakdown.member_hours_live ?? 0) +
+      Number(breakdown.member_hours_benefit ?? 0) +
+      Number(breakdown.member_hours_media ?? 0) +
+      Number(breakdown.member_hours_training ?? 0);
+    breakdown.revenue_per_member_hour =
+      totalMemberHours > 0 ? Math.round(breakdown.income_total / totalMemberHours) : undefined;
+  }
 
   if (group && typeof group === "object") {
     const g = group as Record<string, unknown>;

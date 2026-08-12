@@ -448,9 +448,9 @@ class FinanceSystem:
             u = 0
         ev = _CD_SALES_MODEL.get("online_signing_event") if isinstance(_CD_SALES_MODEL.get("online_signing_event"), dict) else {}
         try:
-            sec = int(ev.get("seconds_per_cd_allocating_member", 30))
+            sec = int(ev.get("seconds_per_cd_allocating_member", 15))
         except (TypeError, ValueError):
-            sec = 30
+            sec = 15
         return max(0, u * max(0, sec))
 
     @classmethod

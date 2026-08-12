@@ -676,6 +676,73 @@ function selectedScheduledLiveRecord(): Record<string, unknown> | null {
   return schedules[0] ??  null;
 }
 
+function normalizeLiveTypeForForm(value: unknown): NewLiveFormState["liveType"] {
+  const raw = String(value ?? "").trim();
+  return raw === "Concert" || raw === "Taiban" || raw === "Festival" ? raw : "Routine";
+}
+
+function programItemsFromLive(live: Record<string, unknown>): LiveProgramItem[] {
+  const rawProgram = Array.isArray(live.program)
+    ? (live.program as unknown[]).filter((item): item is Record<string, unknown> => Boolean(item && typeof item === "object"))
+    : [];
+  if (rawProgram.length) {
+    return rawProgram.map((item) => {
+      const kind = item.kind === "mc" || item.kind === "break" ? item.kind : "song";
+      const label = String(item.label ?? item.songTitle ?? (kind === "mc" ? "MC" : kind === "break" ? "Break" : "")).trim();
+      return {
+        id: String(item.id ?? newLiveProgramId(kind)),
+        kind,
+        label: label || (kind === "song" ? "Song" : kind === "mc" ? "MC" : "Break"),
+        durationMinutes: Math.max(0, Number(item.durationMinutes ?? 0) || 0),
+        songTitle: kind === "song" ? String(item.songTitle ?? label).trim() : undefined,
+      };
+    });
+  }
+  const setlist = Array.isArray(live.setlist)
+    ? (live.setlist as unknown[]).map((item) => String(item ?? "").trim()).filter(Boolean)
+    : [];
+  return setlist.map((title) => createSongProgramItem(title));
+}
+
+function loadScheduledLiveIntoArrangeForm(uid: string): boolean {
+  if (!save) return false;
+  scheduledLiveUid = uid;
+  const live = selectedScheduledLiveRecord();
+  if (!live) return false;
+  const liveType = normalizeLiveTypeForForm(live.live_type ?? live.event_type);
+  const program = programItemsFromLive(live);
+  newLiveForm = {
+    liveType,
+    title: String(live.title ?? live.live_type ?? "Live"),
+    date: String(live.start_date ?? live.date ?? currentIsoForNewLive()).split("T")[0],
+    startTime: String(live.start_time ?? ""),
+    endTime: String(live.end_time ?? ""),
+    rehearsalStart: String(live.rehearsal_start ?? ""),
+    rehearsalEnd: String(live.rehearsal_end ?? ""),
+    venueName: String(live.venue ?? ""),
+    program,
+    setlist: songTitlesFromProgram(program),
+    tokutenkaiEnabled: Boolean(live.tokutenkai_enabled),
+    tokutenkaiStart: String(live.tokutenkai_start ?? ""),
+    tokutenkaiEnd: String(live.tokutenkai_end ?? ""),
+    tokutenkaiTicketPrice: Math.max(0, Number(live.tokutenkai_ticket_price ?? 0) || 0),
+    tokutenkaiSlotSeconds: Math.max(0, Number(live.tokutenkai_slot_seconds ?? 0) || 0),
+    tokutenkaiExpectedTickets: Math.max(0, Number(live.tokutenkai_expected_tickets ?? 0) || 0),
+    goodsEnabled: Boolean(live.goods_enabled),
+    goodsUids: Array.isArray(live.goods_uids)
+      ? (live.goods_uids as unknown[]).map((item) => String(item)).filter(Boolean)
+      : String(live.goods_uid ?? "").trim()
+        ? [String(live.goods_uid ?? "").trim()]
+        : [],
+    ticketPriceYen: Math.max(0, Number(live.ticket_price ?? 0) || 0),
+    vipTicketPriceYen: Math.max(0, Number(live.vip_ticket_price ?? 0) || 0),
+    vipCapacity: Math.max(0, Number(live.vip_capacity ?? 0) || 0),
+  };
+  selectedLiveSongTitle = newLiveForm.setlist[0] ?? null;
+  selectedSetlistSongIndex = newLiveForm.program.length ? 0 : null;
+  return true;
+}
+
 function goodsInventory(): ProducedGoodsRow[] {
   return Array.isArray(save?.goods_inventory) ? save!.goods_inventory : [];
 }
@@ -2446,8 +2513,8 @@ function paintGame(): void {
       if (uid) {
         navigate(() => {
           currentView = "Lives";
-          livesTab = "scheduled";
-          scheduledLiveUid = uid;
+          livesTab = "new";
+          loadScheduledLiveIntoArrangeForm(uid);
         });
       }
       return;
@@ -2458,6 +2525,10 @@ function paintGame(): void {
       if (tab === "new" || tab === "scheduled" || tab === "past" || tab === "festival" || tab === "league") {
         navigate(() => {
           livesTab = tab;
+          if (tab === "new") {
+            scheduledLiveUid = null;
+            resetNewLiveFormDefaults(newLiveForm.liveType);
+          }
         });
       }
       return;
@@ -2549,6 +2620,43 @@ function paintGame(): void {
     const scheduleLiveBtn = t.closest<HTMLElement>("[data-live-schedule]");
     if (scheduleLiveBtn && save && !browseMode && currentView === "Lives") {
       const venue = getVenuesCatalog().find((row) => row.name === newLiveForm.venueName) ??  null;
+      const goodsUids = [...newLiveForm.goodsUids];
+      const goodsNames = goodsUids.map((uid) => goodsDisplayLabel(findGoodsByUid(uid))).filter(Boolean);
+      const goodsGross = estimateCurrentLiveGoodsGross(newLiveForm.liveType, newLiveForm.venueName, goodsUids);
+      const editingLive = scheduledLiveUid ? selectedScheduledLiveRecord() : null;
+      if (editingLive) {
+        editingLive.title = newLiveForm.title.trim() || `${save.managing_group ??  "Managed group"} ${newLiveForm.liveType}`;
+        editingLive.event_type = LIVE_TYPE_PRESETS[newLiveForm.liveType].event_type;
+        editingLive.live_type = newLiveForm.liveType;
+        editingLive.start_date = newLiveForm.date;
+        editingLive.end_date = newLiveForm.date;
+        editingLive.start_time = newLiveForm.startTime;
+        editingLive.end_time = newLiveForm.endTime;
+        editingLive.rehearsal_start = newLiveForm.rehearsalStart;
+        editingLive.rehearsal_end = newLiveForm.rehearsalEnd;
+        editingLive.venue = newLiveForm.venueName || null;
+        editingLive.venue_uid = venue?.uid ?? null;
+        editingLive.location = venue?.location ?? "";
+        editingLive.capacity = venue?.capacity ?? null;
+        editingLive.ticket_price = newLiveForm.ticketPriceYen;
+        editingLive.vip_ticket_price = newLiveForm.vipTicketPriceYen;
+        editingLive.vip_capacity = newLiveForm.vipCapacity;
+        editingLive.setlist = [...newLiveForm.setlist];
+        editingLive.program = newLiveForm.program.map((item) => ({ ...item }));
+        editingLive.tokutenkai_enabled = newLiveForm.tokutenkaiEnabled;
+        editingLive.tokutenkai_start = newLiveForm.tokutenkaiStart;
+        editingLive.tokutenkai_end = newLiveForm.tokutenkaiEnd;
+        editingLive.tokutenkai_ticket_price = newLiveForm.tokutenkaiTicketPrice;
+        editingLive.tokutenkai_slot_seconds = newLiveForm.tokutenkaiSlotSeconds;
+        editingLive.tokutenkai_expected_tickets = newLiveForm.tokutenkaiExpectedTickets;
+        editingLive.goods_enabled = newLiveForm.goodsEnabled;
+        editingLive.goods_uids = goodsUids;
+        editingLive.goods_uid = goodsUids[0] ?? "";
+        editingLive.goods_line = goodsNames.join(", ");
+        editingLive.goods_expected_revenue_yen = goodsGross;
+        paintGame();
+        return;
+      }
       const reservation = reservationFeeForNewLive(venue?.capacity ??  null, newLiveForm.date);
       if (reservation.blocked) {
         addNotification(save, {
@@ -2580,9 +2688,6 @@ function paintGame(): void {
         paintGame();
         return;
       }
-      const goodsUids = [...newLiveForm.goodsUids];
-      const goodsNames = goodsUids.map((uid) => goodsDisplayLabel(findGoodsByUid(uid))).filter(Boolean);
-      const goodsGross = estimateCurrentLiveGoodsGross(newLiveForm.liveType, newLiveForm.venueName, goodsUids);
       const uid = `manual-live-${Date.now().toString(36)}`;
       const live = {
         uid,
@@ -4304,6 +4409,18 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("dblclick", (ev) => {
     const t = ev.target as HTMLElement;
+    const liveOpen = t.closest<HTMLElement>("[data-live-open-uid]");
+    if (liveOpen && save && !browseMode && currentView === "Schedule") {
+      const uid = String(liveOpen.getAttribute("data-live-open-uid") ?? "").trim();
+      if (uid) {
+        navigate(() => {
+          currentView = "Lives";
+          livesTab = "new";
+          loadScheduledLiveIntoArrangeForm(uid);
+        });
+      }
+      return;
+    }
     const calDay = t.closest<HTMLElement>("[data-sched-date]");
     if (calDay && save && !browseMode && currentView === "Schedule") {
       const iso = String(calDay.getAttribute("data-sched-date") ?? "").trim();
