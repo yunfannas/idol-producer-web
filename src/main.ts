@@ -133,7 +133,7 @@ import {
 } from "./data/songStartingFormation";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
 import { mountWorldRuntime } from "./ui/worldRuntime";
-import type { WorldRoomId, WorldZoomTarget } from "./ui/worldUi";
+import type { WorldRoomId, WorldVenueFocus, WorldZoomTarget } from "./ui/worldUi";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
 import { showAppConfirm } from "./ui/appConfirm";
@@ -150,6 +150,11 @@ const UI_LANG_STORAGE_KEY = "idol-producer-ui-lang";
 const ACCOUNT_NAME_STORAGE_KEY = "idol-producer-account-name";
 const TUTORIAL_AUTO_OPEN_STORAGE_KEY = "idol-producer-tutorial-auto-open";
 const FEEDBACK_STORAGE_KEY = "idol-producer-feedback-log";
+
+function officePreviewDollsHtml(count: number): string {
+  const visualCount = Math.max(0, Math.min(12, Math.round(count)));
+  return Array.from({ length: visualCount }, () => "<i></i>").join("");
+}
 
 function isUiLanguage(value: unknown): value is UiLanguage {
   return value === "en" || value === "zh-CN";
@@ -1365,6 +1370,7 @@ let worldPhoneMessageUid: string | null = null;
 let worldCalendarOpen = false;
 let worldZoomTarget: WorldZoomTarget = null;
 let worldZoomMemberUid: string | null = null;
+let worldVenueFocus: WorldVenueFocus = null;
 let idolDetailUid: string | null = null;
 let groupDetailUid: string | null = null;
 /** Songs view: selected `group_uid` from snapshot (browse or save). */
@@ -2222,6 +2228,34 @@ function paintOpening(): void {
           officePreview.dataset.tier = officeTier;
           const tierLabel = officePreview.querySelector<HTMLElement>("[data-office-tier-label]");
           if (tierLabel) tierLabel.textContent = officeTier === "A" ? "A+" : officeTier;
+          const studioCount = Number(tr.getAttribute("data-studio-count") ?? tr.getAttribute("data-member-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio-count]").forEach((elt) => {
+            elt.textContent = String(studioCount);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(studioCount);
+          });
+          const studio2Count = Number(tr.getAttribute("data-studio2-count") ?? tr.getAttribute("data-member-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio2-count]").forEach((elt) => {
+            elt.textContent = String(studio2Count);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio2-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(studio2Count);
+          });
+          const managerCount = Number(tr.getAttribute("data-manager-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-manager-count]").forEach((elt) => {
+            elt.textContent = String(managerCount);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-manager-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(managerCount);
+          });
+          const specializedStaffCount = Number(tr.getAttribute("data-specialized-staff-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-specialized-count]").forEach((elt) => {
+            elt.textContent = String(specializedStaffCount);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-specialized-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(specializedStaffCount);
+          });
         }
         selectedNewGameGroupUid = uid && uid.length ? uid : null;
         if (startBtn) startBtn.disabled = !selectedNewGameGroupUid || !accountName.trim();
@@ -2393,6 +2427,7 @@ function paintGame(): void {
     worldCalendarOpen,
     zoomTarget: worldZoomTarget,
     worldZoomMemberUid,
+    worldVenueFocus,
   });
   restoreFocus(appRoot, focus);
   mountWorldRuntime(appRoot);
@@ -2472,9 +2507,30 @@ function paintGame(): void {
         worldCalendarOpen = false;
         worldZoomTarget = null;
         worldZoomMemberUid = null;
+        worldVenueFocus = null;
         if (nav && isDesktopNavId(nav) && (!browseMode || isBrowseNav(nav) || isManagementNav(nav))) {
           currentView = nav;
         }
+      });
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-venue-zone]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      const zone = String(elt.getAttribute("data-world-venue-zone") ?? "").trim();
+      if (browseMode || !save || (zone !== "stage" && zone !== "tokutenkai" && zone !== "backstage" && zone !== "entry")) return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      navigate(() => {
+        currentView = "Lives";
+        livesTab = "scheduled";
+        scheduledLiveUid = null;
+        worldVenueFocus = zone;
+        worldPhoneOpen = false;
+        worldPhoneMessageUid = null;
+        worldCalendarOpen = false;
+        worldZoomTarget = null;
+        worldZoomMemberUid = null;
+        inboxSelectedUid = null;
       });
     });
   });
@@ -2527,6 +2583,7 @@ function paintGame(): void {
         livesTab = "scheduled";
         scheduledLiveUid = null;
         worldRoom = "producer";
+        worldVenueFocus = "stage";
         worldPhoneOpen = false;
         worldPhoneMessageUid = null;
         worldCalendarOpen = false;
@@ -4544,6 +4601,7 @@ function paintGame(): void {
         groupDetailUid = null;
         worldZoomTarget = null;
         worldZoomMemberUid = null;
+        worldVenueFocus = null;
         if (v !== "Inbox") inboxSelectedUid = null;
         currentView = v;
       });

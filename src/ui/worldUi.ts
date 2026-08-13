@@ -9,6 +9,7 @@ import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "
 
 export type WorldRoomId = "producer" | "staff" | "meeting" | "studio" | "recording" | "studio2";
 export type WorldZoomTarget = "members" | "history" | null;
+export type WorldVenueFocus = "stage" | "tokutenkai" | "backstage" | "entry" | null;
 
 export interface WorldShellRenderProps {
   lang: UiLanguage;
@@ -32,6 +33,7 @@ export interface WorldShellRenderProps {
   footerHtml: string;
   zoomTarget: WorldZoomTarget;
   zoomProfileInner?: string | null;
+  worldVenueFocus?: WorldVenueFocus;
 }
 
 const WORLD_ROOMS: Array<{
@@ -406,19 +408,22 @@ function renderVenueMap(): string {
   return `<section class="world-venue-map-panel" aria-label="Venue map">
     <div class="world-map-title"><span>Venue</span><strong data-world-activity-label>live site check-in</strong></div>
     <div class="world-venue-map-art">
-      <button type="button" class="world-venue-zone world-venue-zone--stage" data-nav="Lives">
+      <button type="button" class="world-venue-zone world-venue-zone--stage" data-world-venue-zone="stage" data-nav="Lives">
         <strong>Stage</strong><em>performance floor</em>
       </button>
-      <button type="button" class="world-venue-zone world-venue-zone--audience" data-nav="Lives">
+      <button type="button" class="world-venue-zone world-venue-zone--backstage" data-world-venue-zone="backstage" data-nav="Lives">
+        <strong>Backstage</strong><em>green room</em>
+      </button>
+      <button type="button" class="world-venue-zone world-venue-zone--audience" data-world-venue-zone="audience" data-nav="Lives">
         <strong>Audience</strong><em>fan response</em>
       </button>
-      <button type="button" class="world-venue-zone world-venue-zone--tokutenkai" data-nav="Lives">
+      <button type="button" class="world-venue-zone world-venue-zone--tokutenkai" data-world-venue-zone="tokutenkai" data-nav="Lives">
         <strong>Tokutenkai</strong><em>post-live meet</em>
       </button>
-      <button type="button" class="world-venue-zone world-venue-zone--goods" data-nav="Lives">
+      <button type="button" class="world-venue-zone world-venue-zone--goods" data-world-venue-zone="goods" data-nav="Lives">
         <strong>Goods</strong><em>sales table</em>
       </button>
-      <button type="button" class="world-venue-zone world-venue-zone--entry" data-nav="Schedule">
+      <button type="button" class="world-venue-zone world-venue-zone--entry" data-world-venue-zone="entry" data-nav="Lives">
         <strong>Entry</strong><em>schedule desk</em>
       </button>
     </div>
@@ -493,6 +498,11 @@ function renderProducerRoom(p: WorldShellRenderProps): string {
 }
 
 function renderRoomFocus(p: WorldShellRenderProps): string {
+  if (p.currentView === "Lives" && p.worldVenueFocus) {
+    return `<section class="world-focus-venue-stage world-focus-venue-stage--${htmlEsc(p.worldVenueFocus)}" aria-label="Venue focus view">
+      ${p.mainInner}
+    </section>`;
+  }
   if (p.worldRoom === "producer") return renderProducerRoom(p);
   const room = WORLD_ROOMS.find((item) => item.id === p.worldRoom) ?? WORLD_ROOMS[0];
   const workflow = roomWorkflow(room.id, p);

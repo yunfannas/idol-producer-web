@@ -162,27 +162,102 @@ function officeTierLabel(tier: OfficeTier): string {
   return tier === "A" ? "A+" : tier;
 }
 
-function renderOfficeRoom(code: string, label: string): string {
+function normalizedLetterTier(tier: string): string {
+  const t0 = String(tier ?? "").trim().toUpperCase();
+  return /^[SABCDEF]$/.test(t0) ? t0 : "D";
+}
+
+function idolManagerCountForGroup(memberCount: number, tier: string): number {
+  const n = Math.max(0, Math.round(memberCount));
+  const letterTier = normalizedLetterTier(tier);
+  if (n > 20) {
+    if (letterTier === "S") return Math.round(10 + n * 0.2);
+    if (letterTier === "A") return Math.round(8 + n * 0.2);
+    if (letterTier === "B") return Math.round(4 + n * 0.2);
+  }
+  if (letterTier === "S") return 3 + n;
+  if (letterTier === "A") return n;
+  if (letterTier === "B") return Math.round(n * 0.8);
+  if (letterTier === "C") return Math.floor(n / 2);
+  if (letterTier === "D") return Math.max(3, Math.floor(n / 3));
+  if (letterTier === "E") return Math.max(2, Math.floor(n / 4));
+  return Math.max(2, Math.floor(n / 5));
+}
+
+function specializedStaffCountForOfficeTier(tier: OfficeTier): number {
+  if (tier === "A") return 4;
+  if (tier === "B") return 2;
+  return 3;
+}
+
+function practiceStudioCount(code: string, memberCount: number, tier: string): number {
+  const officeTier = officeTierFromLetter(tier);
+  if (officeTier !== "A") return memberCount;
+  if (code === "studio") return Math.ceil(memberCount / 2);
+  if (code === "studio2") return Math.floor(memberCount / 2);
+  return memberCount;
+}
+
+function roomCountLabel(code: string, memberCount: number, tier: string): { count: number; role: string; dynamic?: "studio" | "studio2" | "managers" | "specialized" } {
+  const officeTier = officeTierFromLetter(tier);
+  if (code === "producer") return { count: 1, role: "Producer" };
+  if (code === "meeting") return { count: idolManagerCountForGroup(memberCount, tier), role: "Idol manager", dynamic: "managers" };
+  if (code === "staff") return { count: specializedStaffCountForOfficeTier(officeTier), role: "Specialized staff", dynamic: "specialized" };
+  if (code === "recording") return { count: 1, role: "Sound director" };
+  if (code === "studio") return { count: practiceStudioCount(code, memberCount, tier), role: "Current idols", dynamic: "studio" };
+  if (code === "studio2") return { count: practiceStudioCount(code, memberCount, tier), role: "Current idols", dynamic: "studio2" };
+  return { count: 0, role: "People" };
+}
+
+function dynamicCountAttr(kind: "studio" | "studio2" | "managers" | "specialized" | undefined): string {
+  if (kind === "studio") return "data-office-studio-count";
+  if (kind === "studio2") return "data-office-studio2-count";
+  if (kind === "managers") return "data-office-manager-count";
+  if (kind === "specialized") return "data-office-specialized-count";
+  return "";
+}
+
+function dynamicDollsAttr(kind: "studio" | "studio2" | "managers" | "specialized" | undefined): string {
+  if (kind === "studio") return "data-office-studio-dolls";
+  if (kind === "studio2") return "data-office-studio2-dolls";
+  if (kind === "managers") return "data-office-manager-dolls";
+  if (kind === "specialized") return "data-office-specialized-dolls";
+  return "";
+}
+
+function renderOfficeDolls(count: number): string {
+  const visualCount = Math.max(0, Math.min(12, Math.round(count)));
+  return Array.from({ length: visualCount }, () => "<i></i>").join("");
+}
+
+function renderOfficeRoom(code: string, label: string, memberCount: number, tier: string): string {
+  const roomCount = roomCountLabel(code, memberCount, tier);
   return `<span class="opening-office-room opening-office-room--${code}">
-    <span class="opening-office-room-label">${htmlEsc(label)}</span>
+    <span class="opening-office-room-copy">
+      <span class="opening-office-room-label">${htmlEsc(label)}</span>
+      <span class="opening-office-room-count">
+        <strong ${dynamicCountAttr(roomCount.dynamic)}>${htmlEsc(String(roomCount.count))}</strong>
+        <em>${htmlEsc(roomCount.role)}</em>
+      </span>
+    </span>
     <span class="opening-office-room-floor" aria-hidden="true"></span>
-    <span class="opening-office-room-dolls" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="opening-office-room-dolls" ${dynamicDollsAttr(roomCount.dynamic)} aria-hidden="true">${renderOfficeDolls(roomCount.count)}</span>
   </span>`;
 }
 
-function renderOpeningOfficePreview(tier: OfficeTier): string {
+function renderOpeningOfficePreview(tier: OfficeTier, memberCount: number, letterTier: string): string {
   return `<aside class="opening-office-preview" data-office-preview data-tier="${htmlEsc(tier)}" aria-label="Office preview">
     <div class="opening-office-preview-head">
       <span>Office Size</span>
       <strong data-office-tier-label>${htmlEsc(officeTierLabel(tier))}</strong>
     </div>
     <div class="opening-office-cutaway">
-      ${renderOfficeRoom("producer", "Producer Room")}
-      ${renderOfficeRoom("meeting", "Meeting Room")}
-      ${renderOfficeRoom("studio", "Practice Studio")}
-      ${renderOfficeRoom("staff", "Staff Room")}
-      ${renderOfficeRoom("recording", "Recording Booth")}
-      ${renderOfficeRoom("studio2", "Practice Studio 2")}
+      ${renderOfficeRoom("producer", "Producer Room", memberCount, letterTier)}
+      ${renderOfficeRoom("meeting", "Meeting Room", memberCount, letterTier)}
+      ${renderOfficeRoom("studio", "Practice Studio", memberCount, letterTier)}
+      ${renderOfficeRoom("staff", "Staff Room", memberCount, letterTier)}
+      ${renderOfficeRoom("recording", "Recording Booth", memberCount, letterTier)}
+      ${renderOfficeRoom("studio2", "Practice Studio 2", memberCount, letterTier)}
     </div>
   </aside>`;
 }
@@ -280,7 +355,7 @@ export function renderNewGameScreen(
   const tableRows = rows
     .map(
       (r) => `
-    <tr data-group-uid="${htmlEsc(r.uid)}" data-office-tier="${htmlEsc(officeTierFromLetter(r.tier))}" class="group-picker-row${r.recommended ? " group-picker-row--recommended" : ""}">
+    <tr data-group-uid="${htmlEsc(r.uid)}" data-office-tier="${htmlEsc(officeTierFromLetter(r.tier))}" data-member-count="${htmlEsc(String(r.memberCount))}" data-studio-count="${htmlEsc(String(practiceStudioCount("studio", r.memberCount, r.tier)))}" data-studio2-count="${htmlEsc(String(practiceStudioCount("studio2", r.memberCount, r.tier)))}" data-manager-count="${htmlEsc(String(idolManagerCountForGroup(r.memberCount, r.tier)))}" data-specialized-staff-count="${htmlEsc(String(specializedStaffCountForOfficeTier(officeTierFromLetter(r.tier))))}" class="group-picker-row${r.recommended ? " group-picker-row--recommended" : ""}">
       <td>${r.recommended ? `<span class="opening-rec-mark" title="${htmlEsc(t(lang, "opening_recommended"))}">★</span>` : ""}${htmlEsc(r.name)}</td>
       <td>${htmlEsc(r.nameRomanji ?? "-")}</td>
       <td>${htmlEsc(r.tier)}</td>
@@ -294,7 +369,7 @@ export function renderNewGameScreen(
   return `
 <section class="opening-screen opening-new-game" aria-label="${htmlEsc(t(lang, "opening_new_game"))}">
   <div class="opening-new-game-shell">
-    ${renderOpeningOfficePreview(defaultTier)}
+    ${renderOpeningOfficePreview(defaultTier, rows[0]?.memberCount ?? 0, rows[0]?.tier ?? "D")}
     <div class="opening-new-game-panel">
       <div class="opening-hero fm-card-opening">
         ${renderLanguageSelect(lang)}

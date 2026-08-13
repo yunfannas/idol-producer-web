@@ -87,7 +87,7 @@ import {
 } from "../data/songCatalog";
 import { renderSongPreviewControls } from "./songPreviewPlayer";
 import { renderLiveModeView, type LiveModeSession } from "./liveMode";
-import { renderWorldShell, type WorldRoomId } from "./worldUi";
+import { renderWorldShell, type WorldRoomId, type WorldVenueFocus } from "./worldUi";
 import type { WorldZoomTarget } from "./worldUi";
 import { groupsForDirectoryListing } from "../data/scenarioBrowse";
 import {
@@ -4868,6 +4868,239 @@ function renderVenueSceneGallery(lang: UiLanguage): string {
   </div>`;
 }
 
+function renderLiveFrontCamera(save: GameSavePayload, selectedLive: Record<string, unknown> | null, lang: UiLanguage): string {
+  const group = getPrimaryGroup(save);
+  const title = selectedLive ? liveDisplayTitleText(selectedLive) : localizedLiteral(lang, "Stage camera", "舞台镜头");
+  const venue = selectedLive ? liveVenueCompactText(selectedLive) : localizedLiteral(lang, "Venue stage", "场馆舞台");
+  const time = selectedLive ? liveTimeRangeText(selectedLive) : "";
+  const venueName = String(selectedLive?.venue ?? selectedLive?.venue_name ?? "").trim();
+  const venueRow = getVenuesCatalog().find((row) => row.name === venueName || row.name_romanji === venueName) ?? null;
+  const isOutdoor =
+    String(venueRow?.setting ?? "").toLowerCase() === "outdoor" ||
+    /幕張海浜公園|公園|イベントブロック|特設会場|park|outdoor/i.test(`${venueName} ${venue}`);
+  const memberUids = Array.isArray(group?.member_uids) ? group.member_uids.map((uid) => String(uid)) : [];
+  const members = memberUids
+    .map((uid) => {
+      const idol = save.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid);
+      const name = String(idol?.name ?? idol?.name_romanji ?? "").trim();
+      return name || uid;
+    })
+    .filter(Boolean)
+    .slice(0, 10);
+  const performers = members
+    .map((name, i) => {
+      const left = 12 + (i % 5) * 19;
+      const top = i < 5 ? 8 : 50;
+      return `<span class="live-front-performer" style="--performer-left:${left}%;--performer-top:${top}%" title="${htmlEsc(name)}"><b>${htmlEsc([...name][0] ?? "?")}</b></span>`;
+    })
+    .join("");
+  const liveUid = String(selectedLive?.uid ?? "").trim();
+  const rawProgram =
+    selectedLive && Array.isArray(selectedLive.program) && selectedLive.program.length
+      ? (selectedLive.program as unknown[])
+      : selectedLive && Array.isArray(selectedLive.setlist)
+        ? (selectedLive.setlist as unknown[]).map((item) => ({ kind: "song", label: String(item ?? "") }))
+        : [];
+  const program = rawProgram
+    .map((raw, i) => {
+      if (raw && typeof raw === "object") {
+        const item = raw as Record<string, unknown>;
+        const kind = String(item.kind ?? "song");
+        const label = String(item.label ?? item.songTitle ?? item.title ?? "").trim() || `Song ${i + 1}`;
+        const duration = Number(item.durationMinutes ?? item.duration_minutes ?? 0) || 0;
+        return { kind, label, duration };
+      }
+      return { kind: "song", label: String(raw ?? "").trim() || `Song ${i + 1}`, duration: 0 };
+    })
+    .slice(0, 9);
+  const setlist = program
+    .map((item, i) => `<li class="${i === 0 ? "is-current" : ""}"><span>${htmlEsc(String(i + 1).padStart(2, "0"))}</span><strong>${htmlEsc(item.label)}</strong><em>${htmlEsc(item.kind === "song" ? "song" : `${item.kind}${item.duration ? ` ${item.duration}m` : ""}`)}</em></li>`)
+    .join("");
+  const playButton = liveUid
+    ? `<button type="button" class="fm-btn fm-btn-accent" data-inbox-live-start="${htmlEsc(liveUid)}">${htmlEsc("Play live")}</button>`
+    : `<button type="button" class="fm-btn fm-btn-accent" disabled>${htmlEsc("No live selected")}</button>`;
+  return `<section class="live-front-camera${isOutdoor ? " live-front-camera--outdoor" : ""}" aria-label="${htmlEsc(localizedLiteral(lang, "Live front camera", "公演正面镜头"))}">
+    <div class="live-front-stage">
+      <span class="live-front-light live-front-light--left"></span>
+      <span class="live-front-light live-front-light--right"></span>
+      <div class="live-front-screen"><strong>${htmlEsc(String(group?.name_romanji ?? group?.name ?? save.managing_group ?? ""))}</strong></div>
+      <div class="live-front-performers">${performers}</div>
+    </div>
+    <aside class="live-front-side">
+    <div class="live-front-copy">
+      <span>${htmlEsc(localizedLiteral(lang, "Front view", "正面视角"))}</span>
+      <strong>${htmlEsc(title)}</strong>
+      <em>${htmlEsc([venue, time].filter(Boolean).join(" / ") || venue)}</em>
+    </div>
+      <div class="live-front-actions">
+        ${playButton}
+        <button type="button" class="fm-btn" data-open-training-view="formation">${htmlEsc("Formation")}</button>
+        <button type="button" class="fm-btn" data-nav="Lives">${htmlEsc("Live page")}</button>
+      </div>
+      <section class="live-front-setlist">
+        <h3>${htmlEsc("Setlist play")}</h3>
+        <ol>${setlist || `<li><strong>${htmlEsc("No setlist yet")}</strong></li>`}</ol>
+      </section>
+    </aside>
+  </section>`;
+}
+
+function liveFocusMemberNames(save: GameSavePayload, limit = 9): string[] {
+  const group = getPrimaryGroup(save);
+  const memberUids = Array.isArray(group?.member_uids) ? group.member_uids.map((uid) => String(uid)) : [];
+  return memberUids
+    .map((uid) => {
+      const idol = save.database_snapshot.idols.find((row) => String(row.uid ?? "") === uid);
+      return String(idol?.name ?? idol?.name_romanji ?? "").trim() || uid;
+    })
+    .filter(Boolean)
+    .slice(0, limit);
+}
+
+function renderLiveTokutenkaiFocus(save: GameSavePayload, selectedLive: Record<string, unknown> | null, lang: UiLanguage): string {
+  const group = getPrimaryGroup(save);
+  const title = selectedLive ? liveDisplayTitleText(selectedLive) : "Tokutenkai";
+  const start = String(selectedLive?.tokutenkai_start ?? selectedLive?.end_time ?? "").slice(0, 5);
+  const end = String(selectedLive?.tokutenkai_end ?? "").slice(0, 5);
+  const expected = Math.max(0, Number(selectedLive?.tokutenkai_expected_tickets ?? selectedLive?.tokutenkai_expected ?? 0) || 0);
+  const members = liveFocusMemberNames(save, 9);
+  const queueRows = members
+    .map((name, i) => {
+      const dots = Math.max(2, Math.min(12, Math.round((expected || 42) / Math.max(4, members.length) / 2) + (i % 4) - 1));
+      const fanDots = Array.from({ length: dots }, (_, j) => `<i style="--q-i:${j}"></i>`).join("");
+      return `<button type="button" class="tokuten-member-row" data-open-training-view="roster">
+        <strong>${htmlEsc(name)}</strong>
+        <span>${fanDots}<b></b><em></em></span>
+      </button>`;
+    })
+    .join("");
+  const booths = [
+    ["Group A", 5],
+    ["Group B", 3],
+    [String(group?.name_romanji ?? group?.name ?? save.managing_group ?? "OUR"), 9],
+    ["Group D", 4],
+  ]
+    .map(([name, count], i) => `<div class="tokuten-overview-booth${i === 2 ? " is-our" : ""}"><strong>${htmlEsc(String(name))}</strong><span>${Array.from({ length: Number(count) }, () => "<i></i>").join("")}</span></div>`)
+    .join("");
+  return `<section class="live-tokutenkai-focus">
+    <header class="venue-focus-head">
+      <span>Tokutenkai</span>
+      <strong>${htmlEsc(title)}</strong>
+      <em>${htmlEsc([start && end ? `${start}-${end}` : "", expected ? `${expected} expected tickets` : ""].filter(Boolean).join(" / ") || "post-live meet")}</em>
+    </header>
+    <section class="tokuten-overview">
+      <h3>Venue overview</h3>
+      <div>${booths}</div>
+    </section>
+    <section class="tokuten-booth-focus">
+      <h3>Our booth focus</h3>
+      <div class="tokuten-booth-table">
+        <span>Check-in</span><span>Cheki</span><span>Sign</span><span>Talk</span>
+      </div>
+      <div class="tokuten-member-queues">${queueRows}</div>
+    </section>
+    <aside class="tokuten-side-panel">
+      <h3>Member loop</h3>
+      <ol>
+        <li>fan</li>
+        <li>cheki</li>
+        <li>sign</li>
+        <li>talk</li>
+        <li>next fan</li>
+      </ol>
+      <div class="tokuten-member-focus" aria-label="Tokutenkai member focus">
+        <strong>${htmlEsc(members[0] ?? "Member")}</strong>
+        <span class="tokuten-cheki-frame"></span>
+        <div class="tokuten-flow-rail">
+          <span>fan</span>
+          <span>cheki</span>
+          <span>sign</span>
+          <span>talk</span>
+        </div>
+      </div>
+      <button type="button" class="fm-btn fm-btn-accent" data-nav="Lives">Open live detail</button>
+    </aside>
+  </section>`;
+}
+
+function renderLiveBackstageFocus(save: GameSavePayload, selectedLive: Record<string, unknown> | null, lang: UiLanguage): string {
+  const title = selectedLive ? liveDisplayTitleText(selectedLive) : "Backstage";
+  const members = liveFocusMemberNames(save, 10);
+  const memberCards = members
+    .map((name, i) => `<button type="button" class="backstage-member-card" data-open-training-view="roster" style="--backstage-left:${8 + (i % 5) * 19}%;--backstage-top:${8 + Math.floor(i / 5) * 45}%">
+      <b>${htmlEsc([...name][0] ?? "?")}</b>
+      <strong>${htmlEsc(name)}</strong>
+      <em>${htmlEsc(["resting", "water", "phone", "staff talk", "stretch"][i % 5])}</em>
+    </button>`)
+    .join("");
+  return `<section class="live-backstage-focus">
+    <header class="venue-focus-head">
+      <span>Backstage</span>
+      <strong>${htmlEsc(title)}</strong>
+      <em>green room / ready line / staff notes</em>
+    </header>
+    <div class="backstage-room">
+      <div class="backstage-sofa"></div>
+      <div class="backstage-mirror"></div>
+      <div class="backstage-table"></div>
+      <div class="backstage-members">${memberCards}</div>
+    </div>
+    <aside class="backstage-side-panel">
+      <section>
+        <h3>Conversation context</h3>
+        <button type="button" class="fm-btn" data-open-training-view="roster">Today's live</button>
+        <button type="button" class="fm-btn" data-open-training-view="formation">Fan response</button>
+        <button type="button" class="fm-btn" data-nav="Schedule">Pending concern</button>
+      </section>
+      <section>
+        <h3>Staff board</h3>
+        <ul>
+          <li>water / towels</li>
+          <li>costume check</li>
+          <li>next call time</li>
+          <li>tokutenkai handoff</li>
+        </ul>
+      </section>
+    </aside>
+  </section>`;
+}
+
+function renderLiveEntryFocus(save: GameSavePayload, selectedLive: Record<string, unknown> | null, lang: UiLanguage): string {
+  const title = selectedLive ? liveDisplayTitleText(selectedLive) : "Entry";
+  const venue = selectedLive ? liveVenueCompactText(selectedLive) : "Venue entry";
+  const expected = Math.max(
+    0,
+    Number(selectedLive?.expected_attendance ?? selectedLive?.attendance_estimate ?? selectedLive?.tickets_sold ?? 0) || 0,
+  );
+  const group = getPrimaryGroup(save);
+  const supportName = String(group?.name_romanji ?? group?.name ?? save.managing_group ?? "our group");
+  const gateDots = Array.from({ length: Math.max(18, Math.min(54, Math.round((expected || 320) / 18))) }, (_, i) => {
+    const left = 4 + (i % 9) * 10.5;
+    const top = Math.floor(i / 9) * 1.15;
+    return `<i style="--entry-left:${left}%;--entry-top:${top}rem"></i>`;
+  }).join("");
+  return `<section class="live-entry-focus">
+    <header class="venue-focus-head">
+      <span>Entry</span>
+      <strong>${htmlEsc(title)}</strong>
+      <em>${htmlEsc(venue)}</em>
+    </header>
+    <div class="entry-gate-floor">
+      <div class="entry-gate-arch"><strong>${htmlEsc(supportName)}</strong><span>ticket check</span></div>
+      <div class="entry-queue" aria-hidden="true">${gateDots}</div>
+      <div class="entry-desk entry-desk--tickets"><strong>Tickets</strong><span>scan / wristband</span></div>
+      <div class="entry-desk entry-desk--support"><strong>Oshi desk</strong><span>support cards</span></div>
+      <div class="entry-desk entry-desk--flow"><strong>Flow</strong><span>stage / goods / tokutenkai</span></div>
+    </div>
+    <aside class="entry-side-panel">
+      <h3>Venue movement</h3>
+      <button type="button" class="fm-btn fm-btn-accent" data-world-venue-zone="stage">Move to stage</button>
+      <button type="button" class="fm-btn" data-world-venue-zone="tokutenkai">Move to tokutenkai</button>
+      <button type="button" class="fm-btn" data-world-venue-zone="backstage">Move backstage</button>
+    </aside>
+  </section>`;
+}
+
 function prettyFestivalDisplayName(name: string): string {
   const raw = String(name ?? "").trim();
   if (/tokyo\s*idol\s*festival/i.test(raw)) return "Tokyo Idol Festival";
@@ -4903,6 +5136,7 @@ function renderLivesView(
   festivals: Record<string, unknown>[] | null | undefined,
   lang: UiLanguage,
   leaguePanelTab: LeaguePanelTab = "current",
+  venueFocus: WorldVenueFocus = null,
 ): string {
   const schedules = (save.lives?.schedules ?? []).filter(
     (x): x is Record<string, unknown> => Boolean(x && typeof x === "object"),
@@ -5436,6 +5670,21 @@ function renderLivesView(
           : effectiveLivesTab === "league"
             ? leagueBody
             : newLiveBody;
+  const venueFocusInner =
+    venueFocus === "stage"
+      ? renderLiveFrontCamera(save, selectedScheduled, lang)
+      : venueFocus === "tokutenkai"
+        ? renderLiveTokutenkaiFocus(save, selectedScheduled, lang)
+        : venueFocus === "backstage"
+          ? renderLiveBackstageFocus(save, selectedScheduled, lang)
+          : venueFocus === "entry"
+            ? renderLiveEntryFocus(save, selectedScheduled, lang)
+          : "";
+  if (venueFocus) {
+    return `<section class="content-panel lives-view lives-view--stage-focus">
+      ${venueFocusInner}
+    </section>`;
+  }
 
   return `<section class="content-panel lives-view">
     <h2 class="content-h2">${htmlEsc(navLabel(lang, "Lives"))}</h2>
@@ -5444,6 +5693,7 @@ function renderLivesView(
         ? `当前经营组合：${label}。编排页用于安排新公演；即将进行的公演会进入修改视图，可调整日期、场地、歌单、特典会和周边。`
         : `Managed group: ${label}. Arrange is the live editor for new plans; upcoming lives open in the modification view for date, venue, setlist, tokutenkai, and goods changes.`,
     )}</p>
+    ${frontCamera}
     ${renderLiveTabs(effectiveLivesTab, lang, showLeague)}
     ${renderVenueSceneGallery(lang)}
     ${body}
@@ -5790,6 +6040,7 @@ export function renderMainContent(
     attentionActionUid?: string | null;
     lang: UiLanguage;
     simulationBusy: boolean;
+    worldVenueFocus?: WorldVenueFocus;
   },
 ): string {
   const {
@@ -5831,6 +6082,7 @@ export function renderMainContent(
     attentionActionUid,
     lang,
     simulationBusy,
+    worldVenueFocus,
   } = ctx;
 
   if (browseMode && browseData) {
@@ -5975,6 +6227,7 @@ export function renderMainContent(
         browseData?.festivals ?? null,
         lang,
         leaguePanelTab,
+        worldVenueFocus ?? null,
       );
     case "Training":
       return renderTraining(
@@ -6106,6 +6359,7 @@ export interface DesktopShellProps {
   worldCalendarOpen?: boolean;
   zoomTarget?: WorldZoomTarget;
   worldZoomMemberUid?: string | null;
+  worldVenueFocus?: WorldVenueFocus;
 }
 
 export function renderDesktopShell(p: DesktopShellProps): string {
@@ -6158,6 +6412,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     feedbackStatusMessage,
     wikiModalOpen,
     feedbackModalOpen,
+    worldVenueFocus,
   } = p;
   const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
@@ -6222,6 +6477,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     scheduleTab,
     lang: "en",
     simulationBusy: p.simulationBusy,
+    worldVenueFocus: worldVenueFocus ?? null,
   });
 
   const cashPill = finances
@@ -6352,6 +6608,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     worldCalendarOpen,
     zoomTarget,
     worldZoomMemberUid,
+    worldVenueFocus,
   } = p;
   const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
@@ -6419,6 +6676,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     lang,
     simulationBusy: p.simulationBusy,
     attentionActionUid: p.attentionActionUid ?? null,
+    worldVenueFocus: worldVenueFocus ?? null,
   });
   const zoomProfileInner =
     !liveModeSession && zoomTarget === "members" && worldZoomMemberUid
@@ -6540,6 +6798,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
       feedbackModalHtml,
       footerHtml,
       zoomProfileInner,
+      worldVenueFocus: worldVenueFocus ?? null,
     });
   }
 
