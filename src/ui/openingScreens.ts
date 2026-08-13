@@ -58,38 +58,27 @@ export function renderOpeningLogin(
   accountName: string,
   lang: UiLanguage,
   preset: ScenarioPreset | null = null,
+  canContinue = false,
 ): string {
-  const disabled = dbReady && accountName.trim() ? "" : "disabled";
+  const disabled = dbReady && accountName.trim() && canContinue ? "" : "disabled";
+  const dbDisabled = dbReady ? "" : "disabled";
 
   return `
-<section class="opening-screen" aria-label="${htmlEsc(t(lang, "opening_log_in"))}">
+<section class="opening-screen opening-main-menu" aria-label="${htmlEsc(t(lang, "shell_main_menu"))}">
   <div class="opening-hero fm-card-opening">
     ${renderLanguageSelect(lang)}
     <h1 class="opening-title">${htmlEsc("IDOL PRODUCER")}</h1>
-    <p class="opening-tagline">${htmlEsc(t(lang, "opening_tagline"))}</p>
-  </div>
-
-  ${renderScenarioInfoCard(preset, lang)}
-
-  <div class="fm-card-opening producer-block">
-    <label class="opening-label" for="account-name">${htmlEsc(t(lang, "opening_account_name"))}</label>
-    <input type="text" id="account-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc(t(lang, "opening_enter_account_name"))}" autocomplete="off" />
-    <p class="opening-status-msg">${htmlEsc(t(lang, "opening_password_later"))}</p>
-    <div class="opening-actions-footer">
-      <button type="button" class="opening-btn opening-btn-green" id="opening-login" ${disabled}>${htmlEsc(t(lang, "opening_log_in"))}</button>
+    ${preset ? `<p class="opening-preset">${htmlEsc(t(lang, "opening_scenario_opening", { name: preset.name, date: String(preset.opening_date ?? "") }))}</p>` : ""}
+    <div class="producer-block opening-menu-account">
+      <label class="opening-label" for="account-name">${htmlEsc(t(lang, "opening_account_name"))}</label>
+      <input type="text" id="account-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc(t(lang, "opening_enter_account_name"))}" autocomplete="off" />
     </div>
-  </div>
-
-  <p class="opening-manual-row">
-    <a class="opening-manual-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_game_manual"))}</a>
-    <a class="opening-manual-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_oshi_chart"))}</a>
-    <a class="opening-manual-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_ikonoijoy_best10"))}</a>
-  </p>
-
-  <div class="opening-status fm-card-opening">
-    <h2 class="opening-status-h">${htmlEsc(t(lang, "opening_status"))}</h2>
-    <p class="opening-status-strong">${htmlEsc(dbReady ? t(lang, "opening_db_ready") : t(lang, "opening_db_loading"))}</p>
-    <p class="opening-status-msg">${htmlEsc(status)}</p>
+    <div class="opening-actions-footer">
+      <button type="button" class="opening-btn opening-btn-green" id="opening-login" ${disabled}>${htmlEsc(t(lang, "opening_continue"))}</button>
+      <button type="button" class="opening-btn opening-btn-primary" id="opening-new-game" ${dbDisabled}>${htmlEsc(t(lang, "opening_new_game"))}</button>
+      <button type="button" class="opening-btn opening-btn-primary" id="opening-load-slot" ${disabled}>${htmlEsc(t(lang, "opening_load"))}</button>
+    </div>
+    <p class="opening-status-msg">${htmlEsc(dbReady ? status : t(lang, "opening_db_loading"))}</p>
   </div>
 </section>`;
 }
@@ -156,6 +145,46 @@ export interface NewGameRow {
   popularity: string;
   /** True for the first `recommended_count` allowlist names that matched (pinned to top of the table). */
   recommended?: boolean;
+}
+
+type OfficeTier = "E" | "D" | "C" | "B" | "A";
+
+function officeTierFromLetter(tier: string): OfficeTier {
+  const t0 = tier.trim().toUpperCase();
+  if (t0 === "E" || t0 === "F") return "E";
+  if (t0 === "D") return "D";
+  if (t0 === "C") return "C";
+  if (t0 === "B") return "B";
+  return "A";
+}
+
+function officeTierLabel(tier: OfficeTier): string {
+  return tier === "A" ? "A+" : tier;
+}
+
+function renderOfficeRoom(code: string, label: string): string {
+  return `<span class="opening-office-room opening-office-room--${code}">
+    <span class="opening-office-room-label">${htmlEsc(label)}</span>
+    <span class="opening-office-room-floor" aria-hidden="true"></span>
+    <span class="opening-office-room-dolls" aria-hidden="true"><i></i><i></i><i></i></span>
+  </span>`;
+}
+
+function renderOpeningOfficePreview(tier: OfficeTier): string {
+  return `<aside class="opening-office-preview" data-office-preview data-tier="${htmlEsc(tier)}" aria-label="Office preview">
+    <div class="opening-office-preview-head">
+      <span>Office Size</span>
+      <strong data-office-tier-label>${htmlEsc(officeTierLabel(tier))}</strong>
+    </div>
+    <div class="opening-office-cutaway">
+      ${renderOfficeRoom("producer", "Producer Room")}
+      ${renderOfficeRoom("meeting", "Meeting Room")}
+      ${renderOfficeRoom("studio", "Practice Studio")}
+      ${renderOfficeRoom("staff", "Staff Room")}
+      ${renderOfficeRoom("recording", "Recording Booth")}
+      ${renderOfficeRoom("studio2", "Practice Studio 2")}
+    </div>
+  </aside>`;
 }
 
 function rowFromGroup(g: Record<string, unknown>, tierMap: Map<string, GroupTierRow>, recommended: boolean): NewGameRow | null {
@@ -247,10 +276,11 @@ export function renderNewGameScreen(
   preset: ScenarioPreset | null,
   lang: UiLanguage,
 ): string {
+  const defaultTier = officeTierFromLetter(rows[0]?.tier ?? "D");
   const tableRows = rows
     .map(
       (r) => `
-    <tr data-group-uid="${htmlEsc(r.uid)}" class="group-picker-row${r.recommended ? " group-picker-row--recommended" : ""}">
+    <tr data-group-uid="${htmlEsc(r.uid)}" data-office-tier="${htmlEsc(officeTierFromLetter(r.tier))}" class="group-picker-row${r.recommended ? " group-picker-row--recommended" : ""}">
       <td>${r.recommended ? `<span class="opening-rec-mark" title="${htmlEsc(t(lang, "opening_recommended"))}">★</span>` : ""}${htmlEsc(r.name)}</td>
       <td>${htmlEsc(r.nameRomanji ?? "-")}</td>
       <td>${htmlEsc(r.tier)}</td>
@@ -263,33 +293,37 @@ export function renderNewGameScreen(
 
   return `
 <section class="opening-screen opening-new-game" aria-label="${htmlEsc(t(lang, "opening_new_game"))}">
-  <div class="opening-hero fm-card-opening">
-    ${renderLanguageSelect(lang)}
-    <h1 class="opening-title">${htmlEsc(t(lang, "opening_new_game_title"))}</h1>
-  </div>
+  <div class="opening-new-game-shell">
+    ${renderOpeningOfficePreview(defaultTier)}
+    <div class="opening-new-game-panel">
+      <div class="opening-hero fm-card-opening">
+        ${renderLanguageSelect(lang)}
+        <h1 class="opening-title">${htmlEsc(t(lang, "opening_new_game_title"))}</h1>
+        ${preset ? `<p class="opening-preset">${htmlEsc(t(lang, "opening_scenario_opening", { name: preset.name, date: String(preset.opening_date ?? "") }))}</p>` : ""}
+      </div>
 
-  ${renderScenarioInfoCard(preset, lang)}
+      <div class="fm-card-opening producer-block">
+        <label class="opening-label" for="producer-name">${htmlEsc(t(lang, "opening_producer_account"))}</label>
+        <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc(t(lang, "opening_enter_account_name"))}" autocomplete="username" />
+      </div>
 
-  <div class="fm-card-opening producer-block">
-    <label class="opening-label" for="producer-name">${htmlEsc(t(lang, "opening_producer_account"))}</label>
-    <input type="text" id="producer-name" class="opening-input" value="${htmlEsc(accountName)}" placeholder="${htmlEsc(t(lang, "opening_enter_account_name"))}" autocomplete="username" />
-  </div>
+      <div class="fm-card-opening opening-table-wrap">
+        <h2 class="opening-table-h">${htmlEsc(t(lang, "opening_managed_group"))}</h2>
+        <div class="table-scroll">
+          <table class="fm-table group-pick-table" id="group-pick-table">
+            <thead>
+              <tr><th>${htmlEsc(t(lang, "opening_group"))}</th><th>${htmlEsc(t(lang, "opening_romaji"))}</th><th>${htmlEsc(t(lang, "opening_tier"))}</th><th>${htmlEsc(t(lang, "opening_members"))}</th><th>${htmlEsc(t(lang, "opening_formed"))}</th><th>${htmlEsc(t(lang, "opening_pop"))}</th></tr>
+            </thead>
+            <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(t(lang, "opening_no_rows"))}</td></tr>`}</tbody>
+          </table>
+        </div>
+      </div>
 
-  <div class="fm-card-opening opening-table-wrap">
-    <h2 class="opening-table-h">${htmlEsc(t(lang, "opening_managed_group"))}</h2>
-    <div class="table-scroll">
-      <table class="fm-table group-pick-table" id="group-pick-table">
-        <thead>
-          <tr><th>${htmlEsc(t(lang, "opening_group"))}</th><th>${htmlEsc(t(lang, "opening_romaji"))}</th><th>${htmlEsc(t(lang, "opening_tier"))}</th><th>${htmlEsc(t(lang, "opening_members"))}</th><th>${htmlEsc(t(lang, "opening_formed"))}</th><th>${htmlEsc(t(lang, "opening_pop"))}</th></tr>
-        </thead>
-        <tbody>${tableRows || `<tr><td colspan="6" class="content-muted">${htmlEsc(t(lang, "opening_no_rows"))}</td></tr>`}</tbody>
-      </table>
+      <div class="opening-actions-footer">
+        <button type="button" class="opening-btn" id="new-game-back">${htmlEsc(t(lang, "opening_back"))}</button>
+        <button type="button" class="opening-btn opening-btn-green" id="new-game-start" disabled>${htmlEsc(t(lang, "opening_start_scenario"))}</button>
+      </div>
     </div>
-  </div>
-
-  <div class="opening-actions-footer">
-    <button type="button" class="opening-btn" id="new-game-back">${htmlEsc(t(lang, "opening_back"))}</button>
-    <button type="button" class="opening-btn opening-btn-green" id="new-game-start" disabled>${htmlEsc(t(lang, "opening_start_scenario"))}</button>
   </div>
 </section>`;
 }

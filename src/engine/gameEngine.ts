@@ -247,14 +247,23 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
   const capacity = Number(live.capacity ?? 0) || 0;
   const expectation = live.expectation_score != null ? String(live.expectation_score) : "—";
   const novelty = live.novelty_score != null ? String(live.novelty_score) : "—";
+  const liveAppeal = live.live_appeal != null ? String(live.live_appeal) : "—";
+  const fanDraw = live.fan_draw != null ? String(live.fan_draw) : "—";
+  const fanAcq = Number(live.fan_acquisition ?? 0) || 0;
+  const fanRet = Number(live.fan_retention ?? 0) || 0;
+  const fanDeep = Number(live.fan_deepening ?? 0) || 0;
+  const fanChurn = Number(live.fan_churn ?? 0) || 0;
   const tokutenkaiActual = Number(live.tokutenkai_actual_tickets ?? 0) || 0;
   const tokutenkaiPlanned = Number(live.tokutenkai_expected_tickets ?? 0) || 0;
   const tokutenkaiGross =
     Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(tokutenkaiActual)) || 0;
   const ticketGross = Number(live.ticket_gross_yen ?? 0) || 0;
   const goodsGross = Number(live.goods_gross_yen ?? 0) || 0;
-  let body = `${titleSeed} finished with performance ${live.performance_score ?? "—"} and satisfaction ${live.audience_satisfaction ?? "—"}. `;
-  body += `Attendance ${attendance}${capacity > 0 ? ` / ${capacity}` : ""}, fan change ${fanCh >= 0 ? "+" : ""}${fanCh}, expectation ${expectation}, novelty ${novelty}.`;
+  let body = `${titleSeed} finished with performance ${live.performance_score ?? "—"}, live appeal ${liveAppeal}, and satisfaction ${live.audience_satisfaction ?? "—"}. `;
+  body += `Fan draw ${fanDraw}; attendance ${attendance}${capacity > 0 ? ` / ${capacity}` : ""}, fan change ${fanCh >= 0 ? "+" : ""}${fanCh}, expectation ${expectation}, novelty ${novelty}.`;
+  if (fanAcq || fanRet || fanDeep || fanChurn) {
+    body += ` Fan flow: acquired ${fanAcq}, retained ${fanRet}, deepened ${fanDeep}, churned ${fanChurn}.`;
+  }
   if (venue) body += ` Venue: ${venue}${loc ? ` (${loc})` : ""}.`;
   if (when) body += ` Slot: ${when}.`;
   const setlist = Array.isArray(live.setlist) ? (live.setlist as unknown[]).map((x) => String(x)).filter(Boolean) : [];

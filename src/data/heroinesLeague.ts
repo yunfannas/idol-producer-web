@@ -28,6 +28,8 @@ export type HeroinesLeagueStandingRow = {
   group_name: string;
   points: number;
   note?: string;
+  active_members?: number;
+  mobilization_context?: string;
 };
 
 export type HeroinesLeagueStandingSnapshot = {
@@ -123,6 +125,8 @@ export type HeroinesLeagueData = {
     scoring?: string;
     akishibu_example?: string;
     akishibu_promotion?: string;
+    live_causality?: string;
+    mobilization_semantics?: string;
     gameplay_goals?: {
       primary?: string;
       recovery?: string;

@@ -36,6 +36,7 @@ import {
   formatLiveSlotLine,
   getVenuesCatalog,
   LIVE_TYPE_PRESETS,
+  type VenueRow,
 } from "../engine/liveScheduleWeb";
 import {
   buildAuditionStorageKey,
@@ -86,6 +87,8 @@ import {
 } from "../data/songCatalog";
 import { renderSongPreviewControls } from "./songPreviewPlayer";
 import { renderLiveModeView, type LiveModeSession } from "./liveMode";
+import { renderWorldShell, type WorldRoomId } from "./worldUi";
+import type { WorldZoomTarget } from "./worldUi";
 import { groupsForDirectoryListing } from "../data/scenarioBrowse";
 import {
   classifyOfficialMediaTab,
@@ -1779,6 +1782,10 @@ function renderInbox(
           return `<div class="live-report-detail">
             <div class="live-report-summary-grid">
               <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Performance", "表现"))}</span><strong>${htmlEsc(String(liveReport.performance_score ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Live Appeal", "现场吸引"))}</span><strong>${htmlEsc(String(liveReport.live_appeal ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Fan Draw", "集客"))}</span><strong>${htmlEsc(String(liveReport.fan_draw ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Acquired", "新增"))}</span><strong>${htmlEsc(String(liveReport.fan_acquisition ?? "—"))}</strong></div>
+              <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Churn", "流失"))}</span><strong>${htmlEsc(String(liveReport.fan_churn ?? "—"))}</strong></div>
               <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Satisfaction", "满意度"))}</span><strong>${htmlEsc(String(liveReport.audience_satisfaction ?? "—"))}</strong></div>
               <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Attendance", "到场"))}</span><strong>${htmlEsc(String(liveReport.attendance ?? 0))}${Number(liveReport.capacity ?? 0) > 0 ? htmlEsc(` / ${String(liveReport.capacity)}`) : ""}</strong></div>
               <div class="live-report-summary-item"><span class="label">${htmlEsc(localizedLiteral(lang, "Fan", "粉丝"))}</span><strong>${htmlEsc(`${groupFanCount.toLocaleString("ja-JP")} (${groupFanGain >= 0 ? "+" : ""}${groupFanGain.toLocaleString("ja-JP")})`)}</strong></div>
@@ -4784,6 +4791,83 @@ function liveVenueCompactText(live: Record<string, unknown>): string {
   return city ? `${venue}, ${city}` : venue;
 }
 
+type VenueSceneKind = "small" | "hall" | "stadium" | "outdoor";
+
+function venueSceneKind(venue: VenueRow | null | undefined, liveType = ""): VenueSceneKind {
+  const typeText = `${venue?.venue_type ?? ""} ${liveType}`.toLowerCase();
+  if (venue?.setting === "outdoor" || /outdoor|festival|park|garden|field/.test(typeText)) return "outdoor";
+  const capacity = Math.max(0, Number(venue?.capacity ?? 0) || 0);
+  if (capacity >= 15000 || /stadium|arena|dome/.test(typeText)) return "stadium";
+  if (capacity >= 1200 || /hall|theater|theatre/.test(typeText)) return "hall";
+  return "small";
+}
+
+function venueSceneLabel(kind: VenueSceneKind, lang: UiLanguage): string {
+  if (lang === "zh-CN") {
+    if (kind === "small") return "小型 Live House";
+    if (kind === "hall") return "剧场 / Hall";
+    if (kind === "stadium") return "大型场馆";
+    return "户外舞台";
+  }
+  if (kind === "small") return "Small Live House";
+  if (kind === "hall") return "Hall / Theater";
+  if (kind === "stadium") return "Stadium / Arena";
+  return "Outdoor Stage";
+}
+
+function renderVenueScene(venue: VenueRow | null | undefined, lang: UiLanguage, liveType = ""): string {
+  const kind = venueSceneKind(venue, liveType);
+  const name = venue?.name ?? (lang === "zh-CN" ? "场地待定" : "Venue TBA");
+  const meta = [
+    venueSceneLabel(kind, lang),
+    venue?.location || venue?.city || "",
+    venue?.capacity ? (lang === "zh-CN" ? `容纳 ${venue.capacity.toLocaleString("ja-JP")}` : `cap ${venue.capacity.toLocaleString("ja-JP")}`) : "",
+  ].filter(Boolean);
+  return `<section class="venue-preview venue-preview--${kind}" aria-label="${htmlEsc(venueSceneLabel(kind, lang))}">
+    <div class="venue-preview-scene" aria-hidden="true">
+      <span class="venue-preview-light venue-preview-light--left"></span>
+      <span class="venue-preview-light venue-preview-light--right"></span>
+      <span class="venue-preview-stage"></span>
+      <span class="venue-preview-screen"></span>
+      <span class="venue-preview-crowd venue-preview-crowd--a"></span>
+      <span class="venue-preview-crowd venue-preview-crowd--b"></span>
+      <span class="venue-preview-crowd venue-preview-crowd--c"></span>
+      <span class="venue-preview-roof"></span>
+    </div>
+    <div class="venue-preview-copy">
+      <strong>${htmlEsc(name)}</strong>
+      <span>${htmlEsc(meta.join(" · "))}</span>
+    </div>
+  </section>`;
+}
+
+function renderVenueSceneGallery(lang: UiLanguage): string {
+  const examples: Array<{ kind: VenueSceneKind; name: string; capacity: number; venue_type: string; setting: "indoor" | "outdoor" }> = [
+    { kind: "small", name: venueSceneLabel("small", lang), capacity: 300, venue_type: "Live House", setting: "indoor" },
+    { kind: "hall", name: venueSceneLabel("hall", lang), capacity: 2500, venue_type: "Hall", setting: "indoor" },
+    { kind: "stadium", name: venueSceneLabel("stadium", lang), capacity: 20000, venue_type: "Arena", setting: "indoor" },
+    { kind: "outdoor", name: venueSceneLabel("outdoor", lang), capacity: 8000, venue_type: "Festival", setting: "outdoor" },
+  ];
+  return `<div class="venue-preview-strip" aria-label="${htmlEsc(lang === "zh-CN" ? "场地类型" : "Venue types")}">
+    ${examples
+      .map((item) =>
+        renderVenueScene(
+          {
+            uid: item.kind,
+            name: item.name,
+            venue_type: item.venue_type,
+            setting: item.setting,
+            capacity: item.capacity,
+            location: "",
+          },
+          lang,
+          item.kind,
+        ),
+      )
+      .join("")}
+  </div>`;
+}
+
 function prettyFestivalDisplayName(name: string): string {
   const raw = String(name ?? "").trim();
   if (/tokyo\s*idol\s*festival/i.test(raw)) return "Tokyo Idol Festival";
@@ -4903,6 +4987,7 @@ function renderLivesView(
     .join("");
   const selectedPreset = LIVE_TYPE_PRESETS[newLiveForm.liveType] ?? LIVE_TYPE_PRESETS.Routine;
   const selectedVenue = venueByName.get(newLiveForm.venueName);
+  const scheduledVenue = selectedScheduled ? venueByName.get(String(selectedScheduled.venue ?? "")) : null;
   const selectedVenueFee =
     selectedVenue?.capacity != null
       ? estimateVenueFee(selectedVenue.capacity, {
@@ -5070,6 +5155,7 @@ function renderLivesView(
   const liveDetailBody = selectedScheduled
     ? `<section class="fm-card">
       <h3 class="content-h3">${htmlEsc(t(lang, "lives_upcoming_detail"))}</h3>
+      ${renderVenueScene(scheduledVenue, lang, String(selectedScheduled.live_type ?? selectedScheduled.event_type ?? ""))}
       <div class="form-grid live-form-grid">
         <label><span>${htmlEsc(localizedLiteral(lang, "Type", "类型"))}</span><select class="fm-select" data-live-detail-field="live_type">${renderLiveTypeSelectOptions(lang, String(selectedScheduled.live_type ?? "Routine"), plannerLiveTypes)}</select></label>
         <label><span>${htmlEsc(localizedLiteral(lang, "Title", "标题"))}</span><input class="fm-input" data-live-detail-field="title" value="${htmlEsc(String(selectedScheduled.title ?? ""))}" /></label>
@@ -5182,6 +5268,7 @@ function renderLivesView(
       </section>
       <section class="fm-card live-new-summary-card">
         <h3 class="content-h3">${htmlEsc(t(lang, "lives_summary"))}</h3>
+        ${renderVenueScene(selectedVenue, lang, newLiveForm.liveType)}
         <div class="live-new-summary-layout">
           <section class="live-new-summary-setlist">
             <h4 class="content-h3">${htmlEsc(t(lang, "lives_setlist"))}</h4>
@@ -5358,6 +5445,7 @@ function renderLivesView(
         : `Managed group: ${label}. Arrange is the live editor for new plans; upcoming lives open in the modification view for date, venue, setlist, tokutenkai, and goods changes.`,
     )}</p>
     ${renderLiveTabs(effectiveLivesTab, lang, showLeague)}
+    ${renderVenueSceneGallery(lang)}
     ${body}
   </section>`;
 }
@@ -6012,6 +6100,12 @@ export interface DesktopShellProps {
   attentionActionUid?: string | null;
   /** Immersive live performance session; when set, chrome collapses to top bar only. */
   liveModeSession?: LiveModeSession | null;
+  worldRoom?: WorldRoomId;
+  worldPhoneOpen?: boolean;
+  worldPhoneMessageUid?: string | null;
+  worldCalendarOpen?: boolean;
+  zoomTarget?: WorldZoomTarget;
+  worldZoomMemberUid?: string | null;
 }
 
 export function renderDesktopShell(p: DesktopShellProps): string {
@@ -6252,6 +6346,12 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     wikiModalOpen,
     feedbackModalOpen,
     liveModeSession,
+    worldRoom,
+    worldPhoneOpen,
+    worldPhoneMessageUid,
+    worldCalendarOpen,
+    zoomTarget,
+    worldZoomMemberUid,
   } = p;
   const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
@@ -6320,6 +6420,49 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     simulationBusy: p.simulationBusy,
     attentionActionUid: p.attentionActionUid ?? null,
   });
+  const zoomProfileInner =
+    !liveModeSession && zoomTarget === "members" && worldZoomMemberUid
+      ? renderMainContent({
+          browseMode,
+          browseData,
+          save,
+          view: "Idols",
+          idolDetailUid: worldZoomMemberUid,
+          groupDetailUid: null,
+          idolListLayout,
+          songsGroupUid: songsGroupUid ?? null,
+          songsWorkspaceTab,
+          songsDiscographyKey,
+          songsDetailUid: songsDetailUid ?? null,
+          makingTab,
+          selectedCdProjectUid: p.selectedCdProjectUid ?? null,
+          inboxSelectedUid: inboxSelectedUid ?? null,
+          livesTab,
+          leaguePanelTab,
+          scheduledLiveUid: scheduledLiveUid ?? null,
+          newLiveForm,
+          selectedLiveSongTitle: selectedLiveSongTitle ?? null,
+          selectedSetlistSongIndex: selectedSetlistSongIndex ?? null,
+          scoutTab,
+          trainingTab,
+          trainingRosterSortKey,
+          trainingRosterSortDir,
+          roleBenchmarkPreferences,
+          trainingFormationSongUid: trainingFormationSongUid ?? null,
+          formationEditorHtml: formationEditorHtml ?? "",
+          mediaTab,
+          financeTab,
+          financeHistoryRange,
+          selectedScoutLeadUid: selectedScoutLeadUid ?? null,
+          selectedScoutApplicantUid: selectedScoutApplicantUid ?? null,
+          scheduleCalendarMonthStart: scheduleCalendarMonthStart ?? null,
+          scheduleWeekAnchorIso: scheduleWeekAnchorIso ?? null,
+          scheduleTab,
+          lang,
+          simulationBusy: p.simulationBusy,
+          attentionActionUid: p.attentionActionUid ?? null,
+        })
+      : null;
 
   const cashPill = finances
     ? `<div class="fm-cash-pill" title="${htmlEsc(t(lang, "shell_cash_on_hand"))}"><span class="fm-cash-label">JPY</span> ${finances.cash_yen.toLocaleString("ja-JP")}</div>`
@@ -6344,6 +6487,61 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
   const languageSelect = languageOptions()
     .map((opt) => `<option value="${opt.value}" ${opt.value === lang ? "selected" : ""}>${htmlEsc(opt.label)}</option>`)
     .join("");
+
+  const homeMenuHtml = `<details class="fm-home-dropdown">
+    <summary class="fm-btn fm-btn-accent">${htmlEsc(t(lang, "shell_home"))}</summary>
+    <div class="fm-home-menu" role="menu">
+      <button type="button" class="fm-menu-action" id="btn-main-menu">${htmlEsc(t(lang, "shell_main_menu"))}</button>
+      <a class="fm-menu-action fm-menu-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_game_manual"))}</a>
+      <a class="fm-menu-action fm-menu-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_oshi_chart"))}</a>
+      <a class="fm-menu-action fm-menu-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_ikonoijoy_best10"))}</a>
+      <button type="button" class="fm-menu-action" id="btn-open-tutorial" ${browseMode || liveModeSession ? "disabled" : ""}>${htmlEsc(tutorialMenuLabel(lang))}</button>
+      <label class="fm-menu-row">${htmlEsc(t(lang, "shell_slot"))} <select id="slot-select" class="fm-select" aria-label="${htmlEsc(t(lang, "shell_slot"))}">${slotOpts}</select></label>
+      <label class="fm-menu-row">${htmlEsc(t(lang, "language"))} <select id="lang-select-shell" class="fm-select" aria-label="${htmlEsc(t(lang, "language"))}">${languageSelect}</select></label>
+      <button type="button" class="fm-menu-action" id="btn-save" ${browseMode ? "disabled" : ""}>${htmlEsc(t(lang, "shell_save_game"))}</button>
+      <button type="button" class="fm-menu-action" id="btn-load">${htmlEsc(t(lang, "shell_load_game"))}</button>
+      <button type="button" class="fm-menu-action" id="btn-new">${htmlEsc(t(lang, "shell_new_game"))}</button>
+      <button type="button" class="fm-menu-action danger" id="btn-clear">${htmlEsc(t(lang, "shell_clear_slot"))}</button>
+    </div>
+  </details>`;
+
+  const wikiModalHtml = wikiModalOpen ? `<div class="tutorial-overlay" role="dialog" aria-modal="true" aria-labelledby="wiki-modal-title"><div class="tutorial-overlay__backdrop" data-wiki-modal-close="1"></div><section class="tutorial-overlay__panel wiki-modal__panel"><div class="tutorial-overlay__header"><div><p class="tutorial-overlay__eyebrow">${htmlEsc(lang === "zh-CN" ? "完整百科" : "Full Wiki")}</p><h2 class="tutorial-overlay__title" id="wiki-modal-title">${htmlEsc(lang === "zh-CN" ? "完整百科" : "Full Wiki")}</h2></div><button type="button" class="tutorial-overlay__close" aria-label="${htmlEsc(lang === "zh-CN" ? "关闭百科" : "Close wiki")}" data-wiki-modal-close="1">x</button></div><div class="wiki-modal__content">${renderFullWikiPanel(lang, selectedWikiKey ?? null)}</div></section></div>` : "";
+  const feedbackModalHtml = feedbackModalOpen ? renderFeedbackModal(lang, currentView, isoDatePart(dateStr || ""), feedbackEntries ?? [], feedbackStatusMessage ?? null) : "";
+  const footerHtml = `<footer class="fm-status-bar" role="contentinfo">
+    <span class="fm-status-item">${htmlEsc(statusLeft)}</span>
+    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${htmlEsc(t(lang, "shell_view"))}: <strong>${htmlEsc(navLabel(lang, currentView))}</strong></span>
+    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${htmlEsc(t(lang, "shell_turn"))}: <strong>${save?.turn_number ?? 0}</strong></span>
+    <span class="fm-status-sep">·</span>
+    <span class="fm-status-item">${htmlEsc(typeof ver === "string" ? ver : String(ver))}</span>
+  </footer>`;
+
+  if (!liveModeSession) {
+    return renderWorldShell({
+      lang,
+      browseMode,
+      save,
+      currentView,
+      worldRoom: worldRoom ?? "producer",
+      phoneOpen: Boolean(worldPhoneOpen),
+      phoneMessageUid: worldPhoneMessageUid ?? null,
+      calendarOpen: Boolean(worldCalendarOpen),
+      zoomTarget: zoomTarget ?? null,
+      dateLabel,
+      mainInner,
+      nextDayBtn,
+      cashPill,
+      homeMenuHtml,
+      canGoBack,
+      canGoForward,
+      liveModeSessionActive: false,
+      wikiModalHtml,
+      feedbackModalHtml,
+      footerHtml,
+      zoomProfileInner,
+    });
+  }
 
   return `
 <div class="fm-app${liveModeSession ? " is-live-mode" : ""}">

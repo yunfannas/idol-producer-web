@@ -65,7 +65,7 @@ function enEntries(): WikiEntry[] {
       label: "Live",
       summary: "A booked performance for your managed group.",
       description:
-        "Lives are the core revenue and exposure loop. Inbox Live Start opens immersive Live Mode (setlist, stage formation, and song-preview playback). Ending the show resolves attendance, fan gain, morale, fatigue, and post-show sales.",
+        "Lives are the core revenue and exposure loop. Inbox Live Start opens immersive Live Mode (setlist, stage formation, and song-preview playback). Ending the show resolves attendance, live skill, live appeal, demographic fan flow, morale, fatigue, and post-show sales. Performance mostly improves conversion and retention once an audience is exposed; tokutenkai and other fan-appreciation activity especially protect and deepen otaku/core support.",
       aliases: ["Live Start", "Live Mode", "booked lives", "live", "lives"],
     },
     {
@@ -185,7 +185,7 @@ function enEntries(): WikiEntry[] {
       label: "League",
       summary: "HEROINES League standings and schedule for HEROINES openings.",
       description:
-        "HEROINES League is the collective's seasonal ranking series (League I / II, then FINAL and promotion). The League tab under Lives shows current-season tables, upcoming dates, and History finals (e.g. 24-25 総入れ替え戦). For HEROINES openings your arrangement goal is: stay safe in League I and avoid 入れ替え戦, or if you fall in, recover to finish top 4 and survive. Lineup, setlist, training, and scheduling should move those standings.",
+        "HEROINES League is the collective's seasonal ranking series (League I / II, then FINAL and promotion). It mainly measures fan mobilization, not same-day judging: FC voting closes before the event, and on-site support is registered at entry. Strong lives still matter by converting spectators, improving satisfaction, and lifting future-round mobilization. For HEROINES openings your goal is to stay safe in League I, or recover to top 4 if you fall into 入れ替え戦.",
       aliases: ["League", "league", "HEROINES League", "入れ替え戦", "昇格戦", "総入れ替え戦"],
     },
     {
@@ -248,7 +248,7 @@ function zhEntries(): WikiEntry[] {
       label: "演出",
       summary: "你为当前团安排的实际演出。",
       description:
-        "演出是核心循环。收件箱「开始公演」会进入沉浸式公演模式（曲目单、队形与歌曲试听）。结束公演后结算出勤、涨粉、士气、疲劳和会后销售。",
+        "演出是核心循环。收件箱「开始公演」会进入沉浸式公演模式（曲目单、队形与歌曲试听）。结束公演后结算到场、Live Skill、Live Appeal、分层粉丝流动、士气、疲劳和会后销售。舞台表现主要在获得曝光后提高转化与留存；特典会等粉丝服务尤其影响 otaku/core 层的留存和深化。",
       aliases: ["演出", "开始演出", "公演模式", "Live Start", "Live Mode", "live", "lives"],
     },
     {
@@ -357,7 +357,7 @@ function zhEntries(): WikiEntry[] {
       label: "联赛",
       summary: "HEROINES 联赛积分榜与赛程（仅 HEROINES 开局可见）。",
       description:
-        "HEROINES League 是集体内的赛季排名系列（League I / II，之后是 FINAL 与升降级）。在 Live 的联赛页可查看当前赛季积分榜、即将场次，以及 History 历史决赛（如 24-25 总入れ替え戦）。HEROINES 开局的排期目标是：稳住 League I、尽量避开入れ替え戦；若掉进升降级，则力争前四保级/升回 I。阵容、歌单、训练与排期应能拉动这些名次。",
+        "HEROINES League 是集体内的赛季排名系列（League I / II，之后是 FINAL 与升降级）。它主要测粉丝动员，而不是当日评审：FC 投票在演出前截止，现场支持在入场时登记。好的舞台仍然重要，但主要通过观众满意、转粉和下一轮动员发挥作用。HEROINES 开局目标是稳住 League I，若掉进升降级则力争前四保级/升回 I。",
       aliases: ["联赛", "League", "league", "HEROINES League", "入れ替え戦", "昇格戦", "総入れ替え戦"],
     },
     {
@@ -586,4 +586,3 @@ export function annotateWikiTerms(root: HTMLElement, lang: UiLanguage, allowedKe
     textNode.parentNode?.replaceChild(frag, textNode);
   }
 }
-

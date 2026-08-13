@@ -12,6 +12,7 @@ export const AUTOSAVE_SLOT = 10;
 export interface SlotSummary {
   slot: number;
   label: string;
+  savedAt?: string;
 }
 
 export function normalizeAccountName(accountName: string): string {
@@ -58,16 +59,17 @@ function writeMeta(accountName: string, slot: number, save: GameSavePayload): vo
   localStorage.setItem(metaKey(accountName, slot), JSON.stringify(meta));
 }
 
-function readMetaLabel(accountName: string, slot: number): string | null {
+function readMetaSummary(accountName: string, slot: number): { label: string; savedAt?: string } | null {
   try {
     const raw = localStorage.getItem(metaKey(accountName, slot));
     if (!raw) return null;
-    if (raw === "1") return "saved";
-    const parsed = JSON.parse(raw) as { label?: unknown };
+    if (raw === "1") return { label: "saved" };
+    const parsed = JSON.parse(raw) as { label?: unknown; saved_at?: unknown };
     const label = String(parsed?.label ?? "").trim();
-    return label || "saved";
+    const savedAt = typeof parsed?.saved_at === "string" ? parsed.saved_at : undefined;
+    return { label: label || "saved", savedAt };
   } catch {
-    return "saved";
+    return { label: "saved" };
   }
 }
 
@@ -205,9 +207,11 @@ export function listSlotSummaries(accountName: string): SlotSummary[] {
   const out: SlotSummary[] = [];
   for (let s = 0; s <= AUTOSAVE_SLOT; s++) {
     if (!rawHas(accountName, s)) continue;
+    const meta = readMetaSummary(accountName, s);
     out.push({
       slot: s,
-      label: readMetaLabel(accountName, s) ?? "saved",
+      label: meta?.label ?? "saved",
+      savedAt: meta?.savedAt,
     });
   }
   return out;

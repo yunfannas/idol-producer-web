@@ -1,5 +1,5 @@
 {
-  "_comment": "HEROINES League seasons, standings, schedule, and history. Season ids: 24-25 ends 2024-09-24 総入れ替え戦; 25-26 is 2025-05→2026-04-24 (includes FINAL/入れ替え + 昇格戦); 26-27 from 2026-04-25. League outcomes are intended as reference anchors for future HEROINES simulation (lineup/setlist/training/schedule → performance → standings).",
+  "_comment": "HEROINES League seasons, standings, schedule, and history. Season ids: 24-25 ends 2024-09-24 総入れ替え戦; 25-26 is 2025-05→2026-04-24 (includes FINAL/入れ替え + 昇格戦); 26-27 from 2026-04-25. League outcomes are reference anchors for fan mobilization: FC vote closes before the show, and on-site support is registered at entry. Same-day performance should mainly drive conversion, buzz, and next-round lift.",
   "seasons": [
     {
       "id": "24-25",
@@ -1364,8 +1364,10 @@
   ],
   "design_notes": {
     "player_agency": "No SNS/FC-campaign minigame. Setlist pickup, training, and lineup/roster (core + new members) shape long-term fans and short-term vote/draw. New joins may add immediate attention/fans as well as integration costs.",
-    "scoring": "Season points come from matchday rank tables driven by FC vote + attendance (26-27 League I also Abema). Sim should map managed-group draw power into expected ranks, then accumulate pts against these historical baselines.",
-    "akishibu_example": "アキシブproject 25-26 regular: 15→85→105→110→125→180 (7th after tiebreak). Peak MD2 (2nd/70), collapse MD3–4, MD6 bounce (3rd/55) from 古賀みれい last League performance (her graduate special is a separate event) — one-off League draw boost, not mid-pack baseline.",
+    "scoring": "Season points come from matchday rank tables driven by FC pre-vote + on-site mobilization/attendance (26-27 League I also Abema). Sim should map managed-group mobilization power into expected ranks, then accumulate pts against these historical baselines.",
+    "akishibu_example": "アキシブproject 25-26 regular: 15→85→105→110→125→180 (7th after tiebreak). Peak MD2 (2nd/70), collapse MD3–4, MD6 bounce (3rd/55) is best interpreted as Graduation Last-Chance Mobilization: 古賀みれい graduation was announced 2025-05-02 and held 2025-09-29, five days after the 9/24 League final. It is not a natural mid-pack baseline recovery.",
+    "live_causality": "Performance(t) mostly affects satisfaction, conversion, SNS buzz, and Mobilization(t+1), not already-locked FC votes or entry-registered on-site support for the same round.",
+    "mobilization_semantics": "Recorded on-site mobilization means valid entrants counted for a group at entry, not necessarily concurrent audience or engaged viewers. Keep ticketed/counted mobilization, concurrent audience, and engaged audience conceptually separate.",
     "akishibu_promotion": "入れ替え戦: 50→130→195→225→255 (5th). Peaked vol.2 (2nd/80) still inside I-line through vol.3; Osaka vol.4 slip (6th/30) then final 6th/30 left them 5pt short of chuLa for the last I slot.",
     "gameplay_goals": {
       "primary": "League I safety: finish regular season above the 入れ替え線 (avoid bottom 4) so you never play promotion matches.",
@@ -1376,13 +1378,13 @@
     "agency_model": {
       "avoid": "Do not simulate X/Twitter FC-vote spam or social posting loops.",
       "long_term": "Fan/popularity stock from lives + media, compounded by setlist quality, training, and roster choices (core retention and new joins).",
-      "short_term": "Matchday vote/attendance proxy from recent readiness: active lineup strength, song familiarity vs fatigue, condition/morale, novelty of picked-up songs — not a separate campaign UI.",
+      "short_term": "Matchday vote/attendance proxy from mobilizable core, campaign effort, urgency/narrative, schedule availability, and proxy/social mobilization. Live readiness feeds mostly future conversion unless rules grant a small audience-response bonus.",
       "lineup": "Lineup/roster is a first-class lever: rest vs spotlight core, farewell last League shows, and add/rotate members.",
       "new_members": "New members are not pure short-term pain. They can attract attention and introduce fans immediately (discovery / personal draw), while also stressing setlist familiarity, chemistry, and condition load. Net matchday effect depends on who joins and how you stage them — not automatically hurt-now/help-later."
     }
   },
   "scoring_rules": {
-    "summary": "Matchday rank is decided by HEROINES FC pre-vote + on-site attendance (目当て). Season points are awarded from a fixed rank→pt table (not raw vote totals). From 26-27, League I also adds ABEMA PPV vote weight.",
+    "summary": "Matchday rank is decided by HEROINES FC pre-vote + on-site mobilization/attendance (目当て registered at entry). Season points are awarded from a fixed rank→pt table (not raw vote totals). From 26-27, League I also adds ABEMA PPV vote weight.",
     "by_season": {
       "25-26": {
         "components": [
@@ -1465,7 +1467,7 @@
   "regular_season_rounds": {
     "season_id": "25-26",
     "division": "league_i",
-    "note": "Published matchday results + cumulatives for League I regular season (before Oct FINAL / 入れ替え戦). Round pts for 6/14 inferred as cumulative delta from 5/11. MD6 アキシブ spike = 古賀みれい last League show, not her graduate special.",
+    "note": "Published matchday results + cumulatives for League I regular season (before Oct FINAL / 入れ替え戦). Round pts for 6/14 inferred as cumulative delta from 5/11. MD6 アキシブ spike is treated as graduation last-chance mobilization: 古賀みれい announced graduation on 2025-05-02 and graduated on 2025-09-29, five days after the 9/24 final.",
     "worked_example_group": "アキシブproject",
     "rounds": [
       {
@@ -2069,7 +2071,7 @@
         ],
         "scoring": "fc_vote + attendance",
         "source": "https://idomire.com/news/202509251235/",
-        "note": "Regular-season finale. Tiebreak on total attendance: MEGAFON 844 vs アキシブ 755 → Akishibu treated as 7th → 入れ替え戦. アキシブ 3rd-place bounce: 古賀みれい last League performance only (her graduate special is a separate event).",
+        "note": "Regular-season finale. Tiebreak on total attendance: MEGAFON 844 vs アキシブ 755 → Akishibu treated as 7th → 入れ替え戦. アキシブ 3rd-place spike is best read as pre-event graduation last-chance mobilization for 古賀みれい, whose graduation was announced 2025-05-02 and held 2025-09-29.",
         "results": [
           {
             "rank": 1,
@@ -2085,7 +2087,9 @@
             "rank": 3,
             "group_name": "アキシブproject",
             "points": 55,
-            "note": "古賀みれい last League performance (not the graduate special) — draw spike → 3rd / 55pt"
+            "active_members": 8,
+            "mobilization_context": "No 神崎らん after 2025-06-15; 古賀みれい graduation five days later created last-chance mobilization.",
+            "note": "Graduation last-chance mobilization → 3rd / 55pt; not evidence of same-day performance driving the vote."
           },
           {
             "rank": 4,
@@ -2229,14 +2233,14 @@
         "rank": 3,
         "points": 55,
         "cumulative": 180,
-        "note": "古賀みれい last League performance only (graduate special is separate) — bounce to 3rd/55; tied MEGAFON on pts, lost attendance tiebreak → 7th / 入れ替え戦"
+        "note": "Graduation last-chance mobilization: 神崎らん had already graduated 2025-06-15 (9→8), and 古賀みれい graduated 2025-09-29, five days after this League. 3rd/55 should not be read as same-day performance judging; tied MEGAFON on pts, lost attendance tiebreak → 7th / 入れ替え戦"
       }
     ]
   },
   "promotion_rounds": {
     "season_id": "25-26",
     "series": "入れ替え戦",
-    "note": "Top 4 after series → League I (stay or promote). Bottom 4 → League II. Points table 100/80/65/50/40/30/20/10. Same scoring components as regular: FC vote + attendance.",
+    "note": "Top 4 after series → League I (stay or promote). Bottom 4 → League II. Points table 100/80/65/50/40/30/20/10. Same scoring components as regular: FC pre-vote + on-site mobilization/attendance. アキシブ entered playoffs after roster shocks: 神崎らん 2025-06-15 graduation, 古賀みれい 2025-09-29 graduation, then 美山ひな 2025-10-17 immediate health-related graduation.",
     "points_table": [
       100,
       80,

@@ -1,6 +1,8 @@
 node_modules
 dist
 .DS_Store
+.env.local
+.cloudflare.env
 
 # Album covers under `picture/` in DB map here; ~10k files exceed GitHub single-push pack limits.
 public/data/pictures/groups/*.webp
