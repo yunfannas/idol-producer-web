@@ -8,13 +8,15 @@ The UI should stop behaving like a collection of management tabs. The player sho
 
 Core rules:
 
-- **Top = global menu and time.**
+- **Top = global menu, date/time, phone notifications, and Next.**
 - **Left = current physical world/location.**
 - **Right = current focus.**
 - **Pages show state; sessions change state.**
 - Player decisions pause game time.
 - Completed actions consume producer time by resolving and jumping the clock.
-- Default playback is `1x`; the only fast-forward control is `Jump to...`.
+- Default playback is `1x`; do not add 2x/4x RTS-style speed controls.
+- **Next means advance until the next meaningful phone notification.**
+- The player may always move proactively instead of waiting for Next.
 - Do not build an RTS or a free-form building game.
 - Animation time is presentation time, not simulation time.
 
@@ -28,13 +30,13 @@ Desktop skeleton:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ ☰  Group Name              Oct 14 Mon · 15:32 ▼       ▶ 1×   ⏭ Jump... │
+│ ☰  Group Name       Oct 14 Mon · 15:32 ▼       📱 2      ▶ 1×      NEXT │
 ├────────────────────────────┬───────────────────────────────────────────────┤
 │                            │                                               │
 │       WORLD MAP            │                 FOCUS VIEW                    │
 │        ~35–38%             │                  ~62–65%                      │
 │                            │                                               │
-│ current location           │ producer room / member / rehearsal / live    │
+│ current complex            │ producer room / member / rehearsal / live    │
 │ producer presence          │ tokutenkai / meeting / recording / archive   │
 │ members + staff            │                                               │
 │ current activity           │                                               │
@@ -49,7 +51,7 @@ There is **no traditional HOME / MEMBERS / TRAINING / LIVE tab bar**.
 The top bar is persistent in every location. It contains only global context and time controls:
 
 ```text
-☰   Group Name          OCT 14 MON · 15:32 ▼          ▶ 1×   ⏭ Jump to...
+☰   Group Name      OCT 14 MON · 15:32 ▼      📱 2      ▶ 1×      NEXT
 ```
 
 Clicking the date/time expands the calendar directly from the top bar. Calendar is global and is **not a physical object on the office wall**.
@@ -65,13 +67,14 @@ Example compact calendar overlay:
                  │       Studio A       │
                  │ 18:30 Taiban         │
                  │       Shibuya        │
-                 │ Leave by 17:48       │
                  │ ──────────────────── │
                  │ Tomorrow             │
                  │ 13:00 Recording      │
                  │ [Full Calendar]      │
                  └──────────────────────┘
 ```
+
+Calendar means **known future**. It does not own time progression; the phone/notification pipeline does.
 
 ## 4. Landing page
 
@@ -102,6 +105,8 @@ Right: front-facing Producer desk and computer. The computer occupies most of th
 ```
 
 Landing should be visually quiet. Do not dump fan counts, radar charts, finance charts, rank meters, etc. onto the room itself.
+
+The Producer Room has **day and night background variants** with identical geometry/hitboxes. Other normal indoor rooms may remain visually unchanged across day/night if they have no windows.
 
 ## 5. Producer computer
 
@@ -192,31 +197,131 @@ Historical snapshots should be immutable: opening 2028 in 2035 should show the 2
 
 Only meaningful milestones are physically displayed: debut release, important singles/albums, first one-man, major sold-out live, first/important TIF appearance, major debut, anniversary, major venue, award, etc. Routine taiban lives remain in the archive but do not occupy wall space.
 
-## 8. Base map and movement
+## 8. Location complexes and movement
 
 No free-form construction. Use standardized agency archetypes such as Micro / Small / Medium / Large / Major.
 
-The map is a readable dollhouse schematic, not an architectural simulator.
+The left map is a readable dollhouse schematic, not an architectural simulator.
 
-Internal movement:
+A **Location Complex** contains one or more freely selectable zones/rooms.
 
-- Click another room → producer moves automatically.
-- No confirmation dialog.
-- Resolve a small abstract time cost (roughly 1–3 game minutes).
-- Do not require hallway/elevator/path micro-management.
+Examples:
 
-External movement:
+```text
+Agency Complex
+├── Producer Room
+├── Staff Room
+├── Meeting Room
+├── Practice Studio
+└── Recording Room
 
-- Calendar/event shows destination, travel time, and useful leave-by time.
-- `Go` / `Leave now` resolves travel and jumps to arrival.
+Live Venue Complex
+├── Stage
+├── Backstage
+├── Audience Area
+├── Tokutenkai
+└── Lobby / Merch
+```
+
+### Movement inside one complex
+
+- **Zero simulation-time cost.**
+- Click another room/zone → switch producer presence and focus immediately.
+- A short visual transition is fine, but do not advance game time.
+- No hallway/elevator/path micro-management.
+
+This includes movement within a live venue: Stage ↔ Backstage ↔ Tokutenkai is free.
+
+### Movement between complexes
+
+- Travel time exists only between distinct external locations/complexes.
+- `Go` / `Leave now` resolves travel and jumps directly to arrival.
 - Do not play travel in real time.
+- The player may proactively travel to any available destination, including a live where their own group is not performing.
 
-## 9. Time model
+When away from the office, the phone always offers a lightweight **Return to Office** action.
 
-Only two normal controls are needed:
+## 9. Unified notification / assistant phone system
 
-- `▶ 1×` — observe the world.
-- `⏭ Jump to...` — advance to a meaningful point.
+All routine game notifications should be integrated into one **Assistant Phone** pipeline. Do not maintain separate popup systems for scandals, calendar blockers, staff issues, audition notices, etc.
+
+Top-right example:
+
+```text
+Oct 14 Mon · 15:32      📱 3      ▶ 1×      NEXT
+```
+
+Clicking the phone expands a tray under the top bar:
+
+```text
+┌────────────────────────────────────┐
+│ ASSISTANT                          │
+│                                    │
+│ 15:28 Rana's queue is still        │
+│       growing.                     │
+│       [Handle] [Go there]          │
+│                                    │
+│ 15:14 Casting offer for Mio        │
+│       received.                    │
+│       [Review]                     │
+│                                    │
+│ 14:52 Studio B rehearsal delayed.  │
+│       [Reply] [Delegate]           │
+└────────────────────────────────────┘
+```
+
+A notification may expose only the actions that make sense:
+
+- **Reply** — answer a simple question directly on the phone.
+- **Review** — open a related data/focus panel.
+- **Delegate** — leave it to staff.
+- **Go** — switch/travel to the relevant location.
+- **Call Meeting** — create/enter a meeting session when the issue is too complex for a reply.
+
+Simple problems should not force the player to travel. Examples: approve a minor appearance request, accept a studio substitution, confirm a small staff recommendation.
+
+Replies should resolve inline and fade into notification history. Avoid extra “SUCCESS” result popups.
+
+### Notification interruption levels
+
+Internally distinguish at least:
+
+- `SILENT` — log/history only.
+- `INFO` — appears in phone history but does not stop Next.
+- `ACTIONABLE` — stops Next and is presented to the player.
+- `REQUIRED` — must be resolved/acknowledged before continuing.
+- `URGENT` — immediately interrupts current flow and auto-pauses.
+
+Do not stop the game for trivial simulation updates such as tiny stat changes or routine staff completion.
+
+### Crisis / scandal integration
+
+Major scandals are phone notifications first, not standalone AVG-style event screens.
+
+Example:
+
+```text
+📱 Assistant · URGENT
+
+A post involving Member A is spreading
+rapidly on social media.
+
+[Review]
+[Call Emergency Meeting]
+```
+
+The phone provides the alert and routing. The actual crisis handling happens through review/investigation and one or more meeting sessions. Future crisis refactor should follow:
+
+**Incident → applicable baseline/rule → evidence → phone alert → staff assessment → meeting → decision → follow-up notifications**.
+
+## 10. Time model and Next
+
+The normal controls are:
+
+- `▶ 1×` — observe the current world/session.
+- `NEXT` — advance simulation until the next meaningful phone notification.
+
+Do not use 2x/4x speed controls as a core mechanic.
 
 Internal engine states:
 
@@ -241,9 +346,40 @@ player chooses "change route — ~15 min"
 resume FLOW
 ```
 
-Jump must still simulate the skipped interval. If a truly player-required decision occurs at 15:47 while jumping to 17:00, stop at 15:47. Routine simulation changes should not interrupt.
+`NEXT` still simulates the skipped interval. If an actionable/required/urgent notification is generated at 15:47, stop at 15:47. Silent/info changes do not stop Next.
 
-## 10. Rehearsal session
+Calendar events do not themselves have to be the stopping primitive. Instead, the notification system can generate useful prompts such as “time to leave for the venue,” “rehearsal is about to begin,” etc.
+
+The player can always ignore Next and move proactively.
+
+## 11. Daily loop and overnight reset
+
+The office is the daily home anchor.
+
+Typical loop:
+
+```text
+08:00 Producer Room
+      │
+      ├── NEXT → next meaningful phone notification
+      ├── proactively move to another room/location
+      ├── use computer / member wall / archive
+      └── attend sessions
+             ↓
+          End Day
+             ↓
+      Overnight simulation
+             ↓
+08:00 Producer Room
+```
+
+When the day is over, **regardless of the producer's current location**, overnight transition jumps directly to the next day at **08:00 in the Producer Room**.
+
+Do not simulate home, sleep, commute, or the trip back from the previous venue.
+
+Overnight can resolve daily aggregation, fatigue recovery, finances, SNS/media developments, external-group simulation, staff progress, and next-day preparation. Any important overnight developments should appear as morning phone notifications rather than separate popups.
+
+## 12. Rehearsal session
 
 Rehearsal should be the first full vertical slice because it validates location + session + focus without venue/fan complexity.
 
@@ -263,27 +399,153 @@ MIRROR                            Song A — Chorus
 
 Formation changes and detailed training planning belong here (or in an appropriate meeting), not as global instant edits on a Training page.
 
-## 11. Venue / taiban
+Small groups should normally make producer presence at rehearsal useful: members can raise issues directly and problems can be resolved on the spot. Producer attendance should not be a flat buff; its value is access to immediate observation and decision opportunities.
 
-When traveling to a live, the left map changes from Base to Venue while the top bar and right-focus logic remain unchanged.
+One-man rehearsal uses the **same Rehearsal Session** at the live venue rather than a separate system.
 
-Venue zones:
+## 13. Venue system
+
+All live maps share one renderer/data model. Four baseline venue archetypes:
+
+1. **Small Indoor Venue**
+2. **Hall**
+3. **Stadium / Arena**
+4. **Outdoor Venue**
+
+These are not four separate gameplay systems. They differ mainly in layout template, crowd rendering LOD, backstage structure, booth arrangement, and visual assets.
+
+Common conceptual model:
 
 ```text
-BACKSTAGE
-    │
-STAGE
-    │
-TOKUTENKAI
+VenueComplex
+├── archetype
+├── zones[]
+├── stages[]
+├── booths[]
+├── crowdAreas[]
+└── occupants / sessions
 ```
 
-Render them as a simple cute venue map, not literal tabs.
+### 13.1 Small Indoor Venue
 
-Click Stage → right side shows the existing/front live presentation.
+Primary live-idol/taiban archetype. Compact, low ceiling, small backstage, audience close to stage, tokutenkai/merch nearby or reusing the audience floor after the live.
 
-Other groups at a taiban should be visible so a non-idol-fan player can understand the ecosystem by observation.
+```text
+┌──────────────────────────────┐
+│ BACKSTAGE                    │
+│  A      OUR      C           │
+│          │                   │
+│       ┌──▼───┐               │
+│       │STAGE │               │
+│       └──────┘               │
+│     ○○○○○○○○○○               │
+│     ○○○○○○○○○○               │
+│        AUDIENCE              │
+│                              │
+│ TOKUTENKAI / MERCH           │
+│ [A] [B] [OUR] [C]            │
+└──────────────────────────────┘
+```
 
-## 12. Tokutenkai LOD
+This is the first venue archetype to implement because it validates Stage + Backstage + Crowd + Tokutenkai + Other Groups.
+
+### 13.2 Hall
+
+Formal theater/concert-hall archetype with clear seated audience sections, larger backstage corridors/dressing rooms, FOH, and lobby/merch. Empty seats should visually communicate attendance without requiring a large dashboard number.
+
+### 13.3 Stadium / Arena
+
+Large-scale archetype with highly aggregated crowd rendering, audience blocks, floor audience, main stage, optional runway/B-stage, large backstage/production areas, concourse/merch.
+
+Do not attempt one visual sprite per attendee; use density rendering/representative sprites.
+
+### 13.4 Outdoor Venue
+
+**Single outdoor venue by default**, not a festival container. One primary outdoor stage, audience field, backstage tents/containers, and optional tokutenkai/merch area.
+
+Outdoor should visibly support day/night/weather presentation where useful.
+
+```text
+┌──────────────────────────────┐
+│ BACKSTAGE / TENTS            │
+│                              │
+│       ┌──────────┐           │
+│       │  STAGE   │           │
+│       └──────────┘           │
+│                              │
+│      ○ ○ ○ ○ ○ ○             │
+│    ○ ○ ○ ○ ○ ○ ○ ○           │
+│       AUDIENCE FIELD         │
+│                              │
+│ TOKUTENKAI / MERCH           │
+│ [A] [B] [OUR] [C]            │
+└──────────────────────────────┘
+```
+
+## 14. Festival container
+
+Festival is **not a fifth venue archetype**. It is a thin event container holding multiple ordinary venues, potentially mixing types (for example outdoor stages plus indoor venues/halls).
+
+Festival UI should remain extremely simple:
+
+```text
+             TIF 2026
+
+        ‹   HOT STAGE ▼   ›
+
+┌──────────────────────────────┐
+│      CURRENT VENUE MAP       │
+└──────────────────────────────┘
+```
+
+- Left arrow: previous venue.
+- Right arrow: next venue.
+- Click venue name: dropdown to jump directly to a selected venue.
+- Switching venues inside the same festival is **0 simulation-time cost**.
+
+The dropdown should show **each venue's current and next scheduled act** plus venue type, but not hidden scouting data such as real-time crowd size.
+
+Example:
+
+```text
+SELECT VENUE
+
+HOT STAGE · Outdoor
+NOW   Group A
+NEXT  Group B · 16:20
+
+SKY STAGE · Outdoor
+NOW   Group C
+NEXT  Group D · 16:15
+
+DOLL FACTORY · Small Indoor
+NOW   Group E
+NEXT  OUR GROUP · 16:35
+
+HEAT GARAGE · Hall
+NOW   Changeover
+NEXT  Group F · 16:25
+```
+
+Use stable venue order so left/right navigation and dropdown order agree.
+
+Festival tells the player **where something is happening**; the actual venue map tells them **what it looks like there**.
+
+## 15. Taiban observation
+
+At a taiban, other groups should be visible in the venue. This is a core onboarding tool for players unfamiliar with idol culture.
+
+The map and live focus should let the player observe:
+
+- different groups rotating through the stage;
+- audience density changing by act;
+- fan flow after a performance;
+- other groups' tokutenkai booths/queues;
+- backstage presence where appropriate.
+
+Do not immediately expose precise hidden values for other groups. Observation should provide the world first; detailed knowledge can improve internally over time.
+
+## 16. Tokutenkai LOD
 
 Do not attempt to show 3–4 groups × 7–9 member queues simultaneously.
 
@@ -314,7 +576,7 @@ fan → cheki → sign → talk → next fan
 
 Fan simulation can use aggregate populations with representative sprites; do not require every fan to be a heavyweight individual agent.
 
-## 13. Backstage and conversation
+## 17. Backstage and conversation
 
 Backstage visually shows members resting, drinking, using phones, talking with staff, etc. After live/tokutenkai, clicking a member creates a natural conversation opportunity.
 
@@ -322,7 +584,9 @@ Conversation topics are contextual: today's live, fan response, center/featured 
 
 Conversation freezes time while the player chooses; completion resolves an abstract duration and jumps the clock.
 
-## 14. Recording and meeting
+For small groups, direct backstage/rehearsal interaction should be common. As organizations grow, more issues should reach the producer through staff/assistant phone notifications instead.
+
+## 18. Recording and meeting
 
 Both reuse the same World + Focus + Session architecture.
 
@@ -339,8 +603,9 @@ Long-term migration targets for Meeting/Session context include:
 - operating/group rules
 - staff responsibility
 - release planning
+- crisis/scandal handling
 
-## 15. Loading/title background
+## 19. Loading/title background
 
 The title/loading visual is a **fixed background image**, not an interactive room.
 
@@ -357,7 +622,7 @@ Composition:
 
 The background itself should contain no title/menu text. The game overlays the real `idol-producer-logo.png` and menu options at runtime. The towel should remain blank in the generated background unless the real logo is composited deterministically in code/image editing rather than regenerated by an image model.
 
-## 16. Implementation milestones
+## 20. Implementation milestones
 
 ### M1 — World Shell
 
@@ -373,14 +638,19 @@ The background itself should contain no title/menu text. The game overlays the r
 - top-bar calendar overlay
 - keep existing gameplay available while migration begins
 
-### M2 — World Time
+### M2 — Notification / Time / Movement Foundation
 
-- FLOW / DECISION_PAUSED / RESOLVE
-- internal movement
-- external travel
-- `1×` / `Jump to...`
-- jump interruption for required decisions
-- action duration resolution
+- unified Assistant Phone tray
+- notification severity/interruption model
+- direct Reply / Review / Delegate / Go / Call Meeting routing
+- replace old notification/event-blocker paths gradually with unified phone pipeline
+- `FLOW / DECISION_PAUSED / RESOLVE`
+- zero-time movement within one Location Complex
+- external travel between complexes
+- `1× / NEXT`
+- Next stops at next actionable/required/urgent notification
+- proactive travel / Return to Office
+- overnight reset to next day 08:00 Producer Room
 
 ### M3 — Rehearsal vertical slice
 
@@ -391,14 +661,15 @@ The background itself should contain no title/menu text. The game overlays the r
 - contextual rehearsal issues
 - post-rehearsal interactions
 
-### M4 — Venue
+### M4 — Small Indoor Venue / Taiban
 
-- venue map
+- Small Indoor Venue map
 - stage
 - taiban timeline
 - other groups
 - existing live presentation embedded in Focus
 - backstage
+- simple audience aggregation
 
 ### M5 — Tokutenkai / Fan World
 
@@ -409,35 +680,50 @@ The background itself should contain no title/menu text. The game overlays the r
 - tokutenkai rule integration
 - member interactions
 
-### M6 — Management in Context
+### M6 — Additional Venue Archetypes / Festival
+
+- Hall
+- Stadium / Arena
+- Outdoor Venue
+- festival container
+- previous/next venue arrows
+- venue dropdown with NOW/NEXT schedule
+- mixed venue archetypes inside one festival
+
+### M7 — Management in Context
 
 - Meeting
 - Recording
 - contextual conversation
 - staff delegation
+- crisis/scandal meeting flow
 - migrate global instant-edit controls into sessions
 
-### M7 — History and visual polish
+### M8 — History and visual polish
 
 - Year Files
 - Former Member Files
 - memorabilia/discography objects
 - long-term office historical accumulation
+- day/night Producer Room backgrounds
 - hair/costume system
 - final chibi art and animation set
 
-## 17. Implementation guardrails
+## 21. Implementation guardrails
 
 - Do not implement a building game.
 - Do not implement RTS controls.
 - Do not make animation time equal simulation time.
+- Do not charge time for moving between rooms/zones inside one complex.
 - Do not remove an existing gameplay function until its replacement exists.
 - Do not turn the World Map into a numerical dashboard.
 - Do not make staff dialogue the primary tutorial mechanism.
 - Do not use scripted AVG-style events as a substitute for routine simulation.
+- Do not create multiple competing notification systems; route notifications through the Assistant Phone.
+- Do not force the player to travel for simple issues that can reasonably be answered remotely.
 - The simulation creates situations; sessions expose them. Scripted events may dramatize exceptional situations but should not manufacture routine gameplay.
 
-## 18. Reference mockups
+## 22. Reference mockups
 
 The design branch should keep two visual references beside this document:
 
