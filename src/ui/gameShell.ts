@@ -60,7 +60,7 @@ import {
   romajiFromRow,
 } from "./idolRowMeta";
 import { htmlEsc } from "./htmlEsc";
-import { gameManualHref, ikonoijoyBest10Href, languageOptions, liveTypeLabel, navLabel, oshiChartHref, t, type UiLanguage } from "./i18n";
+import { gameManualHref, ikonoijoyBest10Href, languageOptions, lineupChronicleHref, liveTypeLabel, navLabel, oshiChartHref, t, type UiLanguage } from "./i18n";
 import { resolveMemberColorCss } from "./memberColor";
 import { tutorialMenuLabel } from "./tutorialOverlay";
 import { renderFullWikiPanel, renderWikiPanel } from "./wiki";
@@ -6356,6 +6356,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
           <a class="fm-menu-action fm-menu-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_game_manual"))}</a>
           <a class="fm-menu-action fm-menu-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_oshi_chart"))}</a>
           <a class="fm-menu-action fm-menu-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_ikonoijoy_best10"))}</a>
+          <a class="fm-menu-action fm-menu-link" href="${htmlEsc(lineupChronicleHref())}" target="_blank" rel="noopener noreferrer" role="menuitem">${htmlEsc(t(lang, "shell_lineup_chronicle"))}</a>
           <button type="button" class="fm-menu-action" id="btn-open-tutorial" ${browseMode || liveModeSession ? "disabled" : ""}>${htmlEsc(tutorialMenuLabel(lang))}</button>
           <label class="fm-menu-row">${htmlEsc(t(lang, "shell_slot"))} <select id="slot-select" class="fm-select" aria-label="${htmlEsc(t(lang, "shell_slot"))}">${slotOpts}</select></label>
           <label class="fm-menu-row">${htmlEsc(t(lang, "language"))} <select id="lang-select-shell" class="fm-select" aria-label="${htmlEsc(t(lang, "language"))}">${languageSelect}</select></label>
