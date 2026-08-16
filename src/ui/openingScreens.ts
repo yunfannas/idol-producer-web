@@ -84,6 +84,7 @@ export function renderOpeningLogin(
     <a class="opening-manual-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_game_manual"))}</a>
     <a class="opening-manual-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_oshi_chart"))}</a>
     <a class="opening-manual-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_ikonoijoy_best10"))}</a>
+    <a class="opening-manual-link" href="${htmlEsc(lineupChronicleHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_lineup_chronicle"))}</a>
   </p>
 
   <div class="opening-status fm-card-opening">
