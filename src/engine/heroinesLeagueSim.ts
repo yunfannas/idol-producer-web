@@ -6,15 +6,16 @@
  * then awards fixed rank points. May 2025 Matchday 1 was attendance-only.
  * From 26-27 League I also adds ABEMA PPV vote weight.
  *
- * Gameplay goals (player arrangement → draw power → pts → standing):
+ * Gameplay goals (campaign + mobilizable fans → recorded mobilization → pts → standing):
  *   1. Best: stay clear of 入れ替え戦 (League I regular-season safety above bottom 4).
  *   2. Recovery: if drawn into promotion, finish top 4 to survive / return to League I.
  * Historical anchor: アキシブproject failed (1) on tiebreak, then failed (2) at 5th/255.
  *
- * Agency model (no SNS sim):
- *   setlist pickup + training + lineup/roster (core + new members)
- *   → long-term fan stock + short-term vote/draw proxy for matchday rank.
- *   New members can attract attention / fans immediately, not only "hurt now".
+ * Agency model:
+ *   League rank mainly measures pre-event mobilization. FC votes close before the
+ *   show; on-site support is registered at entry. Same-day performance should
+ *   mostly create conversion, buzz, and next-round lift, with only a limited
+ *   audience-response bonus if a future ruleset wants one.
  */
 
 export type LeagueDivision = "league_i" | "league_ii";
@@ -74,11 +75,13 @@ export type MatchdayResultRow = {
   group_name: string;
   points: number;
   note?: string;
+  active_members?: number;
+  mobilization_context?: string;
 };
 
 export type SimulatedEntrant = {
   group_name: string;
-  /** Relative draw power (fans × condition × setlist/training quality). Higher → better rank. */
+  /** Relative recorded mobilization (core fans × campaign × urgency × proxy/social mobilization). */
   strength: number;
 };
 
@@ -147,7 +150,7 @@ export const AKISHIBU_REGULAR_SEASON_PATH = [
     rank: 3,
     points: 55,
     cumulative: 180,
-    note: "古賀みれい last League performance only (graduate special is separate) — bounce to 3rd/55; tied MEGAFON, lost attendance tiebreak → 入れ替え戦",
+    note: "Graduation last-chance mobilization: 古賀みれい graduation was announced 2025-05-02 and held 2025-09-29, five days after this League. 3rd/55 is best read as a pre-event mobilization spike; tied MEGAFON, lost attendance tiebreak → 入れ替え戦",
   },
 ] as const;
 

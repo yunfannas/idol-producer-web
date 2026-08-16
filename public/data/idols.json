@@ -36933,7 +36933,8 @@
         "member_color": "Yellow",
         "member_name": "福丸うさ",
         "member_color_code": "0xffff00",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "notes": "Support member 2023-07-15 to 2023-08-18; regular from 2023-08-19 (announce 2023-07-13)."
       },
       {
         "group_name": "ZUTTOMOTTO",
@@ -36954,12 +36955,14 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "wikipedia"
     ],
     "x_account": "ilife_fukumaru",
     "x_url": "https://x.com/ilife_fukumaru",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "2562768e-c832-4bb1-a4f9-b00c82d1948b",
@@ -61433,7 +61436,17 @@
         "member_color": "Purple",
         "member_name": "有栖るな",
         "member_color_code": "0x800080",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "status_history": [
+          {
+            "kind": "hiatus",
+            "start_date": "2024-09-19",
+            "end_date": "2025-03-09",
+            "summary_ja": "2024年9月19日から無期限の活動休止。2025年3月9日卒業。",
+            "source_label": "Wikipedia（iLiFE!）",
+            "source_url": "https://ja.wikipedia.org/wiki/ILiFE!"
+          }
+        ]
       }
     ],
     "x_followers": null,
@@ -61445,8 +61458,10 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
-    ]
+      "jpop_wiki",
+      "wikipedia"
+    ],
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "3f14ec10-bea2-4411-8465-52b5351c5349",
@@ -80295,19 +80310,50 @@
     "group_history": [
       {
         "group_name": "ILiFE! Kouhosei",
-        "start_date": null,
-        "end_date": null,
+        "start_date": "2024-01-04",
+        "end_date": "2024-07-30",
         "member_color": null,
-        "member_color_code": null
+        "member_color_code": null,
+        "member_name": "華瀬まい",
+        "status_history": [
+          {
+            "kind": "hiatus",
+            "start_date": "2024-05-03",
+            "end_date": "2024-07-29",
+            "summary_ja": "2024年5月3日よりiLiFE!のライブから離脱。7月30日に正規メンバーへ復帰。",
+            "source_label": "Wikipedia（iLiFE!）",
+            "source_url": "https://ja.wikipedia.org/wiki/ILiFE!"
+          }
+        ]
       },
       {
-        "group_name": "iLife!",
+        "group_name": "iLiFE!",
         "start_date": "2023-09-10",
+        "end_date": "2024-01-04",
+        "member_color": "Blue",
+        "member_name": "華瀬まい",
+        "member_color_code": "0x0000ff",
+        "group_uid": "aUxpRkUh",
+        "status_history": [
+          {
+            "kind": "scandal",
+            "start_date": "2024-01-04",
+            "score": 4,
+            "summary_ja": "過去の行動により正規メンバーからiLiFE!候補生へ降格。",
+            "source_label": "Wikipedia（iLiFE!）",
+            "source_url": "https://ja.wikipedia.org/wiki/ILiFE!"
+          }
+        ]
+      },
+      {
+        "group_name": "iLiFE!",
+        "start_date": "2024-07-30",
         "end_date": "2025-01-08",
         "member_color": "Blue",
         "member_name": "華瀬まい",
         "member_color_code": "0x0000ff",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "status_history": []
       }
     ],
     "x_followers": null,
@@ -80319,8 +80365,10 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
-    ]
+      "jpop_wiki",
+      "wikipedia"
+    ],
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "5250a6ec-cf8c-423c-9ba8-e94bd5de2041",
@@ -84634,11 +84682,12 @@
       {
         "group_name": "iLife!",
         "start_date": "2025-10-05",
-        "end_date": null,
+        "end_date": "2026-05-24",
         "member_color": "Orange (monogatari) Pink (Non¬Fiction / iLiFE!)",
         "member_name": "恋星はるか",
         "member_color_code": "0xffa500",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "notes": "Support member 2025-10-05 to 2026-05-24."
       },
       {
         "group_name": "GILTY × GILTY",
@@ -84681,7 +84730,8 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "wikipedia"
     ],
     "nickname": "Haruru (はるる)",
     "x_account": "haru_nonfic",
@@ -84767,7 +84817,8 @@
           "source": "fandom"
         }
       ]
-    }
+    },
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "572525b9-60e2-443c-8525-e6ed017e6b9d",
@@ -117021,15 +117072,6 @@
         "member_name": "心咲めい",
         "member_color_code": null,
         "group_uid": "QkxBQ0tOQVpBUkVORQ"
-      },
-      {
-        "group_name": "iLife!",
-        "start_date": "2020-06-01",
-        "end_date": "2020-12-31",
-        "member_color": "Purple",
-        "member_name": "心咲めい",
-        "member_color_code": "0x800080",
-        "group_uid": "aUxpRkUh"
       }
     ],
     "x_followers": null,
@@ -117042,8 +117084,10 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
-    ]
+      "jpop_wiki",
+      "wikipedia"
+    ],
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "7848bae8-0cc7-48a4-9195-78a21095cd85",
@@ -125639,13 +125683,14 @@
         "member_color_code": "0xffa500"
       },
       {
-        "group_name": "iLife!",
+        "group_name": "iLiFE!",
         "start_date": "2025-01-21",
         "end_date": "2025-06-10",
         "member_color": "Orange",
         "member_name": "こるね",
         "member_color_code": "0xffa500",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "notes": "Support member 2025-01-21 to 2025-06-10."
       },
       {
         "group_name": "のんふぃく！",
@@ -125690,15 +125735,6 @@
         "member_color_code": "0xff0000"
       },
       {
-        "group_name": "iLiFE!",
-        "start_date": "2025-01-21",
-        "end_date": "2025-06-10",
-        "member_color": "Orange",
-        "member_color_code": "0xffa500",
-        "member_name": "こるね",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "Non?Fiction",
         "member_name": "こるね",
         "member_color": "Red",
@@ -125717,7 +125753,8 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "wikipedia"
     ],
     "x_account": "colne_icol",
     "x_url": "https://x.com/colne_icol",
@@ -125731,7 +125768,8 @@
       "44Gu44KT44G144GD44GP77yB": "fetcher\\database\\picture_fandom\\こるね__NonFiction_portrait.jpg"
     },
     "portrait_source": "unknown",
-    "portrait_updated": "2026-07-13T21:47:25.025732"
+    "portrait_updated": "2026-07-13T21:47:25.025732",
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "80a5a0e3-1198-4b05-9a61-a8c16dc8bc1e",
@@ -133991,15 +134029,6 @@
         "member_name": "あいす"
       },
       {
-        "group_name": "iLife!",
-        "start_date": "2022-07-11",
-        "end_date": null,
-        "member_name": "あいす",
-        "member_color": "White",
-        "member_color_code": "0xffffff",
-        "group_uid": "aUxpRkUh"
-      },
-      {
         "group_name": "YAMINABE",
         "start_date": null,
         "end_date": "2022-11-20",
@@ -134021,7 +134050,8 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "wikipedia"
     ],
     "x_account": "ice_icol",
     "x_url": "https://x.com/ice_icol",
@@ -134061,7 +134091,8 @@
           "source": "fandom"
         }
       ]
-    }
+    },
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "891110c7-0de2-4ee3-bd4c-2aa123bc7576",
@@ -161001,11 +161032,12 @@
       {
         "group_name": "iLife!",
         "start_date": "2025-10-06",
-        "end_date": "2025-12-31",
+        "end_date": "2025-12-28",
         "member_color": "Pink (iON! / iLiFE!)",
         "member_name": "恋春ねね",
         "member_color_code": "0xffc0cb",
-        "group_uid": "aUxpRkUh"
+        "group_uid": "aUxpRkUh",
+        "notes": "Sub-support member 2025-10-06 to 2025-12-28."
       },
       {
         "group_name": "iON!",
@@ -161045,9 +161077,10 @@
     ],
     "data_sources": [
       "jpop_wiki",
-      "neverless_wiki"
+      "neverless_wiki",
+      "wikipedia"
     ],
-    "last_updated": "2026-05-10T05:12:23Z",
+    "last_updated": "2026-08-16T00:00:00Z",
     "group_portrait_history": {
       "iON!": [
         {
@@ -172095,7 +172128,7 @@
     "group_history": [
       {
         "group_name": "iLife!",
-        "start_date": "2021-11-30",
+        "start_date": "2021-11-27",
         "end_date": "2022-05-25",
         "member_color": "White",
         "member_name": "琥珀しえる",
@@ -172112,8 +172145,10 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
-    ]
+      "jpop_wiki",
+      "wikipedia"
+    ],
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "b03f67df-302e-48a8-a975-fdd19527fd18",
@@ -198436,7 +198471,7 @@
       },
       {
         "group_name": "iLife!",
-        "start_date": "2021-11-30",
+        "start_date": "2021-11-28",
         "end_date": "2024-09-01",
         "member_color": "Pink (iLiFE!)",
         "member_name": "向日えな",
@@ -198454,8 +198489,10 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
-    ]
+      "jpop_wiki",
+      "wikipedia"
+    ],
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "cab6d6f7-7ce7-40fc-92a5-93b0e61a2c8d",
@@ -206307,14 +206344,17 @@
         "member_color": "Yellow",
         "member_name": "天羽しおり",
         "member_color_code": "0xffff00",
-        "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": "2023-07-12",
-        "member_color": "Yellow",
-        "member_color_code": "0xffff00"
+        "group_uid": "aUxpRkUh",
+        "status_history": [
+          {
+            "kind": "hiatus",
+            "start_date": "2023-06-09",
+            "end_date": "2023-07-01",
+            "summary_ja": "2023年6月9日から7月1日まで活動休止。",
+            "source_label": "Jpop Wiki（iLiFE!）",
+            "source_url": "https://jpop.fandom.com/wiki/ILiFE!"
+          }
+        ]
       }
     ],
     "x_followers": 51954,
@@ -206326,12 +206366,14 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "wikipedia"
     ],
     "x_account": "lastscene_amo",
     "x_url": "https://x.com/lastscene_amo",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "d388142b-2dcd-4b98-8d6e-39e897ff89b5",
@@ -227971,21 +228013,6 @@
         "group_uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4"
       },
       {
-        "group_name": "iLife!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Pink (iON! / iLiFE!)",
-        "member_color_code": "0xffc0cb",
-        "group_uid": "aUxpRkUh"
-      },
-      {
-        "group_name": "iLiFE!",
-        "start_date": null,
-        "end_date": null,
-        "member_color": "Pink (iON! / iLiFE!)",
-        "member_color_code": "0xffc0cb"
-      },
-      {
         "group_name": "ヒロインズ研究生",
         "start_date": "2023-10-16",
         "end_date": "2025-04-06",
@@ -228002,8 +228029,10 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
-    ]
+      "jpop_wiki",
+      "wikipedia"
+    ],
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "e921cc44-9467-41da-916b-bc049d0a0d04",
@@ -247188,12 +247217,12 @@
       {
         "group_name": "iLife!",
         "start_date": "2023-05-09",
-        "end_date": "2023-09-25",
+        "end_date": "2023-09-24",
         "member_color": "Red (BLK LiLiY",
         "member_name": "響羽リズ",
         "member_color_code": "0xff0000",
         "group_uid": "aUxpRkUh",
-        "notes": "Additional member colors: AdamLilith) Purple (BLK LiLiY; 2021) Green (iLiFE!; July-September 2023) Black (iLiFE!; May-July 2023)"
+        "notes": "Support member 2023-05-09 to 2023-09-24. Additional member colors: AdamLilith) Purple (BLK LiLiY; 2021) Green (iLiFE!; July-September 2023) Black (iLiFE!; May-July 2023)"
       },
       {
         "group_name": "BLK LiLiY",
@@ -247213,12 +247242,14 @@
       "jpop_wiki"
     ],
     "data_sources": [
-      "jpop_wiki"
+      "jpop_wiki",
+      "wikipedia"
     ],
     "x_account": "rizu_adamth",
     "x_url": "https://x.com/rizu_adamth",
     "x_followers_source": "x-ranker",
-    "x_followers_updated_at": "2026-04-04"
+    "x_followers_updated_at": "2026-04-04",
+    "last_updated": "2026-08-16T00:00:00Z"
   },
   {
     "uid": "fb4e0f61-729a-462a-9d78-9d0326e61dfc",
@@ -262069,16 +262100,21 @@
       {
         "group_name": "iLiFE!",
         "group_uid": "aUxpRkUh",
-        "start_date": "2026-05-27",
+        "start_date": "2026-05-30",
         "end_date": null,
         "member_name": "真守みゅう",
         "member_color": "Pink",
-        "member_color_code": "0xffc0cb"
+        "member_color_code": "0xffc0cb",
+        "notes": "Project i winner announced as りべろ on 2026-05-27; name 真守みゅう announced 2026-05-30."
       }
     ],
     "wiki_url": "https://jpop.fandom.com/wiki/Mamori_Mew",
     "portrait_photo_path": "fetcher\\database\\picture_fandom\\真守みゅう_portrait.jpg",
-    "notes": "Minimal stub row added from Jpop Wiki group roster."
+    "notes": "Minimal stub row added from Jpop Wiki group roster.",
+    "last_updated": "2026-08-16T00:00:00Z",
+    "data_sources": [
+      "wikipedia"
+    ]
   },
   {
     "uid": "58ae84f3-6ab4-578d-a1e8-580bed592b13",

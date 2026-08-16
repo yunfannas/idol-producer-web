@@ -132,6 +132,8 @@ import {
   type SongStartingFormation,
 } from "./data/songStartingFormation";
 import { wirePortraitFallbacks } from "./ui/portraitUrl";
+import { mountWorldRuntime } from "./ui/worldRuntime";
+import type { WorldRoomId, WorldVenueFocus, WorldZoomTarget } from "./ui/worldUi";
 import { groupsForDirectoryListing } from "./data/scenarioBrowse";
 import { t, type UiLanguage } from "./ui/i18n";
 import { showAppConfirm } from "./ui/appConfirm";
@@ -148,6 +150,11 @@ const UI_LANG_STORAGE_KEY = "idol-producer-ui-lang";
 const ACCOUNT_NAME_STORAGE_KEY = "idol-producer-account-name";
 const TUTORIAL_AUTO_OPEN_STORAGE_KEY = "idol-producer-tutorial-auto-open";
 const FEEDBACK_STORAGE_KEY = "idol-producer-feedback-log";
+
+function officePreviewDollsHtml(count: number): string {
+  const visualCount = Math.max(0, Math.min(12, Math.round(count)));
+  return Array.from({ length: visualCount }, () => "<i></i>").join("");
+}
 
 function isUiLanguage(value: unknown): value is UiLanguage {
   return value === "en" || value === "zh-CN";
@@ -1357,6 +1364,13 @@ let wikiModalOpen = false;
 let feedbackModalOpen = false;
 
 let currentView: DesktopNavId = "Inbox";
+let worldRoom: WorldRoomId = "producer";
+let worldPhoneOpen = false;
+let worldPhoneMessageUid: string | null = null;
+let worldCalendarOpen = false;
+let worldZoomTarget: WorldZoomTarget = null;
+let worldZoomMemberUid: string | null = null;
+let worldVenueFocus: WorldVenueFocus = null;
 let idolDetailUid: string | null = null;
 let groupDetailUid: string | null = null;
 /** Songs view: selected `group_uid` from snapshot (browse or save). */
@@ -1980,6 +1994,52 @@ function syncFestivalLivesIfPossible(): void {
   syncManagedTif2025Lives(save, festivals);
 }
 
+function mostRecentSlotForAccount(name: string): number | null {
+  const rows = listSlotSummaries(name);
+  if (!rows.length) return null;
+  rows.sort((a, b) => {
+    const at = a.savedAt ? Date.parse(a.savedAt) : 0;
+    const bt = b.savedAt ? Date.parse(b.savedAt) : 0;
+    if (bt !== at) return bt - at;
+    return b.slot - a.slot;
+  });
+  return rows[0]?.slot ?? null;
+}
+
+async function loadOpeningSlot(targetSlot: number): Promise<void> {
+  if (!accountName) return;
+  const loaded = await loadFromSlot(accountName, targetSlot);
+  if (loaded && assertHydratedSave(loaded)) {
+    save = loaded;
+    slot = targetSlot;
+    if (!save.tutorial) save.tutorial = { completed: true, disabled: false };
+    setAccountName(String(save.account_name ??  save.player_name ??  accountName));
+    save.account_name = accountName;
+    save.player_name = accountName;
+    ensureAutoBookedLivesThroughEndOfNextMonth(save);
+    maybeSeedMonthEndAutoBookPrompt(save);
+    scheduleCalendarMonthStart = null;
+    resetNewLiveFormDefaults();
+    if (loadedScenario) {
+      hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
+      hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
+      syncFestivalLivesIfPossible();
+    }
+    browseMode = false;
+    tutorialOverlayOpen = false;
+    openingScreen = "home";
+    currentView = "Inbox";
+    idolDetailUid = null;
+    groupDetailUid = null;
+    openingStatus = t(uiLang, "opening_loaded_slot", { slot: targetSlot });
+    resetNavigationHistory();
+    paintGame();
+  } else {
+    openingStatus = t(uiLang, "opening_slot_invalid", { slot: targetSlot });
+    paintOpening();
+  }
+}
+
 function paintOpening(): void {
   tutorialOverlayOpen = false;
   const focus = captureFocus(appRoot);
@@ -1987,7 +2047,7 @@ function paintOpening(): void {
   const dbReady = loadedScenario != null;
   appRoot.innerHTML =
     openingScreen === "login"
-      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang, preset)
+      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang, preset, mostRecentSlotForAccount(accountName) != null)
       : openingScreen === "home"
         ? renderOpeningHome(
             preset,
@@ -2012,8 +2072,11 @@ function paintOpening(): void {
   if (openingScreen === "login") {
     const accountInput = document.getElementById("account-name") as HTMLInputElement | null;
     const loginBtn = document.getElementById("opening-login") as HTMLButtonElement | null;
+    const loadBtn = document.getElementById("opening-load-slot") as HTMLButtonElement | null;
     const syncLoginEnabled = () => {
-      if (loginBtn) loginBtn.disabled = !(loadedScenario != null && accountName.trim());
+      const hasRecentSave = mostRecentSlotForAccount(accountName) != null;
+      if (loginBtn) loginBtn.disabled = !(loadedScenario != null && accountName.trim() && hasRecentSave);
+      if (loadBtn) loadBtn.disabled = !(loadedScenario != null && accountName.trim());
     };
     accountInput?.addEventListener("input", (ev) => {
       setAccountName((ev.target as HTMLInputElement).value);
@@ -2030,8 +2093,32 @@ function paintOpening(): void {
 
     document.getElementById("opening-login")?.addEventListener("click", () => {
       if (!accountName.trim()) return;
-      openingScreen = "home";
+      const recentSlot = mostRecentSlotForAccount(accountName);
+      if (recentSlot == null) {
+        openingStatus = t(uiLang, "opening_slot_invalid", { slot });
+        paintOpening();
+        return;
+      }
+      void loadOpeningSlot(recentSlot);
+    });
+
+    document.getElementById("opening-new-game")?.addEventListener("click", async () => {
+      if (!loadedScenario) return;
+      openingStatus = t(uiLang, "opening_db_loading");
       paintOpening();
+      try {
+        loadedScenario = await loadDefaultScenario();
+      } catch (e) {
+        console.error("opening-new-game reload failed", e);
+      }
+      openingScreen = "new_game";
+      selectedNewGameGroupUid = null;
+      paintOpening();
+    });
+
+    document.getElementById("opening-load-slot")?.addEventListener("click", async () => {
+      if (!accountName) return;
+      await loadOpeningSlot(slot);
     });
   } else if (openingScreen === "home") {
     document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
@@ -2135,13 +2222,48 @@ function paintOpening(): void {
         document.querySelectorAll(".group-picker-row").forEach((r) => r.classList.remove("is-selected"));
         tr.classList.add("is-selected");
         const uid = tr.getAttribute("data-group-uid");
+        const officeTier = tr.getAttribute("data-office-tier");
+        const officePreview = document.querySelector<HTMLElement>("[data-office-preview]");
+        if (officePreview && officeTier) {
+          officePreview.dataset.tier = officeTier;
+          const tierLabel = officePreview.querySelector<HTMLElement>("[data-office-tier-label]");
+          if (tierLabel) tierLabel.textContent = officeTier === "A" ? "A+" : officeTier;
+          const studioCount = Number(tr.getAttribute("data-studio-count") ?? tr.getAttribute("data-member-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio-count]").forEach((elt) => {
+            elt.textContent = String(studioCount);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(studioCount);
+          });
+          const studio2Count = Number(tr.getAttribute("data-studio2-count") ?? tr.getAttribute("data-member-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio2-count]").forEach((elt) => {
+            elt.textContent = String(studio2Count);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-studio2-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(studio2Count);
+          });
+          const managerCount = Number(tr.getAttribute("data-manager-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-manager-count]").forEach((elt) => {
+            elt.textContent = String(managerCount);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-manager-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(managerCount);
+          });
+          const specializedStaffCount = Number(tr.getAttribute("data-specialized-staff-count") ?? 0) || 0;
+          officePreview.querySelectorAll<HTMLElement>("[data-office-specialized-count]").forEach((elt) => {
+            elt.textContent = String(specializedStaffCount);
+          });
+          officePreview.querySelectorAll<HTMLElement>("[data-office-specialized-dolls]").forEach((elt) => {
+            elt.innerHTML = officePreviewDollsHtml(specializedStaffCount);
+          });
+        }
         selectedNewGameGroupUid = uid && uid.length ? uid : null;
         if (startBtn) startBtn.disabled = !selectedNewGameGroupUid || !accountName.trim();
       });
     });
 
     document.getElementById("new-game-back")?.addEventListener("click", () => {
-      openingScreen = "home";
+      openingScreen = "login";
       selectedNewGameGroupUid = null;
       paintOpening();
     });
@@ -2299,8 +2421,16 @@ function paintGame(): void {
     wikiModalOpen,
     feedbackModalOpen,
     liveModeSession,
+    worldRoom,
+    worldPhoneOpen,
+    worldPhoneMessageUid,
+    worldCalendarOpen,
+    zoomTarget: worldZoomTarget,
+    worldZoomMemberUid,
+    worldVenueFocus,
   });
   restoreFocus(appRoot, focus);
+  mountWorldRuntime(appRoot);
   syncSongPreviewUi(appRoot);
   if (liveModeSession && save) {
     hydrateLiveModePortraits(appRoot, save);
@@ -2360,6 +2490,161 @@ function paintGame(): void {
   appRoot.querySelectorAll<HTMLElement>("[data-feedback-modal-close]").forEach((elt) => {
     elt.addEventListener("click", () => {
       feedbackModalOpen = false;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-room]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      const room = elt.getAttribute("data-world-room");
+      if (room !== "producer" && room !== "staff" && room !== "meeting" && room !== "studio" && room !== "recording" && room !== "studio2") return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      const nav = elt.getAttribute("data-nav");
+      navigate(() => {
+        worldRoom = room;
+        worldPhoneOpen = false;
+        worldPhoneMessageUid = null;
+        worldCalendarOpen = false;
+        worldZoomTarget = null;
+        worldZoomMemberUid = null;
+        worldVenueFocus = null;
+        if (nav && isDesktopNavId(nav) && (!browseMode || isBrowseNav(nav) || isManagementNav(nav))) {
+          currentView = nav;
+        }
+      });
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-venue-zone]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      const zone = String(elt.getAttribute("data-world-venue-zone") ?? "").trim();
+      if (browseMode || !save || (zone !== "stage" && zone !== "tokutenkai" && zone !== "backstage" && zone !== "entry")) return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      navigate(() => {
+        currentView = "Lives";
+        livesTab = "scheduled";
+        scheduledLiveUid = null;
+        worldVenueFocus = zone;
+        worldPhoneOpen = false;
+        worldPhoneMessageUid = null;
+        worldCalendarOpen = false;
+        worldZoomTarget = null;
+        worldZoomMemberUid = null;
+        inboxSelectedUid = null;
+      });
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-phone-toggle]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      worldPhoneOpen = !worldPhoneOpen;
+      if (worldPhoneOpen) {
+        worldCalendarOpen = false;
+      } else {
+        worldPhoneMessageUid = null;
+      }
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-calendar-toggle]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      worldCalendarOpen = !worldCalendarOpen;
+      if (worldCalendarOpen) {
+        worldPhoneOpen = false;
+        worldPhoneMessageUid = null;
+      }
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-phone-message]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      const uid = String(elt.getAttribute("data-world-phone-message") ?? "").trim();
+      if (!uid) return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      worldPhoneOpen = true;
+      worldCalendarOpen = false;
+      worldPhoneMessageUid = uid;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-phone-message-close]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      worldPhoneMessageUid = null;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-live-shortcut]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      if (browseMode || !save) return;
+      navigate(() => {
+        currentView = "Lives";
+        livesTab = "scheduled";
+        scheduledLiveUid = null;
+        worldRoom = "producer";
+        worldVenueFocus = "stage";
+        worldPhoneOpen = false;
+        worldPhoneMessageUid = null;
+        worldCalendarOpen = false;
+        worldZoomTarget = null;
+        worldZoomMemberUid = null;
+        inboxSelectedUid = null;
+      });
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-zoom]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      const target = elt.getAttribute("data-world-zoom");
+      if (target !== "members" && target !== "history") return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      worldZoomTarget = target;
+      worldZoomMemberUid = null;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>(".world-zoom [data-idol-detail]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      const uid = elt.getAttribute("data-idol-detail");
+      if (!uid) return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      worldZoomMemberUid = uid;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-member-profile-back]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      worldZoomMemberUid = null;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>(".world-zoom #btn-idol-detail-back").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      worldZoomMemberUid = null;
+      paintGame();
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-history-open]").forEach((elt) => {
+    elt.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      navigate(() => {
+        worldZoomTarget = null;
+        worldZoomMemberUid = null;
+        groupDetailUid = null;
+        idolDetailUid = null;
+        currentView = "Groups";
+      });
+    });
+  });
+  appRoot.querySelectorAll<HTMLElement>("[data-world-zoom-close]").forEach((elt) => {
+    elt.addEventListener("click", () => {
+      worldZoomTarget = null;
+      worldZoomMemberUid = null;
       paintGame();
     });
   });
@@ -4314,6 +4599,9 @@ function paintGame(): void {
         }
         idolDetailUid = null;
         groupDetailUid = null;
+        worldZoomTarget = null;
+        worldZoomMemberUid = null;
+        worldVenueFocus = null;
         if (v !== "Inbox") inboxSelectedUid = null;
         currentView = v;
       });

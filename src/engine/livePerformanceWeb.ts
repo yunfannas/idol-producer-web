@@ -14,6 +14,8 @@ import {
   estimateAudiencePurchaseUnits,
   financeAudienceProfileForGroup,
   resolveGroupLetterTier,
+  type AudienceLayer,
+  type FinanceAudienceProfile,
 } from "./financeSystem";
 
 function clamp(n: number, lo: number, hi: number): number {
@@ -30,10 +32,31 @@ function isLimitedDiscoveryLiveType(liveType: string): boolean {
   return liveType === "Taiban" || liveType === "Festival" || liveType === "Joint";
 }
 
+function liveAudienceLayerWeights(liveType: string): Record<AudienceLayer, number> {
+  const key = String(liveType ?? "").trim().toLowerCase();
+  if (key === "festival") return { public: 0.58, otaku: 0.34, core: 0.08 };
+  if (key === "concert" || key === "one-man") return { public: 0.2, otaku: 0.43, core: 0.37 };
+  if (key === "taiban" || key === "joint") return { public: 0.12, otaku: 0.56, core: 0.32 };
+  if (key === "tokutenkai") return { public: 0.02, otaku: 0.26, core: 0.72 };
+  return { public: 0.16, otaku: 0.46, core: 0.38 };
+}
+
+function profileFansByLayer(profile: FinanceAudienceProfile, layer: AudienceLayer): number {
+  if (layer === "public") return profile.publicFans;
+  if (layer === "otaku") return profile.otakuFans;
+  return profile.coreFans;
+}
+
 function avgFloat(...values: number[]): number {
   const v = values.filter((x) => Number.isFinite(x));
   if (!v.length) return 0;
   return v.reduce((a, b) => a + b, 0) / v.length;
+}
+
+function harmonicMean(...values: number[]): number {
+  const v = values.filter((x) => Number.isFinite(x) && x > 0);
+  if (!v.length) return 0;
+  return v.length / v.reduce((sum, x) => sum + 1 / x, 0);
 }
 
 function hexDigestUtf8(message: string): string {
@@ -465,6 +488,14 @@ function expectationScore(
 }
 
 export interface LiveResultPayload extends Record<string, unknown> {
+  live_skill: number;
+  live_appeal: number;
+  fan_draw: number;
+  fan_flow: Record<string, unknown>[];
+  fan_acquisition: number;
+  fan_retention: number;
+  fan_deepening: number;
+  fan_churn: number;
   performance_score: number;
   audience_satisfaction: number;
   expectation_score: number;
@@ -478,6 +509,129 @@ export interface LiveResultPayload extends Record<string, unknown> {
   fan_gain: number;
   popularity_gain: number;
   member_scores: Record<string, unknown>[];
+}
+
+function estimateLiveFanFlow(args: {
+  audienceProfile: FinanceAudienceProfile;
+  liveType: string;
+  attendance: number;
+  exposurePool: number;
+  liveAppeal: number;
+  audienceSatisfaction: number;
+  expectationGap: number;
+  noveltyScore: number;
+  tokutenkaiActualTickets: number;
+  tokutenkaiDemand: number;
+  lineupTokutenkaiSalesStrength: number;
+  topTokutenkaiSalesStrength: number;
+}): {
+  rows: Record<string, unknown>[];
+  acquisition: number;
+  retention: number;
+  deepening: number;
+  churn: number;
+  net: number;
+} {
+  const weights = liveAudienceLayerWeights(args.liveType);
+  const totalFans = Math.max(
+    1,
+    args.audienceProfile.publicFans + args.audienceProfile.otakuFans + args.audienceProfile.coreFans,
+  );
+  const fanServiceScore = clamp(
+    45 +
+      Math.min(22, (args.tokutenkaiActualTickets / Math.max(1, args.attendance)) * 180) +
+      Math.min(16, (args.tokutenkaiActualTickets / Math.max(1, args.tokutenkaiDemand)) * 14) +
+      (args.lineupTokutenkaiSalesStrength - 6.0) * 7 +
+      (args.topTokutenkaiSalesStrength - 6.2) * 3,
+    20,
+    100,
+  );
+  const appealLift = clamp((args.liveAppeal - 55) / 45, -0.55, 1.0);
+  const satisfactionLift = clamp((args.audienceSatisfaction - 55) / 45, -0.65, 1.0);
+  const expectationLift = clamp(args.expectationGap / 45, -0.5, 0.75);
+  const serviceLift = clamp((fanServiceScore - 55) / 45, -0.45, 1.0);
+  const noveltyLift = clamp((args.noveltyScore - 4) / 18, -0.18, 0.45);
+
+  const layerBaseConversion: Record<AudienceLayer, number> = {
+    public: 0.012,
+    otaku: 0.028,
+    core: 0.006,
+  };
+  const layerRetentionExposure: Record<AudienceLayer, number> = {
+    public: 0.015,
+    otaku: 0.035,
+    core: 0.08,
+  };
+  const rows: Record<string, unknown>[] = [];
+  let acquisition = 0;
+  let retention = 0;
+  let deepening = 0;
+  let churn = 0;
+
+  for (const layer of ["public", "otaku", "core"] as const) {
+    const seen = Math.max(0, Math.round(args.exposurePool * weights[layer]));
+    const existingFans = profileFansByLayer(args.audienceProfile, layer);
+    const outsiderShare = clamp(1 - existingFans / totalFans, 0.12, 0.88);
+    const acquisitionPool = layer === "core" ? seen * 0.25 : seen * outsiderShare;
+    const conversionRate = clamp(
+      layerBaseConversion[layer] *
+        (1 + appealLift * (layer === "public" ? 0.95 : 0.75)) *
+        (1 + satisfactionLift * 0.45) *
+        (1 + expectationLift * 0.35) *
+        (1 + noveltyLift),
+      0,
+      layer === "public" ? 0.055 : layer === "otaku" ? 0.085 : 0.025,
+    );
+    const acquired = Math.max(0, Math.round(acquisitionPool * conversionRate));
+
+    const retainedPool = Math.min(existingFans, Math.round(seen * layerRetentionExposure[layer]));
+    const retentionRate = clamp(
+      0.45 + satisfactionLift * 0.2 + serviceLift * (layer === "core" ? 0.26 : 0.16),
+      0.12,
+      0.9,
+    );
+    const retained = Math.max(0, Math.round(retainedPool * retentionRate));
+    const deepeningRate = clamp(
+      0.012 +
+        Math.max(0, satisfactionLift) * 0.018 +
+        Math.max(0, serviceLift) * (layer === "core" ? 0.04 : 0.026),
+      0,
+      layer === "core" ? 0.09 : 0.045,
+    );
+    const deepened = Math.max(0, Math.round(retained * deepeningRate));
+    const churnRate = clamp(
+      0.004 + Math.max(0, -satisfactionLift) * 0.035 + Math.max(0, -serviceLift) * (layer === "core" ? 0.018 : 0.01),
+      0,
+      layer === "core" ? 0.06 : 0.04,
+    );
+    const lost = Math.max(0, Math.round(retainedPool * churnRate));
+
+    acquisition += acquired;
+    retention += retained;
+    deepening += deepened;
+    churn += lost;
+    rows.push({
+      layer,
+      exposed: seen,
+      acquisition_pool: Math.round(acquisitionPool),
+      acquired,
+      retained,
+      deepened,
+      churned: lost,
+      conversion_rate: Math.round(conversionRate * 10000) / 100,
+      retention_rate: Math.round(retentionRate * 10000) / 100,
+      fan_service_score: Math.round(fanServiceScore * 100) / 100,
+    });
+  }
+
+  return {
+    rows,
+    acquisition,
+    retention,
+    deepening,
+    churn,
+    net: acquisition - churn,
+  };
 }
 
 export function resolveGroupLiveResultWeb(
@@ -544,6 +698,22 @@ export function resolveGroupLiveResultWeb(
   const performanceScore = clamp(rosterScore + synergyBonus + noise + setlistEffect.score_delta, 25, 100);
 
   const expectation = expectationScore(group, members, liveType, profileStrength, noveltyScore);
+  const technicalFloor20 = members.length > 0
+    ? avgFloat(
+        ...members.map((m) => {
+          const comp = memberLiveComponentScores(m, refIso);
+          return harmonicMean(comp.vocal, comp.dance, Math.max(1, memberConditionScore(m) / 5.0));
+        }),
+      )
+    : 9.0;
+  const technicalFloor = clamp((technicalFloor20 / 20.0) * 100.0, 20, 100);
+  const technicalModifier = clamp(0.68 + (technicalFloor - 45.0) / 95.0, 0.58, 1.18);
+  const charismaSignal = clamp(
+    averageRating * 9.0 + noveltyScore * 0.55 + Math.max(0, synergyBonus) * 1.15,
+    20,
+    100,
+  );
+  const liveSkill = clamp(performanceScore * 0.72 + technicalFloor * 0.28, 20, 100);
 
   const expectedTickets = Math.max(0, Math.trunc(num(live.tokutenkai_expected_tickets, 0)));
   const capacity = Math.max(0, Math.trunc(num(live.capacity, 0)));
@@ -559,7 +729,7 @@ export function resolveGroupLiveResultWeb(
 
   if (capacity > 0) {
     let demandAnchor = clamp(
-      (profileStrength / 100.0) * 0.8 + (performanceScore / 100.0) * 0.42 + (noveltyScore / 100.0) * 0.15,
+      (profileStrength / 100.0) * 0.88 + (liveSkill / 100.0) * 0.24 + (performanceScore / 100.0) * 0.12 + (noveltyScore / 100.0) * 0.15,
       0.12,
       1.0,
     );
@@ -591,6 +761,11 @@ export function resolveGroupLiveResultWeb(
 
   const audienceSatisfaction = clamp(
     performanceScore * 0.74 + profileStrength * 0.16 + noveltyScore * 1.1 + deterministicNoise(`audi:${live.uid}`) * 3.0,
+    20,
+    100,
+  );
+  const liveAppeal = clamp(
+    (charismaSignal * 0.55 + audienceSatisfaction * 0.25 + performanceScore * 0.2) * technicalModifier,
     20,
     100,
   );
@@ -632,17 +807,34 @@ export function resolveGroupLiveResultWeb(
     discoveryPool = attendance;
     conversionRate =
       0.015 +
-      (performanceScore - 60.0) / 180.0 +
+      (liveAppeal - 60.0) / 170.0 +
+      (performanceScore - 60.0) / 360.0 +
       (averageRating - 6.0) / 12.0 +
       (audienceSatisfaction - 60.0) / 300.0 +
       (noveltyScore - 50.0) / 600.0 +
       expectationGap / 300.0;
     conversionRate = clamp(conversionRate, -0.08, 0.15);
   } else {
-    conversionRate = (baseDiscovery[liveType] ?? 0.016) + expectationGap / 60.0 + noveltyScore / 180.0;
+    conversionRate = (baseDiscovery[liveType] ?? 0.016) + expectationGap / 70.0 + (liveAppeal - 60.0) / 240.0 + noveltyScore / 180.0;
     conversionRate = clamp(conversionRate, -0.1, 0.22);
   }
-  const fanGain = Math.round(discoveryPool * conversionRate);
+  const legacyFanGain = Math.round(discoveryPool * conversionRate);
+  const fanFlow = estimateLiveFanFlow({
+    audienceProfile,
+    liveType,
+    attendance,
+    exposurePool: discoveryPool,
+    liveAppeal,
+    audienceSatisfaction,
+    expectationGap,
+    noveltyScore,
+    tokutenkaiActualTickets: actualTickets,
+    tokutenkaiDemand: chekiDemand,
+    lineupTokutenkaiSalesStrength: lineupSalesStrength,
+    topTokutenkaiSalesStrength: topSellerStrength,
+  });
+  const fanGain = Math.round(fanFlow.net * 0.72 + legacyFanGain * 0.28);
+  const fanDraw = Math.max(0, Math.round(attendance));
 
   let popularityGain = 0;
   if (expectationGap >= 18 || audienceSatisfaction >= 82) popularityGain = 2;
@@ -651,6 +843,9 @@ export function resolveGroupLiveResultWeb(
   else if (expectationGap <= -8 || audienceSatisfaction < 42) popularityGain = -1;
 
   return {
+    live_skill: Math.round(liveSkill * 100) / 100,
+    live_appeal: Math.round(liveAppeal * 100) / 100,
+    fan_draw: fanDraw,
     performance_score: Math.round(performanceScore * 100) / 100,
     audience_satisfaction: Math.round(audienceSatisfaction * 100) / 100,
     expectation_score: Math.round(expectation * 100) / 100,
@@ -661,6 +856,11 @@ export function resolveGroupLiveResultWeb(
     tokutenkai_actual_tickets: Math.max(0, actualTickets),
     tokutenkai_demographic_demand: Math.max(0, chekiDemand),
     live_ticket_demographic_demand: Math.max(0, liveTicketDemographicDemand),
+    fan_flow: fanFlow.rows,
+    fan_acquisition: fanFlow.acquisition,
+    fan_retention: fanFlow.retention,
+    fan_deepening: fanFlow.deepening,
+    fan_churn: fanFlow.churn,
     fan_gain: fanGain,
     average_member_rating: Math.round(averageRating * 100) / 100,
     popularity_gain: popularityGain,
@@ -722,8 +922,11 @@ export function applyLiveResultToSnapshot(
     ensureIdolSimulationDefaults(idol);
     const uid = String(idol.uid ?? "");
     const memberScore = scoreByUid.get(uid) ?? performanceScore;
+    const salesScore = salesByUid.get(uid) ?? 6.0;
     const weight =
-      fanGain >= 0 ? Math.max(0.25, memberScore / 100.0) : Math.max(0.25, (120.0 - memberScore) / 100.0);
+      fanGain >= 0
+        ? Math.max(0.25, memberScore / 140.0 + Math.max(0, salesScore - 5.5) / 7.5)
+        : Math.max(0.25, (120.0 - memberScore) / 100.0 + Math.max(0, 6.2 - salesScore) / 8.0);
     memberWeights.push({ idol, weight });
     totalWeight += weight;
   }

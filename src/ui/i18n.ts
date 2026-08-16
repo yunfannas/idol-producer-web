@@ -22,6 +22,7 @@ const EN: Dict = {
   opening_tagline:
     "Choose how to enter the world: start a fresh scenario, load browser save slots, or browse the database first.",
   opening_default_scenario: "Default scenario preset: {name} (opening {date}).",
+  opening_continue: "Continue",
   opening_resume: "Resume",
   opening_new_game: "New Game",
   opening_load: "Load",
@@ -52,6 +53,7 @@ const EN: Dict = {
   opening_game_manual: "Game manual",
   opening_oshi_chart: "HEROINES oshi chart",
   opening_ikonoijoy_best10: "IKONOIJOY best 10",
+  opening_lineup_chronicle: "iLiFE! lineup chronicle",
   opening_account_name: "Account name",
   opening_enter_account_name: "Enter account name",
   opening_password_later: "Password support can be added later.",
@@ -65,6 +67,7 @@ const EN: Dict = {
   shell_game_manual: "Game manual",
   shell_oshi_chart: "HEROINES oshi chart",
   shell_ikonoijoy_best10: "IKONOIJOY best 10",
+  shell_lineup_chronicle: "iLiFE! lineup chronicle",
   shell_home: "Home",
   shell_main_menu: "Main menu",
   shell_slot: "Slot",
@@ -256,7 +259,7 @@ const EN: Dict = {
   lives_league_panel_history: "History",
   lives_league_no_history: "No historical league finals are available yet.",
   lives_league_sim_note:
-    "League outcomes are reference anchors: attributes, fans, lineup, setlist, training, and scheduling should eventually move your standing.",
+    "League rank mostly measures pre-event mobilization: FC votes close before the show, and on-site support is registered at entry. Strong performances mainly convert fans for future rounds.",
   lives_league_zone_legend_i:
     "Green: FINAL (top 4). Red: promotion playoff (bottom 4). Outcomes are not assumed for your group.",
   lives_league_zone_legend_ii: "Amber: promotion playoff (top 4).",
@@ -368,6 +371,7 @@ const ZH_CN: Dict = {
     "\u9009\u62e9\u8fdb\u5165\u8fd9\u4e2a\u4e16\u754c\u7684\u65b9\u5f0f\uff1a\u5f00\u59cb\u65b0\u5267\u672c\uff0c\u8bfb\u53d6\u6d4f\u89c8\u5668\u5b58\u6863\uff0c\u6216\u5148\u6d4f\u89c8\u6570\u636e\u5e93\u3002",
   opening_default_scenario:
     "\u9ed8\u8ba4\u5267\u672c\uff1a{name}\uff08\u5f00\u59cb\u65e5\u671f {date}\uff09\u3002",
+  opening_continue: "\u7ee7\u7eed",
   opening_resume: "\u7ee7\u7eed",
   opening_new_game: "\u65b0\u6e38\u620f",
   opening_load: "\u8bfb\u53d6",
@@ -400,6 +404,7 @@ const ZH_CN: Dict = {
   opening_game_manual: "\u6e38\u620f\u624b\u518c",
   opening_oshi_chart: "HEROINES \u63a8\u3057\u30c1\u30e3\u30fc\u30c8",
   opening_ikonoijoy_best10: "IKONOIJOY \u30d9\u30b9\u30c810",
+  opening_lineup_chronicle: "iLiFE! \u6b74\u4ee3\u30e9\u30a4\u30f3\u30ca\u30c3\u30d7\u6620\u50cf\u5e74\u8868",
   opening_account_name: "\u8d26\u53f7\u540d\u79f0",
   opening_enter_account_name: "\u8f93\u5165\u8d26\u53f7\u540d\u79f0",
   opening_password_later: "\u5bc6\u7801\u529f\u80fd\u53ef\u4ee5\u7a0d\u540e\u518d\u52a0\u5165\u3002",
@@ -413,6 +418,7 @@ const ZH_CN: Dict = {
   shell_game_manual: "\u6e38\u620f\u624b\u518c",
   shell_oshi_chart: "HEROINES \u63a8\u3057\u30c1\u30e3\u30fc\u30c8",
   shell_ikonoijoy_best10: "IKONOIJOY \u30d9\u30b9\u30c810",
+  shell_lineup_chronicle: "iLiFE! \u6b74\u4ee3\u30e9\u30a4\u30f3\u30ca\u30c3\u30d7\u6620\u50cf\u5e74\u8868",
   shell_home: "\u4e3b\u9875",
   shell_main_menu: "\u4e3b\u83dc\u5355",
   shell_slot: "\u5b58\u6863\u69fd",
@@ -606,7 +612,7 @@ const ZH_CN: Dict = {
   lives_league_panel_history: "\u5386\u53f2",
   lives_league_no_history: "\u6682\u65e0\u53ef\u7528\u7684\u5386\u53f2\u8054\u8d5b\u7ed3\u679c\u3002",
   lives_league_sim_note:
-    "\u8054\u8d5b\u7ed3\u679c\u662f\u53c2\u8003\u951a\u70b9\uff1a\u6210\u5458\u5c5e\u6027\u3001\u7c89\u4e1d\u3001\u9635\u5bb9\u3001\u6b4c\u5355\u3001\u8bad\u7ec3\u4e0e\u6392\u671f\uff0c\u6700\u7ec8\u5e94\u80fd\u62c9\u52a8\u4f60\u7684\u79ef\u5206\u699c\u4f4d\u7f6e\u3002",
+    "联赛名次主要测赛前动员：FC 票在演出前截止，现场动员在入场时登记。优秀舞台更主要转化为后续轮次的粉丝与动员。",
   lives_league_zone_legend_i:
     "\u7eff\uff1aFINAL\uff08\u524d 4\uff09\u3002\u7ea2\uff1a\u5347\u964d\u7ea7\uff08\u540e 4\uff09\u3002\u4e0d\u4f1a\u6309\u5386\u53f2\u7ed3\u679c\u5047\u5b9a\u672c\u7ec4\u8fdb\u5165\u51b3\u8d5b/\u5347\u964d\u7ea7\u3002",
   lives_league_zone_legend_ii: "\u9ec4\uff1a\u5347\u964d\u7ea7\uff08\u524d 4\uff09\u3002",
@@ -782,4 +788,9 @@ export function oshiChartHref(): string {
 /** Top-10 favorite song selector for IKONOIJOY (=LOVE / ≠ME / ≒JOY). */
 export function ikonoijoyBest10Href(): string {
   return "./ikonoijoy/index.html";
+}
+
+/** Historical on-stage lineup chronicle (static page under public/lineup). */
+export function lineupChronicleHref(): string {
+  return "./lineup/ilife/index.html";
 }
