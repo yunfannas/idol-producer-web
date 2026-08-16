@@ -30,6 +30,12 @@ function staticToolIndexes(): Plugin {
           res.end(fs.readFileSync(filePath));
           return;
         }
+        if (url === "/lineup/akishibu" || url === "/lineup/akishibu/") {
+          const filePath = path.join(rootDir, "public", "lineup", "akishibu", "index.html");
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(fs.readFileSync(filePath));
+          return;
+        }
         if (url === "/formation-editor" || url === "/formation-editor/" || url === "/formation-editor.html") {
           const filePath = path.join(rootDir, "formation-editor.html");
           res.setHeader("Content-Type", "text/html; charset=utf-8");

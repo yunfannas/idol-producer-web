@@ -54,6 +54,7 @@ const EN: Dict = {
   opening_oshi_chart: "HEROINES oshi chart",
   opening_ikonoijoy_best10: "IKONOIJOY best 10",
   opening_lineup_chronicle: "iLiFE! lineup chronicle",
+  opening_lineup_chronicle_akishibu: "Akishibu project lineup chronicle",
   opening_account_name: "Account name",
   opening_enter_account_name: "Enter account name",
   opening_password_later: "Password support can be added later.",
@@ -68,6 +69,7 @@ const EN: Dict = {
   shell_oshi_chart: "HEROINES oshi chart",
   shell_ikonoijoy_best10: "IKONOIJOY best 10",
   shell_lineup_chronicle: "iLiFE! lineup chronicle",
+  shell_lineup_chronicle_akishibu: "Akishibu project lineup chronicle",
   shell_home: "Home",
   shell_main_menu: "Main menu",
   shell_slot: "Slot",
@@ -405,6 +407,7 @@ const ZH_CN: Dict = {
   opening_oshi_chart: "HEROINES \u63a8\u3057\u30c1\u30e3\u30fc\u30c8",
   opening_ikonoijoy_best10: "IKONOIJOY \u30d9\u30b9\u30c810",
   opening_lineup_chronicle: "iLiFE! \u6b74\u4ee3\u30e9\u30a4\u30f3\u30ca\u30c3\u30d7\u6620\u50cf\u5e74\u8868",
+  opening_lineup_chronicle_akishibu: "\u30a2\u30ad\u30b7\u30d6project \u6b74\u4ee3\u30e9\u30a4\u30f3\u30ca\u30c3\u30d7\u6620\u50cf\u5e74\u8868",
   opening_account_name: "\u8d26\u53f7\u540d\u79f0",
   opening_enter_account_name: "\u8f93\u5165\u8d26\u53f7\u540d\u79f0",
   opening_password_later: "\u5bc6\u7801\u529f\u80fd\u53ef\u4ee5\u7a0d\u540e\u518d\u52a0\u5165\u3002",
@@ -419,6 +422,7 @@ const ZH_CN: Dict = {
   shell_oshi_chart: "HEROINES \u63a8\u3057\u30c1\u30e3\u30fc\u30c8",
   shell_ikonoijoy_best10: "IKONOIJOY \u30d9\u30b9\u30c810",
   shell_lineup_chronicle: "iLiFE! \u6b74\u4ee3\u30e9\u30a4\u30f3\u30ca\u30c3\u30d7\u6620\u50cf\u5e74\u8868",
+  shell_lineup_chronicle_akishibu: "\u30a2\u30ad\u30b7\u30d6project \u6b74\u4ee3\u30e9\u30a4\u30f3\u30ca\u30c3\u30d7\u6620\u50cf\u5e74\u8868",
   shell_home: "\u4e3b\u9875",
   shell_main_menu: "\u4e3b\u83dc\u5355",
   shell_slot: "\u5b58\u6863\u69fd",
@@ -793,4 +797,9 @@ export function ikonoijoyBest10Href(): string {
 /** Historical on-stage lineup chronicle (static page under public/lineup). */
 export function lineupChronicleHref(): string {
   return "./lineup/ilife/index.html";
+}
+
+/** Akishibu project lineup chronicle (static page under public/lineup). */
+export function akishibuLineupChronicleHref(): string {
+  return "./lineup/akishibu/index.html";
 }

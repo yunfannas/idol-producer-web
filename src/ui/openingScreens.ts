@@ -8,7 +8,7 @@ import { compareStartupGroupRows, groupTierRowMap, sortGroupsForStartupPick } fr
 import { inferLetterTier } from "../engine/financeSystem";
 import { AUTOSAVE_SLOT, type SlotSummary } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
-import { gameManualHref, ikonoijoyBest10Href, languageOptions, lineupChronicleHref, oshiChartHref, t, type UiLanguage } from "./i18n";
+import { akishibuLineupChronicleHref, gameManualHref, ikonoijoyBest10Href, languageOptions, lineupChronicleHref, oshiChartHref, t, type UiLanguage } from "./i18n";
 
 export type OpeningScreen = "login" | "home" | "new_game" | "load_slot";
 
@@ -79,6 +79,13 @@ export function renderOpeningLogin(
       <button type="button" class="opening-btn opening-btn-primary" id="opening-load-slot" ${disabled}>${htmlEsc(t(lang, "opening_load"))}</button>
     </div>
     <p class="opening-status-msg">${htmlEsc(dbReady ? status : t(lang, "opening_db_loading"))}</p>
+    <p class="opening-manual-row">
+      <a class="opening-manual-link" href="${htmlEsc(gameManualHref(lang))}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_game_manual"))}</a>
+      <a class="opening-manual-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_oshi_chart"))}</a>
+      <a class="opening-manual-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_ikonoijoy_best10"))}</a>
+      <a class="opening-manual-link" href="${htmlEsc(lineupChronicleHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_lineup_chronicle"))}</a>
+      <a class="opening-manual-link" href="${htmlEsc(akishibuLineupChronicleHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_lineup_chronicle_akishibu"))}</a>
+    </p>
   </div>
 </section>`;
 }
@@ -118,6 +125,7 @@ export function renderOpeningHome(
     <a class="opening-manual-link" href="${htmlEsc(oshiChartHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_oshi_chart"))}</a>
     <a class="opening-manual-link" href="${htmlEsc(ikonoijoyBest10Href())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_ikonoijoy_best10"))}</a>
     <a class="opening-manual-link" href="${htmlEsc(lineupChronicleHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_lineup_chronicle"))}</a>
+    <a class="opening-manual-link" href="${htmlEsc(akishibuLineupChronicleHref())}" target="_blank" rel="noopener noreferrer">${htmlEsc(t(lang, "opening_lineup_chronicle_akishibu"))}</a>
   </p>
 
   <div class="opening-status fm-card-opening">
