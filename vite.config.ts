@@ -18,6 +18,18 @@ function staticToolIndexes(): Plugin {
           res.end(fs.readFileSync(filePath));
           return;
         }
+        if (url === "/ikonoijoy" || url === "/ikonoijoy/") {
+          const filePath = path.join(rootDir, "public", "ikonoijoy", "index.html");
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(fs.readFileSync(filePath));
+          return;
+        }
+        if (url === "/lineup/ilife" || url === "/lineup/ilife/") {
+          const filePath = path.join(rootDir, "public", "lineup", "ilife", "index.html");
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(fs.readFileSync(filePath));
+          return;
+        }
         if (url === "/formation-editor" || url === "/formation-editor/" || url === "/formation-editor.html") {
           const filePath = path.join(rootDir, "formation-editor.html");
           res.setHeader("Content-Type", "text/html; charset=utf-8");

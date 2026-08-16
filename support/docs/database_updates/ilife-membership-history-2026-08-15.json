@@ -1,0 +1,56 @@
+{
+  "title": "iLiFE! membership history catalog patch",
+  "date": "2026-08-15",
+  "group_uid": "aUxpRkUh",
+  "skill": "skills/idol-database-update/",
+  "tool": "tools/reality-data/patchIlifeMembershipHistory.mjs",
+  "primary_source": {
+    "title": "ILiFE! - Wikipedia (ja)",
+    "url": "https://ja.wikipedia.org/wiki/ILiFE!",
+    "coverage": "fallback_needed then wikipedia for dated membership history"
+  },
+  "secondary_sources": [
+    "https://jpop.fandom.com/wiki/ILiFE!"
+  ],
+  "evidence": "reports/ilife-lineup-ranking/catalog_audit.json",
+  "lab_files": [
+    "public/data/idols.json",
+    "public/data/groups.json",
+    "public/data/scenarios/scenario_6/idols.json"
+  ],
+  "web_files": [
+    "public/data/idols.json",
+    "public/data/groups.json",
+    "public/data/scenarios/scenario_6/idols.json"
+  ],
+  "not_touched": [
+    "public/data/scenarios/scenario_6/groups.json"
+  ],
+  "opening_roster_note": "Scenario 6 opening date remains 2025-07-05. This patch does not copy main current member_uids into Scenario 6. Historical group_history on idol rows is updated; opening arrays stay rebuilt from dated history.",
+  "changes": {
+    "date_fixes": [
+      "恋星はるか end_date 2026-05-24",
+      "恋春ねね end_date 2025-12-28",
+      "琥珀しえる start_date 2021-11-27",
+      "向日えな start_date 2021-11-28",
+      "響羽リズ end_date 2023-09-24",
+      "真守みゅう start_date 2026-05-30"
+    ],
+    "duplicate_cleanup": [
+      "乃上楓 iLiFE stint removed",
+      "佐藤ねね undated iLiFE aliases removed",
+      "あいす/こるね/天羽 duplicate iLiFE rows collapsed"
+    ],
+    "status": [
+      "support notes for 響羽リズ, 福丸うさ, こるね, 恋星はるか, 恋春ねね",
+      "有栖るな hiatus 2024-09-19",
+      "天羽しおり hiatus 2023-06-09 to 2023-07-01",
+      "華瀬まい regular split plus 候補生 2024-01-04 to 2024-07-30"
+    ],
+    "main_groups_past_roster": {
+      "removed": ["響羽凛瞳", "佐藤ねね", "乃上楓"],
+      "added": ["恋星はるか"]
+    }
+  },
+  "merge_command": "node tools/reality-data/patchIlifeMembershipHistory.mjs --root H:\\Qsync\\Project\\idol-producer-web"
+}
