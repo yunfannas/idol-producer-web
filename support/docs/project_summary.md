@@ -1,5 +1,13 @@
 # Project Summary
 
+## 2026-08-23 — Database consolidation + agent index
+
+- **Restored corrupted main catalog:** `public/data/groups.json` and `public/data/songs.json` were truncated mid-write (invalid JSON). Reverted to last good HEAD; both parse and integrity check passes.
+- **Added agent-facing database index:**
+  - `support/docs/GAME_DATABASE_INDEX.md` — master doc (two-DB model, file map, schemas, agent routing, integrity rules)
+  - `support/scripts/buildGameDatabaseIndex.mjs` — regenerates `support/docs/generated/game_database_index.json` (lookups, allowlist, counts, script index)
+- **Integrity @ consolidation:** `node support/scripts/checkMainScenarioDbIntegrity.mjs` → PASS (2 warnings: undated alias histories on YAMINABE, ヒロインズ研究生大阪 — rosters still correct).
+
 ## 2026-07-26 — Scenario 6: corruption fix + landing copy update
 
 - Fixed **major Scenario 6 roster corruption** (notably `iLiFE!` and `アキシブproject`) caused by undated `group_history` alias rows being treated as “active” during a scenario refresh.
@@ -17,7 +25,7 @@
 
 - Updated Scenario 6 landing copy:
   - `public/data/scenarios/presets/scenario6.json`
-  - Title: `Scenario 6: Festivals and Challenges`
+  - Title: `Scenario 6: Festivals and challenges`
   - Background/description (EN + ZH) to match the new theme.
 - Updated desktop reference landing label to match:
   - `support/reference/python-desktop/main_ui.py`
