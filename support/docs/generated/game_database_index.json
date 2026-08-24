@@ -1,0 +1,5131 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-24T01:19:58.624Z",
+  "repo": "idol-producer-web",
+  "docs": {
+    "master_index": "support/docs/GAME_DATABASE_INDEX.md",
+    "game_logic": "support/docs/reference/game_logic_model.md",
+    "web_port_plan": "support/docs/WEB_GAME_PLAN.md",
+    "database_refresh": "support/docs/database_updates/database_refresh_playbook.md",
+    "scenario6_playable": "support/docs/scenario6_available_groups.txt"
+  },
+  "databases": {
+    "main": {
+      "label": "Living catalog (today)",
+      "paths": {
+        "groups": "public/data/groups.json",
+        "idols": "public/data/idols.json",
+        "songs": "public/data/songs.json",
+        "groups_staging": "public/data/groups_update.json",
+        "songs_staging": "public/data/songs_update.json"
+      },
+      "counts": {
+        "groups": 688,
+        "idols": 7033,
+        "songs": 16081,
+        "idols_with_portrait": 4696,
+        "idols_with_birthday": 5174,
+        "idols_with_group_history": 6944
+      }
+    },
+    "scenario_6": {
+      "label": "Time-locked snapshot",
+      "opening_date": "2025-07-05",
+      "preset": "public/data/scenarios/presets/scenario6.json",
+      "paths": {
+        "groups": "public/data/scenarios/scenario_6/groups.json",
+        "idols": "public/data/scenarios/scenario_6/idols.json",
+        "songs": "public/data/scenarios/scenario_6/songs.json",
+        "group_tiers": "public/data/scenarios/scenario_6/group_tiers.json",
+        "startup_allowlist": "public/data/scenarios/scenario_6/startup_allowlist.json",
+        "groups_update": "public/data/scenarios/scenario_6/groups_update.json"
+      },
+      "counts": {
+        "groups": 475,
+        "idols": 6653,
+        "allowlist": 86,
+        "tier_counts": {
+          "S": 5,
+          "A": 4,
+          "B": 10,
+          "C": 25,
+          "D": 137,
+          "E": 204,
+          "F": 10,
+          "I": 80
+        }
+      }
+    }
+  },
+  "integrity": {
+    "checker": "node support/scripts/checkMainScenarioDbIntegrity.mjs",
+    "skill": ".cursor/skills/scenario-db-integrity/SKILL.md",
+    "canaries_at_opening": {
+      "=LOVE": 10,
+      "iLiFE!": 9,
+      "高嶺のなでしこ": 10,
+      "アキシブproject": 8
+    },
+    "rule": "Scenario rosters match dated group_history @ opening_date — NOT main catalog member_uids."
+  },
+  "query_hints": {
+    "find_group_by_name": "grep name in groups.json OR use main_group_lookup below",
+    "find_idol_by_uid": "grep uid in idols.json",
+    "find_songs_for_group": "filter songs.json by group_uid OR read group.song_uids",
+    "scenario_playable_only": "startup_allowlist.json names_in_order (86 groups)"
+  },
+  "allowlist": [
+    {
+      "name": "=LOVE",
+      "uid": "PUxPVkU",
+      "name_romanji": "=LOVE",
+      "tier": "A",
+      "fans": 296768,
+      "main_member_count": 10,
+      "opening_member_count": 10,
+      "song_uids_count": 138
+    },
+    {
+      "name": "iLiFE!",
+      "uid": "aUxpRkUh",
+      "name_romanji": "iLiFE!",
+      "tier": "B",
+      "fans": 129753,
+      "main_member_count": 9,
+      "opening_member_count": 9,
+      "song_uids_count": 60
+    },
+    {
+      "name": "高嶺のなでしこ",
+      "uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+      "name_romanji": "Takane_no_Nadeshiko",
+      "tier": "C",
+      "fans": 26283,
+      "main_member_count": 10,
+      "opening_member_count": 10,
+      "song_uids_count": 40
+    },
+    {
+      "name": "アキシブproject",
+      "uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "name_romanji": "Akishibu project",
+      "tier": "D",
+      "fans": 5166,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 45
+    },
+    {
+      "name": "FRUITS ZIPPER",
+      "uid": "RlJVSVRTIFpJUFBFUg",
+      "name_romanji": "FRUITS_ZIPPER",
+      "tier": "A",
+      "fans": 305959,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 58
+    },
+    {
+      "name": "Broken By The Scream",
+      "uid": "QnJva2VuIEJ5IFRoZSBTY3JlYW0",
+      "name_romanji": "BROKEN_BY_THE_SCREAM",
+      "tier": "C",
+      "fans": 66331,
+      "main_member_count": 4,
+      "opening_member_count": 4,
+      "song_uids_count": 11
+    },
+    {
+      "name": "CUTIE STREET",
+      "uid": "Q1VUSUUgU1RSRUVU",
+      "name_romanji": "CUTIE_STREET",
+      "tier": "B",
+      "fans": 238350,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 26
+    },
+    {
+      "name": "CANDY TUNE",
+      "uid": "Q0FORFkgVFVORQ",
+      "name_romanji": "CANDY_TUNE",
+      "tier": "B",
+      "fans": 125972,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 50
+    },
+    {
+      "name": "≠ME",
+      "uid": "4omgTUU",
+      "name_romanji": "≠ME",
+      "tier": "B",
+      "fans": 64622,
+      "main_member_count": 12,
+      "opening_member_count": 12,
+      "song_uids_count": 124
+    },
+    {
+      "name": "AVAM",
+      "uid": "QVZBTQ",
+      "name_romanji": "AVAM",
+      "tier": "C",
+      "fans": 23287,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 34
+    },
+    {
+      "name": "GENIC",
+      "uid": "R0VOSUM",
+      "name_romanji": "GENIC",
+      "tier": "D",
+      "fans": 23050,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 27
+    },
+    {
+      "name": "REIRIE",
+      "uid": "UkVJUklF",
+      "name_romanji": "REIRIE",
+      "tier": "D",
+      "fans": 16779,
+      "main_member_count": 2,
+      "opening_member_count": 2,
+      "song_uids_count": 12
+    },
+    {
+      "name": "CYNHN",
+      "uid": "Q1lOSE4",
+      "name_romanji": "CYNHN",
+      "tier": "D",
+      "fans": 13922,
+      "main_member_count": 4,
+      "opening_member_count": 4,
+      "song_uids_count": 38
+    },
+    {
+      "name": "ばってん少女隊",
+      "uid": "44Gw44Gj44Gm44KT5bCR5aWz6ZqK",
+      "name_romanji": "Batten_Shoujo-tai",
+      "tier": "D",
+      "fans": 12688,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 24
+    },
+    {
+      "name": "Negicco",
+      "uid": "TmVnaWNjbw",
+      "name_romanji": "Negicco",
+      "tier": "D",
+      "fans": 18532,
+      "main_member_count": 3,
+      "opening_member_count": 3,
+      "song_uids_count": 35
+    },
+    {
+      "name": "SWEET STEADY",
+      "uid": "U1dFRVQgU1RFQURZ",
+      "name_romanji": "SWEET_STEADY",
+      "tier": "C",
+      "fans": 30769,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 25
+    },
+    {
+      "name": "≒JOY",
+      "uid": "4omSSk9Z",
+      "name_romanji": "≒JOY",
+      "tier": "C",
+      "fans": 34091,
+      "main_member_count": 12,
+      "opening_member_count": 12,
+      "song_uids_count": 28
+    },
+    {
+      "name": "いぎなり東北産",
+      "uid": "44GE44GO44Gq44KK5p2x5YyX55Sj",
+      "name_romanji": "Iginari_Tohokusan",
+      "tier": "C",
+      "fans": 18487,
+      "main_member_count": 9,
+      "opening_member_count": 9,
+      "song_uids_count": 91
+    },
+    {
+      "name": "TENRIN",
+      "uid": "VEVOUklO",
+      "name_romanji": "TENRIN",
+      "tier": "D",
+      "fans": 6542,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 14
+    },
+    {
+      "name": "yosugala",
+      "uid": "eW9zdWdhbGE",
+      "name_romanji": "Yosugala",
+      "tier": "D",
+      "fans": 8329,
+      "main_member_count": 4,
+      "opening_member_count": 4,
+      "song_uids_count": 26
+    },
+    {
+      "name": "JamsCollection",
+      "uid": "SmFtc0NvbGxlY3Rpb24",
+      "name_romanji": "Jams_Collection",
+      "tier": "C",
+      "fans": 8936,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 60
+    },
+    {
+      "name": "ARCANA PROJECT",
+      "uid": "QVJDQU5BIFBST0pFQ1Q",
+      "name_romanji": "ARCANA_PROJECT",
+      "tier": "D",
+      "fans": 9405,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 16
+    },
+    {
+      "name": "NANIMONO",
+      "uid": "TkFOSU1PTk8",
+      "name_romanji": "NANIMONO",
+      "tier": "D",
+      "fans": 10083,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 11
+    },
+    {
+      "name": "Onephony",
+      "uid": "T25lcGhvbnk",
+      "name_romanji": "Onephony",
+      "tier": "D",
+      "fans": 4091,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 8
+    },
+    {
+      "name": "NEO JAPONISM",
+      "uid": "TkVPIEpBUE9OSVNN",
+      "name_romanji": "NEO_JAPONISM",
+      "tier": "C",
+      "fans": 11251,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 35
+    },
+    {
+      "name": "Devil ANTHEM.",
+      "uid": "RGV2aWwgQU5USEVNLg",
+      "name_romanji": "Devil_ANTHEM.",
+      "tier": "C",
+      "fans": 8343,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 32
+    },
+    {
+      "name": "FES☆TIVE",
+      "uid": "RkVT4piGVElWRQ",
+      "name_romanji": "FES☆TIVE",
+      "tier": "C",
+      "fans": 9894,
+      "main_member_count": 9,
+      "opening_member_count": 9,
+      "song_uids_count": 21
+    },
+    {
+      "name": "LinQ",
+      "uid": "TGluUQ",
+      "name_romanji": "LinQ",
+      "tier": "D",
+      "fans": 4268,
+      "main_member_count": 11,
+      "opening_member_count": 11,
+      "song_uids_count": 27
+    },
+    {
+      "name": "Ringwanderung",
+      "uid": "UmluZ3dhbmRlcnVuZw",
+      "name_romanji": "Ringwanderung",
+      "tier": "D",
+      "fans": 6722,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 47
+    },
+    {
+      "name": "タイトル未定",
+      "uid": "44K_44Kk44OI44Or5pyq5a6a",
+      "name_romanji": "Title_Mitei",
+      "tier": "C",
+      "fans": 4397,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 12
+    },
+    {
+      "name": "手羽先センセーション",
+      "uid": "5omL57695YWI44K744Oz44K744O844K344On44Oz",
+      "name_romanji": "Tebasaki_Sensation",
+      "tier": "D",
+      "fans": 6160,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 20
+    },
+    {
+      "name": "Luce Twinkle Wink☆",
+      "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
+      "name_romanji": "Luce_Twinkle_Wink☆",
+      "tier": "D",
+      "fans": 6106,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 13
+    },
+    {
+      "name": "おこさまぷれ〜と。",
+      "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
+      "name_romanji": "Zero_Project",
+      "tier": "D",
+      "fans": 5014,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 3
+    },
+    {
+      "name": "Dorothy Little Happy",
+      "uid": "RG9yb3RoeSBMaXR0bGUgSGFwcHk",
+      "name_romanji": "Dorothy_Little_Happy",
+      "tier": "D",
+      "fans": 4564,
+      "main_member_count": 1,
+      "opening_member_count": 1,
+      "song_uids_count": 20
+    },
+    {
+      "name": "のんふぃく！",
+      "uid": "44Gu44KT44G144GD44GP77yB",
+      "name_romanji": "Non¬Fiction",
+      "tier": "D",
+      "fans": 15566,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 35
+    },
+    {
+      "name": "夜光性アミューズ",
+      "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+      "name_romanji": "Yakousei_Amuse",
+      "tier": "D",
+      "fans": 14999,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 46
+    },
+    {
+      "name": "Merry BAD TUNE.",
+      "uid": "TWVycnkgQkFEIFRVTkUu",
+      "name_romanji": "Merry_BAD_TUNE.",
+      "tier": "D",
+      "fans": 3177,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 3
+    },
+    {
+      "name": "UtaGe!",
+      "uid": "VXRhR2Uh",
+      "name_romanji": "UtaGe!",
+      "tier": "D",
+      "fans": 2519,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 19
+    },
+    {
+      "name": "ポンコツコンポ",
+      "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+      "name_romanji": "Ponkotsu_Konpo",
+      "tier": "E",
+      "fans": 1811,
+      "main_member_count": 9,
+      "opening_member_count": 9,
+      "song_uids_count": 6
+    },
+    {
+      "name": "衛星とカラテア",
+      "uid": "6KGb5pif44Go44Kr44Op44OG44Ki",
+      "name_romanji": "Eisei_to_Karatea",
+      "tier": "E",
+      "fans": 2737,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 13
+    },
+    {
+      "name": "花魁道中",
+      "uid": "6Iqx6a2B6YGT5Lit",
+      "name_romanji": "Oiran_Dochu",
+      "tier": "E",
+      "fans": 2108,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 13
+    },
+    {
+      "name": "AZATOY",
+      "uid": "QVpBVE9Z",
+      "name_romanji": "AZATOY",
+      "tier": "E",
+      "fans": 1961,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 8
+    },
+    {
+      "name": "SITUASION",
+      "uid": "U0lUVUFTSU9O",
+      "name_romanji": "Situasion",
+      "tier": "D",
+      "fans": 3885,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 31
+    },
+    {
+      "name": "煌めき☆アンフォレント",
+      "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+      "name_romanji": "Kirameki☆Unforent",
+      "tier": "D",
+      "fans": 6061,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 45
+    },
+    {
+      "name": "LEIWAN",
+      "uid": "TEVJV0FO",
+      "name_romanji": "LEIWAN",
+      "tier": "D",
+      "fans": 3162,
+      "main_member_count": 4,
+      "opening_member_count": 4,
+      "song_uids_count": 57
+    },
+    {
+      "name": "Sweet Alley",
+      "uid": "U3dlZXQgQWxsZXk",
+      "name_romanji": "Sweet_Alley",
+      "tier": "E",
+      "fans": 1880,
+      "main_member_count": 9,
+      "opening_member_count": 9,
+      "song_uids_count": 8
+    },
+    {
+      "name": "MyDearDarlin'",
+      "uid": "TXlEZWFyRGFybGluJw",
+      "name_romanji": "MyDearDarlin'",
+      "tier": "D",
+      "fans": 3255,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 26
+    },
+    {
+      "name": "AIBECK",
+      "uid": "QUlCRUNL",
+      "name_romanji": "AIBECK",
+      "tier": "D",
+      "fans": 3145,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 49
+    },
+    {
+      "name": "STAiNY",
+      "uid": "U1RBaU5Z",
+      "name_romanji": "STAiNY",
+      "tier": "E",
+      "fans": 2710,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 21
+    },
+    {
+      "name": "PRSMIN",
+      "uid": "UFJTTUlO",
+      "name_romanji": "PRSMIN",
+      "tier": "E",
+      "fans": 2671,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 21
+    },
+    {
+      "name": "SAY-LA",
+      "uid": "U0FZLUxB",
+      "name_romanji": "SAY-LA",
+      "tier": "E",
+      "fans": 2504,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 20
+    },
+    {
+      "name": "にっぽんワチャチャ",
+      "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
+      "name_romanji": "Nippon_Wachacha",
+      "tier": "E",
+      "fans": 1957,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 10
+    },
+    {
+      "name": "ふわふわ",
+      "uid": "44G144KP44G144KP",
+      "name_romanji": "FuWa_FuWa",
+      "tier": "D",
+      "fans": 3688,
+      "main_member_count": 3,
+      "opening_member_count": 3,
+      "song_uids_count": 8
+    },
+    {
+      "name": "KRD8",
+      "uid": "S1JEOA",
+      "name_romanji": "KRD8",
+      "tier": "E",
+      "fans": 1578,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 21
+    },
+    {
+      "name": "STARMARIE",
+      "uid": "U1RBUk1BUklF",
+      "name_romanji": "STARMARIE",
+      "tier": "D",
+      "fans": 2929,
+      "main_member_count": 3,
+      "opening_member_count": 3,
+      "song_uids_count": 47
+    },
+    {
+      "name": "BANZAI JAPAN",
+      "uid": "QkFOWkFJIEpBUEFO",
+      "name_romanji": "BANZAI_JAPAN",
+      "tier": "E",
+      "fans": 1629,
+      "main_member_count": 10,
+      "opening_member_count": 10,
+      "song_uids_count": 12
+    },
+    {
+      "name": "iON!",
+      "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+      "name_romanji": "iON!",
+      "tier": "D",
+      "fans": 2824,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 3
+    },
+    {
+      "name": "AsIs",
+      "uid": "QXNJcw",
+      "name_romanji": "AsIs",
+      "tier": "E",
+      "fans": 1293,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 10
+    },
+    {
+      "name": "こみっきゅおん！",
+      "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
+      "name_romanji": "Komikkyon",
+      "tier": "E",
+      "fans": 510,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 3
+    },
+    {
+      "name": "パラディーク",
+      "uid": "44OR44Op44OH44Kj44O844Kv",
+      "name_romanji": "Paradeeq",
+      "tier": "E",
+      "fans": 1416,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 14
+    },
+    {
+      "name": "hakanai",
+      "uid": "aGFrYW5haQ",
+      "name_romanji": "Hakanai",
+      "tier": "E",
+      "fans": 1113,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 3
+    },
+    {
+      "name": "Melty BeaR",
+      "uid": "TWVsdHkgQmVhUg",
+      "name_romanji": "Melty_BeaR",
+      "tier": "E",
+      "fans": 702,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 2
+    },
+    {
+      "name": "点染テンセイ少女。",
+      "uid": "54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC",
+      "name_romanji": "Tensen Tensei Shoujo.",
+      "tier": "E",
+      "fans": 999,
+      "main_member_count": 10,
+      "opening_member_count": 10,
+      "song_uids_count": 19
+    },
+    {
+      "name": "GANGDEMIC",
+      "uid": "R0FOR0RFTUlD",
+      "name_romanji": "GANGDEMIC",
+      "tier": "E",
+      "fans": 912,
+      "main_member_count": 12,
+      "opening_member_count": 12,
+      "song_uids_count": 20
+    },
+    {
+      "name": "SPRISE",
+      "uid": "U1BSSVNF",
+      "name_romanji": "SPRISE",
+      "tier": "E",
+      "fans": 824,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 33
+    },
+    {
+      "name": "脳内パステル",
+      "uid": "6ISz5YaF44OR44K544OG44Or",
+      "name_romanji": "Nounai_Pastel",
+      "tier": "E",
+      "fans": 811,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 1
+    },
+    {
+      "name": "FOKALITE",
+      "uid": "Rk9LQUxJVEU",
+      "name_romanji": "FOKALITE",
+      "tier": "E",
+      "fans": 803,
+      "main_member_count": 3,
+      "opening_member_count": 3,
+      "song_uids_count": 14
+    },
+    {
+      "name": "HelloYouth",
+      "uid": "SGVsbG9Zb3V0aA",
+      "name_romanji": "HelloYouth",
+      "tier": "E",
+      "fans": 672,
+      "main_member_count": 8,
+      "opening_member_count": 8,
+      "song_uids_count": 6
+    },
+    {
+      "name": "LIT MOON",
+      "uid": "TElUIE1PT04",
+      "name_romanji": "LIT_MOON",
+      "tier": "E",
+      "fans": 953,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 19
+    },
+    {
+      "name": "STARRY×NIGHT↗︎",
+      "uid": "U1RBUlJZw5dOSUdIVOKGl--4jg",
+      "name_romanji": "STARRY×NIGHT↗︎",
+      "tier": "E",
+      "fans": 451,
+      "main_member_count": 5,
+      "opening_member_count": 5,
+      "song_uids_count": 12
+    },
+    {
+      "name": "ZUTTOMOTTO",
+      "uid": "WlVUVE9NT1RUTw",
+      "name_romanji": "ZUTTOMOTTO",
+      "tier": "E",
+      "fans": 670,
+      "main_member_count": 9,
+      "opening_member_count": 9,
+      "song_uids_count": 3
+    },
+    {
+      "name": "Finally",
+      "uid": "RmluYWxseQ",
+      "name_romanji": "Finally",
+      "tier": "E",
+      "fans": 1431,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 29
+    },
+    {
+      "name": "FULIT BOX",
+      "uid": "RlVMSVQgQk9Y",
+      "name_romanji": "FULIT_BOX",
+      "tier": "E",
+      "fans": 445,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 15
+    },
+    {
+      "name": "Bunny La Crew",
+      "uid": "QnVubnkgTGEgQ3Jldw",
+      "name_romanji": "Bunny_La_Crew",
+      "tier": "E",
+      "fans": 1054,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 1
+    },
+    {
+      "name": "ideal peco",
+      "uid": "aWRlYWwgcGVjbw",
+      "name_romanji": "Ideal_peco",
+      "tier": "E",
+      "fans": 1107,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 19
+    },
+    {
+      "name": "ゑんら",
+      "uid": "44KR44KT44KJ",
+      "name_romanji": "Wyenra",
+      "tier": "E",
+      "fans": 636,
+      "main_member_count": 3,
+      "opening_member_count": 3,
+      "song_uids_count": 4
+    },
+    {
+      "name": "メイビーME",
+      "uid": "44Oh44Kk44OT44O8TUU",
+      "name_romanji": "Meibii ME",
+      "tier": "E",
+      "fans": 1138,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 5
+    },
+    {
+      "name": "CHICKEN BLOW THE IDOL",
+      "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
+      "name_romanji": "CHICKEN_BLOW_THE_IDOL",
+      "tier": "E",
+      "fans": 1329,
+      "main_member_count": 3,
+      "opening_member_count": 3,
+      "song_uids_count": 9
+    },
+    {
+      "name": "JUGS MAFIA",
+      "uid": "SlVHUyBNQUZJQQ",
+      "name_romanji": "JUGS_MAFIA",
+      "tier": "E",
+      "fans": 1221,
+      "main_member_count": 4,
+      "opening_member_count": 4,
+      "song_uids_count": 17
+    },
+    {
+      "name": "READY TO KISS",
+      "uid": "UkVBRFkgVE8gS0lTUw",
+      "name_romanji": "READY_TO_KISS",
+      "tier": "E",
+      "fans": 1351,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 17
+    },
+    {
+      "name": "ドレスコード",
+      "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+      "name_romanji": "Dress_Code",
+      "tier": "E",
+      "fans": 0,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 1
+    },
+    {
+      "name": "私立恵比寿中学",
+      "uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
+      "name_romanji": "Shiritsu_Ebisu_Chugaku",
+      "tier": "B",
+      "fans": 69264,
+      "main_member_count": 7,
+      "opening_member_count": 7,
+      "song_uids_count": 0
+    },
+    {
+      "name": "シンデレラ宣言！",
+      "uid": "44K344Oz44OH44Os44Op5a6j6KiA77yB",
+      "name_romanji": "Cinderella_Sengen!",
+      "tier": "D",
+      "fans": 6190,
+      "main_member_count": 10,
+      "opening_member_count": 10,
+      "song_uids_count": 0
+    },
+    {
+      "name": "Appare!",
+      "uid": "QXBwYXJlIQ",
+      "name_romanji": "Appare!",
+      "tier": "D",
+      "fans": 8383,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 0
+    },
+    {
+      "name": "シュレーディンガーの犬",
+      "uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs",
+      "name_romanji": "Schrödinger_no_Inu",
+      "tier": "E",
+      "fans": 2162,
+      "main_member_count": 6,
+      "opening_member_count": 6,
+      "song_uids_count": 0
+    },
+    {
+      "name": "可憐なアイボリー",
+      "uid": "5Y-v5oaQ44Gq44Ki44Kk44Oc44Oq44O8",
+      "name_romanji": "Karen_na_Ivory",
+      "tier": "D",
+      "fans": 5279,
+      "main_member_count": 11,
+      "opening_member_count": 11,
+      "song_uids_count": 0
+    }
+  ],
+  "main_group_lookup": {
+    "963": {
+      "uid": "OTYz",
+      "name_romanji": "963",
+      "member_count": 4,
+      "fans": 2205
+    },
+    "3776": {
+      "uid": "Mzc3Ng",
+      "name_romanji": "3776",
+      "member_count": 1,
+      "fans": 3719
+    },
+    "アキシブproject": {
+      "uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "name_romanji": "Akishibu_project",
+      "member_count": 7,
+      "fans": 5166
+    },
+    "LINK START": {
+      "uid": "TElOSyBTVEFSVA",
+      "name_romanji": "Link_start",
+      "member_count": 6,
+      "fans": 190
+    },
+    "BiS": {
+      "uid": "QmlT",
+      "name_romanji": "BiS",
+      "member_count": 0,
+      "fans": 38344
+    },
+    "煌めき☆アンフォレント": {
+      "uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+      "name_romanji": "Kirameki☆Unforent",
+      "member_count": 7,
+      "fans": 6061
+    },
+    "BPM15Q": {
+      "uid": "QlBNMTVR/#google_vignette",
+      "name_romanji": "BPM15Q",
+      "member_count": 2,
+      "fans": 14655
+    },
+    "BLUEGOATS": {
+      "uid": "QkxVRUdPQVRT",
+      "name_romanji": "BLUEGOATS",
+      "member_count": 4,
+      "fans": 1915
+    },
+    "HIBANA": {
+      "uid": "SElCQU5B",
+      "name_romanji": "HIBANA",
+      "member_count": 5,
+      "fans": 1102
+    },
+    "ゆるめるモ！": {
+      "uid": "44KG44KL44KB44KL44Oi77yB",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 21140
+    },
+    "風男塾": {
+      "uid": "6aKo55S35aG-",
+      "name_romanji": "Fudanjuku",
+      "member_count": 10,
+      "fans": 7017
+    },
+    "シンデレラ宣言！": {
+      "uid": "44K344Oz44OH44Os44Op5a6j6KiA77yB",
+      "name_romanji": "Cinderella_Sengen!",
+      "member_count": 16,
+      "fans": 6190
+    },
+    "Kolokol": {
+      "uid": "S29sb2tvbA",
+      "name_romanji": "Kolokol",
+      "member_count": 4,
+      "fans": 4906
+    },
+    "Quubi": {
+      "uid": "UXV1Ymk",
+      "name_romanji": "Quubi",
+      "member_count": 4,
+      "fans": 4241
+    },
+    "CiON": {
+      "uid": "Q2lPTg",
+      "name_romanji": "CiON",
+      "member_count": 5,
+      "fans": 4791
+    },
+    "MAPA": {
+      "uid": "TUFQQQ",
+      "name_romanji": "MAPA",
+      "member_count": 6,
+      "fans": 3595
+    },
+    "Lyrical School": {
+      "uid": "bHlyaWNhbCBzY2hvb2w",
+      "name_romanji": "Lyrical_school",
+      "member_count": 17,
+      "fans": 18140
+    },
+    "純情のアフィリア": {
+      "uid": "57SU5oOF44Gu44Ki44OV44Kj44Oq44Ki",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 4823
+    },
+    "LinQ": {
+      "uid": "TGluUQ",
+      "name_romanji": "LinQ",
+      "member_count": 8,
+      "fans": 4268
+    },
+    "SITUASION": {
+      "uid": "U0lUVUFTSU9O",
+      "name_romanji": "Situasion",
+      "member_count": 5,
+      "fans": 3885
+    },
+    "THE ORCHESTRA TOKYO": {
+      "uid": "VEhFIE9SQ0hFU1RSQSBUT0tZTw",
+      "name_romanji": "THE_ORCHESTRA_TOKYO",
+      "member_count": 5,
+      "fans": 3770
+    },
+    "衛星とカラテア": {
+      "uid": "6KGb5pif44Go44Kr44Op44OG44Ki",
+      "name_romanji": "Eisei_to_Karatea",
+      "member_count": 5,
+      "fans": 2737
+    },
+    "夢みるアドレセンス": {
+      "uid": "5aSi44G_44KL44Ki44OJ44Os44K744Oz44K5",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 12063
+    },
+    "ゆくえしれずつれづれ": {
+      "uid": "44KG44GP44GI44GX44KM44Ga44Gk44KM44Gl44KM",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 10612
+    },
+    "ミームトーキョー": {
+      "uid": "44Of44O844Og44OI44O844Kt44On44O8",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 10481
+    },
+    "Ringwanderung": {
+      "uid": "UmluZ3dhbmRlcnVuZw",
+      "name_romanji": "Ringwanderung",
+      "member_count": 5,
+      "fans": 6722
+    },
+    "Luce Twinkle Wink☆": {
+      "uid": "THVjZSBUd2lua2xlIFdpbmvimIY",
+      "name_romanji": "Luce_Twinkle_Wink☆",
+      "member_count": 6,
+      "fans": 6106
+    },
+    "LEIWAN": {
+      "uid": "TEVJV0FO",
+      "name_romanji": "LEIWAN",
+      "member_count": 3,
+      "fans": 3162
+    },
+    "民族ハッピー組": {
+      "uid": "RUdSe-OBiOOBkOOCi30",
+      "name_romanji": "Happy_People_Party",
+      "member_count": 12,
+      "fans": 290
+    },
+    "真っ白なキャンバス": {
+      "uid": "55yf44Gj55m944Gq44Kt44Oj44Oz44OQ44K5",
+      "name_romanji": "Masshiro_na_Canvas",
+      "member_count": 7,
+      "fans": 8388
+    },
+    "#ババババンビ": {
+      "uid": "I-ODkOODkOODkOODkOODs-ODkw",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 6988
+    },
+    "Ill": {
+      "uid": "SWxs",
+      "name_romanji": "Ill",
+      "member_count": 4,
+      "fans": 6472
+    },
+    "クマリデパート": {
+      "uid": "44Kv44Oe44Oq44OH44OR44O844OI",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 6228
+    },
+    "おこさまぷれ〜と。": {
+      "uid": "44GK44GT44GV44G-44G344KM44Cc44Go44CC",
+      "name_romanji": "Zero_Project",
+      "member_count": 1,
+      "fans": 5014
+    },
+    "きのホ。": {
+      "uid": "44GN44Gu44Ob44CC",
+      "name_romanji": "Ho?",
+      "member_count": 5,
+      "fans": 2377
+    },
+    "ライスボール": {
+      "uid": "44Op44Kk44K544Oc44O844Or",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 2041
+    },
+    "Palette Parade": {
+      "uid": "UGFsZXR0ZSBQYXJhZGU",
+      "name_romanji": "Palette_Parade",
+      "member_count": 7,
+      "fans": 1984
+    },
+    "Sweet Alley": {
+      "uid": "U3dlZXQgQWxsZXk",
+      "name_romanji": "Sweet_Alley",
+      "member_count": 8,
+      "fans": 1880
+    },
+    "クララ・マグラ": {
+      "uid": "44Kv44Op44Op44O744Oe44Kw44Op",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 1111
+    },
+    "uijin": {
+      "uid": "dWlqaW4",
+      "name_romanji": "Uijin",
+      "member_count": 5,
+      "fans": 5817
+    },
+    "PANDAMIC": {
+      "uid": "UEFOREFNSUM",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 638
+    },
+    "みうみお": {
+      "uid": "44G_44GG44G_44GK",
+      "name_romanji": "Miumio",
+      "member_count": 2,
+      "fans": 3402
+    },
+    "シュレーディンガーの犬": {
+      "uid": "44K344Ol44Os44O844OH44Kj44Oz44Ks44O844Gu54qs",
+      "name_romanji": "Schrödinger_no_Inu",
+      "member_count": 10,
+      "fans": 2162
+    },
+    "YOLOZ": {
+      "uid": "WU9MT1o",
+      "name_romanji": "YOLOZ",
+      "member_count": 5,
+      "fans": 1932
+    },
+    "zanka": {
+      "uid": "emFua2E",
+      "name_romanji": "Zanka",
+      "member_count": 9,
+      "fans": 1759
+    },
+    "ポンコツコンポ": {
+      "uid": "44Od44Oz44Kz44OE44Kz44Oz44Od",
+      "name_romanji": "Ponkotsu_Konpo",
+      "member_count": 8,
+      "fans": 1811
+    },
+    "AQ": {
+      "uid": "QVE",
+      "name_romanji": "AQ",
+      "member_count": 4,
+      "fans": 1142
+    },
+    "AsIs": {
+      "uid": "QXNJcw",
+      "name_romanji": "AsIs",
+      "member_count": 7,
+      "fans": 1293
+    },
+    "Tohkei": {
+      "uid": "VG9oa2Vp",
+      "name_romanji": "Tohkei",
+      "member_count": 4,
+      "fans": 989
+    },
+    "月刊PAM": {
+      "uid": "5pyI5YiKUEFN",
+      "name_romanji": null,
+      "member_count": 2,
+      "fans": 1069
+    },
+    "AOAO": {
+      "uid": "QU9BTw",
+      "name_romanji": "AOAO",
+      "member_count": 8,
+      "fans": 909
+    },
+    "FOKALITE": {
+      "uid": "Rk9LQUxJVEU",
+      "name_romanji": "FOKALITE",
+      "member_count": 4,
+      "fans": 803
+    },
+    "Melty BeaR": {
+      "uid": "TWVsdHkgQmVhUg",
+      "name_romanji": "Melty_BeaR",
+      "member_count": 6,
+      "fans": 702
+    },
+    "FRUITPOCHETTE": {
+      "uid": "RlJVSVRQT0NIRVRURQ",
+      "name_romanji": "FRUITPOCHETTE",
+      "member_count": 3,
+      "fans": 13671
+    },
+    "NUANCE": {
+      "uid": "TlVBTkNF",
+      "name_romanji": "NUANCE",
+      "member_count": 7,
+      "fans": 4924
+    },
+    "リルネード": {
+      "uid": "44Oq44Or44ON44O844OJ",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 4246
+    },
+    "アンスリューム": {
+      "uid": "44Ki44Oz44K544Oq44Ol44O844Og",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 3770
+    },
+    "MyDearDarlin'": {
+      "uid": "TXlEZWFyRGFybGluJw",
+      "name_romanji": "MyDearDarlin'",
+      "member_count": 4,
+      "fans": 3255
+    },
+    "AIBECK": {
+      "uid": "QUlCRUNL",
+      "name_romanji": "AIBECK",
+      "member_count": 5,
+      "fans": 3145
+    },
+    "美味しい曖昧": {
+      "uid": "576O5ZGz44GX44GE5puW5pin",
+      "name_romanji": "Aimai",
+      "member_count": 7,
+      "fans": 2201
+    },
+    "LINKL PLANET": {
+      "uid": "TElOS0wgUExBTkVU",
+      "name_romanji": "LINKL_PLANET",
+      "member_count": 8,
+      "fans": 2136
+    },
+    "MAGMAZ": {
+      "uid": "TUFHTUFa",
+      "name_romanji": "MAGMAZ",
+      "member_count": 6,
+      "fans": 1904
+    },
+    "AZATOY": {
+      "uid": "QVpBVE9Z",
+      "name_romanji": "AZATOY",
+      "member_count": 6,
+      "fans": 1961
+    },
+    "Finger Runs": {
+      "uid": "RmluZ2VyIFJ1bnM",
+      "name_romanji": "Finger_Runs",
+      "member_count": 4,
+      "fans": 1613
+    },
+    "花魁道中": {
+      "uid": "6Iqx6a2B6YGT5Lit",
+      "name_romanji": "Oiran_Dochu",
+      "member_count": 6,
+      "fans": 2108
+    },
+    "びっくえんじぇる": {
+      "uid": "44Gz44Gj44GP44GI44KT44GY44GH44KL",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 1558
+    },
+    "鳴ル神": {
+      "uid": "6bO044Or56We",
+      "name_romanji": "Narukami",
+      "member_count": 4,
+      "fans": 617
+    },
+    "ヤなことそっとミュート": {
+      "uid": "44Ok44Gq44GT44Go44Gd44Gj44Go44Of44Ol44O844OI",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 15007
+    },
+    "ニァピン": {
+      "uid": "44OL44Kh44OU44Oz",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 12370
+    },
+    "BLACKNAZARENE": {
+      "uid": "QkxBQ0tOQVpBUkVORQ",
+      "name_romanji": "BLACKNAZARENE",
+      "member_count": 6,
+      "fans": 7796
+    },
+    "おやすみホログラム": {
+      "uid": "44GK44KE44GZ44G_44Ob44Ot44Kw44Op44Og",
+      "name_romanji": "Oyasumi",
+      "member_count": 2,
+      "fans": 7458
+    },
+    "#2i2": {
+      "uid": "IzJpMg",
+      "name_romanji": "2i2",
+      "member_count": 4,
+      "fans": 3066
+    },
+    "STAiNY": {
+      "uid": "U1RBaU5Z",
+      "name_romanji": "STAiNY",
+      "member_count": 9,
+      "fans": 2710
+    },
+    "diig": {
+      "uid": "ZGlpZw",
+      "name_romanji": "Diig",
+      "member_count": 7,
+      "fans": 2804
+    },
+    "キングサリ": {
+      "uid": "44Kt44Oz44Kw44K144Oq",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 2337
+    },
+    "Axelight": {
+      "uid": "QXhlbGlnaHQ",
+      "name_romanji": "Axelight",
+      "member_count": 5,
+      "fans": 1944
+    },
+    "あっとせぶんてぃーん": {
+      "uid": "44GC44Gj44Go44Gb44G244KT44Gm44GD44O844KT",
+      "name_romanji": "@17",
+      "member_count": 6,
+      "fans": 1782
+    },
+    "#Mooove!": {
+      "uid": "I01vb292ZSE",
+      "name_romanji": "Mooove!",
+      "member_count": 7,
+      "fans": 1789
+    },
+    "太陽と踊れ月夜に唄え": {
+      "uid": "5aSq6Zm944Go6LiK44KM5pyI5aSc44Gr5ZSE44GI",
+      "name_romanji": "UTA",
+      "member_count": 8,
+      "fans": 1513
+    },
+    "さよならステイチューン": {
+      "uid": "44GV44KI44Gq44KJ44K544OG44Kk44OB44Ol44O844Oz",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1521
+    },
+    "Alcute！": {
+      "uid": "QWxjdXRl77yB",
+      "name_romanji": "Alcute!",
+      "member_count": 6,
+      "fans": 1061
+    },
+    "hakanai": {
+      "uid": "aGFrYW5haQ",
+      "name_romanji": "Hakanai",
+      "member_count": 5,
+      "fans": 1113
+    },
+    "ラナキュラ": {
+      "uid": "44Op44OK44Kt44Ol44Op",
+      "name_romanji": null,
+      "member_count": 10,
+      "fans": 904
+    },
+    "スパンコールグッドタイムズ": {
+      "uid": "44K544OR44Oz44Kz44O844Or44Kw44OD44OJ44K_44Kk44Og44K6",
+      "name_romanji": null,
+      "member_count": 4,
+      "fans": 812
+    },
+    "Candye♡Syrup": {
+      "uid": "Q2FuZHll4pmhU3lydXA",
+      "name_romanji": "Candye♡Syrup",
+      "member_count": 9,
+      "fans": 11487
+    },
+    "PRSMIN": {
+      "uid": "UFJTTUlO",
+      "name_romanji": "PRSMIN",
+      "member_count": 5,
+      "fans": 2671
+    },
+    "透色ドロップ": {
+      "uid": "6YCP6Imy44OJ44Ot44OD44OX",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 1831
+    },
+    "カラフルスクリーム": {
+      "uid": "44Kr44Op44OV44Or44K544Kv44Oq44O844Og",
+      "name_romanji": null,
+      "member_count": 15,
+      "fans": 1588
+    },
+    "Finally": {
+      "uid": "RmluYWxseQ",
+      "name_romanji": "Finally",
+      "member_count": 6,
+      "fans": 1431
+    },
+    "パラディーク": {
+      "uid": "44OR44Op44OH44Kj44O844Kv",
+      "name_romanji": "Paradeeq",
+      "member_count": 5,
+      "fans": 1416
+    },
+    "lonlium": {
+      "uid": "bG9ubGl1bQ",
+      "name_romanji": "Lonlium",
+      "member_count": 4,
+      "fans": 1174
+    },
+    "Hellzapoppin'": {
+      "uid": "SGVsbHphcG9wcGluJw",
+      "name_romanji": "Hellzapoppin'",
+      "member_count": 4,
+      "fans": 1148
+    },
+    "selfish": {
+      "uid": "c2VsZmlzaA",
+      "name_romanji": "Selfish",
+      "member_count": 6,
+      "fans": 961
+    },
+    "1つ足りない賽は投げられた": {
+      "uid": "MeOBpOi2s-OCiuOBquOBhOizveOBr-aKleOBkuOCieOCjOOBnw",
+      "name_romanji": null,
+      "member_count": 1,
+      "fans": 857
+    },
+    ".LiNIXLiNE.": {
+      "uid": "LkxpTklYTGlORS4",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 826
+    },
+    "ルージュブック": {
+      "uid": "44Or44O844K444Ol44OW44OD44Kv",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 706
+    },
+    "Chalca": {
+      "uid": "Q2hhbGNh",
+      "name_romanji": "Chalca",
+      "member_count": 7,
+      "fans": 755
+    },
+    "パラレルサイダー": {
+      "uid": "44OR44Op44Os44Or44K144Kk44OA44O8",
+      "name_romanji": "",
+      "member_count": 6,
+      "fans": 822
+    },
+    "ぽけっとファントム": {
+      "uid": "44G944GR44Gj44Go44OV44Kh44Oz44OI44Og",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 328
+    },
+    "kolme": {
+      "uid": "a29sbWU",
+      "name_romanji": "Kolme",
+      "member_count": 4,
+      "fans": 11517
+    },
+    "MIGMA SHELTER": {
+      "uid": "TUlHTUEgU0hFTFRFUg",
+      "name_romanji": "MIGMA_SHELTER",
+      "member_count": 8,
+      "fans": 8568
+    },
+    "BELLRING少女ハート": {
+      "uid": "QkVMTFJJTkflsJHlpbPjg4_jg7zjg4g",
+      "name_romanji": null,
+      "member_count": 4,
+      "fans": 2880
+    },
+    "Payrin's": {
+      "uid": "UGF5cmluJ3M",
+      "name_romanji": "Payrin's",
+      "member_count": 5,
+      "fans": 2802
+    },
+    "airattic": {
+      "uid": "YWlyYXR0aWM",
+      "name_romanji": "Airattic",
+      "member_count": 5,
+      "fans": 2331
+    },
+    "シャニムニ＝パレード": {
+      "uid": "44K344Oj44OL44Og44OL77yd44OR44Os44O844OJ",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 1914
+    },
+    "9DayzGlitchClubTokyo": {
+      "uid": "OURheXpHbGl0Y2hDbHViVG9reW8",
+      "name_romanji": "9DayzGlitchClubTokyo",
+      "member_count": 4,
+      "fans": 1411
+    },
+    "カイジューバイミー": {
+      "uid": "44Kr44Kk44K444Ol44O844OQ44Kk44Of44O8",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 1404
+    },
+    "ルルネージュ": {
+      "uid": "44Or44Or44ON44O844K444Ol",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 1229
+    },
+    "瞬きもせず": {
+      "uid": "556s44GN44KC44Gb44Ga",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 1039
+    },
+    "LIT MOON": {
+      "uid": "TElUIE1PT04",
+      "name_romanji": "LIT_MOON",
+      "member_count": 5,
+      "fans": 953
+    },
+    "FR2PON!": {
+      "uid": "RlIyUE9OIQ",
+      "name_romanji": "FR2PON!",
+      "member_count": 6,
+      "fans": 867
+    },
+    "ponderosa may bloom": {
+      "uid": "cG9uZGVyb3NhIG1heSBibG9vbQ",
+      "name_romanji": "Ponderosa_may_bloom",
+      "member_count": 4,
+      "fans": 811
+    },
+    "SPRISE": {
+      "uid": "U1BSSVNF",
+      "name_romanji": "SPRISE",
+      "member_count": 5,
+      "fans": 824
+    },
+    "脳内パステル": {
+      "uid": "6ISz5YaF44OR44K544OG44Or",
+      "name_romanji": "Nounai_Pastel",
+      "member_count": 8,
+      "fans": 811
+    },
+    "W.ダブルヴィー": {
+      "uid": "Vy7jg4Djg5bjg6vjg7TjgqPjg7w",
+      "name_romanji": "W",
+      "member_count": 2,
+      "fans": 749
+    },
+    "限りなく白く": {
+      "uid": "6ZmQ44KK44Gq44GP55m944GP",
+      "name_romanji": null,
+      "member_count": 11,
+      "fans": 613
+    },
+    "THE ENCORE": {
+      "uid": "VEhFIEVOQ09SRQ",
+      "name_romanji": "THE_ENCORE",
+      "member_count": 7,
+      "fans": 566
+    },
+    "クライセカイ": {
+      "uid": "44Kv44Op44Kk44K744Kr44Kk",
+      "name_romanji": "Kurai_Sekai",
+      "member_count": 7,
+      "fans": 493
+    },
+    "こみっきゅおん！": {
+      "uid": "44GT44G_44Gj44GN44KF44GK44KT77yB",
+      "name_romanji": "Komikkyon",
+      "member_count": 1,
+      "fans": 510
+    },
+    "Task have Fun": {
+      "uid": "VGFzayBoYXZlIEZ1bg",
+      "name_romanji": "Gips_(Task_have_Fun)",
+      "member_count": 3,
+      "fans": 6045
+    },
+    "tipToe.": {
+      "uid": "dGlwVG9lLg",
+      "name_romanji": "TipToe.",
+      "member_count": 5,
+      "fans": 5582
+    },
+    "アイドルカレッジ": {
+      "uid": "44Ki44Kk44OJ44Or44Kr44Os44OD44K4",
+      "name_romanji": null,
+      "member_count": 25,
+      "fans": 2296
+    },
+    "#ジューロック": {
+      "uid": "I-OCuOODpeODvOODreODg-OCrw",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1854
+    },
+    "さとりモンスター": {
+      "uid": "44GV44Go44KK44Oi44Oz44K544K_44O8",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1867
+    },
+    "SOMOSOMO": {
+      "uid": "U09NT1NPTU8",
+      "name_romanji": "SOMOSOMO",
+      "member_count": 12,
+      "fans": 1743
+    },
+    ".BPM": {
+      "uid": "LkJQTQ",
+      "name_romanji": ".BPM",
+      "member_count": 5,
+      "fans": 1110
+    },
+    "天使にはなれない": {
+      "uid": "5aSp5L2_44Gr44Gv44Gq44KM44Gq44GE",
+      "name_romanji": "Tenshi ni wa Narenai",
+      "member_count": 6,
+      "fans": 1116
+    },
+    "ぜろから☆すた→と": {
+      "uid": "44Gc44KN44GL44KJ4piG44GZ44Gf4oaS44Go",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 1053
+    },
+    "TOKYOてふてふ": {
+      "uid": "VE9LWU_jgabjgbXjgabjgbU",
+      "name_romanji": "TOKYO_Tefutefu",
+      "member_count": 4,
+      "fans": 960
+    },
+    "Flower＊Hour": {
+      "uid": "Rmxvd2Vy77yKSG91cg",
+      "name_romanji": "Flower",
+      "member_count": 14,
+      "fans": 864
+    },
+    "HiiT Factory": {
+      "uid": "SGlpVCBGYWN0b3J5",
+      "name_romanji": "FACTORY",
+      "member_count": 6,
+      "fans": 813
+    },
+    "PASTEL RADIO": {
+      "uid": "UEFTVEVMIFJBRElP",
+      "name_romanji": "PASTEL_RADIO",
+      "member_count": 6,
+      "fans": 809
+    },
+    "my fav": {
+      "uid": "bXkgZmF2",
+      "name_romanji": "my fav",
+      "member_count": 6,
+      "fans": 781
+    },
+    "里咲りさ": {
+      "uid": "6YeM5ZKy44KK44GV",
+      "name_romanji": "RISA☆RISA",
+      "member_count": 0,
+      "fans": 556
+    },
+    "HAPPY CREATORS": {
+      "uid": "SEFQUFkgQ1JFQVRPUlM",
+      "name_romanji": "HAPPY_CREATORS",
+      "member_count": 7,
+      "fans": 601
+    },
+    "Beloved": {
+      "uid": "QmVsb3ZlZA",
+      "name_romanji": "Beloved",
+      "member_count": 5,
+      "fans": 293
+    },
+    "HONEY POPCORN": {
+      "uid": "SE9ORVkgUE9QQ09STg",
+      "name_romanji": "Honey_Popcorn",
+      "member_count": 12,
+      "fans": 25691
+    },
+    "THE HOOPERS": {
+      "uid": "VEhFIEhPT1BFUlM",
+      "name_romanji": "THE_HOOPERS",
+      "member_count": 6,
+      "fans": 4322
+    },
+    "開歌-かいか-": {
+      "uid": "6ZaL5q2MLeOBi-OBhOOBiy0",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 2913
+    },
+    "雨模様のソラリス": {
+      "uid": "6Zuo5qih5qeY44Gu44K944Op44Oq44K5",
+      "name_romanji": null,
+      "member_count": 4,
+      "fans": 2903
+    },
+    "電影と少年CQ": {
+      "uid": "6Zu75b2x44Go5bCR5bm0Q1E",
+      "name_romanji": "Shounen",
+      "member_count": 4,
+      "fans": 1727
+    },
+    "EMPATHY": {
+      "uid": "RU1QQVRIWQ",
+      "name_romanji": "EMPATHY",
+      "member_count": 6,
+      "fans": 1644
+    },
+    "かすみ草とステラ": {
+      "uid": "44GL44GZ44G_6I2J44Go44K544OG44Op",
+      "name_romanji": null,
+      "member_count": 10,
+      "fans": 1573
+    },
+    "棘-おどろ-": {
+      "uid": "5qOYLeOBiuOBqeOCjS0",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1417
+    },
+    "あたまのなかは8ビット⁉︎": {
+      "uid": "44GC44Gf44G-44Gu44Gq44GL44GvOOODk-ODg-ODiOKBie-4jg",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1133
+    },
+    "われらがプワプワプーワプワ": {
+      "uid": "44KP44KM44KJ44GM44OX44Ov44OX44Ov44OX44O844Ov44OX44Ov",
+      "name_romanji": "Wareraga_Puwapuwapuuwapuwa",
+      "member_count": 8,
+      "fans": 1065
+    },
+    "点染テンセイ少女。": {
+      "uid": "54K55p-T44OG44Oz44K744Kk5bCR5aWz44CC",
+      "name_romanji": "Tensen Tensei Shoujo.",
+      "member_count": 9,
+      "fans": 999
+    },
+    "AFTERS": {
+      "uid": "QUZURVJT",
+      "name_romanji": "AFTERS",
+      "member_count": 8,
+      "fans": 1013
+    },
+    "フューチャーサイダー": {
+      "uid": "44OV44Ol44O844OB44Oj44O844K144Kk44OA44O8",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 802
+    },
+    "LiVS": {
+      "uid": "TGlWUw",
+      "name_romanji": "LiVS",
+      "member_count": 4,
+      "fans": 842
+    },
+    "SiLENT←NOiSE": {
+      "uid": "U2lMRU5U4oaQTk9pU0U",
+      "name_romanji": "SiLENT←NOiSE",
+      "member_count": 5,
+      "fans": 797
+    },
+    "HelloYouth": {
+      "uid": "SGVsbG9Zb3V0aA",
+      "name_romanji": "HelloYouth",
+      "member_count": 6,
+      "fans": 672
+    },
+    "ほくりくアイドル部": {
+      "uid": "44G744GP44KK44GP44Ki44Kk44OJ44Or6YOo",
+      "name_romanji": "Hokuriku_Idolbu",
+      "member_count": 15,
+      "fans": 620
+    },
+    "君と見るそら": {
+      "uid": "5ZCb44Go6KaL44KL44Gd44KJ",
+      "name_romanji": null,
+      "member_count": 4,
+      "fans": null
+    },
+    "ZUTTOMOTTO": {
+      "uid": "WlVUVE9NT1RUTw",
+      "name_romanji": "ZUTTOMOTTO",
+      "member_count": 11,
+      "fans": 670
+    },
+    "スワンスワンズ": {
+      "uid": "44K544Ov44Oz44K544Ov44Oz44K6",
+      "name_romanji": null,
+      "member_count": 2,
+      "fans": 921
+    },
+    "AQA": {
+      "uid": "QVFB",
+      "name_romanji": "AQA",
+      "member_count": 6,
+      "fans": 487
+    },
+    "ROOKEY♡ROOKEYS": {
+      "uid": "Uk9PS0VZ4pmhUk9PS0VZUw",
+      "name_romanji": "ROOKEY♡ROOKEYS",
+      "member_count": 7,
+      "fans": 506
+    },
+    "STARRY×NIGHT↗︎": {
+      "uid": "U1RBUlJZw5dOSUdIVOKGl--4jg",
+      "name_romanji": "STARRY×NIGHT↗︎",
+      "member_count": 5,
+      "fans": 451
+    },
+    "カミサマパレード": {
+      "uid": "44Kr44Of44K144Oe44OR44Os44O844OJ",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 339
+    },
+    "Aicong": {
+      "uid": "QWljb25n",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 271
+    },
+    "中2映画プロジェクトアイドル部": {
+      "uid": "5LitMuaYoOeUu-ODl-ODreOCuOOCp-OCr-ODiOOCouOCpOODieODq-mDqA",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 185
+    },
+    "GO TO THE BEDS": {
+      "uid": "R08gVE8gVEhFIEJFRFM",
+      "name_romanji": "GO_TO_THE_BEDS",
+      "member_count": 11,
+      "fans": 5658
+    },
+    "NightOwl": {
+      "uid": "TmlnaHRPd2w",
+      "name_romanji": "NightOwl",
+      "member_count": 4,
+      "fans": 5315
+    },
+    "XTEEN": {
+      "uid": "WFRFRU4",
+      "name_romanji": "XTEEN",
+      "member_count": 3,
+      "fans": 4671
+    },
+    "ナナランド": {
+      "uid": "44OK44OK44Op44Oz44OJ",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 3212
+    },
+    "O'CHAWANZ HIP-HOP COLLEGE": {
+      "uid": "TydDSEFXQU5aIEhJUC1IT1AgQ09MTEVHRQ",
+      "name_romanji": "O'CHAWANZ",
+      "member_count": 3,
+      "fans": 1544
+    },
+    "may in film": {
+      "uid": "bWF5IGluIGZpbG0",
+      "name_romanji": "May_in_film",
+      "member_count": 5,
+      "fans": 1450
+    },
+    "HIGH SPIRITS": {
+      "uid": "SElHSCBTUElSSVRT",
+      "name_romanji": "HIGH_SPIRITS",
+      "member_count": 9,
+      "fans": 1288
+    },
+    "Bunny La Crew": {
+      "uid": "QnVubnkgTGEgQ3Jldw",
+      "name_romanji": "Bunny_La_Crew",
+      "member_count": 7,
+      "fans": 1054
+    },
+    "MAGICAL SPEC": {
+      "uid": "TUFHSUNBTCBTUEVD",
+      "name_romanji": "MAGICAL_SPEC",
+      "member_count": 12,
+      "fans": 1051
+    },
+    "Panic Monster !n Wonderland": {
+      "uid": "UGFuaWMgTW9uc3RlciAhbiBXb25kZXJsYW5k",
+      "name_romanji": "Panic Monster !n Wonderland",
+      "member_count": 9,
+      "fans": null
+    },
+    "花いろは": {
+      "uid": "6Iqx44GE44KN44Gv",
+      "name_romanji": "Hana_Iroha",
+      "member_count": 10,
+      "fans": 935
+    },
+    "ガラチア": {
+      "uid": "44Ks44Op44OB44Ki",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 584
+    },
+    "トナリア": {
+      "uid": "44OI44OK44Oq44Ki",
+      "name_romanji": "Tonariau_/_ONE'S_AGAIN",
+      "member_count": 4,
+      "fans": 572
+    },
+    "BAD IVY": {
+      "uid": "QkFEIElWWQ",
+      "name_romanji": null,
+      "member_count": 10,
+      "fans": 471
+    },
+    "FULIT BOX": {
+      "uid": "RlVMSVQgQk9Y",
+      "name_romanji": "FULIT_BOX",
+      "member_count": 7,
+      "fans": 445
+    },
+    "ai*ai": {
+      "uid": "YWkqYWk",
+      "name_romanji": "Ai*ai",
+      "member_count": 5,
+      "fans": 309
+    },
+    "AVACLUB": {
+      "uid": "QVZBQ0xVQg",
+      "name_romanji": null,
+      "member_count": 4,
+      "fans": 236
+    },
+    "Malcolm Mask McLaren": {
+      "uid": "TWFsY29sbSBNYXNrIE1jTGFyZW4",
+      "name_romanji": "Malcolm_Mask_McLaren",
+      "member_count": 5,
+      "fans": 5969
+    },
+    "Ange☆Reve": {
+      "uid": "QW5nZeKYhlJldmU",
+      "name_romanji": "Ange☆Reve",
+      "member_count": 6,
+      "fans": 4959
+    },
+    "神使轟く、激情の如く。": {
+      "uid": "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC",
+      "name_romanji": "Shinshi Todoroku, Gekijou no Gotoku.",
+      "member_count": 0,
+      "fans": 4579
+    },
+    "アップアップガールズ（仮）": {
+      "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI5Luu77yJ",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 4144
+    },
+    "じゅじゅ": {
+      "uid": "44GY44KF44GY44KF",
+      "name_romanji": "JUJU",
+      "member_count": 4,
+      "fans": 3944
+    },
+    "ふわふわ": {
+      "uid": "44G144KP44G144KP",
+      "name_romanji": "FuWa_FuWa",
+      "member_count": 2,
+      "fans": 3688
+    },
+    "アップアップガールズ（２）": {
+      "uid": "44Ki44OD44OX44Ki44OD44OX44Ks44O844Or44K677yI77yS77yJ",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 3337
+    },
+    "ピューパ!!": {
+      "uid": "44OU44Ol44O844ORISE",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 2942
+    },
+    "KissBee": {
+      "uid": "S2lzc0JlZQ",
+      "name_romanji": "KissBee",
+      "member_count": 7,
+      "fans": 2800
+    },
+    "都内某所": {
+      "uid": "6YO95YaF5p-Q5omA",
+      "name_romanji": "TONAi_BOUSHO",
+      "member_count": 1,
+      "fans": 2585
+    },
+    "SAY-LA": {
+      "uid": "U0FZLUxB",
+      "name_romanji": "SAY-LA",
+      "member_count": 8,
+      "fans": 2504
+    },
+    "エラバレシ": {
+      "uid": "44Ko44Op44OQ44Os44K3",
+      "name_romanji": "Erabareshi",
+      "member_count": 7,
+      "fans": 2194
+    },
+    "KiSS KiSS": {
+      "uid": "S2lTUyBLaVNT",
+      "name_romanji": "KiSS_KiSS",
+      "member_count": 5,
+      "fans": 2025
+    },
+    "にっぽんワチャチャ": {
+      "uid": "44Gr44Gj44G944KT44Ov44OB44Oj44OB44Oj",
+      "name_romanji": "Nippon_Wachacha",
+      "member_count": 5,
+      "fans": 1957
+    },
+    "MiiS": {
+      "uid": "TWlpUw",
+      "name_romanji": "MiiS",
+      "member_count": 4,
+      "fans": 1876
+    },
+    "グデイ": {
+      "uid": "44Kw44OH44Kk",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 1612
+    },
+    "I MY ME MINE": {
+      "uid": "SSBNWSBNRSBNSU5F",
+      "name_romanji": "I_MY_ME_MINE",
+      "member_count": 10,
+      "fans": 1569
+    },
+    "WT☆Egret": {
+      "uid": "V1TimIZFZ3JldA",
+      "name_romanji": "WT☆Egret",
+      "member_count": 8,
+      "fans": 1151
+    },
+    "NEOTOKYO-TRIBE": {
+      "uid": "TkVPVE9LWU8tVFJJQkU",
+      "name_romanji": "NEOTOKYO-TRIBE",
+      "member_count": 7,
+      "fans": 978
+    },
+    "ハニースパイスRe.": {
+      "uid": "44OP44OL44O844K544OR44Kk44K5UmUu",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 957
+    },
+    "GANGDEMIC": {
+      "uid": "R0FOR0RFTUlD",
+      "name_romanji": "GANGDEMIC",
+      "member_count": 8,
+      "fans": 912
+    },
+    "ゑんら": {
+      "uid": "44KR44KT44KJ",
+      "name_romanji": "Wyenra",
+      "member_count": 3,
+      "fans": 636
+    },
+    "RaRaJaM": {
+      "uid": "UmFSYUphTQ",
+      "name_romanji": "RaRaJaM",
+      "member_count": 2,
+      "fans": 609
+    },
+    "Charm Poche": {
+      "uid": "Q2hhcm0gUG9jaGU",
+      "name_romanji": "Charm_Poche",
+      "member_count": 7,
+      "fans": 546
+    },
+    "ヲドルマヨナカ": {
+      "uid": "44Oy44OJ44Or44Oe44Oo44OK44Kr",
+      "name_romanji": "Wodoru_Mayonaka",
+      "member_count": 11,
+      "fans": 428
+    },
+    "Beauty Box": {
+      "uid": "QmVhdXR5IEJveA",
+      "name_romanji": null,
+      "member_count": 2,
+      "fans": 34166
+    },
+    "悪魔のキッス": {
+      "uid": "5oKq6a2U44Gu44Kt44OD44K5",
+      "name_romanji": "Akuma_no_Kiss",
+      "member_count": 2,
+      "fans": 16721
+    },
+    "放課後プリンセス": {
+      "uid": "5pS-6Kqy5b6M44OX44Oq44Oz44K744K5",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 5463
+    },
+    "マジカル・パンチライン": {
+      "uid": "44Oe44K444Kr44Or44O744OR44Oz44OB44Op44Kk44Oz",
+      "name_romanji": "Majika",
+      "member_count": 2,
+      "fans": 5007
+    },
+    "MELLOW MELLOW": {
+      "uid": "TUVMTE9XIE1FTExPVw",
+      "name_romanji": "MELLOW_MELLOW",
+      "member_count": 3,
+      "fans": 4913
+    },
+    "SAKA-SAMA": {
+      "uid": "U0FLQS1TQU1B",
+      "name_romanji": "SAKA-SAMA",
+      "member_count": 5,
+      "fans": 3570
+    },
+    "浪江女子発組合": {
+      "uid": "5rWq5rGf5aWz5a2Q55m657WE5ZCI",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 3161
+    },
+    "校庭カメラガールドライ": {
+      "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or44OJ44Op44Kk",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 2589
+    },
+    "星歴13夜": {
+      "uid": "5pif5q20MTPlpJw",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 2108
+    },
+    "ambitious": {
+      "uid": "YW1iaXRpb3Vz",
+      "name_romanji": "Ambitious",
+      "member_count": 6,
+      "fans": 1932
+    },
+    "fancylabo": {
+      "uid": "ZmFuY3lsYWJv",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 1807
+    },
+    "RIRYDAY": {
+      "uid": "UklSWURBWQ",
+      "name_romanji": "RIRYDAY",
+      "member_count": 0,
+      "fans": 1724
+    },
+    "UNBS": {
+      "uid": "VU5CUw",
+      "name_romanji": "UNBS",
+      "member_count": 5,
+      "fans": 1519
+    },
+    "終わらないで、夜": {
+      "uid": "57WC44KP44KJ44Gq44GE44Gn44CB5aSc",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 1433
+    },
+    "ネコプラpixx.": {
+      "uid": "44ON44Kz44OX44OpcGl4eC4",
+      "name_romanji": null,
+      "member_count": 10,
+      "fans": 1319
+    },
+    "ワッツ◎さーくる": {
+      "uid": "44Ov44OD44OE4peO44GV44O844GP44KL",
+      "name_romanji": null,
+      "member_count": 9,
+      "fans": 1248
+    },
+    "OS☆U": {
+      "uid": "T1PimIZV",
+      "name_romanji": "OS☆U",
+      "member_count": 11,
+      "fans": 1170
+    },
+    "ふぇありーているず！": {
+      "uid": "44G144GH44GC44KK44O844Gm44GE44KL44Ga77yB",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 1124
+    },
+    "ideal peco": {
+      "uid": "aWRlYWwgcGVjbw",
+      "name_romanji": "Ideal_peco",
+      "member_count": 6,
+      "fans": 1107
+    },
+    "サクヤコノハナ": {
+      "uid": "44K144Kv44Ok44Kz44OO44OP44OK",
+      "name_romanji": "Sakuya_Konohana",
+      "member_count": 7,
+      "fans": 1084
+    },
+    "POPPiNG EMO": {
+      "uid": "UE9QUGlORyBFTU8",
+      "name_romanji": "POPPiNG_EMO",
+      "member_count": 6,
+      "fans": 1044
+    },
+    "SAI²Rium": {
+      "uid": "U0FJwrJSaXVt",
+      "name_romanji": "SAI_²Rium",
+      "member_count": 9,
+      "fans": 1031
+    },
+    "なんキニ！": {
+      "uid": "44Gq44KT44Kt44OL77yB",
+      "name_romanji": "Nankini!",
+      "member_count": 8,
+      "fans": 3863
+    },
+    "SANDAL TELEPHONE": {
+      "uid": "U0FOREFMIFRFTEVQSE9ORQ",
+      "name_romanji": "Sandal_Telephone",
+      "member_count": 3,
+      "fans": 3767
+    },
+    "SAiNT SEX": {
+      "uid": "U0FpTlQgU0VY",
+      "name_romanji": "SAiNT_SEX",
+      "member_count": 1,
+      "fans": 3502
+    },
+    "愛乙女☆DOLL": {
+      "uid": "5oSb5LmZ5aWz4piGRE9MTA",
+      "name_romanji": ".DOLL",
+      "member_count": 12,
+      "fans": 3010
+    },
+    "めろん畑a go go": {
+      "uid": "44KB44KN44KT55WRYSBnbyBnbw",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 2082
+    },
+    "ピュアリーモンスター": {
+      "uid": "44OU44Ol44Ki44Oq44O844Oi44Oz44K544K_44O8",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 1727
+    },
+    "NaNoMoRaL": {
+      "uid": "TmFOb01vUmFM",
+      "name_romanji": "NaNoMoRaL",
+      "member_count": 2,
+      "fans": 1457
+    },
+    "DREAMING MONSTER": {
+      "uid": "RFJFQU1JTkcgTU9OU1RFUg",
+      "name_romanji": "DREAMING_MONSTER",
+      "member_count": 9,
+      "fans": 1281
+    },
+    "CUBΣLIC": {
+      "uid": "Q1VCzqNMSUM",
+      "name_romanji": "CUBΣLIC",
+      "member_count": 4,
+      "fans": 1213
+    },
+    "メイビーME": {
+      "uid": "44Oh44Kk44OT44O8TUU",
+      "name_romanji": "Meibii ME",
+      "member_count": 6,
+      "fans": 1138
+    },
+    "PinkySpice": {
+      "uid": "UGlua3lTcGljZQ",
+      "name_romanji": "PinkySpice",
+      "member_count": 6,
+      "fans": 1106
+    },
+    "metarium": {
+      "uid": "bWV0YXJpdW0",
+      "name_romanji": "Metarium",
+      "member_count": 6,
+      "fans": 1084
+    },
+    "Layn": {
+      "uid": "TGF5bg",
+      "name_romanji": "Layn",
+      "member_count": 6,
+      "fans": 1057
+    },
+    "・・・・・・・・・": {
+      "uid": "44O744O744O744O744O744O744O744O744O7",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 29309
+    },
+    "アリス十番": {
+      "uid": "44Ki44Oq44K55Y2B55Wq",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 1046
+    },
+    "スチームガールズ": {
+      "uid": "44K544OB44O844Og44Ks44O844Or44K6",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 1046
+    },
+    "NANONI": {
+      "uid": "TkFOT05J",
+      "name_romanji": "NANONI",
+      "member_count": 7,
+      "fans": 1045
+    },
+    "XOXO EXTREME": {
+      "uid": "WE9YTyBFWFRSRU1F",
+      "name_romanji": "XOXO_EXTREME",
+      "member_count": 4,
+      "fans": 1719
+    },
+    "KRD8": {
+      "uid": "S1JEOA",
+      "name_romanji": "KRD8",
+      "member_count": 10,
+      "fans": 1578
+    },
+    "iSPY": {
+      "uid": "aVNQWQ",
+      "name_romanji": "ISPY",
+      "member_count": 5,
+      "fans": 1314
+    },
+    "Dorothy Little Happy": {
+      "uid": "RG9yb3RoeSBMaXR0bGUgSGFwcHk",
+      "name_romanji": "Dorothy_Little_Happy",
+      "member_count": 1,
+      "fans": 4564
+    },
+    "PARADISES": {
+      "uid": "UEFSQURJU0VT",
+      "name_romanji": "PARADISES",
+      "member_count": 11,
+      "fans": 4386
+    },
+    "STARMARIE": {
+      "uid": "U1RBUk1BUklF",
+      "name_romanji": "STARMARIE",
+      "member_count": 5,
+      "fans": 2929
+    },
+    "イケてるハーツ": {
+      "uid": "44Kk44Kx44Gm44KL44OP44O844OE",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 2080
+    },
+    "8bitBRAIN": {
+      "uid": "OGJpdEJSQUlO",
+      "name_romanji": "8bitBRAIN",
+      "member_count": 3,
+      "fans": 1741
+    },
+    "yumegiwa last girl": {
+      "uid": "eXVtZWdpd2EgbGFzdCBnaXJs",
+      "name_romanji": "Yumegiwa_last_girl",
+      "member_count": 5,
+      "fans": 1642
+    },
+    "BABY-CRAYON〜1361〜": {
+      "uid": "QkFCWS1DUkFZT07jgJwxMzYx44Cc",
+      "name_romanji": "BABY-CRAYON~1361~",
+      "member_count": 6,
+      "fans": 1382
+    },
+    "CHICKEN BLOW THE IDOL": {
+      "uid": "Q0hJQ0tFTiBCTE9XIFRIRSBJRE9M",
+      "name_romanji": "CHICKEN_BLOW_THE_IDOL",
+      "member_count": 3,
+      "fans": 1329
+    },
+    "つぼみ大革命": {
+      "uid": "44Gk44G844G_5aSn6Z2p5ZG9",
+      "name_romanji": "Tsubomi_Daikakumei",
+      "member_count": 7,
+      "fans": 1134
+    },
+    "BANZAI JAPAN": {
+      "uid": "QkFOWkFJIEpBUEFO",
+      "name_romanji": "BANZAI_JAPAN",
+      "member_count": 7,
+      "fans": 1629
+    },
+    "JYA☆PON 2.0": {
+      "uid": "SllB4piGUE9OIDIuMA",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 1564
+    },
+    "READY TO KISS": {
+      "uid": "UkVBRFkgVE8gS0lTUw",
+      "name_romanji": "READY_TO_KISS",
+      "member_count": 8,
+      "fans": 1351
+    },
+    "JUGS MAFIA": {
+      "uid": "SlVHUyBNQUZJQQ",
+      "name_romanji": "JUGS_MAFIA",
+      "member_count": 4,
+      "fans": 1221
+    },
+    "#PEXACOA": {
+      "uid": "I1BFWEFDT0E",
+      "name_romanji": "PEXACOA",
+      "member_count": 7,
+      "fans": 1071
+    },
+    "クロスノエシス": {
+      "uid": "44Kv44Ot44K544OO44Ko44K344K5",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 1578
+    },
+    "MANACLE": {
+      "uid": "TUFOQUNMRQ",
+      "name_romanji": "MANACLE",
+      "member_count": 6,
+      "fans": 1445
+    },
+    "2o Love to Sweet Bullet": {
+      "uid": "Mm8gTG92ZSB0byBTd2VldCBCdWxsZXQ",
+      "name_romanji": "Ai_no_Hana_(2o_Love_to_Sweet_Bullet)",
+      "member_count": 8,
+      "fans": 1247
+    },
+    "Chu-Z": {
+      "uid": "Q2h1LVo",
+      "name_romanji": "Chu-Z",
+      "member_count": 8,
+      "fans": 1152
+    },
+    "校庭カメラガール": {
+      "uid": "5qCh5bqt44Kr44Oh44Op44Ks44O844Or",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 1088
+    },
+    "MEWM": {
+      "uid": "TUVXTQ",
+      "name_romanji": "MEWM",
+      "member_count": 3,
+      "fans": 1046
+    },
+    "HAMIDASYSTEM": {
+      "uid": "SEFNSURBU1lTVEVN",
+      "name_romanji": "HAMIDASYSTEM",
+      "member_count": 2,
+      "fans": 2552
+    },
+    "MAGICOUR": {
+      "uid": "TUFHSUNPVVI",
+      "name_romanji": "MAGICOUR",
+      "member_count": 7,
+      "fans": 2062
+    },
+    "外神田いっちょめ": {
+      "uid": "5aSW56We55Sw44GE44Gj44Gh44KH44KB",
+      "name_romanji": null,
+      "member_count": 19,
+      "fans": 1239
+    },
+    "et-アンド-": {
+      "uid": "ZXQt44Ki44Oz44OJLQ",
+      "name_romanji": "Et-and-",
+      "member_count": 3,
+      "fans": 1106
+    },
+    "グーグールル": {
+      "uid": "44Kw44O844Kw44O844Or44Or",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 2065
+    },
+    "NILKLY": {
+      "uid": "TklMS0xZ",
+      "name_romanji": "NILKLY",
+      "member_count": 3,
+      "fans": 1418
+    },
+    "Five emotion": {
+      "uid": "Rml2ZSBlbW90aW9u",
+      "name_romanji": "Five_emotion",
+      "member_count": 5,
+      "fans": 1342
+    },
+    "EMOE": {
+      "uid": "RU1PRQ",
+      "name_romanji": "EMOE",
+      "member_count": 5,
+      "fans": 1101
+    },
+    "OLNew": {
+      "uid": "T0xOZXc",
+      "name_romanji": "OLNew",
+      "member_count": 5,
+      "fans": 166
+    },
+    "ARCANA PROJECT": {
+      "uid": "QVJDQU5BIFBST0pFQ1Q",
+      "name_romanji": "ARCANA_PROJECT",
+      "member_count": 6,
+      "fans": 9405
+    },
+    "Ma’Scar’Piece": {
+      "uid": "TWHigJlTY2Fy4oCZUGllY2U",
+      "name_romanji": "Ma'Scar'Piece",
+      "member_count": 6,
+      "fans": 3223
+    },
+    "東京女子流": {
+      "uid": "5p2x5Lqs5aWz5a2Q5rWB",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 26337
+    },
+    "BABYBEARD": {
+      "uid": "QkFCWUJFQVJE",
+      "name_romanji": "BABYBEARD",
+      "member_count": 5,
+      "fans": 22028
+    },
+    "ばってん少女隊": {
+      "uid": "44Gw44Gj44Gm44KT5bCR5aWz6ZqK",
+      "name_romanji": "Batten_Shoujo-tai",
+      "member_count": 7,
+      "fans": 12688
+    },
+    "FES☆TIVE": {
+      "uid": "RkVT4piGVElWRQ",
+      "name_romanji": "FES☆TIVE",
+      "member_count": 8,
+      "fans": 9894
+    },
+    "TEAM SHACHI": {
+      "uid": "VEVBTSBTSEFDSEk",
+      "name_romanji": "TEAM_SHACHI",
+      "member_count": 4,
+      "fans": 8861
+    },
+    "KLP48": {
+      "uid": "S0xQNDg",
+      "name_romanji": "KLP48",
+      "member_count": 1,
+      "fans": 7410
+    },
+    "WHITE SCORPION": {
+      "uid": "V0hJVEUgU0NPUlBJT04",
+      "name_romanji": "WHITE_SCORPION",
+      "member_count": 22,
+      "fans": 5289
+    },
+    "タイトル未定": {
+      "uid": "44K_44Kk44OI44Or5pyq5a6a",
+      "name_romanji": "Title_Mitei",
+      "member_count": 5,
+      "fans": 4397
+    },
+    "UtaGe!": {
+      "uid": "VXRhR2Uh",
+      "name_romanji": "UtaGe!",
+      "member_count": 7,
+      "fans": 2519
+    },
+    "ハルニシオン": {
+      "uid": "44OP44Or44OL44K344Kq44Oz",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1403
+    },
+    "NECRONOMIDOL": {
+      "uid": "TkVDUk9OT01JRE9M",
+      "name_romanji": "NECRONOMIDOL",
+      "member_count": 1,
+      "fans": 30053
+    },
+    "SUPER☆GiRLS": {
+      "uid": "U1VQRVLimIZHaVJMUw",
+      "name_romanji": "SUPER☆GiRLS",
+      "member_count": 9,
+      "fans": 23382
+    },
+    "まねきケチャ": {
+      "uid": "44G-44Gt44GN44Kx44OB44Oj",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 19850
+    },
+    "仮面ライダーGIRLS": {
+      "uid": "5Luu6Z2i44Op44Kk44OA44O8R0lSTFM",
+      "name_romanji": "Kamen_Rider_Girls",
+      "member_count": 4,
+      "fans": 8824
+    },
+    "fishbowl": {
+      "uid": "ZmlzaGJvd2w",
+      "name_romanji": "Fishbowl",
+      "member_count": 6,
+      "fans": 8226
+    },
+    "PIGGS": {
+      "uid": "UElHR1M",
+      "name_romanji": "PIGGS",
+      "member_count": 11,
+      "fans": 7109
+    },
+    "chuLa": {
+      "uid": "Y2h1TGE",
+      "name_romanji": "ChuLa",
+      "member_count": 7,
+      "fans": 6968
+    },
+    "Dancing Dolls": {
+      "uid": "RGFuY2luZyBEb2xscw",
+      "name_romanji": "Dancing_Dolls",
+      "member_count": 5,
+      "fans": 2899
+    },
+    "なみだ色の消しごむ": {
+      "uid": "44Gq44G_44Gg6Imy44Gu5raI44GX44GU44KA",
+      "name_romanji": null,
+      "member_count": 14,
+      "fans": 1916
+    },
+    "ベロティカ": {
+      "uid": "44OZ44Ot44OG44Kj44Kr",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 1510
+    },
+    "Maison book girl": {
+      "uid": "TWFpc29uIGJvb2sgZ2lybA",
+      "name_romanji": "Maison_book_girl",
+      "member_count": 4,
+      "fans": 27706
+    },
+    "バンドじゃないもん！MAXX NAKAYOSHI": {
+      "uid": "44OQ44Oz44OJ44GY44KD44Gq44GE44KC44KT77yBTUFYWCBOQUtBWU9TSEk",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 17773
+    },
+    "MAZE": {
+      "uid": "TUFaRQ",
+      "name_romanji": "MAZE",
+      "member_count": 5,
+      "fans": 10189
+    },
+    "GILTY × GILTY": {
+      "uid": "R0lMVFkgw5cgR0lMVFk",
+      "name_romanji": "GILTY×GILTY",
+      "member_count": 6,
+      "fans": 8563
+    },
+    "ASP": {
+      "uid": "QVNQ",
+      "name_romanji": "ASP",
+      "member_count": 10,
+      "fans": 7912
+    },
+    "ukka": {
+      "uid": "dWtrYQ",
+      "name_romanji": "Ukka",
+      "member_count": 7,
+      "fans": 6973
+    },
+    "INUWASI": {
+      "uid": "SU5VV0FTSQ",
+      "name_romanji": "INUWASI",
+      "member_count": 6,
+      "fans": 4695
+    },
+    "新章 大阪☆春夏秋冬": {
+      "uid": "5paw56ugIOWkp-mYquKYhuaYpeWkj-eni-WGrA",
+      "name_romanji": "Shunkashuutou",
+      "member_count": 4,
+      "fans": 4118
+    },
+    "ラフ×ラフ": {
+      "uid": "44Op44OVw5fjg6njg5U",
+      "name_romanji": "Rough_x_Laugh",
+      "member_count": 8,
+      "fans": 2481
+    },
+    "Not Secured,Loose Ends": {
+      "uid": "Tm90IFNlY3VyZWQsTG9vc2UgRW5kcw",
+      "name_romanji": "Not_Secured,_Loose_Ends",
+      "member_count": 4,
+      "fans": 1814
+    },
+    "Negicco": {
+      "uid": "TmVnaWNjbw",
+      "name_romanji": "Negicco",
+      "member_count": 3,
+      "fans": 18532
+    },
+    "モノクローン": {
+      "uid": "44Oi44OO44Kv44Ot44O844Oz",
+      "name_romanji": null,
+      "member_count": 0,
+      "fans": 6085
+    },
+    "手羽先センセーション": {
+      "uid": "5omL57695YWI44K744Oz44K744O844K344On44Oz",
+      "name_romanji": "Tebasaki_Sensation",
+      "member_count": 6,
+      "fans": 6160
+    },
+    "りんご娘": {
+      "uid": "44KK44KT44GU5aiY",
+      "name_romanji": "Ringo_Musume",
+      "member_count": 4,
+      "fans": 4764
+    },
+    "Peel the Apple": {
+      "uid": "UGVlbCB0aGUgQXBwbGU",
+      "name_romanji": "Peel_the_Apple",
+      "member_count": 8,
+      "fans": 4598
+    },
+    "群青の世界": {
+      "uid": "576k6Z2S44Gu5LiW55WM",
+      "name_romanji": "Gunjou_no_Sekai",
+      "member_count": 0,
+      "fans": 4056
+    },
+    "Mirror,Mirror": {
+      "uid": "TWlycm9yLE1pcnJvcg",
+      "name_romanji": "Mirror,Mirror",
+      "member_count": 7,
+      "fans": 2436
+    },
+    "AdamLilith": {
+      "uid": "QWRhbUxpbGl0aA",
+      "name_romanji": "AdamLilith",
+      "member_count": 4,
+      "fans": 2827
+    },
+    "REIRIE": {
+      "uid": "UkVJUklF",
+      "name_romanji": "REIRIE",
+      "member_count": 2,
+      "fans": 16779
+    },
+    "pinponpanpon": {
+      "uid": "cGlucG9ucGFucG9u",
+      "name_romanji": "Pinponpanpon",
+      "member_count": 4,
+      "fans": 10014
+    },
+    "最終未来少女": {
+      "uid": "5pyA57WC5pyq5p2l5bCR5aWz",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 11628
+    },
+    "JamsCollection": {
+      "uid": "SmFtc0NvbGxlY3Rpb24",
+      "name_romanji": "Jams_Collection",
+      "member_count": 7,
+      "fans": 8936
+    },
+    "GANG PARADE": {
+      "uid": "R0FORyBQQVJBREU",
+      "name_romanji": "GANG_PARADE",
+      "member_count": 11,
+      "fans": 24934
+    },
+    "ExWHYZ": {
+      "uid": "RXhXSFla",
+      "name_romanji": "ExWHYZ",
+      "member_count": 4,
+      "fans": 10561
+    },
+    "MAD JAMIE": {
+      "uid": "TUFEIEpBTUlF",
+      "name_romanji": "MAD_JAMIE",
+      "member_count": 1,
+      "fans": 8896
+    },
+    "Appare!": {
+      "uid": "QXBwYXJlIQ",
+      "name_romanji": "Appare!",
+      "member_count": 9,
+      "fans": 8383
+    },
+    "TENRIN": {
+      "uid": "VEVOUklO",
+      "name_romanji": "TENRIN",
+      "member_count": 8,
+      "fans": 6542
+    },
+    "CY8ER": {
+      "uid": "Q1k4RVI",
+      "name_romanji": "CY8ER",
+      "member_count": 5,
+      "fans": 36086
+    },
+    "IRONBUNNY": {
+      "uid": "SVJPTkJVTk5Z",
+      "name_romanji": "IRONBUNNY",
+      "member_count": 1,
+      "fans": 22024
+    },
+    "ノースリーブス": {
+      "uid": "44OO44O844K544Oq44O844OW44K5",
+      "name_romanji": null,
+      "member_count": 3,
+      "fans": 18200
+    },
+    "Isiliel": {
+      "uid": "SXNpbGllbA",
+      "name_romanji": null,
+      "member_count": 1,
+      "fans": 10033
+    },
+    "NANIMONO": {
+      "uid": "TkFOSU1PTk8",
+      "name_romanji": "NANIMONO",
+      "member_count": 7,
+      "fans": 10083
+    },
+    "マーキュロ": {
+      "uid": "44Oe44O844Kt44Ol44Ot",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 4787
+    },
+    "Onephony": {
+      "uid": "T25lcGhvbnk",
+      "name_romanji": "Onephony",
+      "member_count": 5,
+      "fans": 4091
+    },
+    "ドラマチックレコード": {
+      "uid": "44OJ44Op44Oe44OB44OD44Kv44Os44Kz44O844OJ",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": 2822
+    },
+    "マザリ": {
+      "uid": "44Oe44K244Oq",
+      "name_romanji": "Mazari",
+      "member_count": 6,
+      "fans": 3125
+    },
+    "NGT48": {
+      "uid": "TkdUNDg",
+      "name_romanji": "NGT48",
+      "member_count": 1,
+      "fans": 42398
+    },
+    "CYNHN": {
+      "uid": "Q1lOSE4",
+      "name_romanji": "CYNHN",
+      "member_count": 4,
+      "fans": 13922
+    },
+    "NEO JAPONISM": {
+      "uid": "TkVPIEpBUE9OSVNN",
+      "name_romanji": "NEO_JAPONISM",
+      "member_count": 8,
+      "fans": 11251
+    },
+    "i-COL": {
+      "uid": "aS1DT0w",
+      "name_romanji": "I-COL",
+      "member_count": 2,
+      "fans": 10873
+    },
+    "Devil ANTHEM.": {
+      "uid": "RGV2aWwgQU5USEVNLg",
+      "name_romanji": "Devil_ANTHEM.",
+      "member_count": 6,
+      "fans": 8343
+    },
+    "可憐なアイボリー": {
+      "uid": "5Y-v5oaQ44Gq44Ki44Kk44Oc44Oq44O8",
+      "name_romanji": "Karen_na_Ivory",
+      "member_count": 11,
+      "fans": 5279
+    },
+    "君に、胸キュン。": {
+      "uid": "5ZCb44Gr44CB6IO444Kt44Ol44Oz44CC",
+      "name_romanji": null,
+      "member_count": 8,
+      "fans": 3882
+    },
+    "ジエメイ": {
+      "uid": "44K444Ko44Oh44Kk",
+      "name_romanji": "Jiemei",
+      "member_count": 3,
+      "fans": 3472
+    },
+    "Merry BAD TUNE.": {
+      "uid": "TWVycnkgQkFEIFRVTkUu",
+      "name_romanji": "Merry_BAD_TUNE.",
+      "member_count": 6,
+      "fans": 3177
+    },
+    "豆柴の大群": {
+      "uid": "6LGG5p-044Gu5aSn576k",
+      "name_romanji": "MAMESHiBA_NO_TAiGUN",
+      "member_count": 6,
+      "fans": 14961
+    },
+    "RAY": {
+      "uid": "UkFZ",
+      "name_romanji": "RAY",
+      "member_count": 5,
+      "fans": 11015
+    },
+    "MADMED": {
+      "uid": "TUFETUVE",
+      "name_romanji": "MADMED",
+      "member_count": 6,
+      "fans": 10584
+    },
+    "ME:I": {
+      "uid": "TUU6SQ",
+      "name_romanji": "Nishimoto Meisa",
+      "member_count": 11,
+      "fans": 164748
+    },
+    "超ときめき♡宣伝部": {
+      "uid": "6LaF44Go44GN44KB44GN4pmh5a6j5Lyd6YOo",
+      "name_romanji": "Cho_Tokimeki♡Sendenbu",
+      "member_count": 5,
+      "fans": 132919
+    },
+    "ファントムシータ": {
+      "uid": "44OV44Kh44Oz44OI44Og44K344O844K_",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 277269
+    },
+    "きゅるりんってしてみて": {
+      "uid": "44GN44KF44KL44KK44KT44Gj44Gm44GX44Gm44G_44Gm",
+      "name_romanji": null,
+      "member_count": 4,
+      "fans": 69895
+    },
+    "日向坂46": {
+      "uid": "5pel5ZCR5Z2CNDY",
+      "name_romanji": "Hinatazaka46",
+      "member_count": 29,
+      "fans": 347493
+    },
+    "BiSH": {
+      "uid": "QmlTSA",
+      "name_romanji": "BiSH",
+      "member_count": 0,
+      "fans": 411234
+    },
+    "ももいろクローバーZ": {
+      "uid": "44KC44KC44GE44KN44Kv44Ot44O844OQ44O8Wg",
+      "name_romanji": "Momoiro Clover Z",
+      "member_count": 4,
+      "fans": 232986
+    },
+    "≠ME": {
+      "uid": "4omgTUU",
+      "name_romanji": "≠ME",
+      "member_count": 10,
+      "fans": 64622
+    },
+    "Billlie": {
+      "uid": "QmlsbGxpZQ",
+      "name_romanji": "Fukutomi Tsuki",
+      "member_count": 15,
+      "fans": 702820
+    },
+    "SWEET STEADY": {
+      "uid": "U1dFRVQgU1RFQURZ",
+      "name_romanji": "SWEET_STEADY",
+      "member_count": 7,
+      "fans": 30769
+    },
+    "Buono!": {
+      "uid": "QnVvbm8h",
+      "name_romanji": "Buono!",
+      "member_count": 6,
+      "fans": 34930
+    },
+    "≒JOY": {
+      "uid": "4omSSk9Z",
+      "name_romanji": "≒JOY",
+      "member_count": 12,
+      "fans": 34091
+    },
+    "NMB48": {
+      "uid": "Tk1CNDg",
+      "name_romanji": "NMB48",
+      "member_count": 1,
+      "fans": 91994
+    },
+    "i☆Ris": {
+      "uid": "aeKYhlJpcw",
+      "name_romanji": "I☆Ris",
+      "member_count": 5,
+      "fans": 71168
+    },
+    "私立恵比寿中学": {
+      "uid": "56eB56uL5oG15q-U5a-_5Lit5a2m",
+      "name_romanji": "Shiritsu_Ebisu_Chugaku",
+      "member_count": 17,
+      "fans": 69264
+    },
+    "AVAM": {
+      "uid": "QVZBTQ",
+      "name_romanji": "AVAM",
+      "member_count": 7,
+      "fans": 23287
+    },
+    "高嶺のなでしこ": {
+      "uid": "6auY5ba644Gu44Gq44Gn44GX44GT",
+      "name_romanji": "Takane_no_Nadeshiko",
+      "member_count": 9,
+      "fans": 26283
+    },
+    "Cherry Bullet": {
+      "uid": "Q2hlcnJ5IEJ1bGxldA",
+      "name_romanji": "Cherry Bullet",
+      "member_count": 0,
+      "fans": 455265
+    },
+    "PassCode": {
+      "uid": "UGFzc0NvZGU",
+      "name_romanji": "PassCode",
+      "member_count": 4,
+      "fans": 113809
+    },
+    "いぎなり東北産": {
+      "uid": "44GE44GO44Gq44KK5p2x5YyX55Sj",
+      "name_romanji": "Iginari_Tohokusan",
+      "member_count": 9,
+      "fans": 18487
+    },
+    "のんふぃく！": {
+      "uid": "44Gu44KT44G144GD44GP77yB",
+      "name_romanji": "Non¬Fiction",
+      "member_count": 9,
+      "fans": 15566
+    },
+    "EMPiRE": {
+      "uid": "RU1QaVJF",
+      "name_romanji": "EMPiRE",
+      "member_count": 4,
+      "fans": 39484
+    },
+    "ZOCX": {
+      "uid": "Wk9DWA",
+      "name_romanji": "ZOCX",
+      "member_count": 8,
+      "fans": 51416
+    },
+    "GENIC": {
+      "uid": "R0VOSUM",
+      "name_romanji": "GENIC",
+      "member_count": 7,
+      "fans": 23050
+    },
+    "でんぱ組.inc": {
+      "uid": "44Gn44KT44Gx57WELmluYw",
+      "name_romanji": "Dempagumi.inc",
+      "member_count": 7,
+      "fans": 76655
+    },
+    "Girls²": {
+      "uid": "R2lybHPCsg",
+      "name_romanji": "Girls²",
+      "member_count": 7,
+      "fans": 37723
+    },
+    "清竜人25": {
+      "uid": "5riF56uc5Lq6MjU",
+      "name_romanji": "Kiyoshi Ryujin 25",
+      "member_count": 1,
+      "fans": 15874
+    },
+    "SKE48": {
+      "uid": "U0tFNDg",
+      "name_romanji": "SKE48",
+      "member_count": 5,
+      "fans": 88903
+    },
+    "HKT48": {
+      "uid": "SEtUNDg",
+      "name_romanji": "HKT48",
+      "member_count": 1,
+      "fans": 78998
+    },
+    "Broken By The Scream": {
+      "uid": "QnJva2VuIEJ5IFRoZSBTY3JlYW0",
+      "name_romanji": "BROKEN_BY_THE_SCREAM",
+      "member_count": 4,
+      "fans": 66331
+    },
+    "フィロソフィーのダンス": {
+      "uid": "44OV44Kj44Ot44K944OV44Kj44O844Gu44OA44Oz44K5",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 32647
+    },
+    "KAQRIYOTERROR": {
+      "uid": "S0FRUklZT1RFUlJPUg",
+      "name_romanji": "KAQRIYOTERROR",
+      "member_count": 4,
+      "fans": 29119
+    },
+    "℃-ute": {
+      "uid": "4oSDLXV0ZQ",
+      "name_romanji": "℃-ute",
+      "member_count": 6,
+      "fans": 30665
+    },
+    "夜光性アミューズ": {
+      "uid": "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6",
+      "name_romanji": "Yakousei_Amuse",
+      "member_count": 6,
+      "fans": 14999
+    },
+    "わーすた": {
+      "uid": "44KP44O844GZ44Gf",
+      "name_romanji": "Wa-Suta",
+      "member_count": 4,
+      "fans": 36404
+    },
+    "AMEFURASSHI": {
+      "uid": "QU1FRlVSQVNTSEk",
+      "name_romanji": "AMEFURASSHI",
+      "member_count": 4,
+      "fans": 13867
+    },
+    "CSR": {
+      "uid": "Q1NS",
+      "name_romanji": null,
+      "member_count": 7,
+      "fans": 99103
+    },
+    "lol": {
+      "uid": "bG9s",
+      "name_romanji": "Lol",
+      "member_count": 8,
+      "fans": 61866
+    },
+    "Rocket Punch": {
+      "uid": "Um9ja2V0IFB1bmNo",
+      "name_romanji": "Rocket_Punch",
+      "member_count": 11,
+      "fans": 219217
+    },
+    "femme fatale": {
+      "uid": "ZmVtbWUgZmF0YWxl",
+      "name_romanji": "Femme_fatale",
+      "member_count": 2,
+      "fans": 44687
+    },
+    "STU48": {
+      "uid": "U1RVNDg",
+      "name_romanji": "STU48",
+      "member_count": 1,
+      "fans": 39737
+    },
+    "我儘ラキア": {
+      "uid": "5oiR5YSY44Op44Kt44Ki",
+      "name_romanji": "WAGAMAMARAKIA",
+      "member_count": 4,
+      "fans": 29384
+    },
+    "@onefive": {
+      "uid": "QG9uZWZpdmU",
+      "name_romanji": "@onefive",
+      "member_count": 4,
+      "fans": 11220
+    },
+    "yosugala": {
+      "uid": "eW9zdWdhbGE",
+      "name_romanji": "Yosugala",
+      "member_count": 4,
+      "fans": 8329
+    },
+    "虹のコンキスタドール": {
+      "uid": "6Jm544Gu44Kz44Oz44Kt44K544K_44OJ44O844Or",
+      "name_romanji": "Niji no Conquistador",
+      "member_count": 13,
+      "fans": 20702
+    },
+    "ぜんぶ君のせいだ。": {
+      "uid": "44Gc44KT44G25ZCb44Gu44Gb44GE44Gg44CC",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 19884
+    },
+    "LE SSERAFIM": {
+      "uid": "TEUgU1NFUkFGSU0",
+      "name_romanji": "LE_SSERAFIM",
+      "member_count": 14,
+      "fans": 9697819
+    },
+    "BABYMONSTER": {
+      "uid": "QkFCWU1PTlNURVI",
+      "name_romanji": "Kawai Ruka",
+      "member_count": 17,
+      "fans": 7521603
+    },
+    "BABYMETAL": {
+      "uid": "QkFCWU1FVEFM",
+      "name_romanji": "BABYMETAL",
+      "member_count": 4,
+      "fans": 2967244
+    },
+    "=LOVE": {
+      "uid": "PUxPVkU",
+      "name_romanji": "=LOVE",
+      "member_count": 10,
+      "fans": 296768
+    },
+    "乃木坂46": {
+      "uid": "5LmD5pyo5Z2CNDY",
+      "name_romanji": "Nogizaka46",
+      "member_count": 40,
+      "fans": 1322989
+    },
+    "FRUITS ZIPPER": {
+      "uid": "RlJVSVRTIFpJUFBFUg",
+      "name_romanji": "FRUITS_ZIPPER",
+      "member_count": 7,
+      "fans": 305959
+    },
+    "AKB48": {
+      "uid": "QUtCNDg",
+      "name_romanji": "AKB48",
+      "member_count": 4,
+      "fans": 550295
+    },
+    "iLiFE!": {
+      "uid": "aUxpRkUh",
+      "name_romanji": "iLiFE!",
+      "member_count": 9,
+      "fans": 129753
+    },
+    "櫻坂46": {
+      "uid": "5qu75Z2CNDY",
+      "name_romanji": "Sakurazaka46",
+      "member_count": 32,
+      "fans": 226614
+    },
+    "CUTIE STREET": {
+      "uid": "Q1VUSUUgU1RSRUVU",
+      "name_romanji": "CUTIE_STREET",
+      "member_count": 8,
+      "fans": 238350
+    },
+    "CANDY TUNE": {
+      "uid": "Q0FORFkgVFVORQ",
+      "name_romanji": "CANDY_TUNE",
+      "member_count": 7,
+      "fans": 125972
+    },
+    "じーくらむ！": {
+      "uid": "44GY44O844GP44KJ44KA77yB",
+      "name_romanji": null,
+      "member_count": 6,
+      "fans": null
+    },
+    "ラストシーン": {
+      "uid": "44Op44K544OI44K344O844Oz",
+      "name_romanji": "LAST_SCENE_(HEROINES)",
+      "member_count": 6,
+      "fans": null
+    },
+    "Nゼロ": {
+      "uid": "TuOCvOODrQ",
+      "name_romanji": "N_Zero",
+      "member_count": 10,
+      "fans": null
+    },
+    "Checkmate": {
+      "uid": "Q2hlY2ttYXRl",
+      "name_romanji": "Checkmate!?",
+      "member_count": 2,
+      "fans": null
+    },
+    "VILLAINS HOUSE": {
+      "uid": "VklMTEFJTlMgSE9VU0U",
+      "name_romanji": "VILLAINS_HOUSE",
+      "member_count": 9,
+      "fans": 2529
+    },
+    "YAMINABE": {
+      "uid": "WUFNSU5BQkU",
+      "name_romanji": "YAMINABE",
+      "member_count": 3,
+      "fans": null
+    },
+    "あげもん！": {
+      "uid": "44GC44GS44KC44KT77yB",
+      "name_romanji": "Agemon!",
+      "member_count": 4,
+      "fans": 493
+    },
+    "ナト☆カン": {
+      "uid": "44OK44OI4piG44Kr44Oz/#google_vignette",
+      "name_romanji": "Nato☆Kan",
+      "member_count": 2,
+      "fans": 364
+    },
+    "リリシック学園": {
+      "uid": "44Oq44Oq44K344OD44Kv5a2m5ZyS",
+      "name_romanji": null,
+      "member_count": 5,
+      "fans": 213
+    },
+    "Pimm's": {
+      "uid": "UGltbSdz",
+      "name_romanji": "Pimm's",
+      "member_count": 7,
+      "fans": 5303
+    },
+    "Love Cocchi": {
+      "uid": "TG92ZSBDb2NjaGk",
+      "name_romanji": "Love Cocchi",
+      "member_count": 3,
+      "fans": 1469
+    },
+    "ドレスコード": {
+      "uid": "d231b9f2-f247-4cf5-8d57-35365fd73f16",
+      "name_romanji": "Dress_Code",
+      "member_count": 6,
+      "fans": null
+    },
+    "ガガピエロ": {
+      "uid": "df3e70ea-93af-41a2-bc29-22f7087350d8",
+      "name_romanji": "GAGAPIERO",
+      "member_count": 0,
+      "fans": null
+    },
+    "ヒロインズ研究生": {
+      "uid": "9b937bbf-facf-437b-9815-94152bfe5805",
+      "name_romanji": "HEROINES Kenkyuusei",
+      "member_count": 13,
+      "fans": null
+    },
+    "ナナコロビヤオキ": {
+      "uid": "055cd81a-8c78-44ad-b74b-3f45fc551f9b",
+      "name_romanji": "Nanakorobi_Yaoki",
+      "member_count": 7,
+      "fans": null
+    },
+    "iON!": {
+      "uid": "d698eb6b-e82f-48f1-a2df-6cf858315ad4",
+      "name_romanji": "iON!",
+      "member_count": 10,
+      "fans": 2824
+    },
+    "LADYBABY": {
+      "uid": "72612662-7c13-4de8-b694-a800f9eb1dda",
+      "name_romanji": "LADYBABY",
+      "member_count": 4,
+      "fans": 136942
+    },
+    "AMAKAZE": {
+      "uid": "a7805041-7cce-4541-86b5-a3fe06d3d4ea",
+      "name_romanji": "",
+      "member_count": 9,
+      "fans": null
+    },
+    "Raiden": {
+      "uid": "743724ff-5c2d-4e42-85ab-95e7e5c42954",
+      "name_romanji": "",
+      "member_count": 10,
+      "fans": null
+    },
+    "Ragken!": {
+      "uid": "d8f8e543-16c7-4f7e-8903-ded7ec8c5380",
+      "name_romanji": "",
+      "member_count": 13,
+      "fans": null
+    },
+    "SUIGETSU": {
+      "uid": "764d49a4-9186-44f0-9c88-ab913d7c95ca",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": null
+    },
+    "BLK LiLiY": {
+      "uid": "15c6385c-b09a-4dbc-89f1-fc96cef74fff",
+      "name_romanji": "BLK_LiLiY",
+      "member_count": 0,
+      "fans": null
+    },
+    "Link STAR's": {
+      "uid": "7e2b7bae-0b97-4c6c-8268-4923aa92c622",
+      "name_romanji": "Link_STAR's",
+      "member_count": 0,
+      "fans": null
+    },
+    "Yumeiro H!L!T": {
+      "uid": "4d9e63bf-672e-4b0a-86e6-40c8e5cc6689",
+      "name_romanji": "Yumeiro_H!L!T",
+      "member_count": 0,
+      "fans": null
+    },
+    "欅坂46": {
+      "uid": "5qyF5Z2CNDY",
+      "name_romanji": "Keyakizaka46",
+      "member_count": 1,
+      "fans": null
+    },
+    "IZ*ONE": {
+      "uid": "SVoqT05F",
+      "name_romanji": "IZ*ONE",
+      "member_count": 0,
+      "fans": 2511205
+    },
+    "モーニング娘。": {
+      "uid": "44Oi44O844OL44Oz44Kw5aiY44CC",
+      "name_romanji": "Morning Musume",
+      "member_count": 0,
+      "fans": 41880
+    },
+    "Juice=Juice": {
+      "uid": "SnVpY2U9SnVpY2U",
+      "name_romanji": "Juice=Juice",
+      "member_count": 1,
+      "fans": 34065
+    },
+    "神宿": {
+      "uid": "56We5a6_",
+      "name_romanji": "KAMIYADO",
+      "member_count": 0,
+      "fans": 54257
+    },
+    "PiKi": {
+      "uid": "UGlLaQ",
+      "name_romanji": "PiKi",
+      "member_count": 2,
+      "fans": 33211
+    },
+    "アンジュルム": {
+      "uid": "44Ki44Oz44K444Ol44Or44Og",
+      "name_romanji": "ANGERME",
+      "member_count": 0,
+      "fans": 17688
+    },
+    "Berryz工房": {
+      "uid": "QmVycnl65bel5oi_",
+      "name_romanji": "Berryz Koubou",
+      "member_count": 1,
+      "fans": 28002
+    },
+    "BEYOOOOONDS": {
+      "uid": "QkVZT09PT09ORFM",
+      "name_romanji": "BEYOOOOONDS",
+      "member_count": 2,
+      "fans": 14256
+    },
+    "つばきファクトリー": {
+      "uid": "44Gk44Gw44GN44OV44Kh44Kv44OI44Oq44O8",
+      "name_romanji": "Tsubaki Factory",
+      "member_count": 0,
+      "fans": 11728
+    },
+    "Pretty Chuu": {
+      "uid": "UHJldHR5IENodXU",
+      "name_romanji": "Pretty_Chuu",
+      "member_count": 5,
+      "fans": 7927
+    },
+    "MORE STAR": {
+      "uid": "TU9SRSBTVEFS",
+      "name_romanji": "MORE_STAR",
+      "member_count": 9,
+      "fans": 11713
+    },
+    "MEGAFON": {
+      "uid": "TUVHQUZPTg",
+      "name_romanji": "MEGAFON",
+      "member_count": 6,
+      "fans": 6537
+    },
+    "幽世脅嚇": {
+      "uid": "5bm95LiW6ISF5ZqH",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 30493
+    },
+    "A応P": {
+      "uid": "QeW_nFA",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 16339
+    },
+    "OCHA NORMA": {
+      "uid": "T0NIQSBOT1JNQQ",
+      "name_romanji": "OCHA NORMA",
+      "member_count": 1,
+      "fans": 10143
+    },
+    "アイドリング!!!": {
+      "uid": "44Ki44Kk44OJ44Oq44Oz44KwISEh",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 9251
+    },
+    "DRAW♡ME": {
+      "uid": "RFJBV-KZoU1F",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 4338
+    },
+    "MNL48": {
+      "uid": "TU5MNDg",
+      "name_romanji": "MNL48",
+      "member_count": 1,
+      "fans": 45910
+    },
+    "ロージークロニクル": {
+      "uid": "44Ot44O844K444O844Kv44Ot44OL44Kv44Or",
+      "name_romanji": "Rosy Chronicle",
+      "member_count": 0,
+      "fans": 7441
+    },
+    "眉村ちあき": {
+      "uid": "55yJ5p2R44Gh44GC44GN",
+      "name_romanji": "Mayumura_Chiaki",
+      "member_count": 0,
+      "fans": 26251
+    },
+    "MYERA": {
+      "uid": "TVlFUkE",
+      "name_romanji": "",
+      "member_count": 5,
+      "fans": 13154
+    },
+    "Buzy": {
+      "uid": "QnV6eQ",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 5178
+    },
+    "ハロプロ研修生": {
+      "uid": "44OP44Ot44OX44Ot56CU5L-u55Sf",
+      "name_romanji": "Hello Pro Kenshuusei",
+      "member_count": 0,
+      "fans": 3364
+    },
+    "ラストアイドル2期生": {
+      "uid": "44Op44K544OI44Ki44Kk44OJ44OrMuacn-eUnw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 26516
+    },
+    "sora tob sakana": {
+      "uid": "c29yYSB0b2Igc2FrYW5h",
+      "name_romanji": "Sora_tob_sakana",
+      "member_count": 0,
+      "fans": 27609
+    },
+    "さくら学院": {
+      "uid": "44GV44GP44KJ5a2m6Zmi",
+      "name_romanji": "Sakura_Gakuin",
+      "member_count": 0,
+      "fans": 18919
+    },
+    "渡り廊下走り隊7": {
+      "uid": "5rih44KK5buK5LiL6LWw44KK6ZqKNw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 10570
+    },
+    "Prizmmy☆": {
+      "uid": "UHJpem1teeKYhg",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 9186
+    },
+    "フェアリーズ": {
+      "uid": "44OV44Kn44Ki44Oq44O844K6",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 27984
+    },
+    "26時のマスカレイド": {
+      "uid": "MjbmmYLjga7jg57jgrnjgqvjg6zjgqTjg4k",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 16188
+    },
+    "GPP": {
+      "uid": "R1BQ",
+      "name_romanji": "",
+      "member_count": 8,
+      "fans": 4040
+    },
+    "RealRomantic": {
+      "uid": "UmVhbFJvbWFudGlj",
+      "name_romanji": "",
+      "member_count": 8,
+      "fans": 3545
+    },
+    "PIGMONZ": {
+      "uid": "UElHTU9OWg",
+      "name_romanji": "",
+      "member_count": 3,
+      "fans": 763
+    },
+    "ONEPIXCEL": {
+      "uid": "T05FUElYQ0VM",
+      "name_romanji": "OnePixcel",
+      "member_count": 0,
+      "fans": 9321
+    },
+    "テンシンランマン": {
+      "uid": "44OG44Oz44K344Oz44Op44Oz44Oe44Oz",
+      "name_romanji": "Tenshinranman",
+      "member_count": 7,
+      "fans": 1093
+    },
+    "Straight Angeli": {
+      "uid": "U3RyYWlnaHQgQW5nZWxp",
+      "name_romanji": "Straight_Angeli",
+      "member_count": 6,
+      "fans": 734
+    },
+    "脇田もなり": {
+      "uid": "6ISH55Sw44KC44Gq44KK",
+      "name_romanji": "Wakita_Monari",
+      "member_count": 0,
+      "fans": 5679
+    },
+    "Jewel": {
+      "uid": "SmV3ZWw",
+      "name_romanji": "",
+      "member_count": 1,
+      "fans": 4763
+    },
+    "DIAVEL": {
+      "uid": "RElBVkVM",
+      "name_romanji": "",
+      "member_count": 7,
+      "fans": 1382
+    },
+    "MilkyWay": {
+      "uid": "TWlsa3lXYXk",
+      "name_romanji": "Milkyway",
+      "member_count": 1,
+      "fans": 935
+    },
+    "365°": {
+      "uid": "MzY1wrA",
+      "name_romanji": "365",
+      "member_count": 0,
+      "fans": 202
+    },
+    "Chuning Candy": {
+      "uid": "Q2h1bmluZyBDYW5keQ",
+      "name_romanji": "Chuning_Candy",
+      "member_count": 0,
+      "fans": 3593
+    },
+    "XINXIN": {
+      "uid": "WElOWElO",
+      "name_romanji": "",
+      "member_count": 8,
+      "fans": 860
+    },
+    "Gen1es": {
+      "uid": "R2VuMWVz",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 10681
+    },
+    "フレンチ・キス": {
+      "uid": "44OV44Os44Oz44OB44O744Kt44K5",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 9102
+    },
+    "MISS MERCY": {
+      "uid": "TUlTUyBNRVJDWQ",
+      "name_romanji": "MISS_MERCY",
+      "member_count": 7,
+      "fans": 1815
+    },
+    "Toi Toi Toi": {
+      "uid": "VG9pIFRvaSBUb2k",
+      "name_romanji": "Toi_Toi_Toi",
+      "member_count": 8,
+      "fans": 1057
+    },
+    "amini": {
+      "uid": "YW1pbmk",
+      "name_romanji": "Amini",
+      "member_count": 6,
+      "fans": 595
+    },
+    "セクト": {
+      "uid": "44K744Kv44OI",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 518
+    },
+    "ハッピーくるくる": {
+      "uid": "44OP44OD44OU44O844GP44KL44GP44KL",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 19467
+    },
+    "悲撃のヒロイン症候群": {
+      "uid": "5oKy5pKD44Gu44OS44Ot44Kk44Oz55eH5YCZ576k",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 11209
+    },
+    "RYUTist": {
+      "uid": "UllVVGlzdA",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 10938
+    },
+    "ザ・コインロッカーズ": {
+      "uid": "44K244O744Kz44Kk44Oz44Ot44OD44Kr44O844K6",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 4437
+    },
+    "りンね": {
+      "uid": "44KK44Oz44Gt",
+      "name_romanji": "Rinne",
+      "member_count": 0,
+      "fans": 1212
+    },
+    "Made in Maiden": {
+      "uid": "TWFkZSBpbiBNYWlkZW4",
+      "name_romanji": "Requiem_(Made_in_Maiden)",
+      "member_count": 4,
+      "fans": 1333
+    },
+    "ギミック": {
+      "uid": "44Ku44Of44OD44Kv",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 534
+    },
+    "Busters": {
+      "uid": "QnVzdGVycw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 57570
+    },
+    "ミソラドエジソン": {
+      "uid": "44Of44K944Op44OJ44Ko44K444K944Oz",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2791
+    },
+    "SOL": {
+      "uid": "U09M",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 1755
+    },
+    "CAL&RES": {
+      "uid": "Q0FMJlJFUw",
+      "name_romanji": "CAL&RES",
+      "member_count": 4,
+      "fans": 1116
+    },
+    "ねおち": {
+      "uid": "44Gt44GK44Gh",
+      "name_romanji": "Neochi",
+      "member_count": 0,
+      "fans": 930
+    },
+    "神様の言う通り": {
+      "uid": "56We5qeY44Gu6KiA44GG6YCa44KK",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 584
+    },
+    "絶望キネマ": {
+      "uid": "57W25pyb44Kt44ON44Oe",
+      "name_romanji": "Zetsubou_Kinema",
+      "member_count": 5,
+      "fans": 364
+    },
+    "LUNARSOLAR": {
+      "uid": "TFVOQVJTT0xBUg",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 85898
+    },
+    "Especia": {
+      "uid": "RXNwZWNpYQ",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 7602
+    },
+    "Zsasz": {
+      "uid": "WnNhc3o",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 5146
+    },
+    "コレって恋ですか？": {
+      "uid": "44Kz44Os44Gj44Gm5oGL44Gn44GZ44GL77yf",
+      "name_romanji": "Korette_Koi_desu_ka?",
+      "member_count": 0,
+      "fans": 4238
+    },
+    "プランクスターズ": {
+      "uid": "44OX44Op44Oz44Kv44K544K_44O844K6",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2076
+    },
+    "可憐Girl's": {
+      "uid": "5Y-v5oaQR2lybCdz",
+      "name_romanji": "Karen_Girl's",
+      "member_count": 2,
+      "fans": 1749
+    },
+    "SPACE GIRLS PLANET": {
+      "uid": "U1BBQ0UgR0lSTFMgUExBTkVU",
+      "name_romanji": "SPACE_GIRLS_PLANET",
+      "member_count": 0,
+      "fans": 903
+    },
+    "Root mimi": {
+      "uid": "Um9vdCBtaW1p",
+      "name_romanji": "Root_mimi",
+      "member_count": 13,
+      "fans": 827
+    },
+    "log you": {
+      "uid": "bG9nIHlvdQ",
+      "name_romanji": "Log_you",
+      "member_count": 12,
+      "fans": 735
+    },
+    "めっ！": {
+      "uid": "44KB44Gj77yB",
+      "name_romanji": "Sukisugite_Metsu!",
+      "member_count": 0,
+      "fans": 545
+    },
+    "DEADLIFT LOLITA": {
+      "uid": "REVBRExJRlQgTE9MSVRB",
+      "name_romanji": "DEADLIFT_LOLITA",
+      "member_count": 2,
+      "fans": 23791
+    },
+    "アイドルネッサンス": {
+      "uid": "44Ki44Kk44OJ44Or44ON44OD44K144Oz44K5",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 8145
+    },
+    "ベイビーレイズJAPAN": {
+      "uid": "44OZ44Kk44OT44O844Os44Kk44K6SkFQQU4",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 7398
+    },
+    "CARRY LOOSE": {
+      "uid": "Q0FSUlkgTE9PU0U",
+      "name_romanji": "CARRY_LOOSE",
+      "member_count": 4,
+      "fans": 6383
+    },
+    "吉川友": {
+      "uid": "5ZCJ5bed5Y-L",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 4045
+    },
+    "東京パフォーマンスドール": {
+      "uid": "5p2x5Lqs44OR44OV44Kp44O844Oe44Oz44K544OJ44O844Or",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3317
+    },
+    "BeForU": {
+      "uid": "QmVGb3JV",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3139
+    },
+    "RE-GE": {
+      "uid": "UkUtR0U",
+      "name_romanji": "",
+      "member_count": 9,
+      "fans": 523
+    },
+    "アストレイル": {
+      "uid": "44Ki44K544OI44Os44Kk44Or",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 313
+    },
+    "PASSPO☆": {
+      "uid": "UEFTU1BP4piG",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 12778
+    },
+    "吉田凜音": {
+      "uid": "5ZCJ55Sw5Yec6Z-z",
+      "name_romanji": "Yoshida_Rinne",
+      "member_count": 0,
+      "fans": 9183
+    },
+    "miscast": {
+      "uid": "bWlzY2FzdA",
+      "name_romanji": "Miscast",
+      "member_count": 8,
+      "fans": 3864
+    },
+    "Rev.from DVL": {
+      "uid": "UmV2LmZyb20gRFZM",
+      "name_romanji": "Rev._from_DVL",
+      "member_count": 0,
+      "fans": 3234
+    },
+    "NEKIRU": {
+      "uid": "TkVLSVJV",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 1101
+    },
+    "VINII": {
+      "uid": "VklOSUk",
+      "name_romanji": "",
+      "member_count": 4,
+      "fans": 694
+    },
+    "MeMeQ": {
+      "uid": "TWVNZVE",
+      "name_romanji": "",
+      "member_count": 7,
+      "fans": 437
+    },
+    "CURE'T": {
+      "uid": "Q1VSRSdU",
+      "name_romanji": "",
+      "member_count": 6,
+      "fans": 398
+    },
+    "Sugar♡Holic": {
+      "uid": "U3VnYXLimaFIb2xpYw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 335
+    },
+    "BNSI": {
+      "uid": "Qk5TSQ",
+      "name_romanji": "",
+      "member_count": 7,
+      "fans": 282
+    },
+    "ヒイラギリオ": {
+      "uid": "44OS44Kk44Op44Ku44Oq44Kq",
+      "name_romanji": "Hiiragi_Rio",
+      "member_count": 0,
+      "fans": 238
+    },
+    "特撮がるず": {
+      "uid": "54m55pKu44GM44KL44Ga",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 274
+    },
+    "篠崎りさ": {
+      "uid": "56-g5bSO44KK44GV",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 24
+    },
+    "Cheeky Parade": {
+      "uid": "Q2hlZWt5IFBhcmFkZQ",
+      "name_romanji": "Cheeky_Parade",
+      "member_count": 0,
+      "fans": 7139
+    },
+    "IDOLATER": {
+      "uid": "SURPTEFURVI",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2617
+    },
+    "ファーストプレイリスト": {
+      "uid": "44OV44Kh44O844K544OI44OX44Os44Kk44Oq44K544OI",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 186
+    },
+    "ReFLiA": {
+      "uid": "UmVGTGlB",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 96
+    },
+    "武藤彩未": {
+      "uid": "5q2m6Jek5b2p5pyq",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3709
+    },
+    "ねもぺろ from でんぱ組.inc": {
+      "uid": "44Gt44KC44G644KNIGZyb20g44Gn44KT44Gx57WELmluYw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3173
+    },
+    "みぎてやじるし ひだりてはーと": {
+      "uid": "44G_44GO44Gm44KE44GY44KL44GXIOOBsuOBoOOCiuOBpuOBr-ODvOOBqA",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 11095
+    },
+    "CROWN POP": {
+      "uid": "Q1JPV04gUE9Q",
+      "name_romanji": "CROWN_POP",
+      "member_count": 0,
+      "fans": 5131
+    },
+    "乙女新党": {
+      "uid": "5LmZ5aWz5paw5YWa",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 4614
+    },
+    "寺嶋由芙": {
+      "uid": "5a-65baL55Sx6IqZ",
+      "name_romanji": "Terashima_Yufu",
+      "member_count": 0,
+      "fans": 4025
+    },
+    "B.O.L.T": {
+      "uid": "Qi5PLkwuVA",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3591
+    },
+    "WHY@DOLL": {
+      "uid": "V0hZQERPTEw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3592
+    },
+    "predia": {
+      "uid": "cHJlZGlh",
+      "name_romanji": "Predia",
+      "member_count": 0,
+      "fans": 3054
+    },
+    "GEM": {
+      "uid": "R0VN",
+      "name_romanji": "",
+      "member_count": 9,
+      "fans": 5084
+    },
+    "恵比寿マスカッツ": {
+      "uid": "5oG15q-U5a-_44Oe44K544Kr44OD44OE",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2880
+    },
+    "KOTO": {
+      "uid": "S09UTw",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2738
+    },
+    "HO6LA": {
+      "uid": "SE82TEE",
+      "name_romanji": "",
+      "member_count": 6,
+      "fans": 2369
+    },
+    "広瀬愛菜": {
+      "uid": "5bqD54Cs5oSb6I-c",
+      "name_romanji": "Hirose_Aina",
+      "member_count": 0,
+      "fans": 2321
+    },
+    "シュークリームロケッツ": {
+      "uid": "44K344Ol44O844Kv44Oq44O844Og44Ot44Kx44OD44OE",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2283
+    },
+    "みんなのこどもちゃん": {
+      "uid": "44G_44KT44Gq44Gu44GT44Gp44KC44Gh44KD44KT",
+      "name_romanji": "Minna_no_Kodomo-chan",
+      "member_count": 0,
+      "fans": 4404
+    },
+    "バニラビーンズ": {
+      "uid": "44OQ44OL44Op44OT44O844Oz44K6",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2598
+    },
+    "DESURABBITS": {
+      "uid": "REVTVVJBQkJJVFM",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2580
+    },
+    "HALLCA": {
+      "uid": "SEFMTENB",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2437
+    },
+    "PiXMiX": {
+      "uid": "UGlYTWlY",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2170
+    },
+    "はちみつロケット": {
+      "uid": "44Gv44Gh44G_44Gk44Ot44Kx44OD44OI",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3939
+    },
+    "ロッカジャポニカ": {
+      "uid": "44Ot44OD44Kr44K444Oj44Od44OL44Kr",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 3317
+    },
+    "X21": {
+      "uid": "WDIx",
+      "name_romanji": "",
+      "member_count": 0,
+      "fans": 2741
+    },
+    "Siam☆Dream": {
+      "uid": "U2lhbeKYhkRyZWFt",
+      "name_romanji": "Dream",
+      "member_count": 6,
+      "fans": 2521
+    },
+    "3B junior": {
+      "uid": "M0IganVuaW9y",
+      "name_romanji": "3B_junior",
+      "member_count": 0,
+      "fans": 2278
+    },
+    "raymay": {
+      "uid": "cmF5bWF5",
+      "name_romanji": "Raymay",
+      "member_count": 0,
+      "fans": 2166
+    },
+    "On the treat Super Season": {
+      "uid": "T24gdGhlIHRyZWF0IFN1cGVyIFNlYXNvbg",
+      "name_romanji": "On_the_treat_Super_Season",
+      "member_count": 0,
+      "fans": 2126
+    },
+    "NELN": {
+      "uid": "TkVMTg",
+      "name_romanji": "",
+      "member_count": 2,
+      "fans": 2047
+    },
+    "炭酸くろにくるっ": {
+      "uid": "54Kt6YW444GP44KN44Gr44GP44KL44Gj",
+      "name_romanji": "tansankuronikuru",
+      "member_count": 0,
+      "fans": null
+    },
+    "Le Siana": {
+      "uid": "TGUgU2lhbmE",
+      "name_romanji": "Le Siana",
+      "member_count": 0,
+      "fans": null
+    },
+    "Pink Babies": {
+      "uid": "UGluayBCYWJpZXM",
+      "name_romanji": "Pink Babies",
+      "member_count": 5,
+      "fans": null
+    },
+    "eyes": {
+      "uid": "ZXllcw",
+      "name_romanji": "eyes",
+      "member_count": 4,
+      "fans": null
+    },
+    "Last Idol": {
+      "uid": "TGFzdCBJZG9s",
+      "name_romanji": "Last Idol",
+      "member_count": 0,
+      "fans": null
+    },
+    "Fujun Bungaku Shoujo Kagekidan": {
+      "uid": "RnVqdW4gQnVuZ2FrdSBTaG91am8gS2FnZWtpZGFu",
+      "name_romanji": "Fujun Bungaku Shoujo Kagekidan",
+      "member_count": 0,
+      "fans": null
+    },
+    "La Luce": {
+      "uid": "TGEgTHVjZQ",
+      "name_romanji": "La Luce",
+      "member_count": 3,
+      "fans": null
+    },
+    "Good Tears": {
+      "uid": "R29vZCBUZWFycw",
+      "name_romanji": "Good Tears",
+      "member_count": 2,
+      "fans": null
+    },
+    "Choux Cream Rockets": {
+      "uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
+      "name_romanji": "Choux Cream Rockets",
+      "member_count": 2,
+      "fans": null
+    },
+    "Someday Somewhere": {
+      "uid": "U29tZWRheSBTb21ld2hlcmU",
+      "name_romanji": "Someday Somewhere",
+      "member_count": 2,
+      "fans": null
+    },
+    "Last Idol 2nd Generation": {
+      "uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
+      "name_romanji": "Last Idol 2nd Generation",
+      "member_count": 7,
+      "fans": null
+    },
+    "Last Idol 2nd Generation Under": {
+      "uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9uIFVuZGVy",
+      "name_romanji": "Last Idol 2nd Generation Under",
+      "member_count": 18,
+      "fans": null
+    },
+    "アルプスおとめ": {
+      "uid": "44Ki44Or44OX44K544GK44Go44KB",
+      "name_romanji": "Alps Otome",
+      "member_count": 0,
+      "fans": null
+    },
+    "Astrain": {
+      "uid": "QXN0cmFpbg",
+      "name_romanji": "Astrain",
+      "member_count": 3,
+      "fans": null
+    },
+    "Circle Lychee": {
+      "uid": "Q2lyY2xlIEx5Y2hlZQ",
+      "name_romanji": "Circle Lychee",
+      "member_count": 52,
+      "fans": null
+    },
+    "Shirayuri to Ame": {
+      "uid": "U2hpcmF5dXJpIHRvIEFtZQ",
+      "name_romanji": "Shirayuri to Ame",
+      "member_count": 6,
+      "fans": null
+    },
+    "Sect": {
+      "uid": "U2VjdA",
+      "name_romanji": "Sect",
+      "member_count": 7,
+      "fans": null
+    },
+    "Cerisier": {
+      "uid": "Q2VyaXNpZXI",
+      "name_romanji": "Cerisier",
+      "member_count": 63,
+      "fans": null
+    },
+    "#DO RE MI FA SOL LA SEED": {
+      "uid": "I0RPIFJFIE1JIEZBIFNPTCBMQSBTRUVE",
+      "name_romanji": "#DO RE MI FA SOL LA SEED",
+      "member_count": 4,
+      "fans": null
+    },
+    "Wagamama na Last Note": {
+      "uid": "V2FnYW1hbWEgbmEgTGFzdCBOb3Rl",
+      "name_romanji": "Wagamama na Last Note",
+      "member_count": 6,
+      "fans": null
+    },
+    "KAMO ga NEGI wo Shottekuru!!!": {
+      "uid": "S0FNTyBnYSBORUdJIHdvIFNob3R0ZWt1cnUhISE",
+      "name_romanji": "KAMO ga NEGI wo Shottekuru!!!",
+      "member_count": 0,
+      "fans": null
+    },
+    "mai mai": {
+      "uid": "bWFpIG1haQ",
+      "name_romanji": "mai mai",
+      "member_count": 3,
+      "fans": null
+    },
+    "Sukiiro Drop": {
+      "uid": "U3VraWlybyBEcm9w",
+      "name_romanji": "Sukiiro Drop",
+      "member_count": 2,
+      "fans": null
+    },
+    "Toriko Naru Prelude": {
+      "uid": "VG9yaWtvIE5hcnUgUHJlbHVkZQ",
+      "name_romanji": "Toriko Naru Prelude",
+      "member_count": 5,
+      "fans": null
+    },
+    "Amaterasu": {
+      "uid": "QW1hdGVyYXN1",
+      "name_romanji": "Amaterasu",
+      "member_count": 2,
+      "fans": null
+    },
+    "UNLAME": {
+      "uid": "VU5MQU1F",
+      "name_romanji": "UNLAME",
+      "member_count": 6,
+      "fans": null
+    },
+    "NoelliL": {
+      "uid": "Tm9lbGxpTA",
+      "name_romanji": "NoelliL",
+      "member_count": 7,
+      "fans": null
+    },
+    "Solennel Company": {
+      "uid": "U29sZW5uZWwgQ29tcGFueQ",
+      "name_romanji": "Solennel Company",
+      "member_count": 3,
+      "fans": null
+    },
+    "COLOR'z": {
+      "uid": "Q09MT1Ineg",
+      "name_romanji": "COLOR'z",
+      "member_count": 5,
+      "fans": null
+    },
+    "37.2℃ -Nanadonibu-": {
+      "uid": "MzcuMuKEgyAtTmFuYWRvbmlidS0",
+      "name_romanji": "37.2℃ -Nanadonibu-",
+      "member_count": 4,
+      "fans": null
+    },
+    "Junjou no Afilia": {
+      "uid": "SnVuam91IG5vIEFmaWxpYQ",
+      "name_romanji": "Junjou no Afilia",
+      "member_count": 8,
+      "fans": null
+    },
+    "Houkago Princess": {
+      "uid": "SG91a2FnbyBQcmluY2Vzcw",
+      "name_romanji": "Houkago Princess",
+      "member_count": 9,
+      "fans": null
+    },
+    "Kakedashi no Hikou Shoujo": {
+      "uid": "S2FrZWRhc2hpIG5vIEhpa291IFNob3Vqbw",
+      "name_romanji": "Kakedashi no Hikou Shoujo",
+      "member_count": 0,
+      "fans": null
+    },
+    "Artemis no Tsubasa": {
+      "uid": "QXJ0ZW1pcyBubyBUc3ViYXNh",
+      "name_romanji": "Artemis no Tsubasa",
+      "member_count": 9,
+      "fans": null
+    },
+    "#Pentaprism": {
+      "uid": "I1BlbnRhcHJpc20",
+      "name_romanji": "#Pentaprism",
+      "member_count": 0,
+      "fans": null
+    },
+    "KATACOTO * BANK": {
+      "uid": "S0FUQUNPVE8gKiBCQU5L",
+      "name_romanji": "KATACOTO * BANK",
+      "member_count": 4,
+      "fans": null
+    },
+    "Minichu": {
+      "uid": "TWluaWNodQ",
+      "name_romanji": "Minichu",
+      "member_count": 0,
+      "fans": null
+    },
+    "BOKU ha KIMI no KAKERA.": {
+      "uid": "Qk9LVSBoYSBLSU1JIG5vIEtBS0VSQS4",
+      "name_romanji": "BOKU ha KIMI no KAKERA.",
+      "member_count": 0,
+      "fans": null
+    },
+    "4864.": {
+      "uid": "NDg2NC4",
+      "name_romanji": "",
+      "member_count": 1,
+      "fans": null
+    },
+    "AUGMENTAL": {
+      "uid": "QVVHTUVOVEFM",
+      "name_romanji": "AUGMENTAL",
+      "member_count": 0,
+      "fans": null
+    },
+    "1Eyeline": {
+      "uid": "MUV5ZWxpbmU",
+      "name_romanji": "1Eyeline",
+      "member_count": 0,
+      "fans": null
+    },
+    "Eureka": {
+      "uid": "RXVyZWth",
+      "name_romanji": "Eureka",
+      "member_count": 1,
+      "fans": null
+    },
+    "HAKUSULA": {
+      "uid": "SEFLVVNVTEE",
+      "name_romanji": "HAKUSULA",
+      "member_count": 2,
+      "fans": null
+    },
+    "HACK": {
+      "uid": "SEFDSw",
+      "name_romanji": "HACK",
+      "member_count": 0,
+      "fans": null
+    },
+    "MINORITY ALERT": {
+      "uid": "TUlOT1JJVFkgQUxFUlQ",
+      "name_romanji": "MINORITY ALERT",
+      "member_count": 4,
+      "fans": null
+    },
+    "Hare Nochi Koi Moyou": {
+      "uid": "SGFyZSBOb2NoaSBLb2kgTW95b3U",
+      "name_romanji": "Hare Nochi Koi Moyou",
+      "member_count": 0,
+      "fans": null
+    },
+    "Hiragana SAY-LA": {
+      "uid": "SGlyYWdhbmEgU0FZLUxB",
+      "name_romanji": "Hiragana SAY-LA",
+      "member_count": 1,
+      "fans": null
+    },
+    "HikuteAmata": {
+      "uid": "SGlrdXRlQW1hdGE",
+      "name_romanji": "HikuteAmata",
+      "member_count": 0,
+      "fans": null
+    },
+    "Spopopopony": {
+      "uid": "U3BvcG9wb3Bvbnk",
+      "name_romanji": "Spopopopony",
+      "member_count": 3,
+      "fans": null
+    },
+    "&Ch!ll": {
+      "uid": "JkNoIWxs",
+      "name_romanji": "&Ch!ll",
+      "member_count": 5,
+      "fans": null
+    },
+    "cUTe! cENTI-mENTAL": {
+      "uid": "Y1VUZSEgY0VOVEktbUVOVEFM",
+      "name_romanji": "cUTe! cENTI-mENTAL",
+      "member_count": 0,
+      "fans": null
+    },
+    "Starlet": {
+      "uid": "U3RhcmxldA",
+      "name_romanji": "Starlet",
+      "member_count": 6,
+      "fans": null
+    },
+    "LARMOON": {
+      "uid": "TEFSTU9PTg",
+      "name_romanji": "LARMOON",
+      "member_count": 0,
+      "fans": null
+    },
+    "Lovely☆DOLL": {
+      "uid": "TG92ZWx54piGRE9MTA",
+      "name_romanji": "Lovely☆DOLL",
+      "member_count": 5,
+      "fans": null
+    },
+    "Tokyo Yume Piyogumi": {
+      "uid": "VG9reW8gWXVtZSBQaXlvZ3VtaQ",
+      "name_romanji": "Tokyo Yume Piyogumi",
+      "member_count": 0,
+      "fans": null
+    },
+    "GRACiAS": {
+      "uid": "R1JBQ2lBUw",
+      "name_romanji": "GRACiAS",
+      "member_count": 0,
+      "fans": null
+    },
+    "momograci": {
+      "uid": "bW9tb2dyYWNp",
+      "name_romanji": "momograci",
+      "member_count": 0,
+      "fans": null
+    },
+    "Momoiro Kakumei": {
+      "uid": "TW9tb2lybyBLYWt1bWVp",
+      "name_romanji": "Momoiro Kakumei",
+      "member_count": 3,
+      "fans": null
+    },
+    "METROPOLIS": {
+      "uid": "TUVUUk9QT0xJUw",
+      "name_romanji": "METROPOLIS",
+      "member_count": 0,
+      "fans": null
+    },
+    "B.L.T. IDOL COLLEGE": {
+      "uid": "Qi5MLlQuIElET0wgQ09MTEVHRQ",
+      "name_romanji": "B.L.T. IDOL COLLEGE",
+      "member_count": 0,
+      "fans": null
+    },
+    "Survive-ZERO": {
+      "uid": "U3Vydml2ZS1aRVJP",
+      "name_romanji": "Survive-ZERO",
+      "member_count": 1,
+      "fans": null
+    },
+    "Yanchan Gakuen Ongakubu": {
+      "uid": "WWFuY2hhbiBHYWt1ZW4gT25nYWt1YnU",
+      "name_romanji": "Yanchan Gakuen Ongakubu",
+      "member_count": 5,
+      "fans": null
+    },
+    "Alcute!": {
+      "uid": "QWxjdXRlIQ",
+      "name_romanji": "Alcute!",
+      "member_count": 7,
+      "fans": null
+    },
+    "Z5-C1": {
+      "uid": "WjUtQzE",
+      "name_romanji": "Z5-C1",
+      "member_count": 0,
+      "fans": null
+    },
+    "PrincessGarden-2GN-": {
+      "uid": "UHJpbmNlc3NHYXJkZW4tMkdOLQ",
+      "name_romanji": "PrincessGarden-2GN-",
+      "member_count": 7,
+      "fans": null
+    },
+    "rosé collage": {
+      "uid": "cm9zw6kgY29sbGFnZQ",
+      "name_romanji": "rosé collage",
+      "member_count": 0,
+      "fans": null
+    },
+    "Station♪": {
+      "uid": "U3RhdGlvbuKZqg",
+      "name_romanji": "Station♪",
+      "member_count": 3,
+      "fans": null
+    },
+    "Katamomi Joshi": {
+      "uid": "S2F0YW1vbWkgSm9zaGk",
+      "name_romanji": "Katamomi Joshi",
+      "member_count": 0,
+      "fans": null
+    },
+    "info.m@te": {
+      "uid": "aW5mby5tQHRl",
+      "name_romanji": "info.m@te",
+      "member_count": 4,
+      "fans": null
+    },
+    "Wonder Weed Ten": {
+      "uid": "V29uZGVyIFdlZWQgVGVu",
+      "name_romanji": "Wonder Weed Ten",
+      "member_count": 7,
+      "fans": null
+    },
+    "buGG": {
+      "uid": "YnVHRw",
+      "name_romanji": "buGG",
+      "member_count": 3,
+      "fans": null
+    },
+    "BACK THE RIPPER": {
+      "uid": "QkFDSyBUSEUgUklQUEVS",
+      "name_romanji": "BACK THE RIPPER",
+      "member_count": 4,
+      "fans": null
+    },
+    "Party chuuuN!": {
+      "uid": "UGFydHkgY2h1dXVOIQ",
+      "name_romanji": "Party chuuuN!",
+      "member_count": 2,
+      "fans": null
+    },
+    "KissBeeWEST": {
+      "uid": "S2lzc0JlZVdFU1Q",
+      "name_romanji": "KissBeeWEST",
+      "member_count": 0,
+      "fans": null
+    },
+    "Suteneko Cats": {
+      "uid": "U3V0ZW5la28gQ2F0cw",
+      "name_romanji": "Suteneko Cats",
+      "member_count": 8,
+      "fans": null
+    },
+    "M3LOGIN": {
+      "uid": "TTNMT0dJTg",
+      "name_romanji": "M3LOGIN",
+      "member_count": 4,
+      "fans": null
+    },
+    "Sureness": {
+      "uid": "U3VyZW5lc3M",
+      "name_romanji": "Sureness",
+      "member_count": 0,
+      "fans": null
+    },
+    "Kore:ct": {
+      "uid": "S29yZTpjdA",
+      "name_romanji": "Kore:ct",
+      "member_count": 5,
+      "fans": null
+    },
+    "MIROKUNOROCK": {
+      "uid": "TUlST0tVTk9ST0NL",
+      "name_romanji": "MIROKUNOROCK",
+      "member_count": 3,
+      "fans": null
+    },
+    "Tsuki to Taiyou": {
+      "uid": "VHN1a2kgdG8gVGFpeW91",
+      "name_romanji": "Tsuki to Taiyou",
+      "member_count": 0,
+      "fans": null
+    },
+    "Luna By Snap": {
+      "uid": "THVuYSBCeSBTbmFw",
+      "name_romanji": "Luna By Snap",
+      "member_count": 2,
+      "fans": null
+    },
+    "Yokubari Sensation": {
+      "uid": "WW9rdWJhcmkgU2Vuc2F0aW9u",
+      "name_romanji": "Yokubari Sensation",
+      "member_count": 4,
+      "fans": null
+    },
+    "husky": {
+      "uid": "aHVza3k",
+      "name_romanji": "husky",
+      "member_count": 5,
+      "fans": null
+    },
+    "PLANCK STARS": {
+      "uid": "UExBTkNLIFNUQVJT",
+      "name_romanji": "PLANCK STARS",
+      "member_count": 7,
+      "fans": null
+    },
+    "chuuum": {
+      "uid": "Y2h1dXVt",
+      "name_romanji": "chuuum",
+      "member_count": 3,
+      "fans": null
+    },
+    "Bokuseka": {
+      "uid": "Qm9rdXNla2E",
+      "name_romanji": "Bokuseka",
+      "member_count": 0,
+      "fans": null
+    },
+    "SKIRMISH": {
+      "uid": "U0tJUk1JU0g",
+      "name_romanji": "SKIRMISH",
+      "member_count": 4,
+      "fans": null
+    },
+    "LUCY": {
+      "uid": "TFVDWQ",
+      "name_romanji": "LUCY",
+      "member_count": 5,
+      "fans": null
+    },
+    "MELTY HZ": {
+      "uid": "TUVMVFkgSFo",
+      "name_romanji": "MELTY HZ",
+      "member_count": 2,
+      "fans": null
+    },
+    "postalgia": {
+      "uid": "cG9zdGFsZ2lh",
+      "name_romanji": "postalgia",
+      "member_count": 4,
+      "fans": null
+    },
+    "MagMell": {
+      "uid": "TWFnTWVsbA",
+      "name_romanji": "MagMell",
+      "member_count": 1,
+      "fans": null
+    },
+    "Chu☆Oh! Dolly": {
+      "uid": "Q2h14piGT2ghIERvbGx5",
+      "name_romanji": "Chu☆Oh! Dolly",
+      "member_count": 0,
+      "fans": null
+    },
+    "Jelno!": {
+      "uid": "SmVsbm8h",
+      "name_romanji": "Jelno!",
+      "member_count": 0,
+      "fans": null
+    },
+    "Stella☆Beats": {
+      "uid": "U3RlbGxh4piGQmVhdHM",
+      "name_romanji": "Stella☆Beats",
+      "member_count": 3,
+      "fans": null
+    },
+    "LoveKen": {
+      "uid": "TG92ZUtlbg",
+      "name_romanji": "LoveKen",
+      "member_count": 28,
+      "fans": null
+    },
+    "BELLRING Shoujo Heart '22": {
+      "uid": "QkVMTFJJTkcgU2hvdWpvIEhlYXJ0ICcyMg",
+      "name_romanji": "BELLRING Shoujo Heart '22",
+      "member_count": 4,
+      "fans": null
+    },
+    "THERE THERE THERES": {
+      "uid": "VEhFUkUgVEhFUkUgVEhFUkVT",
+      "name_romanji": "THERE THERE THERES",
+      "member_count": 4,
+      "fans": null
+    },
+    "Seven Colors": {
+      "uid": "U2V2ZW4gQ29sb3Jz",
+      "name_romanji": "Seven Colors",
+      "member_count": 1,
+      "fans": null
+    },
+    "Shojotai": {
+      "uid": "U2hvam90YWk",
+      "name_romanji": "Shojotai",
+      "member_count": 1,
+      "fans": null
+    },
+    "mignon": {
+      "uid": "bWlnbm9u",
+      "name_romanji": "mignon",
+      "member_count": 2,
+      "fans": null
+    },
+    "SHANIMUNI PARADE": {
+      "uid": "U0hBTklNVU5JIFBBUkFERQ",
+      "name_romanji": "SHANIMUNI PARADE",
+      "member_count": 4,
+      "fans": null
+    },
+    "PIP": {
+      "uid": "UElQ",
+      "name_romanji": "PIP",
+      "member_count": 0,
+      "fans": null
+    },
+    "ALLOVER": {
+      "uid": "QUxMT1ZFUg",
+      "name_romanji": "ALLOVER",
+      "member_count": 4,
+      "fans": null
+    },
+    "Bubble Bobbdie Gum!!": {
+      "uid": "QnViYmxlIEJvYmJkaWUgR3VtISE",
+      "name_romanji": "Bubble Bobbdie Gum!!",
+      "member_count": 1,
+      "fans": null
+    },
+    "Goodbye for First kiss": {
+      "uid": "R29vZGJ5ZSBmb3IgRmlyc3Qga2lzcw",
+      "name_romanji": "Goodbye for First kiss",
+      "member_count": 2,
+      "fans": null
+    },
+    "Raydroid": {
+      "uid": "UmF5ZHJvaWQ",
+      "name_romanji": "Raydroid",
+      "member_count": 0,
+      "fans": null
+    },
+    "Neon Rain": {
+      "uid": "TmVvbiBSYWlu",
+      "name_romanji": "Neon Rain",
+      "member_count": 7,
+      "fans": null
+    },
+    "100-YOKAI": {
+      "uid": "MTAwLVlPS0FJ",
+      "name_romanji": "100-YOKAI",
+      "member_count": 7,
+      "fans": null
+    },
+    "Kitto Zutto Seishun.": {
+      "uid": "S2l0dG8gWnV0dG8gU2Vpc2h1bi4",
+      "name_romanji": "Kitto Zutto Seishun.",
+      "member_count": 8,
+      "fans": null
+    },
+    "Kitsunebi": {
+      "uid": "S2l0c3VuZWJp",
+      "name_romanji": "Kitsunebi",
+      "member_count": 0,
+      "fans": null
+    },
+    "Sengoku Animal Gokuraku Joudo": {
+      "uid": "U2VuZ29rdSBBbmltYWwgR29rdXJha3UgSm91ZG8",
+      "name_romanji": "Sengoku Animal Gokuraku Joudo",
+      "member_count": 9,
+      "fans": null
+    },
+    "astraia*": {
+      "uid": "YXN0cmFpYSo",
+      "name_romanji": "astraia*",
+      "member_count": 0,
+      "fans": null
+    },
+    "BABY TO KISS": {
+      "uid": "QkFCWSBUTyBLSVNT",
+      "name_romanji": "BABY TO KISS",
+      "member_count": 0,
+      "fans": null
+    },
+    "MILLION＄PARADE": {
+      "uid": "TUlMTElPTu-8hFBBUkFERQ",
+      "name_romanji": "MILLION＄PARADE",
+      "member_count": 2,
+      "fans": null
+    },
+    "Mecha High": {
+      "uid": "TWVjaGEgSGlnaA",
+      "name_romanji": "Mecha High",
+      "member_count": 0,
+      "fans": null
+    },
+    "Strawberry Syndrome": {
+      "uid": "U3RyYXdiZXJyeSBTeW5kcm9tZQ",
+      "name_romanji": "Strawberry Syndrome",
+      "member_count": 4,
+      "fans": null
+    },
+    "DOPING BERRY": {
+      "uid": "RE9QSU5HIEJFUlJZ",
+      "name_romanji": "DOPING BERRY",
+      "member_count": 5,
+      "fans": null
+    },
+    "Odoro": {
+      "uid": "T2Rvcm8",
+      "name_romanji": "Odoro",
+      "member_count": 4,
+      "fans": null
+    },
+    "BugMEME": {
+      "uid": "QnVnTUVNRQ",
+      "name_romanji": "BugMEME",
+      "member_count": 5,
+      "fans": null
+    },
+    "FANTASIA": {
+      "uid": "RkFOVEFTSUE",
+      "name_romanji": "FANTASIA",
+      "member_count": 3,
+      "fans": null
+    },
+    "FILL ME TRAX": {
+      "uid": "RklMTCBNRSBUUkFY",
+      "name_romanji": "FILL ME TRAX",
+      "member_count": 3,
+      "fans": null
+    },
+    "403ERROR": {
+      "uid": "NDAzRVJST1I",
+      "name_romanji": "403ERROR",
+      "member_count": 4,
+      "fans": null
+    },
+    "Nemuleap": {
+      "uid": "TmVtdWxlYXA",
+      "name_romanji": "Nemuleap",
+      "member_count": 3,
+      "fans": null
+    },
+    "SUDDENDEATH": {
+      "uid": "U1VEREVOREVBVEg",
+      "name_romanji": "SUDDENDEATH",
+      "member_count": 3,
+      "fans": null
+    },
+    "プティパ": {
+      "uid": "44OX44OG44Kj44OR",
+      "name_romanji": "petit pas!",
+      "member_count": 3,
+      "fans": null
+    },
+    "フルコース": {
+      "uid": "RnVsbCBDb3Vyc2U",
+      "name_romanji": "Full Course",
+      "member_count": 7,
+      "fans": null
+    },
+    "ハルカエコー": {
+      "uid": "82c6703f-0d5d-4b54-972d-232437a3b991",
+      "name_romanji": "HARUKA ECHO",
+      "member_count": 6,
+      "fans": null
+    },
+    "ヒロインズ研究生大阪": {
+      "uid": "dff1e0bf-9b5e-4a9c-85db-5379cafb7513",
+      "name_romanji": "HEROINES Kenkyuusei Osaka",
+      "member_count": 10,
+      "fans": null
+    },
+    "Pastel Closet": {
+      "uid": "3470f280-df87-4c34-addb-7d4a7c52106a",
+      "name_romanji": "Pastel Closet",
+      "member_count": 8,
+      "fans": null
+    },
+    "MOBIUS": {
+      "uid": "TU9CSVVT",
+      "name_romanji": "MOBIUS",
+      "member_count": null,
+      "fans": null
+    },
+    "妄愛グラビティ": {
+      "uid": "5aaE5oSb44Kw44Op44OT44OG44Kj",
+      "name_romanji": "Mouai Gravity",
+      "member_count": null,
+      "fans": null
+    },
+    "鵺": {
+      "uid": "6bW6",
+      "name_romanji": "Nue",
+      "member_count": null,
+      "fans": null
+    },
+    "iLiFE!候補生": {
+      "uid": "aUxpRkUh5YCZ6KOc55Sf",
+      "name_romanji": "iLiFE! Kouhosei",
+      "member_count": null,
+      "fans": null
+    },
+    "なう♡すとれーじ": {
+      "uid": "Tm93U3RvcmFnZQ",
+      "name_romanji": "Now♡Storage",
+      "member_count": 7,
+      "fans": null
+    }
+  },
+  "reference_data": [
+    "public/data/reference/agencies.json",
+    "public/data/reference/group_reputation.json",
+    "public/data/reference/group_agency_overrides.json",
+    "public/data/reference/scandal_handlings.json",
+    "public/data/reference/career_decisions.json",
+    "public/data/reference/heroines_league.json",
+    "public/data/reference/idol_group_rankings_2025_mapped.json",
+    "public/data/group_tier_policy.json",
+    "public/data/group_union.json",
+    "public/data/shared_releases.json",
+    "public/data/venues.json",
+    "public/data/live_events_catalog.json",
+    "public/data/festival_series.json",
+    "public/data/member_role_attribute_model.json",
+    "public/data/song_popularity_tier_rules.json",
+    "public/data/song_starting_formations.json"
+  ],
+  "schedule_data": {
+    "timetree": "public/data/timetree/*.json",
+    "official_schedules": "public/data/official_schedules/*.json",
+    "managed_live_schedules": "public/data/managed-live-schedules/groups/*.json",
+    "timetree_slugs": "public/data/reference/timetree_group_slugs.json"
+  },
+  "agent_skills": {
+    "scenario_db_integrity": ".cursor/skills/scenario-db-integrity/SKILL.md",
+    "idol_portraits": ".cursor/skills/idol-portraits/SKILL.md",
+    "idol_scandal_history": ".cursor/skills/idol-scandal-history/SKILL.md",
+    "timetree_schedule": ".cursor/skills/timetree-group-schedule/SKILL.md",
+    "game_logic_balance": ".cursor/skills/game-logic-balance/SKILL.md",
+    "idol_database_refresh": "support/docs/skills/idol-database-refresh/SKILL.md",
+    "apple_music_songs": "support/docs/skills/apple-music-song-update/SKILL.md"
+  },
+  "scripts_by_task": {
+    "integrity_check": [
+      "support/scripts/checkMainScenarioDbIntegrity.mjs"
+    ],
+    "scenario_roster_rebuild": [
+      "support/scripts/refreshScenario6GroupMembers.mjs",
+      "support/scripts/cleanupScenario6IdolPollution.mjs"
+    ],
+    "catalog_merge": [
+      "support/scripts/mergeCatalogUpdates.mjs",
+      "support/scripts/mergeScenario6GroupsUpdate.mjs"
+    ],
+    "tier_work": [
+      "support/scripts/build-scenario6-group-tiers.mjs",
+      "support/scripts/reinterpolate-scenario6-tiers.mjs",
+      "support/scripts/reevaluateScenario6TiersWithX.mjs"
+    ],
+    "schedule_scrape": [
+      "support/scripts/timetree_public_calendar_scrape.mjs",
+      "support/scripts/official_schedule_scrape.mjs",
+      "support/scripts/buildManagedLiveScheduleDb.mjs"
+    ],
+    "portraits": [
+      "support/docs/skills/idol-portraits/SKILL.md"
+    ],
+    "songs_apple_music": [
+      "support/docs/skills/apple-music-song-update/SKILL.md"
+    ]
+  }
+}

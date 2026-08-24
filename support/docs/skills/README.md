@@ -35,6 +35,8 @@ ln -sfn "$(pwd)/skills" .cursor/skills
 
 `.cursor/skills` should list the available project skill folders.
 
+**Database & catalog work:** start at [`support/docs/GAME_DATABASE_INDEX.md`](../GAME_DATABASE_INDEX.md). Regenerate machine index: `node support/scripts/buildGameDatabaseIndex.mjs`.
+
 Current repo-local skills include:
 
 - `timetree-group-schedule`
