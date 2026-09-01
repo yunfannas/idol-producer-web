@@ -1,0 +1,16 @@
+{
+  "id": "scenario3_featured_trial",
+  "name": "=LOVE — The Audition, 2017",
+  "scenario_number": 3,
+  "opening_date": "2017-04-03",
+  "data_subdir": "scenario_3",
+  "entry_mode": "featured_trial",
+  "start_phase": "equal_love_audition",
+  "player_character": "指原莉乃",
+  "player_character_uid": "4d86d1bb-0f98-45f8-a640-9c33d63e0a70",
+  "managed_group_uid": "PUxPVkU",
+  "managed_group_label": "=LOVE",
+  "startup_view": "Inbox",
+  "background_en": "As active idol and producer 指原莉乃, choose a new group from a 103-person final audition pool, manage limited time and imperfect information, train your chosen members, and bring them to their first public stage at TIF.",
+  "background_zh": "身为现役偶像兼制作人指原莉乃，从103人的最终甄选中挑选并组建新团体，在信息不完整、时间有限的情况下训练成员，并带领她们登上TIF的初舞台。"
+}

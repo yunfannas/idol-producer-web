@@ -1,0 +1,35 @@
+{
+  "document": "Researched real persons for S3 =LOVE 2017 final audition pool (Type 2). Public sources rarely name non-selected finalists.",
+  "updated_at": "2026-08-31",
+  "verified_type2": [
+    {
+      "name": "蒼乃爽",
+      "name_romanji": "Aono Sou",
+      "portrait_type": "type2",
+      "notes": "Reached 2017 =LOVE final audition; did not pass. Later cosplayer / stage performer.",
+      "sources": [
+        "https://news.infoseek.co.jp/article/entamenext_47266/"
+      ]
+    }
+  ],
+  "historical_type1_finalists": [
+    "大谷映美里",
+    "大場花菜",
+    "長南舞",
+    "齊藤なぎさ",
+    "佐竹のん乃",
+    "佐々木舞香",
+    "髙松瞳",
+    "瀧脇笙古",
+    "諸橋沙夏",
+    "山本杏奈",
+    "野口衣織",
+    "音嶋莉沙",
+    "齋藤樹愛羅"
+  ],
+  "research_notes": [
+    "103-person final pool count is documented; individual non-selected names were not published by organizers.",
+    "SHOWROOM 2017 screening used entry numbers; not all 103 participated in SHOWROOM.",
+    "Additional Type 2 names should be added here with sources before regenerating scenario_3 data."
+  ]
+}

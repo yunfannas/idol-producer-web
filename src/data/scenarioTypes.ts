@@ -19,6 +19,46 @@ export interface ScenarioCatalogEntry {
   data_subdir: string | null;
   data_available: boolean;
   design_ref?: string;
+  entry_mode?: "featured_trial" | "full_scenario";
+}
+
+/** Scenario 3 =LOVE featured trial audition state. */
+export type EqualLoveTrialPhase =
+  | "opening_week"
+  | "camp_week_1"
+  | "intermediate_review"
+  | "camp_week_2"
+  | "final_review"
+  | "formation"
+  | "delegation"
+  | "tif_prep"
+  | "post_debut";
+
+export interface EqualLoveTrialState {
+  phase: EqualLoveTrialPhase;
+  entry_mode: "featured_trial";
+  start_phase: "equal_love_audition";
+  pool_size: number;
+  candidate_uids: string[];
+  active_candidate_uids: string[];
+  selected_member_uids: string[];
+  first_cut_done: boolean;
+  final_selection_done: boolean;
+  player_dual_role: {
+    schedule_load: "high";
+    producer_availability: "limited";
+    industry_influence: "very_high";
+  };
+  agency_mandate: Record<string, unknown>;
+  tif_setlist_uids: string[];
+  /** Per-candidate staff-team attribute estimates (panel truth for UI). */
+  staff_knowledge?: Record<string, import("../engine/staffKnowledge").CandidateStaffKnowledge>;
+  /** Idols sub-view when on Idols nav. */
+  idols_roster_filter?: "candidates" | "selected";
+  /** Minutes of producer time remaining today (dual-role days). */
+  producer_minutes_remaining_today?: number;
+  /** ISO dates where HKT/media blocks limit producer availability. */
+  dual_role_blocked_dates?: string[];
 }
 
 export interface ScenariosCatalogFile {
@@ -35,6 +75,16 @@ export interface ScenarioPreset {
   data_subdir: string;
   startup_view?: string;
   startup_group?: string;
+  /** featured_trial | full_scenario */
+  entry_mode?: "featured_trial" | "full_scenario";
+  /** Opening gameplay phase id (e.g. equal_love_audition). */
+  start_phase?: string;
+  /** Fixed player character for dual-role scenarios. */
+  player_character?: string;
+  player_character_uid?: string;
+  /** Pre-selected managed group for featured trials (skip group picker). */
+  managed_group_uid?: string;
+  managed_group_label?: string;
   /** Short landing-screen background blurb (English). */
   background_en?: string;
   /** Short landing-screen background blurb (Simplified Chinese). */
@@ -148,4 +198,8 @@ export interface LoadedScenario {
   official_schedules?: OfficialScheduleBundle[];
   /** Optional calibrated model for synthesizing missing idol attributes from roles. */
   role_attribute_model?: Record<string, unknown>;
+  /** Scenario-specific future event queue (S3 featured trial calendar anchors). */
+  future_events?: Record<string, unknown>[];
+  /** Fixed agency mandate for constrained-producer scenarios. */
+  agency_mandate?: Record<string, unknown>;
 }

@@ -1,4 +1,4 @@
 {
-  "presets": ["scenario6"],
-  "defaultPreset": "scenario6"
+  "presets": ["scenario3_featured_trial", "scenario6"],
+  "defaultPreset": "scenario3_featured_trial"
 }

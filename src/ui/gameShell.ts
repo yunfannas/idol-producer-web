@@ -47,7 +47,16 @@ import {
   type ScoutLeadRow,
 } from "../engine/scoutWeb";
 import { festivalPerformancesForManagedGroup, normalizeFestivalCatalog } from "../engine/festivalWeb";
-import { MEMBER_ROLE_DEFINITIONS, memberRolesSummary, roleAssignmentsFromHistoryEntry } from "../data/memberRoles";
+import {
+  filterIdolsForS3Roster,
+  isS3TrialSave,
+  producerMinutesRemainingToday,
+  s3IdolsRosterFilter,
+  staffKnowledgeForIdol,
+} from "../engine/s3EqualLoveTrial";
+import type { CandidateStaffKnowledge } from "../engine/staffKnowledge";
+import { formatEstimateRange } from "../engine/staffKnowledge";
+import { type AttributeV2Key } from "../engine/attributeV2";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
@@ -941,6 +950,38 @@ function idolXProfileUrl(row: Record<string, unknown>): string | undefined {
   return `https://x.com/${encodeURIComponent(acct)}`;
 }
 
+function renderStaffEstimatePanels(knowledge: CandidateStaffKnowledge, lang: UiLanguage): string {
+  const row = (keys: AttributeV2Key[], label: string) => {
+    const lines = keys
+      .map((key) => {
+        const est = knowledge.attributes[key];
+        if (!est) return "";
+        return `<div class="attr-dl-row"><dt>${htmlEsc(key.replace(/_/g, " "))}</dt><dd class="attr-dd-bar"><span class="attr-bar-val">${htmlEsc(formatEstimateRange(est))}</span></dd></div>`;
+      })
+      .filter(Boolean)
+      .join("");
+    return `<div class="attr-block"><span class="attr-block-label">${htmlEsc(label)}</span><dl class="attr-dl">${lines}</dl></div>`;
+  };
+  const hints =
+    knowledge.trait_hints?.length ?
+      `<ul class="s3-trait-hints">${knowledge.trait_hints.map((h) => `<li>${htmlEsc(h)}</li>`).join("")}</ul>`
+    : "";
+  return `<div class="attr-panels attr-panels--estimates">
+    ${row(["agility", "natural_fitness", "stamina"], localizedLiteral(lang, "Physical", "体能"))}
+    ${row(["cute", "pretty"], localizedLiteral(lang, "Appearance", "外貌"))}
+    ${row(["pitch", "tone", "breath", "rhythm", "power", "stage_presence"], localizedLiteral(lang, "Performance", "表演"))}
+    ${row(["wit", "humor", "talking", "teamwork", "fashion", "creativity"], localizedLiteral(lang, "Communication", "交流/创意"))}
+  </div>
+  <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Staff-team estimate — not exact truth.", "制作团队综合估计 — 非真实数值。"))}</p>
+  ${hints}`;
+}
+
+function renderS3IdolsRosterTabs(active: "candidates" | "selected", lang: UiLanguage): string {
+  const mk = (id: "candidates" | "selected", label: string) =>
+    `<button type="button" class="fm-btn fm-btn-tab${active === id ? " is-active" : ""}" data-s3-roster-filter="${id}">${htmlEsc(label)}</button>`;
+  return `<div class="s3-roster-tabs planner-actions">${mk("candidates", localizedLiteral(lang, "Candidates", "候选人"))}${mk("selected", localizedLiteral(lang, "Selected members", "已选成员"))}</div>`;
+}
+
 function renderAttributePanels(a: PersistedIdolAttributes): string {
   const row = (
     keys: [string, number][],
@@ -1178,19 +1219,31 @@ function pastNamesSummary(row: Record<string, unknown>): string {
   return entries.length ? entries.join(" - ") : "-";
 }
 
+/** S3 audition direct actions on idol detail. */
+export interface S3IdolDetailActions {
+  idolUid: string;
+  canInterview: boolean;
+  minutesLeft: number;
+}
+
 /** Single-idol profile (mirrors desktop `IdolUIMixin._show_idol_profile`). */
 function renderIdolDetailPage(
   row: Record<string, unknown>,
   groupsSnapshot: Record<string, unknown>[],
   referenceIso: string | undefined,
   lang: UiLanguage,
+  staffKnowledge: CandidateStaffKnowledge | null = null,
+  s3Actions: S3IdolDetailActions | null = null,
 ): string {
   const name = typeof row.name === "string" ? row.name : "-";
   const romaji = romajiFromRow(row);
   const nick = typeof row.nickname === "string" ? row.nickname.trim() : "";
   const hiragana = typeof row.hiragana === "string" ? row.hiragana.trim() : "";
   const attrs = attrsFromRow(row);
-  const attrPanels = renderAttributePanels(attrs);
+  const attrPanels = staffKnowledge ? renderStaffEstimatePanels(staffKnowledge, lang) : renderAttributePanels(attrs);
+  const attrHeading = staffKnowledge
+    ? localizedLiteral(lang, "Staff estimates", "团队估计")
+    : t(lang, "idol_attributes");
 
   const initial = [...(name.trim() || "?")][0] ?? "?";
   const portraitSrc = idolPortraitPublicSrc(row, referenceIso);
@@ -1279,6 +1332,17 @@ function renderIdolDetailPage(
 
   const linksInline = `<div class="idol-detail-links-inline">${wikiPart}${ablPart}${xPart}</div>`;
 
+  const interviewBlock =
+    s3Actions ?
+      `<section class="fm-card idol-detail-block s3-interview-block">
+        <h3 class="content-h3 idol-detail-h">${htmlEsc(localizedLiteral(lang, "Producer time", "制作人时间"))}</h3>
+        <p class="content-muted">${htmlEsc(localizedLiteral(lang, `${s3Actions.minutesLeft} min remaining today`, `今日剩余 ${s3Actions.minutesLeft} 分钟`))}</p>
+        <div class="planner-actions">
+          <button type="button" class="fm-btn fm-btn-accent${s3Actions.canInterview ? "" : " is-disabled"}" data-s3-interview="${htmlEsc(s3Actions.idolUid)}"${s3Actions.canInterview ? "" : " disabled"}>${htmlEsc(localizedLiteral(lang, "Interview (45 min)", "面谈（45 分钟）"))}</button>
+        </div>
+      </section>`
+    : "";
+
   return `
 <section class="content-panel idol-detail-view" aria-label="${htmlEsc(name)}">
   <header class="idol-detail-toolbar">
@@ -1300,8 +1364,10 @@ function renderIdolDetailPage(
     </aside>
   </div>
 
+  ${interviewBlock}
+
   <section class="fm-card idol-detail-block">
-    <h3 class="content-h3 idol-detail-h">${htmlEsc(t(lang, "idol_attributes"))}</h3>
+    <h3 class="content-h3 idol-detail-h">${htmlEsc(attrHeading)}</h3>
     <div class="idol-detail-attrs">${attrPanels}</div>
   </section>
 
@@ -3055,6 +3121,7 @@ function renderIdolsList(
   lang: UiLanguage,
   groupsSnapshot: Record<string, unknown>[] = [],
   note?: string,
+  headerExtra = "",
 ): string {
   if (!idols.length) return renderPlaceholder(navLabel(lang, "Idols"), localizedLiteral(lang, "No idols in database snapshot.", "数据库快照中没有偶像。"));
 
@@ -3155,6 +3222,7 @@ function renderIdolsList(
   return `
     <section class="content-panel idols-view">
       <h2 class="content-h2">${htmlEsc(headline)}</h2>
+      ${headerExtra}
       <p class="content-muted">${htmlEsc(lang === "zh-CN" ? `${sorted.length.toLocaleString()} 名偶像 · 参考日 ${referenceIso ?? "—"}` : `${sorted.length.toLocaleString()} idols · reference ${referenceIso ?? "—"}`)}.</p>
       ${noteHtml}
       ${toolbar}
@@ -5827,23 +5895,53 @@ export function renderMainContent(
     case "Idols": {
       const refIso = displayReferenceIso(save, browseData?.preset?.opening_date);
       const uidStr = idolDetailUid?.trim() ?? "";
+      const s3Trial = isS3TrialSave(save);
       if (uidStr) {
         const row = save.database_snapshot.idols.find((r) => String((r as { uid?: unknown }).uid ?? "") === uidStr);
-        if (row) return renderIdolDetailPage(row, save.database_snapshot.groups, refIso, lang);
+        if (row) {
+          const staffKnowledge =
+            s3Trial && save.equal_love_trial?.active_candidate_uids?.includes(uidStr)
+              ? staffKnowledgeForIdol(save, uidStr)
+              : null;
+          const minutesLeft = producerMinutesRemainingToday(save);
+          const s3Actions: S3IdolDetailActions | null =
+            s3Trial && save.equal_love_trial?.active_candidate_uids?.includes(uidStr)
+              ? {
+                  idolUid: uidStr,
+                  canInterview: minutesLeft >= 45,
+                  minutesLeft,
+                }
+              : null;
+          return renderIdolDetailPage(row, save.database_snapshot.groups, refIso, lang, staffKnowledge, s3Actions);
+        }
         return `
             <section class="content-panel">
               <p class="content-muted">${htmlEsc(t(lang, "error_idol_not_in_save_snapshot", { uid: uidStr }))}</p>
               <button type="button" class="fm-btn fm-btn-accent" id="btn-idol-detail-back">${htmlEsc(t(lang, "idol_back_list"))}</button>
             </section>`;
       }
+      const rosterFilter = s3Trial ? s3IdolsRosterFilter(save) : null;
+      const idolRows = s3Trial ? filterIdolsForS3Roster(save, save.database_snapshot.idols) : save.database_snapshot.idols;
+      const rosterTabs = s3Trial ? renderS3IdolsRosterTabs(rosterFilter ?? "candidates", lang) : "";
+      const s3Note =
+        s3Trial ?
+          rosterFilter === "selected"
+            ? localizedLiteral(lang, "Final =LOVE members you selected.", "你已选定的 =LOVE 正式成员。")
+          : localizedLiteral(
+              lang,
+              `Audition pool — staff estimates only. ${producerMinutesRemainingToday(save)} min producer time left today.`,
+              `Audition 候选池 — 仅显示团队估计。今日剩余制作人时间 ${producerMinutesRemainingToday(save)} 分钟。`,
+            )
+        : localizedLiteral(lang, "Attributes from save (defaults applied where missing).", "来自存档的属性（缺失项已套用默认值）。");
       return renderIdolsList(
-        save.database_snapshot.idols,
+        idolRows,
         refIso,
         navLabel(lang, "Idols"),
         idolListLayout,
         lang,
         save.database_snapshot.groups,
-        localizedLiteral(lang, "Attributes from save (defaults applied where missing).", "来自存档的属性（缺失项已套用默认值）。"),
+        s3Note,
+        rosterTabs,
       );
     }
     case "Groups": {

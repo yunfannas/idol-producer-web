@@ -1,0 +1,48 @@
+[
+  {
+    "uid": "SEtUNDg",
+    "name": "HKT48",
+    "name_romanji": "HKT48",
+    "letter_tier": "S",
+    "formed_date": "2011-01-01",
+    "member_count": 0,
+    "member_uids": [],
+    "context_only": true,
+    "popularity": 85,
+    "fans": 500000
+  },
+  {
+    "uid": "QUtCNDg",
+    "name": "AKB48",
+    "name_romanji": "AKB48",
+    "letter_tier": "S",
+    "formed_date": "2005-01-01",
+    "member_count": 0,
+    "member_uids": [],
+    "context_only": true,
+    "popularity": 95,
+    "fans": 2000000
+  },
+  {
+    "uid": "PUxPVkU",
+    "name": "=LOVE",
+    "name_romanji": "=LOVE",
+    "nickname": "イコラブ",
+    "nickname_romanji": "Ikorabu",
+    "letter_tier": "B",
+    "formed_date": null,
+    "debut_date": "2017-08-05",
+    "member_count": 0,
+    "member_uids": [],
+    "member_names": [],
+    "producer": "指原莉乃",
+    "producer_uid": "4d86d1bb-0f98-45f8-a640-9c33d63e0a70",
+    "agency": "代々木アニメーション学院",
+    "project_status": "audition",
+    "popularity": 0,
+    "fans": 0,
+    "x_followers": 0,
+    "song_uids": [],
+    "description": "Voice actress / idol project produced by 指原莉乃. Final audition camp begins April 2017; TIF debut target August 2017."
+  }
+]

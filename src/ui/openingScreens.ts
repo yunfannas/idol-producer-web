@@ -10,7 +10,7 @@ import { AUTOSAVE_SLOT, type SlotSummary } from "../persistence/saves";
 import { htmlEsc } from "./htmlEsc";
 import { akishibuLineupChronicleHref, gameManualHref, ikonoijoyBest10Href, languageOptions, lineupChronicleHref, oshiChartHref, t, type UiLanguage } from "./i18n";
 
-export type OpeningScreen = "login" | "home" | "new_game" | "load_slot";
+export type OpeningScreen = "login" | "home" | "new_game" | "s3_featured_trial" | "load_slot";
 
 function scenarioBackground(preset: ScenarioPreset, lang: UiLanguage): string {
   if (lang === "zh-CN") {

@@ -264,7 +264,37 @@ export async function loadScenarioDatabase(preset: ScenarioPreset): Promise<Load
 
   const official_schedules = await loadOfficialScheduleBundles(groups);
 
-  return { preset, idols, groups, songs, shared_releases, lives, festivals, group_tiers, startup_allowlist, official_schedules, role_attribute_model };
+  let future_events: Record<string, unknown>[] | undefined;
+  try {
+    const fe: unknown = await fetchJson(`${root}future_events.json`);
+    if (Array.isArray(fe)) future_events = fe as Record<string, unknown>[];
+  } catch {
+    /* optional scenario event queue */
+  }
+
+  let agency_mandate: Record<string, unknown> | undefined;
+  try {
+    const am: unknown = await fetchJson(`${root}agency_mandate.json`);
+    if (am && typeof am === "object") agency_mandate = am as Record<string, unknown>;
+  } catch {
+    /* optional agency mandate */
+  }
+
+  return {
+    preset,
+    idols,
+    groups,
+    songs,
+    shared_releases,
+    lives,
+    festivals,
+    group_tiers,
+    startup_allowlist,
+    official_schedules,
+    role_attribute_model,
+    future_events,
+    agency_mandate,
+  };
 }
 
 export async function loadDefaultScenario(): Promise<LoadedScenario> {

@@ -1,5 +1,5 @@
 import "./style.css";
-import { loadDefaultScenario } from "./data/loadScenario";
+import { loadDefaultScenario, loadPreset, loadScenarioDatabase } from "./data/loadScenario";
 import type { LoadedScenario } from "./data/scenarioTypes";
 import {
   advanceOneDay,
@@ -9,6 +9,7 @@ import {
   hasPendingEventsToday,
   isoDatePart,
 } from "./engine/gameEngine";
+import { createEqualLoveFeaturedTrialSave, isEqualLoveFeaturedTrialPreset, runS3CandidateInterview, setS3IdolsRosterFilter } from "./engine/s3EqualLoveTrial";
 import { applyAttributesToAllIdols, normalizePersistedAttributes } from "./engine/idolAttributes";
 import {
   ensureBirthdayTeeInventoryRow,
@@ -92,6 +93,7 @@ import {
   renderNewGameScreen,
   buildNewGameRows,
 } from "./ui/openingScreens";
+import { renderS3FeaturedTrialScreen } from "./ui/s3OpeningScreens";
 import { AUTOSAVE_SLOT, clearSlot, listOccupiedSlots, listSlotSummaries, loadFromSlot, normalizeAccountName, saveToSlot } from "./persistence/saves";
 import { htmlEsc } from "./ui/htmlEsc";
 import {
@@ -1980,6 +1982,20 @@ function syncFestivalLivesIfPossible(): void {
   syncManagedTif2025Lives(save, festivals);
 }
 
+function featuredTrialOpeningScreen(): OpeningScreen {
+  return loadedScenario && isEqualLoveFeaturedTrialPreset(loadedScenario) ? "s3_featured_trial" : "new_game";
+}
+
+async function reloadDefaultScenarioForNewGame(): Promise<void> {
+  openingStatus = t(uiLang, "opening_db_loading");
+  paintOpening();
+  try {
+    loadedScenario = await loadDefaultScenario();
+  } catch (e) {
+    console.error("opening-new-game reload failed", e);
+  }
+}
+
 function paintOpening(): void {
   tutorialOverlayOpen = false;
   const focus = captureFocus(appRoot);
@@ -1999,14 +2015,16 @@ function paintOpening(): void {
             listSlotSummaries(accountName),
             uiLang,
           )
-      : loadedScenario
-        ? renderNewGameScreen(
-            buildNewGameRows(loadedScenario),
-            accountName,
-            loadedScenario.preset,
-            uiLang,
-          )
-        : `<p class="fm-error" role="alert">${htmlEsc(t(uiLang, "opening_no_scenario_loaded"))}</p>`;
+        : openingScreen === "s3_featured_trial" && loadedScenario
+          ? renderS3FeaturedTrialScreen(loadedScenario, accountName, uiLang)
+          : loadedScenario
+            ? renderNewGameScreen(
+                buildNewGameRows(loadedScenario),
+                accountName,
+                loadedScenario.preset,
+                uiLang,
+              )
+            : `<p class="fm-error" role="alert">${htmlEsc(t(uiLang, "opening_no_scenario_loaded"))}</p>`;
   restoreFocus(appRoot, focus);
 
   if (openingScreen === "login") {
@@ -2058,14 +2076,8 @@ function paintOpening(): void {
 
     document.getElementById("opening-new-game")?.addEventListener("click", async () => {
       if (!loadedScenario) return;
-      openingStatus = t(uiLang, "opening_db_loading");
-      paintOpening();
-      try {
-        loadedScenario = await loadDefaultScenario();
-      } catch (e) {
-        console.error("opening-new-game reload failed", e);
-      }
-      openingScreen = "new_game";
+      await reloadDefaultScenarioForNewGame();
+      openingScreen = featuredTrialOpeningScreen();
       selectedNewGameGroupUid = null;
       paintOpening();
     });
@@ -2185,6 +2197,72 @@ function paintOpening(): void {
         paintGame();
       } catch (e) {
         console.error("new-game-start failed", e);
+        window.alert(e instanceof Error ? e.message : String(e));
+      }
+    });
+  } else if (openingScreen === "s3_featured_trial" && loadedScenario) {
+    const nameInput = document.getElementById("producer-name") as HTMLInputElement | null;
+    const defaultPlayer = String(loadedScenario.preset.player_character ?? "指原莉乃");
+
+    nameInput?.addEventListener("input", (ev) => {
+      setAccountName((ev.target as HTMLInputElement).value);
+    });
+
+    document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
+      const value = (ev.target as HTMLSelectElement).value;
+      if (!isUiLanguage(value)) return;
+      setUiLanguage(value);
+      paintOpening();
+    });
+
+    document.getElementById("s3-trial-back")?.addEventListener("click", () => {
+      openingScreen = "home";
+      paintOpening();
+    });
+
+    document.getElementById("s3-open-scenario6")?.addEventListener("click", async () => {
+      openingStatus = t(uiLang, "opening_db_loading");
+      paintOpening();
+      try {
+        const preset = await loadPreset("scenario6");
+        loadedScenario = await loadScenarioDatabase(preset);
+        openingScreen = "new_game";
+        selectedNewGameGroupUid = null;
+        paintOpening();
+      } catch (e) {
+        console.error("s3-open-scenario6 failed", e);
+        window.alert(e instanceof Error ? e.message : String(e));
+      }
+    });
+
+    document.getElementById("s3-trial-start")?.addEventListener("click", () => {
+      if (!loadedScenario) return;
+      const playerName = accountName.trim() || defaultPlayer;
+      setAccountName(playerName);
+      try {
+        save = createEqualLoveFeaturedTrialSave(loadedScenario, { playerName });
+        hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
+        hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
+        save.tutorial = {
+          completed: false,
+          disabled: !tutorialAutoOpen,
+        };
+        save.account_name = playerName;
+        save.player_name = playerName;
+        scheduleCalendarMonthStart = null;
+        resetNewLiveFormDefaults();
+        browseMode = false;
+        tutorialStepIndex = 0;
+        tutorialOverlayOpen = tutorialAutoOpen;
+        openingScreen = "home";
+        currentView = "Inbox";
+        idolDetailUid = null;
+        groupDetailUid = null;
+        openingStatus = t(uiLang, "opening_new_production_started");
+        resetNavigationHistory();
+        paintGame();
+      } catch (e) {
+        console.error("s3-trial-start failed", e);
         window.alert(e instanceof Error ? e.message : String(e));
       }
     });
@@ -3650,6 +3728,27 @@ function paintGame(): void {
           localStorage.setItem(IDOL_LIST_LAYOUT_KEY, mode);
         } catch {
           /* ignore */
+        }
+        paintGame();
+      }
+      return;
+    }
+    const s3RosterPick = t.closest<HTMLElement>("[data-s3-roster-filter]");
+    if (s3RosterPick && currentView === "Idols" && !idolDetailUid && save?.equal_love_trial) {
+      const mode = s3RosterPick.getAttribute("data-s3-roster-filter");
+      if (mode === "candidates" || mode === "selected") {
+        setS3IdolsRosterFilter(save, mode);
+        paintGame();
+      }
+      return;
+    }
+    const s3InterviewBtn = t.closest<HTMLElement>("[data-s3-interview]");
+    if (s3InterviewBtn && save?.equal_love_trial && currentView === "Idols") {
+      const uid = s3InterviewBtn.getAttribute("data-s3-interview");
+      if (uid) {
+        const result = runS3CandidateInterview(save, uid);
+        if (!result.ok) {
+          window.alert(result.reason);
         }
         paintGame();
       }

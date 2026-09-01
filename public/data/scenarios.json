@@ -19,11 +19,12 @@
     },
     {
       "scenario_number": 3,
-      "name": "Sashihara's Ambition",
-      "opening_date": "2017-01-01",
-      "data_subdir": null,
-      "data_available": false,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 3"
+      "name": "=LOVE — The Audition, 2017",
+      "opening_date": "2017-04-03",
+      "data_subdir": "scenario_3",
+      "data_available": true,
+      "entry_mode": "featured_trial",
+      "design_ref": "docs/design/S3_EQUAL_LOVE_FEATURED_TRIAL.md"
     },
     {
       "scenario_number": 4,

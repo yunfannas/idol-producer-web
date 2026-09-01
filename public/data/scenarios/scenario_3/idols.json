@@ -1,0 +1,2864 @@
+[
+  {
+    "uid": "4d86d1bb-0f98-45f8-a640-9c33d63e0a70",
+    "name": "指原莉乃",
+    "past_names": {},
+    "birthday": "1992-11-21",
+    "age": 32,
+    "height": 159,
+    "birthplace": "Oita City, Oita",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "STU48",
+        "start_date": "2017-02-01",
+        "end_date": "2017-11-30",
+        "member_color": null,
+        "member_color_code": null,
+        "group_uid": "U1RVNDg"
+      },
+      {
+        "group_name": "HKT48",
+        "start_date": "2012-06-01",
+        "end_date": "2019-04-30",
+        "member_color": null,
+        "member_color_code": null,
+        "group_uid": "SEtUNDg"
+      },
+      {
+        "group_name": "AKB48",
+        "start_date": "2007-10-01",
+        "end_date": "2012-06-30",
+        "member_color": null,
+        "member_color_code": null,
+        "group_uid": "QUtCNDg"
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\指原莉乃_portrait.jpg",
+    "romaji": "Sasuhara Rino",
+    "sources": [
+      "wikipedia_ja",
+      "akb48_wiki"
+    ],
+    "wikipedia_url_ja": "https://ja.wikipedia.org/wiki/%E6%8C%87%E5%8E%9F%E8%8E%89%E4%B9%83",
+    "last_updated": "2026-03-24T22:54:26.448366",
+    "data_sources": [
+      "wikipedia_ja",
+      "akb48_wiki"
+    ],
+    "wiki_url": "https://akb48.fandom.com/wiki/Sashihara_Rino",
+    "attributes_origin": "generated",
+    "attributes": {
+      "physical": {
+        "strength": 15,
+        "agility": 14,
+        "natural_fitness": 14,
+        "stamina": 13
+      },
+      "appearance": {
+        "cute": 10,
+        "pretty": 13
+      },
+      "technical": {
+        "pitch": 10,
+        "tone": 11,
+        "breath": 10,
+        "rhythm": 12,
+        "power": 12,
+        "grace": 17
+      },
+      "mental": {
+        "clever": 16,
+        "humor": 13,
+        "talking": 13,
+        "determination": 13,
+        "teamwork": 16,
+        "fashion": 14
+      },
+      "hidden": {
+        "professionalism": 13,
+        "injury_proneness": 3,
+        "ambition": 16,
+        "loyalty": 16
+      }
+    },
+    "player_character": true,
+    "historical_dual_role": true,
+    "audition_candidate": false,
+    "age_at_reference": 25
+  },
+  {
+    "uid": "dcc951b3-55bf-4065-bb30-2a78b769a0b4",
+    "name": "大谷映美里",
+    "past_names": [],
+    "birthday": "1998-03-15",
+    "age": 28,
+    "height": 155,
+    "birthplace": "Tokyo",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "アキシブproject",
+        "start_date": "2013-05-01",
+        "end_date": "2016-04-17",
+        "member_color": "White",
+        "member_name": "大谷映美里",
+        "member_color_code": "0xffffff",
+        "group_uid": "44Ki44Kt44K344OWcHJvamVjdA"
+      },
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Light Purple",
+        "member_name": "大谷映美里",
+        "member_color_code": "0xcbc3e3",
+        "group_uid": "PUxPVkU",
+        "notes": "Additional member colors: Light Purple",
+        "roles": {
+          "center": 0.2,
+          "content": 1,
+          "streaming": 0.4,
+          "style": 1
+        }
+      },
+      {
+        "group_name": "akishibu project",
+        "start_date": null,
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null
+      }
+    ],
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大谷映美里_portrait.jpg",
+    "nickname": "Mirinya (みりにゃ)",
+    "hiragana": "おおたにえみり",
+    "romaji": "Otani Emiri",
+    "last_updated": "2026-03-29T21:56:16.999821",
+    "akishibu_sync_source": "fetcher/archive/test_akishibu_result.json",
+    "wiki_url": "https://jpop.fandom.com/wiki/Otani_Emiri",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "x_account": "otani_emiri",
+    "x_url": "https://x.com/otani_emiri",
+    "x_followers": 464951,
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 14,
+        "agility": 18,
+        "natural_fitness": 16,
+        "stamina": 16
+      },
+      "appearance": {
+        "cute": 18,
+        "pretty": 18
+      },
+      "technical": {
+        "pitch": 14,
+        "tone": 15,
+        "breath": 15,
+        "rhythm": 17,
+        "power": 18,
+        "grace": 19
+      },
+      "mental": {
+        "clever": 14,
+        "humor": 18,
+        "talking": 16,
+        "determination": 16,
+        "teamwork": 17,
+        "fashion": 20
+      },
+      "hidden": {
+        "professionalism": 17,
+        "injury_proneness": 5,
+        "ambition": 16,
+        "loyalty": 18
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 0,
+    "age_at_reference": 19
+  },
+  {
+    "uid": "f6847b46-eae4-43ef-8f54-3865d1dc94a9",
+    "name": "大場花菜",
+    "past_names": {},
+    "birthday": "2000-02-04",
+    "age": 25,
+    "height": 159.8,
+    "birthplace": "Saitama",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Orange",
+        "member_name": "大場花菜",
+        "member_color_code": "0xffa500",
+        "group_uid": "PUxPVkU",
+        "notes": "Additional member colors: Medium Blue",
+        "roles": {
+          "host": 0.2,
+          "content": 0.2,
+          "streaming": 0.6,
+          "call_leader": 0.8
+        }
+      }
+    ],
+    "x_followers": 260097,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\大場花菜_portrait.jpg",
+    "romaji": "Oba Hana",
+    "hiragana": "おおばはな",
+    "wiki_url": "https://jpop.fandom.com/wiki/Oba_Hana",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:17.914791",
+    "nickname": "Hana-chan (はなちゃん)",
+    "x_account": "hana_oba",
+    "x_url": "https://x.com/hana_oba",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 17,
+        "agility": 16,
+        "natural_fitness": 17,
+        "stamina": 16
+      },
+      "appearance": {
+        "cute": 15,
+        "pretty": 17
+      },
+      "technical": {
+        "pitch": 16,
+        "tone": 16,
+        "breath": 14,
+        "rhythm": 16,
+        "power": 17,
+        "grace": 16
+      },
+      "mental": {
+        "clever": 15,
+        "humor": 17,
+        "talking": 17,
+        "determination": 16,
+        "teamwork": 16,
+        "fashion": 16
+      },
+      "hidden": {
+        "professionalism": 19,
+        "injury_proneness": 4,
+        "ambition": 18,
+        "loyalty": 19
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 1,
+    "age_at_reference": 17
+  },
+  {
+    "uid": "4ffa18d4-5b15-47e2-8ac6-6c641780e612",
+    "name": "長南舞",
+    "past_names": {},
+    "birthday": "1997-11-21",
+    "age": 27,
+    "height": 160,
+    "birthplace": "Hokkaido",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "なんキニ！",
+        "start_date": "2018-06-16",
+        "end_date": "2019-05-31",
+        "member_color": null,
+        "member_name": "長南舞",
+        "member_color_code": null,
+        "group_uid": "44Gq44KT44Kt44OL77yB"
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\長南舞_portrait.jpg",
+    "romaji": "Chonan Mai",
+    "hiragana": "ちょうなんまい",
+    "wiki_url": "https://jpop.fandom.com/wiki/Chonan_Mai",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "attributes_origin": "generated",
+    "attributes": {
+      "physical": {
+        "strength": 11,
+        "agility": 14,
+        "natural_fitness": 10,
+        "stamina": 12
+      },
+      "appearance": {
+        "cute": 11,
+        "pretty": 15
+      },
+      "technical": {
+        "pitch": 14,
+        "tone": 13,
+        "breath": 11,
+        "rhythm": 16,
+        "power": 16,
+        "grace": 15
+      },
+      "mental": {
+        "clever": 15,
+        "humor": 8,
+        "talking": 10,
+        "determination": 9,
+        "teamwork": 12,
+        "fashion": 10
+      },
+      "hidden": {
+        "professionalism": 15,
+        "injury_proneness": 5,
+        "ambition": 17,
+        "loyalty": 18
+      }
+    },
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 2,
+    "age_at_reference": 20
+  },
+  {
+    "uid": "7e5dd852-de2f-41a5-8ff3-9997905a20d3",
+    "name": "齊藤なぎさ",
+    "past_names": {},
+    "birthday": "2003-07-06",
+    "age": 22,
+    "height": 152.2,
+    "birthplace": "Kanagawa",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-19",
+        "end_date": "2023-01-13",
+        "member_color": "Pink",
+        "member_name": "齊藤なぎさ",
+        "member_color_code": "0xffc0cb",
+        "group_uid": "PUxPVkU"
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\齊藤なぎさ_portrait.jpg",
+    "romaji": "Saito Nagisa",
+    "hiragana": "さいとうなぎさ",
+    "wiki_url": "https://jpop.fandom.com/wiki/Saito_Nagisa",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:19.961349",
+    "nickname": "Naatan (なーたん)",
+    "attributes_origin": "generated",
+    "attributes": {
+      "physical": {
+        "strength": 15,
+        "agility": 17,
+        "natural_fitness": 13,
+        "stamina": 16
+      },
+      "appearance": {
+        "cute": 19,
+        "pretty": 14
+      },
+      "technical": {
+        "pitch": 15,
+        "tone": 13,
+        "breath": 15,
+        "rhythm": 16,
+        "power": 18,
+        "grace": 17
+      },
+      "mental": {
+        "clever": 14,
+        "humor": 14,
+        "talking": 14,
+        "determination": 16,
+        "teamwork": 17,
+        "fashion": 12
+      },
+      "hidden": {
+        "professionalism": 15,
+        "injury_proneness": 5,
+        "ambition": 13,
+        "loyalty": 18
+      }
+    },
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 3,
+    "age_at_reference": 14
+  },
+  {
+    "uid": "fdfbd1a8-57a6-4e0f-a36c-e87d33f24fb6",
+    "name": "佐竹のん乃",
+    "past_names": {},
+    "birthday": "1998-11-06",
+    "age": 26,
+    "height": 158.9,
+    "birthplace": "Gunma",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-19",
+        "end_date": "2021-03-06",
+        "member_color": "Blue",
+        "member_name": "佐竹のん乃",
+        "member_color_code": "0x0000ff",
+        "group_uid": "PUxPVkU",
+        "status_history": [
+          {
+            "kind": "scandal",
+            "start_date": "2021-03-01",
+            "score": 5,
+            "summary_ja": "「文春オンライン」が、佐竹のん乃の「パパ活」売春疑惑を写真付きで報じた。",
+            "source_label": "アイドル走り書き（=LOVE）",
+            "source_url": "https://seesaawiki.jp/neverless/d/%3dLOVE"
+          }
+        ]
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\佐竹のん乃_portrait.jpg",
+    "romaji": "Satake Nonno",
+    "hiragana": "さたけの",
+    "wiki_url": "https://jpop.fandom.com/wiki/Satake_Nonno",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki",
+      "neverless_wiki"
+    ],
+    "last_updated": "2026-05-08T00:00:00",
+    "nickname": "Nonno (のんの)",
+    "attributes_origin": "generated",
+    "attributes": {
+      "physical": {
+        "strength": 16,
+        "agility": 16,
+        "natural_fitness": 16,
+        "stamina": 14
+      },
+      "appearance": {
+        "cute": 15,
+        "pretty": 17
+      },
+      "technical": {
+        "pitch": 17,
+        "tone": 19,
+        "breath": 19,
+        "rhythm": 16,
+        "power": 17,
+        "grace": 18
+      },
+      "mental": {
+        "clever": 14,
+        "humor": 10,
+        "talking": 16,
+        "determination": 13,
+        "teamwork": 17,
+        "fashion": 15
+      },
+      "hidden": {
+        "professionalism": 3,
+        "injury_proneness": 6,
+        "ambition": 16,
+        "loyalty": 18
+      }
+    },
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 4,
+    "age_at_reference": 19
+  },
+  {
+    "uid": "41558c44-2be4-4992-9684-9431a17f0243",
+    "name": "佐々木舞香",
+    "past_names": {},
+    "birthday": "2000-01-21",
+    "age": 25,
+    "height": 157,
+    "birthplace": "Aichi",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "White",
+        "member_name": "佐々木舞香",
+        "member_color_code": "0xffffff",
+        "group_uid": "PUxPVkU",
+        "roles": {
+          "leader": 0.6,
+          "center": 1,
+          "lead_singer": 1,
+          "host": 0.6,
+          "content": 0.4
+        }
+      }
+    ],
+    "x_followers": 497152,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\佐々木舞香_portrait.jpg",
+    "romaji": "Sasaki Maika",
+    "hiragana": "ささきまいか",
+    "wiki_url": "https://jpop.fandom.com/wiki/Sasaki_Maika",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:18.524764",
+    "nickname": "Maika (まいか)",
+    "x_account": "sasaki_maika",
+    "x_url": "https://x.com/sasaki_maika",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 16,
+        "agility": 17,
+        "natural_fitness": 18,
+        "stamina": 16
+      },
+      "appearance": {
+        "cute": 17,
+        "pretty": 19
+      },
+      "technical": {
+        "pitch": 20,
+        "tone": 20,
+        "breath": 20,
+        "rhythm": 19,
+        "power": 17,
+        "grace": 17
+      },
+      "mental": {
+        "clever": 16,
+        "humor": 15,
+        "talking": 17,
+        "determination": 18,
+        "teamwork": 18,
+        "fashion": 16
+      },
+      "hidden": {
+        "professionalism": 15,
+        "injury_proneness": 6,
+        "ambition": 18,
+        "loyalty": 16
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 5,
+    "age_at_reference": 17
+  },
+  {
+    "uid": "ad9ef028-1108-471b-b29a-f24be9815af4",
+    "name": "髙松瞳",
+    "past_names": {},
+    "birthday": "2001-01-19",
+    "age": 24,
+    "height": 163,
+    "birthplace": "Tokyo",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Red",
+        "member_name": "髙松瞳",
+        "member_color_code": "0xff0000",
+        "group_uid": "PUxPVkU",
+        "roles": {
+          "leader": 0.6,
+          "center": 0.6,
+          "lead_singer": 0.6,
+          "host": 0.6,
+          "content": 0.4,
+          "streaming": 0.6
+        }
+      }
+    ],
+    "x_followers": 352370,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\髙松瞳_portrait.jpg",
+    "romaji": "Takamatsu Hitomi",
+    "hiragana": "たかまつひとみ",
+    "wiki_url": "https://jpop.fandom.com/wiki/Takamatsu_Hitomi",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:18.672208",
+    "nickname": "Hitomin (ひとみん)",
+    "x_account": "takamatsuhitomi",
+    "x_url": "https://x.com/takamatsuhitomi",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 18,
+        "agility": 17,
+        "natural_fitness": 19,
+        "stamina": 17
+      },
+      "appearance": {
+        "cute": 15,
+        "pretty": 18
+      },
+      "technical": {
+        "pitch": 16,
+        "tone": 18,
+        "breath": 15,
+        "rhythm": 18,
+        "power": 17,
+        "grace": 18
+      },
+      "mental": {
+        "clever": 19,
+        "humor": 20,
+        "talking": 18,
+        "determination": 16,
+        "teamwork": 19,
+        "fashion": 16
+      },
+      "hidden": {
+        "professionalism": 20,
+        "injury_proneness": 3,
+        "ambition": 20,
+        "loyalty": 18
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 6,
+    "age_at_reference": 16
+  },
+  {
+    "uid": "4e162c95-e9a1-463d-b825-73326ca6748e",
+    "name": "瀧脇笙古",
+    "past_names": {},
+    "birthday": "2001-07-09",
+    "age": 24,
+    "height": 157,
+    "birthplace": "Yokohama, Kanagawa",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Yellow",
+        "member_name": "瀧脇笙古",
+        "member_color_code": "0xffff00",
+        "group_uid": "PUxPVkU",
+        "notes": "Additional member colors: Orange, Light Pink",
+        "roles": {
+          "content": 0.4,
+          "streaming": 0.8,
+          "call_leader": 0.4
+        }
+      }
+    ],
+    "x_followers": 227991,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\瀧脇笙古_portrait.jpg",
+    "romaji": "Takiwaki Shoko",
+    "hiragana": "たきわきしょうこ",
+    "wiki_url": "https://jpop.fandom.com/wiki/Takiwaki_Shoko",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:18.923404",
+    "nickname": "Shoko (しょこ) Shokora (しょこら)",
+    "x_account": "shoko_takiwaki",
+    "x_url": "https://x.com/shoko_takiwaki",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 17,
+        "agility": 16,
+        "natural_fitness": 19,
+        "stamina": 20
+      },
+      "appearance": {
+        "cute": 16,
+        "pretty": 16
+      },
+      "technical": {
+        "pitch": 16,
+        "tone": 16,
+        "breath": 20,
+        "rhythm": 15,
+        "power": 16,
+        "grace": 16
+      },
+      "mental": {
+        "clever": 15,
+        "humor": 16,
+        "talking": 16,
+        "determination": 18,
+        "teamwork": 16,
+        "fashion": 14
+      },
+      "hidden": {
+        "professionalism": 19,
+        "injury_proneness": 4,
+        "ambition": 20,
+        "loyalty": 18
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 7,
+    "age_at_reference": 16
+  },
+  {
+    "uid": "e4a0b532-8215-4024-a796-55d59cf94b25",
+    "name": "諸橋沙夏",
+    "past_names": {},
+    "birthday": "1996-08-03",
+    "age": 28,
+    "height": 158,
+    "birthplace": "Fukushima",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Light Green",
+        "member_name": "諸橋沙夏",
+        "member_color_code": "0x90ee90",
+        "group_uid": "PUxPVkU",
+        "roles": {
+          "lead_singer": 0.8,
+          "content": 0.2,
+          "streaming": 0.8
+        }
+      }
+    ],
+    "x_followers": 217111,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\諸橋沙夏_portrait.jpg",
+    "romaji": "Morohashi Sana",
+    "hiragana": "もろはしさな",
+    "wiki_url": "https://jpop.fandom.com/wiki/Morohashi_Sana",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:19.608867",
+    "nickname": "Sanatsun (さなつん)",
+    "x_account": "morohashi_sana",
+    "x_url": "https://x.com/morohashi_sana",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 16,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 17
+      },
+      "appearance": {
+        "cute": 16,
+        "pretty": 16
+      },
+      "technical": {
+        "pitch": 20,
+        "tone": 19,
+        "breath": 20,
+        "rhythm": 19,
+        "power": 15,
+        "grace": 16
+      },
+      "mental": {
+        "clever": 17,
+        "humor": 18,
+        "talking": 18,
+        "determination": 16,
+        "teamwork": 16,
+        "fashion": 15
+      },
+      "hidden": {
+        "professionalism": 16,
+        "injury_proneness": 5,
+        "ambition": 15,
+        "loyalty": 18
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 8,
+    "age_at_reference": 21
+  },
+  {
+    "uid": "2641cc39-6b4b-4d99-9a65-5ac99b9480e0",
+    "name": "山本杏奈",
+    "past_names": {},
+    "birthday": "1997-11-30",
+    "age": 27,
+    "height": 149.1,
+    "birthplace": "Hiroshima",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-09-06",
+        "end_date": null,
+        "member_color": "Royal Blue",
+        "member_color_code": "0x4169e1",
+        "group_uid": "PUxPVkU",
+        "member_name": "山本杏奈",
+        "notes": "Additional member colors: Light Yellow; Additional member colors: Yellow",
+        "roles": {
+          "leader": 1,
+          "lead_dancer": 0.8,
+          "host": 1,
+          "content": 0.4,
+          "streaming": 1
+        },
+        "announced_leader": true
+      }
+    ],
+    "x_followers": 217416,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\山本杏奈_portrait.jpg",
+    "romaji": "Yamamoto Anna",
+    "hiragana": "やまもとあんな",
+    "nickname": "Annya (あんにゃ), Leader (リーダー), Captain (キャプテン)",
+    "wiki_url": "https://jpop.fandom.com/wiki/Yamamoto_Anna",
+    "jpop_wiki_url": "https://jpop.fandom.com/wiki/Yamamoto_Anna",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "x_account": "yamamoto_anna_",
+    "x_url": "https://x.com/yamamoto_anna_",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "notes": "Distinct person from Party chuuuN!/KissBee/KissBeeWEST member with the same name.",
+    "attributes": {
+      "physical": {
+        "strength": 18,
+        "agility": 19,
+        "natural_fitness": 19,
+        "stamina": 18
+      },
+      "appearance": {
+        "cute": 18,
+        "pretty": 15
+      },
+      "technical": {
+        "pitch": 17,
+        "tone": 17,
+        "breath": 19,
+        "rhythm": 19,
+        "power": 20,
+        "grace": 18
+      },
+      "mental": {
+        "clever": 16,
+        "humor": 15,
+        "talking": 20,
+        "determination": 19,
+        "teamwork": 20,
+        "fashion": 15
+      },
+      "hidden": {
+        "professionalism": 18,
+        "injury_proneness": 3,
+        "ambition": 19,
+        "loyalty": 20
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 9,
+    "age_at_reference": 20
+  },
+  {
+    "uid": "e203088a-bbb9-410f-9945-c6534ed75e29",
+    "name": "野口衣織",
+    "past_names": {},
+    "birthday": "2000-04-26",
+    "age": 25,
+    "height": 161,
+    "birthplace": "Ibaraki",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Purple",
+        "member_name": "野口衣織",
+        "member_color_code": "0x800080",
+        "group_uid": "PUxPVkU",
+        "roles": {
+          "center": 0.8,
+          "lead_singer": 0.8,
+          "lead_dancer": 0.8,
+          "host": 0.6,
+          "content": 0.2
+        }
+      }
+    ],
+    "x_followers": 470863,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\野口衣織_portrait.jpg",
+    "romaji": "Noguchi Iori",
+    "hiragana": "のぐちいおり",
+    "wiki_url": "https://jpop.fandom.com/wiki/Noguchi_Iori",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:19.180115",
+    "nickname": "Iori (いおり)",
+    "x_account": "noguchi_iori",
+    "x_url": "https://x.com/noguchi_iori",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 20,
+        "agility": 18,
+        "natural_fitness": 20,
+        "stamina": 19
+      },
+      "appearance": {
+        "cute": 14,
+        "pretty": 18
+      },
+      "technical": {
+        "pitch": 19,
+        "tone": 19,
+        "breath": 19,
+        "rhythm": 20,
+        "power": 20,
+        "grace": 18
+      },
+      "mental": {
+        "clever": 14,
+        "humor": 15,
+        "talking": 16,
+        "determination": 18,
+        "teamwork": 17,
+        "fashion": 17
+      },
+      "hidden": {
+        "professionalism": 18,
+        "injury_proneness": 4,
+        "ambition": 20,
+        "loyalty": 19
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 10,
+    "age_at_reference": 17
+  },
+  {
+    "uid": "9cf08bc4-2aee-4745-80a6-2262e61d3b32",
+    "name": "音嶋莉沙",
+    "past_names": {},
+    "birthday": "1998-08-11",
+    "age": 26,
+    "height": 159.6,
+    "birthplace": "Fukuoka",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Light Blue",
+        "member_name": "音嶋莉沙",
+        "member_color_code": "0xadd8e6",
+        "group_uid": "PUxPVkU",
+        "notes": "Additional member colors: Pink",
+        "roles": {
+          "content": 0.2,
+          "streaming": 0.4,
+          "style": 0.8
+        }
+      },
+      {
+        "group_name": "HKT48",
+        "start_date": "2016-07-01",
+        "end_date": "2016-07-31",
+        "member_color": null,
+        "member_color_code": null,
+        "group_uid": "SEtUNDg"
+      }
+    ],
+    "x_followers": 243154,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\音嶋莉沙_portrait.jpg",
+    "romaji": "Otoshima Risa",
+    "hiragana": "おとしまりさ",
+    "wiki_url": "https://jpop.fandom.com/wiki/Otoshima_Risa",
+    "sources": [
+      "jpop_wiki",
+      "akb48_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki",
+      "akb48_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:17.691560",
+    "nickname": "Risa-chan (りさちゃん) Rii-chan (りーちゃん)",
+    "x_account": "otoshima_risa",
+    "x_url": "https://x.com/otoshima_risa",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 14,
+        "agility": 18,
+        "natural_fitness": 17,
+        "stamina": 16
+      },
+      "appearance": {
+        "cute": 16,
+        "pretty": 18
+      },
+      "technical": {
+        "pitch": 15,
+        "tone": 16,
+        "breath": 16,
+        "rhythm": 17,
+        "power": 16,
+        "grace": 18
+      },
+      "mental": {
+        "clever": 15,
+        "humor": 15,
+        "talking": 15,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 20
+      },
+      "hidden": {
+        "professionalism": 16,
+        "injury_proneness": 5,
+        "ambition": 19,
+        "loyalty": 18
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 11,
+    "age_at_reference": 19
+  },
+  {
+    "uid": "b1a65b5b-436f-4f12-b345-147bd51a18fd",
+    "name": "齋藤樹愛羅",
+    "past_names": {},
+    "birthday": "2004-11-26",
+    "age": 20,
+    "height": 155.7,
+    "birthplace": "Tochigi",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "=LOVE",
+        "start_date": "2017-04-01",
+        "end_date": null,
+        "member_color": "Light Pink",
+        "member_name": "齋藤樹愛羅",
+        "member_color_code": "0xffb6c1",
+        "group_uid": "PUxPVkU",
+        "roles": {
+          "center": 0.4,
+          "lead_singer": 0.6,
+          "lead_dancer": 0.6,
+          "host": 0.4,
+          "content": 0.6
+        }
+      }
+    ],
+    "x_followers": 358393,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\齋藤樹愛羅_portrait.jpg",
+    "romaji": "Saito Kiara",
+    "hiragana": "さいとうきあら",
+    "wiki_url": "https://jpop.fandom.com/wiki/Saito_Kiara",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "last_updated": "2026-03-29T21:56:18.297007",
+    "nickname": "Kyatan (きゃーたん) Kiara (きあら)",
+    "x_account": "saitou_kiara",
+    "x_url": "https://x.com/saitou_kiara",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 17,
+        "agility": 19,
+        "natural_fitness": 17,
+        "stamina": 17
+      },
+      "appearance": {
+        "cute": 18,
+        "pretty": 16
+      },
+      "technical": {
+        "pitch": 17,
+        "tone": 19,
+        "breath": 19,
+        "rhythm": 19,
+        "power": 18,
+        "grace": 19
+      },
+      "mental": {
+        "clever": 15,
+        "humor": 18,
+        "talking": 17,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 18
+      },
+      "hidden": {
+        "professionalism": 16,
+        "injury_proneness": 6,
+        "ambition": 20,
+        "loyalty": 20
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type1",
+    "historical_equal_love": true,
+    "s3_pool_index": 12,
+    "age_at_reference": 14
+  },
+  {
+    "uid": "37f1d78c-ffeccb2b44dc36e7d39d52c0f61",
+    "name": "山本花恋",
+    "romaji": "",
+    "birthday": "1998-08-28",
+    "height": 163,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 13,
+    "fan_count": 0,
+    "x_followers": 249,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19,
+    "historical_related": true
+  },
+  {
+    "uid": "5c880996-5587-4d46-929c-437a376ab417",
+    "name": "中村優花",
+    "past_names": {},
+    "birthday": "1994-07-04",
+    "age": 31,
+    "height": 158,
+    "birthplace": "Hekinan, Aichi",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "SKE48",
+        "start_date": "2010-09-01",
+        "end_date": "2011-12-31",
+        "member_color": null,
+        "member_color_code": null,
+        "group_uid": "U0tFNDg"
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\中村優花_portrait.jpg",
+    "romaji": "Nakamura Yuka",
+    "wiki_url": "https://akb48.fandom.com/wiki/Nakamura_Yuka",
+    "sources": [
+      "akb48_wiki"
+    ],
+    "data_sources": [
+      "akb48_wiki"
+    ],
+    "attributes_origin": "generated",
+    "attributes": {
+      "physical": {
+        "strength": 15,
+        "agility": 14,
+        "natural_fitness": 15,
+        "stamina": 16
+      },
+      "appearance": {
+        "cute": 12,
+        "pretty": 19
+      },
+      "technical": {
+        "pitch": 16,
+        "tone": 17,
+        "breath": 14,
+        "rhythm": 11,
+        "power": 15,
+        "grace": 16
+      },
+      "mental": {
+        "clever": 14,
+        "humor": 15,
+        "talking": 11,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 12
+      },
+      "hidden": {
+        "professionalism": 13,
+        "injury_proneness": 8,
+        "ambition": 12,
+        "loyalty": 17
+      }
+    },
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "historical_related": true,
+    "s3_pool_index": 14,
+    "age_at_reference": 23
+  },
+  {
+    "uid": "b0112f31-aef4a52246bba7abd83753e35ba",
+    "name": "小島はるか",
+    "romaji": "",
+    "birthday": "1995-01-15",
+    "height": 153,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 15,
+    "fan_count": 0,
+    "x_followers": 747,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22,
+    "historical_related": true
+  },
+  {
+    "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+    "name": "松本ももな",
+    "past_names": {},
+    "birthday": "2002-10-12",
+    "age": 22,
+    "height": 159,
+    "birthplace": "Kanagawa",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "高嶺のなでしこ",
+        "start_date": "2022-08-05",
+        "end_date": null,
+        "member_color": "Light Pink",
+        "member_name": "松本ももな",
+        "member_color_code": "0xffb6c1",
+        "group_uid": "6auY5ba644Gu44Gq44Gn44GX44GT"
+      },
+      {
+        "group_name": "Choux Cream Rockets",
+        "start_date": "2017-08-13",
+        "end_date": "2022-05-31",
+        "member_color": null,
+        "member_name": "松本ももな",
+        "member_color_code": null,
+        "group_uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw"
+      }
+    ],
+    "x_followers": 116954,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\松本ももな_portrait.jpg",
+    "romaji": "Matsumoto Momona",
+    "hiragana": "まつもとももな",
+    "nickname": "Momonan (ももなん) Momo-chan (ももちゃん)",
+    "wiki_url": "https://jpop.fandom.com/wiki/Matsumoto_Momona",
+    "sources": [
+      "jpop_wiki"
+    ],
+    "data_sources": [
+      "jpop_wiki"
+    ],
+    "jpop_wiki_url": "https://jpop.fandom.com/wiki/Matsumoto_Momona",
+    "x_account": "momonamatsumoto",
+    "x_url": "https://x.com/momonamatsumoto",
+    "x_followers_source": "x-ranker",
+    "x_followers_updated_at": "2026-04-04",
+    "attributes": {
+      "physical": {
+        "strength": 14,
+        "agility": 15,
+        "natural_fitness": 12,
+        "stamina": 14
+      },
+      "appearance": {
+        "cute": 19,
+        "pretty": 20
+      },
+      "technical": {
+        "pitch": 12,
+        "tone": 14,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 15,
+        "grace": 16
+      },
+      "mental": {
+        "clever": 14,
+        "humor": 16,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 12,
+        "fashion": 20
+      },
+      "hidden": {
+        "professionalism": 16,
+        "injury_proneness": 4,
+        "ambition": 19,
+        "loyalty": 15
+      }
+    },
+    "attributes_origin": "manual",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "historical_related": true,
+    "s3_pool_index": 16,
+    "age_at_reference": 15
+  },
+  {
+    "uid": "86713b98-4428422b4a192c980f9cea165d1",
+    "name": "渡辺美咲",
+    "romaji": "",
+    "birthday": "1997-06-02",
+    "height": 154,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 17,
+    "fan_count": 0,
+    "x_followers": 689,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20,
+    "historical_related": true
+  },
+  {
+    "uid": "a8ba833b-be08b393ec4cfcf210407b7bdd1",
+    "name": "伊藤さくら",
+    "romaji": "",
+    "birthday": "2002-02-25",
+    "height": 153,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 18,
+    "fan_count": 0,
+    "x_followers": 286,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15,
+    "historical_related": true
+  },
+  {
+    "uid": "f83812b3-0a25d9145584f454d82b5f12b3a",
+    "name": "木村あゆみ",
+    "romaji": "",
+    "birthday": "1998-09-13",
+    "height": 157,
+    "birthplace": "大阪",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 19,
+    "fan_count": 0,
+    "x_followers": 724,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19,
+    "historical_related": true
+  },
+  {
+    "uid": "ab92df3d-1a33b64c8d1055f3a3b1806c9bf",
+    "name": "林美月",
+    "romaji": "",
+    "birthday": "2002-04-23",
+    "height": 152,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 20,
+    "fan_count": 0,
+    "x_followers": 736,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15,
+    "historical_related": true
+  },
+  {
+    "uid": "09949073-334a-47e0-9fa5-77849ef4a1c0",
+    "name": "森田ひかる",
+    "past_names": {},
+    "birthday": "2001-07-10",
+    "age": 24,
+    "height": 149.8,
+    "birthplace": "Fukuoka",
+    "languages": [
+      "Japanese"
+    ],
+    "group_history": [
+      {
+        "group_name": "櫻坂46",
+        "start_date": "2018-11-01",
+        "end_date": null,
+        "member_color": null,
+        "member_color_code": null,
+        "group_uid": "5qu75Z2CNDY"
+      }
+    ],
+    "x_followers": null,
+    "portrait_photo_path": "fetcher\\database\\picture_fandom\\森田ひかる_portrait.jpg",
+    "romaji": "Morita Hikaru",
+    "wiki_url": "https://akb48.fandom.com/wiki/Morita_Hikaru",
+    "sources": [
+      "akb48_wiki"
+    ],
+    "data_sources": [
+      "akb48_wiki"
+    ],
+    "attributes_origin": "generated",
+    "attributes": {
+      "physical": {
+        "strength": 17,
+        "agility": 18,
+        "natural_fitness": 20,
+        "stamina": 14
+      },
+      "appearance": {
+        "cute": 18,
+        "pretty": 15
+      },
+      "technical": {
+        "pitch": 16,
+        "tone": 16,
+        "breath": 19,
+        "rhythm": 16,
+        "power": 16,
+        "grace": 14
+      },
+      "mental": {
+        "clever": 12,
+        "humor": 11,
+        "talking": 17,
+        "determination": 18,
+        "teamwork": 16,
+        "fashion": 15
+      },
+      "hidden": {
+        "professionalism": 11,
+        "injury_proneness": 6,
+        "ambition": 12,
+        "loyalty": 11
+      }
+    },
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "historical_related": true,
+    "s3_pool_index": 21,
+    "age_at_reference": 16
+  },
+  {
+    "uid": "2d2a7785-5bfbbf489e7654a0183a76b3ac3",
+    "name": "石田あかり",
+    "romaji": "",
+    "birthday": "1996-04-08",
+    "height": 158,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 22,
+    "fan_count": 0,
+    "x_followers": 241,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21,
+    "historical_related": true
+  },
+  {
+    "uid": "829396a0-48d92a82ea01f1c49fbdf6da5be",
+    "name": "藤田なな",
+    "romaji": "",
+    "birthday": "1997-09-27",
+    "height": 154,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 23,
+    "fan_count": 0,
+    "x_followers": 361,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20,
+    "historical_related": true
+  },
+  {
+    "uid": "c02ffc86-4ff1743cf8a4658b958f65fc6cf",
+    "name": "青木ゆうか",
+    "romaji": "",
+    "birthday": "2002-01-13",
+    "height": 150,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 24,
+    "fan_count": 0,
+    "x_followers": 720,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15,
+    "historical_related": true
+  },
+  {
+    "uid": "e8755a4f-2848a92a4b22b5b30ab1abd3ff3",
+    "name": "岡田みお",
+    "romaji": "",
+    "birthday": "1995-10-13",
+    "height": 163,
+    "birthplace": "大阪",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 25,
+    "fan_count": 0,
+    "x_followers": 499,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22,
+    "historical_related": true
+  },
+  {
+    "uid": "3ba2e87c-092ebc410feaa17969f63d6e615",
+    "name": "清水あい",
+    "romaji": "",
+    "birthday": "1996-08-06",
+    "height": 158,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 26,
+    "fan_count": 0,
+    "x_followers": 770,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21,
+    "historical_related": true
+  },
+  {
+    "uid": "bcfc09fd-bcb9d78f2bd434d32e24548d324",
+    "name": "池田さおり",
+    "romaji": "",
+    "birthday": "1996-02-08",
+    "height": 160,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "type2",
+    "s3_pool_index": 27,
+    "fan_count": 0,
+    "x_followers": 257,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21,
+    "historical_related": true
+  },
+  {
+    "uid": "cdccb1d0-9f8f6c3750fdfe699894c41ed02",
+    "name": "田中真央",
+    "romaji": "",
+    "birthday": "1998-04-16",
+    "height": 156,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 28,
+    "fan_count": 0,
+    "x_followers": 215,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "f328cba5-65152665da46fe9efa9413c25b1",
+    "name": "高橋遥",
+    "romaji": "",
+    "birthday": "1995-10-28",
+    "height": 159,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 29,
+    "fan_count": 0,
+    "x_followers": 54,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "58986c6a-16b917f405e953f4bc1fbcfd3ed",
+    "name": "鈴木美咲",
+    "romaji": "",
+    "birthday": "2002-12-21",
+    "height": 156,
+    "birthplace": "大阪",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 30,
+    "fan_count": 0,
+    "x_followers": 339,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "cdd0e9b6-c3ae5f9bf1892005b4deac250c9",
+    "name": "鈴木琴音",
+    "romaji": "",
+    "birthday": "1999-07-27",
+    "height": 150,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 31,
+    "fan_count": 0,
+    "x_followers": 616,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "e10eb1f5-af5800aafbbabc886e592754dc9",
+    "name": "渡辺優奈",
+    "romaji": "",
+    "birthday": "1995-01-21",
+    "height": 162,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 32,
+    "fan_count": 0,
+    "x_followers": 398,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "18c9923f-2bc3a888cc83e8be9225acfa0a6",
+    "name": "鈴木彩花",
+    "romaji": "",
+    "birthday": "1995-06-04",
+    "height": 159,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 33,
+    "fan_count": 0,
+    "x_followers": 389,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "8ba369e6-e6c4c8169bcb3f088230d6e7cff",
+    "name": "高橋凛",
+    "romaji": "",
+    "birthday": "2000-04-27",
+    "height": 157,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 34,
+    "fan_count": 0,
+    "x_followers": 585,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "d5a55de2-be86381b995ce94a05e824df698",
+    "name": "加藤凛",
+    "romaji": "",
+    "birthday": "1997-07-24",
+    "height": 162,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 35,
+    "fan_count": 0,
+    "x_followers": 721,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20
+  },
+  {
+    "uid": "b6ed9252-b5a49083bd284a5b3fd4b73ecaa",
+    "name": "佐藤結衣",
+    "romaji": "",
+    "birthday": "2001-03-24",
+    "height": 166,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 36,
+    "fan_count": 0,
+    "x_followers": 673,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "c85aee06-f18402feeac83e3d44597885dbd",
+    "name": "鈴木さくら",
+    "romaji": "",
+    "birthday": "1999-08-26",
+    "height": 165,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 37,
+    "fan_count": 0,
+    "x_followers": 222,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "8a3494e9-395260e06936a691ae0279c078a",
+    "name": "吉田彩花",
+    "romaji": "",
+    "birthday": "2002-03-08",
+    "height": 164,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 38,
+    "fan_count": 0,
+    "x_followers": 259,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "fec92df0-3a2b6aee15f794ca947819e5f63",
+    "name": "鈴木さくら1",
+    "romaji": "",
+    "birthday": "2000-02-02",
+    "height": 167,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 39,
+    "fan_count": 0,
+    "x_followers": 712,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "9c6bbeaf-778554528a9c9da9a3f6c2ccd52",
+    "name": "中村さくら",
+    "romaji": "",
+    "birthday": "1998-08-07",
+    "height": 152,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 40,
+    "fan_count": 0,
+    "x_followers": 89,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "5847ea8c-161b99a4e3d2c93c8d4c22d33aa",
+    "name": "吉田彩花2",
+    "romaji": "",
+    "birthday": "2000-06-15",
+    "height": 155,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 41,
+    "fan_count": 0,
+    "x_followers": 139,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "9fe731ce-4093901f570919708e638478a5e",
+    "name": "渡辺愛莉",
+    "romaji": "",
+    "birthday": "2001-01-08",
+    "height": 164,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 42,
+    "fan_count": 0,
+    "x_followers": 696,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "72614cb8-0d507b951c1fdc675383335d9b1",
+    "name": "高橋さくら",
+    "romaji": "",
+    "birthday": "2001-08-08",
+    "height": 155,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 43,
+    "fan_count": 0,
+    "x_followers": 594,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "14a3730c-4f507fe4c3bbe2f6d599ef17084",
+    "name": "小林彩花",
+    "romaji": "",
+    "birthday": "2000-03-15",
+    "height": 160,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 44,
+    "fan_count": 0,
+    "x_followers": 677,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "986daa69-0708535df63c7f51599c4db0ce2",
+    "name": "山田遥",
+    "romaji": "",
+    "birthday": "1999-06-19",
+    "height": 157,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 45,
+    "fan_count": 0,
+    "x_followers": 184,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "e66baa98-28044d35e56dff10a760405227e",
+    "name": "山本愛莉",
+    "romaji": "",
+    "birthday": "1996-07-04",
+    "height": 167,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 46,
+    "fan_count": 0,
+    "x_followers": 343,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21
+  },
+  {
+    "uid": "207f7d6c-e10b7f6fbcf8f23fdd47e435e0f",
+    "name": "田中結衣",
+    "romaji": "",
+    "birthday": "2000-07-10",
+    "height": 163,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 47,
+    "fan_count": 0,
+    "x_followers": 709,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "f9571a22-87696885b97ac6aba0c023e0411",
+    "name": "鈴木さくら3",
+    "romaji": "",
+    "birthday": "1997-05-11",
+    "height": 150,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 48,
+    "fan_count": 0,
+    "x_followers": 266,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20
+  },
+  {
+    "uid": "5f71ae1f-b8fa21436f83295d1a4cf4f269f",
+    "name": "田中陽菜",
+    "romaji": "",
+    "birthday": "2002-02-24",
+    "height": 164,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 49,
+    "fan_count": 0,
+    "x_followers": 674,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "6d7655fe-4a3397cfa4e4f26b832ff176f8c",
+    "name": "渡辺優奈4",
+    "romaji": "",
+    "birthday": "1999-07-14",
+    "height": 153,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 50,
+    "fan_count": 0,
+    "x_followers": 75,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "f5db23c6-3fed25596a9f024c439009608cd",
+    "name": "佐藤さくら",
+    "romaji": "",
+    "birthday": "1995-02-27",
+    "height": 160,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 51,
+    "fan_count": 0,
+    "x_followers": 682,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "53dd2e42-b160997380196a41a58e43902ce",
+    "name": "山田彩花",
+    "romaji": "",
+    "birthday": "2000-11-12",
+    "height": 157,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 52,
+    "fan_count": 0,
+    "x_followers": 675,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "7485ea4d-500d7a28ef454785bd0818f6251",
+    "name": "鈴木優奈",
+    "romaji": "",
+    "birthday": "1997-02-03",
+    "height": 161,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 53,
+    "fan_count": 0,
+    "x_followers": 199,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20
+  },
+  {
+    "uid": "eb065bb7-3ccd4c537edd2e06571cea354aa",
+    "name": "渡辺さくら",
+    "romaji": "",
+    "birthday": "1995-09-18",
+    "height": 165,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 54,
+    "fan_count": 0,
+    "x_followers": 351,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "968dc4c3-9513a3dcbc9c1d1dc5913ef594a",
+    "name": "山本結衣",
+    "romaji": "",
+    "birthday": "1997-09-18",
+    "height": 155,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 55,
+    "fan_count": 0,
+    "x_followers": 706,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20
+  },
+  {
+    "uid": "85eaa397-5bb7659d58994200d3bcfc0b9a1",
+    "name": "山田凛",
+    "romaji": "",
+    "birthday": "1995-12-08",
+    "height": 153,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 56,
+    "fan_count": 0,
+    "x_followers": 695,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "147d1834-9eae58e2275cad1e2ebe346e982",
+    "name": "中村凛",
+    "romaji": "",
+    "birthday": "1997-07-03",
+    "height": 163,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 57,
+    "fan_count": 0,
+    "x_followers": 686,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20
+  },
+  {
+    "uid": "48cb1c55-83268a99d6e391050ebcb614712",
+    "name": "佐藤結衣5",
+    "romaji": "",
+    "birthday": "1998-03-25",
+    "height": 150,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 58,
+    "fan_count": 0,
+    "x_followers": 667,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "10e4d878-940452129ac37fc997ae680cf82",
+    "name": "鈴木陽菜",
+    "romaji": "",
+    "birthday": "2001-10-22",
+    "height": 159,
+    "birthplace": "大阪",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 59,
+    "fan_count": 0,
+    "x_followers": 394,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "a097b751-506e8256a1779f8c2dc35782b15",
+    "name": "佐藤凛",
+    "romaji": "",
+    "birthday": "1998-07-01",
+    "height": 155,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 60,
+    "fan_count": 0,
+    "x_followers": 151,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "f8da32b8-f7f41fe5f344ecd740d1c076d14",
+    "name": "加藤琴音",
+    "romaji": "",
+    "birthday": "1996-12-26",
+    "height": 151,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 61,
+    "fan_count": 0,
+    "x_followers": 37,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21
+  },
+  {
+    "uid": "f8d1620c-e9668db55d1b3463dc91cbd41df",
+    "name": "吉田彩花6",
+    "romaji": "",
+    "birthday": "1998-12-26",
+    "height": 159,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 62,
+    "fan_count": 0,
+    "x_followers": 72,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "4b8924ae-5e5cb190711bd8f1435e12bce50",
+    "name": "伊藤七海",
+    "romaji": "",
+    "birthday": "1999-07-21",
+    "height": 159,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 63,
+    "fan_count": 0,
+    "x_followers": 785,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "1c0ff6d2-8ef5eb1af220f48cc1e21bc97ae",
+    "name": "田中優奈",
+    "romaji": "",
+    "birthday": "1999-09-12",
+    "height": 157,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 64,
+    "fan_count": 0,
+    "x_followers": 769,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "92d40561-393cc069e1f9bec06c3db7c7a5b",
+    "name": "伊藤琴音",
+    "romaji": "",
+    "birthday": "2000-06-15",
+    "height": 150,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 65,
+    "fan_count": 0,
+    "x_followers": 789,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "88ea7bc4-a52715f4574c9f94ac0d150fa00",
+    "name": "山田優奈",
+    "romaji": "",
+    "birthday": "2001-08-24",
+    "height": 151,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 66,
+    "fan_count": 0,
+    "x_followers": 25,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "2072acbc-fef7a86a65f3d08c0a3c36ca747",
+    "name": "高橋さくら7",
+    "romaji": "",
+    "birthday": "1998-02-19",
+    "height": 164,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 67,
+    "fan_count": 0,
+    "x_followers": 617,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "8e0cb18c-5664a34f6ef8b2a0da51202a330",
+    "name": "吉田真央",
+    "romaji": "",
+    "birthday": "1997-03-21",
+    "height": 151,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 68,
+    "fan_count": 0,
+    "x_followers": 721,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 20
+  },
+  {
+    "uid": "983316c4-3f998975a2f57d0c9b9de1251c3",
+    "name": "加藤凛8",
+    "romaji": "",
+    "birthday": "2002-06-15",
+    "height": 162,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 69,
+    "fan_count": 0,
+    "x_followers": 415,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "1ed4b29b-12c624b6e502d2b00fd692ed388",
+    "name": "中村遥",
+    "romaji": "",
+    "birthday": "2002-11-24",
+    "height": 160,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 70,
+    "fan_count": 0,
+    "x_followers": 41,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "a76a3b22-5ff3839fb6853958b4486d2e324",
+    "name": "加藤彩花",
+    "romaji": "",
+    "birthday": "2000-11-21",
+    "height": 155,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 71,
+    "fan_count": 0,
+    "x_followers": 750,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "23d4769b-e680a14a22f7bed95562a23d6a4",
+    "name": "小林真央",
+    "romaji": "",
+    "birthday": "2002-06-27",
+    "height": 154,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 72,
+    "fan_count": 0,
+    "x_followers": 225,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "39dd8f39-6837136414ef958ba300dde52db",
+    "name": "鈴木さくら9",
+    "romaji": "",
+    "birthday": "1996-06-03",
+    "height": 157,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 73,
+    "fan_count": 0,
+    "x_followers": 610,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21
+  },
+  {
+    "uid": "ccf7ceda-6d8a618f76410d1fe52261f12fb",
+    "name": "田中琴音",
+    "romaji": "",
+    "birthday": "2002-03-25",
+    "height": 166,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 74,
+    "fan_count": 0,
+    "x_followers": 361,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "410301dd-d69ea051bde8879fa63add01c89",
+    "name": "中村七海",
+    "romaji": "",
+    "birthday": "1999-03-26",
+    "height": 163,
+    "birthplace": "大阪",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 75,
+    "fan_count": 0,
+    "x_followers": 655,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 18
+  },
+  {
+    "uid": "878b9546-31b5490f49251db3a5256554df0",
+    "name": "吉田真央10",
+    "romaji": "",
+    "birthday": "1995-05-09",
+    "height": 159,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 76,
+    "fan_count": 0,
+    "x_followers": 424,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "4fe73360-5df634ab30da003c464c0b3deff",
+    "name": "渡辺美咲11",
+    "romaji": "",
+    "birthday": "1995-08-28",
+    "height": 161,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 77,
+    "fan_count": 0,
+    "x_followers": 259,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "af1cbb5d-4f341a8f3d9c06373254feaf039",
+    "name": "伊藤結衣",
+    "romaji": "",
+    "birthday": "1996-06-18",
+    "height": 154,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 78,
+    "fan_count": 0,
+    "x_followers": 258,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21
+  },
+  {
+    "uid": "c81d4955-ffc7faca73955cffdf66831d110",
+    "name": "加藤さくら",
+    "romaji": "",
+    "birthday": "1998-08-10",
+    "height": 165,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 79,
+    "fan_count": 0,
+    "x_followers": 178,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "482a330f-43bbbaa29b862602a3340543db2",
+    "name": "山田優奈12",
+    "romaji": "",
+    "birthday": "2001-01-22",
+    "height": 166,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 80,
+    "fan_count": 0,
+    "x_followers": 136,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "ae76b319-3529788e0dce3bdc8076c020770",
+    "name": "中村美咲",
+    "romaji": "",
+    "birthday": "2001-08-12",
+    "height": 156,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 81,
+    "fan_count": 0,
+    "x_followers": 224,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "76b74312-84f5f36c4474182cdcf88fe4275",
+    "name": "田中優奈13",
+    "romaji": "",
+    "birthday": "2000-05-09",
+    "height": 157,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 82,
+    "fan_count": 0,
+    "x_followers": 726,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "52ef9803-fc04870dbef88f6962f00f73ec1",
+    "name": "鈴木遥",
+    "romaji": "",
+    "birthday": "2000-01-17",
+    "height": 155,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 83,
+    "fan_count": 0,
+    "x_followers": 138,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "8272baf0-cb895bec679d8af7b7847fe235c",
+    "name": "田中結衣14",
+    "romaji": "",
+    "birthday": "2000-03-18",
+    "height": 153,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 84,
+    "fan_count": 0,
+    "x_followers": 710,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "28701689-d0e898fcc285df6e93e5ad836c4",
+    "name": "山田愛莉",
+    "romaji": "",
+    "birthday": "1995-12-26",
+    "height": 155,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 85,
+    "fan_count": 0,
+    "x_followers": 4,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "736e0f24-f8cb29f4e687fe99445ce516f6d",
+    "name": "高橋七海",
+    "romaji": "",
+    "birthday": "1995-07-02",
+    "height": 159,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 86,
+    "fan_count": 0,
+    "x_followers": 748,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "4ce829cb-99ebd3b202d37aaef77a11d29cf",
+    "name": "中村真央",
+    "romaji": "",
+    "birthday": "1995-04-18",
+    "height": 150,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 87,
+    "fan_count": 0,
+    "x_followers": 634,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "f4ab166a-54329c992aa9cf694d6d9584c1b",
+    "name": "鈴木結衣",
+    "romaji": "",
+    "birthday": "1995-07-22",
+    "height": 159,
+    "birthplace": "広島",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 88,
+    "fan_count": 0,
+    "x_followers": 509,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "44099e43-5514dc054bbefe20021b9e816a9",
+    "name": "佐藤愛莉",
+    "romaji": "",
+    "birthday": "2002-04-14",
+    "height": 164,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 89,
+    "fan_count": 0,
+    "x_followers": 660,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "690e58e0-7b01b75de3df4e4ea3b88feab93",
+    "name": "中村琴音",
+    "romaji": "",
+    "birthday": "1998-03-17",
+    "height": 150,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 90,
+    "fan_count": 0,
+    "x_followers": 409,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "de0d3558-bcaa05bf686e6799ebd011aba34",
+    "name": "田中七海",
+    "romaji": "",
+    "birthday": "1995-04-01",
+    "height": 152,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 91,
+    "fan_count": 0,
+    "x_followers": 334,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "a232b292-99d94070927623f03ae886fc640",
+    "name": "伊藤さくら15",
+    "romaji": "",
+    "birthday": "1998-01-10",
+    "height": 165,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 92,
+    "fan_count": 0,
+    "x_followers": 485,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "bcc2cfcf-5ab0c943e12ff50699cd7a60cba",
+    "name": "高橋美咲",
+    "romaji": "",
+    "birthday": "2002-09-18",
+    "height": 165,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 93,
+    "fan_count": 0,
+    "x_followers": 194,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "75bb19cc-f2eb05db993a7fce70d456d0f9a",
+    "name": "吉田愛莉",
+    "romaji": "",
+    "birthday": "2002-10-09",
+    "height": 160,
+    "birthplace": "北海道",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 94,
+    "fan_count": 0,
+    "x_followers": 452,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 15
+  },
+  {
+    "uid": "19d69be1-9cc28110c0a84a2a9b88b9a23d7",
+    "name": "小林凛",
+    "romaji": "",
+    "birthday": "1996-06-01",
+    "height": 159,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 95,
+    "fan_count": 0,
+    "x_followers": 502,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21
+  },
+  {
+    "uid": "6813054d-360f6f7df99d6e55af534f4dc33",
+    "name": "山本真央",
+    "romaji": "",
+    "birthday": "1996-09-09",
+    "height": 160,
+    "birthplace": "東京",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 96,
+    "fan_count": 0,
+    "x_followers": 191,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 21
+  },
+  {
+    "uid": "64445bbb-7fe29a27cd5317c5b350a79a1f1",
+    "name": "中村結衣",
+    "romaji": "",
+    "birthday": "2000-03-02",
+    "height": 151,
+    "birthplace": "大阪",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 97,
+    "fan_count": 0,
+    "x_followers": 110,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 17
+  },
+  {
+    "uid": "d9519e2a-7111d179a539bf6c1a18e9a0c86",
+    "name": "加藤陽菜",
+    "romaji": "",
+    "birthday": "1998-02-10",
+    "height": 161,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 98,
+    "fan_count": 0,
+    "x_followers": 280,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 19
+  },
+  {
+    "uid": "542c0008-8771289cdb5c1aa3e48515c0499",
+    "name": "小林遥",
+    "romaji": "",
+    "birthday": "2001-03-24",
+    "height": 165,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 99,
+    "fan_count": 0,
+    "x_followers": 646,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "14d01c9c-0d2f99d6cb2ab1da953b0382541",
+    "name": "伊藤凛",
+    "romaji": "",
+    "birthday": "2001-07-10",
+    "height": 160,
+    "birthplace": "愛知",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 100,
+    "fan_count": 0,
+    "x_followers": 454,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  },
+  {
+    "uid": "2bb74139-a00de69fea9429020c76b9fbbe1",
+    "name": "高橋琴音",
+    "romaji": "",
+    "birthday": "1995-08-18",
+    "height": 152,
+    "birthplace": "宮城",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 101,
+    "fan_count": 0,
+    "x_followers": 157,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 22
+  },
+  {
+    "uid": "7662456b-609b79a23d0accb0e2e8b75ba83",
+    "name": "山本優奈",
+    "romaji": "",
+    "birthday": "2001-09-20",
+    "height": 153,
+    "birthplace": "福岡",
+    "audition_candidate": true,
+    "portrait_type": "generated",
+    "s3_pool_index": 102,
+    "fan_count": 0,
+    "x_followers": 657,
+    "popularity": 0,
+    "group_history": [],
+    "age_at_reference": 16
+  }
+]

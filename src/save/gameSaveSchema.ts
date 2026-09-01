@@ -34,6 +34,7 @@ import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { buildFilteredSnapshotWithFutureEvents, applyScenarioEventsForDate } from "../engine/scenarioRuntimeWeb";
 import { syncOpenHiatusToIdolTopLevel } from "../engine/scandalHandling";
 import { buildDefaultScoutCompanies, normalizeScoutSubscriptions } from "../engine/scoutWeb";
+import type { EqualLoveTrialState } from "../data/scenarioTypes";
 import { addNotification, type NotificationRow } from "./inbox";
 
 export const GAME_SAVE_VERSION = 11 as const;
@@ -564,6 +565,8 @@ export interface GameSavePayload {
   game_start_date?: string;
   current_date?: string;
   turn_number?: number;
+  /** Scenario 3 =LOVE featured trial audition state. */
+  equal_love_trial?: EqualLoveTrialState;
 }
 
 function deepCopy<T>(v: T): T {
@@ -949,6 +952,45 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
       }
     }
     out.career_decisions = { outcomes, seeded_inbox_keys: seeded };
+  }
+
+  if (p.equal_love_trial && typeof p.equal_love_trial === "object") {
+    const trial = p.equal_love_trial as Record<string, unknown>;
+    const strList = (key: string): string[] =>
+      Array.isArray(trial[key])
+        ? (trial[key] as unknown[]).map((x) => String(x ?? "").trim()).filter(Boolean)
+        : [];
+    out.equal_love_trial = {
+      phase: String(trial.phase ?? "opening_week") as EqualLoveTrialState["phase"],
+      entry_mode: "featured_trial",
+      start_phase: "equal_love_audition",
+      pool_size: Number(trial.pool_size ?? strList("candidate_uids").length) || 0,
+      candidate_uids: strList("candidate_uids"),
+      active_candidate_uids: strList("active_candidate_uids"),
+      selected_member_uids: strList("selected_member_uids"),
+      first_cut_done: trial.first_cut_done === true,
+      final_selection_done: trial.final_selection_done === true,
+      player_dual_role: {
+        schedule_load: "high",
+        producer_availability: "limited",
+        industry_influence: "very_high",
+      },
+      agency_mandate:
+        trial.agency_mandate && typeof trial.agency_mandate === "object"
+          ? deepCopy(trial.agency_mandate as Record<string, unknown>)
+          : {},
+      tif_setlist_uids: strList("tif_setlist_uids"),
+      idols_roster_filter: trial.idols_roster_filter === "selected" ? "selected" : "candidates",
+      producer_minutes_remaining_today:
+        typeof trial.producer_minutes_remaining_today === "number" && Number.isFinite(trial.producer_minutes_remaining_today)
+          ? trial.producer_minutes_remaining_today
+          : undefined,
+      dual_role_blocked_dates: strList("dual_role_blocked_dates"),
+      staff_knowledge:
+        trial.staff_knowledge && typeof trial.staff_knowledge === "object"
+          ? deepCopy(trial.staff_knowledge as Record<string, unknown>)
+          : undefined,
+    };
   }
 
   out.version = GAME_SAVE_VERSION;

@@ -8,6 +8,7 @@
     "build": "vite build",
     "typecheck": "tsc --noEmit",
     "data:group-tiers": "node support/scripts/build-scenario6-group-tiers.mjs",
+    "data:scenario3-trial": "node support/scripts/build-scenario3-equal-love-trial.mjs",
     "data:member-roles-export": "node support/scripts/member_roles_csv.mjs export",
     "data:member-roles-import": "node support/scripts/member_roles_csv.mjs import",
     "data:member-roles-xls-export": "powershell -ExecutionPolicy Bypass -File support/scripts/member_roles_xls.ps1 export",

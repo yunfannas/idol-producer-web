@@ -1,0 +1,50 @@
+[
+  {
+    "uid": "s3-2017-04-07-hkt-live",
+    "event_type": "s3_calendar_anchor",
+    "effective_date": "2017-04-07",
+    "title": "HKT48 Spring Kanto Tour — Matsudo",
+    "body": "Your first live tutorial: five-song HKT48 set. Use Highlight mode to see how stage presence and fatigue read on stage.",
+    "category": "s3_tutorial",
+    "blocking": false
+  },
+  {
+    "uid": "s3-2017-04-10-camp-w1",
+    "event_type": "s3_calendar_anchor",
+    "effective_date": "2017-04-10",
+    "title": "Audition Camp — Week 1 begins",
+    "body": "103 candidates enter vocal, dance, and cooperation trials. Staff will send daily summaries — you cannot observe every room personally.",
+    "category": "s3_audition",
+    "blocking": false
+  },
+  {
+    "uid": "s3-2017-04-15-first-cut",
+    "event_type": "s3_first_cut_gate",
+    "effective_date": "2017-04-15",
+    "title": "End of Camp Week 1 — First cut",
+    "body": "Decide how many candidates remain. Staff recommend keeping 20–30, but the number is your call.",
+    "category": "s3_audition",
+    "blocking": true,
+    "requires_confirmation": true
+  },
+  {
+    "uid": "s3-2017-04-29-selection",
+    "event_type": "s3_final_selection_gate",
+    "effective_date": "2017-04-29",
+    "title": "Final selection & =LOVE announcement",
+    "body": "Select roughly 11–14 members for the provisional =LOVE roster and announce the project.",
+    "category": "s3_audition",
+    "blocking": true,
+    "requires_confirmation": true
+  },
+  {
+    "uid": "s3-2017-08-05-tif",
+    "event_type": "s3_tif_debut",
+    "effective_date": "2017-08-05",
+    "title": "TIF 2017 — =LOVE live debut",
+    "body": "Five-song set: 言い訳Maybe · メロンジュース · ガールズルール · 大声ダイヤモンド · =LOVE",
+    "category": "s3_debut",
+    "blocking": true,
+    "requires_confirmation": true
+  }
+]

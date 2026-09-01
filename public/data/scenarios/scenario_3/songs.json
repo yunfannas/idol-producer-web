@@ -1,0 +1,42 @@
+[
+  {
+    "uid": "s3-tif-01",
+    "title": "言い訳Maybe",
+    "title_romanji": "Iiwake Maybe",
+    "group_uid": "PUxPVkU",
+    "cover_of": "AKB48",
+    "rehearsal_priority": "tif_debut"
+  },
+  {
+    "uid": "s3-tif-02",
+    "title": "メロンジュース",
+    "title_romanji": "Melon Juice",
+    "group_uid": "PUxPVkU",
+    "cover_of": "HKT48",
+    "rehearsal_priority": "tif_debut"
+  },
+  {
+    "uid": "s3-tif-03",
+    "title": "ガールズルール",
+    "title_romanji": "Girls Rule",
+    "group_uid": "PUxPVkU",
+    "cover_of": "Nogizaka46",
+    "rehearsal_priority": "tif_debut"
+  },
+  {
+    "uid": "s3-tif-04",
+    "title": "大声ダイヤモンド",
+    "title_romanji": "Ogoe Diamond",
+    "group_uid": "PUxPVkU",
+    "cover_of": "AKB48",
+    "rehearsal_priority": "tif_debut"
+  },
+  {
+    "uid": "s3-tif-05",
+    "title": "=LOVE",
+    "title_romanji": "=LOVE",
+    "group_uid": "PUxPVkU",
+    "rehearsal_priority": "tif_debut",
+    "original": true
+  }
+]
