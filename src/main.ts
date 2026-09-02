@@ -45,7 +45,6 @@ import {
   BROWSE_NAV_ITEMS,
 } from "./ui/gameShell";
 import {
-  ensureManagedContracts,
   ensureGroupPolicy,
   getActiveFinances,
   getPrimaryGroup,
@@ -220,13 +219,13 @@ function readFeedbackEntries(): FeedbackEntry[] {
       .map((row) => ({
         id: String(row.id ?? ""),
         createdAt: String(row.createdAt ?? ""),
-        type: row.type === "question" || row.type === "suggestion" ? row.type : "bug",
+        type: (row.type === "question" || row.type === "suggestion" ? row.type : "bug") as FeedbackEntry["type"],
         title: String(row.title ?? ""),
         details: String(row.details ?? ""),
         view: String(row.view ?? "Inbox"),
         simDate: String(row.simDate ?? ""),
         accountName: String(row.accountName ?? ""),
-        uiLanguage: row.uiLanguage === "zh-CN" ? "zh-CN" : "en",
+        uiLanguage: (row.uiLanguage === "zh-CN" ? "zh-CN" : "en") as FeedbackEntry["uiLanguage"],
       }))
       .filter((row) => row.id);
   } catch {
@@ -382,11 +381,6 @@ function managedIdolByUid(uid: string): Record<string, unknown> | null {
   ) ??  null;
 }
 
-function selectedInboxNotification(): Record<string, unknown> | null {
-  if (!save || !inboxSelectedUid) return null;
-  return (save.inbox.notifications.find((row) => row.uid === inboxSelectedUid) as unknown as Record<string, unknown> | undefined) ??  null;
-}
-
 function activeScandalLevel(idol: Record<string, unknown>): number {
   const refIso = save?.current_date ??  save?.game_start_date ??  save?.scenario_context?.startup_date ??  currentIsoForNewLive();
   const refDate = isoDatePart(refIso);
@@ -505,6 +499,10 @@ function addIdolToManagedGroup(idolUid: string, startDateIso: string, endDateIso
 }
 
 function shortlistSigningTerms(idol: Record<string, unknown>): { startDate: string; endDate: string; salaryYen: number } {
+  if (!save) {
+    const startDate = addDaysToIsoDate(currentIsoForNewLive(), 14);
+    return { startDate, endDate: addYearsToIsoDate(startDate, 1), salaryYen: 0 };
+  }
   const group = getPrimaryGroup(save);
   const baseSalary = monthlyBaseSalaryYenForGroupLetterTier(resolveGroupLetterTier(group));
   const popularity = Number(idol.popularity ?? 0) || 0;
@@ -751,22 +749,16 @@ function availableGoodsInventory(): ProducedGoodsRow[] {
   return goodsInventory().filter((item) => Math.max(0, Number(item.stock ??  0) || 0) > 0);
 }
 
-function availableSongsForManagedGroup(referenceIso: string): Record<string, unknown>[] {
-  const managedUid = String(save?.managing_group_uid ??  "").trim();
-  return save
-    ? songsForDisplaySorted(save.database_snapshot.songs)
-        .filter((row) => String(row.group_uid ??  "") === managedUid)
-        .filter((row) => isSongAvailableOn(row, referenceIso))
-    : [];
-}
-
 function isBirthdayLiveTitle(title: string): boolean {
   return /生誕|birthday/i.test(String(title ??  ""));
 }
 
 function matchingBirthdayGoodsUid(title: string): string[] {
   if (!save || !isBirthdayLiveTitle(title)) return [];
-  const group = save.database_snapshot.groups.find((row) => String((row as { uid?: unknown }).uid ??  "") === String(save.managing_group_uid ??  "")) as Record<string, unknown> | undefined;
+  const managedUid = String(save.managing_group_uid ?? "").trim();
+  const group = save.database_snapshot.groups.find(
+    (row) => String((row as { uid?: unknown }).uid ?? "") === managedUid,
+  ) as Record<string, unknown> | undefined;
   const memberUids = Array.isArray(group?.member_uids) ? group!.member_uids.map((x) => String(x)) : [];
   const idols = save.database_snapshot.idols as Record<string, unknown>[];
   for (const uid of memberUids) {
@@ -814,10 +806,6 @@ function goodsMatrixKey(item: ProducedGoodsRow | null | undefined): string {
   return `${String(item.category ??  "").trim()}|${String(item.name ??  "").trim()}`;
 }
 
-function goodsRowsForMatrixKey(key: string): ProducedGoodsRow[] {
-  return goodsInventory().filter((item) => goodsMatrixKey(item) === key);
-}
-
 function ensureBirthdayGoodsRowFromDataset(memberUid: string | null | undefined, memberName: string | null | undefined): ProducedGoodsRow | null {
   if (!save || !memberUid || !memberName) return null;
   const uid = String(memberUid).trim();
@@ -832,7 +820,11 @@ function estimateCurrentLiveGoodsGross(
   goodsUids: string[],
 ): number {
   const venue = getVenuesCatalog().find((row) => row.name === venueName) ??  null;
-  const group = save ? sortGroupsForDirectory(save.database_snapshot.groups).find((row) => String(row.uid ??  "") === String(save.managing_group_uid ??  "")) ??  null : null;
+  const group = save
+    ? sortGroupsForDirectory(save.database_snapshot.groups).find(
+        (row) => String(row.uid ?? "") === String(save!.managing_group_uid ?? ""),
+      ) ?? null
+    : null;
   return goodsUids.reduce((sum, goodsUid) => {
     const goods = findGoodsByUid(goodsUid);
     return (
@@ -842,7 +834,7 @@ function estimateCurrentLiveGoodsGross(
         capacity: venue?.capacity ??  null,
         groupFans: Number(group?.fans ??  0) || 0,
         groupPopularity: Number(group?.popularity ??  0) || 0,
-        groupTier: typeof group?.letter_tier === "string" ? group.letter_tier : null,
+        groupTier: resolveGroupLetterTier(group),
       })
     );
   }, 0);
@@ -1002,10 +994,6 @@ function trainingFormationAllMembers(): FormationEditorMember[] {
     });
   }
   return out;
-}
-
-function trainingFormationMembers(): FormationEditorMember[] {
-  return trainingFormationAllMembers().filter((m) => !m.unavailable);
 }
 
 function syncTrainingFormationEditorState(): void {
@@ -1443,6 +1431,8 @@ let newLiveForm: NewLiveFormState = {
   goodsEnabled: true,
   goodsUids: [],
   ticketPriceYen: 2500,
+  vipTicketPriceYen: 0,
+  vipCapacity: 0,
 };
 
 interface NavigationSnapshot {
@@ -1465,6 +1455,7 @@ interface NavigationSnapshot {
   trainingFormationSongUid: string | null;
   trainingRosterSortKey: TrainingRosterSortKey;
   trainingRosterSortDir: "asc" | "desc";
+  roleBenchmarkPreferences: RoleBenchmarkKey[];
   mediaTab: MediaTab;
   financeTab: FinanceTab;
   financeHistoryRange: FinanceHistoryRange;
@@ -1532,6 +1523,7 @@ function sameNavigationSnapshot(a: NavigationSnapshot, b: NavigationSnapshot): b
     a.trainingFormationSongUid === b.trainingFormationSongUid &&
     a.trainingRosterSortKey === b.trainingRosterSortKey &&
     a.trainingRosterSortDir === b.trainingRosterSortDir &&
+    a.roleBenchmarkPreferences.join("|") === b.roleBenchmarkPreferences.join("|") &&
     a.mediaTab === b.mediaTab &&
     a.financeTab === b.financeTab &&
     a.financeHistoryRange === b.financeHistoryRange &&
@@ -1573,6 +1565,7 @@ function applyNavigationSnapshot(snapshot: NavigationSnapshot): void {
   trainingFormationSongUid = snapshot.trainingFormationSongUid;
   trainingRosterSortKey = snapshot.trainingRosterSortKey;
   trainingRosterSortDir = snapshot.trainingRosterSortDir;
+  trainingRoleBenchmarkPreferences = [...snapshot.roleBenchmarkPreferences];
   mediaTab = snapshot.mediaTab;
   financeTab = snapshot.financeTab;
   financeHistoryRange = snapshot.financeHistoryRange;
@@ -1924,7 +1917,9 @@ function ensureSongsDiscographyKey(): void {
     browseMode
       ? loadedScenario?.preset?.opening_date ?? null
       : save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? null,
-    browseMode ? loadedScenario?.shared_releases ?? [] : save?.database_snapshot.shared_releases ?? [],
+    (browseMode
+      ? (loadedScenario?.shared_releases ?? [])
+      : (save?.database_snapshot.shared_releases ?? [])) as unknown as Record<string, unknown>[],
     songs,
   );
   if (groupDiscographyRows.length) {
@@ -2986,7 +2981,7 @@ function paintGame(): void {
           });
           inboxSelectedUid = created.uid;
         } else {
-          const created = addNotification(save, {
+          addNotification(save, {
             title: `Renewal outlook updated: ${name}`,
             body: `Current likelihood is "${likelihood}". Adjust the proposed salary or end date before sending this renewal forward.`,
             sender: "Assistant",
@@ -3116,6 +3111,7 @@ function paintGame(): void {
       const uid = scoutCompanyPick.getAttribute("data-scout-company");
       if (uid) {
         navigate(() => {
+          if (!save) return;
           save.scout.selected_company_uid = uid;
           selectedScoutLeadUid = null;
           selectedScoutApplicantUid = null;
@@ -3447,6 +3443,7 @@ function paintGame(): void {
       const uid = cdDeleteBtn.getAttribute("data-cd-project-delete");
       if (uid) {
         navigate(() => {
+          if (!save) return;
           save.cd_projects = save.cd_projects.filter((row) => row.uid !== uid);
           ensureSelectedCdProjectUid();
         });

@@ -30,7 +30,6 @@ import {
   type ManagedSongStatusRow,
 } from "../engine/songStatusSystem";
 import { normalizeManagedSongFormations, type SongStartingFormation } from "../data/songStartingFormation";
-import { formatLiveSlotLine } from "../engine/liveScheduleWeb";
 import { buildFilteredSnapshotWithFutureEvents, applyScenarioEventsForDate } from "../engine/scenarioRuntimeWeb";
 import { syncOpenHiatusToIdolTopLevel } from "../engine/scandalHandling";
 import { buildDefaultScoutCompanies, normalizeScoutSubscriptions } from "../engine/scoutWeb";
@@ -754,9 +753,9 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
           released_digital_song_uids: released_digital_song_uids.filter(
             (value, valueIndex, arr) => arr.indexOf(value) === valueIndex,
           ),
-        } satisfies CdReleaseProject;
+        } as CdReleaseProject;
       })
-      .filter((row): row is CdReleaseProject => Boolean(row));
+      .filter((row): row is CdReleaseProject => row != null);
   }
 
   if (p.scenario_context && typeof p.scenario_context === "object") {

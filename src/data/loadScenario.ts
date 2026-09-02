@@ -96,10 +96,10 @@ async function loadOfficialScheduleBundles(groups: Record<string, unknown>[]): P
           aliases: Array.isArray(entry.aliases) ? entry.aliases : [],
           file: entry.file,
           events: Array.isArray(data.events) ? data.events : [],
-        } satisfies OfficialScheduleBundle;
+        } as OfficialScheduleBundle;
       }),
     );
-    return bundles.filter((bundle): bundle is OfficialScheduleBundle => Boolean(bundle));
+    return bundles;
   } catch {
     return [];
   }

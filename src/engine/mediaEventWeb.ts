@@ -176,12 +176,6 @@ function tvSupportStaffBaseCost(letterTier: string): number {
   }
 }
 
-function isCdBonusEvent(event: OfficialScheduleEvent, tab: GameplayMediaTab): boolean {
-  const raw = textOfEvent(event).toLocaleLowerCase().normalize("NFKC");
-  if (tab !== "live_events" && tab !== "online") return false;
-  return /握手会|サイン会|オンラインサイン|ネットサイン|お話し会|トーク会|お渡し会|撮影会|ツーショット|2ショット|発売記念/.test(raw);
-}
-
 function normalizeTitleForReleaseMatch(value: string): string {
   return value
     .normalize("NFKC")

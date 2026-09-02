@@ -459,13 +459,6 @@ function currentGroupContext(
   return { signal: 0, letterTier: null };
 }
 
-function currentGroupSignal(
-  idol: Record<string, unknown>,
-  openingIso: string,
-  groupPopularity: Map<string, number>,
-): number {
-  return currentGroupContext(idol, openingIso, groupPopularity).signal;
-}
 
 function scandalHistoryCount(idol: Record<string, unknown>): number {
   let count = 0;
@@ -711,7 +704,7 @@ function adjustAbilityToward(
     let moved = false;
     for (let i = 0; i < VISIBLE_STAT_PATHS.length; i += 1) {
       const [cat, key] = VISIBLE_STAT_PATHS[(step + i) % VISIBLE_STAT_PATHS.length];
-      const block = { ...(current[cat] as Record<string, number>) };
+      const block = { ...(current[cat] as unknown as Record<string, number>) };
       const nextVal = clampStat(block[key] + direction);
       if (nextVal === block[key]) continue;
       block[key] = nextVal;
@@ -719,12 +712,12 @@ function adjustAbilityToward(
         ...current,
         [cat]:
           cat === "physical"
-            ? clampPhysical(block as PersistedIdolAttributes["physical"])
+            ? clampPhysical(block as unknown as PersistedIdolAttributes["physical"])
             : cat === "appearance"
-              ? clampAppearance(block as PersistedIdolAttributes["appearance"])
+              ? clampAppearance(block as unknown as PersistedIdolAttributes["appearance"])
               : cat === "technical"
-                ? clampTechnical(block as PersistedIdolAttributes["technical"])
-                : clampMental(block as PersistedIdolAttributes["mental"]),
+                ? clampTechnical(block as unknown as PersistedIdolAttributes["technical"])
+                : clampMental(block as unknown as PersistedIdolAttributes["mental"]),
       };
       const nextRaw = getAbilityRaw(candidate);
       if (direction > 0 && nextRaw > startRaw + 1e-9) {

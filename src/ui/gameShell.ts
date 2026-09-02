@@ -156,7 +156,7 @@ function buildScheduleMonthCalendarHtml(
     selectedWeekAnchorIso: string | null;
     schedules: Record<string, unknown>[];
     results: Record<string, unknown>[];
-    mediaEvents: Array<{ date: string; event?: string }>;
+    mediaEvents: OfficialScheduleEvent[];
     lang: UiLanguage;
   },
 ): string {
@@ -455,34 +455,6 @@ function formatLongDate(iso: string | undefined): string {
   });
   const timePart = String(iso).includes("T") ? String(iso).split("T")[1]?.slice(0, 5) ?? "" : "";
   return timePart ? `${base} ${timePart}` : base;
-}
-
-function shortlistRows(save: GameSavePayload): { uid: string; label: string; canSign: boolean }[] {
-  const idols = save.database_snapshot.idols;
-  const byUid = new Map<string, Record<string, unknown>>();
-  for (const row of idols) {
-    const uid = row && typeof row === "object" && "uid" in row ? String((row as { uid?: string }).uid) : "";
-    if (uid) byUid.set(uid, row as Record<string, unknown>);
-  }
-  const primaryGroup = getPrimaryGroup(save);
-  const memberSet = new Set(Array.isArray(primaryGroup?.member_uids) ? primaryGroup!.member_uids.map((x) => String(x)) : []);
-  const pendingSigningUids = new Set(
-    save.inbox.notifications
-      .filter((row) => String((row.report_data as Record<string, unknown> | undefined)?.kind ?? "") === "shortlist_signing_offer")
-      .filter((row) => row.requires_confirmation || String(row.choice_status ?? "").trim() === "pending")
-      .map((row) => String(((row.report_data as Record<string, unknown> | undefined)?.idol_uid ?? "")).trim())
-      .filter(Boolean),
-  );
-  return save.shortlist.map((uid) => {
-    const row = byUid.get(uid);
-    const name =
-      row && typeof row.name === "string"
-        ? row.name
-        : row && typeof row.romaji === "string"
-          ? row.romaji
-          : uid.slice(0, 8) + "...";
-    return { uid, label: name, canSign: !memberSet.has(uid) && !pendingSigningUids.has(uid) };
-  });
 }
 
 function renderPlaceholder(view: string, blurb?: string): string {
@@ -3568,7 +3540,7 @@ function buildBirthdayGoodsQueue(save: GameSavePayload, goods: ProducedGoodsRow[
   return out.sort((a, b) => `${a.liveDate} ${a.memberName}`.localeCompare(`${b.liveDate} ${b.memberName}`, "ja"));
 }
 
-function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRow[]): string {
+function renderGoodsInventoryTable(save: GameSavePayload, goods: ProducedGoodsRow[], lang: UiLanguage): string {
   const regularGoods = goods.filter((item) => String(item.name ?? "").trim() !== BIRTHDAY_TEE_TEMPLATE.name);
   const { members, rows } = buildGoodsInventoryMatrix(regularGoods);
   const birthdayQueue = buildBirthdayGoodsQueue(save, goods);
@@ -4994,31 +4966,6 @@ function renderLivesView(
     `${localizedLiteral(lang, "Ticket price", "票价")}:${newLiveForm.ticketPriceYen > 0 ? currencyText(lang, newLiveForm.ticketPriceYen) : localizedLiteral(lang, "Not set", "未设置")}`,
   ];
 
-  const scheduledDetail = selectedScheduled
-    ? `<div class="content-muted">${[
-        `${liveDisplayTitleText(selectedScheduled)}`,
-        `${localizedLiteral(lang, "When", "时间")}:${formatLiveSlotLine(selectedScheduled)}`,
-        `${localizedLiteral(lang, "Venue", "场地")}:${String(selectedScheduled.venue ?? localizedLiteral(lang, "TBA", "待定"))}${String(selectedScheduled.location ?? "").trim() ? ` · ${String(selectedScheduled.location ?? "").trim()}` : ""}`,
-        `${localizedLiteral(lang, "Program", "节目内容")}:${Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
-          ? (selectedScheduled.program as unknown[])
-              .map((raw) => {
-                if (!raw || typeof raw !== "object") return "";
-                const item = raw as Record<string, unknown>;
-                const kind = String(item.kind ?? "song");
-                const label = String(item.label ?? item.songTitle ?? "").trim();
-                const duration = Number(item.durationMinutes ?? 0) || 0;
-                return kind === "song" ? label : lang === "zh-CN" ? `${label} ${duration} 分` : `${label} ${duration}m`;
-              })
-              .filter(Boolean)
-              .join(", ")
-          : Array.isArray(selectedScheduled.setlist) && selectedScheduled.setlist.length
-            ? (selectedScheduled.setlist as unknown[]).map((x) => String(x)).join(", ")
-            : localizedLiteral(lang, "Not set", "未设置")}`,
-        `${localizedLiteral(lang, "Tokutenkai", "特典会")}:${selectedScheduled.tokutenkai_enabled ? `${String(selectedScheduled.tokutenkai_start ?? "")}-${String(selectedScheduled.tokutenkai_end ?? "")} · ${localizedLiteral(lang, "est", "预计")} ${String(selectedScheduled.tokutenkai_expected_tickets ?? "0")}` : localizedLiteral(lang, "Off", "休息")}`,
-        `${localizedLiteral(lang, "Goods", "周边")}:${selectedScheduled.goods_enabled ? `${String(selectedScheduled.goods_line ?? localizedLiteral(lang, "Goods", "周边"))} · ${localizedLiteral(lang, "est", "预计")} ${currencyText(lang, Number(selectedScheduled.goods_expected_revenue_yen ?? 0))}` : localizedLiteral(lang, "Off", "休息")}`,
-      ].map((line) => htmlEsc(line)).join("<br />")}</div>`
-    : `<p class="content-muted">${htmlEsc(t(lang, "lives_no_selected"))}</p>`;
-
   const scheduledProgramSummary = selectedScheduled
     ? Array.isArray(selectedScheduled.program) && selectedScheduled.program.length
       ? (selectedScheduled.program as unknown[])
@@ -5785,7 +5732,7 @@ export function renderMainContent(
                 groups: browseData.groups,
                 lives: browseData.lives ?? null,
                 referenceIso: browseData.preset.opening_date ?? null,
-                sharedReleases: browseData.shared_releases ?? [],
+                sharedReleases: (browseData.shared_releases ?? []) as unknown as Record<string, unknown>[],
                 lang,
               },
             );
@@ -5802,7 +5749,7 @@ export function renderMainContent(
         lang,
         subtitle: browseData.preset?.name ?? undefined,
         groups: browseData.groups,
-        sharedReleases: browseData.shared_releases ?? [],
+        sharedReleases: (browseData.shared_releases ?? []) as unknown as Record<string, unknown>[],
         selectedGroupUid: songsGroupUid ?? "",
           selectedWorkspaceTab: songsWorkspaceTab,
           selectedDiscographyKey: songsDiscographyKey,
@@ -5821,7 +5768,7 @@ export function renderMainContent(
 
   switch (view) {
     case "Inbox":
-      return renderInbox(save, inboxSelectedUid, simulationBusy, ctx.attentionActionUid ?? null, lang);
+      return renderInbox(save, inboxSelectedUid, simulationBusy, attentionActionUid ?? null, lang);
     case "Finances":
       return renderFinancesProjectionView(save, financeHistoryRange, financeTab, lang);
     case "Idols": {
@@ -5855,7 +5802,7 @@ export function renderMainContent(
           songs: save.database_snapshot.songs,
           groups: save.database_snapshot.groups,
           lives: browseData?.lives ?? null,
-          sharedReleases: save.database_snapshot.shared_releases,
+          sharedReleases: save.database_snapshot.shared_releases as unknown as Record<string, unknown>[],
           referenceIso:
             save.current_date ??
             save.game_start_date ??
@@ -5900,7 +5847,7 @@ export function renderMainContent(
         formationEditorHtml ?? "",
       );
     case "Making":
-      if (makingTab === "goods") return renderGoodsInventoryTable(save, save.goods_inventory);
+      if (makingTab === "goods") return renderGoodsInventoryTable(save, save.goods_inventory, lang);
       if (makingTab === "cd") {
         return renderCdProjectsView(
           save,
@@ -5914,7 +5861,7 @@ export function renderMainContent(
           ? localizedLiteral(lang, `Opening ${save.scenario_context.startup_date}`, `起始日期 ${save.scenario_context.startup_date}`)
           : undefined,
         groups: save.database_snapshot.groups,
-        sharedReleases: save.database_snapshot.shared_releases,
+        sharedReleases: save.database_snapshot.shared_releases as unknown as Record<string, unknown>[],
         selectedGroupUid: songsGroupUid ?? "",
         selectedWorkspaceTab: "group_songs",
         selectedDiscographyKey: null,
@@ -5930,7 +5877,7 @@ export function renderMainContent(
           ? localizedLiteral(lang, `Opening ${save.scenario_context.startup_date}`, `起始日期 ${save.scenario_context.startup_date}`)
           : undefined,
         groups: save.database_snapshot.groups,
-        sharedReleases: save.database_snapshot.shared_releases,
+        sharedReleases: save.database_snapshot.shared_releases as unknown as Record<string, unknown>[],
         selectedGroupUid: songsGroupUid ?? "",
         selectedWorkspaceTab: songsWorkspaceTab,
         selectedDiscographyKey: songsDiscographyKey,
@@ -6056,9 +6003,7 @@ export function renderDesktopShell(p: DesktopShellProps): string {
     canGoBack,
     canGoForward,
     slot,
-    occupiedSlots,
     slotSummaries,
-    tutorialOverlayHtml,
     selectedWikiKey,
     feedbackEntries,
     feedbackStatusMessage,
@@ -6243,7 +6188,6 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     canGoBack,
     canGoForward,
     slot,
-    occupiedSlots,
     slotSummaries,
     tutorialOverlayHtml,
     selectedWikiKey,

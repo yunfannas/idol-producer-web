@@ -1198,8 +1198,6 @@ export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   const next = deepSaveCopy(save);
   const beforeIso = currentSimulationIso(next);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
-  const nowIso = currentSimulationIso(next);
-  const todayIso = isoDatePart(nowIso);
   const events = collectTodaySimulationEvents(next);
   if (events.length > 0) {
     const event = events[0]!;

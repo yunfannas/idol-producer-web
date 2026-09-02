@@ -17,13 +17,6 @@ import { htmlEsc } from "./htmlEsc";
 import { resolveMemberColorCss } from "./memberColor";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, groupPicturePublicSrc } from "./portraitUrl";
 import {
-  discMaxTrackSlotCount,
-  discUsesEditionTrackLayout,
-  effectiveEditionSlices,
-  effectiveSharedTracks,
-  summarizeEditionTrackTotals,
-} from "../data/discographyNormalize";
-import {
   buildGroupDiscographyReleaseRows,
   buildDiscBuckets,
   parseCatalogIsoToTime,
@@ -660,79 +653,6 @@ function earliestReleaseAmongSongs(songs: Record<string, unknown>[]): string {
   if (!dates.length) return "—";
   dates.sort();
   return dates[0] ?? "—";
-}
-
-function discographyEditionBreakdownHtml(d: Record<string, unknown>): string {
-  const shared = effectiveSharedTracks(d);
-  const eds = effectiveEditionSlices(d);
-
-  const listHtml = (lines: string[]): string =>
-    lines.length === 0
-      ? `<p class="content-muted">${htmlEsc("—")}</p>`
-      : `<ol class="group-disc-track-ol">${lines.map((line) => `<li>${htmlEsc(line)}</li>`).join("")}</ol>`;
-
-  const chunks: string[] = [];
-  if (shared.length) {
-    chunks.push(
-      `<details class="group-disc-track-detail"><summary>${htmlEsc("Shared tracks (all editions)")}</summary>${listHtml(
-        shared,
-      )}</details>`,
-    );
-  }
-  for (const e of eds) {
-    chunks.push(
-      `<details class="group-disc-track-detail"><summary>${htmlEsc(e.label)}</summary>${listHtml(e.track_list)}</details>`,
-    );
-  }
-  return chunks.join("");
-}
-
-function renderDiscographyRowsFromGroupJson(
-  g: Record<string, unknown>,
-  referenceIso: string | null,
-): string {
-  const refT = parseCatalogIsoToTime(referenceIso);
-  const rawDisc = Array.isArray(g.discography)
-    ? (g.discography as unknown[]).filter((x): x is Record<string, unknown> => Boolean(x && typeof x === "object"))
-    : [];
-  if (!rawDisc.length) return "";
-  const sorted = [...rawDisc].sort((a, b) =>
-    String(a.release_date ?? "").localeCompare(String(b.release_date ?? "")),
-  );
-  const visible = sorted.filter((d) => {
-    const rd = parseCatalogIsoToTime(String(d.release_date ?? ""));
-    if (refT == null) return true;
-    if (rd == null) return true;
-    return rd <= refT;
-  });
-  if (!visible.length) {
-    return `<tr><td colspan="4" class="content-muted">${htmlEsc("No releases on or before the reference date.")}</td></tr>`;
-  }
-  const rows = visible.flatMap((d) => {
-    const t = String(d.title ?? d.title_romanji ?? "—").trim() || "—";
-    const typ = String(d.disc_type ?? "").trim() || "—";
-    const rel =
-      typeof d.release_date === "string" && d.release_date.trim()
-        ? d.release_date.trim().split("T")[0]
-        : "—";
-    const tc = Math.max(discMaxTrackSlotCount(d), Array.isArray(d.track_song_uids) ? d.track_song_uids.length : 0);
-    const editions = summarizeEditionTrackTotals(d);
-    const tcCell =
-      editions.length > 0
-        ? `<span class="num">${tc.toLocaleString("ja-JP")}</span><div class="content-muted group-disc-track-totals">${htmlEsc(
-            editions,
-          )}</div>`
-        : tc.toLocaleString("ja-JP");
-    const main = `<tr class="group-disc-row"><td>${htmlEsc(t)}</td><td>${htmlEsc(typ)}</td><td class="num">${htmlEsc(
-      rel,
-    )}</td><td class="num">${tcCell}</td></tr>`;
-    if (!discUsesEditionTrackLayout(d)) return [main];
-    const detail = `<tr class="group-disc-edition-row"><td colspan="4" class="group-disc-edition-cell">${discographyEditionBreakdownHtml(
-      d,
-    )}</td></tr>`;
-    return [main, detail];
-  });
-  return rows.join("");
 }
 
 function renderDiscographyRowsFromSongBuckets(teamSongs: Record<string, unknown>[]): string {

@@ -112,7 +112,7 @@ export function normalizeManagedSongStatus(
     const uid = String(song.uid ?? "").trim();
     if (!uid) continue;
     const isTopTwelve = topTwelve.has(uid);
-    const releaseAgeYears = yearsBetweenIso(currentIso, song.release_date);
+    const releaseAgeYears = yearsBetweenIso(currentIso, String(song.release_date ?? ""));
     const isRecentSong = releaseAgeYears != null && releaseAgeYears <= 5;
     const initialFamiliarity = isTopTwelve ? 90 : isRecentSong ? 80 : 20;
     const base = defaultSongStatusRow(song, currentIso, memberCount, initialFamiliarity);
@@ -425,14 +425,19 @@ export function maybeAddSongUnlockNotification(save: GameSavePayload, targetIso:
   if (exists) return;
   save.inbox.notifications.push({
     uid: `song-unlock-${TIMELESS_MEMORY_UID}`,
+    date: TIMELESS_MEMORY_UNLOCK_DATE,
     title: "New song prepared: タイムレスメモリー",
     body: "タイムレスメモリー is now available for training preparation, setlists, and scheduling.",
     sender: "Assistant",
     category: "general",
+    level: "normal",
     created_at: `${TIMELESS_MEMORY_UNLOCK_DATE}T08:00:00`,
-    unread: true,
     read: false,
-    requires_confirmation: false,
     dedupe_key: `song-unlock|${TIMELESS_MEMORY_UID}|${TIMELESS_MEMORY_UNLOCK_DATE}`,
+    requires_confirmation: false,
+    choice_kind: "",
+    choice_status: "",
+    choice_options: [],
+    related_event_uid: "",
   });
 }
