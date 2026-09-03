@@ -6,28 +6,43 @@ This document is a **working game-balance reference** for Scenario 6 (start date
 
 These numbers are **simulation assumptions**, not audited real-world accounts. Real groups can reach the same letter tier with very different business models. Use the table as a calibration frame, not as a hard formula.
 
-Fan counts below refer to the **group-level mutually exclusive audience pools**:
+Fan counts below refer to the **group-level mutually exclusive paying audience pools**:
 
-- `public`: broad group-level recognition / light fandom;
-- `otaku`: fans who actively follow the group as an idol group;
+- `public`: light-paying group fans who may buy a ticket, CD, merch, stream, or paid content occasionally;
+- `otaku`: fans who actively follow the group as an idol group and participate more regularly;
 - `core`: the deepest repeat / high-spend supporters.
+
+`public` is **not general social awareness**. Broad recognition, television value, endorsement value, media reach, and mainstream brand power are represented separately by group tier / brand / recognition systems.
 
 Member-specific personal public recognition is **not included** in these group fanbase anchors.
 
-A key structural rule is that lower tiers have a larger `otaku + core` share, while higher tiers increasingly accumulate a large public layer.
+A key structural rule is that lower tiers have a larger `otaku + core` share, while higher tiers increasingly accumulate a large light-paying public layer.
 
 ---
 
 ## Main Fanbase Anchors
 
-| Tier | Reality anchor / archetype | Public | Otaku | Core | Total | Approx. structure |
-|---|---|---:|---:|---:|---:|---|
-| E | Small part-time underground idol group | 600 | 215 | 85 | 900 | Public still limited; survival depends heavily on direct fans |
-| D | Akishibu project-style professional underground group | 1,800 | 540 | 180 | 2,520 | `10:3:1` anchor |
-| C | Jams Collection, S6 start | 6,000 | 1,800 | 500 | 8,300 | Larger scene reach, growing public layer |
-| B | NMB48, 2025 major-side archetype | 25,000 | 6,000 | 1,500 | 32,500 | Large organized fandom plus mainstream reach |
-| A | =LOVE, 2025 | 80,000 | 16,000 | 4,000 | 100,000 | Arena/IP-scale audience |
-| S | Nogizaka46, 2025 | 300,000 | 40,000 | 10,000 | 350,000 | National phenomenon / mass public layer |
+| Tier | Reality anchor / archetype | Public | Otaku | Core | Total paying fanbase | Large-live planning audience anchor |
+|---|---|---:|---:|---:|---:|---:|
+| E | Small part-time underground idol group | 600 | 215 | 85 | 900 | ~180 |
+| D | Akishibu project-style professional underground group | 1,800 | 540 | 180 | 2,520 | ~500 |
+| C | Jams Collection, S6 start | 5,200 | 1,700 | 550 | 7,450 | ~1,500 |
+| B | NMB48, 2025 major-side archetype | 13,000 | 4,000 | 1,300 | 18,300 | ~3,500-4,000 |
+| A | =LOVE, 2025 | 39,000 | 8,500 | 2,500 | 50,000 | ~10,000 |
+| S | Nogizaka46, 2025 | 190,000 | 40,000 | 10,000 | 240,000 | ~45,000-50,000 |
+
+### Large-live planning anchor
+
+A useful cross-tier calibration rule is:
+
+`large_live_planning_attendance ≈ 20% of total paying fanbase`
+
+This is **not** the annual flagship / milestone maximum.
+
+- It is the planning attendance for a healthy group's normal large solo live at that tier.
+- Annual anniversary shows, graduations, Budokan challenges, arena milestones, or the single biggest show of the year can draw a much larger share of dormant and low-frequency fans.
+- A flagship/milestone event may reasonably reach roughly `1.5x-2.5x` the normal large-live planning anchor depending on context.
+- Tier calibration should use the normal large-live anchor, not exceptional once-a-year maximum attendance.
 
 ### Interpretation
 
@@ -35,9 +50,55 @@ A key structural rule is that lower tiers have a larger `otaku + core` share, wh
 - **D -> C** is where revenue begins to diversify beyond frequent benefit sessions.
 - **C -> B** is the transition into a large, formally organized major / upper-live-idol business.
 - **B -> A** adds arena-scale touring and large release/IP economics.
-- **A -> S** adds genuine national cultural reach and a very large public layer.
+- **A -> S** adds genuine national cultural reach and very large mainstream commercial power; this mainstream awareness itself is not counted one-for-one inside `public` fanbase.
 
 Tier is an organizational / market-scale classification, **not a profit ranking**. A lean C-tier group may have a higher margin percentage than a large B-tier organization.
+
+---
+
+## Cross-Checks For Fanbase Anchors
+
+The fanbase anchors should not be set from one metric alone. They should simultaneously remain plausible against several independent observations.
+
+### 1. Large-live attendance
+
+Normal large solo-live planning attendance is roughly 20% of the paying fan pool:
+
+```text
+E  ~   180 /    900
+D  ~   500 /  2,520
+C  ~ 1,500 /  7,450
+B  ~ 3,500-4,000 / 18,300
+A  ~10,000 / 50,000
+S  ~45,000-50,000 / 240,000
+```
+
+Exceptional annual flagship / graduation / milestone events can substantially exceed these ratios.
+
+### 2. CD / release volume
+
+Physical sales can be much larger than total fanbase because repeat purchasing is highly model-dependent.
+
+Approximate checks:
+
+- C / Jams: ~7.5k paying fanbase supporting ~20k per release is plausible with moderate repeat buying.
+- B / NMB: ~18k paying fanbase can support ~170k+ releases because handshake / online-talk fulfillment drives very high repeat purchasing.
+- A / =LOVE: ~50k paying fanbase can support ~250k-300k+ singles through strong release-event repetition.
+- S / Nogizaka46: ~240k paying fanbase can support ~500k-600k releases with a much larger Public share and therefore lower average repeat rate than release-event-heavy A/B groups.
+
+CD repeat multiple should therefore **not increase monotonically with tier**.
+
+### 3. Benefit-session capacity
+
+E/D/C direct-contact economics should remain compatible with member count, session duration, price, event frequency and observed utilization.
+
+- E can survive with a very small fan pool because fixed cost is low.
+- D can support professional operation with moderate utilization rather than requiring universal sellouts.
+- C can still generate major direct-contact revenue, but CD, live, merch and FC already diversify the business.
+
+### 4. Graduation / member equity
+
+A group fanbase should not be so abstract that losing a top member has little effect. Top-member graduation can remove a substantial amount of Otaku/Core demand even if the group-level Public layer moves only slowly.
 
 ---
 
@@ -59,6 +120,8 @@ The table below uses a common game-design interpretation:
 | S | Stadium/arena + mass release + major IP/commercial economy | ¥230-320M | ¥150-220M | **¥60-100M** |
 
 These are intentionally broad ranges. The same tier can contain very different archetypes.
+
+The fanbase anchors are currently better-calibrated than the upper-tier finance ranges. B/S costs in particular should continue to be refined with real theater, handshake-event, arena and stadium production references.
 
 ---
 
@@ -155,9 +218,11 @@ Jams Collection at the S6 start is used as the central C anchor rather than C+ b
 
 ### Fanbase
 
-`Public 6,000 / Otaku 1,800 / Core 500 = 8,300 total`
+`Public 5,200 / Otaku 1,700 / Core 550 = 7,450 total`
 
-This still excludes member-specific personal public recognition.
+This excludes member-specific personal public recognition.
+
+The normal large-live planning audience is about **1,500**, roughly 20% of total paying fanbase. A milestone live can go materially above this.
 
 ### Benefit-session example
 
@@ -189,12 +254,14 @@ At the game's current `~¥500 group-net per CD` simplification:
 
 `1.2 x 20,000 x ¥500 / 12 ≈ ¥1.0M/month`
 
+The ~20k release volume is compatible with a ~7.5k paying fanbase because repeat purchasing is normal and Core/Otaku buyers purchase more than Public buyers.
+
 ### Live / production model
 
 Working C anchor:
 
 - around one major solo live per month on average;
-- roughly 2,000 paid attendance for an important C-level live;
+- roughly 1,500 paid attendance as the normal large-live planning anchor;
 - actual blended ticket price should be below a naive ¥5,000 assumption because low-price general tickets are common;
 - major-live net contribution around ¥2-3M/month is a useful working value after direct live costs.
 
@@ -225,7 +292,9 @@ B should support several different business models. NMB48 is useful because it i
 
 ### Fanbase
 
-`Public 25,000 / Otaku 6,000 / Core 1,500 = 32,500 total`
+`Public 13,000 / Otaku 4,000 / Core 1,300 = 18,300 total`
+
+Normal large-live planning attendance is around **3,500-4,000**. Larger anniversaries, graduations or arena challenges can exceed this significantly.
 
 ### Business structure
 
@@ -246,6 +315,8 @@ For this archetype, handshake/online-talk events should usually be treated as **
 A working 2025 NMB-style estimate is approximately two singles per year at roughly 170k-180k units each.
 
 Using the generic ¥500/CD simplification would produce roughly ¥14-15M/month contribution, but a release-benefit-heavy model may deserve a lower effective net per unit because event fulfillment is expensive.
+
+The large CD/fanbase multiple is intentional for this archetype and reflects concentrated repeat purchasing rather than hundreds of thousands of distinct paying fans.
 
 ### Theater
 
@@ -271,7 +342,9 @@ Other valid B archetypes include:
 
 ### Fanbase
 
-`Public 80,000 / Otaku 16,000 / Core 4,000 = 100,000 total`
+`Public 39,000 / Otaku 8,500 / Core 2,500 = 50,000 total`
+
+Normal large-live planning attendance is around **10,000**. Annual flagship arena dates can exceed this planning anchor.
 
 ### Business structure
 
@@ -297,6 +370,8 @@ At ¥500 group-net per unit:
 
 `580,000 x ¥500 / 12 ≈ ¥24M/month`
 
+A ~50k paying group fanbase with strong release-event repetition is compatible with 250k-300k+ single volumes.
+
 ### Live scale
 
 Arena tours make live economics a major standalone pillar. Gross ticket sales can exceed ¥100M for a large arena date, but production costs are also very high.
@@ -313,9 +388,13 @@ A is the transition into an arena-scale entertainment IP. Direct fandom remains 
 
 ### Fanbase
 
-`Public 300,000 / Otaku 40,000 / Core 10,000 = 350,000 total`
+`Public 190,000 / Otaku 40,000 / Core 10,000 = 240,000 total`
 
-This large public share is intentional. S should represent genuine national phenomenon scale rather than simply a very successful idol group.
+These are **paying audience pools**, not the much larger population that simply recognizes Nogizaka46.
+
+Mainstream recognition, television value, advertising power and sponsorship reach are represented by S-tier brand power / recognition rather than by inflating the fan pool indefinitely.
+
+Normal large-live planning attendance is around **45,000-50,000**. Truly exceptional stadium, anniversary or graduation events may mobilize a larger fraction of the pool.
 
 ### Business structure
 
@@ -338,6 +417,8 @@ At ¥500 group-net per unit:
 
 `~1.75M x ¥500 / 12 ≈ ¥73M/month`
 
+A ~240k paying fanbase with a very large Public share naturally implies a lower average CD repeat multiple than the highly event-driven A/B release models.
+
 ### Live scale
 
 Summer national touring plus very large Tokyo dates pushes ticket GMV into a completely different order of magnitude from A and below.
@@ -348,7 +429,7 @@ For balancing, a monthly live contribution around **¥90-120M** is a more useful
 
 ### Tier meaning
 
-S is a national entertainment IP with a very large public layer. It should remain rare in the simulation.
+S is a national entertainment IP. Its national awareness is part of the tier/brand model; its `public` fan count should represent actual light-paying audience rather than everyone who knows the name.
 
 ---
 
@@ -361,35 +442,39 @@ S is a national entertainment IP with a very large public layer. It should remai
 | New songs/year | 1-3 | 4-6 | ~8 | 10-15+ | 15-20+ | 20+ possible across releases/projects |
 | MVs/year | 0-1 | ~1 | ~2 | 3-6 | Several high-spec | Many high-spec productions |
 | Costume sets/year | ~1 | 1-2 | ~4 | Several | Frequent | Near project-level refresh cadence |
-| Typical important venue | Small livehouse | 300-700 class | 1k-2k class | 2k-5k hall / arena challenge | Arena | Arena / stadium |
+| Normal large-live planning attendance | ~180 | ~500 | ~1,500 | ~3,500-4,000 | ~10,000 | ~45,000-50,000 |
+| Annual flagship / milestone | Can exceed normal anchor | Can exceed normal anchor | Zepp/Budokan-type challenge possible | Arena challenge | Larger arena / special dates | Stadium/dome-scale special dates |
 | Primary financial risk | Too little demand | Graduation / benefit utilization | Production expansion | Organization complexity | Large-project execution | Very large fixed/project organization |
 
 ---
 
 ## Design Rules Derived From These Anchors
 
-1. **Fanbase is a slow variable; spending/attendance heat is a fast variable.** A group can suffer a rapid revenue decline before the fan count collapses.
-2. **Natural monthly inflow and churn should usually remain within roughly 5% of fanbase.** Long periods of slightly negative net movement can still become fatal over six to twelve months.
-3. **Graduation should remove member-specific fan equity.** Replacing headcount does not instantly restore benefit-session demand.
-4. **Low-tier economics depend on direct access.** E/D groups can be healthy with modest total fan counts if benefit-session utilization is strong and costs are controlled.
-5. **C is the diversification threshold.** A healthy C group should be able to fund songs, costumes, MVs and larger solo lives from several revenue channels.
-6. **B is not one business model.** NMB, iLiFE! and ≠ME can all be B with very different monetization structures.
-7. **A/S should not use the underground post-live tokutenkai model as their primary direct-fan engine.** Release-linked events, FC, arena/stadium touring and IP economics dominate.
-8. **Do not rank tiers by profit margin.** Larger organizations can generate much more revenue while carrying proportionally larger member/staff/production burdens.
-9. **Personal public recognition is separate from group fanbase.** Individual TV/model/acting success should not automatically inflate the group's public pool one-for-one.
-10. **Tier movement should require structural scale change, not a single successful event.** Venue reach, sustainable fanbase, recurring revenue capacity and organizational capability should all matter.
+1. **Fanbase means paying audience, not general awareness.** Public fans are light-paying consumers; broad TV/CM/social recognition belongs to tier/brand/recognition systems.
+2. **Fanbase is a slow variable; spending/attendance heat is a fast variable.** A group can suffer a rapid revenue decline before the fan count collapses.
+3. **Natural monthly inflow and churn should usually remain within roughly 5% of fanbase.** Long periods of slightly negative net movement can still become fatal over six to twelve months.
+4. **Normal large-live planning attendance is roughly 20% of total paying fanbase.** Annual flagship/milestone shows can mobilize a substantially higher share and should not define the base tier anchor.
+5. **Graduation should remove member-specific fan equity.** Replacing headcount does not instantly restore benefit-session demand.
+6. **Low-tier economics depend on direct access.** E/D groups can be healthy with modest total fan counts if benefit-session utilization is strong and costs are controlled.
+7. **C is the diversification threshold.** A healthy C group should be able to fund songs, costumes, MVs and larger solo lives from several revenue channels.
+8. **B is not one business model.** NMB, iLiFE! and ≠ME can all be B with very different monetization structures.
+9. **A/S should not use the underground post-live tokutenkai model as their primary direct-fan engine.** Release-linked events, FC, arena/stadium touring and IP economics dominate.
+10. **CD sales, benefit utilization and live attendance should cross-check fanbase simultaneously.** Do not set fanbase from only one observed metric.
+11. **Do not rank tiers by profit margin.** Larger organizations can generate much more revenue while carrying proportionally larger member/staff/production burdens.
+12. **Personal public recognition is separate from group fanbase.** Individual TV/model/acting success should not automatically inflate the group's Public pool one-for-one.
+13. **Tier movement should require structural scale change, not a single successful event.** Venue reach, sustainable fanbase, recurring revenue capacity and organizational capability should all matter.
 
 ---
 
 ## Current Working Tier Anchors
 
 ```text
-E  =   600 public /   215 otaku /    85 core =     900
-D  = 1,800 public /   540 otaku /   180 core =   2,520
-C  = 6,000 public / 1,800 otaku /   500 core =   8,300
-B  =25,000 public / 6,000 otaku / 1,500 core =  32,500
-A  =80,000 public /16,000 otaku / 4,000 core = 100,000
-S  =300,000 public /40,000 otaku /10,000 core = 350,000
+E  =    600 public /   215 otaku /    85 core =     900 total | large-live planning ~   180
+D  =  1,800 public /   540 otaku /   180 core =   2,520 total | large-live planning ~   500
+C  =  5,200 public / 1,700 otaku /   550 core =   7,450 total | large-live planning ~ 1,500
+B  = 13,000 public / 4,000 otaku / 1,300 core =  18,300 total | large-live planning ~ 3,500-4,000
+A  = 39,000 public / 8,500 otaku / 2,500 core =  50,000 total | large-live planning ~10,000
+S  =190,000 public /40,000 otaku /10,000 core = 240,000 total | large-live planning ~45,000-50,000
 ```
 
 Use these as the central letter-tier anchors. `+` and `-` grades should be interpolated around them while preserving the general rule that the lower the tier, the greater the relative importance of Otaku/Core fans.
