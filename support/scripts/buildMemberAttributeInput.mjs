@@ -41,7 +41,7 @@ function parseArgs(argv) {
 function usage() {
   return [
     'Use --group NAME_OR_UID --reference-date YYYY-MM-DD.',
-    'Optional: --idols PATH --groups PATH --member NAME_OR_UID --out PATH.',
+    'Optional: --idols PATH --groups PATH --member NAME_OR_UID --performance-evidence PATH --out PATH.',
     'Without --out, JSON is printed to stdout and no file is written.',
   ].join('\n');
 }
@@ -122,13 +122,35 @@ function incompleteHistoryLabel(entry) {
   return `${name} (start unknown–${entry.end_date})`;
 }
 
-function buildMember(idol, targetGroup, referenceDate) {
+function performanceFactsFor(memberUid, allFacts) {
+  return allFacts
+    .filter((fact) => String(fact?.member_uid ?? '') === String(memberUid ?? ''))
+    .filter((fact) => fact?.domain === 'vocal' || fact?.domain === 'dance')
+    .map((fact) => ({
+      domain: fact.domain,
+      song_uid: typeof fact.song_uid === 'string' ? fact.song_uid : null,
+      song_title: typeof fact.song_title === 'string' ? fact.song_title : null,
+      song_vocal_difficulty: Number.isFinite(Number(fact.song_vocal_difficulty))
+        ? Number(fact.song_vocal_difficulty)
+        : null,
+      assigned_vocal_difficulty: Number.isFinite(Number(fact.assigned_vocal_difficulty))
+        ? Number(fact.assigned_vocal_difficulty)
+        : null,
+      completion: typeof fact.completion === 'string' ? fact.completion : null,
+      evidence_class: typeof fact.evidence_class === 'string' ? fact.evidence_class : null,
+      note: typeof fact.note === 'string' ? fact.note : null,
+    }));
+}
+
+function buildMember(idol, targetGroup, referenceDate, allPerformanceFacts = []) {
   const history = Array.isArray(idol.group_history) ? idol.group_history : [];
   const allDated = history
     .map((entry) => ({ entry, segment: datedSegment(entry, referenceDate) }))
     .filter(({ segment }) => segment);
   const activeTarget = allDated
-    .filter(({ entry }) => groupMatches(entry, targetGroup) && entry.end_date == null)
+    // A member who leaves after the reference date was still active at that date.
+    .filter(({ entry }) => groupMatches(entry, targetGroup)
+      && (!entry.end_date || entry.end_date >= referenceDate))
     .sort((a, b) => b.segment.start.localeCompare(a.segment.start))[0];
   if (!activeTarget) return null;
 
@@ -193,6 +215,8 @@ function buildMember(idol, targetGroup, referenceDate) {
     prior_groups: priorGroups,
     incomplete_prior_groups: incompletePriorGroups,
     career_summary: careerSummary,
+    // Facts deliberately carry performance observations, never target attributes.
+    performance_evidence: performanceFactsFor(idol.uid, allPerformanceFacts),
     training_background: null,
   };
 }
@@ -209,21 +233,29 @@ async function main() {
 
   const idolsPath = args.idols || 'public/data/idols.json';
   const groupsPath = args.groups || 'public/data/groups.json';
-  const [idols, groups] = await Promise.all([readJson(idolsPath), readJson(groupsPath)]);
+  const performanceEvidencePath = args['performance-evidence'] || 'support/data/member-performance-evidence.json';
+  const [idols, groups, performanceEvidenceDocument] = await Promise.all([
+    readJson(idolsPath),
+    readJson(groupsPath),
+    readJson(performanceEvidencePath),
+  ]);
+  const allPerformanceFacts = Array.isArray(performanceEvidenceDocument?.evidence)
+    ? performanceEvidenceDocument.evidence
+    : [];
   const targetGroup = groups.find((group) => String(group.uid ?? '') === groupArg || String(group.name ?? '') === groupArg);
   if (!targetGroup) throw new Error(`No group found for ${JSON.stringify(groupArg)} in ${groupsPath}`);
 
   const memberArg = String(args.member || '').trim();
   const selected = idols.filter((idol) => {
     if (memberArg && String(idol.uid ?? '') !== memberArg && String(idol.name ?? '') !== memberArg) return false;
-    return buildMember(idol, targetGroup, referenceDate) != null;
+    return buildMember(idol, targetGroup, referenceDate, allPerformanceFacts) != null;
   });
   if (memberArg && selected.length === 0) {
     throw new Error(`No active ${targetGroup.name} member matched ${JSON.stringify(memberArg)} at ${referenceDate}`);
   }
 
   const output = selected
-    .map((idol) => buildMember(idol, targetGroup, referenceDate))
+    .map((idol) => buildMember(idol, targetGroup, referenceDate, allPerformanceFacts))
     .filter(Boolean)
     .sort((a, b) => String(a.name).localeCompare(String(b.name), 'ja'));
   const json = `${JSON.stringify(output, null, 2)}\n`;
