@@ -64,7 +64,7 @@ function scoreCandidate(result, group, config) {
   const text = `${result.title || ''}\n${result.description || ''}`;
   const matches = (group.terms || []).filter(term => text.includes(term));
   const sourceClass = classifySource(result, config);
-  const sourceRank = Math.max(0, (config.sourcePriority || []).indexOf(sourceClass));
+  const sourceRank = (config.sourcePriority || []).indexOf(sourceClass);
   const authorityBonus = sourceRank >= 0 ? Math.max(0, 7 - sourceRank) : 0;
   return {
     ...result,
@@ -106,15 +106,37 @@ async function search(query, config) {
   throw new Error(`Unsupported provider: ${provider}`);
 }
 
-function selectQueryGroups(config, tier) {
+function selectQueries(config, tier) {
   const maxQueries = Number(config.budgetsByTier?.[tier] ?? config.budgetsByTier?.C ?? 9);
-  const candidates = [];
-  for (const group of [...(config.queryGroups || [])].sort((a, b) => (b.priority || 0) - (a.priority || 0))) {
-    for (const template of group.queries || []) {
-      candidates.push({ group, template });
-    }
+  const groups = [...(config.queryGroups || [])]
+    .filter(group => (group.queries || []).length > 0)
+    .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+
+  const selected = [];
+
+  // Coverage pass: first query from as many semantic groups as the budget allows.
+  for (const group of groups) {
+    if (selected.length >= maxQueries) break;
+    selected.push({ group, template: group.queries[0] });
   }
-  return candidates.slice(0, maxQueries);
+
+  // Depth pass: spend remaining budget on each group's secondary queries,
+  // preserving configured priority without starving an entire domain.
+  let depth = 1;
+  while (selected.length < maxQueries) {
+    let added = false;
+    for (const group of groups) {
+      const template = group.queries?.[depth];
+      if (!template) continue;
+      selected.push({ group, template });
+      added = true;
+      if (selected.length >= maxQueries) break;
+    }
+    if (!added) break;
+    depth += 1;
+  }
+
+  return selected;
 }
 
 async function loadMembers() {
@@ -127,6 +149,8 @@ async function loadMembers() {
       age: args.age ? Number(args.age) : null,
       height_cm: args.height ? Number(args.height) : null,
       career_months: args['career-months'] ? Number(args['career-months']) : null,
+      prior_group_months: args['prior-group-months'] ? Number(args['prior-group-months']) : null,
+      training_background: args.training || null,
     }];
   }
   if (!args.input) throw new Error('Use --member NAME [--group GROUP --tier B] or --input members.json');
@@ -136,7 +160,7 @@ async function loadMembers() {
 
 async function collectMember(member, config) {
   const tier = String(member.tier || 'C').replace(/[+-]/g, '').toUpperCase();
-  const selected = selectQueryGroups(config, tier);
+  const selected = selectQueries(config, tier);
   const evidence = [];
 
   for (const { group, template } of selected) {
