@@ -193,6 +193,8 @@ Look for repeated professional use:
 
 Traits measure specialization progress, not job eligibility: an idol can accept the related work even with no trait score. Use 100-199 for novice progress and 200-249 for an early proven practitioner; reserve 250+ for repeated, reliable specialist evidence.
 
+A well-completed vocal part that is materially harder than the song's average is direct evidence for singing attributes. It does not, on its own, establish a high singer trait.
+
 ## Evidence constraint model
 
 The generator should convert evidence to four types of constraints: **range, rank, floor, bias**.

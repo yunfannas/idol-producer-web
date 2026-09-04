@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:21:07.548Z",
+  "generated_at": "2026-09-04T08:25:48.764Z",
   "skill": "idol-attribute-generation",
   "uid": "45484495-8792-48db-bab0-560ee4107464",
   "name": "清見るん",
@@ -60,21 +60,21 @@
   "ability_raw": 77.042,
   "evidence_summary": {
     "high_confidence": [
-      "appears in same talk-live coverage as peers"
+      "appears in same talk-live coverage as peers",
+      "Shine on you: vocal part difficulty 16 vs song average 14; completed well"
     ],
     "medium_confidence": [],
-    "procedural_only": [
-      "retained scenario vocal baseline: SNG 17.25"
-    ]
+    "procedural_only": []
   },
   "constraints_applied": {
     "ranges": [
-      "retained vocal calibration: pitch 18, tone/breath/rhythm 17"
+      "pitch 18, tone/breath/rhythm 17"
     ],
     "ranks": [
-      "reviewed vocal strength"
+      "vocal strength"
     ],
     "floors": [
+      "completed Shine on you vocal part difficulty 16",
       "prior 炭酸くろにくるっ tenure regularizes basics"
     ],
     "biases": []

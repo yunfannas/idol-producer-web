@@ -776,14 +776,17 @@ function generateOne(ctx) {
       { singer: 170, dancer: 120, model: 90, comedy: 50 },
       {
         evidence_summary: {
-          high_confidence: ['歌うまパフォーマンス snippet'],
+          high_confidence: [
+            '歌うまパフォーマンス snippet',
+            'Shine on you: vocal part difficulty 16 vs song average 14; completed well',
+          ],
           medium_confidence: ['profile pages'],
-          procedural_only: ['retained scenario vocal baseline: SNG 18.00'],
+          procedural_only: [],
         },
         constraints_applied: {
-          ranges: ['retained vocal calibration: pitch/tone 18, breath 19, rhythm 17'],
-          ranks: ['reviewed vocal standout in sparse roster'],
-          floors: [],
+          ranges: ['pitch/tone 18, breath 19, rhythm 17'],
+          ranks: ['vocal standout in sparse roster'],
+          floors: ['completed Shine on you vocal part difficulty 16'],
           biases: ['pretty from height 163'],
         },
         career_context_used: careerNotes,
@@ -830,14 +833,17 @@ function generateOne(ctx) {
       { singer: 90, dancer: 130, model: 80, comedy: 70 },
       {
         evidence_summary: {
-          high_confidence: ['appears in same talk-live coverage as peers'],
+          high_confidence: [
+            'appears in same talk-live coverage as peers',
+            'Shine on you: vocal part difficulty 16 vs song average 14; completed well',
+          ],
           medium_confidence: [],
-          procedural_only: ['retained scenario vocal baseline: SNG 17.25'],
+          procedural_only: [],
         },
         constraints_applied: {
-          ranges: ['retained vocal calibration: pitch 18, tone/breath/rhythm 17'],
-          ranks: ['reviewed vocal strength'],
-          floors: ['prior 炭酸くろにくるっ tenure regularizes basics'],
+          ranges: ['pitch 18, tone/breath/rhythm 17'],
+          ranks: ['vocal strength'],
+          floors: ['completed Shine on you vocal part difficulty 16', 'prior 炭酸くろにくるっ tenure regularizes basics'],
           biases: [],
         },
         career_context_used: [
@@ -887,14 +893,15 @@ function generateOne(ctx) {
           high_confidence: [
             'image model / cosmetics campaigns',
             'long prior Le Siana / 煌めき career',
+            'Shine on you: vocal part difficulty 16 vs song average 14; completed well',
           ],
           medium_confidence: [],
-          procedural_only: ['retained scenario vocal baseline: SNG 17.75'],
+          procedural_only: [],
         },
         constraints_applied: {
-          ranges: ['fashion/pretty 16-18', 'retained vocal calibration: pitch/tone/breath 18, rhythm 17'],
-          ranks: ['model/visual lean; reviewed vocal strength'],
-          floors: ['long career determination/talking/stamina regularization'],
+          ranges: ['fashion/pretty 16-18', 'pitch/tone/breath 18, rhythm 17'],
+          ranks: ['model/visual lean; vocal strength'],
+          floors: ['completed Shine on you vocal part difficulty 16', 'long career determination/talking/stamina regularization'],
           biases: ['model trait', 'pretty age 26'],
         },
         career_context_used: [

@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:21:07.549Z",
+  "generated_at": "2026-09-04T08:25:48.764Z",
   "skill": "idol-attribute-generation",
   "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
   "name": "茉井良菜",
@@ -75,22 +75,22 @@
   "evidence_summary": {
     "high_confidence": [
       "image model / cosmetics campaigns",
-      "long prior Le Siana / 煌めき career"
+      "long prior Le Siana / 煌めき career",
+      "Shine on you: vocal part difficulty 16 vs song average 14; completed well"
     ],
     "medium_confidence": [],
-    "procedural_only": [
-      "retained scenario vocal baseline: SNG 17.75"
-    ]
+    "procedural_only": []
   },
   "constraints_applied": {
     "ranges": [
       "fashion/pretty 16-18",
-      "retained vocal calibration: pitch/tone/breath 18, rhythm 17"
+      "pitch/tone/breath 18, rhythm 17"
     ],
     "ranks": [
-      "model/visual lean; reviewed vocal strength"
+      "model/visual lean; vocal strength"
     ],
     "floors": [
+      "completed Shine on you vocal part difficulty 16",
       "long career determination/talking/stamina regularization"
     ],
     "biases": [
