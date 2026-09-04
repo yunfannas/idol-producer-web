@@ -11,6 +11,7 @@
     "current_group_months": 35.8,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
     "training_background": null
   },
@@ -26,7 +27,16 @@
     "current_group_months": 5.5,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
-    "career_summary": "iLife! (2025-01-20–present)",
+    "incomplete_prior_groups": [
+      {
+        "group_name": "Monogatari",
+        "group_uid": null,
+        "start_date": null,
+        "end_date": "2020-02-16",
+        "date_status": "start_unknown"
+      }
+    ],
+    "career_summary": "Monogatari (start unknown–2020-02-16); iLife! (2025-01-20–present)",
     "training_background": null
   },
   {
@@ -41,6 +51,7 @@
     "current_group_months": 21.7,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "iLife! (2023-09-12–present)",
     "training_background": null
   },
@@ -56,6 +67,7 @@
     "current_group_months": 1.8,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "iLife! (2025-05-10–present)",
     "training_background": null
   },
@@ -71,6 +83,7 @@
     "current_group_months": 1.8,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "iLife! (2025-05-11–present)",
     "training_background": null
   },
@@ -86,6 +99,7 @@
     "current_group_months": 52.3,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "Yumeiro H!L!T (2019-06-23–present); iLife! (2021-02-25–present); GILTY × GILTY (2022-06-01–present)",
     "training_background": null
   },
@@ -101,6 +115,7 @@
     "current_group_months": 1.9,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "iLife! (2025-05-09–present)",
     "training_background": null
   },
@@ -116,6 +131,7 @@
     "current_group_months": 23.7,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
     "training_background": null
   }

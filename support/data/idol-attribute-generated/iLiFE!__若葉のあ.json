@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.762Z",
+  "generated_at": "2026-09-04T15:52:34.861Z",
   "skill": "idol-attribute-generation",
   "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
   "name": "若葉のあ",
@@ -14,6 +14,7 @@
   "current_group_months": 21.7,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "iLife! (2023-09-12–present)",
   "attributes": {
     "strength": 13,

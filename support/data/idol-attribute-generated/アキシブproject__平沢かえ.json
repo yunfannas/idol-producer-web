@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.763Z",
+  "generated_at": "2026-09-04T15:52:34.862Z",
   "skill": "idol-attribute-generation",
   "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
   "name": "平沢かえ",
@@ -14,6 +14,7 @@
   "current_group_months": 18.2,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "アキシブproject (2023-12-28–2026-02-24)",
   "attributes": {
     "strength": 13,

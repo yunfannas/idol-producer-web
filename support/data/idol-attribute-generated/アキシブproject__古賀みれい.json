@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.763Z",
+  "generated_at": "2026-09-04T15:52:34.861Z",
   "skill": "idol-attribute-generation",
   "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
   "name": "古賀みれい",
@@ -14,6 +14,7 @@
   "current_group_months": 31.5,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "アキシブproject (2022-11-20–2025-09-29)",
   "attributes": {
     "strength": 13,

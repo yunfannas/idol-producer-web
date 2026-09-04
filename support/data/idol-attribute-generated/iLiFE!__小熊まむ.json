@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.761Z",
+  "generated_at": "2026-09-04T15:52:34.859Z",
   "skill": "idol-attribute-generation",
   "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
   "name": "小熊まむ",
@@ -14,6 +14,7 @@
   "current_group_months": 1.8,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "iLife! (2025-05-11–present)",
   "attributes": {
     "strength": 13,

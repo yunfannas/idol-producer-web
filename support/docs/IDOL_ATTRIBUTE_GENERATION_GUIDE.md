@@ -65,13 +65,14 @@ Example batch input:
     "prior_group_months": 0,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "",
     "training_background": null
   }
 ]
 ```
 
-The builder ignores undated `group_history` rows, merges overlapping dated memberships for career duration, and calculates age at the supplied reference date. The collector writes one JSON evidence bundle per member, preserving the resulting career context for the `idol-attribute-generation` agent skill.
+The builder ignores null/null aliases, preserves end-dated rows with an unknown start in `incomplete_prior_groups`, merges overlapping dated memberships for career duration, and calculates age at the supplied reference date. An incomplete row never contributes guessed months. The collector writes one JSON evidence bundle per member, preserving the resulting career context for the `idol-attribute-generation` agent skill.
 
 ## Adaptive search strategy
 

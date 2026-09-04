@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.766Z",
+  "generated_at": "2026-09-04T15:52:34.864Z",
   "skill": "idol-attribute-generation",
   "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
   "name": "籾山ひめり",
@@ -22,6 +22,7 @@
       "months": 57.6
     }
   ],
+  "incomplete_prior_groups": [],
   "career_summary": "Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
   "attributes": {
     "strength": 14,

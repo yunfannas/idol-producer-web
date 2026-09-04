@@ -12,7 +12,9 @@
  *
  * `career_months` is elapsed professional time with overlapping memberships
  * merged. `prior_group_months` only counts completed, dated memberships before
- * the selected group's active stint. Undated aliases are deliberately ignored.
+ * the selected group's active stint. Null/null aliases are deliberately ignored;
+ * an end-dated row with an unknown start is retained as prior-group context but
+ * never contributes invented career months.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -109,6 +111,17 @@ function historyLabel(entry, segment) {
   return `${name} (${segment.start}–${end})`;
 }
 
+function groupIdentity(entry) {
+  const uid = String(entry?.group_uid ?? '').trim();
+  if (uid) return `uid:${uid.toLowerCase()}`;
+  return `name:${String(entry?.group_name ?? '').trim().toLowerCase()}`;
+}
+
+function incompleteHistoryLabel(entry) {
+  const name = String(entry.group_name ?? entry.group_uid ?? 'Unknown group').trim();
+  return `${name} (start unknown–${entry.end_date})`;
+}
+
 function buildMember(idol, targetGroup, referenceDate) {
   const history = Array.isArray(idol.group_history) ? idol.group_history : [];
   const allDated = history
@@ -120,11 +133,12 @@ function buildMember(idol, targetGroup, referenceDate) {
   if (!activeTarget) return null;
 
   const currentStart = activeTarget.segment.start;
-  const priorGroups = allDated
+  const priorRows = allDated
     .filter(({ entry, segment }) => {
       if (groupMatches(entry, targetGroup)) return false;
       return Boolean(entry.end_date) && segment.end <= currentStart;
-    })
+    });
+  const priorGroups = priorRows
     .map(({ entry, segment }) => ({
       group_name: String(entry.group_name ?? '').trim() || null,
       group_uid: String(entry.group_uid ?? '').trim() || null,
@@ -133,9 +147,37 @@ function buildMember(idol, targetGroup, referenceDate) {
       months: monthCount(dayNumber(segment.end) - dayNumber(segment.start)),
     }))
     .sort((a, b) => a.start_date.localeCompare(b.start_date));
+  const incompleteGroupKeys = new Set();
+  const incompletePriorGroups = history
+    .filter((entry) => {
+      if (groupMatches(entry, targetGroup)) return false;
+      const start = isoDay(entry.start_date);
+      const end = isoDay(entry.end_date);
+      return !start && Boolean(end) && end <= currentStart;
+    })
+    .map((entry) => ({
+      group_name: String(entry.group_name ?? '').trim() || null,
+      group_uid: String(entry.group_uid ?? '').trim() || null,
+      start_date: null,
+      end_date: isoDay(entry.end_date),
+      date_status: 'start_unknown',
+    }))
+    .filter((entry) => {
+      const key = groupIdentity(entry);
+      if (incompleteGroupKeys.has(key)) return false;
+      incompleteGroupKeys.add(key);
+      return true;
+    })
+    .sort((a, b) => a.end_date.localeCompare(b.end_date));
   const priorDays = mergeDays(priorGroups.map((entry) => ({ start: entry.start_date, end: entry.end_date })));
   const allDays = mergeDays(allDated.map(({ segment }) => segment));
   const height = Number(idol.height_cm ?? idol.height);
+  const careerSummary = [
+    ...incompletePriorGroups.map(incompleteHistoryLabel),
+    ...allDated
+      .sort((a, b) => a.segment.start.localeCompare(b.segment.start))
+      .map(({ entry, segment }) => historyLabel(entry, segment)),
+  ].join('; ');
 
   return {
     uid: idol.uid || null,
@@ -149,10 +191,8 @@ function buildMember(idol, targetGroup, referenceDate) {
     current_group_months: monthCount(dayNumber(referenceDate) - dayNumber(currentStart)),
     career_reference_date: referenceDate,
     prior_groups: priorGroups,
-    career_summary: allDated
-      .sort((a, b) => a.segment.start.localeCompare(b.segment.start))
-      .map(({ entry, segment }) => historyLabel(entry, segment))
-      .join('; '),
+    incomplete_prior_groups: incompletePriorGroups,
+    career_summary: careerSummary,
     training_background: null,
   };
 }

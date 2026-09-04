@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.763Z",
+  "generated_at": "2026-09-04T15:52:34.861Z",
   "skill": "idol-attribute-generation",
   "uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
   "name": "那蘭のどか",
@@ -22,6 +22,7 @@
       "months": 34.6
     }
   ],
+  "incomplete_prior_groups": [],
   "career_summary": "ZOCX (2021-05-13–2024-03-31); iLiFE! (2024-09-28–2025-08-27)",
   "attributes": {
     "strength": 13,

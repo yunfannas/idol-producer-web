@@ -8,8 +8,21 @@
     "tier": "B",
     "age": 24,
     "height_cm": 155,
-    "career_months": 5,
+    "career_months": 5.5,
     "prior_group_months": 0,
+    "current_group_months": 5.5,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "incomplete_prior_groups": [
+      {
+        "group_name": "Monogatari",
+        "group_uid": null,
+        "start_date": null,
+        "end_date": "2020-02-16",
+        "date_status": "start_unknown"
+      }
+    ],
+    "career_summary": "Monogatari (start unknown–2020-02-16); iLife! (2025-01-20–present)",
     "training_background": null
   },
   "search_summary": {
