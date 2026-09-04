@@ -1,13 +1,13 @@
 {
   "schema": "idol_attribute_generation_batch_v1",
-  "generated_at": "2026-09-04T08:21:07.556Z",
+  "generated_at": "2026-09-04T08:25:48.771Z",
   "skill": "idol-attribute-generation",
   "opening_date": "2025-07-05",
   "note": "Generator-only rerun from existing Tavily evidence + catalog career context. Ability is derived; no target-Ability nudging.",
   "members": [
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.545Z",
+      "generated_at": "2026-09-04T08:25:48.760Z",
       "skill": "idol-attribute-generation",
       "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
       "name": "あいす",
@@ -95,7 +95,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.546Z",
+      "generated_at": "2026-09-04T08:25:48.762Z",
       "skill": "idol-attribute-generation",
       "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
       "name": "空詩かれん",
@@ -184,7 +184,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.547Z",
+      "generated_at": "2026-09-04T08:25:48.762Z",
       "skill": "idol-attribute-generation",
       "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
       "name": "若葉のあ",
@@ -269,7 +269,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.547Z",
+      "generated_at": "2026-09-04T08:25:48.762Z",
       "skill": "idol-attribute-generation",
       "uid": "9871efc4-1501-41eb-a430-94fd34bf4015",
       "name": "純嶺みき",
@@ -354,7 +354,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.546Z",
+      "generated_at": "2026-09-04T08:25:48.761Z",
       "skill": "idol-attribute-generation",
       "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
       "name": "小熊まむ",
@@ -439,7 +439,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.546Z",
+      "generated_at": "2026-09-04T08:25:48.761Z",
       "skill": "idol-attribute-generation",
       "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
       "name": "心花りり",
@@ -522,7 +522,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.547Z",
+      "generated_at": "2026-09-04T08:25:48.763Z",
       "skill": "idol-attribute-generation",
       "uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
       "name": "那蘭のどか",
@@ -616,7 +616,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.547Z",
+      "generated_at": "2026-09-04T08:25:48.763Z",
       "skill": "idol-attribute-generation",
       "uid": "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
       "name": "虹羽みに",
@@ -704,7 +704,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.546Z",
+      "generated_at": "2026-09-04T08:25:48.762Z",
       "skill": "idol-attribute-generation",
       "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
       "name": "福丸うさ",
@@ -789,7 +789,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.549Z",
+      "generated_at": "2026-09-04T08:25:48.764Z",
       "skill": "idol-attribute-generation",
       "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
       "name": "葵ふう",
@@ -868,7 +868,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.547Z",
+      "generated_at": "2026-09-04T08:25:48.763Z",
       "skill": "idol-attribute-generation",
       "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
       "name": "古賀みれい",
@@ -951,7 +951,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.548Z",
+      "generated_at": "2026-09-04T08:25:48.764Z",
       "skill": "idol-attribute-generation",
       "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
       "name": "水琴まなみ",
@@ -1031,7 +1031,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.548Z",
+      "generated_at": "2026-09-04T08:25:48.764Z",
       "skill": "idol-attribute-generation",
       "uid": "45484495-8792-48db-bab0-560ee4107464",
       "name": "清見るん",
@@ -1091,21 +1091,21 @@
       "ability_raw": 77.042,
       "evidence_summary": {
         "high_confidence": [
-          "appears in same talk-live coverage as peers"
+          "appears in same talk-live coverage as peers",
+          "Shine on you: vocal part difficulty 16 vs song average 14; completed well"
         ],
         "medium_confidence": [],
-        "procedural_only": [
-          "retained scenario vocal baseline: SNG 17.25"
-        ]
+        "procedural_only": []
       },
       "constraints_applied": {
         "ranges": [
-          "retained vocal calibration: pitch 18, tone/breath/rhythm 17"
+          "pitch 18, tone/breath/rhythm 17"
         ],
         "ranks": [
-          "reviewed vocal strength"
+          "vocal strength"
         ],
         "floors": [
+          "completed Shine on you vocal part difficulty 16",
           "prior 炭酸くろにくるっ tenure regularizes basics"
         ],
         "biases": []
@@ -1120,7 +1120,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.548Z",
+      "generated_at": "2026-09-04T08:25:48.763Z",
       "skill": "idol-attribute-generation",
       "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
       "name": "如月なな",
@@ -1198,7 +1198,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.548Z",
+      "generated_at": "2026-09-04T08:25:48.764Z",
       "skill": "idol-attribute-generation",
       "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
       "name": "美山ひな",
@@ -1296,7 +1296,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.548Z",
+      "generated_at": "2026-09-04T08:25:48.763Z",
       "skill": "idol-attribute-generation",
       "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
       "name": "平沢かえ",
@@ -1348,23 +1348,24 @@
       "ability_raw": 79.542,
       "evidence_summary": {
         "high_confidence": [
-          "歌うまパフォーマンス snippet"
+          "歌うまパフォーマンス snippet",
+          "Shine on you: vocal part difficulty 16 vs song average 14; completed well"
         ],
         "medium_confidence": [
           "profile pages"
         ],
-        "procedural_only": [
-          "retained scenario vocal baseline: SNG 18.00"
-        ]
+        "procedural_only": []
       },
       "constraints_applied": {
         "ranges": [
-          "retained vocal calibration: pitch/tone 18, breath 19, rhythm 17"
+          "pitch/tone 18, breath 19, rhythm 17"
         ],
         "ranks": [
-          "reviewed vocal standout in sparse roster"
+          "vocal standout in sparse roster"
         ],
-        "floors": [],
+        "floors": [
+          "completed Shine on you vocal part difficulty 16"
+        ],
         "biases": [
           "pretty from height 163"
         ]
@@ -1376,7 +1377,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.549Z",
+      "generated_at": "2026-09-04T08:25:48.764Z",
       "skill": "idol-attribute-generation",
       "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
       "name": "茉井良菜",
@@ -1451,22 +1452,22 @@
       "evidence_summary": {
         "high_confidence": [
           "image model / cosmetics campaigns",
-          "long prior Le Siana / 煌めき career"
+          "long prior Le Siana / 煌めき career",
+          "Shine on you: vocal part difficulty 16 vs song average 14; completed well"
         ],
         "medium_confidence": [],
-        "procedural_only": [
-          "retained scenario vocal baseline: SNG 17.75"
-        ]
+        "procedural_only": []
       },
       "constraints_applied": {
         "ranges": [
           "fashion/pretty 16-18",
-          "retained vocal calibration: pitch/tone/breath 18, rhythm 17"
+          "pitch/tone/breath 18, rhythm 17"
         ],
         "ranks": [
-          "model/visual lean; reviewed vocal strength"
+          "model/visual lean; vocal strength"
         ],
         "floors": [
+          "completed Shine on you vocal part difficulty 16",
           "long career determination/talking/stamina regularization"
         ],
         "biases": [
@@ -1484,7 +1485,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.550Z",
+      "generated_at": "2026-09-04T08:25:48.766Z",
       "skill": "idol-attribute-generation",
       "uid": "fa435849-8378-41af-b0fe-341103a45ac5",
       "name": "橋本桃呼",
@@ -1573,7 +1574,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.549Z",
+      "generated_at": "2026-09-04T08:25:48.765Z",
       "skill": "idol-attribute-generation",
       "uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
       "name": "春野莉々",
@@ -1652,7 +1653,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.550Z",
+      "generated_at": "2026-09-04T08:25:48.765Z",
       "skill": "idol-attribute-generation",
       "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
       "name": "松本ももな",
@@ -1744,7 +1745,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.549Z",
+      "generated_at": "2026-09-04T08:25:48.764Z",
       "skill": "idol-attribute-generation",
       "uid": "2fda22b6-ffe0-4265-b61c-00caa862380f",
       "name": "城月菜央",
@@ -1838,7 +1839,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.549Z",
+      "generated_at": "2026-09-04T08:25:48.765Z",
       "skill": "idol-attribute-generation",
       "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
       "name": "星谷美来",
@@ -1920,7 +1921,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.550Z",
+      "generated_at": "2026-09-04T08:25:48.765Z",
       "skill": "idol-attribute-generation",
       "uid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
       "name": "東山恵里沙",
@@ -2000,7 +2001,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.549Z",
+      "generated_at": "2026-09-04T08:25:48.765Z",
       "skill": "idol-attribute-generation",
       "uid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
       "name": "日向端ひな",
@@ -2075,7 +2076,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.550Z",
+      "generated_at": "2026-09-04T08:25:48.766Z",
       "skill": "idol-attribute-generation",
       "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
       "name": "籾山ひめり",
@@ -2168,7 +2169,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.550Z",
+      "generated_at": "2026-09-04T08:25:48.766Z",
       "skill": "idol-attribute-generation",
       "uid": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
       "name": "葉月紗蘭",
@@ -2248,7 +2249,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:21:07.550Z",
+      "generated_at": "2026-09-04T08:25:48.766Z",
       "skill": "idol-attribute-generation",
       "uid": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
       "name": "涼海すう",

@@ -107,6 +107,8 @@ For a curated repair only, an explicitly retained project attribute baseline may
 - `歌声`, `声が好き` -> mostly tone/timbre; do not automatically raise pitch or breath
 - repeated important vocal parts / `落ちサビ` -> vocal rank bias, not proof by itself
 
+A documented vocal part completed well at a difficulty materially above its song average is direct performance evidence for pitch/tone/breath/rhythm. One successful song supports attributes, not by itself a high `singer` trait.
+
 ### Dance/performance
 
 - `ダンスが上手い` -> rhythm/power/agility
