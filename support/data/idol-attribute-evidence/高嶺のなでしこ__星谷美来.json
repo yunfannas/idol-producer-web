@@ -1,0 +1,345 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:55.653Z",
+  "member": {
+    "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+    "name": "星谷美来",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 161,
+    "career_months": 36,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 3,
+      "mental_professional": 3,
+      "traits": 3
+    },
+    "final_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 3,
+      "mental_professional": 3,
+      "traits": 3
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"星谷美来\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "5_星谷美来 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/mikuru_hoshitani",
+          "description": "血液型: O型 ; 星座: さそり座 ; 身長: 161cm ; 生年月日: 2003年11月6日 ; 出身地: 東京都.",
+          "age": null,
+          "score": 0.42792314,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "【Dance Practice Video】17歳／高嶺のなでしこ【HoneyWorks】",
+          "url": "https://www.youtube.com/watch?v=_KDcZgugOsY",
+          "description": "「17歳」ダンスプラクティス動画を公開！ 「17歳」ダンスパフォーマンスビデオはこちら↓ https://youtu.be/puTujCvaRjA 「17歳」 ❀Music Lyrics:",
+          "age": null,
+          "score": 0.3486013,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "高嶺のなでしこ 初の東京国際フォーラム ホールA公演のライブ ...",
+          "url": "https://e.usen.com/news/news-event/-a-2026922.html",
+          "description": "間奏では星谷がメンバーひとりひとりの横に移動しながら、ともにポーズを決めてまわるコミュニケーション。そのパフォーマンスの天性のキュートさに心を掴まれる。",
+          "age": null,
+          "score": 0.54535896,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ 星谷美来 | TIF2026 コラボ映像ハイライト | TikTok",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7672711199552834824",
+          "description": "identified_languages: 日本語. Keywords: 高嶺のなでしこ 星谷美来, TIF2026 コラボ映像, 教育バイト パフォーマンス, タマ 可愛くてごめん, 涼海すう",
+          "age": null,
+          "score": 0.4362623,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ、9人体制“最後の夏”は「ファンからの愛に全力で応え ...",
+          "url": "https://news.yahoo.co.jp/articles/5f0b2a46e89a7302a75c6abe053f509870ac6c48",
+          "description": "星谷美来：本当に毎日が楽しいのですが、今回のTIFでも泣いてくれているファンの方を見て、もらい泣きしそうになりました。初日の最初のステージに出演",
+          "age": null,
+          "score": 0.4272061,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ على X: \"  ⋆.˚ Digest 公開 ˚.⋆   高嶺のなでしこ 星谷美来 ...",
+          "url": "https://x.com/takanenofficial/status/2094424981560037464?lang=ar",
+          "description": "Digest 公開 ˚.⋆✿ 高嶺のなでしこ 星谷美来卒業公演〜ずっと恋の病でいてね❤️〜 Digest youtu.be/eppf4aeq-qc ぜひご覧ください #HoneyWorks",
+          "age": null,
+          "score": 0.42477044,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ | 星谷美来の活動に関するご報告",
+          "url": "https://www.jvcmusic.co.jp/-/News/A028511/169.html",
+          "description": "高嶺のなでしこ メンバーの星谷美来より申し出があり、8月末までの活動をもって、高嶺のなでしこから卒業することとなりました。",
+          "age": null,
+          "score": 0.38560653,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "240606【高嶺のなでしこ】星谷美来 私より好きでいて",
+          "url": "https://www.bilibili.com/video/BV12z42187vh",
+          "description": "... 【高嶺のなでしこ】星谷美来 うい麦畑で捕まえて，240507【高嶺のなでしこ】 ... 240606【高嶺のなでしこ】星谷美来 私より好きでいて. ラストアイドル.",
+          "age": null,
+          "score": 0.3623603,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！星谷美来編 - 運転免許トロッカ！",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa09.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！星谷美来さんの回答はコチラ！",
+          "age": null,
+          "score": 0.34455422,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【Dance Practice Video】I'M YOUR IDOL／高嶺のなでしこ ... - YouTube",
+          "url": "https://www.youtube.com/watch?v=1SakX8WpzZc",
+          "description": "「I'M YOUR IDOL」は高嶺のなでしこの最高の曲だけど、いつも一番感動的な場面までとっておくなんてズルいよ。聞くたびに泣きそうになる。",
+          "age": null,
+          "score": 0.3223238,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"星谷美来\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "Ray編集部が完全プロデュース！高嶺のなでしこ 星谷美来と ...",
+          "url": "https://mixch.tv/p/drplciry",
+          "description": "今回は「可愛くてごめん」のMVでも話題！ 「高嶺のなでしこ」星谷美来さんをオーディションアンバサダーとした Ray編集部完全プロデュースの”リンクコーデ”掲載モデル",
+          "age": null,
+          "score": 0.50856906,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル",
+            "コーデ"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "高嶺のなでしこ・星谷美来、小顔きわだつポニテ×レトロ ...",
+          "url": "https://topics.smt.docomo.ne.jp/article/wwschannel/entertainment/wwschannel-625232",
+          "description": "高嶺のなでしこ・星谷美来、小顔きわだつポニテ×レトロファッションを披露（WWSチャンネル）※画像は星谷美来Instagramよりアイドル高嶺のなでしこの",
+          "age": null,
+          "score": 0.6072213,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ファッション"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "星谷美来 オンライン個別お話し会のお知らせ - 高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/%E2%9C%BF%E6%98%9F%E8%B0%B7%E7%BE%8E%E6%9D%A5-%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E5%80%8B%E5%88%A5%E3%81%8A%E8%A9%B1%E3%81%97%E4%BC%9A%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E2%9C%BF",
+          "description": "1対1のコミュニケーションが実現するライブトーク（ビデオ通話）サービス「SPACE MAKE」にて「星谷美来 オンライン個別お話し会」を開催致します。",
+          "age": null,
+          "score": 0.42634606,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "トーク"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "星谷美来",
+          "url": "https://www.pinterest.com/ideas/%E6%98%9F%E8%B0%B7%E7%BE%8E%E6%9D%A5/936977739960",
+          "description": "星谷美来 · 星谷美来（ほしたにみくる） on X | 検索, アイドル, · 星谷美来 hoshitani mikuru 高嶺のなでしこ takane no nadeshiko jpop | Tamiya gantetsusai,.",
+          "age": null,
+          "score": 0.4977301,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！星谷美来編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa09.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ！星谷美来さんの回答はコチラ！",
+          "age": null,
+          "score": 0.43065065,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこの、星谷美来を 見つけてくれて",
+          "url": "https://x.com/Mikuru_hositani/status/2094437621095338074",
+          "description": "高嶺のなでしこの、星谷美来を見つけてくれて、本当にありがとうございました❤️❤️ 大好きなメンバーとファンの皆さんに出会えて本当に幸せです",
+          "age": null,
+          "score": 0.36881536,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「星谷美来」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?rkf=1&p=%E6%98%9F%E8%B0%B7%E7%BE%8E%E6%9D%A5&btid=MjA5MTQ4MDU3MjYyNzY3MzIxNQ%3D%3D&ifr=tp_bz",
+          "description": "2026年8月25日(火) #高嶺のなでしこ 星谷美来卒業公演 〜ずっと恋の病でいてね❤️〜 恵比寿ガーデンホール 松本ももなさん⑦ #ももなんにおくりもも #高嶺のなでしこ",
+          "age": null,
+          "score": 0.3431001,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"星谷美来\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこ・星谷美来、8月末での卒業を発表「自分の将来 ...",
+          "url": "https://encount.press/archives/1016447",
+          "description": "アイドルグループ・高嶺のなでしこが17日、メンバーの星谷美来が8月末をもって卒業することを公式サイトなどで発表した。 日本を代表する敏腕社長が“日本",
+          "age": null,
+          "score": 0.44565076,
+          "source_class": "professional_media",
+          "matched_terms": [],
+          "relevance_score": 4
+        },
+        {
+          "title": "高嶺のなでしこ・星谷美来、卒業発表 本人から申し出「未来へ ...",
+          "url": "https://www.oricon.co.jp/news/2461977",
+          "description": "アイドルグループ・高嶺のなでしこは17日、公式サイトを更新。メンバーの星谷美来（22）が8月末をもって卒業すると発表した。 「高嶺のなでしこ",
+          "age": null,
+          "score": 0.4315129,
+          "source_class": "professional_media",
+          "matched_terms": [],
+          "relevance_score": 4
+        },
+        {
+          "title": "星谷美来",
+          "url": "https://outofmusic.net/archives/tag/%E6%98%9F%E8%B0%B7%E7%BE%8E%E6%9D%A5",
+          "description": "高嶺のなでしこ 10人組アイドルグループ、高嶺のなでしこ。 2nd Single「Iʼ M YOUR IDOL / アドレナリンゲーム」、総1万6,000字 ロング・インタビュー 前編、先行掲載！",
+          "age": null,
+          "score": 0.6100127,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ、9人体制“最後の夏”は「ファンからの愛に ...",
+          "url": "https://news.yahoo.co.jp/articles/5f0b2a46e89a7302a75c6abe053f509870ac6c48",
+          "description": "WEBザテレビジョンでは、過酷な夏のステージを終えたばかりのメンバーに直撃インタビューを敢行。TIF出演の感想や、初披露された夏曲",
+          "age": null,
+          "score": 0.43510985,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "星谷美来",
+          "url": "https://baike.baidu.com/ja/item/%E6%98%9F%E8%B0%B7%E7%BE%8E%E6%9D%A5/3717918",
+          "description": "星谷美来（Hoshitani Mikuru）は、2003年11月6日に日本の 東京都 で生まれ、日本の女性歌手であり、女性グループ 高岭のなでしこ のメンバーです。 1. 2014年7月に、「南",
+          "age": null,
+          "score": 0.6522641,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！星谷美来編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa09.html",
+          "description": "運転免許トロッカ!アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ!星谷美来さんの回答はコチラ! 高嶺のなでしこに聞いてみた! たかねこウォッチング 星谷美来",
+          "age": null,
+          "score": 0.54594,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "星谷美来の活動に関するご報告 - 高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/%E6%98%9F%E8%B0%B7%E7%BE%8E%E6%9D%A5%E3%81%AE%E6%B4%BB%E5%8B%95%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%94%E5%A0%B1%E5%91%8A",
+          "description": "高嶺のなでしこ メンバーの星谷美来より申し出があり、8月末までの活動をもって、高嶺のなでしこから卒業することとなりました。",
+          "age": null,
+          "score": 0.46584973,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ on X: \"星谷美来の活動に関するご報告 https://t ...",
+          "url": "https://x.com/takanenofficial/status/2067200709196738789",
+          "description": "高嶺のなでしこ on X: \"星谷美来の活動に関するご報告https://t.co/1936BZfIkv\" ; そね · @sone_de_su · 3 ; NICK🕊️高嶺のなでしこ- は組 ❤️みけるん隊",
+          "age": null,
+          "score": 0.43352634,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

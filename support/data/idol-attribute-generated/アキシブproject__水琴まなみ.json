@@ -1,0 +1,80 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.548Z",
+  "skill": "idol-attribute-generation",
+  "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+  "name": "水琴まなみ",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 20,
+  "height_cm": null,
+  "career_months": 6.7,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 6.7,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "アキシブproject (2024-12-13–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 15,
+    "cute": 14,
+    "pretty": 17,
+    "pitch": 13,
+    "tone": 14,
+    "breath": 13,
+    "rhythm": 16,
+    "power": 15,
+    "stage_presence": 16,
+    "wit": 13,
+    "humor": 13,
+    "talking": 14,
+    "determination": 15,
+    "teamwork": 14,
+    "fashion": 16
+  },
+  "traits": {
+    "singer": 70,
+    "dancer": 180,
+    "model": 200,
+    "comedy": 50
+  },
+  "radar": {
+    "PHY": 14.75,
+    "APP": 16.4,
+    "SNG": 14,
+    "DAN": 15.67,
+    "MEN": 14.17
+  },
+  "ability": 74,
+  "ability_raw": 74.729,
+  "evidence_summary": {
+    "high_confidence": [
+      "pro media: extreme proportions/style praised by MC",
+      "birthday-solo choreography collab"
+    ],
+    "medium_confidence": [],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pretty 16-18",
+      "dance/rhythm mid-high"
+    ],
+    "ranks": [
+      "visual/dance specialist"
+    ],
+    "floors": [],
+    "biases": [
+      "model+dancer",
+      "newcomer vocal uncertain low-mid"
+    ]
+  },
+  "career_context_used": [
+    "catalog: アキシブproject (2024-12-13–present)",
+    "career_months=6.7",
+    "short tenure (~7 months): visual/dance evidence overrides newcomer weakness; vocal stays uncertain"
+  ]
+}

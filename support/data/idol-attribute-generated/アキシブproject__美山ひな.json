@@ -1,0 +1,98 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.548Z",
+  "skill": "idol-attribute-generation",
+  "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
+  "name": "美山ひな",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 18,
+  "height_cm": null,
+  "career_months": 29.5,
+  "prior_group_months": 22.9,
+  "training_background": null,
+  "current_group_months": 6.6,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "じーくらむ！",
+      "group_uid": "44GY44O844GP44KJ44KA77yB",
+      "start_date": "2021-07-01",
+      "end_date": "2022-08-31",
+      "months": 14
+    },
+    {
+      "group_name": "あげもん！",
+      "group_uid": "44GC44GS44KC44KT77yB",
+      "start_date": "2022-11-01",
+      "end_date": "2023-07-31",
+      "months": 8.9
+    }
+  ],
+  "career_summary": "じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
+  "attributes": {
+    "strength": 13,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 15,
+    "cute": 16,
+    "pretty": 14,
+    "pitch": 13,
+    "tone": 14,
+    "breath": 13,
+    "rhythm": 15,
+    "power": 14,
+    "stage_presence": 15,
+    "wit": 13,
+    "humor": 13,
+    "talking": 13,
+    "determination": 14,
+    "teamwork": 14,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 70,
+    "dancer": 130,
+    "model": 80,
+    "comedy": 50
+  },
+  "radar": {
+    "PHY": 14.25,
+    "APP": 15.6,
+    "SNG": 13.75,
+    "DAN": 14.67,
+    "MEN": 13.5
+  },
+  "ability": 71,
+  "ability_raw": 71.688,
+  "evidence_summary": {
+    "high_confidence": [
+      "profile stubs"
+    ],
+    "medium_confidence": [
+      "shared event dance mentions"
+    ],
+    "procedural_only": [
+      "junior / lower-middle D"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "slightly below roster mean"
+    ],
+    "ranks": [
+      "junior tail"
+    ],
+    "floors": [],
+    "biases": [
+      "cute age 18"
+    ]
+  },
+  "career_context_used": [
+    "catalog: じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
+    "prior groups: じーくらむ！, あげもん！",
+    "career_months=29.5",
+    "prior_group_months=22.9",
+    "short tenure; newcomer uncertainty preserved"
+  ]
+}

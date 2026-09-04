@@ -1,0 +1,321 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:03.253Z",
+  "member": {
+    "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+    "name": "籾山ひめり",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 158,
+    "career_months": 35,
+    "prior_group_months": 58,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 5,
+      "dance_performance": 5,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 4,
+      "mental_professional": 4,
+      "traits": 4
+    },
+    "final_coverage": {
+      "vocal": 5,
+      "dance_performance": 5,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 4,
+      "mental_professional": 4,
+      "traits": 4
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"籾山ひめり\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこライブに行ったことある人に質問ですが、実際 ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10288219570",
+          "description": "### ビジュアル、ももなんはエグいですよね！私もビックリしました。歌ですが、たかねこは籾山ひめり橋本桃呼東山恵里沙日向端ひな葉月紗蘭が歌唱メンです。ひめりちゃんは10年やっているので、踊りながらのコントロールが上手いです。スッと入ってくる安定した歌い方で、生では最も聴きやすいのではないでしょうか？恐らく、初見さんに一番わかりやすく響くかと思います。ただ、高音が苦手なので、たまにビックリするような音の外し方をします。 「いつか私がママになったら」の最後のフェイク部分がわかりやすいので確認してみて下さい。 こういった欠点がありますが、総じて上手いと思います。 桃呼ちゃんは、技術的には最も巧いかと思います。 ハマった時は鳥肌が立つようなカッコ良さがあります。 ステージではイキってしまいがちで、声に波はありますね。 歌い方にクセありと感じる人は感じるので、メインで歌うよりスパイス的な役割の方が生きるタイプかと思います。 桃呼ちゃんの歌がないと物足りないと感じる歌唱力の持ち主です。 [...] 恵里沙ちゃんは、バランスが取れたタイプで、高音から低音まで、強くも弱くも幅広く声が出ますし、カッコ良くも可愛くも感情を乗せた表現ができます。 また、音を外すということがあまりないです。 たかねこのレコーディング時のハモり音は彼女に任せられているくらいなので、たかねこの歌の柱なのだと思います。 日向端ひなちゃんは、高音域に生きるタイプで、艶のある独特の声質が素敵だなぁと思います。 落ち着いて歌えば、決戦スピリットの歌ってみたのように、心地の良い歌い方ができ、非常に上手いです。 ただ、生パフォーマンスの歌唱は一定の歌い方になってしまいがちで、音を外すこともあるので、これから上達していったら凄くなるなぁと思います。 葉月紗蘭ちゃんは、独特の声色で、ソロで生きるタイプですね。 好きな人には凄くたまらない歌声かと思います。 ライブで踊りながらや爆音の中歌うと弱々しく浮いてしまうので、グループ活動をするのであれば、声量など課題はありますね。 他の5人に関しても、みんな好みで、好きな声や歌い方があるでしょうし、推しメンが一番上手いってみんな思ってるんじゃないでしょうか？ [...] グループアイドルはそれでいいと思います(^^)",
+          "age": null,
+          "score": 0.81524754,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "歌声",
+            "高音",
+            "低音",
+            "パフォーマンス"
+          ],
+          "relevance_score": 15
+        },
+        {
+          "title": "4_籾山ひめり – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/himeri_momiyama",
+          "description": "血液型: B型. 星座: おひつじ座. 身長: 158cm. 生年月日: 2004年3月22日. 出身地: 栃木県. 趣味: 動画編集・ファッション・音楽・カフェラテを飲むこと（生きがい）.",
+          "age": null,
+          "score": 0.4784076,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "17歳のダンスパフォーマンスビデオ公開中！ - TikTok",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7285327109424221458",
+          "description": "#籾山ひめり #高嶺のなでしこ. Keywords: 17歳 ダンスパフォーマンス, 籾山ひめり ダンスビデオ, 高嶺のなでしこ パフォーマンス, 若者 ダンス映像",
+          "age": null,
+          "score": 0.5446325,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "籾山ひめり 歌声に感動 | TikTok",
+          "url": "https://www.tiktok.com/@momichan_hime/video/7629654774727609621",
+          "description": "この曲だいすきなの . 籾山ひめり 歌声に感動. 籾山ひめりさんの歌声に心打たれたファン必見！感動を呼ぶパフォーマンスをチェック！ #籾山ひめり",
+          "age": null,
+          "score": 0.39662948,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "高嶺のなでしこ 結成から3年、過去最大規模となる幕張 ... - USENの",
+          "url": "https://e.usen.com/news/news-event/-3-4-1.html",
+          "description": "照明で赤く染まったステージで籾山ひめりが妖艶なボーカルを響かせたり、さっきまでキュートな笑顔を見せていた松本や東山もシリアスな表情でファンを煽っ",
+          "age": null,
+          "score": 0.5806618,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ボーカル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ on X: \"   #千鳥の鬼レンチャン 出演   #HoneyWorks ...",
+          "url": "https://x.com/takanenofficial/status/2071237280044319067",
+          "description": "... ひめりんこと #籾山ひめり さんの#ダンシング鬼レンチャン ✨ 番組初のヘッドセット歌唱 全力ダンス10曲魅せられるのか？ . 7:20 AM · Jun 28",
+          "age": null,
+          "score": 0.5715041,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ（城月菜央・松本ももな・籾山ひめり）が2nd ...",
+          "url": "https://recochoku.jp/ch/recolog/takanenonadeshiko",
+          "description": "レコログ\n\nビクターエンタテインメントより『美しく⽣きろ/恋を知った世界』にてメジャーデビュー。   \n     \n   12月11日(水)には2ndシングル『I’M YOUR IDOL / アドレナリンゲーム』をリリース。   \n     \n   2025年2月14日(金)には、『高嶺のなでしこ ワンマンライブ 2025 〜Cute for life〜』supported by KOJIを国立代々木競技場第二体育館で開催。\n\n X\n Facebook\n LINE\n はてなブックマーク\n\nカテゴリー\n:   インタビュー\n\n関連サービス\n:   Artistmurketインタビュー\n\n## ランキング\n\n 1\n\n   米津玄師インタビュー<br>「ポジティブな音楽を作り続けるためにはどうしたらいいかと日々考えています。」　\n\n  INTERVIEW\n\n  ### 米津玄師インタビュー 「ポジティブな音楽を作り続けるためにはどうしたらいいかと日々考えています。」\n 2\n\n   BE:FIRSTがレコチョク新人ランキングタイトルで2冠獲得！多くの人に愛される彼らが今語る想いとは [...] INTERVIEW\n\n  ### 高嶺のなでしこ（城月菜央・松本ももな・籾山ひめり）が2ndシングルで描いた新境地を語る「ずっとそばにいてくださると嬉しいです」\n\n  Artistmurketインタビュー\n 彩音が語る、ファンと歩んだ20年への感謝。人気楽曲のデジタル音源＋CD風キーホルダーでいつもそばに \n\n  INTERVIEW\n\n  ### 彩音が語る、ファンと歩んだ20年への感謝。人気楽曲のデジタル音源＋CD風キーホルダーでいつもそばに\n\n  Artistmurketインタビュー\n ドレスコーズ志磨遼平、過去の映像作品のデジタル版をリリース、作品毎に自身の解説動画コメントも \n\n  INTERVIEW\n\n  ### ドレスコーズ志磨遼平、過去の映像作品のデジタル版をリリース、作品毎に自身の解説動画コメントも\n\n  Artistmurketインタビュー\n 再始動した「リリィさよなら。」が江嶋綾恵梨（ex.26時のマスカレイド）とコラボ、「カランコロン feat.江嶋綾恵梨」をリリース！二人が語る今とこれから \n\n  INTERVIEW [...] INTERVIEW\n\n  ### レコチョクランキングで2冠を制したBE:FIRSTがBESTYへの想いを語ったインタビュー公開！2023年を振り返って思うことや来年に向けた抱負を語る！\n\n## 新着記事\n\n 上野優華が語る、デビュー10周年を振り返って思うこと―「この5年間が一番成長できたと思っています」\n\n  INTERVIEW\n\n  ### 上野優華が語る、デビュー10周年を振り返って思うこと―「この5年間が一番成長できたと思っています」\n 新進気鋭のクリエイターユニット・otsumamiのインタビューが公開！新曲「レモン水」へ込めた想いや今後の活動への意気込みを語る\n\n  INTERVIEW\n\n  ### 新進気鋭のクリエイターユニット・otsumamiのインタビューが公開！新曲「レモン水」へ込めた想いや今後の活動への意気込みを語る\n 唯一無二のユニット・harhaがBreakthroughフィーチャーアーティストに決定！彼らの魅了や素顔に迫るインタビューが公開！\n\n  INTERVIEW",
+          "age": null,
+          "score": 0.507544,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ3周年“9人で立つ大舞台”籾山ひめり「私たちの覚悟を ...",
+          "url": "https://www.youtube.com/watch?v=dmYhpOLT7hg",
+          "description": "https://www.youtube.com/@mezamashimedia チャンネル登録お願いします #高嶺のなでしこ #たかねこ#城月菜央 #涼海すう #橋本桃呼 #葉月紗蘭 #東山",
+          "age": null,
+          "score": 0.4678915,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！籾山ひめり編 - 運転免許トロッカ！",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa01.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！籾山ひめりさんの回答はコチラ！",
+          "age": null,
+          "score": 0.34263802,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "決戦スピリット（cover）／日向端ひな×籾山ひめり - YouTube",
+          "url": "https://www.youtube.com/watch?v=aeLMEitzNgo",
+          "description": "日向端ひなです！ 大好きなCHiCO with HoneyWorksさんの《決戦スピリット》を歌わせて頂きました！ 自分自身この曲が大好きなのでとても楽しく歌う",
+          "age": null,
+          "score": 0.27256745,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"籾山ひめり\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "4_籾山ひめり – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/himeri_momiyama",
+          "description": "血液型: B型 ; 星座: おひつじ座 ; 身長: 158cm ; 生年月日: 2004年3月22日 ; 出身地: 栃木県.",
+          "age": null,
+          "score": 0.4874788,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "籾山ひめり (@momichan_hime)",
+          "url": "https://www.instagram.com/momichan_hime?hl=ja",
+          "description": "⁡とっても可愛いお洋服を着せていただいたよ ♡ #オシグラフ(@. ⁡とっても可愛いお ... 28日絶対にみてね✨️ #たかねこ #高嶺のなでしこ",
+          "age": null,
+          "score": 0.59033114,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "籾山ひめり(もみやまひめり) (@himeri_momiyama) / X",
+          "url": "https://x.com/himeri_momiyama",
+          "description": "フジテレビ 『 #千鳥の鬼レンチャン 』に出演させていただきました✨ #高嶺のなでしこ の籾山ひめりです #ダンシング鬼レンチャン いかがでしたか？",
+          "age": null,
+          "score": 0.5450684,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「#籾山ひめり」のYahoo!リアルタイム検索 - X（旧Twitter ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&md=h&p=%23%E7%B1%BE%E5%B1%B1%E3%81%B2%E3%82%81%E3%82%8A&rkf=1&ifr=tl_hash",
+          "description": "籾山ひめり」に関するYahoo!リアルタイム検索結果です。X(旧Twitter)上で今発信された情報をリアルタイムに検索できます。 #籾山ひめり さん(高嶺のなでしこ)",
+          "age": null,
+          "score": 0.4054258,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！籾山ひめり編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa01.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！籾山ひめりさんの回答はコチラ！",
+          "age": null,
+          "score": 0.4042963,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"籾山ひめり\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "籾山ひめりのプロフィール",
+          "url": "https://www.oricon.co.jp/prof/990001969",
+          "description": "2004年3月22日生まれ、栃木県出身。アイドルグループ・Someday Somewhereの元メンバー。22年8月、アイドルグループ・高嶺のなでしこに加入。 2023-10-27 更新",
+          "age": null,
+          "score": 0.7251239,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "4_籾山ひめり – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/himeri_momiyama",
+          "description": "籾山 ひめり MOMIYAMA HIMERI 血液型 B型 星座 おひつじ座 身長 158cm 生年月日 2004年3月22日 出身地 栃木県",
+          "age": null,
+          "score": 0.5792344,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "高嶺のなでしこ・籾山ひめり復帰へ「アイドルとして軽率な行動」",
+          "url": "https://www.sanspo.com/article/20260130-MUZWXFMYGZAZHLCIDEHZPPEQ3Y",
+          "description": "9人組アイドル、高嶺のなでしこの公式サイトが30日に更新され、キャプテンの籾山ひめり（21）の活動復帰を発表した。 公式サイトによると、昨年12月、",
+          "age": null,
+          "score": 0.43611822,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "籾山ひめり",
+          "url": "https://ja.wikipedia.org/wiki/%E7%B1%BE%E5%B1%B1%E3%81%B2%E3%82%81%E3%82%8A",
+          "description": "籾山 ひめり（もみやま ひめり、2004年3月22日 - ）は、日本の女性アイドル、女優、振付師。女性アイドルグループ・高嶺のなでしこのメンバー。",
+          "age": null,
+          "score": 0.756376,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "振付"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "IDOL : 高嶺のなでしこ",
+          "url": "https://ticket.rakuten.co.jp/features/interview221229/index.html",
+          "description": "そんな注目すべきアイドル『高嶺のなでしこ』をインタビューにて特集！ ①高嶺のなでしこのパーソナルな部分、趣味・特技、好きなことなど ②",
+          "age": null,
+          "score": 0.5443418,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "籾山ひめり(もみやまひめり) (@himeri_momiyama) / X",
+          "url": "https://x.com/himeri_momiyama",
+          "description": "フジテレビ 『 #千鳥の鬼レンチャン 』に出演させていただきました✨ #高嶺のなでしこ の籾山ひめりです #ダンシング鬼レンチャン いかがでしたか？",
+          "age": null,
+          "score": 0.5299209,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！籾山ひめり編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa01.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！籾山ひめりさんの回答はコチラ！",
+          "age": null,
+          "score": 0.5068117,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.549Z",
+  "skill": "idol-attribute-generation",
+  "uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+  "name": "春野莉々",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 21,
+  "height_cm": 158,
+  "career_months": 35.8,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 35.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "高嶺のなでしこ (2022-07-10–2025-07-31)",
+  "attributes": {
+    "strength": 11,
+    "agility": 13,
+    "natural_fitness": 12,
+    "stamina": 14,
+    "cute": 15,
+    "pretty": 14,
+    "pitch": 17,
+    "tone": 17,
+    "breath": 15,
+    "rhythm": 14,
+    "power": 13,
+    "stage_presence": 15,
+    "wit": 12,
+    "humor": 12,
+    "talking": 13,
+    "determination": 15,
+    "teamwork": 14,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 220,
+    "dancer": 100,
+    "model": 60,
+    "comedy": 40
+  },
+  "radar": {
+    "PHY": 12.5,
+    "APP": 14.8,
+    "SNG": 15.75,
+    "DAN": 14,
+    "MEN": 13.33
+  },
+  "ability": 71,
+  "ability_raw": 71.542,
+  "evidence_summary": {
+    "high_confidence": [
+      "peer: emotional expressive vocals"
+    ],
+    "medium_confidence": [
+      "dance videos exist"
+    ],
+    "procedural_only": [
+      "vocal-strong with weak support domains"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pitch/tone 16-17"
+    ],
+    "ranks": [
+      "vocal over dance; guide ~72"
+    ],
+    "floors": [],
+    "biases": []
+  },
+  "career_context_used": [
+    "catalog: 高嶺のなでしこ (2022-07-10–2025-07-31)",
+    "career_months=35.8",
+    "may be end-dated after opening in catalog; generated against S6 opening evidence roster"
+  ]
+}

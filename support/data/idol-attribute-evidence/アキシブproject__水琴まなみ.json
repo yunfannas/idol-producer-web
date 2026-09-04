@@ -1,0 +1,380 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:08.447Z",
+  "member": {
+    "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+    "name": "水琴まなみ",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 20,
+    "height_cm": null,
+    "career_months": 7,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 5,
+      "dance_performance": 5,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 6,
+      "mental_professional": 6,
+      "traits": 6
+    },
+    "final_coverage": {
+      "vocal": 5,
+      "dance_performance": 5,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 6,
+      "mental_professional": 6,
+      "traits": 6
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"水琴まなみ\" \"アキシブproject\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "「すごい！体の半分以上が脚！」アキシブProject・新メンバー水琴まなみの超絶スタイルをMC沖侑果が絶賛／春のアイドル祭り2025トークライブレポート | WEBザテレビジョン",
+          "url": "https://thetv.jp/news/detail/1255310",
+          "description": "「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject\n\n「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject※ザテレビジョン撮影\n\nこの記事はWEBザテレビジョン編集部が制作しています。\n\n春のアイドル祭りの記事はこちら  \n 出演アイドルの記事を読む  \n   \n   \n 「楽演祭EXTRA -春のアイドル祭り 2025-」特設ページ  \n   \n   \n ■「楽演祭EXTRA -春のアイドル祭り2025-」  \n   \n ■音楽ライブステージ(ホールA)  \n ニコニコでの有料生配信　4/22(火),23(水)まで販売して配信チケット販売中！  \n   \n 楽演祭EXTRA -春のアイドル祭り 2025- ホールA 音楽ライブステージ 独占生中継  \n   \n ・配信チケット代金：チケット3,900円+販売手数料220円(税込)/日  \n ・アーカイブ期間：30日間  \n ・チケット購入ページ  \n \n\n### 求人情報\n\nSponsored by\n\n- NEW [...] 最安値:7,296円\n\n  Amazonで見る\n affiliate1\n\n  We're timelesz LIVE TOUR 2026 episode 2 MOMENTUM (通常盤)(3枚組) [DVD]\n\n  最安値:5,100円\n\n  Amazonで見る\n\nAmazonでもっと見る\n\n 月刊ザテレビジョン10月号\n\n  月刊ザテレビジョン10月号\n  :   表紙：深田竜生＆浮所飛貴\n ザテレビジョンお正月超特大号 2026\n\n  ザテレビジョンお正月超特大号 2026\n  :   表紙：Travis Japan\n ザテレビジョンCOLORS Vol.61 PINK\n\n  ザテレビジョンCOLORS Vol.61 PINK\n  :   表紙：中島健人\n NHK2026年 大河ドラマ 豊臣兄弟！完全ナビブック\n\n  NHK2026年 大河ドラマ 豊臣兄弟！完全ナビブック\n ザテレビジョンShow　Vol.10\n\n  ザテレビジョンShow　Vol.10\n  :   表紙：岩本照×深澤辰哉×宮舘涼太\n ザテレビジョンgenic.　 Vol.8 [...] 話題の作品がいっぱい！コミック試し読みまとめ\n ザテレビジョン連載 VIBY 159 Road to 武道館\n\n  ザテレビジョン連載 VIBY 159 Road to 武道館\n\nもっと見る\n\nPICK UP\n\n ディズニープラスのおすすめ作品をザテレビジョンが紹介！\n Leminoの注目作品をWEBザテレビジョンが大紹介！\n ドラマが充実の「FOD」を大特集！\n 各局話題のドラマが大集合! Hulu特集\n 週刊アベマ\n BSJapanextを大特集\n TELASAの最新情報はこちら！\n 17LIVEを大特集\n\n音楽・アイドル  \nニュースランキング\n\n2026年9月4日12:00\n\n SKE48の新曲ダンスはギャルがテーマの“キャピキャピダンス”　「パレオはエメラルド」に続く新たな夏の定番曲に\n\n  SKE48の新曲ダンスはギャルがテーマの“キャピキャピダンス”　「パレオはエメラルド」に続く新たな夏の定番曲に\n\n  2026/9/4 8:15\n 家入レオが語る、29歳等身大の結婚観「不自由も悪くないと思える年齢になって、結婚を身近に考えられるようになった」",
+          "age": null,
+          "score": 0.53619206,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 茉井良菜 | まつい らな | らなてぃん | (1999-01-13) 1999年1月13日（27歳） | 不明 | 奈良県 | ミントグリーン | 7期生 | 2023年12月31日～ | 元・Le Siana、煌めき☆アンフォレント |\n| 水琴まなみ | みこと まなみ | まなみん | (2004-08-17) 2004年8月17日（22歳） | B型 | 京都府 | 水色 | 8期生 | 2024年12月19日～ |\n| 天川ほたる | あまかわ ほたる | ほたる | (2005-10-27) 2005年10月27日（20歳） | A型 | 群馬県 | 紫 | 9期生 | 2026年2月28日〜 | 元・chuLa |\n| 夢咲ありさ | ゆめさき ありさ | ありさ あち | (2003-04-01) 2003年4月1日（23歳） | B型 | 大阪府 | ピンク | 9期生 | 2026年2月28日〜 | 元・LINK START | [...] | アキシブproject |\n\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2012年 - |\n| 事務所 | ライブプラネット\") (2012年 - ） |\n| 共同作業者 |  imaginate (2024年 - )  岡村元義（プロデューサー） |\n| 公式サイト | アキシブproject |\n| メンバー |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ |\n| 旧メンバー | 過去のメンバーを参照。 |\n\n| アキシブproject |\n\n| YouTube |\n| チャンネル |  アキシブproject 公式チャンネル |\n| 活動期間 | 2012年9月28日 - |\n| ジャンル |  音楽  エンターテインメント |\n| 登録者数 | 1.08万人 |\n| 総再生回数 | 5,538,233回 |\n| チャンネル登録者数・総再生回数は 000000002026-04-21-00002026年4月21日時点。 |\n| テンプレートを表示 | [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | |",
+          "age": null,
+          "score": 0.5837973,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "Replies by 水琴まなみ【アキシブ】 (@aksb_manami) / X",
+          "url": "https://x.com/aksb_manami/with_replies",
+          "description": "@aksb_manami · Aug 17. ほたちゃんありがとう ほたちゃんの歌もダンスもふわふわなところもぜんぶぜんぶ大好き‼️ ... 【振付】アキシブproject / 水琴まなみ",
+          "age": null,
+          "score": 0.49128565,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "水琴まなみ【アキシブproject】",
+          "url": "https://www.showroom-live.com/r/manami_aksb",
+          "description": "アキシブproject新メンバー水色担当 京都府出身です୨୧⑅*",
+          "age": null,
+          "score": 0.52700067,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ【アキシブ】 on X",
+          "url": "https://x.com/aksb_manami/status/1867526006812332115",
+          "description": "この度、アキシブproject新メンバー 水色担当になりました 水琴 まなみ（みこと まなみ）です！ ずっと夢だったアイドルを\"アキシブproject\"として",
+          "age": null,
+          "score": 0.48733237,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ (@aksb_manami)",
+          "url": "https://www.instagram.com/aksb_manami",
+          "description": "アキシブprojectの水琴まなみです 本日からInstagram開設しました〜♡♡よろしくお願いし",
+          "age": null,
+          "score": 0.4572585,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject 13周年ライブ｜新曲「Step By Step」披露",
+          "url": "https://www.tiktok.com/@sochan.o56/video/7647061160931446037",
+          "description": "ファンコメントでは「13周年おめでとう✨️新曲2曲ともよかった」との声が寄せられ、水琴まなみも出演しています。ここでは公演のハイライトと新曲「Step",
+          "age": null,
+          "score": 0.40373197,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブProject【水琴まなみ】生誕祭応援プロジェクト",
+          "url": "https://soreosu.com/projects/manami-birthday2026",
+          "description": "アキシブProject【水琴まなみ】生誕祭応援プロジェクト ; 目標達成率 2334% ; 資金の使い道. ¥100,000円 生誕開催¥400,000円 生誕衣装作成¥600,000円",
+          "age": null,
+          "score": 0.30797216,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【水琴まなみ】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/850319/view",
+          "description": "2025年8月実施予定の水琴まなみ生誕祭をより盛大にお祝いできるようご支援をお願いいたします.",
+          "age": null,
+          "score": 0.3070987,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"水琴まなみ\" \"アキシブproject\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "「すごい！体の半分以上が脚！」アキシブProject・新メンバー ...",
+          "url": "https://thetv.jp/news/detail/1255310",
+          "description": "アキシブProjectは“秋葉原と渋谷の文化の融合”をコンセプトに活動している王道アイドルグループ。5月に活動12周年を迎えるということで、葵ふうは「歴史があるからこそ、アイドルが好きな人はみんな知ってるような曲が数曲あるので、ライブが盛り上がるのが魅力かなと思います」とグループについて解説。  \n   \n 葵はさらに「(水琴)まなみの等身がすごくて、脚が長いんですよ」とアピール。水琴が立ち上がると、スタイルの良さにMCの沖侑果から「すごい、体の半分が脚！」と驚きの声が上がる。  \n   \n 最近、ハマっていることの話題では、神崎らんが「アキシブに映画ブームが来てて、オフの日があればみんなで映画館に行ってます。最近、みんなで見にいったのは『ファーストキス 1ST KISS』です」とアキシブProject内での流行を紹介。  \n   \n 清見るんも「昨日、かえちゃん(平沢かえ)、まなみん(水琴)と見にいって。『少年と犬っていう』超泣ける感動映画を見て、大号泣して涙でメークを崩して帰りました」と話す。 [...] アキシブProjectが「楽演祭EXTRA -春のアイドル祭り 2025-」出演し、ライブパフォーマンス後にはトークライブを行った\n アキシブProject・新メンバー水琴まなみの超絶スタイルをMC沖侑果が絶賛\n 【写真】笑顔弾ける茉井良菜らアキシブProjectのメンバーたち\n 「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject\n 「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject\n 「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject\n 「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject\n 「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject\n 「楽演祭EXTRA -春のアイドル祭り 2025-」でライブパフォーマンスを見せたアキシブProject [...] 検索;)\n\nKADOKAWA Group\n\n ニュース;)\n 番組;)\n タレント;)\n\n閉じる;)\n\n 芸能ニュース\n 音楽・アイドル\n 「すごい！体の半分以上が脚！」アキシブProject・新メンバー水琴まなみの超絶スタイルをMC沖侑果が絶賛／春のアイドル祭り2025トークライブレポート\n\n# 「すごい！体の半分以上が脚！」アキシブProject・新メンバー水琴まなみの超絶スタイルをMC沖侑果が絶賛／春のアイドル祭り2025トークライブレポート\n\n音楽 アイドル インタビュー\n\n2025/04/19 19:30\n\n ポスト\n シェア\n\nアキシブProjectが「楽演祭EXTRA -春のアイドル祭り 2025-」出演し、ライブパフォーマンス後にはトークライブを行った\n\nアキシブProjectが「楽演祭EXTRA -春のアイドル祭り 2025-」出演し、ライブパフォーマンス後にはトークライブを行った※ザテレビジョン撮影",
+          "age": null,
+          "score": 0.63179934,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "MC",
+            "トーク"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 茉井良菜 | まつい らな | らなてぃん | (1999-01-13) 1999年1月13日（27歳） | 不明 | 奈良県 | ミントグリーン | 7期生 | 2023年12月31日～ | 元・Le Siana、煌めき☆アンフォレント |\n| 水琴まなみ | みこと まなみ | まなみん | (2004-08-17) 2004年8月17日（22歳） | B型 | 京都府 | 水色 | 8期生 | 2024年12月19日～ |\n| 天川ほたる | あまかわ ほたる | ほたる | (2005-10-27) 2005年10月27日（20歳） | A型 | 群馬県 | 紫 | 9期生 | 2026年2月28日〜 | 元・chuLa |\n| 夢咲ありさ | ゆめさき ありさ | ありさ あち | (2003-04-01) 2003年4月1日（23歳） | B型 | 大阪府 | ピンク | 9期生 | 2026年2月28日〜 | 元・LINK START | [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | | [...] | アキシブproject |\n\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2012年 - |\n| 事務所 | ライブプラネット\") (2012年 - ） |\n| 共同作業者 |  imaginate (2024年 - )  岡村元義（プロデューサー） |\n| 公式サイト | アキシブproject |\n| メンバー |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ |\n| 旧メンバー | 過去のメンバーを参照。 |\n\n| アキシブproject |\n\n| YouTube |\n| チャンネル |  アキシブproject 公式チャンネル |\n| 活動期間 | 2012年9月28日 - |\n| ジャンル |  音楽  エンターテインメント |\n| 登録者数 | 1.08万人 |\n| 総再生回数 | 5,538,233回 |\n| チャンネル登録者数・総再生回数は 000000002026-04-21-00002026年4月21日時点。 |\n| テンプレートを表示 |",
+          "age": null,
+          "score": 0.533714,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "水琴まなみ【アキシブproject】 - プロフィール",
+          "url": "https://www.showroom-live.com/room/profile?room_id=540615",
+          "description": "プロフィール: - アキシブproject 新メンバー 水色担当 京都府出身です୨୧⑅*",
+          "age": null,
+          "score": 0.52802294,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "水琴まなみのプロフィール・SNS情報｜アキシブproject",
+          "url": "https://popidolblog.com/article/member-310-profile.html",
+          "description": "水琴まなみは「アキシブproject」のメンバーです。 本記事では水琴まなみの誕生日・メンバーカラー・SNS情報などをまとめています。 ライブでのコール・",
+          "age": null,
+          "score": 0.49128565,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "水琴まなみ【アキシブ】 (@aksb_manami) / X",
+          "url": "https://x.com/aksb_manami",
+          "description": "AkishibuProject ♡ 水色担当 ┊︎ 京都府出身︎┊︎ #まなみんとはんなり┊︎ライブ予定▶︎▷ハイライト🪄︎︎",
+          "age": null,
+          "score": 0.51383984,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ【アキシブ】 on X",
+          "url": "https://x.com/aksb_manami/status/1867526006812332115",
+          "description": "この度、アキシブproject新メンバー 水色担当になりました 水琴 まなみ（みこと まなみ）です！ ずっと夢だったアイドルを\"アキシブproject\"として",
+          "age": null,
+          "score": 0.4906999,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブprojectの新メンバー紹介：水琴まなみ",
+          "url": "https://www.tiktok.com/@aksb_manami/video/7469393044475743506",
+          "description": "アキシブprojectの新メンバー、水琴まなみの魅力を発見しよう！ 彼女のダンスを見逃さないで！ #アキシブproject #アイドル. Keywords: 水琴まなみ 新",
+          "age": null,
+          "score": 0.47154015,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ",
+          "url": "https://www.tiktok.com/discover/%E6%B0%B4%E7%90%B4%E3%81%BE%E3%81%AA%E3%81%BF",
+          "description": "タイムレスメモリー 歌ってみた｜水琴まなみ×アキシブproject撮可. 特別な一日の「タイムレスメモリー」を歌唱・撮可ショット。アキシブの曲で撮れて嬉しい瞬間を収めた",
+          "age": null,
+          "score": 0.4358301,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ (@aksb_manami)",
+          "url": "https://www.instagram.com/aksb_manami",
+          "description": "709 followers · 18 following · 15 posts · @aksb_manami: “アキシブproject 水色 ྀི”",
+          "age": null,
+          "score": 0.4040141,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【水琴まなみ】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/850319/view",
+          "description": "2025年8月実施予定の水琴まなみ生誕祭をより盛大にお祝いできるようご支援をお願いいたします.",
+          "age": null,
+          "score": 0.32794857,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"水琴まなみ\" \"アキシブproject\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "「すごい！体の半分以上が脚！」アキシブProject・新メンバー ...",
+          "url": "https://thetv.jp/news/detail/1255310",
+          "description": "検索;)\n\nKADOKAWA Group\n\n ニュース;)\n 番組;)\n タレント;)\n\n閉じる;)\n\n 芸能ニュース\n 音楽・アイドル\n 「すごい！体の半分以上が脚！」アキシブProject・新メンバー水琴まなみの超絶スタイルをMC沖侑果が絶賛／春のアイドル祭り2025トークライブレポート\n\n# 「すごい！体の半分以上が脚！」アキシブProject・新メンバー水琴まなみの超絶スタイルをMC沖侑果が絶賛／春のアイドル祭り2025トークライブレポート\n\n音楽 アイドル インタビュー\n\n2025/04/19 19:30\n\n ポスト\n シェア\n\nアキシブProjectが「楽演祭EXTRA -春のアイドル祭り 2025-」出演し、ライブパフォーマンス後にはトークライブを行った\n\nアキシブProjectが「楽演祭EXTRA -春のアイドル祭り 2025-」出演し、ライブパフォーマンス後にはトークライブを行った※ザテレビジョン撮影 [...] ### キーワード\n\n 春のアイドル祭り2025\n アキシブProject\n 葵ふう\n 如月なな\n 古賀みれい\n 神崎らん\n 清見るん\n 平沢かえ\n 茉井良菜\n 水琴まなみ\n 美山ひな\n 沖侑果\n 音楽\n インタビュー\n 女性アイドル\n\n ポスト\n シェア\n\n### 関連人物\n\n No Image\n\n  アキシブproject\n No Image\n\n  茉井良菜\n No Image\n\n  沖侑果\n\n## おすすめ特集\n\n注目の映画やドラマ、人物を総力特集\n\n 【秋ドラマ】2026年10月期の新ドラマまとめ一覧\n\n  随時更新中！【秋ドラマ】2026年10月期の新ドラマまとめ一覧\n 2026夏密着レポ！\n\n  手羽先センセーション2026夏密着レポ！\n 第128回ザテレビジョンドラマアカデミー賞\n\n  結果発表！第128回ザテレビジョンドラマアカデミー賞\n ザテレビジョン マンガ部まとめ\n\n  SNSでバズった話題のマンガが読み放題！ザテレビジョン マンガ部まとめ\n コミック試し読みまとめ [...] アキシブProjectは“秋葉原と渋谷の文化の融合”をコンセプトに活動している王道アイドルグループ。5月に活動12周年を迎えるということで、葵ふうは「歴史があるからこそ、アイドルが好きな人はみんな知ってるような曲が数曲あるので、ライブが盛り上がるのが魅力かなと思います」とグループについて解説。  \n   \n 葵はさらに「(水琴)まなみの等身がすごくて、脚が長いんですよ」とアピール。水琴が立ち上がると、スタイルの良さにMCの沖侑果から「すごい、体の半分が脚！」と驚きの声が上がる。  \n   \n 最近、ハマっていることの話題では、神崎らんが「アキシブに映画ブームが来てて、オフの日があればみんなで映画館に行ってます。最近、みんなで見にいったのは『ファーストキス 1ST KISS』です」とアキシブProject内での流行を紹介。  \n   \n 清見るんも「昨日、かえちゃん(平沢かえ)、まなみん(水琴)と見にいって。『少年と犬っていう』超泣ける感動映画を見て、大号泣して涙でメークを崩して帰りました」と話す。",
+          "age": null,
+          "score": 0.5221784,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "Replies by 水琴まなみ【アキシブ】 (@aksb_manami) / X",
+          "url": "https://x.com/aksb_manami/with_replies",
+          "description": "【振付】アキシブproject / 水琴まなみ生誕ソロ曲「ラストシンデレラ」 一緒に振付ました！ もう本当にまなみが大天才チャンネルなので事前に世界観や要望やテイスト",
+          "age": null,
+          "score": 0.350133,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ソロ曲",
+            "振付"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "水琴まなみ【アキシブproject】",
+          "url": "https://www.showroom-live.com/r/manami_aksb",
+          "description": "アキシブproject新メンバー水色担当 京都府出身です୨୧⑅*",
+          "age": null,
+          "score": 0.635879,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ【アキシブ】 (@aksb_manami) / X",
+          "url": "https://x.com/aksb_manami",
+          "description": "AkishibuProject ♡ 水色担当 ┊︎ 京都府出身︎┊︎ #まなみんとはんなり┊︎ライブ予定▶︎▷ハイライト🪄︎︎",
+          "age": null,
+          "score": 0.5996498,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 茉井良菜 | まつい らな | らなてぃん | (1999-01-13) 1999年1月13日（27歳） | 不明 | 奈良県 | ミントグリーン | 7期生 | 2023年12月31日～ | 元・Le Siana、煌めき☆アンフォレント |\n| 水琴まなみ | みこと まなみ | まなみん | (2004-08-17) 2004年8月17日（22歳） | B型 | 京都府 | 水色 | 8期生 | 2024年12月19日～ |\n| 天川ほたる | あまかわ ほたる | ほたる | (2005-10-27) 2005年10月27日（20歳） | A型 | 群馬県 | 紫 | 9期生 | 2026年2月28日〜 | 元・chuLa |\n| 夢咲ありさ | ゆめさき ありさ | ありさ あち | (2003-04-01) 2003年4月1日（23歳） | B型 | 大阪府 | ピンク | 9期生 | 2026年2月28日〜 | 元・LINK START | [...] アキシブproject（アキシブプロジェクト、Akishibu Project）は、日本の女性アイドルグループ。秋葉原の「TwinBox AKIHABARA」をホームグランドとしている。ライブプラネット\")所属。\n\n## 年譜\n\n[編集]\n\n|  |\n\n| 伝記の記載を年譜形式のみとすることは推奨されていません。 人物の伝記は流れのあるまとまった文章で記述し、年譜は補助的な使用にとどめてください。（2025年1月） |\n\n### 2012年\n\n[編集] [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | |",
+          "age": null,
+          "score": 0.5737984,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴 まなみ-アキシブproject - iDOLY（アイドリー）",
+          "url": "https://idoly.jp/mikoto-manami",
+          "description": "メンバーカラー 水色. 血液型 B. 趣味・特技 -. ひとこと 「まなみのこと見とこ♡」. このアイドルが所属しているグループ. アキシブproject",
+          "age": null,
+          "score": 0.4974371,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "水琴まなみ (@aksb_manami)",
+          "url": "https://www.instagram.com/aksb_manami",
+          "description": "709 followers · 18 following · 15 posts · @aksb_manami: “アキシブproject 水色 ྀི”",
+          "age": null,
+          "score": 0.45667687,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブProject【水琴まなみ】生誕祭応援プロジェクト",
+          "url": "https://widget.soreosu.com/projects/manami-birthday2026/widget/600x144?site=animate",
+          "description": "アキシブProject【水琴まなみ】生誕祭応援プロジェクト. 株式会社LIVEPLANET. 総支援額. ¥2,334,000. 目標達成率. 2334%. 残り時間.",
+          "age": null,
+          "score": 0.4013364,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Akishibu project - Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Akishibu_project",
+          "description": "akishibu project (アキシブproject) is a seven-member idol group formed by ex-BiS member Yokoyama Rina. The group aims to connect the male-focused Akihabara",
+          "age": null,
+          "score": 0.3035568,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【水琴まなみ】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/850319/view",
+          "description": "この度2023年以降＜HEROINES＞関連アーティストの生誕祭につきまして、運営主導のクラウドファンディング方式による開催支援金の募集を行わせていただきます。 ご支援",
+          "age": null,
+          "score": 0.2884493,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

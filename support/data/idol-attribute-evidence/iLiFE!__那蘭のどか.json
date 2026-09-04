@@ -1,0 +1,283 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:50.024Z",
+  "member": {
+    "uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
+    "name": "那蘭のどか",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 19,
+    "height_cm": 164,
+    "career_months": 9,
+    "prior_group_months": 35,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 4,
+      "mental_professional": 4,
+      "traits": 4
+    },
+    "final_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 4,
+      "mental_professional": 4,
+      "traits": 4
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"那蘭のどか\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "【iLiFE!人気メンバー】「那蘭のどか」って何者？元ZOCの経歴や今話題の理由を徹底解説！ - FOMO²",
+          "url": "https://fomo-fomo.com/sns/influencer/nodoka-introduction",
+          "description": "## 那蘭のどかの基本プロフィール\n\n> この投稿をInstagramで見る\n>\n> 那蘭 のどか(@ilife\\_nodoka)がシェアした投稿\n\nまずは那蘭のどかさんの基本的なプロフィールを押さえておきましょう。\n\n◇プロフィール\n\n 生年月日: 2005年10月12日（現在19歳）\n 出身地: 愛知県\n 身長: 164cm\n 所属グループ: iLiFE!（担当カラー: ピンク）\n 元所属グループ: ZOC（2018年結成の大森靖子プロデュースのアイドルグループ）\n SNSフォロワー数: X（旧Twitter）約9.8万人、Instagram約10.6万人、TikTok約8.0万人（2025年7月時点）\n\n愛知県出身の19歳である那蘭のどかさんは、2024年9月からiLiFE!に加入したアイドルです。iLiFE!ではピンク色を担当し、「のどかの事好きにならない？」というキャッチコピーで親しまれています。SNS上でも人気が高く、X（旧Twitter）で約10万人のフォロワーを抱えるなど、同世代の若者を中心に強い支持を得ています。\n\n## 経歴：ZOC時代からiLiFE!へ [...] 元ZOCの経歴を持ち、iLiFE!でも中心メンバーとして活躍してきた那蘭のどかさん。突然の脱退発表は残念なニュースでしたが、8月27日の武道館ライブでは有終の美を飾るべく、最後のステージに立つ予定です。わずかデビュー数年で武道館に立つまでになったカリスマ性は本物であり、その才能に疑いはありません。今後グループを離れた後、彼女が芸能活動を続けるのか、新たな道を歩むのかは不透明ですが、19歳という若さを考えると再起のチャンスも十分あるでしょう。\n\nファンとしては複雑な気持ちかもしれませんが、まずはラストパフォーマンスとなる武道館ライブでの那蘭のどかさんの勇姿を見届けたいですね。そして彼女自身の反省と努力が実を結び、またいつかステージで輝く日が来ることを願わずにはいられません。詳しい情報や最新の発信はiLiFE!公式サイトや公式Xアカウントでも随時公開されるので、気になる方はぜひチェックしてみてください。今後の那蘭のどかさんの動向にも要注目です！\n\n画像\n\nFAVORITE\n\n## エンタメの人気記事\n\n 川﨑桜を紹介する記事のアイキャッチ [...] 引用元:iLiFE!公式X\n\n最近SNSで名前を見かける「那蘭のどか」さん、一体どんな人なのでしょうか？10代～20代に大人気の女性アイドルグループiLiFE!（アイライフ）のメンバーで、過去には別の有名グループにも所属していた経歴の持ち主です。この記事では、那蘭のどかさんの基本プロフィールからこれまでの活動、そして話題の最新ニュースまでをカジュアルな語り口で紹介していきます。\n\n目次\n\n画像\n\nINFOMATION\n\nあわせて読みたい\n\n【2025年版】iLiFE!とは？プロフィールや人気ランキング、SNSでバズった楽曲を徹底調査！ 引用元: 最近、TikTokやX（旧Twitter）で話題のアイドルグループ「iLiFE!（アイライフ）」を知っていますか？…\n\nあわせて読みたい\n\n【2025年8月時点】「天宮しゅな」って何者？基本プロフィールと話題の理由を徹底解説！\n\n(引用元：天宮しゅな公式X) 最近SNSで話題の天宮しゅなさんをご存知ですか？インフルエンサー・ゆりにゃさんがプロデュースするアイドルグループ「Pretty Chuu（プリテ…\n\n## 那蘭のどかの基本プロフィール",
+          "age": null,
+          "score": 0.5758033,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "【iLiFE!】那蘭のどかの本名が珍しい?!出身高校などのwikiプロフィールを徹底調査！ | aosora blog",
+          "url": "https://qoo-san111.com/naranodoka-profile",
+          "description": "October 1, 2024 - 那蘭のどか プロフィール ... 生年月日：2005年10月12日 年齢：18歳（2024年9月現在） 出身地：愛知県 旧所属グループ：ZOC（鎮目のどか名義）メンバーカラー：NEVERLAND GREEN 現所属グループ：iLiFE",
+          "age": null,
+          "score": 0.4787,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "那蘭のどか 【iLiFE!】 (@iLiFE_nara) / ...",
+          "url": "https://x.com/ilife_nara",
+          "description": "@iLiFE_official‧₊˚♡ならって読みます/ ピンク担当 /愛知県出身/ #どこでものどか ⇽チェキツイタグ♡ 8.27 日本武道館公演🇯🇵",
+          "age": null,
+          "score": 0.4630806,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "【iLiFE!】那蘭のどか経歴プロフィールをかわいい画像と共に紹介！",
+          "url": "https://yuka-voice.blog/naranodoka",
+          "description": "August 25, 2025 - もともとは「鎮目のどか」として別グループ「ZOC」で活動していましたが、2024年に「那蘭のどか」と改名し、新たにiLiFE!へ加入。",
+          "age": null,
+          "score": 0.41634628,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "那蘭のどか - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/那蘭のどか",
+          "description": "July 17, 2026 - 那蘭 のどか（なら のどか、2005年10月12日 - ）は日本の女性アイドル。ZOCの元メンバー、iLiFE!の元メンバー。2024年9月、鎮目 のどか（しずめ のどか）から改名。最終所属はimaginate。 · 2021年5月13日、大森靖子が「共犯者",
+          "age": null,
+          "score": 0.58408195,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Ilife 歌上手いランキング | TikTok",
+          "url": "https://www.tiktok.com/discover/ilife-歌上手いランキング",
+          "description": "2 weeks ago - 250610 COLNE BIG LOVE!! 初恋リバイバル #iLiFE #那蘭のどか #撮可 #おすすめ #fyp iLiFE! 那蘭のどか 初恋リバイバル 撮可ライブ.",
+          "age": null,
+          "score": 0.49084634,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどかさんの現在の年齢と経歴を徹底解説！ZOC・iLiFE!での活動、出身や高校生活は？",
+          "url": "http://nishinomiya-city.jp/nodoka",
+          "description": "October 17, 2025 - 那蘭のどかさんは、2005年生まれの19歳（2025年8月時点）で、 10代にしてZOC、iLiFE!という2つのグループで重要な役割を果たした、才能溢れるアイドルです。 音楽的な感性と努力を重",
+          "age": null,
+          "score": 0.47957736,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどかの経歴＆学歴!高校は名古屋から上京!前世は大抜擢の新メンバーだった! | ぬゃんブログ",
+          "url": "https://nuxyanblog.com/naranodoka",
+          "description": "November 12, 2025 - 那蘭のどか（なら のどか）さんは、日本のアイドルグループ「iLiFE!」の元メンバーです。 · 彼女は以前、「鎮目のどか（しずめ のどか）」としても知られていました。",
+          "age": null,
+          "score": 0.47811517,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【iLiFE】那蘭のどかの本名・年齢・経歴は？インスタやXはある？",
+          "url": "https://oto-blog.com/ilife-naranodoka-career",
+          "description": "December 29, 2025 - アイドルグループ「iLiFE!」のメンバーとして活動している「那蘭のどか（なら のどか）」さん。 · クールなビジュアルと、親しみやすいキャラクターのギャップで多くのファンを魅了しています。",
+          "age": null,
+          "score": 0.3835264,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどか (@ilife_nodoka)",
+          "url": "https://www.tiktok.com/@ilife_nodoka",
+          "description": "那蘭のどか · ilife_nodoka · 58Following · 188.6KFollowers · 2.9MLikes · iLiFE!のピンク♡ 那蘭(なら) のどかです👶🏻 · 864.3K · 862.1K · 934.9K · Log in",
+          "age": null,
+          "score": 0.38200366,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"那蘭のどか\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "那蘭のどか 【iLiFE!】 (@iLiFE_nara) / X",
+          "url": "https://x.com/iLiFE_nara?lang=ja",
+          "description": "iLiFE_official‧₊˚♡ならって読みます/ ピンク担当 /愛知県出身/ #どこでものどか ⇽チェキツイタグ♡ 8.27 日本武道館公演.",
+          "age": null,
+          "score": 0.4674539,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "「那蘭のどか or のどか ilife or 鎮目のどか」の ... - Yahoo!検索",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=%E9%82%A3%E8%98%AD%E3%81%AE%E3%81%A9%E3%81%8B+or+%E3%81%AE%E3%81%A9%E3%81%8B+ilife+or+%E9%8E%AE%E7%9B%AE%E3%81%AE%E3%81%A9%E3%81%8B&rkf=1",
+          "description": "電車で肩㌧㌧されてﾋﾞｸｩ！なったらこの画面見せられて神❣️ 女子からの可愛いは何時でも受け付けてますよ⊂(ᴖ ̫ᴖ )⊃ いい気分♬お姉さんありがとう ♡.",
+          "age": null,
+          "score": 0.42005292,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "那蘭 のどか (@ilife_nodoka)",
+          "url": "https://www.instagram.com/ilife_nodoka?hl=ja",
+          "description": "改めまして、iLiFE! 新メンバー、ピンク担当になりました 那蘭のどか (なら のどか)です ♡ 暖かい声も",
+          "age": null,
+          "score": 0.4874788,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどか (@ilife_nodoka)",
+          "url": "https://www.tiktok.com/@ilife_nodoka",
+          "description": "iLiFE!のピンク♡ 那蘭(なら) のどかです · ゆゆのオリジナル楽曲 - ジバニャンを使用して那蘭のどかが作成 · iLiFE! · =LOVEの超特急逃走中を使用して那蘭のどかが作成.",
+          "age": null,
+          "score": 0.42520002,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「那蘭のどか」のアイデア 70 件【2026】",
+          "url": "https://jp.pinterest.com/m__b1z/%E9%82%A3%E8%98%AD%E3%81%AE%E3%81%A9%E3%81%8B",
+          "description": "2026/04/23 - Pinterest で ❓ さんのボード「那蘭のどか」を見てみましょう。。「にのあい, ilife のどか, 那蘭のどか」のアイデアをもっと見てみましょう。",
+          "age": null,
+          "score": 0.3179242,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"那蘭のどか\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "那蘭 のどか (@ilife_nodoka)",
+          "url": "https://www.instagram.com/ilife_nodoka?hl=ja",
+          "description": "185K followers · 96 following · 147 posts · @ilife_nodoka: “@ilife.idol のピンク *.+ﾟ1st写真集 「忘れたくない」 発売 ... インタビュー動画で好きな曲",
+          "age": null,
+          "score": 0.49509352,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "那蘭のどか「アイドルになって初めての目標が、武道館に立つ ...",
+          "url": "https://scawaiiweb.com/ilife250710",
+          "description": "――まずは自己紹介とあなたの強みを教えてください！ 「那蘭のどかです。19歳で、A型のてんびん座で、iLiFE!のピンクを担当しています。自分",
+          "age": null,
+          "score": 0.6922474,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどか (@ilife_nodoka)",
+          "url": "https://www.tiktok.com/@ilife_nodoka",
+          "description": "フォロワー188.6K人。iLiFE!のピンク♡ 那蘭(なら) のどかです .那蘭のどかの人気動画、「さみしがりやです、 #iLiFE #...」、「さみしがりやです、 #iLiFE",
+          "age": null,
+          "score": 0.5249554,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどか 【iLiFE!】 (@iLiFE_nara) / X",
+          "url": "https://x.com/iLiFE_nara?lang=ja",
+          "description": "この度は皆様の期待を裏切ってしまい本当に申し訳ありません。 メンバーのみんなにも、いつも応援してくれている皆様にも今はとにかく謝罪することしか出来ません。",
+          "age": null,
+          "score": 0.42148095,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "那蘭のどかに関するお知らせ - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/topics/detail/index/1874",
+          "description": "平素よりiLiFE!を応援いただき誠にありがとうございます。 この度メンバーの『那蘭のどか』におきまして、重大な規約違反が判明いたしました。",
+          "age": null,
+          "score": 0.34700638,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.547Z",
+  "skill": "idol-attribute-generation",
+  "uid": "9871efc4-1501-41eb-a430-94fd34bf4015",
+  "name": "純嶺みき",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 22,
+  "height_cm": 164.5,
+  "career_months": 1.8,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 1.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "iLife! (2025-05-10–present)",
+  "attributes": {
+    "strength": 14,
+    "agility": 18,
+    "natural_fitness": 16,
+    "stamina": 18,
+    "cute": 14,
+    "pretty": 16,
+    "pitch": 15,
+    "tone": 16,
+    "breath": 15,
+    "rhythm": 18,
+    "power": 18,
+    "stage_presence": 18,
+    "wit": 13,
+    "humor": 12,
+    "talking": 13,
+    "determination": 16,
+    "teamwork": 14,
+    "fashion": 15
+  },
+  "traits": {
+    "singer": 150,
+    "dancer": 300,
+    "model": 120,
+    "comedy": 40
+  },
+  "radar": {
+    "PHY": 16.5,
+    "APP": 15.6,
+    "SNG": 16,
+    "DAN": 18,
+    "MEN": 13.83
+  },
+  "ability": 79,
+  "ability_raw": 79.042,
+  "evidence_summary": {
+    "high_confidence": [
+      "cheer-dance background + キレ/表現力",
+      "stamina floor 18"
+    ],
+    "medium_confidence": [
+      "stable voice mentions in roundups"
+    ],
+    "procedural_only": [
+      "catalog newcomer; talking/wit unevidenced"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "agility/rhythm/power/stage_presence 17-18"
+    ],
+    "ranks": [
+      "dance-performance specialist; skill Ability ~79"
+    ],
+    "floors": [
+      "stamina>=18"
+    ],
+    "biases": [
+      "cheer -> agility/rhythm/stamina",
+      "pretty from height/style"
+    ]
+  },
+  "career_context_used": [
+    "catalog: iLife! (2025-05-10–present)",
+    "career_months=1.8",
+    "newcomer uncertainty on MC/mental; training background overrides dance weakness prior"
+  ]
+}

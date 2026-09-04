@@ -1,0 +1,252 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:28.973Z",
+  "member": {
+    "uid": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+    "name": "城月菜央",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 153,
+    "career_months": 36,
+    "prior_group_months": 6,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 5,
+      "mental_professional": 5,
+      "traits": 5
+    },
+    "final_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 5,
+      "mental_professional": 5,
+      "traits": 5
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"城月菜央\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこ VANITYMIX WEB LIMITED INTERVIEW",
+          "url": "https://www.vanitymix.jp/music/takanenonadeshiko-3/2",
+          "description": "城月 りりちゃんはステージ上での表現力がすごいです。歌声もエモい歌声で。自分は結構可愛い系の歌声なので、個人的にはすごく憧れる声でもあります。 籾山 はるりん",
+          "age": null,
+          "score": 0.70483154,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声",
+            "表現力"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "高嶺のなでしこライブに行ったことある人に質問ですが、実際 ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10288219570",
+          "description": "落ち着いて歌えば、決戦スピリットの歌ってみたのように、心地の良い歌い方ができ、非常に上手いです。 ただ、生パフォーマンスの歌唱は一定の歌い方",
+          "age": null,
+          "score": 0.6018984,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "“推しの魔法”が解き放つ熱狂 ─ 高嶺のなでしこ、春の乱舞",
+          "url": "https://kakko3.tokyo/2025/05/14/takanenonadeshiko-lcs",
+          "description": "... パフォーマンス、ハプニングを乗り越える対応力、城月菜央の独自性など、進化を続けるグループの魅力を余すところなく紹介。アイドルを超えた10人の表現",
+          "age": null,
+          "score": 0.57837737,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ「生きてりゃいい」インタビュー――たかねこからの",
+          "url": "https://e.usen.com/interview/interview-original/takanenonadeshiko-ikiteryaii.html",
+          "description": "城月 菜央、涼海 すう、橋本 桃呼、葉月 紗蘭、4人にツアーを終えた感想を、そして、元気を与えられる曲であり、元気になる曲＝「生きてりゃいい」",
+          "age": null,
+          "score": 0.39305934,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "②【先行掲載・WEBオリジナル記事】国立代々木第二体育館 ...",
+          "url": "https://outofmusic.net/archives/1540",
+          "description": "――「喜怒哀楽、すべて高嶺のなでしこに任せていいよ」と歌っているわけですよね。嬉しいことも悲しいことも、いろんな感情に対して、メンバーが寄り添ってくれている、",
+          "age": null,
+          "score": 0.27386728,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"城月菜央\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "城月菜央(高嶺のなでしこ) - プロフィール",
+          "url": "https://www.showroom-live.com/room/profile?room_id=410791",
+          "description": "世界観と（褒めてる）すてきなトークでめちゃくちゃ楽しいです。 これからもよろしくお願いします！（？） びすきー ‍❄️. dennka. なおちゃんの笑顔が好きです。言語",
+          "age": null,
+          "score": 0.6562404,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "トーク"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "城月菜央(きづきなお) (@nao_kizuki) / X",
+          "url": "https://x.com/nao_kizuki",
+          "description": "お団子ヘアの人！HoneyWorksサウンドプロデュースアイドル/高嶺のなでしこ@takanenofficial /黄色/あなたの鳥 TikTok→せんしゅちゃん/毎日使って！→ #気づいて城月",
+          "age": null,
+          "score": 0.5806618,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "7_城月菜央 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/nao_kizuki",
+          "description": "血液型: B型. 星座: やぎ座. 身長: 153cm. 生年月日: 2003年12月25日. 出身地: 埼玉県. 趣味: ホラー系作品鑑賞・ヘアアレンジ. 特技: 色々な怪獣の顔マネ・変な動き.",
+          "age": null,
+          "score": 0.53954184,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "城月菜央 (@nao_kizuki_)",
+          "url": "https://www.instagram.com/nao_kizuki_?hl=ja",
+          "description": "せんしゅちゃんですっ!!∠( ˙-˙ )／ … 高嶺のなでしこ 黄色 … … 2003.12.25 … … どっからどう見ても鳥です … SNSは事務所管理 TikTokもほぼ毎日更新中❀",
+          "age": null,
+          "score": 0.48879638,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！城月 菜央編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa02.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！城月 菜央さんの回答はコチラ！",
+          "age": null,
+          "score": 0.40825373,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"城月菜央\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "城月菜央(きづきなお) (@nao_kizuki) / X",
+          "url": "https://x.com/nao_kizuki",
+          "description": "城月菜央(きづきなお) ; お団子ヘアの人！HoneyWorksサウンドプロデュースアイドル/高嶺のなでしこ@takanenofficial ; /黄色/あなたの鳥 TikTok→せんしゅちゃん/毎日使って",
+          "age": null,
+          "score": 0.50432175,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "高嶺のなでしこ VANITYMIX WEB LIMITED INTERVIEW",
+          "url": "https://www.vanitymix.jp/music/takanenonadeshiko-3/2",
+          "description": "努力家で、最初の頃から完成しきっていたのにどんどん成長しているのが本当に ... 城月 もみちゃんはやっぱりたかねこのキャプテンとしていつもみんなをまとめて",
+          "age": null,
+          "score": 0.643173,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "努力家"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ（城月菜央・松本ももな・籾山ひめり）が2nd ...",
+          "url": "https://recochoku.jp/ch/recolog/takanenonadeshiko",
+          "description": "... 城月菜央、松本ももな、籾山ひめりの3名にインタビューを実施。メンバー自身について、新曲やMV撮影のエピソード、2024年の振り返りやファンの皆さん",
+          "age": null,
+          "score": 0.6364215,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ「生きてりゃいい」インタビュー――たかねこからの",
+          "url": "https://e.usen.com/interview/interview-original/takanenonadeshiko-ikiteryaii.html",
+          "description": "... 月13日にリリースした高嶺のなでしこ。城月 菜央、涼海 すう、橋本 桃呼、葉月 紗蘭、4人にツアーを終えた感想を、そして、元気を与えられる曲であり",
+          "age": null,
+          "score": 0.54942364,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！城月 菜央編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa02.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！城月 菜央さんの回答はコチラ！",
+          "age": null,
+          "score": 0.51442534,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "城月菜央の復帰に関してのご報告 - 高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/%E5%9F%8E%E6%9C%88%E8%8F%9C%E5%A4%AE%E3%81%AE%E5%BE%A9%E5%B8%B0%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E3%81%AE%E3%81%94%E5%A0%B1%E5%91%8A",
+          "description": "体調不良により公演を見合わせておりました高嶺のなでしこの城月菜央につきまして、体調経過が良好という医師の診断をいただきましたので、下記公演より",
+          "age": null,
+          "score": 0.466433,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

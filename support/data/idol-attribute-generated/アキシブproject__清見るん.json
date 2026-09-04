@@ -1,0 +1,89 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.548Z",
+  "skill": "idol-attribute-generation",
+  "uid": "45484495-8792-48db-bab0-560ee4107464",
+  "name": "清見るん",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 23,
+  "height_cm": 159,
+  "career_months": 44.4,
+  "prior_group_months": 26.2,
+  "training_background": null,
+  "current_group_months": 18.3,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "炭酸くろにくるっ",
+      "group_uid": "54Kt6YW444GP44KN44Gr44GP44KL44Gj",
+      "start_date": "2021-04-18",
+      "end_date": "2023-06-23",
+      "months": 26.2
+    }
+  ],
+  "career_summary": "炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 14,
+    "pretty": 15,
+    "pitch": 18,
+    "tone": 17,
+    "breath": 17,
+    "rhythm": 17,
+    "power": 15,
+    "stage_presence": 15,
+    "wit": 14,
+    "humor": 14,
+    "talking": 15,
+    "determination": 15,
+    "teamwork": 15,
+    "fashion": 15
+  },
+  "traits": {
+    "singer": 90,
+    "dancer": 130,
+    "model": 80,
+    "comedy": 70
+  },
+  "radar": {
+    "PHY": 14.5,
+    "APP": 14.8,
+    "SNG": 17.25,
+    "DAN": 15.67,
+    "MEN": 14.67
+  },
+  "ability": 77,
+  "ability_raw": 77.042,
+  "evidence_summary": {
+    "high_confidence": [
+      "appears in same talk-live coverage as peers"
+    ],
+    "medium_confidence": [],
+    "procedural_only": [
+      "retained scenario vocal baseline: SNG 17.25"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "retained vocal calibration: pitch 18, tone/breath/rhythm 17"
+    ],
+    "ranks": [
+      "reviewed vocal strength"
+    ],
+    "floors": [
+      "prior 炭酸くろにくるっ tenure regularizes basics"
+    ],
+    "biases": []
+  },
+  "career_context_used": [
+    "catalog: 炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+    "prior groups: 炭酸くろにくるっ",
+    "career_months=44.4",
+    "prior_group_months=26.2",
+    "prior_group_months used as professional floor only"
+  ]
+}

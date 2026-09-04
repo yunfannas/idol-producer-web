@@ -1,0 +1,348 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:36.124Z",
+  "member": {
+    "uid": "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
+    "name": "虹羽みに",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 15,
+    "height_cm": 150,
+    "career_months": 2,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 7,
+      "dance_performance": 7,
+      "appearance_model": 10,
+      "mc_comedy": 10,
+      "physical_stamina": 11,
+      "mental_professional": 11,
+      "traits": 11
+    },
+    "final_coverage": {
+      "vocal": 7,
+      "dance_performance": 7,
+      "appearance_model": 10,
+      "mc_comedy": 10,
+      "physical_stamina": 11,
+      "mental_professional": 11,
+      "traits": 11
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"虹羽みに\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2000年7月10日 |\n| 年齢 | 25歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 155cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 青色 |\n\n空詩かれん（そなたかれん）さんは、2025年1月に加入したiLiFE!のメンバーです。加入以前はアイドルグループ「monogatari」でリーダーを務めており、2025年10月にはiLiFE!のリーダーにも就任しています（2026年3月時点）。monogatariでは「福本カレン」として約4年間活動し、歌唱力の高さを武器に多くのステージ経験を積んできた人物です。\n\n2019年にはソロ楽曲「I LOVE YOU」を発表するなど、個人としての実績も持っています。可愛らしい雰囲気と迫力あるパフォーマンスの両面を併せ持ち、ライブで大きなインパクトを残すメンバーとして注目されています。\n\n### 2-6. 虹羽みに [...] ### 2-6. 虹羽みに\n\n> 猫の日らしいにゃ〜(^\\_ ̫ \\_ ̥ ^)੭ #iLiFE#猫の日pic.twitter.com/AdKA99a9O6\n>\n> — 虹羽みに【iLiFE!】 (@iLiFE\\_mini) February 22, 2026\n\n|  |  |\n --- |\n| 生年月日 | 2010年3月2日 |\n| 年齢 | 16歳 ※2026年3月時点 |\n| 身長 | 150cm |\n| メンバーカラー | 水色 |\n\n虹羽みに（こはねみに）さんは、2025年5月にiLiFE!へ加入したメンバーです。小柄で愛らしいビジュアルと透明感のある雰囲気が印象的で、加入当初から注目を集めています。オーディション時には前向きに挑戦を続ける姿が話題となり、ひたむきな努力を重ねる様子がファンの支持を得ました。\n\n歌うことが好きという思いを原動力に活動をスタートさせ、ステージでは安定感のある歌声で存在感を発揮しています。フレッシュな存在感と成長への意欲を併せ持ち、今後の活躍が期待されるメンバーです。\n\n### 2-7. 純嶺みき [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。",
+          "age": null,
+          "score": 0.7906115,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌唱力",
+            "歌声",
+            "安定感",
+            "パフォーマンス"
+          ],
+          "relevance_score": 19
+        },
+        {
+          "title": "虹羽みに「“アイドルになりたい”じゃなくて“iLiFE!になりたい”と思ってオーディションを受けました」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.4】 | S Cawaii!(エスカワイイ)",
+          "url": "https://scawaiiweb.com/ilife250707",
+          "description": "――まずは自己紹介とあなたの強みを教えてください！ 「虹羽みにです。最年少15歳、水色担当です。私の強みは、見た目からは想像できない歌声です！  小さくて甘々な見た目かもですが、自分なりにしっかりした歌声を出せることが強みだと思ってます。もともと歌うことが大好きだったので、そこからボイトレを重ねて少しずつ自信をつけられるようにして、ソロパートはもちろんユニゾンの部分でもちゃんと自分の歌声を届けられるようがんばっています！」\n\n――グループの中ではどんなポジション？　まわりからどんな人って言われますか？ 「ザ・一番年下っていう感じです。自分からめっちゃ甘えるタイプで、りりさんによく甘えてます。『りりさ～ん！』っていっぱい呼んだり(笑)。でも他のメンバーにも甘えちゃうかも。みんなにかまちょしてます♡」 [...] ――みにちゃんのハッシュタグ「#みにちゃんの成長日記」にちなんで、最近成長したなと感じた瞬間を教えて！ 「ライブでファンサ（ファンサービス）とか、ファンのみんなにレスできるようになりました。ペンライトとかタオルを見つけたら、目を合わせたり、指をさしたり、ハートを作ったり。ライブ中にそれをできる余裕がちょっと出てきたのかなって」\n\n――最後にアイライファーの皆さんへ愛のメッセージをお願いします！ 「本当にいつもありがとうって思います！　やっぱりアイライファーさんがいないとはじまらないし、アイライファーさんがいるおかげでがんばれるし。お互いに支え合えているという感覚もありますね」\n\nこはね・みに。\n\n担当カラー・水色。キャッチコピー「みにの成長みにきてよ！」\n\n公式X　公式TikTok\n\niLiFE!（アイライフ）\n\nHEROINES所属の9人組アイドルグループ。コンセプトは「私（ｉ）と貴方（！）で作るアイドル（ｉ）ライフ（LiFE）」。今年の5月に新しく3人のメンバーを迎え、新体制に。8月27日(水)にグループ初となる日本武道館ワンマンライブを控えている。 [...] Skip to content\n\nscawaii\n\nHOME 虹羽みに「“アイドルになりたい”じゃなくて“iLiFE!になりたい”と思ってオーディションを受けました」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.4】\n\n2025/7/11 CULTURE\n\n# 虹羽みに「“アイドルになりたい”じゃなくて“iLiFE!になりたい”と思ってオーディションを受けました」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.4】\n\nS Cawaii! 編集部\n\nFACEBOOK TWITTER LINE\n\n超・超・超アツいライブが大人気♡　今年の5月に新体制になったばかりの9人組人気アイドルグループ・iLiFE!（アイライフ）のスペシャルリレーインタビュー企画‼　本日は、15歳の最年少メンバー・虹羽みにちゃん♡　今年5月に加入したばかりのみにちゃんの今の心境、iLiFE!への想いなどなどを独占取材。S Cawaii!WEBでしか見られない撮りおろしカットにも注目です♡　サイン入りチェキプレゼントもお見逃しなく‼",
+          "age": null,
+          "score": 0.6609831,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌声"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLife!（アイライフ）メンバー一覧・プロフィール | アイドルグループ",
+          "url": "https://oshilattice.com/groups/ilife",
+          "description": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "age": null,
+          "score": 0.21031219,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFE!アイライフで歌が上手いと個人的に思うメンバーを順番 ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12317767272",
+          "description": "Yahoo! JAPAN\n ヘルプ\n\nYahoo!知恵袋\n\n 知恵袋トップ\n カテゴリ一覧\n エンターテインメントと趣味\n 芸能人\n 女性アイドル\n\nあさん\n\n2025/7/22 1:13\n\n1回答\n\n# iLiFE! アイライフで歌が上手いと個人的に思うメンバーを順番に教えてください。また、いつの体制が１番歌唱力が高いと思うかも教えていただけると嬉しいです。\n\n女性アイドル | 音楽・4,141閲覧\n\nあ\n\nあさん\n\n2025/7/22 1:28\n\n### 2025年2月3日時点の体制が1番歌唱力が高いと思います。(個人的にです)空詩かれん≧あいすこるね心花りり福丸うさ、那蘭のどか若葉のあ誰が低いから〜とかではなく、バランスよく歌唱力が高く 綺麗 といえる体制だったと思います。並びで記載している部分もあり申し訳ないです。\n\nこの回答はいかがでしたか？ リアクションしてみよう\n\n### 質問者からのお礼コメント\n\nお礼日時：2025/7/30 0:30\n\n## カテゴリQ&Aランキング\n\n女性アイドル\n\n1 [...] ## あなたも答えてみませんか\n\n香港ディズニーチケットで、4人で行くために下記を2セット購入しましたが、問題ないでしょうか。 2名様用お食事割引クーポン付き1デー・チケット（観光客限定）（ティア1）\n\nどうしよう。曜日を勘違いしていて、時間割の見るところを間違えて四谷学院の授業をいくつかすっぽかしてしまいました。 死ぬほど怒られますか。。？また、親に連絡行くでしょうか泣\n\n来週SHL社の適性検査があります。私は学力がない人間で恥ずかしながら方程式も勉強し直してやっと解けるようになりました。図表解読や法則性は解説を見て要約なるほど、？ となるクオリティです。勉強頑張...\n\nラグーナ、プールついて質問です。 今週金曜日にラグーナへ行きます。プールを楽しむつもりでしたが雨予報。 プールサイドのレンタルルームもとってあります。雨の日でも水着のまま遊べるアトラクションはあ...\n\n深江橋駅の接客・清潔感・居心地で選ぶ居酒屋はどこですか？ 大阪市深江橋駅周辺で地元の方々がおすすめする一推しの居酒屋はどこでしょうか、名物料理やお通し、串や揚げ物の火入れ、地酒やサワーのラインナ... [...] ブリタBRITA、の浄水ポット使ってる方教えてください！！！ 初めて購入したのですが、浄水が穴から出てくる時 2方向から出てくるのって普通ですか？ 使っている方の動画見ても、皆さん一方向からし...\n\nにじさんじで初配信振り返りをやった人を分かる限り教えてください！\n\n長いほどモード感もアップ！ 今年のブーツはサイハイで決まり。最旬デザイン12選【2026-27年秋冬バッグ＆シューズ vol.9】 \n\nテレビ朝日のドリームフェスティバル3日目に行きたいと思っています。 倍率が高そうなので一緒に行く友達と1人2枚ずつでチケットを取りたいのですが、重複当選しちゃう可能性ありますよね？ その場合リセ...\n\nイコラブについて イコラブ9周年ライブの一般先行はまだ始まってませんよね？ 始まる場合はだいたいいつ頃からと予想されるでしょうか？\n\n## 総合Q&Aランキング\n\n1\n\n「薬屋のひとりごと」芦田愛菜主演で実写化。 壬氏は誰が適役だと思いますか？ \n\n2",
+          "age": null,
+          "score": 0.43482184,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "歌が上手い"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "Kohane Mini 虹羽みに - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/556",
+          "description": "担当カラー 水色○キャッチコピー 「みにの成長みにきてよ！」 OTHER MEMBER. ice. あいす · Sonata Karen. 空詩かれん · Konoka Riri. 心花りり.",
+          "age": null,
+          "score": 0.45028743,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"【新メンバー公開】 ♥虹羽みに（こは ...",
+          "url": "https://x.com/iLiFE_official/status/1920785809914855586",
+          "description": "【新メンバー公開】 ♥虹羽みに（こはねみに） ♡ @iLiFE_mini ♥担当カラー 水色♡みにの成長みにきてよ！ ♥iLiFE!最年少15歳「みにのちいささ",
+          "age": null,
+          "score": 0.44391435,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"虹羽みに\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "虹羽みに「“アイドルになりたい”じゃなくて“iLiFE! ...",
+          "url": "https://scawaiiweb.com/ilife250707",
+          "description": "公式WEBサイト　公式YouTube　公式X\n\n【PRESENT】 \n\niLiFE!さんのサイン入りチェキを各1名様・計10名様にPRESENT！  \n 応募フォームはコチラ♡\n\n※締め切りは2025年7月20日（日）23：59までです！\n\nPhotograph\\_Takaki Kusumoto　Hair&Makeup\\_Maho Kamiya,Wakana Goto(ROI),Maki Yamada(Lila)\n\n## TAGS\n\n## RECOMMENDED\n\nおすすめの記事\n\nVIEW  \nMORE\n\n2026/08/01\n\nCULTURE\n\n### 【DXTEEN】7TH SINGLE『Wanna』リリース記念イベント開催！　「オールシーズンな曲」「トップレベルで爽やか」「推しがいる人に刺さる」とアピール VIEW  \nMORE\n\n2026/08/01\n\nCULTURE\n\n### 【小川史記×瀬戸利樹】瀬戸利樹、小川史記の“唇”を絶賛!?『しもべの王子様』イベントで初共演とは思えない仲良しトークが炸裂 VIEW  \nMORE\n\n2026/07/28\n\nCULTURE [...] ――まずは自己紹介とあなたの強みを教えてください！ 「虹羽みにです。最年少15歳、水色担当です。私の強みは、見た目からは想像できない歌声です！  小さくて甘々な見た目かもですが、自分なりにしっかりした歌声を出せることが強みだと思ってます。もともと歌うことが大好きだったので、そこからボイトレを重ねて少しずつ自信をつけられるようにして、ソロパートはもちろんユニゾンの部分でもちゃんと自分の歌声を届けられるようがんばっています！」\n\n――グループの中ではどんなポジション？　まわりからどんな人って言われますか？ 「ザ・一番年下っていう感じです。自分からめっちゃ甘えるタイプで、りりさんによく甘えてます。『りりさ～ん！』っていっぱい呼んだり(笑)。でも他のメンバーにも甘えちゃうかも。みんなにかまちょしてます♡」 [...] ――みにちゃんのハッシュタグ「#みにちゃんの成長日記」にちなんで、最近成長したなと感じた瞬間を教えて！ 「ライブでファンサ（ファンサービス）とか、ファンのみんなにレスできるようになりました。ペンライトとかタオルを見つけたら、目を合わせたり、指をさしたり、ハートを作ったり。ライブ中にそれをできる余裕がちょっと出てきたのかなって」\n\n――最後にアイライファーの皆さんへ愛のメッセージをお願いします！ 「本当にいつもありがとうって思います！　やっぱりアイライファーさんがいないとはじまらないし、アイライファーさんがいるおかげでがんばれるし。お互いに支え合えているという感覚もありますね」\n\nこはね・みに。\n\n担当カラー・水色。キャッチコピー「みにの成長みにきてよ！」\n\n公式X　公式TikTok\n\niLiFE!（アイライフ）\n\nHEROINES所属の9人組アイドルグループ。コンセプトは「私（ｉ）と貴方（！）で作るアイドル（ｉ）ライフ（LiFE）」。今年の5月に新しく3人のメンバーを迎え、新体制に。8月27日(水)にグループ初となる日本武道館ワンマンライブを控えている。",
+          "age": null,
+          "score": 0.5230555,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "トーク"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLiFE! 虹羽みにちゃんの私服まとめ     #iLiFE #虹羽みに #アイドル #私服 ...",
+          "url": "https://www.instagram.com/p/DXlXxsDiXYC",
+          "description": "ナルが着てみました ♡ モデル＆アイテム：Naruya Petale インナートップス：Mezzo Piano デニムボレロ：Liz Lisa サイズ：S かわいいを、もっと。",
+          "age": null,
+          "score": 0.65252984,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい",
+            "モデル"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "虹羽みに【iLiFE!】 (@iLiFE_mini) / X",
+          "url": "https://x.com/iLiFE_mini",
+          "description": "「ミシェルマカロン」のモデルを虹羽みにが務めさせていただきました❤︎ かわいい雰囲気からちょっぴり大人な雰囲気なお洋服までたくさん着させて頂きました！",
+          "age": null,
+          "score": 0.64719695,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい",
+            "モデル"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "⁡ 6が逆ですがそれも1ちゃいらしいです     ⁡ ⁡ #iLiFE #虹羽みに生誕祭 ...",
+          "url": "https://www.instagram.com/reel/DWYUFk4x8VT",
+          "description": "可愛いわ . yua29462. めちゃかわいい、！ ilifer.suki. ちょっと前にデビューしたばっかだと思ってたのにもう完璧アイドルなのすごいかわいいよ .",
+          "age": null,
+          "score": 0.5521781,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい",
+            "可愛い"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "iLiFE! 虹羽みにちゃんのかわいい瞬間 - TikTok",
+          "url": "https://www.tiktok.com/@ilife_mini/video/7620361453232573717",
+          "description": "#iLiFE #虹羽みに #ドラ顔じゃんけん. Keywords: iLiFE 虹羽みに,ドラ顔じゃんけん,あいらいふむまむまま,みにちゃん かわいい,アイライファー ロック画面",
+          "age": null,
+          "score": 0.5476824,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "虹羽みに mini iLife! jpop - Pinterest",
+          "url": "https://www.pinterest.com/pin/mini-ilife-jpop--334392341108569647",
+          "description": "虹羽みに mini iLife! jpop. Explore. Women's Fashion ... 虹羽みに | うでくみ イラスト, 女の子 おしゃれ イラスト. iLiFE! 虹羽",
+          "age": null,
+          "score": 0.52203226,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "おしゃれ"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "秋服のかわいいスタイルを楽しもう！ - TikTok",
+          "url": "https://www.tiktok.com/@ilife_mini/video/7552895509413825813",
+          "description": "... iLiFE #虹羽みに #idol #秋服」。",
+          "age": null,
+          "score": 0.50915486,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "虹羽 みに (@ilife_mini) - TikTok",
+          "url": "https://www.tiktok.com/@ilife_mini",
+          "description": "iLiFE! 最年少16さい 水色担当のこはねみにです 衣装着てる時のカラコンはベイビーベイビー 毎日投稿してます！♪゛. x.com/ilife_mini?s=21.",
+          "age": null,
+          "score": 0.50856906,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Kohane Mini 虹羽みに - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/556",
+          "description": "担当カラー 水色○キャッチコピー 「みにの成長みにきてよ！」 OTHER MEMBER. ice. あいす · Sonata Karen. 空詩かれん · Konoka Riri. 心花りり.",
+          "age": null,
+          "score": 0.46628717,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "生誕衣装ふわふわでお気に入り   #iLiFE #虹羽みに - YouTube",
+          "url": "https://www.youtube.com/shorts/GCb0igEtSeA",
+          "description": "iLiFE #あいらいふ #idol #地下アイドル #アイドル #ヲタク #ヒロインズ #HEROINES.",
+          "age": null,
+          "score": 0.4654124,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"虹羽みに\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2000年7月10日 |\n| 年齢 | 25歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 155cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 青色 |\n\n空詩かれん（そなたかれん）さんは、2025年1月に加入したiLiFE!のメンバーです。加入以前はアイドルグループ「monogatari」でリーダーを務めており、2025年10月にはiLiFE!のリーダーにも就任しています（2026年3月時点）。monogatariでは「福本カレン」として約4年間活動し、歌唱力の高さを武器に多くのステージ経験を積んできた人物です。\n\n2019年にはソロ楽曲「I LOVE YOU」を発表するなど、個人としての実績も持っています。可愛らしい雰囲気と迫力あるパフォーマンスの両面を併せ持ち、ライブで大きなインパクトを残すメンバーとして注目されています。\n\n### 2-6. 虹羽みに [...] ### 2-6. 虹羽みに\n\n> 猫の日らしいにゃ〜(^\\_ ̫ \\_ ̥ ^)੭ #iLiFE#猫の日pic.twitter.com/AdKA99a9O6\n>\n> — 虹羽みに【iLiFE!】 (@iLiFE\\_mini) February 22, 2026\n\n|  |  |\n --- |\n| 生年月日 | 2010年3月2日 |\n| 年齢 | 16歳 ※2026年3月時点 |\n| 身長 | 150cm |\n| メンバーカラー | 水色 |\n\n虹羽みに（こはねみに）さんは、2025年5月にiLiFE!へ加入したメンバーです。小柄で愛らしいビジュアルと透明感のある雰囲気が印象的で、加入当初から注目を集めています。オーディション時には前向きに挑戦を続ける姿が話題となり、ひたむきな努力を重ねる様子がファンの支持を得ました。\n\n歌うことが好きという思いを原動力に活動をスタートさせ、ステージでは安定感のある歌声で存在感を発揮しています。フレッシュな存在感と成長への意欲を併せ持ち、今後の活躍が期待されるメンバーです。\n\n### 2-7. 純嶺みき [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。",
+          "age": null,
+          "score": 0.8127637,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール",
+            "リーダー"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "【iLiFE!】虹羽 みに｜完全網羅プロフィール＆経歴・最新情報 ...",
+          "url": "https://note.com/idol_information/n/nfcfaf67d992f",
+          "description": "先輩メンバーたちからの温かい指導を受け、持ち前の「努力家」な性格を爆発させた彼女は、猛スピードでパフォーマンスの基礎を吸収していきました。 【",
+          "age": null,
+          "score": 0.74652773,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール",
+            "努力家"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "Kohane Mini 虹羽みに - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/556",
+          "description": "アイドルグループ iLiFE!【あいらいふ】のメンバープロフィール. ... MEMBER. 虹羽みに. Kohane Mini. ○担当カラー 水色○キャッチコピー 「みにの成長みにきて. X: » Move",
+          "age": null,
+          "score": 0.63288915,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "虹羽みに「“アイドルになりたい”じゃなくて“iLiFE! ...",
+          "url": "https://scawaiiweb.com/ilife250707",
+          "description": "Skip to content\n\nscawaii\n\nHOME 虹羽みに「“アイドルになりたい”じゃなくて“iLiFE!になりたい”と思ってオーディションを受けました」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.4】\n\n2025/7/11 CULTURE\n\n# 虹羽みに「“アイドルになりたい”じゃなくて“iLiFE!になりたい”と思ってオーディションを受けました」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.4】\n\nS Cawaii! 編集部\n\nFACEBOOK TWITTER LINE\n\n超・超・超アツいライブが大人気♡　今年の5月に新体制になったばかりの9人組人気アイドルグループ・iLiFE!（アイライフ）のスペシャルリレーインタビュー企画‼　本日は、15歳の最年少メンバー・虹羽みにちゃん♡　今年5月に加入したばかりのみにちゃんの今の心境、iLiFE!への想いなどなどを独占取材。S Cawaii!WEBでしか見られない撮りおろしカットにも注目です♡　サイン入りチェキプレゼントもお見逃しなく‼ [...] ――まずは自己紹介とあなたの強みを教えてください！ 「虹羽みにです。最年少15歳、水色担当です。私の強みは、見た目からは想像できない歌声です！  小さくて甘々な見た目かもですが、自分なりにしっかりした歌声を出せることが強みだと思ってます。もともと歌うことが大好きだったので、そこからボイトレを重ねて少しずつ自信をつけられるようにして、ソロパートはもちろんユニゾンの部分でもちゃんと自分の歌声を届けられるようがんばっています！」\n\n――グループの中ではどんなポジション？　まわりからどんな人って言われますか？ 「ザ・一番年下っていう感じです。自分からめっちゃ甘えるタイプで、りりさんによく甘えてます。『りりさ～ん！』っていっぱい呼んだり(笑)。でも他のメンバーにも甘えちゃうかも。みんなにかまちょしてます♡」 [...] ――みにちゃんのハッシュタグ「#みにちゃんの成長日記」にちなんで、最近成長したなと感じた瞬間を教えて！ 「ライブでファンサ（ファンサービス）とか、ファンのみんなにレスできるようになりました。ペンライトとかタオルを見つけたら、目を合わせたり、指をさしたり、ハートを作ったり。ライブ中にそれをできる余裕がちょっと出てきたのかなって」\n\n――最後にアイライファーの皆さんへ愛のメッセージをお願いします！ 「本当にいつもありがとうって思います！　やっぱりアイライファーさんがいないとはじまらないし、アイライファーさんがいるおかげでがんばれるし。お互いに支え合えているという感覚もありますね」\n\nこはね・みに。\n\n担当カラー・水色。キャッチコピー「みにの成長みにきてよ！」\n\n公式X　公式TikTok\n\niLiFE!（アイライフ）\n\nHEROINES所属の9人組アイドルグループ。コンセプトは「私（ｉ）と貴方（！）で作るアイドル（ｉ）ライフ（LiFE）」。今年の5月に新しく3人のメンバーを迎え、新体制に。8月27日(水)にグループ初となる日本武道館ワンマンライブを控えている。",
+          "age": null,
+          "score": 0.62906903,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "虹羽みに【iLiFE!】 on X: \"ついにみにのばんきたー！！♡ 取材 ...",
+          "url": "https://x.com/iLiFE_mini/status/1943667045058670724",
+          "description": "4 】 大注目のアイドルグループ・ iLiFE!（アイライフ）のスペシャルリレーインタビュー企画実施中 vol.4は15歳の最年少メンバー #虹羽みに ちゃん",
+          "age": null,
+          "score": 0.58862966,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "虹羽みに【iLiFE!】 (@iLiFE_mini) / X",
+          "url": "https://x.com/iLiFE_mini",
+          "description": "「ミシェルマカロン」のモデルを虹羽みにが務めさせていただきました❤︎ かわいい雰囲気からちょっぴり大人な雰囲気なお洋服までたくさん着させて頂きました！",
+          "age": null,
+          "score": 0.41137156,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "虹羽みに (@ilife__mini)",
+          "url": "https://www.instagram.com/ilife__mini",
+          "description": "@ilife.idol の最年少16歳 水色担当 ⁡ 『2026年8月26日Kアリーナ横浜』 ⁡ ⚠︎本人アカウントではありません♡#みにたんみにきて ♡#みにちゃんの成長日記.",
+          "age": null,
+          "score": 0.5185224,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

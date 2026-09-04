@@ -1,0 +1,382 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:47:55.338Z",
+  "member": {
+    "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+    "name": "古賀みれい",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 20,
+    "height_cm": 152,
+    "career_months": 31,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 2,
+      "mental_professional": 2,
+      "traits": 2
+    },
+    "final_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 2,
+      "mental_professional": 2,
+      "traits": 2
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"古賀みれい\" \"アキシブproject\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject[単語] - ニコニコ大百科",
+          "url": "https://dic.nicovideo.jp/a/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "ダンスが得意で、他アイドル(ハコイリ♡ムスメ, 思い出とプレゼント等)の曲 20曲以上の振付けを担当するほど。 〈活動期間: 2018年6月10日～2022年8月17日〉 →CANDY TUNE",
+          "age": null,
+          "score": 0.38234952,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "Koga Mirei | Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Koga_Mirei",
+          "description": "Koga Mirei (古賀みれい) is a Japanese idol, a founding member of LAST SCENE, a member of HEROINES, and a former 6th generation member of akishibu project.",
+          "age": null,
+          "score": 0.66699636,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 桜庭萌桃 | さくらば もも | ももちゃん | (2006-05-01) 2006年5月1日（20歳） | O型 | 愛知県 | 桃 | 7期生 | 2023年12月31日 - 2024年5月18日 | 元・アモレカリーナ名古屋、LUCIANNA、BUDPiNK |\n| 神崎らん | かんざき らん | らあら | (2002-12-12) 2002年12月12日（23歳） | AB型 | 青森県 | 紫 | 7期生 | 2023年12月31日 - 2025年6月15日 | 現・Root mimi |\n| 古賀みれい | こが みれい | みれい | (2004-08-14) 2004年8月14日（22歳） | A型 | 埼玉県 | 白 | 6期生 | 2022年11月20日 - 2025年9月29日 | 現・ラストシーン |\n| 美山ひな | みやま ひな | ひなちゃん | (2007-04-17) 2007年4月17日（19歳） | 東京都 | ピンク | 8期生 | 2024年12月19日 - 2025年10月17日 | 元・じーぐらむ！、Agemon! | [...] 雛月ひな  朝日まる\\s | | ナナコロビヤオキ |  苺川えくぼ\\  歌花てんか  瀬戸内れもん  熊ノ実にも  水田茉莉  笑乃にな  阪菜りこ  長居しいな | | ドレスコード |  百宮みも  御伽りるむ  早坂わむ  月野あのん  秋田こまち\\s | | MEGAFON |  小晴のか  日陽きい  星野あみ  宮代ゆき  明音いろは  羽雲ろこ | | iON! |  宇野ゆり  伽久耶くらら  栗栖むぎ  鈴都りせ  儚寧この  花丸ぺこ  名雲めんま  透明くりあ  大須かのん\\s  苺川えくぼ\\s | | テンシンランマン |  海老原てん  小倉あずき  織田こゆん  琴音うな  味園そら  大須かのん\\ | | Pastel Closet4 |  安斎みのり  柑乃あい  篠原さくら  澄原夏帆  仁科美都  花木舞花  雛城ののか  幸野れいあ | | ラストシーン |  天羽しおり  古賀みれい  宮瀬うゆ  優木あずさ  佑月いちか  水空ゆん  綾乃もな  椎名すず\\s | | フルコース \"フルコース (アイドルグループ)\") |  阿部菜々実 [...] 田口未彩 (@aksb\\_taguchi) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 田口未彩 (@miiro\\_taguchi) - Instagram\n 田口未彩オフィシャルブログ「みぃ姫のlovely☆castle」Powered by Ameba - Ameba Blog\n 葵ふう (@aksb\\_fu) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 葵ふう (@aksb\\_fu) - Instagram\n 黒崎りある (@aksb\\_Real) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 黒崎りある (@aksb\\_real) - Instagram\n 古賀みれい (@aksb\\_mirei) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 古賀みれい (@aksb\\_mirei) - Instagram",
+          "age": null,
+          "score": 0.6002124,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブ 古賀みれい - TikTok",
+          "url": "https://www.tiktok.com/discover/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96-%E5%8F%A4%E8%B3%80%E3%81%BF%E3%82%8C%E3%81%84",
+          "description": "アキシブproject みれちゃん12周年ライブの魅力. アキシブprojectの古賀みれい最後のワンマンライブを振り返る！推しカメラや特別な瞬間をお見逃しなく！",
+          "age": null,
+          "score": 0.4719782,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "可愛？  」【アキシブproject】所属担当色：白色  年龄：18岁介绍 - 新浪",
+          "url": "https://www.sina.cn/news/detail/5003491515568579.html",
+          "description": "古賀みれい： 「可愛？♡」 【アキシブproject】所属担当色：白色 年龄：18岁介绍：偶像1年级生 ｢只能看到みれ哦！♡」",
+          "age": null,
+          "score": 0.46555817,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject on X",
+          "url": "https://x.com/AkishibuProject/status/1741074152625443076",
+          "description": "アキシブproject on X: \"【新体制お披露目✨】 𖤐·̩͙古賀みれい（@aksb_mirei ） 𖤐·̩͙こがみれい𖤐·̩͙担当カラー 白色｢みれしか見れない！♡」 #アキシブ",
+          "age": null,
+          "score": 0.44391435,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - アイドル情報まとめ - IDOL TRACKS",
+          "url": "https://popidolblog.com/article/idol/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "アキシブproject - アイドル情報まとめ IDOL. Spotify Apple Music Amazon ・ 現役メンバー (10人) 古賀みれい ・ 茉井良菜 葵ふう 福山梨乃 曲一覧 (43曲)",
+          "age": null,
+          "score": 0.43929082,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブprojectの古賀みれいに注目 - TikTok",
+          "url": "https://www.tiktok.com/@kiyonobu8/video/7513985848396762376",
+          "description": "いいねの数：58kiyo (@kiyonobu8)のTikTok (ティックトック) 動画：「古賀みれいの魅力を可愛い映像で紹介！アイドルとしての彼女を深く知るチャンス",
+          "age": null,
+          "score": 0.40938663,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "古賀みれい【ラストシーン】 on X: \"『アキシブproject-12th Anniversary ...",
+          "url": "https://x.com/LASTSCENE_mire/status/1925196719165513732",
+          "description": "古賀みれい【ラストシーン】 on X: \"『アキシブproject-12th Anniversary Live-』 ありがとうございました❕ALTみてね ♡\" ... まじで楽しいライブやった！",
+          "age": null,
+          "score": 0.36581963,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【アキシブproject】20250401 【トゥラトゥラ】古賀みれい 推し ...",
+          "url": "https://www.bilibili.com/video/BV1LyndzpEnz",
+          "description": "App. 【4K】铃原希实-「secret base ～君がくれたもの～」「secret base~你给我的所有~」铃原希实生日会2025 双语字幕. 加载中... 加载失败.",
+          "age": null,
+          "score": 0.3442235,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"古賀みれい\" \"アキシブproject\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject - 古賀みれいのプロフィール・SNS情報",
+          "url": "https://popidolblog.com/article/member-305-profile.html",
+          "description": "古賀みれいは「アキシブproject」のメンバーです。 本記事では古賀みれいの誕生日・メンバーカラー・SNS情報などをまとめています。 ライブでのコール・",
+          "age": null,
+          "score": 0.5100334,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "古賀みれい【アキシブ】 (@aksb_mirei) on X",
+          "url": "https://in.pinterest.com/pin/517280707219308098",
+          "description": "古賀みれい【アキシブ】 (@aksb_mirei) on X | 美人, 可愛い人. AI ... 古賀みれい【アキシブ】 (@aksb_mirei) on X | Project. 古賀みれい",
+          "age": null,
+          "score": 0.55709904,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い",
+            "美人"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "Koga Mirei | Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Koga_Mirei",
+          "description": "Koga Mirei (古賀みれい) is a Japanese idol, a founding member of LAST SCENE, a member of HEROINES, and a former 6th generation member of akishibu project.",
+          "age": null,
+          "score": 0.60610276,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "\"【 新ヴィジュアル公開 】 𖤐·̩͙古賀みれい（@aksb_mirei ...",
+          "url": "https://x.com/AkishibuProject/status/1869669064152592586",
+          "description": "アキシブproject on X: \"【 新ヴィジュアル公開 】 𖤐·̩͙古賀みれい（@aksb_mirei ） 𖤐·̩͙こがみれい𖤐·̩͙担当カラー 白色｢みれのことしか見れないよね？",
+          "age": null,
+          "score": 0.5996498,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 桜庭萌桃 | さくらば もも | ももちゃん | (2006-05-01) 2006年5月1日（20歳） | O型 | 愛知県 | 桃 | 7期生 | 2023年12月31日 - 2024年5月18日 | 元・アモレカリーナ名古屋、LUCIANNA、BUDPiNK |\n| 神崎らん | かんざき らん | らあら | (2002-12-12) 2002年12月12日（23歳） | AB型 | 青森県 | 紫 | 7期生 | 2023年12月31日 - 2025年6月15日 | 現・Root mimi |\n| 古賀みれい | こが みれい | みれい | (2004-08-14) 2004年8月14日（22歳） | A型 | 埼玉県 | 白 | 6期生 | 2022年11月20日 - 2025年9月29日 | 現・ラストシーン |\n| 美山ひな | みやま ひな | ひなちゃん | (2007-04-17) 2007年4月17日（19歳） | 東京都 | ピンク | 8期生 | 2024年12月19日 - 2025年10月17日 | 元・じーぐらむ！、Agemon! | [...] 田口未彩 (@aksb\\_taguchi) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 田口未彩 (@miiro\\_taguchi) - Instagram\n 田口未彩オフィシャルブログ「みぃ姫のlovely☆castle」Powered by Ameba - Ameba Blog\n 葵ふう (@aksb\\_fu) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 葵ふう (@aksb\\_fu) - Instagram\n 黒崎りある (@aksb\\_Real) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 黒崎りある (@aksb\\_real) - Instagram\n 古賀みれい (@aksb\\_mirei) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 古賀みれい (@aksb\\_mirei) - Instagram [...] 雛月ひな  朝日まる\\s | | ナナコロビヤオキ |  苺川えくぼ\\  歌花てんか  瀬戸内れもん  熊ノ実にも  水田茉莉  笑乃にな  阪菜りこ  長居しいな | | ドレスコード |  百宮みも  御伽りるむ  早坂わむ  月野あのん  秋田こまち\\s | | MEGAFON |  小晴のか  日陽きい  星野あみ  宮代ゆき  明音いろは  羽雲ろこ | | iON! |  宇野ゆり  伽久耶くらら  栗栖むぎ  鈴都りせ  儚寧この  花丸ぺこ  名雲めんま  透明くりあ  大須かのん\\s  苺川えくぼ\\s | | テンシンランマン |  海老原てん  小倉あずき  織田こゆん  琴音うな  味園そら  大須かのん\\ | | Pastel Closet4 |  安斎みのり  柑乃あい  篠原さくら  澄原夏帆  仁科美都  花木舞花  雛城ののか  幸野れいあ | | ラストシーン |  天羽しおり  古賀みれい  宮瀬うゆ  優木あずさ  佑月いちか  水空ゆん  綾乃もな  椎名すず\\s | | フルコース \"フルコース (アイドルグループ)\") |  阿部菜々実",
+          "age": null,
+          "score": 0.5815176,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "„アキシブprojectさんの 古賀みれいさんとお写真撮ってもらい ...",
+          "url": "https://x.com/ruki__CH/status/1959242484988715251?lang=bg",
+          "description": "アキシブprojectさんの 古賀みれいさんとお写真撮ってもらいました＞̳ ̫ ＜̳ᐡ 前に見た時からお顔がタイプで浴衣のみれいさんとびきり可愛かった",
+          "age": null,
+          "score": 0.5622973,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【旧サイト】アキシブproject 古賀みれい卒業公演",
+          "url": "https://t.livepocket.jp/e/mirei_graduation",
+          "description": "料金：最前席 25,000円 (チェキ撮影ファストパス・延長物販参加券付き・メッセージ付きポストカード)/前方エリア6,000円(延長物販参加券付き)／一般エリア1,000円（D代",
+          "age": null,
+          "score": 0.44145688,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": ". アキシブproject 古賀みれいさん🤍 生誕衣装のデザインと制作 ...",
+          "url": "https://www.instagram.com/p/CwXREnELcam",
+          "description": "アキシブproject 古賀みれいさん 生誕衣装のデザインと制作をさせて頂きました！ お誕生日おめでとうございます ケープ×フードにお耳をつけてます☺️",
+          "age": null,
+          "score": 0.42993253,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【古賀みれい】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/857798/view",
+          "description": "2025年9月に開催予定のアキシブproject【古賀みれい】生誕祭を盛大に行うため、ご支援をよろしくお願いいたします。 【プロジェクト実施タレントの紹介】 株式会社",
+          "age": null,
+          "score": 0.38234952,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「古賀みれい」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=%E5%8F%A4%E8%B3%80%E3%81%BF%E3%82%8C%E3%81%84&md=h&rkf=1",
+          "description": "古賀みれい生誕祭2026『みれとにゃんこ化計画♡』きてくれて本当にありがとうございました❕♡ ステージに出たらだいすきなみんなのお顔が沢山見えて、楽しんでるお顔も",
+          "age": null,
+          "score": 0.36697587,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"古賀みれい\" \"アキシブproject\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 桜庭萌桃 | さくらば もも | ももちゃん | (2006-05-01) 2006年5月1日（20歳） | O型 | 愛知県 | 桃 | 7期生 | 2023年12月31日 - 2024年5月18日 | 元・アモレカリーナ名古屋、LUCIANNA、BUDPiNK |\n| 神崎らん | かんざき らん | らあら | (2002-12-12) 2002年12月12日（23歳） | AB型 | 青森県 | 紫 | 7期生 | 2023年12月31日 - 2025年6月15日 | 現・Root mimi |\n| 古賀みれい | こが みれい | みれい | (2004-08-14) 2004年8月14日（22歳） | A型 | 埼玉県 | 白 | 6期生 | 2022年11月20日 - 2025年9月29日 | 現・ラストシーン |\n| 美山ひな | みやま ひな | ひなちゃん | (2007-04-17) 2007年4月17日（19歳） | 東京都 | ピンク | 8期生 | 2024年12月19日 - 2025年10月17日 | 元・じーぐらむ！、Agemon! | [...] アキシブproject（アキシブプロジェクト、Akishibu Project）は、日本の女性アイドルグループ。秋葉原の「TwinBox AKIHABARA」をホームグランドとしている。ライブプラネット\")所属。\n\n## 年譜\n\n[編集]\n\n|  |\n\n| 伝記の記載を年譜形式のみとすることは推奨されていません。 人物の伝記は流れのあるまとまった文章で記述し、年譜は補助的な使用にとどめてください。（2025年1月） |\n\n### 2012年\n\n[編集] [...] 田口未彩 (@aksb\\_taguchi) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 田口未彩 (@miiro\\_taguchi) - Instagram\n 田口未彩オフィシャルブログ「みぃ姫のlovely☆castle」Powered by Ameba - Ameba Blog\n 葵ふう (@aksb\\_fu) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 葵ふう (@aksb\\_fu) - Instagram\n 黒崎りある (@aksb\\_Real) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 黒崎りある (@aksb\\_real) - Instagram\n 古賀みれい (@aksb\\_mirei) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 古賀みれい (@aksb\\_mirei) - Instagram",
+          "age": null,
+          "score": 0.6161283,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Akishibu project - Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Akishibu_project",
+          "description": "akishibu project (アキシブproject) is a seven-member idol group formed by ex-BiS member Yokoyama Rina. Koga Mirei (古賀みれい; White) (Joined November 20, 2022;",
+          "age": null,
+          "score": 0.55998856,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "可愛？  」【アキシブproject】所属担当色：白色  年龄：18岁介绍 - 新浪",
+          "url": "https://www.sina.cn/news/detail/5003491515568579.html",
+          "description": "古賀みれい： 「可愛？♡」 【アキシブproject】所属担当色：白色 年龄：18岁介绍：偶像1年级生 ｢只能看到みれ哦！♡」",
+          "age": null,
+          "score": 0.52583206,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【アキシブproject新体制】 4人目のメンバーを発表   古賀みれい",
+          "url": "https://x.com/AkishibuProject/status/1593545139510968321",
+          "description": "【アキシブproject新体制】 4人目のメンバーを発表 ▽ 古賀みれい(@aksb_mirei) ▽ 担当カラー 白『みれいと幸せになろ～ 』 #アキシブ.",
+          "age": null,
+          "score": 0.5113512,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": ". アキシブproject 古賀みれいさん   生誕衣装のデザインと制作をさせて ...",
+          "url": "https://www.instagram.com/p/CwXREnELcam",
+          "description": "アキシブproject 古賀みれいさん 生誕衣装のデザインと制作をさせて頂きました！ お誕生日おめでとうございます ケープ×フードにお耳をつけてます",
+          "age": null,
+          "score": 0.39040667,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【アキシブproject】20250401 【トゥラトゥラ】古賀みれい 推し ...",
+          "url": "https://www.bilibili.com/video/BV1LyndzpEnz",
+          "description": "App. 【4K】铃原希实-「secret base ～君がくれたもの～」「secret base~你给我的所有~」铃原希实生日会2025 双语字幕. 加载中... 加载失败.",
+          "age": null,
+          "score": 0.35267037,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【古賀みれい】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/768718/view",
+          "description": "2024年8月実施予定のアキシブproject【古賀みれい】生誕祭の開催、そして、より盛大にお祝いできるよう支援お願いいたします。 現在 7,835,000円 支援",
+          "age": null,
+          "score": 0.32759354,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【旧サイト】アキシブproject 古賀みれい卒業公演 - LivePocket-Ticket",
+          "url": "https://t.livepocket.jp/e/mirei_graduation",
+          "description": "アキシブproject 古賀みれい卒業公演のチケット情報・予約・購入はこちらから|2025年9月29日(月)：東京都 Spotify O-WEST：アキシブproject|9月29",
+          "age": null,
+          "score": 0.31700373,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "『アキシブproject 古賀みれい卒業公演』 - TimeTree",
+          "url": "https://timetreeapp.com/public_calendars/akishibu/events/2768095156952318793?locale=en",
+          "description": "『アキシブproject 古賀みれい卒業公演』. Mon, Sep 29, 2025. 4 people liked this. @ Spotify O-WEST ⏱️ 開場17:00／開演18:00 最前席 25,000円 (チェキ撮影",
+          "age": null,
+          "score": 0.29024148,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "天才不二『前方で貰うレスは芸術点は高くない』乾『卒業公演の途中で ...",
+          "url": "https://note.com/timelmitei/n/n8756ed1c3403",
+          "description": "古賀みれい卒業公演が18:00開始O-WEST。新宿Renyドレコちゃんが19:00からだから相当厳しいスケジュールだったんですよ。 アキシブウェイ観たら帰るかと",
+          "age": null,
+          "score": 0.2814209,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.545Z",
+  "skill": "idol-attribute-generation",
+  "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
+  "name": "あいす",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 19,
+  "height_cm": 152,
+  "career_months": 39.1,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 35.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
+  "attributes": {
+    "strength": 14,
+    "agility": 18,
+    "natural_fitness": 16,
+    "stamina": 18,
+    "cute": 18,
+    "pretty": 15,
+    "pitch": 17,
+    "tone": 17,
+    "breath": 17,
+    "rhythm": 19,
+    "power": 19,
+    "stage_presence": 20,
+    "wit": 14,
+    "humor": 13,
+    "talking": 14,
+    "determination": 17,
+    "teamwork": 16,
+    "fashion": 15
+  },
+  "traits": {
+    "singer": 180,
+    "dancer": 330,
+    "model": 140,
+    "comedy": 60
+  },
+  "radar": {
+    "PHY": 16.5,
+    "APP": 17.4,
+    "SNG": 17.5,
+    "DAN": 19.33,
+    "MEN": 14.83
+  },
+  "ability": 85,
+  "ability_raw": 85.292,
+  "evidence_summary": {
+    "high_confidence": [
+      "profile: small body + powerful sharp stage presence / キレ",
+      "lolita/visual praise",
+      "group stamina floor 18"
+    ],
+    "medium_confidence": [
+      "fan Q&A interest in dance/song ranking"
+    ],
+    "procedural_only": [
+      "wit/humor mid; MC not strongly evidenced"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "stage_presence 19-20",
+      "agility/power/rhythm 18-19",
+      "pitch/tone/breath 16-17 supporting"
+    ],
+    "ranks": [
+      "dance/presence head; skill Ability calibration ~85"
+    ],
+    "floors": [
+      "stamina>=18"
+    ],
+    "biases": [
+      "cute>pretty age/height",
+      "dancer trait high"
+    ]
+  },
+  "career_context_used": [
+    "catalog: YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
+    "career_months=39.1",
+    "concurrent/related unit activity in evidence; not treated as Ability bonus"
+  ]
+}

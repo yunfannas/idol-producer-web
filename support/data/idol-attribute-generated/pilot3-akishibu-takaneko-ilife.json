@@ -1,0 +1,2328 @@
+{
+  "schema": "idol_attribute_generation_batch_v1",
+  "generated_at": "2026-09-04T08:21:07.556Z",
+  "skill": "idol-attribute-generation",
+  "opening_date": "2025-07-05",
+  "note": "Generator-only rerun from existing Tavily evidence + catalog career context. Ability is derived; no target-Ability nudging.",
+  "members": [
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.545Z",
+      "skill": "idol-attribute-generation",
+      "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
+      "name": "あいす",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 19,
+      "height_cm": 152,
+      "career_months": 39.1,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
+      "attributes": {
+        "strength": 14,
+        "agility": 18,
+        "natural_fitness": 16,
+        "stamina": 18,
+        "cute": 18,
+        "pretty": 15,
+        "pitch": 17,
+        "tone": 17,
+        "breath": 17,
+        "rhythm": 19,
+        "power": 19,
+        "stage_presence": 20,
+        "wit": 14,
+        "humor": 13,
+        "talking": 14,
+        "determination": 17,
+        "teamwork": 16,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 180,
+        "dancer": 330,
+        "model": 140,
+        "comedy": 60
+      },
+      "radar": {
+        "PHY": 16.5,
+        "APP": 17.4,
+        "SNG": 17.5,
+        "DAN": 19.33,
+        "MEN": 14.83
+      },
+      "ability": 85,
+      "ability_raw": 85.292,
+      "evidence_summary": {
+        "high_confidence": [
+          "profile: small body + powerful sharp stage presence / キレ",
+          "lolita/visual praise",
+          "group stamina floor 18"
+        ],
+        "medium_confidence": [
+          "fan Q&A interest in dance/song ranking"
+        ],
+        "procedural_only": [
+          "wit/humor mid; MC not strongly evidenced"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "stage_presence 19-20",
+          "agility/power/rhythm 18-19",
+          "pitch/tone/breath 16-17 supporting"
+        ],
+        "ranks": [
+          "dance/presence head; skill Ability calibration ~85"
+        ],
+        "floors": [
+          "stamina>=18"
+        ],
+        "biases": [
+          "cute>pretty age/height",
+          "dancer trait high"
+        ]
+      },
+      "career_context_used": [
+        "catalog: YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
+        "career_months=39.1",
+        "concurrent/related unit activity in evidence; not treated as Ability bonus"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.546Z",
+      "skill": "idol-attribute-generation",
+      "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
+      "name": "空詩かれん",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 24,
+      "height_cm": 155,
+      "career_months": 5.5,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 5.5,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "iLife! (2025-01-20–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 18,
+        "cute": 14,
+        "pretty": 16,
+        "pitch": 19,
+        "tone": 19,
+        "breath": 18,
+        "rhythm": 17,
+        "power": 16,
+        "stage_presence": 18,
+        "wit": 15,
+        "humor": 14,
+        "talking": 17,
+        "determination": 18,
+        "teamwork": 18,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 360,
+        "dancer": 190,
+        "model": 80,
+        "comedy": 90
+      },
+      "radar": {
+        "PHY": 15.5,
+        "APP": 15.6,
+        "SNG": 18.25,
+        "DAN": 17,
+        "MEN": 16
+      },
+      "ability": 82,
+      "ability_raw": 82.792,
+      "evidence_summary": {
+        "high_confidence": [
+          "overwhelming vocal / main-vocal framing",
+          "evidence: prior monogatari leader + later iLiFE leader path",
+          "stamina floor 18"
+        ],
+        "medium_confidence": [
+          "dance high but secondary to vocal"
+        ],
+        "procedural_only": [
+          "catalog career_months short for iLiFE only; prior group may be undated in DB"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pitch/tone 18-19",
+          "breath 17-18",
+          "stage_presence 17-18"
+        ],
+        "ranks": [
+          "vocal ace; stage presence strong but not top-tier"
+        ],
+        "floors": [
+          "stamina>=18",
+          "teamwork/talking/determination from leadership evidence"
+        ],
+        "biases": [
+          "singer trait very high",
+          "pretty mild age 24"
+        ]
+      },
+      "career_context_used": [
+        "catalog: iLife! (2025-01-20–present)",
+        "career_months=5.5",
+        "short current_group tenure ignored as weakness; leadership/vocal evidence overrides newcomer prior"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.547Z",
+      "skill": "idol-attribute-generation",
+      "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
+      "name": "若葉のあ",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 16,
+      "height_cm": 164,
+      "career_months": 21.7,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 21.7,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "iLife! (2023-09-12–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 17,
+        "cute": 19,
+        "pretty": 18,
+        "pitch": 15,
+        "tone": 16,
+        "breath": 15,
+        "rhythm": 16,
+        "power": 15,
+        "stage_presence": 17,
+        "wit": 13,
+        "humor": 12,
+        "talking": 14,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 18
+      },
+      "traits": {
+        "singer": 130,
+        "dancer": 160,
+        "model": 200,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 15.25,
+        "APP": 18.8,
+        "SNG": 15.5,
+        "DAN": 16,
+        "MEN": 14.67
+      },
+      "ability": 80,
+      "ability_raw": 80.938,
+      "evidence_summary": {
+        "high_confidence": [
+          "visual buzz / teen magazine framing"
+        ],
+        "medium_confidence": [
+          "performance adequate, not vocal/dance ace"
+        ],
+        "procedural_only": [
+          "MC/comedy low"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "cute/pretty 18-19",
+          "fashion 17-18"
+        ],
+        "ranks": [
+          "appearance head; skill Ability ~81"
+        ],
+        "floors": [
+          "stamina>=17"
+        ],
+        "biases": [
+          "model trait at early-practitioner tier",
+          "cute primary age 16 with height pretty pull"
+        ]
+      },
+      "career_context_used": [
+        "catalog: iLife! (2023-09-12–present)",
+        "career_months=21.7",
+        "no prior groups; ~22 months tenure regularizes stamina/stage basics only"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.547Z",
+      "skill": "idol-attribute-generation",
+      "uid": "9871efc4-1501-41eb-a430-94fd34bf4015",
+      "name": "純嶺みき",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 22,
+      "height_cm": 164.5,
+      "career_months": 1.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 1.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "iLife! (2025-05-10–present)",
+      "attributes": {
+        "strength": 14,
+        "agility": 18,
+        "natural_fitness": 16,
+        "stamina": 18,
+        "cute": 14,
+        "pretty": 16,
+        "pitch": 15,
+        "tone": 16,
+        "breath": 15,
+        "rhythm": 18,
+        "power": 18,
+        "stage_presence": 18,
+        "wit": 13,
+        "humor": 12,
+        "talking": 13,
+        "determination": 16,
+        "teamwork": 14,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 150,
+        "dancer": 300,
+        "model": 120,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 16.5,
+        "APP": 15.6,
+        "SNG": 16,
+        "DAN": 18,
+        "MEN": 13.83
+      },
+      "ability": 79,
+      "ability_raw": 79.042,
+      "evidence_summary": {
+        "high_confidence": [
+          "cheer-dance background + キレ/表現力",
+          "stamina floor 18"
+        ],
+        "medium_confidence": [
+          "stable voice mentions in roundups"
+        ],
+        "procedural_only": [
+          "catalog newcomer; talking/wit unevidenced"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "agility/rhythm/power/stage_presence 17-18"
+        ],
+        "ranks": [
+          "dance-performance specialist; skill Ability ~79"
+        ],
+        "floors": [
+          "stamina>=18"
+        ],
+        "biases": [
+          "cheer -> agility/rhythm/stamina",
+          "pretty from height/style"
+        ]
+      },
+      "career_context_used": [
+        "catalog: iLife! (2025-05-10–present)",
+        "career_months=1.8",
+        "newcomer uncertainty on MC/mental; training background overrides dance weakness prior"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.546Z",
+      "skill": "idol-attribute-generation",
+      "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
+      "name": "小熊まむ",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 20,
+      "height_cm": 165.9,
+      "career_months": 1.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 1.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "iLife! (2025-05-11–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 17,
+        "cute": 17,
+        "pretty": 16,
+        "pitch": 14,
+        "tone": 15,
+        "breath": 14,
+        "rhythm": 16,
+        "power": 15,
+        "stage_presence": 16,
+        "wit": 12,
+        "humor": 13,
+        "talking": 14,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 100,
+        "dancer": 170,
+        "model": 110,
+        "comedy": 70
+      },
+      "radar": {
+        "PHY": 15.25,
+        "APP": 16.8,
+        "SNG": 14.75,
+        "DAN": 15.67,
+        "MEN": 14.17
+      },
+      "ability": 76,
+      "ability_raw": 76.604,
+      "evidence_summary": {
+        "high_confidence": [
+          "dance expression / smile-on-stage praise",
+          "tall friendly cute framing"
+        ],
+        "medium_confidence": [
+          "new-member resolve interview"
+        ],
+        "procedural_only": [
+          "vocal lower-middle"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "cute 16-18",
+          "technical mid 14-16"
+        ],
+        "ranks": [
+          "lower-middle Ability tail of B roster; skill Ability ~76"
+        ],
+        "floors": [
+          "stamina>=17"
+        ],
+        "biases": [
+          "height pretty pull vs cute primary"
+        ]
+      },
+      "career_context_used": [
+        "catalog: iLife! (2025-05-11–present)",
+        "career_months=1.8",
+        "newcomer (~2 months): uncertainty kept; no invented vocal strength"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.546Z",
+      "skill": "idol-attribute-generation",
+      "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+      "name": "心花りり",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 26,
+      "height_cm": 156,
+      "career_months": 72.4,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 52.3,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "Yumeiro H!L!T (2019-06-23–present); iLife! (2021-02-25–present); GILTY × GILTY (2022-06-01–present)",
+      "attributes": {
+        "strength": 14,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 17,
+        "cute": 14,
+        "pretty": 16,
+        "pitch": 17,
+        "tone": 17,
+        "breath": 17,
+        "rhythm": 17,
+        "power": 16,
+        "stage_presence": 18,
+        "wit": 16,
+        "humor": 14,
+        "talking": 18,
+        "determination": 19,
+        "teamwork": 18,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 210,
+        "dancer": 180,
+        "model": 70,
+        "comedy": 80
+      },
+      "radar": {
+        "PHY": 15.5,
+        "APP": 15.6,
+        "SNG": 17,
+        "DAN": 17,
+        "MEN": 16.5
+      },
+      "ability": 81,
+      "ability_raw": 81.625,
+      "evidence_summary": {
+        "high_confidence": [
+          "longest-tenured / leader history",
+          "multi-group veteran in career_summary"
+        ],
+        "medium_confidence": [
+          "solid all-rounder rather than one-domain ace"
+        ],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "determination/teamwork/talking 17-18",
+          "technical cluster 16-18"
+        ],
+        "ranks": [
+          "leadership / professional head; skill Ability ~82"
+        ],
+        "floors": [
+          "stamina>=17"
+        ],
+        "biases": [
+          "pretty>cute age 26"
+        ]
+      },
+      "career_context_used": [
+        "catalog: Yumeiro H!L!T (2019-06-23–present); iLife! (2021-02-25–present); GILTY × GILTY (2022-06-01–present)",
+        "career_months=72.4",
+        "veteran floor on determination/teamwork/talking; no flat Ability bonus"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.547Z",
+      "skill": "idol-attribute-generation",
+      "uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
+      "name": "那蘭のどか",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 19,
+      "height_cm": 164,
+      "career_months": 43.8,
+      "prior_group_months": 34.6,
+      "training_background": null,
+      "current_group_months": 9.2,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "ZOCX",
+          "group_uid": "Wk9DWA",
+          "start_date": "2021-05-13",
+          "end_date": "2024-03-31",
+          "months": 34.6
+        }
+      ],
+      "career_summary": "ZOCX (2021-05-13–2024-03-31); iLiFE! (2024-09-28–2025-08-27)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 17,
+        "cute": 15,
+        "pretty": 17,
+        "pitch": 16,
+        "tone": 16,
+        "breath": 16,
+        "rhythm": 16,
+        "power": 16,
+        "stage_presence": 17,
+        "wit": 14,
+        "humor": 13,
+        "talking": 15,
+        "determination": 16,
+        "teamwork": 16,
+        "fashion": 17
+      },
+      "traits": {
+        "singer": 160,
+        "dancer": 170,
+        "model": 130,
+        "comedy": 50
+      },
+      "radar": {
+        "PHY": 15.25,
+        "APP": 16.6,
+        "SNG": 16,
+        "DAN": 16.33,
+        "MEN": 15.17
+      },
+      "ability": 79,
+      "ability_raw": 79.688,
+      "evidence_summary": {
+        "high_confidence": [
+          "transfer framing / prior ZOC (鎮目のどか) in media"
+        ],
+        "medium_confidence": [
+          "sparse domain-specific praise in this collect"
+        ],
+        "procedural_only": [
+          "balanced mid-high B from prior-career regularization"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "technical mostly 15-17"
+        ],
+        "ranks": [
+          "middle-upper roster; skill Ability ~80"
+        ],
+        "floors": [
+          "stamina>=17",
+          "avoid very-low professional basics"
+        ],
+        "biases": [
+          "pretty from height 164"
+        ]
+      },
+      "career_context_used": [
+        "catalog: ZOCX (2021-05-13–2024-03-31); iLiFE! (2024-09-28–2025-08-27)",
+        "prior groups: ZOCX",
+        "career_months=43.8",
+        "prior_group_months=34.6",
+        "prior ZOC evidence used as professional context / floor, not Ability proof"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.547Z",
+      "skill": "idol-attribute-generation",
+      "uid": "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
+      "name": "虹羽みに",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 15,
+      "height_cm": 150,
+      "career_months": 1.9,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 1.9,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "iLife! (2025-05-09–present)",
+      "attributes": {
+        "strength": 12,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 17,
+        "cute": 18,
+        "pretty": 14,
+        "pitch": 17,
+        "tone": 17,
+        "breath": 16,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 15,
+        "wit": 12,
+        "humor": 12,
+        "talking": 14,
+        "determination": 17,
+        "teamwork": 14,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 230,
+        "dancer": 110,
+        "model": 170,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 14.5,
+        "APP": 17.2,
+        "SNG": 16.25,
+        "DAN": 14.67,
+        "MEN": 14
+      },
+      "ability": 77,
+      "ability_raw": 77.708,
+      "evidence_summary": {
+        "high_confidence": [
+          "self: unexpected solid singing vs cute look",
+          "model gigs"
+        ],
+        "medium_confidence": [
+          "effort / voice-training statements"
+        ],
+        "procedural_only": [
+          "stamina 17 (not 18 trio)",
+          "dance power uncertain newcomer"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pitch/tone 16-17",
+          "cute 17-19"
+        ],
+        "ranks": [
+          "junior vocal specialty; skill Ability ~77"
+        ],
+        "floors": [
+          "stamina>=17",
+          "determination bias from effort"
+        ],
+        "biases": [
+          "cute>>pretty age<=16 height<153",
+          "singer+model traits"
+        ]
+      },
+      "career_context_used": [
+        "catalog: iLife! (2025-05-09–present)",
+        "career_months=1.9",
+        "true newcomer (~2 months): high uncertainty except evidenced vocal/model"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.546Z",
+      "skill": "idol-attribute-generation",
+      "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
+      "name": "福丸うさ",
+      "group": "iLiFE!",
+      "tier": "B",
+      "age": 21,
+      "height_cm": 159,
+      "career_months": 29,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 23.7,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 17,
+        "cute": 16,
+        "pretty": 15,
+        "pitch": 15,
+        "tone": 16,
+        "breath": 15,
+        "rhythm": 16,
+        "power": 16,
+        "stage_presence": 17,
+        "wit": 15,
+        "humor": 17,
+        "talking": 17,
+        "determination": 16,
+        "teamwork": 16,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 120,
+        "dancer": 160,
+        "model": 80,
+        "comedy": 220
+      },
+      "radar": {
+        "PHY": 15.25,
+        "APP": 15.8,
+        "SNG": 15.5,
+        "DAN": 16.33,
+        "MEN": 15.83
+      },
+      "ability": 78,
+      "ability_raw": 78.688,
+      "evidence_summary": {
+        "high_confidence": [
+          "self: genki / funny-role framing"
+        ],
+        "medium_confidence": [
+          "prior ZUTTOMOTTO / あいら in career_summary"
+        ],
+        "procedural_only": [
+          "vocal not ace"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "humor/talking 16-17",
+          "stage_presence 16-17"
+        ],
+        "ranks": [
+          "communication / mood maker; skill Ability ~78"
+        ],
+        "floors": [
+          "stamina>=17"
+        ],
+        "biases": [
+          "comedy trait elevated",
+          "cute mild"
+        ]
+      },
+      "career_context_used": [
+        "catalog: ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
+        "career_months=29",
+        "prior group months regularize basics; comedy from self-statement not tenure"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.549Z",
+      "skill": "idol-attribute-generation",
+      "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
+      "name": "葵ふう",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 21,
+      "height_cm": null,
+      "career_months": 31.5,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 31.5,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "アキシブproject (2022-11-20–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 17,
+        "cute": 15,
+        "pretty": 14,
+        "pitch": 14,
+        "tone": 14,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 15,
+        "wit": 14,
+        "humor": 14,
+        "talking": 16,
+        "determination": 15,
+        "teamwork": 16,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 80,
+        "dancer": 120,
+        "model": 70,
+        "comedy": 90
+      },
+      "radar": {
+        "PHY": 14.75,
+        "APP": 14.8,
+        "SNG": 14.25,
+        "DAN": 14.67,
+        "MEN": 14.83
+      },
+      "ability": 73,
+      "ability_raw": 73.063,
+      "evidence_summary": {
+        "high_confidence": [
+          "talk-live explains group history/appeal (MC-ish)",
+          "long tenure"
+        ],
+        "medium_confidence": [],
+        "procedural_only": [
+          "stamina lift for live-heavy veteran framing"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "talking 15-17"
+        ],
+        "ranks": [
+          "communication lean"
+        ],
+        "floors": [
+          "tenure stamina/teamwork"
+        ],
+        "biases": []
+      },
+      "career_context_used": [
+        "catalog: アキシブproject (2022-11-20–present)",
+        "career_months=31.5"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.547Z",
+      "skill": "idol-attribute-generation",
+      "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+      "name": "古賀みれい",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 20,
+      "height_cm": 152,
+      "career_months": 31.5,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 31.5,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "アキシブproject (2022-11-20–2025-09-29)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 16,
+        "pretty": 14,
+        "pitch": 14,
+        "tone": 14,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 15,
+        "wit": 13,
+        "humor": 13,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 90,
+        "dancer": 140,
+        "model": 80,
+        "comedy": 50
+      },
+      "radar": {
+        "PHY": 14.5,
+        "APP": 15.6,
+        "SNG": 14.25,
+        "DAN": 14.67,
+        "MEN": 14
+      },
+      "ability": 73,
+      "ability_raw": 73.042,
+      "evidence_summary": {
+        "high_confidence": [
+          "identity/profile pages"
+        ],
+        "medium_confidence": [
+          "cute/美人 social tags"
+        ],
+        "procedural_only": [
+          "weak searchable performance evidence; D middle from tenure"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "mostly 13-16"
+        ],
+        "ranks": [
+          "uncertain middle"
+        ],
+        "floors": [
+          "~31 months tenure avoids very-low basics"
+        ],
+        "biases": [
+          "cute lean height 152"
+        ]
+      },
+      "career_context_used": [
+        "catalog: アキシブproject (2022-11-20–2025-09-29)",
+        "career_months=31.5",
+        "may leave after opening in later catalog; generated on S6 opening roster"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.548Z",
+      "skill": "idol-attribute-generation",
+      "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+      "name": "水琴まなみ",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 20,
+      "height_cm": null,
+      "career_months": 6.7,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 6.7,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "アキシブproject (2024-12-13–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 15,
+        "cute": 14,
+        "pretty": 17,
+        "pitch": 13,
+        "tone": 14,
+        "breath": 13,
+        "rhythm": 16,
+        "power": 15,
+        "stage_presence": 16,
+        "wit": 13,
+        "humor": 13,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 14,
+        "fashion": 16
+      },
+      "traits": {
+        "singer": 70,
+        "dancer": 180,
+        "model": 200,
+        "comedy": 50
+      },
+      "radar": {
+        "PHY": 14.75,
+        "APP": 16.4,
+        "SNG": 14,
+        "DAN": 15.67,
+        "MEN": 14.17
+      },
+      "ability": 74,
+      "ability_raw": 74.729,
+      "evidence_summary": {
+        "high_confidence": [
+          "pro media: extreme proportions/style praised by MC",
+          "birthday-solo choreography collab"
+        ],
+        "medium_confidence": [],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pretty 16-18",
+          "dance/rhythm mid-high"
+        ],
+        "ranks": [
+          "visual/dance specialist"
+        ],
+        "floors": [],
+        "biases": [
+          "model+dancer",
+          "newcomer vocal uncertain low-mid"
+        ]
+      },
+      "career_context_used": [
+        "catalog: アキシブproject (2024-12-13–present)",
+        "career_months=6.7",
+        "short tenure (~7 months): visual/dance evidence overrides newcomer weakness; vocal stays uncertain"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.548Z",
+      "skill": "idol-attribute-generation",
+      "uid": "45484495-8792-48db-bab0-560ee4107464",
+      "name": "清見るん",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 23,
+      "height_cm": 159,
+      "career_months": 44.4,
+      "prior_group_months": 26.2,
+      "training_background": null,
+      "current_group_months": 18.3,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "炭酸くろにくるっ",
+          "group_uid": "54Kt6YW444GP44KN44Gr44GP44KL44Gj",
+          "start_date": "2021-04-18",
+          "end_date": "2023-06-23",
+          "months": 26.2
+        }
+      ],
+      "career_summary": "炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 14,
+        "pretty": 15,
+        "pitch": 18,
+        "tone": 17,
+        "breath": 17,
+        "rhythm": 17,
+        "power": 15,
+        "stage_presence": 15,
+        "wit": 14,
+        "humor": 14,
+        "talking": 15,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 90,
+        "dancer": 130,
+        "model": 80,
+        "comedy": 70
+      },
+      "radar": {
+        "PHY": 14.5,
+        "APP": 14.8,
+        "SNG": 17.25,
+        "DAN": 15.67,
+        "MEN": 14.67
+      },
+      "ability": 77,
+      "ability_raw": 77.042,
+      "evidence_summary": {
+        "high_confidence": [
+          "appears in same talk-live coverage as peers"
+        ],
+        "medium_confidence": [],
+        "procedural_only": [
+          "retained scenario vocal baseline: SNG 17.25"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "retained vocal calibration: pitch 18, tone/breath/rhythm 17"
+        ],
+        "ranks": [
+          "reviewed vocal strength"
+        ],
+        "floors": [
+          "prior 炭酸くろにくるっ tenure regularizes basics"
+        ],
+        "biases": []
+      },
+      "career_context_used": [
+        "catalog: 炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+        "prior groups: 炭酸くろにくるっ",
+        "career_months=44.4",
+        "prior_group_months=26.2",
+        "prior_group_months used as professional floor only"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.548Z",
+      "skill": "idol-attribute-generation",
+      "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
+      "name": "如月なな",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 19,
+      "height_cm": null,
+      "career_months": 31.5,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 31.5,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "アキシブproject (2022-11-20–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 15,
+        "pretty": 16,
+        "pitch": 14,
+        "tone": 14,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 15,
+        "wit": 13,
+        "humor": 13,
+        "talking": 15,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 80,
+        "dancer": 130,
+        "model": 100,
+        "comedy": 60
+      },
+      "radar": {
+        "PHY": 14.5,
+        "APP": 15.8,
+        "SNG": 14.25,
+        "DAN": 14.67,
+        "MEN": 14.33
+      },
+      "ability": 73,
+      "ability_raw": 73.625,
+      "evidence_summary": {
+        "high_confidence": [
+          "pro media talk/performance context with peers"
+        ],
+        "medium_confidence": [],
+        "procedural_only": [
+          "noisy cross-group hits discounted"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "D mid"
+        ],
+        "ranks": [],
+        "floors": [
+          "tenure regularization"
+        ],
+        "biases": [
+          "talking slight from MC context"
+        ]
+      },
+      "career_context_used": [
+        "catalog: アキシブproject (2022-11-20–present)",
+        "career_months=31.5"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.548Z",
+      "skill": "idol-attribute-generation",
+      "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
+      "name": "美山ひな",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 18,
+      "height_cm": null,
+      "career_months": 29.5,
+      "prior_group_months": 22.9,
+      "training_background": null,
+      "current_group_months": 6.6,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "じーくらむ！",
+          "group_uid": "44GY44O844GP44KJ44KA77yB",
+          "start_date": "2021-07-01",
+          "end_date": "2022-08-31",
+          "months": 14
+        },
+        {
+          "group_name": "あげもん！",
+          "group_uid": "44GC44GS44KC44KT77yB",
+          "start_date": "2022-11-01",
+          "end_date": "2023-07-31",
+          "months": 8.9
+        }
+      ],
+      "career_summary": "じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 15,
+        "cute": 16,
+        "pretty": 14,
+        "pitch": 13,
+        "tone": 14,
+        "breath": 13,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 15,
+        "wit": 13,
+        "humor": 13,
+        "talking": 13,
+        "determination": 14,
+        "teamwork": 14,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 70,
+        "dancer": 130,
+        "model": 80,
+        "comedy": 50
+      },
+      "radar": {
+        "PHY": 14.25,
+        "APP": 15.6,
+        "SNG": 13.75,
+        "DAN": 14.67,
+        "MEN": 13.5
+      },
+      "ability": 71,
+      "ability_raw": 71.688,
+      "evidence_summary": {
+        "high_confidence": [
+          "profile stubs"
+        ],
+        "medium_confidence": [
+          "shared event dance mentions"
+        ],
+        "procedural_only": [
+          "junior / lower-middle D"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "slightly below roster mean"
+        ],
+        "ranks": [
+          "junior tail"
+        ],
+        "floors": [],
+        "biases": [
+          "cute age 18"
+        ]
+      },
+      "career_context_used": [
+        "catalog: じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
+        "prior groups: じーくらむ！, あげもん！",
+        "career_months=29.5",
+        "prior_group_months=22.9",
+        "short tenure; newcomer uncertainty preserved"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.548Z",
+      "skill": "idol-attribute-generation",
+      "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "name": "平沢かえ",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 20,
+      "height_cm": 163,
+      "career_months": 18.2,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 18.2,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "アキシブproject (2023-12-28–2026-02-24)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 14,
+        "pretty": 16,
+        "pitch": 18,
+        "tone": 18,
+        "breath": 19,
+        "rhythm": 17,
+        "power": 17,
+        "stage_presence": 16,
+        "wit": 13,
+        "humor": 13,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 170,
+        "dancer": 120,
+        "model": 90,
+        "comedy": 50
+      },
+      "radar": {
+        "PHY": 14.5,
+        "APP": 15.6,
+        "SNG": 18,
+        "DAN": 16.67,
+        "MEN": 14.17
+      },
+      "ability": 79,
+      "ability_raw": 79.542,
+      "evidence_summary": {
+        "high_confidence": [
+          "歌うまパフォーマンス snippet"
+        ],
+        "medium_confidence": [
+          "profile pages"
+        ],
+        "procedural_only": [
+          "retained scenario vocal baseline: SNG 18.00"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "retained vocal calibration: pitch/tone 18, breath 19, rhythm 17"
+        ],
+        "ranks": [
+          "reviewed vocal standout in sparse roster"
+        ],
+        "floors": [],
+        "biases": [
+          "pretty from height 163"
+        ]
+      },
+      "career_context_used": [
+        "catalog: アキシブproject (2023-12-28–2026-02-24)",
+        "career_months=18.2"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.549Z",
+      "skill": "idol-attribute-generation",
+      "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+      "name": "茉井良菜",
+      "group": "アキシブproject",
+      "tier": "D",
+      "age": 26,
+      "height_cm": 158,
+      "career_months": 121.8,
+      "prior_group_months": 103.6,
+      "training_background": null,
+      "current_group_months": 18.2,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "Le Siana",
+          "group_uid": "TGUgU2lhbmE",
+          "start_date": "2012-10-01",
+          "end_date": "2016-06-04",
+          "months": 44.1
+        },
+        {
+          "group_name": "煌めき☆アンフォレント",
+          "group_uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+          "start_date": "2016-07-03",
+          "end_date": "2020-11-29",
+          "months": 52.9
+        },
+        {
+          "group_name": "モユルハル",
+          "group_uid": null,
+          "start_date": "2022-08-16",
+          "end_date": "2023-03-05",
+          "months": 6.6
+        }
+      ],
+      "career_summary": "Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 14,
+        "natural_fitness": 13,
+        "stamina": 16,
+        "cute": 14,
+        "pretty": 17,
+        "pitch": 18,
+        "tone": 18,
+        "breath": 18,
+        "rhythm": 17,
+        "power": 15,
+        "stage_presence": 17,
+        "wit": 14,
+        "humor": 13,
+        "talking": 15,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 17
+      },
+      "traits": {
+        "singer": 90,
+        "dancer": 110,
+        "model": 220,
+        "comedy": 60
+      },
+      "radar": {
+        "PHY": 14,
+        "APP": 16.4,
+        "SNG": 17.75,
+        "DAN": 16.33,
+        "MEN": 15
+      },
+      "ability": 80,
+      "ability_raw": 80.333,
+      "evidence_summary": {
+        "high_confidence": [
+          "image model / cosmetics campaigns",
+          "long prior Le Siana / 煌めき career"
+        ],
+        "medium_confidence": [],
+        "procedural_only": [
+          "retained scenario vocal baseline: SNG 17.75"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "fashion/pretty 16-18",
+          "retained vocal calibration: pitch/tone/breath 18, rhythm 17"
+        ],
+        "ranks": [
+          "model/visual lean; reviewed vocal strength"
+        ],
+        "floors": [
+          "long career determination/talking/stamina regularization"
+        ],
+        "biases": [
+          "model trait",
+          "pretty age 26"
+        ]
+      },
+      "career_context_used": [
+        "catalog: Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
+        "prior groups: Le Siana, 煌めき☆アンフォレント, モユルハル",
+        "career_months=121.8",
+        "prior_group_months=103.6",
+        "career_months ~120 used for professional floors only, not Ability targeting"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.550Z",
+      "skill": "idol-attribute-generation",
+      "uid": "fa435849-8378-41af-b0fe-341103a45ac5",
+      "name": "橋本桃呼",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 22,
+      "height_cm": 160,
+      "career_months": 84.5,
+      "prior_group_months": 49.5,
+      "training_background": null,
+      "current_group_months": 35,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "Last Idol 2nd Generation",
+          "group_uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
+          "start_date": "2018-04-15",
+          "end_date": "2022-05-31",
+          "months": 49.5
+        }
+      ],
+      "career_summary": "Last Idol 2nd Generation (2018-04-15–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 16,
+        "cute": 14,
+        "pretty": 16,
+        "pitch": 18,
+        "tone": 17,
+        "breath": 17,
+        "rhythm": 16,
+        "power": 16,
+        "stage_presence": 17,
+        "wit": 14,
+        "humor": 13,
+        "talking": 14,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 280,
+        "dancer": 170,
+        "model": 90,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 15,
+        "APP": 15.6,
+        "SNG": 17,
+        "DAN": 16.33,
+        "MEN": 14.5
+      },
+      "ability": 78,
+      "ability_raw": 78.917,
+      "evidence_summary": {
+        "high_confidence": [
+          "fan: technically sharpest vocal; spicy rather than always-main"
+        ],
+        "medium_confidence": [],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pitch 17-18"
+        ],
+        "ranks": [
+          "top vocal technician"
+        ],
+        "floors": [
+          "veteran prior Last Idol 2nd gen regularizes stamina/breath"
+        ],
+        "biases": [
+          "singer high"
+        ]
+      },
+      "career_context_used": [
+        "catalog: Last Idol 2nd Generation (2018-04-15–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+        "prior groups: Last Idol 2nd Generation",
+        "career_months=84.5",
+        "prior_group_months=49.5",
+        "prior Last Idol used as professional floor only"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.549Z",
+      "skill": "idol-attribute-generation",
+      "uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+      "name": "春野莉々",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 21,
+      "height_cm": 158,
+      "career_months": 35.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "高嶺のなでしこ (2022-07-10–2025-07-31)",
+      "attributes": {
+        "strength": 11,
+        "agility": 13,
+        "natural_fitness": 12,
+        "stamina": 14,
+        "cute": 15,
+        "pretty": 14,
+        "pitch": 17,
+        "tone": 17,
+        "breath": 15,
+        "rhythm": 14,
+        "power": 13,
+        "stage_presence": 15,
+        "wit": 12,
+        "humor": 12,
+        "talking": 13,
+        "determination": 15,
+        "teamwork": 14,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 220,
+        "dancer": 100,
+        "model": 60,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 12.5,
+        "APP": 14.8,
+        "SNG": 15.75,
+        "DAN": 14,
+        "MEN": 13.33
+      },
+      "ability": 71,
+      "ability_raw": 71.542,
+      "evidence_summary": {
+        "high_confidence": [
+          "peer: emotional expressive vocals"
+        ],
+        "medium_confidence": [
+          "dance videos exist"
+        ],
+        "procedural_only": [
+          "vocal-strong with weak support domains"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pitch/tone 16-17"
+        ],
+        "ranks": [
+          "vocal over dance; guide ~72"
+        ],
+        "floors": [],
+        "biases": []
+      },
+      "career_context_used": [
+        "catalog: 高嶺のなでしこ (2022-07-10–2025-07-31)",
+        "career_months=35.8",
+        "may be end-dated after opening in catalog; generated against S6 opening evidence roster"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.550Z",
+      "skill": "idol-attribute-generation",
+      "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+      "name": "松本ももな",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 22,
+      "height_cm": 159,
+      "career_months": 92.6,
+      "prior_group_months": 57.6,
+      "training_background": null,
+      "current_group_months": 35,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "Choux Cream Rockets",
+          "group_uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
+          "start_date": "2017-08-13",
+          "end_date": "2022-05-31",
+          "months": 57.6
+        }
+      ],
+      "career_summary": "Choux Cream Rockets (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+      "attributes": {
+        "strength": 12,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 18,
+        "pretty": 20,
+        "pitch": 15,
+        "tone": 16,
+        "breath": 15,
+        "rhythm": 16,
+        "power": 15,
+        "stage_presence": 17,
+        "wit": 14,
+        "humor": 14,
+        "talking": 16,
+        "determination": 16,
+        "teamwork": 15,
+        "fashion": 20
+      },
+      "traits": {
+        "singer": 130,
+        "dancer": 150,
+        "model": 380,
+        "comedy": 60
+      },
+      "radar": {
+        "PHY": 14.25,
+        "APP": 19.6,
+        "SNG": 15.5,
+        "DAN": 16,
+        "MEN": 15.83
+      },
+      "ability": 82,
+      "ability_raw": 82.354,
+      "evidence_summary": {
+        "high_confidence": [
+          "Kansai Collection / model interviews",
+          "visual consensus"
+        ],
+        "medium_confidence": [
+          "adequate live performance, not vocal ace"
+        ],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pretty/fashion 19-20"
+        ],
+        "ranks": [
+          "visual/fashion ace; guide Ability ~82 via APP not SNG"
+        ],
+        "floors": [
+          "performance mid floor from group live duty"
+        ],
+        "biases": [
+          "model trait near-max; pretty>cute"
+        ]
+      },
+      "career_context_used": [
+        "catalog: Choux Cream Rockets (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+        "prior groups: Choux Cream Rockets",
+        "career_months=92.6",
+        "prior_group_months=57.6",
+        "prior Choux Cream Rockets used as experience regularization only"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.549Z",
+      "skill": "idol-attribute-generation",
+      "uid": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+      "name": "城月菜央",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 21,
+      "height_cm": 153,
+      "career_months": 41.9,
+      "prior_group_months": 6,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "#PEXACOA",
+          "group_uid": "I1BFWEFDT0E",
+          "start_date": "2021-05-30",
+          "end_date": "2021-11-30",
+          "months": 6
+        }
+      ],
+      "career_summary": "#PEXACOA (2021-05-30–2021-11-30); 高嶺のなでしこ (2022-07-10–present)",
+      "attributes": {
+        "strength": 12,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 15,
+        "cute": 17,
+        "pretty": 15,
+        "pitch": 15,
+        "tone": 15,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 16,
+        "wit": 16,
+        "humor": 17,
+        "talking": 17,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 120,
+        "dancer": 140,
+        "model": 100,
+        "comedy": 300
+      },
+      "radar": {
+        "PHY": 14,
+        "APP": 16.6,
+        "SNG": 14.75,
+        "DAN": 15,
+        "MEN": 15.83
+      },
+      "ability": 76,
+      "ability_raw": 76.75,
+      "evidence_summary": {
+        "high_confidence": [
+          "humor 17 calibration",
+          "talk/worldview praise",
+          "visual/communication shape"
+        ],
+        "medium_confidence": [
+          "cute-leaning vocal via peers"
+        ],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "humor 17 locked",
+          "talking 17-18",
+          "wit 15-17"
+        ],
+        "ranks": [
+          "communication specialty; guide Ability ~77-78"
+        ],
+        "floors": [],
+        "biases": [
+          "comedy trait high",
+          "cute lean height 153"
+        ]
+      },
+      "career_context_used": [
+        "catalog: #PEXACOA (2021-05-30–2021-11-30); 高嶺のなでしこ (2022-07-10–present)",
+        "prior groups: #PEXACOA",
+        "career_months=41.9",
+        "prior_group_months=6",
+        "short prior #PEXACOA noted; communication score from evidence not tenure"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.549Z",
+      "skill": "idol-attribute-generation",
+      "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+      "name": "星谷美来",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 21,
+      "height_cm": 161,
+      "career_months": 35.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+      "attributes": {
+        "strength": 12,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 19,
+        "pretty": 17,
+        "pitch": 14,
+        "tone": 15,
+        "breath": 14,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 16,
+        "wit": 13,
+        "humor": 14,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 17
+      },
+      "traits": {
+        "singer": 90,
+        "dancer": 130,
+        "model": 220,
+        "comedy": 50
+      },
+      "radar": {
+        "PHY": 14.25,
+        "APP": 18.6,
+        "SNG": 14.5,
+        "DAN": 15,
+        "MEN": 14.67
+      },
+      "ability": 77,
+      "ability_raw": 77.938,
+      "evidence_summary": {
+        "high_confidence": [
+          "Ray link-coordinate model / cute stage communication"
+        ],
+        "medium_confidence": [
+          "dance practice videos exist"
+        ],
+        "procedural_only": [
+          "appearance-led middle"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "cute 18-19",
+          "fashion 16-17"
+        ],
+        "ranks": [
+          "appearance-forward; guide ~77"
+        ],
+        "floors": [],
+        "biases": [
+          "model medium",
+          "not vocal specialist"
+        ]
+      },
+      "career_context_used": [
+        "catalog: 高嶺のなでしこ (2022-07-10–present)",
+        "career_months=35.8"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.550Z",
+      "skill": "idol-attribute-generation",
+      "uid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+      "name": "東山恵里沙",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 19,
+      "height_cm": 156,
+      "career_months": 35.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+      "attributes": {
+        "strength": 13,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 15,
+        "pretty": 15,
+        "pitch": 18,
+        "tone": 17,
+        "breath": 17,
+        "rhythm": 16,
+        "power": 15,
+        "stage_presence": 16,
+        "wit": 13,
+        "humor": 12,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 280,
+        "dancer": 180,
+        "model": 100,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 14.5,
+        "APP": 15,
+        "SNG": 17,
+        "DAN": 15.67,
+        "MEN": 13.83
+      },
+      "ability": 76,
+      "ability_raw": 76.458,
+      "evidence_summary": {
+        "high_confidence": [
+          "fan: balanced vocal pillar / harmony recording role",
+          "wide range, rarely off-pitch"
+        ],
+        "medium_confidence": [
+          "teen visual features"
+        ],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pitch/tone/breath 17-18"
+        ],
+        "ranks": [
+          "vocal pillar; guide Ability ~78"
+        ],
+        "floors": [],
+        "biases": [
+          "singer high"
+        ]
+      },
+      "career_context_used": [
+        "catalog: 高嶺のなでしこ (2022-07-10–present)",
+        "career_months=35.8",
+        "no prior groups; ~36 months takaneko tenure only"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.549Z",
+      "skill": "idol-attribute-generation",
+      "uid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+      "name": "日向端ひな",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 22,
+      "height_cm": 158,
+      "career_months": 35.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+      "attributes": {
+        "strength": 12,
+        "agility": 15,
+        "natural_fitness": 14,
+        "stamina": 16,
+        "cute": 16,
+        "pretty": 15,
+        "pitch": 17,
+        "tone": 17,
+        "breath": 16,
+        "rhythm": 15,
+        "power": 14,
+        "stage_presence": 16,
+        "wit": 13,
+        "humor": 13,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 230,
+        "dancer": 130,
+        "model": 80,
+        "comedy": 40
+      },
+      "radar": {
+        "PHY": 14.25,
+        "APP": 15.8,
+        "SNG": 16.25,
+        "DAN": 15,
+        "MEN": 14
+      },
+      "ability": 76,
+      "ability_raw": 76.104,
+      "evidence_summary": {
+        "high_confidence": [
+          "fan: high-register distinctive tone; live consistency still developing"
+        ],
+        "medium_confidence": [],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "pitch/tone 16-17",
+          "power lower"
+        ],
+        "ranks": [
+          "singing member"
+        ],
+        "floors": [],
+        "biases": []
+      },
+      "career_context_used": [
+        "catalog: 高嶺のなでしこ (2022-07-10–present)",
+        "career_months=35.8"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.550Z",
+      "skill": "idol-attribute-generation",
+      "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+      "name": "籾山ひめり",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 21,
+      "height_cm": 158,
+      "career_months": 92.6,
+      "prior_group_months": 57.6,
+      "training_background": null,
+      "current_group_months": 35,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [
+        {
+          "group_name": "Someday Somewhere",
+          "group_uid": "U29tZWRheSBTb21ld2hlcmU",
+          "start_date": "2017-08-13",
+          "end_date": "2022-05-31",
+          "months": 57.6
+        }
+      ],
+      "career_summary": "Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+      "attributes": {
+        "strength": 14,
+        "agility": 17,
+        "natural_fitness": 15,
+        "stamina": 17,
+        "cute": 15,
+        "pretty": 16,
+        "pitch": 18,
+        "tone": 18,
+        "breath": 17,
+        "rhythm": 18,
+        "power": 17,
+        "stage_presence": 18,
+        "wit": 14,
+        "humor": 13,
+        "talking": 16,
+        "determination": 18,
+        "teamwork": 18,
+        "fashion": 14
+      },
+      "traits": {
+        "singer": 300,
+        "dancer": 260,
+        "model": 90,
+        "comedy": 70
+      },
+      "radar": {
+        "PHY": 15.75,
+        "APP": 15.8,
+        "SNG": 17.75,
+        "DAN": 17.67,
+        "MEN": 15.5
+      },
+      "ability": 82,
+      "ability_raw": 82.396,
+      "evidence_summary": {
+        "high_confidence": [
+          "fan consensus: singing member, dance-while-singing control, captain",
+          "long prior Someday Somewhere career"
+        ],
+        "medium_confidence": [
+          "high notes weaker / occasional misses"
+        ],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "vocal/dance cluster 17-18"
+        ],
+        "ranks": [
+          "song+dance head; guide Ability ~82"
+        ],
+        "floors": [
+          "captain teamwork/determination",
+          "veteran stamina/breath"
+        ],
+        "biases": [
+          "singer+dancer high; pitch high but not max due to high-note weakness notes"
+        ]
+      },
+      "career_context_used": [
+        "catalog: Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+        "prior groups: Someday Somewhere",
+        "career_months=92.6",
+        "prior_group_months=57.6",
+        "prior Last Idol family tenure supports professional floors, not automatic Ability"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.550Z",
+      "skill": "idol-attribute-generation",
+      "uid": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+      "name": "葉月紗蘭",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 18,
+      "height_cm": 158,
+      "career_months": 35.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+      "attributes": {
+        "strength": 11,
+        "agility": 13,
+        "natural_fitness": 12,
+        "stamina": 14,
+        "cute": 15,
+        "pretty": 15,
+        "pitch": 17,
+        "tone": 18,
+        "breath": 15,
+        "rhythm": 14,
+        "power": 13,
+        "stage_presence": 15,
+        "wit": 12,
+        "humor": 11,
+        "talking": 13,
+        "determination": 15,
+        "teamwork": 14,
+        "fashion": 13
+      },
+      "traits": {
+        "singer": 240,
+        "dancer": 90,
+        "model": 70,
+        "comedy": 30
+      },
+      "radar": {
+        "PHY": 12.5,
+        "APP": 15,
+        "SNG": 16,
+        "DAN": 14,
+        "MEN": 13
+      },
+      "ability": 71,
+      "ability_raw": 71.792,
+      "evidence_summary": {
+        "high_confidence": [
+          "fan: unique timbre solo-type; weak volume while dancing"
+        ],
+        "medium_confidence": [
+          "official still-developing framing"
+        ],
+        "procedural_only": []
+      },
+      "constraints_applied": {
+        "ranges": [
+          "tone 17-18",
+          "pitch 16-17",
+          "power/stamina weaker"
+        ],
+        "ranks": [
+          "vocal strong / weak support; guide 72-74"
+        ],
+        "floors": [],
+        "biases": [
+          "singer medium-high; dancer low"
+        ]
+      },
+      "career_context_used": [
+        "catalog: 高嶺のなでしこ (2022-07-10–present)",
+        "career_months=35.8"
+      ]
+    },
+    {
+      "schema": "idol_attribute_generation_v1",
+      "generated_at": "2026-09-04T08:21:07.550Z",
+      "skill": "idol-attribute-generation",
+      "uid": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+      "name": "涼海すう",
+      "group": "高嶺のなでしこ",
+      "tier": "C",
+      "age": 17,
+      "height_cm": 148,
+      "career_months": 35.8,
+      "prior_group_months": 0,
+      "training_background": null,
+      "current_group_months": 35.8,
+      "career_reference_date": "2025-07-05",
+      "prior_groups": [],
+      "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+      "attributes": {
+        "strength": 12,
+        "agility": 16,
+        "natural_fitness": 15,
+        "stamina": 16,
+        "cute": 19,
+        "pretty": 14,
+        "pitch": 14,
+        "tone": 15,
+        "breath": 14,
+        "rhythm": 16,
+        "power": 15,
+        "stage_presence": 16,
+        "wit": 13,
+        "humor": 14,
+        "talking": 14,
+        "determination": 15,
+        "teamwork": 15,
+        "fashion": 15
+      },
+      "traits": {
+        "singer": 100,
+        "dancer": 160,
+        "model": 180,
+        "comedy": 60
+      },
+      "radar": {
+        "PHY": 14.75,
+        "APP": 18,
+        "SNG": 14.75,
+        "DAN": 15.67,
+        "MEN": 14.33
+      },
+      "ability": 77,
+      "ability_raw": 77.896,
+      "evidence_summary": {
+        "high_confidence": [
+          "model tags / cute dance clips"
+        ],
+        "medium_confidence": [],
+        "procedural_only": [
+          "not listed as singing ace"
+        ]
+      },
+      "constraints_applied": {
+        "ranges": [
+          "cute 18-19"
+        ],
+        "ranks": [
+          "visual/cute"
+        ],
+        "floors": [],
+        "biases": [
+          "cute>>pretty age 17 height 148"
+        ]
+      },
+      "career_context_used": [
+        "catalog: 高嶺のなでしこ (2022-07-10–present)",
+        "career_months=35.8"
+      ]
+    }
+  ]
+}

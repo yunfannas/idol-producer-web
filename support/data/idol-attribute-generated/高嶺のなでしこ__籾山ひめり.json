@@ -1,0 +1,93 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.550Z",
+  "skill": "idol-attribute-generation",
+  "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+  "name": "籾山ひめり",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 21,
+  "height_cm": 158,
+  "career_months": 92.6,
+  "prior_group_months": 57.6,
+  "training_background": null,
+  "current_group_months": 35,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "Someday Somewhere",
+      "group_uid": "U29tZWRheSBTb21ld2hlcmU",
+      "start_date": "2017-08-13",
+      "end_date": "2022-05-31",
+      "months": 57.6
+    }
+  ],
+  "career_summary": "Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+  "attributes": {
+    "strength": 14,
+    "agility": 17,
+    "natural_fitness": 15,
+    "stamina": 17,
+    "cute": 15,
+    "pretty": 16,
+    "pitch": 18,
+    "tone": 18,
+    "breath": 17,
+    "rhythm": 18,
+    "power": 17,
+    "stage_presence": 18,
+    "wit": 14,
+    "humor": 13,
+    "talking": 16,
+    "determination": 18,
+    "teamwork": 18,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 300,
+    "dancer": 260,
+    "model": 90,
+    "comedy": 70
+  },
+  "radar": {
+    "PHY": 15.75,
+    "APP": 15.8,
+    "SNG": 17.75,
+    "DAN": 17.67,
+    "MEN": 15.5
+  },
+  "ability": 82,
+  "ability_raw": 82.396,
+  "evidence_summary": {
+    "high_confidence": [
+      "fan consensus: singing member, dance-while-singing control, captain",
+      "long prior Someday Somewhere career"
+    ],
+    "medium_confidence": [
+      "high notes weaker / occasional misses"
+    ],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "vocal/dance cluster 17-18"
+    ],
+    "ranks": [
+      "song+dance head; guide Ability ~82"
+    ],
+    "floors": [
+      "captain teamwork/determination",
+      "veteran stamina/breath"
+    ],
+    "biases": [
+      "singer+dancer high; pitch high but not max due to high-note weakness notes"
+    ]
+  },
+  "career_context_used": [
+    "catalog: Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+    "prior groups: Someday Somewhere",
+    "career_months=92.6",
+    "prior_group_months=57.6",
+    "prior Last Idol family tenure supports professional floors, not automatic Ability"
+  ]
+}

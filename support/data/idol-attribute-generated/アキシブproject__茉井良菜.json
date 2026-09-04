@@ -1,0 +1,108 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.549Z",
+  "skill": "idol-attribute-generation",
+  "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+  "name": "茉井良菜",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 26,
+  "height_cm": 158,
+  "career_months": 121.8,
+  "prior_group_months": 103.6,
+  "training_background": null,
+  "current_group_months": 18.2,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "Le Siana",
+      "group_uid": "TGUgU2lhbmE",
+      "start_date": "2012-10-01",
+      "end_date": "2016-06-04",
+      "months": 44.1
+    },
+    {
+      "group_name": "煌めき☆アンフォレント",
+      "group_uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+      "start_date": "2016-07-03",
+      "end_date": "2020-11-29",
+      "months": 52.9
+    },
+    {
+      "group_name": "モユルハル",
+      "group_uid": null,
+      "start_date": "2022-08-16",
+      "end_date": "2023-03-05",
+      "months": 6.6
+    }
+  ],
+  "career_summary": "Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 14,
+    "natural_fitness": 13,
+    "stamina": 16,
+    "cute": 14,
+    "pretty": 17,
+    "pitch": 18,
+    "tone": 18,
+    "breath": 18,
+    "rhythm": 17,
+    "power": 15,
+    "stage_presence": 17,
+    "wit": 14,
+    "humor": 13,
+    "talking": 15,
+    "determination": 16,
+    "teamwork": 15,
+    "fashion": 17
+  },
+  "traits": {
+    "singer": 90,
+    "dancer": 110,
+    "model": 220,
+    "comedy": 60
+  },
+  "radar": {
+    "PHY": 14,
+    "APP": 16.4,
+    "SNG": 17.75,
+    "DAN": 16.33,
+    "MEN": 15
+  },
+  "ability": 80,
+  "ability_raw": 80.333,
+  "evidence_summary": {
+    "high_confidence": [
+      "image model / cosmetics campaigns",
+      "long prior Le Siana / 煌めき career"
+    ],
+    "medium_confidence": [],
+    "procedural_only": [
+      "retained scenario vocal baseline: SNG 17.75"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "fashion/pretty 16-18",
+      "retained vocal calibration: pitch/tone/breath 18, rhythm 17"
+    ],
+    "ranks": [
+      "model/visual lean; reviewed vocal strength"
+    ],
+    "floors": [
+      "long career determination/talking/stamina regularization"
+    ],
+    "biases": [
+      "model trait",
+      "pretty age 26"
+    ]
+  },
+  "career_context_used": [
+    "catalog: Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
+    "prior groups: Le Siana, 煌めき☆アンフォレント, モユルハル",
+    "career_months=121.8",
+    "prior_group_months=103.6",
+    "career_months ~120 used for professional floors only, not Ability targeting"
+  ]
+}

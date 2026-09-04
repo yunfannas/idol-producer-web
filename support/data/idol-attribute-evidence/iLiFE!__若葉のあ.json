@@ -1,0 +1,317 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:27.290Z",
+  "member": {
+    "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
+    "name": "若葉のあ",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 16,
+    "height_cm": 164,
+    "career_months": 22,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 6,
+      "mc_comedy": 6,
+      "physical_stamina": 6,
+      "mental_professional": 6,
+      "traits": 6
+    },
+    "final_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 6,
+      "mc_comedy": 6,
+      "physical_stamina": 6,
+      "mental_professional": 6,
+      "traits": 6
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"若葉のあ\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2008年7月7日 |\n| 年齢 | 17歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 164cm |\n| 出身地 | 岐阜県 |\n| メンバーカラー | 緑色 |\n\n若葉のあさんは、2023年9月に加入が発表されたiLiFE!のメンバーです。加入以前は一般の学生として生活しており、アイドル活動の経験はありませんでした。SNSで偶然オーディションの告知を見つけたことをきっかけに応募し、グループの一員として活動をスタートさせています。\n\nキュートなルックスと透明感のある雰囲気に加え、安定した歌唱力や表現力も魅力の1つです。初々しさを感じさせる存在感で、ライブでは着実に経験を重ねながら成長を見せています。今後の活躍にも期待が寄せられるメンバーです。\n\n### 2-5. 空詩かれん\n\n> 一生雇って♡#アイライフバレンタイン2026pic.twitter.com/uuCC30ofMB\n>\n> — 空詩かれん【iLiFE!】 (@iLiFE\\_karen) February 13, 2026 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。 [...] |  |  |\n --- |\n| 生年月日 | 2000年7月10日 |\n| 年齢 | 25歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 155cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 青色 |\n\n空詩かれん（そなたかれん）さんは、2025年1月に加入したiLiFE!のメンバーです。加入以前はアイドルグループ「monogatari」でリーダーを務めており、2025年10月にはiLiFE!のリーダーにも就任しています（2026年3月時点）。monogatariでは「福本カレン」として約4年間活動し、歌唱力の高さを武器に多くのステージ経験を積んできた人物です。\n\n2019年にはソロ楽曲「I LOVE YOU」を発表するなど、個人としての実績も持っています。可愛らしい雰囲気と迫力あるパフォーマンスの両面を併せ持ち、ライブで大きなインパクトを残すメンバーとして注目されています。\n\n### 2-6. 虹羽みに",
+          "age": null,
+          "score": 0.7827459,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌唱力",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 16
+        },
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile",
+          "description": "# iLiFE!【あいらいふ】\n\n## PROFILE\n\niLiFE!【あいらいふ】\n\nHEROINES所属のアイドルグループ。  \n 「私(ｉ)と貴方(！)で作るアイドル(ｉ)ライフ(LiFE)」をコンセプトに活動。  \n   \n ステージとフロアで共に作り上げる熱量あるライブと、SNSでの発信力、楽曲のキャッチーさが相まって、Z世代を中心に強い支持を集めている。  \n   \n 2025年8月に開催した夢の舞台 日本武道館公演ではチケット即完売。  \n   \n 2026年には最大規模のワンマンライブをKアリーナ横浜にて開催予定。武道館に続き、アリーナでの公演もチケットは即完売となり、次なるステージに向けその歩みはさらに加速している。\n\n## MEMBER\n\n ice\n\n  あいす\n Sonata Karen\n\n  空詩かれん\n Konoka Riri\n\n  心花りり\n Fukumaru Usa\n\n  福丸うさ\n Wakaba Noa\n\n  若葉のあ\n Kohane Mini\n\n  虹羽みに\n Koguma Mamu\n\n  小熊まむ\n Sumire Miki [...] 純嶺みき\n Mamori Mew\n\n 𝕏",
+          "age": null,
+          "score": 0.54361504,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "若葉のあ【iLiFE!】 (@iLiFE_wakaba) / X",
+          "url": "https://x.com/iLiFE_wakaba",
+          "description": "iLiFE!( @iLiFE_official ) 高校3年生18歳！！ ／緑色担当♡／ #のあへのあい #のあにゃんず ／ チェキタグ #のあにゃと相思相愛 8月26日Kアリーナ横浜ワンマン.",
+          "age": null,
+          "score": 0.44478238,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLife!（アイライフ）メンバー一覧・プロフィール | アイドルグループ",
+          "url": "https://oshilattice.com/groups/ilife",
+          "description": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "age": null,
+          "score": 0.23890553,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "だいすき宣言っ！（若葉のあソロ曲） ‑ 曲・歌詞：iLiFE!",
+          "url": "https://open.spotify.com/intl-ja/track/47CtXSFbEoTM4Hs4SM3TIV",
+          "description": "らぶりー属性♡（心花りりソロ曲）iLiFE! ... 初恋サマーライン♡（若葉のあソロ曲）iLiFE! ... かわいくてあいらびゅー（福丸うさソロ曲）iLiFE! ... Star*Rise（福丸うさソロ曲",
+          "age": null,
+          "score": 0.40105483,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "文化祭でiLife!さんを若葉のあちゃんを担当して踊ることになり ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12330268407",
+          "description": "文化祭でiLife!さんを若葉のあちゃんを担当して踊ることになりました！できるだけのあちゃんに寄せたいのでのあちゃん踊り方の癖？",
+          "age": null,
+          "score": 0.35287103,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"若葉のあ\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "若葉のあ【iLiFE!】 (@iLiFE_wakaba) / X",
+          "url": "https://x.com/iLiFE_wakaba",
+          "description": "iLiFE!( @iLiFE_official ) 高校3年生18歳！！ ／緑色担当♡／ #のあへのあい #のあにゃんず ／ チェキタグ #のあにゃと相思相愛 8月26日Kアリーナ横浜ワンマン.",
+          "age": null,
+          "score": 0.43712714,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "【今気になる！ 令和最強ティーン】iLiFE!・若葉のあちゃん",
+          "url": "https://nicola.jp/article/article-19480",
+          "description": "昨年9月、アイドルグループiLiFE!の新メンバーとして発表されるやいなや、かわいすぎるビジュアルが話題になった若葉のあちゃんがニコラに初登場♡",
+          "age": null,
+          "score": 0.63615024,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ビジュアル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "若葉のあ - Pinterest",
+          "url": "https://in.pinterest.com/pin/806496245822922969",
+          "description": "若葉のあ | にのあい, 推し, かわいいこ. More to explore. amelochan ... 若葉のあ【iLiFE!】 (@iLiFE_wakaba) on X | 髪型画像. 若葉のあ【iLiFE",
+          "age": null,
+          "score": 0.5117904,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【MV】初恋サマーライン   / 若葉のあ【iLiFE!】 - YouTube",
+          "url": "https://www.youtube.com/watch?v=DLZj0pWRsS8",
+          "description": "【Noa happy birthday】 みなさんお待たせしました♡ のあと青春している気分になれる甘酸っぱくてとても綺麗で可愛いMVになってます！ 若葉のあ初",
+          "age": null,
+          "score": 0.4613328,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【若葉のあ生誕祭】17歳のぴゅありードール 【iLiFE!】 - YouTube",
+          "url": "https://www.youtube.com/watch?v=RANiNsUt0jo",
+          "description": "HoneyWorks covered by 若葉のあ) 28:19 ※カバー曲のため配信なしのびしろグリッター 32:26 会いにKiTE! 35:57 MC 40:10 ころころガール 45:50",
+          "age": null,
+          "score": 0.4598771,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "MC"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "可愛い全国ツアー衣装公開   #iLiFE #あいらいふ #アイドル #若葉のあ",
+          "url": "https://www.tiktok.com/@ilife_official/video/7578464765358443784",
+          "description": "可愛い全国ツアー衣装公開 #iLiFE #あいらいふ #アイドル #若葉のあ ... 辻 のあ Mardi 服 · 若葉のあ 卒アル デスドル · Ilife 若葉のあ 衣装.",
+          "age": null,
+          "score": 0.42233846,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "綺麗な街だったよ  .*ﾟ   #08 #若葉のあ #アイドル #ilife #fjk - Instagram",
+          "url": "https://www.instagram.com/reel/DHu-nGAzuii",
+          "description": "実質デートだ かわいい！！ 7richu_. かわにーー .",
+          "age": null,
+          "score": 0.41364354,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "若葉のあ (@ilife__wakaba) - TikTok",
+          "url": "https://www.tiktok.com/@ilife__wakaba",
+          "description": "TikTok (ティックトック) の 若葉のあ (@ilife__wakaba) |4.2M件の「いいね」。フォロワー230.1K人。てぃっくとっくはじめました、、。♡ٛ ̳ ̫ ̳ ٛ ٍ.若葉のあの人気",
+          "age": null,
+          "score": 0.40260404,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "若葉のあ (@ilife_wakaba) • Instagram photos and videos",
+          "url": "https://www.instagram.com/ilife_wakaba",
+          "description": "Kアリーナワンマンライブ MEGALIFE! ありがとうございました SEで出てきた瞬間のペンライトの星空の景色をみて思わず涙が溢れました、！ この景色を作ってくださっ",
+          "age": null,
+          "score": 0.3420444,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「若葉のあ ilife!」のYahoo!リアルタイム検索",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&rkf=1&ifr=tl_unit&p=%E8%8B%A5%E8%91%89%E3%81%AE%E3%81%82+ilife%21",
+          "description": "「若葉のあ ilife!」に関するYahoo!リアルタイム検索結果です。X（旧Twitter）上で今発信された情報をリアルタイムに検索できます。",
+          "age": null,
+          "score": 0.29237348,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"若葉のあ\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile",
+          "description": "# iLiFE!【あいらいふ】\n\n## PROFILE\n\niLiFE!【あいらいふ】\n\nHEROINES所属のアイドルグループ。  \n 「私(ｉ)と貴方(！)で作るアイドル(ｉ)ライフ(LiFE)」をコンセプトに活動。  \n   \n ステージとフロアで共に作り上げる熱量あるライブと、SNSでの発信力、楽曲のキャッチーさが相まって、Z世代を中心に強い支持を集めている。  \n   \n 2025年8月に開催した夢の舞台 日本武道館公演ではチケット即完売。  \n   \n 2026年には最大規模のワンマンライブをKアリーナ横浜にて開催予定。武道館に続き、アリーナでの公演もチケットは即完売となり、次なるステージに向けその歩みはさらに加速している。\n\n## MEMBER\n\n ice\n\n  あいす\n Sonata Karen\n\n  空詩かれん\n Konoka Riri\n\n  心花りり\n Fukumaru Usa\n\n  福丸うさ\n Wakaba Noa\n\n  若葉のあ\n Kohane Mini\n\n  虹羽みに\n Koguma Mamu\n\n  小熊まむ\n Sumire Miki [...] 純嶺みき\n Mamori Mew\n\n 𝕏",
+          "age": null,
+          "score": 0.62303346,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "若葉のあ【iLiFE!】 (@iLiFE_wakaba) / X",
+          "url": "https://x.com/iLiFE_wakaba",
+          "description": "iLiFE!( @iLiFE_official ) 高校3年生18歳！！ ／緑色担当♡／ #のあへのあい #のあにゃんず ／ チェキタグ #のあにゃと相思相愛 8月26日Kアリーナ横浜ワンマン.",
+          "age": null,
+          "score": 0.49670476,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "若葉のあ「今はアイドルになってよかったと思ってます」【iLiFE!× ...",
+          "url": "https://scawaiiweb.com/ilife250706",
+          "description": "... iLiFE!（アイライフ）のスペシャルリレーインタビュー企画‼ 本日は、度々顔バズする最強ビジュ・若葉のあちゃん♡ アイドル ... ノックアウトダンス",
+          "age": null,
+          "score": 0.6211049,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【今気になる！ 令和最強ティーン】iLiFE!・若葉のあちゃん",
+          "url": "https://nicola.jp/article/article-19480",
+          "description": "ダンスを一度もやったことない未経験の子の方が私よりうまく踊れるんじゃないかと思うくらい、本当に下手だったので、とにかく最初はダンスに苦労しました",
+          "age": null,
+          "score": 0.60245985,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "若葉のあ (@ilife_wakaba)",
+          "url": "https://www.instagram.com/ilife_wakaba",
+          "description": "248K followers · 49 following · 406 posts · @ilife_wakaba: “iLiFE! の 緑色 @ilife.idol / 2008. 07.07 (18) 4月6日 GMOアリーナさいたま ♡”",
+          "age": null,
+          "score": 0.4229103,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "文化祭でiLife!さんを若葉のあちゃんを担当して踊ることになり ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12330268407",
+          "description": "文化祭でiLife!さんを若葉のあちゃんを担当して踊ることになりました！できるだけのあちゃんに寄せたいのでのあちゃん踊り方の癖？？などあれば教えて",
+          "age": null,
+          "score": 0.38124317,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

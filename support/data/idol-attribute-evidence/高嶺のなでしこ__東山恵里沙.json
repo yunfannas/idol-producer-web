@@ -1,0 +1,274 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:45.072Z",
+  "member": {
+    "uid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+    "name": "東山恵里沙",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 19,
+    "height_cm": 156,
+    "career_months": 36,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 2,
+      "dance_performance": 2,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 3,
+      "mental_professional": 3,
+      "traits": 3
+    },
+    "final_coverage": {
+      "vocal": 2,
+      "dance_performance": 2,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 3,
+      "mental_professional": 3,
+      "traits": 3
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"東山恵里沙\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこライブに行ったことある人に質問ですが、実際生歌... - Yahoo!知恵袋",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10288219570",
+          "description": "恵里沙ちゃんは、バランスが取れたタイプで、高音から低音まで、強くも弱くも幅広く声が出ますし、カッコ良くも可愛くも感情を乗せた表現ができます。 また、音を外すということがあまりないです。 たかねこのレコーディング時のハモり音は彼女に任せられているくらいなので、たかねこの歌の柱なのだと思います。 日向端ひなちゃんは、高音域に生きるタイプで、艶のある独特の声質が素敵だなぁと思います。 落ち着いて歌えば、決戦スピリットの歌ってみたのように、心地の良い歌い方ができ、非常に上手いです。 ただ、生パフォーマンスの歌唱は一定の歌い方になってしまいがちで、音を外すこともあるので、これから上達していったら凄くなるなぁと思います。 葉月紗蘭ちゃんは、独特の声色で、ソロで生きるタイプですね。 好きな人には凄くたまらない歌声かと思います。 ライブで踊りながらや爆音の中歌うと弱々しく浮いてしまうので、グループ活動をするのであれば、声量など課題はありますね。 他の5人に関しても、みんな好みで、好きな声や歌い方があるでしょうし、推しメンが一番上手いってみんな思ってるんじゃないでしょうか？ [...] ### ビジュアル、ももなんはエグいですよね！私もビックリしました。歌ですが、たかねこは籾山ひめり橋本桃呼東山恵里沙日向端ひな葉月紗蘭が歌唱メンです。ひめりちゃんは10年やっているので、踊りながらのコントロールが上手いです。スッと入ってくる安定した歌い方で、生では最も聴きやすいのではないでしょうか？恐らく、初見さんに一番わかりやすく響くかと思います。ただ、高音が苦手なので、たまにビックリするような音の外し方をします。 「いつか私がママになったら」の最後のフェイク部分がわかりやすいので確認してみて下さい。 こういった欠点がありますが、総じて上手いと思います。 桃呼ちゃんは、技術的には最も巧いかと思います。 ハマった時は鳥肌が立つようなカッコ良さがあります。 ステージではイキってしまいがちで、声に波はありますね。 歌い方にクセありと感じる人は感じるので、メインで歌うよりスパイス的な役割の方が生きるタイプかと思います。 桃呼ちゃんの歌がないと物足りないと感じる歌唱力の持ち主です。 [...] グループアイドルはそれでいいと思います(^^)",
+          "age": null,
+          "score": 0.80735475,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "歌声",
+            "生歌",
+            "高音",
+            "低音",
+            "パフォーマンス"
+          ],
+          "relevance_score": 18
+        },
+        {
+          "title": "②【先行掲載・WEBオリジナル記事】国立代々木第二体育館公演開催！！高嶺のなでしこ。総1万6,000字 ロング・インタビュー 前編、先行掲載！② – OUT of MUSIC WEB",
+          "url": "https://outofmusic.net/archives/1540",
+          "description": "東山恵里沙●この楽曲は、音楽を通してファンの方に勇気や幸せを届ける曲だと、私は思っているので、歌うときに自分がこの活動をしていて幸せだったことや楽しかったことを思い出して、自分が温かい幸せな気持ちになってから、歌いたいなぁって意識しています。自分が幸せを感じて、それをファンの方に伝えたいと思っています。温かい楽曲なので、自然に一体感が生まれたらいなと思いますし、ファンの方一人ひとりの目を見て、遠くまで、後ろのほうの方も見て、会場に一体感が生まれるように、ファンの方に目線を送ることを意識して歌っています。\n\n――ももなさんが指揮をする間奏部分のあと、サウンドがブレイクして、ボーカルオンリーで〈世界飾る愛のファンタジー〉という歌唱パートがありますが、そこも恵里沙さんが歌ってますよね。恵里沙さんの歌唱がダイレクトに伝わる部分です。\n\n東山恵里沙●はい。レコーディングの現場で、とくに〈愛のファンタジー〉のニュアンスについてHoneyWorksさんに細かくディレクションしていただきました。ライブでも意識して歌っていますが、毎回緊張して歌ってます。 [...] ――この、ひなさんの歌唱パートは、大きな世界というか「人生」「旅」「奇跡」というワードから、時間と空間が広がって視野がすごく大きくなってますよね。この曲は基本的には「“あなた”と“わたし”」という関係性が軸にありますが、より大きな世界観で捉えてます。この歌唱パートの前後がコーラスで、その間（あいだ）に、ポンとひなさんのソロパートが来るので目立ってますよね。このあと続く、間奏とダンスのパートに繋げる助走でもあります。\n\n日向端ひな●ありがとうございます〈笑顔〉。\n\n――では続いて、ももなさん。\n\n松本ももな（まつもとももな）●私はこの「Iʼ M YOUR IDOL」は、ファンの方にやさしく寄り添うような、励ますような楽曲だと思っていて、自分でも歌っていて、さきほど出た〈誰かの心を灯せるように〉という紗蘭ちゃんと歌っているパートで、パフォーマンス中も、誰かの心に響くように優しい歌声で、ファン方一人ひとり目を合わせるように、パフォーマンスしてます。メンバーとも目を合わせてパフォーマンスするように意識してます。 [...] 任せて〉という歌詞の〈任せて〉のパートをソロで歌っています。サビに向かって盛り上がっていくパートなので、ファンの方の心を灯せるような、私たちの曲を知らないけど、この曲を聴いていただいたときに、明るく前向きになってもらえるように、ピュアな気持ちで歌っています。\n\n――この二番の〈任せて〉も目立ってますよね。印象に残ってます…って一番の恵里沙さんの〈任せて〉も目立ってますけど（笑）。\n\n全員●（笑）。\n\n星谷美来●そうなんです。一番では〈苦しみも悲しみも寂しさも〉のあとに恵里沙ちゃんの〈任せて〉が来て、二番では〈楽しみも喜びも幸せも〉のあとに私の〈任せて〉という歌が続いていますが、一番ではネガティブな気持ち、二番ではポジティブな気持ちという違いも注目していただきたいなと思いました。",
+          "age": null,
+          "score": 0.7132923,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声",
+            "ボーカル",
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 12
+        },
+        {
+          "title": "1_東山恵里沙 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/erisa_higashiyama",
+          "description": "血液型: AB型 ; 星座: ふたご座 ; 身長: 157cm ; 生年月日: 2006年5月28日 ; 出身地: 岐阜県.",
+          "age": null,
+          "score": 0.4556594,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "東山 恵里沙 (@erisahigasiyama) / X",
+          "url": "https://x.com/erisahigasiyama",
+          "description": "東山 恵里沙 · @erisahigasiyama · Sep 1. お知らせ 🗓️9月13日(日) #高嶺のなでしこ ワンマンライブ〜CROWNED IN BLOOM〜 が開催されます！！ ⏰OPEN 13:30 / START",
+          "age": null,
+          "score": 0.41279107,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！東山恵里沙編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa07.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ！東山恵里沙さんの回答はコチラ！",
+          "age": null,
+          "score": 0.38373423,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"東山恵里沙\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "【今気になる！ 令和最強ティーン】高嶺のなでしこ・東山恵里沙 ...",
+          "url": "https://nicola.jp/article/article-19490",
+          "description": "-かわいいファッションにも大注目の恵里沙ちゃん。もっと魅力を知りたい子は、ぜひこちらのインタビューも読んでみてね！ 【高嶺のなでしこ】メンバー",
+          "age": null,
+          "score": 0.6186197,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい",
+            "ファッション"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "東山 恵里沙 (@erisahigasiyama)",
+          "url": "https://www.tiktok.com/@erisahigasiyama",
+          "description": "TikTok (ティックトック) の 東山 恵里沙 (@erisahigasiyama) |1.6M件の「いいね」。フォロワー31.6K人。@高嶺のなでしこ オレンジ ポニーテール アイドルオタク",
+          "age": null,
+          "score": 0.49699774,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "東山 恵里沙 (@erisahigasiyama) / X",
+          "url": "https://x.com/erisahigasiyama",
+          "description": "東山 恵里沙 · @erisahigasiyama · Sep 1. お知らせ 🗓️9月13日(日) #高嶺のなでしこ ワンマンライブ〜CROWNED IN BLOOM〜 が開催されます！！ ⏰OPEN 13:30 / START",
+          "age": null,
+          "score": 0.42148095,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！東山恵里沙編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa07.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ！東山恵里沙さんの回答はコチラ！",
+          "age": null,
+          "score": 0.41534993,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「#東山恵里沙」のYahoo!リアルタイム検索 - X（旧Twitter ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=%23%E6%9D%B1%E5%B1%B1%E6%81%B5%E9%87%8C%E6%B2%99&md=h&rkf=1",
+          "description": "東山恵里沙」に関するYahoo!リアルタイム検索結果です。X(旧Twitter)上で今発信された情報をリアルタイムに検索できます。 #東山恵里沙 さん(高嶺のなでしこ)",
+          "age": null,
+          "score": 0.40014032,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "東山 恵里沙 (@erisa_higashiyama)",
+          "url": "https://www.instagram.com/erisa_higashiyama",
+          "description": "26K followers · 96 following · 228 posts ・ 東山 恵里沙 25.9K followers 95 ・ たくさん癒され 🌺🌴 スティッチディズニー💙 スティッチのお話すること全部かわい",
+          "age": null,
+          "score": 0.3290472,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"東山恵里沙\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "1_東山恵里沙 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/erisa_higashiyama",
+          "description": "血液型: AB型. 星座: ふたご座. 身長: 157cm. 生年月日: 2006年5月28日. 出身地: 岐阜県. 趣味: アイドル鑑賞. 特技: なんでも楽しむこと！",
+          "age": null,
+          "score": 0.6479992,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "【今気になる！ 令和最強ティーン】高嶺のなでしこ・東山恵里沙 ...",
+          "url": "https://nicola.jp/article/article-19490",
+          "description": "-かわいいファッションにも大注目の恵里沙ちゃん。もっと魅力を知りたい子は、ぜひこちらのインタビューも読んでみてね！ 【高嶺のなでしこ】メンバー全員",
+          "age": null,
+          "score": 0.6164054,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！東山恵里沙編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa07.html",
+          "description": "運転免許トロッカ!アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ!東山恵里沙さんの回答はコチラ ! たかねこウォッチング 東山恵里沙編 … たくさん推しを摂取",
+          "age": null,
+          "score": 0.49978086,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "東山 恵里沙 (@erisa_higashiyama)",
+          "url": "https://www.instagram.com/erisa_higashiyama",
+          "description": "HoneyWorksさんサウンドプロデュースのアイドル 𓈒𓏸︎︎︎︎￤ ひがしやま えりさ高嶺のなでしこ ￤ 2006.05.28 オレンジ色 ﾞ ￤ アイドルヲタク",
+          "age": null,
+          "score": 0.49948794,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ 東山恵里沙 さん 葉月紗蘭 さんが登場❗️三宅 ...",
+          "url": "https://www.tfm.co.jp/darehana/report/75403",
+          "description": "誰かに聞きたかったこと。 ✨ 今聞きたいことをゲストをお招きして伺うコーナーです！ 高嶺のなでしこ 東山恵里沙 さん 葉月紗蘭 さんをスタジオにお招きして、New",
+          "age": null,
+          "score": 0.4797236,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ・東山恵里沙が19歳の誕生日を迎える「大好き ...",
+          "url": "https://sportsbull.jp/p/2079513",
+          "description": "アイドルグループ・高嶺のなでしこの東山恵里沙が28日、自身のインスタグラムを更新した。【画像】「みんなと過ごすバレンタイ… 記事全文を見る.",
+          "age": null,
+          "score": 0.42391166,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "東山 恵里沙 (@erisahigasiyama) / X",
+          "url": "https://x.com/erisahigasiyama",
+          "description": "東山 恵里沙 · @erisahigasiyama · Sep 1. お知らせ 🗓️9月13日(日) #高嶺のなでしこ ワンマンライブ〜CROWNED IN BLOOM〜 が開催されます！！ ⏰OPEN 13:30 / START",
+          "age": null,
+          "score": 0.37209493,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

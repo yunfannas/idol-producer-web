@@ -1,0 +1,295 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:19.025Z",
+  "member": {
+    "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
+    "name": "あいす",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 19,
+    "height_cm": 152,
+    "career_months": 36,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 5,
+      "dance_performance": 5,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 10,
+      "mental_professional": 10,
+      "traits": 10
+    },
+    "final_coverage": {
+      "vocal": 5,
+      "dance_performance": 5,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 10,
+      "mental_professional": 10,
+      "traits": 10
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"あいす\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2006年1月23日 |\n| 年齢 | 20歳 ※2026年3月時点 |\n| 血液型 | O型 |\n| 身長 | 151cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 白 |\n\nあいすさんは、2022年7月にiLiFE!へ加入したメンバーです。2021年にHEROINES所属のアイドルユニット「i-COL」としてデビューし、現在も兼任しながら活動を続けています。黒髪ボブの小柄なルックスと透き通るような白い肌が印象的で、愛らしい雰囲気からファンやメンバーの間では「ばぶちゃん」という愛称でも親しまれています。\n\n普段は可憐で柔らかな存在感を放つ一方、ステージに立つと力強くキレのあるパフォーマンスで会場の視線を一気に引き寄せるのも魅力です。小さな体からは想像できないエネルギッシュな表現力を武器に、ライブでは圧倒的な存在感を発揮しています。\n\n### 2-3. 福丸うさ\n\n> この投稿をInstagramで見る\n>\n> 福丸うさ(@ilife\\_usa)がシェアした投稿 [...] |  |  |\n --- |\n| 生年月日 | 1999年5月19日 |\n| 年齢 | 26歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 156cm |\n| 出身地 | 宮城県 |\n| メンバーカラー | 赤色 |\n\n心花りり（このかりり）さんは、2021年2月に加入し、現メンバーの中でも最も長く活動を続けている存在です。中学生の頃からアイドルを志し、高校卒業後に本格的な芸能活動をスタートしました。iLiFE!加入前は「上村まり」名義でリンクSTAR’sやゆめいろHiLiT!などのグループに在籍し、着実に経験を重ねてきた実力派メンバーです。\n\n現在は同じHEROINESプロジェクト所属のアイドルユニットGILTYxGILTYとの兼任でも活動しており、幅広いステージで存在感を発揮しています。\n\n### 2-2. あいす\n\n> この投稿をInstagramで見る\n>\n> あいす(@ice\\_icol)がシェアした投稿 [...] ### 2-7. 純嶺みき\n\n> 世界中のチョコレートをたべる🍫💓 pic.twitter.com/Ez7hkPh0kl\n>\n> — 純嶺みき【iLiFE!】 (@iLiFE\\_sumire) February 13, 2026\n\n|  |  |\n --- |\n| 生年月日 | 2003年1月12日 |\n| 年齢 | 23歳 ※2026年3月時点 |\n| 血液型 | BかO型 |\n| 身長 | 164.5cm |\n| 出身地 | 神奈川県 |\n| メンバーカラー | 紫色 |\n\n純嶺みき（すみれみき）さんは、2025年5月に加入したiLiFE!のメンバーで、チアダンス経験を生かしたキレのあるパフォーマンスが特徴です。幼い頃から歌やダンスに親しみ、高校時代もダンス活動を続けるなど、豊富なステージ経験を積んできました。\n\n落ち着いた雰囲気とスタイリッシュなビジュアルも印象的で、ライブでは表現力豊かなダンスを通して観客の視線を引きつけています。加入当初から注目度の高い存在として話題を集めており、今後はパフォーマンス面でグループを支える存在としての活躍が期待されています。",
+          "age": null,
+          "score": 0.7147281,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "ダンス",
+            "キレ",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 19
+        },
+        {
+          "title": "iLifeの歌唱力？歌が安定してる子順番で教えてください。アイ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11320541231",
+          "description": "iLifeの歌唱力?歌が安定してる子順番で教えてください … ilife現メンバーのダンス上手い順を知りたいです! iLife 歌が上手いと個人的に思うメンバーを順",
+          "age": null,
+          "score": 0.49582586,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "歌が上手い",
+            "ダンス"
+          ],
+          "relevance_score": 9
+        },
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile/member/index/468",
+          "description": "アイドルグループ iLiFE!【あいらいふ】のメンバープロフィール.",
+          "age": null,
+          "score": 0.2775126,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLife!（アイライフ）メンバー一覧・プロフィール | アイドルグループ",
+          "url": "https://oshilattice.com/groups/ilife",
+          "description": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "age": null,
+          "score": 0.24120373,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "あいすちゃんの表現力に感動！LOML/iLiFEの魅力",
+          "url": "https://www.tiktok.com/@oshake_147cm/video/7595894009856331009",
+          "description": "あいすちゃんの表現力に感動! 歌詞が心に響く!感情豊かなパフォーマンスをお楽しみください。#LOML #ilife #踊ってみた",
+          "age": null,
+          "score": 0.6307082,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "iLiFE! 候補生のトップクラス歌唱力｜ほんと歌上手い",
+          "url": "https://www.tiktok.com/@n_in27/video/7644150108392606996",
+          "description": "候補生の中でトップクラスの歌唱力だと思う、という評価を受けるパフォーマンスを紹介します。表情、発声、音程安定性、ビブラートやフレージングの使い",
+          "age": null,
+          "score": 0.58976424,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "i - あいすソロ曲 ‑ 曲・歌詞：iLiFE!",
+          "url": "https://open.spotify.com/intl-ja/track/4SLFnFsmCxX3mjeUDuZkKh",
+          "description": "みんなのあいす屋さん - あいすソロ曲iLiFE! ... 愛キョウ！最キョウ！逆キョウ上等！ - あいすソロ曲iLiFE! Hands Up!iLiFE! ... 私はかわいいよ絶対 - あいすソロ曲iLiFE!",
+          "age": null,
+          "score": 0.36697587,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "i (あいすソロ曲)” by iLiFE! - トラック・歌詞情報 | AWA",
+          "url": "https://s.awa.fm/track/51df9527f90d05604c34",
+          "description": "歌詞. 生きている 愛すべき日々よ駆け抜ける一瞬の意味を僕のままで ずっと未来に描いてゆく一歩 踏み出した日を今も覚えてる震えてすくんだ足を何度",
+          "age": null,
+          "score": 0.3120769,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"あいす\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!あいす、金髪ロリータコーデで雰囲気一変「悶絶級の可愛 ...",
+          "url": "https://mdpr.jp/news/detail/4828765",
+          "description": "iLiFE!あいす、金髪ロリータコーデで雰囲気一変「悶絶級の可愛さ」「ビジュ大優勝」と絶賛の声【関コレ2026A/W】 · あいす、金髪ロリータで甘さ全開 · 「",
+          "age": null,
+          "score": 0.48616135,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "コーデ"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "あいす【あいこる/ iLiFE!】 (@ice_icol) / X",
+          "url": "https://x.com/ice_icol",
+          "description": "【重大発表】 なんと！！ iLiFE!に妹ちゃんがもうひとつ誕生することになりました ‍♀️❤︎ 名前は...『iMiN!(あいみん)』(@iMiN_official) 9月20日にデビュー姉妹3",
+          "age": null,
+          "score": 0.28823888,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "48 件の「あいす（iLife）」や「にのあい」のアイデアを見つけましょう",
+          "url": "https://jp.pinterest.com/acchakamasa/%E3%81%82%E3%81%84%E3%81%99ilife",
+          "description": "あいす（iLife） ; 黒髪 モデル · 可愛い 髪型 イラスト · 女の子のアイコン · 髪型イメチェン · 女子 髪型 ショート · 髪型 イラスト · ショートヘア 女の子 · ポージング",
+          "age": null,
+          "score": 0.4059909,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い",
+            "モデル"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "あいす (@ice_icol) • Instagram photos and videos",
+          "url": "https://www.instagram.com/ice_icol",
+          "description": "318K followers · 37 following · 167 posts · @ice_icol: iLiFE!とi-COLであいどるをしています” 317K followers 35 following",
+          "age": null,
+          "score": 0.39117387,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"あいす\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 1999年5月19日 |\n| 年齢 | 26歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 156cm |\n| 出身地 | 宮城県 |\n| メンバーカラー | 赤色 |\n\n心花りり（このかりり）さんは、2021年2月に加入し、現メンバーの中でも最も長く活動を続けている存在です。中学生の頃からアイドルを志し、高校卒業後に本格的な芸能活動をスタートしました。iLiFE!加入前は「上村まり」名義でリンクSTAR’sやゆめいろHiLiT!などのグループに在籍し、着実に経験を重ねてきた実力派メンバーです。\n\n現在は同じHEROINESプロジェクト所属のアイドルユニットGILTYxGILTYとの兼任でも活動しており、幅広いステージで存在感を発揮しています。\n\n### 2-2. あいす\n\n> この投稿をInstagramで見る\n>\n> あいす(@ice\\_icol)がシェアした投稿 [...] |  |  |\n --- |\n| 生年月日 | 2006年1月23日 |\n| 年齢 | 20歳 ※2026年3月時点 |\n| 血液型 | O型 |\n| 身長 | 151cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 白 |\n\nあいすさんは、2022年7月にiLiFE!へ加入したメンバーです。2021年にHEROINES所属のアイドルユニット「i-COL」としてデビューし、現在も兼任しながら活動を続けています。黒髪ボブの小柄なルックスと透き通るような白い肌が印象的で、愛らしい雰囲気からファンやメンバーの間では「ばぶちゃん」という愛称でも親しまれています。\n\n普段は可憐で柔らかな存在感を放つ一方、ステージに立つと力強くキレのあるパフォーマンスで会場の視線を一気に引き寄せるのも魅力です。小さな体からは想像できないエネルギッシュな表現力を武器に、ライブでは圧倒的な存在感を発揮しています。\n\n### 2-3. 福丸うさ\n\n> この投稿をInstagramで見る\n>\n> 福丸うさ(@ilife\\_usa)がシェアした投稿 [...] ### 2-8. 小熊まむ\n\n> みんなのあいす屋さん🍨🤍 pic.twitter.com/ICGmJNPv7W\n>\n> — 小熊まむ【iLiFE!】 (@iLiFE\\_koguma) February 4, 2026\n\n|  |  |\n --- |\n| 生年月日 | 2004年12月23日 |\n| 年齢 | 21歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 165.9cm |\n| 出身地 | 長野県 |\n| メンバーカラー | オレンジ |\n\n小熊まむさんは2025年5月に加入したiLiFE!のメンバーで、元気で親しみやすいキャラクターが印象的なメンバーです。加入当初から前向きでポジティブな姿勢が注目され、周囲を気遣う優しい人柄も話題となりました。ライブでは笑顔を絶やさないパフォーマンスで観客を惹きつけ、会場を明るい雰囲気へと導く役割を担っています。\n\n人懐っこく温かい人柄も支持されており、ファンとの距離の近さも魅力の1つです。フレッシュな勢いとエネルギーで、グループに新しい活力をもたらす存在として期待されています。",
+          "age": null,
+          "score": 0.74273956,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLifeのあいすちゃんについてのプロフィールを沢山教えて ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12321505852",
+          "description": "iLifeのあいすちゃんについてのプロフィールを沢山教えて欲しいです！！最近推しになったのでたくさん色んなことが知りたいです！お願いします！",
+          "age": null,
+          "score": 0.586926,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile/member/index/468",
+          "description": "アイドルグループ iLiFE!【あいらいふ】のメンバープロフィール.",
+          "age": null,
+          "score": 0.48235655,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "あいす「現実的に武道館のビジョンがイメージできるようになっ ...",
+          "url": "https://scawaiiweb.com/ilife250713",
+          "description": "あいす「現実的に武道館のビジョンがイメージできるようになってきた」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.10】 · scawaii.",
+          "age": null,
+          "score": 0.48235655,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "あいす",
+          "url": "https://baike.baidu.com/ja/item/%E3%81%82%E3%81%84%E3%81%99/2132026",
+          "description": "あいすは、2006年1月23日に日本東京都で生まれ、現在は女性アイドルグループiLiFE!及びデュオユニットi-COLのメンバーである。2025年5月、アイスクリームThirty-One",
+          "age": null,
+          "score": 0.6659544,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "あいす【あいこる/ iLiFE!】 on X: \"念願の運動会できた( ᐪ ...",
+          "url": "https://x.com/ice_icol/status/1699378846317805702",
+          "description": "なんと！日本テレビにて放送される「今夜もHAKO-OSHI秋のアイドル大運動会」に出演させて頂きます❕ え…iLiFE!って意外と運動できる？",
+          "age": null,
+          "score": 0.51076555,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "みんなのあいす屋さん @ice-iLiFE 191K subscribers",
+          "url": "https://www.youtube.com/@ice-iLiFE",
+          "description": "Share your videos with friends, family, and the world.",
+          "age": null,
+          "score": 0.22028412,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

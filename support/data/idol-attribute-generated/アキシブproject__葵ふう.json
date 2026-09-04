@@ -1,0 +1,79 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.549Z",
+  "skill": "idol-attribute-generation",
+  "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
+  "name": "葵ふう",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 21,
+  "height_cm": null,
+  "career_months": 31.5,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 31.5,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "アキシブproject (2022-11-20–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 17,
+    "cute": 15,
+    "pretty": 14,
+    "pitch": 14,
+    "tone": 14,
+    "breath": 14,
+    "rhythm": 15,
+    "power": 14,
+    "stage_presence": 15,
+    "wit": 14,
+    "humor": 14,
+    "talking": 16,
+    "determination": 15,
+    "teamwork": 16,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 80,
+    "dancer": 120,
+    "model": 70,
+    "comedy": 90
+  },
+  "radar": {
+    "PHY": 14.75,
+    "APP": 14.8,
+    "SNG": 14.25,
+    "DAN": 14.67,
+    "MEN": 14.83
+  },
+  "ability": 73,
+  "ability_raw": 73.063,
+  "evidence_summary": {
+    "high_confidence": [
+      "talk-live explains group history/appeal (MC-ish)",
+      "long tenure"
+    ],
+    "medium_confidence": [],
+    "procedural_only": [
+      "stamina lift for live-heavy veteran framing"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "talking 15-17"
+    ],
+    "ranks": [
+      "communication lean"
+    ],
+    "floors": [
+      "tenure stamina/teamwork"
+    ],
+    "biases": []
+  },
+  "career_context_used": [
+    "catalog: アキシブproject (2022-11-20–present)",
+    "career_months=31.5"
+  ]
+}
