@@ -1,0 +1,169 @@
+[
+  {
+    "uid": "fa435849-8378-41af-b0fe-341103a45ac5",
+    "name": "橋本桃呼",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 22,
+    "height_cm": 160,
+    "career_months": 84.5,
+    "prior_group_months": 49.5,
+    "current_group_months": 35,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "Last Idol 2nd Generation",
+        "group_uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
+        "start_date": "2018-04-15",
+        "end_date": "2022-05-31",
+        "months": 49.5
+      }
+    ],
+    "career_summary": "Last Idol 2nd Generation (2018-04-15–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+    "training_background": null
+  },
+  {
+    "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+    "name": "松本ももな",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 22,
+    "height_cm": 159,
+    "career_months": 92.6,
+    "prior_group_months": 57.6,
+    "current_group_months": 35,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "Choux Cream Rockets",
+        "group_uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
+        "start_date": "2017-08-13",
+        "end_date": "2022-05-31",
+        "months": 57.6
+      }
+    ],
+    "career_summary": "Choux Cream Rockets (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+    "training_background": null
+  },
+  {
+    "uid": "2fda22b6-ffe0-4265-b61c-00caa862380f",
+    "name": "城月菜央",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 153,
+    "career_months": 41.9,
+    "prior_group_months": 6,
+    "current_group_months": 35.8,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "#PEXACOA",
+        "group_uid": "I1BFWEFDT0E",
+        "start_date": "2021-05-30",
+        "end_date": "2021-11-30",
+        "months": 6
+      }
+    ],
+    "career_summary": "#PEXACOA (2021-05-30–2021-11-30); 高嶺のなでしこ (2022-07-10–present)",
+    "training_background": null
+  },
+  {
+    "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+    "name": "星谷美来",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 161,
+    "career_months": 35.8,
+    "prior_group_months": 0,
+    "current_group_months": 35.8,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+    "training_background": null
+  },
+  {
+    "uid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+    "name": "東山恵里沙",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 19,
+    "height_cm": 156,
+    "career_months": 35.8,
+    "prior_group_months": 0,
+    "current_group_months": 35.8,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+    "training_background": null
+  },
+  {
+    "uid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+    "name": "日向端ひな",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 22,
+    "height_cm": 158,
+    "career_months": 35.8,
+    "prior_group_months": 0,
+    "current_group_months": 35.8,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+    "training_background": null
+  },
+  {
+    "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
+    "name": "籾山ひめり",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 158,
+    "career_months": 92.6,
+    "prior_group_months": 57.6,
+    "current_group_months": 35,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "Someday Somewhere",
+        "group_uid": "U29tZWRheSBTb21ld2hlcmU",
+        "start_date": "2017-08-13",
+        "end_date": "2022-05-31",
+        "months": 57.6
+      }
+    ],
+    "career_summary": "Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+    "training_background": null
+  },
+  {
+    "uid": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+    "name": "葉月紗蘭",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 18,
+    "height_cm": 158,
+    "career_months": 35.8,
+    "prior_group_months": 0,
+    "current_group_months": 35.8,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+    "training_background": null
+  },
+  {
+    "uid": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+    "name": "涼海すう",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 17,
+    "height_cm": 148,
+    "career_months": 35.8,
+    "prior_group_months": 0,
+    "current_group_months": 35.8,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+    "training_background": null
+  }
+]

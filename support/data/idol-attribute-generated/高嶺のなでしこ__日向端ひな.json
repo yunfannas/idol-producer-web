@@ -1,0 +1,75 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.549Z",
+  "skill": "idol-attribute-generation",
+  "uid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
+  "name": "日向端ひな",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 22,
+  "height_cm": 158,
+  "career_months": 35.8,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 35.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+  "attributes": {
+    "strength": 12,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 16,
+    "pretty": 15,
+    "pitch": 17,
+    "tone": 17,
+    "breath": 16,
+    "rhythm": 15,
+    "power": 14,
+    "stage_presence": 16,
+    "wit": 13,
+    "humor": 13,
+    "talking": 14,
+    "determination": 15,
+    "teamwork": 15,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 230,
+    "dancer": 130,
+    "model": 80,
+    "comedy": 40
+  },
+  "radar": {
+    "PHY": 14.25,
+    "APP": 15.8,
+    "SNG": 16.25,
+    "DAN": 15,
+    "MEN": 14
+  },
+  "ability": 76,
+  "ability_raw": 76.104,
+  "evidence_summary": {
+    "high_confidence": [
+      "fan: high-register distinctive tone; live consistency still developing"
+    ],
+    "medium_confidence": [],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pitch/tone 16-17",
+      "power lower"
+    ],
+    "ranks": [
+      "singing member"
+    ],
+    "floors": [],
+    "biases": []
+  },
+  "career_context_used": [
+    "catalog: 高嶺のなでしこ (2022-07-10–present)",
+    "career_months=35.8"
+  ]
+}

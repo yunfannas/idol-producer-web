@@ -1,0 +1,80 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.548Z",
+  "skill": "idol-attribute-generation",
+  "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+  "name": "平沢かえ",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 20,
+  "height_cm": 163,
+  "career_months": 18.2,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 18.2,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "アキシブproject (2023-12-28–2026-02-24)",
+  "attributes": {
+    "strength": 13,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 14,
+    "pretty": 16,
+    "pitch": 18,
+    "tone": 18,
+    "breath": 19,
+    "rhythm": 17,
+    "power": 17,
+    "stage_presence": 16,
+    "wit": 13,
+    "humor": 13,
+    "talking": 14,
+    "determination": 15,
+    "teamwork": 15,
+    "fashion": 15
+  },
+  "traits": {
+    "singer": 170,
+    "dancer": 120,
+    "model": 90,
+    "comedy": 50
+  },
+  "radar": {
+    "PHY": 14.5,
+    "APP": 15.6,
+    "SNG": 18,
+    "DAN": 16.67,
+    "MEN": 14.17
+  },
+  "ability": 79,
+  "ability_raw": 79.542,
+  "evidence_summary": {
+    "high_confidence": [
+      "歌うまパフォーマンス snippet"
+    ],
+    "medium_confidence": [
+      "profile pages"
+    ],
+    "procedural_only": [
+      "retained scenario vocal baseline: SNG 18.00"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "retained vocal calibration: pitch/tone 18, breath 19, rhythm 17"
+    ],
+    "ranks": [
+      "reviewed vocal standout in sparse roster"
+    ],
+    "floors": [],
+    "biases": [
+      "pretty from height 163"
+    ]
+  },
+  "career_context_used": [
+    "catalog: アキシブproject (2023-12-28–2026-02-24)",
+    "career_months=18.2"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.547Z",
+  "skill": "idol-attribute-generation",
+  "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
+  "name": "若葉のあ",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 16,
+  "height_cm": 164,
+  "career_months": 21.7,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 21.7,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "iLife! (2023-09-12–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 17,
+    "cute": 19,
+    "pretty": 18,
+    "pitch": 15,
+    "tone": 16,
+    "breath": 15,
+    "rhythm": 16,
+    "power": 15,
+    "stage_presence": 17,
+    "wit": 13,
+    "humor": 12,
+    "talking": 14,
+    "determination": 16,
+    "teamwork": 15,
+    "fashion": 18
+  },
+  "traits": {
+    "singer": 130,
+    "dancer": 160,
+    "model": 200,
+    "comedy": 40
+  },
+  "radar": {
+    "PHY": 15.25,
+    "APP": 18.8,
+    "SNG": 15.5,
+    "DAN": 16,
+    "MEN": 14.67
+  },
+  "ability": 80,
+  "ability_raw": 80.938,
+  "evidence_summary": {
+    "high_confidence": [
+      "visual buzz / teen magazine framing"
+    ],
+    "medium_confidence": [
+      "performance adequate, not vocal/dance ace"
+    ],
+    "procedural_only": [
+      "MC/comedy low"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "cute/pretty 18-19",
+      "fashion 17-18"
+    ],
+    "ranks": [
+      "appearance head; skill Ability ~81"
+    ],
+    "floors": [
+      "stamina>=17"
+    ],
+    "biases": [
+      "model trait at early-practitioner tier",
+      "cute primary age 16 with height pretty pull"
+    ]
+  },
+  "career_context_used": [
+    "catalog: iLife! (2023-09-12–present)",
+    "career_months=21.7",
+    "no prior groups; ~22 months tenure regularizes stamina/stage basics only"
+  ]
+}

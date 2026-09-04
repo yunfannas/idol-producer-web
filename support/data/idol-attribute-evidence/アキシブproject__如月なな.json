@@ -1,0 +1,315 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:47:59.847Z",
+  "member": {
+    "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
+    "name": "如月なな",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 19,
+    "height_cm": null,
+    "career_months": 31,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 8,
+      "mc_comedy": 8,
+      "physical_stamina": 2,
+      "mental_professional": 2,
+      "traits": 2
+    },
+    "final_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 8,
+      "mc_comedy": 8,
+      "physical_stamina": 2,
+      "mental_professional": 2,
+      "traits": 2
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"如月なな\" \"アキシブproject\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "モーニング娘。",
+          "url": "https://sites.google.com/site/hajishirazuyuusukenouebusaito/home/moningu-niang",
+          "description": "「恋は発想 Do the Hustle!」直感2より全然良いじゃんって感じのグループサウンズへんてこナンバー。\n\nサビの勢いが好きですね。元々A面予定だったそうで、PVも存在する。佳曲。\n\n「踊れ！モーニングカレー」これA面でもいけたんじゃ、、って感じの全盛期を彷彿とさせるおふざけポップス。\n\n「Hand Made City」ロックサイドの名曲。コール＆レスポンスが楽しい。サビの熱量。\n\n「3,2,1 BREAKIN' OUT」ファンキーでサイコー！圧倒的歌唱力が光る。かなり高度なナンバー。必聴です。\n\n「秋麗」しなやかでメランコリックなポップナンバー。こちらもボーカルの表現力が良い。名曲です。\n\n「すべては愛の力」これも好きだなぁ。キャッチーで切ないし、A面で全然いける。\n\nプラチナ期のカップリング曲はシングルを超える勢いで名曲揃いです！\n\nモーニング娘。 / 10 MY ME（2010）\n\n9/10\n\n前作は基調にR&Bがあった感じでしたが、本作はどちらかというとロックのテイストを強く感じます。 [...] こちらも捨て曲がほとんど無い名盤でしょう。今でもライブの定番となる名曲を多数収録。\n\n楽曲もバラエティに富んでいるので、全く飽きさせません。曲の流れも完璧。\n\n本当に9作目～現在まで彼女たちのアルバムに駄作は一切ないです。\n\n「Moonlight night ～月夜の晩だよ～」怪しい雰囲気漂うダンスナンバー。今でもライブの定番ですね。\n\nマンパワーとかあの辺の曲をアップデートした様なカッコよさ。ライブでは間奏でのダンスパフォーマンスが凄まじくカッコいい。\n\n「気まぐれプリンセス」プラチナ期を代表する超名曲です。つんく♂氏お得意のロシア民謡風メロディが全開。\n\n合いの手の入り方とかサビで急にメランコリーな雰囲気が出てくる感じとか本当に唯一無二の世界。\n\n詞世界も面白く，つらい現実と理想の世界が交錯する不思議な感覚。ボーカルでは亀井絵里の脅威のヴィブラートが聴けます。凄い。\n\n「元気ピカッピカッ！」爽やかな雰囲気のポップナンバー。こういうはつらつとした楽曲もこなしてます。\n\n「涙ッチ」 Never Forgetに並ぶ卒業アンセムナンバー。静と動，力強くロックに駆け抜ける様が爽快です。 [...] 「Give Me愛」いきなりカッコよすぎです。プラチナ期を彷彿とさせるメロディラインですが、\n\n確実に何かが変わっています。魂を揺さぶる様な高橋愛，鞘師里保の歌唱，何かが始まる様なワクワク感があります。\n\n「Only You」つんく♂氏が震災を経て作ったという鬼気迫るロックナンバー。メンバーの歌唱が混然一体で迫って来ます。\n\n「シルバーの腕時計」切ない失恋の歌。メロディは歌謡曲そのものなのですが、\n\n田中れいなと鞘師里保の表現力豊かなボーカルが堪りません。新垣里沙・光井愛佳のラップもトリッキーで良い。\n\nこの曲の失恋したときの気持ちの表現の仕方は凄くリアルで素晴らしいです。\n\n「好きだな君が」エレポップの名曲。道重さゆみ・譜久村聖が歌い上げます。可愛らしい曲調にメランコリーなメロディが堪りませんね。\n\n間奏でいきなり爆走する展開がツボです。\n\nファンキーな「怪傑ポジティブA」疾走感溢れる「My Way～女子高花道～」は遊び心溢れるロックナンバー。\n\n何だかすかんちの音楽を思い出すような楽しさに溢れています。",
+          "age": null,
+          "score": 0.10092311,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "ボーカル",
+            "ダンス",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 15
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| アキシブproject |\n\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2012年 - |\n| 事務所 | ライブプラネット\") (2012年 - ） |\n| 共同作業者 |  imaginate (2024年 - )  岡村元義（プロデューサー） |\n| 公式サイト | アキシブproject |\n| メンバー |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ |\n| 旧メンバー | 過去のメンバーを参照。 |\n\n| アキシブproject |\n\n| YouTube |\n| チャンネル |  アキシブproject 公式チャンネル |\n| 活動期間 | 2012年9月28日 - |\n| ジャンル |  音楽  エンターテインメント |\n| 登録者数 | 1.08万人 |\n| 総再生回数 | 5,538,233回 |\n| チャンネル登録者数・総再生回数は 000000002026-04-21-00002026年4月21日時点。 |\n| テンプレートを表示 | [...] | 名前 | よみ | 愛称 | 生年月日 | 血液型 | 出身地 | カラー | 加入期 | 活動期間 | 備考 |\n ---  ---  ---  ---  --- |\n| 葵ふう | あおい ふう | ふうちゃん ふちゃん | (2003-11-18) 2003年11月18日（22歳） | 不明 | 東京都 | 青 | 6期生 | 2022年11月20日～ |\n| 如月なな | きさらぎ なな | ななちゃん なっな | (2006-02-17) 2006年2月17日（20歳） | B型 | 埼玉県 | 赤 | 6期生 | 2022年11月20日～ |\n| 清見るん | きよみ るん | るんちゃん | (2002-01-08) 2002年1月8日（24歳） | B型 | 千葉県 | オレンジ | 7期生 | 2023年12月31日～ | 元・炭酸くろにくるっ | [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | |",
+          "age": null,
+          "score": 0.5568099,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "「すごい！体の半分以上が脚！」アキシブProject・新メンバー ...",
+          "url": "https://thetv.jp/news/detail/1255310",
+          "description": "ザテレビジョンが注目する次世代アイドル26組が登場した同フェスの中から、アキシブProjectのライブパフォーマンス後に行われたトークライブの様子をレポートする。 5月に",
+          "age": null,
+          "score": 0.20272751,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "Next Music From Tokyo vol 18",
+          "url": "http://www.nextmusicfromtokyo.com?page_id=5239%3A",
+          "description": "View fullsize\n\nView fullsize Next Music from Tokyo vol 17 \nft @haku___official @tattle_tale_official @banshimoku @carpentersblue \nSept 19 Toronto @horseshoetavern \nSept 20 Toronto @horseshoetavern \nSept 22 Montreal @petitcampus \nSept 24 Vancouver @wisehallandlounge \nSept 25 Vanc [...] View fullsize NMFT vol 17 ft. @haku___official @tattle_tale_official @banshimoku @carpentersblue \nThese four awesome bands will be coming to Canada:\nSept 19 Toronto @horseshoetavern \nSept 20 Toronto @horseshoetavern \nSept 22 Montreal @petitcampus \nSept 24 Vancouve [...] BUY TICKETS\n\n# Vancouver shows:\n\nBUY TICKETS\n\n Untitled-1.jpg\n\n### IMAGES\n\n# Instagram\n\nView fullsize There will be LOTS of tickets available at the door for tonight's (Sat Sept 20) show at the Horseshoe.\n\nThe bands arrived on Wednesday and they absolutely love Toronto!  Can't wait to show them the fantastic food and sophisticated flair of Montreal a",
+          "age": null,
+          "score": 0.026559154,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "初めまして❕ アキシブproject 新メンバーの 如月(きさらぎ)な ...",
+          "url": "https://x.com/aksb_nana/status/1593910545496739840",
+          "description": "初めまして❕ アキシブproject 新メンバーの如月(きさらぎ)なな です！ 0からのスタートで不安もたくさんあるけど、精一杯頑張ります❣️ 私の初めて",
+          "age": null,
+          "score": 0.43093804,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "如月なな (@aksb_nana)",
+          "url": "https://www.instagram.com/aksb_nana",
+          "description": "3.1K+ followers · 37 following · 63 posts · @aksb_nana: “【アキシブproject】赤色担当 なっなってよんで♡”",
+          "age": null,
+          "score": 0.4184836,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "如月なな【アキシブ】 (@aksb_nana) / X",
+          "url": "https://x.com/aksb_nana",
+          "description": "如月なな【アキシブ】 Project アキシブproject … 如月ななと1対1でLIVEトーク! アキシブproject. MUSIC EXCHANGE 出演時間⏰ 🎙11:25-11:50 📸 12:00-13:00",
+          "age": null,
+          "score": 0.36581963,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"如月なな\" \"アキシブproject\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 名前 | よみ | 愛称 | 生年月日 | 血液型 | 出身地 | カラー | 加入期 | 活動期間 | 備考 |\n ---  ---  ---  ---  --- |\n| 葵ふう | あおい ふう | ふうちゃん ふちゃん | (2003-11-18) 2003年11月18日（22歳） | 不明 | 東京都 | 青 | 6期生 | 2022年11月20日～ |\n| 如月なな | きさらぎ なな | ななちゃん なっな | (2006-02-17) 2006年2月17日（20歳） | B型 | 埼玉県 | 赤 | 6期生 | 2022年11月20日～ |\n| 清見るん | きよみ るん | るんちゃん | (2002-01-08) 2002年1月8日（24歳） | B型 | 千葉県 | オレンジ | 7期生 | 2023年12月31日～ | 元・炭酸くろにくるっ | [...] | アキシブproject |\n\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2012年 - |\n| 事務所 | ライブプラネット\") (2012年 - ） |\n| 共同作業者 |  imaginate (2024年 - )  岡村元義（プロデューサー） |\n| 公式サイト | アキシブproject |\n| メンバー |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ |\n| 旧メンバー | 過去のメンバーを参照。 |\n\n| アキシブproject |\n\n| YouTube |\n| チャンネル |  アキシブproject 公式チャンネル |\n| 活動期間 | 2012年9月28日 - |\n| ジャンル |  音楽  エンターテインメント |\n| 登録者数 | 1.08万人 |\n| 総再生回数 | 5,538,233回 |\n| チャンネル登録者数・総再生回数は 000000002026-04-21-00002026年4月21日時点。 |\n| テンプレートを表示 | [...] 甘一姫愛 (@aksb\\_kiara) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 甘一姫愛 (@amai\\_kiara\\_) - Instagram\n 如月なな (@aksb\\_nana) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 如月なな (@aksb\\_nana) - Instagram",
+          "age": null,
+          "score": 0.533714,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "如月なな (@aksb_nana)",
+          "url": "https://www.instagram.com/aksb_nana",
+          "description": "3.1K+ followers · 37 following · 63 posts · @aksb_nana: “【アキシブproject】赤色担当 なっなってよんで♡” Message たまにくるメガネ … カラコンは @chapun.official",
+          "age": null,
+          "score": 0.36861077,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "「すごい！体の半分以上が脚！」アキシブProject・新メンバー ...",
+          "url": "https://thetv.jp/news/detail/1255310",
+          "description": "ザテレビジョンが注目する次世代アイドル26組が登場した同フェスの中から、アキシブProjectのライブパフォーマンス後に行われたトークライブの様子をレポートする。 5月に",
+          "age": null,
+          "score": 0.2558365,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "トーク"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "アキシブproject 如月なな かわいい撮可",
+          "url": "https://www.tiktok.com/@w_o2ss/video/7648187506642472213",
+          "description": "アキシブprojectのメンバー、如月ななさんの魅力的な撮可写真を公開します。彼女のかわいらしい姿を捉えた、ファン必見のショットばかりです。",
+          "age": null,
+          "score": 0.67347145,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "如月なな【アキシブ】 (@aksb_nana) / X",
+          "url": "https://x.com/aksb_nana",
+          "description": "如月なな【アキシブ】 ... かわいいこなら誰でもいいの？ ... 2日間HEROINES SILVERです❕ 土日なっなと一緒に過ごそうね ̫ 19日 19:00〜チケ発始まってる！",
+          "age": null,
+          "score": 0.46905875,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "アキシブproject -akishibu project",
+          "url": "https://www.youtube.com/user/AkishibuProject",
+          "description": "アキシブproject -akishibu project-. Home. Shorts. Library. アキシブproject -akishibu project-. @AkishibuProject. 10.9K subscribers•210 videos.",
+          "age": null,
+          "score": 0.17084005,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"如月なな\" \"アキシブproject\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブprojectのプロフィール | オリコンニュース（ORICON NEWS ...",
+          "url": "https://www.oricon.co.jp/prof/645602",
+          "description": "アキシブproject（アキシブプロジェクト） 葵ふう、如月なな、清見るん、平沢かえ、茉井良菜、水琴まなみによるアイドルグループ。2018年8月、「Hola! Hola!",
+          "age": null,
+          "score": 0.5492786,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "如月なな (@aksb_nana) • Instagram photos and videos",
+          "url": "https://www.instagram.com/aksb_nana",
+          "description": "3.1K+ followers · 37 following · 63 posts · @aksb_nana: “【アキシブproject】赤色担当 なっなってよんで♡” カラコンは @chapun.official のみつめてブラウニー",
+          "age": null,
+          "score": 0.39985907,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "[Akishibu Official] 5-Second Self-Introduction   [New Member]",
+          "url": "https://www.youtube.com/watch?v=US6WdFvU4F0",
+          "description": "アキシブ公式YouTube企画！！！♡ 今回は新メンバー「山本未悠」「新居歩美」が1問5秒で自己紹介♡ 2人のことをよく知ってる方も、そうじゃない方も",
+          "age": null,
+          "score": 0.15460591,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "アキシブproject にインタビュー ｜Musicpocket VOICES - YouTube",
+          "url": "https://www.youtube.com/watch?v=3yK-4fJHVHw",
+          "description": "MusicPocket #インタビュー #アーティストライブに関わるすべての“つくり手”と“届け手”のリアルな声を集める企画「MusicPocket VOICES」。",
+          "age": null,
+          "score": 0.43395805,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 名前 | よみ | 愛称 | 生年月日 | 血液型 | 出身地 | カラー | 加入期 | 活動期間 | 備考 |\n ---  ---  ---  ---  --- |\n| 葵ふう | あおい ふう | ふうちゃん ふちゃん | (2003-11-18) 2003年11月18日（22歳） | 不明 | 東京都 | 青 | 6期生 | 2022年11月20日～ |\n| 如月なな | きさらぎ なな | ななちゃん なっな | (2006-02-17) 2006年2月17日（20歳） | B型 | 埼玉県 | 赤 | 6期生 | 2022年11月20日～ |\n| 清見るん | きよみ るん | るんちゃん | (2002-01-08) 2002年1月8日（24歳） | B型 | 千葉県 | オレンジ | 7期生 | 2023年12月31日～ | 元・炭酸くろにくるっ | [...] アキシブproject（アキシブプロジェクト、Akishibu Project）は、日本の女性アイドルグループ。秋葉原の「TwinBox AKIHABARA」をホームグランドとしている。ライブプラネット\")所属。\n\n## 年譜\n\n[編集]\n\n|  |\n\n| 伝記の記載を年譜形式のみとすることは推奨されていません。 人物の伝記は流れのあるまとまった文章で記述し、年譜は補助的な使用にとどめてください。（2025年1月） |\n\n### 2012年\n\n[編集] [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | |",
+          "age": null,
+          "score": 0.572078,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "如月なな【アキシブ】 (@aksb_nana) / X",
+          "url": "https://x.com/aksb_nana",
+          "description": "如月なな【アキシブ】 ... かわいいこなら誰でもいいの？ ... 2日間HEROINES SILVERです❕ 土日なっなと一緒に過ごそうね ̫ 19日 19:00〜チケ発始まってる！",
+          "age": null,
+          "score": 0.33665863,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【如月なな】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/910454/view",
+          "description": "2026年2月実施予定の如月なな生誕祭をより盛大にお祝いできるようご支援をお願いいたします。",
+          "age": null,
+          "score": 0.3114169,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "《アキシブproject密着 0からのスタート》初回メンバーコメント",
+          "url": "https://www.youtube.com/watch?v=93unW5E9SKo",
+          "description": "7/27にメンバーの卒業を迎え7人となったアキシブproject 再び0からのスタートという気持ちで、まずは8月4日から始まるTIFに向けての合宿集中レッスン",
+          "age": null,
+          "score": 0.26707336,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「IDOL AND READ 014」発売記念 小此木流花（アキシブproject ...",
+          "url": "https://www.shinko-music.co.jp/report/idolandread014_1",
+          "description": "『IDOL AND READ』第14弾の発売を記念したトークショー＆サイン会が、小此木流花（アキシブproject）をゲストに迎え4月17日、書泉ブックタワーにて開催された。",
+          "age": null,
+          "score": 0.12912819,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

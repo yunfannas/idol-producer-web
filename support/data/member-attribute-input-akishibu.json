@@ -1,0 +1,107 @@
+[
+  {
+    "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
+    "name": "葵ふう",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 21,
+    "height_cm": 0,
+    "career_months": 31.5,
+    "prior_group_months": 0,
+    "current_group_months": 31.5,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "アキシブproject (2022-11-20–present)",
+    "training_background": null
+  },
+  {
+    "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+    "name": "水琴まなみ",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 20,
+    "height_cm": 0,
+    "career_months": 6.7,
+    "prior_group_months": 0,
+    "current_group_months": 6.7,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "アキシブproject (2024-12-13–present)",
+    "training_background": null
+  },
+  {
+    "uid": "45484495-8792-48db-bab0-560ee4107464",
+    "name": "清見るん",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 23,
+    "height_cm": 159,
+    "career_months": 44.4,
+    "prior_group_months": 26.2,
+    "current_group_months": 18.3,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "炭酸くろにくるっ",
+        "group_uid": "54Kt6YW444GP44KN44Gr44GP44KL44Gj",
+        "start_date": "2021-04-18",
+        "end_date": "2023-06-23",
+        "months": 26.2
+      }
+    ],
+    "career_summary": "炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+    "training_background": null
+  },
+  {
+    "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
+    "name": "如月なな",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 19,
+    "height_cm": 0,
+    "career_months": 31.5,
+    "prior_group_months": 0,
+    "current_group_months": 31.5,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "アキシブproject (2022-11-20–present)",
+    "training_background": null
+  },
+  {
+    "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+    "name": "茉井良菜",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 26,
+    "height_cm": 158,
+    "career_months": 121.8,
+    "prior_group_months": 103.6,
+    "current_group_months": 18.2,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "Le Siana",
+        "group_uid": "TGUgU2lhbmE",
+        "start_date": "2012-10-01",
+        "end_date": "2016-06-04",
+        "months": 44.1
+      },
+      {
+        "group_name": "煌めき☆アンフォレント",
+        "group_uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+        "start_date": "2016-07-03",
+        "end_date": "2020-11-29",
+        "months": 52.9
+      },
+      {
+        "group_name": "モユルハル",
+        "group_uid": null,
+        "start_date": "2022-08-16",
+        "end_date": "2023-03-05",
+        "months": 6.6
+      }
+    ],
+    "career_summary": "Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
+    "training_background": null
+  }
+]

@@ -1,0 +1,280 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:24.922Z",
+  "member": {
+    "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
+    "name": "葵ふう",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 21,
+    "height_cm": null,
+    "career_months": 31,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 0,
+      "dance_performance": 0,
+      "appearance_model": 1,
+      "mc_comedy": 1,
+      "physical_stamina": 2,
+      "mental_professional": 2,
+      "traits": 2
+    },
+    "final_coverage": {
+      "vocal": 0,
+      "dance_performance": 0,
+      "appearance_model": 1,
+      "mc_comedy": 1,
+      "physical_stamina": 2,
+      "mental_professional": 2,
+      "traits": 2
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"葵ふう\" \"アキシブproject\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| アキシブproject |\n\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2012年 - |\n| 事務所 | ライブプラネット\") (2012年 - ） |\n| 共同作業者 |  imaginate (2024年 - )  岡村元義（プロデューサー） |\n| 公式サイト | アキシブproject |\n| メンバー |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ |\n| 旧メンバー | 過去のメンバーを参照。 |\n\n| アキシブproject |\n\n| YouTube |\n| チャンネル |  アキシブproject 公式チャンネル |\n| 活動期間 | 2012年9月28日 - |\n| ジャンル |  音楽  エンターテインメント |\n| 登録者数 | 1.08万人 |\n| 総再生回数 | 5,538,233回 |\n| チャンネル登録者数・総再生回数は 000000002026-04-21-00002026年4月21日時点。 |\n| テンプレートを表示 | [...] | 名前 | よみ | 愛称 | 生年月日 | 血液型 | 出身地 | カラー | 加入期 | 活動期間 | 備考 |\n ---  ---  ---  ---  --- |\n| 葵ふう | あおい ふう | ふうちゃん ふちゃん | (2003-11-18) 2003年11月18日（22歳） | 不明 | 東京都 | 青 | 6期生 | 2022年11月20日～ |\n| 如月なな | きさらぎ なな | ななちゃん なっな | (2006-02-17) 2006年2月17日（20歳） | B型 | 埼玉県 | 赤 | 6期生 | 2022年11月20日～ |\n| 清見るん | きよみ るん | るんちゃん | (2002-01-08) 2002年1月8日（24歳） | B型 | 千葉県 | オレンジ | 7期生 | 2023年12月31日～ | 元・炭酸くろにくるっ | [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | |",
+          "age": null,
+          "score": 0.5818027,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "葵ふう | アキシブproject",
+          "url": "https://navi-idol.com/idol/bz5u6u2e",
+          "description": "葵ふうのプロフィール情報、出演ライブ、基本情報をご紹介。",
+          "age": null,
+          "score": 0.46672463,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "アキシブprojectのプロフィール",
+          "url": "https://www.oricon.co.jp/prof/645602",
+          "description": "アキシブprojectのプロフィール・画像・動画・ニュース・特集・ランキング・TV出演情報・ドラマ出演情報・CM出演情報・歌詞情報をまとめてチェックできます。",
+          "age": null,
+          "score": 0.21678194,
+          "source_class": "professional_media",
+          "matched_terms": [],
+          "relevance_score": 4
+        },
+        {
+          "title": "葵 ふう (ふうにゃんこ) (@aksb_fu)",
+          "url": "https://www.instagram.com/aksb_fu",
+          "description": "2.3K+ followers · シブproject青色担当” 葵 ふう (ふうにゃんこ) (@aksb_fu) • Instagram photos and videos … 88 following 2003.11.18",
+          "age": null,
+          "score": 0.30130085,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "aksb_fu - 葵 ふう【アキシブ】",
+          "url": "https://x.com/aksb_fu",
+          "description": "アキシブproject · @AkishibuProject · Aug 21. 【 葵ふう生誕祭 】 葵ふう4回目となる生誕祭です☁️ 今年のモチーフは『群青』青に染まる特別な日、絶対最高になるので",
+          "age": null,
+          "score": 0.30090013,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "葵 ふう【アキシブ】 on X: \"19歳独身アイドル歴1年 もらってくれ ...",
+          "url": "https://x.com/aksb_fu/status/1702668609150160974",
+          "description": "19歳独身アイドル歴1年もらってくれますか……？",
+          "age": null,
+          "score": 0.28558657,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject【葵ふう】生誕祭応援プロジェクト",
+          "url": "https://camp-fire.jp/projects/790531/view",
+          "description": "¥10,000 以上のご支援をいただいた方に、生誕オリジナルネームプレートやクラウドファンディング限定グッズが付いてきます。 · ＜お知らせ＞ · ▽HEROINES · 表示金額 · ¥",
+          "age": null,
+          "score": 0.23451224,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"葵ふう\" \"アキシブproject\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 名前 | よみ | 愛称 | 生年月日 | 血液型 | 出身地 | カラー | 加入期 | 活動期間 | 備考 |\n ---  ---  ---  ---  --- |\n| 葵ふう | あおい ふう | ふうちゃん ふちゃん | (2003-11-18) 2003年11月18日（22歳） | 不明 | 東京都 | 青 | 6期生 | 2022年11月20日～ |\n| 如月なな | きさらぎ なな | ななちゃん なっな | (2006-02-17) 2006年2月17日（20歳） | B型 | 埼玉県 | 赤 | 6期生 | 2022年11月20日～ |\n| 清見るん | きよみ るん | るんちゃん | (2002-01-08) 2002年1月8日（24歳） | B型 | 千葉県 | オレンジ | 7期生 | 2023年12月31日～ | 元・炭酸くろにくるっ | [...] 田口未彩 (@aksb\\_taguchi) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 田口未彩 (@miiro\\_taguchi) - Instagram\n 田口未彩オフィシャルブログ「みぃ姫のlovely☆castle」Powered by Ameba - Ameba Blog\n 葵ふう (@aksb\\_fu) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 葵ふう (@aksb\\_fu) - Instagram\n 黒崎りある (@aksb\\_Real) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 黒崎りある (@aksb\\_real) - Instagram\n 古賀みれい (@aksb\\_mirei) - X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")\n 古賀みれい (@aksb\\_mirei) - Instagram [...] | アキシブproject |\n\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2012年 - |\n| 事務所 | ライブプラネット\") (2012年 - ） |\n| 共同作業者 |  imaginate (2024年 - )  岡村元義（プロデューサー） |\n| 公式サイト | アキシブproject |\n| メンバー |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ |\n| 旧メンバー | 過去のメンバーを参照。 |\n\n| アキシブproject |\n\n| YouTube |\n| チャンネル |  アキシブproject 公式チャンネル |\n| 活動期間 | 2012年9月28日 - |\n| ジャンル |  音楽  エンターテインメント |\n| 登録者数 | 1.08万人 |\n| 総再生回数 | 5,538,233回 |\n| チャンネル登録者数・総再生回数は 000000002026-04-21-00002026年4月21日時点。 |\n| テンプレートを表示 |",
+          "age": null,
+          "score": 0.56661874,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "ライブ「アキシブproject -11th Anniver sary Live-」",
+          "url": "https://ameblo.jp/1974kengo/entry-12852864478.html",
+          "description": "ライブ中のふうちゃんはかっこいいし、可愛いくて特典会の時のふうちゃんはすごく可愛いかったです。 ライブ中、MCお疲れ様でした。 チェキに書いて",
+          "age": null,
+          "score": 0.5999311,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い",
+            "MC"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "葵 ふう (ふうにゃんこ) (@aksb_fu)",
+          "url": "https://www.instagram.com/aksb_fu",
+          "description": "2.3K+ followers · 89 following · 3 posts … アキシブproject青色担当” 葵 ふう (ふうにゃんこ) (@aksb_fu) • Instagram photos and videos",
+          "age": null,
+          "score": 0.4718322,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "残念偶像厨伊吹",
+          "url": "https://www.sina.cn/news/detail/5120152326901284.html",
+          "description": "アキシブproject 新体制艺写公开 ✧*｡成员｡*✧ 葵ふう❤️如月なな 古賀みれい 神崎らん 清見るん 平沢かえ 茉井良菜 水琴まなみ 美山ひな",
+          "age": null,
+          "score": 0.4424684,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "葵ふう",
+          "url": "https://www.tiktok.com/discover/%E8%91%B5%E3%81%B5%E3%81%86",
+          "description": "アキシブProject 青色担当 葵ふう推しカメラ 夜の野外のライブのふうちゃんが美し過ぎた✨ 2026年8月8日 IDOL SUMMER JUNGLE day2@お台場R地区",
+          "age": null,
+          "score": 0.43640643,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "\"アキシブproject新メンバーになりました！葵(あおい)ふうです🐾 ...",
+          "url": "https://x.com/aksb_fu/status/1593182705570951168",
+          "description": "アキシブproject新メンバーになりました！葵(あおい)ふうです アイドル未経験ですが精一杯がんばりますので、応援よろしくお願いします.",
+          "age": null,
+          "score": 0.42993253,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "aksb_fu - 葵 ふう【アキシブ】",
+          "url": "https://x.com/aksb_fu",
+          "description": "アキシブproject · @AkishibuProject · Aug 21. 【 葵ふう生誕祭 】 葵ふう4回目となる生誕祭です☁️ 今年のモチーフは『群青』青に染まる特別な日、絶対最高になるので",
+          "age": null,
+          "score": 0.38838658,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【旧サイト】アキシブproject-葵ふう生誕祭",
+          "url": "https://t.livepocket.jp/e/akishibu_fubirthday2023",
+          "description": "アキシブproject-葵ふう生誕祭-のチケット情報・予約・購入はこちらから|2023年11月15日(水)：東京都 恵比寿CreAto：アキシブproject|11月15日(水)『アキシブproject-",
+          "age": null,
+          "score": 0.33018008,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"葵ふう\" \"アキシブproject\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 名前 | よみ | 愛称 | 生年月日 | 血液型 | 出身地 | カラー | 加入期 | 活動期間 | 備考 |\n ---  ---  ---  ---  --- |\n| 葵ふう | あおい ふう | ふうちゃん ふちゃん | (2003-11-18) 2003年11月18日（22歳） | 不明 | 東京都 | 青 | 6期生 | 2022年11月20日～ |\n| 如月なな | きさらぎ なな | ななちゃん なっな | (2006-02-17) 2006年2月17日（20歳） | B型 | 埼玉県 | 赤 | 6期生 | 2022年11月20日～ |\n| 清見るん | きよみ るん | るんちゃん | (2002-01-08) 2002年1月8日（24歳） | B型 | 千葉県 | オレンジ | 7期生 | 2023年12月31日～ | 元・炭酸くろにくるっ | [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | | [...] アキシブproject（アキシブプロジェクト、Akishibu Project）は、日本の女性アイドルグループ。秋葉原の「TwinBox AKIHABARA」をホームグランドとしている。ライブプラネット\")所属。\n\n## 年譜\n\n[編集]\n\n|  |\n\n| 伝記の記載を年譜形式のみとすることは推奨されていません。 人物の伝記は流れのあるまとまった文章で記述し、年譜は補助的な使用にとどめてください。（2025年1月） |\n\n### 2012年\n\n[編集]",
+          "age": null,
+          "score": 0.609455,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Aoi Fuu | Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Aoi_Fuu_(Akishibu_project)",
+          "description": "Aoi Fuu (葵ふう) is a Japanese idol, a 6th generation member of akishibu project and a member of HEROINES. She joined akishibu project on November 20, 2022,",
+          "age": null,
+          "score": 0.5942929,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "\"アキシブproject新メンバーになりました！葵(あおい)ふうです🐾 ...",
+          "url": "https://x.com/aksb_fu/status/1593182705570951168",
+          "description": "アキシブproject新メンバーになりました！葵(あおい)ふうです アイドル未経験ですが精一杯がんばりますので、応援よろしくお願いします.",
+          "age": null,
+          "score": 0.5198388,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "葵 ふう (ふうにゃんこ) (@aksb_fu)",
+          "url": "https://www.instagram.com/aksb_fu",
+          "description": "2.3K+ followers · 89 following · 3 posts · @aksb_fu: “2003.11.18 アキシブproject青色担当”",
+          "age": null,
+          "score": 0.48616135,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "aksb_fu - 葵 ふう【アキシブ】",
+          "url": "https://x.com/aksb_fu",
+          "description": "AkishibuProject 黒髪ボブ青色、ねこです。セトリ▶︎#アキシブセトリ チェキツイ▶︎ #本日のふにゃんこ 全部 #みてみてふーちゃん.",
+          "age": null,
+          "score": 0.4511578,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

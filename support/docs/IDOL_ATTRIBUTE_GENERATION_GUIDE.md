@@ -12,6 +12,7 @@ The collector intentionally does **not** score attributes. Search rules and gene
 ## Files
 
 - Search config: `support/config/idol-attribute-search.json`
+- Catalog-to-input builder: `support/scripts/buildMemberAttributeInput.mjs`
 - Collector: `support/scripts/collectIdolAttributeEvidence.mjs`
 - Generator skill: `.cursor/skills/idol-attribute-generation/SKILL.md`
 - Default evidence output: `support/data/idol-attribute-evidence/`
@@ -35,9 +36,16 @@ node support/scripts/collectIdolAttributeEvidence.mjs \
   --height 150
 ```
 
-Collect a batch from JSON:
+Build a batch from dated catalog history, then collect its evidence:
 
 ```bash
+node support/scripts/buildMemberAttributeInput.mjs \
+  --group "アキシブproject" \
+  --idols public/data/scenarios/scenario_6/idols.json \
+  --groups public/data/scenarios/scenario_6/groups.json \
+  --reference-date 2025-07-05 \
+  --out support/data/member-attribute-input.json
+
 node support/scripts/collectIdolAttributeEvidence.mjs \
   --input support/data/member-attribute-input.json
 ```
@@ -55,12 +63,15 @@ Example batch input:
     "height_cm": 150,
     "career_months": 2,
     "prior_group_months": 0,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "career_summary": "",
     "training_background": null
   }
 ]
 ```
 
-The collector writes one JSON evidence bundle per member. That bundle is the normal input to the `idol-attribute-generation` agent skill.
+The builder ignores undated `group_history` rows, merges overlapping dated memberships for career duration, and calculates age at the supplied reference date. The collector writes one JSON evidence bundle per member, preserving the resulting career context for the `idol-attribute-generation` agent skill.
 
 ## Adaptive search strategy
 
@@ -180,6 +191,8 @@ Look for repeated professional use:
 - model: magazines, runway, brand work, styling/fashion work
 - comedy: variety work, comedy formats, repeatable MC/comedic utility
 
+Traits measure specialization progress, not job eligibility: an idol can accept the related work even with no trait score. Use 100-199 for novice progress and 200-249 for an early proven practitioner; reserve 250+ for repeated, reliable specialist evidence.
+
 ## Evidence constraint model
 
 The generator should convert evidence to four types of constraints: **range, rank, floor, bias**.
@@ -261,7 +274,7 @@ Unknown attributes must not default to 15-16. Generate a latent personal profile
 
 ## Trait vs attribute distinction
 
-Attributes describe what the idol can currently do. Traits describe externally usable specialization and accumulated career capital.
+Attributes describe what the idol can currently do. Traits describe externally usable specialization and accumulated career capital; they do not gate whether the idol may take an external-work assignment.
 
 A member can have pitch/tone 18 but low singer trait if she has almost no vocal-specific external career. A high model trait normally implies repeat fashion/model work and should bias pretty/fashion upward. A talkative member is not automatically high comedy trait.
 

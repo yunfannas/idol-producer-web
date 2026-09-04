@@ -183,6 +183,10 @@ async function loadMembers() {
       height_cm: args.height ? Number(args.height) : null,
       career_months: args['career-months'] ? Number(args['career-months']) : null,
       prior_group_months: args['prior-group-months'] ? Number(args['prior-group-months']) : null,
+      current_group_months: args['current-group-months'] ? Number(args['current-group-months']) : null,
+      career_reference_date: args['career-reference-date'] || null,
+      prior_groups: [],
+      career_summary: null,
       training_background: args.training || null,
     }];
   }
@@ -216,6 +220,10 @@ async function collectMember(member, config) {
       height_cm: member.height_cm ?? null,
       career_months: member.career_months ?? null,
       prior_group_months: member.prior_group_months ?? null,
+      current_group_months: member.current_group_months ?? null,
+      career_reference_date: member.career_reference_date ?? null,
+      prior_groups: Array.isArray(member.prior_groups) ? member.prior_groups : [],
+      career_summary: member.career_summary ?? null,
       training_background: member.training_background ?? null,
     },
     search_summary: {

@@ -1,0 +1,325 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:23.561Z",
+  "member": {
+    "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
+    "name": "福丸うさ",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 21,
+    "height_cm": 159,
+    "career_months": 24,
+    "prior_group_months": 7,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 6,
+      "dance_performance": 6,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 9,
+      "mental_professional": 9,
+      "traits": 9
+    },
+    "final_coverage": {
+      "vocal": 6,
+      "dance_performance": 6,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 9,
+      "mental_professional": 9,
+      "traits": 9
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"福丸うさ\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2006年1月23日 |\n| 年齢 | 20歳 ※2026年3月時点 |\n| 血液型 | O型 |\n| 身長 | 151cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 白 |\n\nあいすさんは、2022年7月にiLiFE!へ加入したメンバーです。2021年にHEROINES所属のアイドルユニット「i-COL」としてデビューし、現在も兼任しながら活動を続けています。黒髪ボブの小柄なルックスと透き通るような白い肌が印象的で、愛らしい雰囲気からファンやメンバーの間では「ばぶちゃん」という愛称でも親しまれています。\n\n普段は可憐で柔らかな存在感を放つ一方、ステージに立つと力強くキレのあるパフォーマンスで会場の視線を一気に引き寄せるのも魅力です。小さな体からは想像できないエネルギッシュな表現力を武器に、ライブでは圧倒的な存在感を発揮しています。\n\n### 2-3. 福丸うさ\n\n> この投稿をInstagramで見る\n>\n> 福丸うさ(@ilife\\_usa)がシェアした投稿 [...] |  |  |\n --- |\n| 生年月日 | 2004年1月26日 |\n| 年齢 | 22歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 159cm |\n| メンバーカラー | 黄色 |\n\n福丸うささんは、2023年8月にiLiFE!の正規所属メンバーとして加入しました。加入以前はHEROINES所属のアイドルグループ「ZUTTOMOTTO」に在籍し、「あいら」名義で活動していた経歴を持ちます。2023年7月にiLiFE!のサポートメンバーとして参加し、その後正式メンバーへの加入が発表されました。\n\n黄色の担当カラーにぴったりの朗らかな笑顔と気さくな性格が魅力で、ファンとの交流でも親しみやすさを発揮しています。どのような場面でも前向きな姿勢を崩さない人柄が、グループの雰囲気をさらに明るくする存在として支持されています。\n\n### 2-4. 若葉のあ\n\n> この投稿をInstagramで見る\n>\n> 若葉のあ(@ilife\\_wakaba)がシェアした投稿 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。",
+          "age": null,
+          "score": 0.70336664,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "キレ",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 16
+        },
+        {
+          "title": "【iLiFE!】福丸 うさ｜完全網羅プロフィール＆経歴・最新情報まとめ",
+          "url": "https://note.com/idol_information/n/nadce307a1107",
+          "description": "22歳を迎え、表現力にも大人の魅力が加わった福丸うさ。 彼女が牽引する「アイドルライフ」は、これからも多くのファンに「福」をもたらし続けること",
+          "age": null,
+          "score": 0.6826801,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "表現力"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLife!（アイライフ）メンバー一覧・プロフィール | アイドルグループ",
+          "url": "https://oshilattice.com/groups/ilife",
+          "description": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "age": null,
+          "score": 0.23575042,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFE!アイライフで歌が上手いと個人的に思うメンバーを順番に... - Yahoo!知恵袋",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12317767272",
+          "description": "Yahoo! JAPAN\n ヘルプ\n\nYahoo!知恵袋\n\n 知恵袋トップ\n カテゴリ一覧\n エンターテインメントと趣味\n 芸能人\n 女性アイドル\n\nあさん\n\n2025/7/22 1:13\n\n1回答\n\n# iLiFE! アイライフで歌が上手いと個人的に思うメンバーを順番に教えてください。また、いつの体制が１番歌唱力が高いと思うかも教えていただけると嬉しいです。\n\n女性アイドル | 音楽・4,141閲覧\n\nあ\n\nあさん\n\n2025/7/22 1:28\n\n### 2025年2月3日時点の体制が1番歌唱力が高いと思います。(個人的にです)空詩かれん≧あいすこるね心花りり福丸うさ、那蘭のどか若葉のあ誰が低いから〜とかではなく、バランスよく歌唱力が高く 綺麗 といえる体制だったと思います。並びで記載している部分もあり申し訳ないです。\n\nこの回答はいかがでしたか？ リアクションしてみよう\n\n### 質問者からのお礼コメント\n\nお礼日時：2025/7/30 0:30\n\n## カテゴリQ&Aランキング\n\n女性アイドル\n\n1 [...] ## あなたも答えてみませんか\n\n香港ディズニーチケットで、4人で行くために下記を2セット購入しましたが、問題ないでしょうか。 2名様用お食事割引クーポン付き1デー・チケット（観光客限定）（ティア1）\n\nどうしよう。曜日を勘違いしていて、時間割の見るところを間違えて四谷学院の授業をいくつかすっぽかしてしまいました。 死ぬほど怒られますか。。？また、親に連絡行くでしょうか泣\n\n来週SHL社の適性検査があります。私は学力がない人間で恥ずかしながら方程式も勉強し直してやっと解けるようになりました。図表解読や法則性は解説を見て要約なるほど、？ となるクオリティです。勉強頑張...\n\nラグーナ、プールついて質問です。 今週金曜日にラグーナへ行きます。プールを楽しむつもりでしたが雨予報。 プールサイドのレンタルルームもとってあります。雨の日でも水着のまま遊べるアトラクションはあ...\n\n深江橋駅の接客・清潔感・居心地で選ぶ居酒屋はどこですか？ 大阪市深江橋駅周辺で地元の方々がおすすめする一推しの居酒屋はどこでしょうか、名物料理やお通し、串や揚げ物の火入れ、地酒やサワーのラインナ... [...] ブリタBRITA、の浄水ポット使ってる方教えてください！！！ 初めて購入したのですが、浄水が穴から出てくる時 2方向から出てくるのって普通ですか？ 使っている方の動画見ても、皆さん一方向からし...\n\nにじさんじで初配信振り返りをやった人を分かる限り教えてください！\n\n長いほどモード感もアップ！ 今年のブーツはサイハイで決まり。最旬デザイン12選【2026-27年秋冬バッグ＆シューズ vol.9】 \n\nテレビ朝日のドリームフェスティバル3日目に行きたいと思っています。 倍率が高そうなので一緒に行く友達と1人2枚ずつでチケットを取りたいのですが、重複当選しちゃう可能性ありますよね？ その場合リセ...\n\nイコラブについて イコラブ9周年ライブの一般先行はまだ始まってませんよね？ 始まる場合はだいたいいつ頃からと予想されるでしょうか？\n\n## 総合Q&Aランキング\n\n1\n\n「薬屋のひとりごと」芦田愛菜主演で実写化。 壬氏は誰が適役だと思いますか？ \n\n2",
+          "age": null,
+          "score": 0.6334335,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "歌が上手い"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "iLiFE! 候補生のトップクラス歌唱力｜ほんと歌上手い",
+          "url": "https://www.tiktok.com/@n_in27/video/7644150108392606996",
+          "description": "候補生の中でトップクラスの歌唱力だと思う、という評価を受けるパフォーマンスを紹介します。表情、発声、音程安定性、ビブラートやフレージングの",
+          "age": null,
+          "score": 0.53094244,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "Ilife! 君セン! みにうさ歌唱",
+          "url": "https://www.tiktok.com/ja/trending/detail/ilife-%E5%90%9B%E3%82%BB%E3%83%B3-%E3%81%BF%E3%81%AB%E3%81%86%E3%81%95%E6%AD%8C%E5%94%B1",
+          "description": "福丸うさ Ilife カラコン · Ilifeうさ · 福丸うさ コ. 78.7Kいいね. 297 ... 声に、しかもめちゃ歌上手くなっててすごい . 2801. いいねの数：20.1K",
+          "age": null,
+          "score": 0.6077801,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Star*Rise（福丸うさソロ曲） - song and lyrics by iLiFE!",
+          "url": "https://open.spotify.com/track/4yb22GEOc2sapOB57lQN3y",
+          "description": "フクキタリズム（福丸うさソロ曲）iLiFE! ... かわいくてあいらびゅー（福丸うさソロ曲）iLiFE! ... だいすき宣言っ！（若葉のあソロ曲）iLiFE! ... 初恋サマーライン♡（若葉の",
+          "age": null,
+          "score": 0.38581482,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"福丸うさ\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE! 福丸うさ💛",
+          "url": "https://jp.pinterest.com/pin/745205069639711962",
+          "description": "iLiFE! 福丸うさ . アイデアを探す. Women's Fashion ... 福丸うさ | ふくまる, かわいいテキスト, アスカ. 福丸うさ. ピンの説明文を表示する. 103. 保存.",
+          "age": null,
+          "score": 0.5677694,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"【特別ビジュアル公開】 ♥福丸うさ ♡ ...",
+          "url": "https://x.com/iLiFE_official/status/1908052138602934299",
+          "description": "【特別ビジュアル公開】 ♥福丸うさ♡担当カラー 黄色♥うさと笑えば福きたる｢一生なんて叶わなくても、今は側にいてよ」 #iLiFE.",
+          "age": null,
+          "score": 0.55623144,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ビジュアル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【特別ビジュアル公開】 ♥福丸うさ ♡担当カラー 黄色 ♥うさと笑 ...",
+          "url": "https://www.instagram.com/p/DIA_s8YT-uJ",
+          "description": "【特別ビジュアル公開】 ♥福丸うさ♡担当カラー 黄色♥うさと笑えば福きたる ｢一生なんて叶わなくても、今は側にいてよ」 #iLiFE.",
+          "age": null,
+          "score": 0.5463757,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ビジュアル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "福丸うさ「ファンであるアイライファーさんのことをいっぱい幸せに ...",
+          "url": "https://scawaiiweb.com/ilife250708",
+          "description": "――まずは自己紹介とあなたの強みを教えてください！ 「iLiFE!の黄色担当、福丸うさです。iLiFE!の中では元気キャラで、自分ではおもしろい担当だと思っ",
+          "age": null,
+          "score": 0.5457947,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「#福丸うさ」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=%23%E7%A6%8F%E4%B8%B8%E3%81%86%E3%81%95&rkf=1",
+          "description": "・うさにゃん ・うさぴょん どちらが正しいの？ (どちらでも好きだけど) #福丸うさ x.com/iLiFE_fukumaru… 福丸うさ【iLiFE!】 @iLiFE_fukumaru. 福丸うさにゃん",
+          "age": null,
+          "score": 0.4017588,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"福丸うさ\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2004年1月26日 |\n| 年齢 | 22歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 159cm |\n| メンバーカラー | 黄色 |\n\n福丸うささんは、2023年8月にiLiFE!の正規所属メンバーとして加入しました。加入以前はHEROINES所属のアイドルグループ「ZUTTOMOTTO」に在籍し、「あいら」名義で活動していた経歴を持ちます。2023年7月にiLiFE!のサポートメンバーとして参加し、その後正式メンバーへの加入が発表されました。\n\n黄色の担当カラーにぴったりの朗らかな笑顔と気さくな性格が魅力で、ファンとの交流でも親しみやすさを発揮しています。どのような場面でも前向きな姿勢を崩さない人柄が、グループの雰囲気をさらに明るくする存在として支持されています。\n\n### 2-4. 若葉のあ\n\n> この投稿をInstagramで見る\n>\n> 若葉のあ(@ilife\\_wakaba)がシェアした投稿 [...] |  |  |\n --- |\n| 生年月日 | 2006年1月23日 |\n| 年齢 | 20歳 ※2026年3月時点 |\n| 血液型 | O型 |\n| 身長 | 151cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 白 |\n\nあいすさんは、2022年7月にiLiFE!へ加入したメンバーです。2021年にHEROINES所属のアイドルユニット「i-COL」としてデビューし、現在も兼任しながら活動を続けています。黒髪ボブの小柄なルックスと透き通るような白い肌が印象的で、愛らしい雰囲気からファンやメンバーの間では「ばぶちゃん」という愛称でも親しまれています。\n\n普段は可憐で柔らかな存在感を放つ一方、ステージに立つと力強くキレのあるパフォーマンスで会場の視線を一気に引き寄せるのも魅力です。小さな体からは想像できないエネルギッシュな表現力を武器に、ライブでは圧倒的な存在感を発揮しています。\n\n### 2-3. 福丸うさ\n\n> この投稿をInstagramで見る\n>\n> 福丸うさ(@ilife\\_usa)がシェアした投稿 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。",
+          "age": null,
+          "score": 0.74004334,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile",
+          "description": "# iLiFE!【あいらいふ】\n\n## PROFILE\n\niLiFE!【あいらいふ】\n\nHEROINES所属のアイドルグループ。  \n 「私(ｉ)と貴方(！)で作るアイドル(ｉ)ライフ(LiFE)」をコンセプトに活動。  \n   \n ステージとフロアで共に作り上げる熱量あるライブと、SNSでの発信力、楽曲のキャッチーさが相まって、Z世代を中心に強い支持を集めている。  \n   \n 2025年8月に開催した夢の舞台 日本武道館公演ではチケット即完売。  \n   \n 2026年には最大規模のワンマンライブをKアリーナ横浜にて開催予定。武道館に続き、アリーナでの公演もチケットは即完売となり、次なるステージに向けその歩みはさらに加速している。\n\n## MEMBER\n\n ice\n\n  あいす\n Sonata Karen\n\n  空詩かれん\n Konoka Riri\n\n  心花りり\n Fukumaru Usa\n\n  福丸うさ\n Wakaba Noa\n\n  若葉のあ\n Kohane Mini\n\n  虹羽みに\n Koguma Mamu\n\n  小熊まむ\n Sumire Miki [...] 純嶺みき\n Mamori Mew\n\n 𝕏",
+          "age": null,
+          "score": 0.60694176,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLife!（アイライフ）メンバー一覧・プロフィール | アイドルグループ",
+          "url": "https://oshilattice.com/groups/ilife",
+          "description": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "age": null,
+          "score": 0.34826875,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLiFE!",
+          "url": "https://ja.wikipedia.org/wiki/ILiFE!",
+          "description": "| 福丸 うさ ふくまる うさ | (2004-01-26) 2004年1月26日（22歳） | A | 159cm | 黄色 |  キャッチフレーズは「うさと笑えば福きたる」  元 ZUTTOMOTTO（2023年2月9日～2023年9月1日）  2023年7月15日よりサポートメンバーとして加入、同9月1日にはZUTTOMOTTOを卒業し正規メンバーとなった。  会いにKiTE!の歌詞「ずっと笑おう もっと遊ぼう」は、ZUTTOMOTTOに加入していたことに由来している。 |\n| 若葉 のあ わかば のあ | (2008-07-07) 2008年7月7日（18歳） | A | 165cm | 岐阜県 | 緑色 |  キャッチフレーズは「君に届け！のあのあい♡」  2023年9月12日加入発表 | [...] |  |\n| 基本情報 |\n| 出身地 | 日本の旗 日本 東京都 |\n| ジャンル | J-POP |\n| 活動期間 | 2020年 - |\n| レーベル |  CROSS SIDE MUSIC（2023年 - ) 日本コロムビア（2026年）  Sony Music Labels（2026年 - ） |\n| 事務所 | imaginate |\n| 共同作業者 | Uya（渡辺裕也、HEROINES総合プロデューサー） |\n| 公式サイト | iLiFE! - official web site |\n| メンバー |  心花りり  あいす  福丸うさ  若葉のあ  空詩かれん  虹羽みに  純嶺みき  小熊まむ  真守みゅう |\n| 旧メンバー |  桜餅ふゆ  心咲めい  双葉りつ  琥珀しえる  甘音ゆあ  天羽しおり  深月らむ  向日えな  涼芽なの  華瀬まい  日日にこり  響羽リズ（サポートメンバー）  有栖るな  こるね（サポートメンバー）  那蘭のどか  恋春ねね（サブサポートメンバー）  恋星はるか（サポートメンバー） |\n| YouTube | [...] 51. ↑ iLiFE!【あいらいふ】 [@iLiFE\\_official] (2023年5月9日). “【サポートメンバー加入！】”. X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")より2023年5月10日閲覧.\n52. ↑ iLiFE!【あいらいふ】 [@iLiFE\\_official] (2023年6月19日). “【深月らむ、天羽しおり卒業のお知らせ】”. X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")より2023年6月19日閲覧.\n53. ↑ iLiFE!【あいらいふ】 [@iLiFE\\_official] (2023年8月19日). “【重大発表】サポートメンバーとして活動してくれていた福丸うさがこの度...正規メンバーになる事が決定しました💛iLiFE!に沢山の「福」をもたらして下さい🙇‍♀️❤︎”. X（旧Twitter） \"X (ソーシャル・ネットワーキング・サービス)\")より2023年8月19日閲覧.",
+          "age": null,
+          "score": 0.6102915,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFE! 新メンバーオーディション｜福丸うさ×つやり 応募情報 - TikTok",
+          "url": "https://www.tiktok.com/@ilife_official/video/7637798940166884628",
+          "description": "いいねの数：27.7Kコメントの数：142。iLiFE!【あいらいふ】 (@ilife_official)のTikTok (ティックトック) 動画：「iLiFE! 新メンバーオーディション",
+          "age": null,
+          "score": 0.35414317,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "福丸うさ「ファンであるアイライファーさんのことをいっぱい ...",
+          "url": "https://scawaiiweb.com/ilife250708",
+          "description": "福丸うさ「ファンであるアイライファーさんのことをいっぱい幸せにしたい」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.5】 · scawaii.",
+          "age": null,
+          "score": 0.5215936,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "福丸うさ iLiFE! ダンス | きゃわいい曲で踊ってみた - TikTok",
+          "url": "https://www.tiktok.com/@fukumarusa/video/7644148641308953877",
+          "description": "（アイライフ）関連のダンス動画。ファンが楽しみにしていたかわいい振付と表情が魅力のパフォーマンスです。 本文- 動画の見どころ - きゃわいい曲の",
+          "age": null,
+          "score": 0.28231785,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "振付"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"Usa Happy Birthday     #福丸うさ生誕 ...",
+          "url": "https://x.com/iLiFE_official/status/2015439602463711528",
+          "description": "うささん誕生日おめでとう㊗️ ‼️ iLifeに入ってくれてありがとう これからもあにまるずよろしくね‼️ うささんにとっていい一年になりますように.",
+          "age": null,
+          "score": 0.4424684,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "福丸うさ (@ilife_usa) • Instagram photos and videos",
+          "url": "https://www.instagram.com/ilife_usa",
+          "description": "205K followers · 44 following · 104 posts · @ilife_usa: “@ilife.idol きいろ担当 ྀིあまとうですDM見れません！”",
+          "age": null,
+          "score": 0.400703,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【MV】フクキタリズム / 福丸うさ【iLiFE!】 - YouTube",
+          "url": "https://www.youtube.com/watch?v=iMjN8Hyed80",
+          "description": "【Usa happy birthday】 おまたせしましたーー！！！みんなのおかげで叶った、うさにとって初めてのソロMVです ぜひたくさん見て聴いてね～！",
+          "age": null,
+          "score": 0.30470383,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

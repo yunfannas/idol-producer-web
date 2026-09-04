@@ -1,0 +1,370 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:09.041Z",
+  "member": {
+    "uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
+    "name": "春野莉々",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 21,
+    "height_cm": 158,
+    "career_months": 36,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 4,
+      "dance_performance": 4,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 5,
+      "mental_professional": 5,
+      "traits": 5
+    },
+    "final_coverage": {
+      "vocal": 4,
+      "dance_performance": 4,
+      "appearance_model": 3,
+      "mc_comedy": 3,
+      "physical_stamina": 5,
+      "mental_professional": 5,
+      "traits": 5
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"春野莉々\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこ - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B6%BA%E3%81%AE%E3%81%AA%E3%81%A7%E3%81%97%E3%81%93",
+          "description": "愛称は、みくるん。身長161cm。チャームポイントは、笑うと出るえくぼ。趣味は、カフェ巡り、車の運転。特技は、下りも漕げるという一輪車、高速ポージング。甘いもの担当であり、好きな食べ物はイチゴ、クリームブリュレ、オムレツ。ファンネームはみけるん隊。ファンマークは🫠🏹。ハッシュタグは #まいにちみくるん。\n\n小学生の時にダンス発表会のステージで沢山の拍手や歓声を受け「舞台に立つことって素敵」と感激したのをきっかけにアイドルを目指す。グループでは、あざと可愛い担当で、可愛い系のセリフやパートを歌うことが多い。背筋が伸びていて姿勢を褒めてもらえることが多く、中学校の卒業式で「一度もイスの背もたれに背中をつけていなかったよ」と友達から褒められた。\n\n### 旧メンバー\n\n[編集]\n\n| 名前 | 生年月日 | 出身地 | 血液型 | メンバーカラー | 備考 |\n ---  ---  --- |\n| 春野莉々 （はるの りり） | (2004-01-16) 2004年1月16日（22歳） | 長野県 | A型 | 緑 | 2025年5月より活動休止。2025年7月31日、脱退を発表。 | [...] ### 葉月紗蘭\n\n[編集]\n\n2020年にNizi Projectを見たのをきっかけにアイドルを目指す。目標はNiziUのミイヒ。2022年夏（当時高校1年生）、JDOLオーディションに合格し高嶺のなでしこの結成メンバーとしてお披露目された。2026年6月、ITTY-WINTITの公式アンバサダーに就任した。\n\n愛称は、さぁさん、さあちゃん。チャームポイントは、まるみのあるおでこ。透明感のあるビジュアルとナチュラルな存在感、サラサラのストレートヘアが特徴。身長160cm。趣味は映画を観ること。特技は絵を描くこと。ファンネームは、は組。ハッシュタグは #さあらいふ。\n\n特徴的な歌声を持つ。JDOLオーディションの前に受けた別のオーディションは不合格となったものの、面接官から「歌声がいいからそれを伸ばしたらいいと思う」と褒められ、高嶺のなでしこのオーディションにつながった。歌声は透明感や儚さの中に芯のある強さがあり表現力豊かで、グループで落ちサビを多く任されている。2026年1月26日公開のショートムービー『ジブリをうたう その２ ーふうとなぎの物語ー』に なぎ 役として出演した。 [...] 画像提供依頼：2026年8月29日～8月30日に日産グローバル本社ギャラリーで行われた24時間テレビ 日産チャリティーイベントに登場した時の画像提供をお願いします。（2026年8月）\n\n \n\n| 高嶺のなでしこ |\n\n|  |\n| 基本情報 |\n| 出身地 | 日本の旗 日本 |\n| ジャンル | J-POP |\n| 活動期間 | 2022年8月7日 - |\n| レーベル |  TAKANEKOchan MUSIC （2022年 - ）  ビクターエンタテインメント （2024年 - ） |\n| 事務所 | TWIN PLANET/インクストゥエンター |\n| 公式サイト | 高嶺のなでしこ公式サイト |\n| メンバー |  城月菜央  涼海すう  橋本桃呼  葉月紗蘭  東山恵里沙  日向端ひな  星谷美来  松本ももな  籾山ひめり |\n| 旧メンバー | 春野莉々 |\n\n| 高嶺のなでしこ Official |",
+          "age": null,
+          "score": 0.65173227,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌声",
+            "落ちサビ",
+            "ダンス",
+            "表現力"
+          ],
+          "relevance_score": 19
+        },
+        {
+          "title": "春野莉々のダンスパフォーマンスビデオ公開中！",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7260064685414780161",
+          "description": "春野莉々のダンスパフォーマンスビデオ公開中！ 春野莉々がYouTubeで披露するダンスパフォーマンスビデオをチェック！#月曜日の憂鬱 #高嶺のなでしこ #",
+          "age": null,
+          "score": 0.5299209,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "高嶺のなでしこから春野莉々が脱退「皆さまの前に立ち続ける ...",
+          "url": "https://natalie.mu/music/news/634523",
+          "description": "Aug 1, 2025 — 春野莉々(高嶺のなでしこ) 高画質で見る SNS上で自身のプライベート写真が拡散されたことを受け、今年5月から無期限で活動を休止していた春野。",
+          "age": null,
+          "score": 0.3486013,
+          "source_class": "professional_media",
+          "matched_terms": [],
+          "relevance_score": 4
+        },
+        {
+          "title": "高嶺のなでしこ、雨の中で全力パフォーマンス！？メジャーデビュー ...",
+          "url": "https://www.youtube.com/watch?v=yRboapHLzig",
+          "description": "高嶺のなでしこ、雨の中で全力パフォーマンス！？メジャーデビュー曲「美しく生きろ」TikTokで大バズり「可愛くてごめん」含む4曲披露 『高嶺の",
+          "age": null,
+          "score": 0.3450175,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "②【先行掲載・WEBオリジナル記事】国立代々木第二体育館 ...",
+          "url": "https://outofmusic.net/archives/1540",
+          "description": "――「喜怒哀楽、すべて高嶺のなでしこに任せていいよ」と歌っているわけですよね。嬉しいことも悲しいことも、いろんな感情に対して、メンバーが寄り添ってくれている、そういう歌ですし、ソロだったり、ペアだったり、いろんな歌唱パターンで聴かせてくれています。ちなみに、今回の歌唱のペアですけど、莉々さんと桃呼さんのペア率が多い印象を受けました。\n\n春野莉々（はるのりり）●そうですね。この曲はすごく一緒に歌ってます。\n\n――声の相性、響き合いがいいですよね。 [...] ※このインタビューの全編は、次号OUT of MUSIC87（2025年1月30日発売）に掲載です。\n\n※関連記事 → 【特集ハイライト】10人組アイドルグループ 高嶺のなでしこ Digital Single『モテチェン！』インタビュー OUT of MUSIC 86掲載\n\n高嶺のなでしこ\n\nJDOL AUDITIONを勝ち抜いて選ばれた7名と、元「ラストアイドル」の3名からなる10人組の女性アイドルグループ。2022年デビュー。メンバーは城月菜央、涼海すう、橋本桃呼、葉月紗蘭、春野莉々、東山恵里沙、日向端ひな、星谷美来、松本ももな、籾山ひめり。サウンドプロデュースは、関連動画再生回数10億回を突破し数々のヒットを生むクリエイターユニットHoneyWorks。2024年2月21日、メジャーデビューシングル『美しく生きろ / 恋を知った世界』リリース。12月11日、2ndシングル「Iʼ M YOUR IDOL / アドレナリンゲーム」リリース。国立代々木第二体育館公演（2025年2月14日）も開催決定！\n\n#### outofmusic [...] 春野莉々●それこそ、髪型も似ている部分もありますし（笑）。嬉しいです。私と桃呼ちゃんで歌っているパートはいくつかあるのですが、二番の〈僕らは埋め合い輝くことを知る〉という歌詞が特に好きです。私は、このお仕事をさせていただくまで、誰かと一緒に何かをするというか、共存して分かり合ってお仕事をするという経験がいままでなくて、普段、高校生だったときも、どちらかというと一人でいるタイプでした。みんなで一緒に支え合いながら活動していくということが初めてで、最初は「どうしよう？」ってちょっと戸惑いもありました。でも、そんな私をメンバーがすごく支えてくれて、それこそ自分に欠けている部分をメンバーが埋めあって、ひとつのグループで輝いていけると思いましたし、この曲からそういう思いを感じながら、歌っています。\n\n――メンバー10人それぞれの輝きが、お互いの輝きを強めながら、さらに大きく光り輝くイメージですよね。ファンの人も包まれて広がってく、そんな物語も感じます。",
+          "age": null,
+          "score": 0.68420124,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "#17歳 Dance Performance Video公開中 ...",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7287194327615393032",
+          "description": "#春野莉々 @雪の降る季節の頃に #高嶺のなでしこ #17歳 Dance Performance Video公開中🍳🧹 Dance",
+          "age": null,
+          "score": 0.54942364,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ「結成2周年 “橋本桃呼＆春野莉々＆日向端ひな ...",
+          "url": "https://strmweb.jp/archives/13455",
+          "description": "Jul 14, 2024 — 初めて聴いたときはハッピーにかわいく歌うと思っていたんですけど、イメージとは違い、内面のかわいさを出すためにおしとやかに歌うとHoneyWorksさんから ...Read more",
+          "age": null,
+          "score": 0.4358301,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【春野莉々focus】可愛くてごめんdance practice -高嶺のなでしこ",
+          "url": "https://www.bilibili.com/video/BV11D4y1Y7Ge",
+          "description": "【春野莉々focus】可愛くてごめんdance practice -高嶺のなでしこ. 静流___. 相关推荐. 查看更多. 【星谷美来focus】可愛くてごめんdance practice -高嶺のなでしこ.Read more",
+          "age": null,
+          "score": 0.42491361,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【推しカメラ】モテチェン！／高嶺のなでしこ／春野莉々 ...",
+          "url": "https://www.youtube.com/watch?v=n9caM9E3vOc",
+          "description": "高嶺のなでしこ 全国ツアー2024“わたし色に染まれ” 7月13日(土) TOUR FINAL TOKYO DOME CITY HALL公演より「モテチェン！」推しカメラを公開！",
+          "age": null,
+          "score": 0.37779367,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "[Live, KR] 春野莉々 | Takaneko Concert, Full Ver. | 高嶺のなでしこ",
+          "url": "https://www.youtube.com/watch?v=wb86m5h2CzE",
+          "description": "[Live, KR] 春野莉々 | Takaneko Concert, Full Ver. | 高嶺のなでしこ | Praying for Riri's Return, Day 17. @GoN_TKNK237 views1 year ago",
+          "age": null,
+          "score": 0.3702487,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"春野莉々\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "春野莉々の魅力と特技紹介 - TikTok",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7145432018757717249",
+          "description": "いいねの数：857コメントの数：21。高嶺のなでしこ (@takanenofficial)のTikTok (ティックトック) 動画：「春野莉々の魅力を深掘り！",
+          "age": null,
+          "score": 0.45028743,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "高嶺のなでしこ on Instagram: \"  アーティスト写真  ‍     #春野莉々 ...",
+          "url": "https://www.instagram.com/p/C0JH48GrOxM",
+          "description": "Photo by 高嶺のなでしこ on November 27, 2023. 2,096 likes. takanenofficial. アーティスト写真 ‍⬛ #春野莉々 #HARUNORIRI · #高嶺のなでしこ",
+          "age": null,
+          "score": 0.43496582,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "[Live, KR] 春野莉々 | Takaneko Concert, Full Ver. | 高嶺のなでしこ",
+          "url": "https://www.youtube.com/watch?v=wb86m5h2CzE",
+          "description": "Comments ; 23:12 · Go to channel しゔぃら ひより · 1.8K views ; 22:11 · Go to channel 高嶺のなでしこ Official · 高嶺のなでしこ Official ; 21:44 · Go",
+          "age": null,
+          "score": 0.35911742,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "高嶺のなでしこ「結成2周年 “橋本桃呼＆春野莉々＆日向端ひな”が笑顔で ...",
+          "url": "https://strmweb.jp/archives/13455",
+          "description": "メンバーがすごくかわいいので、かわいい人を見てると自分も「ヤバい。かわいくならなきゃ」と思うじゃないですか。だから、かわいいメイクとか取り入れ",
+          "age": null,
+          "score": 0.52100873,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ on Instagram: \"#春野莉々 のお出かけ前     @haruno_riri ...",
+          "url": "https://www.instagram.com/reel/DILS056Sus2",
+          "description": "... 高嶺のなでしこ #たかねこ #Cuteforlife #一生かわいい #HoneyWorks ... 私が憧れてきたアイドルは、そんなアイドルアイドルしてるアイドルじゃ",
+          "age": null,
+          "score": 0.5126688,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【初恋のひと。】春野莉々ver. #shorts #高嶺のなでしこ ... - YouTube",
+          "url": "https://www.youtube.com/shorts/TkZwsAITtOQ",
+          "description": "This content isn't available. Skip video.",
+          "age": null,
+          "score": 0.50959414,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "春野莉々 - YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLi6w2CyFqlYqshrSYI2i5i5YzBuBOsfOY",
+          "description": "春野 莉々（高嶺のなでしこ） 2024 0412 22：20 · 春野 莉々（高嶺のなでしこ） 2024 0410 22：13 · 春野 莉々（高嶺のなでしこ） 2024 0409 21：09 · 春野 莉々（高嶺の",
+          "age": null,
+          "score": 0.44160134,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【推しカメラ】モテチェン！／高嶺のなでしこ／春野莉々【HoneyWorks】",
+          "url": "https://www.youtube.com/watch?v=n9caM9E3vOc",
+          "description": "高嶺のなでしこ 全国ツアー2024“わたし色に染まれ” 7月13日(土) TOUR FINAL TOKYO DOME CITY HALL公演より「モテチェン！」推しカメラを公開！",
+          "age": null,
+          "score": 0.43784812,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「春野莉々」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=%E6%98%A5%E9%87%8E%E8%8E%89%E3%80%85&rkf=1",
+          "description": "高嶺のなでしこ メンバー10名公開✨ 左から 日向端 ひな 春野 莉々 籾山 ひめり 涼海 すう 松本 ももな 東山 恵里沙 葉月 紗蘭 城月 菜央 橋本 桃呼 星谷 美来 10人を",
+          "age": null,
+          "score": 0.39466807,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ on X: \"春野莉々の活動に関するご報告 https://t.co ...",
+          "url": "https://x.com/takanenofficial/status/1926941464610636077",
+          "description": "高嶺のなでしこの10人が大好きです。この10人だからこそ、パフォーマンスに心惹かれて、心から応援したい気持ちにさせてくれてるんだと最近強く思ってまし",
+          "age": null,
+          "score": 0.3580393,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"春野莉々\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "【高嶺のなでしこ】最新曲『モテチェン！』インタビュー！ たかねこ ...",
+          "url": "https://nicola.jp/article/article-22017",
+          "description": "美意識が高くて、努力家なんだなって思っています。 ... SNSで話題になってるものはお店で試すようにしてます。 春野莉々（はるの・りり）ちゃん.",
+          "age": null,
+          "score": 0.64719695,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー",
+            "努力家"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "高嶺のなでしこ・春野莉々、脱退「皆さまの前に立ち続ける覚悟 ...",
+          "url": "https://www.oricon.co.jp/news/2398793",
+          "description": "アイドルグループ・高嶺のなでしこが7月31日、公式サイトを更新。無期限の活動休止中だった春野莉々（21）が脱退し、以降は9人組として活動をしていくことを発表した。",
+          "age": null,
+          "score": 0.4048609,
+          "source_class": "professional_media",
+          "matched_terms": [],
+          "relevance_score": 4
+        },
+        {
+          "title": "高嶺のなでしこ VANITYMIX WEB LIMITED INTERVIEW",
+          "url": "https://www.vanitymix.jp/music/takanenonadeshiko-2/2",
+          "description": "結成当時の時と比べて、特に変化したと感じる点はありますか？ 春野 私は体力が一番成長したと思っています。デビューステージの時は、フルで踊ったのは2",
+          "age": null,
+          "score": 0.6504012,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "体力"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "春野莉々",
+          "url": "https://outofmusic.net/archives/tag/%E6%98%A5%E9%87%8E%E8%8E%89%E3%80%85",
+          "description": "高嶺のなでしこ 10人組アイドルグループ、高嶺のなでしこ。 2nd Single「Iʼ M YOUR IDOL / アドレナリンゲーム」、総1万6,000字 ロング・インタビュー 前編、先行掲載！",
+          "age": null,
+          "score": 0.61279696,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこ「結成2周年 “橋本桃呼＆春野莉々＆日向端ひな ...",
+          "url": "https://strmweb.jp/archives/13455",
+          "description": "INTERVIEW 高嶺のなでしこ「結成2周年 “橋本桃呼&春野莉々&日向端ひな”が笑顔で語ったステージへの熱意」 春野莉々だ。共にインタビューを受けた橋本",
+          "age": null,
+          "score": 0.5843666,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "春野莉々の活動に関するご報告 - 高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/%E6%98%A5%E9%87%8E%E8%8E%89%E3%80%85%E3%81%AE%E6%B4%BB%E5%8B%95%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%94%E5%A0%B1%E5%91%8A",
+          "description": "高嶺のなでしこの春野莉々につきまして、今後の活動について本人と深く熟考し協議した結果、本人の意思を尊重し、無期限で活動を休止させていただく",
+          "age": null,
+          "score": 0.45784017,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ on X: \"春野莉々の活動に関するご報告 https://t ...",
+          "url": "https://x.com/takanenofficial/status/1926941464610636077",
+          "description": "高嶺のなでしこ on X: \"春野莉々の活動に関するご報告https://t.co/Nzy5L1KWps\" ... 紳士に向き合った対応をありがとうございます。 いつまでも待ちます。",
+          "age": null,
+          "score": 0.38623142,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

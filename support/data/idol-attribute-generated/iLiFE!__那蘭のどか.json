@@ -1,0 +1,94 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.547Z",
+  "skill": "idol-attribute-generation",
+  "uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
+  "name": "那蘭のどか",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 19,
+  "height_cm": 164,
+  "career_months": 43.8,
+  "prior_group_months": 34.6,
+  "training_background": null,
+  "current_group_months": 9.2,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "ZOCX",
+      "group_uid": "Wk9DWA",
+      "start_date": "2021-05-13",
+      "end_date": "2024-03-31",
+      "months": 34.6
+    }
+  ],
+  "career_summary": "ZOCX (2021-05-13–2024-03-31); iLiFE! (2024-09-28–2025-08-27)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 17,
+    "cute": 15,
+    "pretty": 17,
+    "pitch": 16,
+    "tone": 16,
+    "breath": 16,
+    "rhythm": 16,
+    "power": 16,
+    "stage_presence": 17,
+    "wit": 14,
+    "humor": 13,
+    "talking": 15,
+    "determination": 16,
+    "teamwork": 16,
+    "fashion": 17
+  },
+  "traits": {
+    "singer": 160,
+    "dancer": 170,
+    "model": 130,
+    "comedy": 50
+  },
+  "radar": {
+    "PHY": 15.25,
+    "APP": 16.6,
+    "SNG": 16,
+    "DAN": 16.33,
+    "MEN": 15.17
+  },
+  "ability": 79,
+  "ability_raw": 79.688,
+  "evidence_summary": {
+    "high_confidence": [
+      "transfer framing / prior ZOC (鎮目のどか) in media"
+    ],
+    "medium_confidence": [
+      "sparse domain-specific praise in this collect"
+    ],
+    "procedural_only": [
+      "balanced mid-high B from prior-career regularization"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "technical mostly 15-17"
+    ],
+    "ranks": [
+      "middle-upper roster; skill Ability ~80"
+    ],
+    "floors": [
+      "stamina>=17",
+      "avoid very-low professional basics"
+    ],
+    "biases": [
+      "pretty from height 164"
+    ]
+  },
+  "career_context_used": [
+    "catalog: ZOCX (2021-05-13–2024-03-31); iLiFE! (2024-09-28–2025-08-27)",
+    "prior groups: ZOCX",
+    "career_months=43.8",
+    "prior_group_months=34.6",
+    "prior ZOC evidence used as professional context / floor, not Ability proof"
+  ]
+}

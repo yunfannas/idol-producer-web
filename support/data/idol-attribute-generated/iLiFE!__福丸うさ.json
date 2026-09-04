@@ -1,0 +1,85 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.546Z",
+  "skill": "idol-attribute-generation",
+  "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
+  "name": "福丸うさ",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 21,
+  "height_cm": 159,
+  "career_months": 29,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 23.7,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 17,
+    "cute": 16,
+    "pretty": 15,
+    "pitch": 15,
+    "tone": 16,
+    "breath": 15,
+    "rhythm": 16,
+    "power": 16,
+    "stage_presence": 17,
+    "wit": 15,
+    "humor": 17,
+    "talking": 17,
+    "determination": 16,
+    "teamwork": 16,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 120,
+    "dancer": 160,
+    "model": 80,
+    "comedy": 220
+  },
+  "radar": {
+    "PHY": 15.25,
+    "APP": 15.8,
+    "SNG": 15.5,
+    "DAN": 16.33,
+    "MEN": 15.83
+  },
+  "ability": 78,
+  "ability_raw": 78.688,
+  "evidence_summary": {
+    "high_confidence": [
+      "self: genki / funny-role framing"
+    ],
+    "medium_confidence": [
+      "prior ZUTTOMOTTO / あいら in career_summary"
+    ],
+    "procedural_only": [
+      "vocal not ace"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "humor/talking 16-17",
+      "stage_presence 16-17"
+    ],
+    "ranks": [
+      "communication / mood maker; skill Ability ~78"
+    ],
+    "floors": [
+      "stamina>=17"
+    ],
+    "biases": [
+      "comedy trait elevated",
+      "cute mild"
+    ]
+  },
+  "career_context_used": [
+    "catalog: ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
+    "career_months=29",
+    "prior group months regularize basics; comedy from self-statement not tenure"
+  ]
+}

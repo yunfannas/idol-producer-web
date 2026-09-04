@@ -1,0 +1,83 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.546Z",
+  "skill": "idol-attribute-generation",
+  "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+  "name": "心花りり",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 26,
+  "height_cm": 156,
+  "career_months": 72.4,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 52.3,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "Yumeiro H!L!T (2019-06-23–present); iLife! (2021-02-25–present); GILTY × GILTY (2022-06-01–present)",
+  "attributes": {
+    "strength": 14,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 17,
+    "cute": 14,
+    "pretty": 16,
+    "pitch": 17,
+    "tone": 17,
+    "breath": 17,
+    "rhythm": 17,
+    "power": 16,
+    "stage_presence": 18,
+    "wit": 16,
+    "humor": 14,
+    "talking": 18,
+    "determination": 19,
+    "teamwork": 18,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 210,
+    "dancer": 180,
+    "model": 70,
+    "comedy": 80
+  },
+  "radar": {
+    "PHY": 15.5,
+    "APP": 15.6,
+    "SNG": 17,
+    "DAN": 17,
+    "MEN": 16.5
+  },
+  "ability": 81,
+  "ability_raw": 81.625,
+  "evidence_summary": {
+    "high_confidence": [
+      "longest-tenured / leader history",
+      "multi-group veteran in career_summary"
+    ],
+    "medium_confidence": [
+      "solid all-rounder rather than one-domain ace"
+    ],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "determination/teamwork/talking 17-18",
+      "technical cluster 16-18"
+    ],
+    "ranks": [
+      "leadership / professional head; skill Ability ~82"
+    ],
+    "floors": [
+      "stamina>=17"
+    ],
+    "biases": [
+      "pretty>cute age 26"
+    ]
+  },
+  "career_context_used": [
+    "catalog: Yumeiro H!L!T (2019-06-23–present); iLife! (2021-02-25–present); GILTY × GILTY (2022-06-01–present)",
+    "career_months=72.4",
+    "veteran floor on determination/teamwork/talking; no flat Ability bonus"
+  ]
+}

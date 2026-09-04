@@ -1,0 +1,82 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.549Z",
+  "skill": "idol-attribute-generation",
+  "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
+  "name": "星谷美来",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 21,
+  "height_cm": 161,
+  "career_months": 35.8,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 35.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+  "attributes": {
+    "strength": 12,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 19,
+    "pretty": 17,
+    "pitch": 14,
+    "tone": 15,
+    "breath": 14,
+    "rhythm": 15,
+    "power": 14,
+    "stage_presence": 16,
+    "wit": 13,
+    "humor": 14,
+    "talking": 14,
+    "determination": 15,
+    "teamwork": 15,
+    "fashion": 17
+  },
+  "traits": {
+    "singer": 90,
+    "dancer": 130,
+    "model": 220,
+    "comedy": 50
+  },
+  "radar": {
+    "PHY": 14.25,
+    "APP": 18.6,
+    "SNG": 14.5,
+    "DAN": 15,
+    "MEN": 14.67
+  },
+  "ability": 77,
+  "ability_raw": 77.938,
+  "evidence_summary": {
+    "high_confidence": [
+      "Ray link-coordinate model / cute stage communication"
+    ],
+    "medium_confidence": [
+      "dance practice videos exist"
+    ],
+    "procedural_only": [
+      "appearance-led middle"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "cute 18-19",
+      "fashion 16-17"
+    ],
+    "ranks": [
+      "appearance-forward; guide ~77"
+    ],
+    "floors": [],
+    "biases": [
+      "model medium",
+      "not vocal specialist"
+    ]
+  },
+  "career_context_used": [
+    "catalog: 高嶺のなでしこ (2022-07-10–present)",
+    "career_months=35.8"
+  ]
+}

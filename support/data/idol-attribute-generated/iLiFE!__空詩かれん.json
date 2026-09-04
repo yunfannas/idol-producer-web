@@ -1,0 +1,89 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.546Z",
+  "skill": "idol-attribute-generation",
+  "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
+  "name": "空詩かれん",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 24,
+  "height_cm": 155,
+  "career_months": 5.5,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 5.5,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "iLife! (2025-01-20–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 18,
+    "cute": 14,
+    "pretty": 16,
+    "pitch": 19,
+    "tone": 19,
+    "breath": 18,
+    "rhythm": 17,
+    "power": 16,
+    "stage_presence": 18,
+    "wit": 15,
+    "humor": 14,
+    "talking": 17,
+    "determination": 18,
+    "teamwork": 18,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 360,
+    "dancer": 190,
+    "model": 80,
+    "comedy": 90
+  },
+  "radar": {
+    "PHY": 15.5,
+    "APP": 15.6,
+    "SNG": 18.25,
+    "DAN": 17,
+    "MEN": 16
+  },
+  "ability": 82,
+  "ability_raw": 82.792,
+  "evidence_summary": {
+    "high_confidence": [
+      "overwhelming vocal / main-vocal framing",
+      "evidence: prior monogatari leader + later iLiFE leader path",
+      "stamina floor 18"
+    ],
+    "medium_confidence": [
+      "dance high but secondary to vocal"
+    ],
+    "procedural_only": [
+      "catalog career_months short for iLiFE only; prior group may be undated in DB"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pitch/tone 18-19",
+      "breath 17-18",
+      "stage_presence 17-18"
+    ],
+    "ranks": [
+      "vocal ace; stage presence strong but not top-tier"
+    ],
+    "floors": [
+      "stamina>=18",
+      "teamwork/talking/determination from leadership evidence"
+    ],
+    "biases": [
+      "singer trait very high",
+      "pretty mild age 24"
+    ]
+  },
+  "career_context_used": [
+    "catalog: iLife! (2025-01-20–present)",
+    "career_months=5.5",
+    "short current_group tenure ignored as weakness; leadership/vocal evidence overrides newcomer prior"
+  ]
+}

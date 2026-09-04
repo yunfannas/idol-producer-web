@@ -1,0 +1,83 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.547Z",
+  "skill": "idol-attribute-generation",
+  "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+  "name": "古賀みれい",
+  "group": "アキシブproject",
+  "tier": "D",
+  "age": 20,
+  "height_cm": 152,
+  "career_months": 31.5,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 31.5,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "アキシブproject (2022-11-20–2025-09-29)",
+  "attributes": {
+    "strength": 13,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 16,
+    "pretty": 14,
+    "pitch": 14,
+    "tone": 14,
+    "breath": 14,
+    "rhythm": 15,
+    "power": 14,
+    "stage_presence": 15,
+    "wit": 13,
+    "humor": 13,
+    "talking": 14,
+    "determination": 15,
+    "teamwork": 15,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 90,
+    "dancer": 140,
+    "model": 80,
+    "comedy": 50
+  },
+  "radar": {
+    "PHY": 14.5,
+    "APP": 15.6,
+    "SNG": 14.25,
+    "DAN": 14.67,
+    "MEN": 14
+  },
+  "ability": 73,
+  "ability_raw": 73.042,
+  "evidence_summary": {
+    "high_confidence": [
+      "identity/profile pages"
+    ],
+    "medium_confidence": [
+      "cute/美人 social tags"
+    ],
+    "procedural_only": [
+      "weak searchable performance evidence; D middle from tenure"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "mostly 13-16"
+    ],
+    "ranks": [
+      "uncertain middle"
+    ],
+    "floors": [
+      "~31 months tenure avoids very-low basics"
+    ],
+    "biases": [
+      "cute lean height 152"
+    ]
+  },
+  "career_context_used": [
+    "catalog: アキシブproject (2022-11-20–2025-09-29)",
+    "career_months=31.5",
+    "may leave after opening in later catalog; generated on S6 opening roster"
+  ]
+}

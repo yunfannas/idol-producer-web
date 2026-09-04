@@ -1,0 +1,331 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:04.535Z",
+  "member": {
+    "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+    "name": "平沢かえ",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 20,
+    "height_cm": 163,
+    "career_months": 18,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 1,
+      "mc_comedy": 1,
+      "physical_stamina": 1,
+      "mental_professional": 1,
+      "traits": 1
+    },
+    "final_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 1,
+      "mc_comedy": 1,
+      "physical_stamina": 1,
+      "mental_professional": 1,
+      "traits": 1
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"平沢かえ\" \"アキシブproject\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "アキシブproject 2025: 平沢かえの歌うまパフォーマンス",
+          "url": "https://www.tiktok.com/@norochu_return_love/video/7493356464631745810",
+          "description": "アキシブproject 2025: 平沢かえの歌うまパフォーマンス. 平沢かえが登場するSummer☆Summerで歌うまを披露！彼女の魅力をお見逃しなく。#アキシブproject",
+          "age": null,
+          "score": 0.6745014,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "Hirasawa Kae - Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Hirasawa_Kae",
+          "description": "Hirasawa Kae (平沢かえ) is a Japanese idol, a founding member of HARUKA ECHO and the combined group HEROINES, and a former member of Akishibu project.",
+          "age": null,
+          "score": 0.6439794,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "\"アキシブproject新メンバーになりました！ 黄色担当平沢かえ ...",
+          "url": "https://x.com/HARUKAECHO_KAE/status/1740334812807000105",
+          "description": "アキシブproject新メンバーになりました！ 黄色担当平沢かえ(ひらさわ)です！ 初めてのアイドル活動で分からない事だらけだけど、歌うことが大好き",
+          "age": null,
+          "score": 0.51822984,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブprojectの平沢かえが卒業を発表 ... - テレ朝NEWS",
+          "url": "https://news.tv-asahi.co.jp/news_geinou/articles/900182415.html",
+          "description": "Xでは「この度、メンバーの平沢かえにつきまして、次の道へ進むことが決定したため、アキシブprojectを卒業することとなりました。突然のご報告となり、",
+          "age": null,
+          "score": 0.34488514,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "お誕生日おめでとうございます🎉🎉🎉 平沢かえさんの生誕曲 ...",
+          "url": "https://x.com/beat872/status/1822853053667852316",
+          "description": "お誕生日おめでとうございます 平沢かえさんの生誕曲「君のアイドル」、編曲を担当させて頂きました☺️ とても爽やかだけど力強い素敵な歌",
+          "age": null,
+          "score": 0.32640076,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"平沢かえ\" \"アキシブproject\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "Hirasawa Kae - Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Hirasawa_Kae",
+          "description": "Hirasawa Kae (平沢かえ) is a Japanese idol, a founding member of HARUKA ECHO and the combined group HEROINES, and a former member of Akishibu project.",
+          "age": null,
+          "score": 0.5999311,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 平沢かえ | ひらさわ かえ | かえちゃん | (2004-07-20) 2004年7月20日（22歳） | B型 | 黄色 | 7期生 | 2023年12月31日 - 2026年2月24日 | 現・ハルカエコー | [...] |  阿部菜々実  鈴木遥夏  中川心  小葉こな  金城まき  桜咲みはね  水上凜巳花 | | ハルカエコー |  高坂りん  平沢かえ  雨宮るり  神凪みふゆ  常盤うた  芦名ゆい | | なう♡すとれーじ |  晴野せら  園田まのん  白羽つくし  羽宮きわみ  結城ぴゅれ  永瀬玲乃  星心こはな | | ウメコマチ |  春日のん  松ヶ枝あんこ  明太たらこ  博鍋もちゅ  百道つむぎ  本城ゆかり  若鷹のぞみ  琴通もん  甘桜いちご  出島みなと  茶乃わかな | | ヒロインズ研究生 |  可愛川ここ  鳴雷びび  芽野りりあ  有舞ねおん  逢坂めるむ  矢乃ひまり  花森ぴの  小梅ちろ  白鳥ちな  綾瀬めめ  小菜実こゆ  広瀬りむ\\  白石あゆ | | ヒロインズ研究生大阪 |  安良城いと  小花衣はお  笑門りい  汐見らう  鹿野こなほ  北浜そふと  千鳥もえ  不破ふわり  御堂筋ぴこ  桃谷りの | | [...] ### 2025年\n\n[編集]\n\n 5月21日 アキシブproject 12thワンマンLIVE（会場：ZEPP DiverCity）を開催。\n 6月15日 「神崎らん卒業ライブ」（会場：白金高輪 SELENE b2）をもって神崎らんが卒業。\n 9月29日「古賀みれい卒業公演」（会場：Spotify O-WEST）をもって古賀みれいが卒業。\n 10月17日 美山ひなが持病の症状悪化によりグループを卒業。\n\n### 2026年\n\n[編集]\n\n 1月21日、平沢かえが卒業を発表。\n 2月24日、「平沢かえ卒業公演」（会場：GRIT at Shibuya）をもって平沢かえが卒業。\n 2月28日、「HEROINES FES 2026」（会場：LaLa arena TOKYO-BAY）にて天川ほたる、夢咲ありさがお披露目され、新体制となる。\n\n## メンバー\n\n[編集]\n\n### 現メンバー\n\n[編集]",
+          "age": null,
+          "score": 0.5354634,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Hirasawa Kae 平沢かえ Akishibu Project #jpop - Pinterest",
+          "url": "https://www.pinterest.com/pin/hirasawa-kae-akishibu-project-jpop--179862578866641429",
+          "description": "Hirasawa Kae 平沢かえ Akishibu Project #jpop | A person wearing a light blue outfit with a large bow and lace details. Explore Women's Fashion",
+          "age": null,
+          "score": 0.493043,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "平沢かえ【ハルカエコー】 on X: \"以上",
+          "url": "https://x.com/HARUKAECHO_KAE/status/2028788066970943810",
+          "description": "以上、アキシブproject黄色担当平沢かえでした！幸せな2年間をありがとう！❤︎ あの日からの全部がかえの宝物です。またね。",
+          "age": null,
+          "score": 0.47066417,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "平沢かえ【ハルカエコー】 on X: \"アキシブproject新メンバーになり ...",
+          "url": "https://x.com/HARUKAECHO_KAE/status/1740334812807000105",
+          "description": "アキシブproject新メンバーになりました！ 黄色担当平沢かえ(ひらさわ)です！ 初めてのアイドル活動で分からない事だらけだけど、歌うことが大好き",
+          "age": null,
+          "score": 0.44059017,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "平沢 かえ (@harukaecho_kae) • Instagram photos and videos",
+          "url": "https://www.instagram.com/harukaecho_kae",
+          "description": "バグベア × HEROINES新グループでデビューさせて頂くことになりました！黄色担当平沢かえです！ 改めてこれからまたよろしくね𛰙᭜",
+          "age": null,
+          "score": 0.3737392,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【LIVE映像】アキシブウェイ / アキシブproject 【新体制】",
+          "url": "https://www.youtube.com/watch?v=CmcMp0eIFdg",
+          "description": "... アイドルグループ。 12年目を迎えるアキシブprojectは2023年12月23日にHEORINES(ヒロインズ) ... 平沢かえ推し•619 views.",
+          "age": null,
+          "score": 0.35898256,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "平沢選手 (@aksb_kae) - TikTok",
+          "url": "https://www.tiktok.com/@aksb_kae",
+          "description": "平沢選手のオリジナル楽曲 - 平沢 かえを使用して平沢選手が作成. 11.5K. アキシブprojectのハロハロナイトパレードを使用してアキシブprojectが作成したし. 4896.",
+          "age": null,
+          "score": 0.3569626,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブprojectの平沢かえが卒業を発表「アキシブで過ごした時間は",
+          "url": "https://news.tv-asahi.co.jp/news_geinou/articles/900182415.html",
+          "description": "Xでは「この度、メンバーの平沢かえにつきまして、次の道へ進むことが決定したため、アキシブprojectを卒業することとなりました。突然のご報告となり、",
+          "age": null,
+          "score": 0.2628494,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【中日雙語字幕】アキシブproject「アキシブウェイ（秋渋系）」【LIVE ...",
+          "url": "https://www.youtube.com/watch?v=xgv1L0GLClA",
+          "description": "【中日雙語字幕】アキシブproject「アキシブウェイ（秋渋系）」【LIVE映像】【HEROINES FES】【4K】. @CNiLiFEr23 likes2.9K views1 year ago",
+          "age": null,
+          "score": 0.20102818,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"平沢かえ\" \"アキシブproject\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "平沢かえ | アキシブproject - アイドルナビ",
+          "url": "https://navi-idol.com/idol/3kbvq385",
+          "description": "平沢かえのプロフィール情報、出演ライブ、基本情報をご紹介。",
+          "age": null,
+          "score": 0.6216563,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "Hirasawa Kae - Jpop Wiki - Fandom",
+          "url": "https://jpop.fandom.com/wiki/Hirasawa_Kae",
+          "description": "Hirasawa Kae (平沢かえ) is a Japanese idol, a founding member of HARUKA ECHO and the combined group HEROINES, and a former member of Akishibu project.",
+          "age": null,
+          "score": 0.60274047,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "平沢かえ【ハルカエコー】 on X: \"以上",
+          "url": "https://x.com/HARUKAECHO_KAE/status/2028788066970943810",
+          "description": "以上、アキシブproject黄色担当平沢かえでした！幸せな2年間をありがとう！❤︎ あの日からの全部がかえの宝物です。またね。",
+          "age": null,
+          "score": 0.5837973,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "| 平沢かえ | ひらさわ かえ | かえちゃん | (2004-07-20) 2004年7月20日（22歳） | B型 | 黄色 | 7期生 | 2023年12月31日 - 2026年2月24日 | 現・ハルカエコー | [...] |  阿部菜々実  鈴木遥夏  中川心  小葉こな  金城まき  桜咲みはね  水上凜巳花 | | ハルカエコー |  高坂りん  平沢かえ  雨宮るり  神凪みふゆ  常盤うた  芦名ゆい | | なう♡すとれーじ |  晴野せら  園田まのん  白羽つくし  羽宮きわみ  結城ぴゅれ  永瀬玲乃  星心こはな | | ウメコマチ |  春日のん  松ヶ枝あんこ  明太たらこ  博鍋もちゅ  百道つむぎ  本城ゆかり  若鷹のぞみ  琴通もん  甘桜いちご  出島みなと  茶乃わかな | | ヒロインズ研究生 |  可愛川ここ  鳴雷びび  芽野りりあ  有舞ねおん  逢坂めるむ  矢乃ひまり  花森ぴの  小梅ちろ  白鳥ちな  綾瀬めめ  小菜実こゆ  広瀬りむ\\  白石あゆ | | ヒロインズ研究生大阪 |  安良城いと  小花衣はお  笑門りい  汐見らう  鹿野こなほ  北浜そふと  千鳥もえ  不破ふわり  御堂筋ぴこ  桃谷りの | | [...] アキシブproject（アキシブプロジェクト、Akishibu Project）は、日本の女性アイドルグループ。秋葉原の「TwinBox AKIHABARA」をホームグランドとしている。ライブプラネット\")所属。\n\n## 年譜\n\n[編集]\n\n|  |\n\n| 伝記の記載を年譜形式のみとすることは推奨されていません。 人物の伝記は流れのあるまとまった文章で記述し、年譜は補助的な使用にとどめてください。（2025年1月） |\n\n### 2012年\n\n[編集]",
+          "age": null,
+          "score": 0.5689194,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "平沢かえ【ハルカエコー】 on X: \"アキシブproject新メンバーになり ...",
+          "url": "https://x.com/HARUKAECHO_KAE/status/1740334812807000105",
+          "description": "黄色担当平沢かえ(ひらさわ)です！ 初めてのアイドル活動で分からない事だらけだけど、歌うことが大好きなのでいっぱい楽しんでがんばります！！ 12月31",
+          "age": null,
+          "score": 0.44985238,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブprojectの平沢かえが卒業を発表「アキシブで過ごした時間は",
+          "url": "https://news.tv-asahi.co.jp/news_geinou/articles/900182415.html",
+          "description": "Xでは「この度、メンバーの平沢かえにつきまして、次の道へ進むことが決定したため、アキシブprojectを卒業することとなりました。突然のご報告となり、",
+          "age": null,
+          "score": 0.44044575,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject on X: \". 平沢 かえ .· ˚₊ Happy Birtℎday",
+          "url": "https://x.com/AkishibuProject/status/1946858358868431288",
+          "description": "平沢 かえ ⟡.· ˚₊ Happy Birtℎday ₊˚ ·.⟡ #平沢かえ生誕祭2025 · 2:02 AM · Jul 20, 202514.9KViews.",
+          "age": null,
+          "score": 0.4256297,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "\"アキシブproject平沢かえ卒業のお知らせ\" / X",
+          "url": "https://x.com/AkishibuProject/status/2013959781653053469",
+          "description": "アキシブproject平沢かえ卒業のお知らせ.",
+          "age": null,
+          "score": 0.3014242,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject[単語] - ニコニコ大百科",
+          "url": "https://dic.nicovideo.jp/a/%E3%82%A2%E3%82%AD%E3%82%B7%E3%83%96project",
+          "description": "アキシブproject とは、日本のアイドルグループ。 “渋谷と秋葉原 両方のカルチャーの融合 ”をコンセプトとして2012年に横山利奈(りなはむ)が発起人となり結成。",
+          "age": null,
+          "score": 0.2889005,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "アキシブproject - アイドル走り書き",
+          "url": "https://seesaawiki.jp/neverless/d/%A5%A2%A5%AD%A5%B7%A5%D6project",
+          "description": "活動期間：2012.10～現在。 「アキシブ系」というファッションスタイルがテーマ。 元「BiS」の「りなはむ（ヨコヤマリナ・横山利奈）」がプロデュースし",
+          "age": null,
+          "score": 0.27746856,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

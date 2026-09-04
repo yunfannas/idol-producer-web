@@ -19,7 +19,7 @@ Required or preferred inputs per member:
 - group tier
 - age
 - height
-- career months and prior-group months when known
+- career months and prior-group months when known; retain dated `prior_groups` / `career_summary` when supplied
 - training/sports/model background when known
 - group-specific floors or known performance requirements
 - curated/manual overrides, if any
@@ -62,6 +62,18 @@ External-work traits, 0-400:
 
 Do not create a permanent archetype/role field. Profile shape is a generation-time latent only.
 
+### Trait progress scale
+
+- Traits measure specialization progress, never whether a member may be assigned that work. A member may accept model, singing, dance, or comedy work at any trait score.
+- 0-99: no verified specialist track record yet.
+- 100-199: novice; emerging or occasional specialist evidence.
+- 200-249: proven early practitioner; credible but still limited evidence.
+- 250-299: repeated, reliable specialist work.
+- 300-349: established specialist.
+- 350-400: exceptional or flagship-level, repeatedly proven work.
+
+Do not use 200 as a job-eligibility threshold. It marks a first proven professional tier, not prominence.
+
 ## Evidence interpretation
 
 Translate evidence into one or more of four constraint types:
@@ -85,6 +97,8 @@ Prefer constraints over point values. Preserve uncertainty.
 
 A low-authority source should normally create only a bias, not a narrow range.
 
+For a curated repair only, an explicitly retained project attribute baseline may supply a review constraint. Record it as `procedural_only`, never present it as web evidence, and do not import such baselines into blind/random generation.
+
 ## Search phrase semantics
 
 ### Vocal
@@ -99,6 +113,8 @@ A low-authority source should normally create only a bias, not a narrow range.
 - `キレ` -> power/agility
 - `表現力`, `ステージ映え`, `目を引く` -> stage_presence
 - `振り覚えが早い` -> rhythm plus a weak wit/learning bias
+
+`stage_presence` 19-20 requires independent, repeated evidence of stage command: reliable center focus, audience-commanding presence, or repeated performance reporting that specifically says the member dominates the stage. Vocal excellence, leadership, long career, or a single "powerful performance" description can support 17-18, but must not be compounded into 19. 主唱、经验丰富、舞台有冲击力 给到18 而不是19。
 
 ### Physical
 
@@ -140,6 +156,8 @@ Strongly associated with agility/rhythm/power, moderately with stage_presence/na
 - no automatic increase to cute
 
 Repeated magazine, runway, brand, styling, or fashion work is the strongest evidence.
+
+`fashion` measures usable visual/style presentation, while the `model` trait measures specialist model-career progress. Strong visual buzz plus credible youth-fashion editorial coverage can support fashion 18 even without a long professional modeling record. One credible editorial plus that visual evidence can support the 200 early-practitioner tier; 240+ requires repeated credits. A low or absent model trait never prevents ordinary model work. 视觉话题、Nicola 青少年杂志露出、可爱/透明感  给fashion 18可以接受。
 
 ### comedy
 
@@ -204,6 +222,8 @@ Career experience should:
 - reduce the probability of very low professional basics
 - raise stamina/breath/stage_presence/rhythm where justified
 - raise determination/teamwork/talking when duties justify it
+
+Read the evidence bundle's `prior_groups` and `career_summary` before treating a member as a newcomer. Group names and elapsed tenure establish professional context and can support a floor or bias; they are not direct proof of vocal, dance, visual, or Ability strength.
 
 A veteran may still have weak vocal or dance attributes if those are not strengths.
 
@@ -317,6 +337,7 @@ constraints_applied:
   ranks: [...]
   floors: [...]
   biases: [...]
+career_context_used: [...]
 ```
 
 Keep evidence and generation logic auditable so manual corrections can replace procedural values without rewriting the entire model.

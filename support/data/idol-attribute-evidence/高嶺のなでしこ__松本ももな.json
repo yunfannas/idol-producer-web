@@ -1,0 +1,390 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:59.648Z",
+  "member": {
+    "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+    "name": "松本ももな",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 22,
+    "height_cm": 159,
+    "career_months": 35,
+    "prior_group_months": 58,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 4,
+      "dance_performance": 4,
+      "appearance_model": 14,
+      "mc_comedy": 14,
+      "physical_stamina": 7,
+      "mental_professional": 7,
+      "traits": 7
+    },
+    "final_coverage": {
+      "vocal": 4,
+      "dance_performance": 4,
+      "appearance_model": 14,
+      "mc_comedy": 14,
+      "physical_stamina": 7,
+      "mental_professional": 7,
+      "traits": 7
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"松本ももな\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこ 初の東京国際フォーラム ホールA公演のライブレポートが到着！ | USENの音楽情報サイト「encore（アンコール）」",
+          "url": "https://e.usen.com/news/news-event/-a-2026922.html",
+          "description": "松本ももなが「ここまで一緒に走ってきた大切なメンバーと、大好きなファンの方たちのおかげで今この景色が見られています」と感謝の気持ちを告げる。東山恵里沙が「高嶺のなでしこが、HoneyWorksさんに初めていただいた曲です」と言って、「女の子は強い」を披露。女の子が恋をしたときの強さを表現する、とてもたかねこらしいパワーを秘めた歌だ。ソロでつないでいく歌声に、それぞれの思いがこもるようで、思わず引き込まれる。横並びのダンスで魅せるエアギターもキュート。\n\nそして今回のツアーは、「Bouquet of 9 Flowers」というツアータイトルが示すとおり、本編中盤でメンバーそれぞれの魅力にしっかりフォーカスするセトリで構成されていた。9人それぞれが一人一人違った色で、違った個性を持つ花であり、その様々な花が集まって「高嶺のなでしこ」という唯一無二のブーケができあがる。その本質が明確に浮き彫りになる中盤だった。 [...] 続いては松本ももなのターン。白いチェアを使ってのソロダンス。しなやかな動きが観客の視線をぐっと引き寄せる。そのダンスの優美さに彼女の魅力の一端を見る。そして全員がステージに戻って「初恋のひと。」が始まると、歌つなぎに合わせて会場からのメンバーコールも最高潮。その声に煽られるように、さらに胸キュンなパフォーマンスで魅せるたかねこ。そして楽曲は「推しの魔法」へ。この曲でのメインは城月菜央。「これからみんなの元に行っちゃうよ！」と、ステージを下り客席フロアを縦横無尽に駆け回るサプライズ。会場中を巻き込んでオーディエンスとのコール＆レスポンスは圧巻。この人懐こさと陽のエネルギーは城月ならではだ。\n\n続いて涼海すうがセンターに立っての「ヒロインは平均以下。」。女の子のラブコメみ溢れるどこか自虐的な歌が、涼海の飾らないキャラクターと相まって、とても微笑ましく響く。アップテンポで駆け抜けるこの曲で披露するソロダンスもとにかく爽快。涼海はたかねこの躍動感にブーストをかける存在だ。 [...] そして、ヘヴィなサウンドが響いて、籾山ひめりがキレのよいダンスを披露する。その力強い動きにどよめくような声があがる。ごく自然にほかの8人もジョインしてのダンスパフォーマンスはとにかくかっこよかった。楽曲は「決戦スピリット」。客席の特大のコールにも籾山は「まだ足りないよ、ついてこい！」とさらに煽動。たかねこの持つ絶対的な「強さ」を表現した。籾山のボーカルに牽引されてメンバー全員の声がさらに力強くなっていくのがわかる。これぞ強烈なキャプテンシー。\n\nその「強さ」のバトンを受け取るのはやはり橋本桃呼だ。彼女自身によるナレーションが、「アイドルって何を見せる仕事？ 悔し涙は偶像には必要ない？」と自問を投げかける。「この世界は嘘でできている。それでも私はここにいる」と告げる、そのモノローグをコンテンポラリーダンスで表現するメンバーたち。そのダンスが内省的な世界へ引き込み、「この世界は嘘でできている」の披露。橋本の表情に、歌声に、演技とは思えぬ切実さが滲む。これが橋本の本気のエモーション。そしてこの歌を表現できるのが高嶺のなでしこなのだ。",
+          "age": null,
+          "score": 0.72814995,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声",
+            "ボーカル",
+            "ダンス",
+            "キレ",
+            "パフォーマンス"
+          ],
+          "relevance_score": 15
+        },
+        {
+          "title": "②【先行掲載・WEBオリジナル記事】国立代々木第二体育館 ...",
+          "url": "https://outofmusic.net/archives/1540",
+          "description": "――この、ひなさんの歌唱パートは、大きな世界というか「人生」「旅」「奇跡」というワードから、時間と空間が広がって視野がすごく大きくなってますよね。この曲は基本的には「“あなた”と“わたし”」という関係性が軸にありますが、より大きな世界観で捉えてます。この歌唱パートの前後がコーラスで、その間（あいだ）に、ポンとひなさんのソロパートが来るので目立ってますよね。このあと続く、間奏とダンスのパートに繋げる助走でもあります。\n\n日向端ひな●ありがとうございます〈笑顔〉。\n\n――では続いて、ももなさん。\n\n松本ももな（まつもとももな）●私はこの「Iʼ M YOUR IDOL」は、ファンの方にやさしく寄り添うような、励ますような楽曲だと思っていて、自分でも歌っていて、さきほど出た〈誰かの心を灯せるように〉という紗蘭ちゃんと歌っているパートで、パフォーマンス中も、誰かの心に響くように優しい歌声で、ファン方一人ひとり目を合わせるように、パフォーマンスしてます。メンバーとも目を合わせてパフォーマンスするように意識してます。 [...] ――アイコンタクトは重要ですよね。ちなみに間奏のダンスパートでは、ももなさんが指揮者となって、指揮棒をふるような手振りで、メンバーと合唱しているようなシーンがあります。\n\n松本ももな（まつもとももな）●そうなんです。そこでも、みんなのことを見て、合唱しているような、ニコニコ笑顔でパフォーマンスしています。\n\n城月菜央（きづきなお）●私は〈一人じゃ感情も捨ててた〉というパートを歌っていますが、この歌詞を歌うと、やっぱりメンバーやファンのみなさん、スタッフの方がいるから、こうやってアイドルとして立っていられるんだなと感じます。先ほど話に出た「美しく生きろ」という曲で、私が歌っているパート、〈信じていい 覚悟が番うんだ〉という歌詞と、気持ちがつながる部分があるというか…。\n\n――というと？\n\n城月菜央●ファンのみなさんに私たちから語りかけている言葉や、逆にファンの方から私たちに届けてくれる言葉もあって…（少し考える）。 [...] ※このインタビューの全編は、次号OUT of MUSIC87（2025年1月30日発売）に掲載です。\n\n※関連記事 → 【特集ハイライト】10人組アイドルグループ 高嶺のなでしこ Digital Single『モテチェン！』インタビュー OUT of MUSIC 86掲載\n\n高嶺のなでしこ\n\nJDOL AUDITIONを勝ち抜いて選ばれた7名と、元「ラストアイドル」の3名からなる10人組の女性アイドルグループ。2022年デビュー。メンバーは城月菜央、涼海すう、橋本桃呼、葉月紗蘭、春野莉々、東山恵里沙、日向端ひな、星谷美来、松本ももな、籾山ひめり。サウンドプロデュースは、関連動画再生回数10億回を突破し数々のヒットを生むクリエイターユニットHoneyWorks。2024年2月21日、メジャーデビューシングル『美しく生きろ / 恋を知った世界』リリース。12月11日、2ndシングル「Iʼ M YOUR IDOL / アドレナリンゲーム」リリース。国立代々木第二体育館公演（2025年2月14日）も開催決定！\n\n#### outofmusic",
+          "age": null,
+          "score": 0.5081298,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声",
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 9
+        },
+        {
+          "title": "【インタビュー】高嶺のなでしこ（城月菜央・松本ももな・籾山ひめり）が2ndシングルで描いた新境地を語る「ずっとそばにいてくださると嬉しいです」 | レコログ",
+          "url": "https://recochoku.jp/ch/recolog/takanenonadeshiko",
+          "description": "レコログ\n\nビクターエンタテインメントより『美しく⽣きろ/恋を知った世界』にてメジャーデビュー。   \n     \n   12月11日(水)には2ndシングル『I’M YOUR IDOL / アドレナリンゲーム』をリリース。   \n     \n   2025年2月14日(金)には、『高嶺のなでしこ ワンマンライブ 2025 〜Cute for life〜』supported by KOJIを国立代々木競技場第二体育館で開催。\n\n X\n Facebook\n LINE\n はてなブックマーク\n\nカテゴリー\n:   インタビュー\n\n関連サービス\n:   Artistmurketインタビュー\n\n## ランキング\n\n 1\n\n   米津玄師インタビュー<br>「ポジティブな音楽を作り続けるためにはどうしたらいいかと日々考えています。」　\n\n  INTERVIEW\n\n  ### 米津玄師インタビュー 「ポジティブな音楽を作り続けるためにはどうしたらいいかと日々考えています。」\n 2\n\n   BE:FIRSTがレコチョク新人ランキングタイトルで2冠獲得！多くの人に愛される彼らが今語る想いとは [...] INTERVIEW\n\n  ### レコチョクランキングで2冠を制したBE:FIRSTがBESTYへの想いを語ったインタビュー公開！2023年を振り返って思うことや来年に向けた抱負を語る！\n\n## 新着記事\n\n 上野優華が語る、デビュー10周年を振り返って思うこと―「この5年間が一番成長できたと思っています」\n\n  INTERVIEW\n\n  ### 上野優華が語る、デビュー10周年を振り返って思うこと―「この5年間が一番成長できたと思っています」\n 新進気鋭のクリエイターユニット・otsumamiのインタビューが公開！新曲「レモン水」へ込めた想いや今後の活動への意気込みを語る\n\n  INTERVIEW\n\n  ### 新進気鋭のクリエイターユニット・otsumamiのインタビューが公開！新曲「レモン水」へ込めた想いや今後の活動への意気込みを語る\n 唯一無二のユニット・harhaがBreakthroughフィーチャーアーティストに決定！彼らの魅了や素顔に迫るインタビューが公開！\n\n  INTERVIEW [...] INTERVIEW\n\n  ### 再始動した「リリィさよなら。」が江嶋綾恵梨（ex.26時のマスカレイド）とコラボ、「カランコロン feat.江嶋綾恵梨」をリリース！二人が語る今とこれから\n\n  ArtistEggsEggs Passインタビューエッグス\n\nカテゴリーから記事を探す\n:   インタビュー ライブレポート その他\n\n関連サービスから記事を探す\n:   レコチョク dヒッツ OTORAKU WEDDING MUSIC BOX AKB48グループ映像倉庫 murket NFT Eggs WIZY プレイパス\n\nアーティストから記事を探す\n:   Aimer BE:FIRST Kep1er LinQ cadode Penthouse 内田雄馬 小倉唯 鬼頭明里 八木海莉 大黒摩季\n\n#### 最新情報はレコチョク公式SNSから！\n\n X @recochoku\\_jp\n Facebook @recochoku",
+          "age": null,
+          "score": 0.459586,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "2_松本ももな – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/momona_matsumoto",
+          "description": "profile ; 血液型: B型 ; 星座: てんびん座 ; 身長: 159cm ; 生年月日: 2002年10月12日 ; 出身地: 神奈川県.",
+          "age": null,
+          "score": 0.43496582,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "松本ももなと夢のダンスパフォーマンス - TikTok",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7492024174752304392",
+          "description": "松本ももなと仲間たちの可愛いダンスをチェック！#高嶺のなでしこ #愛♡スクリーム #アイスクリーム. これはAIによって生成されたコンテンツ要約であり、",
+          "age": null,
+          "score": 0.5071046,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "本当に失礼は承知なんですが、高嶺のなでしこの松本ももなちゃんっ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11281014481",
+          "description": "私は特別に松本ももなさんのファンではありませんが確かに歌声は特別良い感じではないように思えます。 逆に橋本さんは歌声が良くて迫力もありますね。",
+          "age": null,
+          "score": 0.685971,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【神回】とにかくバタバタする松本ももな【高嶺のなでしこ】",
+          "url": "https://www.youtube.com/watch?v=qBAqOk5qdho",
+          "description": "高嶺のなでしこ #松本ももな #たかねこ #アイドル #カラオケ #SHOWROOM.",
+          "age": null,
+          "score": 0.54201555,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "松本ももな (@momonamatsumoto) / X",
+          "url": "https://x.com/momonamatsumoto",
+          "description": "HoneyWorksプロデュースアイドル 高嶺のなでしこTikTok → https://t.co/k1fxT8MoOY 薄ぴんく担当 #ももなんにおくりもも 【も 】 ♡ かわいいは作れる.",
+          "age": null,
+          "score": 0.5232017,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "『高嶺のなでしこ』松本ももな「この曲を歌って可愛いを更新 ...",
+          "url": "https://news.livedoor.com/article/detail/26787703",
+          "description": "『高嶺のなでしこ』松本ももな「この曲を歌って可愛いを更新できるように頑張りたい」 · 「HoneyWorks」がサウンドプロデュースするアイドルグループ「高嶺",
+          "age": null,
+          "score": 0.486015,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "松本ももな ver】初恋のひと。 ／『高嶺のなでしこ 東名阪ツアー 2025",
+          "url": "https://www.youtube.com/watch?v=tJwVdQgVaTE",
+          "description": "2025年5月14日に開催された『高嶺のなでしこ 東名阪ツアー 2025 - Spring Ride -』より『初恋のひと。』松本ももなMain Camera ライブ映像を公開！",
+          "age": null,
+          "score": 0.39705023,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"松本ももな\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "〈インタビュー〉松本ももな（高嶺のなでしこ）｜「元気を与えられる存在に」アイドルとモデル、それぞれの夢【KANSAI COLLECTION 2026 A/W】 – ライブタイムズ",
+          "url": "https://livetimes.jp/news/61219",
+          "description": "## 松本ももな（まつもと ももな）\n\n2002年10月12日生まれ（23歳）、神奈川県出身。血液型B型、身長159cm。愛称は「ももなん」。\n\n元「シュークリームロケッツ」のメンバー。2022年8月からHoneyWorksサウンドプロデュースのアイドルグループ「高嶺のなでしこ」のメンバーとして活動。グループ活動と並行してモデルとしても活躍し、「KANSAI COLLECTION」には2026年S/Sから2季連続で出演している。\n\n公式Instagram：\n\n## KANSAI COLLECTION 2026 AUTUMN＆WINTER\n\n「関西コレクション」は、アーティストのライブ、タレントやモデルによるファッションショー、会場内ブースでのヘアメイク体験や出演者によるトークショーなどで構成される、京セラドーム大阪で1日中楽しめるエンターテインメントイベント。 [...] ＜ABEMA GUEST＞ 谷村優真 / 倉澤俊 / 森口優花 / 酒井理央 / 五十嵐蓮 / 日向祢音 / 相塲星音 / 河村叶翔\n\n＜FUTURE＞ 秋山愛 / 秋山みづき / 河村叶翔 / 倉田琉偉 / 齊藤千夏(Pretty Chuu) / すみぽん(高倉菫) / 高橋かの / 寺島季咲 / Ten(最終未来少女) / まいきち / まりい / MINJII / 森山未唯 / 山﨑心 / 山本雪菜\n\n＜OPENING ACT＞ スーパーハイスクール / HUH JIWON / Onephony\n\n＜MC＞ 朝日奈央 / ぺこぱ\n\n＜Live Streaming MC＞ 大倉士門\n\n〈ライブタイムズ編集部〉KANSAI COLLECTION 2026 AUTUMN＆WINTER\n\n「関西コレクション」は、アーティストのライブ、タレントやモデルによるファッションショー、会場内ブースでのヘアメイク体験や出演者によるトークショーなどで構成される、京セラドーム大阪で1日中楽しめるエンターテインメントイベント。 [...] 高嶺のなでしこ・松本ももな、2季連続の関コレで3ステージ。ゴシックからロリータ、大人の秋コーデまで【KANSAI COLLECTION 2026 A/W】\n\n2ステージ目を終えた直後、松本はLIVE TIMES ENTAMEのインタビューに応じてくれた。ランウェイの率直な感想や衣装のお気に入りポイント、活動する上で大切にしていること、さらにはアイドルとモデル、それぞれの目標まで明かしてくれた。\n\n## ステージを終えての感想と、衣装のお気に入り\n\n今着ているお洋服は、「BABY, THE STARS SHINE BRIGHT」さんのかわいいロリータのお洋服なんですけど、リボンがいっぱいついていて、ピンクと赤のかわいい色味の組み合わせで。360度どこから見てもかわいいところがすごくお気に入りです。\n\n## 活動する上で大切にしていること\n\n——普段、どんな想いを大切に活動されていますか。\n\n応援してくださっているファンの皆さんに、「今日も頑張ってよかった」とか「明日も頑張ろう」って思えるような元気を与えられる存在でいたいなという気持ちを大切にしています。",
+          "age": null,
+          "score": 0.71040785,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "かわいい",
+            "モデル",
+            "ファッション",
+            "コーデ",
+            "ランウェイ",
+            "MC",
+            "トーク"
+          ],
+          "relevance_score": 28
+        },
+        {
+          "title": "2_松本ももな – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/momona_matsumoto",
+          "description": "血液型: B型. 星座: てんびん座. 身長: 159cm. 生年月日: 2002年10月12日. 出身地: 神奈川県. 趣味: 可愛いキャラクターものを集めること.",
+          "age": null,
+          "score": 0.54361504,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "可愛い"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "高嶺のなでしこ：松本ももなの魅力 - TikTok",
+          "url": "https://www.tiktok.com/@momona.1012/video/7611473589321157908",
+          "description": "... 高嶺のなでしこに寄り添う松本ももなの可愛いビジュアルとメイクをお楽しみください。#おめめきらきら #松本ももな #メイク」。",
+          "age": null,
+          "score": 0.657033,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ビジュアル",
+            "可愛い"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "松本ももな (@momonamatsumoto) / X",
+          "url": "https://x.com/momonamatsumoto",
+          "description": "HoneyWorksプロデュースアイドル 高嶺のなでしこTikTok → https://t.co/k1fxT8MoOY 薄ぴんく担当 #ももなんにおくりもも 【も 】 ♡ かわいいは作れる.",
+          "age": null,
+          "score": 0.6055431,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "#松本ももな #松本桃菜 #高嶺のなでしこ | Momona Matsumoto",
+          "url": "https://www.facebook.com/momona.matsumoto.9231/videos/%EF%B8%8F%EF%B8%8E%EF%B8%8E%E6%9D%BE%E6%9C%AC%E3%82%82%E3%82%82%E3%81%AA%E6%9D%BE%E6%9C%AC%E6%A1%83%E8%8F%9C%E9%AB%98%E5%B6%BA%E3%81%AE%E3%81%AA%E3%81%A7%E3%81%97%E3%81%93/874897025057755",
+          "description": "藤井敏彦 · 8mo ; 奈良龍一. Sticker, A white rabbit that's blushing with open arms and throwing pink hearts in the. 9mo ; 菊地法幸. ももなさん可愛い",
+          "age": null,
+          "score": 0.59824234,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "松本ももな(@momona.1012) • Instagram写真と動画",
+          "url": "https://www.instagram.com/momona.1012?hl=ja",
+          "description": "## momona.1012\n\n フォロワー29.8万人\n フォロー中194人\n\n松本ももな\n\n♡ IDOL ⇒ 高嶺のなでしこ⋈ みるきーぴんく担当 🎀🍼  \n♡ 2002.10.12 ついんてーる ⌒\\(„❛ ֊ ❛„)\\⌒やぽー  \n♡ ୨୧┈ かわいいは作れる ┈୨୧   \n♡ TikTok ⇒ momona.1012\n\n...\n\n続きを読む\n\nwww.tiktok.com/@momona.1012\n\n momona.1012のストーリーズ写真のハイライト\n\n  (՞ᵒ̴̶̷᷄꒳ᵒ̴̶̷᷅՞)\n momona.1012のストーリーズ写真のハイライト\n\n  🔐\n\nPhoto by 松本ももな on September 01, 2026.\n\nPhoto by 松本ももな on August 30, 2026.\n\nPhoto by 松本ももな on August 29, 2026.\n\nVideo by 松本ももな on August 29, 2026. 1人以上、ヘア、バスローブ、テキストの画像のようです.\n\nPhoto by 松本ももな on August 28, 2026. [...] Photo by オシグラフ『OSHI GRAPH』 on August 27, 2026.\n\nPhoto by 松本ももな on August 27, 2026.\n\nPhoto by 松本ももな on August 26, 2026.\n\nPhoto by 松本ももな on August 23, 2026.\n\nPhoto by 松本ももな on August 22, 2026.\n\nPhoto by 松本ももな on August 21, 2026.\n\nPhoto by 松本ももな on August 21, 2026.\n\nmomona.1012の投稿をもっと見る",
+          "age": null,
+          "score": 0.5663309,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "TITTY&CO. 2026 summer collection ꙳ 高嶺のなでしこ 松本ももな ...",
+          "url": "https://www.instagram.com/reel/DWlXjgiE0s_",
+          "description": "TITTY&CO. 2026 summer collection ⸝꙳ 高嶺のなでしこ松本ももなちゃん( @momona.1012 ) にモデルを務めていただきまし",
+          "age": null,
+          "score": 0.46905875,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "かわいすぎるアイドル！高嶺のなでしこの松本ももなに夢中",
+          "url": "https://fineboys-online.jp/interview/detail.php?id=5123",
+          "description": "かわいすぎるアイドル！高嶺のなでしこの松本ももなに夢中. HoneyWorksの「可愛くてごめん」のカバー動画は1600万回再生を突破！",
+          "age": null,
+          "score": 0.46687052,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ／松本ももな【HoneyWorks】 - YouTube",
+          "url": "https://www.youtube.com/watch?v=JWnL31slcIs",
+          "description": "高嶺のなでしこ 全国ツアー2024“わたし色に染まれ” 7月13日(土) TOUR FINAL TOKYO DOME CITY HALL公演より「モテチェン！」推しカメラを公開！",
+          "age": null,
+          "score": 0.46264356,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【TAKANEKO TV】#44 松本ももなになろう!   - YouTube",
+          "url": "https://www.youtube.com/watch?v=lPq2GPO22ck",
+          "description": "桃呼・紗蘭が松本ももなになってみた!? ももな先生がメイク・ヘアメイクのポイントを紹介 ✨ ー・ー✿ー・ー✿ー・ー✿ー・ー✿ー・ー✿ー・",
+          "age": null,
+          "score": 0.3396748,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"松本ももな\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "〈インタビュー〉松本ももな（高嶺のなでしこ）｜「元気を与え ...",
+          "url": "https://livetimes.jp/news/61219",
+          "description": "## 松本ももな（まつもと ももな）\n\n2002年10月12日生まれ（23歳）、神奈川県出身。血液型B型、身長159cm。愛称は「ももなん」。\n\n元「シュークリームロケッツ」のメンバー。2022年8月からHoneyWorksサウンドプロデュースのアイドルグループ「高嶺のなでしこ」のメンバーとして活動。グループ活動と並行してモデルとしても活躍し、「KANSAI COLLECTION」には2026年S/Sから2季連続で出演している。\n\n公式Instagram：\n\n## KANSAI COLLECTION 2026 AUTUMN＆WINTER\n\n「関西コレクション」は、アーティストのライブ、タレントやモデルによるファッションショー、会場内ブースでのヘアメイク体験や出演者によるトークショーなどで構成される、京セラドーム大阪で1日中楽しめるエンターテインメントイベント。 [...] ＜ABEMA GUEST＞ 谷村優真 / 倉澤俊 / 森口優花 / 酒井理央 / 五十嵐蓮 / 日向祢音 / 相塲星音 / 河村叶翔\n\n＜FUTURE＞ 秋山愛 / 秋山みづき / 河村叶翔 / 倉田琉偉 / 齊藤千夏(Pretty Chuu) / すみぽん(高倉菫) / 高橋かの / 寺島季咲 / Ten(最終未来少女) / まいきち / まりい / MINJII / 森山未唯 / 山﨑心 / 山本雪菜\n\n＜OPENING ACT＞ スーパーハイスクール / HUH JIWON / Onephony\n\n＜MC＞ 朝日奈央 / ぺこぱ\n\n＜Live Streaming MC＞ 大倉士門\n\n〈ライブタイムズ編集部〉\n\n投稿者アバター\n\nライブタイムズ\n\n自己紹介の全文を表示\n\nインタビュー（エンタメ） 松本ももな 芸能\n\nコメントを投稿する\n\nコメントする 返信をキャンセルする [...] ＜GLOBAL GUEST＞ LEE JIN SEOK / LEE CHAEYEON / Lee Tae Lee / エラ・フレイヤ / KIM JEONG SU / KIM MUJUN / Bora Kim / Kelly / CHOI JONG WOO / テリ(Taeri) / PARK MIN KYU / HUH JIWON / YUMEKI / YEONWOO\n\n＜ATHLETE GUEST＞ 臼井麗香\n\n＜ARTIST＞ iLiFE! / AHOF / MIYEON\n\n＜NEXT BREAK ARTIST＞ しなこ / TAGRIGHT / MON7A / #らぶしっく / リアルピース\n\n＜Legend Artist＞ FIELD OF VIEW／浅岡雄也\n\n＜CREATOR＞ えみ姉 / きりまる / しなこ / 鈴木優香 / すずしょうと / ちょんまげ小僧 / Hinata / ひまひま / HIMAWARIちゃんねる / ヘラヘラ三銃士 / ボンボンTV / Mumei / 森ケの日常 / リアルピース",
+          "age": null,
+          "score": 0.72418857,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "インタビュー",
+            "モデル"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "高嶺のなでしこ（城月菜央・松本ももな・籾山ひめり）が2nd ...",
+          "url": "https://recochoku.jp/ch/recolog/takanenonadeshiko",
+          "description": "レコログ\n\nビクターエンタテインメントより『美しく⽣きろ/恋を知った世界』にてメジャーデビュー。   \n     \n   12月11日(水)には2ndシングル『I’M YOUR IDOL / アドレナリンゲーム』をリリース。   \n     \n   2025年2月14日(金)には、『高嶺のなでしこ ワンマンライブ 2025 〜Cute for life〜』supported by KOJIを国立代々木競技場第二体育館で開催。\n\n X\n Facebook\n LINE\n はてなブックマーク\n\nカテゴリー\n:   インタビュー\n\n関連サービス\n:   Artistmurketインタビュー\n\n## ランキング\n\n 1\n\n   米津玄師インタビュー<br>「ポジティブな音楽を作り続けるためにはどうしたらいいかと日々考えています。」　\n\n  INTERVIEW\n\n  ### 米津玄師インタビュー 「ポジティブな音楽を作り続けるためにはどうしたらいいかと日々考えています。」\n 2\n\n   BE:FIRSTがレコチョク新人ランキングタイトルで2冠獲得！多くの人に愛される彼らが今語る想いとは [...] INTERVIEW\n\n  ### 再始動した「リリィさよなら。」が江嶋綾恵梨（ex.26時のマスカレイド）とコラボ、「カランコロン feat.江嶋綾恵梨」をリリース！二人が語る今とこれから\n\n  ArtistEggsEggs Passインタビューエッグス\n\nカテゴリーから記事を探す\n:   インタビュー ライブレポート その他\n\n関連サービスから記事を探す\n:   レコチョク dヒッツ OTORAKU WEDDING MUSIC BOX AKB48グループ映像倉庫 murket NFT Eggs WIZY プレイパス\n\nアーティストから記事を探す\n:   Aimer BE:FIRST Kep1er LinQ cadode Penthouse 内田雄馬 小倉唯 鬼頭明里 八木海莉 大黒摩季\n\n#### 最新情報はレコチョク公式SNSから！\n\n X @recochoku\\_jp\n Facebook @recochoku [...] INTERVIEW\n\n  ### 高嶺のなでしこ（城月菜央・松本ももな・籾山ひめり）が2ndシングルで描いた新境地を語る「ずっとそばにいてくださると嬉しいです」\n\n  Artistmurketインタビュー\n 彩音が語る、ファンと歩んだ20年への感謝。人気楽曲のデジタル音源＋CD風キーホルダーでいつもそばに \n\n  INTERVIEW\n\n  ### 彩音が語る、ファンと歩んだ20年への感謝。人気楽曲のデジタル音源＋CD風キーホルダーでいつもそばに\n\n  Artistmurketインタビュー\n ドレスコーズ志磨遼平、過去の映像作品のデジタル版をリリース、作品毎に自身の解説動画コメントも \n\n  INTERVIEW\n\n  ### ドレスコーズ志磨遼平、過去の映像作品のデジタル版をリリース、作品毎に自身の解説動画コメントも\n\n  Artistmurketインタビュー\n 再始動した「リリィさよなら。」が江嶋綾恵梨（ex.26時のマスカレイド）とコラボ、「カランコロン feat.江嶋綾恵梨」をリリース！二人が語る今とこれから \n\n  INTERVIEW",
+          "age": null,
+          "score": 0.6383174,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "2_松本ももな – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/momona_matsumoto",
+          "description": "血液型: B型. 星座: てんびん座. 身長: 159cm. 生年月日: 2002年10月12日. 出身地: 神奈川県. 趣味: 可愛いキャラクターものを集めること.",
+          "age": null,
+          "score": 0.60498303,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "松本ももな・カバーガールインタビュー「グループ名を聞いて",
+          "url": "https://glassgirl.info/article/post-10574/2",
+          "description": "2017年、ラストアイドルファミリー「シュークリームロケッツ」に加入。ラストアイドルの活動終了を経て、2022年8月に「高嶺のなでしこ」のメンバーとして",
+          "age": null,
+          "score": 0.62824833,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！松本ももな編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa10.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！松本ももなさんの回答はコチラ！",
+          "age": null,
+          "score": 0.5192538,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "松本ももな (@momonamatsumoto) / X",
+          "url": "https://x.com/momonamatsumoto",
+          "description": "HoneyWorksプロデュースアイドル 高嶺のなでしこTikTok → https://t.co/k1fxT8MoOY 薄ぴんく担当 #ももなんにおくりもも 【も 】 ♡ かわいいは作れる.",
+          "age": null,
+          "score": 0.493043,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "松本ももな (@momona.1012) • Instagram photos and videos",
+          "url": "https://www.instagram.com/momona.1012?hl=ja",
+          "description": "## momona.1012\n\n フォロワー29.8万人\n フォロー中194人\n\n松本ももな\n\n♡ IDOL ⇒ 高嶺のなでしこ⋈ みるきーぴんく担当 🎀🍼  \n♡ 2002.10.12 ついんてーる ⌒\\(„❛ ֊ ❛„)\\⌒やぽー  \n♡ ୨୧┈ かわいいは作れる ┈୨୧   \n♡ TikTok ⇒ momona.1012\n\n...\n\n続きを読む\n\nwww.tiktok.com/@momona.1012\n\n momona.1012のストーリーズ写真のハイライト\n\n  (՞ᵒ̴̶̷᷄꒳ᵒ̴̶̷᷅՞)\n momona.1012のストーリーズ写真のハイライト\n\n  🔐\n\nPhoto by 松本ももな on September 01, 2026.\n\nPhoto by 松本ももな on August 30, 2026.\n\nPhoto by 松本ももな on August 29, 2026.\n\nVideo by 松本ももな on August 29, 2026. 1人以上、ヘア、バスローブ、テキストの画像のようです.\n\nPhoto by 松本ももな on August 28, 2026. [...] Photo by オシグラフ『OSHI GRAPH』 on August 27, 2026.\n\nPhoto by 松本ももな on August 27, 2026.\n\nPhoto by 松本ももな on August 26, 2026.\n\nPhoto by 松本ももな on August 23, 2026.\n\nPhoto by 松本ももな on August 22, 2026.\n\nPhoto by 松本ももな on August 21, 2026.\n\nPhoto by 松本ももな on August 21, 2026.\n\nmomona.1012の投稿をもっと見る",
+          "age": null,
+          "score": 0.462061,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

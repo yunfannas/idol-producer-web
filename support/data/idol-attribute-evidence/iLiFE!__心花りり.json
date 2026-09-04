@@ -1,0 +1,405 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:15.324Z",
+  "member": {
+    "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+    "name": "心花りり",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 26,
+    "height_cm": 156,
+    "career_months": 52,
+    "prior_group_months": 110,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 2,
+    "total_queries": 5,
+    "initial_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 0,
+      "mc_comedy": 0,
+      "physical_stamina": 8,
+      "mental_professional": 8,
+      "traits": 8
+    },
+    "final_coverage": {
+      "vocal": 4,
+      "dance_performance": 4,
+      "appearance_model": 4,
+      "mc_comedy": 4,
+      "physical_stamina": 10,
+      "mental_professional": 10,
+      "traits": 10
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"心花りり\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説｜エンタメクロス",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 1999年5月19日 |\n| 年齢 | 26歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 156cm |\n| 出身地 | 宮城県 |\n| メンバーカラー | 赤色 |\n\n心花りり（このかりり）さんは、2021年2月に加入し、現メンバーの中でも最も長く活動を続けている存在です。中学生の頃からアイドルを志し、高校卒業後に本格的な芸能活動をスタートしました。iLiFE!加入前は「上村まり」名義でリンクSTAR’sやゆめいろHiLiT!などのグループに在籍し、着実に経験を重ねてきた実力派メンバーです。\n\n現在は同じHEROINESプロジェクト所属のアイドルユニットGILTYxGILTYとの兼任でも活動しており、幅広いステージで存在感を発揮しています。\n\n### 2-2. あいす\n\n> この投稿をInstagramで見る\n>\n> あいす(@ice\\_icol)がシェアした投稿 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。 [...] メンバーの加入や卒業を重ねながら進化を続けており、2026年3月時点では心花りりさんやあいすさんら正規メンバー8人に加え、サポートメンバーとして恋星はるかさん、サブサポートメンバーとして恋春ねねさんが加入し、計10人で精力的に活動しています。ファンと一体となる熱量の高いライブや、個性豊かなメンバーの魅力が注目されているアイドルグループです。\n\n## 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n\n> この投稿をInstagramで見る\n>\n> iLiFE!(@ilife.idol)がシェアした投稿\n\niLiFE!は個性豊かなメンバーが集まり、それぞれの魅力や経歴、得意分野を生かしながらグループの活動を支えています。\n\nここでは、現在のメインメンバー8人のプロフィールを紹介します。\n\n### 2-1. 心花りり\n\n> この投稿をInstagramで見る\n>\n> 心花りり(@riri\\_ilife)がシェアした投稿",
+          "age": null,
+          "score": 0.68874115,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "パフォーマンス"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile/member/index/464",
+          "description": "MEMBER. 心花りり. Konoka Riri. ○担当カラー 赤○キャッチコピー 「3度の飯よりりりが好き. X: » Move to URL. instagram: » Move to URL. TikTok: » Move to URL. ○",
+          "age": null,
+          "score": 0.511644,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "url": "https://oshilattice.com/groups/ilife",
+          "description": "iLife!メンバー一覧・プロフィール | アイドルグループ | OshiLattice (推しラティス)",
+          "age": null,
+          "score": 0.22919038,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFE!アイライフで歌が上手いと個人的に思うメンバーを順番 ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12317767272",
+          "description": "アイライフで歌が上手いと個人的に思うメンバーを順番に教えてください。 また、いつの体制が1番歌唱力が高いと思うかも教えていただけると嬉しいです。",
+          "age": null,
+          "score": 0.34072697,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "歌が上手い"
+          ],
+          "relevance_score": 6
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"心花りり\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "心花りり",
+          "url": "https://www.pinterest.com/pin/ilife--992199361640539623",
+          "description": "心花りり | 髪型 ボーイッシュ, すみれ, 女性アイドル. 心花りり. More ... 心花りり【iLiFE! / ギルギル】 on X | にのあい,. 心花りり【iLiFE",
+          "age": null,
+          "score": 0.474023,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「#心花りり」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=%23%E5%BF%83%E8%8A%B1%E3%82%8A%E3%82%8A&md=h&rkf=1",
+          "description": "にゃんにゃん衣装纏ったりりたん可愛すぎるにゃん だいすきだにゃん❤️ #心花りり x.com/ilife_riri/sta… 心花りり【iLiFE! / ギルギル】 @iLiFE_riri. りりにゃん降臨♡",
+          "age": null,
+          "score": 0.4475333,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"【ライブ写真公開♥️】 りりちゃん ...",
+          "url": "https://x.com/iLiFE_official/status/1459477281697505284",
+          "description": "【ライブ写真公開♥️】 りりちゃんごしゃい❕今日もいい子❕ 心花りり(@iLiFE_riri ). 3:04 AM · Nov 13, 2021.",
+          "age": null,
+          "score": 0.43784812,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "心花りり (@riri_ilife)",
+          "url": "https://www.instagram.com/riri_ilife?hl=ja",
+          "description": "245K followers · 44 following · 476 posts · @riri_ilife: “YouTube始めました♡‎『りりたんちゃんねる‎』 iLiFE!の赤色担当 2026.08.26 Kアリーナ”",
+          "age": null,
+          "score": 0.41364354,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"心花りり\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 1999年5月19日 |\n| 年齢 | 26歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 156cm |\n| 出身地 | 宮城県 |\n| メンバーカラー | 赤色 |\n\n心花りり（このかりり）さんは、2021年2月に加入し、現メンバーの中でも最も長く活動を続けている存在です。中学生の頃からアイドルを志し、高校卒業後に本格的な芸能活動をスタートしました。iLiFE!加入前は「上村まり」名義でリンクSTAR’sやゆめいろHiLiT!などのグループに在籍し、着実に経験を重ねてきた実力派メンバーです。\n\n現在は同じHEROINESプロジェクト所属のアイドルユニットGILTYxGILTYとの兼任でも活動しており、幅広いステージで存在感を発揮しています。\n\n### 2-2. あいす\n\n> この投稿をInstagramで見る\n>\n> あいす(@ice\\_icol)がシェアした投稿 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。 [...] メンバーの加入や卒業を重ねながら進化を続けており、2026年3月時点では心花りりさんやあいすさんら正規メンバー8人に加え、サポートメンバーとして恋星はるかさん、サブサポートメンバーとして恋春ねねさんが加入し、計10人で精力的に活動しています。ファンと一体となる熱量の高いライブや、個性豊かなメンバーの魅力が注目されているアイドルグループです。\n\n## 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n\n> この投稿をInstagramで見る\n>\n> iLiFE!(@ilife.idol)がシェアした投稿\n\niLiFE!は個性豊かなメンバーが集まり、それぞれの魅力や経歴、得意分野を生かしながらグループの活動を支えています。\n\nここでは、現在のメインメンバー8人のプロフィールを紹介します。\n\n### 2-1. 心花りり\n\n> この投稿をInstagramで見る\n>\n> 心花りり(@riri\\_ilife)がシェアした投稿",
+          "age": null,
+          "score": 0.78572035,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "iLiFE! - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/ILiFE!",
+          "description": "| 名前 | 生年月日 | 血液型 | 身長 | 出身地 | 担当カラー | 人物 |\n ---  ---  --- \n| 心花 りり このか りり | (1999-05-19) 1999年5月19日（27歳） | A | 156cm | 宮城県 | 赤色 |  キャッチフレーズは「三度の飯よりりりが好き！」  3代目リーダー（2025年8月26日降格）  2021年2月25日加入発表  2022年6月よりGILTY × GILTY兼任  元リンクSTAR`s （上村まり）、ゆめいろH！L！T（上村まりの） | [...] |  |\n| 基本情報 |\n| 出身地 | 日本の旗 日本 東京都 |\n| ジャンル | J-POP |\n| 活動期間 | 2020年 - |\n| レーベル |  CROSS SIDE MUSIC（2023年 - ) 日本コロムビア（2026年）  Sony Music Labels（2026年 - ） |\n| 事務所 | imaginate |\n| 共同作業者 | Uya（渡辺裕也、HEROINES総合プロデューサー） |\n| 公式サイト | iLiFE! - official web site |\n| メンバー |  心花りり  あいす  福丸うさ  若葉のあ  空詩かれん  虹羽みに  純嶺みき  小熊まむ  真守みゅう |\n| 旧メンバー |  桜餅ふゆ  心咲めい  双葉りつ  琥珀しえる  甘音ゆあ  天羽しおり  深月らむ  向日えな  涼芽なの  華瀬まい  日日にこり  響羽リズ（サポートメンバー）  有栖るな  こるね（サポートメンバー）  那蘭のどか  恋春ねね（サブサポートメンバー）  恋星はるか（サポートメンバー） |\n| YouTube | [...] 白雪姫乃\\  紫ノ色  森緑藻 | | パラレルサイダー |  小熊まな香  小坂みおん  葉月みつは  彩音ゆの  宇佐美あこ  瀬川なつき | | GILTY × GILTY |  蒼井叶\\  白雪姫乃\\  白空こあい\\  恋星はるか\\  心花りり\\ | | AdamLilith |  響羽リズ  三木零  都ユナ  夜宵やむ | | ZUTTOMOTTO |  四宮える  真空せいら  青葉わか  椎名すず\\  小紅ゆず  式守くるみ  神谷ひなの  美雲みつき  愛夏ひなた  広瀬りむ\\s | | LADYBABY1 |  神黎ミア  來崎せな  月街えい  越智きの | | アキシブproject2 |  葵ふう  如月なな  清見るん  茉井良菜  水琴まなみ  天川ほたる  夢咲ありさ | | chuLa4 |  飴色りんご  明鏡みらの  紫藤らら  はまちひよ  陽咲みお  茉野ゆに  世野つばさ | | パラディーク3 |  水野めい  来栖ゆる  新木るの  浜辺しずく  灯田にじ  桜空ちゅいん  楪みかん  雛月ひな  朝日まる\\s | |",
+          "age": null,
+          "score": 0.75659186,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "リーダー"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile",
+          "description": "# iLiFE!【あいらいふ】\n\n## PROFILE\n\niLiFE!【あいらいふ】\n\nHEROINES所属のアイドルグループ。  \n 「私(ｉ)と貴方(！)で作るアイドル(ｉ)ライフ(LiFE)」をコンセプトに活動。  \n   \n ステージとフロアで共に作り上げる熱量あるライブと、SNSでの発信力、楽曲のキャッチーさが相まって、Z世代を中心に強い支持を集めている。  \n   \n 2025年8月に開催した夢の舞台 日本武道館公演ではチケット即完売。  \n   \n 2026年には最大規模のワンマンライブをKアリーナ横浜にて開催予定。武道館に続き、アリーナでの公演もチケットは即完売となり、次なるステージに向けその歩みはさらに加速している。\n\n## MEMBER\n\n ice\n\n  あいす\n Sonata Karen\n\n  空詩かれん\n Konoka Riri\n\n  心花りり\n Fukumaru Usa\n\n  福丸うさ\n Wakaba Noa\n\n  若葉のあ\n Kohane Mini\n\n  虹羽みに\n Koguma Mamu\n\n  小熊まむ\n Sumire Miki [...] 純嶺みき\n Mamori Mew\n\n 𝕏",
+          "age": null,
+          "score": 0.6546525,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "Post",
+          "url": "https://x.com/mag_scawaii/status/1942886446349607055",
+          "description": "... リレーインタビュー企画実施中✊ ❤️‍ ソロインタビューのトップバッターは天性のアイドル #心花りり ちゃん リーダーとしての覚悟、iLiFE!への",
+          "age": null,
+          "score": 0.7180613,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー",
+            "リーダー"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "心花りり「新メンバーちゃんのために自分ができることをしてあげ ...",
+          "url": "https://scawaiiweb.com/ilife250705",
+          "description": "心花りり「新メンバーちゃんのために自分ができることをしてあげたい」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.2】",
+          "age": null,
+          "score": 0.56920683,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "iLiFE!のメンバー変歴 まとめ｜kiha",
+          "url": "https://note.com/yellow_ohana/n/n61e5b2678b32",
+          "description": "⑤しえる えな ゆあ加入（2021/11)  \n７人体制  \n💙　深月らむ  \n💚　天羽しおり  \n❤️　心花りり  \n💜　有栖るな  \n🤍　琥珀しえる　加入（2021/11/27)  \n🩷　日向えな　　加入（2021/11/28)  \n💛　甘音ゆあ　　加入（2021/11/30)\n\n⑥しえる卒業（2022/5)  \n🤍　琥珀しえる　卒業（2022/5/25)  \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿  \n６人体制💙　深月らむ  \n💚　天羽しおり  \n❤️　心花りり  \n💜　有栖るな  \n🩷　日向えな  \n💛　甘音ゆあ\n\n⑦あいす加入（2022/7)  \n７人体制  \n💙　深月らむ  \n💚　天羽しおり  \n❤️　心花りり  \n💜　有栖るな (2022/12/3~2023/1/13 活動休止)  \n🩷　日向えな  \n💛　甘音ゆあ  \n🤍　あいす　加入（2022/7/11) [...] ⑩リズ サポート終了・まい のあ にこり なの加入（2023/9)  \n💚　響羽リズ　サポート期間終了（2023/9/24)  \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿  \n９人体制  \n❤️　心花りり  \n💜　有栖るな  \n🩷　日向えな  \n🤍　あいす  \n💛　福丸うさ  \n💙　華瀬まい　　加入（2023/9/25)  \n💚　若葉のあ　　加入（2023/9/25)  \n🧡　日日にこり　加入（2023/9/25)  \n🩵　涼芽なの　　加入（2023/9/25)\n\n⑪まい 離脱・復帰（2024/1~8)  \n💙　華瀬まい　iLiFE!候補生に降格（2024/1/4)  \n→　正規メンバーへ昇格（2024/8/23)  \n※2024/5/3まではiLiFE!としてLIVE参加  \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿  \n一時期間、８人体制  \n❤️　心花りり  \n💜　有栖るな  \n🩷　日向えな  \n🤍　あいす  \n💛　福丸うさ  \n💚　若葉のあ　  \n🧡　日日にこり  \n🩵　涼芽なの [...] ⑭まい にこり 脱退・かれん加入・こるね参加（2025/1)  \n💙　華瀬まい　　脱退（2025/1/8)  \n🧡　日日にこり　脱退（2025/1/12)  \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿  \n8人(７人)体制  \n❤️　心花りり  \n💜　有栖るな　 (活動休止中)  \n🤍　あいす  \n💛　福丸うさ  \n💚　若葉のあ　  \n🩷　那蘭のどか  \n💙　空詩かれん　加入（2025/1/20)  \n🧡　こるね　　　サポート参加（2025/1/21)\n\n※あいす生誕祭はかれん・こるねを除いた5人でiLiFE!として参加  \n※追加オーディション開催決定\n\n⑮るな 卒業（2025/3)  \n💜　有栖るな　卒業（2025/3/9)  \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿  \n７人体制  \n❤️　心花りり  \n🤍　あいす  \n💛　福丸うさ  \n💚　若葉のあ　  \n🩷　那蘭のどか  \n💙　空詩かれん  \n🧡　こるね",
+          "age": null,
+          "score": 0.55420566,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "心花りり (@riri_ilife)",
+          "url": "https://www.instagram.com/riri_ilife?hl=ja",
+          "description": "245K followers · 44 following · 476 posts · @riri_ilife: “YouTube始めました♡‎『りりたんちゃんねる‎』 iLiFE!の赤色担当 2026.08.26 Kアリーナ”",
+          "age": null,
+          "score": 0.44044575,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "targeted",
+      "query_group": "appearance_model",
+      "covers": [
+        "appearance_model"
+      ],
+      "query": "\"心花りり\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション ランウェイ",
+      "error": null,
+      "results": [
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile/member/index/464",
+          "description": "MEMBER. 心花りり. Konoka Riri. ○担当カラー 赤○キャッチコピー 「3度の飯よりりりが好き. X: » Move to URL. instagram: » Move to URL. TikTok: » Move to URL. ○",
+          "age": null,
+          "score": 0.5634506,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFE! 心花りりちゃんの私服まとめ❤️‍🔥✨ # ...",
+          "url": "https://www.instagram.com/p/DXVYaMViQBR",
+          "description": "心花りりちゃんの私服まとめ❤️ ✨ #心花りり #ilife #私服 #ファッション. Photo by imiter la mode fashion on August 29, 2026.",
+          "age": null,
+          "score": 0.6219319,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"【新アー写公開】 ♥心花りり ♡担当 ...",
+          "url": "https://x.com/iLiFE_official/status/2059586985782878257",
+          "description": "【新アー写公開】 ♥心花りり♡担当カラー 赤♥3度の飯よりりりが好き！ ｢君のハートを独り占め❤️きゅありりたん ❤️」 #iLiFE.",
+          "age": null,
+          "score": 0.48308808,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "心花りり - アイドル",
+          "url": "https://jp.pinterest.com/fu_ji_ta_0117/%E5%BF%83%E8%8A%B1%E3%82%8A%E3%82%8A",
+          "description": "2026 年の 130 件の「心花りり」や「にのあい」のアイデアを見つけましょう | 花、アイドル、心花りり など ... 心花りり · にのあい · かわいい · 心花りり - iLiFE! | Jpop.",
+          "age": null,
+          "score": 0.39796236,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "targeted",
+      "query_group": "mc_comedy",
+      "covers": [
+        "mc_comedy"
+      ],
+      "query": "\"心花りり\" \"iLiFE!\" MC トーク 面白い バラエティ ムードメーカー",
+      "error": null,
+      "results": [
+        {
+          "title": "プロフィール/メンバー｜iLiFE!【あいらいふ】 OFFICIAL SITE",
+          "url": "https://ilife-heroines.com/profile/member/index/464",
+          "description": "... iLiFE!【あいらいふ】のメンバープロフィール. ... MEMBER. 心花りり. Konoka Riri. ○担当カラー 赤○キャッチコピー 「3度の飯より",
+          "age": null,
+          "score": 0.49436116,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "【自己紹介曲】会いにKiTE! / iLiFE!【コール動画】 - YouTube",
+          "url": "https://www.youtube.com/watch?v=-oYvgtgFz94",
+          "description": "//instagram.com/ilife.idol Tiktok：https://www.tiktok.com/@ilife_official ＜MEMBER＞ あいすX（Twitter）：https://x.com/ice_icol ❤️心花りり",
+          "age": null,
+          "score": 0.43727133,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "心花りり【iLiFE! / ギルギル】 (@iLiFE_riri) / X",
+          "url": "https://x.com/iLiFE_riri",
+          "description": "Log inSign up\n\n心花りり【iLiFE! / ギルギル】\n\niLiFE!【あいらいふ】\n\n心花りり【iLiFE! / ギルギル】 profile banner\n\n@iLiFE_riri\n\n# 心花りり【iLiFE! / ギルギル】\n\niLiFE!【あいらいふ】\n\n@iLiFE\\_official @GILTYxGILTY このかりり🍚 チェキツイと撮可動画専用 𐩢𐩺 #りりたんもぐもぐ/ブログ専用 𐩢𐩺 #りりたんブログ/YouTube 𐩢𐩺 #りりたんちゃんねる/その他は #心花りり/4月6日GMOさいたまスーパーアリーナ❣️🎀\n\nらぶりー属性♡：りりたん\n\ninstagram.com/riri\\_ilife\n\nBorn May 19\n\nJoined March 2019\n\n62\n\nFollowing202.3K\n\nFollowers\n\nRepliesRepliesRepostsRepostsMediaMedia\n\n Pinned\n\n  @iLiFE_riri\n\n  心花りり【iLiFE! / ギルギル】\n\n  iLiFE!【あいらいふ】\n\n  @iLiFE\\_riri [...] @iLiFE\\_riri\n\n  May 19\n\n  《 ❤️🎀重大なお知らせ🎀❤️ 》 なんとなんとなんと…！ YouTubeで心花りりの個人チャンネル【りりたんちゃんねる】を開設することになりました❣️ 🔗youtube.com/channel/UCXt8Z… 5月19日（火）今夜公開⟡.· チャンネル登録して待っててね🫶🏻 #りりたんちゃんねる\n\n  これはトプ画だよ〜デコった⊂( ᴖ ̫ᴖ)⊃\n\n  448\n @iLiFE_riri\n\n  心花りり【iLiFE! / ギルギル】\n\n  iLiFE!【あいらいふ】\n\n  @iLiFE\\_riri\n\n  1h\n\n  会いたい🥺9月会える日少ないもん🥺\n\n  @iLiFE_official\n\n  iLiFE!【あいらいふ】\n\n  @iLiFE\\_official\n\n  Sep 2 [...] Sep 2\n\n  9月9日は！iLiFE! FC限定公演 「緊急開催！MEGALiFE! アフターライブ！」を開催します❤︎ MEGALiFE!の余韻が冷めない為緊急開催❗️ 一緒にKアリの思い出語ろう🗣️♡ 🎫 ただいまよりFC限定抽選受付開始！ (〜9月3日23時59分) t-dv.com/260909-MEGALiF… #iLiFE\n\n  \n\n  107\n @iLiFE_riri\n\n  心花りり【iLiFE! / ギルギル】\n\n  iLiFE!【あいらいふ】\n\n  @iLiFE\\_riri\n\n  11h\n\n  おはよう₍ · ̫·₎\n\n  221\n @iLiFE_riri\n\n  心花りり【iLiFE! / ギルギル】\n\n  iLiFE!【あいらいふ】\n\n  @iLiFE\\_riri\n\n  Sep 1\n\n  フォロワー様20万人突破！！！ ありがとうございます❤️\n\n  \n\n  \n @iLiFE_riri\n\n  心花りり【iLiFE! / ギルギル】\n\n  iLiFE!【あいらいふ】\n\n  @iLiFE\\_riri\n\n  Sep 1",
+          "age": null,
+          "score": 0.4081122,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "3度の飯より りりが好き❤️ 天性のアイドル! ムードメーカー   ʚ ...",
+          "url": "https://www.instagram.com/reel/DNMySboTuI7",
+          "description": "ムードメーカー ʚ Marika まりか ɞ ʚ 心花りり担当 - 紅色 ɞ #mylife❣️ #舞團 #踊 #踊ってみた #翻跳 #擴散希望 #ilife #心花りり #ilifer",
+          "age": null,
+          "score": 0.5674818,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "大移動りりちゃんの楽しいトークセッション - TikTok",
+          "url": "https://www.tiktok.com/@kome_0519/video/7535085042381393159",
+          "description": "... トークをお楽しみください。#iLiFE #心花りり ... #iLiFE #心花りり. これはAIによって生成されたコンテンツ要約であり",
+          "age": null,
+          "score": 0.54855317,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "りりたんちゃんねる - YouTube",
+          "url": "https://www.youtube.com/channel/UCXt8ZQPTMNHhDg8hGu9J-lA",
+          "description": "りりたんちゃんねる. @りりたんちゃんねる. 90.1K subscribers•10 videos. 3度の飯 ... 【初投稿】iLiFE!心花りり、YouTube始めることになりました！♡. 157K views. 3",
+          "age": null,
+          "score": 0.432807,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "心花りり (@riri_ilife) • Instagram photos and videos",
+          "url": "https://www.instagram.com/riri_ilife?hl=ja",
+          "description": "245K followers · 44 following · 476 posts · @riri_ilife: “YouTube始めました♡‎『りりたんちゃんねる‎』 iLiFE!の赤色担当 2026.08.26 Kアリーナ”",
+          "age": null,
+          "score": 0.4295017,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "心花りり (@kome_0519) - TikTok",
+          "url": "https://www.tiktok.com/@kome_0519",
+          "description": "フォロワー460.5K人。iLiFE!の赤色担当 8月26日 Kアリーナ横浜にてワンマンライブ.心花りりの人気動画、「2人で踊れたよ ♩#iLiFE @虹羽...」、「りりパートのダンス",
+          "age": null,
+          "score": 0.41463867,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!・心花りりのメンバーカラーの決め方に若槻が驚愕!? 「赤」が ...",
+          "url": "https://www.youtube.com/watch?v=qF8q5E6N0-E",
+          "description": "【若槻千夏のうるさい心理テスト】無料で続きをチェック！ ▷ https://tver.jp/series/srkln8d61d 最新話を無料配信中！上記リンクから⤴︎ #若槻千夏",
+          "age": null,
+          "score": 0.33541664,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "[Self-introduction] Once again, I'm Kokohana Riri - YouTube",
+          "url": "https://www.youtube.com/watch?v=cJBKnjG4RaE",
+          "description": "流行りのMBTIだったり、加入するきっかけの秘話だったり… 詳しく自分のこと紹介できたきがします♩ 1つずつりりたんのこと知ってくれたら嬉しいです♡",
+          "age": null,
+          "score": 0.18207656,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

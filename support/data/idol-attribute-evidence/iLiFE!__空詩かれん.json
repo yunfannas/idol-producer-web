@@ -1,0 +1,362 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:32.199Z",
+  "member": {
+    "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
+    "name": "空詩かれん",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 24,
+    "height_cm": 155,
+    "career_months": 5,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 10,
+      "dance_performance": 10,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 13,
+      "mental_professional": 13,
+      "traits": 13
+    },
+    "final_coverage": {
+      "vocal": 10,
+      "dance_performance": 10,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 13,
+      "mental_professional": 13,
+      "traits": 13
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"空詩かれん\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2000年7月10日 |\n| 年齢 | 25歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 155cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 青色 |\n\n空詩かれん（そなたかれん）さんは、2025年1月に加入したiLiFE!のメンバーです。加入以前はアイドルグループ「monogatari」でリーダーを務めており、2025年10月にはiLiFE!のリーダーにも就任しています（2026年3月時点）。monogatariでは「福本カレン」として約4年間活動し、歌唱力の高さを武器に多くのステージ経験を積んできた人物です。\n\n2019年にはソロ楽曲「I LOVE YOU」を発表するなど、個人としての実績も持っています。可愛らしい雰囲気と迫力あるパフォーマンスの両面を併せ持ち、ライブで大きなインパクトを残すメンバーとして注目されています。\n\n### 2-6. 虹羽みに [...] |  |  |\n --- |\n| 生年月日 | 2008年7月7日 |\n| 年齢 | 17歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 164cm |\n| 出身地 | 岐阜県 |\n| メンバーカラー | 緑色 |\n\n若葉のあさんは、2023年9月に加入が発表されたiLiFE!のメンバーです。加入以前は一般の学生として生活しており、アイドル活動の経験はありませんでした。SNSで偶然オーディションの告知を見つけたことをきっかけに応募し、グループの一員として活動をスタートさせています。\n\nキュートなルックスと透明感のある雰囲気に加え、安定した歌唱力や表現力も魅力の1つです。初々しさを感じさせる存在感で、ライブでは着実に経験を重ねながら成長を見せています。今後の活躍にも期待が寄せられるメンバーです。\n\n### 2-5. 空詩かれん\n\n> 一生雇って♡#アイライフバレンタイン2026pic.twitter.com/uuCC30ofMB\n>\n> — 空詩かれん【iLiFE!】 (@iLiFE\\_karen) February 13, 2026 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。",
+          "age": null,
+          "score": 0.818055,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌唱力",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 16
+        },
+        {
+          "title": "【iLiFE!】空詩 かれん｜完全網羅プロフィール＆経歴・最新情報まとめ｜アイドル紹介センター",
+          "url": "https://note.com/idol_information/n/n240edf393512",
+          "description": "April 20, 2026 - 【2025年10月〜現在：4代...革命を歌ったロックテイストの激しいサウンドに、力強いボーカルが完璧にマッチし大反響を呼んでいます。2026年現在もその快進撃は続いており、空詩かれんの物語はまさに今、最高潮を迎えています。 · 空詩かれんは、iLiFE!の楽曲においてその圧倒的な歌唱力を買わ",
+          "age": null,
+          "score": 0.72814995,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌唱力",
+            "ボーカル"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "空詩かれんの前世はアイドル＆ソロの経歴も？年齢などプロフィール！ | わくわくタイム",
+          "url": "https://waku-time.net/sonata-karen-zense",
+          "description": "February 28, 2026 - 歌もダンスも高水準で、見るたびに「この人、ただのアイドルじゃないな」と感じる存在感があります。 · 実は空詩かれんさんには、iLiFE!加入以前の長い活動歴があることをご存知でしょうか？",
+          "age": null,
+          "score": 0.57723385,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "ダンス"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "空詩かれん【iLiFE!】 (@iLiFE_karen) on X",
+          "url": "https://x.com/iLiFE_karen",
+          "description": "【@iLiFE_official】 そなたかれん あおいろ 歌が好き チェキツイ→ #かれんに奏でて/ なんでも→ #そなた便り / ブログ感想 → #そなたブログ 2026年8月26日Kアリーナ横浜ワンマンライブ ... 【#空詩かれん生誕祭2025 】 Buono!さんの「初恋サイダー」を、生誕祭でカバーさせていただきました！🪄 またいつか歌えますように💘",
+          "age": null,
+          "score": 0.43367022,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFEメンバーの本名や年齢順＆身長順！歌ダンスの上手い順は？ | 図解でわかる人気順！",
+          "url": "https://ninki-jyun.com/ilifeメンバーの本名や年齢順＆身長順！歌ダンスの",
+          "description": "June 9, 2026 - 歌唱力で見るなら、空詩かれんさんはかなり強い存在ですね！ · 空詩かれんさんは、元monogatariとしての活動やソロ経験もあり、歌唱面での評価がかなり高いです。",
+          "age": null,
+          "score": 0.70847535,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力",
+            "ダンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "空詩かれんは前世もアイドル！グループ解散後にソロ活動＆アイライフへ！",
+          "url": "https://korea-room39.net/sonata-karen-previous-life",
+          "description": "August 26, 2025 - iLiFE!（アイライフ）メンバーとして活動している空詩かれんさんは、中学3年生でアイドルデビューを果たした前世があるとか。 · 歌・ダンスともに実力がある空詩かれんさんの前世や経歴が気になりますよね。",
+          "age": null,
+          "score": 0.63098115,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "空詩かれんの前世は?中学生からリーダーで4年活動!路上ライブの過去も! | ぬゃんブログ",
+          "url": "https://nuxyanblog.com/sonatakaren",
+          "description": "December 19, 2025 - 当時の歌唱力を見た「iLiFE!」のファンからは、 · 歌がうますぎる · という声も聞かれています。 · 努力してた子なんだな こういうのは素直に推せる https://t.co/roXAVL4xwA— こうた🖤🐰 (@UkoutaTa75129) January 20, 2025 · 2025年1月、「空詩かれん」としてアイドルグループ「iLiFE!」に加入しました。 ·",
+          "age": null,
+          "score": 0.6219319,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌唱力"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "Ilife 歌上手いランキング | TikTok",
+          "url": "https://www.tiktok.com/discover/ilife-歌上手いランキング",
+          "description": "2 weeks ago - I love her TT #iLiFE #空詩かれん 空詩かれんの魅力：J-Popアイドルの歌声.",
+          "age": null,
+          "score": 0.5550741,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "歌声"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "空 - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/空",
+          "description": "空 （そら、 英: sky）とは、 地上 から見上げたときに頭上に広がる 空間 のこと。 天空（てんくう）とも [1]。 漢字一文字で書く場合は 空 が一般的であるが、他にも漢字一文字で表記... 空 は、そら / むなしい / むなしくする / 広い / から / 無駄になどの意味を持つ漢字です。 部首は穴部（あなかんむり）に属し、画数は8画です。 小学校1年生で習い、漢字検定10級に... 空 （拼音：kōng，kòng，kǒng）是汉语通用规范一级汉字（常用字）。 此字始见于战国文字，也见于《诗经》《管子》等战国以前的著作。 空 的本义是孔穴，这种意义今音读kǒng。 引申指没... 大徳よ、どのような点から「世間は 空 である」と仰られるのでしょうか。 アーナンダ よ、我（attena）、あるいは我所（attaniyena）が 空 なるものであることから、「世間は 空 である」と... 「そらからくる（ 空 絡繰）」「そらうそぶく（ 空 嘯）」「そらっぷく（ 空 吹）」など。 ② 形容詞の上に付いて、はっきりした結果、または事情は不明であるが、その気持のはなはだしいこ... Jul 6, 2025 · Provided to YouTube by B- ME空 · BE: FIRST空℗ AVEX MUSIC CREATIVE INC.Released on: 2025-07-07Composer: UTA/LOAR/SKY-HILyricist: SKY-HIArranger: SKY-HI/UTA (TinyVo... May 3, 2026 · 空 とはどんな漢字か 空 の基本的な意味 空 は、 天空・大気の広がり・中身がない状態・から・うつろ・むなしい・無駄・穴・空洞・航空に関すること という複数の意味の系統を持つ、非常... （そら） 場所。 旅の 空 （そら） 気持ち。 うわの空 （から）何もないこと。 箱 の 中 は空っぽ （そら）何も見たり教えてもらったりせず、当人の記憶だけに頼る状態。 それぐらいは... Aug 25, 2026 · 孔 (OC *kʰloːŋʔ, “hole”) is probably the endoactive derivation of 空 (OC *kʰoːŋ, “hollow; empty”) (Schuessler, 2007). Cognate with Tibetan ཁུང (khung, “hole”), Jingpho la... Oct 12, 2025 · ----- ‘ 空 ’ Streaming & Download https://BEFIRST.lnk.to/Sora 8th Single ‘ 空 ’ Release https://befirst.lnk.to/sora_PKG ’ 空 ’ 特設サイト https://befirst-sp.com/Sora/ Lyrics :",
+          "age": null,
+          "score": 0.2337505,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "空 (仏教) - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/空_(仏教)",
+          "description": "大徳よ、どのような点から「世間は 空 である」と仰られるのでしょうか。 アーナンダ よ、我（attena）、あるいは我所（attaniyena）が 空 なるものであることから、「世間は 空 である」と... 「そらからくる（ 空 絡繰）」「そらうそぶく（ 空 嘯）」「そらっぷく（ 空 吹）」など。 ② 形容詞の上に付いて、はっきりした結果、または事情は不明であるが、その気持のはなはだしいこ... Jul 6, 2025 · Provided to YouTube by B- ME空 · BE: FIRST空℗ AVEX MUSIC CREATIVE INC.Released on: 2025-07-07Composer: UTA/LOAR/SKY-HILyricist: SKY-HIArranger: SKY-HI/UTA (TinyVo... May 3, 2026 · 空 とはどんな漢字か 空 の基本的な意味 空 は、 天空・大気の広がり・中身がない状態・から・うつろ・むなしい・無駄・穴・空洞・航空に関すること という複数の意味の系統を持つ、非常... （そら） 場所。 旅の 空 （そら） 気持ち。 うわの空 （から）何もないこと。 箱 の 中 は空っぽ （そら）何も見たり教えてもらったりせず、当人の記憶だけに頼る状態。 それぐらいは... Aug 25, 2026 · 孔 (OC *kʰloːŋʔ, “hole”) is probably the endoactive derivation of 空 (OC *kʰoːŋ, “hollow; empty”) (Schuessler, 2007). Cognate with Tibetan ཁུང (khung, “hole”), Jingpho la... Oct 12, 2025 · ----- ‘ 空 ’ Streaming & Download https://BEFIRST.lnk.to/Sora 8th Single ‘ 空 ’ Release https://befirst.lnk.to/sora_PKG ’ 空 ’ 特設サイト https://befirst-sp.com/Sora/ Lyrics :",
+          "age": null,
+          "score": 0.09715906,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"空詩かれん\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE! 空詩かれんちゃんの私服まとめ🌌💙 # ...",
+          "url": "https://www.instagram.com/p/DYtIORAibWc?hl=ja",
+          "description": "空詩かれんちゃんの私服まとめ #ilife #空詩かれん #アイドル #私服 #ファッション ... 可愛いし面白い笑笑みきちゃん のでやっと気づく笑・",
+          "age": null,
+          "score": 0.6847074,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "可愛い",
+            "ファッション",
+            "面白い"
+          ],
+          "relevance_score": 9
+        },
+        {
+          "title": "空詩かれん【iLiFE!】 on X: \"チャイナの衣装ほんとうにかわいい( ...",
+          "url": "https://x.com/iLiFE_karen/status/1884241914066788863",
+          "description": "チャイナの衣装ほんとうにかわいい( ᵕ~ᵕ̩̩ )♡ 衣装に負けないくらいかわいくなるぞ、、毎日いっぱいがんばるからね(ദ്ദി⩌𖥦⩌) ‼️",
+          "age": null,
+          "score": 0.5663309,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "かわいい"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "空詩かれん「アイドルに興味ない人も、自分の歌でiLiFE!の渦に ...",
+          "url": "https://scawaiiweb.com/ilife250712",
+          "description": "空詩かれん「アイドルに興味ない人も、自分の歌でiLiFE!の渦に巻き込みたい」【iLiFE!×S Cawaii!WEBスペシャルリレーインタビュー vol.9】. S Cawaii!",
+          "age": null,
+          "score": 0.38574538,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「空詩かれん」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?rkf=1&p=%E7%A9%BA%E8%A9%A9%E3%81%8B%E3%82%8C%E3%82%93&btid=MTk1OTkwNzQ3MzA2Mzg3OTEzMQ%3D%3D&ifr=tp_bz",
+          "description": "「空詩かれん」に関するYahoo!リアルタイム検索結果です。X（旧Twitter）上で今発信された情報をリアルタイムに検索できます。",
+          "age": null,
+          "score": 0.22129218,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"空詩かれん\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!",
+          "url": "https://ja.wikipedia.org/wiki/ILiFE!",
+          "description": "| 空詩 かれん そなた かれん | (2000-07-10) 2000年7月10日（26歳） | A | 155cm | 東京都 | 青色 |  キャッチフレーズは「かれんに奏でる君とソナタ♩」  4代目リーダー  2025年1月20日加入発表  元monogatari（リーダー、福本カレン）（2016年3月3日～2020年2月16日） |\n| 虹羽 みに こはね みに | (2010-03-02) 2010年3月2日（16歳） | O | 152cm | 水色 |  キャッチフレーズは「みにの成長見にきてよ！」  2025年5月9日加入発表  グループ最年少 |\n| 純嶺 みき すみれ みき | (2003-04-12) 2003年4月12日（23歳） | B | 164cm | 神奈川県 | 紫色 |  キャッチフレーズは「隅からすみれまで全部好き！」  2025年5月10日加入発表  女子高生ミスコン2019・神奈川県代表（ミセイ） | [...] 1. ↑ ソニー・ミュージック・レーベルへ移籍\n2. ↑ “［インタビュー］LADYBABY×HEROINES 新プロジェクト始動！「批判もあると思うけど、それでもやる価値がある」プロデューサー・SMDが語るLADYBABYのすべて【Uyaコメントあり】”. Pop'n'Roll (2023年2月3日). 2025年12月15日閲覧。\n3. ↑ “artist”. 株式会社imaginate. 2025年2月5日閲覧。\n4. ↑ 2月11日よりメジャーデビューしていた『日本コロムビア』から移籍\n5. 1 2 “iLiFE!のプロフィール”. 音楽ナタリー.  ナターシャ. 2024年6月4日閲覧。\n6. 1 2 3 “iLiFE!に空詩かれん加入、2020年解散monogatariのメンバー”. 音楽ナタリー (2025年1月21日). 2025年2月5日閲覧。\n7. 1 2 3 “DECO\\27「モニタリング」に隠された真実とは？ / 観れば誰でも沸けるiLiFE!の曲、シリーズ第3弾登場”. 音楽ナタリー (2024年12月6日). 2025年2月6日閲覧。 [...] |  |\n| 基本情報 |\n| 出身地 | 日本の旗 日本 東京都 |\n| ジャンル | J-POP |\n| 活動期間 | 2020年 - |\n| レーベル |  CROSS SIDE MUSIC（2023年 - ) 日本コロムビア（2026年）  Sony Music Labels（2026年 - ） |\n| 事務所 | imaginate |\n| 共同作業者 | Uya（渡辺裕也、HEROINES総合プロデューサー） |\n| 公式サイト | iLiFE! - official web site |\n| メンバー |  心花りり  あいす  福丸うさ  若葉のあ  空詩かれん  虹羽みに  純嶺みき  小熊まむ  真守みゅう |\n| 旧メンバー |  桜餅ふゆ  心咲めい  双葉りつ  琥珀しえる  甘音ゆあ  天羽しおり  深月らむ  向日えな  涼芽なの  華瀬まい  日日にこり  響羽リズ（サポートメンバー）  有栖るな  こるね（サポートメンバー）  那蘭のどか  恋春ねね（サブサポートメンバー）  恋星はるか（サポートメンバー） |\n| YouTube |",
+          "age": null,
+          "score": 0.7125728,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "インタビュー",
+            "プロフィール",
+            "リーダー"
+          ],
+          "relevance_score": 16
+        },
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "|  |  |\n --- |\n| 生年月日 | 2000年7月10日 |\n| 年齢 | 25歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 155cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 青色 |\n\n空詩かれん（そなたかれん）さんは、2025年1月に加入したiLiFE!のメンバーです。加入以前はアイドルグループ「monogatari」でリーダーを務めており、2025年10月にはiLiFE!のリーダーにも就任しています（2026年3月時点）。monogatariでは「福本カレン」として約4年間活動し、歌唱力の高さを武器に多くのステージ経験を積んできた人物です。\n\n2019年にはソロ楽曲「I LOVE YOU」を発表するなど、個人としての実績も持っています。可愛らしい雰囲気と迫力あるパフォーマンスの両面を併せ持ち、ライブで大きなインパクトを残すメンバーとして注目されています。\n\n### 2-6. 虹羽みに [...] |  |  |\n --- |\n| 生年月日 | 2008年7月7日 |\n| 年齢 | 17歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 164cm |\n| 出身地 | 岐阜県 |\n| メンバーカラー | 緑色 |\n\n若葉のあさんは、2023年9月に加入が発表されたiLiFE!のメンバーです。加入以前は一般の学生として生活しており、アイドル活動の経験はありませんでした。SNSで偶然オーディションの告知を見つけたことをきっかけに応募し、グループの一員として活動をスタートさせています。\n\nキュートなルックスと透明感のある雰囲気に加え、安定した歌唱力や表現力も魅力の1つです。初々しさを感じさせる存在感で、ライブでは着実に経験を重ねながら成長を見せています。今後の活躍にも期待が寄せられるメンバーです。\n\n### 2-5. 空詩かれん\n\n> 一生雇って♡#アイライフバレンタイン2026pic.twitter.com/uuCC30ofMB\n>\n> — 空詩かれん【iLiFE!】 (@iLiFE\\_karen) February 13, 2026 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。",
+          "age": null,
+          "score": 0.8201387,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール",
+            "リーダー"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "【iLiFE!】空詩 かれん｜完全網羅プロフィール＆経歴・最新情報まとめ｜アイドル紹介センター",
+          "url": "https://note.com/idol_information/n/n240edf393512",
+          "description": "April 20, 2026 - 大ブレイク中のアイドルグループ「iLiFE!（アイライフ）」の青色担当であり、第4代目リーダーとしてグループを力強く牽引する空詩かれん（そなた かれん）。 中学生時代からのアイドル経験と、不遇の時代を路上ライブで乗り越えた圧倒的な歌唱力で、Z世代を中心に多くのファンを魅了し続けています。 1. 【2026最新版】空詩かれんの完全プロフィールまとめ 基本データ一覧 iLiFE!（アイライフ）の青色担当であり、グループの精神的支柱でもある空詩（そなた）かれんの基本プロフィールは以下の通りです。 本名 非公表（前世活動名：福本カレン） イベント名 空詩かれん（そなた か",
+          "age": null,
+          "score": 0.77364457,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール",
+            "リーダー"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "空詩かれんの前世はアイドル＆ソロの経歴も？年齢などプロフィール！ | わくわくタイム",
+          "url": "https://waku-time.net/sonata-karen-zense",
+          "description": "February 28, 2026 - 表舞台に出ていなくても、ずっと努力を積み上げていたんだということが伝わってきますよね。 · 私も動画を見て、その歌声の安定感に思わず聴き入ってしまいました。 · そして2025年1月20日、「空詩かれん」としてiLiFE!への加入が発表されました！",
+          "age": null,
+          "score": 0.5835125,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "空詩かれん(そなた かれん)【あおいろ】プロフィール｜iLiFE!【あいらいふ】 – iLiFE!【アイライフ】まとめサイト",
+          "url": "https://ilife.hatoyuzuan.com/ilife-profile-sonata-karen",
+          "description": "February 3, 2026 - 空詩かれん(そなた かれん)【あおいろ】プロフィール｜iLiFE!【あいらいふ】",
+          "age": null,
+          "score": 0.5694942,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "空詩かれんのプロフィール",
+          "url": "https://www.oricon.co.jp/prof/951156",
+          "description": "空詩かれんのプロフィール・画像・動画・ニュース・特集・ランキング・TV出演情報・ドラマ出演情報・CM出演情報・歌詞情報をまとめてチェックできます。空詩かれん（ソナタ カレン） アイドルグループ・iLiFE!のメンバー。",
+          "age": null,
+          "score": 0.67063034,
+          "source_class": "professional_media",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 7
+        },
+        {
+          "title": "空詩かれん【iLiFE!】 (@iLiFE_karen) on X",
+          "url": "https://x.com/iLiFE_karen",
+          "description": "【@iLiFE_official】 そなたかれん あおいろ 歌が好き チェキツイ→ #かれんに奏でて/ なんでも→ #そなた便り / ブログ感想 → #そなたブログ 2026年8月26日Kアリーナ横浜ワンマンライブ",
+          "age": null,
+          "score": 0.38276476,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "空詩かれんの前世は?中学生からリーダーで4年活動!路上ライブの過去も! | ぬゃんブログ",
+          "url": "https://nuxyanblog.com/sonatakaren",
+          "description": "December 19, 2025 - アイドルグループ「iLiFE!」の新メンバーとして活躍する空詩かれん（そなた かれん）さん。 · 前世グループの活動や、ソロ活動時代の努力家な一面も垣間見れました。",
+          "age": null,
+          "score": 0.68874115,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "努力家",
+            "リーダー"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "空詩かれん【iLiFE!】 on X: \"この度、iLiFE!のリーダーを務め ...",
+          "url": "https://x.com/iLiFE_karen/status/1974444594655076467",
+          "description": "October 4, 2025 - この度、iLiFE!のリーダーを務めさせていただくことになりました！ 色々な意見があることも承知しています。ですが任せていただいた以上、全力でこの役割を果たす覚悟です。 日頃関わってくださる全ての方々に「素敵なグループ」だと思っていただけるように",
+          "age": null,
+          "score": 0.62523276,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "リーダー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "idolandread：IDOL AND READ 042取材レポートその10（空詩かれん／iLiFE!）",
+          "url": "https://ameblo.jp/idolandread/entry-12891917088.html",
+          "description": "March 31, 2025 - そして、どんな経緯でiLiFE!に加入し、どんなモチベーションでアイドル活動を再開させたのでしょうか。 · 8月の日本武道館のことを含め、空詩かれんさんの「覚悟」を聞きました。",
+          "age": null,
+          "score": 0.5366292,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

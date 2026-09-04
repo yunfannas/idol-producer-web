@@ -1,0 +1,334 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:41.241Z",
+  "member": {
+    "uid": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
+    "name": "葉月紗蘭",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 18,
+    "height_cm": 158,
+    "career_months": 36,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 6,
+      "dance_performance": 6,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 4,
+      "mental_professional": 4,
+      "traits": 4
+    },
+    "final_coverage": {
+      "vocal": 6,
+      "dance_performance": 6,
+      "appearance_model": 2,
+      "mc_comedy": 2,
+      "physical_stamina": 4,
+      "mental_professional": 4,
+      "traits": 4
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"葉月紗蘭\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "高嶺のなでしこ - Wikipedia",
+          "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B6%BA%E3%81%AE%E3%81%AA%E3%81%A7%E3%81%97%E3%81%93",
+          "description": "### 葉月紗蘭\n\n[編集]\n\n2020年にNizi Projectを見たのをきっかけにアイドルを目指す。目標はNiziUのミイヒ。2022年夏（当時高校1年生）、JDOLオーディションに合格し高嶺のなでしこの結成メンバーとしてお披露目された。2026年6月、ITTY-WINTITの公式アンバサダーに就任した。\n\n愛称は、さぁさん、さあちゃん。チャームポイントは、まるみのあるおでこ。透明感のあるビジュアルとナチュラルな存在感、サラサラのストレートヘアが特徴。身長160cm。趣味は映画を観ること。特技は絵を描くこと。ファンネームは、は組。ハッシュタグは #さあらいふ。\n\n特徴的な歌声を持つ。JDOLオーディションの前に受けた別のオーディションは不合格となったものの、面接官から「歌声がいいからそれを伸ばしたらいいと思う」と褒められ、高嶺のなでしこのオーディションにつながった。歌声は透明感や儚さの中に芯のある強さがあり表現力豊かで、グループで落ちサビを多く任されている。2026年1月26日公開のショートムービー『ジブリをうたう その２ ーふうとなぎの物語ー』に なぎ 役として出演した。 [...] 78. 1 2 “強みを磨いてグループ史上最大の挑戦へ、この夏を駆ける高嶺のなでしこの全力宣言”. Bezzy. 2025年7月31日. 2026年1月31日閲覧.\n79. ↑ “葉月紗蘭（高嶺のなでしこ）＆厚味りりか、トリビュートAL『ジブリをうたう その２』ショートムービーに出演”. Billboard JAPAN. 株式会社阪神コンテンツリンク. 2026年1月26日. 2026年1月31日閲覧.\n80. ↑ “高嶺のなでしこ・東山恵里沙「憧れていたステージから皆さんの姿を見て実感…もっと成長したい」　グループが初お披露目”. サンケイスポーツ. 2024年9月5日. 2026年1月31日閲覧.\n81. ↑ “「高嶺のなでしこ」岐阜出身・東山恵里沙　巨人ーヤクルト戦試合前にパフォ「熱量が全身に…」”. スポーツニッポン. 2024年9月5日. 2026年1月31日閲覧.\n82. ↑ “【巨人】「高嶺のなでしこ」がパフォーマンス「楽しい 時間 」地元岐阜出身Ｇ党東山恵里沙”. 日刊スポーツ. 2024年9月5日. 2026年1月31日閲覧. [...] | 名前 | 生年月日 | 出身地 | 血液型 | メンバーカラー | 備考 |\n ---  ---  --- |\n| 城月菜央 （きづき なお） | (2003-12-25) 2003年12月25日（22歳） | 埼玉県 | B型 | 黄 | 元ヒロインとロマンスのまにまに、元#PEXACOA |\n| 涼海すう （すずみ すう） | (2007-08-22) 2007年8月22日（19歳） | 大阪府 | AB型 | 水色 |\n| 橋本桃呼 （はしもと ももこ） | (2003-06-28) 2003年6月28日（23歳） | 山口県 | AB型 | 濃いピンク | 元ハロプロ研修生、元ラストアイドル2期生 |\n| 葉月紗蘭 （はづき さあら） | (2007-03-03) 2007年3月3日（19歳） | 三重県 | 不明 | 白 |\n| 東山恵里沙 （ひがしやま えりさ） | (2006-05-28) 2006年5月28日（20歳） | 岐阜県 | AB型 | オレンジ | 元ZEST MUSIC SCHOOLスクール生 |",
+          "age": null,
+          "score": 0.82186085,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌声",
+            "落ちサビ",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 19
+        },
+        {
+          "title": "9_葉月紗蘭 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/saara_hazuki",
+          "description": "まだまだ未熟ですが、これから沢山歌もダンスも頑張って練習して皆さんに楽しんでいただけるようなパフォーマンスを披露できるように頑張ります！これからよろしく",
+          "age": null,
+          "score": 0.65252984,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "葉月紗蘭(はづきさあら) (@saara_hazuki) / X",
+          "url": "https://x.com/saara_hazuki",
+          "description": "HoneyWorksサウンドプロデュースアイドル「高嶺のなでしこ(@takanenofficial)」の葉月紗蘭です！showroomはこちら→https://t.co/BBuJ1AxJrK.",
+          "age": null,
+          "score": 0.575517,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "高嶺のなでしこライブに行ったことある人に質問ですが、実際生歌...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10288219570",
+          "description": "ただ、生パフォーマンスの歌唱は一定の歌い方になってしまいがちで、音を外すこともあるので、これから上達していったら凄くなるなぁと思います。 葉月紗",
+          "age": null,
+          "score": 0.67758125,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "生歌",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "【インタビュー】かわいさもエモさも表現する10人組アイドル ...",
+          "url": "https://rockinon.com/interview/detail/212621",
+          "description": "葉月紗蘭 個性はバラバラなんですけど、ライブではフォーメーションダンスがすごくきれいだったり、10人の声が重なったときの歌にすごくまとまりが",
+          "age": null,
+          "score": 0.47227025,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "葉月紗蘭 (@saara_hazuki) • Instagram photos and videos",
+          "url": "https://www.instagram.com/saara_hazuki",
+          "description": "HoneyWorksサウンドプロデュース「高嶺のなでしこ」の歌と映画大好きな白色担当です 11/18 高嶺のなでしこ アルバムリリース⟡.·*.",
+          "age": null,
+          "score": 0.52583206,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【葉月紗蘭 ver】乙女どもよ。 ／『高嶺のなでしこ 東名阪ツアー 2025",
+          "url": "https://www.youtube.com/watch?v=gqZcYKVXK1Q",
+          "description": "2025年5月14日に開催された『高嶺のなでしこ 東名阪ツアー 2025 - Spring Ride -』より『乙女どもよ。』葉月紗蘭Main Camera ライブ映像を公開！",
+          "age": null,
+          "score": 0.3480693,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ。 2nd Single「Iʼ M YOUR IDOL / アドレナリン ...",
+          "url": "https://outofmusic.net/archives/1286",
+          "description": "「恋を知った世界」のイメージに少し重なるかなとも感じました。ドラマチックなコード展開で、世界が目まぐるしく動くようなスピード感、その中で歌われている感情が、高嶺",
+          "age": null,
+          "score": 0.3358086,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！葉月紗蘭編 - 運転免許トロッカ！",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa05.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！葉月紗蘭さんの回答はコチラ！",
+          "age": null,
+          "score": 0.3331999,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "17歳（cover）／葉月紗蘭×東山恵里沙 - YouTube",
+          "url": "https://www.youtube.com/watch?v=w4aDnfJ_tKU",
+          "description": "葉月紗蘭(はづきさあら)です！‎ monaさんの「17歳」をえりさと一緒にカバーさせて頂きました！ 同い年の今年17歳コンビで歌うことが出来てとても",
+          "age": null,
+          "score": 0.31583142,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"葉月紗蘭\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "葉月紗蘭(はづきさあら)",
+          "url": "https://x.com/saara_hazuki",
+          "description": "HoneyWorksサウンドプロデュースアイドル「高嶺のなでしこ(@takanenofficial)」の葉月紗蘭です！showroomはこちら→https://t.co/BBuJ1AxJrK.",
+          "age": null,
+          "score": 0.6058229,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "9_葉月紗蘭 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/saara_hazuki",
+          "description": "血液型: ー. 星座: うお座. 身長: 160cm. 生年月日: 2007年3月3日. 出身地: 三重県. 趣味: 映画を観ること. 特技: 絵を描くこと.",
+          "age": null,
+          "score": 0.42176673,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "葉月紗蘭（高嶺のなでしこ）",
+          "url": "https://www.showroom-live.com/saara_hazuki",
+          "description": "葉月紗蘭 生年月日..2007年3月3日 血液型..— 星座..うお座 身長..158cm 皆さんに素敵なパフォーマンスを届けられるように頑張ります 9人組のアイドル ... 葉月紗蘭(高",
+          "age": null,
+          "score": 0.48250288,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「#葉月紗蘭」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&rkf=1&ifr=tl_unit&p=%23%E8%91%89%E6%9C%88%E7%B4%97%E8%98%AD",
+          "description": "高嶺のなでしこの投稿動画を楽しみましょう！#TikTok #高嶺のなでしこ #たかねこ #美しく生きろ #籾山ひめり #日向端ひな #橋本桃呼 #葉月紗蘭 #城月菜央 #涼海すう",
+          "age": null,
+          "score": 0.451448,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！葉月紗蘭編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa05.html",
+          "description": "運転免許トロッカ!アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ!葉月紗蘭さんの回答はコチラ! ッカ!スタッフのココロの声 SNSでもたまに拝見するさあちゃん",
+          "age": null,
+          "score": 0.40839532,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "葉月紗蘭 (@saara_hazuki)",
+          "url": "https://www.instagram.com/saara_hazuki",
+          "description": "HoneyWorksサウンドプロデュース「高嶺のなでしこ」の歌と映画大好きな白色担当です 11/18 高嶺のなでしこ アルバムリリース⟡.·*.",
+          "age": null,
+          "score": 0.40028095,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Hazuki Saara (@takaneno.nadeshiko)",
+          "url": "https://www.facebook.com/takaneno.nadeshiko",
+          "description": "かけがえのない1年を過ごすことができ、感謝の気持 ちを心からお伝えしたいです 皆様良いお年をお迎えください໒꒱· ﾟ #高嶺のなでしこ #葉月紗蘭 より · No photo",
+          "age": null,
+          "score": 0.39550823,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"葉月紗蘭\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "葉月紗蘭(はづきさあら)",
+          "url": "https://x.com/saara_hazuki",
+          "description": "HoneyWorksサウンドプロデュースアイドル「高嶺のなでしこ(@takanenofficial)」の葉月紗蘭です! Joined May 2022 248 Following 19.2K Posts",
+          "age": null,
+          "score": 0.53050464,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "9_葉月紗蘭 – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/saara_hazuki",
+          "description": "血液型: ー. 星座: うお座. 身長: 160cm. 生年月日: 2007年3月3日. 出身地: 三重県. 趣味: 映画を観ること. 特技: 絵を描くこと.",
+          "age": null,
+          "score": 0.5012457,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "高嶺のなでしこ「生きてりゃいい」インタビュー――たかねこからの",
+          "url": "https://e.usen.com/interview/interview-original/takanenonadeshiko-ikiteryaii.html",
+          "description": "encoreオリジナル\n\nSHARE\n\n──2月からスタートした『高嶺のなでしこ Live Tour - Bouquet of 9 Flowers -』は、5月6日に東京国際フォーラム ホールAでツアーファイナルを迎えました。このライブツアーを終えた全体の感想から聞かせてください。  \n  \n橋本 桃呼「このツアーは“9”という数字にこだわったツアーでした。セットリストではメンバーそれぞれが主人公になるゾーンがあって。一人一人の個性と全員が合わさった時の魅力、どちらも出せたと思いますし、日本だけでなく、ソウルと台北にも行かせていただいたので、私たちにとって成長できたツアーでした！」  \n  \n葉月 紗蘭「今回のツアーも“長いようで早く終わってしまったな”という印象が強いです。その中で、それこそフォーカスゾーンを作ってもらったので、“私がこのライブで残せることって何だろう？”ということをすごく考えさせられたツアーでもありました。自分にできることを考えてステージで果たすことが自分自身の成長にもつながったと思います」\n\n \n\n橋本 桃呼\n\n   \n\n葉月 紗蘭 [...] 橋本 桃呼\n\n   \n\n葉月 紗蘭\n\n城月 菜央「少し似た感じになってしまうんですけど、わたしも自分自身が成長できたツアーでした。ステージを完成させる上で、“ステージの成功って何だろう？”とか、すごく深く考えたツアーでした。アイドルの大先輩に電話をかけて、“ステージの成功って何だと思いますか？”と相談したり、いろんなアイドルの友達に意見を求めたりして…ステージを成功させるために、どういう意識で、どう動くか？を考えて、ツアーが出来たと思います」  \n  \n涼海 すう「みんなが言っている通り、3年目にして“まだまだ学ぶことがたくさんあるな”というのを実感したツアーでした。そういうツアーをみんなと回れたことで、メンバー内の気持ちもより高まりましたし、この 3年間の想いをぶつけられたと思います」\n\n \n\n城月 菜央\n\n   \n\n涼海 すう [...] 葉月「私、“緊張する”というのがネックというか…とても足を引っ張っていた部分だったので、新しい感覚をつかめたという意味では、すごく印象に残っているライブでした」  \n  \n──そのトラブルはどうやって解決したんですか？  \n  \n葉月「5曲くらいは足の力で靴を脱げないように押さえながらやりました！ MC の時にスタッフさんが応急処置をしてくださって…耐え忍びました（笑）」  \n  \n──耐えながら踊っていたんですね（笑）。",
+          "age": null,
+          "score": 0.64719695,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【インタビュー】高嶺のなでしこが「この夏、好きになっちゃえば ...",
+          "url": "https://kelly-net.jp/life/entame/20250809070054142133.html",
+          "description": "今回は、高嶺のなでしこから岐阜県出身の東山恵里沙さん（@erisa_higashiyama）と三重県出身の葉月紗蘭さん（@saara_hazuki）に「この夏、好きになっちゃ",
+          "age": null,
+          "score": 0.6246834,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "葉月紗蘭（高嶺のなでしこ）",
+          "url": "https://www.showroom-live.com/saara_hazuki",
+          "description": "はづきさあら 葉月紗蘭 生年月日︰2007年3月3日 血液型︰— 星座︰うお座 身長︰158cm 皆さんに素敵なパフォーマンスを届けられるように頑張ります 9人組のアイドル",
+          "age": null,
+          "score": 0.61279696,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！葉月紗蘭編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko03_qa05.html",
+          "description": "運転免許トロッカ!アンバサダー「高嶺のなでしこ」のメンバーの日常をウォッチ!葉月紗蘭さんの回答はコチラ! 高嶺のなでしこに聞いてみた!",
+          "age": null,
+          "score": 0.5236402,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Saachan Positive 🤍 #葉月紗蘭 #さあらいふ #高嶺のなでしこ",
+          "url": "https://www.facebook.com/TakanekoFanpageLA/videos/saachan-positive-%E8%91%89%E6%9C%88%E7%B4%97%E8%98%AD-%E3%81%95%E3%81%82%E3%82%89%E3%81%84%E3%81%B5-%E9%AB%98%E5%B6%BA%E3%81%AE%E3%81%AA%E3%81%A7%E3%81%97%E3%81%93-mokoiro/906954601933382",
+          "description": "Saachan Positive #葉月紗蘭 #さあらいふ #高嶺のなでしこ-Mokoiro. Takaneko Fanpage -Takane no Nadeshiko Latinoamérica Log in Video",
+          "age": null,
+          "score": 0.39992937,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:49:45.838Z",
+  "member": {
+    "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
+    "name": "小熊まむ",
+    "group": "iLiFE!",
+    "tier": "B",
+    "age": 20,
+    "height_cm": 165.9,
+    "career_months": 2,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 2,
+    "total_queries": 5,
+    "initial_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 0,
+      "mc_comedy": 0,
+      "physical_stamina": 6,
+      "mental_professional": 6,
+      "traits": 6
+    },
+    "final_coverage": {
+      "vocal": 3,
+      "dance_performance": 3,
+      "appearance_model": 6,
+      "mc_comedy": 6,
+      "physical_stamina": 11,
+      "mental_professional": 11,
+      "traits": 11
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"小熊まむ\" \"iLiFE!\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "iLiFE!（アイライフ）とは？メインメンバー8人のプロフィールを解説",
+          "url": "https://www.ticket.co.jp/entx/music/ilife-members",
+          "description": "### 2-8. 小熊まむ\n\n> みんなのあいす屋さん🍨🤍 pic.twitter.com/ICGmJNPv7W\n>\n> — 小熊まむ【iLiFE!】 (@iLiFE\\_koguma) February 4, 2026\n\n|  |  |\n --- |\n| 生年月日 | 2004年12月23日 |\n| 年齢 | 21歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 165.9cm |\n| 出身地 | 長野県 |\n| メンバーカラー | オレンジ |\n\n小熊まむさんは2025年5月に加入したiLiFE!のメンバーで、元気で親しみやすいキャラクターが印象的なメンバーです。加入当初から前向きでポジティブな姿勢が注目され、周囲を気遣う優しい人柄も話題となりました。ライブでは笑顔を絶やさないパフォーマンスで観客を惹きつけ、会場を明るい雰囲気へと導く役割を担っています。\n\n人懐っこく温かい人柄も支持されており、ファンとの距離の近さも魅力の1つです。フレッシュな勢いとエネルギーで、グループに新しい活力をもたらす存在として期待されています。 [...] 目次\n\n 1. iLiFE!（アイライフ）とは？\n 2. iLiFE!の現在のメインメンバー8人のプロフィールを紹介！\n  + 2-1. 心花りり\n  + 2-2. あいす\n  + 2-3. 福丸うさ\n  + 2-4. 若葉のあ\n  + 2-5. 空詩かれん\n  + 2-6. 虹羽みに\n  + 2-7. 純嶺みき\n  + 2-8. 小熊まむ\n 3. iLiFE!の初期メンバー一覧｜歴代メンバーと脱退メンバーも\n まとめ\n\n## 1. iLiFE!（アイライフ）とは？\n\n引用：X「@iLiFE\\_official」\n\niLiFE!（アイライフ）は、2020年6月に結成された女性アイドルグループで、imaginateが手掛けるアイドルプロジェクト「HEROINES」に所属し活動を続けています。キャッチコピーは「私と貴方で作る、アイドルライフ！」で、ファンとともに歩みながら成長していくスタイルが大きな特徴です。\n\nライブパフォーマンスを中心に人気を高め、TikTokで話題となった楽曲「アイドルライフスターターパック」をきっかけに知名度を一気に拡大しました。 [...] |  |  |\n --- |\n| 生年月日 | 2000年7月10日 |\n| 年齢 | 25歳 ※2026年3月時点 |\n| 血液型 | A型 |\n| 身長 | 155cm |\n| 出身地 | 東京都 |\n| メンバーカラー | 青色 |\n\n空詩かれん（そなたかれん）さんは、2025年1月に加入したiLiFE!のメンバーです。加入以前はアイドルグループ「monogatari」でリーダーを務めており、2025年10月にはiLiFE!のリーダーにも就任しています（2026年3月時点）。monogatariでは「福本カレン」として約4年間活動し、歌唱力の高さを武器に多くのステージ経験を積んできた人物です。\n\n2019年にはソロ楽曲「I LOVE YOU」を発表するなど、個人としての実績も持っています。可愛らしい雰囲気と迫力あるパフォーマンスの両面を併せ持ち、ライブで大きなインパクトを残すメンバーとして注目されています。\n\n### 2-6. 虹羽みに",
+          "age": null,
+          "score": 0.62633044,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "歌唱力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 13
+        },
+        {
+          "title": "iLiFE!の小熊まむちゃんか空詩かれんちゃんどちらを推そうか ...",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14319770044",
+          "description": "小熊まむさんの魅力: ・愛らしいルックスと親しみやすい雰囲気が特徴・ダンスの表現力が高く、パフォーマンス中の笑顔が印象的・ファンとの交流を大切",
+          "age": null,
+          "score": 0.69820654,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス",
+            "表現力",
+            "パフォーマンス"
+          ],
+          "relevance_score": 9
+        },
+        {
+          "title": "小熊まむ (@ilife_koguma)",
+          "url": "https://www.tiktok.com/@ilife_koguma",
+          "description": "TikTok (ティックトック) の 小熊まむ (@ilife_koguma) フォロワー232.5K人。iLiFE!のオレンジ色担当 長野県出身 公式X. Olivia Rodrigo @livbe … iLiFE! 長野県出身🧸🍎",
+          "age": null,
+          "score": 0.42105237,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "小熊まむ「人一倍の覚悟を持ってオーディションを受けました」 ...",
+          "url": "https://scawaiiweb.com/ilife250711",
+          "description": "「iLiFE!のザ・王道アイドル感が大好きです。はしゃげるライブも大好き。iLiFE!の楽曲って、ファンの方と作り上げるものが多くて、そのアツさがいいなって",
+          "age": null,
+          "score": 0.50476116,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Koguma Mamu 小熊まむ - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/555",
+          "description": "アイドルグループ iLiFE ... MEMBER. 小熊まむ. Koguma Mamu. ○担当カラー オレンジ○キャッチコピー 「まむに夢中でくまっ",
+          "age": null,
+          "score": 0.47066417,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"【新メンバー公開】 ♥小熊まむ ...",
+          "url": "https://x.com/iLiFE_official/status/1921505862377439545",
+          "description": "【新メンバー公開】 ♥小熊まむ（こぐままむ） ♡ @iLiFE_koguma ♥担当カラー オレンジ♡まむに夢中でくまっちゃう！ 「とびっきりの愛、届け〜！",
+          "age": null,
+          "score": 0.42792314,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "スター☆まむナイズ（小熊まむソロ曲） ‑ 曲・歌詞：iLiFE!",
+          "url": "https://open.spotify.com/intl-ja/track/1fLv86rgW9VxfUnc2GHOeW",
+          "description": "スター☆まむナイズ(小熊まむソロ曲)」をSpotifyで聴こう。iLiFE! アーティスト iLiFE! この楽曲に基づくおすすめ 完全勝利Love&Good! BRAVE GROOVE BRAVE GROOVE4,214,200",
+          "age": null,
+          "score": 0.40952834,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"小熊まむ\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "小熊まむ (@ilife_koguma)",
+          "url": "https://www.tiktok.com/@ilife_koguma",
+          "description": "TikTok (ティックトック) の 小熊まむ (@ilife_koguma) |10.2M件の「いいね」。フォロワー232.5K人。iLiFE!のオレンジ色担当 長野県出身 公式Xはこちら ⬇️.",
+          "age": null,
+          "score": 0.51076555,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "小熊まむ【iLiFE!】 (@iLiFE_koguma) / X",
+          "url": "https://x.com/iLiFE_koguma",
+          "description": "iLiFE!【@iLiFE_official】オレンジ色担当*.+ﾟ /長野県出身 /チェキタグ☆➪#まむに夢中/なんでもタグ♡➪#まむにくまっちゃう/9.19 ROCK IN JAPAN",
+          "age": null,
+          "score": 0.5101799,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "小熊まむ (@koguma__ilife)",
+          "url": "https://www.instagram.com/koguma__ilife",
+          "description": "iLiFE!【@ilife.idol】オレンジ色担当⟡.* ※本人アカウントではありません・ ♡#まむに夢中 ♡#まむにくまっちゃう.Read more",
+          "age": null,
+          "score": 0.49553296,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "流行ってるやつやった #iLiFE #小熊まむ #fyp #アイドル #idol",
+          "url": "https://www.tiktok.com/@ilife_koguma/video/7661082559513775381",
+          "description": "いいねの数：46.5Kコメントの数：340。小熊まむ (@ilife_koguma)のTikTok (ティックトック) 動画：「流行ってるやつやった♪ #iLiFE #小熊まむ",
+          "age": null,
+          "score": 0.44333586,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "小熊まむ｜ilife! 新メンバー＆新衣装まとめ",
+          "url": "https://www.tiktok.com/@ilife_official/video/7645305907693456660",
+          "description": "リード小熊まむのはじける笑顔とともに、ilife!（アイライフ）の新メンバー発表や新衣装、アー写（アーティスト写真）に関する話題を整理します。",
+          "age": null,
+          "score": 0.39494804,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "キスハグ侵略者！/iLiFE!小熊まむ生誕祭2026",
+          "url": "https://www.youtube.com/watch?v=wCEg_gHtlSs",
+          "description": "【小熊まむ生誕祭】まむ☆進化論！〜夢見るクマの大変身！〜【iLiFE ... 【MV】アイドルライフメガパック / iLiFE!【コール動画】. iLiFE!【あい",
+          "age": null,
+          "score": 0.39138326,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【みにまむ伊勢旅行】みにとVlog撮ったらまさかの結末…!?小熊まむ ...",
+          "url": "https://www.youtube.com/watch?v=SDwT7ar1KZk",
+          "description": "【みにまむ伊勢旅行】みにとVlog撮ったらまさかの結末…!?小熊まむTVスペシャルバージョン✮*｡ﾟ #iLiFE #虹羽みに #小熊まむ #伊勢 #Vlog &middot; Comments.",
+          "age": null,
+          "score": 0.3512003,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "「小熊まむ」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
+          "url": "https://search.yahoo.co.jp/realtime/search?rkf=1&fr=rts_bzmod_ytop_pc&p=%E5%B0%8F%E7%86%8A%E3%81%BE%E3%82%80&btid=MTkyMTUwMjEzNjM4NDI2MjQ0NQ%3D%3D",
+          "description": "「小熊まむ」に関するYahoo!リアルタイム検索結果です。X（旧Twitter）上で今発信された情報をリアルタイムに検索できます。",
+          "age": null,
+          "score": 0.22015837,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "こぐままむ",
+          "url": "https://jp.pinterest.com/ideas/%E3%81%93%E3%81%90%E3%81%BE%E3%81%BE%E3%82%80/899474205635",
+          "description": "Pinterest で「こぐままむ」の人気アイデアをご覧ください。アイデアを見つけて新しいことにトライしましょう。 5,067 人のユーザーがこのトピックを検索しました.Read more",
+          "age": null,
+          "score": 0.15972821,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"小熊まむ\" \"iLiFE!\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "Koguma Mamu 小熊まむ - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/555",
+          "description": "アイドルグループ iLiFE!【あいらいふ】のメンバープロフィール. ... MEMBER. 小熊まむ. Koguma Mamu. ○担当カラー オレンジ○キャッチコピー 「まむに夢中でくまっ",
+          "age": null,
+          "score": 0.63777614,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "プロフィール"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "小熊まむ (@ilife_koguma)",
+          "url": "https://www.tiktok.com/@ilife_koguma",
+          "description": "TikTok (ティックトック) の 小熊まむ (@ilife_koguma) |10.2M件の「いいね」。フォロワー232.5K人。iLiFE!のオレンジ色担当 長野県出身 公式Xはこちら ⬇️.",
+          "age": null,
+          "score": 0.5063723,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "小熊まむ「人一倍の覚悟を持ってオーディションを受けました」 ...",
+          "url": "https://scawaiiweb.com/ilife250711",
+          "description": "（アイライフ）のスペシャルリレーインタビュー企画‼ 本日は、元気いっぱい二十歳の新メンバー・小熊まむちゃん♡ アイドルを目指したきっかけからiLiFE!",
+          "age": null,
+          "score": 0.65914243,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "小熊まむ【iLiFE!】 on X: \"本日ついに‼️ まむのインタビュー ...",
+          "url": "https://x.com/iLiFE_koguma/status/1945070081094111556",
+          "description": "本日ついに‼️ まむのインタビュー記事が掲載されました(^> ·̮ <^)✩ 初インタビュードキドキだったけど、色んな事を振り返るきっかけにもなって",
+          "age": null,
+          "score": 0.61779,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "スター☆まむナイズ（小熊まむソロ曲） ‑ 曲・歌詞：iLiFE!",
+          "url": "https://open.spotify.com/intl-ja/track/1fLv86rgW9VxfUnc2GHOeW",
+          "description": "スター☆まむナイズ（小熊まむソロ曲）. iLiFE! スター☆まむナイズ20263:38. iLiFE! アーティスト. iLiFE! この楽曲に基づくおすすめ. 完全勝利Love&Good！iLiFE!",
+          "age": null,
+          "score": 0.18732621,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ソロ曲"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "小熊まむ (@koguma__ilife)",
+          "url": "https://www.instagram.com/koguma__ilife",
+          "description": "iLiFE!【@ilife.idol】オレンジ色担当⟡.* ※本人アカウントではありません・ ♡#まむに夢中 ♡#まむにくまっちゃう. Follow. Message",
+          "age": null,
+          "score": 0.5230555,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【日本ハム】iLIFE！小熊まむがワンバン投球「無事に投げ ...",
+          "url": "https://news.yahoo.co.jp/articles/5ec286b841f55fe54011ebce3eaf5b4a402d42ca",
+          "description": "「すごく緊張したんですけど、無事に投げられて良かったで～す」と小熊。イニング間には、ファイターズガールと一緒にきつねダンスも踊る。 この記事",
+          "age": null,
+          "score": 0.47694567,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "targeted",
+      "query_group": "appearance_model",
+      "covers": [
+        "appearance_model"
+      ],
+      "query": "\"小熊まむ\" \"iLiFE!\" ビジュアル かわいい 美人 モデル ファッション ランウェイ",
+      "error": null,
+      "results": [
+        {
+          "title": "小熊まむ (@ilife_koguma) - TikTok",
+          "url": "https://www.tiktok.com/@ilife_koguma",
+          "description": "TikTok (ティックトック) の 小熊まむ (@ilife_koguma) |10.2M件の「いいね」。フォロワー232.5K人。iLiFE!のオレンジ色担当 長野県出身 公式Xはこちら ⬇️.",
+          "age": null,
+          "score": 0.5176446,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "Koguma Mamu 小熊まむ - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/555",
+          "description": "アイドルグループ iLiFE!【あいらいふ】のメンバープロフィール. ... MEMBER. 小熊まむ. Koguma Mamu. ○担当カラー オレンジ○キャッチコピー 「まむに夢中でくまっ",
+          "age": null,
+          "score": 0.46060488,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "iLiFE! 小熊まむちゃんの私服まとめ     #小熊まむ #ilife #アイドル #私服 ...",
+          "url": "https://www.instagram.com/p/DYgDk1mCSbC",
+          "description": "小熊まむちゃんの私服まとめ #小熊まむ … さんをモデルにお迎えし、 特別なビジュアルでお届けいたします♡ [website:9/3(thu)20:00-Release]",
+          "age": null,
+          "score": 0.6504012,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "GRL浴衣コラボ｜iLiFE全員×小熊まむがモデルを務めました - TikTok",
+          "url": "https://www.tiktok.com/@ilife_koguma/video/7650102990128286997",
+          "description": "いいねの数：20.5Kコメントの数：228。小熊まむ (@ilife_koguma)のTikTok (ティックトック) 動画：「GRLの浴衣で夏を始めよう。iLiFE全員でGRLモデル",
+          "age": null,
+          "score": 0.572078,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "いつもと違うのはどこでしょう｜iLiFE! 小熊まむ ランウェイ | TikTok",
+          "url": "https://www.tiktok.com/@ilife_koguma/video/7673074140416429333",
+          "description": "- ハッシュタグ（#iLiFE #小熊まむ #アイドル）で関連投稿を探し、別視点の指摘を参考にする。 締め（要点の再確認と呼びかけ）： 映像の「むずかしい」",
+          "age": null,
+          "score": 0.56517935,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE! on Instagram: \"【新衣装公開】 新衣装ティザームービー公開 ...",
+          "url": "https://www.instagram.com/reel/DY2DqsJRmJy",
+          "description": "62K likes, 60 comments - ilife.idol on May 27, 2026: \"【新衣装公開】 新衣装ティザームービー公開 ⁡ ⁡ #小熊まむ#iLiFE # ... まむちゃん可愛い\"(∩>ω",
+          "age": null,
+          "score": 0.5550741,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "小熊まむ【iLiFE!】 on X: \"なんと……‼️   IDOL RUNWAY COLLECTION ...",
+          "url": "https://x.com/iLiFE_koguma/status/2011790932778320190",
+          "description": "なんと……‼️ IDOL RUNWAY COLLECTION CREATEs presents IRC2026に出演させていただきます……(^> ·̮ <^)✩ ランウェイ ✨✨ 今から緊張しちゃうけど",
+          "age": null,
+          "score": 0.5297749,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "こぐままむ",
+          "url": "https://jp.pinterest.com/ideas/%E3%81%93%E3%81%90%E3%81%BE%E3%81%BE%E3%82%80/899474205635",
+          "description": "やまもとみかな | こぐままむ ilife, あいこん, 可愛い女の子. 地下アイドル ... ILife 小熊まむ | マム, にのあい, アイドル 衣装 · マム · にのあい · アイドル 衣装.",
+          "age": null,
+          "score": 0.49582586,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!【あいらいふ】 on X: \"【新アー写公開】 小熊まむ 担当カラー ...",
+          "url": "https://x.com/iLiFE_official/status/1973710766995042706",
+          "description": "【新アー写公開】 ♥小熊まむ♡ 担当カラー オレンジ♥ まむに夢中でくまっちゃう！ 「ほら！パレードが始まるよ‼️ 」 #iLiFE.",
+          "age": null,
+          "score": 0.43093804,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【みにまむ伊勢旅行】みにとVlog撮ったらまさかの結末…!?小熊まむTV ...",
+          "url": "https://www.youtube.com/watch?v=SDwT7ar1KZk",
+          "description": "元(2026年6月27日) https://www.tiktok.com/@ilife_koguma/video/7656016627963677972 --------------------- iLiFE YouTube",
+          "age": null,
+          "score": 0.3634441,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "targeted",
+      "query_group": "mc_comedy",
+      "covers": [
+        "mc_comedy"
+      ],
+      "query": "\"小熊まむ\" \"iLiFE!\" MC トーク 面白い バラエティ ムードメーカー",
+      "error": null,
+      "results": [
+        {
+          "title": "小熊まむ (@ilife_koguma)",
+          "url": "https://www.tiktok.com/@ilife_koguma",
+          "description": "TikTok (ティックトック) の 小熊まむ (@ilife_koguma) |10.2M件の「いいね」。フォロワー232.5K人。iLiFE!のオレンジ色担当 長野県出身 公式Xはこちら ⬇️.",
+          "age": null,
+          "score": 0.45551404,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "小熊まむ【iLiFE!】 (@iLiFE_koguma) / X",
+          "url": "https://x.com/iLiFE_koguma",
+          "description": "iLiFE!【@iLiFE_official】オレンジ色担当*.+ﾟ /長野県出身 /チェキタグ☆➪#まむに夢中/なんでもタグ♡➪#まむにくま ... 小熊まむ【iLiFE!】 iLiFE!【あいらいふ】.",
+          "age": null,
+          "score": 0.43093804,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "小熊まむ「人一倍の覚悟を持ってオーディションを受けました」 ...",
+          "url": "https://scawaiiweb.com/ilife250711",
+          "description": "「iLiFE!のザ・王道アイドル感が大好きです。はしゃげるライブも大好き。iLiFE!の楽曲って、ファンの方と作り上げるものが多くて、そのアツさがいいなって",
+          "age": null,
+          "score": 0.51530343,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "Koguma Mamu 小熊まむ - iLiFE!【あいらいふ】",
+          "url": "https://ilife-heroines.com/profile/member/index/555",
+          "description": "担当カラー オレンジ○キャッチコピー 「まむに夢中でくまっちゃう！」 OTHER MEMBER. ice. あいす · Sonata Karen. 空詩かれん · Konoka Riri. 心花りり.",
+          "age": null,
+          "score": 0.45551404,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "iLiFE!の小熊まむちゃんについてです。小熊ま ... - Yahoo!知恵袋",
+          "url": "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10329223310",
+          "description": "iLiFE!の小熊まむちゃんについてです。小熊まむちゃん推しなのですが、今まむちーはそんなに人気なんですか？？ どこのライブか忘れてしまったのです",
+          "age": null,
+          "score": 0.4069804,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "小熊 まむ（コグマ マム）の出演番組一覧",
+          "url": "https://bangumi.org/talents/410697",
+          "description": "小熊 まむ（コグマ マム）の未来8日間のテレビとラジオの出演番組情報です。",
+          "age": null,
+          "score": 0.28709823,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

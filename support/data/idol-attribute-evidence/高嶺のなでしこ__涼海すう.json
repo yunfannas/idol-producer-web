@@ -1,0 +1,331 @@
+{
+  "schema": "idol_attribute_evidence_candidates_v2",
+  "collected_at": "2026-09-04T04:48:32.573Z",
+  "member": {
+    "uid": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
+    "name": "涼海すう",
+    "group": "高嶺のなでしこ",
+    "tier": "C",
+    "age": 17,
+    "height_cm": 148,
+    "career_months": 36,
+    "prior_group_months": 0,
+    "training_background": null
+  },
+  "search_summary": {
+    "broad_queries": 3,
+    "targeted_queries": 0,
+    "total_queries": 3,
+    "initial_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 11,
+      "mc_comedy": 11,
+      "physical_stamina": 12,
+      "mental_professional": 12,
+      "traits": 12
+    },
+    "final_coverage": {
+      "vocal": 1,
+      "dance_performance": 1,
+      "appearance_model": 11,
+      "mc_comedy": 11,
+      "physical_stamina": 12,
+      "mental_professional": 12,
+      "traits": 12
+    }
+  },
+  "evidence": [
+    {
+      "phase": "broad",
+      "query_group": "performance",
+      "covers": [
+        "vocal",
+        "dance_performance"
+      ],
+      "query": "\"涼海すう\" \"高嶺のなでしこ\" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力",
+      "error": null,
+      "results": [
+        {
+          "title": "涼海 すう (@su_suzumi_) / X",
+          "url": "https://x.com/su_suzumi_",
+          "description": "14h\n\n  9月3日(木)25:01~ ！ TBS『 全力アピール〜アダムシアター〜 』 #高嶺のなでしこ 出演させていただきます🐈‍⬛🌸 また出演させていただけて嬉しいです🥹 ぜひチェックしてね〜！！ #全力アピール #アダムシアター #たかねこ\n\n  @takanenofficial\n\n  高嶺のなでしこ\n\n  @takanenofficial\n\n  16h\n\n  📺出演情報📺 TBS 『 全力アピール〜アダムシアター〜 』 #高嶺のなでしこ の出演が決定🐈‍⬛🌸 🗓️9月3日(木) ⏰25:01~ 🔗tbs.co.jp/zenryoku\\_appea… 🎥NFT adam.jp/airdrops/zenry… 🎥YouTube youtu.be/Q1HDZypFbGU ぜひご覧ください🪄 @zenryoku\\_appeal #全力アピール #アダムシアター\n\n  \n\n  3\n @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  16h [...] Sep 1\n\n  🚨緊張告知🚨 9月13日(日)！！ #高嶺のなでしこ ワンマンライブ 〜CROWNED IN BLOOM〜 開催決定🌸✨️ ‼️重要ポイント‼️ ❤︎9/2(水)0:00よりチケット先着発売🎫 ❤︎ライブ後に『個別2ショット撮影会』🫶💕 ❤︎たかねこ新体制初ワンマン🐈‍⬛🗼 告知がギリギリになってしまったけど\n\n  멋진 사진 고마워요🥹🩵\n\n  @takanenofficial\n\n  高嶺のなでしこ\n\n  @takanenofficial\n\n  Aug 31\n\n  \n\n  ◤￣￣￣￣￣￣￣￣￣￣◥ 　　 🚨緊急告知🚨 ◣＿＿＿＿＿＿＿＿＿＿◢ #高嶺のなでしこ ワンマンライブ 〜CROWNED IN BLOOM〜 開催決定！ 🗓️9月13日(日) ⏰OPEN 13:30 / START 14:30 📍SHIBUYA LOVEZ 🎫9/2(水)0:00よりチケット発売！ eplus.jp/takanenonadesh…\n\n  6\n @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  4h [...] Log inSign up\n\n涼海 すう\n\n涼海 すう profile banner\n\n@su_suzumi_\n\n# 涼海 すう\n\n高嶺のなでしこ(@takanenofficial)最年少19さい水色🐬🩵HoneyWorksｻｳﾝﾄﾞﾌﾟﾛﾃﾞｭｰｽアイドル┏|∵|┛Popteen専属モデル〖すぅにゃ〗アニメ漫画VTuberさんｵﾀｸ😻タグ➡️ #すうですぅ #すうだより\n\nBorn August 22\n\nJoined May 2022\n\n330\n\nFollowing26.4K\n\nFollowers\n\nRepliesRepliesRepostsRepostsMediaMedia\n\n Pinned\n\n  @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  Sep 1",
+          "age": null,
+          "score": 0.4974371,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "#涼海すう #高嶺のなでしこ #好きすぎて滅 #M!LK #karaoke - YouTube",
+          "url": "https://www.youtube.com/watch?v=rhpUJYzIu4o",
+          "description": "高嶺のなでしこ https://www.youtube.com/@official_takaneko.",
+          "age": null,
+          "score": 0.48103997,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "8_涼海すう – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/su_suzumi",
+          "description": "涼海 すう SUZUMI SU 血液型 AB型 星座 しし座 身長 148cm 生 出身地 大阪府 趣味 Vtuberさん、マンガ、アニメを見ること",
+          "age": null,
+          "score": 0.45696765,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "愛もLOVEももらえるダンス！涼海すうの魅力 - TikTok",
+          "url": "https://www.tiktok.com/@takanenofficial/video/7481133270298627335",
+          "description": "愛もLOVEももらえるダンス！涼海すうの魅力. 高嶺のなでしこの涼海すうが可愛いダンスを披露！見逃せないパフォーマンスをお楽しみに！ #高嶺",
+          "age": null,
+          "score": 0.529337,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "ダンス",
+            "パフォーマンス"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "涼海 すう (@su_suzumi_) • Instagram photos and videos",
+          "url": "https://www.instagram.com/su_suzumi_",
+          "description": "涼海 すう 26.8K followers 190 【Dance Performance Video】 高嶺のなでしこの涼海すうとしてアイドルが出来てます!!",
+          "age": null,
+          "score": 0.572078,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【旋風再び】高嶺のなでしこ #涼海すう パワーフォースで魅せる！vs ...",
+          "url": "https://www.instagram.com/reel/DRYhN6zjSUO",
+          "description": "【旋風再び】高嶺のなでしこ #涼海すう パワーフォースで魅せる！vs ＝LOVE #瀧脇笙古 #SASUKEアイドル予選会 · View all 5 comments.",
+          "age": null,
+          "score": 0.39173222,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "涼海すう (@suu._. - TikTok",
+          "url": "https://www.tiktok.com/@suu._.suu",
+          "description": "TikTok (ティックトック) の 涼海すう (@suu._.suu) |1.7M件の「いいね」。フォロワー38.4K人。@高嶺のなでしこ の最年少 水色 Popteen専属モデル꒰ すぅにゃ ꒱.",
+          "age": null,
+          "score": 0.38623142,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこ #涼海すう さん #籾山ひめり さんと一緒に ... - Instagram",
+          "url": "https://www.instagram.com/reel/DZhguf0pghh",
+          "description": "高嶺のなでしこ #涼海すう さん #籾山ひめり さんと一緒に #FUNKYステップ · 一瞬で目を奪われるって、こういうこと · #高嶺のなでしこ · 【開脚 #",
+          "age": null,
+          "score": 0.36609152,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "【涼海すう ver】美しく生きろ ／『高嶺のなでしこ 東名阪ツアー 2025",
+          "url": "https://www.youtube.com/watch?v=_nfm0Ky9UhE",
+          "description": "2025年5月14日に開催された『高嶺のなでしこ 東名阪ツアー 2025 - Spring Ride -』より『美しく生きろ』涼海すうverライブ映像を公開！",
+          "age": null,
+          "score": 0.3078785,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！涼海すう編 - 運転免許トロッカ！",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa03.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！涼海すうさんの回答はコチラ！",
+          "age": null,
+          "score": 0.30716103,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "visual_personality",
+      "covers": [
+        "appearance_model",
+        "mc_comedy"
+      ],
+      "query": "\"涼海すう\" \"高嶺のなでしこ\" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い",
+      "error": null,
+      "results": [
+        {
+          "title": "涼海 すう (@su_suzumi_) / X",
+          "url": "https://x.com/su_suzumi_",
+          "description": "Log inSign up\n\n涼海 すう\n\n涼海 すう profile banner\n\n@su_suzumi_\n\n# 涼海 すう\n\n高嶺のなでしこ(@takanenofficial)最年少19さい水色🐬🩵HoneyWorksｻｳﾝﾄﾞﾌﾟﾛﾃﾞｭｰｽアイドル┏|∵|┛Popteen専属モデル〖すぅにゃ〗アニメ漫画VTuberさんｵﾀｸ😻タグ➡️ #すうですぅ #すうだより\n\nBorn August 22\n\nJoined May 2022\n\n330\n\nFollowing26.4K\n\nFollowers\n\nRepliesRepliesRepostsRepostsMediaMedia\n\n Pinned\n\n  @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  Sep 1 [...] 14h\n\n  9月3日(木)25:01~ ！ TBS『 全力アピール〜アダムシアター〜 』 #高嶺のなでしこ 出演させていただきます🐈‍⬛🌸 また出演させていただけて嬉しいです🥹 ぜひチェックしてね〜！！ #全力アピール #アダムシアター #たかねこ\n\n  @takanenofficial\n\n  高嶺のなでしこ\n\n  @takanenofficial\n\n  16h\n\n  📺出演情報📺 TBS 『 全力アピール〜アダムシアター〜 』 #高嶺のなでしこ の出演が決定🐈‍⬛🌸 🗓️9月3日(木) ⏰25:01~ 🔗tbs.co.jp/zenryoku\\_appea… 🎥NFT adam.jp/airdrops/zenry… 🎥YouTube youtu.be/Q1HDZypFbGU ぜひご覧ください🪄 @zenryoku\\_appeal #全力アピール #アダムシアター\n\n  \n\n  3\n @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  16h [...] 16h\n\n  🎶Tiktok投稿しました🎶 あのね！それでね！ みてねん😈 ➸vt.tiktok.com/ZSVof4GEg/ #高嶺のなでしこ\n\n  \n\n  00:00\n @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  Sep 1\n\n  いんすたも出したのでみてへー🥹🥹 紫珍しいかも💜 instagram.com/p/DcvrjjUEjb2/… #高嶺のなでしこ\n\n  @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  Sep 1\n\n  \n\n  10",
+          "age": null,
+          "score": 0.493043,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "8_涼海すう – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/su_suzumi",
+          "description": "血液型: AB型 ; 星座: しし座 ; 身長: 148cm ; 生年月日: 2007年8月22日 ; 出身地: 大阪府.",
+          "age": null,
+          "score": 0.45057756,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "涼海すう",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B6%BC%E6%B5%B7%E3%81%99%E3%81%86",
+          "description": "ファッションウェブマガジン『Popteen』専属モデル。大阪府出身。TWIN PLANET所属。FM大阪『高嶺のなでしこのらじおっちゅーの!』メインパーソナリティー。 すずみ すう.",
+          "age": null,
+          "score": 0.7192461,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル",
+            "ファッション"
+          ],
+          "relevance_score": 6
+        },
+        {
+          "title": "涼海 すう (@su_suzumi_)",
+          "url": "https://www.instagram.com/su_suzumi_",
+          "description": "高嶺のなでしこ の水色担当 Popteen専属モデル‪꒰すぅにゃ꒱ ※DMは事務所管理︎ﾃﾞｽ( ᴗ ᴗ)\". Follow. Message. ⁡キュンてなった？ ・ ⁡・ ・ ・ ・ ⁡8月終わったの‬",
+          "age": null,
+          "score": 0.56575525,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "suu._. - 涼海すう",
+          "url": "https://www.tiktok.com/@suu._.suu",
+          "description": "TikTok (ティックトック) の 涼海すう (@suu._.suu) |1.7M件の「いいね」。フォロワー38.4K人。@高嶺のなでしこ の最年少 水色 Popteen専属モデル꒰ すぅにゃ ꒱.",
+          "age": null,
+          "score": 0.5191075,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        }
+      ]
+    },
+    {
+      "phase": "broad",
+      "query_group": "background_physical",
+      "covers": [
+        "physical_stamina",
+        "mental_professional",
+        "traits"
+      ],
+      "query": "\"涼海すう\" \"高嶺のなでしこ\" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー",
+      "error": null,
+      "results": [
+        {
+          "title": "涼海 すう (@su_suzumi_) / X",
+          "url": "https://x.com/su_suzumi_",
+          "description": "Log inSign up\n\n涼海 すう\n\n涼海 すう profile banner\n\n@su_suzumi_\n\n# 涼海 すう\n\n高嶺のなでしこ(@takanenofficial)最年少19さい水色🐬🩵HoneyWorksｻｳﾝﾄﾞﾌﾟﾛﾃﾞｭｰｽアイドル┏|∵|┛Popteen専属モデル〖すぅにゃ〗アニメ漫画VTuberさんｵﾀｸ😻タグ➡️ #すうですぅ #すうだより\n\nBorn August 22\n\nJoined May 2022\n\n330\n\nFollowing26.4K\n\nFollowers\n\nRepliesRepliesRepostsRepostsMediaMedia\n\n Pinned\n\n  @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  Sep 1 [...] 14h\n\n  9月3日(木)25:01~ ！ TBS『 全力アピール〜アダムシアター〜 』 #高嶺のなでしこ 出演させていただきます🐈‍⬛🌸 また出演させていただけて嬉しいです🥹 ぜひチェックしてね〜！！ #全力アピール #アダムシアター #たかねこ\n\n  @takanenofficial\n\n  高嶺のなでしこ\n\n  @takanenofficial\n\n  16h\n\n  📺出演情報📺 TBS 『 全力アピール〜アダムシアター〜 』 #高嶺のなでしこ の出演が決定🐈‍⬛🌸 🗓️9月3日(木) ⏰25:01~ 🔗tbs.co.jp/zenryoku\\_appea… 🎥NFT adam.jp/airdrops/zenry… 🎥YouTube youtu.be/Q1HDZypFbGU ぜひご覧ください🪄 @zenryoku\\_appeal #全力アピール #アダムシアター\n\n  \n\n  3\n @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  16h [...] 4h\n\n  おはよございます( \\ˊᵕˋ)ﾉ 9月21日(月・祝)！！ #高嶺のなでしこ リリイベ【個別握手会】決定💿💕 久しぶりの個別握手〜✊ ̖́- 会いに来てくれたら嬉しいな🥹🩵 みんなの手温める準備しときます！！ 待ってます🥹🥹 #たかねこ\n\n  \n\n  @takanenofficial\n\n  高嶺のなでしこ\n\n  @takanenofficial\n\n  17h\n\n  \n\n  °˖✿ リリイベ情報更新 ✿˖° #高嶺のなでしこ ニューアルバム 『 A World in Our Colors 』 リリースイベントの詳細が決定！🐈‍⬛💿 🗓️9月21日(月・祝) 個別握手会 📍東京都内某所 takanenonadeshiko.jp/newalbum-aworl… ご参加お待ちしております🌸 #たかねこ #HoneyWorks\n\n  27\n @su_suzumi_\n\n  涼海 すう\n\n  @su\\_suzumi\\_\n\n  14h",
+          "age": null,
+          "score": 0.5071046,
+          "source_class": "official_profile",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 10
+        },
+        {
+          "title": "8_涼海すう – 【公式】高嶺のなでしこ",
+          "url": "https://takanenonadeshiko.jp/su_suzumi",
+          "description": "涼海 すう SUZUMI SU 血液型 AB型 星座 しし座 身長 148cm 生年月日 2007年8月22日 出身地 大阪府 趣味 Vtuberさん、マンガ、アニメ",
+          "age": null,
+          "score": 0.529191,
+          "source_class": "official_profile",
+          "matched_terms": [],
+          "relevance_score": 7
+        },
+        {
+          "title": "涼海すう",
+          "url": "https://ja.wikipedia.org/wiki/%E6%B6%BC%E6%B5%B7%E3%81%99%E3%81%86",
+          "description": "ファッションウェブマガジン『Popteen』専属モデル。大阪府出身。TWIN PLANET所属。FM大阪『高嶺のなでしこのらじおっちゅーの!』メインパーソナリティー。 すずみ すう.Read more",
+          "age": null,
+          "score": 0.5948579,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "涼海 すう (@su_suzumi_)",
+          "url": "https://www.instagram.com/su_suzumi_",
+          "description": "27K followers · 192 following · 110 posts · @su_suzumi_: “高嶺のなでしこ の水色担当 Popteen専属モデル‪꒰すぅにゃ꒱ ※DMは事務所管理︎ﾃﾞｽ( ᴗ ᴗ)\"”‬",
+          "age": null,
+          "score": 0.54535896,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "【旋風再び】高嶺のなでしこ #涼海すう パワーフォースで魅せる！vs ...",
+          "url": "https://www.instagram.com/reel/DRYhN6zjSUO",
+          "description": "初単独アリーナ直前！リハ中のすいすてに突撃インタビュー♡【YouTube公開】 奥田彩友 @okudaayu 音井結衣 @otoi_yui_19",
+          "age": null,
+          "score": 0.539833,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "インタビュー"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "2025/7/10（木）ゲスト：高嶺のなでしこ 涼海すう",
+          "url": "https://www.fmosaka.net/_ct/17777405",
+          "description": "Jul 10, 2025 — 運動が得意な涼海さん。 特に水泳！得意なのはクロール！ そして陸上部！ FM大阪で先月末までレギュラー番組を担当！ グループ最年少ながら ...Read more",
+          "age": null,
+          "score": 0.53196377,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "陸上"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "suu._. - 涼海すう",
+          "url": "https://www.tiktok.com/@suu._.suu",
+          "description": "TikTok (ティックトック) の 涼海すう (@suu._.suu) |1.7M件の「いいね」。フォロワー38.4K人。@高嶺のなでしこ の最年少 水色 Popteen専属モデル꒰ すぅにゃ ꒱.",
+          "age": null,
+          "score": 0.34900057,
+          "source_class": "unclassified",
+          "matched_terms": [
+            "モデル"
+          ],
+          "relevance_score": 3
+        },
+        {
+          "title": "高嶺のなでしこに聞いてみた！涼海すう編",
+          "url": "https://menkyo-torocca.jp/feature/takaneko_qa03.html",
+          "description": "運転免許トロッカ！アンバサダー「高嶺のなでしこ」のメンバーにあんなことやこんなことを徹底質問！涼海すうさんの回答はコチラ！",
+          "age": null,
+          "score": 0.4574039,
+          "source_class": "unclassified",
+          "matched_terms": [],
+          "relevance_score": 0
+        }
+      ]
+    }
+  ]
+}

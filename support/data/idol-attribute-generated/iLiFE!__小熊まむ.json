@@ -1,0 +1,85 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.546Z",
+  "skill": "idol-attribute-generation",
+  "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
+  "name": "小熊まむ",
+  "group": "iLiFE!",
+  "tier": "B",
+  "age": 20,
+  "height_cm": 165.9,
+  "career_months": 1.8,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 1.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "iLife! (2025-05-11–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 17,
+    "cute": 17,
+    "pretty": 16,
+    "pitch": 14,
+    "tone": 15,
+    "breath": 14,
+    "rhythm": 16,
+    "power": 15,
+    "stage_presence": 16,
+    "wit": 12,
+    "humor": 13,
+    "talking": 14,
+    "determination": 16,
+    "teamwork": 15,
+    "fashion": 15
+  },
+  "traits": {
+    "singer": 100,
+    "dancer": 170,
+    "model": 110,
+    "comedy": 70
+  },
+  "radar": {
+    "PHY": 15.25,
+    "APP": 16.8,
+    "SNG": 14.75,
+    "DAN": 15.67,
+    "MEN": 14.17
+  },
+  "ability": 76,
+  "ability_raw": 76.604,
+  "evidence_summary": {
+    "high_confidence": [
+      "dance expression / smile-on-stage praise",
+      "tall friendly cute framing"
+    ],
+    "medium_confidence": [
+      "new-member resolve interview"
+    ],
+    "procedural_only": [
+      "vocal lower-middle"
+    ]
+  },
+  "constraints_applied": {
+    "ranges": [
+      "cute 16-18",
+      "technical mid 14-16"
+    ],
+    "ranks": [
+      "lower-middle Ability tail of B roster; skill Ability ~76"
+    ],
+    "floors": [
+      "stamina>=17"
+    ],
+    "biases": [
+      "height pretty pull vs cute primary"
+    ]
+  },
+  "career_context_used": [
+    "catalog: iLife! (2025-05-11–present)",
+    "career_months=1.8",
+    "newcomer (~2 months): uncertainty kept; no invented vocal strength"
+  ]
+}

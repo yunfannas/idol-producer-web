@@ -1,0 +1,80 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.550Z",
+  "skill": "idol-attribute-generation",
+  "uid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
+  "name": "東山恵里沙",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 19,
+  "height_cm": 156,
+  "career_months": 35.8,
+  "prior_group_months": 0,
+  "training_background": null,
+  "current_group_months": 35.8,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [],
+  "career_summary": "高嶺のなでしこ (2022-07-10–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 15,
+    "pretty": 15,
+    "pitch": 18,
+    "tone": 17,
+    "breath": 17,
+    "rhythm": 16,
+    "power": 15,
+    "stage_presence": 16,
+    "wit": 13,
+    "humor": 12,
+    "talking": 14,
+    "determination": 15,
+    "teamwork": 15,
+    "fashion": 14
+  },
+  "traits": {
+    "singer": 280,
+    "dancer": 180,
+    "model": 100,
+    "comedy": 40
+  },
+  "radar": {
+    "PHY": 14.5,
+    "APP": 15,
+    "SNG": 17,
+    "DAN": 15.67,
+    "MEN": 13.83
+  },
+  "ability": 76,
+  "ability_raw": 76.458,
+  "evidence_summary": {
+    "high_confidence": [
+      "fan: balanced vocal pillar / harmony recording role",
+      "wide range, rarely off-pitch"
+    ],
+    "medium_confidence": [
+      "teen visual features"
+    ],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pitch/tone/breath 17-18"
+    ],
+    "ranks": [
+      "vocal pillar; guide Ability ~78"
+    ],
+    "floors": [],
+    "biases": [
+      "singer high"
+    ]
+  },
+  "career_context_used": [
+    "catalog: 高嶺のなでしこ (2022-07-10–present)",
+    "career_months=35.8",
+    "no prior groups; ~36 months takaneko tenure only"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.550Z",
+  "skill": "idol-attribute-generation",
+  "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
+  "name": "松本ももな",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 22,
+  "height_cm": 159,
+  "career_months": 92.6,
+  "prior_group_months": 57.6,
+  "training_background": null,
+  "current_group_months": 35,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "Choux Cream Rockets",
+      "group_uid": "Q2hvdXggQ3JlYW0gUm9ja2V0cw",
+      "start_date": "2017-08-13",
+      "end_date": "2022-05-31",
+      "months": 57.6
+    }
+  ],
+  "career_summary": "Choux Cream Rockets (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+  "attributes": {
+    "strength": 12,
+    "agility": 15,
+    "natural_fitness": 14,
+    "stamina": 16,
+    "cute": 18,
+    "pretty": 20,
+    "pitch": 15,
+    "tone": 16,
+    "breath": 15,
+    "rhythm": 16,
+    "power": 15,
+    "stage_presence": 17,
+    "wit": 14,
+    "humor": 14,
+    "talking": 16,
+    "determination": 16,
+    "teamwork": 15,
+    "fashion": 20
+  },
+  "traits": {
+    "singer": 130,
+    "dancer": 150,
+    "model": 380,
+    "comedy": 60
+  },
+  "radar": {
+    "PHY": 14.25,
+    "APP": 19.6,
+    "SNG": 15.5,
+    "DAN": 16,
+    "MEN": 15.83
+  },
+  "ability": 82,
+  "ability_raw": 82.354,
+  "evidence_summary": {
+    "high_confidence": [
+      "Kansai Collection / model interviews",
+      "visual consensus"
+    ],
+    "medium_confidence": [
+      "adequate live performance, not vocal ace"
+    ],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pretty/fashion 19-20"
+    ],
+    "ranks": [
+      "visual/fashion ace; guide Ability ~82 via APP not SNG"
+    ],
+    "floors": [
+      "performance mid floor from group live duty"
+    ],
+    "biases": [
+      "model trait near-max; pretty>cute"
+    ]
+  },
+  "career_context_used": [
+    "catalog: Choux Cream Rockets (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+    "prior groups: Choux Cream Rockets",
+    "career_months=92.6",
+    "prior_group_months=57.6",
+    "prior Choux Cream Rockets used as experience regularization only"
+  ]
+}

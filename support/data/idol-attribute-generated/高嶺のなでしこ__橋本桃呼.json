@@ -1,0 +1,89 @@
+{
+  "schema": "idol_attribute_generation_v1",
+  "generated_at": "2026-09-04T08:21:07.550Z",
+  "skill": "idol-attribute-generation",
+  "uid": "fa435849-8378-41af-b0fe-341103a45ac5",
+  "name": "橋本桃呼",
+  "group": "高嶺のなでしこ",
+  "tier": "C",
+  "age": 22,
+  "height_cm": 160,
+  "career_months": 84.5,
+  "prior_group_months": 49.5,
+  "training_background": null,
+  "current_group_months": 35,
+  "career_reference_date": "2025-07-05",
+  "prior_groups": [
+    {
+      "group_name": "Last Idol 2nd Generation",
+      "group_uid": "TGFzdCBJZG9sIDJuZCBHZW5lcmF0aW9u",
+      "start_date": "2018-04-15",
+      "end_date": "2022-05-31",
+      "months": 49.5
+    }
+  ],
+  "career_summary": "Last Idol 2nd Generation (2018-04-15–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+  "attributes": {
+    "strength": 13,
+    "agility": 16,
+    "natural_fitness": 15,
+    "stamina": 16,
+    "cute": 14,
+    "pretty": 16,
+    "pitch": 18,
+    "tone": 17,
+    "breath": 17,
+    "rhythm": 16,
+    "power": 16,
+    "stage_presence": 17,
+    "wit": 14,
+    "humor": 13,
+    "talking": 14,
+    "determination": 16,
+    "teamwork": 15,
+    "fashion": 15
+  },
+  "traits": {
+    "singer": 280,
+    "dancer": 170,
+    "model": 90,
+    "comedy": 40
+  },
+  "radar": {
+    "PHY": 15,
+    "APP": 15.6,
+    "SNG": 17,
+    "DAN": 16.33,
+    "MEN": 14.5
+  },
+  "ability": 78,
+  "ability_raw": 78.917,
+  "evidence_summary": {
+    "high_confidence": [
+      "fan: technically sharpest vocal; spicy rather than always-main"
+    ],
+    "medium_confidence": [],
+    "procedural_only": []
+  },
+  "constraints_applied": {
+    "ranges": [
+      "pitch 17-18"
+    ],
+    "ranks": [
+      "top vocal technician"
+    ],
+    "floors": [
+      "veteran prior Last Idol 2nd gen regularizes stamina/breath"
+    ],
+    "biases": [
+      "singer high"
+    ]
+  },
+  "career_context_used": [
+    "catalog: Last Idol 2nd Generation (2018-04-15–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
+    "prior groups: Last Idol 2nd Generation",
+    "career_months=84.5",
+    "prior_group_months=49.5",
+    "prior Last Idol used as professional floor only"
+  ]
+}
