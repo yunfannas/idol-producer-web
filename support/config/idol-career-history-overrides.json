@@ -1,0 +1,41 @@
+{
+  "schema": "idol_career_history_overrides_v1",
+  "notes": [
+    "Use only when the scenario idol source omits known prior memberships or loses historical context.",
+    "Keep approximate dates explicitly approximate; do not invent month/day precision.",
+    "These overrides supplement, rather than replace, source group_history_in_group entries."
+  ],
+  "overrides": {
+    "f58e36c6-38e3-49d7-9253-2225dc16f3d2": {
+      "idol_name": "茉井良菜",
+      "career_history": [
+        {
+          "group_uid": "TGUgU2lhbmE",
+          "group_name": "Le Siana",
+          "start_year": 2012,
+          "end_year": 2016,
+          "date_precision": "year",
+          "source_type": "curated_project_research",
+          "note": "Prior local-idol career; exact dates intentionally not invented."
+        },
+        {
+          "group_uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+          "group_name": "煌めき☆アンフォレント",
+          "start_year": 2016,
+          "end_year": 2020,
+          "date_precision": "year",
+          "source_type": "curated_project_research",
+          "note": "Long prior live-idol career; exact dates intentionally not invented."
+        },
+        {
+          "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+          "group_name": "アキシブproject",
+          "start_date": "2023-12-29",
+          "end_date": null,
+          "date_precision": "day",
+          "source_type": "scenario_data"
+        }
+      ]
+    }
+  }
+}
