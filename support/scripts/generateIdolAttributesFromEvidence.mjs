@@ -31,6 +31,9 @@ const TALK_TERMS = ['MC', '司会', '進行', 'トーク力', 'ムードメー�
 const HUMOR_TERMS = ['面白い', 'お笑い', 'ボケ', 'ツッコミ'];
 const LEADER_TERMS = ['リーダー', 'キャプテン', 'まとめ役'];
 const EFFORT_TERMS = ['努力家', '負けず嫌い', '真面目'];
+const CENTER_TERMS = ['センター', 'center', 'エース', '顔'];
+const NOTED_TERMS = ['注目', '話題', 'バズ', '大反響', 'ソロ曲'];
+const VOCAL_ROLE_TERMS = ['歌担', '歌唱担当', 'ボーカル担当', 'メインボーカル', '主唱'];
 
 function parseArgs(argv) {
   const out = {};
@@ -106,11 +109,15 @@ function directMentionCount(results, terms) {
 }
 
 function careerContext(member) {
-  const current = numberOr(member.career_months);
+  const careerMonths = numberOr(member.career_months);
   const prior = numberOr(member.prior_group_months);
+  const currentGroup = numberOr(member.current_group_months, careerMonths);
   const incomplete = Array.isArray(member.incomplete_prior_groups) && member.incomplete_prior_groups.length > 0;
   return {
-    known_months: Math.max(current, current + prior),
+    current_group_months: currentGroup,
+    // `career_months` is the de-duplicated total emitted by the builder; prior
+    // months are a subset, so adding them again would double-count a career.
+    known_months: Math.max(careerMonths, currentGroup + prior),
     has_incomplete_prior_group: incomplete,
   };
 }
@@ -139,7 +146,60 @@ function dedupeFacts(facts) {
   });
 }
 
-function attributesFor(member, bundle, facts) {
+function parseIsoDay(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : null;
+}
+
+function groupRepertoireProfile(member, songs) {
+  const referenceDate = parseIsoDay(member.career_reference_date);
+  const currentStart = parseIsoDay(member.current_group_start_date);
+  if (!referenceDate || !currentStart || !Array.isArray(songs)) {
+    return { song_count: 0, mean_vocal_difficulty: null, mean_dance_difficulty: null, mean_reception: null, supports_baseline: false };
+  }
+  const relevant = songs.filter((song) => {
+    const release = parseIsoDay(song?.release_date);
+    return song?.group_name === member.group && release && release >= currentStart && release <= referenceDate
+      && Number.isFinite(Number(song.vocal_difficulty)) && Number.isFinite(Number(song.dance_difficulty));
+  });
+  const meanOf = (values) => values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+  const reception = relevant
+    .map((song) => Number.isFinite(Number(song.popularity_local)) ? Number(song.popularity_local) : numberOr(song.popularity, NaN))
+    .filter(Number.isFinite);
+  const meanVocal = meanOf(relevant.map((song) => Number(song.vocal_difficulty)));
+  const meanDance = meanOf(relevant.map((song) => Number(song.dance_difficulty)));
+  const meanReception = meanOf(reception);
+  return {
+    song_count: relevant.length,
+    mean_vocal_difficulty: meanVocal == null ? null : +meanVocal.toFixed(2),
+    mean_dance_difficulty: meanDance == null ? null : +meanDance.toFixed(2),
+    mean_reception: meanReception == null ? null : +meanReception.toFixed(2),
+    // Group repertoire never proves an individual's ceiling. It establishes only
+    // that a sufficiently tenured participant has a normal professional floor.
+    supports_baseline: relevant.length >= 3
+      && (meanVocal >= 13.5 || meanDance >= 14)
+      && meanReception != null && meanReception >= 2,
+  };
+}
+
+function applyDPerformanceCenter(attrs, target, uid) {
+  const low = Math.floor(target);
+  const high = Math.ceil(target);
+  attrs.performance.pitch = low;
+  attrs.performance.tone = high;
+  attrs.performance.breath = low;
+  attrs.performance.rhythm = high;
+  // Integer stats cannot express 14.5 per idol. Alternate two equally plausible
+  // dance shapes so the cohort converges to its intended centre without clones.
+  if (stableOffset(uid, 'd-tier-dance-shape') >= 0) {
+    attrs.performance.power = low;
+    attrs.performance.stage_presence = high;
+  } else {
+    attrs.performance.power = high;
+    attrs.performance.stage_presence = low;
+  }
+}
+
+function attributesFor(member, bundle, facts, repertoire) {
   const uid = String(member.uid || `${member.group}:${member.name}`);
   const base = TIER_BASE[String(member.tier || 'C').toUpperCase()] ?? TIER_BASE.C;
   const age = Number.isFinite(Number(member.age)) ? Number(member.age) : null;
@@ -155,6 +215,9 @@ function attributesFor(member, bundle, facts) {
     humor_claims: directMentionCount(results, HUMOR_TERMS),
     leader_claims: directMentionCount(results, LEADER_TERMS),
     effort_claims: directMentionCount(results, EFFORT_TERMS),
+    center_claims: directMentionCount(results, CENTER_TERMS),
+    noted_claims: directMentionCount(results, NOTED_TERMS),
+    vocal_role_claims: directMentionCount(results, VOCAL_ROLE_TERMS),
   };
 
   const professionalFloor = career.known_months >= 96 ? 16
@@ -199,6 +262,14 @@ function attributesFor(member, bundle, facts) {
     },
   };
 
+  const isDTier = String(member.tier || '').toUpperCase() === 'D';
+  const hasLongCurrentTenure = career.current_group_months >= 12;
+  const groupSupportsShorterTenure = career.current_group_months >= 6 && repertoire.supports_baseline;
+  if (isDTier && (hasLongCurrentTenure || groupSupportsShorterTenure)) {
+    const publicFocus = signals.center_claims > 0 || signals.noted_claims > 0;
+    applyDPerformanceCenter(attrs, publicFocus ? 15.5 : 14.5, uid);
+  }
+
   if (signals.dance_claims) {
     attrs.physical.agility = clamp(attrs.physical.agility + 1);
     attrs.performance.rhythm = clamp(attrs.performance.rhythm + 1);
@@ -236,7 +307,7 @@ function attributesFor(member, bundle, facts) {
       attrs.performance[stat] = Math.max(attrs.performance[stat], floor);
     }
   }
-  if (signals.vocal_claims && !repeatedVocalFloor) {
+  if ((signals.vocal_claims || signals.vocal_role_claims) && !repeatedVocalFloor) {
     attrs.performance.pitch = clamp(attrs.performance.pitch + 1);
     attrs.performance.tone = clamp(attrs.performance.tone + 1);
     // A direct "歌うま"-class claim is differentiated from merely enjoying singing.
@@ -244,12 +315,12 @@ function attributesFor(member, bundle, facts) {
   }
 
   const traits = {
-    singer: Math.min(400, 40 + successfulParts.length * 40 + signals.vocal_claims * 40),
+    singer: Math.min(400, 40 + successfulParts.length * 40 + (signals.vocal_claims + signals.vocal_role_claims) * 40),
     dancer: Math.min(400, 40 + signals.dance_claims * 60),
     model: Math.min(400, 40 + signals.model_claims * 70),
     comedy: Math.min(400, 40 + signals.humor_claims * 60),
   };
-  return { attrs, traits, signals, successfulParts, professionalFloor, career };
+  return { attrs, traits, signals, successfulParts, professionalFloor, career, repertoire };
 }
 
 function scoreOf(attrs) {
@@ -277,6 +348,9 @@ function auditFor(member, derived) {
     `${fact.song_title || 'performance'}: completed vocal part ${fact.assigned_vocal_difficulty} vs song average ${fact.song_vocal_difficulty}`);
   if (derived.signals.vocal_claims) highConfidence.push('direct member-specific vocal-performance claim in search evidence');
   const procedural = [`professional-basics floor=${derived.professionalFloor}`];
+  if (derived.repertoire.song_count) {
+    procedural.push(`current-group repertoire: n=${derived.repertoire.song_count}, vocal=${derived.repertoire.mean_vocal_difficulty}, dance=${derived.repertoire.mean_dance_difficulty}, reception=${derived.repertoire.mean_reception}`);
+  }
   if (derived.career.has_incomplete_prior_group) procedural.push('incomplete prior group retained without inventing duration');
   return {
     evidence_summary: {
@@ -296,6 +370,7 @@ function auditFor(member, derived) {
     },
     career_context_used: [
       `known professional months=${derived.career.known_months}`,
+      ...(derived.repertoire.supports_baseline ? ['current-group repertoire supports a normal D-tier performance baseline'] : []),
       ...(derived.career.has_incomplete_prior_group ? ['prior-group experience exists but duration is unknown'] : []),
     ],
   };
@@ -306,11 +381,16 @@ async function main() {
   const inputPath = String(args.input || 'support/data/member-attribute-input-pilot3.json');
   const evidenceDir = String(args['evidence-dir'] || 'support/data/idol-attribute-evidence');
   const factsPath = String(args['performance-evidence'] || 'support/data/member-performance-evidence.json');
+  const songsPath = String(args.songs || 'public/data/scenarios/scenario_6/songs.json');
   const groupFilter = String(args.group || '').trim();
-  const [members, factDocument, evidenceFiles] = await Promise.all([
+  const [members, factDocument, evidenceFiles, songs] = await Promise.all([
     fs.readFile(inputPath, 'utf8').then(JSON.parse),
     fs.readFile(factsPath, 'utf8').then(JSON.parse),
     fs.readdir(evidenceDir),
+    fs.readFile(songsPath, 'utf8').then(JSON.parse).catch((error) => {
+      if (error?.code === 'ENOENT') return [];
+      throw error;
+    }),
   ]);
   const bundles = await Promise.all(
     evidenceFiles.filter((file) => file.endsWith('.json')).map(async (file) => {
@@ -328,7 +408,7 @@ async function main() {
         ...referenceFactsFor(member, allFacts),
         ...(Array.isArray(member.performance_evidence) ? member.performance_evidence : []),
       ]);
-      const derived = attributesFor(member, bundle, facts);
+      const derived = attributesFor(member, bundle, facts, groupRepertoireProfile(member, songs));
       const scored = scoreOf(derived.attrs);
       return {
         schema: 'idol_attribute_generation_v2',
@@ -360,7 +440,7 @@ async function main() {
 
   const report = {
     schema: 'idol_attribute_generation_batch_v2',
-    input: { inputPath, evidenceDir, factsPath, groupFilter: groupFilter || null },
+    input: { inputPath, evidenceDir, factsPath, songsPath, groupFilter: groupFilter || null },
     note: 'Derived from evidence facts and generic rules; no member-name score table or Ability target is used.',
     members: generated,
   };
