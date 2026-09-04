@@ -62,6 +62,53 @@ Example batch input:
 
 The collector writes one JSON evidence bundle per member. That bundle is the normal input to the `idol-attribute-generation` agent skill.
 
+## Adaptive search strategy
+
+The collector now uses **three broad searches first**, then only fills evidence gaps.
+
+### Broad search 1: performance
+
+Covers vocal + dance/performance in one query.
+
+Typical query shape:
+
+```text
+"{name}" "{group}" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力
+```
+
+### Broad search 2: visual + personality
+
+Covers appearance/model + MC/comedy.
+
+```text
+"{name}" "{group}" ビジュアル かわいい 美人 モデル ファッション MC トーク 面白い
+```
+
+### Broad search 3: background + physical
+
+Covers stamina, sports/training background, professionalism and trait clues.
+
+```text
+"{name}" "{group}" インタビュー プロフィール 体力 スタミナ 運動神経 ダンス歴 バレエ チア 努力家 リーダー
+```
+
+After those three searches, the script computes coarse domain coverage from returned titles/snippets. Missing domains trigger targeted queries only within the tier budget.
+
+Current maximum targeted follow-ups:
+
+| Tier | Broad | Max follow-ups | Max total |
+|---|---:|---:|---:|
+| E | 3 | 0 | 3 |
+| D | 3 | 0 | 3 |
+| C | 3 | 1 | 4 |
+| B | 3 | 2 | 5 |
+| A | 3 | 3 | 6 |
+| S | 3 | 3 | 6 |
+
+This is a ceiling, not a required count. If the broad searches already expose useful evidence across domains, no extra query is needed.
+
+The output records `initial_coverage`, `final_coverage`, and the number of broad/targeted searches so future tuning can be measured rather than guessed.
+
 ## Collector responsibility
 
 The collector should answer only:
@@ -70,6 +117,7 @@ The collector should answer only:
 - What result titles/snippets/URLs were returned?
 - Which configured keywords appeared?
 - What rough source class does the result appear to belong to?
+- Which evidence domains appear covered enough to skip follow-up searches?
 
 It must not answer:
 
@@ -97,74 +145,31 @@ High-value searchable evidence includes:
 
 Observation-heavy evidence such as frame-by-frame live review is reserved for high-priority manual research and playable groups.
 
-## Search domains
-
-The collector config organizes searches into these semantic groups:
+## Evidence domains
 
 ### Vocal
 
-Typical terms:
-
-- 歌唱力
-- 歌が上手い
-- 歌声
-- ボーカル
-- 生歌
-- 高音
-- 安定感
-- 落ちサビ
+Typical terms: 歌唱力, 歌が上手い, 歌声, ボーカル, 生歌, 高音, 安定感, 落ちサビ.
 
 ### Dance / performance
 
-- ダンス
-- キレ
-- 表現力
-- パフォーマンス
-- ステージ映え
-- 目を引く
-- 振り覚え
+ダンス, キレ, 表現力, パフォーマンス, ステージ映え, 目を引く, 振り覚え.
 
 ### Physical / stamina
 
-- 体力
-- スタミナ
-- 体力おばけ
-- 運動神経
-- スポーツ
-- バレエ
-- チア
-- 体操
-- 陸上
+体力, スタミナ, 体力おばけ, 運動神経, スポーツ, バレエ, チア, 体操, 陸上.
 
 ### Appearance / model
 
-- ビジュアル
-- かわいい / 可愛い
-- 美人
-- モデル
-- ファッション
-- おしゃれ
-- コーデ
-- ランウェイ
-- 雑誌
+ビジュアル, かわいい / 可愛い, 美人, モデル, ファッション, おしゃれ, コーデ, ランウェイ, 雑誌.
 
 ### MC / comedy
 
-- MC
-- トーク
-- 面白い
-- バラエティ
-- ムードメーカー
-- 司会 / 進行
-- ツッコミ / ボケ
+MC, トーク, 面白い, バラエティ, ムードメーカー, 司会 / 進行, ツッコミ / ボケ.
 
 ### Mental / professionalism
 
-- 努力家
-- 負けず嫌い
-- リーダー
-- メンバー思い
-- まとめ役
+努力家, 負けず嫌い, リーダー, メンバー思い, まとめ役.
 
 ### External-work traits
 
@@ -177,54 +182,7 @@ Look for repeated professional use:
 
 ## Evidence constraint model
 
-The generator should convert evidence to four types of constraints.
-
-### Range
-
-An absolute plausible interval.
-
-Example:
-
-```yaml
-vocal:
-  range: [16, 18]
-  confidence: high
-```
-
-### Rank
-
-A relative group constraint.
-
-Example:
-
-```yaml
-dance:
-  rank: group_top_quartile
-```
-
-This is preferred when a source says “group's best dancer” but does not justify an exact score.
-
-### Floor
-
-A proven minimum.
-
-Example:
-
-```yaml
-stamina:
-  floor: 15
-```
-
-### Bias
-
-A directional probability adjustment.
-
-Example:
-
-```yaml
-appearance:
-  pretty_bias: positive
-```
+The generator should convert evidence to four types of constraints: **range, rank, floor, bias**.
 
 Low-authority or ambiguous evidence should usually remain a bias rather than becoming a hard range.
 
@@ -271,7 +229,7 @@ visual_base
 + explicit evidence
 ```
 
-Age and height primarily influence **style**, not total visual value.
+Age and height primarily influence style, not total visual value.
 
 ### Age prior
 
@@ -279,8 +237,6 @@ Age and height primarily influence **style**, not total visual value.
 - 17-21: both cute and pretty plausible
 - 22-25: neutral / mild pretty bias
 - 26+: stronger mature/pretty bias
-
-Do not automatically reduce APP because a member is older.
 
 ### Height prior
 
@@ -291,59 +247,23 @@ Do not automatically reduce APP because a member is older.
 
 ### Model trait
 
-A model-specialized member should usually have:
-
-- clearly higher `fashion` prior
-- higher `pretty` prior
-- sometimes a mild `stage_presence` prior
-
-Model trait does not automatically raise `cute`.
+A model-specialized member should usually have clearly higher `fashion`, higher `pretty`, and sometimes mild `stage_presence`. Model trait does not automatically raise `cute`.
 
 ## Experience and newcomer handling
 
-Do not apply a flat Ability modifier for career experience.
+Do not apply a flat Ability modifier for career experience. Experience regularizes concrete attributes such as stamina, breath, rhythm, stage_presence, determination, teamwork, and talking when role history supports it.
 
-Experience is a regularizer that can support:
-
-- stamina
-- breath
-- rhythm
-- stage_presence
-- determination
-- teamwork
-- talking when role history supports it
-
-Newcomer status means uncertainty and less proven professional floor, not low skill. A selected newcomer can already have vocal/dance values around 14-16 or higher.
+Newcomer status means uncertainty and less proven professional floor, not low skill.
 
 ## Correlated profile generation
 
-Unknown attributes must not default to 15-16.
-
-Generate a latent personal profile shape, then correlated substats. Example shapes include:
-
-- balanced
-- vocal-leaning
-- dance-leaning
-- visual-leaning
-- communication-leaning
-- physical-leaning
-- multi-specialist
-- strongly uneven
-- high-potential newcomer
-
-The shape exists only during generation and is not stored as an old-style permanent role.
+Unknown attributes must not default to 15-16. Generate a latent personal profile shape, then correlated substats. Useful temporary shapes include balanced, vocal-leaning, dance-leaning, visual-leaning, communication-leaning, physical-leaning, multi-specialist, strongly uneven, and high-potential newcomer.
 
 ## Trait vs attribute distinction
 
-Attributes describe what the idol can currently do.
+Attributes describe what the idol can currently do. Traits describe externally usable specialization and accumulated career capital.
 
-Traits describe externally usable specialization and accumulated career capital.
-
-Examples:
-
-- A member can have pitch/tone 18 but low singer trait if she has almost no vocal-specific external career.
-- A high model trait normally implies repeat fashion/model work and should bias pretty/fashion upward.
-- A talkative member is not automatically high comedy trait.
+A member can have pitch/tone 18 but low singer trait if she has almost no vocal-specific external career. A high model trait normally implies repeat fashion/model work and should bias pretty/fashion upward. A talkative member is not automatically high comedy trait.
 
 ## Ability distribution
 
@@ -376,8 +296,6 @@ Current useful anchors:
 - 葉月紗蘭 ~72-74, vocal strength
 - 春野莉々 ~72, vocal strength with weaker supporting domains
 
-This demonstrates that a C-tier roster can contain both 82-level heads and low-70 specialist members.
-
 ### iLiFE!
 
 Current working Ability calibration:
@@ -394,7 +312,7 @@ Current working Ability calibration:
 | 虹羽みに | 77 |
 | 小熊まむ | 76 |
 
-Mean is about 80. This is a useful strong-B-tier exemplar: one rare 85 head and most of the roster in 77-82.
+Mean is about 80. This is a useful strong-B-tier exemplar.
 
 ## Generation precedence
 
