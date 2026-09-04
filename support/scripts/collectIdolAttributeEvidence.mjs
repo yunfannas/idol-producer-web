@@ -60,9 +60,9 @@ function classifySource(result, config) {
   return 'unclassified';
 }
 
-function scoreCandidate(result, group, config) {
+function scoreCandidate(result, terms, config) {
   const text = `${result.title || ''}\n${result.description || ''}`;
-  const matches = (group.terms || []).filter(term => text.includes(term));
+  const matches = (terms || []).filter(term => text.includes(term));
   const sourceClass = classifySource(result, config);
   const sourceRank = (config.sourcePriority || []).indexOf(sourceClass);
   const authorityBonus = sourceRank >= 0 ? Math.max(0, 7 - sourceRank) : 0;
@@ -106,37 +106,70 @@ async function search(query, config) {
   throw new Error(`Unsupported provider: ${provider}`);
 }
 
-function selectQueries(config, tier) {
-  const maxQueries = Number(config.budgetsByTier?.[tier] ?? config.budgetsByTier?.C ?? 9);
-  const groups = [...(config.queryGroups || [])]
-    .filter(group => (group.queries || []).length > 0)
-    .sort((a, b) => (b.priority || 0) - (a.priority || 0));
-
-  const selected = [];
-
-  // Coverage pass: first query from as many semantic groups as the budget allows.
-  for (const group of groups) {
-    if (selected.length >= maxQueries) break;
-    selected.push({ group, template: group.queries[0] });
+async function runQuery(member, spec, config, phase) {
+  const query = fillTemplate(spec.query, member);
+  let results = [];
+  let error = null;
+  try {
+    results = await search(query, config);
+  } catch (err) {
+    error = String(err?.message || err);
   }
+  const ranked = results
+    .map(r => scoreCandidate(r, spec.terms || [], config))
+    .sort((a, b) => b.relevance_score - a.relevance_score);
+  return {
+    phase,
+    query_group: spec.id || spec.domain,
+    covers: spec.covers || [spec.domain].filter(Boolean),
+    query,
+    error,
+    results: ranked,
+  };
+}
 
-  // Depth pass: spend remaining budget on each group's secondary queries,
-  // preserving configured priority without starving an entire domain.
-  let depth = 1;
-  while (selected.length < maxQueries) {
-    let added = false;
-    for (const group of groups) {
-      const template = group.queries?.[depth];
-      if (!template) continue;
-      selected.push({ group, template });
-      added = true;
-      if (selected.length >= maxQueries) break;
+function buildDomainTerms(config) {
+  const terms = new Map();
+  for (const broad of config.broadQueries || []) {
+    for (const domain of broad.covers || []) {
+      if (!terms.has(domain)) terms.set(domain, new Set());
+      for (const term of broad.terms || []) terms.get(domain).add(term);
     }
-    if (!added) break;
-    depth += 1;
   }
+  for (const targeted of config.targetedQueries || []) {
+    if (!terms.has(targeted.domain)) terms.set(targeted.domain, new Set());
+  }
+  return terms;
+}
 
-  return selected;
+function coverageFromEvidence(evidence, config) {
+  const domainTerms = buildDomainTerms(config);
+  const coverage = {};
+  for (const domain of domainTerms.keys()) coverage[domain] = 0;
+
+  for (const item of evidence) {
+    for (const result of item.results || []) {
+      const text = `${result.title || ''}\n${result.description || ''}`;
+      for (const [domain, terms] of domainTerms.entries()) {
+        const matched = [...terms].some(term => text.includes(term));
+        if (matched) coverage[domain] += 1;
+      }
+    }
+  }
+  return coverage;
+}
+
+function chooseFollowups(coverage, config, tier) {
+  const maxFollowups = Number(config.maxFollowupsByTier?.[tier] ?? config.maxFollowupsByTier?.C ?? 1);
+  const threshold = Number(config.coverageThreshold ?? 1);
+  if (maxFollowups <= 0) return [];
+
+  const candidates = (config.targetedQueries || [])
+    .map(spec => ({ spec, score: Number(coverage[spec.domain] || 0) }))
+    .filter(({ score }) => score < threshold)
+    .sort((a, b) => a.score - b.score || a.spec.domain.localeCompare(b.spec.domain));
+
+  return candidates.slice(0, maxFollowups).map(x => x.spec);
 }
 
 async function loadMembers() {
@@ -160,32 +193,19 @@ async function loadMembers() {
 
 async function collectMember(member, config) {
   const tier = String(member.tier || 'C').replace(/[+-]/g, '').toUpperCase();
-  const selected = selectQueries(config, tier);
   const evidence = [];
 
-  for (const { group, template } of selected) {
-    const query = fillTemplate(template, member);
-    let results = [];
-    let error = null;
-    try {
-      results = await search(query, config);
-    } catch (err) {
-      error = String(err?.message || err);
-    }
-    const ranked = results
-      .map(r => scoreCandidate(r, group, config))
-      .sort((a, b) => b.relevance_score - a.relevance_score);
+  const broad = (config.broadQueries || []).slice(0, Number(config.broadQueryCount || 3));
+  for (const spec of broad) evidence.push(await runQuery(member, spec, config, 'broad'));
 
-    evidence.push({
-      query_group: group.id,
-      query,
-      error,
-      results: ranked,
-    });
-  }
+  const initialCoverage = coverageFromEvidence(evidence, config);
+  const followups = chooseFollowups(initialCoverage, config, tier);
+  for (const spec of followups) evidence.push(await runQuery(member, spec, config, 'targeted'));
+
+  const finalCoverage = coverageFromEvidence(evidence, config);
 
   return {
-    schema: config.output?.schema || 'idol_attribute_evidence_candidates_v1',
+    schema: config.output?.schema || 'idol_attribute_evidence_candidates_v2',
     collected_at: new Date().toISOString(),
     member: {
       uid: member.uid || null,
@@ -197,6 +217,13 @@ async function collectMember(member, config) {
       career_months: member.career_months ?? null,
       prior_group_months: member.prior_group_months ?? null,
       training_background: member.training_background ?? null,
+    },
+    search_summary: {
+      broad_queries: broad.length,
+      targeted_queries: followups.length,
+      total_queries: broad.length + followups.length,
+      initial_coverage: initialCoverage,
+      final_coverage: finalCoverage,
     },
     evidence,
   };
@@ -213,7 +240,7 @@ async function main() {
     const filename = `${slugify(member.group)}__${slugify(member.name)}.json`;
     const outputPath = path.join(outputDir, filename);
     await fs.writeFile(outputPath, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
-    console.log(outputPath);
+    console.log(`${outputPath} (${record.search_summary.total_queries} searches)`);
   }
 }
 
