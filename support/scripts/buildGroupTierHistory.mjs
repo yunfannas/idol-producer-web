@@ -27,6 +27,14 @@ function baseSlot({ scenario, scenarioDate, formedDate, s6Tier }) {
     };
   }
   if (scenario === 'S6' && s6Tier) {
+    if (String(s6Tier).toUpperCase() === 'I') {
+      return {
+        tier: 'I',
+        status: 'inactive',
+        confidence: 'scenario_data',
+        source: S6_TIERS_PATH,
+      };
+    }
     return {
       tier: s6Tier,
       status: 'active',
@@ -107,7 +115,7 @@ async function main() {
 
   const counts = {};
   for (const scenario of Object.keys(scenarios)) {
-    counts[scenario] = { active: 0, not_active: 0, unknown: 0 };
+    counts[scenario] = { active: 0, inactive: 0, not_active: 0, unknown: 0 };
     for (const row of rows) {
       const status = row.tier_history[scenario]?.status || 'unknown';
       counts[scenario][status] = (counts[scenario][status] || 0) + 1;
