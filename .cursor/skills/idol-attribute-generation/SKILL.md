@@ -2,103 +2,88 @@
 name: idol-attribute-generation
 description: >-
   Use when generating or reviewing idol member attributes and external-work traits
-  from collected search evidence plus tier, career, age, height, training history,
-  and group-specific performance floors. Consumes evidence produced by
-  support/scripts/collectIdolAttributeEvidence.mjs.
+  from collected search evidence plus tier, full career history, historical group-tier
+  exposure, age, height, training history, and group-specific performance floors.
+  Consumes evidence produced by support/scripts/collectIdolAttributeEvidence.mjs.
 ---
 
 # Idol attribute generation
 
-Use this skill to convert collected evidence into the 18 underlying idol attributes and the external-work traits. Do not search ad hoc inside the generator unless the evidence bundle is clearly insufficient; the collector and generator are intentionally separate.
+Generate the 18 underlying idol attributes and 0-400 external-work traits from searchable evidence plus structured member context. The collector and generator are intentionally separate.
 
-## Inputs
+## Required inputs
 
-Required or preferred inputs per member:
+Prefer, in order:
 
 - evidence bundle from `support/data/idol-attribute-evidence/*.json`
-- group tier
-- age
-- height
-- career months and prior-group months when known
-- training/sports/model background when known
-- group-specific floors or known performance requirements
-- curated/manual overrides, if any
+- current group tier
+- `career_history[]` from `support/data/idol-career-context.json`
+- historical `tier_exposure` for each career segment from `support/data/group-tier-history.json`
+- age and height
+- training/sports/model background
+- group-specific stamina/live floors
+- curated/manual attribute constraints
 
-Collector configuration lives at `support/config/idol-attribute-search.json`.
+`prior_group_months` is only a fallback summary. If `career_history[]` exists, use the segments and their historical context instead of treating all prior months as equivalent.
 
 ## Output attributes
 
-Physical:
-- strength
-- agility
-- natural_fitness
-- stamina
+Physical: `strength`, `agility`, `natural_fitness`, `stamina`
 
-Appearance:
-- cute
-- pretty
+Appearance: `cute`, `pretty`
 
-Technical/performance:
-- pitch
-- tone
-- breath
-- rhythm
-- power
-- stage_presence
+Technical/performance: `pitch`, `tone`, `breath`, `rhythm`, `power`, `stage_presence`
 
-Mental:
-- wit
-- humor
-- talking
-- determination
-- teamwork
-- fashion
+Mental: `wit`, `humor`, `talking`, `determination`, `teamwork`, `fashion`
 
-External-work traits, 0-400:
-- singer
-- dancer
-- model
-- comedy
+External-work traits, 0-400: `singer`, `dancer`, `model`, `comedy`
 
-Do not create a permanent archetype/role field. Profile shape is a generation-time latent only.
+Do not create a permanent archetype/role field. Profile shape is generation-time latent only.
 
-## Evidence interpretation
+## Hard generation rules
 
-Translate evidence into one or more of four constraint types:
+1. **Never target Ability.** Generate attributes first; derive Ability only at the end. Calibration Ability values are validation anchors, never optimization targets.
+2. **Range is a hard clamp.** If a constraint says 16-18, output must be inside 16-18 unless a higher-authority curated override explicitly supersedes it.
+3. **Floor is a hard minimum, not an attractor.** `stamina >= 17` does not mean “prefer 18”. Draw normally above the floor only when separate evidence supports it.
+4. **Rank is roster-relative.** Satisfy the ordering without inventing an absolute elite value.
+5. **Bias is probabilistic only.** A bias may influence a latent draw but cannot behave like a hidden hard bonus.
+6. **Unknown is neither good nor bad.** Absence of searchable praise must not become a negative rating.
 
-1. `range`: plausible absolute range, e.g. vocal 16-18.
-2. `rank`: relative placement in the group, e.g. top 1-2 in dance.
-3. `floor`: proven minimum, e.g. stamina >= 15 after a full large one-man.
-4. `bias`: directional prior only, e.g. model trait raises pretty/fashion probability.
+## Evidence constraints
 
-Prefer constraints over point values. Preserve uncertainty.
+Translate evidence into:
 
-### Source hierarchy
+- `range`: plausible absolute interval
+- `rank`: relative group placement
+- `floor`: proven minimum
+- `bias`: directional prior
 
-1. direct self statement, official profile, explicit training history
-2. member/producer evaluation
-3. professional media with concrete description
+Source hierarchy:
+
+1. self statement / official profile / explicit training history
+2. member or producer evaluation
+3. professional media concrete description
 4. repeated direct performance reporting
 5. multi-source fan consensus
 6. single fan source
 7. procedural prior
 
-A low-authority source should normally create only a bias, not a narrow range.
+Low-authority evidence should normally create a bias, not a narrow range.
 
 ## Search phrase semantics
 
 ### Vocal
 
-- `歌唱力`, `歌が上手い`, `生歌`, `高音`, `安定感` -> singing technique evidence
-- `歌声`, `声が好き` -> mostly tone/timbre; do not automatically raise pitch or breath
-- repeated important vocal parts / `落ちサビ` -> vocal rank bias, not proof by itself
+- `歌唱力`, `歌が上手い`, `生歌`, `高音`, `安定感` -> singing technique
+- `歌声`, `声が好き` -> mainly tone/timbre, not automatic pitch/breath
+- repeated important vocal parts / `落ちサビ` -> vocal rank bias
 
-### Dance/performance
+### Dance / performance
 
 - `ダンスが上手い` -> rhythm/power/agility
 - `キレ` -> power/agility
 - `表現力`, `ステージ映え`, `目を引く` -> stage_presence
-- `振り覚えが早い` -> rhythm plus a weak wit/learning bias
+- `振り覚えが早い` -> rhythm plus weak learning/wit bias
 
 ### Physical
 
@@ -109,124 +94,178 @@ A low-authority source should normally create only a bias, not a narrow range.
 - gymnastics -> agility/strength/natural_fitness bias
 - athletics/running -> stamina/natural_fitness bias
 
-### Communication/mental
+### Communication / mental
 
 - MC/司会/進行 -> talking, sometimes wit
 - 頭の回転が速い -> wit
 - 面白い/ボケ/ツッコミ -> humor, sometimes wit
 - ムードメーカー -> humor + teamwork bias
 - 努力家/負けず嫌い -> determination
-- 長期leader/まとめ役 -> teamwork + talking + determination floor/bias
+- long-term leader/まとめ役 -> teamwork + talking + determination floor/bias
 
-Do not collapse wit, humor, and talking into one score.
+Do not collapse wit, humor and talking.
+
+## Full career-history inference
+
+Each career segment may contain:
+
+```yaml
+group_uid: ...
+group_name: ...
+start_date/start_year: ...
+end_date/end_year: ...
+approximate_months: ...
+tier_exposure:
+  S3: {tier: C, status: active, confidence: curated}
+  S4: {tier: C, status: active, confidence: curated}
+```
+
+### Why historical tier matters
+
+Two idols with 60 prior-group months are not necessarily equivalent. Long service in a high-frequency, professionally demanding C/B group is stronger evidence of professional basics than the same duration in a small or lightly active E group.
+
+Historical group tier is **context**, not an attribute bonus. It may regularize only abilities plausibly exercised by sustained professional idol work.
+
+### Career-derived professional basics
+
+Long active career, especially with C+ tier exposure, can reduce the chance of implausibly low values in:
+
+- stamina
+- breath
+- rhythm
+- stage_presence
+- teamwork
+- determination
+- talking only when role/public evidence supports it
+
+It does **not** automatically raise:
+
+- pitch or tone
+- cute or pretty
+- humor or wit
+- strength
+- fashion
+- raw dance power/agility without dance evidence
+
+A veteran can remain a weak singer or dancer. Historical tier should prevent an experienced professional from being treated like an unevidenced rookie, not make her an all-rounder.
+
+### Duration weighting
+
+Use duration as a soft evidence weight, not a flat additive bonus. Rough interpretation:
+
+- <6 months: little regularization
+- 6-18 months: some professional-floor evidence
+- 18-36 months: meaningful sustained-work evidence
+- 36+ months: strong evidence that repeated professional basics were actually exercised
+
+Multiple segments accumulate context, but do not double-count overlapping dates.
+
+### Tier exposure weighting
+
+Use broad strength only:
+
+- E: weak professional-load evidence
+- D: ordinary live-idol professional-load evidence
+- C: established professional live-idol evidence
+- B: strong sustained professional-load evidence
+- A/S: very strong professional environment, but still not proof of every personal skill
+
+Do not infer historical tier when the tier-history slot is `unknown`. Unknown must remain unknown.
+
+### Group style and workload
+
+If separate evidence says the group is unusually live-heavy, dance-heavy, or performs long one-man sets, that workload evidence may matter more than market tier. Tier and workload are separate concepts.
+
+## Unknown-domain prior
+
+Do not use either of these shortcuts:
+
+```text
+unknown -> 15-16 everywhere
+unknown -> 12-14 everywhere
+```
+
+Instead derive an unknown-domain prior from:
+
+1. current tier population
+2. full career duration and historical tier exposure
+3. training background
+4. group workload floors
+5. latent personal profile shape
+
+Then draw correlated values. Strong known domains should not force all unknown domains downward merely to preserve a target Ability.
 
 ## Trait mapping
 
-Traits represent externally usable specialization, not raw ability.
+Traits represent externally usable specialization/career capital, not raw ability.
 
 ### singer
-
-Strongly associated with pitch/tone, moderately with breath/rhythm, but requires repeated professional evidence such as solo songs, vocal projects, music-show work, or sustained main-vocal duties.
+Strongly associated with pitch/tone and moderately breath/rhythm, but high trait requires repeated vocal-specific professional evidence.
 
 ### dancer
-
-Strongly associated with agility/rhythm/power, moderately with stage_presence/natural_fitness. Raise trait for dance projects, choreography work, long dance history, or repeated lead-dance duties.
+Strongly associated with agility/rhythm/power and moderately stage_presence/natural_fitness. Raise for dance projects, choreography, long dance history or repeated lead-dance duties.
 
 ### model
-
-- strong positive prior on fashion
-- medium/strong positive prior on pretty
-- weak positive prior on stage_presence
-- no automatic increase to cute
-
-Repeated magazine, runway, brand, styling, or fashion work is the strongest evidence.
+- fashion strong positive prior
+- pretty medium/strong positive prior
+- stage_presence weak positive prior
+- no automatic cute increase
 
 ### comedy
+- humor strong prior
+- wit medium prior
+- talking moderate prior
 
-- strong prior on humor
-- medium prior on wit
-- moderate prior on talking
-
-Requires repeatable variety/comedy utility. Being talkative alone is not enough.
+Being talkative alone is not high comedy trait.
 
 ## Appearance generation
 
-Do not independently randomize cute and pretty.
+Generate correlated `cute`/`pretty` from:
 
-Generate:
+`visual_base + cute_pretty_axis + age + height + model trait + explicit evidence`
 
-1. `visual_base`
-2. `cute_pretty_axis`
-3. age bias
-4. height bias
-5. model-trait bias
-6. explicit evidence
-
-Age changes style more than total visual quality:
-
+Age changes style more than total quality:
 - <=16: stronger cute prior
-- 17-21: cute and pretty both plausible
-- 22-25: neutral to mild pretty bias
-- 26+: stronger pretty/mature bias; do not automatically lower APP
+- 17-21: both plausible
+- 22-25: neutral / mild pretty
+- 26+: stronger pretty/mature bias; no automatic APP penalty
 
-Height is also a style prior:
-
+Height:
 - <153 cm: mild cute bias
 - 153-158: neutral
 - 159-164: mild pretty bias
 - 165+: stronger pretty/model bias
 
-These are soft priors only. Direct evidence overrides them.
-
 ## Stamina inference
 
-Stamina is unusually evidence-friendly and should use career/live floors.
-
 General anchors:
-
-- 20-24 full-participation songs in a large one-man -> stamina floor 15
+- 20-24 full-participation songs in a large one-man -> floor 15
 - 25-29 -> floor 16
 - 30-34 -> floor 17
 - 35+ high-intensity, high-quality completion -> 18 candidate
 
-A live-heavy underground idol with repeated multi-live days, tokutenkai after shows, and a proven large one-man should rarely generate very low stamina.
+A live-heavy underground idol with regular shows, tokutenkai and proven large one-man experience should rarely have very low stamina.
 
-Group-specific floors may override generic floors. Example calibration: iLiFE! uses stamina 18 for あいす / 空詩かれん / 純嶺みき and 17 for the other S6 opening members.
+S6 iLiFE calibration is **exactly a floor/profile example, not a group-wide 18 target**:
+- stamina 18: あいす / 空詩かれん / 純嶺みき
+- stamina 17: other S6 opening members unless separate evidence justifies higher
 
-Large-live evidence raises stamina, not automatically strength/agility/natural_fitness.
+Large-live evidence does not automatically raise strength/agility/natural_fitness.
 
-## Experience
+## Correlated profile generation
 
-Do not add flat Ability bonuses for experience.
-
-Career experience should:
-
-- reduce the probability of very low professional basics
-- raise stamina/breath/stage_presence/rhythm where justified
-- raise determination/teamwork/talking when duties justify it
-
-A veteran may still have weak vocal or dance attributes if those are not strengths.
-
-Newcomer status means higher uncertainty, not automatic weakness. Strong direct evidence overrides a newcomer prior.
-
-## Correlated generation
-
-Use correlated clusters rather than independent draws:
-
+Use correlated clusters:
 - singing: pitch/tone/breath/rhythm
 - dance: agility/rhythm/power/stage_presence
 - physical: natural_fitness/stamina/agility
-- appearance: cute/pretty with a style axis
+- appearance: cute/pretty
 - communication: wit/humor/talking
 
-Actively permit weak sides. Unknown must not default to 15-16 across every attribute.
+Allow real weak sides. A veteran/career floor should regularize professional basics, not erase specialization.
 
 ## Tier prior
 
-Tier is a population prior and sanity check, not an ability cap.
-
-Current rough centers:
-
+Current rough member Ability centers are sanity checks only:
 - E: 69-71
 - D: 73-75
 - C: 75-78
@@ -234,7 +273,7 @@ Current rough centers:
 - A: 81-83
 - S: 82-84
 
-Within-group distributions should have few head members, many middle members, and a meaningful lower tail. Avoid symmetric Gaussian all-rounder rosters.
+Never solve backwards from these values. Within rosters use few heads, many middle members, and a meaningful lower tail.
 
 ## Radar formulas
 
@@ -254,60 +293,30 @@ mentalPart = (wit + humor + talking + determination + teamwork + fashion) / 6
 ability = floor(physicalPart + appearancePart + technicalPart + mentalPart)
 ```
 
-Ability is derived only. Never target an Ability value and raise all attributes together to hit it.
-
-## Sanity-check workflow
+## Validation, not targeting
 
 After generation:
 
-1. calculate Radar and Ability
-2. compare with group tier distribution
-3. inspect outliers
-4. if an outlier looks wrong, identify the missing/overweighted domain evidence
-5. change the relevant underlying attributes or evidence interpretation only
+1. validate every hard range and floor
+2. validate roster-relative rank constraints
+3. calculate Radar and Ability
+4. compare Ability distribution with tier and known calibration anchors
+5. report deviations without rewriting attributes to hit an anchor
 
-Do not normalize an entire roster into a narrow band.
+If a result looks wrong, diagnose missing evidence, career context, workload floor or prior shape. Do not add +1 everywhere.
 
-## Calibration examples
+Known calibration anchors are test expectations, not inputs to the draw. In a blind/pilot run, hide them until generation is complete when possible.
 
-### High-cat / 高嶺のなでしこ
-
-Useful shape anchors include:
-- 籾山ひめり ~82, song+dance strong
-- 松本ももな ~82, exceptional visual/fashion with adequate performance
-- 星谷美来 ~77, stronger appearance
-- 葉月紗蘭 ~72-74, vocal strong but weaker elsewhere
-- 春野莉々 ~72, vocal strong with multiple weak support domains
-- 城月菜央 humor 17, visual/communication shape
-
-### iLiFE! S6 opening
-
-Working Ability anchors:
-- あいす 85
-- 空詩かれん 83
-- 心花りり 82
-- 若葉のあ 81
-- 那蘭のどか 80
-- 純嶺みき 79
-- 福丸うさ 78
-- 虹羽みに 77
-- 小熊まむ 76
-
-This roster is a useful B-tier calibration: mean ~80, one rare 85 head, most members 77-82.
-
-## Output recommendation
-
-Return both the generated values and an audit block:
+## Output audit block
 
 ```yaml
 attributes: {...18 values...}
-traits:
-  singer: 0-400
-  dancer: 0-400
-  model: 0-400
-  comedy: 0-400
+traits: {singer, dancer, model, comedy}
 radar: {PHY, APP, SNG, DAN, MEN}
 ability: N
+career_context_used:
+  segments: [...]
+  historical_tier_exposure: [...]
 evidence_summary:
   high_confidence: [...]
   medium_confidence: [...]
@@ -317,6 +326,9 @@ constraints_applied:
   ranks: [...]
   floors: [...]
   biases: [...]
+constraint_validation:
+  passed: true|false
+  violations: [...]
 ```
 
-Keep evidence and generation logic auditable so manual corrections can replace procedural values without rewriting the entire model.
+Keep the evidence, career context, constraints and final values auditable.
