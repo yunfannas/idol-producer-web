@@ -261,6 +261,13 @@ Current rough centers:
 
 Within-group distributions should have few head members, many middle members, and a meaningful lower tail. Avoid symmetric Gaussian all-rounder rosters.
 
+### D-tier performance cohort
+
+- For a normal D-tier member with at least 12 months in the current group, use a SNG/DAN cohort center near `14.5`; do not inflate it from career duration alone.
+- Use `15.5` for a center, ace, or clearly public-facing/spotlight member. A member with at least 6 current-group months can use the same normal baseline only when the current repertoire is consistently demanding and well received.
+- Add above that cohort only for individual evidence: direct skill claims, vocal-role words such as `歌担`/`歌唱担当`/`メインボーカル`, or documented difficult assigned parts performed well.
+- Current-group repertoire difficulty and reception establish the professional baseline, never an individual ceiling or a substitute for member-specific evidence.
+
 ## Radar formulas
 
 - PHY = `(strength + agility + natural_fitness + stamina) / 4`

@@ -55,6 +55,7 @@ node support/scripts/generateIdolAttributesFromEvidence.mjs \
   --input support/data/member-attribute-input.json \
   --evidence-dir support/data/idol-attribute-evidence \
   --performance-evidence support/data/member-performance-evidence.json \
+  --songs public/data/scenarios/scenario_6/songs.json \
   --group "アキシブproject" \
   --verify
 ```
@@ -72,6 +73,8 @@ Example batch input:
     "height_cm": 150,
     "career_months": 2,
     "prior_group_months": 0,
+    "current_group_start_date": "2025-05-01",
+    "current_group_months": 2,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
     "incomplete_prior_groups": [],
@@ -97,7 +100,7 @@ Covers vocal + dance/performance in one query.
 Typical query shape:
 
 ```text
-"{name}" "{group}" 歌 歌唱力 ボーカル ダンス パフォーマンス 表現力
+"{name}" "{group}" 歌 歌唱力 歌担 歌唱担当 メインボーカル ダンス パフォーマンス 表現力
 ```
 
 ### Broad search 2: visual + personality
@@ -221,6 +224,12 @@ This is a floor for pitch, tone, breath, and rhythm—not an individual score. A
 
 When parsing search results, scope keyword matching to the passage around the target member's name. Group roundup pages often contain multiple members' bios; whole-result matching leaks one member's praise into another's profile.
 
+### Repertoire and reception as a bounded prior
+
+For a member who was active when a song was released, the generator may read the group's assessed repertoire: average vocal/dance difficulty and available local popularity/reception. This can establish a **normal professional baseline** when at least three contemporaneous songs show sustained difficulty and non-trivial reception. It cannot establish an individual ceiling, lead-vocal status, or specialist trait.
+
+The relevant songs must fall between the member's current-group start date and the scenario reference date. Do not credit repertoire from before the member joined or after she left.
+
 ## Evidence constraint model
 
 The generator should convert evidence to four types of constraints: **range, rank, floor, bias**.
@@ -322,6 +331,18 @@ Current rough population centers:
 | S | 82-84 |
 
 These are priors, not hard ranges or caps. Within a group, use few head members, many middle members, and a meaningful lower tail rather than a symmetric Gaussian roster.
+
+### D-tier performance convergence
+
+For D-tier groups, converge only the *singing and dance clusters* before individual evidence:
+
+- a normal long-serving current member: around **14.5**
+- a member explicitly described as centre, ace, or notably in the spotlight: around **15.5**
+- explicit skill words (`歌担`, `歌唱担当`, `メインボーカル`, repeated `歌うま`, dance-lead evidence) may then raise the relevant cluster
+
+Long service means roughly 12 current-group months. A member with at least six current-group months may receive the same normal baseline when the contemporaneous repertoire has enough assessed difficulty and reception evidence. These are cohort centres, not member targets: integer substats should vary as correlated shapes around them.
+
+For example, a long-serving D-tier member begins near 14.5. If they also have a well-completed part two levels above their song average, the structured-part rule can independently raise SNG into the 16.5–17 range. No member name or Ability target is needed.
 
 ## Offline evaluation rosters
 

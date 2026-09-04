@@ -210,6 +210,7 @@ function buildMember(idol, targetGroup, referenceDate, allPerformanceFacts = [])
     height_cm: Number.isFinite(height) ? height : null,
     career_months: monthCount(allDays),
     prior_group_months: monthCount(priorDays),
+    current_group_start_date: currentStart,
     current_group_months: monthCount(dayNumber(referenceDate) - dayNumber(currentStart)),
     career_reference_date: referenceDate,
     prior_groups: priorGroups,
