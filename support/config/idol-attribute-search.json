@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "provider": {
+    "default": "brave",
+    "brave": {
+      "endpoint": "https://api.search.brave.com/res/v1/web/search",
+      "apiKeyEnv": "BRAVE_SEARCH_API_KEY",
+      "count": 10,
+      "country": "jp",
+      "searchLang": "ja",
+      "freshness": null
+    }
+  },
+  "budgetsByTier": {
+    "S": 15,
+    "A": 15,
+    "B": 12,
+    "C": 9,
+    "D": 6,
+    "E": 5
+  },
+  "sourcePriority": [
+    "official_profile",
+    "official_interview",
+    "member_or_producer_statement",
+    "professional_media",
+    "live_report",
+    "fan_consensus",
+    "single_fan_source"
+  ],
+  "queryGroups": [
+    {
+      "id": "vocal",
+      "priority": 100,
+      "queries": [
+        "\"{name}\" \"{group}\" 歌唱力",
+        "\"{name}\" \"{group}\" 歌が上手い",
+        "\"{name}\" \"{group}\" 歌声 ボーカル",
+        "\"{name}\" \"{group}\" 生歌 高音 安定感"
+      ],
+      "terms": ["歌唱力", "歌が上手い", "歌声", "ボーカル", "生歌", "高音", "低音", "歌姫", "落ちサビ", "安定感"]
+    },
+    {
+      "id": "dance_performance",
+      "priority": 95,
+      "queries": [
+        "\"{name}\" \"{group}\" ダンス",
+        "\"{name}\" \"{group}\" パフォーマンス 表現力",
+        "\"{name}\" \"{group}\" キレ ステージ映え"
+      ],
+      "terms": ["ダンス", "ダンスが上手い", "キレ", "表現力", "パフォーマンス", "ステージ映え", "目を引く", "振り覚え"]
+    },
+    {
+      "id": "physical_stamina",
+      "priority": 90,
+      "queries": [
+        "\"{name}\" \"{group}\" 体力 スタミナ",
+        "\"{name}\" \"{group}\" 運動神経 スポーツ",
+        "\"{name}\" \"{group}\" バレエ チア 体操 陸上"
+      ],
+      "terms": ["体力", "スタミナ", "体力おばけ", "運動神経", "スポーツ", "バレエ", "チア", "体操", "陸上", "長時間ライブ"]
+    },
+    {
+      "id": "appearance_model",
+      "priority": 85,
+      "queries": [
+        "\"{name}\" \"{group}\" ビジュアル かわいい 美人",
+        "\"{name}\" \"{group}\" モデル ファッション",
+        "\"{name}\" \"{group}\" 雑誌 ランウェイ コーデ"
+      ],
+      "terms": ["ビジュアル", "かわいい", "可愛い", "美人", "モデル", "ファッション", "おしゃれ", "コーデ", "ランウェイ", "雑誌"]
+    },
+    {
+      "id": "mc_comedy",
+      "priority": 80,
+      "queries": [
+        "\"{name}\" \"{group}\" MC トーク",
+        "\"{name}\" \"{group}\" 面白い バラエティ",
+        "\"{name}\" \"{group}\" ムードメーカー 司会 進行"
+      ],
+      "terms": ["MC", "トーク", "トーク力", "面白い", "バラエティ", "ムードメーカー", "司会", "進行", "ツッコミ", "ボケ"]
+    },
+    {
+      "id": "mental_professional",
+      "priority": 65,
+      "queries": [
+        "\"{name}\" \"{group}\" 努力家 負けず嫌い",
+        "\"{name}\" \"{group}\" リーダー メンバー思い まとめ役"
+      ],
+      "terms": ["努力家", "負けず嫌い", "リーダー", "メンバー思い", "まとめ役", "真面目"]
+    },
+    {
+      "id": "traits",
+      "priority": 75,
+      "queries": [
+        "\"{name}\" \"{group}\" ソロ曲 歌唱企画 歌番組",
+        "\"{name}\" \"{group}\" ダンス企画 振付 ダンス歴",
+        "\"{name}\" \"{group}\" モデル 雑誌 ランウェイ ブランド",
+        "\"{name}\" \"{group}\" バラエティ お笑い MC"
+      ],
+      "terms": ["ソロ曲", "歌唱企画", "歌番組", "ダンス企画", "振付", "ダンス歴", "モデル", "雑誌", "ランウェイ", "ブランド", "バラエティ", "お笑い", "MC"]
+    },
+    {
+      "id": "interview",
+      "priority": 70,
+      "queries": [
+        "\"{name}\" \"{group}\" インタビュー",
+        "\"{name}\" \"{group}\" メンバー 評価"
+      ],
+      "terms": ["インタビュー", "メンバー", "得意", "一番", "評価"]
+    }
+  ],
+  "sourceClassification": {
+    "officialHints": ["official", "公式", "profile", "プロフィール"],
+    "professionalMediaDomains": [
+      "natalie.mu",
+      "oricon.co.jp",
+      "mdpr.jp",
+      "thetv.jp",
+      "realsound.jp",
+      "entamenext.com",
+      "popnroll.tv",
+      "encount.press",
+      "utaten.com"
+    ],
+    "lowTrustDomains": ["matome", "ranking" ]
+  },
+  "output": {
+    "schema": "idol_attribute_evidence_candidates_v1",
+    "defaultDir": "support/data/idol-attribute-evidence"
+  }
+}
