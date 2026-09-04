@@ -1,0 +1,433 @@
+{
+  "generated_at": "2026-09-04T05:12:27.718Z",
+  "reports": [
+    {
+      "label": "main",
+      "path": "H:\\Qsync\\Project\\idol-data-lab\\public\\data\\idols.json",
+      "dry_run": false,
+      "idols_touched": 268,
+      "rows_removed": 279,
+      "top_dropped_names": [
+        [
+          "Houkago Princess",
+          27
+        ],
+        [
+          "akishibu project",
+          27
+        ],
+        [
+          "IDOL COLLEGE",
+          26
+        ],
+        [
+          "Paradeeq",
+          19
+        ],
+        [
+          "Wodoru Mayonaka",
+          19
+        ],
+        [
+          "You'll Melt More!",
+          11
+        ],
+        [
+          "Yakousei Amuse",
+          10
+        ],
+        [
+          "Nanakorobi Yaoki",
+          10
+        ],
+        [
+          "Non¬Fiction",
+          9
+        ],
+        [
+          "Yumemiru Adolescence",
+          9
+        ],
+        [
+          "Tenshinranman",
+          7
+        ],
+        [
+          "Nounai Pastel",
+          7
+        ],
+        [
+          "Now♡Storage",
+          7
+        ],
+        [
+          "Akishibu project",
+          6
+        ],
+        [
+          "BELLRING Shoujo Heart",
+          6
+        ],
+        [
+          "GAGAPIERO",
+          5
+        ],
+        [
+          "Ponkotsu Konpo",
+          5
+        ],
+        [
+          "Dempagumi.inc",
+          5
+        ],
+        [
+          "Dress Code",
+          4
+        ],
+        [
+          "Shinshi Todoroku, Gekijou no Gotoku.",
+          4
+        ],
+        [
+          "GILTY×GILTY",
+          4
+        ],
+        [
+          "Okosama Plate.",
+          4
+        ],
+        [
+          "Sandal Telephone",
+          4
+        ],
+        [
+          "link start",
+          3
+        ],
+        [
+          "TOKYO Tefutefu",
+          3
+        ]
+      ],
+      "sample": [
+        {
+          "idol_uid": "069305ba-5774-49c3-9f76-68cedde84b0d",
+          "idol_name": "山口みらん",
+          "dropped_group_name": "Houkago Princess",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "SG91a2FnbyBQcmluY2Vzcw"
+          ]
+        },
+        {
+          "idol_uid": "06e43ce8-6662-4290-8cad-6b69eebe6673",
+          "idol_name": "平沢ゆめ",
+          "dropped_group_name": "Paradeeq",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44OR44Op44OH44Kj44O844Kv"
+          ]
+        },
+        {
+          "idol_uid": "08b0ade9-d0f1-4822-b3d8-44d804aea31e",
+          "idol_name": "白石りか",
+          "dropped_group_name": "Houkago Princess",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "SG91a2FnbyBQcmluY2Vzcw"
+          ]
+        },
+        {
+          "idol_uid": "08bcb62c-9908-4b67-88b2-fa4e49a01842",
+          "idol_name": "永藤葵",
+          "dropped_group_name": "Houkago Princess",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "SG91a2FnbyBQcmluY2Vzcw"
+          ]
+        },
+        {
+          "idol_uid": "0905e105-9720-46ff-8ed1-604dbea12174",
+          "idol_name": "御伽りるむ",
+          "dropped_group_name": "Dress Code",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "d231b9f2-f247-4cf5-8d57-35365fd73f16"
+          ]
+        },
+        {
+          "idol_uid": "0998dca0-20e6-4c64-afc8-4f825642ca4f",
+          "idol_name": "関根ささら",
+          "dropped_group_name": "Houkago Princess",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "SG91a2FnbyBQcmluY2Vzcw"
+          ]
+        },
+        {
+          "idol_uid": "0a041c74-e38f-4b3d-a4b8-1b8bac4725b6",
+          "idol_name": "Shimamura Uta",
+          "dropped_group_name": "Country Girls",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Kr44Oz44OI44Oq44O844O744Ks44O844Or44K6"
+          ]
+        },
+        {
+          "idol_uid": "0e72fc1a-527b-4c0d-8a4d-904b611441c9",
+          "idol_name": "魔城もも",
+          "dropped_group_name": "Shinshi Todoroku, Gekijou no Gotoku.",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "56We5L2_6L2f44GP44CB5r-A5oOF44Gu5aaC44GP44CC"
+          ]
+        },
+        {
+          "idol_uid": "10453944-5fd0-4e53-86f5-9798e95fa7e2",
+          "idol_name": "星乃まひろ",
+          "dropped_group_name": "Akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "104d0903-9527-442d-822c-5a22d0b2b750",
+          "idol_name": "神崎らん",
+          "dropped_group_name": "Akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "10a39bb2-9962-49c8-ae3d-f2a2e420bde9",
+          "idol_name": "千葉咲乃",
+          "dropped_group_name": "Houkago Princess",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "SG91a2FnbyBQcmluY2Vzcw"
+          ]
+        },
+        {
+          "idol_uid": "112c6285-2b64-423f-aecc-9792a019fa67",
+          "idol_name": "心花りり",
+          "dropped_group_name": "GILTY×GILTY",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "R0lMVFkgw5cgR0lMVFk"
+          ]
+        },
+        {
+          "idol_uid": "13e87381-5781-4ab7-a706-7711fce4e9c5",
+          "idol_name": "紅月双葉",
+          "dropped_group_name": "Wodoru Mayonaka",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Oy44OJ44Or44Oe44Oo44OK44Kr"
+          ]
+        },
+        {
+          "idol_uid": "14718705-13f9-43c8-89ad-5627b46cf8ae",
+          "idol_name": "のぴ",
+          "dropped_group_name": "Okosama Plate.",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44GK44GT44GV44G-44G344KM44Cc44Go44CC"
+          ]
+        },
+        {
+          "idol_uid": "1626e615-f982-4e03-b2aa-21d7383ceda7",
+          "idol_name": "はまちひよ",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "scenario_6",
+      "path": "H:\\Qsync\\Project\\idol-data-lab\\public\\data\\scenarios\\scenario_6\\idols.json",
+      "dry_run": false,
+      "idols_touched": 62,
+      "rows_removed": 64,
+      "top_dropped_names": [
+        [
+          "akishibu project",
+          27
+        ],
+        [
+          "Yakousei Amuse",
+          10
+        ],
+        [
+          "Nanakorobi Yaoki",
+          10
+        ],
+        [
+          "Ponkotsu Konpo",
+          5
+        ],
+        [
+          "Dress Code",
+          4
+        ],
+        [
+          "akishibu Project",
+          3
+        ],
+        [
+          "Jams Collection",
+          2
+        ],
+        [
+          "HARUKA ECHO",
+          2
+        ],
+        [
+          "Tebasaki Sensation",
+          1
+        ]
+      ],
+      "sample": [
+        {
+          "idol_uid": "0905e105-9720-46ff-8ed1-604dbea12174",
+          "idol_name": "御伽りるむ",
+          "dropped_group_name": "Dress Code",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "d231b9f2-f247-4cf5-8d57-35365fd73f16"
+          ]
+        },
+        {
+          "idol_uid": "1626e615-f982-4e03-b2aa-21d7383ceda7",
+          "idol_name": "はまちひよ",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "1671e9b3-a50a-47be-9633-a8cf79a33479",
+          "idol_name": "今居るか",
+          "dropped_group_name": "Ponkotsu Konpo",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Od44Oz44Kz44OE44Kz44Oz44Od"
+          ]
+        },
+        {
+          "idol_uid": "1a4fccf9-b4fb-4382-b34f-8782354687f9",
+          "idol_name": "藤本美紀",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "24f2ed8c-6a63-4270-99a7-7a66b7bd04a6",
+          "idol_name": "星川まの",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
+          "idol_name": "水琴まなみ",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "329ab4ce-f7a9-424a-8061-4c66b9ca73c1",
+          "idol_name": "計良日向子",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "36d45eea-61d7-4eef-9441-2116d7df5e52",
+          "idol_name": "炎谷莉奈",
+          "dropped_group_name": "Yakousei Amuse",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6"
+          ]
+        },
+        {
+          "idol_uid": "3a8efd4a-6df1-4c76-a3d5-fafc8a8c89f6",
+          "idol_name": "宮代柚花",
+          "dropped_group_name": "Tebasaki Sensation",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "5omL57695YWI44K744Oz44K744O844K344On44Oz"
+          ]
+        },
+        {
+          "idol_uid": "4010e0a9-7ce9-43c2-9cea-bb0d2ff86bfe",
+          "idol_name": "ふてこ",
+          "dropped_group_name": "Yakousei Amuse",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6"
+          ]
+        },
+        {
+          "idol_uid": "40c8e4f5-d8d3-4e35-84c1-a833001eb468",
+          "idol_name": "小此木流花",
+          "dropped_group_name": "Jams Collection",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "SmFtc0NvbGxlY3Rpb24"
+          ]
+        },
+        {
+          "idol_uid": "40c8e4f5-d8d3-4e35-84c1-a833001eb468",
+          "idol_name": "小此木流花",
+          "dropped_group_name": "akishibu Project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "4143870f-ecdf-4754-ac53-0c542f404e72",
+          "idol_name": "琴音ふりる",
+          "dropped_group_name": "Yakousei Amuse",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "5aSc5YWJ5oCn44Ki44Of44Ol44O844K6"
+          ]
+        },
+        {
+          "idol_uid": "45484495-8792-48db-bab0-560ee4107464",
+          "idol_name": "清見るん",
+          "dropped_group_name": "akishibu project",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Ki44Kt44K344OWcHJvamVjdA"
+          ]
+        },
+        {
+          "idol_uid": "475dc395-9acd-4fc1-b761-9cff1e532725",
+          "idol_name": "小森ねる",
+          "dropped_group_name": "Ponkotsu Konpo",
+          "reason": "name_or_romanji_alias_of_dated",
+          "resolved_uids": [
+            "44Od44Oz44Kz44OE44Kz44Oz44Od"
+          ]
+        }
+      ]
+    }
+  ]
+}
