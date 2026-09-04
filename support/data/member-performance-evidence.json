@@ -1,0 +1,39 @@
+{
+  "schema": "member_performance_evidence_v1",
+  "description": "Structured, score-free performance facts consumed by the attribute generator. These are evidence records, not attribute targets or overrides.",
+  "evidence": [
+    {
+      "member_uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
+      "domain": "vocal",
+      "song_uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+      "song_title": "Shine on you",
+      "song_vocal_difficulty": 14,
+      "assigned_vocal_difficulty": 16,
+      "completion": "well",
+      "evidence_class": "verified_performance_assessment",
+      "note": "Assigned a materially harder-than-song-average vocal part and completed it well."
+    },
+    {
+      "member_uid": "45484495-8792-48db-bab0-560ee4107464",
+      "domain": "vocal",
+      "song_uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+      "song_title": "Shine on you",
+      "song_vocal_difficulty": 14,
+      "assigned_vocal_difficulty": 16,
+      "completion": "well",
+      "evidence_class": "verified_performance_assessment",
+      "note": "Assigned a materially harder-than-song-average vocal part and completed it well."
+    },
+    {
+      "member_uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+      "domain": "vocal",
+      "song_uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+      "song_title": "Shine on you",
+      "song_vocal_difficulty": 14,
+      "assigned_vocal_difficulty": 16,
+      "completion": "well",
+      "evidence_class": "verified_performance_assessment",
+      "note": "Assigned a materially harder-than-song-average vocal part and completed it well."
+    }
+  ]
+}

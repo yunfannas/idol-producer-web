@@ -5,7 +5,7 @@ Status: active design guide for world-generation member attributes and traits.
 This guide defines a two-stage pipeline:
 
 1. **Collector script**: reproducibly gathers search-friendly evidence candidates.
-2. **Agent generator**: interprets those candidates together with tier, career, age, height, training history, and group constraints to produce the 18 attributes and 0-400 external-work traits.
+2. **Generator**: interprets those candidates together with tier, career, age, height, training history, and structured performance facts to produce the 17 visible attributes, optional hidden personality, and 0-400 external-work traits.
 
 The collector intentionally does **not** score attributes. Search rules and generation rules must stay separable so that generation logic can evolve without re-running every web search.
 
@@ -14,6 +14,8 @@ The collector intentionally does **not** score attributes. Search rules and gene
 - Search config: `support/config/idol-attribute-search.json`
 - Catalog-to-input builder: `support/scripts/buildMemberAttributeInput.mjs`
 - Collector: `support/scripts/collectIdolAttributeEvidence.mjs`
+- Structured performance facts: `support/data/member-performance-evidence.json`
+- Evidence-driven V2 generator: `support/scripts/generateIdolAttributesFromEvidence.mjs`
 - Generator skill: `.cursor/skills/idol-attribute-generation/SKILL.md`
 - Default evidence output: `support/data/idol-attribute-evidence/`
 
@@ -48,6 +50,13 @@ node support/scripts/buildMemberAttributeInput.mjs \
 
 node support/scripts/collectIdolAttributeEvidence.mjs \
   --input support/data/member-attribute-input.json
+
+node support/scripts/generateIdolAttributesFromEvidence.mjs \
+  --input support/data/member-attribute-input.json \
+  --evidence-dir support/data/idol-attribute-evidence \
+  --performance-evidence support/data/member-performance-evidence.json \
+  --group "アキシブproject" \
+  --verify
 ```
 
 Example batch input:
@@ -67,12 +76,15 @@ Example batch input:
     "prior_groups": [],
     "incomplete_prior_groups": [],
     "career_summary": "",
+    "performance_evidence": [],
     "training_background": null
   }
 ]
 ```
 
 The builder ignores null/null aliases, preserves end-dated rows with an unknown start in `incomplete_prior_groups`, merges overlapping dated memberships for career duration, and calculates age at the supplied reference date. An incomplete row never contributes guessed months. The collector writes one JSON evidence bundle per member, preserving the resulting career context for the `idol-attribute-generation` agent skill.
+
+`performance_evidence` contains observations such as song difficulty, assigned part difficulty, and completion quality. It must never contain a target attribute, Radar, Ability, or trait score. This keeps evidence collection separate from score generation.
 
 ## Adaptive search strategy
 
@@ -196,6 +208,19 @@ Traits measure specialization progress, not job eligibility: an idol can accept 
 
 A well-completed vocal part that is materially harder than the song's average is direct evidence for singing attributes. It does not, on its own, establish a high singer trait.
 
+## Structured performance facts
+
+Use a fact when a performance observation is known with enough confidence to be reused. For vocal evidence, record the song's average difficulty, the member's assigned-part difficulty, and completion quality. The generic rule is then:
+
+```text
+completed well AND assigned part >= song average + 2
+  -> singing-cluster floor = assigned part + 1
+```
+
+This is a floor for pitch, tone, breath, and rhythm—not an individual score. A separate direct vocal-performance claim may increase the cluster further. Thus two members with the same verified difficult part get the same minimum, while a third member with an independent `歌うま`-class claim can legitimately score higher without a name-specific rule.
+
+When parsing search results, scope keyword matching to the passage around the target member's name. Group roundup pages often contain multiple members' bios; whole-result matching leaks one member's praise into another's profile.
+
 ## Evidence constraint model
 
 The generator should convert evidence to four types of constraints: **range, rank, floor, bias**.
@@ -217,7 +242,7 @@ Working anchors:
 
 For underground idols, regular live frequency plus post-live tokutenkai is additional evidence. A mature live-idol member who has repeatedly completed large one-man shows and long benefit-event days should rarely generate stamina 11-13 without explicit contrary evidence.
 
-Do not transfer a stamina floor to strength, agility, or natural_fitness automatically.
+Do not transfer a stamina floor to agility or natural_fitness automatically.
 
 ### iLiFE! calibration
 
@@ -267,7 +292,7 @@ A model-specialized member should usually have clearly higher `fashion`, higher 
 
 ## Experience and newcomer handling
 
-Do not apply a flat Ability modifier for career experience. Experience regularizes concrete attributes such as stamina, breath, rhythm, stage_presence, determination, teamwork, and talking when role history supports it.
+Do not apply a flat Ability modifier for career experience. Experience regularizes concrete attributes such as stamina, breath, rhythm, stage_presence, teamwork, talking, creativity, and hidden professionalism when role history supports it.
 
 Newcomer status means uncertainty and less proven professional floor, not low skill.
 
@@ -298,7 +323,9 @@ Current rough population centers:
 
 These are priors, not hard ranges or caps. Within a group, use few head members, many middle members, and a meaningful lower tail rather than a symmetric Gaussian roster.
 
-## Calibration rosters
+## Offline evaluation rosters
+
+These cases are held out checks for the generator. They are not run-time member overrides, target Ability inputs, or per-member score tables. When an output drifts, identify the missing or overweighted evidence rule before changing the generator.
 
 ### 高嶺のなでしこ
 
@@ -334,13 +361,12 @@ Mean is about 80. This is a useful strong-B-tier exemplar.
 
 Use this order:
 
-1. curated/manual override
-2. high-confidence direct evidence
-3. relative ranking constraints
-4. career/group floors
-5. trait priors
-6. age/height/training priors
-7. group/tier population prior
-8. profile-shape randomness
+1. high-confidence direct evidence and structured performance facts
+2. relative ranking constraints
+3. career/group floors
+4. trait priors
+5. age/height/training priors
+6. group/tier population prior
+7. profile-shape randomness
 
-After generation, derive Radar and Ability and run a sanity check. If the result appears wrong, fix the missing or overweighted domain evidence; never add +1 to every attribute merely to reach a desired Ability.
+After generation, derive Radar and Ability and run a sanity check. If the result appears wrong, fix the missing or overweighted domain evidence; never add +1 to every attribute merely to reach a desired Ability, and never add a member-name score rule to make an evaluation case pass.

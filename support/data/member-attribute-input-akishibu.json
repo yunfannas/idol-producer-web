@@ -11,7 +11,26 @@
     "current_group_months": 31.5,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "アキシブproject (2022-11-20–present)",
+    "performance_evidence": [],
+    "training_background": null
+  },
+  {
+    "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
+    "name": "古賀みれい",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 20,
+    "height_cm": 152,
+    "career_months": 31.5,
+    "prior_group_months": 0,
+    "current_group_months": 31.5,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "incomplete_prior_groups": [],
+    "career_summary": "アキシブproject (2022-11-20–2025-09-29)",
+    "performance_evidence": [],
     "training_background": null
   },
   {
@@ -26,7 +45,9 @@
     "current_group_months": 6.7,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "アキシブproject (2024-12-13–present)",
+    "performance_evidence": [],
     "training_background": null
   },
   {
@@ -49,7 +70,28 @@
         "months": 26.2
       }
     ],
-    "career_summary": "炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+    "incomplete_prior_groups": [
+      {
+        "group_name": "Tansan Chronicle",
+        "group_uid": null,
+        "start_date": null,
+        "end_date": "2023-06-23",
+        "date_status": "start_unknown"
+      }
+    ],
+    "career_summary": "Tansan Chronicle (start unknown–2023-06-23); 炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+    "performance_evidence": [
+      {
+        "domain": "vocal",
+        "song_uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+        "song_title": "Shine on you",
+        "song_vocal_difficulty": 14,
+        "assigned_vocal_difficulty": 16,
+        "completion": "well",
+        "evidence_class": "verified_performance_assessment",
+        "note": "Assigned a materially harder-than-song-average vocal part and completed it well."
+      }
+    ],
     "training_background": null
   },
   {
@@ -64,7 +106,69 @@
     "current_group_months": 31.5,
     "career_reference_date": "2025-07-05",
     "prior_groups": [],
+    "incomplete_prior_groups": [],
     "career_summary": "アキシブproject (2022-11-20–present)",
+    "performance_evidence": [],
+    "training_background": null
+  },
+  {
+    "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
+    "name": "美山ひな",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 18,
+    "height_cm": 0,
+    "career_months": 29.5,
+    "prior_group_months": 22.9,
+    "current_group_months": 6.6,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [
+      {
+        "group_name": "じーくらむ！",
+        "group_uid": "44GY44O844GP44KJ44KA77yB",
+        "start_date": "2021-07-01",
+        "end_date": "2022-08-31",
+        "months": 14
+      },
+      {
+        "group_name": "あげもん！",
+        "group_uid": "44GC44GS44KC44KT77yB",
+        "start_date": "2022-11-01",
+        "end_date": "2023-07-31",
+        "months": 8.9
+      }
+    ],
+    "incomplete_prior_groups": [],
+    "career_summary": "じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
+    "performance_evidence": [],
+    "training_background": null
+  },
+  {
+    "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
+    "name": "平沢かえ",
+    "group": "アキシブproject",
+    "tier": "D",
+    "age": 20,
+    "height_cm": 163,
+    "career_months": 18.2,
+    "prior_group_months": 0,
+    "current_group_months": 18.2,
+    "career_reference_date": "2025-07-05",
+    "prior_groups": [],
+    "incomplete_prior_groups": [],
+    "career_summary": "アキシブproject (2023-12-28–2026-02-24)",
+    "performance_evidence": [
+      {
+        "domain": "vocal",
+        "song_uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+        "song_title": "Shine on you",
+        "song_vocal_difficulty": 14,
+        "assigned_vocal_difficulty": 16,
+        "completion": "well",
+        "evidence_class": "verified_performance_assessment",
+        "note": "Assigned a materially harder-than-song-average vocal part and completed it well."
+      }
+    ],
     "training_background": null
   },
   {
@@ -101,7 +205,20 @@
         "months": 6.6
       }
     ],
+    "incomplete_prior_groups": [],
     "career_summary": "Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
+    "performance_evidence": [
+      {
+        "domain": "vocal",
+        "song_uid": "a3600e91-f5ab-4f90-832f-782d1e449c00",
+        "song_title": "Shine on you",
+        "song_vocal_difficulty": 14,
+        "assigned_vocal_difficulty": 16,
+        "completion": "well",
+        "evidence_class": "verified_performance_assessment",
+        "note": "Assigned a materially harder-than-song-average vocal part and completed it well."
+      }
+    ],
     "training_background": null
   }
 ]

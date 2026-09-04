@@ -22,7 +22,8 @@ Required or preferred inputs per member:
 - career months and prior-group months when known; retain dated `prior_groups` / `career_summary` when supplied
 - training/sports/model background when known
 - group-specific floors or known performance requirements
-- curated/manual overrides, if any
+- structured performance facts when available (song requirement, assigned part, completion quality)
+- offline evaluation cases, never member-name score anchors
 
 Collector configuration lives at `support/config/idol-attribute-search.json`.
 
@@ -97,7 +98,7 @@ Prefer constraints over point values. Preserve uncertainty.
 
 A low-authority source should normally create only a bias, not a narrow range.
 
-For a curated repair only, an explicitly retained project attribute baseline may supply a review constraint. Record it as `procedural_only`, never present it as web evidence, and do not import such baselines into blind/random generation.
+Do not add a member-name point/range rule or an Ability target to make a calibration case pass. If a case is wrong, correct the evidence extraction or the general evidence-to-constraint mapping.
 
 ## Search phrase semantics
 
@@ -106,6 +107,8 @@ For a curated repair only, an explicitly retained project attribute baseline may
 - `歌唱力`, `歌が上手い`, `生歌`, `高音`, `安定感` -> singing technique evidence
 - `歌声`, `声が好き` -> mostly tone/timbre; do not automatically raise pitch or breath
 - repeated important vocal parts / `落ちサビ` -> vocal rank bias, not proof by itself
+
+Record that observation as structured evidence—song difficulty, assigned-part difficulty, and completion quality—not as `SNG: N`. A well-completed part at least two difficulty points above its song average establishes a singing-cluster floor of `assigned part + 1`; independent direct vocal claims may add evidence-based lift above that floor.
 
 A documented vocal part completed well at a difficulty materially above its song average is direct performance evidence for pitch/tone/breath/rhythm. One successful song supports attributes, not by itself a high `singer` trait.
 
@@ -292,7 +295,7 @@ Do not normalize an entire roster into a narrow band.
 
 ## Calibration examples
 
-### High-cat / 高嶺のなでしこ
+### High-cat / 高嶺のなでしこ (offline evaluation)
 
 Useful shape anchors include:
 - 籾山ひめり ~82, song+dance strong
@@ -302,7 +305,7 @@ Useful shape anchors include:
 - 春野莉々 ~72, vocal strong with multiple weak support domains
 - 城月菜央 humor 17, visual/communication shape
 
-### iLiFE! S6 opening
+### iLiFE! S6 opening (offline evaluation)
 
 Working Ability anchors:
 - あいす 85
@@ -313,6 +316,7 @@ Working Ability anchors:
 - 純嶺みき 79
 - 福丸うさ 78
 - 虹羽みに 77
+These examples are hold-out checks only. They must not be encoded as per-member constraints, ranges, floors, or Ability targets in a generator run.
 - 小熊まむ 76
 
 This roster is a useful B-tier calibration: mean ~80, one rare 85 head, most members 77-82.
