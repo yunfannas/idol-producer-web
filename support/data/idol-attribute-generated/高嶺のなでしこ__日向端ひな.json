@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.765Z",
+  "generated_at": "2026-09-04T15:52:34.863Z",
   "skill": "idol-attribute-generation",
   "uid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
   "name": "日向端ひな",
@@ -14,6 +14,7 @@
   "current_group_months": 35.8,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "高嶺のなでしこ (2022-07-10–present)",
   "attributes": {
     "strength": 12,

@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.762Z",
+  "generated_at": "2026-09-04T15:52:34.860Z",
   "skill": "idol-attribute-generation",
   "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
   "name": "空詩かれん",
@@ -10,11 +10,20 @@
   "height_cm": 155,
   "career_months": 5.5,
   "prior_group_months": 0,
-  "training_background": null,
   "current_group_months": 5.5,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
-  "career_summary": "iLife! (2025-01-20–present)",
+  "incomplete_prior_groups": [
+    {
+      "group_name": "Monogatari",
+      "group_uid": null,
+      "start_date": null,
+      "end_date": "2020-02-16",
+      "date_status": "start_unknown"
+    }
+  ],
+  "career_summary": "Monogatari (start unknown–2020-02-16); iLife! (2025-01-20–present)",
+  "training_background": null,
   "attributes": {
     "strength": 13,
     "agility": 16,
@@ -60,7 +69,7 @@
       "dance high but secondary to vocal"
     ],
     "procedural_only": [
-      "catalog career_months short for iLiFE only; prior group may be undated in DB"
+      "Monogatari prior-group record has an unknown start date; duration is not counted"
     ]
   },
   "constraints_applied": {
@@ -82,8 +91,9 @@
     ]
   },
   "career_context_used": [
-    "catalog: iLife! (2025-01-20–present)",
+    "catalog: Monogatari (start unknown–2020-02-16); iLife! (2025-01-20–present)",
+    "prior groups (duration unknown): Monogatari",
     "career_months=5.5",
-    "short current_group tenure ignored as weakness; leadership/vocal evidence overrides newcomer prior"
+    "Monogatari context retained without inventing duration; leadership/vocal evidence overrides newcomer prior"
   ]
 }

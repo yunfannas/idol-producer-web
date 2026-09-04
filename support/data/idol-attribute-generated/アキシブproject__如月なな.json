@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.763Z",
+  "generated_at": "2026-09-04T15:52:34.861Z",
   "skill": "idol-attribute-generation",
   "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
   "name": "如月なな",
@@ -14,6 +14,7 @@
   "current_group_months": 31.5,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "アキシブproject (2022-11-20–present)",
   "attributes": {
     "strength": 13,

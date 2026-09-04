@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.764Z",
+  "generated_at": "2026-09-04T15:52:34.862Z",
   "skill": "idol-attribute-generation",
   "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
   "name": "水琴まなみ",
@@ -14,6 +14,7 @@
   "current_group_months": 6.7,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "アキシブproject (2024-12-13–present)",
   "attributes": {
     "strength": 13,

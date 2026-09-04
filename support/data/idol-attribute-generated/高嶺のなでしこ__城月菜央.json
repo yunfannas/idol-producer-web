@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.764Z",
+  "generated_at": "2026-09-04T15:52:34.863Z",
   "skill": "idol-attribute-generation",
   "uid": "2fda22b6-ffe0-4265-b61c-00caa862380f",
   "name": "城月菜央",
@@ -22,6 +22,7 @@
       "months": 6
     }
   ],
+  "incomplete_prior_groups": [],
   "career_summary": "#PEXACOA (2021-05-30–2021-11-30); 高嶺のなでしこ (2022-07-10–present)",
   "attributes": {
     "strength": 12,

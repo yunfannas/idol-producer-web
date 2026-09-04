@@ -1,13 +1,13 @@
 {
   "schema": "idol_attribute_generation_batch_v1",
-  "generated_at": "2026-09-04T08:25:48.771Z",
+  "generated_at": "2026-09-04T15:52:34.870Z",
   "skill": "idol-attribute-generation",
   "opening_date": "2025-07-05",
   "note": "Generator-only rerun from existing Tavily evidence + catalog career context. Ability is derived; no target-Ability nudging.",
   "members": [
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.760Z",
+      "generated_at": "2026-09-04T15:52:34.859Z",
       "skill": "idol-attribute-generation",
       "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
       "name": "あいす",
@@ -21,6 +21,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
       "attributes": {
         "strength": 14,
@@ -95,7 +96,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.762Z",
+      "generated_at": "2026-09-04T15:52:34.860Z",
       "skill": "idol-attribute-generation",
       "uid": "bdda9cba-8c14-400a-81d6-9f6a91c60a5f",
       "name": "空詩かれん",
@@ -105,11 +106,20 @@
       "height_cm": 155,
       "career_months": 5.5,
       "prior_group_months": 0,
-      "training_background": null,
       "current_group_months": 5.5,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
-      "career_summary": "iLife! (2025-01-20–present)",
+      "incomplete_prior_groups": [
+        {
+          "group_name": "Monogatari",
+          "group_uid": null,
+          "start_date": null,
+          "end_date": "2020-02-16",
+          "date_status": "start_unknown"
+        }
+      ],
+      "career_summary": "Monogatari (start unknown–2020-02-16); iLife! (2025-01-20–present)",
+      "training_background": null,
       "attributes": {
         "strength": 13,
         "agility": 16,
@@ -155,7 +165,7 @@
           "dance high but secondary to vocal"
         ],
         "procedural_only": [
-          "catalog career_months short for iLiFE only; prior group may be undated in DB"
+          "Monogatari prior-group record has an unknown start date; duration is not counted"
         ]
       },
       "constraints_applied": {
@@ -177,14 +187,15 @@
         ]
       },
       "career_context_used": [
-        "catalog: iLife! (2025-01-20–present)",
+        "catalog: Monogatari (start unknown–2020-02-16); iLife! (2025-01-20–present)",
+        "prior groups (duration unknown): Monogatari",
         "career_months=5.5",
-        "short current_group tenure ignored as weakness; leadership/vocal evidence overrides newcomer prior"
+        "Monogatari context retained without inventing duration; leadership/vocal evidence overrides newcomer prior"
       ]
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.762Z",
+      "generated_at": "2026-09-04T15:52:34.861Z",
       "skill": "idol-attribute-generation",
       "uid": "8006b0ec-ead5-43fc-bb0e-6bb9f579b1c4",
       "name": "若葉のあ",
@@ -198,6 +209,7 @@
       "current_group_months": 21.7,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "iLife! (2023-09-12–present)",
       "attributes": {
         "strength": 13,
@@ -269,7 +281,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.762Z",
+      "generated_at": "2026-09-04T15:52:34.860Z",
       "skill": "idol-attribute-generation",
       "uid": "9871efc4-1501-41eb-a430-94fd34bf4015",
       "name": "純嶺みき",
@@ -283,6 +295,7 @@
       "current_group_months": 1.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "iLife! (2025-05-10–present)",
       "attributes": {
         "strength": 14,
@@ -354,7 +367,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.761Z",
+      "generated_at": "2026-09-04T15:52:34.859Z",
       "skill": "idol-attribute-generation",
       "uid": "39648c9a-5e5c-47b9-9145-4437d165330e",
       "name": "小熊まむ",
@@ -368,6 +381,7 @@
       "current_group_months": 1.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "iLife! (2025-05-11–present)",
       "attributes": {
         "strength": 13,
@@ -439,7 +453,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.761Z",
+      "generated_at": "2026-09-04T15:52:34.860Z",
       "skill": "idol-attribute-generation",
       "uid": "112c6285-2b64-423f-aecc-9792a019fa67",
       "name": "心花りり",
@@ -453,6 +467,7 @@
       "current_group_months": 52.3,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "Yumeiro H!L!T (2019-06-23–present); iLife! (2021-02-25–present); GILTY × GILTY (2022-06-01–present)",
       "attributes": {
         "strength": 14,
@@ -522,7 +537,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.763Z",
+      "generated_at": "2026-09-04T15:52:34.861Z",
       "skill": "idol-attribute-generation",
       "uid": "2a3f475a-312d-43b5-ace9-5c66b2df9784",
       "name": "那蘭のどか",
@@ -544,6 +559,7 @@
           "months": 34.6
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "ZOCX (2021-05-13–2024-03-31); iLiFE! (2024-09-28–2025-08-27)",
       "attributes": {
         "strength": 13,
@@ -616,7 +632,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.763Z",
+      "generated_at": "2026-09-04T15:52:34.861Z",
       "skill": "idol-attribute-generation",
       "uid": "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
       "name": "虹羽みに",
@@ -630,6 +646,7 @@
       "current_group_months": 1.9,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "iLife! (2025-05-09–present)",
       "attributes": {
         "strength": 12,
@@ -704,7 +721,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.762Z",
+      "generated_at": "2026-09-04T15:52:34.860Z",
       "skill": "idol-attribute-generation",
       "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
       "name": "福丸うさ",
@@ -718,6 +735,7 @@
       "current_group_months": 23.7,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
       "attributes": {
         "strength": 13,
@@ -789,7 +807,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.764Z",
+      "generated_at": "2026-09-04T15:52:34.863Z",
       "skill": "idol-attribute-generation",
       "uid": "c9703d21-784d-4818-ba13-eb66993e5b12",
       "name": "葵ふう",
@@ -803,6 +821,7 @@
       "current_group_months": 31.5,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "アキシブproject (2022-11-20–present)",
       "attributes": {
         "strength": 13,
@@ -868,7 +887,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.763Z",
+      "generated_at": "2026-09-04T15:52:34.861Z",
       "skill": "idol-attribute-generation",
       "uid": "3dfb8264-e501-45a7-a373-b3255445674e",
       "name": "古賀みれい",
@@ -882,6 +901,7 @@
       "current_group_months": 31.5,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "アキシブproject (2022-11-20–2025-09-29)",
       "attributes": {
         "strength": 13,
@@ -951,7 +971,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.764Z",
+      "generated_at": "2026-09-04T15:52:34.862Z",
       "skill": "idol-attribute-generation",
       "uid": "25e6538c-68e4-4d4f-8aca-becdd5efd613",
       "name": "水琴まなみ",
@@ -965,6 +985,7 @@
       "current_group_months": 6.7,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "アキシブproject (2024-12-13–present)",
       "attributes": {
         "strength": 13,
@@ -1031,7 +1052,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.764Z",
+      "generated_at": "2026-09-04T15:52:34.862Z",
       "skill": "idol-attribute-generation",
       "uid": "45484495-8792-48db-bab0-560ee4107464",
       "name": "清見るん",
@@ -1053,7 +1074,16 @@
           "months": 26.2
         }
       ],
-      "career_summary": "炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+      "incomplete_prior_groups": [
+        {
+          "group_name": "Tansan Chronicle",
+          "group_uid": null,
+          "start_date": null,
+          "end_date": "2023-06-23",
+          "date_status": "start_unknown"
+        }
+      ],
+      "career_summary": "Tansan Chronicle (start unknown–2023-06-23); 炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
       "attributes": {
         "strength": 13,
         "agility": 15,
@@ -1061,7 +1091,7 @@
         "stamina": 16,
         "cute": 14,
         "pretty": 15,
-        "pitch": 18,
+        "pitch": 17,
         "tone": 17,
         "breath": 17,
         "rhythm": 17,
@@ -1083,12 +1113,12 @@
       "radar": {
         "PHY": 14.5,
         "APP": 14.8,
-        "SNG": 17.25,
+        "SNG": 17,
         "DAN": 15.67,
         "MEN": 14.67
       },
-      "ability": 77,
-      "ability_raw": 77.042,
+      "ability": 76,
+      "ability_raw": 76.708,
       "evidence_summary": {
         "high_confidence": [
           "appears in same talk-live coverage as peers",
@@ -1099,7 +1129,7 @@
       },
       "constraints_applied": {
         "ranges": [
-          "pitch 18, tone/breath/rhythm 17"
+          "pitch/tone/breath/rhythm 17"
         ],
         "ranks": [
           "vocal strength"
@@ -1111,8 +1141,9 @@
         "biases": []
       },
       "career_context_used": [
-        "catalog: 炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
+        "catalog: Tansan Chronicle (start unknown–2023-06-23); 炭酸くろにくるっ (2021-04-18–2023-06-23); アキシブproject (2023-12-27–present)",
         "prior groups: 炭酸くろにくるっ",
+        "prior groups (duration unknown): Tansan Chronicle",
         "career_months=44.4",
         "prior_group_months=26.2",
         "prior_group_months used as professional floor only"
@@ -1120,7 +1151,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.763Z",
+      "generated_at": "2026-09-04T15:52:34.861Z",
       "skill": "idol-attribute-generation",
       "uid": "ddb5696e-2390-4d7e-b17d-6de5e77a3533",
       "name": "如月なな",
@@ -1134,6 +1165,7 @@
       "current_group_months": 31.5,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "アキシブproject (2022-11-20–present)",
       "attributes": {
         "strength": 13,
@@ -1198,7 +1230,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.764Z",
+      "generated_at": "2026-09-04T15:52:34.862Z",
       "skill": "idol-attribute-generation",
       "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
       "name": "美山ひな",
@@ -1227,6 +1259,7 @@
           "months": 8.9
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
       "attributes": {
         "strength": 13,
@@ -1296,7 +1329,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.763Z",
+      "generated_at": "2026-09-04T15:52:34.862Z",
       "skill": "idol-attribute-generation",
       "uid": "9fca343a-7ca8-4b6e-aade-3a0ffbcfe7e8",
       "name": "平沢かえ",
@@ -1310,6 +1343,7 @@
       "current_group_months": 18.2,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "アキシブproject (2023-12-28–2026-02-24)",
       "attributes": {
         "strength": 13,
@@ -1377,7 +1411,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.764Z",
+      "generated_at": "2026-09-04T15:52:34.862Z",
       "skill": "idol-attribute-generation",
       "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
       "name": "茉井良菜",
@@ -1413,6 +1447,7 @@
           "months": 6.6
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
       "attributes": {
         "strength": 13,
@@ -1421,9 +1456,9 @@
         "stamina": 16,
         "cute": 14,
         "pretty": 17,
-        "pitch": 18,
-        "tone": 18,
-        "breath": 18,
+        "pitch": 17,
+        "tone": 17,
+        "breath": 17,
         "rhythm": 17,
         "power": 15,
         "stage_presence": 17,
@@ -1443,12 +1478,12 @@
       "radar": {
         "PHY": 14,
         "APP": 16.4,
-        "SNG": 17.75,
+        "SNG": 17,
         "DAN": 16.33,
         "MEN": 15
       },
-      "ability": 80,
-      "ability_raw": 80.333,
+      "ability": 79,
+      "ability_raw": 79.333,
       "evidence_summary": {
         "high_confidence": [
           "image model / cosmetics campaigns",
@@ -1461,7 +1496,7 @@
       "constraints_applied": {
         "ranges": [
           "fashion/pretty 16-18",
-          "pitch/tone/breath 18, rhythm 17"
+          "pitch/tone/breath/rhythm 17"
         ],
         "ranks": [
           "model/visual lean; vocal strength"
@@ -1485,7 +1520,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.766Z",
+      "generated_at": "2026-09-04T15:52:34.864Z",
       "skill": "idol-attribute-generation",
       "uid": "fa435849-8378-41af-b0fe-341103a45ac5",
       "name": "橋本桃呼",
@@ -1507,6 +1542,7 @@
           "months": 49.5
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "Last Idol 2nd Generation (2018-04-15–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
       "attributes": {
         "strength": 13,
@@ -1574,7 +1610,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.765Z",
+      "generated_at": "2026-09-04T15:52:34.864Z",
       "skill": "idol-attribute-generation",
       "uid": "5c75a6ef-154d-4402-b65b-cb9dcfb34a70",
       "name": "春野莉々",
@@ -1588,6 +1624,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "高嶺のなでしこ (2022-07-10–2025-07-31)",
       "attributes": {
         "strength": 11,
@@ -1653,7 +1690,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.765Z",
+      "generated_at": "2026-09-04T15:52:34.864Z",
       "skill": "idol-attribute-generation",
       "uid": "d7006c4e-f7e9-4a02-8be6-1082f1526c31",
       "name": "松本ももな",
@@ -1675,6 +1712,7 @@
           "months": 57.6
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "Choux Cream Rockets (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
       "attributes": {
         "strength": 12,
@@ -1745,7 +1783,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.764Z",
+      "generated_at": "2026-09-04T15:52:34.863Z",
       "skill": "idol-attribute-generation",
       "uid": "2fda22b6-ffe0-4265-b61c-00caa862380f",
       "name": "城月菜央",
@@ -1767,6 +1805,7 @@
           "months": 6
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "#PEXACOA (2021-05-30–2021-11-30); 高嶺のなでしこ (2022-07-10–present)",
       "attributes": {
         "strength": 12,
@@ -1839,7 +1878,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.765Z",
+      "generated_at": "2026-09-04T15:52:34.863Z",
       "skill": "idol-attribute-generation",
       "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
       "name": "星谷美来",
@@ -1853,6 +1892,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "高嶺のなでしこ (2022-07-10–present)",
       "attributes": {
         "strength": 12,
@@ -1921,7 +1961,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.765Z",
+      "generated_at": "2026-09-04T15:52:34.864Z",
       "skill": "idol-attribute-generation",
       "uid": "c9d6ebdd-2027-4e1f-b7b1-8831718bc453",
       "name": "東山恵里沙",
@@ -1935,6 +1975,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "高嶺のなでしこ (2022-07-10–present)",
       "attributes": {
         "strength": 13,
@@ -2001,7 +2042,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.765Z",
+      "generated_at": "2026-09-04T15:52:34.863Z",
       "skill": "idol-attribute-generation",
       "uid": "d1d67550-8a8e-436f-b0fc-22ec3827ef25",
       "name": "日向端ひな",
@@ -2015,6 +2056,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "高嶺のなでしこ (2022-07-10–present)",
       "attributes": {
         "strength": 12,
@@ -2076,7 +2118,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.766Z",
+      "generated_at": "2026-09-04T15:52:34.864Z",
       "skill": "idol-attribute-generation",
       "uid": "7e1f424a-254d-4c98-9ef4-059e6a8e30b9",
       "name": "籾山ひめり",
@@ -2098,6 +2140,7 @@
           "months": 57.6
         }
       ],
+      "incomplete_prior_groups": [],
       "career_summary": "Someday Somewhere (2017-08-13–2022-05-31); 高嶺のなでしこ (2022-08-05–present)",
       "attributes": {
         "strength": 14,
@@ -2169,7 +2212,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.766Z",
+      "generated_at": "2026-09-04T15:52:34.865Z",
       "skill": "idol-attribute-generation",
       "uid": "0ee225b0-bc42-4132-998e-46a0d6df1b9c",
       "name": "葉月紗蘭",
@@ -2183,6 +2226,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "高嶺のなでしこ (2022-07-10–present)",
       "attributes": {
         "strength": 11,
@@ -2249,7 +2293,7 @@
     },
     {
       "schema": "idol_attribute_generation_v1",
-      "generated_at": "2026-09-04T08:25:48.766Z",
+      "generated_at": "2026-09-04T15:52:34.864Z",
       "skill": "idol-attribute-generation",
       "uid": "3b2056fe-4dd1-4b72-8c90-9d3e25f302b8",
       "name": "涼海すう",
@@ -2263,6 +2307,7 @@
       "current_group_months": 35.8,
       "career_reference_date": "2025-07-05",
       "prior_groups": [],
+      "incomplete_prior_groups": [],
       "career_summary": "高嶺のなでしこ (2022-07-10–present)",
       "attributes": {
         "strength": 12,

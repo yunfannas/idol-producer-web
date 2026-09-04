@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.762Z",
+  "generated_at": "2026-09-04T15:52:34.860Z",
   "skill": "idol-attribute-generation",
   "uid": "256177bf-8043-4c43-9e77-c9838fcbf245",
   "name": "福丸うさ",
@@ -14,6 +14,7 @@
   "current_group_months": 23.7,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "ZUTTOMOTTO (2023-02-04–2023-09-01); iLife! (2023-07-15–present)",
   "attributes": {
     "strength": 13,

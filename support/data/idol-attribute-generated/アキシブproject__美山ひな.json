@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.764Z",
+  "generated_at": "2026-09-04T15:52:34.862Z",
   "skill": "idol-attribute-generation",
   "uid": "814c40ad-bcde-4f1a-af3b-f5154e98d601",
   "name": "美山ひな",
@@ -29,6 +29,7 @@
       "months": 8.9
     }
   ],
+  "incomplete_prior_groups": [],
   "career_summary": "じーくらむ！ (2021-07-01–2022-08-31); あげもん！ (2022-11-01–2023-07-31); アキシブproject (2024-12-16–2025-10-17)",
   "attributes": {
     "strength": 13,

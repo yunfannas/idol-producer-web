@@ -48,6 +48,12 @@ function mergeDays(segments) {
   return days;
 }
 
+function groupIdentity(entry) {
+  const uid = String(entry?.group_uid ?? '').trim();
+  if (uid) return `uid:${uid.toLowerCase()}`;
+  return `name:${String(entry?.group_name ?? '').trim().toLowerCase()}`;
+}
+
 function careerContext(idol, groupName, groupUid, referenceDate) {
   const history = Array.isArray(idol?.group_history) ? idol.group_history : [];
   const allDated = history
@@ -68,15 +74,17 @@ function careerContext(idol, groupName, groupUid, referenceDate) {
       prior_group_months: null,
       current_group_months: null,
       prior_groups: [],
+      incomplete_prior_groups: [],
       career_summary: '',
     };
   }
   const currentStart = activeTarget.segment.start;
-  const priorGroups = allDated
+  const priorRows = allDated
     .filter(({ entry, segment }) => {
       if (matchesTarget(entry)) return false;
       return Boolean(entry.end_date) && segment.end <= currentStart;
-    })
+    });
+  const priorGroups = priorRows
     .map(({ entry, segment }) => ({
       group_name: String(entry.group_name ?? '').trim() || null,
       group_uid: String(entry.group_uid ?? '').trim() || null,
@@ -85,21 +93,47 @@ function careerContext(idol, groupName, groupUid, referenceDate) {
       months: monthCount(dayNumber(segment.end) - dayNumber(segment.start)),
     }))
     .sort((a, b) => a.start_date.localeCompare(b.start_date));
+  const incompleteGroupKeys = new Set();
+  const incompletePriorGroups = history
+    .filter((entry) => {
+      if (matchesTarget(entry)) return false;
+      const start = isIsoDay(entry.start_date) ? entry.start_date : null;
+      const end = isIsoDay(entry.end_date) ? entry.end_date : null;
+      return !start && Boolean(end) && end <= currentStart;
+    })
+    .map((entry) => ({
+      group_name: String(entry.group_name ?? '').trim() || null,
+      group_uid: String(entry.group_uid ?? '').trim() || null,
+      start_date: null,
+      end_date: isIsoDay(entry.end_date) ? entry.end_date : null,
+      date_status: 'start_unknown',
+    }))
+    .filter((entry) => {
+      const key = groupIdentity(entry);
+      if (incompleteGroupKeys.has(key)) return false;
+      incompleteGroupKeys.add(key);
+      return true;
+    })
+    .sort((a, b) => a.end_date.localeCompare(b.end_date));
   const priorDays = mergeDays(priorGroups.map((e) => ({ start: e.start_date, end: e.end_date })));
   const allDays = mergeDays(allDated.map(({ segment }) => segment));
-  return {
-    career_months: monthCount(allDays),
-    prior_group_months: monthCount(priorDays),
-    current_group_months: monthCount(dayNumber(referenceDate) - dayNumber(currentStart)),
-    prior_groups: priorGroups,
-    career_summary: allDated
+  const careerSummary = [
+    ...incompletePriorGroups.map((entry) => `${entry.group_name} (start unknown–${entry.end_date})`),
+    ...allDated
       .sort((a, b) => a.segment.start.localeCompare(b.segment.start))
       .map(({ entry, segment }) => {
         const name = String(entry.group_name ?? entry.group_uid ?? 'Unknown').trim();
         const end = entry.end_date || 'present';
         return `${name} (${segment.start}–${end})`;
-      })
-      .join('; '),
+      }),
+  ].join('; ');
+  return {
+    career_months: monthCount(allDays),
+    prior_group_months: monthCount(priorDays),
+    current_group_months: monthCount(dayNumber(referenceDate) - dayNumber(currentStart)),
+    prior_groups: priorGroups,
+    incomplete_prior_groups: incompletePriorGroups,
+    career_summary: careerSummary,
   };
 }
 
@@ -170,12 +204,14 @@ function generateOne(ctx) {
   const careerMonths = career.career_months ?? member.career_months ?? 0;
   const priorMonths = career.prior_group_months ?? member.prior_group_months ?? 0;
   const priorNames = (career.prior_groups || []).map((g) => g.group_name).filter(Boolean);
+  const incompletePriorNames = (career.incomplete_prior_groups || []).map((g) => g.group_name).filter(Boolean);
   const summary = career.career_summary || '';
   const snippets = matchedSnippet(evidence);
 
   const careerNotes = [];
   if (summary) careerNotes.push(`catalog: ${summary}`);
   if (priorNames.length) careerNotes.push(`prior groups: ${priorNames.join(', ')}`);
+  if (incompletePriorNames.length) careerNotes.push(`prior groups (duration unknown): ${incompletePriorNames.join(', ')}`);
   if (careerMonths != null) careerNotes.push(`career_months=${careerMonths}`);
   if (priorMonths) careerNotes.push(`prior_group_months=${priorMonths}`);
 
@@ -243,7 +279,7 @@ function generateOne(ctx) {
             'stamina floor 18',
           ],
           medium_confidence: ['dance high but secondary to vocal'],
-          procedural_only: ['catalog career_months short for iLiFE only; prior group may be undated in DB'],
+          procedural_only: ['Monogatari prior-group record has an unknown start date; duration is not counted'],
         },
         constraints_applied: {
           ranges: ['pitch/tone 18-19', 'breath 17-18', 'stage_presence 17-18'],
@@ -253,7 +289,7 @@ function generateOne(ctx) {
         },
         career_context_used: [
           ...careerNotes,
-          'short current_group tenure ignored as weakness; leadership/vocal evidence overrides newcomer prior',
+          'Monogatari context retained without inventing duration; leadership/vocal evidence overrides newcomer prior',
         ],
       },
     ),
@@ -827,7 +863,7 @@ function generateOne(ctx) {
       {
         strength: 13, agility: 15, natural_fitness: 14, stamina: 16,
         cute: 14, pretty: 15,
-        pitch: 18, tone: 17, breath: 17, rhythm: 17, power: 15, stage_presence: 15,
+        pitch: 17, tone: 17, breath: 17, rhythm: 17, power: 15, stage_presence: 15,
         wit: 14, humor: 14, talking: 15, determination: 15, teamwork: 15, fashion: 15,
       },
       { singer: 90, dancer: 130, model: 80, comedy: 70 },
@@ -841,7 +877,7 @@ function generateOne(ctx) {
           procedural_only: [],
         },
         constraints_applied: {
-          ranges: ['pitch 18, tone/breath/rhythm 17'],
+          ranges: ['pitch/tone/breath/rhythm 17'],
           ranks: ['vocal strength'],
           floors: ['completed Shine on you vocal part difficulty 16', 'prior 炭酸くろにくるっ tenure regularizes basics'],
           biases: [],
@@ -884,7 +920,7 @@ function generateOne(ctx) {
       {
         strength: 13, agility: 14, natural_fitness: 13, stamina: 16,
         cute: 14, pretty: 17,
-        pitch: 18, tone: 18, breath: 18, rhythm: 17, power: 15, stage_presence: 17,
+        pitch: 17, tone: 17, breath: 17, rhythm: 17, power: 15, stage_presence: 17,
         wit: 14, humor: 13, talking: 15, determination: 16, teamwork: 15, fashion: 17,
       },
       { singer: 90, dancer: 110, model: 220, comedy: 60 },
@@ -899,7 +935,7 @@ function generateOne(ctx) {
           procedural_only: [],
         },
         constraints_applied: {
-          ranges: ['fashion/pretty 16-18', 'pitch/tone/breath 18, rhythm 17'],
+          ranges: ['fashion/pretty 16-18', 'pitch/tone/breath/rhythm 17'],
           ranks: ['model/visual lean; vocal strength'],
           floors: ['completed Shine on you vocal part difficulty 16', 'long career determination/talking/stamina regularization'],
           biases: ['model trait', 'pretty age 26'],
@@ -954,6 +990,7 @@ function careerFields(member, career) {
     current_group_months: career.current_group_months ?? null,
     career_reference_date: OPENING,
     prior_groups: career.prior_groups || [],
+    incomplete_prior_groups: career.incomplete_prior_groups || [],
     career_summary: career.career_summary || '',
   };
 }

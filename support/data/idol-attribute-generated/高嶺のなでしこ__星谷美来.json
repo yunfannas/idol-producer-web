@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.765Z",
+  "generated_at": "2026-09-04T15:52:34.863Z",
   "skill": "idol-attribute-generation",
   "uid": "a3b60276-9e19-4966-8e12-7a487c2f3bd8",
   "name": "星谷美来",
@@ -14,6 +14,7 @@
   "current_group_months": 35.8,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "高嶺のなでしこ (2022-07-10–present)",
   "attributes": {
     "strength": 12,

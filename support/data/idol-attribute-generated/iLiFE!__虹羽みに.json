@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.763Z",
+  "generated_at": "2026-09-04T15:52:34.861Z",
   "skill": "idol-attribute-generation",
   "uid": "77a5d5c2-cb47-4523-b18f-c1f18476e4cb",
   "name": "虹羽みに",
@@ -14,6 +14,7 @@
   "current_group_months": 1.9,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "iLife! (2025-05-09–present)",
   "attributes": {
     "strength": 12,

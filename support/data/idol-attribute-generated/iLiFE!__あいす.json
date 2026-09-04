@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.760Z",
+  "generated_at": "2026-09-04T15:52:34.859Z",
   "skill": "idol-attribute-generation",
   "uid": "890b101f-f7b0-4111-b495-5137a2aca824",
   "name": "あいす",
@@ -14,6 +14,7 @@
   "current_group_months": 35.8,
   "career_reference_date": "2025-07-05",
   "prior_groups": [],
+  "incomplete_prior_groups": [],
   "career_summary": "YAMINABE (2022-04-01–2022-11-20); iLiFE! (2022-07-11–present)",
   "attributes": {
     "strength": 14,

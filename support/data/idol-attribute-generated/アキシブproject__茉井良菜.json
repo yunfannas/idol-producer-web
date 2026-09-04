@@ -1,6 +1,6 @@
 {
   "schema": "idol_attribute_generation_v1",
-  "generated_at": "2026-09-04T08:25:48.764Z",
+  "generated_at": "2026-09-04T15:52:34.862Z",
   "skill": "idol-attribute-generation",
   "uid": "f58e36c6-38e3-49d7-9253-2225dc16f3d2",
   "name": "茉井良菜",
@@ -36,6 +36,7 @@
       "months": 6.6
     }
   ],
+  "incomplete_prior_groups": [],
   "career_summary": "Le Siana (2012-10-01–2016-06-04); 煌めき☆アンフォレント (2016-07-03–2020-11-29); モユルハル (2022-08-16–2023-03-05); アキシブproject (2023-12-29–present)",
   "attributes": {
     "strength": 13,
@@ -44,9 +45,9 @@
     "stamina": 16,
     "cute": 14,
     "pretty": 17,
-    "pitch": 18,
-    "tone": 18,
-    "breath": 18,
+    "pitch": 17,
+    "tone": 17,
+    "breath": 17,
     "rhythm": 17,
     "power": 15,
     "stage_presence": 17,
@@ -66,12 +67,12 @@
   "radar": {
     "PHY": 14,
     "APP": 16.4,
-    "SNG": 17.75,
+    "SNG": 17,
     "DAN": 16.33,
     "MEN": 15
   },
-  "ability": 80,
-  "ability_raw": 80.333,
+  "ability": 79,
+  "ability_raw": 79.333,
   "evidence_summary": {
     "high_confidence": [
       "image model / cosmetics campaigns",
@@ -84,7 +85,7 @@
   "constraints_applied": {
     "ranges": [
       "fashion/pretty 16-18",
-      "pitch/tone/breath 18, rhythm 17"
+      "pitch/tone/breath/rhythm 17"
     ],
     "ranks": [
       "model/visual lean; vocal strength"
