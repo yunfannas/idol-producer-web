@@ -21,9 +21,18 @@ function parseArgs(argv) {
 
 const args = parseArgs(process.argv);
 const configPath = args.config || 'support/config/idol-attribute-search.json';
+const careerContextPath = args['career-context'] || 'support/data/idol-career-context.json';
 
 async function readJson(file) {
   return JSON.parse(await fs.readFile(file, 'utf8'));
+}
+
+async function readJsonIfExists(file) {
+  try { return await readJson(file); }
+  catch (err) {
+    if (err?.code === 'ENOENT') return null;
+    throw err;
+  }
 }
 
 function slugify(value) {
@@ -85,10 +94,7 @@ async function braveSearch(query, providerConfig) {
   if (providerConfig.freshness) url.searchParams.set('freshness', providerConfig.freshness);
 
   const res = await fetch(url, {
-    headers: {
-      Accept: 'application/json',
-      'X-Subscription-Token': apiKey,
-    },
+    headers: { Accept: 'application/json', 'X-Subscription-Token': apiKey },
   });
   if (!res.ok) throw new Error(`Brave search ${res.status}: ${await res.text()}`);
   const json = await res.json();
@@ -110,11 +116,8 @@ async function runQuery(member, spec, config, phase) {
   const query = fillTemplate(spec.query, member);
   let results = [];
   let error = null;
-  try {
-    results = await search(query, config);
-  } catch (err) {
-    error = String(err?.message || err);
-  }
+  try { results = await search(query, config); }
+  catch (err) { error = String(err?.message || err); }
   const ranked = results
     .map(r => scoreCandidate(r, spec.terms || [], config))
     .sort((a, b) => b.relevance_score - a.relevance_score);
@@ -146,13 +149,11 @@ function coverageFromEvidence(evidence, config) {
   const domainTerms = buildDomainTerms(config);
   const coverage = {};
   for (const domain of domainTerms.keys()) coverage[domain] = 0;
-
   for (const item of evidence) {
     for (const result of item.results || []) {
       const text = `${result.title || ''}\n${result.description || ''}`;
       for (const [domain, terms] of domainTerms.entries()) {
-        const matched = [...terms].some(term => text.includes(term));
-        if (matched) coverage[domain] += 1;
+        if ([...terms].some(term => text.includes(term))) coverage[domain] += 1;
       }
     }
   }
@@ -163,13 +164,12 @@ function chooseFollowups(coverage, config, tier) {
   const maxFollowups = Number(config.maxFollowupsByTier?.[tier] ?? config.maxFollowupsByTier?.C ?? 1);
   const threshold = Number(config.coverageThreshold ?? 1);
   if (maxFollowups <= 0) return [];
-
-  const candidates = (config.targetedQueries || [])
+  return (config.targetedQueries || [])
     .map(spec => ({ spec, score: Number(coverage[spec.domain] || 0) }))
     .filter(({ score }) => score < threshold)
-    .sort((a, b) => a.score - b.score || a.spec.domain.localeCompare(b.spec.domain));
-
-  return candidates.slice(0, maxFollowups).map(x => x.spec);
+    .sort((a, b) => a.score - b.score || a.spec.domain.localeCompare(b.spec.domain))
+    .slice(0, maxFollowups)
+    .map(x => x.spec);
 }
 
 async function loadMembers() {
@@ -191,9 +191,16 @@ async function loadMembers() {
   return Array.isArray(data) ? data : data.members;
 }
 
-async function collectMember(member, config) {
+async function loadCareerContext() {
+  const data = await readJsonIfExists(careerContextPath);
+  if (!data) return new Map();
+  return new Map((data.members || []).filter(x => x?.uid).map(x => [String(x.uid), x]));
+}
+
+async function collectMember(member, config, careerByUid) {
   const tier = String(member.tier || 'C').replace(/[+-]/g, '').toUpperCase();
   const evidence = [];
+  const careerContext = member.uid ? careerByUid.get(String(member.uid)) : null;
 
   const broad = (config.broadQueries || []).slice(0, Number(config.broadQueryCount || 3));
   for (const spec of broad) evidence.push(await runQuery(member, spec, config, 'broad'));
@@ -201,7 +208,6 @@ async function collectMember(member, config) {
   const initialCoverage = coverageFromEvidence(evidence, config);
   const followups = chooseFollowups(initialCoverage, config, tier);
   for (const spec of followups) evidence.push(await runQuery(member, spec, config, 'targeted'));
-
   const finalCoverage = coverageFromEvidence(evidence, config);
 
   return {
@@ -215,7 +221,8 @@ async function collectMember(member, config) {
       age: member.age ?? null,
       height_cm: member.height_cm ?? null,
       career_months: member.career_months ?? null,
-      prior_group_months: member.prior_group_months ?? null,
+      prior_group_months: member.prior_group_months ?? careerContext?.prior_group_months ?? null,
+      career_history: member.career_history ?? careerContext?.career_history ?? [],
       training_background: member.training_background ?? null,
     },
     search_summary: {
@@ -230,17 +237,20 @@ async function collectMember(member, config) {
 }
 
 async function main() {
-  const config = await readJson(configPath);
-  const members = await loadMembers();
+  const [config, members, careerByUid] = await Promise.all([
+    readJson(configPath),
+    loadMembers(),
+    loadCareerContext(),
+  ]);
   const outputDir = args.out || config.output?.defaultDir || 'support/data/idol-attribute-evidence';
   await fs.mkdir(outputDir, { recursive: true });
 
   for (const member of members) {
-    const record = await collectMember(member, config);
+    const record = await collectMember(member, config, careerByUid);
     const filename = `${slugify(member.group)}__${slugify(member.name)}.json`;
     const outputPath = path.join(outputDir, filename);
     await fs.writeFile(outputPath, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
-    console.log(`${outputPath} (${record.search_summary.total_queries} searches)`);
+    console.log(`${outputPath} (${record.search_summary.total_queries} searches, ${record.member.career_history.length} career segments)`);
   }
 }
 
