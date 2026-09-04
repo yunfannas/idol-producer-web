@@ -1,0 +1,38 @@
+{
+  "schema": "group_tier_history_overrides_v1",
+  "scenarios": {
+    "S1": { "opening_date": "2010-01-01", "label": "2009/2010 early-idol era" },
+    "S2": { "opening_date": "2013-07-01", "label": "2013 H2" },
+    "S3": { "opening_date": "2017-04-01", "label": "spring 2017" },
+    "S4": { "opening_date": "2019-12-01", "label": "2019-12" },
+    "S5": { "opening_date": "2021-01-01", "label": "early 2021" },
+    "S6": { "opening_date": "2025-07-05", "label": "2025-07-05" }
+  },
+  "notes": [
+    "This file stores only curated/explicit historical tier overrides. Do not fill unsupported history by guessing.",
+    "The builder creates all S1-S6 slots for every S6 database group. A group formed after a scenario date is marked not_active; unresolved active history is unknown.",
+    "S6 tier comes from public/data/scenarios/scenario_6/group_tiers.json unless explicitly overridden here."
+  ],
+  "overrides": {
+    "44Ki44Kt44K344OWcHJvamVjdA": {
+      "group_name": "アキシブproject",
+      "S6": { "tier": "D", "status": "active", "confidence": "curated", "note": "S6 working anchor" }
+    },
+    "aUxpRkUh": {
+      "group_name": "iLiFE!",
+      "S6": { "tier": "B", "status": "active", "confidence": "curated", "note": "S6 working anchor" }
+    },
+    "6auY5ba644Gu44Gq44Gn44GX44GT": {
+      "group_name": "高嶺のなでしこ",
+      "S6": { "tier": "C", "status": "active", "confidence": "curated", "note": "S6 working anchor" }
+    },
+    "PUxPVkU": {
+      "group_name": "=LOVE",
+      "S6": { "tier": "A", "status": "active", "confidence": "curated", "note": "S6 working anchor" }
+    },
+    "SmFtc0NvbGxlY3Rpb24": {
+      "group_name": "JamsCollection",
+      "S6": { "tier": "C", "status": "active", "confidence": "curated", "note": "S6 working anchor" }
+    }
+  }
+}
