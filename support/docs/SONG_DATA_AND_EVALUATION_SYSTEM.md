@@ -8,7 +8,7 @@
 
 The song database must stay compact enough to scale to 10,000+ songs. Most musical/aesthetic analysis is evidence used to estimate a small number of gameplay fields rather than becoming permanent simulation stats.
 
-For recommended/playable groups, songs may be manually reviewed in detail. For the broader catalog, title/lyrics/audio-preview/search evidence may be used to auto-enrich the same final fields.
+For recommended/playable groups, songs may be manually reviewed in detail. For the broader catalog, title/lyrics/audio-preview/search/streaming evidence may be used to auto-enrich the same final fields.
 
 ## 2. Core song fields
 
@@ -36,11 +36,45 @@ Dynamic fields such as `popularity`, `freshness`, and derived `classicness` rema
 
 `appeal` is the principal continuous intrinsic song-quality value.
 
-It represents the song/work's underlying potential to be positively received and retained after adequate exposure. It is not the same as current popularity, sales, views, TikTok performance, or promotional reach.
+It represents the song/work's underlying potential to be positively received and retained after adequate exposure. It is not identical to current popularity, sales, views, TikTok performance, or promotional reach.
 
 Detailed aesthetic review may consider concept, lyrics, music, choreography, performance, integration, signature features, and other evidence, but those do not need to become separate permanent game stats. They primarily support the final `appeal` estimate.
 
-Real-world success signals may be used as weak validation/correction evidence, not as a direct replacement for appeal.
+### 3.1 Streaming evidence
+
+Observed listening preference contains useful information about appeal. For large-scale automatic evaluation, **Spotify popularity and Apple Music relative listening/play performance may directly inform `appeal` when normalized correctly**.
+
+Use relative, not raw, comparison:
+
+```text
+same group
++ roughly comparable release era
++ enough time since release
++ similar release role when known
+```
+
+A practical default correction from within-group relative performance is:
+
+| Relative performance | Appeal evidence |
+|---|---:|
+| top ~10% | +2 |
+| 75–90% | +1 |
+| 25–75% | 0 |
+| 10–25% | -1 |
+| bottom ~10% | -2 |
+
+Rules:
+- agreement between Spotify and Apple Music increases confidence;
+- one platform alone normally gets reduced weight;
+- very recent songs get reduced weight until launch/promotion stabilizes;
+- title tracks, tie-ins, heavy playlisting, graduation/anniversary songs, and large campaigns require release-role/promotion adjustment;
+- known viral events may explain outperformance without the same increase in intrinsic appeal;
+- long-tail overperformance after promotion fades is particularly good appeal evidence;
+- absolute streams across different groups must not be directly compared as appeal;
+- sales/chart rank remain weaker evidence because release mechanics and fandom purchasing behavior confound them more heavily;
+- TikTok virality remains primarily part of SNS/history/event handling.
+
+This allows broad-catalog FAST evaluation to use real behavioral evidence instead of relying only on sparse lyrics or short previews.
 
 ## 4. Themes
 
@@ -225,6 +259,8 @@ title
 lyrics
 release metadata
 audio preview
+Spotify within-group relative popularity
+Apple Music within-group relative listening/play performance
 MV/live/choreography video when available
 web evidence / interviews / official descriptions
 historical platform signals when useful
