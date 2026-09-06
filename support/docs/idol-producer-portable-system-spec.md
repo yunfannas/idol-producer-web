@@ -2,6 +2,7 @@
 
 > Portable design snapshot distilled from the current design discussion.  
 > Simulation opening: **S6 = 2025-07-05**.  
+> Updated: **2026-09-05**.  
 > Status tags: **LOCKED** = current design truth; **PROVISIONAL** = direction agreed, constants tunable; **ILLUSTRATIVE** = calibration/example only; **REAL-WORLD ANCHOR** = observation used for calibration, not a forced future script.
 
 ---
@@ -138,13 +139,13 @@ Player controls broad Physical/Singing/Dance intensity, member adjustment, and I
 `Idol Trait` is a learned professional capability **outside the idol's core job of singing, dancing, visual presentation, and ordinary fan communication**. It is not a personality stat and must not recreate removed values such as `work_rate`, `professionalism`, `ambition`, or `loyalty`.
 
 Initial trait domains:
-- `mc` — professional MC / hosting beyond ordinary `talking`
-- `acting` — drama, film, stage acting
-- `lyric_writing` — writing lyrics
-- `composition` — composing songs
-- `choreography` — creating/materially designing choreography
-- `costume_design` — costume design/styling direction beyond ordinary `fashion`
-- `producer` — concept, member/role decisions, setlist/content direction, project coordination
+- `mc`
+- `acting`
+- `lyric_writing`
+- `composition`
+- `choreography`
+- `costume_design`
+- `producer`
 
 Additional professional domains may be added only when the game has meaningful activities that exercise them.
 
@@ -161,37 +162,20 @@ TraitXP[trait] >= 0
 
 Player normally sees the discrete level, not exact XP.
 
-### 7.2 Growth
+### 7.2 Growth and decay
 
-TraitXP grows only from actually performing the relevant work:
+TraitXP grows only from actually performing relevant work:
 
 ```text
 TraitXP gain
 = relevant work amount
-× completion quality
-× learning/mentorship modifier
+* completion quality
+* learning/mentorship modifier
 ```
 
-Examples:
-- hosting live/program/talk event -> MC
-- acting in stage/drama/film -> acting
-- credited/meaningful lyric contribution -> lyric_writing
-- composing demo/formal song -> composition
-- creating/materially revising choreography -> choreography
-- designing/supervising costume concept -> costume_design
-- taking real production responsibility -> producer
+Examples: hosting -> MC; acting work -> acting; credited lyrics -> lyric_writing; composing -> composition; meaningful choreography work -> choreography; costume concept -> costume_design; real production responsibility -> producer.
 
-Core attributes may affect learning or execution quality but do not directly grant the trait. Examples: `talking/wit/humor` can help MC, `creativity` can help composition/lyrics/producer, `fashion` can help costume design, `teamwork` can help collaborative production.
-
-### 7.3 Use-it-or-lose-it decay
-
-Trait XP decays when unused. **LOCKED concept.**
-
-- decay within the same displayed level can be noticeable;
-- crossing back below a displayed tier is deliberately very slow;
-- acquired professional experience should not vanish because of a short inactive period.
-
-Implementation may use hysteresis or a tier-protection multiplier. Exact downgrade thresholds remain PROVISIONAL.
+Core attributes may affect learning/execution quality but do not directly grant the trait. Trait XP decays when unused, but crossing back below a displayed tier is deliberately slow; acquired professional experience should not vanish after a short inactive period.
 
 ## 8. Fanwork policy
 
@@ -242,21 +226,30 @@ Trend modifies **Theme Coherence at setlist level**, not every song independentl
 
 ## 11. Song difficulty / traits / leads
 
-Default ordinary idol song: singDifficulty 12, danceDifficulty 12. Difficulty tiers: 10 / 12 / 14 / 16.
+Default ordinary idol song: `singDifficulty = 12`, `danceDifficulty = 12`.
 
-Traits:
-- easy_vocal -> 10
-- difficult_vocal -> 14
-- very_difficult_vocal -> 16
-- low_dance -> 10
-- difficult_dance -> 14
-- very_difficult_dance -> 16
-- sing_together
-- complex_formation
+Difficulty tiers are **8 / 10 / 12 / 14 / 16**:
+- 8 = especially easy
+- 10 = easy
+- 12 = ordinary
+- 14 = difficult
+- 16 = especially difficult
 
-No separate vocal_showcase/dance_showcase traits.
+Traits may map into those values:
+- `very_easy_vocal` -> 8
+- `easy_vocal` -> 10
+- `difficult_vocal` -> 14
+- `very_difficult_vocal` -> 16
+- `very_low_dance` -> 8
+- `low_dance` -> 10
+- `difficult_dance` -> 14
+- `very_difficult_dance` -> 16
+- `sing_together`
+- `complex_formation`
 
-Arrangement fixes maximum `vocalLeadSlots` and `danceLeadSlots`; player may fill fewer. Lead requirement defaults to song difficulty +2.
+`complex_formation` is descriptive/arrangement information. **There is no separate Formation Difficulty score.**
+
+Arrangement fixes 0–3 `vocalLeadSlots` and 0–3 `danceLeadSlots`; player may fill fewer where arrangement permits. Lead requirement defaults to corresponding song difficulty +2.
 
 Vocal Lead: failed higher check -> penalty; strong pass gives no extra raw bonus.  
 Dance Lead: successful higher check -> bonus; failed extra lead check gives no extra penalty beyond normal dance result.  
@@ -264,56 +257,142 @@ Dance Lead: successful higher check -> bonus; failed extra lead check gives no e
 
 ToneFactor and PowerFactor come from themes. Tone is singing pure bonus; Power is dance pure bonus. Difficulty and Appeal may be weakly positively correlated in generation but never deterministic.
 
-## 12. Performance kernel
+## 12. Performance kernel and dynamic condition
 
 Keep detailed attributes mathematically distinct; do not collapse into one sing/dance stat.
 
-Internal fatigue states:
-- Vocal Fatigue 0–100
-- Physical Fatigue 0–100
+### 12.1 Unified long-term body state
 
-Exact values are hidden/fuzzy to player.
+**LOCKED:** retire separate persistent Vocal Fatigue / Physical Fatigue.
+
+```text
+fitness_condition: 0..100
+100 = best / fully recovered
+0   = extreme depletion
+
+exhaustion = 100 - fitness_condition   // internal helper only
+```
+
+Other dynamic member states remain separate:
+- `morale`
+- `confidence`
+
+Temporary health states are discrete:
+
+```text
+vocal_condition:    none | mild | moderate | severe
+physical_condition: none | mild | moderate | severe
+```
+
+Exact internal formula inputs may remain hidden/fuzzy to the player.
+
+### 12.2 Fitness-condition attribute effect
+
+Low fitness condition directly reduces current effective:
+- Breath
+- Rhythm
+- Power
+
+It does **not** directly subtract Pitch, Tone, or Agility.
+
+Working smooth-loss anchors by exhaustion:
+- E0 -> 0
+- E30 -> ~0.2
+- E50 -> ~1.0
+- E70 -> ~2.5
+- E100 -> ~7.0
 
 Singing:
-- Breath + Rhythm determine continuous baseline vs difficulty.
-- Breath/Rhythm are fatigue-sensitive.
-- Pitch is not fatigue-sensitive; below difficulty creates probabilistic downside only.
-- Positive Pitch margin gives no bonus.
-- Tone is fatigue-insensitive and gives a theme-scaled positive bonus.
-- Stage Presence is fatigue-insensitive and acts as final multiplier.
+- current Breath + Rhythm determine continuous baseline vs difficulty.
+- Pitch below difficulty creates probabilistic downside only; positive Pitch margin gives no bonus.
+- Tone gives theme-scaled positive bonus and is not directly condition-subtracted.
+- Stage Presence acts as final multiplier.
 - Power never enters singing.
 
 Dance:
 - current Rhythm vs danceDifficulty gives continuous baseline.
 - Agility below difficulty creates probabilistic downside; positive margin gives no bonus.
-- Power gives a theme-scaled positive bonus.
-- Stamina controls fatigue accumulation, not raw score.
+- current Power gives theme-scaled positive bonus and is condition-sensitive.
+- Stamina controls workload accumulation, not raw score.
 - Stage Presence acts as final multiplier.
+
+Because singing and dance checks remain independent, D14/D14 intentionally creates pressure on both performance channels.
 
 Critical-check rough calibration: +3 <0.5%, +2 ~1%, +1 ~3%, 0 ~7%, -1 ~15%, -2 ~30%, -3 ~50%. **PROVISIONAL**
 
-## 13. Per-segment live loop
+## 13. Unified workload model and live loop
 
-For each song:
-1. current effective Breath/Rhythm from fatigue
+Detailed current formula spec: [`FITNESS_CONDITION_AND_WORKLOAD_SYSTEM.md`](./FITNESS_CONDITION_AND_WORKLOAD_SYSTEM.md).
+
+Every activity emits:
+
+```ts
+interface ActivityLoad {
+  general: number;   // only channel that directly lowers fitness_condition
+  vocal: number;     // recent-load input for vocal abnormality only
+  physical: number;  // recent-load input for physical abnormality only
+}
+```
+
+Vocal/Physical recent load are **not** second fatigue bars and are not added to General load.
+
+For each activity segment:
+
+```text
+E = 100 - fitness_condition
+
+ConditionAmplifier(E)
+= 0.62
++ 0.0025 * E
++ 0.75 / (1 + exp(-(E - 67) / 10))
+
+DeltaExhaustion
+= GeneralRaw
+* StaminaMultiplier
+* ConditionAmplifier(E)
+```
+
+Approx amplifier: E0 .62, 20 .67, 40 .75, 50 .84, 60 .99, 70 1.20, 80 1.39, 90 1.52, 100 1.61.
+
+For each live song:
+
+```text
+Lv = 1.5 * (Dv' / 12)^1.5
+Ld = 1.5 * (Dd' / 12)^1.5
+Lsong = Lv + Ld
+```
+
+`Dv'`/`Dd'` add +2 only for the member actually assigned the corresponding Lead.
+
+Equal-difficulty raw totals:
+- 8/8 = 1.63
+- 10/10 = 2.28
+- 12/12 = 3.00
+- 14/14 = 3.79
+- 16/16 = 4.62
+
+Working live setup overhead: General +2.
+
+Per-song live loop:
+1. derive current effective Breath/Rhythm/Power from fitness condition
 2. singing kernel
 3. dance kernel
 4. combine performance
 5. audience response
 6. update momentum
-7. immediately apply vocal/physical load
+7. immediately apply song General/Vocal/Physical workload
 
-MC -> small recovery; costume change -> recovery; encore break -> larger recovery; unit/offstage -> nonparticipants recover; low-movement/float arrangements -> reduced load. Do not calculate the whole show before fatigue.
+MC, costume change, encore break and unit/offstage time may recover condition. Do not calculate the entire show before updating condition.
 
-## 14. Fatigue / Stamina
+## 14. Stamina and workload calibration
 
 ### 14.1 Stamina semantics
 
 - Sta10: ~5-song taiban + ~20m rest + ~1h busy tokuten (~100 interactions), tired but functional.
 - Sta14: ordinary professional ~15-song one-man.
 - Sta16: strong professional endurance for ~20–25-song large live.
-- Sta18: can finish ~35–40-song ultra-long live with meaningful breaks, but should finish heavily fatigued (~70% in current iLiFE! anchor).
-- Sta19: elite endurance; only ~5–10% lower total fatigue than Sta18 in same ultra-long live and still >60 at end.
+- Sta18: can finish ~35–40-song ultra-long live with meaningful breaks, but should finish heavily depleted.
+- Sta19: elite endurance; only modestly better than Sta18 in the same ultra-long live.
 - Sta20: extreme endurance outlier.
 
 Current iLiFE! calibration:
@@ -335,130 +414,164 @@ Current iLiFE! calibration:
 | 19 | **0.72** |
 | 20 | **0.68** |
 
-18->19 lowers base load only ~5.3%. Extra end-show difference emerges because Sta19 reaches the high-fatigue region later.
+### 14.3 Live calibration targets
 
-### 14.3 Smooth fatigue amplifier
+Working targets after unifying condition:
+- Sta14, ~15 ordinary 12/12 songs -> about +31 exhaustion.
+- Sta18, ~40 ordinary songs -> about +71 exhaustion before fine-grained break/low-movement tuning.
 
-**LOCKED**
-
-```text
-FatigueAmplifier(F)
-= 0.62
-+ 0.0025 * F
-+ 0.75 / (1 + exp(-(F - 67) / 10))
-```
-
-Approx: F0 ~0.62, 20 ~0.67, 40 ~0.75, 50 ~0.84, 60 ~0.99, 70 ~1.20, 80 ~1.39, 90 ~1.52, 100 ~1.61.
-
-Meaning: 0–30 stable work zone; 40–60 gradually more expensive; 60–75 meaningfully self-reinforcing; 80+ expensive without discontinuity.
-
-### 14.4 Physical fatigue
-
-Dance load is comparatively even across participating members.
-
-```text
-PhysicalLoad
-= BaseDanceLoad
-* DanceParticipation
-* StaminaMultiplier
-* FatigueAmplifier(currentPhysicalFatigue)
-```
-
-DanceParticipation examples:
-- full choreography ~1.00
-- somewhat simplified ~0.80–0.90
-- 客降 / deliberate low movement ~0.50–0.70
-- unit/partial = actual stage time
-- offstage = no song load; recovery instead
-
-### 14.5 Vocal fatigue
-
-Vocal load is more individualized than dance load.
-
-```text
-VocalLoad
-= BaseVocalLoad
-* PerformerCountFactor
-* IndividualVocalShare
-* BreathEfficiency
-* SingLeadFactor
-* DanceCrossFactor
-* StaminaMultiplier
-* FatigueAmplifier(currentVocalFatigue)
-```
-
-Performer-count factor is mild rather than 1/N:
-- 10 performers 0.80
-- 8 0.85
-- 6 0.92
-- 4 1.00
-- 3 1.08
-- 2 1.18
-- solo 1.35
-
-`IndividualVocalShare` separately represents actual line share.
-
-Breath efficiency working coefficients:
-- Breath10 1.15
-- 12 1.08
-- 14 1.00
-- 16 0.93
-- 18 0.87
-- 20 0.82
-
-Sing-lead load: normal 1.00, sing lead 1.10, major lead ~1.15 optional/provisional.
-
-Dance cross-load: 客降/low 1.00, normal 1.05, high 1.10, very high 1.15.
-
-客降 mainly saves Physical Fatigue; it does not create free Vocal recovery, though it mildly protects vocals by reducing whole-body respiratory demand.
-
-### 14.6 38-song iLiFE! anchor
-
-**REAL-WORLD ANCHOR / LOCKED calibration target**
-
-Scenario:
-- 38 performed songs
-- ~4 breaks of roughly 15 minutes, including costume changes
-- some songs simplified choreography / 客降
-- encore had no difficult songs
-
-Target final Physical Fatigue:
-```text
-Sta18: ~68–72, center ~70
-Sta19: ~63–67, clearly >60
-```
-
-Target Vocal Fatigue varies more by member:
-- low vocal share / strong Breath: ~55–60
-- ordinary share: ~60–68
-- heavy lead/major vocal share: ~68–75
-
-15-minute break working recovery target about 3 fatigue points, provisional. Ultimately use common Natural Fitness/time-based recovery rather than a concert-only heal.
+The older separate Vocal/Physical end-show targets are retired.
 
 ## 15. Natural Fitness and recovery
 
-Natural Fitness governs off-stage/time-based recovery, not raw live output. NF14 recovery multiplier =1.00; NF18 =1.35 locked anchor. Suggested interpolation remains provisional.
+Natural Fitness governs off-stage/time-based recovery, not raw live output. NF14 recovery multiplier =1.00; NF18 =1.35 locked anchor.
 
-Recovery is continuous through schedule gaps, not daily reset. Train/transport mostly reduces recovery quality rather than adding huge active fatigue. Exact internal fatigue stays hidden; player sees fuzzy condition bands.
+Provisional interpolation:
+- NF10 .75
+- NF12 .87
+- NF14 1.00
+- NF16 1.17
+- NF18 1.35
+- NF20 1.50
 
-## 16. Lesson fatigue
+Break recovery:
 
-At Sta14 baseline, provisional hourly gross load:
-- Light: Vocal +1.0 / Physical +1.5
-- Medium: +2.0 / +2.5
-- Heavy: +3.0 / +3.5
+```text
+R_break = 3 * sqrt(minutes / 15) * NFMultiplier
+```
 
-Multiply by stamina and apply normal recovery during explicit gaps.
+Sleep recovery:
 
-## 17. Tokuten fatigue
+```text
+R_sleep = 22 * (sleepHours / 8)^0.8 * NFMultiplier
+```
 
-Only actual completed interactions add fatigue linearly; no extra duration tax and no diminishing completed-interaction count. Idle time naturally recovers.
+Working anchors:
+- NF14, meaningful 15m break -> +3 fitness condition
+- NF14, 8h sleep -> +22
+- NF18, 8h sleep -> ~29.7
 
-Provisional standard per completed interaction before stamina:
-- Vocal +0.115
-- Physical +0.070
+Recovery is continuous through schedule gaps, not a daily reset. Transport mostly adds modest workload and/or reduces sleep/recovery quality rather than acting as an enormous instant penalty.
 
-Fan-work Adaptation does **not** reduce physical/vocal fatigue; it reduces mental load / maintains interaction quality over long sessions.
+## 16. Schedule activity workload
+
+V1 hourly raw-load table:
+
+| Activity | General | Vocal | Physical |
+|---|---:|---:|---:|
+| Vocal lesson | 2.0/h | 2.0/h | 0 |
+| Dance lesson | 3.0/h | 0 | 3.5/h |
+| Combined rehearsal | 3.0/h | 1.3/h | 2.2/h |
+| Formation-only rehearsal | 2.0/h | 0 | 0 |
+| Recording | 1.5/h | 2.5/h | 0 |
+| MV shoot | 1.5/h | 0 | 0 |
+| Photoshoot | 1.0/h | 0 | 0 |
+| Normal livestream | 0.6/h | 0 | 0 |
+| Talk / radio | 0.6/h | 0 | 0 |
+| Variety / TV recording | 1.0/h | 0 | 0 |
+| Standing external appearance | 1.5/h | 0 | 0 |
+
+Music show = holding/recording workload + actual performed-song live workload.
+
+Late-night streaming/external work should hurt primarily by crowding sleep/recovery.
+
+Travel:
+- ordinary local transit under ~1h may be ignored
+- intercity rail/bus ~General 0.4/h
+- long bus/economy flight ~0.7/h
+- poor/overnight transport up to ~1.0/h, with reduced sleep recovery carrying much of the penalty
+- genuine expedition day fixed overhead: General +1.5 **PROVISIONAL**
+
+## 17. Tokuten, abnormality generation, worsening and recovery
+
+### 17.1 Tokuten
+
+**LOCKED principle:** only completed interactions consume tokuten workload; scheduled session duration adds no separate tax.
+
+```text
+GeneralRaw_tokuten = 0.08 * completedInteractions
+```
+
+Examples: 50 -> 4, 100 -> 8, 150 -> 12, 200 -> 16.
+
+Default Vocal=0, Physical=0. Re-evaluate the condition amplifier about every 20 interactions in long sessions. Idle time naturally recovers.
+
+Fan-work Adaptation does not erase body workload; it affects interaction quality/mental endurance.
+
+### 17.2 New mild abnormality
+
+A new abnormality requires **sustained low fitness condition plus recent corresponding load**. A single hard event does not directly roll a new moderate/severe state.
+
+Use recency-weighted 7-day average `F7`:
+
+```text
+Rlow = clamp((60 - F7) / 30, 0, 1)
+Wv = clamp(V7 / 25, 0, 1.5)
+Wd = clamp(D7 / 25, 0, 1.5)
+
+P(vocal none -> mild)    = 0.10 * Rlow^2 * Wv
+P(physical none -> mild) = 0.10 * Rlow^2 * Wd
+```
+
+`V7`/`D7` are recent-work accumulators only, not player-facing fatigue states.
+
+At W=1: F7>=60 -> 0; F55 ~0.3%/day; F50 ~1.1%; F45 ~2.5%; F40 ~4.4%; F30 ~10% per channel/day.
+
+### 17.3 Worsening
+
+Only continuing related work normally worsens the corresponding abnormality:
+
+```text
+X = clamp(RelatedLoadToday / 12, 0, 1.5)
+U = clamp((50 - fitness_condition) / 30, 0, 1)
+
+P(mild -> moderate)   = 0.06 * X * (1 + U)
+P(moderate -> severe) = 0.035 * X * (1 + U)
+```
+
+### 17.4 Recovery
+
+When related load is near zero:
+
+```text
+P(recover one tier)
+= Pbase * NFMultiplier * (0.5 + 0.5 * fitness_condition / 100)
+```
+
+Pbase/day:
+- mild .40
+- moderate .25
+- severe .12
+
+Continuing related work reduces/blocks recovery and also rolls worsening.
+
+### 17.5 Vocal abnormality semantics
+
+- mild: throat discomfort; Vocal effective -1
+- moderate: throat pain/hoarseness/significant voice limitation; Vocal effective -2
+- severe: cannot normally execute assigned vocal parts
+
+Severe Vocal does **not** automatically remove the idol from the live. She may still appear, dance, stand in formation and MC. Original parts must be reassigned, grouped, cut, or covered by backing/prerecorded vocal.
+
+Vocal abnormality itself does not reduce formation familiarity while parts remain unchanged. Emergency part reassignment causes a **small temporary effective formation-familiarity penalty**; larger redistribution causes a larger one. Removing the affected member's actual vocal load reduces further worsening risk.
+
+### 17.6 Physical abnormality semantics
+
+- mild: waist/leg discomfort; Dance effective -1; **no formation-familiarity penalty** if original choreography/movement is still executed
+- moderate: pain/movement limitation; Dance effective -2; formation penalty only if choreography/movement is actually modified
+- severe: cannot normally stand/dance; may still appear seated and sing/MC; affected Dance/Physical load may approach zero
+
+A seated/emergency arrangement necessarily causes a significant temporary effective formation-familiarity penalty.
+
+Do not permanently erase trained familiarity:
+
+```text
+effectiveFormationFamiliarity
+= trainedFormationFamiliarity
+- emergencyAdjustmentPenalty
+```
+
+Emergency rehearsal time may reduce that temporary penalty.
 
 ## 18. Fan states
 
@@ -469,7 +582,7 @@ Long-term group fan states:
 
 State is per group. Same conceptual person may be Core for A, Otaku for B, Public for C; simulation uses aggregate cohorts rather than explicit overlap individuals.
 
-Taiban has essentially no Neutral Public for the current group; audience is current-group Public/Otaku/Core. Main acquisition is Public→Otaku, not creating Public.
+Taiban has essentially no Neutral Public for the current group; audience is current-group Public/Otaku/Core. Main acquisition is Public->Otaku, not creating Public.
 
 ## 19. Live audience response and conversion
 
@@ -489,18 +602,14 @@ Popularity primarily controls KnownRate.
 
 Setlist-level response includes Continuity, Theme Coherence, Momentum and redundancy handling. Theme Trend modifies Theme Coherence rather than buffing each song independently.
 
-Live creates:
-- Group Live Interest
-- Member Affinity
-
-At live end:
-- Public interest -> weekly Public→Otaku momentum
-- Otaku satisfaction -> weekly Otaku→Core momentum
+Live creates Group Live Interest and Member Affinity. At live end:
+- Public interest -> weekly Public->Otaku momentum
+- Otaku satisfaction -> weekly Otaku->Core momentum
 - Core satisfaction -> retention/attachment
 
 Normal conversion settles at weekly update rather than immediately. Momentum persists partially across weeks; exact sigmoid/retention constants remain provisional.
 
-Working ordinary channel weights: Live 1.00, Livestream .45, SNS .35, Media .25. Otaku→Core normal speed ~40% of Public→Otaku was a working calibration, not final.
+Working ordinary channel weights: Live 1.00, Livestream .45, SNS .35, Media .25. Otaku->Core normal speed ~40% of Public->Otaku was a working calibration, not final.
 
 ## 20. Member affinity
 
@@ -515,11 +624,13 @@ Member affinity sources only:
 Stage Presence excluded to avoid double-counting performance.
 
 Working appearance score:
+
 ```text
 Appearance = 0.7*max(cute,pretty) + 0.3*min(cute,pretty)
 ```
 
 Working role exposure:
+
 ```text
 RoleExposure = 1
 + .45 center
@@ -535,12 +646,12 @@ Tokuten is a special immediate path, separate from normal weekly momentum:
 
 ```text
 Strong Live
-→ First-time Tokuten Demand
-→ Member Affinity routing
-→ Queue / capacity
-→ Successful Interaction
-→ Member-specific Fanwork Performance
-→ Immediate Public → Otaku
+-> First-time Tokuten Demand
+-> Member Affinity routing
+-> Queue / capacity
+-> Successful Interaction
+-> Member-specific Fanwork Performance
+-> Immediate Public -> Otaku
 ```
 
 Live quality mainly determines how many Public try tokuten; member interaction quality determines closing once they arrive.
@@ -585,9 +696,7 @@ Working annual direct-spending targets:
 | A | ~¥15–25k | ¥100k | ¥450k |
 | S | higher | ~¥105k | ~¥475k |
 
-High-profile mainstream groups monetize Public meaningfully; underground groups derive little revenue from Public.
-
-Fanwork style changes spending mix more than total ARPU.
+High-profile mainstream groups monetize Public meaningfully; underground groups derive little revenue from Public. Fanwork style changes spending mix more than total ARPU.
 
 ## 24. Salary and member compensation
 
@@ -605,17 +714,17 @@ F-tier often part-time / cheki-only but is outside current game scope due poor d
 
 ## 25. Finance architecture
 
-Do not use fan count × ARPU as weekly free money.
+Do not use fan count * ARPU as weekly free money.
 
 ```text
 Fan Stock
 Public / Otaku / Core
-→ activity opportunities + Tier pricing + Fanwork Style
-→ actual spending by live / tokuten / merch / release / FC / etc.
-→ channel-specific capture rate
-→ recognized project revenue
-→ member + staff + production + event + overhead costs
-→ operating profit
+-> activity opportunities + Tier pricing + Fanwork Style
+-> actual spending by live / tokuten / merch / release / FC / etc.
+-> channel-specific capture rate
+-> recognized project revenue
+-> member + staff + production + event + overhead costs
+-> operating profit
 ```
 
 Fan-side spending != project revenue. Capture is high for tokuten/direct merch, medium for own live/FC, lower for taiban tickets and distributed music retail. Merch has COGS.
@@ -626,7 +735,7 @@ Working illustrative annual calibration for アキシブproject:
 - ~49.5k tokuten interactions/year
 - ~¥2,000 each -> ~¥99M tokuten gross
 - 15% member back -> ~¥14.85M
-- 9 members × ¥160k × 12 -> ~¥17.28M fixed salary
+- 9 members * ¥160k * 12 -> ~¥17.28M fixed salary
 - total member compensation including minor extras ~¥34–36M
 - fan-side annual spending ~¥170–180M
 - recognized project revenue ~¥140–150M
@@ -688,13 +797,13 @@ Recommended hidden/fuzzy:
 - player producer rating
 - other producers' ratings
 - other groups' idol ability values except partial observation
-- exact Vocal/Physical Fatigue
+- exact internal workload/risk formula inputs
 - Natural Fitness inference
 - hidden growth response
 - historical pressure details
 - exact TraitXP
 
-Player should make decisions under uncertainty.
+Player may see `fitness_condition` as a readable condition band/value depending final UI choice, but should not receive direct V7/D7 risk meters or exact abnormality-roll probabilities.
 
 ## 32. AKSB sample setlist calibration
 
@@ -711,11 +820,11 @@ Use identity bookends plus a coherent summer middle block. Theme Coherence can r
 
 `探せ ダイヤモンドリリー` working calibration:
 - singing D14 high-end
-- dance D14
+- dance D14 high-end
 - three vocal lead slots
 - no dance lead
 
-Use as rare late-show failure anchor: fatigue ~60–70 makes D14 edge-sensitive, but failure must remain a tail event rather than expected behavior.
+Use as rare late-show failure anchor: low fitness condition makes D14 edge-sensitive, but failure must remain a tail event rather than expected behavior for an otherwise capable professional member.
 
 ## 34. Implementation order
 
@@ -731,6 +840,9 @@ Use as rare late-show failure anchor: fatigue ~60–70 makes D14 edge-sensitive,
 10. Weekly financial + fan-state settlement
 11. Idol professional traits: TraitXP, 100/200/300 thresholds, activity-driven gain, slow cross-tier decay
 12. Historical priors and divergence decay
+13. Unified `fitness_condition` state and ActivityLoad contract
+14. Live/tokuten/lesson/media/travel workload processing
+15. Vocal/Physical abnormality generation, worsening, recovery, and emergency live adjustment
 
 ## 35. Locked vs provisional summary
 
@@ -742,9 +854,12 @@ Use as rare late-show failure anchor: fatigue ~60–70 makes D14 edge-sensitive,
 - Final 17 attributes.
 - Removed personality stats stay removed, including `work_rate`.
 - Idol professional traits are outside core idol duties, use hidden continuous TraitXP, and display levels at 100/200/300 thresholds.
-- Trait growth comes from actually performing the relevant professional work; decay exists, but crossing back below a displayed level is deliberately slow.
+- Trait growth comes from actually performing relevant professional work; cross-tier decay is deliberately slow.
 - Real-person anchors in portable specs use full display name + group affiliation/context.
-- Power affects dance only.
+- Power affects dance only, but low fitness condition lowers current effective Power along with Breath and Rhythm.
+- Song Vocal/Dance difficulty scale = 8/10/12/14/16; ordinary =12.
+- 0–3 Sing Lead and 0–3 Dance Lead slots; Lead requirement = corresponding difficulty +2.
+- There is no separate Formation Difficulty stat.
 - Fan states = Public / Otaku / Core.
 - Normal conversion accumulates momentum; tokuten is separate immediate path.
 - Member affinity separate from group interest.
@@ -754,11 +869,17 @@ Use as rare late-show failure anchor: fatigue ~60–70 makes D14 edge-sensitive,
 - Popularity primarily affects KnownRate.
 - Theme list = 29.
 - Trend modifies Theme Coherence, not each song directly.
-- Two internal fatigue states: Vocal / Physical.
-- Natural Fitness = recovery; Stamina = fatigue accumulation.
-- Smooth fatigue amplifier formula in Section 14.3.
+- **One persistent `fitness_condition` replaces Vocal/Physical Fatigue.**
+- Temporary `vocal_condition` and `physical_condition` remain distinct abnormalities.
+- New normal abnormalities start only at mild after sustained low condition + corresponding recent load.
+- Continuing related work may worsen abnormalities; rest can recover them.
+- Physical mild does not affect formation familiarity if choreography/movement remains unchanged.
+- Vocal abnormality does not affect formation familiarity unless parts are actually reassigned.
+- Severe Vocal may still appear with replacement parts/backing; severe Physical may still appear seated.
+- Natural Fitness = recovery; Stamina = workload accumulation.
+- Smooth condition amplifier formula in Section 13.
 - Aisu iLiFE! stamina anchor = 19; current iLiFE! roster-level others = 18 for ultra-long-live calibration.
-- Tokuten fatigue only per completed interaction.
+- Tokuten condition cost depends only on completed interactions, not scheduled duration.
 - Staff package model.
 - D-tier salary ~¥160k, C ~¥200k, B ~¥240k, A ~¥300k benchmark.
 - Mature D-tier tokuten back ~15%.
@@ -766,9 +887,10 @@ Use as rare late-show failure anchor: fatigue ~60–70 makes D14 edge-sensitive,
 
 ### PROVISIONAL / tune later
 - exact TraitXP gain rates, mentorship modifiers, decay/hysteresis constants
-- exact song base fatigue constants
-- exact Natural Fitness recovery curve
-- fatigue→attribute exact interpolation
+- exact ActivityLoad constants
+- exact Natural Fitness recovery interpolation
+- fitness-condition -> attribute exact interpolation between anchors
+- abnormality probability constants and seven-day weighting
 - Pitch/Agility failure probabilities
 - lead-check probability math
 - group dance aggregation
@@ -790,4 +912,4 @@ Use as rare late-show failure anchor: fatigue ~60–70 makes D14 edge-sensitive,
 
 ## One-sentence system summary
 
-**Idol Producer models a group as a weekly system in which member capability + fatigue determine performance, performance + song/setlist fit create fan interest, interest converts Public→Otaku→Core through ordinary and special paths, those cohorts spend differently by Tier and Fanwork Style, and channel-specific revenue is consumed by members, staff, production, events, and overhead to produce a realistic operating business with strategic tradeoffs rather than deterministic growth.**
+**Idol Producer models a group as a weekly system in which member capability + unified fitness condition + temporary vocal/physical abnormalities determine performance, performance + song/setlist fit create fan interest, interest converts Public->Otaku->Core through ordinary and special paths, those cohorts spend differently by Tier and Fanwork Style, and channel-specific revenue is consumed by members, staff, production, events, and overhead to produce a realistic operating business with strategic tradeoffs rather than deterministic growth.**
