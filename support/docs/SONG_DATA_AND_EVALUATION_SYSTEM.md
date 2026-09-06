@@ -2,6 +2,7 @@
 
 > Current design truth as of 2026-09-05.
 > This document defines the compact song schema used by the simulation and the intended enrichment workflow for a 10,000+ song catalog.
+> **Authoritative song-spec note:** where Sections 9–11 of `idol-producer-portable-system-spec.md` conflict with this file, this file takes precedence until the portable snapshot is regenerated.
 
 ## 1. Design principle
 
