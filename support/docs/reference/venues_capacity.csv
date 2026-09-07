@@ -12,7 +12,7 @@ GARDEN新木場FACTORY,1500,indoor,Tokyo,Event Space
 GOTANDA G7,350,indoor,Tokyo,Live House
 GRIT,350,indoor,Tokyo,Live House
 harevutai,500,indoor,Tokyo,Live House
-KABUKICHO TOWER STAGE,500,indoor,Tokyo,Outdoor Stage
+KABUKICHO TOWER STAGE,500,outdoor,Tokyo,Outdoor Stage
 Kanadevia Hall,3200,indoor,Tokyo,Hall
 KT Zepp Yokohama,2150,indoor,Yokohama,Live House
 Kアリーナ横浜,20000,indoor,Yokohama,Arena
@@ -40,54 +40,79 @@ WWW,400,indoor,Tokyo,Live House
 WWW X,600,indoor,Tokyo,Live House
 zephyr hall,600,indoor,Nagoya,Live House
 Zepp DiverCity,2500,indoor,Tokyo,Live House
+Zepp Fukuoka,1500,indoor,Fukuoka,Live House
 Zepp Haneda,2900,indoor,Tokyo,Live House
+Zepp Namba,2500,indoor,Osaka,Live House
 Zepp osaka Bayside,2800,indoor,Osaka,Live House
+Zepp Sapporo,2000,indoor,Sapporo,Live House
 Zepp Shinjuku,1500,indoor,Tokyo,Live House
+MIYASHITA PARK,500,outdoor,Tokyo,Event Space
+PEACE STADIUM Connected by SoftBank,20000,outdoor,Nagasaki,Stadium
+TAO STUDIO aoyama,200,indoor,Tokyo,Studio
 うみかぜ公園 野外特設会場,2000,outdoor,Yokosuka,Festival Site
 お台場R地区,5000,outdoor,Tokyo,Festival Site
+お台場・青海周辺エリア,10000,outdoor,Tokyo,Festival Site
+お台場臨海公園（TIF・複数ステージ）,10000,outdoor,Tokyo,Festival Site
 さいたまスーパーアリーナ,37000,indoor,Saitama,Arena
+アーバンドック ららぽーと豊洲,500,outdoor,Tokyo,Event Space
+キラナガーデン豊洲,1000,outdoor,Tokyo,Event Space
+ザ・ガーデンホール/ルーム,1500,indoor,Tokyo,Hall
 シティーホール五反田,500,indoor,Tokyo,Event Space
 シティホール五反田,500,indoor,Tokyo,Event Space
+ステラボール,1850,indoor,Tokyo,Hall
 スモールワールズ,300,indoor,Tokyo,Event Space
 ダイバーシティ東京 プラザ,500,outdoor,Tokyo,Event Space
 ところざわサクラタウン,1000,indoor,Tokorozawa,Event Space
 としま区民センター 多目的ホール,500,indoor,Tokyo,Hall
+なんばHatch,1900,indoor,Osaka,Live House
 パシフィコ横浜,5000,indoor,Yokohama,Hall
 ぴあアリーナMM,12000,indoor,Yokohama,Arena
 ヒューリックホール東京,900,indoor,Tokyo,Hall
 ベルーナドーム,35000,indoor,Saitama,Stadium
 ベルエポック美容専門学校 第2校舎,300,indoor,Tokyo,Event Space
 ベルサール渋谷ガーデン 他,1500,indoor,Tokyo,Festival Site
+ベルサール新宿南口,700,indoor,Tokyo,Event Space
+ベルサール虎ノ門,300,indoor,Tokyo,Event Space
+マイドームおおさか,1800,indoor,Osaka,Convention Hall
 ランドマークホール (Landmark Hall),500,indoor,Yokohama,Hall
+ワールド記念ホール,8000,indoor,Kobe,Arena
 横浜アリーナ,13000,indoor,Yokohama,Arena
 歌舞伎町タワーステージ,500,outdoor,Tokyo,Outdoor Stage
 海の森水上競技場,5000,outdoor,Tokyo,Festival Site
 恵比寿ガーデンホール,1500,indoor,Tokyo,Hall
 恵比寿ガーデンルーム,500,indoor,Tokyo,Hall
+原宿スペース,300,indoor,Tokyo,Event Space
 国立代々木競技場 第一体育館,13000,indoor,Tokyo,Arena
 渋谷CLUB QUATTRO,900,indoor,Tokyo,Live House
+渋谷ソラスタコンファレンス,300,indoor,Tokyo,Event Space
 渋谷音楽堂,500,outdoor,Tokyo,Outdoor Stage
 渋谷複数会場,3000,outdoor,Tokyo,Festival Site
+渋谷（複数会場フェス）,3000,outdoor,Tokyo,Festival Site
 松下IMPホール,850,indoor,Osaka,Hall
 上野恩賜公園 野外ステージ,1000,outdoor,Tokyo,Outdoor Stage
 新宿LOFT,550,indoor,Tokyo,Live House
 新宿ReNY,800,indoor,Tokyo,Live House
 新代田FEVER,300,indoor,Tokyo,Live House
+昭和女子大学 人見記念講堂,2050,indoor,Tokyo,Hall
 神田スクエアホール,1000,indoor,Tokyo,Hall
 神田明神ホール,650,indoor,Tokyo,Hall
 赤羽ReNY,700,indoor,Tokyo,Live House
 赤坂BLITZ,1300,indoor,Tokyo,Live House
+青海R地区,5000,outdoor,Tokyo,Festival Site
+青海地区R区画,5000,outdoor,Tokyo,Festival Site
+千葉市蘇我スポーツ公園,20000,outdoor,Chiba,Festival Site
 代々木公園野外音楽堂,1000,outdoor,Tokyo,Outdoor Stage
 大阪城音楽堂,3000,outdoor,Osaka,Outdoor Stage
 大手町プレイスホール&カンファレンス,600,indoor,Tokyo,Event Space
 大塚 FUTURE:,200,indoor,Tokyo,Live House
 東京ガーデンシアター,8000,indoor,Tokyo,Theater
+東京カルチャーカルチャー,250,indoor,Tokyo,Event Space
 東京キネマ倶楽部,600,indoor,Tokyo,Theater
 東京ドーム,55000,indoor,Tokyo,Stadium
+東京虎ノ門グローバルスクエア コンファレンス,100,indoor,Tokyo,Event Space
 東京国際フォーラム ホールA,5000,indoor,Tokyo,Hall
-MOONDOG,1500,indoor,Taipei,Live House
-YES24 WANDERLOCH HALL,1000,indoor,Seoul,Hall
 東京体育館,10000,indoor,Tokyo,Arena
+東急歌舞伎町タワー,500,indoor,Tokyo,Event Space
 東武動物公園 イベントステージ HOLA!,1300,outdoor,Saitama,Outdoor Stage
 桃配運動公園,5000,outdoor,Gifu,Festival Site
 日産スタジアム,72000,outdoor,Yokohama,Stadium
@@ -99,11 +124,17 @@ YES24 WANDERLOCH HALL,1000,indoor,Seoul,Hall
 豊洲PIT,3000,indoor,Tokyo,Live House
 幕張メッセ,9000,indoor,Chiba,Convention Hall
 幕張海浜公園 イベントブロック特設会場,5000,outdoor,Chiba,Festival Site
+幕張海浜公園Ｇブロック芝生広場,5000,outdoor,Chiba,Festival Site
+本館(1号館/モリス館),300,indoor,Tokyo,Event Space
+本多の森 北電ホール,1700,indoor,Kanazawa,Hall
+北海道立総合体育センター,10000,indoor,Sapporo,Arena
+木の広場（イオンレイクタウンmori）,500,indoor,Saitama,Event Space
 国営ひたち海浜公園,20000,outdoor,Ibaraki,Festival Site
 Mazda Zoom-Zoom Stadium Hiroshima,33000,outdoor,Hiroshima,Stadium
 エスコンフィールドHOKKAIDO,35000,indoor,Hokkaido,Stadium
 六本木ヒルズアリーナ,1000,outdoor,Tokyo,Outdoor Stage
 COOL JAPAN PARK OSAKA TTホール,700,indoor,Osaka,Theater
+COOL JAPAN PARK OSAKA WWホール,1150,indoor,Osaka,Theater
 烏丸半島芝生広場,5000,outdoor,Shiga,Festival Site
 県民共済みらいホール,300,indoor,Yokohama,Hall
 芝公園（御成門駅前広場）,1000,outdoor,Tokyo,Festival Site
@@ -112,3 +143,12 @@ COOL JAPAN PARK OSAKA TTホール,700,indoor,Osaka,Theater
 広島国際会議場 ヒマワリ,200,indoor,Hiroshima,Convention Hall
 有明アリーナ,15000,indoor,Tokyo,Arena
 立川ステージガーデン,3000,indoor,Tachikawa,Hall
+京セラドーム大阪,55000,indoor,Osaka,Stadium
+学習院大学 - 目白キャンパス,1000,indoor,Tokyo,Event Space
+津島市文化会館,1200,indoor,Tsushima,Hall
+仙台PIT,1450,indoor,Sendai,Live House
+近江八幡市文化会館,1150,indoor,Shiga,Hall
+三重県営サンアリーナ,11000,indoor,Mie,Arena
+阪急西宮ガーデンズ 本館,500,outdoor,Nishinomiya,Event Space
+ららぽーと名古屋みなとアクルス,500,outdoor,Nagoya,Event Space
+豊崎海浜公園 美らSUNビーチ,5000,outdoor,Okinawa,Festival Site
