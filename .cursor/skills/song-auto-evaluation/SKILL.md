@@ -57,6 +57,8 @@ Difficulty labels are not traits.
 8. Popularity is not identical to appeal, but **normalized streaming performance is valid direct evidence for appeal**.
 9. Never compare raw Spotify/Apple streaming levels across groups as if group scale were song quality.
 10. TikTok virality is mainly an SNS/event outcome; `viral_design` is about design intent/adaptation.
+11. Appeal is primarily a work-quality judgement. Group tier and group production type are weak priors, not substitutes for evaluating the song itself.
+12. The six-part work framework is not a simple arithmetic average or a weakest-link test. A song may have one ordinary/weak dimension and still have high overall appeal if stronger dimensions support the work.
 
 ## 3. Evidence stages
 
@@ -70,6 +72,8 @@ Use first:
 - known manual notes
 - already-collected Spotify popularity
 - already-collected Apple Music within-group relative listening/play indicators
+- group tier at the scenario/evaluation date when available
+- lightweight group production-type notes when already known from project data/manual research
 
 Enough for most themes, some appeal prior, and obvious solo/unit detection.
 
@@ -83,6 +87,7 @@ Use an official/lawful 30–90s preview when available for:
 - obvious rap/fast articulation
 - arrangement density
 - tempo/energy prior for dance
+- music/arrangement quality evidence for appeal
 
 A preview may miss bridge, last chorus, key change, highest note, or dance break. Do not claim full-song certainty from a partial sample.
 
@@ -96,6 +101,7 @@ Escalate only when needed for:
 - unusual structure
 - unresolved title/lyrics ambiguity
 - streaming anomalies requiring promotion/tie-in context
+- production-role context when group-type prior would otherwise be speculative
 
 Useful query patterns:
 
@@ -118,7 +124,7 @@ Use for recommended/playable groups, calibration songs, likely extremes, ambiguo
 ## 4. Processing modes
 
 ### FAST
-Bulk catalog. Use Stage A, plus B if already cheap/available. Streaming-relative evidence is especially useful here for appeal.
+Bulk catalog. Use Stage A, plus B if already cheap/available. Streaming-relative evidence is especially useful here for appeal. Tier/group-type priors may be used conservatively when project data already contains them.
 
 ### STANDARD
 C+ groups, representative songs, or FAST failures. Use A+B and targeted C.
@@ -151,7 +157,7 @@ Rules:
 
 It is not identical to current popularity, but observed replay/listening preference contains information about appeal and should be used when normalized correctly.
 
-### 6.1 Aesthetic evidence
+### 6.1 Six-part work evaluation is the main signal
 
 Internally use the project's six-part work framework as latent reasoning support:
 - Concept
@@ -163,12 +169,23 @@ Internally use the project's six-part work framework as latent reasoning support
 
 Do not store these six as permanent sub-scores.
 
+The six dimensions are the **main work-level evidence** for appeal. Tier and group type are only weak calibration priors layered around this analysis.
+
+Important scoring rules:
+- Do **not** calculate appeal as a simple average of six dimension scores.
+- Do **not** use a weakest-link/minimum rule.
+- A merely ordinary dimension is not automatically a defect.
+- Lyrics may score low for a simple hype/cute/live-oriented song without capping the whole work if Music, Performance and Integration are strong.
+- Conversely, a lyric-rich thematic song may earn high appeal through Concept/Lyrics/Integration even if choreography is ordinary.
+- Judge whether the work succeeds as a whole, then use the six dimensions to explain why.
+
 Ask:
 - Is there a memorable/signature design?
 - Is the melodic/rhythmic/lyrical identity strong?
 - Do music, lyrics, choreography, and performance reinforce each other?
 - Is the work generic but competent, or genuinely distinctive?
 - Are there defects that materially cap it?
+- Which dimensions actually carry the song's appeal, and which are merely functional/adequate?
 
 Work-rating calibration:
 
@@ -184,9 +201,48 @@ Work-rating calibration:
 | C | 10–11 |
 | D or below | <=9 |
 
-Avoid inflation; most professional idol songs should not cluster at 16+.
+Avoid inflation. Most professional idol songs should cluster around the B region, with B+/A- common for strong professional work and C-/D reserved for relatively rare failures or materially weak works.
 
-### 6.2 Relative-streaming appeal evidence
+### 6.2 Tier prior: weak and bounded
+
+Group tier may inform expected production-resource floor, but must not directly determine song quality.
+
+Use tier only as a **small prior**, normally no more than about one appeal point in either direction before song-specific evidence.
+
+Practical default prior band:
+
+| Group tier | Typical prior tendency |
+|---|---|
+| S / A | slight positive floor prior, usually +0 to +1 |
+| B / C | near-neutral, usually 0 to +0.5 |
+| D | neutral baseline |
+| E | slight negative floor prior, usually 0 to -0.5 |
+
+Rules:
+- Never add a large bonus because a group is famous/high-tier.
+- A D-tier catalog leader may legitimately be A/A- quality.
+- A high-tier group may still have ordinary B or weaker songs, especially in large functional catalogs.
+- Tier is a resource/stability prior, not a ceiling or ranking constraint.
+- Use the tier at the relevant scenario/date, not current fame when evaluating a historical song.
+
+### 6.3 Group-type / production-style prior: adjust expectations, not schema
+
+When the project's existing research already identifies a group's broad production pattern, use it as a lightweight prior on the six dimensions. Do **not** create a permanent song field for this.
+
+Useful conceptual patterns include:
+
+- `works-driven`: stronger song selection/creative filtering; Concept/Lyrics/Music/Integration may have a somewhat stronger upper tail.
+- `live-driven` / `template-driven`: stable rhythmic/arrangement identity and reliable performance fit can raise the Music/Performance/Integration floor even when Lyrics are simple; catalogs may show high consistency and low variance.
+- `selection-driven`: large catalogs contain many functional songs for roster/unit/generation/release-package needs; high group tier does not imply every song should receive a high appeal prior.
+
+Rules:
+- Group type should modify **priors for relevant six-part dimensions**, not give a blind fixed bonus to final appeal.
+- Keep the practical final impact small: normally around ±0.5 to ±1 appeal point unless strong song-specific evidence agrees.
+- Do not infer group type from one song.
+- Do not penalize a live/template-driven song merely because lyrical depth is low; score Lyrics honestly, then allow Music/Performance/Integration to carry the overall work if warranted.
+- Do not assume stylistic consistency means every song has the same appeal; lyrics/concept/hook and execution can still differentiate works within a narrow sonic template.
+
+### 6.4 Relative-streaming appeal evidence
 
 Spotify popularity and Apple Music relative listening/play performance may directly inform appeal.
 
@@ -201,7 +257,7 @@ same group
 
 For each platform, estimate a within-group percentile or residual after controlling for age/promotion where possible.
 
-Practical default correction:
+Practical default correction for ordinary full-group songs:
 
 | Within-group relative performance | appeal evidence |
 |---|---:|
@@ -215,15 +271,49 @@ Rules:
 - Spotify + Apple agreement raises confidence; full correction may be used.
 - One platform only: usually cap at ±1 unless the gap is extreme and persistent.
 - Very recent songs receive reduced weight until launch/promotion stabilizes.
+- Prefer age-adjusted within-group comparisons; cumulative popularity alone systematically favors old songs.
 - Main title tracks, tie-ins, graduation/anniversary songs, heavy playlisting, or major campaigns should be compared with similar release roles or promotion-adjusted downward.
 - Known viral events may explain overperformance without the same increase in intrinsic appeal.
 - Strong long-tail overperformance after promotion fades is especially strong appeal evidence.
 - For FAST mode, normalized streaming can establish the main appeal prior even when only lyrics/short preview are available.
 - A D-tier group's catalog leader can have high appeal even with far fewer absolute streams than an A-tier group's ordinary song.
 
+#### Unit / solo streaming exclusion
+
+Do not apply ordinary full-group negative streaming corrections to `unit` or `solo` songs.
+
+Default behavior:
+
+```text
+ordinary full-group song:
+  relative streaming -> [-2, +2] appeal evidence
+
+unit / solo song against ordinary group catalog:
+  relative streaming -> [0, +2] only
+```
+
+Rationale: unit/solo songs usually have a smaller addressable audience, lower playlist/main-track prominence, member-popularity effects, and less live usage. Low relative streaming is therefore not reliable evidence of low intrinsic appeal.
+
+Exception: if the same group/era has a sufficiently large comparable unit/solo sample, compare within subtype; then normal [-2,+2] corrections may be used.
+
 Sales and chart rank are weaker appeal evidence because fandom purchasing and release mechanics dominate them more strongly. TikTok success is primarily treated in the SNS/viral layer.
 
-### 6.3 Partial-audio caution
+### 6.5 Appeal synthesis order
+
+For automatic evaluation, use this order:
+
+```text
+1. Six-part work evaluation (main signal)
+2. Tier prior (weak resource-floor calibration)
+3. Group-type prior (weak production-style calibration)
+4. Normalized streaming evidence (real-world reception correction/validation)
+5. Promotion/age/unit-solo confounder adjustment
+6. Final appeal + confidence
+```
+
+Do not let steps 2–4 erase clear song-level evidence from step 1.
+
+### 6.6 Partial-audio caution
 
 With only a preview:
 - reduce confidence
@@ -340,25 +430,33 @@ Flag manual review when:
 - proposed curated change >=2 points
 - recommended/playable song only has FAST evidence
 - streaming-based appeal is extreme but strongly confounded by promotion/tie-in/viral event
+- tier/group-type prior contributes more than one appeal point without strong supporting evidence
 
 ## 14. Calibration
 
 Use manually rated recommended/playable-group songs as calibration examples for project-specific appeal and difficulty scales.
 
-Do not train toward group tier. Streaming evidence must be normalized within group/era rather than using absolute group popularity.
+Do not train toward group tier. Tier is only a weak prior. Streaming evidence must be normalized within group/era rather than using absolute group popularity.
 
 When automatic output systematically differs from curated examples, adjust priors/rubric rather than patching songs one by one.
+
+Useful calibration checks:
+- Does a stable live/template-driven group produce a realistic high floor without forcing every song to B+/A-?
+- Can a low-tier group still produce A/A- songs when six-part evidence supports it?
+- Can a high-tier selection-driven catalog still contain many B songs without being artificially inflated by tier?
+- Are simple-lyric hype songs allowed to score well through Music/Performance/Integration rather than being mechanically dragged down?
 
 ## 15. Batch workflow
 
 1. preserve curated fields
 2. evaluate missing fields first
 3. batch Stage A for all songs, including available normalized streaming evidence
-4. create uncertainty/extreme/confounder queue
-5. escalate only queued songs to B/C/D
-6. write staging output first
-7. validate schema/member IDs
-8. merge after review policy passes
+4. assign weak tier/group-type priors only where project data already supports them
+5. create uncertainty/extreme/confounder queue
+6. escalate only queued songs to B/C/D
+7. write staging output first
+8. validate schema/member IDs
+9. merge after review policy passes
 
 Do not web-search every field of every song.
 
@@ -397,7 +495,15 @@ evidence_used:
   audio_preview: true
   spotify_relative: 0.86
   apple_music_relative: 0.79
+  group_tier_prior: D
+  group_type_prior: live_driven
   choreography_video: false
+appeal_components_summary:
+  main_strengths: [music, integration]
+  ordinary_or_weak_dimensions: [lyrics]
+  tier_prior_effect: 0
+  group_type_prior_effect: 0.5
+  streaming_effect: 1
 streaming_context:
   comparison_group: same_group_same_era
   promotion_confounded: false
@@ -425,6 +531,10 @@ Keep reasoning summaries short and decision-oriented; do not store chain-of-thou
 - unit and solo never coexist
 - defaultMembers absent unless unit/solo
 - no universal liveValue/viralValue
+- six-part evaluation remains the main appeal signal
+- tier prior remains weak/bounded
+- group type modifies priors rather than becoming a permanent song field
 - no raw cross-group streaming conversion into appeal
+- unit/solo songs are not negatively corrected against ordinary full-group streaming baselines
 - normalized Spotify/Apple evidence records its comparison context
 - curated values never silently overwritten
