@@ -37,6 +37,8 @@
     "calendar:timetree-ocr-csv-import": "node support/scripts/timetree_poster_ocr_csv.mjs import",
     "data:venues-csv": "node support/scripts/venues_capacity_csv.mjs export",
     "data:venues-csv-import": "node support/scripts/venues_capacity_csv.mjs import",
+    "data:venues-cleanup": "node support/scripts/cleanupVenueCatalog.mjs",
+    "data:venues-cleanup-write": "node support/scripts/cleanupVenueCatalog.mjs --write",
     "data:multi-venue-festivals": "node support/scripts/applyMultiVenueFestivals.mjs",
     "data:merge-catalog": "node support/scripts/mergeCatalogUpdates.mjs",
     "data:fill-romaji": "node support/scripts/fillCatalogRomaji.mjs",
