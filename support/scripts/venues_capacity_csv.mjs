@@ -1,5 +1,5 @@
 /**
- * Export / import venue catalog: name, capacity, setting (indoor/outdoor), city.
+ * Export / import venue catalog: name, capacity, setting (indoor/outdoor), city, venue_type.
  *
  *   node scripts/venues_capacity_csv.mjs export [--out path.csv]
  *   node scripts/venues_capacity_csv.mjs import [path.csv] [--create]
@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..", "..");
 const defaultCsv = path.join(root, "support", "docs", "reference", "venues_capacity.csv");
 
-const HEADER = ["name", "capacity", "setting", "city"];
+const HEADER = ["name", "capacity", "setting", "city", "venue_type"];
 
 /** Names that share one canonical row in the CSV. */
 const NAME_ALIASES = new Map([
@@ -86,8 +86,8 @@ export function guessCity(name) {
 /** @param {string} name */
 export function guessSetting(name) {
   const n = String(name ?? "");
-  if (/野外|運動公園|公園|うみかぜ|海の森|お台場R|HOLA!|音楽堂$|野外ステージ|野外特設/.test(n)) return "outdoor";
-  if (/ドーム|スタジアム|アリーナ|メッセ|ホール|PIT|Zepp|CLUB|BOX|livehouse/i.test(n)) return "indoor";
+  if (/野外|運動公園|公園|うみかぜ|海の森|お台場R|青海|HOLA!|音楽堂$|野外ステージ|野外特設|スタジアム/.test(n)) return "outdoor";
+  if (/ドーム|アリーナ|メッセ|ホール|PIT|Zepp|CLUB|BOX|livehouse/i.test(n)) return "indoor";
   return "indoor";
 }
 
@@ -97,7 +97,8 @@ function rowFromVenue(v) {
   const cap = v.capacity != null && Number(v.capacity) > 0 ? Number(v.capacity) : "";
   const setting = v.setting ? String(v.setting) : guessSetting(name);
   const city = v.city ? String(v.city) : guessCity(name);
-  return { name, capacity: cap, setting, city };
+  const venueType = v.venue_type ? String(v.venue_type) : "Live House";
+  return { name, capacity: cap, setting, city, venue_type: venueType };
 }
 
 function exportCsv(outPath) {
@@ -131,7 +132,7 @@ function importCsv(csvPath, createNew) {
 
   const header = parseCsvLine(lines[0]).map((h) => h.trim().toLowerCase());
   const idx = Object.fromEntries(header.map((h, i) => [h, i]));
-  if (idx.name == null || idx.capacity == null) throw new Error("CSV needs: name, capacity, setting, city");
+  if (idx.name == null || idx.capacity == null) throw new Error("CSV needs: name, capacity, setting, city; venue_type is optional");
 
   const catalog = loadVenuesCatalog();
   const byKey = new Map();
@@ -160,6 +161,7 @@ function importCsv(csvPath, createNew) {
     }
     const setting = normSetting(get("setting"));
     const city = get("city") || null;
+    const venueType = get("venue_type") || null;
 
     const keys = [normalizeVenueKey(name)];
     for (const [aliasKey, canonical] of NAME_ALIASES) {
@@ -177,6 +179,7 @@ function importCsv(csvPath, createNew) {
       if (setting) row.setting = setting;
       if (city) row.city = city;
       if (city) row.location = city;
+      if (venueType) row.venue_type = venueType;
       updated += 1;
     }
 
@@ -186,6 +189,7 @@ function importCsv(csvPath, createNew) {
         continue;
       }
       const stub = createVenueStub(name, { capacity: cap, setting, city });
+      if (venueType) stub.venue_type = venueType;
       catalog.venues.push(stub);
       byKey.set(normalizeVenueKey(name), stub);
       created += 1;
