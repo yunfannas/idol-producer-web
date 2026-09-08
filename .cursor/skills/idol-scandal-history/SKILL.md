@@ -9,6 +9,12 @@ description: >-
   scenario future events).
 ---
 
+## Ownership gate
+
+For sourced real-world history, do not write data in this Web repository. Start the task in `idol-data-lab` with `skills/l1-fact-maintenance/`. This retained skill is compatibility/reference only.
+
+
+
 # Idol scandal history from アイドル走り書き (neverless)
 
 Source of truth: **https://seesaawiki.jp/neverless/** — a Japanese indie-idol wiki that
