@@ -88,7 +88,9 @@ Runtime: `idolPortraitPublicSrc(row, asOfIso)` picks the newest history entry wi
 
 ## Date and group-era binding
 
-A Fandom filename/caption such as `Name_May_2024` is a source date label, not automatically an exact date. Preserve the raw label and record its basis and precision (`exact`, `month`, or `bounded`). A month-only image must not be selected for an opening within that month unless a more exact source date is verified; use the end-of-month bound for safe as-of selection.
+A Fandom filename/caption such as `Name_May_2024` is a source date label, not automatically an exact day. Preserve the raw label and record its basis and precision (`exact`, `month`, or `bounded`). A month-only photo is valid anywhere in that same scenario-opening month when its group membership is active at both the opening and the image date.
+
+Visual selection defaults are `same_calendar_month_allowed: true`, `post_opening_window_days: 90`, and `stale_prior_days: 180` (scenario manifest may override them). Prefer the nearest same-group photo before/in the opening month. If no suitable earlier candidate exists or it is older than 180 days, choose the nearest suitable photo up to 90 days after opening and record `temporal_mode: post_opening_grace` plus day offset. A later transfer, join, or graduation photo never qualifies.
 
 Every era entry for an idol must state the group it depicts and, where the L1 relation is available, the membership relation:
 
@@ -102,7 +104,7 @@ Every era entry for an idol must state the group it depicts and, where the L1 re
 }
 ```
 
-`group_portrait_history`'s Japanese-name key is legacy compatibility only. The L1/L3 association is `idol_uid + depicts_group_uid + membership_relation_uid`; do not allow a later image from another group to replace the opening-era image simply because it is newer.
+`group_portrait_history`'s Japanese-name key is legacy compatibility only. The L1/L3 association is `idol_uid + depicts_group_uid + membership_relation_uid`; do not allow a later image from another group to replace the opening-era image simply because it is newer. For concurrent memberships, retain one group-era history entry per active relation; it is valid for two records to share a binary checksum, but they must remain distinct group bindings. Call-site selection must pass the active group UID when known—an as-of date alone is insufficient to choose among concurrent group portraits.
 
 ## Post-opening group switches (Scenario 6)
 
