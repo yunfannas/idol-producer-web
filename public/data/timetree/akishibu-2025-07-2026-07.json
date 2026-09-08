@@ -207,7 +207,7 @@
         "浮き島ステージ",
         "DOLL FACTORY"
       ],
-      "venue_uid": null
+      "venue_uid": "4607dc77-d554-47f7-9411-f00858276334"
     },
     {
       "date": "2025-08-04",
@@ -390,8 +390,7 @@
         "https://attachments.timetreeapp.com/public_event/188c/2025-08-14/0-1755149844699.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷複数会場",
-      "venue_uid": "4199ef00-7f6f-4e24-b884-b467286ecc00"
+      "venue": "渋谷複数会場"
     },
     {
       "date": "2025-08-30",
@@ -577,8 +576,8 @@
         "https://attachments.timetreeapp.com/public_event/19ae/2025-09-07/0-1757242915474.jpg"
       ],
       "type": "Festival",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2025-09-20",
@@ -698,8 +697,8 @@
         "https://attachments.timetreeapp.com/public_event/8426/2025-09-26/0-1758871003197.jpg"
       ],
       "type": "Other",
-      "venue": "TACHIKAWA STAGE GARDEN",
-      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
     },
     {
       "date": "2025-09-29",
@@ -877,8 +876,8 @@
         "https://attachments.timetreeapp.com/public_event/cd2f/2025-10-16/0-1760596939830.jpg"
       ],
       "type": "Other",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2025-10-21",
@@ -1310,8 +1309,8 @@
         "https://attachments.timetreeapp.com/public_event/ff56/2025-11-25/0-1764069390149.jpg"
       ],
       "type": "Other",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2025-12-10",
@@ -1865,8 +1864,8 @@
         "https://attachments.timetreeapp.com/public_event/bf2d/2026-01-17/0-1768621705028.jpg"
       ],
       "type": "Taiban",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2026-02-13",
@@ -1896,8 +1895,8 @@
         "https://attachments.timetreeapp.com/public_event/e13a/2026-01-24/0-1769219968227.jpg"
       ],
       "type": "Taiban",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2026-02-15",
@@ -2150,8 +2149,8 @@
         "https://attachments.timetreeapp.com/public_event/b40a/2026-03-16/0-1773634731661.jpg"
       ],
       "type": "Other",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6"
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2026-03-22",
@@ -2304,8 +2303,8 @@
         "https://attachments.timetreeapp.com/public_event/9ff7/2026-03-27/0-1774609464390.jpg"
       ],
       "type": "Festival",
-      "venue": "TACHIKAWA STAGE GARDEN",
-      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
     },
     {
       "date": "2026-04-19",
@@ -2567,8 +2566,8 @@
         "https://attachments.timetreeapp.com/public_event/4a1d/2026-05-10/0-1778413208732.jpg"
       ],
       "type": "Taiban",
-      "venue": "Ebisu Garden Hall",
-      "venue_uid": "0e2c33e0-7fc4-4347-aaa1-0874a26a8f4b"
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
       "date": "2026-05-20",
@@ -2593,8 +2592,8 @@
         "https://attachments.timetreeapp.com/public_event/e3da/2026-04-18/0-1776492537962.jpg"
       ],
       "type": "Other",
-      "venue": "白金高輪SELENE STUDIO SELENE b2",
-      "venue_uid": "2a675574-9b03-4c13-896c-c8f2165fb033"
+      "venue": "白金高輪SELENE b2",
+      "venue_uid": "8849c27a-75b7-429c-afd9-0fa8dd676eab"
     },
     {
       "date": "2026-05-23",
@@ -2753,8 +2752,8 @@
         "https://attachments.timetreeapp.com/public_event/1cf1/2026-05-26/0-1779777059153.jpg"
       ],
       "type": "Taiban",
-      "venue": "Ebisu Garden Hall",
-      "venue_uid": "0e2c33e0-7fc4-4347-aaa1-0874a26a8f4b"
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
       "date": "2026-06-19",
@@ -2848,8 +2847,8 @@
         "https://attachments.timetreeapp.com/public_event/1ba9/2026-06-12/0-1781270011044.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷DIVE",
-      "venue_uid": "47ee2722-f83c-4972-9bdb-5cc089c63c78"
+      "venue": "SHIBUYA DIVE",
+      "venue_uid": "59520581-31f6-4ed7-b906-354eeb1e32ed"
     },
     {
       "date": "2026-06-28",
@@ -2890,8 +2889,8 @@
         "https://attachments.timetreeapp.com/public_event/e6fc/2026-06-16/0-1781583175630.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張海浜公園Gブロック特設会場",
-      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+      "venue": "幕張海浜公園Ｇブロック芝生広場",
+      "venue_uid": "7cc87e28-105e-4aa3-948e-8450509daa41"
     },
     {
       "date": "2026-07-07",
@@ -2929,8 +2928,7 @@
         "https://attachments.timetreeapp.com/public_event/98ca/2026-06-12/0-1781270130468.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷ベルサールガーデン含む複数会場",
-      "venue_uid": "8273e88e-215f-432f-9e19-9239c5d55588"
+      "venue": "渋谷ベルサールガーデン含む複数会場"
     },
     {
       "date": "2026-07-18",

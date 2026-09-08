@@ -93,7 +93,6 @@
       "type": "Festival",
       "venue": "ベルサール渋谷ガーデン / 他",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/2119/2025-05-28/0-1748415636993.jpg",
-      "venue_uid": "8884f83d-864a-4d2c-9030-dce2685345c0",
       "live_catalog_match_key": "2025-07-12|spark 2025 渋谷納涼祭"
     },
     {
@@ -134,7 +133,6 @@
       "type": "Other",
       "venue": "新宿2会場",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/cee3/2025-06-15/0-1750002851425.jpg",
-      "venue_uid": "7192cdba-01b8-4f18-8c95-a58aec39baad",
       "live_catalog_match_key": "2025-07-18|ガルデラ道場"
     },
     {
@@ -278,7 +276,6 @@
       "type": "Festival",
       "venue": "渋谷9会場サーキット",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/b60c/2025-07-26/0-1753571661689.jpg",
-      "venue_uid": "00cdbf7a-6ab6-4837-93f4-ffca15ab2d5b",
       "live_catalog_match_key": "2025-08-13|neo kassen2025"
     },
     {
@@ -393,7 +390,6 @@
       ],
       "type": "Other",
       "venue": "渋谷複数会場",
-      "venue_uid": "4199ef00-7f6f-4e24-b884-b467286ecc00",
       "live_catalog_match_key": "2025-08-26|エンドレスサマー2025"
     },
     {
@@ -679,8 +675,8 @@
         "https://attachments.timetreeapp.com/public_event/d29f/2025-09-20/0-1758335601309.jpg"
       ],
       "type": "Other",
-      "venue": "TACHIKAWA STAGE GARDEN",
-      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000",
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172",
       "live_catalog_match_key": "2025-09-28|アイドル甲子園 in tachikawa stage garden -day2-"
     },
     {
@@ -721,7 +717,6 @@
       "type": "Festival",
       "venue": "渋谷4会場",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/00c6/2025-09-03/0-1756888091437.jpg",
-      "venue_uid": "48f97fa0-d36d-4a56-bf96-98a5d3772b38",
       "live_catalog_match_key": "2025-10-02|heroines fes-渋谷サーキット-"
     },
     {
@@ -1177,7 +1172,6 @@
       "type": "Other",
       "venue": "都内",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/b497/2025-11-04/0-1762261902211.jpg",
-      "venue_uid": "09d30b22-5edb-4a22-a001-34d1f48f9885",
       "live_catalog_match_key": "2025-11-23|ヒロインズと柏へ行こう!"
     },
     {
@@ -1520,9 +1514,9 @@
         "https://attachments.timetreeapp.com/public_event/16a8/2025-12-14/0-1765706897804.jpg"
       ],
       "type": "Other",
-      "venue": "Zepher Hall",
+      "venue": "zephyr hall",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/16a8/2025-12-14/0-1765706897804.jpg",
-      "venue_uid": "c5850b0b-6487-4a50-ae24-38b02424a966",
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49",
       "live_catalog_match_key": "2026-01-06|テンラン会〜新年編〜day1"
     },
     {
@@ -1785,8 +1779,8 @@
         "https://attachments.timetreeapp.com/public_event/56ba/2026-01-15/0-1768480539871.jpg"
       ],
       "type": "Taiban",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4",
       "live_catalog_match_key": "2026-02-11|heroines february"
     },
     {
@@ -1827,8 +1821,8 @@
         "https://attachments.timetreeapp.com/public_event/1875/2026-01-24/0-1769256245333.jpg"
       ],
       "type": "Taiban",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4",
       "live_catalog_match_key": "2026-02-14|heroines valentine day1"
     },
     {
@@ -2238,8 +2232,8 @@
         "https://attachments.timetreeapp.com/public_event/346f/2026-03-27/0-1774614812629.jpg"
       ],
       "type": "Festival",
-      "venue": "TACHIKAWA STAGE GARDEN",
-      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000",
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172",
       "live_catalog_match_key": "2026-04-18|heroines fes -debut day-"
     },
     {
@@ -2408,9 +2402,9 @@
         "https://attachments.timetreeapp.com/public_event/7c02/2026-04-23/0-1776928295054.jpg"
       ],
       "type": "Concert",
-      "venue": "Stellar Ball",
+      "venue": "ステラボール",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/7c02/2026-04-23/0-1776928295054.jpg",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4",
       "live_catalog_match_key": "2026-05-10|ヒロインズ研究生4期お披露目"
     },
     {

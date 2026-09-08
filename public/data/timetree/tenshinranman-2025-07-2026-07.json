@@ -45,9 +45,9 @@
         "https://attachments.timetreeapp.com/public_event/3380/2025-05-13/0-1747132826533.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張海浜公園Gブロック特設会場",
+      "venue": "幕張海浜公園Ｇブロック芝生広場",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/3380/2025-05-13/0-1747132826533.jpg",
-      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c",
+      "venue_uid": "7cc87e28-105e-4aa3-948e-8450509daa41",
       "live_catalog_match_key": "2025-07-05|超natsuzome 2025"
     },
     {
@@ -105,7 +105,6 @@
       "type": "Festival",
       "venue": "ベルサール渋谷ガーデン / 他",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/8bf1/2025-05-27/0-1748351440412.jpg",
-      "venue_uid": "8884f83d-864a-4d2c-9030-dce2685345c0",
       "live_catalog_match_key": "2025-07-12|spark 2025 渋谷納涼祭"
     },
     {
@@ -328,7 +327,6 @@
       "type": "Festival",
       "venue": "渋谷9会場サーキット",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/5882/2025-06-03/0-1748963788850.jpg",
-      "venue_uid": "00cdbf7a-6ab6-4837-93f4-ffca15ab2d5b",
       "live_catalog_match_key": "2025-08-13|neo kassen2025"
     },
     {
@@ -530,7 +528,6 @@
       "type": "Other",
       "venue": "渋谷サーキット",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/1c64/2025-08-21/0-1755743614381.jpg",
-      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca",
       "live_catalog_match_key": "2025-09-09|超明星現象 2025"
     },
     {
@@ -601,9 +598,9 @@
         "https://attachments.timetreeapp.com/public_event/f98b/2025-09-19/0-1758257950694.jpg"
       ],
       "type": "Festival",
-      "venue": "clube asia",
+      "venue": "clubasia",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/8809/2025-09-19/0-1758257947026.jpg",
-      "venue_uid": "99490c9b-952e-41ac-a1f6-198c9f3d142d",
+      "venue_uid": "eb6e8eb6-b759-4d49-989a-c1adb4ab9ed3",
       "live_catalog_match_key": "2025-09-20|nakayoshi fes"
     },
     {
@@ -1085,9 +1082,9 @@
         "https://attachments.timetreeapp.com/public_event/c47a/2025-10-14/0-1760444673587.jpg"
       ],
       "type": "Other",
-      "venue": "名古屋ReNY",
+      "venue": "NAGOYA Reny Limited",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/c47a/2025-10-14/0-1760444673587.jpg",
-      "venue_uid": "57d1ac71-e97e-4da9-8f09-e1a22570c1d3",
+      "venue_uid": "d0e4cab0-666d-48c6-9c9b-f94e715e79f5",
       "live_catalog_match_key": "2025-11-13|テンラン会"
     },
     {
@@ -1188,8 +1185,8 @@
         "https://attachments.timetreeapp.com/public_event/b8c2/2025-10-29/0-1761735721500.jpg"
       ],
       "type": "Other",
-      "venue": "Zepher Hall",
-      "venue_uid": "c5850b0b-6487-4a50-ae24-38b02424a966"
+      "venue": "zephyr hall",
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
     },
     {
       "date": "2025-11-29",
@@ -1253,9 +1250,9 @@
         "https://attachments.timetreeapp.com/public_event/88db/2025-11-22/0-1763795085735.jpg"
       ],
       "type": "Other",
-      "venue": "大阪城野音",
+      "venue": "大阪城音楽堂",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/88db/2025-11-22/0-1763795085735.jpg",
-      "venue_uid": "04989016-c70a-4e1d-9e20-ab01d9469f0f",
+      "venue_uid": "75722583-0863-4323-8fd7-b6d9c9b97277",
       "live_catalog_match_key": "2025-12-13|girls☆delight#369"
     },
     {
@@ -2114,9 +2111,9 @@
         "https://attachments.timetreeapp.com/public_event/af5d/2026-01-11/0-1768128570751.jpg"
       ],
       "type": "Other",
-      "venue": "Stellar Ball",
+      "venue": "ステラボール",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/af5d/2026-01-11/0-1768128570751.jpg",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4",
       "live_catalog_match_key": "2026-03-23|爆音祭~お誕生日会sp~"
     },
     {
@@ -2229,9 +2226,9 @@
         "https://attachments.timetreeapp.com/public_event/eb27/2026-03-21/0-1774094409601.jpg"
       ],
       "type": "Festival",
-      "venue": "名古屋ReNY",
+      "venue": "NAGOYA Reny Limited",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/eb27/2026-03-21/0-1774094409601.jpg",
-      "venue_uid": "57d1ac71-e97e-4da9-8f09-e1a22570c1d3",
+      "venue_uid": "d0e4cab0-666d-48c6-9c9b-f94e715e79f5",
       "live_catalog_match_key": "2026-04-02|heroines rock fes"
     },
     {
@@ -2434,8 +2431,7 @@
       "timetree_url": "https://timetr.ee/p/tenshinranman/2917617463460220835",
       "venue_hint": "都内",
       "type": "Other",
-      "venue": "都内",
-      "venue_uid": "09d30b22-5edb-4a22-a001-34d1f48f9885"
+      "venue": "都内"
     },
     {
       "date": "2026-05-02",
@@ -2966,8 +2962,7 @@
       "timetree_url": "https://timetr.ee/p/tenshinranman/2998063318847311731",
       "venue_hint": "名古屋(夜",
       "type": "Other",
-      "venue": "名古屋(夜",
-      "venue_uid": "1534916d-bf4f-4731-b52b-e2272fa47afc"
+      "venue": "名古屋(夜"
     },
     {
       "date": "2026-07-13",

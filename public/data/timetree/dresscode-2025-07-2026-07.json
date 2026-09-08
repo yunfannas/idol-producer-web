@@ -61,8 +61,8 @@
         "https://attachments.timetreeapp.com/public_event/d3c4/2025-04-25/0-1745575940228.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張海浜公園Gブロック特設会場",
-      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+      "venue": "幕張海浜公園Ｇブロック芝生広場",
+      "venue_uid": "7cc87e28-105e-4aa3-948e-8450509daa41"
     },
     {
       "date": "2025-07-07",
@@ -219,8 +219,7 @@
         "https://attachments.timetreeapp.com/public_event/2643/2025-06-17/0-1750144125264.jpg"
       ],
       "type": "Festival",
-      "venue": "新宿会場",
-      "venue_uid": "6ec4c685-9a3e-48d5-8113-fe7891ac557f"
+      "venue": "新宿会場"
     },
     {
       "date": "2025-07-24",
@@ -640,8 +639,7 @@
         "https://attachments.timetreeapp.com/public_event/0afa/2025-07-16/0-1752669977672.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷サーキット",
-      "venue_uid": "ecfdcf37-e722-45ab-bcc8-d46c2337b4ca"
+      "venue": "渋谷サーキット"
     },
     {
       "date": "2025-09-13",
@@ -725,8 +723,7 @@
         "https://attachments.timetreeapp.com/public_event/4bce/2025-08-18/0-1755518518701.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷会場",
-      "venue_uid": "1eb207c1-e385-41d2-8966-0a809d540242"
+      "venue": "渋谷会場"
     },
     {
       "date": "2025-09-21",
@@ -906,8 +903,7 @@
         "https://attachments.timetreeapp.com/public_event/fb3d/2025-07-31/0-1753952509032.jpg"
       ],
       "type": "Festival",
-      "venue": "金沢会場",
-      "venue_uid": "6f0208cf-b5b9-4ce4-a13a-7553a5bbb42f"
+      "venue": "金沢会場"
     },
     {
       "date": "2025-10-12",
@@ -919,8 +915,8 @@
         "https://attachments.timetreeapp.com/public_event/9274/2025-09-18/0-1758195085422.jpg"
       ],
       "type": "Festival",
-      "venue": "10 / 12 ＠ COMTEC PORTBASE",
-      "venue_uid": null,
+      "venue": "COMTEC PORTBASE",
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c",
       "live_catalog_match_key": "2025-10-12|heroines halloween in nagoya",
       "event_type": "Festival",
       "venue_mode": "multi_venue_festival",
@@ -1024,7 +1020,7 @@
         "https://attachments.timetreeapp.com/public_event/1418/2025-09-18/0-1758195117885.jpg"
       ],
       "type": "Festival",
-      "venue": "10 / 12 ＠ COMTEC PORTBASE",
+      "venue": "COMTEC PORTBASE",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/1418/2025-09-18/0-1758195117885.jpg",
       "event_type": "Festival",
       "venue_mode": "multi_venue_festival",
@@ -1033,7 +1029,7 @@
         "10",
         "12 ＠ COMTEC PORTBASE"
       ],
-      "venue_uid": null
+      "venue_uid": "7d7df140-987c-44e2-bed4-5bd56361fe9c"
     },
     {
       "date": "2025-10-27",
@@ -1513,8 +1509,7 @@
         "https://attachments.timetreeapp.com/public_event/2eeb/2025-12-03/0-1764753263229.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷会場",
-      "venue_uid": "1eb207c1-e385-41d2-8966-0a809d540242"
+      "venue": "渋谷会場"
     },
     {
       "date": "2025-12-30",
@@ -1683,8 +1678,7 @@
         "https://attachments.timetreeapp.com/public_event/4fa4/2026-01-08/0-1767866767175.jpg"
       ],
       "type": "Festival",
-      "venue": "新宿会場",
-      "venue_uid": "6ec4c685-9a3e-48d5-8113-fe7891ac557f"
+      "venue": "新宿会場"
     },
     {
       "date": "2026-01-31",
@@ -1739,8 +1733,7 @@
         "https://attachments.timetreeapp.com/public_event/f7e3/2025-12-27/0-1766832036228.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷会場",
-      "venue_uid": "1eb207c1-e385-41d2-8966-0a809d540242"
+      "venue": "渋谷会場"
     },
     {
       "date": "2026-02-07",
@@ -1979,8 +1972,7 @@
         "https://attachments.timetreeapp.com/public_event/8182/2025-11-21/0-1763709568511.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷会場",
-      "venue_uid": "1eb207c1-e385-41d2-8966-0a809d540242"
+      "venue": "渋谷会場"
     },
     {
       "date": "2026-03-10",
@@ -2418,8 +2410,8 @@
         "https://attachments.timetreeapp.com/public_event/5a95/2026-04-20/0-1776692781542.jpg"
       ],
       "type": "Festival",
-      "venue": "品川インターシティーホール",
-      "venue_uid": "79d2a8ba-1a47-4191-a71c-7001bfc90fbe"
+      "venue": "品川インターシティホール&貸会議室",
+      "venue_uid": "6c45fda6-9b01-4790-9702-1bfb184be3ed"
     },
     {
       "date": "2026-05-10",
@@ -2738,8 +2730,7 @@
         "https://attachments.timetreeapp.com/public_event/85b4/2026-05-06/0-1778065263219.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷会場",
-      "venue_uid": "1eb207c1-e385-41d2-8966-0a809d540242"
+      "venue": "渋谷会場"
     },
     {
       "date": "2026-07-08",
@@ -2886,8 +2877,7 @@
         "https://attachments.timetreeapp.com/public_event/e402/2026-07-02/0-1782985409746.jpg"
       ],
       "type": "Other",
-      "venue": "品川会場",
-      "venue_uid": "a4424b24-5a7d-498a-892d-919abbf54d1f"
+      "venue": "品川会場"
     },
     {
       "date": "2026-07-29",
