@@ -15,7 +15,7 @@ description: >-
 
 | Priority | Source | When |
 |----------|--------|------|
-| **1 — preferred when URL is already resolved** | **Dated Fandom gallery still** via a known `static.wikia.nocookie.net` URL | Group-era / scenario opening looks |
+| **1 — preferred** | **Dated Fandom gallery still**, automatically resolved from Fandom filename group/date tags | Group-era / scenario opening looks |
 | 2 | Official group profile page still | Normal fallback; required when Fandom cannot be resolved |
 | 3 | X profile photo (`pbs.twimg.com`, drop `_normal`) | Last resort / current-era only when no Fandom still exists |
 | Avoid | Tiny unavatar placeholders, random handle guesses, undated stub WebP | Wrong person / useless thumbs |
@@ -124,10 +124,10 @@ Helper scratch scripts (not product): `support/tmp/find_post_opening_transfers.m
 
 ## Checklist
 
-1. Prefer a **dated Fandom static URL only when already resolved**; otherwise use the official-profile fallback. Confirm person + outfit/group context.
-2. Download via the known static URL; reject a 402/non-image payload and normalize to real WebP.
+1. Automatically resolve all requested Fandom gallery candidates and parse filename group/date tags.
+2. Choose by group tag + scenario date; download, validate real WebP **320×213**, hash, and write one asset per group binding.
 3. Write file(s) under `public/data/pictures/idols/`.
 4. Patch main (+ scenario) idol row: `portrait_photo_path` + dated `group_portrait_history`.
-5. Smoke: as-of opening date → early still; as-of transfer/debut → later still.
-6. If you touched scenario rosters too, run scenario DB integrity (`scenario-db-integrity` skill).
-7. After filling one transfer, re-scan for other post-`2025-07-05` switches still missing multi-date history.
+5. Smoke: as-of opening date → correct group/era still; as-of transfer/debut → later still.
+6. If the resolver reports `source_access_blocked`, fix the automated runner; do not replace the test with manually downloaded files.
+7. If you touched scenario rosters too, run scenario DB integrity (`scenario-db-integrity` skill).
