@@ -28,24 +28,21 @@ Do **not** depend on Fandom wiki HTML, `Special:FilePath`, or `api.php` to resol
 
 A known dated `static.wikia.nocookie.net` image URL remains usable. Obtain it only from an existing source record, a previous reviewed catalog row, or a manually resolved gallery reference; otherwise use the official profile-page fallback.
 
-If the stored URL includes `/revision/latest/scale-to-width-down/<n>`, it is a requested thumbnail, not the stored original. Remove that path segment while retaining the file path and any `cb=` query parameter, then download the original and normalize it locally. For example, the known `…jpg/revision/latest/scale-to-width-down/267?cb=…` sample yields a 267×178 thumbnail, whereas `…jpg?cb=…` yields the 4096×2730 original.
+If a stored URL contains `/revision/latest/scale-to-width-down/<n>`, it is an old thumbnail request. Strip the existing `/revision/latest/...` suffix, retain an optional `cb=` query, and request the standard **320px-wide** Fandom thumbnail directly. A valid 3:2 portrait source yields **WebP 320×213**; do not download the original or locally rescale it for this workflow.
 
 ```bash
-curl --fail --location --retry 2 --output input.bin "<known-original-static-wikia-url>"
-file input.bin
-identify -format '%m %wx%h\\n' input.bin
-# or: ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=p=0 input.bin
-```
-
-Fandom may send **WebP bytes under a `.jpg` URL**. The output extension must match the actual normalized codec; convert the reviewed derivative to WebP and verify it after conversion:
-
-```bash
-ffmpeg -y -i input.bin -vf "scale='min(320,iw)':-2" -c:v libwebp -q:v 82 "public/data/pictures/idols/<basename>.webp"
+# known_url may be either original or an old scale-to-width-down URL
+path="${known_url%%\?*}"; query="${known_url#*\?}"
+path="${path%%/revision/latest*}"
+thumb="${path}/revision/latest/scale-to-width-down/320"
+[ "${query}" = "${known_url}" ] || thumb="${thumb}?${query}"
+curl --fail --location --retry 2 --output "public/data/pictures/idols/<basename>.webp" "${thumb}"
 file "public/data/pictures/idols/<basename>.webp"
-identify -format '%m %wx%h\\n' "public/data/pictures/idols/<basename>.webp"
+identify -format '%m %wx%h\n' "public/data/pictures/idols/<basename>.webp"
+# expected: WEBP 320x213
 ```
 
-The existing runtime can display a `267×178` image, but do not select that thumbnail when its original static asset is available; normalize the original down to the 320px cap instead. Do not upscale a source that is genuinely only 267×178. Reject non-image/error payloads and files whose identity or era cannot be checked; do not silently save them with a misleading `.jpg` suffix.
+Fandom may send WebP bytes under a `.jpg` pathname; the standardized thumbnail must be saved as `.webp`. Reject HTTP error/HTML/JSON bodies, dimensions other than 320×213, and any file whose identity or era cannot be confirmed. If a candidate is not a 3:2 portrait, choose another source or mark it for review; do not crop, stretch, upscale, or save it with a misleading `.jpg` suffix.
 
 ## Storage & JSON
 
