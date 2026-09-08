@@ -26,10 +26,12 @@ description: >-
 
 Do **not** depend on Fandom wiki HTML, `Special:FilePath`, or `api.php` to resolve a filename. They can return **402** (`Please contact the site owner for access`) in the current automated environment. Do not retry the same blocked endpoint or treat the missing result as evidence that the image does not exist.
 
-A known dated `static.wikia.nocookie.net` image URL remains usable. Obtain it only from an existing source record, a previous reviewed catalog row, or a manually resolved gallery reference; otherwise use the official profile-page fallback. Download and validate the static asset before admitting it:
+A known dated `static.wikia.nocookie.net` image URL remains usable. Obtain it only from an existing source record, a previous reviewed catalog row, or a manually resolved gallery reference; otherwise use the official profile-page fallback.
+
+If the stored URL includes `/revision/latest/scale-to-width-down/<n>`, it is a requested thumbnail, not the stored original. Remove that path segment while retaining the file path and any `cb=` query parameter, then download the original and normalize it locally. For example, the known `…jpg/revision/latest/scale-to-width-down/267?cb=…` sample yields a 267×178 thumbnail, whereas `…jpg?cb=…` yields the 4096×2730 original.
 
 ```bash
-curl --fail --location --retry 2 --output input.bin "<known-static-wikia-url>"
+curl --fail --location --retry 2 --output input.bin "<known-original-static-wikia-url>"
 file input.bin
 identify -format '%m %wx%h\\n' input.bin
 # or: ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=p=0 input.bin
@@ -43,7 +45,7 @@ file "public/data/pictures/idols/<basename>.webp"
 identify -format '%m %wx%h\\n' "public/data/pictures/idols/<basename>.webp"
 ```
 
-A `267×178` image is valid for the existing runtime and must not be upscaled merely to hit the 320px cap. Reject non-image/error payloads and files whose identity or era cannot be checked; do not silently save them with a misleading `.jpg` suffix.
+The existing runtime can display a `267×178` image, but do not select that thumbnail when its original static asset is available; normalize the original down to the 320px cap instead. Do not upscale a source that is genuinely only 267×178. Reject non-image/error payloads and files whose identity or era cannot be checked; do not silently save them with a misleading `.jpg` suffix.
 
 ## Storage & JSON
 
