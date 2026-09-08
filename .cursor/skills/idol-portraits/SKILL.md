@@ -9,6 +9,12 @@ description: >-
   group-era portrait history.
 ---
 
+## Ownership gate
+
+For reality/scenario image collection, do not write data in this Web repository. Start the task in `idol-data-lab` with `skills/l1-fandom-photo-assets/`; it loads every requested S1–S6 opening from the Lab scenario registry. This retained skill is compatibility/reference only.
+
+
+
 # Idol portraits
 
 ## Source preference (do not skip)
