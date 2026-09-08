@@ -8,6 +8,12 @@ description: >-
   scripts, or investigating wrong member counts (iLiFE!, Akishibu, etc.).
 ---
 
+## Ownership gate
+
+For reality/scenario validation and exports, do not write data in this Web repository. Start the task in `idol-data-lab` with `skills/l3-scenario-projection/` plus Lab validators. This retained skill is compatibility/reference only.
+
+
+
 # Main vs scenario database integrity
 
 ## Mental model (do not skip)
