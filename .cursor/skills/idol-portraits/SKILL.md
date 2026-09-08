@@ -86,6 +86,24 @@ Use `support/scripts/groupPortraitHistory.mjs` (`upsertGroupPortraitHistory`) or
 
 Runtime: `idolPortraitPublicSrc(row, asOfIso)` picks the newest history entry with `effective_date <= asOfIso`. Always pass the browse/save reference date from UI call sites.
 
+## Date and group-era binding
+
+A Fandom filename/caption such as `Name_May_2024` is a source date label, not automatically an exact date. Preserve the raw label and record its basis and precision (`exact`, `month`, or `bounded`). A month-only image must not be selected for an opening within that month unless a more exact source date is verified; use the end-of-month bound for safe as-of selection.
+
+Every era entry for an idol must state the group it depicts and, where the L1 relation is available, the membership relation:
+
+```json
+{
+  "group_uid": "g:...",
+  "membership_relation_uid": "rel:...",
+  "fandom_date_label": "May 2024",
+  "date_basis": "fandom_filename",
+  "source_date": { "precision": "month", "earliest": "2024-05-01", "latest": "2024-05-31" }
+}
+```
+
+`group_portrait_history`'s Japanese-name key is legacy compatibility only. The L1/L3 association is `idol_uid + depicts_group_uid + membership_relation_uid`; do not allow a later image from another group to replace the opening-era image simply because it is newer.
+
 ## Post-opening group switches (Scenario 6)
 
 Opening date is **`2025-07-05`**. Idols who **leave or join** after that need the same era treatment as 古賀みれい:
