@@ -1066,13 +1066,13 @@
       "event_raw": "超NATSUZOME 2026",
       "site_category": "ライブ／イベント",
       "type": "Festival",
-      "venue": "幕張海浜公園Gブロック特設会場",
+      "venue": "幕張海浜公園Ｇブロック芝生広場",
       "venue_hint": "幕張海浜公園Gブロック特設会場",
       "note": "イベント詳細 日付: 2026.07.05 カテゴリ: ライブ／イベント 『超NATSUZOME 2026』に出演決定！ ▼日時 2026年7月4日(土) / 5日(日) ▼会場 幕張海浜公園Gブロック特設会場 ▼出演 ▼チケット",
       "official_detail_url": "https://takanenonadeshiko.jp/events/event/%e8%b6%85natsuzome-2026/",
       "official_detail_slug": "超natsuzome-2026",
       "source": "official",
-      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+      "venue_uid": "7cc87e28-105e-4aa3-948e-8450509daa41"
     },
     {
       "date": "2026-07-12",
@@ -1114,8 +1114,7 @@
       "note": "イベント詳細 日付: 2026.07.25 &ndash; 26 カテゴリ: ライブ／イベント 『10年目記念で有明に引っ越しだよ！六本木アイドルフェスティバル2026』に出演決定！ ▼日時 2026年7月25日(土) / 26日(日) OPEN 10:00 / START 11:00 ▼会場 東京ドリームパーク ほか ▼HP https://www.tv-asahi.co.jp/idolfes/ ▼チケット https://ticket.tv-asahi.co.jp/ex/project/rif2026?_ga=2.24518264.39401697.1777020435-1508301224.1774069753",
       "official_detail_url": "https://takanenonadeshiko.jp/events/event/10%e5%b9%b4%e7%9b%ae%e8%a8%98%e5%bf%b5%e3%81%a7%e6%9c%89%e6%98%8e%e3%81%ab%e5%bc%95%e3%81%a3%e8%b6%8a%e3%81%97%e3%81%a0%e3%82%88%ef%bc%81%e5%85%ad%e6%9c%ac%e6%9c%a8%e3%82%a2%e3%82%a4%e3%83%89%e3%83%ab/",
       "official_detail_slug": "10年目記念で有明に引っ越しだよ！六本木アイドル",
-      "source": "official",
-      "venue_uid": "ad6eef61-f8c6-4573-9f32-75a0d9874a78"
+      "source": "official"
     },
     {
       "date": "2026-07-31",

@@ -142,7 +142,8 @@
         "テンシンランマン",
         "ドレスコード",
         "夜光性アミューズ"
-      ]
+      ],
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
     },
     {
       "date": "2025-07-17",
@@ -155,20 +156,22 @@
         "テンシンランマン",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
     },
     {
       "date": "2025-07-31",
       "season_id": "25-26",
       "kind": "league_ii",
       "title": "HEROINES LEAGUE II",
-      "venue": "バナナホール",
+      "venue": "BANANA HALL",
       "attending_groups": [
         "ZUTTOMOTTO",
         "テンシンランマン",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "660478f6-c71d-4545-9730-8b2c0f95c24b"
     },
     {
       "date": "2025-08-04",
@@ -197,7 +200,8 @@
         "ZUTTOMOTTO",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
     },
     {
       "date": "2025-08-21",
@@ -209,7 +213,8 @@
         "ZUTTOMOTTO",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "b3010127-f185-4b5d-9896-a637a40dea49"
     },
     {
       "date": "2025-09-22",
@@ -222,7 +227,8 @@
         "テンシンランマン",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "6ab58860-abbd-414f-b074-f9d0412019ce"
     },
     {
       "date": "2025-09-23",
@@ -240,7 +246,8 @@
         "アキシブproject",
         "ドレスコード",
         "夜光性アミューズ"
-      ]
+      ],
+      "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
     },
     {
       "date": "2025-09-24",
@@ -258,7 +265,8 @@
         "アキシブproject",
         "ドレスコード",
         "夜光性アミューズ"
-      ]
+      ],
+      "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e"
     },
     {
       "date": "2025-09-25",
@@ -271,7 +279,8 @@
         "テンシンランマン",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e"
     },
     {
       "date": "2025-10-08",
@@ -293,7 +302,8 @@
         "パラレルサイダー",
         "夜光性アミューズ"
       ],
-      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools).",
+      "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
     },
     {
       "date": "2025-11-25",
@@ -337,14 +347,15 @@
         "パラレルサイダー",
         "夜光性アミューズ"
       ],
-      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools).",
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
     },
     {
       "date": "2026-01-13",
       "season_id": "25-26",
       "kind": "promotion",
       "title": "HEROINES LEAGUE 入れ替え戦",
-      "venue": "Zepp Osaka Bayside",
+      "venue": "Zepp osaka Bayside",
       "attending_groups": [
         "Ill",
         "iON!",
@@ -354,7 +365,8 @@
         "ナナコロビヤオキ",
         "パラレルサイダー",
         "パラディーク"
-      ]
+      ],
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
       "date": "2026-02-07",
@@ -376,7 +388,8 @@
         "パラレルサイダー",
         "夜光性アミューズ"
       ],
-      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools)."
+      "note": "Same day: 決勝リーグ + 入れ替え戦 (separate ranking pools).",
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
     },
     {
       "date": "2026-04-24",
@@ -390,21 +403,23 @@
         "テンシンランマン",
         "ナナコロビヤオキ",
         "ラストシーン"
-      ]
+      ],
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
     },
     {
       "date": "2026-05-18",
       "season_id": "26-27",
       "kind": "league_ii",
       "title": "HEROINES LEAGUE II",
-      "venue": "Ebisu Garden Hall",
+      "venue": "恵比寿ガーデンホール",
       "attending_groups": [
         "ZUTTOMOTTO",
         "iLiFE!",
         "アキシブproject",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
       "date": "2026-05-20",
@@ -423,19 +438,21 @@
         "ドレスコード",
         "ラストシーン",
         "夜光性アミューズ"
-      ]
+      ],
+      "venue_uid": "e0403bb1-235c-4ab2-85ed-53212afe7548"
     },
     {
       "date": "2026-06-18",
       "season_id": "26-27",
       "kind": "league_ii",
       "title": "HEROINES LEAGUE II",
-      "venue": "Ebisu Garden Hall",
+      "venue": "恵比寿ガーデンホール",
       "attending_groups": [
         "アキシブproject",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
       "date": "2026-06-25",
@@ -453,7 +470,8 @@
         "テンシンランマン",
         "ドレスコード",
         "ラストシーン"
-      ]
+      ],
+      "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
     },
     {
       "date": "2026-07-11",
@@ -471,7 +489,8 @@
         "テンシンランマン",
         "ドレスコード",
         "ラストシーン"
-      ]
+      ],
+      "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
     },
     {
       "date": "2026-07-17",
@@ -483,7 +502,8 @@
         "ZUTTOMOTTO",
         "ナナコロビヤオキ",
         "ポンコツコンポ"
-      ]
+      ],
+      "venue_uid": "ff15e6e0-0fdb-4606-ba06-fe4693aa4dce"
     },
     {
       "date": "2026-07-29",
@@ -497,7 +517,8 @@
         "のんふぃく！",
         "ドレスコード",
         "ラストシーン"
-      ]
+      ],
+      "venue_uid": "42ca9395-10f7-46c4-b970-2c44541a7678"
     }
   ],
   "standings_snapshots": [
@@ -1359,7 +1380,8 @@
             "points": 50
           }
         ]
-      }
+      },
+      "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
     }
   ],
   "design_notes": {
@@ -1585,7 +1607,7 @@
       {
         "date": "2025-06-14",
         "round": 2,
-        "venue": "品川ステラボール",
+        "venue": "ステラボール",
         "field_size": 9,
         "scoring": "fc_vote + attendance",
         "source": "https://idomire.com/news/20250615319/",
@@ -1683,7 +1705,8 @@
             "group_name": "TENRIN",
             "points": 30
           }
-        ]
+        ],
+        "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
       },
       {
         "date": "2025-07-14",
@@ -1797,7 +1820,8 @@
             "group_name": "TENRIN",
             "points": 60
           }
-        ]
+        ],
+        "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
       },
       {
         "date": "2025-08-04",
@@ -1923,7 +1947,8 @@
             "points": 20,
             "note": "Participated pts only; makeup not yet fully applied in this snapshot table"
           }
-        ]
+        ],
+        "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
       },
       {
         "date": "2025-09-23",
@@ -2048,7 +2073,8 @@
             "group_name": "TENRIN",
             "points": 80
           }
-        ]
+        ],
+        "venue_uid": "dc6d4c35-8efd-435c-bebc-34f6718a0776"
       },
       {
         "date": "2025-09-24",
@@ -2184,7 +2210,8 @@
             "points": 85,
             "note": "→ 入れ替え戦"
           }
-        ]
+        ],
+        "venue_uid": "378ea355-1be5-4fdb-8095-4553d835e75e"
       }
     ],
     "akishibu_trajectory": [
@@ -2377,7 +2404,8 @@
             "group_name": "パラディーク",
             "points": 10
           }
-        ]
+        ],
+        "venue_uid": "42537f27-f835-4121-b820-acdb79ac7bab"
       },
       {
         "date": "2025-11-25",
@@ -2557,12 +2585,13 @@
             "group_name": "パラディーク",
             "points": 30
           }
-        ]
+        ],
+        "venue_uid": "52f18c74-a765-4c88-a96f-651e7d7f8b44"
       },
       {
         "date": "2026-01-13",
         "vol": 4,
-        "venue": "Zepp Osaka Bayside",
+        "venue": "Zepp osaka Bayside",
         "source": "https://idomire.com/news/202601141865/",
         "note": "Osaka edition. After this: iON! + Ill clinched League I stay.",
         "results": [
@@ -2648,7 +2677,8 @@
             "group_name": "パラディーク",
             "points": 40
           }
-        ]
+        ],
+        "venue_uid": "b3526edf-9aa2-4270-bc9c-907852d32d86"
       },
       {
         "date": "2026-02-07",
@@ -2747,7 +2777,8 @@
             "points": 50,
             "note": "→ League II"
           }
-        ]
+        ],
+        "venue_uid": "92030cd2-6d6b-4a62-baa5-4ad24c8f65ce"
       }
     ],
     "akishibu_trajectory": [

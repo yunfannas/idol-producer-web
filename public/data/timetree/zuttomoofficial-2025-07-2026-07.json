@@ -51,8 +51,8 @@
         "https://attachments.timetreeapp.com/public_event/c052/2025-07-03/0-1751553749610.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張海浜公園Gブロック特設会場",
-      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+      "venue": "幕張海浜公園Ｇブロック芝生広場",
+      "venue_uid": "7cc87e28-105e-4aa3-948e-8450509daa41"
     },
     {
       "date": "2025-07-07",
@@ -195,8 +195,8 @@
         "https://attachments.timetreeapp.com/public_event/eb6f/2025-07-18/0-1752833323614.jpg"
       ],
       "type": "Taiban",
-      "venue": "東武動物公園🐯",
-      "venue_uid": "fd6777d8-6a57-416f-b47d-dbc93e70129c"
+      "venue": "東武動物公園 イベントステージ HOLA!",
+      "venue_uid": "7f4e8a2c-3b1d-4e9f-a6c5-8d2e1f0a9b7c"
     },
     {
       "date": "2025-07-29",
@@ -223,8 +223,8 @@
         "https://attachments.timetreeapp.com/public_event/c274/2025-07-01/0-1751387467381.jpg"
       ],
       "type": "Other",
-      "venue": "バナナホール",
-      "venue_uid": "6bb6be47-074e-490a-b890-88707d7b7965"
+      "venue": "BANANA HALL",
+      "venue_uid": "660478f6-c71d-4545-9730-8b2c0f95c24b"
     },
     {
       "date": "2025-08-03",
@@ -408,7 +408,6 @@
       ],
       "type": "Other",
       "venue": "渋谷複数会場",
-      "venue_uid": "4199ef00-7f6f-4e24-b884-b467286ecc00",
       "live_catalog_match_key": "2025-08-26|エンドレスサマー2025"
     },
     {
@@ -436,8 +435,8 @@
         "https://attachments.timetreeapp.com/public_event/e0c5/2025-08-01/0-1754041405045.jpg"
       ],
       "type": "Other",
-      "venue": "WOBM LIVE",
-      "venue_uid": "222af298-3610-41f7-95ec-ffa844ef6fce"
+      "venue": "WOMB",
+      "venue_uid": "26a6dc16-f631-4f43-a17b-412b161f98ea"
     },
     {
       "date": "2025-09-07",
@@ -466,8 +465,8 @@
         "https://attachments.timetreeapp.com/public_event/d14e/2025-09-01/0-1756744825877.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷VIDENT",
-      "venue_uid": "0fd9ac6b-0773-4a8c-a126-177308e4ef73"
+      "venue": "SHIBUYA VIDENT",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
     },
     {
       "date": "2025-09-09",
@@ -562,8 +561,8 @@
         "https://attachments.timetreeapp.com/public_event/c841/2025-09-08/0-1757320929511.jpg"
       ],
       "type": "Other",
-      "venue": "横浜ランドマークホール",
-      "venue_uid": "bd4ed834-00b6-4a3e-956f-880edb01051c"
+      "venue": "ランドマークホール (Landmark Hall)",
+      "venue_uid": "fe632cc6-c550-4c4a-a05d-83cc380399f3"
     },
     {
       "date": "2025-09-18",
@@ -590,8 +589,7 @@
         "https://attachments.timetreeapp.com/public_event/0b50/2025-09-08/0-1757321281807.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷複数会場",
-      "venue_uid": "4199ef00-7f6f-4e24-b884-b467286ecc00"
+      "venue": "渋谷複数会場"
     },
     {
       "date": "2025-09-21",
@@ -713,8 +711,7 @@
         "https://attachments.timetreeapp.com/public_event/8ee5/2025-09-23/0-1758647932981.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷5会場",
-      "venue_uid": "0f28ee07-ea28-48d6-9af8-1b1fbbc5d844"
+      "venue": "渋谷5会場"
     },
     {
       "date": "2025-10-02",
@@ -877,8 +874,7 @@
         "https://attachments.timetreeapp.com/public_event/ba62/2025-09-23/0-1758648352598.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷会場",
-      "venue_uid": "1eb207c1-e385-41d2-8966-0a809d540242"
+      "venue": "渋谷会場"
     },
     {
       "date": "2025-10-22",
@@ -1264,7 +1260,7 @@
         "https://attachments.timetreeapp.com/public_event/e561/2025-11-18/0-1763447084014.jpg"
       ],
       "type": "Festival",
-      "venue": "渋谷VIDENT / 渋谷チェルシーホテル / 渋谷THE GAME / 渋谷TAKEOFF7",
+      "venue": "チェルシーホテル",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/e561/2025-11-18/0-1763447084014.jpg",
       "event_type": "Festival",
       "venue_mode": "multi_venue_festival",
@@ -1275,7 +1271,7 @@
         "渋谷THE GAME",
         "渋谷TAKEOFF7"
       ],
-      "venue_uid": null
+      "venue_uid": "4973bfbf-b75e-406f-8e65-099f933dbc17"
     },
     {
       "date": "2025-12-15",
@@ -1341,7 +1337,7 @@
         "https://attachments.timetreeapp.com/public_event/5bf8/2025-11-21/0-1763717499014.jpg"
       ],
       "type": "Festival",
-      "venue": "品川ステラボール / 品川インターシティホール / Club eX",
+      "venue": "ステラボール",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/5bf8/2025-11-21/0-1763717499014.jpg",
       "event_type": "Festival",
       "venue_mode": "multi_venue_festival",
@@ -1351,7 +1347,7 @@
         "品川インターシティホール",
         "Club eX"
       ],
-      "venue_uid": null
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4"
     },
     {
       "date": "2025-12-25",
@@ -1630,7 +1626,7 @@
         "https://attachments.timetreeapp.com/public_event/a512/2026-01-16/0-1768559218198.jpg"
       ],
       "type": "Festival",
-      "venue": "Spotify O-EAST / duo MUSIC EXCHANGE / Veats SHIBUYA",
+      "venue": "duo MUSIC EXCHANGE",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/a512/2026-01-16/0-1768559218198.jpg",
       "event_type": "Festival",
       "venue_mode": "multi_venue_festival",
@@ -1640,7 +1636,7 @@
         "duo MUSIC EXCHANGE",
         "Veats SHIBUYA"
       ],
-      "venue_uid": null
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
     },
     {
       "date": "2026-02-07",
@@ -1718,8 +1714,8 @@
         "https://attachments.timetreeapp.com/public_event/ec10/2026-02-01/0-1769922664740.jpg"
       ],
       "type": "Taiban",
-      "venue": "Stellar Ball",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "venue": "ステラボール",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4",
       "live_catalog_match_key": "2026-02-14|heroines valentine day1"
     },
     {
@@ -2233,9 +2229,9 @@
         "https://attachments.timetreeapp.com/public_event/0118/2026-05-01/0-1777603403008.jpg"
       ],
       "type": "Festival",
-      "venue": "TACHIKAWA STAGE GARDEN",
+      "venue": "立川ステージガーデン",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/fc26/2026-04-08/0-1775643196826.jpg",
-      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172",
       "live_catalog_match_key": "2026-05-04|heroines fes-heroines 7th anniversary-"
     },
     {
@@ -2290,9 +2286,9 @@
         "https://attachments.timetreeapp.com/public_event/e067/2026-05-09/0-1778304393452.jpg"
       ],
       "type": "Concert",
-      "venue": "Stellar Ball",
+      "venue": "ステラボール",
       "poster_image_url": "https://attachments.timetreeapp.com/public_event/e067/2026-05-09/0-1778304393452.jpg",
-      "venue_uid": "fda3470d-ae9f-45be-b962-97e494ef7af6",
+      "venue_uid": "4238c317-270d-4ac1-898e-efbf87dc3ea4",
       "live_catalog_match_key": "2026-05-10|ヒロインズ研究生4期お披露目"
     },
     {
@@ -2332,8 +2328,8 @@
         "https://attachments.timetreeapp.com/public_event/b64e/2026-05-12/0-1778571247747.jpg"
       ],
       "type": "Taiban",
-      "venue": "Ebisu Garden Hall",
-      "venue_uid": "0e2c33e0-7fc4-4347-aaa1-0874a26a8f4b",
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e",
       "live_catalog_match_key": "2026-05-18|heroines league ii section1"
     },
     {
@@ -2389,8 +2385,8 @@
         "https://attachments.timetreeapp.com/public_event/56a7/2026-05-16/0-1778942825438.jpg"
       ],
       "type": "Other",
-      "venue": "duo MUSIC EXCANGE",
-      "venue_uid": "eab2670b-5132-431f-adcd-31cbb361e3cc"
+      "venue": "duo MUSIC EXCHANGE",
+      "venue_uid": "9fce7788-f642-474b-a4a2-bfce2c9f3c81"
     },
     {
       "date": "2026-05-29",

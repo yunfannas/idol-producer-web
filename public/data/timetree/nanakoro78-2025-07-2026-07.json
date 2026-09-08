@@ -54,8 +54,8 @@
         "https://attachments.timetreeapp.com/public_event/5821/2025-06-21/0-1750539068856.jpg"
       ],
       "type": "Festival",
-      "venue": "幕張海浜公園Gブロック特設会場",
-      "venue_uid": "26fa3fbb-ed7e-4c66-bd58-c41b4772261c"
+      "venue": "幕張海浜公園Ｇブロック芝生広場",
+      "venue_uid": "7cc87e28-105e-4aa3-948e-8450509daa41"
     },
     {
       "date": "2025-07-08",
@@ -231,8 +231,8 @@
         "https://attachments.timetreeapp.com/public_event/06f6/2025-06-29/0-1751207437011.jpg"
       ],
       "type": "Taiban",
-      "venue": "バナナホール",
-      "venue_uid": "6bb6be47-074e-490a-b890-88707d7b7965"
+      "venue": "BANANA HALL",
+      "venue_uid": "660478f6-c71d-4545-9730-8b2c0f95c24b"
     },
     {
       "date": "2025-08-02",
@@ -263,7 +263,6 @@
       ],
       "type": "Other",
       "venue": "都内",
-      "venue_uid": "09d30b22-5edb-4a22-a001-34d1f48f9885",
       "live_catalog_match_key": "2025-08-03|tif2025"
     },
     {
@@ -775,8 +774,8 @@
         "https://attachments.timetreeapp.com/public_event/0284/2025-09-17/0-1758106981929.jpg"
       ],
       "type": "Other",
-      "venue": "TACHIKAWA STAGE GARDEN",
-      "venue_uid": "2bc389d1-3ec9-4080-b8c3-c18e355cc000"
+      "venue": "立川ステージガーデン",
+      "venue_uid": "a25bce8a-1f58-448a-ab06-4a73c7de4172"
     },
     {
       "date": "2025-10-02",
@@ -1182,8 +1181,8 @@
         "https://attachments.timetreeapp.com/public_event/c636/2025-10-18/0-1760774548630.jpg"
       ],
       "type": "Other",
-      "venue": "渋谷VIDENT",
-      "venue_uid": "0fd9ac6b-0773-4a8c-a126-177308e4ef73"
+      "venue": "SHIBUYA VIDENT",
+      "venue_uid": "57cd7165-e2e5-42ba-99cf-f7d72e26cb2b"
     },
     {
       "date": "2025-11-14",
@@ -1421,8 +1420,8 @@
         "https://attachments.timetreeapp.com/public_event/ad8d/2025-12-02/0-1764667415583.jpg"
       ],
       "type": "Other",
-      "venue": "大阪城野音",
-      "venue_uid": "04989016-c70a-4e1d-9e20-ab01d9469f0f"
+      "venue": "大阪城音楽堂",
+      "venue_uid": "75722583-0863-4323-8fd7-b6d9c9b97277"
     },
     {
       "date": "2025-12-14",
@@ -1914,8 +1913,8 @@
         "https://attachments.timetreeapp.com/public_event/447c/2026-02-07/0-1770439741256.jpg"
       ],
       "type": "Birthday",
-      "venue": "UMEDA CLUB QUATTRO",
-      "venue_uid": "6217ba76-3c94-4245-8dce-3d9b8c108e4b"
+      "venue": "梅田CLUB QUATTRO",
+      "venue_uid": "245c0cf6-1def-4d4b-bba7-93b5eb88b2f8"
     },
     {
       "date": "2026-02-14",
@@ -2045,7 +2044,6 @@
       ],
       "type": "Festival",
       "venue": "渋谷9会場サーキット",
-      "venue_uid": "00cdbf7a-6ab6-4837-93f4-ffca15ab2d5b",
       "live_catalog_match_key": "2026-03-07|idorise!! festival 2026"
     },
     {
@@ -2129,8 +2127,8 @@
         "https://attachments.timetreeapp.com/public_event/67a9/2026-02-19/0-1771523607147.jpg"
       ],
       "type": "Festival",
-      "venue": "UMEDA CLUB QUATTRO",
-      "venue_uid": "6217ba76-3c94-4245-8dce-3d9b8c108e4b"
+      "venue": "梅田CLUB QUATTRO",
+      "venue_uid": "245c0cf6-1def-4d4b-bba7-93b5eb88b2f8"
     },
     {
       "date": "2026-03-20",
@@ -2157,8 +2155,8 @@
         "https://attachments.timetreeapp.com/public_event/fac6/2026-03-05/0-1772721357366.jpg"
       ],
       "type": "Other",
-      "venue": "OSAKAMUSE",
-      "venue_uid": "a7774d8d-4473-4b55-8c99-38e20b4e9065"
+      "venue": "大阪MUSE",
+      "venue_uid": "915353fc-90a7-4085-a25b-d514a90699b7"
     },
     {
       "date": "2026-03-22",
@@ -2171,8 +2169,8 @@
         "https://attachments.timetreeapp.com/public_event/0905/2026-02-08/0-1770555672359.jpg"
       ],
       "type": "Festival",
-      "venue": "OSAKAMUSE",
-      "venue_uid": "a7774d8d-4473-4b55-8c99-38e20b4e9065"
+      "venue": "大阪MUSE",
+      "venue_uid": "915353fc-90a7-4085-a25b-d514a90699b7"
     },
     {
       "date": "2026-03-23",
@@ -2616,8 +2614,8 @@
         "https://attachments.timetreeapp.com/public_event/8fa2/2026-05-11/0-1778506280701.jpg"
       ],
       "type": "Taiban",
-      "venue": "Ebisu Garden Hall",
-      "venue_uid": "0e2c33e0-7fc4-4347-aaa1-0874a26a8f4b"
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
       "date": "2026-05-21",
@@ -2794,8 +2792,8 @@
         "https://attachments.timetreeapp.com/public_event/17f8/2026-05-25/0-1779710580781.jpg"
       ],
       "type": "Taiban",
-      "venue": "Ebisu Garden Hall",
-      "venue_uid": "0e2c33e0-7fc4-4347-aaa1-0874a26a8f4b"
+      "venue": "恵比寿ガーデンホール",
+      "venue_uid": "4dd55fd1-f208-44dd-a93a-3b323c7eb68e"
     },
     {
       "date": "2026-06-19",
@@ -2887,8 +2885,8 @@
         "https://attachments.timetreeapp.com/public_event/a068/2026-06-15/0-1781523376396.jpg"
       ],
       "type": "Concert",
-      "venue": "ViBlue恵比寿",
-      "venue_uid": "77d6389f-87ac-46df-ac4f-f7c0a079a798"
+      "venue": "ViblueEBISU",
+      "venue_uid": "7dc08d22-25ef-45e5-a73c-d81af9fe6bd7"
     },
     {
       "date": "2026-06-30",
