@@ -7,6 +7,12 @@ description: >-
   live catalog, and onboarding new groups.
 ---
 
+## Ownership gate
+
+For schedules, festivals, slots, and venue facts, do not write data in this Web repository. Start the task in `idol-data-lab` with `skills/database-update/`. This retained skill is compatibility/reference only.
+
+
+
 # Group schedule collection
 
 ## Two sources (pick per group)
