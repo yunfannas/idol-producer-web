@@ -15,37 +15,43 @@ description: >-
 
 | Priority | Source | When |
 |----------|--------|------|
-| **1 — preferred** | **Dated Fandom gallery still** on [jpop.fandom.com](https://jpop.fandom.com) (e.g. `Koga_Mirei_Dec_2024_(1).jpg`) | Group-era / scenario opening looks |
-| 2 | Official group profile page still | If Fandom has no dated shot for that era |
+| **1 — preferred when URL is already resolved** | **Dated Fandom gallery still** via a known `static.wikia.nocookie.net` URL | Group-era / scenario opening looks |
+| 2 | Official group profile page still | Normal fallback; required when Fandom cannot be resolved |
 | 3 | X profile photo (`pbs.twimg.com`, drop `_normal`) | Last resort / current-era only when no Fandom still exists |
 | Avoid | Tiny unavatar placeholders, random handle guesses, undated stub WebP | Wrong person / useless thumbs |
 
 **Prefer Fandom dated pictures** whenever the filename or caption encodes a month/year that matches the tenure you need (Akishibu-era → Dec 2024 Akishibu gallery shot, not the later LAST SCENE X avatar).
 
-## Fetch Fandom images (Cloudflare)
+## Fetch Fandom images (current access rule)
 
-Wiki HTML/`Special:FilePath` often returns **403**. Use the MediaWiki API instead:
+Do **not** depend on Fandom wiki HTML, `Special:FilePath`, or `api.php` to resolve a filename. They can return **402** (`Please contact the site owner for access`) in the current automated environment. Do not retry the same blocked endpoint or treat the missing result as evidence that the image does not exist.
 
-```bash
-# Resolve File:… → static.wikia.nocookie.net URL
-https://jpop.fandom.com/api.php?action=query&titles=File:NAME.jpg&prop=imageinfo&iiprop=url|size|mime&format=json
-```
-
-Then `fetch` the `imageinfo[0].url`. Fandom often serves **WebP bytes** with a `.jpg` URL — always verify magic/`ffprobe` and convert:
+A known dated `static.wikia.nocookie.net` image URL remains usable. Obtain it only from an existing source record, a previous reviewed catalog row, or a manually resolved gallery reference; otherwise use the official profile-page fallback. Download and validate the static asset before admitting it:
 
 ```bash
-ffmpeg -y -i input.bin -q:v 2 "public/data/pictures/idols/<basename>.jpg"
-ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=p=0 out.jpg
-# Expect: mjpeg|jpeg, useful width (not 267×178 stubs)
+curl --fail --location --retry 2 --output input.bin "<known-static-wikia-url>"
+file input.bin
+identify -format '%m %wx%h\\n' input.bin
+# or: ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=p=0 input.bin
 ```
+
+Fandom may send **WebP bytes under a `.jpg` URL**. The output extension must match the actual normalized codec; convert the reviewed derivative to WebP and verify it after conversion:
+
+```bash
+ffmpeg -y -i input.bin -vf "scale='min(320,iw)':-2" -c:v libwebp -q:v 82 "public/data/pictures/idols/<basename>.webp"
+file "public/data/pictures/idols/<basename>.webp"
+identify -format '%m %wx%h\\n' "public/data/pictures/idols/<basename>.webp"
+```
+
+A `267×178` image is valid for the existing runtime and must not be upscaled merely to hit the 320px cap. Reject non-image/error payloads and files whose identity or era cannot be checked; do not silently save them with a misleading `.jpg` suffix.
 
 ## Storage & JSON
 
 - Files live flat in `public/data/pictures/idols/` — **basename only** matters for the web loader (`src/ui/portraitUrl.ts`).
 - JSON paths may keep desktop form: `fetcher\database\picture_fandom\<basename>`.
 - Naming:
-  - Primary / opening baseline: `<名前>_portrait.jpg`
-  - Era shot: `<名前>__<GroupKey>_YYYY-MM-DD_fandom.jpg` (use `fandom` in the suffix when from Fandom)
+  - Primary / opening baseline: `<名前>_portrait.webp`
+  - Era shot: `<名前>__<GroupKey>_YYYY-MM-DD_fandom.webp` (use `fandom` in the suffix when from Fandom)
 
 Update **both** when Scenario 6 is in scope:
 
@@ -97,8 +103,8 @@ Helper scratch scripts (not product): `support/tmp/find_post_opening_transfers.m
 
 ## Checklist
 
-1. Prefer a **dated Fandom** still for the target era; confirm person + outfit/group context.
-2. Download via **API URL**, convert to real JPEG if WebP.
+1. Prefer a **dated Fandom static URL only when already resolved**; otherwise use the official-profile fallback. Confirm person + outfit/group context.
+2. Download via the known static URL; reject a 402/non-image payload and normalize to real WebP.
 3. Write file(s) under `public/data/pictures/idols/`.
 4. Patch main (+ scenario) idol row: `portrait_photo_path` + dated `group_portrait_history`.
 5. Smoke: as-of opening date → early still; as-of transfer/debut → later still.
