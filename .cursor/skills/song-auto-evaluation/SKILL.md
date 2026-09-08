@@ -9,6 +9,12 @@ description: >-
   can be processed without deep-searching every song.
 ---
 
+## Ownership gate
+
+For scenario-independent song evaluation, do not write data in this Web repository. Start the task in `idol-data-lab` with `skills/l2-song-game-profile/`. This retained skill is compatibility/reference only.
+
+
+
 # Song auto evaluation
 
 Automatically enrich idol-song data while keeping the final schema compact and auditable.
