@@ -7,6 +7,12 @@ description: >-
   Consumes evidence produced by support/scripts/collectIdolAttributeEvidence.mjs.
 ---
 
+## Ownership gate
+
+For scenario member attributes and traits, do not write data in this Web repository. Start the task in `idol-data-lab` with `skills/l3-scenario-projection/`. This retained skill is compatibility/reference only.
+
+
+
 # Idol attribute generation
 
 Generate the 18 underlying idol attributes and 0-400 external-work traits from searchable evidence plus structured member context. The collector and generator are intentionally separate.
