@@ -22,28 +22,30 @@ description: >-
 
 **Prefer Fandom dated pictures** whenever the filename or caption encodes a month/year that matches the tenure you need (Akishibu-era → Dec 2024 Akishibu gallery shot, not the later LAST SCENE X avatar).
 
-## Fetch Fandom images (current access rule)
+## Fetch Fandom images automatically
 
-Do **not** depend on Fandom wiki HTML, `Special:FilePath`, or `api.php` to resolve a filename. They can return **402** (`Please contact the site owner for access`) in the current automated environment. Do not retry the same blocked endpoint or treat the missing result as evidence that the image does not exist.
+This is an **automated resolver**, not a “paste a known static URL” workflow. Starting from the idol's Fandom page, load the gallery and extract every candidate's Fandom filename, static image URL, and displayed tag data.
 
-A known dated `static.wikia.nocookie.net` image URL remains usable. Obtain it only from an existing source record, a previous reviewed catalog row, or a manually resolved gallery reference; otherwise use the official profile-page fallback.
+Fandom gallery filenames already carry the decisive facts: **group label and image date**. Parse those tags first; they are the source evidence for `depicts_group_uid` and `fandom_date_label`. The page's group tabs are a useful browser affordance for locating the candidates, but the file-name tags—not a visual guess, current membership, face, or costume—bind the photo to a group. This makes concurrent memberships deterministic: emit one record for every requested group label, even if the two records eventually share identical image bytes.
 
-If a stored URL contains `/revision/latest/scale-to-width-down/<n>`, it is an old thumbnail request. Strip the existing `/revision/latest/...` suffix, retain an optional `cb=` query, and request the standard **320px-wide** Fandom thumbnail directly. A valid 3:2 portrait source yields **WebP 320×213**; do not download the original or locally rescale it for this workflow.
+The resolver must:
 
-```bash
-# known_url may be either original or an old scale-to-width-down URL
-path="${known_url%%\?*}"; query="${known_url#*\?}"
-path="${path%%/revision/latest*}"
-thumb="${path}/revision/latest/scale-to-width-down/320"
-[ "${query}" = "${known_url}" ] || thumb="${thumb}?${query}"
-curl --fail --location --retry 2 --output "public/data/pictures/idols/<basename>.webp" "${thumb}"
-file "public/data/pictures/idols/<basename>.webp"
-identify -format '%m %wx%h\n' "public/data/pictures/idols/<basename>.webp"
-# expected: WEBP 320x213
+1. Open the rendered Fandom page in a browser context, enumerate gallery candidates (and group tabs when present).
+2. Parse each file name/tag into a group label and date label; resolve that group label to the requested L1 group UID/alias.
+3. Apply the scenario date policy below, including same-month and post-opening grace.
+4. Normalize the selected static image URL to Fandom's standard 320px thumbnail, download it with redirects, inspect the bytes, then save and hash the asset.
+
+Normalize a selected static URL as:
+
+```text
+<original-static-path-without-/revision/latest...>/revision/latest/scale-to-width-down/320
 ```
 
-Fandom may send WebP bytes under a `.jpg` pathname; the standardized thumbnail must be saved as `.webp`. Reject HTTP error/HTML/JSON bodies, dimensions other than 320×213, and any file whose identity or era cannot be confirmed. If a candidate is not a 3:2 portrait, choose another source or mark it for review; do not crop, stretch, upscale, or save it with a misleading `.jpg` suffix.
+Save only real WebP output. The expected target is **320×213** (3:2); do not crop, stretch, upscale, or relabel a non-WebP payload. A candidate with other dimensions is rejected and the resolver continues with another filename-tagged candidate for the same group. If none qualifies, report `no_standard_ratio_candidate`.
 
+If the runner cannot reach Fandom, return a machine-readable `source_access_blocked` result—do not silently switch to a manually supplied URL or claim no image exists. That is a runner transport defect, not a data conclusion.
+
+The integration fixture is **[Aisu](https://jpop.fandom.com/wiki/Aisu)**. It must, without pre-downloaded files, discover her two group-labelled gallery records and produce one validated asset per group. Each output record must carry `depicts_group_uid` (or unresolved Fandom group label), `fandom_date_label`, `date_basis: "fandom_filename"`, `source_url`, `checksum_sha256`, and `320×213` dimensions.
 ## Storage & JSON
 
 - Files live flat in `public/data/pictures/idols/` — **basename only** matters for the web loader (`src/ui/portraitUrl.ts`).
