@@ -1,53 +1,86 @@
 {
-  "document": "support/docs/WEB_PORT_PLAN.md — scenario catalog for UX and future routing. Only scenario 6 ships full JSON under public/data/scenarios/.",
+  "document": "Canonical scenario catalog imported from idol-data-lab. Chinese is the primary display title; `name_en` is the English equivalent. Only scenario 6 currently ships a full JSON package.",
   "scenarios": [
     {
       "scenario_number": 1,
-      "name": "Rise of AKB",
-      "opening_date": "2008-12-08",
+      "name": "偶像战国前夜",
+      "name_zh": "偶像战国前夜",
+      "name_en": "Eve of the Idol Sengoku",
+      "opening_date": "2010-03-01",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 1; database/game_scenarios/scenario_definitions.json"
+      "recommended_entries": [
+        "SUPER☆GiRLS"
+      ],
+      "design_ref": "idol-data-lab/docs/scenario-catalog.md#s1"
     },
     {
       "scenario_number": 2,
-      "name": "Idol Wars",
-      "opening_date": "2013-04-01",
+      "name": "偶像战国正盛",
+      "name_zh": "偶像战国正盛",
+      "name_en": "Idol Sengoku",
+      "opening_date": "2013-07-22",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 2"
+      "recommended_entries": [
+        "PassCode"
+      ],
+      "design_ref": "idol-data-lab/docs/scenario-catalog.md#s2"
     },
     {
       "scenario_number": 3,
-      "name": "Sashihara's Ambition",
-      "opening_date": "2017-01-01",
+      "name": "新世代开幕",
+      "name_zh": "新世代开幕",
+      "name_en": "A New Generation Begins",
+      "opening_date": "2017-04-03",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 3"
+      "recommended_entries": [
+        "=LOVE Featured Trial"
+      ],
+      "design_ref": "idol-data-lab/docs/scenario-catalog.md#s3"
     },
     {
       "scenario_number": 4,
-      "name": "COVID Challenge",
-      "opening_date": "2020-02-01",
+      "name": "分岔路口",
+      "name_zh": "分岔路口",
+      "name_en": "At the Crossroads",
+      "opening_date": "2019-12-02",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 4"
+      "recommended_entries": [
+        "MyDearDarlin'",
+        "にっぽんワチャチャ",
+        "Sweet Alley"
+      ],
+      "design_ref": "idol-data-lab/docs/scenario-catalog.md#s4"
     },
     {
       "scenario_number": 5,
-      "name": "Kawaii Lab",
-      "opening_date": "2022-03-01",
+      "name": "社交媒体浪潮",
+      "name_zh": "社交媒体浪潮",
+      "name_en": "Social Media Wave",
+      "opening_date": "2022-03-07",
       "data_subdir": null,
       "data_available": false,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 5"
+      "recommended_entries": [
+        "FRUITS ZIPPER: Creative Production Start"
+      ],
+      "design_ref": "idol-data-lab/docs/scenario-catalog.md#s5"
     },
     {
       "scenario_number": 6,
-      "name": "Latest snapshot",
+      "name": "挑战与危机",
+      "name_zh": "挑战与危机",
+      "name_en": "Challenges and Crisis",
       "opening_date": "2025-07-05",
       "data_subdir": "scenario_6",
       "data_available": true,
-      "design_ref": "support/docs/WEB_PORT_PLAN.md — Scenario 6; support/docs/scenario6_available_groups.txt; database/game_scenarios/scenario_6/"
+      "recommended_entries": [
+        "Last Scene New Project",
+        "Pastel Closet"
+      ],
+      "design_ref": "idol-data-lab/docs/scenario-catalog.md#s6"
     }
   ]
 }
