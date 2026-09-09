@@ -1,6 +1,6 @@
 # Group Tier Evaluation Standard
 
-**Authoritative current standard.** This document supersedes earlier versions and earlier provisional C/C+/B- wording in this repository or discussion notes.
+**Authoritative current standard.** This document supersedes earlier provisional Tier wording and earlier Sales thresholds in this repository or discussion notes.
 
 Reference implementation target: Scenario 6 (`opening_date = 2025-07-05`).
 
@@ -54,17 +54,43 @@ A useful lower boundary remains:
 
 ### Sales
 
-Measures repeatable music-product sales power when comparable sales exist.
+Measures repeatable physical music-product sales power using a stable rolling-window anchor.
 
-Evidence can include:
-- first-week and cumulative physical sales
-- release frequency
-- Oricon / Billboard Japan chart performance
-- repeatability of the release-event sales cycle
+**Authoritative Sales rule:** use the **total comparable physical sales achieved during the 12 months immediately preceding the evaluation date**.
 
-Sales may be `null` / `N/A` when a group has no meaningful comparable disc business.
+Prefer Billboard Japan / SoundScan when available; use Oricon when Billboard totals are unavailable. Use only sales already achieved by the evaluation date. Do not back-propagate future releases.
 
-Do not penalize a group simply for lacking national physical releases. Benefit-event-driven sales are legitimate idol commercial power and should be counted as such.
+Benefit-event-driven sales, multiple versions, handshake/talk/signing events and similar idol sales mechanisms are legitimate commercial power and must not be arbitrarily discounted.
+
+Sales may be `null` / `N/A` when there is no meaningful comparable physical-release business. `N/A` is not a penalty.
+
+### Sales tier anchors
+
+The previous low-volume Sales scale is obsolete. The current C-band anchor is intentionally much higher.
+
+| Sales Tier | Rolling 12-month comparable physical sales | Working interpretation |
+|---|---:|---|
+| A+ | 1,000,000+ | top national idol sales system |
+| A | 600,000–999,999 | very large national sales |
+| A- | 400,000–599,999 | large-major sales |
+| B+ | 300,000–399,999 | strong large-idol sales |
+| B | 200,000–299,999 | established large-idol sales |
+| B- | 120,000–199,999 | clearly above C-class commercial scale |
+| **C+** | **80,000–119,999** | strong-major lower edge; 高嶺のなでしこ at roughly 80k+ is the lower anchor |
+| **C** | **40,000–79,999** | stable major-class middle sales |
+| **C-** | **20,000–39,999** | major-entry / strong live-idol physical sales |
+| D+ | 10,000–19,999 | meaningful but sub-C physical sales |
+| D | 4,000–9,999 | small stable physical-release business |
+| D- | 1–3,999 | very small physical-release business |
+| N/A | no meaningful comparable physical sales | do not penalize |
+
+These thresholds are anchors, not a substitute for checking whether the underlying totals are comparable and actually fall inside the 12-month window.
+
+Important examples:
+- 高嶺のなでしこ: roughly 80k+ in the relevant rolling window -> **Sales C+ lower edge**
+- Jams Collection: roughly 20k-class -> **Sales C-**
+- 可憐なアイボリー: roughly 30k-class in the current comparable window -> **Sales C-**
+- a group with 120k+ rolling annual physical sales enters **Sales B-** even if its Overall Tier remains C+ because Live or Brand is weaker
 
 ## 3. Overall is not an arithmetic average
 
@@ -95,9 +121,7 @@ Examples:
 - いぎなり東北産's 2025-07-09 Budokan is four days after the S6 opening date and cannot be counted as completed S6 evidence
 - later 2025/2026 growth by CUTIE STREET, 夜光性アミューズ, のんふぃく！, yosugala, etc. must not be back-propagated
 
-## 5. Revised structural meaning of C and B
-
-The previous wording that treated C mainly as a "Zepp / strong live-idol" class was too loose and is superseded by this section.
+## 5. Structural meaning of C and B
 
 ### D: professional live-idol market
 
@@ -115,20 +139,19 @@ Typical traits:
 - clearly above ordinary D+ paid drawing power
 - competitive for top live-idol festival positions
 - approaching or entering major-class distribution / promotion
-- may still lack stable national Sales
-- may be Live-first, Brand-first, or newly major
-
-This is the lower edge where a group begins to compete as a major-class idol rather than merely a mature live-idol.
+- rolling annual physical sales, when meaningful, are often around 20k–40k
+- may still lack one strong national dimension
 
 ### C: stable major-class middle tier
 
-`C` should usually mean the group has become a **stable major-class act**, even if it is not literally signed to a traditional major label.
+`C` should usually mean the group has become a stable major-class act, even if it is not literally signed to a traditional major label.
 
 Typical traits:
 - sustained national distribution or equivalent commercial reach
 - repeated visible Oricon / Billboard performance when physical releases exist
 - stable paid live drawing beyond ordinary live-idol scale
 - at least two dimensions solidly around C, with no obvious D-level market weakness
+- rolling annual physical sales, where applicable, often around 40k–80k
 
 A group that merely booked one large venue is not C.
 
@@ -141,19 +164,18 @@ Typical traits:
 - multiple dimensions around C+ or better
 - clear national strength beyond the ordinary top-live-idol zone
 - can repeatedly support large halls / major tours or equivalent market scale
-
-Long-term major activity and visible chart performance are normal here, but legal major-label status is not mandatory if the actual market scale is equivalent.
+- rolling annual physical sales, where applicable, often reach roughly 80k+; 高嶺のなでしこ is the practical lower Sales anchor, not a high-end C+ Sales example
 
 ### B-: entry to the large-idol market
 
-`B-` is not merely "a stronger C+". It marks entry into a genuinely larger market structure.
+`B-` is not merely a stronger C+; it marks entry into a genuinely larger market structure.
 
 Expected profile:
 - roughly 5000+ paid live scale becomes repeatable evidence or an equivalent large-market pattern
 - national, not merely regional or Tokyo-only, drawing power
 - strong durable Brand outside the narrow live-idol circle
 - major-class Sales are routine, not occasional
-- results are repeatable across at least a meaningful period, not one commemorative event
+- results are repeatable across a meaningful period, not one commemorative event
 
 Useful hard heuristic:
 - normally at least **two dimensions should be B- or better**, and the third should not be below C+
@@ -167,33 +189,31 @@ Useful hard heuristic:
 
 They should not be assigned merely because a group is famous inside the idol scene, has one arena date, or has strong benefit-driven sales without comparable Brand/Live scale.
 
-## 6. Confirmed / reviewed anchors
+## 6. Confirmed / reviewed S6 anchors
 
 These are the current anchors and replace earlier provisional classifications.
 
 | Group | Brand | Live | Sales | Overall | Notes |
 |---|---|---|---|---|---|
-| 高嶺のなでしこ | B- | C | C+ | **C+** | Strong Brand/Sales, but Live remains the limiting dimension; later 2025 Makuhari result must not be back-propagated |
-| Jams Collection | C | C+ | C-~C | **C** | Strong Live-first profile; S6 should not be C+ merely from Zepp-scale ambition; ~20k-class sales do not support C+ |
-| Appare! | C | C+ | C | **C** | Budokan is meaningful but not enough to make C+ without stronger repeatable cross-dimensional market scale |
-| いぎなり東北産 | C+ | C | C-/N.A. | **C** | S6 opening is before 2025-07-09 Budokan and later major debut; do not back-propagate |
+| 高嶺のなでしこ | B- | C | C+ | **C+** | Sales C+ is lower-edge C+ (~80k+), not unusually strong for the Overall tier; Live remains limiting |
+| Jams Collection | C | C+ | C- | **C** | Strong Live-first profile; ~20k-class sales do not support C+ |
+| Appare! | C | C+ | C | **C** | Budokan meaningful but not enough to make C+ without stronger repeatable cross-dimensional market scale |
+| いぎなり東北産 | C+ | C | C-/N.A. | **C** | S6 opening is before 2025-07-09 Budokan and later major debut |
 | NEO JAPONISM | C | C- | C- | **C-** | 2025 roster reboot; historical C-level footprint cannot be inherited fully by current Live |
 | yosugala | C- | C | D+/N.A. | **C-** | Live-first; S6 Sales not yet major-class |
 | タイトル未定 | C- | C- | C- | **C-** | Strong Hokkaido concentration; national scale lower than local strength |
 | AVAM | C- | C- | N.A./D+ | **C-** | Lower C- anchor: paid Live trajectory + durable song/SNS recognition |
-| 可憐なアイボリー | C- | C- | C-~C | **C-** | Long-running TP/HoneyWorks resource support but limited market growth |
-| 夜光性アミューズ | C- | C- | N.A. | **C-** | Strong top-live-idol boundary case; use only opening-date evidence for S6 |
-| のんふぃく！ | C- | C- | N.A. | **C-** | Same C- boundary logic as above |
+| 可憐なアイボリー | C- | C- | C- | **C-** | Current sales evidence is about 30k-class over a comparable annual window; resource support has not translated into C growth |
+| 夜光性アミューズ | C- | C- | N.A. | **C-** | Strong top-live-idol boundary case |
+| のんふぃく！ | C- | C- | N.A. | **C-** | Same C- boundary logic |
 | MyDearDarlin' | D+ | D+ | N.A. | **D+** | Large projects alone do not prove C- |
-| UtaGe! | D+ | D+ | N.A. | **D+** | Strong D+ under tightened standard |
-| NANIMONO | D+ | D+ | N.A. | **D+** | Strong D+ under tightened standard |
+| UtaGe! | D+ | D+ | N.A. | **D+** | S6 only; by 2026-08 later Live evidence supports C- |
+| NANIMONO | D+ | D+ | N.A. | **D+** | Strong D+; discounted-ticket venue scale must not be overcounted |
 | シンデレラ宣言！ | D+ | D+ | N.A. | **D+** | Strong D+ under tightened standard |
 | Sweet Alley | D+ | D+ | N.A. | **D+** | TIF participation / anniversary one-man do not by themselves justify C- |
 | アキシブproject | D / D+ Brand | D | N.A./weak | **D** | Standard D anchor for 2025-07-05 |
 
 ## 7. AKSB historical calibration
-
-AKSB is useful for understanding D+ / C- transitions and decline.
 
 - 2016 H2: **D+** — `Summer☆Summer` sales plus tour activity established a stronger professional base
 - 2018 late to 2019-08: **C-** — major debut period, stronger commercial visibility, TIF HOT STAGE-level position
@@ -204,8 +224,6 @@ AKSB is useful for understanding D+ / C- transitions and decline.
 Historical peak does not preserve current Tier.
 
 ## 8. Reviewed B- and above anchors for the 2025-07-05 market
-
-This list is for calibration of the upper market and should replace earlier provisional B-level lists.
 
 ### S
 - 乃木坂46 — **S**
@@ -238,12 +256,11 @@ This list is for calibration of the upper market and should replace earlier prov
 ### B-
 - HKT48 — **B-**
 
-K-pop / K-pop-style audition acts such as NiziU are outside the intended normal Japanese-idol calibration and should not be used as anchors here. Other cross-market acts should be explicitly marked as special rather than silently mixed into the baseline.
+K-pop / K-pop-style audition acts such as NiziU are outside the intended normal Japanese-idol calibration and should not be used as anchors here.
 
 ## 9. Hello! Project calibration around the C/B boundary
 
-The current working anchors are:
-
+Current S6-era anchors:
 - モーニング娘。'25 — **B**
 - アンジュルム — **C+**
 - Juice=Juice — **C+**
@@ -252,9 +269,24 @@ The current working anchors are:
 - OCHA NORMA — **C**
 - ロージークロニクル — **C-**
 
-This is useful because Hello! Project demonstrates that **long-term major status by itself does not imply B-**. Stable major activity is normal in C/C+, while B- requires a clearly larger and more repeatable market base.
+Long-term major status by itself does not imply B-. Stable major activity is normal in C/C+; B- requires a clearly larger and more repeatable market base.
 
-## 10. Agency resources are not Tier
+## 10. 2026-08 cross-check anchors
+
+This section is **not S6 data**. It exists only to test whether the same standard behaves sensibly at a later date.
+
+- ≒JOY: **B-** by 2026-08; repeated large paid live evidence plus much stronger Sales moves it above the 2026 C+ field
+- 高嶺のなでしこ: remains **C+**; `Brand B- / Live C / Sales C+` is still a coherent profile
+- Jams Collection: remains **C** unless stronger Sales/Brand evidence emerges; strong Live alone does not force C+
+- きゅるりんってしてみて: **C**; Brand and Live support C despite weak indie physical Sales
+- UtaGe!: **C-** by 2026-08 after normal-price O-EAST-scale / TIF HOT-level evidence
+- ドラマチックレコード: **C-** by 2026-08
+- INUWASI: **C-** by 2026-08; major EP / Oricon plus strong paid live route make it a relatively solid C- case
+- ZOCX: **C-** by 2026-08; Brand stronger than Sales, with normal-price Zepp-class tour evidence
+- Task have Fun: **C-** by 2026-08; mature historical Brand/Sales with current lower-edge Live
+- MyDearDarlin' and NANIMONO: remain **D+** pending stronger normal-price repeatable C- evidence
+
+## 11. Agency resources are not Tier
 
 Agency strength, booking access, launch budget, and ecosystem support are inputs, not market Tier.
 
@@ -265,7 +297,7 @@ Examples:
 
 Agency/network effects should be simulated separately from market outcome.
 
-## 11. Special-case handling
+## 12. Special-case handling
 
 Some acts are not directly comparable to standard Japanese female-idol market structure.
 
@@ -283,7 +315,7 @@ For these groups:
 
 Perfume / BABYMETAL-style acts may be excluded from this Tier system entirely when their business model is too far outside the intended idol-management simulation.
 
-## 12. What must NOT be separate Tier dimensions
+## 13. What must NOT be separate Tier dimensions
 
 Do not add these directly to Overall Tier:
 - agency power
@@ -297,9 +329,7 @@ These are causes, inputs, or observations. Their market outcomes should eventual
 
 The existing fan-layer system remains separate. Tier is only a market-status summary.
 
-## 13. Recommended data shape
-
-Internal group data can use fields conceptually equivalent to:
+## 14. Recommended data shape
 
 ```json
 {
@@ -315,15 +345,16 @@ Internal group data can use fields conceptually equivalent to:
 
 Only `market_tier` should normally be exposed to the player UI.
 
-## 14. Calibration workflow
+## 15. Calibration workflow
 
 When reviewing a scenario group:
 1. lock the evaluation date
-2. collect already-achieved Brand / paid-Live / Sales evidence
-3. discount one-off, free, subsidized, agency-packaged, or future events
-4. assign the three hidden dimensions independently
-5. determine Overall from the structural market boundary, not from arithmetic average
-6. add a special note for roster reboot, regional concentration, overseas route, unusual ticketing, or missing Sales
-7. expose only final Tier to the player
+2. collect already-achieved Brand / paid-Live evidence
+3. calculate comparable rolling 12-month physical Sales where available
+4. discount one-off, free, subsidized, agency-packaged, or future Live events
+5. assign the three hidden dimensions independently
+6. determine Overall from the structural market boundary, not from arithmetic average
+7. add a special note for roster reboot, regional concentration, overseas route, unusual ticketing, or missing Sales
+8. expose only final Tier to the player
 
-Any older provisional C/C+/B- judgments that conflict with this document should be treated as obsolete and recalibrated before use.
+Any older provisional C/C+/B- judgments or older low-volume Sales thresholds that conflict with this document are obsolete and must be recalibrated before use.
