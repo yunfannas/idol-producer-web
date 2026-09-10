@@ -10,16 +10,16 @@ Priority is **Live > Music > Brand**. Overall remains a structural judgment rath
 
 ## Scope and evidence policy
 
-- Candidate universe: every group that already existed at the S6 opening and **has not formally disbanded as of the 2026-09 review**. A later downgrade, reduced festival presence, member turnover, reorganization, hiatus, or weaker current activity does **not** remove a group from consideration.
-- Main table itself contains only groups from that candidate universe judged **Overall C- or above for S6**. Groups below C- are not ranked, except for a limited D+ upper-boundary research set used to calibrate the cutoff.
-- A group is excluded from the candidate universe only when the group itself has actually ended/disbanded. Temporary suspension or hiatus is not sufficient for exclusion.
-- **TIF2024 and TIF2025 are both accepted calibration evidence.** TIF2024 is a pre-opening scene-position signal; TIF2025 is a near-opening validation signal and may affect the S6 opening rating when it clearly reveals the market position already present around the cutoff.
+- **Historical-universe rule:** every group that already existed and had not formally ended by **2025-07-05** is eligible for the S6 calibration. What happened after the opening date — later disbandment, hiatus, decline, reorganization, member turnover, or current inactivity — does **not** affect eligibility for this historical table.
+- Main table contains only eligible groups judged **Overall C- or above at S6**. Groups below C- are not ranked, except for a limited D+ upper-boundary research set used to calibrate the cutoff.
+- Groups that had already formally disbanded before 2025-07-05 are outside the S6 candidate universe. Groups that disbanded after 2025-07-05 remain in the table if their S6 rating is C- or above.
+- **TIF2024 and TIF2025 are both accepted calibration evidence.** TIF2024 is a pre-opening scene-position signal; TIF2025 is a near-opening validation signal and may affect the S6 opening rating when it clearly reveals market position already present around the cutoff.
 - For ordinary Japanese live-idol routes, a **regular independent TIF HOT / UP-T HOT slot** is treated as a C- floor unless the appearance is a scramble-winner, collaboration-only, finale-only, project-only, or another special mechanism.
 - HEAT / SMILE / SKY placement is supporting evidence but is not by itself an automatic C- floor.
 - Festival placement remains a validation feature, not a fourth rating dimension. Own-live economics, Music and Brand still determine the actual rating.
 - The old `festival_tier_validation_pilot_s6.json` tier labels are historical working labels only. Its festival observations may be reused, but its tier labels must not override this recalibration.
 
-## S6 calibration — C- or above among groups not disbanded by 2026-09
+## S6 calibration — C- or above
 
 | # | Group | Live | Music | Brand | Overall | S6 calibration note |
 |---:|---|:---:|:---:|:---:|:---:|---|
@@ -49,29 +49,28 @@ Priority is **Live > Music > Brand**. Overall remains a structural judgment rath
 | 24 | STU48 | C | C+ | C+ | **C+** | Music/Brand sustain C+ despite C Live |
 | 25 | きゅるりんってしてみて | C | C | C | **C** | Before the later arena-scale step |
 | 26 | Jams Collection | C | C- | C | **C** | 2024 Budokan remains a one-time peak; TIF2025 HOT validates stable C scene position |
-| 27 | のんふぃく！ | C | C- | C- | **C** | IDORISE O-EAST + TIF2025 HEROINES/HOT-level treatment |
+| 27 | のんふぃく！ | C | C- | C- | **C** | IDORISE O-EAST + strong TIF2025 treatment |
 | 28 | 夜光性アミューズ | C | C- | C- | **C** | IDORISE O-EAST and strong TIF2025 treatment |
 | 29 | つばきファクトリー | C | C+ | C+ | **C** | Stable H!P C product |
 | 30 | OCHA NORMA | C | C+ | C | **C** | TIF2025 HOT consistent with C product |
 | 31 | NGT48 | C | C+ | C | **C** | 48 ecosystem supports Music/Brand |
 | 32 | 虹のコンキスタドール | C | C | C+ | **C** | Legacy major/live-idol bridge; TIF2025 HOT |
 | 33 | わーすた | C | C | C+ | **C** | Legacy major/live-idol bridge |
-| 34 | FES☆TIVE | C- | C- | C | **C-** | IDORISE O-EAST and repeated TIF upper treatment |
-| 35 | INUWASI | C- | C- | C- | **C-** | IDORISE O-EAST; independent 30-min TIF2025 UP-T HOT slot confirms C- floor |
-| 36 | NEO JAPONISM | C- | C- | C | **C-** | Repeated upper festival position; TIF2025 HOT |
-| 37 | MyDearDarlin' | C- | D+ | D+ / C- | **C-** | S6 own-live/festival structure still supports C-; later decline is not back-propagated |
-| 38 | Task have Fun | C- | C- | C | **C-** | Long-running lower C- structural anchor |
-| 39 | タイトル未定 | C- | C- | C- | **C-** | Strong scene placement; independent TIF2025 HOT slot |
-| 40 | Devil ANTHEM. | C- | C- | C | **C-** | Returned from hiatus; independent TIF2025 HOT slot confirms C- floor |
-| 41 | ばってん少女隊 | C- | C- | C | **C-** | Regional/major-route lower C- anchor |
-| 42 | SWEET STEADY | C- | C | C | **C-** | Independent 30-min TIF2025 UP-T HOT slot establishes ordinary-route C- floor; later B- rise not back-propagated |
-| 43 | Merry BAD TUNE. | C- | D+ | C- | **C-** | Independent opening 30-min TIF2025 UP-T HOT slot; old D+ pilot label superseded |
-| 44 | ロージークロニクル | C- | C | C- | **C-** | Independent 30-min TIF2025 UP-T HOT slot; H!P/Music support makes C- robust |
-| 45 | 衛星とカラテア | C- | D+ | C- | **C-** | IDORISE upper-secondary plus 2025 Zepp/anniversary live structure; still not disbanded |
+| 34 | TEAM SHACHI | C | C | C+ | **C** | Still active at S6 despite an already-announced Dec-2025 dissolution. Jan-2025 TOKYO DOME CITY HALL one-man and long-running regional/national brand support C; TIF2025 respect-stage treatment supports Brand but is not treated as an independent HOT floor. |
+| 35 | FES☆TIVE | C- | C- | C | **C-** | IDORISE O-EAST and repeated TIF upper treatment |
+| 36 | INUWASI | C- | C- | C- | **C-** | IDORISE O-EAST; independent 30-min TIF2025 UP-T HOT slot confirms C- floor |
+| 37 | NEO JAPONISM | C- | C- | C | **C-** | Repeated upper festival position; TIF2025 HOT |
+| 38 | MyDearDarlin' | C- | D+ | D+ / C- | **C-** | S6 own-live/festival structure supports C- regardless of later decline |
+| 39 | Task have Fun | C- | C- | C | **C-** | Long-running lower C- structural anchor |
+| 40 | タイトル未定 | C- | C- | C- | **C-** | Strong scene placement; independent TIF2025 HOT slot |
+| 41 | Devil ANTHEM. | C- | C- | C | **C-** | Returned from hiatus; independent TIF2025 HOT slot confirms C- floor |
+| 42 | ばってん少女隊 | C- | C- | C | **C-** | Regional/major-route lower C- anchor |
+| 43 | SWEET STEADY | C- | C | C | **C-** | Independent 30-min TIF2025 UP-T HOT slot establishes ordinary-route C- floor |
+| 44 | Merry BAD TUNE. | C- | D+ | C- | **C-** | Independent opening 30-min TIF2025 UP-T HOT slot; old D+ pilot label superseded |
+| 45 | ロージークロニクル | C- | C | C- | **C-** | Independent 30-min TIF2025 UP-T HOT slot; H!P/Music support makes C- robust |
+| 46 | 衛星とカラテア | C- | D+ | C- | **C-** | IDORISE upper-secondary plus 2025 Zepp/anniversary live structure |
 
 ### Provisional C- candidates not yet frozen into the numbered table
-
-These are structurally plausible C- cases, but need a dedicated pre-/near-S6 own-live audit before promotion into the ranked set.
 
 | Group | Live | Music | Brand | Working Overall | Why unresolved |
 |---|:---:|:---:|:---:|:---:|---|
@@ -89,29 +88,21 @@ D+ groups are **not ranked in the main table**. Only upper-boundary groups are k
 | かすみ草とステラ | D+ | D+ | C- | **D+** | O-EAST positive residual and strong circuit frequency; own-live structure still needs C- proof |
 | i-COL | D+ | D+ | C- | **D+** | HEROINES ecosystem access and O-EAST positive residual; no independent HOT-floor evidence |
 | GILTY×GILTY | D+ | D+ | C- | **D+** | Zepp-class peak without repeatable C- paid-live structure |
-| NANIMONO | D+ | D+ | C- | **D+** | High-frequency / lower-price business; TIF2025 UtaGe! collaboration is not a HOT floor |
+| NANIMONO | D+ | D+ | C- | **D+** | High-frequency / lower-price business; TIF2025 collaboration is not a HOT floor |
 | ラフ×ラフ | D+ | C- | C | **D+** | Strong Brand/media and TIF premium treatment, but repeatable paid Live remains below C- |
 | 可憐なアイボリー | D+ | C- | C- | **D+** | Music healthier than Live; TIF2025 SKY/SMILE support does not establish HOT floor |
 | AVAM | D+ / C- | D+ | C- | **D+ provisional** | TIF2025 HEAT + lower-stage appearances put it very near the line; dedicated own-live ledger required |
 | THE ORCHESTRA TOKYO | D+ | D+ | C- | **D+** | Strong scene placement, including TIF2025 SMILE/SKY, but insufficient independent paid-live evidence for promotion |
 | なみだ色の消しごむ | D+ | D+ | C- | **D+** | Rising 2025 scene position and later finale inclusion; no ordinary HOT slot, so remains below line pending Live audit |
-| #ババババンビ | D+ / C- | D+ | C | **D+ provisional** | HEAT-level TIF treatment and stronger Brand than typical D+, but current-period own-live economics need reconstruction |
+| #ババババンビ | D+ / C- | D+ | C | **D+ provisional** | HEAT-level TIF treatment and stronger Brand than typical D+, but opening-period own-live economics need reconstruction |
 | 東京女子流 | D+ / C- | D+ | C+ | **D+ provisional** | Legacy Brand is strong; must avoid letting historical status substitute for current paid draw |
 | Peel the Apple | D+ | D+ | C- | **D+** | Repeated TIF/scene presence and finale inclusion, but insufficient Live evidence for C- |
 
-## Disbanded-group exclusion
+## Historical-universe note
 
-Only groups that have **actually disbanded** after the 2025-07-05 opening are excluded from this active S6 comparison universe. Hiatus, reduced activity, reorganization, member turnover, or later tier decline are not exclusion criteria.
-
-| Group | S6 status | Exclusion note |
-|---|---|---|
-| TEAM SHACHI | Would have required C-/C+ range evaluation | Officially announced in February 2025 that the group would disband in December 2025; TIF2025 explicitly treated it as the group's final TIF. Excluded only because the group itself subsequently ended. |
-
-This exclusion list is not assumed complete until the full C-/D+ candidate universe is checked against current group status.
+The S6 table is a **2025-07-05 historical snapshot**, not an active-groups list. Therefore later disbandment does not remove a group. TEAM SHACHI is the clearest example: the group had announced in February 2025 that it would end in December, but it was still active on the S6 opening date and must be evaluated normally. Later-ended groups discovered in the C-/D+ audit must be handled the same way.
 
 ## TIF2025 calibration observations
-
-The 2025 timetable materially sharpens the lower boundary:
 
 - **Merry BAD TUNE.** — 8/1, UP-T HOT STAGE, 10:00-10:30, independent slot -> C- floor.
 - **INUWASI** — 8/1, UP-T HOT STAGE, 10:40-11:10, independent slot -> C- floor.
@@ -121,13 +112,12 @@ The 2025 timetable materially sharpens the lower boundary:
 - **SWEET STEADY** — 8/1, UP-T HOT STAGE, 18:10-18:40 -> C- floor despite the group's youth.
 - **ロージークロニクル** — 8/3, UP-T HOT STAGE, 10:00-10:30 -> C- floor; this supersedes the old D+ working label.
 - HEAT/SMILE/SKY cases such as UtaGe!, AVAM, 可憐なアイボリー and THE ORCHESTRA TOKYO remain useful D+ upper-boundary samples because those placements do not automatically trigger the HOT floor.
+- **TEAM SHACHI** received a dedicated TIF2025 respect-stage program. This is meaningful Brand evidence but not an ordinary independent HOT slot and therefore is not used as an automatic C- floor.
 
 ## Next research pass
 
-Priority order for freezing the S6 table:
-
 1. Reconstruct **2024-07-05..2025-07-04 own-live ticket gross** for ZOCX, CUTIE STREET, AVAM, #ババババンビ and 東京女子流.
-2. Audit the entire provisional C-/D+ universe for **actual post-S6 group disbandment only**; do not remove groups merely for hiatus, reduced activity, reorganization, or decline.
+2. Expand the candidate universe from all groups active on **2025-07-05**, including groups that later disbanded, and identify any omitted C- or above cases.
 3. Add TIF2024 and TIF2025 stage-level evidence for every C- tail and D+ head candidate; distinguish independent HOT slots from collaboration/special-project appearances.
 4. Re-run the upper market with the same Live/Music/Brand standard after the lower boundary is frozen.
 5. Only after that, export the S6 ratings into gameplay data; do not overwrite the 2026-09 current-market table.
