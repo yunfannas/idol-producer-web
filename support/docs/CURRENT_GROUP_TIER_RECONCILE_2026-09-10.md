@@ -1,35 +1,72 @@
 # Current Group Tier Reconcile — 2026-09-10
 
-Canonical reconciliation overlay for the current Japanese female-idol market tier work. This document resolves conflicts among the old 50-group table, the 65-group C- master, automated D+–B- reruns, candidate-universe audits, and the final manual calibration decisions from 2026-09-09.
+Canonical reconciliation overlay for the current Japanese female-idol market tier work. This document resolves conflicts among the old 50-group table, the 65-group C- master, automated reruns, candidate-universe audits, and the final manual calibration decisions from 2026-09-09.
 
 ## Snapshot rule
 
 - Current tier cutoff: **2026-08-31**.
 - Trailing-52-week Live window: **2025-09-01 through 2026-08-31**.
 - Events after 2026-08-31 may affect `current_trend`, but do not contribute current attendance/gross/tier.
-- Manual final calibration decisions override intermediate automated rerun documents when they conflict.
+- Final manual calibration decisions override intermediate automated rerun/master documents when they conflict.
 
-## Reconciled current decisions
+## Authoritative C / C- working boundary
 
-Use `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md` as the membership baseline, with the following corrections/locks:
+The following is the final reconciled working boundary from the 2026-09-09 review.
 
-| Group | Live | Music | Brand | Overall | Reconciled decision |
-|---|:---:|:---:|:---:|:---:|---|
-| 高嶺のなでしこ | C | C+ | C+ | **C+** | Keep final manual calibration; do not restore C+ Live from intermediate rerun. |
-| Jams Collection | C | C- | C | **C** | **C-tier tail anchor.** Intermediate automated C- rerun is superseded. |
-| yosugala | C | C- / C | C | **C** | Promote from C- using completed pre-cutoff 2026 EX THEATER -> QUATTRO/LIQUIDROOM -> NHK Hall live structure; place above Jams in C. |
-| NGT48 | C | C+ | C | **C** | Keep. Physical sales do not imply higher Live, but current evidence does not justify a C- demotion. |
-| のんふぃく！ | C- | C- | C- | **C-** | Keep. Current TIF/Main + HEROINES upper-route evidence holds the C- floor; post-cutoff tour is trend only. |
-| Merry BAD TUNE. | C- | D+ | C- | **C-** | Music remains fixed at D+. |
-| LinQ | C- | D+ | C | **C-** | Keep directly in the lower C- band on repeatable Kyushu own-live structure + regional Brand. |
+### Overall C
 
-After the yosugala correction, the 65-group master distribution becomes:
+1. fav me
+2. 高嶺のなでしこ
+3. RAIN TREE
+4. AVAM
+5. yosugala
+6. GANG PARADE
+7. のんふぃく！
+8. つばきファクトリー
+9. OCHA NORMA
 
-- C: **11**
-- C-: **26**
-- C- or above total: **65**
+### Overall C- — ordered working band
 
-All other master rows remain unchanged unless a later explicit manual decision supersedes them.
+1. Jams Collection
+2. 夜光性アミューズ
+3. 虹のコンキスタドール
+4. Merry BAD TUNE.
+5. TENRIN
+6. Appare!
+7. ドラマチックレコード
+8. iON!
+9. NGT48
+10. わーすた
+11. ZOCX
+12. INUWASI
+13. Devil ANTHEM.
+14. NEO JAPONISM
+15. UtaGe!
+16. MORE STAR
+
+### Boundary anchors
+
+- **Jams Collection = C- head**
+- **MORE STAR = C- floor**
+
+These two anchors define the practical C / C- review gate. New groups should be reconciled against both ends rather than judged from venue names or isolated metrics alone.
+
+## Explicit supersessions of intermediate files
+
+The following intermediate outcomes are superseded for current-tier work:
+
+- Jams Collection is **C-**, not C.
+- のんふぃく！ is **C**, not C-.
+- NGT48 is **C-**, not C.
+- AVAM is **C**, not C-.
+- RAIN TREE is **C** and belongs in the current C band.
+- yosugala is **C**.
+- 虹のコンキスタドール is **C-**, not C.
+- わーすた is **C-**, not C.
+- INUWASI remains **C-**, but is below ZOCX in the current ordered band.
+- Merry BAD TUNE. remains **C-** with **Music D+**.
+
+The older `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md`, `CURRENT_GROUP_TIER_TABLE_2026-09.md`, and `CURRENT_GROUP_TIER_RERUN_DPLUS_BMINUS_2026-09.md` must therefore not be used as authoritative C/C- membership or ordering without applying this overlay.
 
 ## Current D+ boundary — existing researched anchors
 
@@ -43,33 +80,31 @@ The following remain direct D+ working anchors unless promoted by separate evide
 | NANIMONO | **D+** | High frequency but D+-scale median show / low-price expansion. |
 | MyDearDarlin' | **D+** | Current ordinary paid-live business remains below C-. |
 | シンデレラ宣言！ | **D+** | No sufficient independent current Live evidence for C-. |
+| なみだ色の消しごむ | **D+** | IDORISE O-EAST + existing upper-scene evidence establish D+ floor; still below C- gate. |
 
 ## IDORISE!! FESTIVAL 2026 — O-EAST-derived D+ candidate pool
 
-Method: Spotify O-EAST is treated as the IDORISE main-stage placement signal. A **normal O-EAST slot is positive D+ evidence**, but Entry alone is not an automatic final Overall rating. Placement/treatment, own-live draw, Music and Brand still need reconciliation. Explicit newcomer-stage insertions are excluded.
+Spotify O-EAST is treated as the IDORISE main-venue placement signal. A normal O-EAST appearance establishes a **D+ scene-position floor**, not an automatic C- rating and not, by itself, a complete Overall evaluation. Placement > treatment > entry, while own-live commercial evidence remains more important.
 
-Official 2026 timetable cross-check leaves the following active groups outside the current C- master after subtracting groups already rated C- or above:
+After removing groups already C- or above under the authoritative boundary, inactive groups, and explicit newcomer-stage insertions, the remaining O-EAST-derived D+ audit pool is:
 
-| Group | O-EAST placement | Working use |
-|---|---|---|
-| Palette Parade | 3/7 10:00 | **D+ / C- boundary**; O-EAST supports D+ floor, own-live evidence decides promotion. |
-| かすみ草とステラ | 3/7 10:30 | **D+**; repeated upper-festival/O-EAST evidence, current own-live monetization still below clean C-. |
-| LumiUnion | 3/7 11:00 | **D+ candidate**; main-stage placement is sufficient for investigation, but special/major-route context requires separate Live check. |
-| Sweet Alley | 3/7 13:10 | **D+**; already retained in the D+ promotion queue. |
-| ハルニシオン | 3/7 17:10 | **D+ candidate**; relatively strong O-EAST placement, requires own-live confirmation. |
-| MEGAFON | 3/8 10:00 | **D+ candidate**; opening O-EAST slot gives floor evidence, not C- proof. |
-| カラフルスクリーム | 3/8 12:05 | **D+ candidate**; O-EAST placement supports upper-scene floor; regional own-live structure needs reconciliation. |
-| なみだ色の消しごむ | 3/8 12:35 | **D+** | Promote from provisional D+ wording to a clean D+ working anchor on O-EAST main-stage placement plus existing upper-scene evidence; still not enough for C-. |
-| Rain Tree | 3/8 13:25 | **D+ candidate**; major-route Music/Brand may alter Overall, so do not finalize from festival placement alone. |
-| #ババババンビ | 3/8 18:45 | **D+ candidate / high-priority audit**; late O-EAST placement is a strong scene signal and deserves direct current own-live re-evaluation. |
+- Palette Parade
+- かすみ草とステラ
+- LumiUnion
+- Sweet Alley
+- ハルニシオン
+- MEGAFON
+- カラフルスクリーム
+- なみだ色の消しごむ
+- RAIN TREE — already reconciled upward to **C**, so retain only as evidence history, not as a D+ candidate
+- #ババババンビ
 
-### Explicit exclusions from the O-EAST D+ derivation
+### Explicit exclusions
 
-- **ukka** appeared on O-EAST on 3/7 but ended activities on 2026-05-24, so it is not part of the 2026-08-31 current ranking.
-- **RE-GE** (3/7) and **フルコース** (3/8) were explicitly marked `ニューカマーステージ`; the placement mechanism is special and does not establish a D+ floor.
-- Every other O-EAST act in the two-day timetable is already in the reconciled C- or above master and therefore is not part of the D+ candidate pool.
+- ukka: ended activities before the 2026-08-31 current cutoff.
+- RE-GE / フルコース: explicit `ニューカマーステージ` mechanism; no automatic D+ floor from that placement.
 
-## D+ pool after reconciliation
+## D+ audit status
 
 Confirmed/working D+ anchors currently tracked: **7**
 
@@ -81,7 +116,7 @@ Confirmed/working D+ anchors currently tracked: **7**
 - シンデレラ宣言！
 - なみだ色の消しごむ
 
-Additional O-EAST-derived D+ candidates requiring direct Live/Music/Brand audit: **9**
+O-EAST-derived groups still requiring direct Live / Music / Brand audit before freezing Overall D+: **8**
 
 - Palette Parade
 - かすみ草とステラ
@@ -90,11 +125,8 @@ Additional O-EAST-derived D+ candidates requiring direct Live/Music/Brand audit:
 - ハルニシオン
 - MEGAFON
 - カラフルスクリーム
-- Rain Tree
 - #ババババンビ
-
-The candidate count is deliberately separate from the frozen D+ total: O-EAST placement creates a D+ floor signal/candidate, not an automatic final Overall rating.
 
 ## Precedence
 
-For current-market work, use this file together with `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md`. Where they conflict, this reconcile file wins. `CURRENT_GROUP_TIER_TABLE_2026-09.md` and `CURRENT_GROUP_TIER_RERUN_DPLUS_BMINUS_2026-09.md` are historical/intermediate layers and must not override these reconciled decisions.
+For current-market C/C- boundary work, this file is authoritative. Where it conflicts with previous current-tier master or rerun documents, this file wins. The D+ section remains a working research pool and should be frozen only after direct group-by-group review.
