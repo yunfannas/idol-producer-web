@@ -55,6 +55,7 @@ These two anchors define the practical C / C- review gate. New groups should be 
 
 The following intermediate outcomes are superseded for current-tier work:
 
+- 高嶺のなでしこ is **C**, not C+.
 - Jams Collection is **C-**, not C.
 - のんふぃく！ is **C**, not C-.
 - NGT48 is **C-**, not C.
@@ -82,11 +83,18 @@ The following remain direct D+ working anchors unless promoted by separate evide
 | シンデレラ宣言！ | **D+** | No sufficient independent current Live evidence for C-. |
 | なみだ色の消しごむ | **D+** | IDORISE O-EAST + existing upper-scene evidence establish D+ floor; still below C- gate. |
 
-## IDORISE!! FESTIVAL 2026 — O-EAST-derived D+ candidate pool
+## IDORISE!! FESTIVAL 2026 — O-EAST-derived D+ floor
 
-Spotify O-EAST is treated as the IDORISE main-venue placement signal. A normal O-EAST appearance establishes a **D+ scene-position floor**, not an automatic C- rating and not, by itself, a complete Overall evaluation. Placement > treatment > entry, while own-live commercial evidence remains more important.
+Spotify O-EAST is the IDORISE main-venue signal. Per the final 2026-09-09 calibration, a **normal O-EAST appearance directly establishes D+** for current-tier classification. It is not merely a candidate flag. It still does **not** establish C-; promotion above D+ requires stronger placement/treatment and/or independent current own-live/Music/Brand evidence.
 
-After removing groups already C- or above under the authoritative boundary, inactive groups, and explicit newcomer-stage insertions, the remaining O-EAST-derived D+ audit pool is:
+Rule summary:
+
+- Normal IDORISE O-EAST appearance -> **at least D+**.
+- It may be higher if other evidence supports C- or above.
+- Groups already reconciled to C- or above retain that higher rating.
+- Explicit special-mechanism/newcomer-stage insertions are excluded from the automatic D+ floor.
+
+After removing groups already C- or above under the authoritative boundary, inactive groups, and explicit newcomer-stage insertions, the remaining O-EAST-derived groups are all **D+**:
 
 - Palette Parade
 - かすみ草とステラ
@@ -96,17 +104,18 @@ After removing groups already C- or above under the authoritative boundary, inac
 - MEGAFON
 - カラフルスクリーム
 - なみだ色の消しごむ
-- RAIN TREE — already reconciled upward to **C**, so retain only as evidence history, not as a D+ candidate
 - #ババババンビ
+
+RAIN TREE also appeared on O-EAST but is already reconciled upward to **C**, so the O-EAST result is only its floor evidence, not its final tier.
 
 ### Explicit exclusions
 
 - ukka: ended activities before the 2026-08-31 current cutoff.
-- RE-GE / フルコース: explicit `ニューカマーステージ` mechanism; no automatic D+ floor from that placement.
+- RE-GE / フルコース: explicit `ニューカマーステージ` mechanism; no automatic D+ floor from that special placement.
 
-## D+ audit status
+## D+ working pool after applying the O-EAST rule
 
-Confirmed/working D+ anchors currently tracked: **7**
+Direct/researched D+ anchors not dependent on the 2026 O-EAST derivation:
 
 - ラフ×ラフ
 - 可憐なアイボリー
@@ -114,9 +123,8 @@ Confirmed/working D+ anchors currently tracked: **7**
 - NANIMONO
 - MyDearDarlin'
 - シンデレラ宣言！
-- なみだ色の消しごむ
 
-O-EAST-derived groups still requiring direct Live / Music / Brand audit before freezing Overall D+: **8**
+2026 IDORISE O-EAST-derived D+ groups outside the C- or above boundary:
 
 - Palette Parade
 - かすみ草とステラ
@@ -125,8 +133,11 @@ O-EAST-derived groups still requiring direct Live / Music / Brand audit before f
 - ハルニシオン
 - MEGAFON
 - カラフルスクリーム
+- なみだ色の消しごむ
 - #ババババンビ
+
+This yields **15 currently tracked D+ groups before deduplication against any additional non-IDORISE D+ audit records**. Further research may promote some of them to C-, but none of these normal O-EAST groups should be left below D+.
 
 ## Precedence
 
-For current-market C/C- boundary work, this file is authoritative. Where it conflicts with previous current-tier master or rerun documents, this file wins. The D+ section remains a working research pool and should be frozen only after direct group-by-group review.
+For current-market C/C- boundary work and the IDORISE O-EAST D+ floor, this file is authoritative. Where it conflicts with previous current-tier master or rerun documents, this file wins.
