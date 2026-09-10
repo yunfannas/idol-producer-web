@@ -30,10 +30,13 @@ The annual-gross estimate below is intentionally shown as a range because exact 
 | きゅるりんってしてみて | **~12–15+** | **~¥190m–270m** | 2026 `Kyururin Heavenly`: 9 regional halls + 2 Makuhari Event Hall additions; hall tickets ¥12.5k goods / ¥6.6k general / ¥3.9k student. Regional hall run was publicly presented as SOLD OUT across the route; Kobe replacement also sold standing inventory. Makuhari tickets ¥17k front-goods / ¥15k goods / ¥8.8k general / ¥5k student | **very strong annual C+ business; per-show mostly C/C+, with Makuhari peaks above; working Live C+** | B |
 | 高嶺のなでしこ | **at least 13 principal tour shows if each two-part date is counted separately** | **~¥150m–220m, possibly higher** | 2026 `Bouquet of 9 Flowers`: Zepp Sapporo / Osaka Bayside / Nagoya / DiverCity / Fukuoka / Sendai PIT are two-part dates; normal/female ¥7.3k, camera area ¥12k. Sendai first show SOLD OUT, second `残りわずか`. Forum A final adds another major own show. Community/on-site reports still suggest audience breadth around ~2k class rather than consistently filling maximum venue capacity | **annual C+ business but representative audience breadth C; working Live C upper / C+ boundary** | B |
 | Jams Collection | ~8–12 own shows identified/likely incl. member birthday shows + larger one-mans | **~¥45m–80m provisional; archive incomplete** | recurring front/S ~¥6.5–7.5k, general ~¥2.5–3.5k, camera ~¥8.8–9.8k, frequent ¥0.5–1k trial/rear structures. 2025-07 Kanadevia used SS ¥12k / S ¥6.5k / A ¥2.5k / trial ¥500 / camera ¥8.8k; 2026 member birthday O-EAST around front ¥7.5k / general ¥3.5k / female ¥2.5k / camera ¥8.8k | **frequency prevents under-rating, but cheap ordinary inventory suppresses gross; working Live C- upper / C candidate** | C+ |
-| INUWASI | **at least 7 major band-set tour shows in two completed cycles, plus other own dates** | **~¥50m–85m provisional** | 2025-12–2026-02: EX Theater / Nagoya ReNY / BananaHall / Zepp DiverCity. 2026-05–07: BIGCAT / Diamond Hall / LINE CUBE. Common premium ¥10k–15k; ordinary ¥3.5k–4.5k; some lower ¥2.5k tiers. National repetition is much stronger than a single-Zepp reading | **strong annual C route; median show smaller, Tokyo finals C/C+ gross; working Live C candidate** | B |
+| INUWASI | **7 major band-set tour shows confirmed, plus own/birthday dates** | **~¥55m–90m provisional** | 2025-12–2026-02: EX Theater / Nagoya ReNY / BananaHall / Zepp DiverCity. 2026-05–07: BIGCAT / Diamond Hall / LINE CUBE. Common premium ¥10k–15k; ordinary ¥3.5k–4.5k; lower tiers around ¥2.5k. Additional own dates include birthday lives and solo-format `狗祭BLACK`; ordinary multi-group `狗祭` is not counted at 100% | **best current upper-C- / C-line sample; annual gross can touch C band but median operation remains below clean C** | B |
+| AVAM | **5-city Zepp tour + recurring PM11:59 own lives** | **~¥45m–80m provisional** | 2026 `RE:BORNEDGE`: Zepp Sapporo / Namba / Fukuoka / Nagoya / DiverCity with S ¥15k / A ¥6k / student ¥3k. Separate Jan Zepp Shinjuku one-man used S ¥12k / A ¥4k / student ¥2k. PM11:59 dates commonly front ¥7k / general ¥3k at ReNY, BananaHall, UNIT, WWW X etc. Current tour sell-through by city is still incomplete | **upper C- annual business; stronger than a single-Zepp reading, but no current evidence yet forces C** | B- |
+| Merry BAD TUNE. | **national own-tour dates + O-EAST final + Zepp DiverCity one-man + birthday/solo dates** | **~¥35m–60m provisional** | `FOATING EVA TOUR2025→2026` used ordinary live-house stops; Tokyo O-EAST final sold out all three areas at ¥7.5k / ¥3.5k / ¥2k. 2026-04 Zepp DiverCity first one-man was explicitly SOLD OUT, with contemporary reporting describing the floor and 2F rear as full. Exact Zepp ticket mix remains to recover | **core-to-upper C- with a genuine C-class peak; annual accumulation currently looks below promotion line** | B- |
 | NANIMONO | **29 tour shows** from two completed national tours alone | **~¥40m–70m** | 2025 tour 17 shows: S ¥5k / A ¥3k / female ¥1.5k / rear ¥1k. 2026 tour 12 shows: S ¥5k / A ¥3k / female ¥2k / rear ¥500; finals add ¥30k VIP and higher front tiers. Very high frequency but much of the inventory is deliberately low priced | **annual business materially above a typical D+ group, but representative gross and paid breadth remain D+; working Live D+ upper** | B+ |
+| Task have Fun | **16-show 10th-anniversary tour + other own events** | **~¥30m–50m provisional** | 2026 anniversary tour covers 9 locations / 16 performances. General ticket is ¥5,000; BLAZE GOTANDA final adds ¥15k VIP. Most regional rooms are only roughly 300–550-class, and at least some dates still showed ordinary inventory available during sale | **stable lower/core C- by frequency and normal pricing, but current evidence does not support C-candidate annual gross** | B- |
 | Appare! | 15-show 10th-anniversary tour + other own shows | **¥25m–50m provisional** | 2026 15-date tour sells ¥5k front ticket but general admission is ¥0 (drink only); Yoyogi final uses ¥50k / ¥10k / ¥4k / ¥2k / ¥700 ladder | **high frequency, but large free-ticket component suppresses attributable ticket gross; Live C-~C pending final gross reconstruction** | C+ |
-| yosugala | at least 2 major paid one-mans in window + smaller own dates | **¥20m–35m provisional** | 2026-01 EX Theater major-debut release party; 2026-06 NHK Hall 4th anniversary. 2026 national tour begins after evaluation date and is not counted | **low-frequency but high per-show capability; annual gross C-~C, peak C+ venue scale** | C+ |
+| yosugala | **2 major paid one-mans + several smaller paid own dates; two free lives are ¥0 gross** | **~¥25m–40m provisional** | 2026-01 EX Theater major-debut release party: ¥4.5k standing / ¥5k 2F. 2026-06 NHK Hall anniversary: ¥12k VIP / ¥5k reserved/female; late-2025 BIGCAT and O-EAST free lives contribute zero ticket gross. Smaller paid solo dates such as LIQUIDROOM / Veats / WWW contribute, but the new 15-city tour starts after cutoff | **low-frequency/high-ceiling C-; NHK peak and Brand can make it an Overall C candidate, but 52w Live alone is not C** | B |
 | のんふぃく！ | own paid shows in window incomplete; major 2026 national tour starts after cutoff | **¥15m–35m currently evidenced; incomplete** | upcoming 2026 tour uses SS ¥30k / S ¥12k / A ¥3.5k / B ¥2k, but Sep 13 onward is outside this evaluation date. Earlier own-live/birthday archive still needs completion | **do not promote from future tour; current 52w evidence only supports C- provisionally** | C- |
 | FES☆TIVE | several low-price own shows; 52w archive incomplete | **¥15m–30m currently evidenced; likely higher after full archive** | recurring structure often front ¥5–6.5k but general ¥600–1.5k; many low-price / special-format one-mans | **frequency helps annual gross, but normal-price per-show demand is weak; C- / C boundary remains open** | C |
 
@@ -71,7 +74,59 @@ Annual Gross should therefore prevent NANIMONO from being treated like an ordina
 
 Two major band-set tour cycles inside the rolling window contribute at least seven substantial own shows: EX Theater, Nagoya ReNY, BananaHall, Zepp DiverCity, BIGCAT, Diamond Hall and LINE CUBE. Prices are commercially healthy relative to many live-idol peers, with premium tiers around ¥10k–15k and ordinary tiers around ¥3.5k–4.5k.
 
-This makes INUWASI a much stronger C candidate than a one-show model suggested, even if median regional attendance is below standard Zepp scale.
+This makes INUWASI the cleanest current test of the C promotion line. Additional own/birthday dates can plausibly move the rolling total into the lower C gross band, but its representative regional operating scale is still smaller than a clean C baseline.
+
+## Priority-five C-boundary closure pass
+
+### Merry BAD TUNE.
+
+The important correction is repeatability. The 2026-01-08 O-EAST tour final sold out front/general/female-student inventory at ¥7,500 / ¥3,500 / ¥2,000. The 2026-04-09 Zepp DiverCity first one-man then sold out, with contemporary reporting explicitly describing both floor and 2F rear as full. This is a real C-class peak, not a venue-name inference.
+
+However, the rest of the 52-week own-live route is mainly ordinary live-house scale. Until birthday/regular solo dates and the Zepp ticket mix are closed, keep annual gross at roughly **¥35m–60m**. Working position: **core/upper C-**, not C.
+
+### AVAM
+
+AVAM was previously understated because the current window includes a five-city Zepp tour, not only a single Zepp Shinjuku show. The tour uses commercially healthy ¥15k / ¥6k / ¥3k pricing, while recurring PM11:59 own lives usually use ¥7k front / ¥3k general pricing.
+
+The missing variable is station-level sell-through. Current press confirms completion of the route but does not establish that the five Zepps were sold out. A conservative bounded read is therefore **¥45m–80m**, making AVAM an **upper C-** sample and a possible C-line tester only if stronger city-level sales evidence appears.
+
+### INUWASI
+
+INUWASI remains the strongest of these five on 52-week Live business. Seven substantial band-set tour dates are confirmed inside the window, with repeated Tokyo finals at Zepp DiverCity and LINE CUBE and healthy premium/ordinary pricing. Birthday lives and solo-format own shows add revenue; ordinary co-billed `狗祭` events should not be counted at 100%.
+
+Working gross moves slightly upward to **¥55m–90m**. This straddles the C annual-gross boundary and is exactly why the promotion line should not be a hard ¥80m cut: INUWASI can reach that annual number while still having a smaller median regional show than a clean C group.
+
+### Task have Fun
+
+The 10th-anniversary route is 9 locations / 16 performances, all inside the rolling window, with ¥5,000 general admission. The final at BLAZE GOTANDA adds a ¥15,000 VIP option. But most regional rooms are only several-hundred capacity and at least some dates were not sold out during ordinary sale.
+
+A reasonable current band is **¥30m–50m** before a full station-by-station ledger. That moves Task away from the C-candidate line and toward **lower/core C-**. Its Brand/legacy matters to Overall, but current Live does not look like ¥80m+ business.
+
+### yosugala
+
+The cutoff creates an unusually weak annual-revenue snapshot. The 2025 national tour ended before this rolling window; the next 15-city tour begins after it. Two late-2025 free lives at BIGCAT and O-EAST contribute zero ticket gross. The paid core is therefore the 2026-01 EX Theater release party, the 2026-06 NHK Hall anniversary, and several smaller paid solo dates.
+
+EX Theater uses ¥4,500 standing / ¥5,000 2F; NHK Hall uses ¥12,000 VIP / ¥5,000 normal/female. Keep the annual estimate around **¥25m–40m**. yosugala remains a **C candidate in Overall terms because ceiling/scene/Brand are stronger than the annual Live snapshot**, but current 52-week Live itself is C-.
+
+## C-promotion-line implication
+
+This five-group pass does **not** provide evidence for lowering the working C annual-gross band below roughly ¥80m.
+
+The observed structure is instead:
+
+- ~¥30m–50m can support a stable C- when pricing/frequency/scene position are healthy (Task, MBT lower range, yosugala current window)
+- ~¥45m–80m is upper C- territory and can contain groups with clear C-class peaks (AVAM, MBT, INUWASI lower range)
+- ~¥80m+ becomes a meaningful C annual-business signal, but only if representative/median own-show gross also clears D+/low-C- structure
+- high-frequency small-show accumulation or one exceptional peak must not independently trigger C
+
+So the current working anchors remain defensible:
+
+- D+: below ~¥40m, or D+-scale median despite higher annual frequency
+- C-: ~¥40m–80m
+- C: ~¥80m–150m
+- C+: ~¥150m–300m
+
+The main unresolved boundary sample is now **INUWASI**, not Task or yosugala.
 
 ## Working Live interpretation
 
@@ -89,9 +144,12 @@ A high-frequency group can therefore have annual business one tier above its rep
 
 Highest-value missing work:
 
-1. recover all nine きゅるして regional hall capacities and Makuhari configured attendance / sell-through; compute a bounded annual gross ledger
-2. recover station-level 高猫 2026 first/second-show sales status and Forum A attendance; replace the current community ~2k estimate with stronger evidence where possible
-3. enumerate Jams own paid lives inside the 52-week window, especially birthday one-mans, and reconstruct gross using its recurring low-price ladder
-4. recover INUWASI sell-through / attendance for both band-set tour cycles
-5. for NANIMONO, estimate regional attendance by venue and sold-status rather than assuming venue capacity; keep the 29-show frequency advantage explicit
-6. only after 15–20 groups have comparable 52-week ledgers, derive annual-gross Tier anchors from the observed distribution
+1. recover INUWASI station-level sell-through / attendance for both band-set tour cycles and close whether its 52w total is below or above ¥80m
+2. recover AVAM `RE:BORNEDGE` city-level sell-through; this can move it from upper C- toward the C line
+3. recover Merry BAD TUNE. Zepp DiverCity ticket prices / class allocation and enumerate birthday/solo dates
+4. build a station-by-station Task 16-show ledger using actual venue capacities and any available sold-status evidence
+5. enumerate yosugala paid solo dates from 2025-09-10 through 2026-09-09 while keeping free lives at zero gross
+6. recover all nine きゅるして regional hall capacities and Makuhari configured attendance / sell-through; compute a bounded annual gross ledger
+7. recover station-level 高猫 2026 first/second-show sales status and Forum A attendance
+8. enumerate Jams own paid lives inside the 52-week window, especially birthday one-mans
+9. only after 15–20 groups have comparable 52-week ledgers, derive annual-gross Tier anchors from the observed distribution
