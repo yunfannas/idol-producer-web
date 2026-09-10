@@ -13,6 +13,12 @@ Evaluation date: **2026-09-09**. This document defines a forward-looking `trend`
 - `↓↓` — strong downward trajectory
 - `STOP` — announced group termination / disbandment / end of activities. In UI render this **red**. `STOP` overrides directional arrows.
 
+## Time-snapshot rule
+
+Trend must be evaluated **from the selected historical/current snapshot**, not carried across dates.
+
+Example: `=LOVE` is `↑↑` at **Scenario 6 opening (2025-07-05)** because the later 2026 stadium-scale expansion is a major structural jump from the 2025 baseline. At the **current 2026-09 snapshot**, `=LOVE` is only `↑`: it has already reached MUFG Stadium / National Stadium-scale live products in 2026, so the announced 2027 Tokyo Dome two-day run is continued top-tier expansion rather than another two-level jump.
+
 ## Upward evidence
 
 Use `↑` or `↑↑` when there is clear forward evidence such as:
@@ -46,7 +52,7 @@ Examples: わーすた and 超ときめき♡宣伝部.
 
 | Group | Trend | Rationale |
 |---|:---:|---|
-| =LOVE | **↑↑** | 2026 Yokohama Stadium / stadium-scale growth followed by official 2027-01 two-day Tokyo Dome announcement. This is a structural venue-scale jump, not merely incremental growth. |
+| =LOVE | **↑** | At the current 2026-09 snapshot the group has already reached National Stadium / stadium-scale live products. The announced 2027-01 two-day Tokyo Dome run is still upward, but not a second two-level jump from the current baseline. Scenario 6 uses a separate historical trend and remains `↑↑`. |
 | iLiFE! | **↑↑** | 2026-08 K-Arena Yokohama one-man completed after earlier hall/Zepp-scale products; the jump in own-live ceiling and monetization is very large. |
 | のんふぃく！ | **↑** | 2026 Makuhari Messe Event Hall anniversary product plus Kanadevia Hall new-lineup own live materially exceed the group's prior regular own-live scale. |
 | きゅるりんってしてみて | **↑↑** | 2026-05 Makuhari Event Hall 2DAYS was already a large paid product at ¥8,800 general, and the official site has announced a 2026-11 K-Arena Yokohama one-man explicitly as the group's largest-ever capacity. This is a clear structural step-up. |
@@ -64,7 +70,7 @@ Examples: わーすた and 超ときめき♡宣伝部.
 ## Source ledger for seed examples
 
 - =LOVE 2027 Tokyo Dome two-day announcement: https://equal-love.jp/schedule/detail/11617 and https://equal-love.jp/schedule/detail/11618
-- =LOVE 2026 Yokohama Stadium tour final: https://equal-love.jp/schedule/detail/10932
+- =LOVE 2026 stadium-scale live context: https://equal-love.jp/schedule/
 - iLiFE! 2026 K-Arena Yokohama one-man: https://heroines.jp/news/public/_/2glt30y2t9f2aa94.html
 - のんふぃく！ 2026 Makuhari Messe Event Hall anniversary: https://heroines.jp/news/public/_/atde4dubpjyubfee.html
 - のんふぃく！ 2026 Kanadevia Hall new-lineup live: https://heroines.jp/news/public/_/zs6rvoevr5d51pde.html
