@@ -49,16 +49,17 @@ Examples: わーすた and 超ときめき♡宣伝部.
 | =LOVE | **↑↑** | 2026 Yokohama Stadium / stadium-scale growth followed by official 2027-01 two-day Tokyo Dome announcement. This is a structural venue-scale jump, not merely incremental growth. |
 | iLiFE! | **↑↑** | 2026-08 K-Arena Yokohama one-man completed after earlier hall/Zepp-scale products; the jump in own-live ceiling and monetization is very large. |
 | のんふぃく！ | **↑** | 2026 Makuhari Messe Event Hall anniversary product plus Kanadevia Hall new-lineup own live materially exceed the group's prior regular own-live scale. |
+| きゅるりんってしてみて | **↑↑** | 2026-05 Makuhari Event Hall 2DAYS was already a large paid product at ¥8,800 general, and the official site has announced a 2026-11 K-Arena Yokohama one-man explicitly as the group's largest-ever capacity. This is a clear structural step-up. |
+| Jams Collection | **-** | The announced five-city Zepp tour broadens repeatability, but does not materially exceed the group's historical ceiling after its 2024 Nippon Budokan one-man. Current Zepp-scale normalization is healthy expansion, not a sufficient structural jump for `↑`. |
 | 高嶺のなでしこ | **↓** | Current live ceiling and TIF placement have weakened relative to the prior peak period; treat as downward unless later 2026/27 routing reverses this. Do not lower current Overall solely from this trend flag. |
 | わーすた | **STOP** | Officially announced that the group will end with its 2026 winter last live / last tour. |
 | 超ときめき♡宣伝部 | **STOP** | Officially announced end of group activities around spring 2027. |
 
 ## Additional likely trend candidates to verify during canonical-table reconciliation
 
-- Jams Collection — likely `↑` if the announced five-city Zepp tour materially exceeds its comparable 2025 own-live route and sell-through supports the step-up.
-- きゅるりんってしてみて — likely `↑↑` candidate because an official K-Arena Yokohama one-man has been announced as its largest-ever capacity; verify timing and comparable prior-year peak before freezing.
 - fav me — likely `↑` if current Toyosu PIT / member-birthday Zepp products are followed by a larger own-live route rather than agency-event appearances only.
 - 僕が見たかった青空 — likely `↑` or `-` depending whether late-2026/2027 routing clearly exceeds the 2026 spring tour / Kawaguchiko Stellar Theater scale.
+- GANG PARADE / ExWHYZ — if their already-announced end-of-activities dates remain active at the evaluation snapshot, use `STOP` rather than a directional arrow.
 
 ## Source ledger for seed examples
 
@@ -67,9 +68,11 @@ Examples: わーすた and 超ときめき♡宣伝部.
 - iLiFE! 2026 K-Arena Yokohama one-man: https://heroines.jp/news/public/_/2glt30y2t9f2aa94.html
 - のんふぃく！ 2026 Makuhari Messe Event Hall anniversary: https://heroines.jp/news/public/_/atde4dubpjyubfee.html
 - のんふぃく！ 2026 Kanadevia Hall new-lineup live: https://heroines.jp/news/public/_/zs6rvoevr5d51pde.html
+- Jams Collection 2026 Zepp Nagoya tour pricing / five-city Zepp route context: https://jamscollection.jp/news/public/_/ge0h6lies7u4eto8.html
+- きゅるりんってしてみて largest-ever K-Arena announcement: https://www.kyurushite.com/information/
+- きゅるりんってしてみて 2026-05 Makuhari Event Hall 2DAYS pricing: https://www.kyurushite.com/event/704/
 - わーすた end-of-activities announcement: https://wa-suta.world/ko/news/detail.php?id=1132467
 - 超ときめき♡宣伝部 spring-2027 activity-end announcement: https://toki-sen.com/contents/1088152
-- きゅるりんってしてみて K-Arena announcement (candidate, not yet frozen): https://www.kyurushite.com/information/
 
 ## Implementation note
 
