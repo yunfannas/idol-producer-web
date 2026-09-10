@@ -81,7 +81,7 @@ Confirmed/working D+ anchors currently tracked: **7**
 - シンデレラ宣言！
 - なみだ色の消しごむ
 
-Additional O-EAST-derived D+ candidates requiring direct Live/Music/Brand audit: **7**
+Additional O-EAST-derived D+ candidates requiring direct Live/Music/Brand audit: **9**
 
 - Palette Parade
 - かすみ草とステラ
@@ -93,7 +93,7 @@ Additional O-EAST-derived D+ candidates requiring direct Live/Music/Brand audit:
 - Rain Tree
 - #ババババンビ
 
-Note: the heading count above is intentionally not used as a frozen total because candidate status is not equivalent to a final D+ Overall rating. The list is the audit pool; final D+ count should only be frozen after direct checks.
+The candidate count is deliberately separate from the frozen D+ total: O-EAST placement creates a D+ floor signal/candidate, not an automatic final Overall rating.
 
 ## Precedence
 
