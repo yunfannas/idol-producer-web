@@ -52,20 +52,20 @@ Brand is group-level industry position + external-work level + public recognitio
 | yosugala | C- | C- | C | **C-** | Current 52w window is low-frequency/high-ceiling; NHK Hall peak does not by itself make annual Live C |
 | FES☆TIVE | C- | C- | C | **C-** | High activity but recurring low ordinary ticket prices; annual gross still being completed |
 | Devil ANTHEM. | C- | C- | C | **C-** | Kanadevia peak uses very wide ¥20k-to-¥500 ladder; current sustainable own-live business fits C- better than C |
-| INUWASI | C- | C- | C- | **C-** | Selected as a standard upper C- Live anchor: ~¥50–85m 52w gross with repeated tours and C-level Tokyo peaks |
+| INUWASI | C- | C- | C- | **C-** | Standard upper C- Live anchor: repeated paid tours and C-level Tokyo peaks, but not enough stable annual business to promote |
 | ドラマチックレコード | C- | C- | C- | **C-** | ~¥45–70m provisional 52w gross + 2026 regular TIF HOT supports a clean C- profile |
 | ZOCX | C- | C | C | **C-** | Different ecosystem; stronger Music/Brand do not erase lower current Live scale |
-| ロージークロニクル | C- | C | C- | **C-** | TIF/HP position supports C-, but current own-live business has not justified C |
+| ロージークロニクル | C- | C | C- | **C-** | Lower-edge C- on an HP/major route: repeated paid small/medium hall and live-house touring plus Music C sustain C- without needing a 2026 HOT floor |
 | AVAM | C- | C- | C | **C-** | 2026 HOT/Main ecosystem status supports C-; annual paid gross still needs completion |
 | NEO JAPONISM | C- | C- | C | **C-** | Broad national route but ordinary tickets around ¥3k; clear C- rather than automatic C |
 | ばってん少女隊 | C- | C- | C | **C-** | Anniversary sold-out peak is discounted; ordinary tour scale keeps Live C- |
-| Task have Fun | C- | C- | C | **C-** | Long-running scene Brand supports C- floor; current gross still needs stronger confirmation |
+| Task have Fun | C- | C- | C | **C-** | Standard lower-edge C-: 2026 9-city/16-show anniversary route at normal ~¥5k pricing establishes repeatable paid Live at the boundary; Brand C is support, not the sole reason it survives |
 | 夜光性アミューズ | C- | C- | C- | **C-** | Multi-Zepp activity and recent TIF Main keep it in C-; exact 52w gross pending |
 | のんふぃく！ | C- | C- | C- | **C-** | C- attendance/core structure + TIF Main; 2026-09-13 onward tour is outside cutoff |
 | タイトル未定 | C- | C- | C- | **C-** | Stable scene position; current gross needs refresh but no evidence yet for C |
 | UtaGe! | C- | D+ | C- | **C-** | O-EAST 1k+ sell-out is cheap-ticket heavy, but regular TIF Main supplies scene validation |
 | Merry BAD TUNE. | C- | D+ / C- | C- | **C-** | 2026 Zepp DiverCity own one-man sold out; annual gross/Music need completion before any C promotion |
-| ラフ×ラフ | C- | C- | C | **C-** | High-priced KT Zepp product gives credible C- Live despite incomplete final attendance; media route strengthens Brand |
+| ラフ×ラフ | D+ | C- | C | **D+** | KT Zepp anniversary is a strong high-price peak, but later added rear/special inventory and the ordinary route returns to smaller live-house/free-live scale; current repeatable Live remains D+, and Brand C is not enough to lift Overall to C- |
 | 可憐なアイボリー | D+ | C- | C- | **D+** | Healthy ¥4.5k standard ticket but small/medium tour scale; no 2025/26 regular TIF Main; Music alone does not lift Overall |
 | GILTY×GILTY | D+ | D+ | C- | **D+** | Recent Zepp Haneda anniversary uses extreme tiering; no regular recent TIF Main and repeatable own-live gross is not yet C- |
 | NANIMONO | D+ | D+ / C- | C- | **D+** | 29 tour shows create respectable annual revenue, but median show remains D+ and ¥500–3k expansion is structurally important |
@@ -73,6 +73,16 @@ Brand is group-level industry position + external-work level + public recognitio
 | シンデレラ宣言！ | D+ | D+ | C- | **D+** | No sufficient current independent Live evidence to clear C- |
 | なみだ色の消しごむ | D+ | D+ / C- | C- | **D+** provisional | Upper live-idol ecosystem presence, but own-live gross/TIF gate still incomplete |
 | THE ORCHESTRA TOKYO | D+ | D+ / C- | C- | **D+** provisional | Taiban/Zepp appearances cannot substitute for own paid draw |
+
+## C- lower-bound anchors
+
+- **Task have Fun** — standard live-idol / legacy-route C- tail. Repeatable normal-price touring is enough to keep Live at C- even without a current-year HOT slot.
+- **ロージークロニクル** — HP/major-route C- tail. Music and organized paid touring provide a different but valid C- structure.
+- **UtaGe!** — current-scene-floor C-. Cheap ordinary monetization would otherwise be borderline, but a 2026 regular TIF HOT/Main slot supplies the explicit current scene floor.
+- **ラフ×ラフ** — D+ immediately below the survival line. Strong anniversary peak and Brand C do not substitute for repeatable C- Live business.
+- **NANIMONO** — D+ head via the opposite structure: unusually high annual frequency/gross but D+-scale median shows and aggressive low-price expansion.
+
+This means the C- / D+ boundary is deliberately multidimensional. A group does not become C- merely because one peak show, annual frequency, or Brand reaches C-class evidence.
 
 ## Groups now outside this re-run band
 
@@ -86,11 +96,13 @@ Brand is group-level industry position + external-work level + public recognitio
 3. **Appare! Live C+ -> C-; Overall C -> C-**: a 15-show tour with ¥0 general tickets cannot be valued like a normal-price tour.
 4. **yosugala Live C+ -> C-; Overall C -> C-**: current cutoff catches a low-frequency period before the next national tour.
 5. **FES☆TIVE / Devil ANTHEM. Live C -> C-; Overall C -> C-**: high activity and large special venues were overstating repeatable ticket business.
-6. **INUWASI Live C -> C-**: becomes a useful standard upper-C- Live anchor rather than a C anchor.
+6. **INUWASI Live C -> C-**: becomes the standard upper-C- Live anchor rather than a C anchor.
 7. **SWEET STEADY Live C -> B-; Overall C -> B-**: arena attendance and ordinary pricing are materially beyond C+ single-show scale.
 8. **可憐なアイボリー Overall C- -> D+** and **GILTY×GILTY Overall C- -> D+**: prior C- rows were stale.
 9. **≒JOY leaves the band upward**: Live is now B rather than B-.
+10. **ラフ×ラフ Live C- -> D+; Overall C- -> D+**: KT Zepp is treated as a peak rather than repeatable baseline; Brand C cannot independently maintain C-.
+11. **Task have Fun / ロージークロニクル retained at C-** and are now explicit lower-edge anchors for standard live-idol and HP/major-route structures respectively.
 
 ## Remaining high-priority verification
 
-Before freezing the table, complete exact 52w own-live ledgers for Jams Collection, Appare!, FES☆TIVE, Devil ANTHEM., AVAM, 夜光性アミューズ, Task have Fun, Merry BAD TUNE. and ラフ×ラフ. Music/Brand values in this pass reuse the latest working research unless contradicted by new evidence; they should receive a separate hard-data refresh before final production use.
+Before freezing the table, complete exact 52w own-live ledgers for Jams Collection, Appare!, FES☆TIVE, Devil ANTHEM., AVAM, 夜光性アミューズ, Task have Fun and Merry BAD TUNE. ラフ×ラフ no longer needs C- survival-line treatment unless new repeatable own-live evidence materially changes its profile. Music/Brand values in this pass reuse the latest working research unless contradicted by new evidence; they should receive a separate hard-data refresh before final production use.
