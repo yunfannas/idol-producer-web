@@ -2,15 +2,13 @@
 
 Canonical current-market calibration snapshot. Evaluation date: 2026-09-09. This is **not** Scenario 6 data and must not be back-propagated into the 2025-07-05 scenario.
 
-This file is the canonical current table. The former fixed 50-group scope has been removed: membership is determined by the current **C- or above** boundary, while researched D+ boundary anchors are retained separately below.
-
-Hidden dimensions follow `GROUP_TIER_EVALUATION.md`:
+Membership is determined by the current **C- or above** boundary; researched D+ boundary anchors are retained separately below.
 
 `Live / Music / Brand -> Overall`
 
 Priority is **Live > Music > Brand**, but Overall is a structural judgment rather than a fixed arithmetic average. Brand excludes streaming metrics. Music combines Physical + Streaming.
 
-## C- or above — 49 groups
+## C- or above — 50 groups
 
 | # | Group | Live | Music | Brand | Overall |
 |---:|---|:---:|:---:|:---:|:---:|
@@ -38,7 +36,7 @@ Priority is **Live > Music > Brand**, but Overall is a structural judgment rathe
 | 22 | BEYOOOOONDS | C+ | C+ | C+ | **C+** |
 | 23 | いぎなり東北産 | C+ | C | C+ | **C+** |
 | 24 | きゅるりんってしてみて | C+ | C | C+ | **C+** |
-| 25 | 高嶺のなでしこ | C+ | C+ | C+ | **C+** |
+| 25 | 高嶺のなでしこ | C | C+ | C+ | **C+** |
 | 26 | STU48 | C | C+ | C+ | **C+** |
 | 27 | Jams Collection | C | C- | C | **C** |
 | 28 | つばきファクトリー | C | C+ | C+ | **C** |
@@ -58,40 +56,38 @@ Priority is **Live > Music > Brand**, but Overall is a structural judgment rathe
 | 42 | NEO JAPONISM | C- | C- | C | **C-** |
 | 43 | ばってん少女隊 | C- | C- | C | **C-** |
 | 44 | Task have Fun | C- | C- | C | **C-** |
-| 45 | 夜光性アミューズ | C- | C- | C- | **C-** |
-| 46 | のんふぃく！ | C- | C- | C- | **C-** |
-| 47 | タイトル未定 | C- | C- | C- | **C-** |
-| 48 | UtaGe! | C- | D+ | C- | **C-** |
-| 49 | Merry BAD TUNE. | C- | D+ / C- | C- | **C-** |
+| 45 | LinQ | C- | D+ | C | **C-** |
+| 46 | 夜光性アミューズ | C- | C- | C- | **C-** |
+| 47 | のんふぃく！ | C- | C- | C- | **C-** |
+| 48 | タイトル未定 | C- | C- | C- | **C-** |
+| 49 | UtaGe! | C- | D+ | C- | **C-** |
+| 50 | Merry BAD TUNE. | C- | D+ | C- | **C-** |
 
 ## D+ boundary anchors — researched but below current C- cutoff
 
-| Group | Live | Music | Brand | Overall | Boundary role |
-|---|:---:|:---:|:---:|:---:|---|
-| ラフ×ラフ | D+ | C- | C | **D+** | Strong peak / media profile, but repeatable paid-live structure remains below C- |
-| 可憐なアイボリー | D+ | C- | C- | **D+** | Healthy standard pricing and Music, but current own-live scale is below C- |
-| GILTY×GILTY | D+ | D+ | C- | **D+** | Zepp-class peak does not yet translate into repeatable C- own-live business |
-| NANIMONO | D+ | D+ / C- | C- | **D+** | High-frequency D+ head anchor; cheap-ticket inventory and D+-scale median shows prevent automatic promotion |
-| MyDearDarlin' | D+ | D+ | D+ / C- | **D+** | Current ordinary-price paid-live business remains below C- |
-| シンデレラ宣言！ | D+ | D+ | C- | **D+** | Insufficient current independent paid-live evidence for C- |
-| なみだ色の消しごむ | D+ | D+ / C- | C- | **D+ provisional** | Upper live-idol ecosystem presence; own-live ledger still incomplete |
-| THE ORCHESTRA TOKYO | D+ | D+ / C- | C- | **D+ provisional** | Taiban/Zepp appearances do not substitute for own paid draw |
+| Group | Live | Music | Brand | Overall |
+|---|:---:|:---:|:---:|:---:|
+| ラフ×ラフ | D+ | C- | C | **D+** |
+| 可憐なアイボリー | D+ | C- | C- | **D+** |
+| GILTY×GILTY | D+ | D+ | C- | **D+** |
+| NANIMONO | D+ | D+ / C- | C- | **D+** |
+| MyDearDarlin' | D+ | D+ | D+ / C- | **D+** |
+| シンデレラ宣言！ | D+ | D+ | C- | **D+** |
+| なみだ色の消しごむ | D+ | D+ / C- | C- | **D+ provisional** |
+| THE ORCHESTRA TOKYO | D+ | D+ / C- | C- | **D+ provisional** |
 
 ## Reconciliation notes
 
-- **=LOVE / FRUITS ZIPPER**: both promoted to **Overall S-**, with **Music S-** and **Brand A+**.
-- **日向坂46**: corrected from S- to **A+** Overall.
-- **AKB48**: corrected from A+ to **A** Overall; Brand is **A+**, not S-.
-- **ももいろクローバーZ**: current low-frequency profile is represented as **Live A / Music B / Brand A -> Overall A-**.
-- **≠ME**: raised to **B+**. **≒JOY**: raised to **B**.
-- **SWEET STEADY**: latest arena-scale evidence moves it to **B-**.
-- **高嶺のなでしこ**: Live corrected to **C+**; balanced **C+ / C+ / C+** profile.
-- **Jams Collection**: latest decision is **Live C**, with Overall **C at the very bottom of the C band**; Music remains C- and Brand C.
-- **Appare! / yosugala / FES☆TIVE / Devil ANTHEM.**: revised from old C rows to **C-** after 52-week paid-live gross calibration.
-- **INUWASI**: fixed as the **upper/head C-** live-idol anchor, not a C candidate by default.
-- **Task have Fun / ロージークロニクル**: retained at **C-** as lower-boundary examples from different ecosystems.
-- **ラフ×ラフ / 可憐なアイボリー / GILTY×GILTY**: moved below the C- cutoff to **D+**.
-- **Merry BAD TUNE.** is added to the canonical C- set, replacing the old artificial fixed-50 composition.
+- =LOVE / FRUITS ZIPPER: Overall S-, Music S-, Brand A+.
+- 日向坂46: A+ Overall. AKB48: A Overall with Brand A+.
+- ももいろクローバーZ: Live A / Music B / Brand A -> Overall A-.
+- ≠ME: B+. ≒JOY: B.
+- 高嶺のなでしこ: Live C / Music C+ / Brand C+ -> Overall C+.
+- Jams Collection: Live C / Music C- / Brand C -> Overall C, at the bottom of the C band.
+- INUWASI remains an upper/head C- live-idol anchor.
+- Task have Fun / ロージークロニクル remain lower-boundary C- examples from different ecosystems.
+- LinQ is added directly after Task have Fun at C-: Live C- / Music D+ / Brand C, supported by repeatable regional own-live structure, 15th-anniversary 2,000-capacity target, and durable Kyushu brand.
+- Merry BAD TUNE. Music is fixed at D+.
 
 ## Count by Overall tier
 
@@ -107,8 +103,8 @@ Priority is **Live > Music > Brand**, but Overall is a structural judgment rathe
 | B- | 2 |
 | C+ | 7 |
 | C | 6 |
-| C- | 17 |
-| **C- or above total** | **49** |
+| C- | 18 |
+| **C- or above total** | **50** |
 
 ## Interpretation notes
 
