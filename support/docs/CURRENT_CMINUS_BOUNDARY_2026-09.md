@@ -24,6 +24,12 @@ A group should normally remain C- if it has at least one structural advantage ov
 - 52-week attributable ticket gross in clear C- range with non-D+ median shows;
 - or a clear C-level Music/Brand dimension that compensates for borderline Live.
 
+The current lower-bound anchors are intentionally route-specific:
+- **Task have Fun** = standard live-idol / legacy-route C- tail;
+- **ロージークロニクル** = HP/major-route C- tail;
+- **UtaGe!** = current-scene-floor C- via 2026 regular HOT/Main;
+- **ラフ×ラフ** and **NANIMONO** = D+ examples immediately below the line for different reasons.
+
 ### 2. C promotion line
 
 Above this line => C candidate; crossing it with enough supporting evidence => Overall C.
@@ -44,9 +50,8 @@ Typical profile:
 - **タイトル未定** — 2026 first hall tour; Kanamoto Hall final used ¥8.8k / ¥6.6k / ¥4.4k classes with S and B sold out and final inventory nearly exhausted. Strong C-candidate profile despite losing its 2025 HOT slot in 2026.
 - **yosugala** — 2026 regular HOT Stage plus strong own-live ceiling; current annual total is lower-frequency but scene status and large-show capability are clearly above ordinary C-.
 - **ばってん少女隊** — 2026 Tachikawa Stage Garden anniversary SOLD OUT at high normal prices; 2025 regular HOT but not 2026. Anniversary discount keeps it candidate rather than automatic C.
-- **INUWASI** — repeated paid tours and Tokyo C-level peaks; useful upper-C- Live anchor. Candidate status comes from own-live business rather than current TIF guarantee.
-- **AVAM** — 2026 first regular HOT Stage guarantees C- floor; Zepp Shinjuku own-live pricing is healthy. Needs 52w gross closure to move to C.
-- **Task have Fun** — 2025 HOT, not 2026 regular HOT; 2026 9-city/16-show 10th-anniversary route and normal ~¥5k ticketing keep it above survival line. Current gross must decide whether it is candidate or core C-.
+- **INUWASI** — repeated paid tours and Tokyo C-level peaks; fixed as the upper-C- Live anchor rather than promoted to C.
+- **AVAM** — 2026 first regular HOT Stage guarantees C- floor; Zepp-route pricing is healthy. Needs 52w gross closure to move to C.
 
 ### Core C-
 
@@ -57,17 +62,17 @@ Typical profile:
 - **FES☆TIVE** — high activity and strong scene position; low ordinary prices suppress commercial strength.
 - **Devil ANTHEM.** — large peak shows but wide low-price ticket ladders; sustainable business still C-.
 - **Merry BAD TUNE.** — 2026 regular HOT and own Zepp DiverCity SOLD OUT; this automatically clears the survival line, but Music/annual gross need completion before C.
-- **UtaGe!** — 2026 regular HOT. O-EAST 1k+ sold out but cheap general tickets; HOT is the decisive C- floor.
 
-### Lower C- — still above survival line
+### Lower C- — survival-line anchors
 
-- **ロージークロニクル** — 2025 regular HOT, not 2026; HP/Music structure plus 2026 small/medium hall/live-house route retains C-, but not a C candidate.
-- **ラフ×ラフ** — no 2026 HOT; high-priced KT Zepp product and Brand C keep it above D+, but annual Live business is incomplete.
-- **Task have Fun** may move here if its 52w gross comes in materially below current expectation.
+- **Task have Fun** — standard live-idol / legacy-route C- tail. The 2026 9-city/16-show route at normal ~¥5k pricing demonstrates repeatable paid own-live business; Brand C supports but does not create the tier.
+- **ロージークロニクル** — HP/major-route C- tail. Repeated paid small/medium hall and live-house touring plus Music C sustain Overall C- despite no 2026 regular HOT.
+- **UtaGe!** — current-scene-floor C-. O-EAST 1k+ sold out but cheap general tickets make monetization borderline; the 2026 regular HOT/Main slot provides the explicit scene floor.
 
-### D+ head
+### D+ head / immediately below survival line
 
 - **NANIMONO** — fixed top-D+ anchor. Very high frequency and respectable annual gross, but median shows remain D+ and cheap rear/general inventory is structurally important; no recent regular HOT.
+- **ラフ×ラフ** — D+. KT Zepp anniversary is a strong high-price peak, but the repeatable route falls back to smaller live-house/free-live scale. Brand C does not substitute for sustainable C- Live.
 
 ### D+
 
