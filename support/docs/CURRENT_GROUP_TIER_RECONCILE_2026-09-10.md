@@ -1,6 +1,6 @@
 # Current Group Tier Reconcile — 2026-09-10
 
-Canonical reconciliation overlay for the current Japanese female-idol market tier work. This document resolves conflicts among the old 50-group table, the 65-group C- master, automated reruns, candidate-universe audits, and the final manual calibration decisions from 2026-09-09.
+Canonical reconciliation overlay for the current Japanese female-idol market tier work. This document resolves conflicts among the old 50-group table, the 65-group C- master, automated reruns, candidate-universe audits, and the final manual calibration decisions from 2026-09-09/10.
 
 ## Snapshot rule
 
@@ -10,8 +10,6 @@ Canonical reconciliation overlay for the current Japanese female-idol market tie
 - Final manual calibration decisions override intermediate automated rerun/master documents when they conflict.
 
 ## Authoritative C / C- working boundary
-
-The following is the final reconciled working boundary from the 2026-09-09 review.
 
 ### Overall C
 
@@ -47,97 +45,62 @@ The following is the final reconciled working boundary from the 2026-09-09 revie
 ### Boundary anchors
 
 - **Jams Collection = C- head**
-- **MORE STAR = C- floor**
-
-These two anchors define the practical C / C- review gate. New groups should be reconciled against both ends rather than judged from venue names or isolated metrics alone.
+- **MORE STAR = C- floor**, calibrated as `Live D+ / Music C / Brand C -> Overall C-`.
 
 ## Explicit supersessions of intermediate files
 
-The following intermediate outcomes are superseded for current-tier work:
-
-- 高嶺のなでしこ is **C**, not C+.
+- 高嶺のなでしこ is **Live C / Music C+ / Brand C+ -> Overall C**, not C+.
 - Jams Collection is **C-**, not C.
 - のんふぃく！ is **C**, not C-.
 - NGT48 is **C-**, not C.
 - AVAM is **C**, not C-.
-- RAIN TREE is **C** and belongs in the current C band.
+- RAIN TREE is **C**.
 - yosugala is **C**.
 - 虹のコンキスタドール is **C-**, not C.
 - わーすた is **C-**, not C.
-- INUWASI remains **C-**, but is below ZOCX in the current ordered band.
+- INUWASI remains **C-**, below ZOCX in the current ordered band.
 - Merry BAD TUNE. remains **C-** with **Music D+**.
 
-The older `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md`, `CURRENT_GROUP_TIER_TABLE_2026-09.md`, and `CURRENT_GROUP_TIER_RERUN_DPLUS_BMINUS_2026-09.md` must therefore not be used as authoritative C/C- membership or ordering without applying this overlay.
+The older `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md`, `CURRENT_GROUP_TIER_TABLE_2026-09.md`, and `CURRENT_GROUP_TIER_RERUN_DPLUS_BMINUS_2026-09.md` are not authoritative without this overlay.
 
-## Current D+ boundary — existing researched anchors
+## D / D+ calibration correction
 
-The following remain direct D+ working anchors unless promoted by separate evidence:
+The earlier statement that every normal IDORISE O-EAST appearance automatically forces **Overall D+** is superseded.
 
-| Group | Working Overall | Notes |
-|---|:---:|---|
-| ラフ×ラフ | **D+** | Strong peak/Brand, repeatable Live remains below C-. |
-| 可憐なアイボリー | **D+** | Healthy normal pricing, current tour scale below C-. |
-| GILTY×GILTY | **D+** | Large peak does not yet establish repeatable C- Live. |
-| NANIMONO | **D+** | High frequency but D+-scale median show / low-price expansion. |
-| MyDearDarlin' | **D+** | Current ordinary paid-live business remains below C-. |
-| シンデレラ宣言！ | **D+** | No sufficient independent current Live evidence for C-. |
-| なみだ色の消しごむ | **D+** | IDORISE O-EAST + existing upper-scene evidence establish D+ floor; still below C- gate. |
+Current interpretation:
 
-## IDORISE!! FESTIVAL 2026 — O-EAST-derived D+ floor
+- **AKSB = typical D anchor**; D-scale own-live gross is roughly ¥5-10m/year order of magnitude.
+- **MEGAFON = D / D+ boundary reference.** Its early O-EAST placement supports approximately **Brand D+**, but if Live and Music remain D, Overall may remain D.
+- A normal IDORISE O-EAST booking is therefore a strong **Brand / scene-position D+ floor**, not by itself an Overall floor.
+- Placement/treatment matters: early O-EAST is weaker evidence than middle/late O-EAST treatment.
+- Explicit newcomer / special-mechanism stages remain excluded.
+- In the 2026 O-EAST residual set, groups demonstrably stronger overall than MEGAFON are retained at **D+**; MEGAFON itself may remain **D**.
 
-Spotify O-EAST is the IDORISE main-venue signal. Per the final 2026-09-09 calibration, a **normal O-EAST appearance directly establishes D+** for current-tier classification. It is not merely a candidate flag. It still does **not** establish C-; promotion above D+ requires stronger placement/treatment and/or independent current own-live/Music/Brand evidence.
-
-Rule summary:
-
-- Normal IDORISE O-EAST appearance -> **at least D+**.
-- It may be higher if other evidence supports C- or above.
-- Groups already reconciled to C- or above retain that higher rating.
-- Explicit special-mechanism/newcomer-stage insertions are excluded from the automatic D+ floor.
-
-After removing groups already C- or above under the authoritative boundary, inactive groups, and explicit newcomer-stage insertions, the remaining O-EAST-derived groups are all **D+**:
+### O-EAST residuals retained D+
 
 - Palette Parade
 - かすみ草とステラ
 - LumiUnion
 - Sweet Alley
 - ハルニシオン
-- MEGAFON
 - カラフルスクリーム
 - なみだ色の消しごむ
 - #ババババンビ
 
-RAIN TREE also appeared on O-EAST but is already reconciled upward to **C**, so the O-EAST result is only its floor evidence, not its final tier.
+RAIN TREE is already **C**. ukka is inactive at cutoff. RE-GE / フルコース are explicit newcomer-stage exceptions.
 
-### Explicit exclusions
+## D+ structural anchors
 
-- ukka: ended activities before the 2026-08-31 current cutoff.
-- RE-GE / フルコース: explicit `ニューカマーステージ` mechanism; no automatic D+ floor from that special placement.
+- **NANIMONO = `Live C- / Music D+ / Brand D -> Overall D+`**. It is the Live-heavy D+ example and does not receive nonexistent O-EAST credit.
+- **MORE STAR = `Live D+ / Music C / Brand C -> Overall C-`**. It is the lower C- structural anchor.
+- Therefore Overall D+ is intentionally heterogeneous: Live can range from D to C- when Music/Brand structure compensates appropriately.
 
-## D+ working pool after applying the O-EAST rule
+The rebuilt D+ universe and provisional three-axis scores are maintained in:
 
-Direct/researched D+ anchors not dependent on the 2026 O-EAST derivation:
+`support/docs/CURRENT_GROUP_DPLUS_REBUILD_2026-09-10.md`
 
-- ラフ×ラフ
-- 可憐なアイボリー
-- GILTY×GILTY
-- NANIMONO
-- MyDearDarlin'
-- シンデレラ宣言！
-
-2026 IDORISE O-EAST-derived D+ groups outside the C- or above boundary:
-
-- Palette Parade
-- かすみ草とステラ
-- LumiUnion
-- Sweet Alley
-- ハルニシオン
-- MEGAFON
-- カラフルスクリーム
-- なみだ色の消しごむ
-- #ババババンビ
-
-This yields **15 currently tracked D+ groups before deduplication against any additional non-IDORISE D+ audit records**. Further research may promote some of them to C-, but none of these normal O-EAST groups should be left below D+.
+That table begins with 51 evidence-backed / boundary rows and must be expanded from the full current group universe rather than capped to the old C- candidate pool.
 
 ## Precedence
 
-For current-market C/C- boundary work and the IDORISE O-EAST D+ floor, this file is authoritative. Where it conflicts with previous current-tier master or rerun documents, this file wins.
+For current-market C/C- boundary work and D/D+ interpretation, this file is authoritative. For D+ membership/scoring, use `CURRENT_GROUP_DPLUS_REBUILD_2026-09-10.md` together with later direct group-level evidence.
