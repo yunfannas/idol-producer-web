@@ -1,6 +1,14 @@
 # Current Group Tier Reconcile — 2026-09-10
 
-Canonical reconciliation overlay for the current Japanese female-idol market tier work. This document resolves conflicts among the old 50-group table, the 65-group C- master, automated reruns, candidate-universe audits, and the final manual calibration decisions from 2026-09-09/10.
+Canonical reconciliation overlay for the current Japanese female-idol market tier work. This document resolves conflicts among the old 50-group table, the 65-group C- master, automated reruns, candidate-universe audits, and the final manual calibration decisions from 2026-09-09/11.
+
+## Canonical Top 50 snapshot
+
+For the finalized **2026-08-31 Current Top 50**, use:
+
+`support/docs/CURRENT_GROUP_TIER_TOP50_2026-08-31.md`
+
+That file is authoritative for the ordered Top 50 list, `Overall`, `Trend`, `Live`, `Music`, and `Brand` values. If any older table or intermediate rerun conflicts with it, the Top 50 snapshot wins.
 
 ## Snapshot rule
 
@@ -9,7 +17,7 @@ Canonical reconciliation overlay for the current Japanese female-idol market tie
 - Events after 2026-08-31 may affect `current_trend`, but do not contribute current attendance/gross/tier.
 - Final manual calibration decisions override intermediate automated rerun/master documents when they conflict.
 
-## Authoritative C / C- working boundary
+## Current C / C- boundary
 
 ### Overall C
 
@@ -27,12 +35,12 @@ Canonical reconciliation overlay for the current Japanese female-idol market tie
 
 1. Jams Collection
 2. 夜光性アミューズ
-3. 虹のコンキスタドール
-4. Merry BAD TUNE.
-5. TENRIN
-6. Appare!
-7. ドラマチックレコード
-8. iON!
+3. Merry BAD TUNE.
+4. TENRIN
+5. Appare!
+6. ドラマチックレコード
+7. iON!
+8. 虹のコンキスタドール
 9. NGT48
 10. わーすた
 11. ZOCX
@@ -45,23 +53,34 @@ Canonical reconciliation overlay for the current Japanese female-idol market tie
 ### Boundary anchors
 
 - **Jams Collection = C- head**
-- **MORE STAR = C- floor**, calibrated as `Live D+ / Music C / Brand C -> Overall C-`.
+- **MORE STAR = C- floor** in the current ordered Top 50.
+
+## Brand calibration correction
+
+For Current Brand, a normal current-year **TIF HOT/Main Stage** appearance is an immediate **Brand C floor**.
+
+Historical HOT/Main does not by itself preserve Brand C if the group fails to make HOT/Main in the current year. Another current C-level Brand signal — sustained major activity, media/public reach, or equivalent industry position — is needed to hold C independently.
+
+This is an annual certification rule for TIF stage placement, not a claim that all Brand evidence decays instantly.
 
 ## Explicit supersessions of intermediate files
 
-- 高嶺のなでしこ is **Live C / Music C+ / Brand C+ -> Overall C**, not C+.
-- Jams Collection is **C-**, not C.
-- のんふぃく！ is **C**, not C-.
-- NGT48 is **C-**, not C.
-- AVAM is **C**, not C-.
-- RAIN TREE is **C**.
-- yosugala is **C**.
-- 虹のコンキスタドール is **C-**, not C.
-- わーすた is **C-**, not C.
-- INUWASI remains **C-**, below ZOCX in the current ordered band.
-- Merry BAD TUNE. remains **C-** with **Music D+**.
+The older `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md`, `CURRENT_GROUP_TIER_TABLE_2026-09.md`, and `CURRENT_GROUP_TIER_RERUN_DPLUS_BMINUS_2026-09.md` are not authoritative where they conflict with the frozen Top 50 snapshot.
 
-The older `CURRENT_GROUP_CMINUS_ABOVE_MASTER_2026-09.md`, `CURRENT_GROUP_TIER_TABLE_2026-09.md`, and `CURRENT_GROUP_TIER_RERUN_DPLUS_BMINUS_2026-09.md` are not authoritative without this overlay.
+Examples of superseded intermediate judgments include:
+
+- 高嶺のなでしこ is **Overall C**, not C+.
+- Jams Collection is **Overall C-**, not C.
+- のんふぃく！ is **Overall C**, not C-.
+- NGT48 is **Overall C-**, not C.
+- AVAM is **Overall C**.
+- RAIN TREE is **Overall C**.
+- yosugala is **Overall C**.
+- 虹のコンキスタドール is **Overall C-**, Trend `-`.
+- Merry BAD TUNE. is **Overall C-**, Trend `-`.
+- ZOCX Brand is **C-**.
+- CUTIE STREET Trend is `↑`.
+- iLiFE! Trend is `↑`.
 
 ## D / D+ calibration correction
 
@@ -74,33 +93,17 @@ Current interpretation:
 - A normal IDORISE O-EAST booking is therefore a strong **Brand / scene-position D+ floor**, not by itself an Overall floor.
 - Placement/treatment matters: early O-EAST is weaker evidence than middle/late O-EAST treatment.
 - Explicit newcomer / special-mechanism stages remain excluded.
-- In the 2026 O-EAST residual set, groups demonstrably stronger overall than MEGAFON are retained at **D+**; MEGAFON itself may remain **D**.
-
-### O-EAST residuals retained D+
-
-- Palette Parade
-- かすみ草とステラ
-- LumiUnion
-- Sweet Alley
-- ハルニシオン
-- カラフルスクリーム
-- なみだ色の消しごむ
-- #ババババンビ
-
-RAIN TREE is already **C**. ukka is inactive at cutoff. RE-GE / フルコース are explicit newcomer-stage exceptions.
 
 ## D+ structural anchors
 
-- **NANIMONO = `Live C- / Music D+ / Brand D -> Overall D+`**. It is the Live-heavy D+ example and does not receive nonexistent O-EAST credit.
-- **MORE STAR = `Live D+ / Music C / Brand C -> Overall C-`**. It is the lower C- structural anchor.
-- Therefore Overall D+ is intentionally heterogeneous: Live can range from D to C- when Music/Brand structure compensates appropriately.
+Overall D+ remains intentionally heterogeneous. Live can range from D to C- when Music/Brand structure compensates appropriately.
 
 The rebuilt D+ universe and provisional three-axis scores are maintained in:
 
 `support/docs/CURRENT_GROUP_DPLUS_REBUILD_2026-09-10.md`
 
-That table begins with 51 evidence-backed / boundary rows and must be expanded from the full current group universe rather than capped to the old C- candidate pool.
-
 ## Precedence
 
-For current-market C/C- boundary work and D/D+ interpretation, this file is authoritative. For D+ membership/scoring, use `CURRENT_GROUP_DPLUS_REBUILD_2026-09-10.md` together with later direct group-level evidence.
+1. `CURRENT_GROUP_TIER_TOP50_2026-08-31.md` — authoritative ordered Current Top 50 snapshot.
+2. This reconcile file — interpretation, supersessions, and boundary notes.
+3. `CURRENT_GROUP_DPLUS_REBUILD_2026-09-10.md` — D+ membership/scoring below the Top 50 cutoff, subject to later direct group-level evidence.
