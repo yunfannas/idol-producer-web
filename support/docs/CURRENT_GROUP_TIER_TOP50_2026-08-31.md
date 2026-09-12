@@ -1,6 +1,6 @@
-# 日本女性偶像团体 Current Top 50 — 2026-08-31
+# 日本女性偶像团体 Current C- and Above — 2026-08-31
 
-Current-market canonical snapshot for the Japanese female-idol ranking.
+Current-market canonical snapshot for Japanese female-idol groups judged **Overall C- or above** at the 2026-08-31 cutoff. The universe is **not capped at 50 groups**; the count is an output of the calibration.
 
 - **Cutoff:** 2026-08-31
 - **Live rolling window:** 2025-09-01 through 2026-08-31
@@ -10,7 +10,7 @@ Current-market canonical snapshot for the Japanese female-idol ranking.
 - **Trend symbols:** `↑↑` rapid rise, `↑` rise, `-` flat, `↓` decline, `STOP` announced end of activities.
 - Same-tier ordering is meaningful as a working calibration order, but not a claim of exact numerical distance.
 
-## Current Top 50
+## Current C- and above — 51 groups
 
 | # | Group | Overall | Trend | Live | Music | Brand |
 |---:|---|:---:|:---:|:---:|:---:|:---:|
@@ -53,26 +53,27 @@ Current-market canonical snapshot for the Japanese female-idol ranking.
 | 37 | Merry BAD TUNE. | **C-** | - | C- | C- | C |
 | 38 | TENRIN | **C-** | ↑ | C- | C- | C |
 | 39 | Appare! | **C-** | ↑ | C- | C- | C |
-| 40 | ドラマチックレコード | **C-** | ↑ | C- | C- | C |
-| 41 | iON! | **C-** | ↑ | C- | C | C |
-| 42 | 虹のコンキスタドール | **C-** | - | C- | C | C+ |
-| 43 | NGT48 | **C-** | ↓ | C- | C+ | C |
-| 44 | わーすた | **C-** | STOP | C- | C | C+ |
-| 45 | ZOCX | **C-** | - | C- | C | C- |
-| 46 | INUWASI | **C-** | - | C- | D+ | C- |
-| 47 | Devil ANTHEM. | **C-** | - | C- | D+ | C |
-| 48 | NEO JAPONISM | **C-** | ↓ | C- | D+ | C |
-| 49 | UtaGe! | **C-** | - | C- | D+ | C |
-| 50 | MORE STAR | **C-** | ↑↑ | D+ | C- | C |
+| 40 | タイトル未定 | **C-** | - | C- | C- | C |
+| 41 | ドラマチックレコード | **C-** | ↑ | C- | C- | C |
+| 42 | iON! | **C-** | ↑ | C- | C | C |
+| 43 | 虹のコンキスタドール | **C-** | - | C- | C | C+ |
+| 44 | NGT48 | **C-** | ↓ | C- | C+ | C |
+| 45 | わーすた | **C-** | STOP | C- | C | C+ |
+| 46 | ZOCX | **C-** | - | C- | C | C- |
+| 47 | INUWASI | **C-** | - | C- | D+ | C- |
+| 48 | Devil ANTHEM. | **C-** | - | C- | D+ | C |
+| 49 | NEO JAPONISM | **C-** | ↓ | C- | D+ | C |
+| 50 | UtaGe! | **C-** | - | C- | D+ | C |
+| 51 | MORE STAR | **C-** | ↑↑ | D+ | C- | C |
 
 ## Distribution / interpretation
 
-The current ranking is intentionally pyramid-shaped.
-
-- **C+ and above:** 25 groups. At this level the market is sparse and the relative ordering is usually clear. The many upper-tier labels exist because the gaps among the top groups are large; they are not defined by mechanical boundary groups.
-- **C / C- / D+ and below:** increasingly dense clusters. Many groups occupy similar market positions, so boundary calibration and structural evidence matter more than exact rank.
-- **Jams Collection** is the head of the current C- band, but no `upper` suffix is used in the formal table.
-- **MORE STAR** is the current C- floor structure: Live D+ / Music C- / Brand C -> Overall C-.
+- **C+ and above:** 25 groups. At this level the market is sparse and relative ordering is usually clearer.
+- **C / C- / D+ and below:** increasingly dense clusters. Boundary calibration and structural evidence matter more than forcing a round-number list.
+- **Current C- and above total:** **51 groups**.
+- **Jams Collection** remains the head of the current C- band.
+- **MORE STAR** remains the current C- floor structure: `Live D+ / Music C- / Brand C -> Overall C-`.
+- **タイトル未定** is restored at `Live C- / Music C- / Brand C -> Overall C-`. Its current own-live/hall structure and regional Brand are sufficient for C-; it should not be excluded merely because its national scale is smaller than Tokyo-centered peers.
 
 ## Brand calibration note
 
@@ -88,6 +89,7 @@ Notable manually reviewed Trend decisions include:
 - `iLiFE! = ↑`
 - `RAIN TREE = ↑`
 - `Appare! = ↑`
+- `タイトル未定 = -`
 - `虹のコンキスタドール = -`
 - `Merry BAD TUNE. = -`
 - `きゅるりんってしてみて = ↑↑`
@@ -95,4 +97,4 @@ Notable manually reviewed Trend decisions include:
 
 ## Precedence
 
-For the **2026-08-31 Current Top 50 ranking**, this file supersedes older current-ranking tables when they conflict, including intermediate 50-group and 65-group working tables. Lower-tier D+/D/D-/E calibration remains maintained separately and should not be inferred mechanically from this Top 50 list.
+For the **2026-08-31 Current C- and above universe**, this file supersedes older fixed-size current-ranking tables when they conflict. The historical filename still contains `TOP50`, but the canonical content is intentionally no longer capped at 50. Lower-tier D+/D/D-/E calibration remains maintained separately and should not be inferred mechanically from this list.
