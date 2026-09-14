@@ -1,5 +1,5 @@
 /**
- * Game save shape aligned with idol_producer/game_save.py (schema version 11).
+ * Game save shape aligned with idol_producer/game_save.py (schema version 12).
  * Normalization mirrors GameSave.normalize_payload where practical.
  */
 
@@ -34,8 +34,12 @@ import { buildFilteredSnapshotWithFutureEvents, applyScenarioEventsForDate } fro
 import { syncOpenHiatusToIdolTopLevel } from "../engine/scandalHandling";
 import { buildDefaultScoutCompanies, normalizeScoutSubscriptions } from "../engine/scoutWeb";
 import { addNotification, type NotificationRow } from "./inbox";
+import type { TrackBState } from "../engine/trackB/types";
 
-export const GAME_SAVE_VERSION = 11 as const;
+// v12 adds the Agency / Team / Operating / Pricing policy layers.  Old saves
+// normalize into conservative defaults; no historical event outcome is
+// fabricated during this migration.
+export const GAME_SAVE_VERSION = 13 as const;
 
 function startOfMonthIso(isoDate: string): string {
   const [y, m] = String(isoDate).split("T")[0].split("-");
@@ -111,17 +115,16 @@ function estimatedGroupFanReach(group: Record<string, unknown>): number {
   const fans = Math.max(0, num(group.fans, 0));
   const xFollowers = Math.max(0, num(group.x_followers, 0));
   const tier = resolveGroupLetterTier(group);
-  const tierFloor: Record<LetterTier, number> = {
-    S: 180000,
-    A: 80000,
-    B: 30000,
-    C: 10000,
-    D: 3500,
-    E: 1200,
-    F: 300,
-    I: 0,
+  const tierFloor: Record<string, number> = {
+    "S+": 220000, S: 180000, "S-": 140000,
+    "A+": 100000, A: 80000, "A-": 60000,
+    "B+": 40000, B: 30000, "B-": 22000,
+    "C+": 14000, C: 10000, "C-": 7000,
+    "D+": 5000, D: 3500, "D-": 2500,
+    "E+": 1800, E: 1200, "E-": 800,
+    F: 300, I: 0,
   };
-  const popularityFloor = Math.round(tierFloor[tier] * (0.35 + popularity / 100));
+  const popularityFloor = Math.round((tierFloor[tier] ?? 3500) * (0.35 + popularity / 100));
   const followerFloor = Math.round(xFollowers * (0.12 + popularity / 500));
   return Math.max(fans, popularityFloor, followerFloor);
 }
@@ -398,6 +401,39 @@ export interface GroupPolicyTrainingDefaults {
 }
 
 export interface GroupPolicy {
+  /** Agency constraints and Team direction are durable staff inputs.  They
+   * intentionally describe choices, never direct fan/revenue multipliers. */
+  agency: {
+    profitability_requirement: "growth_allowed" | "balanced" | "profitable" | "strict_profit";
+    making_authority: "producer_led" | "mixed" | "agency_led";
+  };
+  team: {
+    workload_target: "light" | "balanced" | "high" | "very_high";
+    rest_priority: "low" | "normal" | "high";
+    live_frequency: "low" | "normal" | "high";
+    event_selectivity: "exposure_first" | "balanced" | "value_selective";
+    travel_willingness: "local_first" | "balanced" | "aggressive";
+    fanwork_tokuten: "disabled" | "selective" | "standard" | "frequent";
+    fanwork_live_related_meeting: "disabled" | "major_live_only" | "selective" | "frequent";
+    fanwork_independent_meeting: "disabled" | "rare" | "regular" | "frequent";
+    fanwork_online: "disabled" | "rare" | "regular" | "frequent";
+    promotion_focus: "public_acquisition" | "balanced" | "fan_deepening";
+    promotion_intensity: "limited" | "normal" | "high";
+    /** Lightweight allocation guidance only; member roles remain historical detail. */
+    role_stability: "stable" | "balanced" | "rotational";
+    selection_policy_enabled: boolean;
+  };
+  operating: {
+    tokuten_enabled_items: string[];
+    tokuten_event_duration_minutes: number;
+    tokuten_extension_policy: "never" | "when_demand_and_schedule_allow";
+    live_default_tokuten_attachment: boolean;
+    live_default_fan_meeting_attachment: boolean;
+  };
+  pricing: {
+    signed_cheki_yen: number;
+    standard_live_ticket_yen: number;
+  };
   live: {
     prerecorded_vocals_by_member: Record<string, boolean>;
     tokutenkai_enabled: boolean;
@@ -431,6 +467,17 @@ function clampPolicyHours(v: unknown, fallback = 0): number {
 export function defaultGroupPolicy(): GroupPolicy {
   const intensity = defaultAutopilotTrainingIntensity();
   return {
+    agency: { profitability_requirement: "balanced", making_authority: "producer_led" },
+    team: {
+      workload_target: "balanced", rest_priority: "normal", live_frequency: "normal", event_selectivity: "balanced", travel_willingness: "balanced",
+      fanwork_tokuten: "standard", fanwork_live_related_meeting: "selective", fanwork_independent_meeting: "rare", fanwork_online: "regular",
+      promotion_focus: "balanced", promotion_intensity: "limited", role_stability: "balanced", selection_policy_enabled: false,
+    },
+    operating: {
+      tokuten_enabled_items: ["CHEKI_SIGNED"], tokuten_event_duration_minutes: 60,
+      tokuten_extension_policy: "when_demand_and_schedule_allow", live_default_tokuten_attachment: true, live_default_fan_meeting_attachment: false,
+    },
+    pricing: { signed_cheki_yen: 2000, standard_live_ticket_yen: 2500 },
     live: {
       prerecorded_vocals_by_member: {},
       tokutenkai_enabled: true,
@@ -454,6 +501,50 @@ export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
   const base = defaultGroupPolicy();
   if (!raw || typeof raw !== "object") return base;
   const p = raw as Record<string, unknown>;
+
+  if (p.agency && typeof p.agency === "object") {
+    const agency = p.agency as Record<string, unknown>;
+    const profitability = String(agency.profitability_requirement ?? "");
+    if (["growth_allowed", "balanced", "profitable", "strict_profit"].includes(profitability)) base.agency.profitability_requirement = profitability as GroupPolicy["agency"]["profitability_requirement"];
+    const authority = String(agency.making_authority ?? "");
+    if (["producer_led", "mixed", "agency_led"].includes(authority)) base.agency.making_authority = authority as GroupPolicy["agency"]["making_authority"];
+  }
+  if (p.team && typeof p.team === "object") {
+    const team = p.team as Record<string, unknown>;
+    const assign = <K extends keyof GroupPolicy["team"]>(key: K, values: readonly string[]) => {
+      const value = key === "selection_policy_enabled" ? undefined : String(team[key] ?? "");
+      if (value && values.includes(value)) (base.team[key] as string) = value;
+    };
+    assign("workload_target", ["light", "balanced", "high", "very_high"]);
+    assign("rest_priority", ["low", "normal", "high"]);
+    assign("live_frequency", ["low", "normal", "high"]);
+    assign("event_selectivity", ["exposure_first", "balanced", "value_selective"]);
+    assign("travel_willingness", ["local_first", "balanced", "aggressive"]);
+    assign("fanwork_tokuten", ["disabled", "selective", "standard", "frequent"]);
+    assign("fanwork_live_related_meeting", ["disabled", "major_live_only", "selective", "frequent"]);
+    assign("fanwork_independent_meeting", ["disabled", "rare", "regular", "frequent"]);
+    assign("fanwork_online", ["disabled", "rare", "regular", "frequent"]);
+    assign("promotion_focus", ["public_acquisition", "balanced", "fan_deepening"]);
+    assign("promotion_intensity", ["limited", "normal", "high"]);
+    assign("role_stability", ["stable", "balanced", "rotational"]);
+    if (typeof team.selection_policy_enabled === "boolean") base.team.selection_policy_enabled = team.selection_policy_enabled;
+  }
+  if (p.operating && typeof p.operating === "object") {
+    const operating = p.operating as Record<string, unknown>;
+    if (Array.isArray(operating.tokuten_enabled_items)) base.operating.tokuten_enabled_items = operating.tokuten_enabled_items.map((item) => String(item).trim()).filter(Boolean);
+    const duration = Number(operating.tokuten_event_duration_minutes);
+    if (Number.isFinite(duration)) base.operating.tokuten_event_duration_minutes = Math.max(1, Math.min(180, Math.round(duration)));
+    if (operating.tokuten_extension_policy === "never" || operating.tokuten_extension_policy === "when_demand_and_schedule_allow") base.operating.tokuten_extension_policy = operating.tokuten_extension_policy;
+    if (typeof operating.live_default_tokuten_attachment === "boolean") base.operating.live_default_tokuten_attachment = operating.live_default_tokuten_attachment;
+    if (typeof operating.live_default_fan_meeting_attachment === "boolean") base.operating.live_default_fan_meeting_attachment = operating.live_default_fan_meeting_attachment;
+  }
+  if (p.pricing && typeof p.pricing === "object") {
+    const pricing = p.pricing as Record<string, unknown>;
+    const cheki = Number(pricing.signed_cheki_yen);
+    const ticket = Number(pricing.standard_live_ticket_yen);
+    if (Number.isFinite(cheki) && cheki >= 0) base.pricing.signed_cheki_yen = Math.round(cheki);
+    if (Number.isFinite(ticket) && ticket >= 0) base.pricing.standard_live_ticket_yen = Math.round(ticket);
+  }
 
   if (p.live && typeof p.live === "object") {
     const live = p.live as Record<string, unknown>;
@@ -523,7 +614,23 @@ export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
 }
 
 export function ensureGroupPolicy(save: GameSavePayload): GroupPolicy {
+  const hadTeamPolicy = Boolean(save.group_policy && typeof save.group_policy === "object" && (save.group_policy as unknown as Record<string, unknown>).team);
   save.group_policy = normalizeGroupPolicy(save.group_policy);
+  const group = getPrimaryGroup(save) as Record<string, unknown> | null;
+  const groupText = `${String(group?.uid ?? "")} ${String(group?.name ?? "")} ${String(group?.name_romanji ?? "")}`;
+  // Migration default for the current D-tier anchor.  This only fills legacy
+  // saves that had no Team Policy at all; an explicit player choice wins.
+  if (!hadTeamPolicy && /akishibu|\u79cb\u8449\u539f\u30d7\u30ed\u30b8\u30a7\u30af\u30c8/i.test(groupText)) {
+    save.group_policy.team.workload_target = "high";
+    save.group_policy.team.live_frequency = "high";
+    save.group_policy.team.fanwork_tokuten = "frequent";
+    save.group_policy.team.fanwork_live_related_meeting = "selective";
+    save.group_policy.team.fanwork_independent_meeting = "rare";
+    save.group_policy.team.fanwork_online = "regular";
+    save.group_policy.team.promotion_intensity = "normal";
+    save.group_policy.pricing.signed_cheki_yen = 2000;
+    save.group_policy.operating.tokuten_event_duration_minutes = 60;
+  }
   return save.group_policy;
 }
 
@@ -556,9 +663,13 @@ export interface GameSavePayload {
   training_song_uids: string[];
   /** Group default ops policy (live / SNS / stream / training). */
   group_policy: GroupPolicy;
+  /** Uncommitted choices for the Current Policy Meeting. Never used by simulation. */
+  policy_meeting_draft?: GroupPolicy;
   tutorial: SaveTutorialState;
   scout: ScoutBlock;
   career_decisions: CareerDecisionsBlock;
+  /** Track B runtime: 17-stat kernel, fan layers, strategy lock, monthly close. */
+  track_b?: TrackBState;
   /** ISO date · optional until first simulated day settles in desktop; web sets at new game */
   game_start_date?: string;
   current_date?: string;
@@ -908,6 +1019,9 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     out.managed_song_status,
   );
   out.group_policy = normalizeGroupPolicy((p as { group_policy?: unknown }).group_policy);
+  if ((p as { policy_meeting_draft?: unknown }).policy_meeting_draft) {
+    out.policy_meeting_draft = normalizeGroupPolicy((p as { policy_meeting_draft?: unknown }).policy_meeting_draft);
+  }
   ensureManagedContracts(out);
 
   {
@@ -948,6 +1062,10 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
       }
     }
     out.career_decisions = { outcomes, seeded_inbox_keys: seeded };
+  }
+
+  if (p.track_b && typeof p.track_b === "object") {
+    out.track_b = deepCopy(p.track_b as TrackBState);
   }
 
   out.version = GAME_SAVE_VERSION;

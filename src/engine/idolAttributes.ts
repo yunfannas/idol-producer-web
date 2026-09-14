@@ -1,9 +1,16 @@
 /**
- * Port of idol_producer/idol_attributes.py — visible + hidden attribute buckets, clamp 0–20,
- * overall rating, and official ability formula.
+ * Idol attribute V2 (LOCKED): 17 visible 0–20 stats + hidden personality.
+ * Radar / ability formulas live here.
  *
- * When an idol row has no persisted stat block, attributes are synthesized from X followers +
- * current group popularity (same rules as `regenerate_scenario6_attributes_by_followers.ps1`).
+ * Visible:
+ *   Physical: agility, natural_fitness, stamina
+ *   Appearance: cute, pretty
+ *   Performance: pitch, tone, breath, rhythm, power, stage_presence
+ *   Communication / Creative: wit, humor, talking, teamwork, fashion, creativity
+ * Hidden: professionalism, ambition, sensitivity
+ *
+ * Legacy keys (strength/grace/clever/determination/injury_proneness/loyalty)
+ * are migrated on normalize and never written back as public stats.
  */
 
 import {
@@ -14,7 +21,6 @@ import {
 import { sha256BytesUtf8 } from "./sha256sync";
 
 export interface PhysicalAttrs {
-  strength: number;
   agility: number;
   natural_fitness: number;
   stamina: number;
@@ -25,29 +31,30 @@ export interface AppearanceAttrs {
   pretty: number;
 }
 
+/** Performance bucket (formerly "technical"). */
 export interface TechnicalAttrs {
   pitch: number;
   tone: number;
   breath: number;
   rhythm: number;
   power: number;
-  grace: number;
+  stage_presence: number;
 }
 
+/** Communication / Creative bucket (formerly "mental"). */
 export interface MentalAttrs {
-  clever: number;
+  wit: number;
   humor: number;
   talking: number;
-  determination: number;
   teamwork: number;
   fashion: number;
+  creativity: number;
 }
 
 export interface HiddenAttrs {
   professionalism: number;
-  injury_proneness: number;
   ambition: number;
-  loyalty: number;
+  sensitivity: number;
 }
 
 export interface PersistedIdolAttributes {
@@ -70,7 +77,6 @@ const clampStat = (n: number) => Math.max(0, Math.min(20, Math.round(n)));
 
 function clampPhysical(p: PhysicalAttrs): PhysicalAttrs {
   return {
-    strength: clampStat(p.strength),
     agility: clampStat(p.agility),
     natural_fitness: clampStat(p.natural_fitness),
     stamina: clampStat(p.stamina),
@@ -88,44 +94,50 @@ function clampTechnical(t: TechnicalAttrs): TechnicalAttrs {
     breath: clampStat(t.breath),
     rhythm: clampStat(t.rhythm),
     power: clampStat(t.power),
-    grace: clampStat(t.grace),
+    stage_presence: clampStat(t.stage_presence),
   };
 }
 
 function clampMental(m: MentalAttrs): MentalAttrs {
   return {
-    clever: clampStat(m.clever),
+    wit: clampStat(m.wit),
     humor: clampStat(m.humor),
     talking: clampStat(m.talking),
-    determination: clampStat(m.determination),
     teamwork: clampStat(m.teamwork),
     fashion: clampStat(m.fashion),
+    creativity: clampStat(m.creativity),
   };
 }
 
 function clampHidden(h: HiddenAttrs): HiddenAttrs {
   return {
     professionalism: clampStat(h.professionalism),
-    injury_proneness: clampStat(h.injury_proneness),
     ambition: clampStat(h.ambition),
-    loyalty: clampStat(h.loyalty),
+    sensitivity: clampStat(h.sensitivity),
   };
 }
 
 export function defaultAttributes(): PersistedIdolAttributes {
   return {
-    physical: clampPhysical({ strength: 12, agility: 12, natural_fitness: 12, stamina: 12 }),
+    physical: clampPhysical({ agility: 12, natural_fitness: 12, stamina: 12 }),
     appearance: clampAppearance({ cute: 12, pretty: 12 }),
-    technical: clampTechnical({ pitch: 12, tone: 12, breath: 12, rhythm: 12, power: 12, grace: 12 }),
+    technical: clampTechnical({
+      pitch: 12,
+      tone: 12,
+      breath: 12,
+      rhythm: 12,
+      power: 12,
+      stage_presence: 12,
+    }),
     mental: clampMental({
-      clever: 12,
+      wit: 12,
       humor: 12,
       talking: 12,
-      determination: 12,
       teamwork: 12,
       fashion: 12,
+      creativity: 12,
     }),
-    hidden: clampHidden({ professionalism: 12, injury_proneness: 4, ambition: 12, loyalty: 12 }),
+    hidden: clampHidden({ professionalism: 12, ambition: 12, sensitivity: 10 }),
   };
 }
 
@@ -135,62 +147,120 @@ function num(v: unknown, fallback = 0): number {
   return fallback;
 }
 
-/** Merge partial nested dicts from JSON row into persisted shape. */
+/**
+ * Merge partial nested dicts from JSON into V2 persisted shape.
+ *
+ * Catalog / GDD bucket name is `performance` (engine still stores it as `technical`).
+ * Accepts legacy keys: strength (ignored), grace→stage_presence, clever→wit,
+ * determination→dropped (creativity falls back to wit/fashion blend), loyalty/injury→dropped.
+ * Also accepts flat attribute maps from idol-attribute-generated files.
+ */
 export function normalizePersistedAttributes(raw: unknown): PersistedIdolAttributes {
   const d = raw && typeof raw === "object" ? (raw as Record<string, unknown>) : {};
   const phys = (d.physical as Record<string, unknown>) ?? {};
   const app = (d.appearance as Record<string, unknown>) ?? {};
-  const tech = (d.technical as Record<string, unknown>) ?? {};
-  const ment = (d.mental as Record<string, unknown>) ?? {};
+  const techNested =
+    (d.performance as Record<string, unknown>) ??
+    (d.technical as Record<string, unknown>) ??
+    {};
+  const ment =
+    (d.mental as Record<string, unknown>) ??
+    (d.communication as Record<string, unknown>) ??
+    (d.creative as Record<string, unknown>) ??
+    {};
   const hid = (d.hidden as Record<string, unknown>) ?? {};
+
+  // Flat generation output: attributes are one level (no physical/performance buckets).
+  const flat = !d.physical && !d.appearance && !d.performance && !d.technical && !d.mental ? d : null;
+
+  const pick = (nested: Record<string, unknown>, key: string, legacyKey?: string, fallback = 12) => {
+    if (flat) {
+      if (legacyKey) return num(flat[key], num(flat[legacyKey], fallback));
+      return num(flat[key], fallback);
+    }
+    if (legacyKey) return num(nested[key], num(nested[legacyKey], fallback));
+    return num(nested[key], fallback);
+  };
+
+  const wit = pick(ment, "wit", "clever", 12);
+  const fashion = pick(ment, "fashion", undefined, 12);
+  const creativityDefault = Math.round((wit + fashion) / 2);
 
   return {
     physical: clampPhysical({
-      strength: num(phys.strength, 12),
-      agility: num(phys.agility, 12),
-      natural_fitness: num(phys.natural_fitness, 12),
-      stamina: num(phys.stamina, 12),
+      agility: pick(phys, "agility"),
+      natural_fitness: pick(phys, "natural_fitness"),
+      stamina: pick(phys, "stamina"),
     }),
     appearance: clampAppearance({
-      cute: num(app.cute, 12),
-      pretty: num(app.pretty, 12),
+      cute: pick(app, "cute"),
+      pretty: pick(app, "pretty"),
     }),
     technical: clampTechnical({
-      pitch: num(tech.pitch, 12),
-      tone: num(tech.tone, 12),
-      breath: num(tech.breath, 12),
-      rhythm: num(tech.rhythm, 12),
-      power: num(tech.power, 12),
-      grace: num(tech.grace, 12),
+      pitch: pick(techNested, "pitch"),
+      tone: pick(techNested, "tone"),
+      breath: pick(techNested, "breath"),
+      rhythm: pick(techNested, "rhythm"),
+      power: pick(techNested, "power"),
+      stage_presence: pick(techNested, "stage_presence", "grace"),
     }),
     mental: clampMental({
-      clever: num(ment.clever, 12),
-      humor: num(ment.humor, 12),
-      talking: num(ment.talking, 12),
-      determination: num(ment.determination, 12),
-      teamwork: num(ment.teamwork, 12),
-      fashion: num(ment.fashion, 12),
+      wit,
+      humor: pick(ment, "humor"),
+      talking: pick(ment, "talking"),
+      teamwork: pick(ment, "teamwork"),
+      fashion,
+      creativity: flat
+        ? num(flat.creativity, creativityDefault)
+        : num(ment.creativity, creativityDefault),
     }),
     hidden: clampHidden({
-      professionalism: num(hid.professionalism, 12),
-      injury_proneness: num(hid.injury_proneness, 4),
-      ambition: num(hid.ambition, 12),
-      loyalty: num(hid.loyalty, 12),
+      professionalism: pick(hid, "professionalism", undefined, 12),
+      ambition: pick(hid, "ambition", undefined, 12),
+      sensitivity: pick(hid, "sensitivity", undefined, 10),
     }),
   };
+}
+
+/** Catalog/GDD write shape: uses `performance` (not legacy `technical`). */
+export function toCatalogAttributeRecord(a: PersistedIdolAttributes): Record<string, unknown> {
+  const out: Record<string, unknown> = {
+    physical: { ...a.physical },
+    appearance: { ...a.appearance },
+    performance: { ...a.technical },
+    mental: { ...a.mental },
+  };
+  if (a.hidden) out.hidden = { ...a.hidden };
+  return out;
 }
 
 /** True when JSON already carries at least one numeric stat (authoritative overlay). */
 export function hasPersistedAttributeBlock(raw: unknown): boolean {
   if (!raw || typeof raw !== "object") return false;
   const d = raw as Record<string, unknown>;
-  for (const cat of ["physical", "appearance", "technical", "mental", "hidden"] as const) {
+  for (const cat of ["physical", "appearance", "performance", "technical", "mental", "communication", "hidden"] as const) {
     const block = d[cat];
     if (!block || typeof block !== "object") continue;
     for (const v of Object.values(block as Record<string, unknown>)) {
       if (typeof v === "number" && Number.isFinite(v)) return true;
       if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v))) return true;
     }
+  }
+  // Flat generation files (strength/agility/... or V2 flat keys at top level)
+  for (const k of [
+    "agility",
+    "stamina",
+    "cute",
+    "pretty",
+    "pitch",
+    "stage_presence",
+    "wit",
+    "creativity",
+    "grace",
+    "clever",
+  ]) {
+    const v = d[k];
+    if (typeof v === "number" && Number.isFinite(v)) return true;
   }
   return false;
 }
@@ -551,7 +621,21 @@ function applyRoleBiasToAttributes(
     for (const role of roles) {
       features[role.key] = Math.max(features[role.key] ?? 0, Math.max(0, Math.min(1, role.focus)));
     }
-    for (const [statPath, featureWeights] of Object.entries(model.coefficients)) {
+    for (const [statPathRaw, featureWeights] of Object.entries(model.coefficients)) {
+      const LEGACY_STAT_PATH: Record<string, string> = {
+        "technical.grace": "technical.stage_presence",
+        "performance.grace": "technical.stage_presence",
+        "performance.stage_presence": "technical.stage_presence",
+        "performance.pitch": "technical.pitch",
+        "performance.tone": "technical.tone",
+        "performance.breath": "technical.breath",
+        "performance.rhythm": "technical.rhythm",
+        "performance.power": "technical.power",
+        "mental.clever": "mental.wit",
+        "mental.determination": "mental.teamwork",
+        "physical.strength": "physical.agility",
+      };
+      const statPath = LEGACY_STAT_PATH[statPathRaw] ?? statPathRaw;
       const [categoryKey, statKey] = statPath.split(".");
       const category = next[categoryKey as keyof PersistedIdolAttributes];
       if (!category || typeof category !== "object" || !statKey) continue;
@@ -591,6 +675,12 @@ function applyRoleBiasToAttributes(
     hidden: clampHidden(next.hidden ?? defaultAttributes().hidden!),
   };
 }
+
+// Kept solely to read legacy saved role metadata during migration.  New
+// attribute generation deliberately does not call this former role system.
+void ageFeatureVector;
+void collectActiveRoleAssignments;
+void applyRoleBiasToAttributes;
 
 /**
  * Soft age ceilings for appearance:
@@ -637,7 +727,6 @@ function scaleVisibleAttributes(attrs: PersistedIdolAttributes, scale: number): 
   const scaleStat = (value: number) => clampStat(12 + (value - 12) * scale);
   return {
     physical: clampPhysical({
-      strength: scaleStat(attrs.physical.strength),
       agility: scaleStat(attrs.physical.agility),
       natural_fitness: scaleStat(attrs.physical.natural_fitness),
       stamina: scaleStat(attrs.physical.stamina),
@@ -652,22 +741,21 @@ function scaleVisibleAttributes(attrs: PersistedIdolAttributes, scale: number): 
       breath: scaleStat(attrs.technical.breath),
       rhythm: scaleStat(attrs.technical.rhythm),
       power: scaleStat(attrs.technical.power),
-      grace: scaleStat(attrs.technical.grace),
+      stage_presence: scaleStat(attrs.technical.stage_presence),
     }),
     mental: clampMental({
-      clever: scaleStat(attrs.mental.clever),
+      wit: scaleStat(attrs.mental.wit),
       humor: scaleStat(attrs.mental.humor),
       talking: scaleStat(attrs.mental.talking),
-      determination: scaleStat(attrs.mental.determination),
       teamwork: scaleStat(attrs.mental.teamwork),
       fashion: scaleStat(attrs.mental.fashion),
+      creativity: scaleStat(attrs.mental.creativity),
     }),
     hidden: attrs.hidden ? clampHidden({ ...attrs.hidden }) : attrs.hidden,
   };
 }
 
 const VISIBLE_STAT_PATHS = [
-  ["physical", "strength"],
   ["physical", "agility"],
   ["physical", "natural_fitness"],
   ["physical", "stamina"],
@@ -678,13 +766,13 @@ const VISIBLE_STAT_PATHS = [
   ["technical", "breath"],
   ["technical", "rhythm"],
   ["technical", "power"],
-  ["technical", "grace"],
-  ["mental", "clever"],
+  ["technical", "stage_presence"],
+  ["mental", "wit"],
   ["mental", "humor"],
   ["mental", "talking"],
-  ["mental", "determination"],
   ["mental", "teamwork"],
   ["mental", "fashion"],
+  ["mental", "creativity"],
 ] as const;
 
 /** Move official ability by ~1 via single-stat steps (all-stat ±1 jumps ~5). */
@@ -801,8 +889,6 @@ export function buildAttributesFromFollowerModel(
   const danceCenter = Math.round(vocalCenter * 0.45 + danceSeed * 0.55);
   const professionalismPenalty = scandalCount > 0 ? 5 + Math.min(6, (scandalCount - 1) * 2) : 0;
   const professionalismBase = scandalCount > 0 ? 9 : base;
-  const injuryBase = scandalCount > 0 ? 6 : 4;
-  const loyaltyPenalty = scandalCount > 0 ? Math.min(4, scandalCount) : 0;
   const age = ageAtOpening(idol, openingIso);
   // Bias the appearance seed itself so younger idols lean cute and older lean pretty
   // before rolls / role model push values around.
@@ -816,8 +902,6 @@ export function buildAttributesFromFollowerModel(
   }
   const baseline: PersistedIdolAttributes = {
     physical: clampPhysical({
-      // Manual calibration set suggests dance-heavy idols tend to carry some extra physicality.
-      strength: Math.round(base * 0.65 + danceCenter * 0.35) + stableRoll(uid, "strength", -2, 2),
       agility: Math.round(base * 0.55 + danceCenter * 0.45) + stableRoll(uid, "agility", -2, 3),
       natural_fitness: base + stableRoll(uid, "natural_fitness", -2, 4),
       stamina: base + stableRoll(uid, "stamina", -2, 4),
@@ -834,28 +918,27 @@ export function buildAttributesFromFollowerModel(
       breath: vocalCenter + stableRoll(uid, "breath", -2, 2),
       rhythm: danceCenter + stableRoll(uid, "rhythm", -2, 2),
       power: danceCenter + stableRoll(uid, "power", -2, 2),
-      grace: danceCenter + stableRoll(uid, "grace", -2, 2),
+      stage_presence: danceCenter + stableRoll(uid, "stage_presence", -2, 2),
     }),
     mental: clampMental({
-      clever: base + stableRoll(uid, "clever", -3, 4),
+      wit: base + stableRoll(uid, "wit", -3, 4),
       humor: base + stableRoll(uid, "humor", -3, 4),
       talking: base + stableRoll(uid, "talking", -3, 4),
-      determination: base + stableRoll(uid, "determination", -2, 5),
       teamwork: base + stableRoll(uid, "teamwork", -2, 4),
       fashion: base + stableRoll(uid, "fashion", -3, 4),
+      creativity: base + stableRoll(uid, "creativity", -3, 4),
     }),
     hidden: clampHidden({
       professionalism:
         professionalismBase + stableRoll(uid, "professionalism", -2, 3) - professionalismPenalty,
-      injury_proneness: injuryBase + stableRoll(uid, "injury_proneness", -1, 4) + Math.min(2, scandalCount),
       ambition: base + stableRoll(uid, "ambition", -2, 5),
-      loyalty: base + stableRoll(uid, "loyalty", -2, 5) - loyaltyPenalty,
+      sensitivity: 10 + stableRoll(uid, "sensitivity", -3, 3),
     }),
   };
-  const activeRoles = collectActiveRoleAssignments(idol, openingIso);
-  const ageFeatures = ageFeatureVector(age);
-  const withRoles = applyRoleBiasToAttributes(baseline, activeRoles, ageFeatures, roleAttributeModel);
-  const withAge = applyAgeAppearanceConstraints(withRoles, age);
+  // Roles are public/historical presentation data.  They no longer generate
+  // or modify ability, including through the legacy role-attribute model.
+  void roleAttributeModel;
+  const withAge = applyAgeAppearanceConstraints(baseline, age);
   return fitAttributesToAbilityCap(withAge, letterTier);
 }
 
@@ -875,7 +958,7 @@ export function ensureIdolRowAttributes(
 ): PersistedIdolAttributes {
   if (hasPersistedAttributeBlock(row.attributes)) {
     const normalized = normalizePersistedAttributes(row.attributes);
-    row.attributes = normalized;
+    row.attributes = toCatalogAttributeRecord(normalized);
     return normalized;
   }
 
@@ -897,12 +980,12 @@ export function ensureIdolRowAttributes(
       tiers,
       withinBoosts,
     );
-    row.attributes = built;
+    row.attributes = toCatalogAttributeRecord(built);
     return built;
   }
 
   const fallback = defaultAttributes();
-  row.attributes = fallback;
+  row.attributes = toCatalogAttributeRecord(fallback);
   return fallback;
 }
 
@@ -1071,16 +1154,16 @@ function reconcileOneGroupAbilityByX(
 
 export function getOverallRating(a: PersistedIdolAttributes): number {
   const p = a.physical;
-  const phAvg = (p.strength + p.agility + p.natural_fitness + p.stamina) / 4;
+  const phAvg = (p.agility + p.natural_fitness + p.stamina) / 3;
   const apAvg = (a.appearance.cute + a.appearance.pretty) / 2;
   const t = a.technical;
-  const techAvg = (t.pitch + t.tone + t.breath + t.rhythm + t.power + t.grace) / 6;
+  const techAvg = (t.pitch + t.tone + t.breath + t.rhythm + t.power + t.stage_presence) / 6;
   const m = a.mental;
-  const menAvg = (m.clever + m.humor + m.talking + m.determination + m.teamwork + m.fashion) / 6;
+  const menAvg = (m.wit + m.humor + m.talking + m.teamwork + m.fashion + m.creativity) / 6;
   return phAvg * 0.15 + apAvg * 0.2 + techAvg * 0.4 + menAvg * 0.25;
 }
 
-/** Desktop `idol_ui._calculate_radar_dimensions` workbook aggregates (0–20-ish). */
+/** Five-axis workbook radar aggregates (0–20-ish). V2 attribute names. */
 export function getWorkbookRadarDimensions(a: PersistedIdolAttributes): { key: string; value: number }[] {
   const physical = a.physical;
   const appearance = a.appearance;
@@ -1089,42 +1172,37 @@ export function getWorkbookRadarDimensions(a: PersistedIdolAttributes): { key: s
   const appearanceHigh = Math.max(appearance.cute, appearance.pretty);
   const appearanceLow = Math.min(appearance.cute, appearance.pretty);
   return [
-    { key: "PHY", value: (physical.strength + physical.agility + physical.natural_fitness + physical.stamina) / 4 },
+    { key: "PHY", value: (physical.agility + physical.natural_fitness + physical.stamina) / 3 },
     { key: "APP", value: ((appearanceHigh + appearanceLow / 4) / 5) * 4 },
     { key: "SNG", value: (technical.pitch + technical.tone + technical.breath + technical.rhythm) / 4 },
-    { key: "DAN", value: (technical.rhythm + technical.power + technical.grace) / 3 },
+    { key: "DAN", value: (technical.rhythm + technical.power + technical.stage_presence) / 3 },
     {
       key: "MEN",
       value:
-        (mental.clever +
-          mental.humor +
-          mental.talking +
-          mental.determination +
-          mental.teamwork +
-          mental.fashion) /
-        6,
+        (mental.wit + mental.humor + mental.talking + mental.teamwork + mental.fashion + mental.creativity) / 6,
     },
   ];
 }
 
 /**
- * Official ability (Python `get_ability`) — note mental sum includes **fashion** in code despite comment.
+ * Official ability (V2). Same structure as legacy get_ability with renamed/retired stats.
+ * physicalPart uses 3 physical stats (no strength); mentalPart uses creativity instead of determination.
  */
 export function getAbilityRaw(a: PersistedIdolAttributes): number {
   const p = a.physical;
-  const physicalSum = p.strength + p.agility + p.natural_fitness + p.stamina;
-  const physicalPart = (physicalSum / 16) * 3;
+  const physicalSum = p.agility + p.natural_fitness + p.stamina;
+  const physicalPart = (physicalSum / 12) * 3;
 
   const appearanceMax = Math.max(a.appearance.cute, a.appearance.pretty);
   const appearanceMin = Math.min(a.appearance.cute, a.appearance.pretty);
   const appearancePart = appearanceMax + appearanceMin / 4;
 
   const t = a.technical;
-  const technicalSum = t.pitch + t.tone + t.breath + t.rhythm + t.power + t.grace;
+  const technicalSum = t.pitch + t.tone + t.breath + t.rhythm + t.power + t.stage_presence;
   const technicalPart = technicalSum / 3;
 
   const m = a.mental;
-  const mentalSum = m.clever + m.humor + m.talking + m.determination + m.teamwork + m.fashion;
+  const mentalSum = m.wit + m.humor + m.talking + m.teamwork + m.fashion + m.creativity;
   const mentalPart = mentalSum / 6;
 
   return physicalPart + appearancePart + technicalPart + mentalPart;

@@ -69,6 +69,7 @@ import { renderGroupDetailPage } from "./groupDetailPage";
 import {
   isSongHiddenFromDisplay,
   isSongAvailableOn,
+  songAvailabilityIso,
   songPopularityNum,
   songsForDisplaySorted,
   buildDiscBuckets,
@@ -312,7 +313,7 @@ export type MakingTab = "songs" | "cd" | "goods";
 export type LivesTab = "new" | "scheduled" | "past" | "festival" | "league";
 export type { LeaguePanelTab };
 export type ScoutTab = "freelancer" | "transfer" | "audition";
-export type TrainingTab = "assignments" | "roster" | "roles" | "songs" | "formation";
+export type TrainingTab = "assignments" | "roster" | "songs";
 export type ScheduleTab = "calendar" | "policy";
 export type RoleBenchmarkKey = "singing" | "dancing" | "teamwork" | "content" | "streaming" | "fashion";
 export type FinanceHistoryRange = "day" | "week" | "month" | "year" | "all";
@@ -340,7 +341,7 @@ export interface LiveProgramItem {
 }
 
 export interface NewLiveFormState {
-  liveType: "Routine" | "Concert" | "Taiban" | "Festival";
+  liveType: "Routine" | "Concert" | "Taiban" | "Festival" | "collaborate_live";
   title: string;
   date: string;
   startTime: string;
@@ -366,24 +367,30 @@ export interface NewLiveFormState {
 /** Full management nav (browse mode restricts to Idol / Groups / Songs like desktop `_browse_mode`). */
 export const MANAGEMENT_NAV_ITEMS = [
   "Inbox",
-  "Idols",
   "Groups",
-  "Training",
-  "Schedule",
-  "Lives",
-  "Songs",
+  "Idols",
   "Making",
-  "Media",
+  "Training",
+  "Lives",
   "Scout",
   "Finances",
+  "Policy",
 ] as const;
 
 export const BROWSE_NAV_ITEMS = ["Idols", "Groups", "Songs"] as const;
 
-export type DesktopNavId = (typeof MANAGEMENT_NAV_ITEMS)[number] | (typeof BROWSE_NAV_ITEMS)[number];
+/** Routes reachable from the fixed shell but deliberately absent from the
+ * left navigation.  Schedule, Songs and Media remain deep-link destinations,
+ * not extra operating modules. */
+export const MANAGEMENT_INTERNAL_VIEW_ITEMS = ["MyGroup", "MyIdols", "Meeting", "Schedule", "Songs", "Media"] as const;
 
-export function isManagementNav(s: string): s is (typeof MANAGEMENT_NAV_ITEMS)[number] {
-  return (MANAGEMENT_NAV_ITEMS as readonly string[]).includes(s);
+export type DesktopNavId =
+  | (typeof MANAGEMENT_NAV_ITEMS)[number]
+  | (typeof MANAGEMENT_INTERNAL_VIEW_ITEMS)[number]
+  | (typeof BROWSE_NAV_ITEMS)[number];
+
+export function isManagementNav(s: string): s is (typeof MANAGEMENT_NAV_ITEMS)[number] | (typeof MANAGEMENT_INTERNAL_VIEW_ITEMS)[number] {
+  return (MANAGEMENT_NAV_ITEMS as readonly string[]).includes(s) || (MANAGEMENT_INTERNAL_VIEW_ITEMS as readonly string[]).includes(s);
 }
 
 export function isBrowseNav(s: string): s is (typeof BROWSE_NAV_ITEMS)[number] {
@@ -931,7 +938,6 @@ function renderAttributePanels(a: PersistedIdolAttributes): string {
     <div class="attr-panels">
       ${row(
         [
-          ["strength", p.strength],
           ["agility", p.agility],
           ["natural_fitness", p.natural_fitness],
           ["stamina", p.stamina],
@@ -952,20 +958,20 @@ function renderAttributePanels(a: PersistedIdolAttributes): string {
           ["breath", t.breath],
           ["rhythm", t.rhythm],
           ["power", t.power],
-          ["grace", t.grace],
+          ["stage_presence", t.stage_presence],
         ],
-        "Technical",
+        "Performance",
       )}
       ${row(
         [
-          ["clever", m.clever],
+          ["wit", m.wit],
           ["humor", m.humor],
           ["talking", m.talking],
-          ["determination", m.determination],
           ["teamwork", m.teamwork],
           ["fashion", m.fashion],
+          ["creativity", m.creativity],
         ],
-        "Mental",
+        "Communication / Creative",
       )}
     </div>`;
 }
@@ -2181,12 +2187,6 @@ function renderTraining(
       const conditionTone = trainingValueToneClass(condition);
       const moraleTone = trainingValueToneClass(morale);
       const statusBadges = trainingStatusBadges(r);
-      const actionButton = hiatusActive
-        ? `<button type="button" class="fm-btn" disabled>${htmlEsc(localizedLiteral(lang, "Hiatus", "休假中"))}</button>`
-        : `<button type="button" class="fm-btn fm-btn-danger" data-training-vacation="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Off", "休息"))}</button>`;
-      const actionCell = hiatusActive
-        ? actionButton
-        : `<div class="training-vacation-controls"><input type="number" min="1" max="365" step="1" value="1" class="fm-input training-vacation-days" data-training-vacation-days="${htmlEsc(uid)}" aria-label="${htmlEsc(localizedLiteral(lang, "Off days", "休息天数"))}" />${actionButton}</div>`;
       const nameCell = `<span class="group-roster-name-wrap"><button type="button" class="idol-detail-group-link" data-idol-detail="${htmlEsc(uid)}">${htmlEsc(name)}</button></span>`;
       return `<tr>
         <td class="idol-list-photo">${portraitCell}</td>
@@ -2199,7 +2199,7 @@ function renderTraining(
         <td class="group-roster-stat"><span class="training-value ${moraleTone}">${htmlEsc(String(morale))}</span></td>
         <td class="group-roster-stat">${htmlEsc(started || "-")}</td>
         <td>${statusBadges}</td>
-        <td>${actionCell}</td>
+        <td>${htmlEsc(hiatusActive ? localizedLiteral(lang, "Hiatus", "休假中") : localizedLiteral(lang, "Staff scheduled", "由 staff 排期"))}</td>
       </tr>`;
     })
     .filter(Boolean)
@@ -2234,21 +2234,19 @@ function renderTraining(
     .map((song) => {
       const uid = String(song.uid ?? "").trim();
       const title = songCatalogDisplayLabel(song);
-      const availableOn = String((song.uid === "d3b51910-0f40-4e75-9413-4f3762fbf110" ? "2026-01-01" : song.release_date) ?? "")
+      const availableOn = String(songAvailabilityIso(song) ?? "")
         .split("T")[0];
       const status = save.managed_song_status[uid];
       const familiarity = Math.round(Number(status?.familiarity ?? 0) || 0);
       const fatigue = Math.round(Number(status?.rotation_fatigue ?? 0) || 0);
       return `<tr>
-        <td><label class="check-pill"><input type="checkbox" data-training-song-pick="${htmlEsc(uid)}" ${selectedSongUids.has(uid) ? "checked" : ""} /> <span>${htmlEsc(localizedLiteral(lang, "Prepare", "练习"))}</span></label></td>
+        <td>${htmlEsc(selectedSongUids.has(uid) ? localizedLiteral(lang, "In rotation", "正在轮换") : localizedLiteral(lang, "Not scheduled", "未排入"))}</td>
         <td>${htmlEsc(title)}</td>
         <td>${htmlEsc(availableOn || "-")}</td>
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
         <td class="num">${htmlEsc(String(familiarity))}</td>
         <td class="num">${htmlEsc(String(fatigue))}</td>
-        <td><button type="button" class="fm-btn fm-btn-xs" data-open-training-formation="${htmlEsc(uid)}">${htmlEsc(
-          localizedLiteral(lang, "Formation", "站位"),
-        )}</button></td>
+        <td>${htmlEsc(localizedLiteral(lang, "Project detail", "项目详情"))}</td>
       </tr>`;
     })
     .join("");
@@ -2316,7 +2314,7 @@ function renderTraining(
       key: "dancing" as const,
       label: localizedLiteral(lang, "Dancing", "舞蹈"),
       value: blendStrength(
-        attrScore((a) => [a.technical.rhythm, a.technical.grace, a.physical.agility, a.physical.stamina]),
+        attrScore((a) => [a.technical.rhythm, a.technical.stage_presence, a.physical.agility, a.physical.stamina]),
         roleScore(["lead_dancer", "center"]),
       ),
     },
@@ -2324,7 +2322,7 @@ function renderTraining(
       key: "teamwork" as const,
       label: localizedLiteral(lang, "Teamwork", "团队协作"),
       value: blendStrength(
-        attrScore((a) => [a.mental.teamwork, a.mental.determination, a.hidden?.professionalism ?? 12]),
+        attrScore((a) => [a.mental.teamwork, a.hidden?.professionalism ?? 12, a.mental.talking]),
         roleScore(["leader", "host", "call_leader"]),
         0.25,
       ),
@@ -2333,7 +2331,7 @@ function renderTraining(
       key: "content" as const,
       label: localizedLiteral(lang, "Content", "内容"),
       value: blendStrength(
-        attrScore((a) => [a.mental.talking, a.mental.humor, a.mental.clever]),
+        attrScore((a) => [a.mental.talking, a.mental.humor, a.mental.wit]),
         roleScore(["content"]),
       ),
     },
@@ -2401,6 +2399,7 @@ function renderTraining(
     .join("");
   const roleHeaderCells = roleColumns.map(({ label }) => `<th>${htmlEsc(label)}</th>`).join("");
 
+  void cards;
   return `<section class="content-panel training-view">
     <h2 class="content-h2">${htmlEsc(navLabel(lang, "Training"))}</h2>
     ${renderTrainingTabs(trainingTab, lang)}
@@ -2433,7 +2432,7 @@ function renderTraining(
                 </table>
               </div>
             </section>`
-          : trainingTab === "roles"
+          : false
             ? `<section class="fm-card">
                 <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Member roles", "成员定位"))}</h3>
                 <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Assign each member's role focus on a 0-5 scale. These roles are saved into the current group membership and regenerate role-based attributes for that member.", "以 0-5 为每位成员设置定位权重。定位会保存到当前组合履历，并重新生成该成员基于定位的能力值。"))}</p>
@@ -2454,9 +2453,9 @@ function renderTraining(
                   </table>
                 </div>
               </section>`
-            : trainingTab === "formation"
+            : false
               ? renderTrainingFormationPanel(managedSongs, formationSongUid, formationEditorHtml, save, lang)
-              : `<div class="training-grid">${cards || `<p class="content-muted">${htmlEsc(localizedLiteral(lang, "No roster members.", "当前没有成员。"))}</p>`}</div>`
+              : `<section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Training status", "训练状态"))}</h3><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Training is planned and delivered by staff from the current Team Policy. This page reports the active roster, workload and song rotation; changes are proposed and resolved in a Meeting.", "训练由 staff 按当前 Team Policy 制定并执行。本页只报告阵容、工作量和歌曲轮换；调整应在会议中提出并决议。"))}</p></section>`
     }
   </section>`;
 }
@@ -4344,12 +4343,34 @@ function policyFocusOptionsHtml(selected: string, lang: UiLanguage): string {
   }).join("");
 }
 
-function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage): string {
-  const policy = ensureGroupPolicy(save);
+function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage, options: { editable?: boolean } = {}): string {
+  const editable = options.editable === true;
+  const policy = editable && save.policy_meeting_draft ? save.policy_meeting_draft : ensureGroupPolicy(save);
   const roster = managedRosterForPolicy(save);
   const refillOn = policy.live.auto_goods_refill != null;
   const refillQty = policy.live.auto_goods_refill ?? 50;
   const intensity = policy.training.default_intensity;
+  const policySummary = `
+    <section class="fm-card policy-section">
+      <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Agency & Team Policy", "Agency 与 Team Policy"))}</h3>
+      <div class="table-scroll"><table class="fm-table"><tbody>
+        <tr><th>${htmlEsc(localizedLiteral(lang, "Agency profitability", "Agency 盈利要求"))}</th><td>${htmlEsc(policy.agency.profitability_requirement)}</td><th>${htmlEsc(localizedLiteral(lang, "Making authority", "制作权限"))}</th><td>${htmlEsc(policy.agency.making_authority)}</td></tr>
+        <tr><th>${htmlEsc(localizedLiteral(lang, "Workload / recovery", "工作量 / 恢复"))}</th><td>${htmlEsc(`${policy.team.workload_target} / ${policy.team.rest_priority}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Live / allocation", "演出 / 分工"))}</th><td>${htmlEsc(`${policy.team.live_frequency} / ${policy.team.event_selectivity} · ${policy.team.role_stability}`)}</td></tr>
+        <tr><th>${htmlEsc(localizedLiteral(lang, "Fanwork", "Fanwork"))}</th><td>${htmlEsc(`${policy.team.fanwork_tokuten} tokuten · ${policy.team.fanwork_online} online`)}</td><th>${htmlEsc(localizedLiteral(lang, "Promotion", "推广"))}</th><td>${htmlEsc(`${policy.team.promotion_focus} / ${policy.team.promotion_intensity}`)}</td></tr>
+        <tr><th>${htmlEsc(localizedLiteral(lang, "Default tokuten", "默认特典会"))}</th><td>${htmlEsc(`${policy.operating.tokuten_event_duration_minutes} min · ${policy.operating.tokuten_extension_policy}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Signed cheki", "签名 cheki"))}</th><td>¥${policy.pricing.signed_cheki_yen.toLocaleString("ja-JP")}</td></tr>
+        ${policy.team.selection_policy_enabled ? `<tr><th>${htmlEsc(localizedLiteral(lang, "Selection Policy", "选拔 Policy"))}</th><td colspan="3">${htmlEsc(localizedLiteral(lang, "Enabled for this selection-based group.", "本团启用选拔制 Policy。"))}</td></tr>` : ""}
+      </tbody></table></div>
+      <p class="content-muted">${htmlEsc(localizedLiteral(lang, "These are staff defaults. They alter scheduling, offer handling and real resource use; they do not apply direct bonuses.", "这些是 staff 默认方案：它们改变排期、邀约处理和实际资源消耗，不直接提供数值加成。"))}</p>
+    </section>`;
+
+  if (!editable) {
+    return `${policySummary}<p class="content-muted">${htmlEsc(localizedLiteral(lang, "Read-only status. Call a Policy Meeting to propose a change; routine training is staff-scheduled from these defaults.", "此处为只读状态。召开 Policy 会议后才能提出改动；日常训练由 staff 按这些默认方案安排。"))}</p>`;
+  }
+
+  const teamPolicySelect = (key: "workload_target" | "rest_priority" | "live_frequency" | "role_stability", label: string, values: string[]) =>
+    `<label class="training-slider training-focus-slider-row"><span class="training-slider-l">${htmlEsc(label)}</span><select class="fm-select training-focus-select" data-policy-team="${key}">${values.map((value) => `<option value="${htmlEsc(value)}" ${policy.team[key] === value ? "selected" : ""}>${htmlEsc(value)}</option>`).join("")}</select><span class="training-slider-v" aria-hidden="true"> </span></label>`;
+
+  const teamDirectionEditor = `<section class="fm-card policy-section"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Team direction", "Team 方向"))}</h3><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Broad staff direction only. It does not assign a member role or alter ability.", "仅设定 staff 的宏观方向；不会分配成员角色，也不会改变能力。"))}</p><div class="training-sliders policy-training-sliders">${teamPolicySelect("workload_target", localizedLiteral(lang, "Workload", "工作量"), ["light", "balanced", "high", "very_high"])}${teamPolicySelect("rest_priority", localizedLiteral(lang, "Recovery priority", "恢复优先级"), ["low", "normal", "high"])}${teamPolicySelect("live_frequency", localizedLiteral(lang, "Live frequency", "演出频率"), ["low", "normal", "high"])}${teamPolicySelect("role_stability", localizedLiteral(lang, "Role stability", "分工稳定度"), ["stable", "balanced", "rotational"])}</div></section>`;
 
   const prerecordRows = roster
     .map(({ uid, name, romaji }) => {
@@ -4401,6 +4422,8 @@ function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage): string {
 
   return `
     <p class="content-muted">${htmlEsc(t(lang, "policy_lead"))}</p>
+    ${policySummary}
+    ${teamDirectionEditor}
     <section class="fm-card policy-section">
       <h3 class="content-h3">${htmlEsc(t(lang, "policy_section_live"))}</h3>
       <div class="policy-live-toggles">
@@ -4462,9 +4485,6 @@ function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage): string {
           <select class="fm-select training-focus-select" data-policy-training-focus>${policyFocusOptionsHtml(policy.training.default_focus, lang)}</select>
           <span class="training-slider-v" aria-hidden="true"> </span>
         </label>
-      </div>
-      <div class="policy-toolbar">
-        <button type="button" class="fm-btn" data-policy-training-apply-all>${htmlEsc(t(lang, "policy_training_apply_all"))}</button>
       </div>
     </section>`;
 }
@@ -4729,9 +4749,7 @@ function renderTrainingTabs(active: TrainingTab, lang: UiLanguage): string {
   const tabs: Array<[TrainingTab, string]> = [
     ["roster", t(lang, "training_tab_roster")],
     ["assignments", t(lang, "training_tab_assignments")],
-    ["roles", t(lang, "training_tab_roles")],
     ["songs", t(lang, "training_tab_songs")],
-    ["formation", t(lang, "training_tab_formation")],
   ];
   return `<div class="workspace-tabs training-tabs">${tabs
     .map(
@@ -4955,7 +4973,7 @@ function renderLivesView(
       return `<option value="${htmlEsc(venue.name)}" ${selected}>${htmlEsc(`${venue.name} (${venue.capacity})`)}</option>`;
     }),
   ].join("");
-  const plannerLiveTypes = ["Routine", "Concert", "Taiban", "Festival"] as const;
+  const plannerLiveTypes = ["Routine", "Concert", "Taiban", "Festival", "collaborate_live"] as const;
   const summaryLines = [
     `${liveTypeLabel(lang, newLiveForm.liveType)} · ${newLiveForm.date || localizedLiteral(lang, "TBD", "待定")} · ${newLiveForm.startTime}-${newLiveForm.endTime}`,
     `${localizedLiteral(lang, "Venue", "场地")}:${newLiveForm.venueName || localizedLiteral(lang, "TBA", "待定")}${selectedVenue?.location ? ` · ${selectedVenue.location}` : ""}${selectedVenue?.capacity ? ` · ${lang === "zh-CN" ? `容纳 ${selectedVenue.capacity}` : `cap ${selectedVenue.capacity}`}` : ""}`,
@@ -5608,6 +5626,108 @@ function renderScoutView(
   </section>`;
 }
 
+function managedMemberRows(save: GameSavePayload): Record<string, unknown>[] {
+  const group = getPrimaryGroup(save);
+  const memberUids = new Set(Array.isArray(group?.member_uids) ? group.member_uids.map((uid) => String(uid)) : []);
+  return save.database_snapshot.idols.filter(
+    (idol): idol is Record<string, unknown> => Boolean(idol && typeof idol === "object" && memberUids.has(String(idol.uid ?? ""))),
+  );
+}
+
+function conditionLabel(condition: unknown, lang: UiLanguage): string {
+  const value = num(condition, 60);
+  if (value >= 75) return localizedLiteral(lang, "Fresh", "状态良好");
+  if (value >= 50) return localizedLiteral(lang, "Working", "可正常工作");
+  if (value >= 30) return localizedLiteral(lang, "Tired", "疲劳注意");
+  return localizedLiteral(lang, "Rest recommended", "建议休息");
+}
+
+function memberStatusSummary(save: GameSavePayload | null, lang: UiLanguage): string {
+  if (!save) return localizedLiteral(lang, "No roster", "无成员");
+  let normal = 0;
+  let issue = 0;
+  let resting = 0;
+  for (const idol of managedMemberRows(save)) {
+    const state = save.track_b?.members?.[String(idol.uid ?? "")];
+    if (isIdolOnHiatus(idol, String(save.current_date ?? "")) || num(state?.condition, 60) < 30) resting += 1;
+    else if (state?.vocal_issue || state?.physical_issue) issue += 1;
+    else normal += 1;
+  }
+  return localizedLiteral(lang, `Normal ${normal} · Issue ${issue} · Rest ${resting}`, `正常 ${normal} · 问题 ${issue} · 休息 ${resting}`);
+}
+
+function renderMyGroupStatus(save: GameSavePayload, lang: UiLanguage): string {
+  const group = getPrimaryGroup(save) as Record<string, unknown> | null;
+  const name = String(group?.name ?? group?.name_romanji ?? localizedLiteral(lang, "My Group", "我的组合"));
+  const now = String(save.current_date ?? save.game_start_date ?? "").split("T")[0];
+  const results = (save.lives?.results ?? [])
+    .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
+    .sort((a, b) => String(b.date ?? b.start_date ?? "").localeCompare(String(a.date ?? a.start_date ?? "")));
+  const recentLives = results.slice(0, 4);
+  const averageSatisfaction = recentLives.length
+    ? Math.round(recentLives.reduce((sum, row) => sum + num(row.audience_satisfaction, 0), 0) / recentLives.length)
+    : null;
+  const nextLive = (save.lives?.schedules ?? [])
+    .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
+    .filter((row) => String(row.start_date ?? "").split("T")[0] >= now && String(row.status ?? "") !== "played")
+    .sort((a, b) => String(a.start_date ?? "").localeCompare(String(b.start_date ?? "")))[0];
+  const ledger = getActiveFinances(save).ledger ?? [];
+  const recentTokuten = ledger.slice(-28);
+  const tokutenRevenue = recentTokuten.reduce((sum, row) => sum + num(row.tokutenkai_revenue, 0), 0);
+  const tokutenSessions = recentTokuten.filter((row) => num(row.tokutenkai_revenue, 0) > 0).length;
+  const managedSongs = save.database_snapshot.songs.filter((song) => String((song as Record<string, unknown>).group_uid ?? "") === String(group?.uid ?? ""));
+  const policy = ensureGroupPolicy(save);
+  const external = save.track_b?.external_offers ?? [];
+  const completedExternal = external.filter((row) => row.completed).length;
+  const streamHours = policy.stream.showroom_hours_per_week + policy.stream.tiktok_hours_per_week + policy.stream.instagram_hours_per_week;
+  const activityCard = (title: string, body: string, action: string, nav: DesktopNavId) => `
+    <section class="fm-card">
+      <h3 class="content-h3">${htmlEsc(title)}</h3>
+      <p>${htmlEsc(body)}</p>
+      <button type="button" class="fm-btn" data-nav="${htmlEsc(nav)}">${htmlEsc(action)}</button>
+    </section>`;
+
+  return `<section class="content-panel">
+    <div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(name)}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Status — recent operating results", "Status — 近期运营结果"))}</p></div><button type="button" class="fm-btn" data-my-group-detail>${htmlEsc(localizedLiteral(lang, "Open group detail", "查看组合资料"))}</button></div>
+    <div class="dashboard-grid">
+      ${activityCard(localizedLiteral(lang, "Fanwork", "特典 / Fanwork"), localizedLiteral(lang, `${tokutenSessions} recorded sessions in the recent ledger · ¥${tokutenRevenue.toLocaleString("ja-JP")} recorded tokuten revenue.`, `近期账本记录 ${tokutenSessions} 场 · 特典收入 ¥${tokutenRevenue.toLocaleString("ja-JP")}.`), localizedLiteral(lang, "Open Finance", "查看财务"), "Finances")}
+      ${activityCard(localizedLiteral(lang, "Live", "演出"), localizedLiteral(lang, `${recentLives.length} recent lives${averageSatisfaction == null ? "" : ` · average Satisfaction ${averageSatisfaction}`}${nextLive ? ` · next: ${String(nextLive.title ?? nextLive.venue ?? nextLive.start_date)}` : ""}.`, `近期 ${recentLives.length} 场${averageSatisfaction == null ? "" : ` · 平均满意度 ${averageSatisfaction}`}${nextLive ? ` · 下一场：${String(nextLive.title ?? nextLive.venue ?? nextLive.start_date)}` : ""}.`), localizedLiteral(lang, "Open Live", "进入演出"), "Lives")}
+      ${activityCard(localizedLiteral(lang, "Music", "音乐"), localizedLiteral(lang, `${managedSongs.length} catalogued tracks for this group.`, `本团曲库已收录 ${managedSongs.length} 首歌曲。`), localizedLiteral(lang, "Open Making", "进入制作"), "Making")}
+      ${activityCard("SNS", localizedLiteral(lang, `${Object.values(policy.sns.by_member).filter((flags) => flags.x || flags.tiktok || flags.instagram || flags.youtube).length} members have a recorded channel plan.`, `${Object.values(policy.sns.by_member).filter((flags) => flags.x || flags.tiktok || flags.instagram || flags.youtube).length} 名成员已有频道安排。`), localizedLiteral(lang, "Open Policy", "查看 Policy"), "Policy")}
+      ${activityCard(localizedLiteral(lang, "Streaming", "直播"), localizedLiteral(lang, `${streamHours} scheduled channel-hours per week.`, `每周计划频道时数：${streamHours} 小时。`), localizedLiteral(lang, "Open Policy", "查看 Policy"), "Policy")}
+      ${activityCard(localizedLiteral(lang, "External Work", "外务"), localizedLiteral(lang, `${completedExternal} completed staff-managed assignments recorded.`, `已记录 ${completedExternal} 项由 staff 执行的外务。`), localizedLiteral(lang, "Open Inbox", "查看收件箱"), "Inbox")}
+    </div>
+  </section>`;
+}
+
+function renderMyIdolsStatus(save: GameSavePayload, selectedUid: string | null, lang: UiLanguage): string {
+  const members = managedMemberRows(save);
+  const tb = save.track_b;
+  const selected = selectedUid ? members.find((idol) => String(idol.uid ?? "") === selectedUid) ?? null : null;
+  if (selected) {
+    const uid = String(selected.uid ?? "");
+    const state = tb?.members?.[uid];
+    const issues = [state?.vocal_issue ? localizedLiteral(lang, "Vocal issue", "声乐问题") : "", state?.physical_issue ? localizedLiteral(lang, "Physical issue", "身体问题") : ""].filter(Boolean).join(" · ") || localizedLiteral(lang, "No active issue recorded", "未记录进行中的问题");
+    return `<section class="content-panel"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(String(selected.name ?? selected.name_romanji ?? uid))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Status — current operational context", "Status — 当前运营状态"))}</p></div><div><button type="button" class="fm-btn" data-my-idols-back>${htmlEsc(localizedLiteral(lang, "My Idols", "我的成员"))}</button> <button type="button" class="fm-btn" data-my-idol-detail="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Open detail", "查看资料"))}</button></div></div><dl class="basic-dl fm-card"><div><dt>${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}</dt><dd>${htmlEsc(conditionLabel(state?.condition, lang))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}</dt><dd>${htmlEsc(String(Math.round(num(selected.morale, 50))))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Confidence", "信心"))}</dt><dd>${htmlEsc(String(Math.round(num(state?.confidence, 50))))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Issue / rest", "问题 / 休息"))}</dt><dd>${htmlEsc(issues)}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Average fanwork sell-through", "平均特典售罄率"))}</dt><dd>${htmlEsc(`${Math.round(num(state?.sell_out_rate, 0.5) * 100)}%`)}</dd></div></dl></section>`;
+  }
+  const rows = members.map((idol) => {
+    const uid = String(idol.uid ?? "");
+    const state = tb?.members?.[uid];
+    const issue = state?.vocal_issue || state?.physical_issue;
+    const unavailable = isIdolOnHiatus(idol, String(save.current_date ?? ""));
+    const issueLabel = unavailable ? localizedLiteral(lang, "Unavailable", "无法出勤") : issue ? localizedLiteral(lang, "Issue", "问题") : localizedLiteral(lang, "Normal", "正常");
+    return `<tr><td><button type="button" class="text-action-btn" data-my-idol-status="${htmlEsc(uid)}">${htmlEsc(String(idol.name ?? idol.name_romanji ?? uid))}</button></td><td>${htmlEsc(conditionLabel(state?.condition, lang))}</td><td class="num">${Math.round(num(idol.morale, 50))}</td><td class="num">${Math.round(num(state?.confidence, 50))}</td><td class="num">${Math.round(num(state?.sell_out_rate, 0.5) * 100)}%</td><td>${htmlEsc(issueLabel)}</td></tr>`;
+  }).join("");
+  return `<section class="content-panel"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "My Idols", "我的成员"))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Fuzzy operational comparison; exact hidden values are not exposed here.", "用于横向比较的模糊运营状态；不展示隐藏精确数值。"))}</p></div></div><div class="table-scroll"><table class="fm-table"><thead><tr><th>${htmlEsc(localizedLiteral(lang, "Idol", "成员"))}</th><th>${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}</th><th>${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}</th><th>${htmlEsc(localizedLiteral(lang, "Confidence", "信心"))}</th><th>${htmlEsc(localizedLiteral(lang, "Avg sell-through", "平均售罄率"))}</th><th>${htmlEsc(localizedLiteral(lang, "Issue / Rest", "问题 / 休息"))}</th></tr></thead><tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed members.", "没有本团成员。"))}</td></tr>`}</tbody></table></div></section>`;
+}
+
+function renderMeeting(save: GameSavePayload, lang: UiLanguage): string {
+  const current = [...save.inbox.notifications].find((item) => item.choice_kind === "policy_meeting" && item.choice_status === "pending");
+  const last = [...save.inbox.notifications].sort((a, b) => String(b.created_at).localeCompare(String(a.created_at))).find((item) => item.choice_kind === "policy_meeting" && item.choice_status === "resolved");
+  if (!current) return `<section class="content-panel"><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Meeting", "会议"))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "No Current Meeting. Routine work is proceeding under Policy and staff defaults.", "没有进行中的会议。日常工作正按 Policy 与 staff 默认方案执行。"))}</p>${last ? `<section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Last Meeting", "上次会议"))}</h3><p>${htmlEsc(last.body)}</p></section>` : ""}<button type="button" class="fm-btn" data-nav="Policy">${htmlEsc(localizedLiteral(lang, "Open Policy", "查看 Policy"))}</button></section>`;
+  return `<section class="content-panel"><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Meeting", "会议"))}</h2><section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Introduction", "议题"))}</h3><p>${htmlEsc(current.body)}</p><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Staff / Idol opinions", "Staff / 成员意见"))}</h3><p>${htmlEsc(localizedLiteral(lang, "Staff recommends applying the existing Agency and Team Policy unless you select a project-specific alternative.", "Staff 建议沿用现有 Agency 与 Team Policy，除非你为本项目选择具体例外。"))}</p><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Options", "选项"))}</h3><p>${htmlEsc(localizedLiteral(lang, "Edit the proposal below. It is a meeting draft: routine simulation continues under the approved Policy until you submit this resolution.", "在下方编辑提案。这是会议草案：提交决议前，日常模拟仍按已批准的 Policy 运行。"))}</p>${renderSchedulePolicy(save, lang, { editable: true })}<button type="button" class="fm-btn fm-btn-accent" data-meeting-submit="${htmlEsc(current.uid)}">${htmlEsc(localizedLiteral(lang, "Submit Resolution", "提交决议"))}</button></section></section>`;
+}
+
 export function renderMainContent(
   ctx: {
     browseMode: boolean;
@@ -5769,6 +5889,14 @@ export function renderMainContent(
   switch (view) {
     case "Inbox":
       return renderInbox(save, inboxSelectedUid, simulationBusy, attentionActionUid ?? null, lang);
+    case "Meeting":
+      return renderMeeting(save, lang);
+    case "MyGroup":
+      return renderMyGroupStatus(save, lang);
+    case "MyIdols":
+      return renderMyIdolsStatus(save, idolDetailUid, lang);
+    case "Policy":
+      return `<section class="content-panel schedule-view"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Policy", "Policy"))}</h2><p class="content-lead">${htmlEsc(localizedLiteral(lang, "Persistent Agency and Team defaults used by staff for routine work. Event overrides belong to their relevant meetings, not Finance.", "供 staff 处理日常工作的 Agency 与 Team 持久默认值。具体活动的例外只在对应会议中设置，不在 Finance 中修改。"))}</p></div><button type="button" class="fm-btn fm-btn-accent" data-open-policy-meeting>${htmlEsc(localizedLiteral(lang, "Call Policy Meeting", "召开 Policy 会议"))}</button></div>${renderSchedulePolicy(save, lang)}</section>`;
     case "Finances":
       return renderFinancesProjectionView(save, financeHistoryRange, financeTab, lang);
     case "Idols": {
@@ -6197,11 +6325,10 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     feedbackModalOpen,
     liveModeSession,
   } = p;
-  const finances = save ? getActiveFinances(save) : null;
   const grp = save ? getPrimaryGroup(save) : null;
   const displayName =
     grp && typeof grp.name === "string" ? grp.name : browseData?.preset?.name ?? preview?.group?.name ?? "-";
-  const titleClickable = htmlEsc(displayName);
+  const titleClickable = `<button type="button" class="fm-game-title-sub fm-group-shortcut" data-nav="MyGroup" title="${htmlEsc(t(lang, "shell_managed_group"))}">${htmlEsc(displayName)}</button>`;
   const dateStr =
     save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? browseData?.preset.opening_date ?? "";
   const dateLabel = formatLongDate(dateStr || undefined);
@@ -6265,9 +6392,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     attentionActionUid: p.attentionActionUid ?? null,
   });
 
-  const cashPill = finances
-    ? `<div class="fm-cash-pill" title="${htmlEsc(t(lang, "shell_cash_on_hand"))}"><span class="fm-cash-label">JPY</span> ${finances.cash_yen.toLocaleString("ja-JP")}</div>`
-    : `<div class="fm-cash-pill content-muted" title="${htmlEsc(t(lang, "shell_browse"))}">${htmlEsc(t(lang, "shell_browse"))}</div>`;
+  const rosterSummary = `<button type="button" class="fm-status-item fm-member-status-summary" data-nav="MyIdols" ${browseMode ? "disabled" : ""}>${htmlEsc(memberStatusSummary(save, lang))}</button>`;
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
   const nextHint =
@@ -6280,8 +6405,8 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
         : t(lang, "shell_advance_one_day");
 
   const nextDayBtn = browseMode
-    ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
-    : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy || liveModeSession ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc(t(lang, "shell_next_day"))}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
+    ? `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" disabled title="${htmlEsc(t(lang, "shell_not_in_browse"))}"><span id="btn-next-day-label">${htmlEsc(localizedLiteral(lang, "Continue", "继续"))}</span></button><span class="fm-next-spinner" aria-hidden="true"></span></div>`
+    : `<div class="fm-next-cluster"><button type="button" class="fm-btn fm-btn-continue" id="btn-next-day" ${p.simulationBusy || liveModeSession ? "disabled" : ""} title="${htmlEsc(nextHint)}"><span id="btn-next-day-label">${htmlEsc(localizedLiteral(lang, "Continue", "继续"))}</span></button><span class="fm-next-spinner${p.simulationBusy ? " is-active" : ""}" aria-hidden="true"></span></div>`;
 
   const ver = save ? String(save.version ?? "-") : browseData ? t(lang, "shell_browse") : "-";
   const statusLeft = browseMode ? t(lang, "shell_browse") : t(lang, "shell_save_version", { version: save?.version ?? "?" });
@@ -6313,14 +6438,14 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
       </details>
       <button type="button" class="fm-btn fm-btn-history" ${canGoBack && !liveModeSession ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_back"))}" aria-label="${htmlEsc(t(lang, "shell_back"))}" data-history="back">&lsaquo;</button>
       <button type="button" class="fm-btn fm-btn-history" ${canGoForward && !liveModeSession ? "" : "disabled"} title="${htmlEsc(t(lang, "shell_forward"))}" aria-label="${htmlEsc(t(lang, "shell_forward"))}" data-history="fwd">&rsaquo;</button>
-      <h1 class="fm-game-title"><span class="fm-game-title-main">IDOL PRODUCER</span><span class="fm-game-title-sub" title="${htmlEsc(t(lang, "shell_managed_group"))}">${browseMode ? htmlEsc(t(lang, "shell_browse_database")) : titleClickable}</span></h1>
+      <h1 class="fm-game-title"><span class="fm-game-title-main">IDOL PRODUCER</span>${browseMode ? `<span class="fm-game-title-sub">${htmlEsc(t(lang, "shell_browse_database"))}</span>` : titleClickable}</h1>
     </div>
     <div class="fm-top-bar-center">
-      <button type="button" class="fm-date-btn" id="btn-goto-schedule" data-nav="Schedule" title="${htmlEsc(t(lang, "shell_open_schedule"))}" ${liveModeSession ? "disabled" : ""}>${htmlEsc(dateLabel)}</button>
+      <span class="fm-date-btn" aria-label="${htmlEsc(localizedLiteral(lang, "Simulation date", "模拟日期"))}">${htmlEsc(dateLabel)}</span>
     </div>
     <div class="fm-top-bar-right">
+      ${rosterSummary}
       ${nextDayBtn}
-      ${cashPill}
     </div>
   </header>
 
