@@ -676,7 +676,7 @@ function selectedScheduledLiveRecord(): Record<string, unknown> | null {
 
 function normalizeLiveTypeForForm(value: unknown): NewLiveFormState["liveType"] {
   const raw = String(value ?? "").trim();
-  return raw === "Concert" || raw === "Taiban" || raw === "Festival" ? raw : "Routine";
+  return raw === "Concert" || raw === "Taiban" || raw === "Festival" || raw === "collaborate_live" ? raw : "Routine";
 }
 
 function programItemsFromLive(live: Record<string, unknown>): LiveProgramItem[] {
@@ -847,13 +847,6 @@ function markInboxOpened(uid: string | null): void {
   row.read = true;
 }
 
-function oldestUnreadInboxUid(rows: { uid: string; read: boolean }[]): string | null {
-  for (let i = rows.length - 1; i >= 0; i--) {
-    if (!rows[i]?.read) return rows[i]?.uid ??  null;
-  }
-  return null;
-}
-
 function notificationTimestampMs(row: { created_at?: string; date?: string }): number {
   const created = String(row.created_at ??  "").trim();
   if (created) {
@@ -997,7 +990,7 @@ function trainingFormationAllMembers(): FormationEditorMember[] {
 }
 
 function syncTrainingFormationEditorState(): void {
-  if (!save || browseMode || currentView !== "Training" || trainingTab !== "formation") {
+  if (!save || browseMode || currentView !== "Training" || (trainingTab as string) !== "formation") {
     return;
   }
   if (liveModeSession) return;
@@ -1037,7 +1030,7 @@ function openTrainingFormationForSong(songUid: string): void {
   if (!uid || !save || browseMode) return;
   navigate(() => {
     currentView = "Training";
-    trainingTab = "formation";
+    trainingTab = "formation" as TrainingTab;
     trainingFormationSongUid = uid;
     if (!liveModeSession) {
       formationEditorState = null;
@@ -1142,7 +1135,7 @@ function mountFormationEditorIfNeeded(): void {
     return;
   }
 
-  if (currentView === "Training" && trainingTab === "formation") {
+  if (currentView === "Training" && (trainingTab as string) === "formation") {
     const host = appRoot.querySelector("[data-formation-editor]");
     if (!host) return;
     bindFormationEditor(host, formationEditorState, uiLang, {
@@ -1793,11 +1786,11 @@ function roleBenchmarkStatScore(idol: Record<string, unknown>, key: RoleBenchmar
     case "singing":
       return avg([a.technical.pitch, a.technical.tone, a.technical.breath, a.technical.power]);
     case "dancing":
-      return avg([a.technical.rhythm, a.technical.grace, a.physical.agility, a.physical.stamina]);
+      return avg([a.technical.rhythm, a.technical.stage_presence, a.physical.agility, a.physical.stamina]);
     case "teamwork":
-      return avg([a.mental.teamwork, a.mental.determination, a.hidden?.professionalism ?? 12]);
+      return avg([a.mental.teamwork, a.hidden?.professionalism ?? 12, a.mental.talking]);
     case "content":
-      return avg([a.mental.talking, a.mental.humor, a.mental.clever]);
+      return avg([a.mental.talking, a.mental.humor, a.mental.wit]);
     case "streaming":
       return avg([a.mental.talking, a.mental.humor, a.mental.teamwork]);
     case "fashion":
@@ -2206,6 +2199,12 @@ function paintGame(): void {
   if (!browseMode && save) {
     trainingRoleBenchmarkPreferences = roleBenchmarkPreferencesFromSave(save);
     writeRoleBenchmarkPreferencesToSave(save, trainingRoleBenchmarkPreferences);
+    const currentPolicyMeeting = currentView === "Meeting" && save.inbox.notifications.some(
+      (item) => item.choice_kind === "policy_meeting" && item.choice_status === "pending",
+    );
+    if (currentPolicyMeeting && !save.policy_meeting_draft) {
+      save.policy_meeting_draft = JSON.parse(JSON.stringify(ensureGroupPolicy(save)));
+    }
   }
   if (!browseMode) syncFestivalLivesIfPossible();
   if (!browseMode && save && currentView === "Making") {
@@ -2219,7 +2218,7 @@ function paintGame(): void {
     !browseMode &&
     save &&
     currentView === "Training" &&
-    trainingTab === "formation" &&
+    (trainingTab as string) === "formation" &&
     formationEditorState &&
     !liveModeSession
       ? renderFormationEditor(formationEditorState, uiLang, { showClose: false, allowVideo: false })
@@ -2447,6 +2446,84 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("click", (ev) => {
     const t = ev.target as HTMLElement;
+    const myGroupDetail = t.closest<HTMLElement>("[data-my-group-detail]");
+    if (myGroupDetail && save && !browseMode) {
+      navigate(() => {
+        currentView = "Groups";
+        groupDetailUid = String(save?.managing_group_uid ?? "") || null;
+        idolDetailUid = null;
+      });
+      return;
+    }
+    const myIdolStatus = t.closest<HTMLElement>("[data-my-idol-status]");
+    if (myIdolStatus && save && !browseMode) {
+      const uid = String(myIdolStatus.getAttribute("data-my-idol-status") ?? "");
+      if (uid) navigate(() => {
+        currentView = "MyIdols";
+        idolDetailUid = uid;
+        groupDetailUid = null;
+      });
+      return;
+    }
+    const myIdolsBack = t.closest<HTMLElement>("[data-my-idols-back]");
+    if (myIdolsBack && save && !browseMode) {
+      navigate(() => { currentView = "MyIdols"; idolDetailUid = null; });
+      return;
+    }
+    const myIdolDetail = t.closest<HTMLElement>("[data-my-idol-detail]");
+    if (myIdolDetail && save && !browseMode) {
+      const uid = String(myIdolDetail.getAttribute("data-my-idol-detail") ?? "");
+      if (uid) navigate(() => { currentView = "Idols"; idolDetailUid = uid; groupDetailUid = null; });
+      return;
+    }
+    const openPolicyMeeting = t.closest<HTMLElement>("[data-open-policy-meeting]");
+    if (openPolicyMeeting && save && !browseMode) {
+      const existing = save.inbox.notifications.find(
+        (item) => item.choice_kind === "policy_meeting" && item.choice_status === "pending",
+      );
+      const meeting = existing ?? addNotification(save, {
+        title: "Policy Meeting",
+        body: "Review Agency and Team Policy. Routine work keeps using the current defaults unless this meeting changes direction.",
+        sender: "Staff",
+        category: "decision",
+        level: "normal",
+        isoDate: isoDatePart(save.current_date ?? save.game_start_date ?? ""),
+        createdTime: "09:00:00",
+        unread: true,
+        dedupeKey: `policy-meeting|${isoDatePart(save.current_date ?? save.game_start_date ?? "")}`,
+        choiceKind: "policy_meeting",
+        choiceStatus: "pending",
+      });
+      if (!save.policy_meeting_draft) {
+        save.policy_meeting_draft = JSON.parse(JSON.stringify(ensureGroupPolicy(save)));
+      }
+      navigate(() => {
+        currentView = "Meeting";
+        inboxSelectedUid = meeting.uid;
+      });
+      return;
+    }
+    const meetingSubmit = t.closest<HTMLElement>("[data-meeting-submit]");
+    if (meetingSubmit && save && !browseMode) {
+      const uid = String(meetingSubmit.getAttribute("data-meeting-submit") ?? "");
+      if (uid) {
+        if (save.policy_meeting_draft) {
+          save.group_policy = save.policy_meeting_draft;
+          delete save.policy_meeting_draft;
+        }
+        save = acknowledgeInboxNotification(save, uid);
+        const item = save.inbox.notifications.find((row) => row.uid === uid);
+        if (item) {
+          item.choice_status = "resolved";
+          item.requires_confirmation = false;
+          item.read = true;
+        }
+        currentView = "Inbox";
+        inboxSelectedUid = uid;
+        paintGame();
+      }
+      return;
+    }
     const calNav = t.closest<HTMLElement>("[data-sched-cal-delta]");
     if (calNav && save && !browseMode && currentView === "Schedule") {
       const root = appRoot.querySelector("[data-sched-cal-root]");
@@ -2476,9 +2553,10 @@ function paintGame(): void {
       return;
     }
     const policyPrerecordAll = t.closest<HTMLElement>("[data-policy-prerecord-all]");
-    if (policyPrerecordAll && save && !browseMode && currentView === "Schedule") {
+    if (policyPrerecordAll && save && !browseMode && currentView === "Meeting") {
       const mode = policyPrerecordAll.getAttribute("data-policy-prerecord-all");
-      const policy = ensureGroupPolicy(save);
+      const policy = save.policy_meeting_draft;
+      if (!policy) return;
       const grp = getPrimaryGroup(save);
       const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
       const next: Record<string, boolean> = { ...policy.live.prerecorded_vocals_by_member };
@@ -2487,18 +2565,6 @@ function paintGame(): void {
         else delete next[uid];
       }
       policy.live.prerecorded_vocals_by_member = next;
-      paintGame();
-      return;
-    }
-    const policyTrainingApply = t.closest<HTMLElement>("[data-policy-training-apply-all]");
-    if (policyTrainingApply && save && !browseMode && currentView === "Schedule") {
-      const policy = ensureGroupPolicy(save);
-      const grp = getPrimaryGroup(save);
-      const memberUids = Array.isArray(grp?.member_uids) ? grp!.member_uids.map((x) => String(x)) : [];
-      for (const uid of memberUids) {
-        save.training_intensity[uid] = { ...policy.training.default_intensity };
-        save.training_focus_skill[uid] = policy.training.default_focus;
-      }
       paintGame();
       return;
     }
@@ -2771,15 +2837,10 @@ function paintGame(): void {
       if (
         tab === "assignments" ||
         tab === "roster" ||
-        tab === "roles" ||
-        tab === "songs" ||
-        tab === "formation"
+        tab === "songs"
       ) {
         navigate(() => {
-          if (trainingTab === "formation" && tab !== "formation" && !liveModeSession) {
-            formationEditorState = null;
-          }
-          trainingTab = tab;
+          trainingTab = tab as TrainingTab;
         });
       }
       return;
@@ -2789,7 +2850,7 @@ function paintGame(): void {
       const uid = trainingFormationSongPick.getAttribute("data-training-formation-song");
       if (uid) {
         navigate(() => {
-          trainingTab = "formation";
+          trainingTab = "formation" as TrainingTab;
           trainingFormationSongUid = uid;
           if (!liveModeSession) formationEditorState = null;
         });
@@ -3343,10 +3404,10 @@ function paintGame(): void {
     const openTrainingView = t.closest<HTMLElement>("[data-open-training-view]");
     if (openTrainingView && save && !browseMode) {
       const tab = openTrainingView.getAttribute("data-open-training-view");
-      if (tab === "assignments" || tab === "roster" || tab === "formation") {
+      if (tab === "assignments" || tab === "roster" || tab === "songs") {
         navigate(() => {
           currentView = "Training";
-          trainingTab = tab;
+          trainingTab = tab as TrainingTab;
         });
       }
       return;
@@ -3932,11 +3993,12 @@ function paintGame(): void {
       return;
     }
     const policySl = t.closest<HTMLInputElement>("[data-policy-training-slider]");
-    if (policySl && save && !browseMode && currentView === "Schedule" && scheduleTab === "policy") {
+    if (policySl && save && !browseMode && currentView === "Meeting") {
       const field = String(policySl.getAttribute("data-field") ?? "").trim();
       const v = Math.max(0, Math.min(5, Number(policySl.value) || 0));
       if (field === "sing" || field === "dance" || field === "physical" || field === "target") {
-        const policy = ensureGroupPolicy(save);
+        const policy = save.policy_meeting_draft;
+        if (!policy) return;
         policy.training.default_intensity[field] = v;
         const valEl = appRoot.querySelector(`[data-policy-training-val="${field}"]`);
         if (valEl) valEl.textContent = String(v);
@@ -3947,8 +4009,9 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("change", (ev) => {
     const t = ev.target as HTMLElement;
-    if (save && !browseMode && currentView === "Schedule" && scheduleTab === "policy") {
-      const policy = ensureGroupPolicy(save);
+    if (save && !browseMode && currentView === "Meeting") {
+      const policy = save.policy_meeting_draft;
+      if (!policy) return;
       const prerecord = t.closest<HTMLInputElement>("[data-policy-prerecord-uid]");
       if (prerecord) {
         const uid = String(prerecord.getAttribute("data-policy-prerecord-uid") ?? "").trim();
@@ -3961,6 +4024,9 @@ function paintGame(): void {
       const tokutenkai = t.closest<HTMLInputElement>("[data-policy-tokutenkai]");
       if (tokutenkai) {
         policy.live.tokutenkai_enabled = tokutenkai.checked;
+        policy.operating.live_default_tokuten_attachment = tokutenkai.checked;
+        if (tokutenkai.checked && policy.team.fanwork_tokuten === "disabled") policy.team.fanwork_tokuten = "standard";
+        if (!tokutenkai.checked) policy.team.fanwork_tokuten = "disabled";
         return;
       }
       const goods = t.closest<HTMLInputElement>("[data-policy-goods]");
@@ -4026,6 +4092,16 @@ function paintGame(): void {
       const trainingFocus = t.closest<HTMLSelectElement>("[data-policy-training-focus]");
       if (trainingFocus) {
         policy.training.default_focus = String(trainingFocus.value ?? "talking");
+        return;
+      }
+      const teamDirection = t.closest<HTMLSelectElement>("[data-policy-team]");
+      if (teamDirection) {
+        const key = String(teamDirection.getAttribute("data-policy-team") ?? "");
+        const value = String(teamDirection.value ?? "");
+        if (key === "workload_target" && ["light", "balanced", "high", "very_high"].includes(value)) policy.team.workload_target = value as typeof policy.team.workload_target;
+        else if (key === "rest_priority" && ["low", "normal", "high"].includes(value)) policy.team.rest_priority = value as typeof policy.team.rest_priority;
+        else if (key === "live_frequency" && ["low", "normal", "high"].includes(value)) policy.team.live_frequency = value as typeof policy.team.live_frequency;
+        else if (key === "role_stability" && ["stable", "balanced", "rotational"].includes(value)) policy.team.role_stability = value as typeof policy.team.role_stability;
         return;
       }
     }
@@ -4352,11 +4428,13 @@ function paintGame(): void {
   document.getElementById("btn-next-day")?.addEventListener("click", () => {
     if (!save || browseMode || simulationBusy) return;
     sortNotificationsInPlace(save.inbox.notifications);
-    const unreadUid = oldestUnreadInboxUid(save.inbox.notifications);
-    if (unreadUid) {
+    const currentMeeting = save.inbox.notifications.find(
+      (item) => item.choice_kind === "policy_meeting" && item.choice_status === "pending",
+    );
+    if (currentMeeting) {
       attentionActionUid = null;
-      currentView = "Inbox";
-      inboxSelectedUid = unreadUid;
+      currentView = "Meeting";
+      inboxSelectedUid = currentMeeting.uid;
       paintGame();
       return;
     }
