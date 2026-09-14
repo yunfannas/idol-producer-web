@@ -4,7 +4,6 @@ import type { GameSavePayload } from "../../save/gameSaveSchema";
 import { getLetterTierFromGroup, getPrimaryGroup } from "../../save/gameSaveSchema";
 import { financeAudienceProfileForGroup } from "../financeSystem";
 import type { LetterTier } from "../types";
-import { toBaseTier } from "../types";
 import type { ActiveIssue, AttributesV2, GroupStrategyState, MemberRuntimeState, SongWorkProfile, StaffPackageState, ThemeTag, TrackBState } from "./types";
 
 export const THEME_DIMENSIONS: Record<string, ThemeTag[]> = {
@@ -187,7 +186,8 @@ export function ensureTrackB(save: GameSavePayload): TrackBState {
   const old = save.track_b as unknown as Record<string, unknown> | undefined;
   const group = getPrimaryGroup(save); const opening = isoDatePart(save.game_start_date ?? save.current_date ?? save.scenario_context.startup_date);
   if (old?.schema === "track_b_v2" && old.members && Object.keys(old.members as object).length) return normalizeV2State(save, old as unknown as TrackBState, opening);
-  const letterTier = (getLetterTierFromGroup(group) || "D") as LetterTier; const baseTier = toBaseTier(letterTier);
+  const letterTier = (getLetterTierFromGroup(group) || "D") as LetterTier;
+  const baseTier = letterTier === "I" || letterTier === "F" ? "E" : letterTier;
   const oldFans = old?.fans && typeof old.fans === "object" ? old.fans as Record<string, unknown> : {};
   const fin = financeAudienceProfileForGroup({ groupName: group?.name, groupRomaji: group?.name_romanji, letterTier, fans: num(group?.fans) });
   const ratio = ({ S: [0.78, .16, .06], A: [.75,.18,.07], B: [.72,.2,.08], C:[.7,.21,.09], D:[.71,.22,.07], E:[.68,.23,.09] } as Record<string, number[]>)[baseTier] ?? [.71,.22,.07];
@@ -199,7 +199,7 @@ export function ensureTrackB(save: GameSavePayload): TrackBState {
   for (const uid of memberUids) {
     const idol = idols.find((r) => String(r.uid ?? "") === uid) ?? { uid }; const attributes = mapLegacyAttributesToV2(idol);
     const theme_skill = Object.fromEntries(ALL_THEMES.map((theme) => [theme, initialThemeSkill(attributes, theme)]));
-    members[uid] = { idol_uid: uid, attributes, condition: legacyCondition(oldMembers[uid], idol), vocal_issue: null, physical_issue: null, confidence: clamp(num(idol.morale, 70) + 5, 20, 90), personal_public: ["C","B","A","S"].includes(baseTier) ? Math.round(num(idol.x_followers) * .04) : 0, otaku_affinity: .12, core_share: memberUids.length ? fans.core / memberUids.length : 0, sell_out_rate: .5, theme_skill, theme_xp: {}, theme_last_used: {}, weekly_condition_sum: 0, weekly_condition_min: 100, weekly_samples: 0, weekly_exposure_impression: 0 };
+    members[uid] = { idol_uid: uid, attributes, condition: legacyCondition(oldMembers[uid], idol), vocal_issue: null, physical_issue: null, confidence: clamp(num(idol.morale, 70) + 5, 20, 90), personal_public: ["C","B","A","S"].includes(baseTier) ? Math.round(num(idol.x_followers) * .04) : 0, otaku_affinity: .12, core_share: memberUids.length ? fans.core / memberUids.length : 0, sell_out_rate: null, recent_live_performance: null, theme_skill, theme_xp: {}, theme_last_used: {}, weekly_condition_sum: 0, weekly_condition_min: 100, weekly_samples: 0, weekly_exposure_impression: 0 };
     syncCondition(idol, members[uid]!);
   }
   const songs = (save.database_snapshot.songs as Record<string, unknown>[]).filter((s) => String(s.group_uid ?? "") === String(group?.uid ?? ""));

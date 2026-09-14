@@ -64,7 +64,7 @@ import { akishibuLineupChronicleHref, gameManualHref, ikonoijoyBest10Href, langu
 import { resolveMemberColorCss } from "./memberColor";
 import { tutorialMenuLabel } from "./tutorialOverlay";
 import { renderFullWikiPanel, renderWikiPanel } from "./wiki";
-import { notificationRequiresAck, sortNotificationsInPlace } from "../save/inbox";
+import { isMeetingNotification, meetingPayload, notificationRequiresAck, sortNotificationsInPlace } from "../save/inbox";
 import { renderGroupDetailPage } from "./groupDetailPage";
 import {
   isSongHiddenFromDisplay,
@@ -1312,8 +1312,12 @@ function renderInbox(
 ): string {
   const rows = [...save.inbox.notifications];
   sortNotificationsInPlace(rows);
+  const meetings = rows.filter(isMeetingNotification);
+  const currentMeeting = meetings.find((item) => item.choice_status === "pending") ?? null;
+  const lastMeeting = meetings.find((item) => item.choice_status === "resolved") ?? null;
+  const meetingHub = `<section class="fm-card inbox-meeting-hub"><div><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Current Meeting", "当前会议"))}</h3><p>${htmlEsc(currentMeeting ? currentMeeting.title : localizedLiteral(lang, "No Current Meeting", "没有进行中的会议"))}</p></div>${currentMeeting ? `<button type="button" class="fm-btn fm-btn-accent" data-nav="Meeting">${htmlEsc(localizedLiteral(lang, "Open Meeting", "进入会议"))}</button>` : ""}<div><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Last Meeting", "上次会议"))}</h3><p>${htmlEsc(lastMeeting ? lastMeeting.title : localizedLiteral(lang, "No prior meeting", "尚无已完成会议"))}</p></div></section>`;
   if (!rows.length) {
-    return `<section class="content-panel"><p class="content-muted">${htmlEsc(t(lang, "inbox_empty"))}</p></section>`;
+    return `<section class="content-panel">${meetingHub}<p class="content-muted">${htmlEsc(t(lang, "inbox_empty"))}</p></section>`;
   }
   const sel = selectedUid && rows.some((r) => r.uid === selectedUid) ? selectedUid : null;
   const selected = sel ? rows.find((r) => r.uid === sel) ?? null : null;
@@ -1821,6 +1825,7 @@ function renderInbox(
       <h2 class="content-h2 inbox-h2">${htmlEsc(t(lang, "nav_inbox"))}</h2>
       <button type="button" class="fm-btn" id="btn-inbox-mark-all" ${markAllDisabled ? "disabled" : ""}>${htmlEsc(localizedLiteral(lang, "Mark all read", "全部标记已读"))}</button>
     </div>
+    ${meetingHub}
     <div class="inbox-split">
       <div class="inbox-list-col fm-card" role="navigation" aria-label="${htmlEsc(localizedLiteral(lang, "Messages", "消息列表"))}">${list}</div>
       <div class="inbox-detail-col">${detail}</div>
@@ -2094,12 +2099,10 @@ function renderTraining(
       const name = typeof r.name === "string" ? r.name : uid.slice(0, 8);
       const romaji = romajiFromRow(r);
       if (!save.training_intensity[uid]) {
-        const policy = ensureGroupPolicy(save);
-        save.training_intensity[uid] = { ...policy.training.default_intensity };
+        save.training_intensity[uid] = { sing: 0, dance: 0, physical: 0, target: 0 };
       }
       if (save.training_focus_skill[uid] == null || save.training_focus_skill[uid] === undefined) {
-        const policy = ensureGroupPolicy(save);
-        save.training_focus_skill[uid] = policy.training.default_focus;
+        save.training_focus_skill[uid] = "talking";
       }
       const intensity = safeTrainingRow(save.training_intensity[uid]);
       const load = trainingLoadFromRow(intensity);
@@ -2322,7 +2325,7 @@ function renderTraining(
       key: "teamwork" as const,
       label: localizedLiteral(lang, "Teamwork", "团队协作"),
       value: blendStrength(
-        attrScore((a) => [a.mental.teamwork, a.hidden?.professionalism ?? 12, a.mental.talking]),
+        attrScore((a) => [a.mental.teamwork, a.mental.creativity, a.mental.talking]),
         roleScore(["leader", "host", "call_leader"]),
         0.25,
       ),
@@ -4321,35 +4324,16 @@ function managedRosterForPolicy(
     .filter(Boolean);
 }
 
-function policyFocusOptionsHtml(selected: string, lang: UiLanguage): string {
-  return FOCUS_SKILL_OPTIONS.map((opt) => {
-    const lab =
-      opt === ""
-        ? localizedLiteral(lang, "- (none)", "无")
-        : opt === "talking"
-          ? localizedLiteral(lang, "talking", "谈话")
-          : opt === "host"
-            ? localizedLiteral(lang, "host", "主持")
-            : opt === "variety"
-              ? localizedLiteral(lang, "variety", "综艺")
-              : opt === "acting"
-                ? localizedLiteral(lang, "acting", "演技")
-                : opt === "make-up"
-                  ? localizedLiteral(lang, "make-up", "妆造")
-                  : opt === "model"
-                    ? localizedLiteral(lang, "model", "模特")
-                    : opt;
-    return `<option value="${htmlEsc(opt)}" ${selected === opt ? "selected" : ""}>${htmlEsc(lab)}</option>`;
-  }).join("");
-}
-
-function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage, options: { editable?: boolean } = {}): string {
+function renderSchedulePolicy(
+  save: GameSavePayload,
+  lang: UiLanguage,
+  options: { editable?: boolean; policy?: GroupPolicy } = {},
+): string {
   const editable = options.editable === true;
-  const policy = editable && save.policy_meeting_draft ? save.policy_meeting_draft : ensureGroupPolicy(save);
+  const policy = options.policy ?? ensureGroupPolicy(save);
   const roster = managedRosterForPolicy(save);
   const refillOn = policy.live.auto_goods_refill != null;
   const refillQty = policy.live.auto_goods_refill ?? 50;
-  const intensity = policy.training.default_intensity;
   const policySummary = `
     <section class="fm-card policy-section">
       <h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Agency & Team Policy", "Agency 与 Team Policy"))}</h3>
@@ -4358,7 +4342,7 @@ function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage, options: 
         <tr><th>${htmlEsc(localizedLiteral(lang, "Workload / recovery", "工作量 / 恢复"))}</th><td>${htmlEsc(`${policy.team.workload_target} / ${policy.team.rest_priority}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Live / allocation", "演出 / 分工"))}</th><td>${htmlEsc(`${policy.team.live_frequency} / ${policy.team.event_selectivity} · ${policy.team.role_stability}`)}</td></tr>
         <tr><th>${htmlEsc(localizedLiteral(lang, "Fanwork", "Fanwork"))}</th><td>${htmlEsc(`${policy.team.fanwork_tokuten} tokuten · ${policy.team.fanwork_online} online`)}</td><th>${htmlEsc(localizedLiteral(lang, "Promotion", "推广"))}</th><td>${htmlEsc(`${policy.team.promotion_focus} / ${policy.team.promotion_intensity}`)}</td></tr>
         <tr><th>${htmlEsc(localizedLiteral(lang, "Default tokuten", "默认特典会"))}</th><td>${htmlEsc(`${policy.operating.tokuten_event_duration_minutes} min · ${policy.operating.tokuten_extension_policy}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Signed cheki", "签名 cheki"))}</th><td>¥${policy.pricing.signed_cheki_yen.toLocaleString("ja-JP")}</td></tr>
-        ${policy.team.selection_policy_enabled ? `<tr><th>${htmlEsc(localizedLiteral(lang, "Selection Policy", "选拔 Policy"))}</th><td colspan="3">${htmlEsc(localizedLiteral(lang, "Enabled for this selection-based group.", "本团启用选拔制 Policy。"))}</td></tr>` : ""}
+        ${policy.selection ? `<tr><th>${htmlEsc(localizedLiteral(lang, "Selection Policy", "选拔 Policy"))}</th><td colspan="3">${htmlEsc(`${policy.selection.selection_size} members · ${policy.selection.center_policy} center · ${policy.selection.stability}`)}</td></tr>` : ""}
       </tbody></table></div>
       <p class="content-muted">${htmlEsc(localizedLiteral(lang, "These are staff defaults. They alter scheduling, offer handling and real resource use; they do not apply direct bonuses.", "这些是 staff 默认方案：它们改变排期、邀约处理和实际资源消耗，不直接提供数值加成。"))}</p>
     </section>`;
@@ -4413,13 +4397,6 @@ function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage, options: 
     )
     .join("");
 
-  const trainingSlider = (field: keyof typeof intensity, label: string) => {
-    const v = intensity[field];
-    return `<label class="training-slider"><span class="training-slider-l">${htmlEsc(label)}</span>
-      <input type="range" min="0" max="5" step="1" value="${v}" data-policy-training-slider data-field="${field}" aria-valuemin="0" aria-valuemax="5" />
-      <span class="training-slider-v" data-policy-training-val="${field}">${v}</span></label>`;
-  };
-
   return `
     <p class="content-muted">${htmlEsc(t(lang, "policy_lead"))}</p>
     ${policySummary}
@@ -4471,22 +4448,7 @@ function renderSchedulePolicy(save: GameSavePayload, lang: UiLanguage, options: 
         </table>
       </div>
     </section>
-    <section class="fm-card policy-section">
-      <h3 class="content-h3">${htmlEsc(t(lang, "policy_section_training"))}</h3>
-      <p class="content-muted">${htmlEsc(t(lang, "policy_training_hint"))}</p>
-      <h4 class="policy-subhead">${htmlEsc(t(lang, "policy_default_intensity"))}</h4>
-      <div class="training-sliders policy-training-sliders">
-        ${trainingSlider("sing", localizedLiteral(lang, "Sing", "唱功"))}
-        ${trainingSlider("dance", localizedLiteral(lang, "Dance", "舞蹈"))}
-        ${trainingSlider("physical", localizedLiteral(lang, "Physical", "体能"))}
-        ${trainingSlider("target", localizedLiteral(lang, "Target / misc", "重点 / 其他"))}
-        <label class="training-slider training-focus-slider-row">
-          <span class="training-slider-l">${htmlEsc(t(lang, "policy_default_focus"))}</span>
-          <select class="fm-select training-focus-select" data-policy-training-focus>${policyFocusOptionsHtml(policy.training.default_focus, lang)}</select>
-          <span class="training-slider-v" aria-hidden="true"> </span>
-        </label>
-      </div>
-    </section>`;
+    `;
 }
 
 function renderSchedule(
@@ -5642,6 +5604,13 @@ function conditionLabel(condition: unknown, lang: UiLanguage): string {
   return localizedLiteral(lang, "Rest recommended", "建议休息");
 }
 
+function outlookLabel(value: unknown, lang: UiLanguage): string {
+  const score = num(value, 50);
+  if (score >= 75) return localizedLiteral(lang, "High", "高");
+  if (score >= 45) return localizedLiteral(lang, "Steady", "稳定");
+  return localizedLiteral(lang, "Low", "低");
+}
+
 function memberStatusSummary(save: GameSavePayload | null, lang: UiLanguage): string {
   if (!save) return localizedLiteral(lang, "No roster", "无成员");
   let normal = 0;
@@ -5671,15 +5640,16 @@ function renderMyGroupStatus(save: GameSavePayload, lang: UiLanguage): string {
     .filter((row): row is Record<string, unknown> => Boolean(row && typeof row === "object"))
     .filter((row) => String(row.start_date ?? "").split("T")[0] >= now && String(row.status ?? "") !== "played")
     .sort((a, b) => String(a.start_date ?? "").localeCompare(String(b.start_date ?? "")))[0];
-  const ledger = getActiveFinances(save).ledger ?? [];
-  const recentTokuten = ledger.slice(-28);
-  const tokutenRevenue = recentTokuten.reduce((sum, row) => sum + num(row.tokutenkai_revenue, 0), 0);
-  const tokutenSessions = recentTokuten.filter((row) => num(row.tokutenkai_revenue, 0) > 0).length;
-  const managedSongs = save.database_snapshot.songs.filter((song) => String((song as Record<string, unknown>).group_uid ?? "") === String(group?.uid ?? ""));
-  const policy = ensureGroupPolicy(save);
+  const recentFanworkLives = recentLives.filter((row) => num(row.tokutenkai_capacity_tickets, 0) > 0);
+  const tokutenTickets = recentFanworkLives.reduce((sum, row) => sum + num(row.tokutenkai_actual_tickets, 0), 0);
+  const tokutenCapacity = recentFanworkLives.reduce((sum, row) => sum + num(row.tokutenkai_capacity_tickets, 0), 0);
+  const tokutenUtilization = tokutenCapacity > 0 ? Math.round((tokutenTickets / tokutenCapacity) * 100) : null;
+  const weeklyActivity = (save.track_b?.week_events ?? []).slice(-4);
+  const snsSignal = weeklyActivity.reduce((sum, event) => sum + event.sns, 0);
+  const streamingSignal = weeklyActivity.reduce((sum, event) => sum + event.streaming, 0);
+  const releasedProjects = save.cd_projects.filter((project) => project.released_digital_song_uids?.length);
   const external = save.track_b?.external_offers ?? [];
   const completedExternal = external.filter((row) => row.completed).length;
-  const streamHours = policy.stream.showroom_hours_per_week + policy.stream.tiktok_hours_per_week + policy.stream.instagram_hours_per_week;
   const activityCard = (title: string, body: string, action: string, nav: DesktopNavId) => `
     <section class="fm-card">
       <h3 class="content-h3">${htmlEsc(title)}</h3>
@@ -5690,11 +5660,11 @@ function renderMyGroupStatus(save: GameSavePayload, lang: UiLanguage): string {
   return `<section class="content-panel">
     <div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(name)}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Status — recent operating results", "Status — 近期运营结果"))}</p></div><button type="button" class="fm-btn" data-my-group-detail>${htmlEsc(localizedLiteral(lang, "Open group detail", "查看组合资料"))}</button></div>
     <div class="dashboard-grid">
-      ${activityCard(localizedLiteral(lang, "Fanwork", "特典 / Fanwork"), localizedLiteral(lang, `${tokutenSessions} recorded sessions in the recent ledger · ¥${tokutenRevenue.toLocaleString("ja-JP")} recorded tokuten revenue.`, `近期账本记录 ${tokutenSessions} 场 · 特典收入 ¥${tokutenRevenue.toLocaleString("ja-JP")}.`), localizedLiteral(lang, "Open Finance", "查看财务"), "Finances")}
+      ${activityCard(localizedLiteral(lang, "Fanwork", "特典 / Fanwork"), recentFanworkLives.length ? localizedLiteral(lang, `${recentFanworkLives.length} completed live-attached sessions · ${tokutenTickets}/${tokutenCapacity} tickets used${tokutenUtilization == null ? "" : ` (${tokutenUtilization}%)`}.`, `${recentFanworkLives.length} 场已完成的 live 后特典 · 使用 ${tokutenTickets}/${tokutenCapacity} 张${tokutenUtilization == null ? "" : `（${tokutenUtilization}%）`}.`) : localizedLiteral(lang, "No completed fanwork result yet.", "暂无已完成的特典结果。"), localizedLiteral(lang, "Open Live", "进入演出"), "Lives")}
       ${activityCard(localizedLiteral(lang, "Live", "演出"), localizedLiteral(lang, `${recentLives.length} recent lives${averageSatisfaction == null ? "" : ` · average Satisfaction ${averageSatisfaction}`}${nextLive ? ` · next: ${String(nextLive.title ?? nextLive.venue ?? nextLive.start_date)}` : ""}.`, `近期 ${recentLives.length} 场${averageSatisfaction == null ? "" : ` · 平均满意度 ${averageSatisfaction}`}${nextLive ? ` · 下一场：${String(nextLive.title ?? nextLive.venue ?? nextLive.start_date)}` : ""}.`), localizedLiteral(lang, "Open Live", "进入演出"), "Lives")}
-      ${activityCard(localizedLiteral(lang, "Music", "音乐"), localizedLiteral(lang, `${managedSongs.length} catalogued tracks for this group.`, `本团曲库已收录 ${managedSongs.length} 首歌曲。`), localizedLiteral(lang, "Open Making", "进入制作"), "Making")}
-      ${activityCard("SNS", localizedLiteral(lang, `${Object.values(policy.sns.by_member).filter((flags) => flags.x || flags.tiktok || flags.instagram || flags.youtube).length} members have a recorded channel plan.`, `${Object.values(policy.sns.by_member).filter((flags) => flags.x || flags.tiktok || flags.instagram || flags.youtube).length} 名成员已有频道安排。`), localizedLiteral(lang, "Open Policy", "查看 Policy"), "Policy")}
-      ${activityCard(localizedLiteral(lang, "Streaming", "直播"), localizedLiteral(lang, `${streamHours} scheduled channel-hours per week.`, `每周计划频道时数：${streamHours} 小时。`), localizedLiteral(lang, "Open Policy", "查看 Policy"), "Policy")}
+      ${activityCard(localizedLiteral(lang, "Music", "音乐"), releasedProjects.length ? localizedLiteral(lang, `${releasedProjects.length} completed digital releases recorded.`, `已记录 ${releasedProjects.length} 个完成的数字发行。`) : localizedLiteral(lang, "No completed release result yet.", "暂无已完成的发行结果。"), localizedLiteral(lang, "Open Making", "进入制作"), "Making")}
+      ${activityCard("SNS", weeklyActivity.length ? localizedLiteral(lang, `Recent activity signal: ${snsSignal.toFixed(2)}.`, `近期实际活动信号：${snsSignal.toFixed(2)}。`) : localizedLiteral(lang, "No recent SNS result recorded.", "暂无近期 SNS 结果。"), localizedLiteral(lang, "Open status", "查看状态"), "MyGroup")}
+      ${activityCard(localizedLiteral(lang, "Streaming", "直播"), weeklyActivity.length ? localizedLiteral(lang, `Recent streaming signal: ${streamingSignal.toFixed(2)}.`, `近期实际直播信号：${streamingSignal.toFixed(2)}。`) : localizedLiteral(lang, "No recent streaming result recorded.", "暂无近期直播结果。"), localizedLiteral(lang, "Open status", "查看状态"), "MyGroup")}
       ${activityCard(localizedLiteral(lang, "External Work", "外务"), localizedLiteral(lang, `${completedExternal} completed staff-managed assignments recorded.`, `已记录 ${completedExternal} 项由 staff 执行的外务。`), localizedLiteral(lang, "Open Inbox", "查看收件箱"), "Inbox")}
     </div>
   </section>`;
@@ -5708,7 +5678,9 @@ function renderMyIdolsStatus(save: GameSavePayload, selectedUid: string | null, 
     const uid = String(selected.uid ?? "");
     const state = tb?.members?.[uid];
     const issues = [state?.vocal_issue ? localizedLiteral(lang, "Vocal issue", "声乐问题") : "", state?.physical_issue ? localizedLiteral(lang, "Physical issue", "身体问题") : ""].filter(Boolean).join(" · ") || localizedLiteral(lang, "No active issue recorded", "未记录进行中的问题");
-    return `<section class="content-panel"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(String(selected.name ?? selected.name_romanji ?? uid))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Status — current operational context", "Status — 当前运营状态"))}</p></div><div><button type="button" class="fm-btn" data-my-idols-back>${htmlEsc(localizedLiteral(lang, "My Idols", "我的成员"))}</button> <button type="button" class="fm-btn" data-my-idol-detail="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Open detail", "查看资料"))}</button></div></div><dl class="basic-dl fm-card"><div><dt>${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}</dt><dd>${htmlEsc(conditionLabel(state?.condition, lang))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}</dt><dd>${htmlEsc(String(Math.round(num(selected.morale, 50))))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Confidence", "信心"))}</dt><dd>${htmlEsc(String(Math.round(num(state?.confidence, 50))))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Issue / rest", "问题 / 休息"))}</dt><dd>${htmlEsc(issues)}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Average fanwork sell-through", "平均特典售罄率"))}</dt><dd>${htmlEsc(`${Math.round(num(state?.sell_out_rate, 0.5) * 100)}%`)}</dd></div></dl></section>`;
+    const sellThrough = typeof state?.sell_out_rate === "number" ? `${Math.round(state.sell_out_rate * 100)}%` : "—";
+    const liveForm = state?.recent_live_performance ?? "—";
+    return `<section class="content-panel"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(String(selected.name ?? selected.name_romanji ?? uid))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Status — current operational context", "Status — 当前运营状态"))}</p></div><div><button type="button" class="fm-btn" data-my-idols-back>${htmlEsc(localizedLiteral(lang, "My Idols", "我的成员"))}</button> <button type="button" class="fm-btn" data-my-idol-detail="${htmlEsc(uid)}">${htmlEsc(localizedLiteral(lang, "Open detail", "查看资料"))}</button></div></div><dl class="basic-dl fm-card"><div><dt>${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}</dt><dd>${htmlEsc(conditionLabel(state?.condition, lang))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}</dt><dd>${htmlEsc(outlookLabel(selected.morale, lang))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Confidence", "信心"))}</dt><dd>${htmlEsc(outlookLabel(state?.confidence, lang))}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Recent live performance", "近期现场表现"))}</dt><dd>${htmlEsc(liveForm)}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Issue / rest", "问题 / 休息"))}</dt><dd>${htmlEsc(issues)}</dd></div><div><dt>${htmlEsc(localizedLiteral(lang, "Average fanwork sell-through", "平均特典售罄率"))}</dt><dd>${htmlEsc(sellThrough)}</dd></div></dl></section>`;
   }
   const rows = members.map((idol) => {
     const uid = String(idol.uid ?? "");
@@ -5716,16 +5688,27 @@ function renderMyIdolsStatus(save: GameSavePayload, selectedUid: string | null, 
     const issue = state?.vocal_issue || state?.physical_issue;
     const unavailable = isIdolOnHiatus(idol, String(save.current_date ?? ""));
     const issueLabel = unavailable ? localizedLiteral(lang, "Unavailable", "无法出勤") : issue ? localizedLiteral(lang, "Issue", "问题") : localizedLiteral(lang, "Normal", "正常");
-    return `<tr><td><button type="button" class="text-action-btn" data-my-idol-status="${htmlEsc(uid)}">${htmlEsc(String(idol.name ?? idol.name_romanji ?? uid))}</button></td><td>${htmlEsc(conditionLabel(state?.condition, lang))}</td><td class="num">${Math.round(num(idol.morale, 50))}</td><td class="num">${Math.round(num(state?.confidence, 50))}</td><td class="num">${Math.round(num(state?.sell_out_rate, 0.5) * 100)}%</td><td>${htmlEsc(issueLabel)}</td></tr>`;
+    const sellThrough = typeof state?.sell_out_rate === "number" ? `${Math.round(state.sell_out_rate * 100)}%` : "—";
+    const liveForm = state?.recent_live_performance ?? "—";
+    return `<tr><td><button type="button" class="text-action-btn" data-my-idol-status="${htmlEsc(uid)}">${htmlEsc(String(idol.name ?? idol.name_romanji ?? uid))}</button></td><td>${htmlEsc(conditionLabel(state?.condition, lang))}</td><td>${htmlEsc(outlookLabel(idol.morale, lang))}</td><td>${htmlEsc(outlookLabel(state?.confidence, lang))}</td><td>${htmlEsc(liveForm)}</td><td class="num">${htmlEsc(sellThrough)}</td><td>${htmlEsc(issueLabel)}</td></tr>`;
   }).join("");
-  return `<section class="content-panel"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "My Idols", "我的成员"))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Fuzzy operational comparison; exact hidden values are not exposed here.", "用于横向比较的模糊运营状态；不展示隐藏精确数值。"))}</p></div></div><div class="table-scroll"><table class="fm-table"><thead><tr><th>${htmlEsc(localizedLiteral(lang, "Idol", "成员"))}</th><th>${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}</th><th>${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}</th><th>${htmlEsc(localizedLiteral(lang, "Confidence", "信心"))}</th><th>${htmlEsc(localizedLiteral(lang, "Avg sell-through", "平均售罄率"))}</th><th>${htmlEsc(localizedLiteral(lang, "Issue / Rest", "问题 / 休息"))}</th></tr></thead><tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed members.", "没有本团成员。"))}</td></tr>`}</tbody></table></div></section>`;
+  return `<section class="content-panel"><div class="content-toolbar"><div><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "My Idols", "我的成员"))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "Fuzzy operational comparison; unavailable results are shown as —.", "用于横向比较的模糊运营状态；无可用结果显示为 —。"))}</p></div></div><div class="table-scroll"><table class="fm-table"><thead><tr><th>${htmlEsc(localizedLiteral(lang, "Idol", "成员"))}</th><th>${htmlEsc(localizedLiteral(lang, "Condition", "状态"))}</th><th>${htmlEsc(localizedLiteral(lang, "Morale", "士气"))}</th><th>${htmlEsc(localizedLiteral(lang, "Confidence", "信心"))}</th><th>${htmlEsc(localizedLiteral(lang, "Recent live", "近期现场"))}</th><th>${htmlEsc(localizedLiteral(lang, "Avg sell-through", "平均售罄率"))}</th><th>${htmlEsc(localizedLiteral(lang, "Issue / Rest", "问题 / 休息"))}</th></tr></thead><tbody>${rows || `<tr><td colspan="7" class="content-muted">${htmlEsc(localizedLiteral(lang, "No managed members.", "没有本团成员。"))}</td></tr>`}</tbody></table></div></section>`;
 }
 
 function renderMeeting(save: GameSavePayload, lang: UiLanguage): string {
-  const current = [...save.inbox.notifications].find((item) => item.choice_kind === "policy_meeting" && item.choice_status === "pending");
-  const last = [...save.inbox.notifications].sort((a, b) => String(b.created_at).localeCompare(String(a.created_at))).find((item) => item.choice_kind === "policy_meeting" && item.choice_status === "resolved");
-  if (!current) return `<section class="content-panel"><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Meeting", "会议"))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "No Current Meeting. Routine work is proceeding under Policy and staff defaults.", "没有进行中的会议。日常工作正按 Policy 与 staff 默认方案执行。"))}</p>${last ? `<section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Last Meeting", "上次会议"))}</h3><p>${htmlEsc(last.body)}</p></section>` : ""}<button type="button" class="fm-btn" data-nav="Policy">${htmlEsc(localizedLiteral(lang, "Open Policy", "查看 Policy"))}</button></section>`;
-  return `<section class="content-panel"><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Meeting", "会议"))}</h2><section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Introduction", "议题"))}</h3><p>${htmlEsc(current.body)}</p><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Staff / Idol opinions", "Staff / 成员意见"))}</h3><p>${htmlEsc(localizedLiteral(lang, "Staff recommends applying the existing Agency and Team Policy unless you select a project-specific alternative.", "Staff 建议沿用现有 Agency 与 Team Policy，除非你为本项目选择具体例外。"))}</p><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Options", "选项"))}</h3><p>${htmlEsc(localizedLiteral(lang, "Edit the proposal below. It is a meeting draft: routine simulation continues under the approved Policy until you submit this resolution.", "在下方编辑提案。这是会议草案：提交决议前，日常模拟仍按已批准的 Policy 运行。"))}</p>${renderSchedulePolicy(save, lang, { editable: true })}<button type="button" class="fm-btn fm-btn-accent" data-meeting-submit="${htmlEsc(current.uid)}">${htmlEsc(localizedLiteral(lang, "Submit Resolution", "提交决议"))}</button></section></section>`;
+  const meetings = save.inbox.notifications.filter(isMeetingNotification);
+  const current = meetings.find((item) => item.choice_status === "pending");
+  const last = [...meetings].sort((a, b) => String(b.created_at).localeCompare(String(a.created_at))).find((item) => item.choice_status === "resolved");
+  if (!current) return `<section class="content-panel"><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Meeting", "会议"))}</h2><p class="content-muted">${htmlEsc(localizedLiteral(lang, "No Current Meeting. Routine work is proceeding under Policy and staff defaults.", "没有进行中的会议。日常工作正按 Policy 与 staff 默认方案执行。"))}</p>${last ? `<section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Last Meeting", "上次会议"))}</h3><p>${htmlEsc(last.title)}</p></section>` : ""}<button type="button" class="fm-btn" data-nav="Policy">${htmlEsc(localizedLiteral(lang, "Open Policy", "查看 Policy"))}</button></section>`;
+  const meeting = meetingPayload(current);
+  if (!meeting) return "";
+  const opinions = meeting.opinions.map((opinion) => `<li><strong>${htmlEsc(opinion.speaker)}:</strong> ${htmlEsc(opinion.text)}</li>`).join("");
+  const options = meeting.options.map((option) => `<button type="button" class="fm-btn" data-meeting-option="${htmlEsc(option.id)}" data-meeting-uid="${htmlEsc(current.uid)}">${htmlEsc(option.label)}${option.summary ? ` — ${htmlEsc(option.summary)}` : ""}</button>`).join(" ");
+  const policyDraft = meeting.draft?.group_policy;
+  const policyEditor = meeting.kind === "policy" && policyDraft && typeof policyDraft === "object"
+    ? renderSchedulePolicy(save, lang, { editable: true, policy: policyDraft as GroupPolicy })
+    : "";
+  return `<section class="content-panel"><h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Meeting", "会议"))}</h2><section class="fm-card"><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Introduction", "议题"))}</h3><p>${htmlEsc(meeting.introduction)}</p><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Staff / Idol opinions", "Staff / 成员意见"))}</h3><ul class="plain-list">${opinions}</ul><h3 class="content-h3">${htmlEsc(localizedLiteral(lang, "Options", "选项"))}</h3><div class="policy-toolbar">${options}</div>${policyEditor}<button type="button" class="fm-btn fm-btn-accent" data-meeting-submit="${htmlEsc(current.uid)}">${htmlEsc(localizedLiteral(lang, "Submit Resolution", "提交决议"))}</button></section></section>`;
 }
 
 export function renderMainContent(

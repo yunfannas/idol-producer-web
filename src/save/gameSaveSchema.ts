@@ -189,7 +189,7 @@ export function createGameSaveFromLoadedScenario(
       : "2020-01-01";
   const filtered = buildFilteredSnapshotWithFutureEvents(loaded.idols, loaded.groups, opening);
   const snap = deepSnapshot(filtered.idols, filtered.groups, loaded.songs, loaded.shared_releases ?? []);
-  applyAttributesToAllIdols(snap.idols, snap.groups, opening, loaded.role_attribute_model);
+  applyAttributesToAllIdols(snap.idols, snap.groups, opening);
 
   const g =
     (opts.managedGroupUid
@@ -254,12 +254,9 @@ export function createGameSaveFromLoadedScenario(
   save.scenario_runtime.official_schedules = deepCopy(loaded.official_schedules ?? []);
   save.shortlist = [];
   save.goods_inventory = defaultGoodsInventory(managedGoodsMembers(save));
-  {
-    const policy = ensureGroupPolicy(save);
-    for (const uid of memberUids) {
-      save.training_intensity[uid] = { ...policy.training.default_intensity };
-      save.training_focus_skill[uid] = policy.training.default_focus;
-    }
+  for (const uid of memberUids) {
+    save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
+    save.training_focus_skill[uid] = "talking";
   }
   save.game_start_date = opening;
   save.current_date = opening;
@@ -386,18 +383,12 @@ export interface SaveTutorialState {
 
 const DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES = ["singing", "dancing", "teamwork", "content", "streaming", "fashion"] as const;
 const TRAINING_ROLE_BENCHMARK_PREFERENCE_SET = new Set<string>(DEFAULT_TRAINING_ROLE_BENCHMARK_PREFERENCES);
-const POLICY_FOCUS_SKILL_SET = new Set(["", "talking", "host", "variety", "acting", "make-up", "model"]);
 
 export interface GroupPolicySnsFlags {
   x: boolean;
   tiktok: boolean;
   instagram: boolean;
   youtube: boolean;
-}
-
-export interface GroupPolicyTrainingDefaults {
-  default_intensity: { sing: number; dance: number; physical: number; target: number };
-  default_focus: string;
 }
 
 export interface GroupPolicy {
@@ -421,7 +412,6 @@ export interface GroupPolicy {
     promotion_intensity: "limited" | "normal" | "high";
     /** Lightweight allocation guidance only; member roles remain historical detail. */
     role_stability: "stable" | "balanced" | "rotational";
-    selection_policy_enabled: boolean;
   };
   operating: {
     tokuten_enabled_items: string[];
@@ -449,13 +439,14 @@ export interface GroupPolicy {
     tiktok_hours_per_week: number;
     instagram_hours_per_week: number;
   };
-  training: GroupPolicyTrainingDefaults;
-}
-
-function clampPolicyLevel(v: unknown, fallback: number): number {
-  const n = typeof v === "number" && Number.isFinite(v) ? v : Number(v);
-  if (!Number.isFinite(n)) return fallback;
-  return Math.max(0, Math.min(5, Math.round(n)));
+  /** Only selection-based groups receive this independent policy layer. */
+  selection?: {
+    selection_size: number;
+    center_policy: "fixed" | "rotating" | "performance_led";
+    newcomer_opportunity: "limited" | "balanced" | "open";
+    stability: "stable" | "balanced" | "fluid";
+    non_selection_treatment: "supportive" | "balanced" | "competitive";
+  };
 }
 
 function clampPolicyHours(v: unknown, fallback = 0): number {
@@ -465,13 +456,12 @@ function clampPolicyHours(v: unknown, fallback = 0): number {
 }
 
 export function defaultGroupPolicy(): GroupPolicy {
-  const intensity = defaultAutopilotTrainingIntensity();
   return {
     agency: { profitability_requirement: "balanced", making_authority: "producer_led" },
     team: {
       workload_target: "balanced", rest_priority: "normal", live_frequency: "normal", event_selectivity: "balanced", travel_willingness: "balanced",
       fanwork_tokuten: "standard", fanwork_live_related_meeting: "selective", fanwork_independent_meeting: "rare", fanwork_online: "regular",
-      promotion_focus: "balanced", promotion_intensity: "limited", role_stability: "balanced", selection_policy_enabled: false,
+      promotion_focus: "balanced", promotion_intensity: "limited", role_stability: "balanced",
     },
     operating: {
       tokuten_enabled_items: ["CHEKI_SIGNED"], tokuten_event_duration_minutes: 60,
@@ -489,10 +479,6 @@ export function defaultGroupPolicy(): GroupPolicy {
       showroom_hours_per_week: 0,
       tiktok_hours_per_week: 0,
       instagram_hours_per_week: 0,
-    },
-    training: {
-      default_intensity: { ...intensity },
-      default_focus: "talking",
     },
   };
 }
@@ -512,7 +498,7 @@ export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
   if (p.team && typeof p.team === "object") {
     const team = p.team as Record<string, unknown>;
     const assign = <K extends keyof GroupPolicy["team"]>(key: K, values: readonly string[]) => {
-      const value = key === "selection_policy_enabled" ? undefined : String(team[key] ?? "");
+      const value = String(team[key] ?? "");
       if (value && values.includes(value)) (base.team[key] as string) = value;
     };
     assign("workload_target", ["light", "balanced", "high", "very_high"]);
@@ -527,7 +513,17 @@ export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
     assign("promotion_focus", ["public_acquisition", "balanced", "fan_deepening"]);
     assign("promotion_intensity", ["limited", "normal", "high"]);
     assign("role_stability", ["stable", "balanced", "rotational"]);
-    if (typeof team.selection_policy_enabled === "boolean") base.team.selection_policy_enabled = team.selection_policy_enabled;
+  }
+  if (p.selection && typeof p.selection === "object") {
+    const selection = p.selection as Record<string, unknown>;
+    const size = Number(selection.selection_size);
+    const center = String(selection.center_policy ?? "");
+    const newcomer = String(selection.newcomer_opportunity ?? "");
+    const stability = String(selection.stability ?? "");
+    const treatment = String(selection.non_selection_treatment ?? "");
+    if (Number.isFinite(size) && ["fixed", "rotating", "performance_led"].includes(center) && ["limited", "balanced", "open"].includes(newcomer) && ["stable", "balanced", "fluid"].includes(stability) && ["supportive", "balanced", "competitive"].includes(treatment)) {
+      base.selection = { selection_size: Math.max(1, Math.min(64, Math.round(size))), center_policy: center as NonNullable<GroupPolicy["selection"]>["center_policy"], newcomer_opportunity: newcomer as NonNullable<GroupPolicy["selection"]>["newcomer_opportunity"], stability: stability as NonNullable<GroupPolicy["selection"]>["stability"], non_selection_treatment: treatment as NonNullable<GroupPolicy["selection"]>["non_selection_treatment"] };
+    }
   }
   if (p.operating && typeof p.operating === "object") {
     const operating = p.operating as Record<string, unknown>;
@@ -593,23 +589,6 @@ export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
     base.stream.instagram_hours_per_week = clampPolicyHours(stream.instagram_hours_per_week, 0);
   }
 
-  if (p.training && typeof p.training === "object") {
-    const training = p.training as Record<string, unknown>;
-    const intensity =
-      training.default_intensity && typeof training.default_intensity === "object"
-        ? (training.default_intensity as Record<string, unknown>)
-        : {};
-    const fallback = defaultAutopilotTrainingIntensity();
-    base.training.default_intensity = {
-      sing: clampPolicyLevel(intensity.sing, fallback.sing),
-      dance: clampPolicyLevel(intensity.dance, fallback.dance),
-      physical: clampPolicyLevel(intensity.physical, fallback.physical),
-      target: clampPolicyLevel(intensity.target, fallback.target),
-    };
-    const focus = String(training.default_focus ?? "talking");
-    base.training.default_focus = POLICY_FOCUS_SKILL_SET.has(focus) ? focus : "talking";
-  }
-
   return base;
 }
 
@@ -663,8 +642,6 @@ export interface GameSavePayload {
   training_song_uids: string[];
   /** Group default ops policy (live / SNS / stream / training). */
   group_policy: GroupPolicy;
-  /** Uncommitted choices for the Current Policy Meeting. Never used by simulation. */
-  policy_meeting_draft?: GroupPolicy;
   tutorial: SaveTutorialState;
   scout: ScoutBlock;
   career_decisions: CareerDecisionsBlock;
@@ -1019,9 +996,6 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
     out.managed_song_status,
   );
   out.group_policy = normalizeGroupPolicy((p as { group_policy?: unknown }).group_policy);
-  if ((p as { policy_meeting_draft?: unknown }).policy_meeting_draft) {
-    out.policy_meeting_draft = normalizeGroupPolicy((p as { policy_meeting_draft?: unknown }).policy_meeting_draft);
-  }
   ensureManagedContracts(out);
 
   {
@@ -1221,10 +1195,9 @@ export function createGameSaveFromPreviewBundle(bundle: WebPreviewBundle): GameS
   save.training_song_uids = [];
   applyAttributesToAllIdols(save.database_snapshot.idols, save.database_snapshot.groups, opening);
   {
-    const policy = ensureGroupPolicy(save);
     for (const uid of g.member_uids?.map(String) ?? []) {
-      save.training_intensity[uid] = { ...policy.training.default_intensity };
-      save.training_focus_skill[uid] = policy.training.default_focus;
+      save.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
+      save.training_focus_skill[uid] = "talking";
       const row = save.database_snapshot.idols.find((r) => String(r.uid ?? "") === uid);
       if (row) ensureIdolSimulationDefaults(row as Record<string, unknown>);
     }

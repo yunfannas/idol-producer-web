@@ -113,7 +113,13 @@ export function parseCatalogIsoToTime(iso: string | null | undefined): number | 
 }
 
 function songAvailabilityTime(row: Record<string, unknown>): number {
-  return parseCatalogIsoToTime(specialSongAvailabilityIso(row) ?? String(row.release_date ?? "")) ?? 0;
+  return parseCatalogIsoToTime(songAvailabilityIso(row) ?? "") ?? 0;
+}
+
+/** Canonical player-visible availability date, including catalog overrides. */
+export function songAvailabilityIso(row: Record<string, unknown>): string | null {
+  const value = specialSongAvailabilityIso(row) ?? String(row.release_date ?? "");
+  return parseCatalogIsoToTime(value) == null ? null : value.split("T")[0] ?? null;
 }
 
 export function isSongAvailableOn(row: Record<string, unknown>, referenceIso: string | null | undefined): boolean {

@@ -1,7 +1,6 @@
 import type { GameSavePayload } from "../save/gameSaveSchema";
 import {
   createGameSaveFromLoadedScenario,
-  ensureGroupPolicy,
   getActiveFinances,
   getLetterTierFromGroup,
   getPrimaryGroup,
@@ -26,6 +25,7 @@ import {
 import {
   applyDailyStatusUpdateJson,
   buildDailyTrainingPlan,
+  defaultAutopilotTrainingIntensity,
   ensureIdolSimulationDefaults,
   isIdolOnHiatus,
   normalizeTrainingWeekLog,
@@ -391,7 +391,7 @@ function collectTodaySimulationEvents(save: GameSavePayload): SimulationEvent[] 
   for (const uid of rosterUids) {
     let intensityRaw = save.training_intensity[uid];
     if (!intensityRaw || typeof intensityRaw !== "object") {
-      intensityRaw = { ...ensureGroupPolicy(save).training.default_intensity };
+      intensityRaw = { ...defaultAutopilotTrainingIntensity() };
     }
     const intensity = safeTrainingRow(intensityRaw);
     const plan = buildDailyTrainingPlan(intensity, todayIso, liveDaysInWeek);
@@ -1050,10 +1050,9 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     for (const uid of rosterUids) {
       const ti = next.training_intensity[uid];
       if (!ti || typeof ti !== "object") {
-        const policy = ensureGroupPolicy(next);
-        next.training_intensity[uid] = { ...policy.training.default_intensity };
+        next.training_intensity[uid] = { ...defaultAutopilotTrainingIntensity() };
         if (next.training_focus_skill[uid] == null || next.training_focus_skill[uid] === undefined) {
-          next.training_focus_skill[uid] = policy.training.default_focus;
+          next.training_focus_skill[uid] = "talking";
         }
       }
       const intensity = safeTrainingRow(next.training_intensity[uid]);

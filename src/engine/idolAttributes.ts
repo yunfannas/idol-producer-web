@@ -1,5 +1,5 @@
 /**
- * Idol attribute V2 (LOCKED): 17 visible 0–20 stats + hidden personality.
+ * Idol attribute V2 (LOCKED): 17 visible 0–20 stats.
  * Radar / ability formulas live here.
  *
  * Visible:
@@ -7,17 +7,9 @@
  *   Appearance: cute, pretty
  *   Performance: pitch, tone, breath, rhythm, power, stage_presence
  *   Communication / Creative: wit, humor, talking, teamwork, fashion, creativity
- * Hidden: professionalism, ambition, sensitivity
  *
- * Legacy keys (strength/grace/clever/determination/injury_proneness/loyalty)
- * are migrated on normalize and never written back as public stats.
  */
 
-import {
-  MEMBER_ROLE_DEFINITIONS,
-  activeRoleAssignmentsFromHistoryEntry,
-  type MemberRoleAssignment,
-} from "../data/memberRoles";
 import { sha256BytesUtf8 } from "./sha256sync";
 
 export interface PhysicalAttrs {
@@ -51,26 +43,11 @@ export interface MentalAttrs {
   creativity: number;
 }
 
-export interface HiddenAttrs {
-  professionalism: number;
-  ambition: number;
-  sensitivity: number;
-}
-
 export interface PersistedIdolAttributes {
   physical: PhysicalAttrs;
   appearance: AppearanceAttrs;
   technical: TechnicalAttrs;
   mental: MentalAttrs;
-  hidden?: HiddenAttrs;
-}
-
-export interface RoleAttributeModel {
-  version?: number;
-  roles?: string[];
-  age_features?: string[];
-  feature_names?: string[];
-  coefficients?: Record<string, Record<string, number>>;
 }
 
 const clampStat = (n: number) => Math.max(0, Math.min(20, Math.round(n)));
@@ -109,14 +86,6 @@ function clampMental(m: MentalAttrs): MentalAttrs {
   };
 }
 
-function clampHidden(h: HiddenAttrs): HiddenAttrs {
-  return {
-    professionalism: clampStat(h.professionalism),
-    ambition: clampStat(h.ambition),
-    sensitivity: clampStat(h.sensitivity),
-  };
-}
-
 export function defaultAttributes(): PersistedIdolAttributes {
   return {
     physical: clampPhysical({ agility: 12, natural_fitness: 12, stamina: 12 }),
@@ -137,7 +106,6 @@ export function defaultAttributes(): PersistedIdolAttributes {
       fashion: 12,
       creativity: 12,
     }),
-    hidden: clampHidden({ professionalism: 12, ambition: 12, sensitivity: 10 }),
   };
 }
 
@@ -148,43 +116,16 @@ function num(v: unknown, fallback = 0): number {
 }
 
 /**
- * Merge partial nested dicts from JSON into V2 persisted shape.
- *
- * Catalog / GDD bucket name is `performance` (engine still stores it as `technical`).
- * Accepts legacy keys: strength (ignored), grace→stage_presence, clever→wit,
- * determination→dropped (creativity falls back to wit/fashion blend), loyalty/injury→dropped.
- * Also accepts flat attribute maps from idol-attribute-generated files.
+ * Read the new explicit V2 shape. Missing values are neutral defaults.
+ * Catalog / GDD bucket name is `performance` (engine stores it as `technical`).
  */
 export function normalizePersistedAttributes(raw: unknown): PersistedIdolAttributes {
   const d = raw && typeof raw === "object" ? (raw as Record<string, unknown>) : {};
   const phys = (d.physical as Record<string, unknown>) ?? {};
   const app = (d.appearance as Record<string, unknown>) ?? {};
-  const techNested =
-    (d.performance as Record<string, unknown>) ??
-    (d.technical as Record<string, unknown>) ??
-    {};
-  const ment =
-    (d.mental as Record<string, unknown>) ??
-    (d.communication as Record<string, unknown>) ??
-    (d.creative as Record<string, unknown>) ??
-    {};
-  const hid = (d.hidden as Record<string, unknown>) ?? {};
-
-  // Flat generation output: attributes are one level (no physical/performance buckets).
-  const flat = !d.physical && !d.appearance && !d.performance && !d.technical && !d.mental ? d : null;
-
-  const pick = (nested: Record<string, unknown>, key: string, legacyKey?: string, fallback = 12) => {
-    if (flat) {
-      if (legacyKey) return num(flat[key], num(flat[legacyKey], fallback));
-      return num(flat[key], fallback);
-    }
-    if (legacyKey) return num(nested[key], num(nested[legacyKey], fallback));
-    return num(nested[key], fallback);
-  };
-
-  const wit = pick(ment, "wit", "clever", 12);
-  const fashion = pick(ment, "fashion", undefined, 12);
-  const creativityDefault = Math.round((wit + fashion) / 2);
+  const techNested = (d.performance as Record<string, unknown>) ?? {};
+  const ment = (d.mental as Record<string, unknown>) ?? {};
+  const pick = (nested: Record<string, unknown>, key: string, fallback = 12) => num(nested[key], fallback);
 
   return {
     physical: clampPhysical({
@@ -202,22 +143,15 @@ export function normalizePersistedAttributes(raw: unknown): PersistedIdolAttribu
       breath: pick(techNested, "breath"),
       rhythm: pick(techNested, "rhythm"),
       power: pick(techNested, "power"),
-      stage_presence: pick(techNested, "stage_presence", "grace"),
+      stage_presence: pick(techNested, "stage_presence"),
     }),
     mental: clampMental({
-      wit,
+      wit: pick(ment, "wit"),
       humor: pick(ment, "humor"),
       talking: pick(ment, "talking"),
       teamwork: pick(ment, "teamwork"),
-      fashion,
-      creativity: flat
-        ? num(flat.creativity, creativityDefault)
-        : num(ment.creativity, creativityDefault),
-    }),
-    hidden: clampHidden({
-      professionalism: pick(hid, "professionalism", undefined, 12),
-      ambition: pick(hid, "ambition", undefined, 12),
-      sensitivity: pick(hid, "sensitivity", undefined, 10),
+      fashion: pick(ment, "fashion"),
+      creativity: pick(ment, "creativity"),
     }),
   };
 }
@@ -230,7 +164,6 @@ export function toCatalogAttributeRecord(a: PersistedIdolAttributes): Record<str
     performance: { ...a.technical },
     mental: { ...a.mental },
   };
-  if (a.hidden) out.hidden = { ...a.hidden };
   return out;
 }
 
@@ -238,29 +171,13 @@ export function toCatalogAttributeRecord(a: PersistedIdolAttributes): Record<str
 export function hasPersistedAttributeBlock(raw: unknown): boolean {
   if (!raw || typeof raw !== "object") return false;
   const d = raw as Record<string, unknown>;
-  for (const cat of ["physical", "appearance", "performance", "technical", "mental", "communication", "hidden"] as const) {
+  for (const cat of ["physical", "appearance", "performance", "mental"] as const) {
     const block = d[cat];
     if (!block || typeof block !== "object") continue;
     for (const v of Object.values(block as Record<string, unknown>)) {
       if (typeof v === "number" && Number.isFinite(v)) return true;
       if (typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v))) return true;
     }
-  }
-  // Flat generation files (strength/agility/... or V2 flat keys at top level)
-  for (const k of [
-    "agility",
-    "stamina",
-    "cute",
-    "pretty",
-    "pitch",
-    "stage_presence",
-    "wit",
-    "creativity",
-    "grace",
-    "clever",
-  ]) {
-    const v = d[k];
-    if (typeof v === "number" && Number.isFinite(v)) return true;
   }
   return false;
 }
@@ -530,26 +447,6 @@ function currentGroupContext(
 }
 
 
-function scandalHistoryCount(idol: Record<string, unknown>): number {
-  let count = 0;
-  const top = Array.isArray(idol.status_history) ? idol.status_history : [];
-  for (const raw of top) {
-    if (!raw || typeof raw !== "object") continue;
-    if (String((raw as Record<string, unknown>).kind ?? "").trim().toLowerCase() === "scandal") count += 1;
-  }
-  const hist = Array.isArray(idol.group_history) ? idol.group_history : [];
-  for (const raw of hist) {
-    if (!raw || typeof raw !== "object") continue;
-    const statuses = (raw as Record<string, unknown>).status_history;
-    if (!Array.isArray(statuses)) continue;
-    for (const s of statuses) {
-      if (!s || typeof s !== "object") continue;
-      if (String((s as Record<string, unknown>).kind ?? "").trim().toLowerCase() === "scandal") count += 1;
-    }
-  }
-  return count;
-}
-
 function numericValue(raw: unknown): number | null {
   if (typeof raw === "number" && Number.isFinite(raw)) return raw;
   if (typeof raw === "string" && raw.trim() !== "" && Number.isFinite(Number(raw))) return Number(raw);
@@ -568,119 +465,6 @@ function ageAtOpening(idol: Record<string, unknown>, openingIso: string): number
   const age = numericValue(idol.age);
   return age != null && age >= 0 && age <= 80 ? age : null;
 }
-
-function ageFeatureVector(age: number | null): Record<string, number> {
-  const safeAge = typeof age === "number" && Number.isFinite(age) ? age : 22;
-  return {
-    age_youth: Math.max(0, Math.min(1, (22 - safeAge) / 6)),
-    age_experience: Math.max(0, Math.min(1, (safeAge - 18) / 10)),
-    age_senior: Math.max(0, Math.min(1, (safeAge - 25) / 10)),
-  };
-}
-
-function collectActiveRoleAssignments(
-  idol: Record<string, unknown>,
-  openingIso: string,
-): MemberRoleAssignment[] {
-  const hist = idol.group_history;
-  if (!Array.isArray(hist)) return [];
-  const byKey = new Map<string, MemberRoleAssignment>();
-  for (const raw of hist) {
-    if (!raw || typeof raw !== "object") continue;
-    const entry = raw as Record<string, unknown>;
-    if (!membershipActiveAtOpening(entry, openingIso)) continue;
-    for (const role of activeRoleAssignmentsFromHistoryEntry(entry, openingIso)) {
-      if (!role.key) continue;
-      const prev = byKey.get(role.key);
-      if (!prev || role.focus > prev.focus) byKey.set(role.key, role);
-    }
-  }
-  return [...byKey.values()].sort((a, b) => b.focus - a.focus || a.key.localeCompare(b.key));
-}
-
-function applyRoleBiasToAttributes(
-  baseAttrs: PersistedIdolAttributes,
-  roles: MemberRoleAssignment[],
-  ageFeatures?: Record<string, number>,
-  model?: RoleAttributeModel | null,
-): PersistedIdolAttributes {
-  if (!roles.length && !model?.coefficients) return baseAttrs;
-
-  const next: PersistedIdolAttributes = {
-    physical: { ...baseAttrs.physical },
-    appearance: { ...baseAttrs.appearance },
-    technical: { ...baseAttrs.technical },
-    mental: { ...baseAttrs.mental },
-    hidden: { ...(baseAttrs.hidden ?? defaultAttributes().hidden!) },
-  };
-
-  const roleBiasScalar = 3;
-
-  if (model?.coefficients) {
-    const features: Record<string, number> = { ...(ageFeatures ?? {}) };
-    for (const role of roles) {
-      features[role.key] = Math.max(features[role.key] ?? 0, Math.max(0, Math.min(1, role.focus)));
-    }
-    for (const [statPathRaw, featureWeights] of Object.entries(model.coefficients)) {
-      const LEGACY_STAT_PATH: Record<string, string> = {
-        "technical.grace": "technical.stage_presence",
-        "performance.grace": "technical.stage_presence",
-        "performance.stage_presence": "technical.stage_presence",
-        "performance.pitch": "technical.pitch",
-        "performance.tone": "technical.tone",
-        "performance.breath": "technical.breath",
-        "performance.rhythm": "technical.rhythm",
-        "performance.power": "technical.power",
-        "mental.clever": "mental.wit",
-        "mental.determination": "mental.teamwork",
-        "physical.strength": "physical.agility",
-      };
-      const statPath = LEGACY_STAT_PATH[statPathRaw] ?? statPathRaw;
-      const [categoryKey, statKey] = statPath.split(".");
-      const category = next[categoryKey as keyof PersistedIdolAttributes];
-      if (!category || typeof category !== "object" || !statKey) continue;
-      const stats = category as unknown as Record<string, unknown>;
-      let value = typeof stats[statKey] === "number" && Number.isFinite(stats[statKey]) ? (stats[statKey] as number) : 12;
-      for (const [featureKey, featureValue] of Object.entries(features)) {
-        const weight = featureWeights?.[featureKey];
-        if (!(typeof weight === "number" && Number.isFinite(weight))) continue;
-        value += weight * featureValue;
-      }
-      stats[statKey] = value;
-    }
-  } else {
-    for (const role of roles) {
-      const focus = Math.max(0, Math.min(1, role.focus));
-      const definition = MEMBER_ROLE_DEFINITIONS[role.key as keyof typeof MEMBER_ROLE_DEFINITIONS];
-      if (!definition) continue;
-      for (const [categoryKey, categoryBias] of Object.entries(definition.attributeBias)) {
-        const category = next[categoryKey as keyof PersistedIdolAttributes];
-        if (!category || typeof category !== "object") continue;
-        const stats = category as unknown as Record<string, unknown>;
-        for (const [statKey, weightRaw] of Object.entries(categoryBias as Record<string, unknown>)) {
-          const weight = typeof weightRaw === "number" && Number.isFinite(weightRaw) ? weightRaw : 0;
-          const prev = stats[statKey];
-          const prevNum = typeof prev === "number" && Number.isFinite(prev) ? prev : 12;
-          stats[statKey] = prevNum + weight * focus * roleBiasScalar;
-        }
-      }
-    }
-  }
-
-  return {
-    physical: clampPhysical(next.physical),
-    appearance: clampAppearance(next.appearance),
-    technical: clampTechnical(next.technical),
-    mental: clampMental(next.mental),
-    hidden: clampHidden(next.hidden ?? defaultAttributes().hidden!),
-  };
-}
-
-// Kept solely to read legacy saved role metadata during migration.  New
-// attribute generation deliberately does not call this former role system.
-void ageFeatureVector;
-void collectActiveRoleAssignments;
-void applyRoleBiasToAttributes;
 
 /**
  * Soft age ceilings for appearance:
@@ -751,7 +535,6 @@ function scaleVisibleAttributes(attrs: PersistedIdolAttributes, scale: number): 
       fashion: scaleStat(attrs.mental.fashion),
       creativity: scaleStat(attrs.mental.creativity),
     }),
-    hidden: attrs.hidden ? clampHidden({ ...attrs.hidden }) : attrs.hidden,
   };
 }
 
@@ -856,7 +639,6 @@ export function buildAttributesFromFollowerModel(
   idol: Record<string, unknown>,
   groupPopularity: Map<string, number>,
   openingIso: string,
-  roleAttributeModel?: RoleAttributeModel | null,
   groupLetterTiers?: Map<string, string>,
   withinGroupXBoosts?: Map<string, number>,
 ): PersistedIdolAttributes {
@@ -876,7 +658,6 @@ export function buildAttributesFromFollowerModel(
     1,
     Math.min(19, Math.round(12.5 + combined * 5.2) + Math.round(withinBoost)),
   );
-  const scandalCount = scandalHistoryCount(idol);
   const portraitPath = idol.portrait_photo_path;
   const portraitBonus =
     typeof portraitPath === "string" && portraitPath.trim().length > 0 ? 1 : 0;
@@ -887,8 +668,6 @@ export function buildAttributesFromFollowerModel(
   const vocalCenter = performanceCore + stableRoll(uid, "vocal_center", -2, 2);
   const danceSeed = technicalBase + stableRoll(uid, "dance_seed", -2, 3);
   const danceCenter = Math.round(vocalCenter * 0.45 + danceSeed * 0.55);
-  const professionalismPenalty = scandalCount > 0 ? 5 + Math.min(6, (scandalCount - 1) * 2) : 0;
-  const professionalismBase = scandalCount > 0 ? 9 : base;
   const age = ageAtOpening(idol, openingIso);
   // Bias the appearance seed itself so younger idols lean cute and older lean pretty
   // before rolls / role model push values around.
@@ -928,16 +707,7 @@ export function buildAttributesFromFollowerModel(
       fashion: base + stableRoll(uid, "fashion", -3, 4),
       creativity: base + stableRoll(uid, "creativity", -3, 4),
     }),
-    hidden: clampHidden({
-      professionalism:
-        professionalismBase + stableRoll(uid, "professionalism", -2, 3) - professionalismPenalty,
-      ambition: base + stableRoll(uid, "ambition", -2, 5),
-      sensitivity: 10 + stableRoll(uid, "sensitivity", -3, 3),
-    }),
   };
-  // Roles are public/historical presentation data.  They no longer generate
-  // or modify ability, including through the legacy role-attribute model.
-  void roleAttributeModel;
   const withAge = applyAgeAppearanceConstraints(baseline, age);
   return fitAttributesToAbilityCap(withAge, letterTier);
 }
@@ -945,7 +715,6 @@ export function buildAttributesFromFollowerModel(
 export interface AttributeAssignmentContext {
   groups: Record<string, unknown>[];
   referenceIso: string;
-  roleAttributeModel?: RoleAttributeModel | null;
   /** Full idol list — used to rank personal X within each active group. */
   idols?: Record<string, unknown>[];
   withinGroupXBoosts?: Map<string, number>;
@@ -976,7 +745,6 @@ export function ensureIdolRowAttributes(
       row,
       idx,
       ref,
-      ctx?.roleAttributeModel ?? null,
       tiers,
       withinBoosts,
     );
@@ -993,12 +761,10 @@ export function applyAttributesToAllIdols(
   idols: Record<string, unknown>[],
   groups?: Record<string, unknown>[],
   referenceIso?: string,
-  roleAttributeModel?: RoleAttributeModel | null,
 ): void {
   const ctx: Partial<AttributeAssignmentContext> = {};
   if (Array.isArray(groups)) ctx.groups = groups;
   if (typeof referenceIso === "string" && referenceIso) ctx.referenceIso = referenceIso;
-  if (roleAttributeModel) ctx.roleAttributeModel = roleAttributeModel;
   ctx.idols = idols;
   if (Array.isArray(groups) && typeof referenceIso === "string" && /^\d{4}-\d{2}-\d{2}$/.test(referenceIso)) {
     ctx.withinGroupXBoosts = buildWithinGroupXRankBoosts(idols, groups, referenceIso);

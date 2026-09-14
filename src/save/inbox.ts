@@ -19,6 +19,35 @@ export interface NotificationRow {
   choice_options: Record<string, string>[];
   related_event_uid: string;
   report_data?: Record<string, unknown>;
+  /** A reusable decision container. Meetings are the sole path for player decisions. */
+  meeting?: MeetingPayload;
+}
+
+export type MeetingKind = "policy" | "making" | "major_live" | "audition" | "career" | "generic";
+
+export interface MeetingOption {
+  id: string;
+  label: string;
+  summary?: string;
+  auto_arrange?: boolean;
+}
+
+export interface MeetingPayload {
+  kind: MeetingKind;
+  introduction: string;
+  opinions: Array<{ speaker: string; text: string }>;
+  options: MeetingOption[];
+  submitted_option_id?: string;
+  /** Meeting-local working state. It never affects simulation before resolution. */
+  draft?: Record<string, unknown>;
+}
+
+export function isMeetingNotification(item: NotificationRow | null | undefined): boolean {
+  return Boolean(item?.meeting);
+}
+
+export function meetingPayload(item: NotificationRow): MeetingPayload | null {
+  return item.meeting ?? null;
 }
 
 export function notificationSortKey(item: NotificationRow): [number, number, string] {
@@ -135,6 +164,7 @@ export function addNotification(
     choiceKind?: string;
     choiceStatus?: string;
     choiceOptions?: Record<string, string>[];
+    meeting?: MeetingPayload;
   },
 ): NotificationRow {
   const {
@@ -153,6 +183,7 @@ export function addNotification(
     choiceKind = "",
     choiceStatus = "",
     choiceOptions = [],
+    meeting,
   } = params;
 
   const day = isoDate && /^\d{4}-\d{2}-\d{2}$/.test(isoDate) ? isoDate : new Date().toISOString().slice(0, 10);
@@ -189,6 +220,7 @@ export function addNotification(
       : [],
     related_event_uid: relatedEventUid ? String(relatedEventUid) : "",
     report_data: reportData,
+    meeting,
   };
   save.inbox.notifications.push(item);
   sortNotificationsInPlace(save.inbox.notifications);

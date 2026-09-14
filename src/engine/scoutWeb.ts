@@ -373,21 +373,15 @@ export function generateAuditionCandidates(company: ScoutCompany, currentIso: st
         breath: 6 + company.level + Math.floor(noise01(`${seed}|tb`) * 8),
         rhythm: 6 + company.level + Math.floor(noise01(`${seed}|tr`) * 8),
         power: 5 + company.level + Math.floor(noise01(`${seed}|tw`) * 8),
-        grace: 6 + company.level + Math.floor(noise01(`${seed}|tg`) * 8),
+        stage_presence: 6 + company.level + Math.floor(noise01(`${seed}|tg`) * 8),
       },
       mental: {
-        clever: 6 + company.level + Math.floor(noise01(`${seed}|mc`) * 8),
+        wit: 6 + company.level + Math.floor(noise01(`${seed}|mc`) * 8),
         humor: 5 + company.level + Math.floor(noise01(`${seed}|mh`) * 8),
         talking: 6 + company.level + Math.floor(noise01(`${seed}|mt`) * 8),
-        determination: 7 + company.level + Math.floor(noise01(`${seed}|md`) * 8),
+        creativity: 7 + company.level + Math.floor(noise01(`${seed}|md`) * 8),
         teamwork: 6 + company.level + Math.floor(noise01(`${seed}|mw`) * 8),
         fashion: 5 + company.level + Math.floor(noise01(`${seed}|mf`) * 8),
-      },
-      hidden: {
-        professionalism: 8 + company.level + Math.floor(noise01(`${seed}|hp`) * 6),
-        injury_proneness: 3 + Math.floor(noise01(`${seed}|hi`) * 4),
-        ambition: 8 + company.level + Math.floor(noise01(`${seed}|ha`) * 6),
-        loyalty: 8 + Math.floor(noise01(`${seed}|hl`) * 6),
       },
     };
     rows.push({

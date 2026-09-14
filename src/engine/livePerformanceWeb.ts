@@ -166,14 +166,12 @@ function memberLiveComponentScores(idol: Record<string, unknown>, refIso: string
   const phys = a.physical;
   const ment = a.mental;
   const app = a.appearance;
-  const prof = a.hidden?.professionalism ?? 12;
-  const effDet = ment.determination + maturity;
-  const effProf = prof + maturity;
+  const teamworkSupport = ment.teamwork + maturity;
 
   const vocal = avgFloat(tech.pitch, tech.tone, tech.breath, tech.power);
-  const dance = avgFloat(phys.agility, phys.stamina, tech.rhythm, tech.grace, tech.power);
-  const stage = avgFloat(app.cute, app.pretty, ment.talking, ment.humor, tech.grace);
-  const teamwork = avgFloat(ment.teamwork, effDet, ment.clever, effProf);
+  const dance = avgFloat(phys.agility, phys.stamina, tech.rhythm, tech.stage_presence, tech.power);
+  const stage = avgFloat(app.cute, app.pretty, ment.talking, ment.humor, tech.stage_presence);
+  const teamwork = avgFloat(ment.teamwork, teamworkSupport, ment.wit, ment.creativity);
   return { vocal, dance, stage, teamwork };
 }
 
@@ -230,14 +228,13 @@ function memberTokutenkaiSalesScore(
   const a = normalizePersistedAttributes(idol.attributes);
   const ment = a.mental;
   const app = a.appearance;
-  const prof = a.hidden?.professionalism ?? 12;
   const maturity = maturityDriveBonus(idol, refIso);
   const ageB = salesAgeBonus(idol, refIso);
   const tenureAdj = salesTenureAdjustment(idol, refIso);
   const roleBias = akishibuRoleBias(group, idol);
 
   const charm = avgFloat(app.cute, app.pretty, ment.talking, ment.humor, ment.fashion);
-  const reliability = avgFloat(prof + maturity, ment.determination + maturity, ment.teamwork);
+  const reliability = avgFloat(ment.teamwork + maturity, ment.talking + maturity, ment.creativity);
   const fc = Math.max(10, num(idol.fan_count, 0));
   const popularitySignal = avgFloat(
     num(idol.popularity, 0),

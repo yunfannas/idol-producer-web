@@ -43,7 +43,10 @@ export interface MemberRuntimeState {
   personal_public: number;
   otaku_affinity: number;
   core_share: number;
-  sell_out_rate: number;
+  /** Null until the member has completed a fanwork session. */
+  sell_out_rate: number | null;
+  /** Player-facing result of the latest completed live. */
+  recent_live_performance: "excellent" | "strong" | "steady" | "weak" | null;
   theme_skill: Record<ThemeTag, number>;
   theme_xp: Record<ThemeTag, number>;
   theme_last_used: Record<ThemeTag, string>;
