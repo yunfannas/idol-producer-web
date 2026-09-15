@@ -11,3 +11,5 @@ The runtime game files remain in `src/`, `public/data/`, and the root Vite confi
 
 Lab-only research/evidence pipelines were moved to `idol-data-lab/archive/web-lab-zone-a-2026-09-15/` (2026-09-15).
 
+Catalog scrape/enrichment pipelines (Zone GRAY) moved to `idol-data-lab/archive/web-lab-zone-gray-2026-09-15/` (2026-09-15). Runtime still uses `support/docs/reference/monthly_live_counts_by_letter_tier_template.csv`. 
+
