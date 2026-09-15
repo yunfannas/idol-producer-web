@@ -16,7 +16,7 @@ import {
   strategyPresetForGroup,
   applyConditionCost,
   recoverCondition,
-  settleThemeMonth,
+  settleColorMonth,
   syncCondition,
 } from "./runtimeState";
 
@@ -412,7 +412,7 @@ export function closeTrackBMonth(save: GameSavePayload, iso: string): void {
   const month = monthKey(iso);
   const day = isoDatePart(iso);
   if (tb.last_month_closed === month) return;
-  settleThemeMonth(tb, day);
+  settleColorMonth(tb, day);
 
   const finances = normalizeFinances(save.finances as Parameters<typeof normalizeFinances>[0]);
   const cashStart = tb.monthly_reports.at(-1)?.cash_end ?? num(finances.opening_cash_yen, finances.cash_yen);

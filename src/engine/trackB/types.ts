@@ -5,6 +5,9 @@ export type VisibleAttributeV2 =
 
 export type AttributesV2 = Record<VisibleAttributeV2, number>;
 export type ThemeTag = string;
+export const COLOR_KEYS = ["red", "orange", "yellow", "white", "green", "aqua", "blue", "purple", "black", "pink"] as const;
+export type ColorKey = typeof COLOR_KEYS[number];
+export type ColorVector = Record<ColorKey, number>;
 export type IssueSeverity = "mild" | "moderate" | "severe";
 
 export interface ActiveIssue { severity: IssueSeverity; started_on: string; recovery_days: number; }
@@ -20,17 +23,19 @@ export interface SongWorkProfile {
   appeal: number;
   vocal_difficulty: number;
   dance_difficulty: number;
-  sing_lead_count: number;
-  dance_lead_count: number;
-  vocal_lead_requirement: number;
-  dance_lead_requirement: number;
   bpm: number | null;
   vocal_range: { low: number | null; high: number | null } | null;
   formation: string | null;
   provenance: "evidence" | "default";
 }
 
-export interface SongRuntimeFamiliarity { vocal: number; dance: number; }
+export interface SongArrangementState {
+  formation_familiarity: number;
+  whole_song_palette_direction: ColorVector;
+  part_palette_direction_override: Record<string, ColorVector>;
+  actual_presented_palette: ColorVector;
+  version_id: string;
+}
 
 export interface MemberRuntimeState {
   idol_uid: string;
@@ -47,9 +52,9 @@ export interface MemberRuntimeState {
   sell_out_rate: number | null;
   /** Player-facing result of the latest completed live. */
   recent_live_performance: "excellent" | "strong" | "steady" | "weak" | null;
-  theme_skill: Record<ThemeTag, number>;
-  theme_xp: Record<ThemeTag, number>;
-  theme_last_used: Record<ThemeTag, string>;
+  theme_proficiency: Record<ThemeTag, number>;
+  developed_color: ColorVector;
+  color_xp: ColorVector;
   weekly_condition_sum: number;
   weekly_condition_min: number;
   weekly_samples: number;
@@ -95,7 +100,7 @@ export interface WeeklyLiveMomentum {
   sns: number; streaming: number; media: number;
 }
 
-export interface WorldThemeState { score: number; momentum: number; saturation: number; }
+export interface WorldColorState { raw_popularity: number; popularity: number; saturation: number; momentum: number; }
 
 export interface MonthlyOperatingReport {
   month: string; cash_start: number; cash_end: number; income_total: number; expense_total: number; net_total: number;
@@ -115,8 +120,9 @@ export interface TrackBState {
   strategy: GroupStrategyState;
   staff: StaffPackageState;
   song_profiles: Record<string, SongWorkProfile>;
-  song_familiarity: Record<string, SongRuntimeFamiliarity>;
-  world_themes: Record<ThemeTag, WorldThemeState>;
+  arrangements: Record<string, SongArrangementState>;
+  world_colors: Record<ColorKey, WorldColorState>;
+  team_palette: ColorVector;
   making: MakingProject[];
   external_offers: ExternalWorkOffer[];
   bonds: PairBond[];

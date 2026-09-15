@@ -4,7 +4,7 @@ import type { GameSavePayload } from "../../save/gameSaveSchema";
 import { getLetterTierFromGroup, getPrimaryGroup } from "../../save/gameSaveSchema";
 import { financeAudienceProfileForGroup } from "../financeSystem";
 import type { LetterTier } from "../types";
-import type { ActiveIssue, AttributesV2, GroupStrategyState, MemberRuntimeState, SongWorkProfile, StaffPackageState, ThemeTag, TrackBState } from "./types";
+import { COLOR_KEYS, type ActiveIssue, type AttributesV2, type ColorVector, type GroupStrategyState, type MemberRuntimeState, type SongWorkProfile, type StaffPackageState, type ThemeTag, type TrackBState } from "./types";
 
 export const THEME_DIMENSIONS: Record<string, ThemeTag[]> = {
   season: ["spring", "summer", "autumn", "winter"],
@@ -14,6 +14,14 @@ export const THEME_DIMENSIONS: Record<string, ThemeTag[]> = {
   aesthetic: ["cute", "cool", "dark", "dreamy", "elegant"],
 };
 export const ALL_THEMES = Object.values(THEME_DIMENSIONS).flat();
+export const emptyColorVector = (): ColorVector => Object.fromEntries(COLOR_KEYS.map((color) => [color, 0])) as ColorVector;
+export const normalizedColorDirection = (seed: string): ColorVector => {
+  const out = emptyColorVector();
+  const primary = COLOR_KEYS[Math.floor(stable01(`${seed}|primary`) * COLOR_KEYS.length)]!;
+  const secondary = COLOR_KEYS[(COLOR_KEYS.indexOf(primary) + 2) % COLOR_KEYS.length]!;
+  out[primary] = .65; out[secondary] = .35;
+  return out;
+};
 
 export function clamp(n: number, lo: number, hi: number): number { return Math.max(lo, Math.min(hi, n)); }
 export function num(v: unknown, fallback = 0): number {
@@ -123,10 +131,10 @@ export function buildStrategy(presetId: string, month: string): GroupStrategySta
 /**
  * L3 song research is intentionally outside this branch. Until that export
  * exists, every catalog item receives the same neutral game treatment: D12/D12,
- * no lead requirement, ordinary appeal, and no theme/formation/BPM/range claim.
+ * ordinary appeal, and no unsupported formation/BPM/range claim.
  */
 export function deriveSongProfile(song: Record<string, unknown>): SongWorkProfile {
-  return { song_uid: String(song.uid ?? ""), themes: [], appeal: 50, vocal_difficulty: 12, dance_difficulty: 12, sing_lead_count: 0, dance_lead_count: 0, vocal_lead_requirement: 14, dance_lead_requirement: 14, bpm: null, vocal_range: null, formation: null, provenance: "default" };
+  return { song_uid: String(song.uid ?? ""), themes: [], appeal: 50, vocal_difficulty: 12, dance_difficulty: 12, bpm: null, vocal_range: null, formation: null, provenance: "default" };
 }
 
 function themeFloor(theme: ThemeTag): number {
@@ -166,12 +174,11 @@ function normalizeV2State(save: GameSavePayload, state: TrackBState, opening: st
     member.condition = clamp(num(member.condition, num(idol.condition, 90)), 0, 100);
     member.vocal_issue = normalizeIssue(member.vocal_issue, opening);
     member.physical_issue = normalizeIssue(member.physical_issue, opening);
-    member.theme_skill ??= {};
-    member.theme_xp ??= {};
-    member.theme_last_used ??= {};
+    member.theme_proficiency ??= {};
+    member.developed_color ??= emptyColorVector();
+    member.color_xp ??= emptyColorVector();
     for (const theme of ALL_THEMES) {
-      member.theme_skill[theme] = clamp(num(member.theme_skill[theme], initialThemeSkill(member.attributes, theme)), themeFloor(theme), 100);
-      member.theme_xp[theme] = Math.max(0, num(member.theme_xp[theme]));
+      member.theme_proficiency[theme] = clamp(num(member.theme_proficiency[theme], initialThemeSkill(member.attributes, theme)), themeFloor(theme), 100);
     }
     member.weekly_condition_sum = Math.max(0, num(member.weekly_condition_sum));
     member.weekly_condition_min = clamp(num(member.weekly_condition_min, member.condition), 0, 100);
@@ -198,34 +205,32 @@ export function ensureTrackB(save: GameSavePayload): TrackBState {
   const members: Record<string, MemberRuntimeState> = {};
   for (const uid of memberUids) {
     const idol = idols.find((r) => String(r.uid ?? "") === uid) ?? { uid }; const attributes = mapLegacyAttributesToV2(idol);
-    const theme_skill = Object.fromEntries(ALL_THEMES.map((theme) => [theme, initialThemeSkill(attributes, theme)]));
-    members[uid] = { idol_uid: uid, attributes, condition: legacyCondition(oldMembers[uid], idol), vocal_issue: null, physical_issue: null, confidence: clamp(num(idol.morale, 70) + 5, 20, 90), personal_public: ["C","B","A","S"].includes(baseTier) ? Math.round(num(idol.x_followers) * .04) : 0, otaku_affinity: .12, core_share: memberUids.length ? fans.core / memberUids.length : 0, sell_out_rate: null, recent_live_performance: null, theme_skill, theme_xp: {}, theme_last_used: {}, weekly_condition_sum: 0, weekly_condition_min: 100, weekly_samples: 0, weekly_exposure_impression: 0 };
+    const theme_proficiency = Object.fromEntries(ALL_THEMES.map((theme) => [theme, initialThemeSkill(attributes, theme)]));
+    members[uid] = { idol_uid: uid, attributes, condition: legacyCondition(oldMembers[uid], idol), vocal_issue: null, physical_issue: null, confidence: clamp(num(idol.morale, 70) + 5, 20, 90), personal_public: ["C","B","A","S"].includes(baseTier) ? Math.round(num(idol.x_followers) * .04) : 0, otaku_affinity: .12, core_share: memberUids.length ? fans.core / memberUids.length : 0, sell_out_rate: null, recent_live_performance: null, theme_proficiency, developed_color: emptyColorVector(), color_xp: emptyColorVector(), weekly_condition_sum: 0, weekly_condition_min: 100, weekly_samples: 0, weekly_exposure_impression: 0 };
     syncCondition(idol, members[uid]!);
   }
   const songs = (save.database_snapshot.songs as Record<string, unknown>[]).filter((s) => String(s.group_uid ?? "") === String(group?.uid ?? ""));
-  const song_profiles: Record<string, SongWorkProfile> = {}; const song_familiarity: TrackBState["song_familiarity"] = {};
-  songs.forEach((song, index) => { const uid = String(song.uid ?? ""); if (!uid) return; song_profiles[uid] = deriveSongProfile(song); const f = index < 12 ? 90 : num(song.popularity) >= 70 ? 80 : 45; song_familiarity[uid] = { vocal: f, dance: f }; });
-  const world_themes = Object.fromEntries(ALL_THEMES.filter((t) => !THEME_DIMENSIONS.season.includes(t)).map((t) => [t, { score: 40, momentum: 0, saturation: 0 }]));
-  const state: TrackBState = { schema: "track_b_v2", members, fans, satisfaction: { live_week: 60, engage_week: 60, live_4w: [60], engage_4w: [60] }, strategy: buildStrategy(strategyPresetForGroup(group), monthKey(opening)), staff: defaultStaffPackage(String(letterTier)), song_profiles, song_familiarity, world_themes, making: [], external_offers: [], bonds: [], week_events: [], monthly_reports: [], last_sunday_iso: null, last_month_closed: null, strategy_month_seeded: monthKey(opening) };
+  const song_profiles: Record<string, SongWorkProfile> = {}; const arrangements: TrackBState["arrangements"] = {};
+  songs.forEach((song, index) => { const uid = String(song.uid ?? ""); if (!uid) return; song_profiles[uid] = deriveSongProfile(song); const f = index < 12 ? 90 : num(song.popularity) >= 70 ? 80 : 45; arrangements[uid] = { formation_familiarity: f, whole_song_palette_direction: normalizedColorDirection(uid), part_palette_direction_override: {}, actual_presented_palette: emptyColorVector(), version_id: "historical" }; });
+  const world_colors = Object.fromEntries(COLOR_KEYS.map((color) => [color, { raw_popularity: 40, popularity: 50, saturation: 0, momentum: 0 }])) as TrackBState["world_colors"];
+  const team_palette = normalizedColorDirection(String(group?.uid ?? "team"));
+  const state: TrackBState = { schema: "track_b_v2", members, fans, satisfaction: { live_week: 60, engage_week: 60, live_4w: [60], engage_4w: [60] }, strategy: buildStrategy(strategyPresetForGroup(group), monthKey(opening)), staff: defaultStaffPackage(String(letterTier)), song_profiles, arrangements, world_colors, team_palette, making: [], external_offers: [], bonds: [], week_events: [], monthly_reports: [], last_sunday_iso: null, last_month_closed: null, strategy_month_seeded: monthKey(opening) };
   save.track_b = state;
   if (group) Object.assign(group, { public_fans: fans.public, otaku_fans: fans.otaku, core_fans: fans.core, box_rate: fans.box_rate, fans: fans.public + fans.otaku + fans.core });
   return state;
 }
 
-export function settleThemeMonth(tb: TrackBState, iso: string): void {
-  for (const member of Object.values(tb.members)) for (const theme of ALL_THEMES) {
-    const xp = num(member.theme_xp[theme]); const skill = num(member.theme_skill[theme], themeFloor(theme));
-    const grown = skill + xp * (1 - skill / 110) * 0.08;
-    const last = member.theme_last_used[theme]; const inactiveMonths = last ? Math.max(0, (Date.parse(`${iso}T12:00:00Z`) - Date.parse(`${last}T12:00:00Z`)) / (30 * 86400000)) : 0;
-    member.theme_skill[theme] = clamp(grown - (inactiveMonths > 6 ? (inactiveMonths - 6) * .15 : 0), themeFloor(theme), 100);
-    member.theme_xp[theme] = 0;
-  }
-  for (const [theme, world] of Object.entries(tb.world_themes)) {
-    const drift = (stable01(`${iso}|${theme}`) - .5) * 6;
+export function settleColorMonth(tb: TrackBState, iso: string): void {
+  let total = 0;
+  for (const color of COLOR_KEYS) {
+    const world = tb.world_colors[color];
+    const drift = (stable01(`${iso}|${color}`) - .5) * 6;
     world.momentum = clamp(world.momentum * .55 + drift - world.saturation * .08, -20, 20);
-    world.score = clamp(world.score + (40 - world.score) * .12 + world.momentum * .25, 0, 100);
-    world.saturation = clamp(world.saturation * .7 + Math.max(0, world.score - 60) * .08, 0, 40);
+    world.raw_popularity = clamp(world.raw_popularity + (40 - world.raw_popularity) * .12 + world.momentum * .25, 5, 120);
+    world.saturation = clamp(world.saturation * .7 + Math.max(0, world.raw_popularity - 60) * .08, 0, 40);
+    total += world.raw_popularity;
   }
+  for (const color of COLOR_KEYS) tb.world_colors[color].popularity = tb.world_colors[color].raw_popularity / Math.max(1, total) * 500;
 }
 
 export function syncTrackBRoster(save: GameSavePayload): void {

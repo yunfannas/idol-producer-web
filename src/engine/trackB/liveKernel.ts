@@ -2,8 +2,8 @@ import type { GameSavePayload } from "../../save/gameSaveSchema";
 import { songCatalogDisplayLabel } from "../../data/songCatalog";
 import type { LiveResultPayload } from "../livePerformanceWeb";
 import type { ManagedSongStatusRow } from "../songStatusSystem";
-import type { MemberRuntimeState, SongWorkProfile, ThemeTag, TrackBState } from "./types";
-import { applyConditionCost, clamp, conditionPenalty, ensureTrackB, isoDatePart, num, recoverCondition, syncCondition, THEME_DIMENSIONS } from "./runtimeState";
+import { COLOR_KEYS, type ColorVector, type MemberRuntimeState, type SongWorkProfile, type ThemeTag, type TrackBState } from "./types";
+import { applyConditionCost, clamp, conditionPenalty, emptyColorVector, ensureTrackB, isoDatePart, num, recoverCondition, syncCondition } from "./runtimeState";
 
 type Segment = "public" | "otaku" | "core";
 type AudienceState = { activation: number; immersion: number; participation: number; impression: number };
@@ -21,8 +21,9 @@ function resolveSetlistSongs(live: Record<string, unknown>, songs: Record<string
 }
 
 function assignLeads(members: MemberRuntimeState[], profile: SongWorkProfile): { singers: Set<string>; dancers: Set<string>; center: string | null } {
-  const singers = new Set([...members].sort((a, b) => b.attributes.pitch + b.attributes.breath - a.attributes.pitch - a.attributes.breath).slice(0, profile.sing_lead_count).map((m) => m.idol_uid));
-  const dancers = new Set([...members].sort((a, b) => b.attributes.agility + b.attributes.rhythm - a.attributes.agility - a.attributes.rhythm).slice(0, profile.dance_lead_count).map((m) => m.idol_uid));
+  void profile;
+  const singers = new Set([...members].sort((a, b) => b.attributes.pitch + b.attributes.breath - a.attributes.pitch - a.attributes.breath).slice(0, 1).map((m) => m.idol_uid));
+  const dancers = new Set([...members].sort((a, b) => b.attributes.agility + b.attributes.rhythm - a.attributes.agility - a.attributes.rhythm).slice(0, 1).map((m) => m.idol_uid));
   const center = [...members].sort((a, b) => b.attributes.stage_presence - a.attributes.stage_presence)[0]?.idol_uid ?? null;
   return { singers, dancers, center };
 }
@@ -91,17 +92,26 @@ function satisfactionFromImpression(impression: number, expected: number): numbe
   return clamp(50 + 78 * Math.tanh((ratio - 1) * 1.5), 0, 100);
 }
 
-function teamThemeExecution(tb: TrackBState, members: MemberRuntimeState[], themes: ThemeTag[], segment: Segment): number {
+function teamThemeExecution(_tb: TrackBState, members: MemberRuntimeState[], themes: ThemeTag[], _segment: Segment): number {
   if (!themes.length) return 1;
-  const segmentWorld = segment === "public" ? 1 : segment === "otaku" ? .55 : .12;
   const scores = themes.map((theme) => {
-    const skill = members.reduce((sum, member) => sum + (member.theme_skill[theme] ?? 0) + (member.attributes.stage_presence - 10) * .35 + (member.attributes.wit - 10) * .12 + (member.attributes.teamwork - 10) * .08, 0) / Math.max(1, members.length);
-    const world = THEME_DIMENSIONS.season.includes(theme) ? 50 : tb.world_themes[theme]?.score ?? 40;
-    return (skill / 100) * (1 + ((world - 40) / 100) * segmentWorld);
+    const skill = members.reduce((sum, member) => sum + (member.theme_proficiency[theme] ?? 0) + (member.attributes.stage_presence - 10) * .35 + (member.attributes.wit - 10) * .12 + (member.attributes.teamwork - 10) * .08, 0) / Math.max(1, members.length);
+    return skill / 100;
   });
   const raw = scores.reduce((a, b) => a + b, 0) / scores.length;
   const dilution = themes.length > 3 ? 1 - (themes.length - 3) * .08 : 1;
   return clamp(.5 + raw * .95 * dilution, .5, 2);
+}
+
+function colorAtmosphere(tb: TrackBState, direction: ColorVector, completion: number, liveSaturation: ColorVector, segment: Segment): number {
+  let score = 0;
+  for (const color of COLOR_KEYS) {
+    const world = tb.world_colors[color];
+    const audiencePopularity = segment === "public" ? world.popularity * .8 + tb.team_palette[color] * 100 : segment === "otaku" ? world.popularity * .45 + tb.team_palette[color] * 275 : tb.team_palette[color] * 500;
+    const saturation = liveSaturation[color] + world.saturation * (segment === "public" ? 1 : segment === "otaku" ? .55 : .2);
+    score += direction[color] * (1 + (clamp(audiencePopularity, 10, 90) - 10) / 80) * clamp(1 - saturation / 130, .55, 1);
+  }
+  return clamp(.65 + score * completion, .55, 2);
 }
 
 function issuePenalty(member: MemberRuntimeState, kind: "vocal" | "physical"): number {
@@ -147,23 +157,27 @@ export function resolveLiveTrackB(save: GameSavePayload, group: Record<string, u
   const audience: Record<Segment, AudienceState> = { public: { activation: 50, immersion: 50, participation: 50, impression: 0 }, otaku: { activation: 50, immersion: 50, participation: 50, impression: 0 }, core: { activation: 50, immersion: 50, participation: 50, impression: 0 } };
   const memberScores = new Map<string, number[]>();
   const songValues: number[] = [];
+  const liveSaturation = emptyColorVector();
 
   for (const [index, song] of setlist.entries()) {
-    const uid = String(song.uid ?? ""); const profile = tb.song_profiles[uid] ?? { song_uid: uid, themes: [], appeal: 50, vocal_difficulty: 12, dance_difficulty: 12, sing_lead_count: 0, dance_lead_count: 0, vocal_lead_requirement: 14, dance_lead_requirement: 14, bpm: null, vocal_range: null, formation: null, provenance: "default" as const };
-    const fam = tb.song_familiarity[uid] ?? { vocal: 50, dance: 50 }; const leads = assignLeads(members, profile); const values: number[] = [];
+    const uid = String(song.uid ?? ""); const profile = tb.song_profiles[uid] ?? { song_uid: uid, themes: [], appeal: 50, vocal_difficulty: 12, dance_difficulty: 12, bpm: null, vocal_range: null, formation: null, provenance: "default" as const };
+    const arrangement = tb.arrangements[uid] ?? { formation_familiarity: 50, whole_song_palette_direction: emptyColorVector(), part_palette_direction_override: {}, actual_presented_palette: emptyColorVector(), version_id: "auto" }; const fam = arrangement.formation_familiarity; const leads = assignLeads(members, profile); const values: number[] = [];
     for (const member of members) {
       const conditionLoss = conditionPenalty(member.condition); const breath = member.attributes.breath - conditionLoss - issuePenalty(member, "vocal"); const rhythm = member.attributes.rhythm - conditionLoss - issuePenalty(member, "physical"); const power = member.attributes.power - conditionLoss - issuePenalty(member, "physical");
-      const vocal = (0.65 * fit(breath - profile.vocal_difficulty) + .35 * fit(rhythm - profile.vocal_difficulty)) * oneSidedGap(profile.vocal_difficulty - member.attributes.pitch) * (.94 + fam.vocal / 100 * .06) + Math.max(0, member.attributes.tone - 10) * .012;
-      const dance = fit(rhythm - profile.dance_difficulty) * oneSidedGap(profile.dance_difficulty - member.attributes.agility) * (.94 + fam.dance / 100 * .06) + Math.max(0, power - 10) * .012 + (leads.dancers.has(member.idol_uid) ? .04 : 0);
-      const leadPenalty = leads.singers.has(member.idol_uid) && (member.attributes.pitch + breath) / 2 < profile.vocal_lead_requirement ? .1 : 0;
+      const vocal = (0.65 * fit(breath - profile.vocal_difficulty) + .35 * fit(rhythm - profile.vocal_difficulty)) * oneSidedGap(profile.vocal_difficulty - member.attributes.pitch) * (.94 + fam / 100 * .06) + Math.max(0, member.attributes.tone - 10) * .012;
+      const dance = fit(rhythm - profile.dance_difficulty) * oneSidedGap(profile.dance_difficulty - member.attributes.agility) * (.94 + fam / 100 * .06) + Math.max(0, power - 10) * .012;
+      const leadPenalty = 0;
       const value = clamp((.55 * vocal + .45 * dance - leadPenalty) * (.9 + member.attributes.stage_presence * .01), .2, 1.25);
       values.push(value); const prev = memberScores.get(member.idol_uid) ?? []; prev.push(value); memberScores.set(member.idol_uid, prev);
       const vocalWork = 1.3 * performerCountFactor(n) * (leads.singers.has(member.idol_uid) ? 1.1 : 1 / n);
       const danceWork = 1.2;
       applyConditionCost(member, vocalWork + danceWork); maybeIssue(member, vocalWork, danceWork, `${uid}|${member.idol_uid}|${index}`, refIso);
-      for (const theme of profile.themes) { member.theme_xp[theme] = (member.theme_xp[theme] ?? 0) + 2 + value * 3; member.theme_last_used[theme] = refIso; }
+      void refIso;
     }
     const performance = values.reduce((a, b) => a + b, 0) / Math.max(1, values.length); songValues.push(performance * 100);
+    const presented = emptyColorVector();
+    for (const color of COLOR_KEYS) presented[color] = arrangement.whole_song_palette_direction[color] * performance;
+    arrangement.actual_presented_palette = presented;
     const fn = liveFunction(profile);
     const popularity = songScale(song.popularity ?? song.popularity_local, 50);
     const quality = songScale(song.quality ?? song.quality_score ?? song.live_quality, profile.appeal);
@@ -172,7 +186,7 @@ export function resolveLiveTrackB(save: GameSavePayload, group: Record<string, u
       const state = audience[segment];
       // Evaluate a song against the current audience state, then transition it.
       const base = 5 + profile.appeal * .04 + popularity * .025 + quality * .015;
-      const impression = base * performance * teamThemeExecution(tb, members, profile.themes, segment) * stateFunctionDemand(state, fn);
+      const impression = base * performance * teamThemeExecution(tb, members, profile.themes, segment) * colorAtmosphere(tb, arrangement.whole_song_palette_direction, performance, liveSaturation, segment) * stateFunctionDemand(state, fn);
       state.impression += impression;
       transitionAudienceState(state, fn, performance);
       songExposure += impression;
@@ -180,6 +194,7 @@ export function resolveLiveTrackB(save: GameSavePayload, group: Record<string, u
     const weights = members.map((member) => ({ member, weight: 1 + (leads.center === member.idol_uid ? .5 : 0) + (leads.singers.has(member.idol_uid) ? .25 : 0) + (leads.dancers.has(member.idol_uid) ? .2 : 0) }));
     const weightSum = weights.reduce((sum, row) => sum + row.weight, 0); for (const row of weights) row.member.weekly_exposure_impression += songExposure * row.weight / Math.max(1, weightSum);
     if ((index + 1) % 8 === 0) for (const member of members) recoverCondition(member, .25);
+    for (const color of COLOR_KEYS) liveSaturation[color] += presented[color] * .18;
   }
 
   const crowd = attendanceFromLayers(tb.fans, liveType, Math.max(0, Math.trunc(num(live.capacity))),);
