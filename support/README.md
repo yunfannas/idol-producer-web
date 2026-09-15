@@ -1,4 +1,4 @@
-Support files live here so the playable web app stays easier to navigate.
+﻿Support files live here so the playable web app stays easier to navigate.
 
 - `docs/`: plans, reference notes, and generated CSV/JSON review material
 - `scripts/`: scraping, catalog maintenance, import/export, and data build scripts
@@ -8,3 +8,6 @@ Support files live here so the playable web app stays easier to navigate.
 - `ocr/`: OCR language data for poster-processing workflows
 
 The runtime game files remain in `src/`, `public/data/`, and the root Vite config files.
+
+Lab-only research/evidence pipelines were moved to `idol-data-lab/archive/web-lab-zone-a-2026-09-15/` (2026-09-15).
+
