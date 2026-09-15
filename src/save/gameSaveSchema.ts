@@ -416,7 +416,12 @@ export interface GroupPolicy {
   operating: {
     tokuten_enabled_items: string[];
     tokuten_event_duration_minutes: number;
+    tokuten_max_extension_minutes: number;
     tokuten_extension_policy: "never" | "when_demand_and_schedule_allow";
+    tokuten_menu: {
+      standard_cheki: { enabled: boolean; price_yen: number; talk_seconds: number };
+      signed_cheki: { enabled: boolean; price_yen: number; talk_seconds: number };
+    };
     live_default_tokuten_attachment: boolean;
     live_default_fan_meeting_attachment: boolean;
   };
@@ -464,8 +469,9 @@ export function defaultGroupPolicy(): GroupPolicy {
       promotion_focus: "balanced", promotion_intensity: "limited", role_stability: "balanced",
     },
     operating: {
-      tokuten_enabled_items: ["CHEKI_SIGNED"], tokuten_event_duration_minutes: 60,
+      tokuten_enabled_items: ["CHEKI_STANDARD", "CHEKI_SIGNED"], tokuten_event_duration_minutes: 60, tokuten_max_extension_minutes: 10,
       tokuten_extension_policy: "when_demand_and_schedule_allow", live_default_tokuten_attachment: true, live_default_fan_meeting_attachment: false,
+      tokuten_menu: { standard_cheki: { enabled: true, price_yen: 1500, talk_seconds: 20 }, signed_cheki: { enabled: true, price_yen: 2000, talk_seconds: 40 } },
     },
     pricing: { signed_cheki_yen: 2000, standard_live_ticket_yen: 2500 },
     live: {
@@ -530,9 +536,21 @@ export function normalizeGroupPolicy(raw: unknown): GroupPolicy {
     if (Array.isArray(operating.tokuten_enabled_items)) base.operating.tokuten_enabled_items = operating.tokuten_enabled_items.map((item) => String(item).trim()).filter(Boolean);
     const duration = Number(operating.tokuten_event_duration_minutes);
     if (Number.isFinite(duration)) base.operating.tokuten_event_duration_minutes = Math.max(1, Math.min(180, Math.round(duration)));
+    const extension = Number(operating.tokuten_max_extension_minutes);
+    if (Number.isFinite(extension)) base.operating.tokuten_max_extension_minutes = Math.max(0, Math.min(30, Math.round(extension)));
     if (operating.tokuten_extension_policy === "never" || operating.tokuten_extension_policy === "when_demand_and_schedule_allow") base.operating.tokuten_extension_policy = operating.tokuten_extension_policy;
     if (typeof operating.live_default_tokuten_attachment === "boolean") base.operating.live_default_tokuten_attachment = operating.live_default_tokuten_attachment;
     if (typeof operating.live_default_fan_meeting_attachment === "boolean") base.operating.live_default_fan_meeting_attachment = operating.live_default_fan_meeting_attachment;
+    if (operating.tokuten_menu && typeof operating.tokuten_menu === "object") {
+      const menu = operating.tokuten_menu as Record<string, unknown>;
+      for (const key of ["standard_cheki", "signed_cheki"] as const) {
+        const raw = menu[key]; if (!raw || typeof raw !== "object") continue;
+        const item = raw as Record<string, unknown>; const target = base.operating.tokuten_menu[key];
+        if (typeof item.enabled === "boolean") target.enabled = item.enabled;
+        const price = Number(item.price_yen); if (Number.isFinite(price)) target.price_yen = Math.max(0, Math.min(100000, Math.round(price)));
+        const seconds = Number(item.talk_seconds); if (Number.isFinite(seconds)) target.talk_seconds = Math.max(1, Math.min(300, Math.round(seconds)));
+      }
+    }
   }
   if (p.pricing && typeof p.pricing === "object") {
     const pricing = p.pricing as Record<string, unknown>;

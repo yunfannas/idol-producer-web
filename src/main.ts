@@ -4020,6 +4020,18 @@ function paintGame(): void {
         return;
       }
       const tokutenkai = t.closest<HTMLInputElement>("[data-policy-tokutenkai]");
+      const tokutenField = t.closest<HTMLInputElement>("[data-policy-tokuten-field]");
+      if (tokutenField) {
+        const key = String(tokutenField.getAttribute("data-policy-tokuten-field") ?? "");
+        const value = Math.max(0, Math.round(Number(tokutenField.value) || 0));
+        if (key === "duration") policy.operating.tokuten_event_duration_minutes = Math.max(1, Math.min(180, value));
+        else if (key === "extension") policy.operating.tokuten_max_extension_minutes = Math.min(30, value);
+        else if (key === "standard_price") policy.operating.tokuten_menu.standard_cheki.price_yen = value;
+        else if (key === "standard_seconds") policy.operating.tokuten_menu.standard_cheki.talk_seconds = Math.max(1, Math.min(300, value));
+        else if (key === "signed_price") { policy.operating.tokuten_menu.signed_cheki.price_yen = value; policy.pricing.signed_cheki_yen = value; }
+        else if (key === "signed_seconds") policy.operating.tokuten_menu.signed_cheki.talk_seconds = Math.max(1, Math.min(300, value));
+        return;
+      }
       if (tokutenkai) {
         policy.live.tokutenkai_enabled = tokutenkai.checked;
         policy.operating.live_default_tokuten_attachment = tokutenkai.checked;

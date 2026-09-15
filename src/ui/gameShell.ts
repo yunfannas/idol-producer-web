@@ -47,11 +47,10 @@ import {
   type ScoutLeadRow,
 } from "../engine/scoutWeb";
 import { festivalPerformancesForManagedGroup, normalizeFestivalCatalog } from "../engine/festivalWeb";
-import { MEMBER_ROLE_DEFINITIONS, memberRolesSummary, roleAssignmentsFromHistoryEntry } from "../data/memberRoles";
+import { MEMBER_ROLE_DEFINITIONS, roleAssignmentsFromHistoryEntry } from "../data/memberRoles";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
-  activeGroupRoleMembershipsAtReference,
   activeGroupsAtReference,
   ageLabel,
   displayReferenceIso,
@@ -1132,16 +1131,15 @@ function renderGroupHistoryTable(
         : `<span data-wiki-skip="1">${htmlEsc(label)}</span>`;
       const col = typeof e.member_color === "string" && e.member_color ? e.member_color : "—";
       const mn = typeof e.member_name === "string" && e.member_name ? e.member_name : "—";
-      const roles = memberRolesSummary(roleAssignmentsFromHistoryEntry(e));
       const startDisp = fmtHistoryDateDisplay(e.start_date, referenceIso, e, "start");
       const endDisp = fmtHistoryDateDisplay(e.end_date, referenceIso, e, "end");
-      return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td><td>${htmlEsc(roles)}</td></tr>`;
+      return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td></tr>`;
     })
     .join("");
   return `
     <div class="table-scroll idol-history-scroll">
       <table class="fm-table">
-        <thead><tr><th>${htmlEsc(t(lang, "idol_group"))}</th><th>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</th><th>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</th><th>${htmlEsc(t(lang, "group_color"))}</th><th>${htmlEsc(localizedLiteral(lang, "Stage name", "艺名"))}</th><th>${htmlEsc(localizedLiteral(lang, "Roles", "定位"))}</th></tr></thead>
+        <thead><tr><th>${htmlEsc(t(lang, "idol_group"))}</th><th>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</th><th>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</th><th>${htmlEsc(t(lang, "group_color"))}</th><th>${htmlEsc(localizedLiteral(lang, "Stage name", "艺名"))}</th></tr></thead>
         <tbody>${tbody}</tbody>
       </table>
     </div>`;
@@ -1180,7 +1178,6 @@ function renderIdolDetailPage(
   const age = htmlEsc(ageLabel(row, referenceIso));
   const xLbl = htmlEsc(xFollowersLabel(row));
   const memberships = activeGroupMembershipsAtReference(row, referenceIso, groupsSnapshot);
-  const roleMemberships = activeGroupRoleMembershipsAtReference(row, referenceIso, groupsSnapshot);
   const currentGroupsHtml =
     memberships.length > 0
       ? memberships
@@ -1192,10 +1189,6 @@ function renderIdolDetailPage(
           })
           .join(", ")
       : htmlEsc("-");
-  const currentRolesText = roleMemberships
-    .filter((membership) => membership.roles.length > 0)
-    .map((membership) => `${membership.name}: ${memberRolesSummary(membership.roles)}`)
-    .join(" | ") || "-";
 
   const secLine = [
     romaji ? htmlEsc(romaji) : "",
@@ -1270,7 +1263,6 @@ function renderIdolDetailPage(
       ${secLine ? `<p class="idol-detail-sub">${secLine}</p>` : ""}
       <p class="idol-detail-facts">${facts.join(" - ")}</p>
       <p class="idol-detail-current-groups" data-wiki-skip="1"><strong>${htmlEsc(t(lang, "idol_group"))}:</strong> ${currentGroupsHtml}</p>
-      <p class="idol-detail-current-groups"><strong>${htmlEsc(localizedLiteral(lang, "Roles", "定位"))}:</strong> ${htmlEsc(currentRolesText)}</p>
       ${linksInline}
     </div>
     <aside class="idol-detail-radar-aside" aria-label="${htmlEsc(localizedLiteral(lang, "Radar", "雷达图"))}">
@@ -1289,7 +1281,6 @@ function renderIdolDetailPage(
       <div><dt>${htmlEsc(t(lang, "idol_birthday"))}</dt><dd>${birthdayDisplay}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_birthplace"))}</dt><dd>${bp ? htmlEsc(bp) : "-"}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_languages"))}</dt><dd>${langs ? htmlEsc(langs) : htmlEsc(t(lang, "common_japanese"))}</dd></div>
-      <div><dt>${htmlEsc(localizedLiteral(lang, "Current roles", "当前定位"))}</dt><dd>${htmlEsc(currentRolesText)}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_past_names"))}</dt><dd>${htmlEsc(pastNamesSummary(row))}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_x_handle"))}</dt><dd>${htmlEsc(xHandle)}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_x_followers"))}</dt><dd>${xLbl}</dd></div>
@@ -4341,7 +4332,7 @@ function renderSchedulePolicy(
         <tr><th>${htmlEsc(localizedLiteral(lang, "Agency profitability", "Agency 盈利要求"))}</th><td>${htmlEsc(policy.agency.profitability_requirement)}</td><th>${htmlEsc(localizedLiteral(lang, "Making authority", "制作权限"))}</th><td>${htmlEsc(policy.agency.making_authority)}</td></tr>
         <tr><th>${htmlEsc(localizedLiteral(lang, "Workload / recovery", "工作量 / 恢复"))}</th><td>${htmlEsc(`${policy.team.workload_target} / ${policy.team.rest_priority}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Live / allocation", "演出 / 分工"))}</th><td>${htmlEsc(`${policy.team.live_frequency} / ${policy.team.event_selectivity} · ${policy.team.role_stability}`)}</td></tr>
         <tr><th>${htmlEsc(localizedLiteral(lang, "Fanwork", "Fanwork"))}</th><td>${htmlEsc(`${policy.team.fanwork_tokuten} tokuten · ${policy.team.fanwork_online} online`)}</td><th>${htmlEsc(localizedLiteral(lang, "Promotion", "推广"))}</th><td>${htmlEsc(`${policy.team.promotion_focus} / ${policy.team.promotion_intensity}`)}</td></tr>
-        <tr><th>${htmlEsc(localizedLiteral(lang, "Default tokuten", "默认特典会"))}</th><td>${htmlEsc(`${policy.operating.tokuten_event_duration_minutes} min · ${policy.operating.tokuten_extension_policy}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Signed cheki", "签名 cheki"))}</th><td>¥${policy.pricing.signed_cheki_yen.toLocaleString("ja-JP")}</td></tr>
+        <tr><th>${htmlEsc(localizedLiteral(lang, "Default tokuten", "默认特典会"))}</th><td>${htmlEsc(`${policy.operating.tokuten_event_duration_minutes} min + ${policy.operating.tokuten_max_extension_minutes} min · ${policy.operating.tokuten_extension_policy}`)}</td><th>${htmlEsc(localizedLiteral(lang, "Cheki menu", "チェキ菜单"))}</th><td>${htmlEsc(`standard ¥${policy.operating.tokuten_menu.standard_cheki.price_yen}/${policy.operating.tokuten_menu.standard_cheki.talk_seconds}s · signed ¥${policy.operating.tokuten_menu.signed_cheki.price_yen}/${policy.operating.tokuten_menu.signed_cheki.talk_seconds}s`)}</td></tr>
         ${policy.selection ? `<tr><th>${htmlEsc(localizedLiteral(lang, "Selection Policy", "选拔 Policy"))}</th><td colspan="3">${htmlEsc(`${policy.selection.selection_size} members · ${policy.selection.center_policy} center · ${policy.selection.stability}`)}</td></tr>` : ""}
       </tbody></table></div>
       <p class="content-muted">${htmlEsc(localizedLiteral(lang, "These are staff defaults. They alter scheduling, offer handling and real resource use; they do not apply direct bonuses.", "这些是 staff 默认方案：它们改变排期、邀约处理和实际资源消耗，不直接提供数值加成。"))}</p>
@@ -4407,6 +4398,18 @@ function renderSchedulePolicy(
         <label class="check-pill"><input type="checkbox" data-policy-tokutenkai ${policy.live.tokutenkai_enabled ? "checked" : ""} /> <span>${htmlEsc(t(lang, "policy_tokutenkai"))}</span></label>
         <label class="check-pill"><input type="checkbox" data-policy-goods ${policy.live.goods_enabled ? "checked" : ""} /> <span>${htmlEsc(t(lang, "policy_goods"))}</span></label>
       </div>
+      <section class="policy-section">
+        <h4 class="policy-subhead">${htmlEsc(localizedLiteral(lang, "Tokuten / cheki defaults", "特典会 / チェキ默认规则"))}</h4>
+        <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Routine lives use this menu by default. A live may only extend when demand and the schedule permit, up to the approved cap.", "日常 live 默认使用此菜单。仅在需求和日程允许时延长，且不得超过批准上限。"))}</p>
+        <div class="form-grid live-form-grid">
+          <label><span>${htmlEsc(localizedLiteral(lang, "Base duration (min)", "基础时长（分钟）"))}</span><input class="fm-input" type="number" min="1" max="180" data-policy-tokuten-field="duration" value="${policy.operating.tokuten_event_duration_minutes}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Max extension (min)", "最多延长（分钟）"))}</span><input class="fm-input" type="number" min="0" max="30" data-policy-tokuten-field="extension" value="${policy.operating.tokuten_max_extension_minutes}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Standard cheki", "标准チェキ"))}</span><input class="fm-input" type="number" min="0" data-policy-tokuten-field="standard_price" value="${policy.operating.tokuten_menu.standard_cheki.price_yen}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Standard talk (sec)", "标准交流（秒）"))}</span><input class="fm-input" type="number" min="1" max="300" data-policy-tokuten-field="standard_seconds" value="${policy.operating.tokuten_menu.standard_cheki.talk_seconds}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Signed cheki", "签名チェキ"))}</span><input class="fm-input" type="number" min="0" data-policy-tokuten-field="signed_price" value="${policy.operating.tokuten_menu.signed_cheki.price_yen}" /></label>
+          <label><span>${htmlEsc(localizedLiteral(lang, "Signed talk (sec)", "签名交流（秒）"))}</span><input class="fm-input" type="number" min="1" max="300" data-policy-tokuten-field="signed_seconds" value="${policy.operating.tokuten_menu.signed_cheki.talk_seconds}" /></label>
+        </div>
+      </section>
       <div class="policy-refill-row">
         <span class="policy-refill-label">${htmlEsc(t(lang, "policy_auto_goods_refill"))}</span>
         <label class="check-pill"><input type="checkbox" data-policy-refill-off ${!refillOn ? "checked" : ""} /> <span>${htmlEsc(t(lang, "policy_refill_off"))}</span></label>
