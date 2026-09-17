@@ -4,7 +4,8 @@
  */
 
 import groupFinanceJson from "./data/group_finance.json";
-import type { DailyBreakdown, Finances, LetterTier } from "./types";
+import type { DailyBreakdown, Finances, LetterTier, BaseTier } from "./types";
+import { toBaseTier } from "./types";
 
 const GF = groupFinanceJson as {
   default_financial_constants?: Record<string, unknown>;
@@ -145,20 +146,19 @@ export function resolveGroupLetterTier(g: Record<string, unknown> | null | undef
   return inferLetterTier(popularity, fans, xFollowers);
 }
 
-/** Active commercial tier used by finance (inactive `I` maps to `F`). */
-export function financeLetterTier(t: LetterTier): Exclude<LetterTier, "I"> {
-  return t === "I" ? "F" : t;
+/** Active commercial base tier used by finance lookup tables. */
+export function financeLetterTier(t: LetterTier): BaseTier {
+  return toBaseTier(t);
 }
 
-const LETTER_TIER_ORDER: Record<LetterTier, number> = {
-  S: 0,
-  A: 1,
-  B: 2,
-  C: 3,
-  D: 4,
-  E: 5,
-  F: 6,
-  I: 7,
+const LETTER_TIER_ORDER: Record<string, number> = {
+  "S+": 0, S: 1, "S-": 2,
+  "A+": 3, A: 4, "A-": 5,
+  "B+": 6, B: 7, "B-": 8,
+  "C+": 9, C: 10, "C-": 11,
+  "D+": 12, D: 13, "D-": 14,
+  "E+": 15, E: 16, "E-": 17,
+  F: 18, I: 19,
 };
 
 /** Lower = higher tier grade (S is 0). */
@@ -222,25 +222,23 @@ export function cdOnlineSigningMemberSeconds(cdUnitsSold: number): number {
 }
 
 export type AudienceLayer = "public" | "otaku" | "core";
-export type AudienceAgeSegment = "youth" | "young_adult" | "middle_plus";
-export type AudienceGenderSegment = "male" | "female";
 export type PurchaseChannel = "live_ticket" | "live_goods" | "post_live_cheki" | "premium_ticket" | "online_signing";
-
-export interface AudienceDemographicMix {
-  malePct: number;
-  femalePct: number;
-  youthPct: number;
-  youngAdultPct: number;
-  middlePlusPct: number;
-}
 
 export interface FinanceAudienceProfile {
   publicFans: number;
   otakuFans: number;
   coreFans: number;
-  publicDemographics: AudienceDemographicMix;
-  otakuDemographics: AudienceDemographicMix;
-  coreDemographics: AudienceDemographicMix;
+}
+
+// Retained only while the old static tuning block below is removed in a later
+// data cleanup. It is no longer part of the audience profile or any runtime
+// calculation.
+interface AudienceDemographicMix {
+  malePct: number;
+  femalePct: number;
+  youthPct: number;
+  youngAdultPct: number;
+  middlePlusPct: number;
 }
 
 export type PurchasePropensityRow = Record<PurchaseChannel, number>;
@@ -280,30 +278,28 @@ function commercialIpMonthlyRevenue(letterTier: LetterTier): number {
 
 function fanclubJoinRate(letterTier: LetterTier): number {
   const tier = financeLetterTier(letterTier);
-  const rates: Record<Exclude<LetterTier, "I">, number> = {
+  const rates: Record<BaseTier, number> = {
     S: 0.055,
     A: 0.045,
     B: 0.035,
     C: 0.026,
     D: 0.018,
     E: 0.011,
-    F: 0.006,
   };
-  return rates[tier];
+  return rates[tier] ?? rates.E;
 }
 
 function tierRevenueMultiplier(letterTier: LetterTier): number {
   const tier = financeLetterTier(letterTier);
-  const mult: Record<Exclude<LetterTier, "I">, number> = {
+  const mult: Record<BaseTier, number> = {
     S: 2.6,
     A: 2.1,
     B: 1.65,
     C: 1.25,
     D: 1.0,
     E: 0.72,
-    F: 0.45,
   };
-  return mult[tier];
+  return mult[tier] ?? mult.E;
 }
 
 function clampNumber(value: number, min: number, max: number): number {
@@ -314,100 +310,13 @@ function layerMix(malePct: number, femalePct: number, youthPct: number, youngAdu
   return { malePct, femalePct, youthPct, youngAdultPct, middlePlusPct };
 }
 
-const TIER_LAYER_SHARES: Record<Exclude<LetterTier, "I">, Record<AudienceLayer, number>> = {
+const TIER_LAYER_SHARES: Record<BaseTier, Record<AudienceLayer, number>> = {
   S: { public: 0.72, otaku: 0.2, core: 0.08 },
   A: { public: 0.68, otaku: 0.22, core: 0.1 },
   B: { public: 0.62, otaku: 0.26, core: 0.12 },
   C: { public: 0.55, otaku: 0.3, core: 0.15 },
   D: { public: 0.45, otaku: 0.33, core: 0.22 },
   E: { public: 0.38, otaku: 0.34, core: 0.28 },
-  F: { public: 0.3, otaku: 0.35, core: 0.35 },
-};
-
-const TIER_DEMOGRAPHIC_DEFAULTS: Record<Exclude<LetterTier, "I">, Record<AudienceLayer, AudienceDemographicMix>> = {
-  S: {
-    public: layerMix(70, 30, 15, 45, 40),
-    otaku: layerMix(82, 18, 10, 35, 55),
-    core: layerMix(88, 12, 7, 30, 63),
-  },
-  A: {
-    public: layerMix(55, 45, 25, 50, 25),
-    otaku: layerMix(55, 45, 20, 50, 30),
-    core: layerMix(60, 40, 15, 50, 35),
-  },
-  B: {
-    public: layerMix(50, 50, 35, 50, 15),
-    otaku: layerMix(60, 40, 25, 55, 20),
-    core: layerMix(68, 32, 15, 50, 35),
-  },
-  C: {
-    public: layerMix(60, 40, 25, 50, 25),
-    otaku: layerMix(72, 28, 18, 52, 30),
-    core: layerMix(78, 22, 10, 50, 40),
-  },
-  D: {
-    public: layerMix(70, 30, 15, 45, 40),
-    otaku: layerMix(80, 20, 10, 45, 45),
-    core: layerMix(85, 15, 7, 38, 55),
-  },
-  E: {
-    public: layerMix(75, 25, 20, 45, 35),
-    otaku: layerMix(82, 18, 12, 48, 40),
-    core: layerMix(88, 12, 8, 42, 50),
-  },
-  F: {
-    public: layerMix(80, 20, 20, 45, 35),
-    otaku: layerMix(85, 15, 12, 48, 40),
-    core: layerMix(90, 10, 8, 42, 50),
-  },
-};
-
-const PURCHASE_PROPENSITY_TABLE: Record<
-  AudienceLayer,
-  Record<AudienceAgeSegment, Record<AudienceGenderSegment, PurchasePropensityRow>>
-> = {
-  public: {
-    youth: {
-      male: { live_ticket: 0.006, live_goods: 0.025, post_live_cheki: 0.008, premium_ticket: 0.001, online_signing: 0.002 },
-      female: { live_ticket: 0.007, live_goods: 0.04, post_live_cheki: 0.006, premium_ticket: 0.001, online_signing: 0.003 },
-    },
-    young_adult: {
-      male: { live_ticket: 0.01, live_goods: 0.035, post_live_cheki: 0.014, premium_ticket: 0.002, online_signing: 0.004 },
-      female: { live_ticket: 0.011, live_goods: 0.055, post_live_cheki: 0.011, premium_ticket: 0.002, online_signing: 0.005 },
-    },
-    middle_plus: {
-      male: { live_ticket: 0.009, live_goods: 0.03, post_live_cheki: 0.018, premium_ticket: 0.004, online_signing: 0.005 },
-      female: { live_ticket: 0.008, live_goods: 0.045, post_live_cheki: 0.012, premium_ticket: 0.003, online_signing: 0.004 },
-    },
-  },
-  otaku: {
-    youth: {
-      male: { live_ticket: 0.05, live_goods: 0.12, post_live_cheki: 0.08, premium_ticket: 0.006, online_signing: 0.018 },
-      female: { live_ticket: 0.055, live_goods: 0.18, post_live_cheki: 0.06, premium_ticket: 0.005, online_signing: 0.02 },
-    },
-    young_adult: {
-      male: { live_ticket: 0.08, live_goods: 0.17, post_live_cheki: 0.16, premium_ticket: 0.014, online_signing: 0.028 },
-      female: { live_ticket: 0.082, live_goods: 0.23, post_live_cheki: 0.11, premium_ticket: 0.012, online_signing: 0.03 },
-    },
-    middle_plus: {
-      male: { live_ticket: 0.075, live_goods: 0.16, post_live_cheki: 0.2, premium_ticket: 0.026, online_signing: 0.035 },
-      female: { live_ticket: 0.065, live_goods: 0.2, post_live_cheki: 0.13, premium_ticket: 0.018, online_signing: 0.028 },
-    },
-  },
-  core: {
-    youth: {
-      male: { live_ticket: 0.16, live_goods: 0.22, post_live_cheki: 0.28, premium_ticket: 0.018, online_signing: 0.055 },
-      female: { live_ticket: 0.15, live_goods: 0.3, post_live_cheki: 0.2, premium_ticket: 0.014, online_signing: 0.06 },
-    },
-    young_adult: {
-      male: { live_ticket: 0.24, live_goods: 0.31, post_live_cheki: 0.55, premium_ticket: 0.045, online_signing: 0.09 },
-      female: { live_ticket: 0.22, live_goods: 0.38, post_live_cheki: 0.38, premium_ticket: 0.036, online_signing: 0.095 },
-    },
-    middle_plus: {
-      male: { live_ticket: 0.25, live_goods: 0.34, post_live_cheki: 0.72, premium_ticket: 0.08, online_signing: 0.11 },
-      female: { live_ticket: 0.2, live_goods: 0.36, post_live_cheki: 0.45, premium_ticket: 0.055, online_signing: 0.09 },
-    },
-  },
 };
 
 const GROUP_DEMOGRAPHIC_OVERRIDES: Record<string, Record<AudienceLayer, AudienceDemographicMix>> = {
@@ -473,23 +382,9 @@ const GROUP_DEMOGRAPHIC_OVERRIDES: Record<string, Record<AudienceLayer, Audience
   },
 };
 
-function normalizeAudienceLookupName(value: unknown): string {
-  return String(value ?? "")
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, " ");
-}
-
-function demographicOverrideForNames(names: Array<unknown>): Record<AudienceLayer, AudienceDemographicMix> | null {
-  for (const raw of names) {
-    const name = normalizeAudienceLookupName(raw);
-    if (!name) continue;
-    if (GROUP_DEMOGRAPHIC_OVERRIDES[name]) return GROUP_DEMOGRAPHIC_OVERRIDES[name];
-    const compact = name.replace(/[_\s]/g, "");
-    if (GROUP_DEMOGRAPHIC_OVERRIDES[compact]) return GROUP_DEMOGRAPHIC_OVERRIDES[compact];
-  }
-  return null;
-}
+// Kept only for source compatibility while group catalog data is decoupled;
+// it is not consumed by the runtime audience model.
+void GROUP_DEMOGRAPHIC_OVERRIDES;
 
 export function financeAudienceProfileForGroup(opts: {
   groupName?: unknown;
@@ -503,38 +398,10 @@ export function financeAudienceProfileForGroup(opts: {
   const coreFans = Math.max(0, Math.round(totalFans * shares.core));
   const otakuFans = Math.max(0, Math.round(totalFans * shares.otaku));
   const publicFans = Math.max(0, totalFans - coreFans - otakuFans);
-  const demographics = demographicOverrideForNames([opts.groupName, opts.groupRomaji]) ?? TIER_DEMOGRAPHIC_DEFAULTS[tier];
   return {
     publicFans,
     otakuFans,
     coreFans,
-    publicDemographics: demographics.public,
-    otakuDemographics: demographics.otaku,
-    coreDemographics: demographics.core,
-  };
-}
-
-function weightedAudiencePct(profile: FinanceAudienceProfile, key: keyof AudienceDemographicMix): number {
-  const total = Math.max(1, profile.publicFans + profile.otakuFans + profile.coreFans);
-  return (
-    profile.publicFans * profile.publicDemographics[key] +
-    profile.otakuFans * profile.otakuDemographics[key] +
-    profile.coreFans * profile.coreDemographics[key]
-  ) / total;
-}
-
-function ageShares(mix: AudienceDemographicMix): Record<AudienceAgeSegment, number> {
-  return {
-    youth: Math.max(0, mix.youthPct) / 100,
-    young_adult: Math.max(0, mix.youngAdultPct) / 100,
-    middle_plus: Math.max(0, mix.middlePlusPct) / 100,
-  };
-}
-
-function genderShares(mix: AudienceDemographicMix): Record<AudienceGenderSegment, number> {
-  return {
-    male: Math.max(0, mix.malePct) / 100,
-    female: Math.max(0, mix.femalePct) / 100,
   };
 }
 
@@ -542,12 +409,6 @@ function profileLayerFans(profile: FinanceAudienceProfile, layer: AudienceLayer)
   if (layer === "public") return profile.publicFans;
   if (layer === "otaku") return profile.otakuFans;
   return profile.coreFans;
-}
-
-function profileLayerMix(profile: FinanceAudienceProfile, layer: AudienceLayer): AudienceDemographicMix {
-  if (layer === "public") return profile.publicDemographics;
-  if (layer === "otaku") return profile.otakuDemographics;
-  return profile.coreDemographics;
 }
 
 function liveAudienceLayerWeights(liveType: string): Record<AudienceLayer, number> {
@@ -589,6 +450,16 @@ function liveTypePurchaseModifier(liveType: string, channel: PurchaseChannel): n
   return key === "concert" ? 1.15 : 1.0;
 }
 
+/**
+ * Purchase propensity is now defined solely by fan commitment layer.  It no
+ * longer branches on age, gender, or region.
+ */
+const LAYER_PURCHASE_PROPENSITY: Record<AudienceLayer, PurchasePropensityRow> = {
+  public: { live_ticket: 0.0085, live_goods: 0.038, post_live_cheki: 0.012, premium_ticket: 0.002, online_signing: 0.004 },
+  otaku: { live_ticket: 0.068, live_goods: 0.177, post_live_cheki: 0.123, premium_ticket: 0.014, online_signing: 0.027 },
+  core: { live_ticket: 0.203, live_goods: 0.318, post_live_cheki: 0.43, premium_ticket: 0.041, online_signing: 0.083 },
+};
+
 export function estimateAudiencePurchaseUnits(
   profile: FinanceAudienceProfile,
   channel: PurchaseChannel,
@@ -601,18 +472,11 @@ export function estimateAudiencePurchaseUnits(
   const intensity = clampNumber(Number(options.intensity ?? 1) || 1, 0.25, 2.5);
   let units = 0;
   for (const layer of ["public", "otaku", "core"] as const) {
-    const mix = profileLayerMix(profile, layer);
     const layerBase =
       audienceSize != null
         ? audienceSize * layerWeights[layer]
         : profileLayerFans(profile, layer);
-    const ages = ageShares(mix);
-    const genders = genderShares(mix);
-    for (const age of ["youth", "young_adult", "middle_plus"] as const) {
-      for (const gender of ["male", "female"] as const) {
-        units += layerBase * ages[age] * genders[gender] * PURCHASE_PROPENSITY_TABLE[layer][age][gender][channel];
-      }
-    }
+    units += layerBase * LAYER_PURCHASE_PROPENSITY[layer][channel];
   }
   const fanbaseScale = audienceSize == null ? clampNumber(Math.sqrt(totalFans / 50_000), 0.55, 2.2) : 1;
   return Math.max(0, Math.round(units * liveTypePurchaseModifier(liveType, channel) * intensity * fanbaseScale));
@@ -626,16 +490,17 @@ function audienceDemandMultipliers(profile: FinanceAudienceProfile): {
   release: number;
   live: number;
 } {
-  const pub = profile.publicDemographics;
-  const ota = profile.otakuDemographics;
-  const core = profile.coreDemographics;
+  const total = Math.max(1, profile.publicFans + profile.otakuFans + profile.coreFans);
+  const publicShare = profile.publicFans / total;
+  const otakuShare = profile.otakuFans / total;
+  const coreShare = profile.coreFans / total;
   return {
-    fanclub: clampNumber(0.85 + core.middlePlusPct * 0.0025 + core.youngAdultPct * 0.0012 + core.femalePct * 0.0008 - core.youthPct * 0.0008, 0.75, 1.25),
-    cheki: clampNumber(0.82 + core.malePct * 0.0018 + core.middlePlusPct * 0.0022 + core.youngAdultPct * 0.0008 - core.youthPct * 0.0008, 0.75, 1.3),
-    goods: clampNumber(0.85 + ota.femalePct * 0.0014 + ota.youthPct * 0.0012 + ota.youngAdultPct * 0.0008, 0.75, 1.25),
-    digital: clampNumber(0.8 + pub.youthPct * 0.0025 + pub.femalePct * 0.0015 + pub.youngAdultPct * 0.0008, 0.75, 1.3),
-    release: clampNumber(0.85 + core.middlePlusPct * 0.0025 + core.malePct * 0.001 + ota.youngAdultPct * 0.0008, 0.75, 1.35),
-    live: clampNumber(0.85 + ota.youngAdultPct * 0.0015 + ota.middlePlusPct * 0.0008 + ota.malePct * 0.0005, 0.75, 1.2),
+    fanclub: clampNumber(0.88 + coreShare * 0.38, 0.75, 1.25),
+    cheki: clampNumber(0.82 + coreShare * 0.58 + otakuShare * 0.12, 0.75, 1.3),
+    goods: clampNumber(0.84 + otakuShare * 0.36 + coreShare * 0.16, 0.75, 1.25),
+    digital: clampNumber(0.82 + publicShare * 0.32, 0.75, 1.3),
+    release: clampNumber(0.86 + coreShare * 0.42 + otakuShare * 0.12, 0.75, 1.35),
+    live: clampNumber(0.86 + otakuShare * 0.24 + coreShare * 0.2, 0.75, 1.2),
   };
 }
 
@@ -761,9 +626,9 @@ export function estimateLiveGoodsUnits(
   const fans = Math.max(0, intOr(opts.groupFans, 0));
   const popularity = Math.max(0, Number(opts.groupPopularity ?? 0) || 0);
   const tier = financeLetterTier(normalizeGroupLetterTier(opts.groupTier ?? "F"));
-  const tierBoost: Record<Exclude<LetterTier, "I">, number> = { S: 1.25, A: 1.18, B: 1.1, C: 1.03, D: 0.96, E: 0.88, F: 0.8 };
+  const tierBoost: Record<BaseTier, number> = { S: 1.25, A: 1.18, B: 1.1, C: 1.03, D: 0.96, E: 0.88 };
   const baseAudience = Math.max(capacity, Math.round(Math.min(fans, Math.max(40, capacity || 0) * 1.2)));
-  const legacyDemand = Math.round(baseAudience * goodsDemandRateByLiveType(opts.liveType) * (0.75 + popularity / 200) * tierBoost[tier]);
+  const legacyDemand = Math.round(baseAudience * goodsDemandRateByLiveType(opts.liveType) * (0.75 + popularity / 200) * (tierBoost[tier] ?? 0.88));
   const audience =
     opts.audienceProfile ??
     financeAudienceProfileForGroup({
@@ -775,7 +640,7 @@ export function estimateLiveGoodsUnits(
   const tableDemand = estimateAudiencePurchaseUnits(audience, "live_goods", {
     liveType: opts.liveType,
     audienceSize: baseAudience,
-    intensity: (0.75 + popularity / 200) * tierBoost[tier],
+    intensity: (0.75 + popularity / 200) * (tierBoost[tier] ?? 0.88),
   });
   const demand = Math.round(legacyDemand * 0.45 + tableDemand * 0.55);
   return Math.max(0, Math.min(stock, demand));
@@ -910,6 +775,9 @@ export interface BuildDailyBreakdownInput {
   liveGoodsRevenue?: number;
   tokutenkaiRevenue?: number;
   tokutenkaiCost?: number;
+  tokutenkaiMaterialCost?: number;
+  tokutenkaiTempStaffCost?: number;
+  memberHoursBenefit?: number;
   liveVenueFeeTotal?: number;
   cdReleaseUnits?: number;
   cdReleaseRevenue?: number;
@@ -936,12 +804,15 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
     liveGoodsRevenue,
     tokutenkaiRevenue = 0,
     tokutenkaiCost = 0,
+    tokutenkaiMaterialCost = 0,
+    tokutenkaiTempStaffCost = 0,
     liveVenueFeeTotal = 0,
     cdReleaseUnits = 0,
     cdReleaseRevenue,
     mediaAppearanceRevenue,
     mediaOperatingCost = 0,
     memberHoursLive = 0,
+    memberHoursBenefit,
     memberHoursMedia = 0,
     memberHoursTraining = 0,
   } = input;
@@ -1010,6 +881,8 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
 
   const tkr = Math.max(0, intOr(tokutenkaiRevenue, 0));
   const tkc = Math.max(0, intOr(tokutenkaiCost, 0));
+  const tkm = Math.max(0, intOr(tokutenkaiMaterialCost, 0));
+  const tks = Math.max(0, intOr(tokutenkaiTempStaffCost, 0));
   const tokutenkaiIdolShareVal = tokutenkaiIdolShare(tkr);
   const chekiNetProfit = tkr - tkc - tokutenkaiIdolShareVal;
   const benefitOpsCost = tkc + Math.round((onlineBenefitRevenue + shootingHandshakeRevenue) * 0.08);
@@ -1020,8 +893,9 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
     staff + office + promotion + liveCost + salaries + scoutRetainers + benefitOpsCost + tokutenkaiIdolShareVal + productionCost;
   const net = income - expense;
   const cdUnits = Math.max(0, intOr(cdReleaseUnits, 0));
-  const memberHoursBenefit = Math.round(((tkr > 0 ? tkr / Math.max(1, 2_000) * 20 : 0) + cdOnlineSigningMemberSeconds(cdUnits)) / 36) / 100;
-  const totalMemberHours = Math.max(0, memberHoursLive + memberHoursBenefit + memberHoursMedia + memberHoursTraining);
+  const calculatedBenefitHours = Math.round(((tkr > 0 ? tkr / Math.max(1, 2_000) * 20 : 0) + cdOnlineSigningMemberSeconds(cdUnits)) / 36) / 100;
+  const benefitHours = Math.max(0, memberHoursBenefit ?? calculatedBenefitHours);
+  const totalMemberHours = Math.max(0, memberHoursLive + benefitHours + memberHoursMedia + memberHoursTraining);
 
   return {
     date: targetDateIso,
@@ -1059,6 +933,8 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
     birthday_special_revenue: 0,
     cheki_gross_revenue: tkr,
     cheki_ops_cost: tkc,
+    cheki_material_cost: tkm,
+    cheki_temp_staff_cost: tks,
     cheki_member_share: tokutenkaiIdolShareVal,
     cheki_net_profit: chekiNetProfit,
     cd_net_profit: releaseSalesRevenue,
@@ -1078,16 +954,13 @@ export function buildDailyBreakdown(input: BuildDailyBreakdownInput): DailyBreak
     public_fans_estimate: publicFans,
     otaku_fans_estimate: otakuFans,
     core_fans_estimate: coreFans,
-    female_fan_share_estimate: Math.round(weightedAudiencePct(audience, "femalePct")),
-    youth_fan_share_estimate: Math.round(weightedAudiencePct(audience, "youthPct")),
-    middle_plus_fan_share_estimate: Math.round(weightedAudiencePct(audience, "middlePlusPct")),
     fanclub_demand_multiplier: Math.round(demand.fanclub * 100) / 100,
     cheki_demand_multiplier: Math.round(demand.cheki * 100) / 100,
     goods_demand_multiplier: Math.round(demand.goods * 100) / 100,
     digital_demand_multiplier: Math.round(demand.digital * 100) / 100,
     release_demand_multiplier: Math.round(demand.release * 100) / 100,
     member_hours_live: memberHoursLive,
-    member_hours_benefit: memberHoursBenefit,
+    member_hours_benefit: benefitHours,
     member_hours_media: memberHoursMedia,
     member_hours_training: memberHoursTraining,
     revenue_per_member_hour: totalMemberHours > 0 ? Math.round(income / totalMemberHours) : undefined,

@@ -89,10 +89,26 @@ export function isSongHiddenFromDisplay(
   return false;
 }
 
-function specialSongAvailabilityIso(row: Record<string, unknown>): string | null {
+/**
+ * Game availability day for catalog filtering (`isSongAvailableOn`).
+ * Prefer explicit `available_from` when present (first-performed / game unlock),
+ * without rewriting historical `release_date`.
+ */
+export function songAvailabilityIso(row: Record<string, unknown>): string | null {
+  const fromField = String(row.available_from ?? "").trim().split("T")[0];
+  if (/^\d{4}-\d{2}-\d{2}$/.test(fromField)) return fromField;
+
+  // Legacy one-off override (pre-available_from).
   const uid = String(row.uid ?? "").trim();
   if (uid === "d3b51910-0f40-4e75-9413-4f3762fbf110") return "2026-01-01";
+
+  const release = String(row.release_date ?? "").trim().split("T")[0];
+  if (/^\d{4}-\d{2}-\d{2}$/.test(release)) return release;
   return null;
+}
+
+function specialSongAvailabilityIso(row: Record<string, unknown>): string | null {
+  return songAvailabilityIso(row);
 }
 
 export function songPopularityNum(row: Record<string, unknown>): number {

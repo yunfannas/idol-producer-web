@@ -70,6 +70,9 @@ export function sortNotificationsInPlace(rows: NotificationRow[]): void {
 /** Mirrors `main_ui.py` `_notification_requires_confirmation` (subset used on web). */
 export function notificationRequiresAck(item: NotificationRow | null | undefined): boolean {
   if (!item) return false;
+  // Pre-overlay saves may contain the former monthly hard-stop.  A policy
+  // review is now optional; staff continues with the persistent defaults.
+  if (item.choice_kind === "strategy_meeting" || String(item.dedupe_key ?? "").startsWith("strategy-meeting|")) return false;
   if (item.requires_confirmation) return true;
   if (String(item.choice_status ?? "").trim() === "pending") return true;
   const cat = String(item.category ?? "").toLowerCase();

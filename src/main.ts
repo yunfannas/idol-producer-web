@@ -137,6 +137,20 @@ import { showAppConfirm } from "./ui/appConfirm";
 import { renderTutorialOverlay, tutorialSteps } from "./ui/tutorialOverlay";
 import { annotateWikiTerms, defaultWikiEntryKey, normalizeWikiSelection, relatedWikiKeysForView } from "./ui/wiki";
 import { roleAssignmentsFromHistoryEntry } from "./data/memberRoles";
+import {
+  advanceMakingProject,
+  makeProject,
+  releaseSongFromProject,
+} from "./engine/makingPipeline";
+import {
+  PALETTE_COLORS,
+  dominantPaletteColor,
+  evolveTeamPalette,
+  paletteFromSong,
+  setPaletteComponent,
+  type PaletteColor,
+  type PaletteVector,
+} from "./engine/paletteSystem";
 
 const appRootElt = document.querySelector<HTMLDivElement>("#app");
 if (!appRootElt) {
@@ -1402,6 +1416,7 @@ let selectedScoutLeadUid: string | null = null;
 let selectedScoutApplicantUid: string | null = null;
 let trainingRepaintTimer: ReturnType<typeof setTimeout> | null = null;
 let liveProgramDragData = "";
+let makingPaletteDrag: { projectUid: string; color: PaletteColor; svg: SVGSVGElement } | null = null;
 let selectedLiveSongTitle: string | null = null;
 let selectedSetlistSongIndex: number | null = null;
 let newLiveForm: NewLiveFormState = {
@@ -1960,6 +1975,168 @@ function createCdProject(kind: CdReleaseProject["release_kind"]): void {
 function selectedCdProject(): CdReleaseProject | null {
   if (!save || !Array.isArray(save.cd_projects)) return null;
   return save.cd_projects.find((row) => row.uid === selectedCdProjectUid) ?? save.cd_projects[0] ?? null;
+}
+
+function currentMakingIso(): string {
+  return isoDatePart(save?.current_date ?? save?.game_start_date ?? save?.scenario_context?.startup_date ?? "") || "2020-01-01";
+}
+
+function managedMakingGroupUid(): string {
+  return String(save?.managing_group_uid ?? "").trim();
+}
+
+function createMakingProjectFromSource(sourceSongUid?: string): void {
+  if (!save) return;
+  const groupUid = managedMakingGroupUid();
+  if (!groupUid) return;
+  const sourceUid = String(sourceSongUid ?? "").trim();
+  if (sourceUid && save.making_projects.some((project) => project.source_song_uid === sourceUid)) return;
+  const source = sourceUid
+    ? (save.database_snapshot.songs.find((song) => String(song.uid ?? "") === sourceUid) as Record<string, unknown> | undefined)
+    : undefined;
+  const project = makeProject(groupUid, currentMakingIso(), save.team_palette.direction, {
+    title: source ? songCatalogDisplayLabel(source) : undefined,
+    sourceSongUid: sourceUid || undefined,
+    sourcePalette: source ? paletteFromSong(source) : null,
+    stage: source ? "arrangement" : "concept",
+  });
+  save.making_projects.unshift(project);
+  addNotification(save, {
+    title: source ? "Track added to making pipeline" : "Original song started",
+    body: source
+      ? `${project.title} enters at arrangement. Complete recording and mastering before digital release.`
+      : `${project.title} starts from the current Team Palette. Set its creative direction, then move through the production stages.`,
+    sender: "Making",
+    category: "internal",
+    isoDate: currentMakingIso(),
+    unread: true,
+  });
+}
+
+function advanceMakingProjectByUid(projectUid: string): void {
+  if (!save) return;
+  const index = save.making_projects.findIndex((project) => project.uid === projectUid);
+  const current = index >= 0 ? save.making_projects[index] : null;
+  if (!current) return;
+  const next = advanceMakingProject(current, currentMakingIso());
+  if (!next) return;
+  const finances = getActiveFinances(save);
+  const cash = Math.max(0, Number(finances.cash_yen ?? 0) || 0);
+  if (next.cost_yen > cash) {
+    addNotification(save, {
+      title: "Making step blocked",
+      body: `${current.title} needs ¥${next.cost_yen.toLocaleString("ja-JP")} for ${next.project.stage}, but only ¥${cash.toLocaleString("ja-JP")} is available.`,
+      sender: "Making",
+      category: "internal",
+      level: "normal",
+      isoDate: currentMakingIso(),
+      unread: true,
+    });
+    return;
+  }
+  save.finances = { ...finances, cash_yen: cash - next.cost_yen };
+  save.making_projects[index] = next.project;
+  addNotification(save, {
+    title: `Making advanced: ${current.title}`,
+    body: next.project.stage === "ready"
+      ? "Master approved. The track is ready for digital release."
+      : `${next.project.stage} is now underway. Production spend: ¥${next.cost_yen.toLocaleString("ja-JP")}.`,
+    sender: "Making",
+    category: "internal",
+    isoDate: currentMakingIso(),
+    unread: true,
+  });
+}
+
+function releaseMakingProjectByUid(projectUid: string): void {
+  if (!save) return;
+  const index = save.making_projects.findIndex((project) => project.uid === projectUid);
+  const project = index >= 0 ? save.making_projects[index] : null;
+  if (!project) return;
+  const release = releaseSongFromProject(project, currentMakingIso());
+  if (!release) return;
+  let releasedSong = release.song;
+  if (project.source_song_uid) {
+    const source = save.database_snapshot.songs.find((song) => String(song.uid ?? "") === project.source_song_uid) as Record<string, unknown> | undefined;
+    if (source) {
+      source.release_date = currentMakingIso();
+      source.disc_type = source.disc_type || "Digital single";
+      source.palette_direction = project.palette_direction;
+      releasedSong = source;
+      release.project.released_song_uid = String(source.uid ?? "").trim();
+    } else {
+      save.database_snapshot.songs.push(release.song);
+    }
+  } else {
+    save.database_snapshot.songs.push(release.song);
+  }
+  save.making_projects[index] = release.project;
+  const songUid = String(releasedSong.uid ?? "").trim();
+  if (songUid) {
+    save.team_palette = evolveTeamPalette(save.team_palette, songUid, project.palette_direction, currentMakingIso());
+  }
+  addNotification(save, {
+    title: `Digital release: ${project.title}`,
+    body: `Released with a ${project.target_color}-led palette direction. The Developed Team Palette has been updated from this release.`,
+    sender: "Making",
+    category: "internal",
+    isoDate: currentMakingIso(),
+    unread: true,
+  });
+}
+
+function paletteEditorColorAtPointer(svg: SVGSVGElement, event: PointerEvent): { color: PaletteColor; share: number } {
+  const rect = svg.getBoundingClientRect();
+  const x = ((event.clientX - rect.left) / Math.max(1, rect.width)) * 240;
+  const y = ((event.clientY - rect.top) / Math.max(1, rect.height)) * 240;
+  const dx = x - 120;
+  const dy = y - 120;
+  const start = -Math.PI / 2;
+  const step = (Math.PI * 2) / PALETTE_COLORS.length;
+  const turn = ((Math.atan2(dy, dx) - start) / step + PALETTE_COLORS.length) % PALETTE_COLORS.length;
+  const color = PALETTE_COLORS[Math.round(turn) % PALETTE_COLORS.length]!;
+  return { color, share: Math.max(0, Math.min(1, Math.hypot(dx, dy) / 82)) };
+}
+
+function refreshPaletteEditorSvg(svg: SVGSVGElement, vector: PaletteVector): void {
+  const cx = 120;
+  const cy = 120;
+  const radius = 82;
+  const start = -Math.PI / 2;
+  const step = (Math.PI * 2) / PALETTE_COLORS.length;
+  const point = (index: number, share: number) => {
+    const angle = start + index * step;
+    return [cx + radius * share * Math.cos(angle), cy + radius * share * Math.sin(angle)] as const;
+  };
+  const polygon = svg.querySelector<SVGPolygonElement>("[data-palette-shape]");
+  if (polygon) {
+    polygon.setAttribute("points", PALETTE_COLORS.map((color, index) => point(index, vector[color]).map((n) => n.toFixed(1)).join(",")).join(" "));
+  }
+  for (const [index, color] of PALETTE_COLORS.entries()) {
+    const [x, y] = point(index, vector[color]);
+    const handle = svg.querySelector<SVGCircleElement>(`[data-palette-handle="${color}"]`);
+    if (handle) {
+      handle.setAttribute("cx", x.toFixed(1));
+      handle.setAttribute("cy", y.toFixed(1));
+    }
+    const wedge = svg.querySelector<SVGPathElement>(`[data-palette-wedge="${color}"]`);
+    if (wedge) {
+      const angle = start + index * step;
+      const left = [cx + radius * vector[color] * Math.cos(angle - step * 0.38), cy + radius * vector[color] * Math.sin(angle - step * 0.38)];
+      const right = [cx + radius * vector[color] * Math.cos(angle + step * 0.38), cy + radius * vector[color] * Math.sin(angle + step * 0.38)];
+      wedge.setAttribute("d", `M ${cx} ${cy} L ${left[0].toFixed(1)} ${left[1].toFixed(1)} L ${right[0].toFixed(1)} ${right[1].toFixed(1)} Z`);
+    }
+  }
+}
+
+function updateMakingPaletteFromPointer(event: PointerEvent): void {
+  if (!save || !makingPaletteDrag) return;
+  const project = save.making_projects.find((row) => row.uid === makingPaletteDrag!.projectUid);
+  if (!project) return;
+  const { share } = paletteEditorColorAtPointer(makingPaletteDrag.svg, event);
+  project.palette_direction = setPaletteComponent(project.palette_direction, makingPaletteDrag.color, share);
+  project.target_color = dominantPaletteColor(project.palette_direction);
+  refreshPaletteEditorSvg(makingPaletteDrag.svg, project.palette_direction);
 }
 
 function syncFestivalLivesIfPossible(): void {
@@ -3441,12 +3618,37 @@ function paintGame(): void {
       }
       return;
     }
-    if (t.closest("[data-making-arrange]") && currentView === "Making") {
+    const makingArrange = t.closest<HTMLElement>("[data-making-arrange]");
+    if (makingArrange && save && !browseMode && currentView === "Making") {
       ev.preventDefault();
+      const encodedUid = makingArrange.getAttribute("data-song-uid") ?? "";
+      let sourceSongUid = encodedUid;
+      try {
+        sourceSongUid = decodeURIComponent(encodedUid);
+      } catch {
+        // Keep the literal attribute when it is an older unescaped UID.
+      }
+      navigate(() => createMakingProjectFromSource(sourceSongUid));
       return;
     }
-    if (t.closest("[data-making-release]") && currentView === "Making") {
+    const makingProjectCreate = t.closest<HTMLElement>("[data-making-project-create]");
+    if (makingProjectCreate && save && !browseMode && currentView === "Making") {
       ev.preventDefault();
+      navigate(() => createMakingProjectFromSource());
+      return;
+    }
+    const makingAdvance = t.closest<HTMLElement>("[data-making-project-advance]");
+    if (makingAdvance && save && !browseMode && currentView === "Making") {
+      ev.preventDefault();
+      const uid = String(makingAdvance.getAttribute("data-making-project-advance") ?? "").trim();
+      if (uid) navigate(() => advanceMakingProjectByUid(uid));
+      return;
+    }
+    const makingRelease = t.closest<HTMLElement>("[data-making-project-release]");
+    if (makingRelease && save && !browseMode && currentView === "Making") {
+      ev.preventDefault();
+      const uid = String(makingRelease.getAttribute("data-making-project-release") ?? "").trim();
+      if (uid) navigate(() => releaseMakingProjectByUid(uid));
       return;
     }
     const makingTabPick = t.closest<HTMLElement>("[data-making-tab]");
@@ -3750,6 +3952,43 @@ function paintGame(): void {
     }
   });
 
+  document.getElementById("main-content")?.addEventListener("pointerdown", (ev) => {
+    const target = ev.target as Element;
+    const svg = target.closest<SVGSVGElement>("[data-making-palette-editor]");
+    if (!svg || !save || browseMode || currentView !== "Making") return;
+    const projectUid = String(svg.getAttribute("data-making-palette-editor") ?? "").trim();
+    const project = save.making_projects.find((row) => row.uid === projectUid);
+    if (!project) return;
+    const handleColor = target.closest<SVGCircleElement>("[data-palette-handle]")?.getAttribute("data-palette-handle") as PaletteColor | null;
+    const pointer = paletteEditorColorAtPointer(svg, ev);
+    const color = handleColor && PALETTE_COLORS.includes(handleColor) ? handleColor : pointer.color;
+    makingPaletteDrag = { projectUid, color, svg };
+    svg.setPointerCapture?.(ev.pointerId);
+    updateMakingPaletteFromPointer(ev);
+    ev.preventDefault();
+  });
+
+  document.getElementById("main-content")?.addEventListener("pointermove", (ev) => {
+    if (!makingPaletteDrag) return;
+    updateMakingPaletteFromPointer(ev);
+    ev.preventDefault();
+  });
+
+  document.getElementById("main-content")?.addEventListener("pointerup", (ev) => {
+    if (!makingPaletteDrag) return;
+    updateMakingPaletteFromPointer(ev);
+    const svg = makingPaletteDrag.svg;
+    if (svg.hasPointerCapture?.(ev.pointerId)) svg.releasePointerCapture(ev.pointerId);
+    makingPaletteDrag = null;
+    paintGame();
+  });
+
+  document.getElementById("main-content")?.addEventListener("pointercancel", () => {
+    if (!makingPaletteDrag) return;
+    makingPaletteDrag = null;
+    paintGame();
+  });
+
   document.getElementById("main-content")?.addEventListener("keydown", (ev) => {
     if (ev.key !== "Enter" && ev.key !== " ") return;
     const t = ev.target as HTMLElement;
@@ -3769,6 +4008,13 @@ function paintGame(): void {
 
   document.getElementById("main-content")?.addEventListener("input", (ev) => {
     const t = ev.target as HTMLElement;
+    const makingTitleInput = t.closest<HTMLInputElement>("[data-making-project-title]");
+    if (makingTitleInput && save && !browseMode && currentView === "Making") {
+      const uid = makingTitleInput.getAttribute("data-making-project-title");
+      const project = save.making_projects.find((row) => row.uid === uid);
+      if (project && makingTitleInput.value.trim()) project.title = makingTitleInput.value.trim();
+      return;
+    }
     const cdTitleInput = t.closest<HTMLInputElement>("[data-cd-project-title]");
     if (cdTitleInput && save && !browseMode && currentView === "Making") {
       const uid = cdTitleInput.getAttribute("data-cd-project-title");

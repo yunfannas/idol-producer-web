@@ -80,6 +80,18 @@ export const LIVE_TYPE_PRESETS: Record<
     tokutenkai_slot_seconds: 20,
     tokutenkai_expected_tickets: 48,
   },
+  collaborate_live: {
+    event_type: "collaborate_live",
+    default_start_time: "18:00",
+    default_duration: 45,
+    rehearsal_start: "",
+    rehearsal_end: "",
+    tokutenkai_enabled: true,
+    tokutenkai_duration: 60,
+    tokutenkai_ticket_price: 2000,
+    tokutenkai_slot_seconds: 20,
+    tokutenkai_expected_tickets: 56,
+  },
   Festival: {
     event_type: "Festival",
     default_start_time: "12:00",
@@ -208,7 +220,7 @@ export function autoSetlistSongCountForLive(
     if (duration >= 95) return 18;
     if (duration >= 80) return 16;
   }
-  if (typeKey === "Taiban" || typeKey === "Festival" || typeKey === "Joint" || typeKey === "Routine") {
+  if (typeKey === "Taiban" || typeKey === "Festival" || typeKey === "Joint" || typeKey === "collaborate_live" || typeKey === "Routine") {
     return Math.max(1, Math.floor(duration / 5));
   }
   return Math.max(1, Math.trunc(fallbackCount || Math.round(duration / 15)));

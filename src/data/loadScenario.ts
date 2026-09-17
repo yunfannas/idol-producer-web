@@ -35,7 +35,7 @@ export async function loadManifest(): Promise<ScenarioManifest> {
   return fetchJson(url) as Promise<ScenarioManifest>;
 }
 
-/** All scenario slots (1–6) for UX copy; see `support/docs/WEB_PORT_PLAN.md` §1a. Optional — returns null if missing. */
+/** All scenario slots (1–6) for UX copy; see archived `support/docs/archive/legacy-pre-2026-09-02/WEB_PORT_PLAN.md` §1a. Optional — returns null if missing. */
 export async function loadScenariosCatalog(): Promise<ScenariosCatalogFile | null> {
   const url = `${base()}data/scenarios.json`;
   try {

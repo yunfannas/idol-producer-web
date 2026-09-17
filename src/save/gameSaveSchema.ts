@@ -35,11 +35,14 @@ import { syncOpenHiatusToIdolTopLevel } from "../engine/scandalHandling";
 import { buildDefaultScoutCompanies, normalizeScoutSubscriptions } from "../engine/scoutWeb";
 import { addNotification, type NotificationRow } from "./inbox";
 import type { TrackBState } from "../engine/trackB/types";
+import { normalizeMakingProjects, type MakingProject } from "../engine/makingPipeline";
+import { normalizeTeamPalette, openingTeamPalette, type TeamPaletteState } from "../engine/paletteSystem";
 
-// v12 adds the Agency / Team / Operating / Pricing policy layers.  Old saves
-// normalize into conservative defaults; no historical event outcome is
-// fabricated during this migration.
-export const GAME_SAVE_VERSION = 13 as const;
+// v15 adds the master-authority Track B migration: unified Condition,
+// Attribute EXP, Formation Familiarity, and role/headcount Staff capacity.
+// v14 also added the player-developed Team Palette and durable song-making
+// projects; older saves receive an L3 opening palette from audited L2B data.
+export const GAME_SAVE_VERSION = 15 as const;
 
 function startOfMonthIso(isoDate: string): string {
   const [y, m] = String(isoDate).split("T")[0].split("-");
@@ -648,6 +651,8 @@ export interface GameSavePayload {
   };
   shortlist: string[];
   cd_projects: CdReleaseProject[];
+  making_projects: MakingProject[];
+  team_palette: TeamPaletteState;
   goods_inventory: ProducedGoodsRow[];
   inbox: { notifications: NotificationRow[] };
   schedules: Record<string, unknown>;
@@ -806,6 +811,8 @@ export function defaultGameSavePayload(): GameSavePayload {
     scenario_runtime: { future_events: [], official_schedules: [] },
     shortlist: [],
     cd_projects: [],
+    making_projects: [],
+    team_palette: openingTeamPalette([], "", null),
     goods_inventory: [],
     inbox: { notifications: [] },
     schedules: {},
@@ -868,6 +875,7 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
       })
       .filter((row): row is CdReleaseProject => row != null);
   }
+  out.making_projects = normalizeMakingProjects((p as { making_projects?: unknown }).making_projects);
 
   if (p.scenario_context && typeof p.scenario_context === "object") {
     const c = p.scenario_context as Record<string, unknown>;
@@ -1003,6 +1011,12 @@ export function normalizeGameSavePayload(raw: unknown): GameSavePayload {
   );
   const primaryGroup = getPrimaryGroup(out);
   const primaryGroupUid = String(primaryGroup?.uid ?? "").trim();
+  const paletteFallback = openingTeamPalette(
+    out.database_snapshot.songs,
+    primaryGroupUid,
+    out.current_date ?? out.game_start_date ?? out.scenario_context.startup_date ?? null,
+  );
+  out.team_palette = normalizeTeamPalette((p as { team_palette?: unknown }).team_palette, paletteFallback);
   const primaryMemberCount = Array.isArray(primaryGroup?.member_uids) ? primaryGroup!.member_uids.length : 0;
   out.managed_song_status = normalizeManagedSongStatus(
     (p as { managed_song_status?: unknown }).managed_song_status,

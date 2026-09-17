@@ -103,10 +103,10 @@ export function trainingBearIndex(idol: Record<string, unknown>): number {
   const attrs = normalizePersistedAttributes(idol.attributes);
   const stamina = attrs.physical.stamina;
   const fitness = attrs.physical.natural_fitness;
-  const determination = attrs.mental.determination;
+  const grit = attrs.hidden?.professionalism ?? 12;
   const condition = num(idol.condition, 90);
   const base =
-    8.0 + (avgInts(stamina, fitness) - 10.0) * 0.45 + (determination - 10.0) * 0.15 + (condition - 50) / 22.0;
+    8.0 + (avgInts(stamina, fitness) - 10.0) * 0.45 + (grit - 10.0) * 0.15 + (condition - 50) / 22.0;
   return clampInt(Math.round(base), 6, 18);
 }
 

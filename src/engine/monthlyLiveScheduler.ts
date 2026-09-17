@@ -1,6 +1,6 @@
 import monthlyLiveCountsCsv from "../../support/docs/reference/monthly_live_counts_by_letter_tier_template.csv?raw";
 import type { GameSavePayload } from "../save/gameSaveSchema";
-import { getPrimaryGroup, getLetterTierFromGroup } from "../save/gameSaveSchema";
+import { ensureGroupPolicy, getPrimaryGroup, getLetterTierFromGroup } from "../save/gameSaveSchema";
 import { addNotification } from "../save/inbox";
 import {
   addMinutesToHHMM,
@@ -66,9 +66,63 @@ type ManagedLiveScheduleEvent = {
   tokutenkai_enabled?: boolean;
   tokutenkai_start?: string;
   tokutenkai_end?: string;
+  tokutenkai_duration?: number;
+  tokutenkai_ticket_price?: number;
+  tokutenkai_slot_seconds?: number;
+  tokutenkai_expected_tickets?: number;
   poster_image_path?: string;
   source_url?: string;
 };
+
+const STANDARD_TOKUTENKAI_FALLBACK_MINUTES = 60;
+const STANDARD_TOKUTENKAI_MAX_MINUTES = 70;
+
+type TokutenkaiSchedule = {
+  enabled: boolean;
+  start: string;
+  end: string;
+  duration: number;
+  ticketPrice: number;
+  slotSeconds: number;
+  expectedTickets: number;
+  capacityTickets: number;
+};
+
+function isAkishibuProject(group: Record<string, unknown>): boolean {
+  return /akishibu|\u79cb\u8449\u539f\u30d7\u30ed\u30b8\u30a7\u30af\u30c8/i.test(
+    `${String(group.uid ?? "")} ${String(group.name ?? "")} ${String(group.name_romanji ?? "")}`,
+  );
+}
+
+function validTime(value: unknown): string | null {
+  const text = String(value ?? "").trim();
+  return /^\d{2}:\d{2}$/.test(text) ? text : null;
+}
+
+function positiveInt(value: unknown): number | null {
+  const n = Math.trunc(Number(value));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+function managedTokutenkaiSchedule(group: Record<string, unknown>, event: ManagedLiveScheduleEvent, template: AutoLiveTemplate, liveEnd: string): TokutenkaiSchedule {
+  const enabled = event.tokutenkai_enabled ?? template.tokutenkaiEnabled;
+  if (!enabled) return { enabled: false, start: "", end: "", duration: 0, ticketPrice: 0, slotSeconds: 0, expectedTickets: 0, capacityTickets: 0 };
+  const start = validTime(event.tokutenkai_start) ?? liveEnd;
+  const suppliedDuration = positiveInt(event.tokutenkai_duration)
+    ?? (validTime(event.tokutenkai_start) && validTime(event.tokutenkai_end)
+      ? durationMinutesBetweenHHMM(validTime(event.tokutenkai_start)!, validTime(event.tokutenkai_end)!)
+      : null)
+    ?? positiveInt(template.tokutenkaiDurationMinutes)
+    ?? STANDARD_TOKUTENKAI_FALLBACK_MINUTES;
+  const duration = Math.min(STANDARD_TOKUTENKAI_MAX_MINUTES, suppliedDuration);
+  const akishibu = isAkishibuProject(group);
+  // AKSB: ¥2,000 signed cheki, 40 seconds with the member plus 5 seconds to switch guests.
+  const ticketPrice = positiveInt(event.tokutenkai_ticket_price) ?? (akishibu ? 2000 : positiveInt(template.tokutenkaiTicketPrice) ?? 0);
+  const slotSeconds = positiveInt(event.tokutenkai_slot_seconds) ?? (akishibu ? 45 : positiveInt(template.tokutenkaiSlotSeconds) ?? 0);
+  const memberCount = Array.isArray(group.member_uids) ? group.member_uids.length : 0;
+  const capacityTickets = slotSeconds > 0 && memberCount > 0 ? Math.floor((duration * 60) / slotSeconds) * memberCount : 0;
+  return { enabled: true, start, end: addMinutesToHHMM(start, duration), duration, ticketPrice, slotSeconds, expectedTickets: positiveInt(event.tokutenkai_expected_tickets) ?? template.tokutenkaiExpectedTickets, capacityTickets };
+}
 
 type ManagedLiveScheduleFile = {
   source_key?: string;
@@ -151,7 +205,7 @@ const AUTO_LIVE_TEMPLATES: Record<AutoLiveTypeKey, AutoLiveTemplate> = {
     defaultStart: "12:00",
     defaultDurationMinutes: 30,
     ticketPriceYen: 0,
-    tokutenkaiEnabled: false,
+    tokutenkaiEnabled: true,
     tokutenkaiDurationMinutes: 0,
     tokutenkaiTicketPrice: 0,
     tokutenkaiSlotSeconds: 0,
@@ -187,9 +241,9 @@ const AUTO_LIVE_TEMPLATES: Record<AutoLiveTypeKey, AutoLiveTemplate> = {
     preferredWeekdays: [4, 5, 6],
   },
   type_5: {
-    liveType: "Joint",
-    eventType: "Joint",
-    titleSuffix: "2/3/4-man Live",
+    liveType: "collaborate_live",
+    eventType: "collaborate_live",
+    titleSuffix: "Collaborate Live",
     defaultStart: "18:00",
     defaultDurationMinutes: 45,
     ticketPriceYen: 2800,
@@ -452,8 +506,15 @@ function buildAutoLiveRow(params: {
     groupUid,
     setlistCount,
   );
-  const tokutenkaiStart = template.tokutenkaiEnabled ? endTime : "";
-  const tokutenkaiEnd = template.tokutenkaiEnabled ? addMinutesToHHMM(endTime, template.tokutenkaiDurationMinutes) : "";
+  const policy = ensureGroupPolicy(save);
+  const policyTokutenEnabled = policy.operating.live_default_tokuten_attachment && policy.team.fanwork_tokuten !== "disabled";
+  const tokutenkaiEnabled = template.tokutenkaiEnabled && policyTokutenEnabled;
+  const tokutenkaiDuration = tokutenkaiEnabled
+    ? Math.min(STANDARD_TOKUTENKAI_MAX_MINUTES, Math.max(1, policy.operating.tokuten_event_duration_minutes))
+    : 0;
+  const tokutenkaiStart = tokutenkaiEnabled ? endTime : "";
+  const tokutenkaiEnd = tokutenkaiEnabled ? addMinutesToHHMM(endTime, tokutenkaiDuration) : "";
+  const collaborateGroupCount = typeKey === "type_5" ? 2 + (ordinal % 4) : null;
   return {
     uid: `monthly-auto-live-${groupUid}-${monthStartIso}-${typeKey}-${ordinal + 1}`,
     title: `${groupName} ${template.titleSuffix}`,
@@ -478,13 +539,13 @@ function buildAutoLiveRow(params: {
     poster_image_path: null,
     setlist,
     program: buildAutoProgramForLive(template.liveType, duration, setlist, `auto-program-${typeKey}-${ordinal + 1}`),
-    tokutenkai_enabled: template.tokutenkaiEnabled,
+    tokutenkai_enabled: tokutenkaiEnabled,
     tokutenkai_start: tokutenkaiStart,
     tokutenkai_end: tokutenkaiEnd,
-    tokutenkai_duration: template.tokutenkaiDurationMinutes,
-    tokutenkai_ticket_price: template.tokutenkaiTicketPrice,
+    tokutenkai_duration: tokutenkaiDuration,
+    tokutenkai_ticket_price: tokutenkaiEnabled ? policy.pricing.signed_cheki_yen : 0,
     tokutenkai_slot_seconds: template.tokutenkaiSlotSeconds,
-    tokutenkai_expected_tickets: template.tokutenkaiEnabled
+    tokutenkai_expected_tickets: tokutenkaiEnabled
       ? Math.min(Math.max(24, template.tokutenkaiExpectedTickets), Math.max(40, Math.trunc((venuePick.capacity ?? desiredCapacity) * 0.4)))
       : 0,
     goods_enabled: false,
@@ -496,6 +557,7 @@ function buildAutoLiveRow(params: {
     status: "scheduled",
     auto_booked_month: monthStartIso,
     auto_booked_type: typeKey,
+    ...(collaborateGroupCount ? { collaborate_group_count: collaborateGroupCount } : {}),
   };
 }
 
@@ -581,6 +643,7 @@ function buildManagedScheduleLiveRow(
   );
   const importedSource = String(source.source_key ?? "managed_schedule").trim() || "managed_schedule";
   const title = String(event.title ?? `${String(group.name ?? group.name_romanji ?? "Managed group")} ${template.titleSuffix}`).trim();
+  const tokutenkai = managedTokutenkaiSchedule(group, event, template, endTime);
   return {
     uid: String(event.uid ?? `${importedSource}-${dateIso}-${title}`),
     title,
@@ -610,21 +673,14 @@ function buildManagedScheduleLiveRow(
       setlist,
       `${importedSource}-program-${String(event.source_event_id ?? event.uid ?? "event")}`,
     ),
-    tokutenkai_enabled: Boolean(event.tokutenkai_enabled ?? template.tokutenkaiEnabled),
-    tokutenkai_start: String(
-      event.tokutenkai_start ??
-        ((event.tokutenkai_enabled ?? template.tokutenkaiEnabled) ? endTime : ""),
-    ),
-    tokutenkai_end: String(
-      event.tokutenkai_end ??
-        ((event.tokutenkai_enabled ?? template.tokutenkaiEnabled)
-          ? addMinutesToHHMM(endTime, template.tokutenkaiDurationMinutes)
-          : ""),
-    ),
-    tokutenkai_duration: template.tokutenkaiDurationMinutes,
-    tokutenkai_ticket_price: template.tokutenkaiTicketPrice,
-    tokutenkai_slot_seconds: template.tokutenkaiSlotSeconds,
-    tokutenkai_expected_tickets: (event.tokutenkai_enabled ?? template.tokutenkaiEnabled) ? template.tokutenkaiExpectedTickets : 0,
+    tokutenkai_enabled: tokutenkai.enabled,
+    tokutenkai_start: tokutenkai.start,
+    tokutenkai_end: tokutenkai.end,
+    tokutenkai_duration: tokutenkai.duration,
+    tokutenkai_ticket_price: tokutenkai.ticketPrice,
+    tokutenkai_slot_seconds: tokutenkai.slotSeconds,
+    tokutenkai_expected_tickets: tokutenkai.expectedTickets,
+    tokutenkai_capacity_tickets: tokutenkai.capacityTickets,
     goods_enabled: false,
     goods_uid: "",
     goods_line: "",
@@ -836,6 +892,8 @@ export function ensureAutoBookedLivesInWindow(
   const tierRaw = String(getLetterTierFromGroup(group) ?? "D").trim().toUpperCase();
   if (tierRaw === "I") return 0;
   const tier = tierRaw;
+  const policy = ensureGroupPolicy(save);
+  const liveFrequencyMultiplier = policy.team.live_frequency === "low" ? 0.7 : policy.team.live_frequency === "high" ? 1.25 : 1;
   const row = liveMatrix().get(tier) ?? liveMatrix().get("D");
   if (!row) return 0;
   const uidSet = existingUids(save);
@@ -845,7 +903,12 @@ export function ensureAutoBookedLivesInWindow(
   while (monthStart <= endMonth) {
     const minIso = monthStart === startOfMonthIso(startIso) ? startIso : undefined;
     for (const typeKey of AUTO_LIVE_TYPE_KEYS) {
-      const count = countForMonth(row[typeKey], monthStart);
+      // Major concerts/tours are player projects. Staff may recommend them,
+      // but the fallback scheduler must not manufacture a committed major
+      // project merely to satisfy a monthly count template.
+      // Festivals are external invitations, not staff-created calendar filler.
+      if (typeKey === "type_1" || typeKey === "type_2" || typeKey === "type_3") continue;
+      const count = Math.max(0, Math.round(countForMonth(row[typeKey], monthStart) * liveFrequencyMultiplier));
       if (count <= 0) continue;
       const template = AUTO_LIVE_TEMPLATES[typeKey];
       const dates = pickDistributedDates(monthStart, count, template.preferredWeekdays, minIso);

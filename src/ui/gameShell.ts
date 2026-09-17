@@ -5,6 +5,18 @@
 import type { LoadedScenario, OfficialScheduleBundle, OfficialScheduleEvent } from "../data/scenarioTypes";
 import type { WebPreviewBundle } from "../types";
 import type { GameSavePayload, GroupPolicy } from "../save/gameSaveSchema";
+import type { MakingProject } from "../engine/makingPipeline";
+import { nextMakingStep } from "../engine/makingPipeline";
+import {
+  PALETTE_COLORS,
+  PALETTE_COLOR_HEX,
+  dominantPaletteColor,
+  paletteCssGradient,
+  paletteFromSong,
+  type PaletteColor,
+  type PaletteVector,
+  type TeamPaletteState,
+} from "../engine/paletteSystem";
 import { AUTOSAVE_SLOT, type SlotSummary } from "../persistence/saves";
 import { getActiveFinances, getPrimaryGroup, ensureGroupPolicy } from "../save/gameSaveSchema";
 import type { PersistedIdolAttributes } from "../engine/idolAttributes";
@@ -47,11 +59,10 @@ import {
   type ScoutLeadRow,
 } from "../engine/scoutWeb";
 import { festivalPerformancesForManagedGroup, normalizeFestivalCatalog } from "../engine/festivalWeb";
-import { MEMBER_ROLE_DEFINITIONS, memberRolesSummary, roleAssignmentsFromHistoryEntry } from "../data/memberRoles";
+import { MEMBER_ROLE_DEFINITIONS, roleAssignmentsFromHistoryEntry } from "../data/memberRoles";
 import { attrQuotedUrl, avatarPlaceholderDataUrl, idolPortraitPublicSrc } from "./portraitUrl";
 import {
   activeGroupMembershipsAtReference,
-  activeGroupRoleMembershipsAtReference,
   activeGroupsAtReference,
   ageLabel,
   displayReferenceIso,
@@ -1107,6 +1118,104 @@ function renderRadarSvg(a: PersistedIdolAttributes): string {
 </figure>`;
 }
 
+type PaletteDisplayValues = Record<PaletteColor, number>;
+
+function displayPaletteValues(vector: PaletteVector, scale = 100): PaletteDisplayValues {
+  return Object.fromEntries(PALETTE_COLORS.map((color) => [color, vector[color] * scale])) as PaletteDisplayValues;
+}
+
+function paletteColorFromMemberColor(color: unknown, colorCode?: unknown): PaletteColor | null {
+  const raw = String(color ?? "").trim().toLowerCase().replace(/[\s_-]+/g, "");
+  const direct: Record<string, PaletteColor> = {
+    red: "red", orange: "orange", yellow: "yellow", green: "green", aqua: "aqua", blue: "blue",
+    purple: "purple", pink: "pink", white: "white", black: "black", mint: "aqua", teal: "aqua",
+    turquoise: "aqua", skyblue: "blue", lightblue: "blue", navy: "blue", lime: "green", gold: "yellow",
+  };
+  if (direct[raw]) return direct[raw];
+  const css = resolveMemberColorCss(String(color ?? ""), colorCode);
+  const m = /^#([0-9a-f]{6})$/i.exec(css ?? "");
+  if (!m) return null;
+  const target = [parseInt(m[1].slice(0, 2), 16), parseInt(m[1].slice(2, 4), 16), parseInt(m[1].slice(4, 6), 16)];
+  return PALETTE_COLORS.reduce((best, candidate) => {
+    const h = PALETTE_COLOR_HEX[candidate];
+    const rgb = [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+    const dist = rgb.reduce((sum, value, index) => sum + (value - target[index]) ** 2, 0);
+    const bestHex = PALETTE_COLOR_HEX[best];
+    const bestRgb = [parseInt(bestHex.slice(1, 3), 16), parseInt(bestHex.slice(3, 5), 16), parseInt(bestHex.slice(5, 7), 16)];
+    const bestDist = bestRgb.reduce((sum, value, index) => sum + (value - target[index]) ** 2, 0);
+    return dist < bestDist ? candidate : best;
+  }, PALETTE_COLORS[0]);
+}
+
+function memberPaletteFallback(row: Record<string, unknown>, referenceIso: string | undefined): PaletteDisplayValues {
+  const direct = paletteFromSong({ palette_direction: row.member_palette_direction ?? row.palette_direction });
+  if (direct) return displayPaletteValues(direct, 30);
+  const ref = refDayString(referenceIso);
+  const history = Array.isArray(row.group_history) ? row.group_history : [];
+  const current = history
+    .filter((item): item is Record<string, unknown> => Boolean(item && typeof item === "object"))
+    .filter((entry) => {
+      if (!ref) return false;
+      const start = historyIsoDay(entry.start_date);
+      const end = historyIsoDay(entry.end_date);
+      return Boolean(start && start <= ref && (!end || ref <= end));
+    })
+    .sort((a, b) => String(b.start_date ?? "").localeCompare(String(a.start_date ?? "")))[0];
+  const ownColor = paletteColorFromMemberColor(current?.member_color ?? row.member_color, current?.member_color_code ?? row.member_color_code);
+  if (!ownColor) return Object.fromEntries(PALETTE_COLORS.map((color) => [color, 7])) as PaletteDisplayValues;
+  return Object.fromEntries(PALETTE_COLORS.map((color) => [color, color === ownColor ? 30 : 5])) as PaletteDisplayValues;
+}
+
+function palettePoint(cx: number, cy: number, radius: number, angle: number): [number, number] {
+  return [cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)];
+}
+
+/** Ten-axis palette radar with coloured vertices and independently filled colour wedges. */
+function renderPaletteRadar(
+  values: PaletteDisplayValues,
+  options: { label: string; maxValue: number; className?: string; editorProjectUid?: string } ,
+): string {
+  const cx = 120;
+  const cy = 120;
+  const radius = 82;
+  const labelRadius = 103;
+  const start = -Math.PI / 2;
+  const step = (Math.PI * 2) / PALETTE_COLORS.length;
+  const safe = (value: number) => Math.max(0, Math.min(options.maxValue, value));
+  const point = (index: number, value: number) => palettePoint(cx, cy, (safe(value) / options.maxValue) * radius, start + index * step);
+  const rings = [0.25, 0.5, 0.75, 1]
+    .map((ratio) => `<polygon points="${PALETTE_COLORS.map((_, index) => palettePoint(cx, cy, radius * ratio, start + index * step).map((v) => v.toFixed(1)).join(",")).join(" ")}" class="palette-radar-ring"/>`)
+    .join("");
+  const wedges = PALETTE_COLORS.map((color, index) => {
+    const angle = start + index * step;
+    const valueRadius = (safe(values[color]) / options.maxValue) * radius;
+    const left = palettePoint(cx, cy, valueRadius, angle - step * 0.38);
+    const right = palettePoint(cx, cy, valueRadius, angle + step * 0.38);
+    return `<path data-palette-wedge="${color}" d="M ${cx} ${cy} L ${left[0].toFixed(1)} ${left[1].toFixed(1)} L ${right[0].toFixed(1)} ${right[1].toFixed(1)} Z" fill="${PALETTE_COLOR_HEX[color]}" class="palette-radar-wedge"/>`;
+  }).join("");
+  const axes = PALETTE_COLORS.map((color, index) => {
+    const angle = start + index * step;
+    const [x, y] = palettePoint(cx, cy, radius, angle);
+    const [lx, ly] = palettePoint(cx, cy, labelRadius, angle);
+    const [vx, vy] = point(index, values[color]);
+    const anchor = Math.abs(lx - cx) < 7 ? "middle" : lx < cx ? "end" : "start";
+    const handle = options.editorProjectUid
+      ? `<circle data-palette-handle="${color}" cx="${vx.toFixed(1)}" cy="${vy.toFixed(1)}" r="4.5" fill="${PALETTE_COLOR_HEX[color]}" class="palette-radar-handle"/>`
+      : "";
+    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="${PALETTE_COLOR_HEX[color]}" class="palette-radar-axis"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="${PALETTE_COLOR_HEX[color]}" class="palette-radar-vertex"/>${handle}<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" fill="${PALETTE_COLOR_HEX[color]}" class="palette-radar-label" text-anchor="${anchor}" dominant-baseline="middle">${htmlEsc(color)}</text>`;
+  }).join("");
+  const polygon = PALETTE_COLORS.map((color, index) => point(index, values[color]).map((v) => v.toFixed(1)).join(",")).join(" ");
+  const editorData = options.editorProjectUid ? ` data-making-palette-editor="${htmlEsc(options.editorProjectUid)}"` : "";
+  return `<figure class="palette-radar-figure ${options.className ?? ""}"><svg class="palette-radar-svg${options.editorProjectUid ? " is-editable" : ""}" viewBox="0 0 240 240" role="img" aria-label="${htmlEsc(options.label)}"${editorData}>${rings}${wedges}${axes}<polygon data-palette-shape points="${polygon}" class="palette-radar-shape"/></svg><figcaption>${htmlEsc(options.label)}</figcaption></figure>`;
+}
+
+function renderSongPaletteEffect(song: Record<string, unknown>): string {
+  const palette = paletteFromSong(song);
+  if (!palette) return `<span class="song-palette-effect is-missing" title="No audited L2B palette">palette —</span>`;
+  const primary = dominantPaletteColor(palette);
+  return `<span class="song-palette-effect" style="background:${htmlEsc(paletteCssGradient(palette))}" title="${htmlEsc(`Palette: ${primary}`)}"><span>${htmlEsc(primary)}</span></span>`;
+}
+
 function renderGroupHistoryTable(
   row: Record<string, unknown>,
   uidToName: Map<string, string>,
@@ -1132,16 +1241,15 @@ function renderGroupHistoryTable(
         : `<span data-wiki-skip="1">${htmlEsc(label)}</span>`;
       const col = typeof e.member_color === "string" && e.member_color ? e.member_color : "—";
       const mn = typeof e.member_name === "string" && e.member_name ? e.member_name : "—";
-      const roles = memberRolesSummary(roleAssignmentsFromHistoryEntry(e));
       const startDisp = fmtHistoryDateDisplay(e.start_date, referenceIso, e, "start");
       const endDisp = fmtHistoryDateDisplay(e.end_date, referenceIso, e, "end");
-      return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td><td>${htmlEsc(roles)}</td></tr>`;
+      return `<tr><td>${groupCell}</td><td>${startDisp ? htmlEsc(startDisp) : ""}</td><td>${endDisp ? htmlEsc(endDisp) : ""}</td><td>${htmlEsc(col)}</td><td>${htmlEsc(mn)}</td></tr>`;
     })
     .join("");
   return `
     <div class="table-scroll idol-history-scroll">
       <table class="fm-table">
-        <thead><tr><th>${htmlEsc(t(lang, "idol_group"))}</th><th>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</th><th>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</th><th>${htmlEsc(t(lang, "group_color"))}</th><th>${htmlEsc(localizedLiteral(lang, "Stage name", "艺名"))}</th><th>${htmlEsc(localizedLiteral(lang, "Roles", "定位"))}</th></tr></thead>
+        <thead><tr><th>${htmlEsc(t(lang, "idol_group"))}</th><th>${htmlEsc(localizedLiteral(lang, "Start", "开始"))}</th><th>${htmlEsc(localizedLiteral(lang, "End", "结束"))}</th><th>${htmlEsc(t(lang, "group_color"))}</th><th>${htmlEsc(localizedLiteral(lang, "Stage name", "艺名"))}</th></tr></thead>
         <tbody>${tbody}</tbody>
       </table>
     </div>`;
@@ -1180,7 +1288,6 @@ function renderIdolDetailPage(
   const age = htmlEsc(ageLabel(row, referenceIso));
   const xLbl = htmlEsc(xFollowersLabel(row));
   const memberships = activeGroupMembershipsAtReference(row, referenceIso, groupsSnapshot);
-  const roleMemberships = activeGroupRoleMembershipsAtReference(row, referenceIso, groupsSnapshot);
   const currentGroupsHtml =
     memberships.length > 0
       ? memberships
@@ -1192,15 +1299,9 @@ function renderIdolDetailPage(
           })
           .join(", ")
       : htmlEsc("-");
-  const currentRolesText = roleMemberships
-    .filter((membership) => membership.roles.length > 0)
-    .map((membership) => `${membership.name}: ${memberRolesSummary(membership.roles)}`)
-    .join(" | ") || "-";
-
   const secLine = [
-    romaji ? htmlEsc(romaji) : "",
-    nick ? `${htmlEsc(t(lang, "idol_nickname"))}: ${htmlEsc(nick)}` : "",
     hiragana ? htmlEsc(hiragana) : "",
+    romaji ? htmlEsc(romaji) : "",
   ]
     .filter(Boolean)
     .join(" | ");
@@ -1266,15 +1367,15 @@ function renderIdolDetailPage(
   <div class="idol-detail-head fm-card idol-detail-head-grid">
     <div class="idol-detail-portrait-wrap">${portraitBig}</div>
     <div class="idol-detail-head-main">
-      <h2 class="idol-detail-name">${htmlEsc(name)}</h2>
+      <h2 class="idol-detail-name">${htmlEsc(name)}${nick ? `<span class="idol-detail-nickname">${htmlEsc(nick)}</span>` : ""}</h2>
       ${secLine ? `<p class="idol-detail-sub">${secLine}</p>` : ""}
       <p class="idol-detail-facts">${facts.join(" - ")}</p>
       <p class="idol-detail-current-groups" data-wiki-skip="1"><strong>${htmlEsc(t(lang, "idol_group"))}:</strong> ${currentGroupsHtml}</p>
-      <p class="idol-detail-current-groups"><strong>${htmlEsc(localizedLiteral(lang, "Roles", "定位"))}:</strong> ${htmlEsc(currentRolesText)}</p>
       ${linksInline}
     </div>
     <aside class="idol-detail-radar-aside" aria-label="${htmlEsc(localizedLiteral(lang, "Radar", "雷达图"))}">
       ${renderRadarSvg(attrs)}
+      ${renderPaletteRadar(memberPaletteFallback(row, referenceIso), { label: localizedLiteral(lang, "Palette trait", "Palette 特性"), maxValue: 30, className: "palette-radar--member" })}
     </aside>
   </div>
 
@@ -1289,7 +1390,6 @@ function renderIdolDetailPage(
       <div><dt>${htmlEsc(t(lang, "idol_birthday"))}</dt><dd>${birthdayDisplay}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_birthplace"))}</dt><dd>${bp ? htmlEsc(bp) : "-"}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_languages"))}</dt><dd>${langs ? htmlEsc(langs) : htmlEsc(t(lang, "common_japanese"))}</dd></div>
-      <div><dt>${htmlEsc(localizedLiteral(lang, "Current roles", "当前定位"))}</dt><dd>${htmlEsc(currentRolesText)}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_past_names"))}</dt><dd>${htmlEsc(pastNamesSummary(row))}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_x_handle"))}</dt><dd>${htmlEsc(xHandle)}</dd></div>
       <div><dt>${htmlEsc(t(lang, "idol_x_followers"))}</dt><dd>${xLbl}</dd></div>
@@ -2755,7 +2855,6 @@ function renderFinances(save: GameSavePayload): string {
     ? `
     <div class="stat-row" role="group" aria-label="Audience shape">
       <div class="stat-block"><span class="stat-label">Public / Otaku / Core</span><span class="stat-value stat-value-sm">${num(audienceRow.public_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.otaku_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.core_fans_estimate).toLocaleString("ja-JP")}</span></div>
-      <div class="stat-block"><span class="stat-label">Female / Youth / Middle+</span><span class="stat-value stat-value-sm">${num(audienceRow.female_fan_share_estimate)}% / ${num(audienceRow.youth_fan_share_estimate)}% / ${num(audienceRow.middle_plus_fan_share_estimate)}%</span></div>
     </div>`
     : "";
   const head = `
@@ -2815,7 +2914,6 @@ function renderFinancesProjectionView(
     ? `
     <div class="stat-row" role="group" aria-label="Audience shape">
       <div class="stat-block"><span class="stat-label">Public / Otaku / Core</span><span class="stat-value stat-value-sm">${num(audienceRow.public_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.otaku_fans_estimate).toLocaleString("ja-JP")} / ${num(audienceRow.core_fans_estimate).toLocaleString("ja-JP")}</span></div>
-      <div class="stat-block"><span class="stat-label">Female / Youth / Middle+</span><span class="stat-value stat-value-sm">${num(audienceRow.female_fan_share_estimate)}% / ${num(audienceRow.youth_fan_share_estimate)}% / ${num(audienceRow.middle_plus_fan_share_estimate)}%</span></div>
     </div>`
     : "";
   const head = `
@@ -3143,7 +3241,11 @@ function isSongReleasedBy(referenceIso: string | null | undefined, row: Record<s
 }
 
 /** Making workshop: Title, Romanji, digital release status, Arrange / Release digital. */
-function makingWorkshopRowsHtml(rows: Record<string, unknown>[], referenceIso: string | null | undefined): string {
+function makingWorkshopRowsHtml(
+  rows: Record<string, unknown>[],
+  referenceIso: string | null | undefined,
+  projects: MakingProject[],
+): string {
   return rows
     .map((row) => {
       const title =
@@ -3155,11 +3257,16 @@ function makingWorkshopRowsHtml(rows: Record<string, unknown>[], referenceIso: s
       const uid = String(row.uid ?? "").trim();
       const uidAttr = uid ? encodeURIComponent(uid) : "";
       const uidData = uidAttr ? ` data-song-uid="${uidAttr}"` : "";
-      const actions = `<div class="making-track-actions">
-        <button type="button" class="fm-btn making-arrange-btn" data-making-arrange${uidData}>${htmlEsc("Arrange")}</button>
-        <button type="button" class="fm-btn fm-btn-accent making-release-btn" data-making-release${uidData}>${htmlEsc("Release digital")}</button>
-      </div>`;
-      return `<tr><td>${htmlEsc(title)}</td><td>${htmlEsc(romanji)}</td><td>${htmlEsc(digitalStatus)}</td><td class="making-actions-cell">${actions}</td></tr>`;
+      const project = projects.find((candidate) => candidate.source_song_uid === uid);
+      const step = project ? nextMakingStep(project) : null;
+      const actions = project?.stage === "ready"
+        ? `<div class="making-track-actions"><button type="button" class="fm-btn fm-btn-accent making-release-btn" data-making-project-release="${htmlEsc(project.uid)}">${htmlEsc("Release digital")}</button></div>`
+        : project?.stage === "released"
+          ? `<span class="content-muted">${htmlEsc("Released")}</span>`
+          : project && step
+            ? `<div class="making-track-actions"><span class="content-muted">${htmlEsc(project.stage)}</span><button type="button" class="fm-btn making-arrange-btn" data-making-project-advance="${htmlEsc(project.uid)}">${htmlEsc(`Advance to ${step.stage}`)}</button></div>`
+            : `<div class="making-track-actions"><button type="button" class="fm-btn making-arrange-btn" data-making-arrange${uidData}>${htmlEsc("Add to pipeline")}</button></div>`;
+      return `<tr><td><span class="song-title-with-palette">${htmlEsc(title)}${renderSongPaletteEffect(row)}</span></td><td>${htmlEsc(romanji)}</td><td>${htmlEsc(digitalStatus)}</td><td class="making-actions-cell">${actions}</td></tr>`;
     })
     .join("");
 }
@@ -3184,8 +3291,8 @@ function songRowsHtml(
           ? songCatalogDisplayLabel(row)
           : String(row.uid ?? "—");
       const titleCell = uid
-        ? `<td><button type="button" class="songs-title-link${selectedSongUid === uid ? " is-selected" : ""}" data-song-detail="${htmlEsc(uid)}">${htmlEsc(title)}</button></td>`
-        : `<td>${htmlEsc(title)}</td>`;
+        ? `<td><span class="song-title-with-palette"><button type="button" class="songs-title-link${selectedSongUid === uid ? " is-selected" : ""}" data-song-detail="${htmlEsc(uid)}">${htmlEsc(title)}</button>${renderSongPaletteEffect(row)}</span></td>`
+        : `<td><span class="song-title-with-palette">${htmlEsc(title)}${renderSongPaletteEffect(row)}</span></td>`;
       const romanji = typeof row.title_romanji === "string" ? row.title_romanji : "";
       const rel = hideCatalogFields ? "—" : typeof row.release_date === "string" ? row.release_date : "—";
       const gname = typeof row.group_name === "string" ? row.group_name : "";
@@ -3308,6 +3415,44 @@ function renderMakingTabs(active: MakingTab, lang: UiLanguage = "en"): string {
     <button type="button" class="songs-workspace-tab${cdAct}" data-making-tab="cd" role="tab">${htmlEsc("CD")}</button>
     <button type="button" class="songs-workspace-tab${goodsAct}" data-making-tab="goods" role="tab">${htmlEsc(localizedLiteral(lang, "Goods", "周边"))}</button>
   </div>`;
+}
+
+function renderMakingPipeline(
+  projects: MakingProject[],
+  teamPalette: TeamPaletteState | undefined,
+  managedUid: string,
+  lang: UiLanguage,
+): string {
+  const palette = teamPalette?.direction;
+  const primary = palette ? dominantPaletteColor(palette) : "pink";
+  const teamRadar = palette
+    ? renderPaletteRadar(displayPaletteValues(palette), { label: localizedLiteral(lang, "Developed Team Palette", "团队调色盘"), maxValue: 100, className: "palette-radar--team" })
+    : "";
+  const teamSummary = `<div class="making-palette-summary"><div><strong>${htmlEsc(localizedLiteral(lang, "Team Palette", "团队调色盘"))}</strong><span>${htmlEsc(primary)} · ${htmlEsc(teamPalette?.source === "l3_catalog_prior" ? "L3 catalog prior" : teamPalette?.source === "developed" ? "developed through releases" : "neutral until L2B data is available")}</span></div>${teamRadar}</div>`;
+  const rows = projects
+    .filter((project) => project.group_uid === managedUid)
+    .map((project) => {
+      const step = nextMakingStep(project);
+      const action = project.stage === "ready"
+        ? `<button type="button" class="fm-btn fm-btn-accent" data-making-project-release="${htmlEsc(project.uid)}">${htmlEsc("Release digital")}</button>`
+        : project.stage === "released"
+          ? `<span class="content-muted">${htmlEsc("Released")}</span>`
+          : step
+            ? `<button type="button" class="fm-btn" data-making-project-advance="${htmlEsc(project.uid)}">${htmlEsc(`Advance to ${step.stage} · ¥${step.cost_yen.toLocaleString("ja-JP")}`)}</button>`
+            : "";
+      const editor = renderPaletteRadar(displayPaletteValues(project.palette_direction), {
+        label: localizedLiteral(lang, "Song Palette Direction", "歌曲调色方向"),
+        maxValue: 100,
+        className: "palette-radar--editor",
+      });
+      return `<tr><td><input class="fm-input making-project-title" data-making-project-title="${htmlEsc(project.uid)}" value="${htmlEsc(project.title)}" aria-label="Project title" /></td><td>${htmlEsc(project.stage)}</td><td>${editor}</td><td>${htmlEsc(dominantPaletteColor(project.palette_direction))}</td><td class="num">¥${project.spent_yen.toLocaleString("ja-JP")}</td><td>${action}</td></tr>`;
+    })
+    .join("");
+  return `<section class="fm-card making-pipeline-card">
+    <div class="making-pipeline-head">${teamSummary}<button type="button" class="fm-btn fm-btn-accent" data-making-project-create>${htmlEsc(localizedLiteral(lang, "New original", "新建原创曲"))}</button></div>
+    <p class="content-muted">${htmlEsc(localizedLiteral(lang, "Concept → writing → composition → arrangement → recording → mastering → digital release. Palette Direction is a read-only production outcome seeded from the Team Palette; it does not rewrite L2B catalog data.", "概念 → 作词 → 作曲 → 编曲 → 录音 → 母带 → 数字发行。调色方向是从团队调色盘出发的只读制作结果，不会改写 L2B 目录数据。"))}</p>
+    <div class="table-scroll"><table class="fm-table making-pipeline-table"><thead><tr><th>${htmlEsc(localizedLiteral(lang, "Project", "项目"))}</th><th>${htmlEsc(localizedLiteral(lang, "Stage", "阶段"))}</th><th>${htmlEsc(localizedLiteral(lang, "Direction", "方向"))}</th><th>${htmlEsc(localizedLiteral(lang, "Palette", "调色"))}</th><th>${htmlEsc(localizedLiteral(lang, "Spent", "已花费"))}</th><th></th></tr></thead><tbody>${rows || `<tr><td colspan="6" class="content-muted">${htmlEsc(localizedLiteral(lang, "No original in progress. Start from a concept or add a future catalog track below.", "暂无制作中的原创曲。可从概念开始，或将下方未来曲目加入流程。"))}</td></tr>`}</tbody></table></div>
+  </section>`;
 }
 
 function releaseStateLabel(song: Record<string, unknown>, referenceIso: string | null | undefined): string {
@@ -3729,7 +3874,7 @@ function renderSongDetailPanel(
     <div class="fm-card songs-song-detail">
       <div class="songs-song-detail-head">
         <div>
-          <h3 class="content-h3">${htmlEsc(title)}</h3>
+          <h3 class="content-h3"><span class="song-title-with-palette">${htmlEsc(title)}${renderSongPaletteEffect(song)}</span></h3>
           <p class="content-muted songs-song-detail-meta">${htmlEsc(
             lang === "zh-CN" ? `人气 ${pop} · 发行 ${release}` : `Popularity ${pop} · Release ${release}`,
           )}</p>
@@ -3753,6 +3898,7 @@ function renderSongDetailPanel(
         <div><dt>${htmlEsc(localizedLiteral(lang, "Lyricist", "作词"))}</dt><dd>${htmlEsc(lyricist)}</dd></div>
         <div><dt>${htmlEsc(localizedLiteral(lang, "Arrangement", "编曲"))}</dt><dd>${htmlEsc(arrangement)}</dd></div>
         <div><dt>${htmlEsc(localizedLiteral(lang, "Version", "版本"))}</dt><dd>${htmlEsc(version)}</dd></div>
+        <div><dt>${htmlEsc(localizedLiteral(lang, "Palette", "调色盘"))}</dt><dd>${renderSongPaletteEffect(song)}</dd></div>
       </dl>
       <div class="songs-song-detail-albums">
         <h4 class="content-h4">${htmlEsc(lang === "zh-CN" ? "关联发行" : "Linked releases")}</h4>
@@ -3912,6 +4058,8 @@ interface SongsRenderOpts {
   trackSplitSurface?: "songs" | "making";
   /** When `trackSplitSurface` is `making`, lock catalog to this group (managed production). */
   managedGroupUid?: string | null;
+  makingProjects?: MakingProject[];
+  teamPalette?: TeamPaletteState;
 }
 
 /** Songs workspace: group picker, Songs | Discography tabs (desktop `main_ui.py`), tables. */
@@ -3921,7 +4069,11 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
   const pageTitle = surface === "making" ? localizedLiteral(lang, "Making", "制作") : localizedLiteral(lang, "Songs", "歌曲");
   const managedUid = opts?.managedGroupUid?.trim() ?? "";
 
-  if (!allSongs.length) return renderPlaceholder(pageTitle, localizedLiteral(lang, "No songs in <code>songs.json</code>.", "<code>songs.json</code> 中没有歌曲。"));
+  // A new managed group may legitimately have no catalog yet; Making must
+  // still expose the original-song pipeline in that state.
+  if (!allSongs.length && surface !== "making") {
+    return renderPlaceholder(pageTitle, localizedLiteral(lang, "No songs in <code>songs.json</code>.", "<code>songs.json</code> 中没有歌曲。"));
+  }
   if (!opts?.groups?.length) {
     return renderPlaceholder(pageTitle, localizedLiteral(lang, "No groups in snapshot for song directory.", "歌曲目录快照中没有组合数据。"));
   }
@@ -3977,7 +4129,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
     } else if (hasRef && makingTeam.length === 0) {
       workshopTbody = `<tr><td colspan="5" class="content-muted">${htmlEsc(lang === "zh-CN" ? `截至 ${refShort} 没有未来或未定日期的歌曲，该日期下所有歌曲都已进入发行目录。已发行列表请到侧边栏的“歌曲”查看。` : `No future or undated tracks as of ${refShort} — everything is released in the catalog for this date. Use Songs in the sidebar for the released list.`)}</td></tr>`;
     } else {
-      workshopTbody = makingWorkshopRowsHtml(workshopRows, opts.catalogReferenceIso);
+      workshopTbody = makingWorkshopRowsHtml(workshopRows, opts.catalogReferenceIso, opts.makingProjects ?? []);
     }
 
     const explMaking = `<p class="content-muted">${htmlEsc(
@@ -4011,6 +4163,7 @@ function renderSongsList(allSongs: Record<string, unknown>[], opts?: SongsRender
       ${sub}
       ${toolbar}
       ${renderMakingTabs("songs", lang)}
+      ${renderMakingPipeline(opts.makingProjects ?? [], opts.teamPalette, managedUid, lang)}
       ${songsPanel}
     </section>`;
   }
@@ -4504,10 +4657,17 @@ function renderSchedule(
   const cur = save.current_date ?? gameStart;
   const turn = typeof save.turn_number === "number" ? save.turn_number : 0;
   const nextIso = addCalendarDays(cur, 1);
+  const staff = save.track_b?.staff;
+  const activeIdols = save.track_b ? Object.keys(save.track_b.members).length : 0;
+  const managerApTotal = staff ? Math.max(0, staff.manager_count * 80 - activeIdols * 4) : 0;
+  const staffCapacity = staff
+    ? `<p class="content-muted">Staff capacity: ${staff.manager_ap_used_week}/${managerApTotal} Manager AP · ${staff.manager_count} Manager${staff.manager_count === 1 ? "" : "s"} · ${staff.vocal_coach_count} Vocal / ${staff.dance_coach_count} Dance coach</p>`
+    : "";
 
   const header = `
     <h2 class="content-h2">${htmlEsc(localizedLiteral(lang, "Schedule", "日程"))}</h2>
     <p class="content-lead">${htmlEsc(localizedLiteral(lang, "Last closed day:", "最近结算日："))} <strong>${htmlEsc(String(cur))}</strong> - ${htmlEsc(localizedLiteral(lang, "Next simulation day:", "下一模拟日："))} <strong>${htmlEsc(nextIso)}</strong> - ${htmlEsc(localizedLiteral(lang, "Turn", "回合"))} <strong>${htmlEsc(String(turn))}</strong></p>
+    ${staffCapacity}
     ${renderScheduleTabs(scheduleTab, lang)}`;
 
   if (scheduleTab === "policy") {
@@ -4926,7 +5086,7 @@ function renderLivesView(
       const familiarity = Math.round(Number(save.managed_song_status[uid]?.familiarity ?? 0) || 0);
       const selected = songCatalogMatchesPick(String(selectedLiveSongTitle ?? "").trim(), song) ? " is-selected-row" : "";
       return `<tr class="live-song-row${selected}" data-live-song-pick="${htmlEsc(title)}">
-        <td>${htmlEsc(title)}</td>
+        <td><span class="song-title-with-palette">${htmlEsc(title)}${renderSongPaletteEffect(song)}</span></td>
         <td class="num">${htmlEsc(songPopularityNum(song).toFixed(1))}</td>
         <td class="num">${htmlEsc(String(familiarity))}</td>
       </tr>`;
@@ -5656,6 +5816,41 @@ function memberStatusSummary(save: GameSavePayload | null, lang: UiLanguage): st
   return localizedLiteral(lang, `Normal ${normal} · Issue ${issue} · Rest ${resting}`, `正常 ${normal} · 问题 ${issue} · 休息 ${resting}`);
 }
 
+function mondayOfIsoWeek(iso: string): string {
+  const day = new Date(`${isoDatePart(iso)}T12:00:00Z`);
+  const offset = (day.getUTCDay() + 6) % 7;
+  day.setUTCDate(day.getUTCDate() - offset);
+  return day.toISOString().slice(0, 10);
+}
+
+function topbarStaffCapacity(save: GameSavePayload | null, lang: UiLanguage): string {
+  const trackB = save?.track_b;
+  const staff = trackB?.staff;
+  if (!save || !trackB || !staff) return "";
+  const memberCount = Object.keys(trackB.members ?? {}).length;
+  const total = Math.max(0, staff.manager_count * 80 - memberCount * 4);
+  const thisWeek = Math.max(0, Math.round(staff.manager_ap_used_week));
+  const current = isoDatePart(save.current_date ?? save.game_start_date ?? "2020-01-01");
+  const nextWeek = addCalendarDays(mondayOfIsoWeek(current), 7);
+  const nextWeekEnd = addCalendarDays(nextWeek, 6);
+  const groupUid = String(save.managing_group_uid ?? "");
+  const liveAp = (save.lives?.schedules ?? [])
+    .filter((raw): raw is Record<string, unknown> => Boolean(raw && typeof raw === "object"))
+    .filter((live) => String(live.group_uid ?? "") === groupUid)
+    .filter((live) => {
+      const date = isoDatePart(String(live.start_date ?? live.date ?? ""));
+      return date >= nextWeek && date <= nextWeekEnd;
+    })
+    .reduce((sum, live) => {
+      const durationMinutes = Math.max(60, Number(live.duration_minutes ?? 120) || 120);
+      const liveSlots = Math.ceil(durationMinutes / 30);
+      const baseStaff = Math.max(1, Math.ceil(memberCount / 4));
+      const benefitStaff = live.tokutenkai_enabled === true ? memberCount * 2 : 0;
+      return sum + liveSlots * baseStaff + benefitStaff;
+    }, 0);
+  return `<div class="fm-staff-capacity" title="Manager AP is constrained by calendar time. Next week includes already scheduled lives and benefit events."><span>${htmlEsc(localizedLiteral(lang, "This wk", "本周"))} <b>${thisWeek}/${total}</b></span><span>${htmlEsc(localizedLiteral(lang, "Next wk", "下周"))} <b>${liveAp}/${total}</b></span><span>${htmlEsc(localizedLiteral(lang, "Parallel", "最大并行"))} <b>${staff.manager_count}</b></span></div>`;
+}
+
 function renderMyGroupStatus(save: GameSavePayload, lang: UiLanguage): string {
   const group = getPrimaryGroup(save) as Record<string, unknown> | null;
   const name = String(group?.name ?? group?.name_romanji ?? localizedLiteral(lang, "My Group", "我的组合"));
@@ -5997,6 +6192,8 @@ export function renderMainContent(
           save.current_date ?? save.game_start_date ?? save.scenario_context?.startup_date ?? null,
         trackSplitSurface: "making",
         managedGroupUid: save.managing_group_uid ?? null,
+        makingProjects: save.making_projects,
+        teamPalette: save.team_palette,
       });
     case "Songs":
       return renderSongsList(save.database_snapshot.songs, {
@@ -6393,6 +6590,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
   });
 
   const rosterSummary = `<button type="button" class="fm-status-item fm-member-status-summary" data-nav="MyIdols" ${browseMode ? "disabled" : ""}>${htmlEsc(memberStatusSummary(save, lang))}</button>`;
+  const staffCapacity = topbarStaffCapacity(save, lang);
 
   const inboxBlock = save && !browseMode ? getBlockingNotificationForSave(save) : null;
   const nextHint =
@@ -6445,6 +6643,7 @@ export function renderDesktopShellI18n(p: DesktopShellProps): string {
     </div>
     <div class="fm-top-bar-right">
       ${rosterSummary}
+      ${staffCapacity}
       ${nextDayBtn}
     </div>
   </header>

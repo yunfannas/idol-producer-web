@@ -37,6 +37,17 @@ import {
   estimateTokutenkaiRevenueYen,
   resolveGroupLiveResultWeb,
 } from "./livePerformanceWeb";
+import {
+  applyTrackBRecovery,
+  applyTrackBFormationRehearsal,
+  applyTrackBTrainingLoad,
+  applyTrackBWorkload,
+  ensureTrackB,
+  lockStrategyMeeting,
+  maybeRunTrackBCadence,
+  resolveLiveTrackB,
+  syncTrackBRoster,
+} from "./trackB";
 import { formatLiveSlotLine } from "./liveScheduleWeb";
 import { applyScenarioEventsForDate } from "./scenarioRuntimeWeb";
 import { processCareerDecisionsForDate } from "./careerDecision";
@@ -142,6 +153,7 @@ export function createNewGameSaveFromScenario(
   ensureAutoBookedLivesThroughEndOfNextMonth(save);
   refreshStartupUpcomingLivesNotification(save, save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01");
   save.current_date = combineIsoDateTime(save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01", SIMULATION_DAY_START_TIME);
+  ensureTrackB(save);
   seedTodaysLiveBlockingInbox(save, save.current_date ?? save.game_start_date ?? loaded.preset.opening_date ?? "2020-01-01");
   maybeSeedMonthEndAutoBookPrompt(save);
   return save;
@@ -172,12 +184,21 @@ function financeAudienceProfileForSave(
   fans: number,
 ): FinanceAudienceProfile {
   const g = group ?? getPrimaryGroup(save);
-  return financeAudienceProfileForGroup({
+  const base = financeAudienceProfileForGroup({
     groupName: g?.name ?? g?.group_name ?? g?.title,
     groupRomaji: g?.name_romanji ?? g?.name_romaji ?? g?.romaji ?? g?.romanized_name,
     letterTier,
     fans,
   });
+  if (save.track_b?.fans) {
+    return {
+      ...base,
+      publicFans: save.track_b.fans.public,
+      otakuFans: save.track_b.fans.otaku,
+      coreFans: save.track_b.fans.core,
+    };
+  }
+  return base;
 }
 
 export function getBlockingNotificationForSave(save: GameSavePayload) {
@@ -249,8 +270,9 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
   const novelty = live.novelty_score != null ? String(live.novelty_score) : "—";
   const tokutenkaiActual = Number(live.tokutenkai_actual_tickets ?? 0) || 0;
   const tokutenkaiPlanned = Number(live.tokutenkai_expected_tickets ?? 0) || 0;
+  const tokutenkaiCapacity = Number(live.tokutenkai_capacity_tickets ?? 0) || 0;
   const tokutenkaiGross =
-    Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(tokutenkaiActual)) || 0;
+    Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(tokutenkaiActual, Number(live.tokutenkai_ticket_price ?? 0) || 2800)) || 0;
   const ticketGross = Number(live.ticket_gross_yen ?? 0) || 0;
   const goodsGross = Number(live.goods_gross_yen ?? 0) || 0;
   let body = `${titleSeed} finished with performance ${live.performance_score ?? "—"} and satisfaction ${live.audience_satisfaction ?? "—"}. `;
@@ -259,8 +281,8 @@ export function buildLiveReportNotificationBody(live: Record<string, unknown>): 
   if (when) body += ` Slot: ${when}.`;
   const setlist = Array.isArray(live.setlist) ? (live.setlist as unknown[]).map((x) => String(x)).filter(Boolean) : [];
   if (setlist.length) body += ` Setlist: ${setlist.join(" · ")}.`;
-  if (tokutenkaiActual || tokutenkaiPlanned) {
-    body += ` Tokutenkai ${tokutenkaiActual}/${tokutenkaiPlanned} tickets`;
+  if (tokutenkaiActual || tokutenkaiPlanned || tokutenkaiCapacity) {
+    body += ` Tokutenkai ${tokutenkaiActual}/${tokutenkaiCapacity || tokutenkaiPlanned} tickets`;
     if (tokutenkaiGross > 0) body += ` (gross ¥${tokutenkaiGross.toLocaleString("ja-JP")})`;
     body += `.`;
   }
@@ -470,7 +492,7 @@ function buildLiveReportData(live: Record<string, unknown>): Record<string, unkn
   const ticketGross = Number(live.ticket_gross_yen ?? 0) || 0;
   const goodsGross = Number(live.goods_gross_yen ?? 0) || 0;
   const tokutenkaiRevenue =
-    Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(Number(live.tokutenkai_actual_tickets ?? 0) || 0)) || 0;
+    Number(live.tokutenkai_revenue_yen ?? estimateTokutenkaiRevenueYen(Number(live.tokutenkai_actual_tickets ?? 0) || 0, Number(live.tokutenkai_ticket_price ?? 0) || 2800)) || 0;
   return {
     kind: "live_report",
     title: String(live.title ?? live.live_type ?? "Live"),
@@ -492,6 +514,7 @@ function buildLiveReportData(live: Record<string, unknown>): Record<string, unkn
     goods_gross_yen: goodsGross,
     tokutenkai_actual_tickets: Number(live.tokutenkai_actual_tickets ?? 0) || 0,
     tokutenkai_expected_tickets: Number(live.tokutenkai_expected_tickets ?? 0) || 0,
+    tokutenkai_capacity_tickets: Number(live.tokutenkai_capacity_tickets ?? 0) || 0,
     tokutenkai_revenue_yen: tokutenkaiRevenue,
     setlist: Array.isArray(live.setlist) ? live.setlist : [],
     member_deltas: Array.isArray(live.member_deltas)
@@ -501,7 +524,7 @@ function buildLiveReportData(live: Record<string, unknown>): Record<string, unkn
           const tk = Number(r.tokutenkai_tickets ?? 0) || 0;
           return {
             ...r,
-            cheki_sale_money_yen: estimateTokutenkaiRevenueYen(tk),
+            cheki_sale_money_yen: estimateTokutenkaiRevenueYen(tk, Number(live.tokutenkai_ticket_price ?? 0) || 2800),
           };
         })
       : [],
@@ -609,6 +632,9 @@ function applyLiveFinanceSettlement(
     liveTicketRevenue: number;
     liveGoodsRevenue: number;
     tokutenkaiRevenue: number;
+    tokutenkaiMaterialCost: number;
+    tokutenkaiTempStaffCost: number;
+    memberHoursBenefit: number;
     liveVenueFeeTotal: number;
     memberHoursLive: number;
   },
@@ -628,6 +654,8 @@ function applyLiveFinanceSettlement(
     liveGoodsRevenue: 0,
     tokutenkaiRevenue: 0,
     tokutenkaiCost: 0,
+    tokutenkaiMaterialCost: 0,
+    tokutenkaiTempStaffCost: 0,
     liveVenueFeeTotal: 0,
   });
   const full = buildDailyBreakdown({
@@ -644,9 +672,12 @@ function applyLiveFinanceSettlement(
     liveTicketRevenue: p.liveTicketRevenue,
     liveGoodsRevenue: p.liveGoodsRevenue,
     tokutenkaiRevenue: p.tokutenkaiRevenue,
-    tokutenkaiCost: 0,
+    tokutenkaiCost: p.tokutenkaiMaterialCost + p.tokutenkaiTempStaffCost,
+    tokutenkaiMaterialCost: p.tokutenkaiMaterialCost,
+    tokutenkaiTempStaffCost: p.tokutenkaiTempStaffCost,
     liveVenueFeeTotal: p.liveVenueFeeTotal,
     memberHoursLive: p.memberHoursLive,
+    memberHoursBenefit: p.memberHoursBenefit,
   });
   const delta = subtractBreakdowns(full, base);
   return applyDailyClose(finances, delta);
@@ -657,6 +688,9 @@ function applyLiveFinanceSettlement(
  * (desktop `_archive_completed_lives_for_date` + `_start_todays_lives` report pass).
  */
 export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targetIso: string): void {
+  // A player can resolve a scheduled Live immediately after loading an older
+  // save, before the normal day-advance migrator has run.
+  ensureTrackB(save);
   const group = getPrimaryGroup(save);
   if (!group || typeof group !== "object") return;
   const g = group as Record<string, unknown>;
@@ -697,8 +731,17 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       continue;
     }
 
-    const resolution = resolveGroupLiveResultWeb(g, members, songs, live, save.managed_song_status);
+    const resolution = save.track_b
+      ? resolveLiveTrackB(save, g, members, songs, live, save.managed_song_status)
+      : resolveGroupLiveResultWeb(g, members, songs, live, save.managed_song_status);
     const applied = applyLiveResultToSnapshot(g, members, resolution);
+    if (save.track_b) {
+      g.public_fans = save.track_b.fans.public;
+      g.otaku_fans = save.track_b.fans.otaku;
+      g.core_fans = save.track_b.fans.core;
+      g.fans = save.track_b.fans.public + save.track_b.fans.otaku + save.track_b.fans.core;
+      g.box_rate = save.track_b.fans.box_rate;
+    }
     const liveMinutes = durationMinutesFromLive(live);
     const rehearsalStart = String(live.rehearsal_start ?? "").slice(0, 5);
     const rehearsalEnd = String(live.rehearsal_end ?? "").slice(0, 5);
@@ -727,16 +770,21 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       const reportRow = memberDeltaByUid.get(uid);
       const tickets = Number(reportRow?.tokutenkai_tickets ?? 0) || 0;
       const extraLiveMinutes = tokutenkaiExtraMinutesForMember(live, tickets);
-      applyDailyStatusUpdateJson(member, {
-        trainingLoad: 0,
-        trainingHours: 0,
-        liveCount: 1,
-        liveMinutes,
-        rehearsalMinutes,
-        extraLiveMinutes,
-        birthday: false,
-        includeSleepRecovery: false,
-      });
+      // Track B owns the unified Condition transition song-by-song, including
+      // post-live tokuten workload. The legacy daily status updater would
+      // reintroduce a second, incompatible live workload calculation.
+      if (!save.track_b) {
+        applyDailyStatusUpdateJson(member, {
+          trainingLoad: 0,
+          trainingHours: 0,
+          liveCount: 1,
+          liveMinutes,
+          rehearsalMinutes,
+          extraLiveMinutes,
+          birthday: false,
+          includeSleepRecovery: false,
+        });
+      }
       if (reportRow) {
         const beforeCondition = Number(reportRow.condition_before ?? member.condition ?? 0) || 0;
         const beforeMorale = Number(reportRow.morale_before ?? member.morale ?? 0) || 0;
@@ -779,7 +827,19 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
         }, 0)
       : Math.max(0, Number(live.goods_gross_yen ?? live.goods_expected_revenue_yen ?? 0) || 0);
     const ticketGross = ticketPrice > 0 ? resolution.attendance * ticketPrice : 0;
-    const tokutenkaiRevenue = estimateTokutenkaiRevenueYen(resolution.tokutenkai_actual_tickets);
+    const tokutenkaiRevenue = estimateTokutenkaiRevenueYen(resolution.tokutenkai_actual_tickets, Number(live.tokutenkai_ticket_price ?? 0) || 2800);
+    const tokutenkaiTickets = Math.max(0, Number(resolution.tokutenkai_actual_tickets ?? 0) || 0);
+    const tokutenkaiMinutes = Math.min(70, Math.max(0, Number(live.tokutenkai_duration ?? 0) || 0));
+    const tokutenkaiSlotSeconds = Math.max(0, Number(live.tokutenkai_slot_seconds ?? 0) || 0);
+    // Finance defaults until each group's policy is configured: ¥150 material
+    // per cheki and one ¥1,200/hour temporary worker per active member.
+    const tokutenkaiMaterialCost = tokutenkaiTickets * 150;
+    const tokutenkaiTempStaffCost = live.tokutenkai_enabled === true
+      ? Math.round(mc * (tokutenkaiMinutes / 60) * 1200)
+      : 0;
+    const memberHoursBenefit = tokutenkaiSlotSeconds > 0
+      ? Math.round((tokutenkaiTickets * tokutenkaiSlotSeconds / 3600) * 100) / 100
+      : 0;
     const played: Record<string, unknown> = {
       ...live,
       status: "played",
@@ -823,6 +883,9 @@ export function archiveAndResolveManagedLivesForDate(save: GameSavePayload, targ
       liveTicketRevenue: ticketGross,
       liveGoodsRevenue: goodsGross,
       tokutenkaiRevenue,
+      tokutenkaiMaterialCost,
+      tokutenkaiTempStaffCost,
+      memberHoursBenefit,
       liveVenueFeeTotal,
       memberHoursLive: Math.round((mc * liveMinutes) / 60 * 100) / 100,
     });
@@ -881,6 +944,14 @@ export function acknowledgeInboxNotification(save: GameSavePayload, notification
 
   const title = String(item.title ?? "");
   const dk = String(item.dedupe_key ?? "");
+  if (title === "Monthly Strategy Meeting" || dk.startsWith("strategy-meeting|") || item.choice_kind === "strategy_meeting") {
+    lockStrategyMeeting(next, isoDatePart(next.current_date ?? next.game_start_date ?? ""));
+    item.read = true;
+    item.requires_confirmation = false;
+    item.choice_status = "resolved";
+    keepCurrentDateMonotonic(next, beforeIso, next.current_date);
+    return next;
+  }
   if (title === "Today's live schedule" || dk.startsWith("daily-lives|")) {
     const cur = next.current_date ?? next.game_start_date ?? next.scenario_context.startup_date ?? "2020-01-01";
     const curIso = String(cur).split("T")[0];
@@ -927,7 +998,10 @@ function applyMorningRecovery(next: GameSavePayload, targetDateIso: string): voi
   for (const uid of rosterUids) {
     const idol = idols.find((r) => String(r.uid ?? "") === uid);
     if (!idol) continue;
-    applyDailyStatusUpdateJson(idol, {
+    // A Track B save has exactly one continuous workload state. Do not let the
+    // legacy daily updater write a second recovery curve before Condition does.
+    if (next.track_b) applyTrackBRecovery(next, idol);
+    else applyDailyStatusUpdateJson(idol, {
       trainingLoad: 0,
       trainingHours: 0,
       liveCount: 0,
@@ -972,7 +1046,9 @@ function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent):
     const blocks = Math.max(1, event.trainingBlocksByUid?.[uid] ?? 1);
     if (blocks > maxBlocks) maxBlocks = blocks;
     const beforeCondition = typeof idol.condition === "number" ? idol.condition : Number(idol.condition ?? 0) || 0;
-    applyDailyStatusUpdateJson(idol, {
+    const intensity = safeTrainingRow(next.training_intensity[uid]);
+    if (next.track_b) applyTrackBTrainingLoad(next, idol, blocks, intensity);
+    else applyDailyStatusUpdateJson(idol, {
       trainingLoad: Math.min(20, blocks * 10),
       trainingHours: blocks * 4,
       liveCount: 0,
@@ -987,6 +1063,7 @@ function processTrainingEndEvent(next: GameSavePayload, event: SimulationEvent):
     affected.push(name);
     conditionLines.push(`- ${name}: ${Math.round(beforeCondition)} -> ${Math.round(afterCondition)} (${delta >= 0 ? "+" : ""}${delta})`);
   }
+  if (next.track_b && maxBlocks > 0) applyTrackBFormationRehearsal(next, maxBlocks * 4);
   const songUpdates = applyTrainingToManagedSongs(
     next.managed_song_status,
     next.training_song_uids,
@@ -1013,6 +1090,7 @@ ${conditionLines.join("\n")}${songUpdates.length ? `\n\nSong preparation:\n${son
 /** Legacy full-day advance path retained while event-step mode wraps it. */
 export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
   const next = deepSaveCopy(save);
+  ensureTrackB(next);
   const beforeIso = currentSimulationIso(next);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
   const mc = memberCountFromSave(next);
@@ -1159,7 +1237,8 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
       const moraleDelta = mediaSummary.member_morale_changes[uid] ?? 0;
       if (!conditionDelta && !fanDelta && !moraleDelta) continue;
       ensureIdolSimulationDefaults(idol);
-      idol.condition = Math.round(clamp(num(idol.condition, 90) + conditionDelta, 0, 100));
+      if (next.track_b) applyTrackBWorkload(next, idol, Math.max(0, -conditionDelta));
+      else idol.condition = Math.round(clamp(num(idol.condition, 90) + conditionDelta, 0, 100));
       idol.fan_count = Math.max(0, Math.round(num(idol.fan_count, 0) + fanDelta));
       idol.morale = Math.round(clamp(num(idol.morale, 70) + moraleDelta, 0, 100));
     }
@@ -1177,6 +1256,7 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
     targetIso,
   );
   applyScenarioEventsForDate(next, targetIso);
+  syncTrackBRoster(next);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
   refreshStartupUpcomingLivesNotification(next, targetIso);
   maybeSeedMonthEndAutoBookPrompt(next);
@@ -1190,12 +1270,15 @@ export function advanceOneDayLegacy(save: GameSavePayload): GameSavePayload {
 
   keepCurrentDateMonotonic(next, beforeIso, next.current_date);
 
+  maybeRunTrackBCadence(next, targetIso);
+
   return next;
 }
 
 /** Advance simulation to the next event today, otherwise to the next day 08:00. */
 export function advanceOneDay(save: GameSavePayload): GameSavePayload {
   const next = deepSaveCopy(save);
+  ensureTrackB(next);
   const beforeIso = currentSimulationIso(next);
   ensureAutoBookedLivesThroughEndOfNextMonth(next);
   const events = collectTodaySimulationEvents(next);

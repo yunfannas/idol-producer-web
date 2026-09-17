@@ -5,7 +5,6 @@
 import {
   financeAudienceProfileForGroup,
   resolveGroupLetterTier,
-  type AudienceDemographicMix,
   type FinanceAudienceProfile,
 } from "../engine/financeSystem";
 import {
@@ -443,43 +442,26 @@ function strategyForGroup(g: Record<string, unknown>): GroupStrategyProfile {
   };
 }
 
-function weightedAudiencePct(profile: FinanceAudienceProfile, key: keyof AudienceDemographicMix): number {
-  const total = Math.max(1, profile.publicFans + profile.otakuFans + profile.coreFans);
-  return (
-    profile.publicFans * profile.publicDemographics[key] +
-    profile.otakuFans * profile.otakuDemographics[key] +
-    profile.coreFans * profile.coreDemographics[key]
-  ) / total;
-}
-
 function renderFanDemographicsBars(profile: FinanceAudienceProfile): string {
-  const male = Math.round(weightedAudiencePct(profile, "malePct"));
-  const female = Math.max(0, 100 - male);
+  const total = Math.max(1, profile.publicFans + profile.otakuFans + profile.coreFans);
   const rows = [
-    { label: "Youth <=22", pct: weightedAudiencePct(profile, "youthPct") },
-    { label: "Young adult 23-34", pct: weightedAudiencePct(profile, "youngAdultPct") },
-    { label: "Middle aged+ >=35", pct: weightedAudiencePct(profile, "middlePlusPct") },
+    { label: "Public", fans: profile.publicFans, tone: "public" },
+    { label: "Otaku", fans: profile.otakuFans, tone: "otaku" },
+    { label: "Core", fans: profile.coreFans, tone: "core" },
   ];
   return `
     <div class="group-demo-bars">
       ${rows
         .map((row) => {
-          const pct = Math.max(0, Math.min(100, Math.round(row.pct)));
+          const pct = Math.max(0, Math.min(100, Math.round((row.fans / total) * 100)));
           return `<div class="group-demo-row">
-            <div class="group-demo-label"><span>${htmlEsc(row.label)}</span><strong>${pct}%</strong></div>
+            <div class="group-demo-label"><span>${htmlEsc(row.label)}</span><strong>${row.fans.toLocaleString("ja-JP")} · ${pct}%</strong></div>
             <div class="group-demo-track" aria-label="${htmlEsc(`${row.label}: ${pct}%`)}">
-              <div class="group-demo-fill" style="width:${pct}%">
-                <span class="group-demo-male" style="width:${male}%"></span>
-                <span class="group-demo-female" style="width:${female}%"></span>
-              </div>
+              <div class="group-demo-fill group-demo-fill-${row.tone}" style="width:${pct}%"></div>
             </div>
           </div>`;
         })
         .join("")}
-      <div class="group-demo-legend">
-        <span><i class="group-demo-dot group-demo-dot-male"></i>Male ${male}%</span>
-        <span><i class="group-demo-dot group-demo-dot-female"></i>Female ${female}%</span>
-      </div>
     </div>`;
 }
 
@@ -898,11 +880,6 @@ export function renderGroupDetailPage(
       <aside class="group-detail-demo-aside" aria-label="Fan demographics">
         <div class="group-detail-aside-title">${htmlEsc("Fan demographics")}</div>
         ${renderFanDemographicsBars(audienceProfile)}
-        <dl class="basic-dl group-demo-layer-dl group-demo-layer-dl-compact">
-          <div><dt>${htmlEsc("Public")}</dt><dd>${audienceProfile.publicFans.toLocaleString("ja-JP")}</dd></div>
-          <div><dt>${htmlEsc("Otaku")}</dt><dd>${audienceProfile.otakuFans.toLocaleString("ja-JP")}</dd></div>
-          <div><dt>${htmlEsc("Core")}</dt><dd>${audienceProfile.coreFans.toLocaleString("ja-JP")}</dd></div>
-        </dl>
       </aside>
     </div>
   </div>

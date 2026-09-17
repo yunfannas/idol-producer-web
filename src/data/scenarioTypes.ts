@@ -140,7 +140,7 @@ export interface LoadedScenario {
   lives?: Record<string, unknown>[];
   /** Optional `public/data/festivals.json` editions. */
   festivals?: Record<string, unknown>[];
-  /** Optional static tiers beside `groups.json` (see `support/docs/WEB_PORT_PLAN.md` §1b). */
+  /** Optional static tiers beside `groups.json` (see archived `support/docs/archive/legacy-pre-2026-09-02/WEB_PORT_PLAN.md` §1b). */
   group_tiers?: GroupTierRow[];
   /** When present (scenario 6), new-game picker is restricted to these `name` values in list order. */
   startup_allowlist?: ScenarioStartupAllowlist;

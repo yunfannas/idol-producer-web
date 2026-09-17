@@ -27,7 +27,7 @@ function num(v: unknown, fallback = 0): number {
 }
 
 function isLimitedDiscoveryLiveType(liveType: string): boolean {
-  return liveType === "Taiban" || liveType === "Festival" || liveType === "Joint";
+  return liveType === "Taiban" || liveType === "Festival" || liveType === "Joint" || liveType === "collaborate_live";
 }
 
 function avgFloat(...values: number[]): number {
@@ -167,13 +167,12 @@ function memberLiveComponentScores(idol: Record<string, unknown>, refIso: string
   const ment = a.mental;
   const app = a.appearance;
   const prof = a.hidden?.professionalism ?? 12;
-  const effDet = ment.determination + maturity;
   const effProf = prof + maturity;
 
   const vocal = avgFloat(tech.pitch, tech.tone, tech.breath, tech.power);
-  const dance = avgFloat(phys.agility, phys.stamina, tech.rhythm, tech.grace, tech.power);
-  const stage = avgFloat(app.cute, app.pretty, ment.talking, ment.humor, tech.grace);
-  const teamwork = avgFloat(ment.teamwork, effDet, ment.clever, effProf);
+  const dance = avgFloat(phys.agility, phys.stamina, tech.rhythm, tech.stage_presence, tech.power);
+  const stage = avgFloat(app.cute, app.pretty, ment.talking, ment.humor, tech.stage_presence);
+  const teamwork = avgFloat(ment.teamwork, ment.wit, effProf);
   return { vocal, dance, stage, teamwork };
 }
 
@@ -237,7 +236,7 @@ function memberTokutenkaiSalesScore(
   const roleBias = akishibuRoleBias(group, idol);
 
   const charm = avgFloat(app.cute, app.pretty, ment.talking, ment.humor, ment.fashion);
-  const reliability = avgFloat(prof + maturity, ment.determination + maturity, ment.teamwork);
+  const reliability = avgFloat(prof + maturity, ment.teamwork + maturity, ment.wit);
   const fc = Math.max(10, num(idol.fan_count, 0));
   const popularitySignal = avgFloat(
     num(idol.popularity, 0),
@@ -624,6 +623,7 @@ export function resolveGroupLiveResultWeb(
     Routine: 0.018,
     Taiban: 0.022,
     Joint: 0.018,
+    collaborate_live: 0.018,
   };
   const expectationGap = audienceSatisfaction - expectation;
   let conversionRate = 0;
@@ -818,7 +818,7 @@ export function applyLiveResultToSnapshot(
   };
 }
 
-export function estimateTokutenkaiRevenueYen(actualTickets: number): number {
+export function estimateTokutenkaiRevenueYen(actualTickets: number, ticketPriceYen = 2800): number {
   if (actualTickets <= 0) return 0;
-  return Math.round(actualTickets * 2800);
+  return Math.round(actualTickets * Math.max(0, ticketPriceYen));
 }

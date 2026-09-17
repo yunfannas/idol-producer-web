@@ -2,15 +2,15 @@ export const MEMBER_ROLE_DEFINITIONS = {
   leader: {
     label: "Leader",
     attributeBias: {
-      mental: { determination: 0.7, teamwork: 0.9, talking: 0.35 },
-      hidden: { professionalism: 0.6, loyalty: 0.35 },
+      mental: { teamwork: 0.9, talking: 0.35, wit: 0.25 },
+      hidden: { professionalism: 0.6, ambition: 0.35 },
     },
   },
   center: {
     label: "Center",
     attributeBias: {
       appearance: { cute: 0.75, pretty: 0.75 },
-      technical: { grace: 0.35, rhythm: 0.25 },
+      technical: { stage_presence: 0.35, rhythm: 0.25 },
       mental: { talking: 0.25 },
     },
   },
@@ -18,35 +18,36 @@ export const MEMBER_ROLE_DEFINITIONS = {
     label: "Lead Singer",
     attributeBias: {
       technical: { pitch: 0.9, tone: 0.9, breath: 0.8, power: 0.55, rhythm: 0.2 },
-      mental: { determination: 0.35 },
+      mental: { teamwork: 0.25 },
+      hidden: { professionalism: 0.25 },
     },
   },
   lead_dancer: {
     label: "Lead Dancer",
     attributeBias: {
       physical: { agility: 0.75, stamina: 0.55, natural_fitness: 0.45 },
-      technical: { rhythm: 0.95, grace: 0.8, power: 0.45 },
-      mental: { determination: 0.25 },
+      technical: { rhythm: 0.95, stage_presence: 0.8, power: 0.45 },
+      mental: { teamwork: 0.25 },
     },
   },
   host: {
     label: "Host",
     attributeBias: {
-      mental: { talking: 0.95, humor: 0.6, clever: 0.55, teamwork: 0.25 },
+      mental: { talking: 0.95, humor: 0.6, wit: 0.55, teamwork: 0.25 },
     },
   },
   content: {
     label: "Content",
     attributeBias: {
       appearance: { cute: 0.2, pretty: 0.2 },
-      mental: { talking: 0.8, humor: 0.7, clever: 0.45, fashion: 0.2 },
+      mental: { talking: 0.8, humor: 0.7, wit: 0.45, fashion: 0.2, creativity: 0.45 },
       hidden: { professionalism: 0.2, ambition: 0.3 },
     },
   },
   streaming: {
     label: "Streaming",
     attributeBias: {
-      mental: { talking: 0.85, humor: 0.45, clever: 0.35, teamwork: 0.25 },
+      mental: { talking: 0.85, humor: 0.45, wit: 0.35, teamwork: 0.25 },
       hidden: { professionalism: 0.25, ambition: 0.25 },
     },
   },
@@ -62,7 +63,8 @@ export const MEMBER_ROLE_DEFINITIONS = {
     attributeBias: {
       physical: { stamina: 0.25 },
       technical: { power: 0.4, rhythm: 0.25 },
-      mental: { talking: 0.85, humor: 0.35, determination: 0.5 },
+      mental: { talking: 0.85, humor: 0.35, wit: 0.35 },
+      hidden: { professionalism: 0.35 },
     },
   },
 } as const;

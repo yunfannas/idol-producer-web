@@ -15,6 +15,9 @@ export interface ManagedSongStatusRow {
   last_trained_date: string | null;
   last_performed_date: string | null;
   recent_performance_dates: string[];
+  vocal_familiarity?: number;
+  dance_familiarity?: number;
+  formation_familiarity?: number;
 }
 
 function clamp(n: number, lo: number, hi: number): number {
@@ -233,8 +236,11 @@ export function registerManagedSetlistPerformance(
       return Number.isFinite(dt) && Number.isFinite(ref) && ref - dt <= 21 * 86400000;
     }).length;
     row.rotation_fatigue = clamp(row.rotation_fatigue + 10 + recentCount * 8, 0, 100);
-    // Live reps rebuild formation familiarity toward 100.
-    row.familiarity = clamp(row.familiarity + Math.max(1, 3 - Math.min(2, recentCount)), 0, 100);
+    const liveGain = Math.max(1, 3 - Math.min(2, recentCount));
+    row.familiarity = clamp(row.familiarity + liveGain, 0, 100);
+    row.vocal_familiarity = clamp((row.vocal_familiarity ?? row.familiarity) + liveGain, 0, 100);
+    row.dance_familiarity = clamp((row.dance_familiarity ?? row.familiarity) + liveGain, 0, 100);
+    row.formation_familiarity = clamp((row.formation_familiarity ?? Math.max(0, row.familiarity - 10)) + liveGain, 0, 100);
     row.recent_performance_dates = [...row.recent_performance_dates, targetIso].slice(-12);
     row.last_performed_date = targetIso;
   }

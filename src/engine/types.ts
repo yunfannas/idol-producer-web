@@ -1,4 +1,26 @@
-export type LetterTier = "S" | "A" | "B" | "C" | "D" | "E" | "F" | "I";
+/** Base letter tiers used by lookup tables (finance, audience, staff). */
+export type BaseTier = "S" | "A" | "B" | "C" | "D" | "E";
+
+/**
+ * Tier system: S+ through E- (with +/standard/- variants).
+ * Legacy "F" and "I" kept for backward compat (mapped to E internally).
+ */
+export type LetterTier =
+  | "S+" | "S" | "S-"
+  | "A+" | "A" | "A-"
+  | "B+" | "B" | "B-"
+  | "C+" | "C" | "C-"
+  | "D+" | "D" | "D-"
+  | "E+" | "E" | "E-"
+  | "F" | "I"; // legacy compat
+
+/** Extract base tier letter from any LetterTier (e.g. "D+" → "D", "F" → "E"). */
+export function toBaseTier(tier: string): BaseTier {
+  const t = tier.replace(/[+-]$/, "");
+  if (t === "F" || t === "I" || !t) return "E";
+  if (["S", "A", "B", "C", "D", "E"].includes(t)) return t as BaseTier;
+  return "D";
+}
 
 /** Mirrors `FinanceSystem.normalize_finances` / save `finances` block. */
 export interface Finances {
@@ -64,6 +86,8 @@ export interface DailyBreakdown {
   birthday_special_revenue?: number;
   cheki_gross_revenue?: number;
   cheki_ops_cost?: number;
+  cheki_material_cost?: number;
+  cheki_temp_staff_cost?: number;
   cheki_member_share?: number;
   cheki_net_profit?: number;
   cd_net_profit?: number;
@@ -83,9 +107,6 @@ export interface DailyBreakdown {
   public_fans_estimate?: number;
   otaku_fans_estimate?: number;
   core_fans_estimate?: number;
-  female_fan_share_estimate?: number;
-  youth_fan_share_estimate?: number;
-  middle_plus_fan_share_estimate?: number;
   fanclub_demand_multiplier?: number;
   cheki_demand_multiplier?: number;
   goods_demand_multiplier?: number;
