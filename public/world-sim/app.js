@@ -208,6 +208,7 @@ function renderPalette(el, palette, opts = {}) {
           `<label>${c}<input data-pal-color="${c}" type="number" min="0" max="1" step="0.001" value="${Number(palette[c] || 0)}" /></label>`
       ).join("")}</div>`
     : "";
+  const dynamics = opts.snapshot ? renderPaletteDynamics(opts.snapshot) : "";
   el.innerHTML = `
     <div class="palette-bar">${bar}</div>
     <div class="palette-meta">
@@ -215,6 +216,7 @@ function renderPalette(el, palette, opts = {}) {
       / secondary <strong>${palette.secondary_color || "—"}</strong>
       ${palette.manual_override || opts.manual ? '<span class="badge">manual</span>' : ""}
     </div>
+    ${dynamics}
     ${inputs}
   `;
   if (editable) {
@@ -229,6 +231,38 @@ function renderPalette(el, palette, opts = {}) {
       });
     });
   }
+}
+
+function renderPaletteDynamics(snapshot) {
+  if (!snapshot?.model) return "";
+  const injections = snapshot.injections || {};
+  const catalog = snapshot.catalog || {};
+  const contributions = snapshot.contributions || [];
+  const newSongs = injections.new_songs?.length || 0;
+  const setlistEvents = injections.setlists?.length || 0;
+  const setlistSongs = injections.resolved_setlist_song_occurrences || 0;
+  const coverage = snapshot.fallback_flags?.verified_setlist_coverage_partial
+    ? '<span class="badge warning">partial setlist coverage</span>'
+    : '<span class="badge">setlist coverage verified</span>';
+  const topSongs = contributions.length
+    ? `<ol class="palette-contributions">${contributions.slice(0, 5).map((song) => `
+        <li><span>${escapeHtml(song.title)}</span><strong>${(Number(song.share || 0) * 100).toFixed(1)}%</strong><small>pop ${Number(song.popularity).toFixed(1)} × exposure ${Number(song.exposure).toFixed(2)}</small></li>`).join("")}</ol>`
+    : '<p class="muted">No eligible songs with both reviewed popularity and palette.</p>';
+  return `
+    <div class="palette-dynamics">
+      <div class="palette-dynamics-meta">
+        <span>popularity × decayed exposure</span>
+        <span>${Number(snapshot.model.exposure_half_life_days)}d half-life</span>
+        <span>${newSongs} new-song pulse${newSongs === 1 ? "" : "s"}</span>
+        <span>${setlistEvents} setlist event${setlistEvents === 1 ? "" : "s"} / ${setlistSongs} song play${setlistSongs === 1 ? "" : "s"}</span>
+        <span>${catalog.analyzed_song_count ?? 0}/${catalog.eligible_song_count ?? 0} songs analyzed</span>
+        ${coverage}
+      </div>
+      <details class="palette-detail">
+        <summary>Top song contributions</summary>
+        ${topSongs}
+      </details>
+    </div>`;
 }
 
 function ensureDraft() {
@@ -297,6 +331,7 @@ function renderGroup() {
   renderPalette(document.getElementById("groupPalette"), tier?.team_palette || currentPalette()?.palette, {
     editable: true,
     manual: Boolean(tier?.manual_override || currentPalette()?.manual_override),
+    snapshot: currentPalette(),
   });
 
   const world = state.worldPalette.get(state.month);

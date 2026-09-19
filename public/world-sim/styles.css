@@ -168,6 +168,15 @@ html, body {
 }
 .palette-bar span { display: block; height: 100%; }
 .palette-meta { margin-top: 0.45rem; font-size: 0.9rem; }
+.palette-dynamics { margin-top: 0.55rem; }
+.palette-dynamics-meta { display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; font-size: 0.76rem; color: var(--muted); }
+.palette-dynamics-meta span { white-space: nowrap; }
+.badge.warning { border-color: #aa6614; color: #8a4c08; background: #fff2dc; }
+.palette-detail { margin-top: 0.45rem; font-size: 0.84rem; }
+.palette-detail summary { cursor: pointer; color: var(--ink); }
+.palette-contributions { margin: 0.4rem 0 0; padding-left: 1.25rem; }
+.palette-contributions li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.1rem 0.5rem; padding: 0.2rem 0; }
+.palette-contributions small { grid-column: 1 / -1; color: var(--muted); }
 .palette-grid {
   margin-top: 0.55rem;
   display: grid;
