@@ -1,0 +1,40 @@
+{
+  "schema_version": "l3-world-viewer-bundle/v1",
+  "generated_at": "2026-09-19T05:44:06.147Z",
+  "month_start": "2010-01",
+  "month_end": "2025-07",
+  "tier_floor_for_rank": "C−",
+  "groups": [
+    {
+      "slug": "akishibu",
+      "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+      "name": "アキシブproject",
+      "coverage": {
+        "tiers": {
+          "start": "2023-08",
+          "end": "2025-07"
+        },
+        "team_palette": {
+          "start": "2022-11",
+          "end": "2025-07"
+        },
+        "members": {
+          "start": "2022-11",
+          "end": "2025-07"
+        }
+      }
+    }
+  ],
+  "capabilities": {
+    "world_palette": true,
+    "group_tiers": true,
+    "group_team_palette": true,
+    "member_state": true,
+    "rank_overall_c_minus_plus": true,
+    "manual_overrides": true,
+    "edit_mode": true,
+    "github_oauth": true,
+    "revisions": true
+  },
+  "source_ref": "idol-data-lab data/l3-world"
+}

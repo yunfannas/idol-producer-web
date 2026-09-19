@@ -36,6 +36,12 @@ function staticToolIndexes(): Plugin {
           res.end(fs.readFileSync(filePath));
           return;
         }
+        if (url === "/world-sim" || url === "/world-sim/") {
+          const filePath = path.join(rootDir, "public", "world-sim", "index.html");
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(fs.readFileSync(filePath));
+          return;
+        }
         if (url === "/formation-editor" || url === "/formation-editor/" || url === "/formation-editor.html") {
           const filePath = path.join(rootDir, "formation-editor.html");
           res.setHeader("Content-Type", "text/html; charset=utf-8");

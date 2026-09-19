@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>World Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <header class="hero">
+    <a class="back-link" href="../index.html">← Idol Producer</a>
+    <p class="brand">World Simulator</p>
+    <h1>Monthly L3 tiers &amp; palettes</h1>
+    <p class="lede">Read-only by default. Edit mode requires a whitelisted GitHub account.</p>
+  </header>
+
+  <section class="toolbar card">
+    <label class="field">
+      <span>Month</span>
+      <input id="monthInput" type="month" min="2010-01" />
+    </label>
+    <label class="field">
+      <span>Group</span>
+      <select id="groupSelect"></select>
+    </label>
+    <div class="mode-box">
+      <span id="modeLabel" class="pill">Read-only</span>
+      <button type="button" id="editBtn" class="btn">Enter edit</button>
+      <button type="button" id="saveBtn" class="btn primary" disabled>Save</button>
+      <span id="authStatus" class="muted"></span>
+    </div>
+  </section>
+
+  <nav class="tab-bar card" role="tablist" aria-label="World simulator views">
+    <button type="button" class="tab is-on" data-tab="group" role="tab" aria-selected="true">Group · tier &amp; palette</button>
+    <button type="button" class="tab" data-tab="idol" role="tab" aria-selected="false">Idol · roster</button>
+  </nav>
+
+  <main class="layout">
+    <p id="statusLine" class="status">Loading…</p>
+
+    <section id="panelGroup" class="panels">
+      <article class="card">
+        <h2>Selected group tiers</h2>
+        <div id="groupTiers" class="tiers"></div>
+        <div id="groupPalette" class="palette-block"></div>
+      </article>
+      <article class="card">
+        <h2>World palette</h2>
+        <div id="worldPalette" class="palette-block"></div>
+      </article>
+      <article class="card">
+        <h2>Overall ≥ C− ranking</h2>
+        <div class="table-wrap">
+          <table class="chart">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Group</th>
+                <th>Overall</th>
+                <th>Live</th>
+                <th>Music</th>
+                <th>Brand</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="rankBody"></tbody>
+          </table>
+        </div>
+        <p id="rankEmpty" class="muted hidden">No groups at C− or above this month.</p>
+      </article>
+    </section>
+
+    <section id="panelIdol" class="panels idol-layout hidden">
+      <article class="card idol-roster-card">
+        <h2>Active roster <span id="rosterCount" class="muted"></span></h2>
+        <p class="hint muted">As of selected month. Future graduations / role ends are not listed as events.</p>
+        <div id="memberList" class="member-list"></div>
+      </article>
+      <article class="card idol-detail-card">
+        <h2>Idol detail</h2>
+        <div id="memberDetail" class="member-detail muted">Select an idol.</div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
