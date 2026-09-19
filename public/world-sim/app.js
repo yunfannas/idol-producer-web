@@ -238,25 +238,32 @@ function renderPaletteDynamics(snapshot) {
   const injections = snapshot.injections || {};
   const catalog = snapshot.catalog || {};
   const contributions = snapshot.contributions || [];
-  const newSongs = injections.new_songs?.length || 0;
+  const catalogEntries = injections.catalog_entries?.length || 0;
+  const releases = injections.releases?.length || 0;
+  const promotions = injections.promotion_signals?.length || 0;
   const setlistEvents = injections.setlists?.length || 0;
   const setlistSongs = injections.resolved_setlist_song_occurrences || 0;
   const coverage = snapshot.fallback_flags?.verified_setlist_coverage_partial
     ? '<span class="badge warning">partial setlist coverage</span>'
     : '<span class="badge">setlist coverage verified</span>';
+  const promotionCoverage = snapshot.fallback_flags?.promotion_coverage_partial
+    ? '<span class="badge warning">partial promotion coverage</span>'
+    : '<span class="badge">promotion coverage verified</span>';
   const topSongs = contributions.length
     ? `<ol class="palette-contributions">${contributions.slice(0, 5).map((song) => `
-        <li><span>${escapeHtml(song.title)}</span><strong>${(Number(song.share || 0) * 100).toFixed(1)}%</strong><small>pop ${Number(song.popularity).toFixed(1)} × exposure ${Number(song.exposure).toFixed(2)}</small></li>`).join("")}</ol>`
+        <li><span>${escapeHtml(song.title)}</span><strong>${(Number(song.share || 0) * 100).toFixed(1)}%</strong><small>current rank ${Number(song.popularity).toFixed(1)} → ${Number(song.popularity_multiplier || 1).toFixed(2)}×; exposure ${Number(song.exposure).toFixed(2)}</small></li>`).join("")}</ol>`
     : '<p class="muted">No eligible songs with both reviewed popularity and palette.</p>';
   return `
     <div class="palette-dynamics">
       <div class="palette-dynamics-meta">
-        <span>popularity × decayed exposure</span>
+        <span>post-hoc popularity × decayed exposure</span>
         <span>${Number(snapshot.model.exposure_half_life_days)}d half-life</span>
-        <span>${newSongs} new-song pulse${newSongs === 1 ? "" : "s"}</span>
+        <span>${catalogEntries} catalog entry / ${releases} release</span>
+        <span>${promotions} verified promotion signal${promotions === 1 ? "" : "s"}</span>
         <span>${setlistEvents} setlist event${setlistEvents === 1 ? "" : "s"} / ${setlistSongs} song play${setlistSongs === 1 ? "" : "s"}</span>
         <span>${catalog.analyzed_song_count ?? 0}/${catalog.eligible_song_count ?? 0} songs analyzed</span>
         ${coverage}
+        ${promotionCoverage}
       </div>
       <details class="palette-detail">
         <summary>Top song contributions</summary>
