@@ -296,7 +296,7 @@ function renderGroup() {
       ["brand", "Brand"],
       ["overall", "Overall"],
     ];
-    el.innerHTML = dims
+    const cells = dims
       .map(([key, label]) => {
         const letter = tier.tiers?.[key] ?? "—";
         const score = tier.tier_scores?.[`${key}_score`] ?? "—";
@@ -314,6 +314,13 @@ function renderGroup() {
         </div>`;
       })
       .join("");
+    const live = tier.live_12m || {};
+    const modeledBaseline = Number(live.baseline_ticket_gross_jpy || 0);
+    const observedGross = live.ticket_gross_jpy;
+    const coverageNote = modeledBaseline > 0
+      ? `<p class="muted tier-provenance">Live 12m: observed ticket proxy ${observedGross == null ? "not covered" : `¥${Number(observedGross).toLocaleString()}`} + modeled routine-exposure baseline ¥${modeledBaseline.toLocaleString()} across ${live.baseline_missing_month_count ?? 0} uncovered month(s). The baseline is not a recorded show.</p>`
+      : "";
+    el.innerHTML = `${cells}${coverageNote}`;
     if (state.mode === "edit") {
       el.querySelectorAll("input[data-tier-letter]").forEach((input) => {
         input.addEventListener("change", () => {
