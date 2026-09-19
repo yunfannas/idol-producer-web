@@ -3,6 +3,11 @@
 > Portable design snapshot distilled from the current design discussion.  
 > Simulation opening: **S6 = 2025-07-05**.  
 > Status tags: **LOCKED** = current design truth; **PROVISIONAL** = direction agreed, constants tunable; **ILLUSTRATIVE** = calibration/example only; **REAL-WORLD ANCHOR** = observation used for calibration, not a forced future script.
+>
+> **Boundary:** this is a legacy main-game gameplay/formula snapshot. It is not
+> a World Simulator database or data-routing authority. L3 viewer work follows
+> `WORLD_SIMULATOR_L3_SPEC.md` and consumes only the reviewed L1/L2-derived
+> viewer bundle.
 
 ---
 

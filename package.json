@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "world-sim:pages": "node support/scripts/buildWorldSimulatorPages.mjs",
     "typecheck": "tsc --noEmit",
     "data:group-tiers": "node support/scripts/build-scenario6-group-tiers.mjs",
     "data:member-roles-export": "node support/scripts/member_roles_csv.mjs export",

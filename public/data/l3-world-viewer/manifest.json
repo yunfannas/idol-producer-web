@@ -1,6 +1,6 @@
 {
   "schema_version": "l3-world-viewer-bundle/v1",
-  "generated_at": "2026-09-19T06:03:41.891Z",
+  "generated_at": "2026-09-19T17:53:22.252Z",
   "month_start": "2010-01",
   "month_end": "2025-07",
   "tier_floor_for_rank": "C−",
@@ -36,5 +36,20 @@
     "github_oauth": true,
     "revisions": true
   },
-  "source_ref": "idol-data-lab data/l3-world"
+  "data_contract": {
+    "contract_version": "l3-viewer-input/v1",
+    "direct_input_layers": [
+      "L1",
+      "L2"
+    ],
+    "direct_input_roots": [
+      "l1/",
+      "reports/l2-research/"
+    ],
+    "legacy_runtime_inputs": false,
+    "web_legacy_catalogs": false,
+    "historical_lineage_may_reference_migration": true
+  },
+  "source_ref": "idol-data-lab data/l3-world",
+  "source_branch": "agent/l3-world-canary"
 }

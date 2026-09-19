@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [agent/l3-world-simulator]
   workflow_dispatch:
 
 permissions:
@@ -26,14 +26,12 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install and build
-        run: |
-          npm install
-          npm run build
+      - name: Build L3 World Simulator artifact
+        run: npm run world-sim:pages
 
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: dist-world-sim
 
   deploy:
     needs: build

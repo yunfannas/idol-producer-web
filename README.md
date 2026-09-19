@@ -46,13 +46,21 @@ Support material now lives under `support/`:
 - `support/reference/python-desktop/` for mirrored desktop Python reference files
 - `support/ocr/` for OCR language data
 
-## Deploy on GitHub Pages (this monorepo)
+## Deploy World Simulator on GitHub Pages
 
-The parent repository includes `.github/workflows/idol-producer-web-pages.yml`.
+GitHub Pages is the L3 World Simulator review surface. The Pages workflow runs
+only from `agent/l3-world-simulator` and publishes an allowlisted artifact:
 
-**One-time setup (required):** in the GitHub repo, open **Settings → Pages**. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”). Until this is done, the deploy job cannot publish the site.
+- `public/world-sim/`
+- `public/data/l3-world-viewer/`
 
-After that, pushes under `idol-producer-web/` on `main` run the workflow; you can also run it manually from the **Actions** tab.
+It does not publish the legacy game catalogs or make `main` the simulator data
+source. The online game remains on `main` until an explicit cutover.
+
+**One-time setup:** in **Settings → Pages**, set **Source** to **GitHub
+Actions**. Push the L3 branch or run the workflow manually to update the page.
+
+See `support/docs/WORLD_SIMULATOR_L3_SPEC.md` for the input and promotion gate.
 
 ## Deploy as its **own** GitHub repository
 

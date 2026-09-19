@@ -58,6 +58,20 @@ async function fetchJsonl(rel) {
     .map((l) => JSON.parse(l));
 }
 
+function assertManifestContract(manifest) {
+  const contract = manifest?.data_contract;
+  const layers = [...(contract?.direct_input_layers || [])].sort().join(",");
+  if (
+    manifest?.schema_version !== "l3-world-viewer-bundle/v1" ||
+    contract?.contract_version !== "l3-viewer-input/v1" ||
+    layers !== "L1,L2" ||
+    contract?.legacy_runtime_inputs !== false ||
+    contract?.web_legacy_catalogs !== false
+  ) {
+    throw new Error("L3 bundle rejected: canonical L1/L2-only contract is missing");
+  }
+}
+
 function parseHash() {
   const raw = location.hash.replace(/^#/, "");
   const p = new URLSearchParams(raw);
@@ -129,6 +143,7 @@ function foldRevisions() {
 
 async function loadAll() {
   state.manifest = await fetchJson("manifest.json");
+  assertManifestContract(state.manifest);
   state.monthsIndex = await fetchJson("index/months.json");
   const worldPal = applyOverrides(await fetchJsonl("world/palette-monthly.jsonl"));
   const ranks = applyOverrides(await fetchJsonl("world/rank-monthly.jsonl"));
@@ -438,11 +453,23 @@ function renderIdolDetail(member) {
 
   const status = member.initial_status_at_join || {};
   const attrs = member.attributes && typeof member.attributes === "object" ? member.attributes : null;
-  const attrRows = attrs
-    ? Object.entries(attrs)
-        .map(([k, v]) => `<tr><th>${escapeHtml(k)}</th><td>${escapeHtml(String(v))}</td></tr>`)
+  const currentAttrs = attrs?.current && typeof attrs.current === "object" ? attrs.current : null;
+  const ceilingAttrs = attrs?.ceiling && typeof attrs.ceiling === "object" ? attrs.ceiling : null;
+  const attrRows = currentAttrs
+    ? Object.entries(currentAttrs)
+        .flatMap(([category, values]) => Object.entries(values || {}).map(([key, value]) => {
+          const ceiling = ceilingAttrs?.[category]?.[key];
+          return `<tr><th>${escapeHtml(`${category}.${key}`)}</th><td>${escapeHtml(String(value))}</td><td>${ceiling ?? "—"}</td></tr>`;
+        }))
         .join("")
-    : "";
+    : attrs
+      ? Object.entries(attrs)
+          .filter(([, value]) => ["string", "number", "boolean"].includes(typeof value))
+          .map(([key, value]) => `<tr><th>${escapeHtml(key)}</th><td colspan="2">${escapeHtml(String(value))}</td></tr>`)
+          .join("")
+      : "";
+  const radar = attrs?.radar_values || {};
+  const radarText = Object.entries(radar).map(([key, value]) => `${key} ${value}`).join(" · ");
 
   const color = member.assigned_member_color;
   const joined = member.membership?.start || "—";
@@ -452,8 +479,10 @@ function renderIdolDetail(member) {
     <div class="detail-grid">
       <div class="detail-item"><div class="k">Joined</div><div class="v">${escapeHtml(joined)}</div></div>
       <div class="detail-item"><div class="k">Cohort</div><div class="v">${escapeHtml(member.cohort || "—")}</div></div>
+      <div class="detail-item"><div class="k">Age</div><div class="v">${member.age ?? "—"}</div></div>
       <div class="detail-item"><div class="k">Tenure (months)</div><div class="v">${member.akishibu_tenure_months ?? "—"}</div></div>
       <div class="detail-item"><div class="k">Prior idol experience</div><div class="v">${escapeHtml(member.prior_idol_experience || "—")}</div></div>
+      <div class="detail-item"><div class="k">Effective experience</div><div class="v">${member.experience?.total_effective_months ?? "—"} months</div></div>
       <div class="detail-item"><div class="k">Assigned color</div><div class="v" style="display:flex;gap:0.4rem;align-items:center"><span class="swatch" style="background:${color?.hex || "#ddd"}"></span>${escapeHtml(color?.name || "—")}</div></div>
       <div class="detail-item"><div class="k">Status (at join)</div><div class="v">C ${status.condition ?? "—"} · M ${status.morale ?? "—"} · Conf ${status.confidence ?? "—"}</div></div>
     </div>
@@ -462,9 +491,10 @@ function renderIdolDetail(member) {
     <h4 style="margin:1rem 0 0.4rem">Tags / archetype</h4>
     <div>${tags}</div>
     <h4 style="margin:1rem 0 0.4rem">Attributes</h4>
+    ${attrs?.ability != null ? `<p><strong>Ability ${attrs.ability}</strong> · overall ${attrs.overall_rating ?? "—"}${radarText ? ` · ${escapeHtml(radarText)}` : ""}</p>` : ""}
     ${
       attrRows
-        ? `<table class="attr-table"><tbody>${attrRows}</tbody></table>`
+        ? `<table class="attr-table"><thead><tr><th>Attribute</th><th>Current</th><th>Ceiling</th></tr></thead><tbody>${attrRows}</tbody></table>`
         : `<p class="muted">Attributes not in this month’s export yet.</p>`
     }
     <h4 style="margin:1rem 0 0.4rem">Palette</h4>

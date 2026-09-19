@@ -1,14 +1,21 @@
 # World Generation Rules
 
-**Status:** current design authority  
-**Effective:** 2026-09-03  
+**Status:** legacy main-game compatibility reference; not an L3 World Simulator authority
+**Effective:** 2026-09-03
 **Primary scenario calibration:** Scenario 6, opening date `2025-07-05`
+
+> World Simulator uses `WORLD_SIMULATOR_L3_SPEC.md`. The rules below remain
+> available for the current online game's legacy bootstrap until an explicit
+> cutover. Do not use its Web `public/data` catalogs, `group_history`, fan
+> backfills or save-owned whole-world snapshot as L3 inputs.
 
 ## 1. Authority and precedence
 
-This document defines the current world-generation rules for new saves. It replaces legacy fan/reach/bootstrap assumptions in archived design notes.
+This document defines the compatibility world-generation rules for the legacy
+main-game new-save path. It does not define the L3 monthly simulator or its
+database boundary.
 
-Active design authorities, in precedence order:
+Legacy runtime design authorities, in precedence order:
 
 1. scenario-specific curated data and dated historical facts;
 2. this document (`WORLD_GENERATION_RULES.md`);
