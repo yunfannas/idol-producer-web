@@ -320,7 +320,11 @@ function renderGroup() {
     const coverageNote = modeledBaseline > 0
       ? `<p class="muted tier-provenance">Live 12m: observed ticket proxy ${observedGross == null ? "not covered" : `¥${Number(observedGross).toLocaleString()}`} + modeled routine-exposure baseline ¥${modeledBaseline.toLocaleString()} across ${live.baseline_missing_month_count ?? 0} uncovered month(s). The baseline is not a recorded show.</p>`
       : "";
-    el.innerHTML = `${cells}${coverageNote}`;
+    const policy = currentMembers()?.group_policy;
+    const policyNote = policy
+      ? `<p class="muted tier-provenance">Group policy: ${escapeHtml(policy.roster_operating_mode || policy.policy_uid)} · ${escapeHtml(policy.planning_horizon || "long-lived")} · ${policy.state_transition === "carry" ? "continued" : "dated policy seed/change"}. Uncalibrated policy is shown for audit only.</p>`
+      : "";
+    el.innerHTML = `${cells}${coverageNote}${policyNote}`;
     if (state.mode === "edit") {
       el.querySelectorAll("input[data-tier-letter]").forEach((input) => {
         input.addEventListener("change", () => {
@@ -488,6 +492,7 @@ function renderIdolDetail(member) {
         .map((r) => {
           const bits = [r.team_role || r.role];
           if (r.singing_lead_weight != null) bits.push(`singing lead ${r.singing_lead_weight}`);
+          if (r.state_transition) bits.push(r.state_transition === "carry" ? "continued" : "dated appointment");
           // As-of month: do not surface future end dates as events.
           return `<span class="role-chip">${escapeHtml(bits.filter(Boolean).join(" · "))}</span>`;
         })
