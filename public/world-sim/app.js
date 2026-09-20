@@ -62,7 +62,7 @@ function assertManifestContract(manifest) {
   const contract = manifest?.data_contract;
   const layers = [...(contract?.direct_input_layers || [])].sort().join(",");
   if (
-    manifest?.schema_version !== "l3-world-viewer-bundle/v1" ||
+    manifest?.schema_version !== "l3-world-viewer-bundle/v2" ||
     contract?.contract_version !== "l3-viewer-input/v1" ||
     layers !== "L1,L2" ||
     contract?.legacy_runtime_inputs !== false ||
@@ -76,7 +76,7 @@ function parseHash() {
   const raw = location.hash.replace(/^#/, "");
   const p = new URLSearchParams(raw);
   return {
-    tab: p.get("tab") === "idol" ? "idol" : "group",
+    tab: ["group", "world", "idol"].includes(p.get("tab")) ? p.get("tab") : "group",
     month: p.get("m") || null,
     group: p.get("g") || null,
     idol: p.get("i") || null,
@@ -351,8 +351,15 @@ function renderGroup() {
     manual: Boolean(tier?.manual_override || currentPalette()?.manual_override),
     snapshot: currentPalette(),
   });
+}
 
+function renderWorld() {
   const world = state.worldPalette.get(state.month);
+  const aggregation = world?.aggregation || {};
+  const coverage = document.getElementById("worldCoverage");
+  coverage.textContent = world?.present
+    ? `${aggregation.contributing_group_count ?? 0}/${aggregation.registered_group_count ?? 0} registered simulated group(s) contribute this month. Population coverage is ${aggregation.population_coverage ?? "unknown"}; adding independently replayed groups improves sample coverage without changing group results.`
+    : "No completed group Team Palette is available for this month; world aggregate is empty.";
   renderPalette(document.getElementById("worldPalette"), world?.present ? world.palette : null, {
     empty: "No simulated groups this month (world palette empty).",
     manual: Boolean(world?.manual_override),
@@ -384,6 +391,7 @@ function renderGroup() {
       tr.addEventListener("click", () => {
         state.groupSlug = tr.getAttribute("data-slug");
         document.getElementById("groupSelect").value = state.groupSlug;
+        state.tab = "group";
         state.draft = null;
         render();
       });
@@ -595,7 +603,9 @@ function updateModeChrome() {
 function render() {
   writeHash();
   document.getElementById("panelGroup").classList.toggle("hidden", state.tab !== "group");
+  document.getElementById("panelWorld").classList.toggle("hidden", state.tab !== "world");
   document.getElementById("panelIdol").classList.toggle("hidden", state.tab !== "idol");
+  document.getElementById("groupField").classList.toggle("hidden", state.tab === "world");
   document.querySelectorAll(".tab").forEach((btn) => {
     const on = btn.getAttribute("data-tab") === state.tab;
     btn.classList.toggle("is-on", on);
@@ -605,13 +615,16 @@ function render() {
   document.getElementById("groupSelect").value = state.groupSlug;
   const flags = state.monthsIndex?.months?.[state.month];
   const gflags = flags?.groups?.[state.groupSlug];
-  document.getElementById("statusLine").textContent =
-    `${state.month} · ${state.groupSlug}` +
-    (gflags
-      ? ` · tiers:${gflags.tiers ? "yes" : "no"} palette:${gflags.team_palette ? "yes" : "no"} members:${gflags.members ? "yes" : "no"}`
-      : " · empty month");
+  const world = state.worldPalette.get(state.month);
+  document.getElementById("statusLine").textContent = state.tab === "world"
+    ? `${state.month} · World aggregate · ${world?.aggregation?.contributing_group_count ?? 0} contributing group(s)`
+    : `${state.month} · ${state.groupSlug}` +
+      (gflags
+        ? ` · tiers:${gflags.tiers ? "yes" : "no"} palette:${gflags.team_palette ? "yes" : "no"} members:${gflags.members ? "yes" : "no"}`
+        : " · empty month");
   updateModeChrome();
   if (state.tab === "group") renderGroup();
+  else if (state.tab === "world") renderWorld();
   else renderIdol();
 }
 

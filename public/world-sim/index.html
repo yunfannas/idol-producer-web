@@ -15,7 +15,7 @@
     <a class="back-link" href="../index.html">← Idol Producer</a>
     <p class="brand">World Simulator</p>
     <h1>Monthly L3 tiers &amp; palettes</h1>
-    <p class="lede">Dated L3 state: tiers plus decaying repertoire palette, live setlists, and explicitly post-hoc popularity weighting. Read-only by default.</p>
+    <p class="lede">Group simulation replays each group independently. World simulation aggregates completed group snapshots and displays its coverage. Read-only by default.</p>
   </header>
 
   <section class="toolbar card">
@@ -23,7 +23,7 @@
       <span>Month</span>
       <input id="monthInput" type="month" min="2010-01" />
     </label>
-    <label class="field">
+    <label id="groupField" class="field">
       <span>Group</span>
       <select id="groupSelect"></select>
     </label>
@@ -36,7 +36,8 @@
   </section>
 
   <nav class="tab-bar card" role="tablist" aria-label="World simulator views">
-    <button type="button" class="tab is-on" data-tab="group" role="tab" aria-selected="true">Group · tier &amp; palette</button>
+    <button type="button" class="tab is-on" data-tab="group" role="tab" aria-selected="true">Group simulation</button>
+    <button type="button" class="tab" data-tab="world" role="tab" aria-selected="false">World simulation</button>
     <button type="button" class="tab" data-tab="idol" role="tab" aria-selected="false">Idol · roster</button>
   </nav>
 
@@ -49,12 +50,16 @@
         <div id="groupTiers" class="tiers"></div>
         <div id="groupPalette" class="palette-block"></div>
       </article>
+    </section>
+
+    <section id="panelWorld" class="panels hidden">
       <article class="card">
         <h2>World palette</h2>
+        <p id="worldCoverage" class="muted"></p>
         <div id="worldPalette" class="palette-block"></div>
       </article>
       <article class="card">
-        <h2>Overall ≥ C− ranking</h2>
+        <h2>Group ranking · Overall ≥ C−</h2>
         <div class="table-wrap">
           <table class="chart">
             <thead>

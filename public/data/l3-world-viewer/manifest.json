@@ -1,6 +1,6 @@
 {
-  "schema_version": "l3-world-viewer-bundle/v1",
-  "generated_at": "2026-09-20T00:29:58.455Z",
+  "schema_version": "l3-world-viewer-bundle/v2",
+  "generated_at": "2026-09-20T00:36:19.966Z",
   "month_start": "2010-01",
   "month_end": "2025-07",
   "tier_floor_for_rank": "C−",
@@ -35,6 +35,22 @@
     "edit_mode": true,
     "github_oauth": true,
     "revisions": true
+  },
+  "simulation_modes": {
+    "group": {
+      "label": "Group simulation",
+      "kind": "independent_monthly_group_replay",
+      "output_scope": "one group and its members",
+      "world_feedback": "none"
+    },
+    "world": {
+      "label": "World simulation",
+      "kind": "derived_cross_group_monthly_aggregate",
+      "input_scope": "available completed group snapshots only",
+      "group_feedback": "none",
+      "population_coverage": "unknown",
+      "accuracy_note": "More independently replayed groups improve sample coverage; the aggregate must display its contributing group count and never claim complete world coverage by default."
+    }
   },
   "data_contract": {
     "contract_version": "l3-viewer-input/v1",
