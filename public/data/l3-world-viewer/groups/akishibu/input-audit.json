@@ -9,17 +9,17 @@
     "end": "2026-09-19"
   },
   "readiness": {
-    "full_history": "l3_blocked",
+    "full_history": "l3_ready_with_fallbacks",
     "group_level_replay": "l3_ready_with_fallbacks",
-    "member_level_full_history": "l3_blocked",
+    "member_level_full_history": "l3_ready_with_fallbacks",
     "opening_six_2022_11": "l3_ready_with_fallbacks"
   },
   "state_counts": {
-    "present": 5,
-    "fallback_ok": 6,
+    "present": 9,
+    "fallback_ok": 5,
     "missing": 1,
-    "stale": 7,
-    "ambiguous": 1,
+    "stale": 5,
+    "ambiguous": 0,
     "invalid_shape": 0
   },
   "inventory": {
@@ -30,21 +30,14 @@
     "affiliation_rows": 3,
     "memberships": {
       "rows": 51,
-      "dated_rows": 46,
+      "dated_rows": 47,
       "null_start_duplicate_rows": 4,
-      "unresolved_rows": [
-        {
-          "idol_uid": "i:ac26d6a1-4793-7a3d-bb5a-4e4c4774c268",
-          "name": "朝倉ゆりな",
-          "from": null,
-          "to": null
-        }
-      ],
+      "unresolved_rows": [],
       "active_at_cutoff": 7
     },
     "l1": {
-      "songs": 46,
-      "releases": 0,
+      "songs": 54,
+      "releases": 54,
       "activities": 21,
       "activities_range": {
         "start": "2013-04-27",
@@ -105,14 +98,26 @@
       "brand_exposure_rows": 1,
       "current_member_profiles": 7,
       "team_member_status": "not_started",
-      "song_profiles": 46,
+      "song_profiles": 54,
       "full_song_range_profiles": 0,
-      "song_palette_profiles": 36,
+      "song_palette_profiles": 54,
       "member_initial_state_rows": 14
     },
     "l3_support": {
       "health_event_rows": 0,
-      "external_predecessor_dependencies": 2
+      "external_predecessor_dependencies": 2,
+      "member_state_window": {
+        "start": "2012-10",
+        "end": "2026-09"
+      },
+      "team_palette_window": {
+        "start": "2015-04",
+        "end": "2026-09"
+      },
+      "group_state_window": {
+        "start": "2012-10",
+        "end": "2026-09"
+      }
     }
   },
   "checks": [
@@ -135,10 +140,10 @@
     {
       "id": "l1.membership_full_history",
       "layer": "L1",
-      "state": "ambiguous",
+      "state": "present",
       "priority": "P0",
       "requirement": "required",
-      "evidence": "51 rows; 4 duplicate null-start rows; 1 unresolved member rows"
+      "evidence": "51 rows; 4 duplicate null-start rows; 0 unresolved member rows"
     },
     {
       "id": "l1.song_catalog",
@@ -146,15 +151,15 @@
       "state": "present",
       "priority": "P1",
       "requirement": "required",
-      "evidence": "46 canonical songs"
+      "evidence": "54 canonical songs"
     },
     {
       "id": "l1.release_catalog",
       "layer": "L1",
-      "state": "fallback_ok",
+      "state": "present",
       "priority": "P1",
       "requirement": "required",
-      "evidence": "0 canonical releases; 8 reviewed L2 release rows bridge Music"
+      "evidence": "54 canonical releases; 8 reviewed L2 release rows bridge Music"
     },
     {
       "id": "l1.independent_live_history",
@@ -250,15 +255,15 @@
       "state": "present",
       "priority": "P2",
       "requirement": "recommended",
-      "evidence": "46/46 song profiles; 0 full-song range profiles"
+      "evidence": "54/54 song profiles; 0 full-song range profiles"
     },
     {
       "id": "l2.song_palette",
       "layer": "L2",
-      "state": "stale",
+      "state": "present",
       "priority": "P1",
       "requirement": "required",
-      "evidence": "36/46 palette profiles"
+      "evidence": "54/54 palette profiles"
     },
     {
       "id": "l2.prior_group_dependencies",
@@ -271,10 +276,10 @@
     {
       "id": "l3.output_window",
       "layer": "L3",
-      "state": "stale",
+      "state": "present",
       "priority": "P1",
       "requirement": "required",
-      "evidence": "current member/palette replay ends 2025-07 and group tier replay begins 2023-08; full 2012-10..2026-09 output is not materialized"
+      "evidence": "member 2012-10..2026-09; tier 2012-10..2026-09; Team Palette 2015-04..2026-09 (intentionally starts at first formal release)"
     }
   ],
   "queue_ids_upserted": [

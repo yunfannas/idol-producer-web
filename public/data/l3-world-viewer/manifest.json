@@ -1,8 +1,8 @@
 {
   "schema_version": "l3-world-viewer-bundle/v2",
-  "generated_at": "2026-09-20T04:55:41.400Z",
+  "generated_at": "2026-09-20T09:30:32.536Z",
   "month_start": "2010-01",
-  "month_end": "2025-07",
+  "month_end": "2026-09",
   "tier_floor_for_rank": "C−",
   "groups": [
     {
@@ -12,16 +12,16 @@
       "input_audit": "groups/akishibu/input-audit.json",
       "coverage": {
         "tiers": {
-          "start": "2023-08",
-          "end": "2025-07"
+          "start": "2012-10",
+          "end": "2026-09"
         },
         "team_palette": {
-          "start": "2022-11",
-          "end": "2025-07"
+          "start": "2015-04",
+          "end": "2026-09"
         },
         "members": {
-          "start": "2022-11",
-          "end": "2025-07"
+          "start": "2012-10",
+          "end": "2026-09"
         }
       }
     }
