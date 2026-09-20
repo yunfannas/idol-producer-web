@@ -589,6 +589,10 @@ function renderIdolDetail(member) {
         return `<span class="role-chip">${escapeHtml(`${tag}${score}`)}</span>`;
       }).join("")
     : `<span class="muted">—</span>`;
+  const tagSearch = member.entry_tag_search;
+  const tagSearchText = tagSearch
+    ? `${tagSearch.status || "unknown"} · ${tagSearch.outcome || "unknown"}`
+    : "outside reviewed scope";
   const mechanicsArchetype = member.member_archetype
     ? `<p class="muted">Mechanics archetype: ${escapeHtml(member.member_archetype)}</p>`
     : "";
@@ -635,6 +639,7 @@ function renderIdolDetail(member) {
     <div>${roleHtml}</div>
     <h4 style="margin:1rem 0 0.4rem">Entry tags (accepted score)</h4>
     <div>${tags}</div>
+    <p class="muted">Tag search: ${escapeHtml(tagSearchText)}</p>
     ${mechanicsArchetype}
     <h4 style="margin:1rem 0 0.4rem">Attributes</h4>
     ${attrs?.ability != null ? `<p><strong>Ability ${attrs.ability}</strong> · overall ${attrs.overall_rating ?? "—"}${radarText ? ` · ${escapeHtml(radarText)}` : ""}</p>` : ""}
