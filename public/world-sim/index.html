@@ -19,7 +19,7 @@
   </header>
 
   <section class="toolbar card">
-    <label class="field">
+    <label id="monthField" class="field">
       <span>Month</span>
       <input id="monthInput" type="month" min="2010-01" />
     </label>
@@ -27,7 +27,7 @@
       <span>Group</span>
       <select id="groupSelect"></select>
     </label>
-    <div class="mode-box">
+    <div id="modeBox" class="mode-box">
       <span id="modeLabel" class="pill">Read-only</span>
       <button type="button" id="editBtn" class="btn">Enter edit</button>
       <button type="button" id="saveBtn" class="btn primary" disabled>Save</button>
@@ -39,6 +39,7 @@
     <button type="button" class="tab is-on" data-tab="group" role="tab" aria-selected="true">Group simulation</button>
     <button type="button" class="tab" data-tab="world" role="tab" aria-selected="false">World simulation</button>
     <button type="button" class="tab" data-tab="idol" role="tab" aria-selected="false">Idol · roster</button>
+    <button type="button" class="tab" data-tab="audit" role="tab" aria-selected="false">Data audit</button>
   </nav>
 
   <main class="layout">
@@ -89,6 +90,32 @@
       <article class="card idol-detail-card">
         <h2>Idol detail</h2>
         <div id="memberDetail" class="member-detail muted">Select an idol.</div>
+      </article>
+    </section>
+
+    <section id="panelAudit" class="panels audit-layout hidden">
+      <article class="card">
+        <div class="audit-heading">
+          <div>
+            <p class="eyebrow">L1 / L2 input gate</p>
+            <h2>Full-history data audit</h2>
+          </div>
+          <span id="auditOverall" class="readiness-pill">Loading…</span>
+        </div>
+        <p id="auditInterval" class="muted"></p>
+        <div id="auditReadiness" class="audit-readiness"></div>
+      </article>
+      <article class="card">
+        <h2>Coverage inventory</h2>
+        <div id="auditInventory" class="audit-inventory"></div>
+      </article>
+      <article class="card">
+        <h2>Open gaps and fallbacks</h2>
+        <div id="auditChecks"></div>
+      </article>
+      <article class="card">
+        <h2>Audit harness</h2>
+        <div id="auditAssertions" class="assertion-list"></div>
       </article>
     </section>
   </main>

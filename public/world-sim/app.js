@@ -19,6 +19,7 @@ const state = {
   tiersBySlug: new Map(),
   paletteBySlug: new Map(),
   membersBySlug: new Map(),
+  auditsBySlug: new Map(),
   worldPalette: new Map(),
   rankByMonth: new Map(),
   revisions: [],
@@ -76,7 +77,7 @@ function parseHash() {
   const raw = location.hash.replace(/^#/, "");
   const p = new URLSearchParams(raw);
   return {
-    tab: ["group", "world", "idol"].includes(p.get("tab")) ? p.get("tab") : "group",
+    tab: ["group", "world", "idol", "audit"].includes(p.get("tab")) ? p.get("tab") : "group",
     month: p.get("m") || null,
     group: p.get("g") || null,
     idol: p.get("i") || null,
@@ -157,6 +158,15 @@ async function loadAll() {
     state.tiersBySlug.set(g.slug, new Map(tiers.map((r) => [r.month, r])));
     state.paletteBySlug.set(g.slug, new Map(pals.map((r) => [r.month, r])));
     state.membersBySlug.set(g.slug, new Map(mems.map((r) => [r.month, r])));
+    if (g.input_audit) {
+      try {
+        state.auditsBySlug.set(g.slug, await fetchJson(g.input_audit));
+      } catch {
+        state.auditsBySlug.set(g.slug, null);
+      }
+    } else {
+      state.auditsBySlug.set(g.slug, null);
+    }
   }
 
   try {
@@ -399,6 +409,70 @@ function renderWorld() {
   }
 }
 
+function renderAudit() {
+  const audit = state.auditsBySlug.get(state.groupSlug);
+  const overall = document.getElementById("auditOverall");
+  const interval = document.getElementById("auditInterval");
+  const readiness = document.getElementById("auditReadiness");
+  const inventory = document.getElementById("auditInventory");
+  const checks = document.getElementById("auditChecks");
+  const assertions = document.getElementById("auditAssertions");
+
+  if (!audit) {
+    overall.textContent = "not audited";
+    overall.className = "readiness-pill is-missing";
+    interval.textContent = "No exported full-history audit is available for this group.";
+    readiness.innerHTML = "";
+    inventory.innerHTML = '<p class="muted">Run the L3 input audit and rebuild the viewer bundle.</p>';
+    checks.innerHTML = "";
+    assertions.innerHTML = "";
+    return;
+  }
+
+  const fullHistory = audit.readiness?.full_history || "unknown";
+  overall.textContent = fullHistory;
+  overall.className = `readiness-pill ${fullHistory === "l3_blocked" ? "is-blocked" : "is-ready"}`;
+  interval.textContent = `${audit.group_name || state.groupSlug} · ${audit.interval?.start || "?"} … ${audit.interval?.end || "?"} · audited ${audit.generated_at || "unknown"}`;
+
+  const readinessLabels = [
+    ["full_history", "Full history"],
+    ["group_level_replay", "Group replay"],
+    ["member_level_full_history", "Member history"],
+    ["opening_six_2022_11", "2022-11 opening six"],
+  ];
+  readiness.innerHTML = readinessLabels.map(([key, label]) => {
+    const value = audit.readiness?.[key] || "unknown";
+    return `<div class="audit-metric"><span>${escapeHtml(label)}</span><strong class="${value === "l3_blocked" ? "text-blocked" : "text-ready"}">${escapeHtml(value)}</strong></div>`;
+  }).join("");
+
+  const inv = audit.inventory || {};
+  const inventoryRows = [
+    ["Membership", `${inv.memberships?.rows ?? 0} rows · ${inv.memberships?.active_at_cutoff ?? 0} active at cutoff`],
+    ["Songs / releases", `${inv.l1?.songs ?? 0} songs · ${inv.l1?.releases ?? 0} canonical releases`],
+    ["Shared FES", `${inv.l1?.shared_festival_participant_rows ?? 0} participant rows · ${(inv.l1?.shared_festival_editions || []).length} editions`],
+    ["Verified setlists", `${inv.l1?.setlists ?? 0}${inv.l1?.setlist_range ? ` · ${inv.l1.setlist_range.start}…${inv.l1.setlist_range.end}` : ""}`],
+    ["Reviewed lives", `${inv.l2?.independent_lives ?? 0} independent · ${inv.l2?.festival_slots ?? 0} FES slots`],
+    ["Song Palette", `${inv.l2?.song_palette_profiles ?? 0}/${inv.l1?.songs ?? 0} songs`],
+    ["Member seeds", `${inv.l2?.member_initial_state_rows ?? 0} rows`],
+    ["Prior-group deps", `${inv.l3_support?.external_predecessor_dependencies ?? 0} external`],
+  ];
+  inventory.innerHTML = inventoryRows.map(([label, value]) => `<div class="inventory-item"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("");
+
+  const priorityOrder = { P0: 0, P1: 1, P2: 2 };
+  const openChecks = (audit.checks || [])
+    .filter((item) => item.state !== "present")
+    .sort((a, b) => (priorityOrder[a.priority] ?? 9) - (priorityOrder[b.priority] ?? 9));
+  checks.innerHTML = openChecks.length
+    ? `<div class="audit-check-list">${openChecks.map((item) => `<article class="audit-check state-${escapeHtml(item.state)}">
+        <div class="audit-check-title"><code>${escapeHtml(item.id)}</code><span class="priority ${escapeHtml(item.priority)}">${escapeHtml(item.priority)}</span><span class="state-badge">${escapeHtml(item.state)}</span></div>
+        <p>${escapeHtml(item.evidence || "No evidence summary")}</p>
+      </article>`).join("")}</div>`
+    : '<p class="muted">No open gaps.</p>';
+
+  const assertionRows = Object.entries(audit.test_assertions || {});
+  assertions.innerHTML = assertionRows.map(([key, value]) => `<div class="assertion-item"><span class="assertion-mark ${value === true ? "pass" : "fail"}">${value === true ? "✓" : "×"}</span><code>${escapeHtml(key)}</code></div>`).join("");
+}
+
 function monthEndDate(ym) {
   const [y, m] = ym.split("-").map(Number);
   return new Date(Date.UTC(y, m, 0)).toISOString().slice(0, 10);
@@ -605,7 +679,10 @@ function render() {
   document.getElementById("panelGroup").classList.toggle("hidden", state.tab !== "group");
   document.getElementById("panelWorld").classList.toggle("hidden", state.tab !== "world");
   document.getElementById("panelIdol").classList.toggle("hidden", state.tab !== "idol");
+  document.getElementById("panelAudit").classList.toggle("hidden", state.tab !== "audit");
   document.getElementById("groupField").classList.toggle("hidden", state.tab === "world");
+  document.getElementById("monthField").classList.toggle("hidden", state.tab === "audit");
+  document.getElementById("modeBox").classList.toggle("hidden", state.tab === "audit");
   document.querySelectorAll(".tab").forEach((btn) => {
     const on = btn.getAttribute("data-tab") === state.tab;
     btn.classList.toggle("is-on", on);
@@ -616,16 +693,20 @@ function render() {
   const flags = state.monthsIndex?.months?.[state.month];
   const gflags = flags?.groups?.[state.groupSlug];
   const world = state.worldPalette.get(state.month);
+  const audit = state.auditsBySlug.get(state.groupSlug);
   document.getElementById("statusLine").textContent = state.tab === "world"
     ? `${state.month} · World aggregate · ${world?.aggregation?.contributing_group_count ?? 0} contributing group(s)`
-    : `${state.month} · ${state.groupSlug}` +
+    : state.tab === "audit"
+      ? `${state.groupSlug} · full-history input audit · ${audit?.state_counts?.present ?? 0} present / ${(audit?.checks || []).length ?? 0} checks`
+      : `${state.month} · ${state.groupSlug}` +
       (gflags
         ? ` · tiers:${gflags.tiers ? "yes" : "no"} palette:${gflags.team_palette ? "yes" : "no"} members:${gflags.members ? "yes" : "no"}`
         : " · empty month");
   updateModeChrome();
   if (state.tab === "group") renderGroup();
   else if (state.tab === "world") renderWorld();
-  else renderIdol();
+  else if (state.tab === "idol") renderIdol();
+  else renderAudit();
 }
 
 async function refreshAuth() {
@@ -729,6 +810,7 @@ function bindUi() {
   document.querySelectorAll(".tab").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.tab = btn.getAttribute("data-tab");
+      if (state.tab === "audit") state.mode = "view";
       render();
     });
   });
@@ -739,7 +821,7 @@ function bindUi() {
     if (h.month) state.month = h.month;
     if (h.group) state.groupSlug = h.group;
     state.tab = h.tab;
-    state.mode = h.mode === "edit" && state.auth.can_edit ? "edit" : "view";
+    state.mode = h.tab !== "audit" && h.mode === "edit" && state.auth.can_edit ? "edit" : "view";
     state.memberUid = h.idol;
     render();
   });
@@ -762,7 +844,7 @@ async function boot() {
   state.tab = h.tab;
   state.memberUid = h.idol;
   await refreshAuth();
-  state.mode = h.mode === "edit" && state.auth.can_edit ? "edit" : "view";
+  state.mode = h.tab !== "audit" && h.mode === "edit" && state.auth.can_edit ? "edit" : "view";
   document.getElementById("statusLine").textContent = `Loaded ${state.manifest.groups.length} group(s); months ${state.manifest.month_start}…${state.manifest.month_end}`;
   render();
 }

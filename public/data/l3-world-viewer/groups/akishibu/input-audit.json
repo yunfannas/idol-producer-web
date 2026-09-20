@@ -1,0 +1,310 @@
+{
+  "schema_version": "l3-world-input-audit/full-history-v0.1",
+  "generated_at": "2026-09-19",
+  "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
+  "canonical_group_uid": "g:idolsdiagram:44Ki44Kt44K344OWcHJvamVjdA",
+  "group_name": "アキシブproject",
+  "interval": {
+    "start": "2012-10-05",
+    "end": "2026-09-19"
+  },
+  "readiness": {
+    "full_history": "l3_blocked",
+    "group_level_replay": "l3_ready_with_fallbacks",
+    "member_level_full_history": "l3_blocked",
+    "opening_six_2022_11": "l3_ready_with_fallbacks"
+  },
+  "state_counts": {
+    "present": 5,
+    "fallback_ok": 6,
+    "missing": 1,
+    "stale": 7,
+    "ambiguous": 1,
+    "invalid_shape": 0
+  },
+  "inventory": {
+    "group_identity": {
+      "found": true,
+      "formed_date": "2012-10-05"
+    },
+    "affiliation_rows": 3,
+    "memberships": {
+      "rows": 51,
+      "dated_rows": 46,
+      "null_start_duplicate_rows": 4,
+      "unresolved_rows": [
+        {
+          "idol_uid": "i:ac26d6a1-4793-7a3d-bb5a-4e4c4774c268",
+          "name": "朝倉ゆりな",
+          "from": null,
+          "to": null
+        }
+      ],
+      "active_at_cutoff": 7
+    },
+    "l1": {
+      "songs": 46,
+      "releases": 0,
+      "activities": 21,
+      "activities_range": {
+        "start": "2013-04-27",
+        "end": "2013-12-25"
+      },
+      "activity_observation_periods": [
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022-01-01/2022-11-20"
+      ],
+      "shared_festival_participant_rows": 14,
+      "shared_festival_editions": [
+        "IDORISE!! FESTIVAL 2023",
+        "IDORISE!! FESTIVAL 2024",
+        "IDORISE!! FESTIVAL 2025",
+        "IDORISE!! FESTIVAL 2026",
+        "TOKYO IDOL FESTIVAL 2014",
+        "TOKYO IDOL FESTIVAL 2015",
+        "TOKYO IDOL FESTIVAL 2016",
+        "TOKYO IDOL FESTIVAL 2017",
+        "TOKYO IDOL FESTIVAL 2018",
+        "TOKYO IDOL FESTIVAL 2019",
+        "TOKYO IDOL FESTIVAL 2020",
+        "TOKYO IDOL FESTIVAL 2021",
+        "TOKYO IDOL FESTIVAL 2022",
+        "TOKYO IDOL FESTIVAL 2025"
+      ],
+      "setlists": 6,
+      "setlist_range": {
+        "start": "2022-12-04",
+        "end": "2025-07-19"
+      }
+    },
+    "l2": {
+      "physical_releases": 8,
+      "independent_lives": 28,
+      "festival_slots": 39,
+      "festival_names": [
+        "IDORISE!! FESTIVAL 2025",
+        "TOKYO IDOL FESTIVAL 2014",
+        "TOKYO IDOL FESTIVAL 2015",
+        "TOKYO IDOL FESTIVAL 2016",
+        "TOKYO IDOL FESTIVAL 2017",
+        "TOKYO IDOL FESTIVAL 2018",
+        "TOKYO IDOL FESTIVAL 2019",
+        "TOKYO IDOL FESTIVAL 2020",
+        "TOKYO IDOL FESTIVAL 2021",
+        "TOKYO IDOL FESTIVAL 2022",
+        "TOKYO IDOL FESTIVAL 2025"
+      ],
+      "brand_exposure_rows": 1,
+      "current_member_profiles": 7,
+      "team_member_status": "not_started",
+      "song_profiles": 46,
+      "full_song_range_profiles": 0,
+      "song_palette_profiles": 36,
+      "member_initial_state_rows": 14
+    },
+    "l3_support": {
+      "health_event_rows": 0,
+      "external_predecessor_dependencies": 2
+    }
+  },
+  "checks": [
+    {
+      "id": "l1.identity",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P0",
+      "requirement": "required",
+      "evidence": "canonical identity and formed date 2012-10-05"
+    },
+    {
+      "id": "l1.agency_timeline",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P2",
+      "requirement": "recommended",
+      "evidence": "3 affiliation rows; 1 dated"
+    },
+    {
+      "id": "l1.membership_full_history",
+      "layer": "L1",
+      "state": "ambiguous",
+      "priority": "P0",
+      "requirement": "required",
+      "evidence": "51 rows; 4 duplicate null-start rows; 1 unresolved member rows"
+    },
+    {
+      "id": "l1.song_catalog",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "46 canonical songs"
+    },
+    {
+      "id": "l1.release_catalog",
+      "layer": "L1",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "0 canonical releases; 8 reviewed L2 release rows bridge Music"
+    },
+    {
+      "id": "l1.independent_live_history",
+      "layer": "L1",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "28 reviewed milestone lives; exact gross/fill and routine lives remain incomplete"
+    },
+    {
+      "id": "l1.venue_capacity",
+      "layer": "L1",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "L3 capacity proxy is explicit; canonical venue capacity remains incomplete"
+    },
+    {
+      "id": "l1.mixed_bill_history",
+      "layer": "L1",
+      "state": "stale",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "21 shared activity rows ending 2013-12-25"
+    },
+    {
+      "id": "l1.festival_shared_ledger",
+      "layer": "L1",
+      "state": "stale",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "14 participant rows across 14 editions; benchmark coverage is mainly TIF/IDORISE"
+    },
+    {
+      "id": "l1.setlist_history",
+      "layer": "L1",
+      "state": "stale",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "6 verified setlists, 2022-12-04..2025-07-19"
+    },
+    {
+      "id": "l1.song_promotion_history",
+      "layer": "L1",
+      "state": "missing",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "no canonical song-resolved promotion timeline for the full interval"
+    },
+    {
+      "id": "l1.media_history",
+      "layer": "L1",
+      "state": "stale",
+      "priority": "P2",
+      "requirement": "recommended",
+      "evidence": "1 reviewed brand/media row; no full dated L1 timeline"
+    },
+    {
+      "id": "l1.health_history",
+      "layer": "L1",
+      "state": "fallback_ok",
+      "priority": "P2",
+      "requirement": "recommended",
+      "evidence": "0 dated compiled health events; unmatched months use explicit healthy default"
+    },
+    {
+      "id": "l2.group_policy",
+      "layer": "L2",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "team_member_l2b=not_started; versioned L3 governance fallback exists"
+    },
+    {
+      "id": "l2.member_entry_full_history",
+      "layer": "L2",
+      "state": "stale",
+      "priority": "P2",
+      "requirement": "recommended",
+      "evidence": "14 L3 opening/member seed rows versus 47 distinct membership rows"
+    },
+    {
+      "id": "l2.festival_classification",
+      "layer": "L2",
+      "state": "present",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "39 classified slots; named coverage: IDORISE!! FESTIVAL 2025, TOKYO IDOL FESTIVAL 2014, TOKYO IDOL FESTIVAL 2015, TOKYO IDOL FESTIVAL 2016, TOKYO IDOL FESTIVAL 2017, TOKYO IDOL FESTIVAL 2018, TOKYO IDOL FESTIVAL 2019, TOKYO IDOL FESTIVAL 2020, TOKYO IDOL FESTIVAL 2021, TOKYO IDOL FESTIVAL 2022, TOKYO IDOL FESTIVAL 2025"
+    },
+    {
+      "id": "l2.song_profiles",
+      "layer": "L2",
+      "state": "present",
+      "priority": "P2",
+      "requirement": "recommended",
+      "evidence": "46/46 song profiles; 0 full-song range profiles"
+    },
+    {
+      "id": "l2.song_palette",
+      "layer": "L2",
+      "state": "stale",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "36/46 palette profiles"
+    },
+    {
+      "id": "l2.prior_group_dependencies",
+      "layer": "L2",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "2 external predecessor dependencies use reviewed transfer fallback"
+    },
+    {
+      "id": "l3.output_window",
+      "layer": "L3",
+      "state": "stale",
+      "priority": "P1",
+      "requirement": "required",
+      "evidence": "current member/palette replay ends 2025-07 and group tier replay begins 2023-08; full 2012-10..2026-09 output is not materialized"
+    }
+  ],
+  "queue_ids_upserted": [
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L1:membership:from_null_sync",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L1:releases:catalog_empty",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L1:live:mixed_bill_full_history",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L1:festival:shared_full_history",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L1:live:setlist_coverage_full_history",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L1:promotion:song_resolved_full_history",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L2:idol:entry_profiles_full_history",
+    "l3wi:44Ki44Kt44K344OWcHJvamVjdA:L2:song:palette_coverage_full_history"
+  ],
+  "test_assertions": {
+    "canonical_identity_resolved": true,
+    "canonical_only_direct_inputs": true,
+    "shared_festival_relations_resolved": true,
+    "shared_festival_model_avoids_per_group_duplicates": true,
+    "opening_six_resolution_loaded": true,
+    "opening_six_ready_with_fallbacks": true,
+    "update_queue_ids_unique": true,
+    "missing_is_not_zero": true
+  },
+  "opening_six_resolution": {
+    "report": "reports/l3-world-input-resolution/akishibu-opening-six-2022-11-audit-test.json",
+    "readiness": "l3_ready_with_fallbacks",
+    "counts": {
+      "present": 29,
+      "fallback_ok": 2,
+      "missing": 1,
+      "ambiguous": 0
+    }
+  }
+}

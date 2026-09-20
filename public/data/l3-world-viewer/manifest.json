@@ -1,6 +1,6 @@
 {
   "schema_version": "l3-world-viewer-bundle/v2",
-  "generated_at": "2026-09-20T00:36:19.966Z",
+  "generated_at": "2026-09-20T04:55:41.400Z",
   "month_start": "2010-01",
   "month_end": "2025-07",
   "tier_floor_for_rank": "C−",
@@ -9,6 +9,7 @@
       "slug": "akishibu",
       "group_uid": "44Ki44Kt44K344OWcHJvamVjdA",
       "name": "アキシブproject",
+      "input_audit": "groups/akishibu/input-audit.json",
       "coverage": {
         "tiers": {
           "start": "2023-08",
@@ -34,7 +35,8 @@
     "manual_overrides": true,
     "edit_mode": true,
     "github_oauth": true,
-    "revisions": true
+    "revisions": true,
+    "input_audit": true
   },
   "simulation_modes": {
     "group": {
