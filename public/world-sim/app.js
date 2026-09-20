@@ -505,21 +505,24 @@ function renderIdolDetail(member) {
       ? `<span class="role-chip">${escapeHtml(member.member_archetype)}</span>`
       : `<span class="muted">—</span>`;
 
-  const status = member.initial_status_at_join || {};
+  const status = member.status || member.initial_status_at_join || {};
   const attrs = member.attributes && typeof member.attributes === "object" ? member.attributes : null;
   const currentAttrs = attrs?.current && typeof attrs.current === "object" ? attrs.current : null;
   const ceilingAttrs = attrs?.ceiling && typeof attrs.ceiling === "object" ? attrs.ceiling : null;
+  const attributeExp = member.attribute_exp && typeof member.attribute_exp === "object" ? member.attribute_exp : null;
+  const currentExp = attributeExp?.current && typeof attributeExp.current === "object" ? attributeExp.current : null;
   const attrRows = currentAttrs
     ? Object.entries(currentAttrs)
         .flatMap(([category, values]) => Object.entries(values || {}).map(([key, value]) => {
           const ceiling = ceilingAttrs?.[category]?.[key];
-          return `<tr><th>${escapeHtml(`${category}.${key}`)}</th><td>${escapeHtml(String(value))}</td><td>${ceiling ?? "—"}</td></tr>`;
+          const exp = currentExp?.[category]?.[key];
+          return `<tr><th>${escapeHtml(`${category}.${key}`)}</th><td>${escapeHtml(String(value))}</td><td>${ceiling ?? "—"}</td><td>${exp ?? "—"}</td></tr>`;
         }))
         .join("")
     : attrs
       ? Object.entries(attrs)
           .filter(([, value]) => ["string", "number", "boolean"].includes(typeof value))
-          .map(([key, value]) => `<tr><th>${escapeHtml(key)}</th><td colspan="2">${escapeHtml(String(value))}</td></tr>`)
+          .map(([key, value]) => `<tr><th>${escapeHtml(key)}</th><td colspan="3">${escapeHtml(String(value))}</td></tr>`)
           .join("")
       : "";
   const radar = attrs?.radar_values || {};
@@ -538,7 +541,7 @@ function renderIdolDetail(member) {
       <div class="detail-item"><div class="k">Prior idol experience</div><div class="v">${escapeHtml(member.prior_idol_experience || "—")}</div></div>
       <div class="detail-item"><div class="k">Effective experience</div><div class="v">${member.experience?.total_effective_months ?? "—"} months</div></div>
       <div class="detail-item"><div class="k">Assigned color</div><div class="v" style="display:flex;gap:0.4rem;align-items:center"><span class="swatch" style="background:${color?.hex || "#ddd"}"></span>${escapeHtml(color?.name || "—")}</div></div>
-      <div class="detail-item"><div class="k">Status (at join)</div><div class="v">C ${status.condition ?? "—"} · M ${status.morale ?? "—"} · Conf ${status.confidence ?? "—"}</div></div>
+      <div class="detail-item"><div class="k">Status (month end)</div><div class="v">C ${status.condition ?? "—"} · M ${status.morale ?? "—"} · Conf ${status.confidence ?? "—"}</div></div>
     </div>
     <h4 style="margin:1rem 0 0.4rem">Roles (as of ${escapeHtml(state.month)})</h4>
     <div>${roleHtml}</div>
@@ -548,9 +551,10 @@ function renderIdolDetail(member) {
     ${attrs?.ability != null ? `<p><strong>Ability ${attrs.ability}</strong> · overall ${attrs.overall_rating ?? "—"}${radarText ? ` · ${escapeHtml(radarText)}` : ""}</p>` : ""}
     ${
       attrRows
-        ? `<table class="attr-table"><thead><tr><th>Attribute</th><th>Current</th><th>Ceiling</th></tr></thead><tbody>${attrRows}</tbody></table>`
+        ? `<table class="attr-table"><thead><tr><th>Attribute</th><th>Current</th><th>Ceiling</th><th>EXP</th></tr></thead><tbody>${attrRows}</tbody></table>`
         : `<p class="muted">Attributes not in this month’s export yet.</p>`
     }
+    ${attributeExp ? `<p class="muted">This month: +${attributeExp.month_gain_total ?? 0} AttrEXP · ${escapeHtml((attributeExp.applied_large_live_fact_ids || []).join(", ") || "no verified large live")}</p>` : ""}
     <h4 style="margin:1rem 0 0.4rem">Palette</h4>
     <div data-idol-palette class="palette-block"></div>
   `;
