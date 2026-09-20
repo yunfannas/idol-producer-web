@@ -36,7 +36,7 @@
     "setlists": 0,
     "activity_observations": 0,
     "l2_song_profiles": 55,
-    "l2_title_only_profiles": 55,
+    "l2_title_only_profiles": 7,
     "l2_song_palettes": 55,
     "team_palette_months": 114,
     "team_palette_window": {
@@ -113,7 +113,7 @@
       "layer": "L2",
       "state": "fallback_ok",
       "priority": "P1",
-      "evidence": "55/55 profiles; 55 are explicit low-confidence title-only fallbacks"
+      "evidence": "55/55 profiles; 7 are explicit low-confidence title-only fallbacks"
     },
     {
       "id": "l2.song_palette",
@@ -134,7 +134,7 @@
       "layer": "L3",
       "state": "fallback_ok",
       "priority": "P1",
-      "evidence": "114 monthly snapshots from 2017-04 through 2026-09; title-only song semantics and zero verified setlists remain explicit fallbacks"
+      "evidence": "114 monthly snapshots from 2017-04 through 2026-09; 48 songs use lyric evidence, 7 remain title-only, and verified setlists remain absent"
     }
   ],
   "queue_ids_upserted": [],
