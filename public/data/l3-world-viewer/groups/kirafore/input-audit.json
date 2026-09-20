@@ -1,0 +1,143 @@
+{
+  "schema_version": "l3-world-input-audit/v0.1",
+  "generated_at": "2026-09-20",
+  "group_uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+  "canonical_group_uid": "g:idolsdiagram:54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+  "group_name": "煌めき☆アンフォレント",
+  "interval": {
+    "start": "2015-10",
+    "end": "2026-09"
+  },
+  "readiness": {
+    "roster_and_member_skeleton": "l3_ready_with_fallbacks",
+    "group_tier_skeleton": "l3_ready_with_fallbacks",
+    "team_palette": "l3_ready_with_fallbacks",
+    "full_history": "l3_ready_with_fallbacks"
+  },
+  "inventory": {
+    "membership_rows": 28,
+    "distinct_person_keys": 28,
+    "duplicate_identity_clusters": [],
+    "suspicious_open_pre_hiatus_memberships": [],
+    "expected_revival_members": [
+      "佐藤栞",
+      "陽葵なな",
+      "小織りあ",
+      "甘楽ゆい",
+      "月埜みみ",
+      "橘すず",
+      "鈴木Mob."
+    ],
+    "songs": 55,
+    "releases": 61,
+    "released_song_works": 55,
+    "activities": 0,
+    "festival_slots": 4,
+    "setlists": 0,
+    "activity_observations": 0,
+    "l2_song_profiles": 55,
+    "l2_title_only_profiles": 55,
+    "l2_song_palettes": 55,
+    "team_palette_months": 114,
+    "team_palette_window": {
+      "start": "2017-04",
+      "end": "2026-09"
+    }
+  },
+  "checks": [
+    {
+      "id": "l1.identity",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P0",
+      "evidence": "formed=2015-10-31"
+    },
+    {
+      "id": "l1.activity_periods",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P0",
+      "evidence": "canonical operating/inactive/operating periods include a zero-exposure hiatus"
+    },
+    {
+      "id": "l1.membership_identity",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P0",
+      "evidence": "28 rows; 0 duplicate-person identity cluster(s)"
+    },
+    {
+      "id": "l1.membership_intervals",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P0",
+      "evidence": "0 pre-hiatus membership row(s) remain open"
+    },
+    {
+      "id": "l1.song_catalog",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P1",
+      "evidence": "55 canonical songs; the 11-track 2026-06-02 release is represented"
+    },
+    {
+      "id": "l1.release_catalog",
+      "layer": "L1",
+      "state": "present",
+      "priority": "P1",
+      "evidence": "55/55 local song works have a dated canonical release (61 release rows including reissues)"
+    },
+    {
+      "id": "l1.live_history",
+      "layer": "L1",
+      "state": "missing",
+      "priority": "P1",
+      "evidence": "0 activities and 4 festival slots"
+    },
+    {
+      "id": "l1.setlists",
+      "layer": "L1",
+      "state": "missing",
+      "priority": "P1",
+      "evidence": "0 canonical setlists"
+    },
+    {
+      "id": "l1.activity_observations",
+      "layer": "L1",
+      "state": "missing",
+      "priority": "P1",
+      "evidence": "0 annual/monthly observations"
+    },
+    {
+      "id": "l2.song_profiles",
+      "layer": "L2",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "evidence": "55/55 profiles; 55 are explicit low-confidence title-only fallbacks"
+    },
+    {
+      "id": "l2.song_palette",
+      "layer": "L2",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "evidence": "55/55 palette records; all remain review-required until lyric-level evidence is available"
+    },
+    {
+      "id": "l2.member_entry",
+      "layer": "L2",
+      "state": "missing",
+      "priority": "P2",
+      "evidence": "member entry archetypes and predecessor discounts not reviewed"
+    },
+    {
+      "id": "l3.team_palette",
+      "layer": "L3",
+      "state": "fallback_ok",
+      "priority": "P1",
+      "evidence": "114 monthly snapshots from 2017-04 through 2026-09; title-only song semantics and zero verified setlists remain explicit fallbacks"
+    }
+  ],
+  "queue_ids_upserted": [],
+  "test_assertions": {},
+  "opening_six_resolution": null
+}

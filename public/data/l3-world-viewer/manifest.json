@@ -1,6 +1,6 @@
 {
   "schema_version": "l3-world-viewer-bundle/v2",
-  "generated_at": "2026-09-20T09:30:32.536Z",
+  "generated_at": "2026-09-20T14:52:50.317Z",
   "month_start": "2010-01",
   "month_end": "2026-09",
   "tier_floor_for_rank": "C−",
@@ -21,6 +21,26 @@
         },
         "members": {
           "start": "2012-10",
+          "end": "2026-09"
+        }
+      }
+    },
+    {
+      "slug": "kirafore",
+      "group_uid": "54WM44KB44GN4piG44Ki44Oz44OV44Kp44Os44Oz44OI",
+      "name": "煌めき☆アンフォレント",
+      "input_audit": "groups/kirafore/input-audit.json",
+      "coverage": {
+        "tiers": {
+          "start": "2015-10",
+          "end": "2026-09"
+        },
+        "team_palette": {
+          "start": "2017-04",
+          "end": "2026-09"
+        },
+        "members": {
+          "start": "2015-10",
           "end": "2026-09"
         }
       }
