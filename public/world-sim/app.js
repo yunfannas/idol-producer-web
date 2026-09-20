@@ -581,11 +581,17 @@ function renderIdolDetail(member) {
         .join("")
     : `<span class="muted">No active role tags</span>`;
 
+  const tagEvaluation = new Map((member.entry_tag_evaluation || []).map((row) => [row.tag, row]));
   const tags = (member.entry_tags || []).length
-    ? member.entry_tags.map((t) => `<span class="role-chip">${escapeHtml(String(t))}</span>`).join("")
-    : member.member_archetype
-      ? `<span class="role-chip">${escapeHtml(member.member_archetype)}</span>`
-      : `<span class="muted">—</span>`;
+    ? member.entry_tags.map((tag) => {
+        const row = tagEvaluation.get(tag);
+        const score = Number.isFinite(Number(row?.score)) ? ` · ${Number(row.score).toFixed(2)}` : "";
+        return `<span class="role-chip">${escapeHtml(`${tag}${score}`)}</span>`;
+      }).join("")
+    : `<span class="muted">—</span>`;
+  const mechanicsArchetype = member.member_archetype
+    ? `<p class="muted">Mechanics archetype: ${escapeHtml(member.member_archetype)}</p>`
+    : "";
 
   const status = member.status || member.initial_status_at_join || {};
   const attrs = member.attributes && typeof member.attributes === "object" ? member.attributes : null;
@@ -627,8 +633,9 @@ function renderIdolDetail(member) {
     </div>
     <h4 style="margin:1rem 0 0.4rem">Roles (as of ${escapeHtml(state.month)})</h4>
     <div>${roleHtml}</div>
-    <h4 style="margin:1rem 0 0.4rem">Tags / archetype</h4>
+    <h4 style="margin:1rem 0 0.4rem">Entry tags (accepted score)</h4>
     <div>${tags}</div>
+    ${mechanicsArchetype}
     <h4 style="margin:1rem 0 0.4rem">Attributes</h4>
     ${attrs?.ability != null ? `<p><strong>Ability ${attrs.ability}</strong> · overall ${attrs.overall_rating ?? "—"}${radarText ? ` · ${escapeHtml(radarText)}` : ""}</p>` : ""}
     ${
