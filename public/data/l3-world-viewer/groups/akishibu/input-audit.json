@@ -104,7 +104,7 @@
       "member_initial_state_rows": 14
     },
     "l3_support": {
-      "health_event_rows": 0,
+      "health_event_rows": 2,
       "external_predecessor_dependencies": 2,
       "member_state_window": {
         "start": "2012-10",
@@ -223,7 +223,7 @@
       "state": "fallback_ok",
       "priority": "P2",
       "requirement": "recommended",
-      "evidence": "0 dated compiled health events; unmatched months use explicit healthy default"
+      "evidence": "2 dated compiled health events; unmatched months use explicit healthy default"
     },
     {
       "id": "l2.group_policy",
