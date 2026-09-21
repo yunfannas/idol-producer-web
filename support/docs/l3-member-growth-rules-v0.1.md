@@ -67,11 +67,15 @@ Two normalization constraints apply:
 
 ### 3.1 Team normalization
 
-For each role used by the team in a period:
+For each role **actually used by the team in that period**:
 
 ```text
 sum(member role share across active members) = 1.0
 ```
+
+If a role is not active in that historical period, its team total is 0 and there
+is no corresponding role-bonus pool. Do not force-normalize an inactive role to
+1.0 by assigning it to an arbitrary member.
 
 Examples:
 
@@ -363,6 +367,23 @@ but it does not erase attributes already earned.
 
 Later-career outcomes are calibration evidence only. They must not be used to
 silently backfill unverified early attributes in L1/L2.
+
+### AKSB aori gap
+
+AKSB has a historical role-gap calibration case: from approximately 2020-03
+through the second half of 2021 there is no active aori assignment.
+
+During that interval:
+
+- team `aori` assignment total = 0, not 1;
+- no member is inferred as aori merely to satisfy normalization;
+- eligible large-live base EXP still applies to participating members;
+- the aori role-bonus pool is absent / zero;
+- when an aori responsibility later reappears, normalization resumes from that
+  effective date only.
+
+The exact restart month should follow the dated L1/L2 role evidence rather than
+being guessed from the simulator.
 
 ## 12. L1 / L2 evidence requirements
 
