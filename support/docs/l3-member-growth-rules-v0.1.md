@@ -67,15 +67,21 @@ Two normalization constraints apply:
 
 ### 3.1 Team normalization
 
-For each role **actually used by the team in that period**:
+For each role actually assigned by the team in that period:
 
 ```text
 sum(member role share across active members) = 1.0
 ```
 
-If a role is not active in that historical period, its team total is 0 and there
-is no corresponding role-bonus pool. Do not force-normalize an inactive role to
-1.0 by assigning it to an arbitrary member.
+A role may remain assigned even when external conditions temporarily suppress its
+gameplay effect. Assignment state and effect strength are separate:
+
+```text
+effective_role_share = assignment_share * role_effectiveness
+```
+
+If no member is assigned to a role, the team total may be 0. Do not invent an
+assignment merely to satisfy normalization.
 
 Examples:
 
@@ -368,22 +374,31 @@ but it does not erase attributes already earned.
 Later-career outcomes are calibration evidence only. They must not be used to
 silently backfill unverified early attributes in L1/L2.
 
-### AKSB aori gap
+### AKSB / COVID aori effectiveness calibration
 
-AKSB has a historical role-gap calibration case: from approximately 2020-03
-through the second half of 2021 there is no active aori assignment.
+AKSB may still have an assigned aori responsibility during the COVID period.
+Do **not** erase the role merely because ordinary live interaction was restricted.
 
-During that interval:
+Instead keep the dated assignment and apply a market-condition effectiveness
+factor to the aori role bonus / aori-derived live effect:
 
-- team `aori` assignment total = 0, not 1;
-- no member is inferred as aori merely to satisfy normalization;
-- eligible large-live base EXP still applies to participating members;
-- the aori role-bonus pool is absent / zero;
-- when an aori responsibility later reappears, normalization resumes from that
-  effective date only.
+- 2020-03 through 2020-12: `aori_effectiveness = 0.00`
+- 2021-01 through 2021-12: `aori_effectiveness = 0.30`
+- 2022-01 onward: `aori_effectiveness = 1.00`
 
-The exact restart month should follow the dated L1/L2 role evidence rather than
-being guessed from the simulator.
+Thus:
+
+```text
+effective_aori_share
+  = assigned_aori_share * aori_effectiveness
+```
+
+The assignment may still sum to 1.0 across members, but the effective bonus pool
+is multiplied by the period effectiveness. Large-live / CD base EXP remains
+independent of this modifier.
+
+This is a COVID-era performance-environment rule, not evidence that the member
+stopped holding the role.
 
 ## 12. L1 / L2 evidence requirements
 
