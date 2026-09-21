@@ -240,7 +240,7 @@ Known design examples:
 Other groups that have historically reached A- or above should be enumerated and
 reviewed individually.
 
-## 9. Buff queue ordering
+## 9. Buff queue ordering and downgrade semantics
 
 Buff tokens do not stack multiplicatively in the same year.
 
@@ -250,34 +250,88 @@ The queue is automatically sorted by multiplier descending:
 1.50 > 1.35 > 1.20 > ...
 ```
 
-The highest available token is consumed first. Equal multipliers use earlier
-trigger order only for deterministic replay.
+The highest currently eligible token becomes the active buff. Equal multipliers
+use earlier trigger order only for deterministic replay.
 
-Example: a true newcomer directly entering C- or above receives D- and C- tokens:
+Example: a true newcomer directly entering C- or above exposes both D- and C-
+tokens. While the team remains C- or above, priority order is:
 
 ```text
 1.50 -> 1.35 -> 1.35 -> 1.20 -> 1.20
 ```
 
-This produces a five-year accelerated development window without multiplying the
-D- and C- buffs together.
+This creates up to a five-year accelerated window without multiplying D- and C-
+buffs together.
 
-If an A- token is earned while earlier higher tokens remain, it enters the same
-queue and waits according to multiplier priority.
+### 9.1 Threshold buffs require the environment to remain valid
+
+Pending tokens above the team's current tier are **not permanently banked**.
+
+If the team drops below a milestone threshold:
+
+- any not-yet-started tokens belonging to that lost threshold immediately become
+  ineligible and disappear from the usable queue;
+- a token that has already started remains active until its current one-year term
+  finishes;
+- finishing that active year does not preserve the rest of the lost-threshold
+  queue.
+
+Example: a member has begun a C- x1.35 year and the team falls to D+ halfway
+through. The x1.35 continues to the end of that one-year term, but an unused C-
+x1.20 token is removed unless the member later re-qualifies under the milestone
+rules.
+
+### 9.2 A higher-priority buff must not consume the buff it displaced
+
+Only the **active** token consumes time.
+
+If a higher multiplier wins the priority queue for a year, a lower eligible token
+that would otherwise have been used that year remains unconsumed. Implementations
+that advance all staged buffs by calendar year must explicitly restore / credit
+back the displaced lower token.
+
+For example, if a D- x1.20 token is pending and a C- x1.35 token becomes active:
+
+```text
+active this year: C- x1.35
+D- x1.20: remains pending
+```
+
+The D- token is not lost merely because a stronger buff occupied that year.
+
+This replacement rule is essential when a higher-tier environment later drops:
+the member may lose unused C- tokens, while still retaining any lower-tier token
+that was only postponed by the C- buff.
+
+If an A- token becomes eligible while earlier higher tokens remain, it enters the
+same priority system. It is usable only while the A- environment remains valid,
+except that an already-started one-year A- token runs to completion.
 
 ## 10. Member-specific milestone exposure
 
 Milestone eligibility belongs to the member, not permanently to the group name.
 
-A member earns a threshold token only if they are active while the team is
-actually at or above that threshold and they have not already earned that
-threshold.
+A member first becomes eligible for a threshold only if they are active while the
+team is actually at or above that threshold.
 
 Historical group achievement does not grant the buff to later members joining
 after the team has fallen below the threshold.
 
-A member cannot repeatedly farm the same threshold by leaving, rejoining, or by
-the team falling below and later returning above it.
+Milestone history prevents farming, but eligibility is environment-dependent:
+
+- crossing / entering a threshold exposes that threshold's token set;
+- pending tokens require the team to remain at or above the threshold;
+- downgrade removes unused tokens from the lost threshold;
+- an already-active token is grandfathered only through the end of its one-year
+  term;
+- a lower-threshold token displaced by a stronger active buff stays pending and
+  must not be accidentally consumed.
+
+A leave/rejoin or tier down/up cycle must not create duplicate consumed years.
+If a previously exposed threshold becomes valid again, replay logic must use the
+member's token history to determine which threshold tokens were already consumed,
+which were removed on downgrade, and which may legitimately become available
+again. It must never grant more than the threshold's designed total entitlement.
 
 ## 11. AKSB calibration case
 
@@ -286,20 +340,26 @@ AKSB is a required calibration case for this rule.
 Working historical tier model:
 
 - before / around TIF 2019, AKSB reaches C- for the first time;
-- members active during that C- environment receive their member-specific C-
-  milestone queue (x1.35, x1.20);
+- members active during that C- environment expose their member-specific C-
+  milestone tokens (x1.35, x1.20);
 - the group later falls back to D+;
-- Ni居歩美 joining during the later D+ period does **not** inherit the historical
+- when AKSB drops to D+, any unused C- token is no longer usable;
+- if a C- token was already active when the downgrade happened, that one-year
+  buff runs to completion;
+- any lower D- token that was postponed because the C- token had higher priority
+  remains pending / is credited back rather than being lost;
+- 新居歩美 joining during the later D+ period does **not** inherit the historical
   2019 C- buff merely because AKSB once reached C-;
-- if a later member is active during a future genuine C- return and has never
-  earned C- before, that member may then earn the milestone;
-- old members who already earned the C- milestone do not receive it again.
+- if AKSB later genuinely returns to C-, member token history determines what
+  C- entitlement remains possible; replay must not duplicate already-consumed
+  C- years.
 
 The careers of 福山, 藤木, Hiyo and similar earlier-generation AKSB members are
-useful validation cases: after developing during the stronger AKSB period and
-holding meaningful responsibilities, they later becoming core members in new
-groups is consistent with retained personal attributes. A later decline in AKSB
-team tier must not erase already-earned member ability.
+useful validation cases: time spent in the stronger C- environment, including any
+C- buff year actually started before downgrade, plus their responsibilities and
+ordinary event growth, can help explain why they later became core members in new
+groups. The later AKSB tier decline removes future C- environment acceleration,
+but it does not erase attributes already earned.
 
 Later-career outcomes are calibration evidence only. They must not be used to
 silently backfill unverified early attributes in L1/L2.
