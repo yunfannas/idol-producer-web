@@ -596,6 +596,16 @@ function renderIdolDetail(member) {
   const mechanicsArchetype = member.member_archetype
     ? `<p class="muted">Mechanics archetype: ${escapeHtml(member.member_archetype)}</p>`
     : "";
+  const attributeCalibration = member.attribute_calibration && typeof member.attribute_calibration === "object"
+    ? member.attribute_calibration
+    : null;
+  const calibrationHtml = attributeCalibration
+    ? `<p class="muted"><strong>Historical calibration:</strong> ${escapeHtml(attributeCalibration.calibration_kind || "reviewed")}`
+      + ` · effective ${escapeHtml(attributeCalibration.effective_from || "unknown")}`
+      + ` · recorded ${escapeHtml(attributeCalibration.recorded_on || "unknown")}`
+      + ` · ${escapeHtml(attributeCalibration.application || "unspecified")}`
+      + `${attributeCalibration.provenance_note ? `<br>${escapeHtml(attributeCalibration.provenance_note)}` : ""}</p>`
+    : "";
 
   const status = member.status || member.initial_status_at_join || {};
   const attrs = member.attributes && typeof member.attributes === "object" ? member.attributes : null;
@@ -646,6 +656,7 @@ function renderIdolDetail(member) {
     <div>${tags}</div>
     <p class="muted">Tag search: ${escapeHtml(tagSearchText)}</p>
     ${mechanicsArchetype}
+    ${calibrationHtml}
     <h4 style="margin:1rem 0 0.4rem">Attributes</h4>
     ${attrs?.ability != null ? `<p><strong>Ability ${attrs.ability}</strong> · overall ${attrs.overall_rating ?? "—"}${radarText ? ` · ${escapeHtml(radarText)}` : ""}</p>` : ""}
     ${
