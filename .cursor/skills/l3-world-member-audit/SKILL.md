@@ -82,8 +82,11 @@ semantics. The audit reports the boundary; it does not invent a different one.
 
 ### 3. Attribute state
 
-Current attributes and ceilings are integers in the game domain (normally 0..20);
-`current <= ceiling`.
+Current attributes are integers in the game domain (normally 0..20).
+
+There is **no per-member attribute ceiling / potential cap**. A legacy `ceiling`
+field is schema debt and should be flagged for migration, not enforced as an
+invariant.
 
 Audit month-to-month transitions:
 
@@ -91,20 +94,30 @@ Audit month-to-month transitions:
   explicit seed/rebase/manual override/event.
 - any decrease => REVIEW unless the model explicitly allows it.
 - multiple simultaneous +2/+3 changes => high-priority REVIEW.
-- values above the documented ceiling or domain => ERROR.
+- values outside the documented 0..20 domain => ERROR.
+- 16+ growth must be explainable by rising EXP cost and eligible event history.
+- 18+ growth should normally have stronger environment / breakthrough evidence.
 
 Do not label a historically curated opening/re-entry seed as simulation growth.
 
 ### 4. Attribute EXP
 
-For `member-attribute-exp/v0.1`:
+For member attribute EXP:
 
 - every per-attribute EXP and month gain is a non-negative integer.
-- `total == sum(current)`.
-- `month_gain_total == sum(month_gain)`.
-- `next_level_cost` is positive.
+- `total == sum(current)` when a total field is present.
+- `month_gain_total == sum(month_gain)` when present.
+- `next_level_cost` is positive and rises materially for high levels, especially
+  from 16 upward.
 - a level-up must be explainable by EXP cost / explicitly applied event IDs.
-- large-live fact IDs must not apply twice to the same member transition.
+- the same large-live, physical-CD-release, or breakthrough fact ID must not apply
+  twice to the same member transition.
+- routine training, ordinary joint lives, and ordinary digital releases are not
+  direct L3 attribute-EXP sources.
+- all participating members receive eligible event base EXP; role assignment only
+  controls the extra role-bonus pool.
+- career-stage buff tokens are consumed from a priority queue ordered by highest
+  multiplier first; milestone tokens are member-specific and one-time per threshold.
 
 ### 5. Status / health
 
@@ -140,6 +153,9 @@ Required ten colors:
 - provenance/evidence IDs must not point to future-effective facts.
 - changes caused by manual adjustment must remain distinguishable from generated
   baseline.
+- team-normalized performance assignments must be explicit enough to verify role
+  bonus allocation.
+- captain must not implicitly grant stage-presence growth.
 
 ### 8. Fallback debt
 
@@ -197,3 +213,4 @@ Before calling a timeline audited:
 - [ ] source/viewer parity checked when both files exist
 - [ ] no future-fact leakage
 - [ ] no silent current-roster backfill
+- [ ] no active dependence on legacy attribute ceilings
