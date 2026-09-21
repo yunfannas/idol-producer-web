@@ -603,12 +603,17 @@ function renderIdolDetail(member) {
   const ceilingAttrs = attrs?.ceiling && typeof attrs.ceiling === "object" ? attrs.ceiling : null;
   const attributeExp = member.attribute_exp && typeof member.attribute_exp === "object" ? member.attribute_exp : null;
   const currentExp = attributeExp?.current && typeof attributeExp.current === "object" ? attributeExp.current : null;
+  const nextLevelCost = attributeExp?.next_level_cost && typeof attributeExp.next_level_cost === "object"
+    ? attributeExp.next_level_cost
+    : null;
   const attrRows = currentAttrs
     ? Object.entries(currentAttrs)
         .flatMap(([category, values]) => Object.entries(values || {}).map(([key, value]) => {
           const ceiling = ceilingAttrs?.[category]?.[key];
           const exp = currentExp?.[category]?.[key];
-          return `<tr><th>${escapeHtml(`${category}.${key}`)}</th><td>${escapeHtml(String(value))}</td><td>${ceiling ?? "—"}</td><td>${exp ?? "—"}</td></tr>`;
+          const cost = nextLevelCost?.[category]?.[key];
+          const expProgress = exp == null ? "—" : cost == null ? String(exp) : `${exp} / ${cost}`;
+          return `<tr><th>${escapeHtml(`${category}.${key}`)}</th><td>${escapeHtml(String(value))}</td><td>${ceiling ?? "—"}</td><td>${escapeHtml(expProgress)}</td></tr>`;
         }))
         .join("")
     : attrs
@@ -645,7 +650,7 @@ function renderIdolDetail(member) {
     ${attrs?.ability != null ? `<p><strong>Ability ${attrs.ability}</strong> · overall ${attrs.overall_rating ?? "—"}${radarText ? ` · ${escapeHtml(radarText)}` : ""}</p>` : ""}
     ${
       attrRows
-        ? `<table class="attr-table"><thead><tr><th>Attribute</th><th>Current</th><th>Ceiling</th><th>EXP</th></tr></thead><tbody>${attrRows}</tbody></table>`
+        ? `<table class="attr-table"><thead><tr><th>Attribute</th><th>Current</th><th>Ceiling</th><th>EXP / next</th></tr></thead><tbody>${attrRows}</tbody></table>`
         : `<p class="muted">Attributes not in this month’s export yet.</p>`
     }
     ${attributeExp ? `<p class="muted">This month: +${attributeExp.month_gain_total ?? 0} AttrEXP · ${escapeHtml((attributeExp.applied_large_live_fact_ids || []).join(", ") || "no verified large live")}</p>` : ""}
