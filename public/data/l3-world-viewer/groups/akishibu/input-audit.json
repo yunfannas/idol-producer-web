@@ -29,8 +29,8 @@
     },
     "affiliation_rows": 3,
     "memberships": {
-      "rows": 51,
-      "dated_rows": 47,
+      "rows": 49,
+      "dated_rows": 45,
       "null_start_duplicate_rows": 4,
       "unresolved_rows": [],
       "active_at_cutoff": 7
@@ -143,7 +143,7 @@
       "state": "present",
       "priority": "P0",
       "requirement": "required",
-      "evidence": "51 rows; 4 duplicate null-start rows; 0 unresolved member rows"
+      "evidence": "49 rows; 4 duplicate null-start rows; 0 unresolved member rows"
     },
     {
       "id": "l1.song_catalog",
@@ -239,7 +239,7 @@
       "state": "stale",
       "priority": "P2",
       "requirement": "recommended",
-      "evidence": "14 L3 opening/member seed rows versus 47 distinct membership rows"
+      "evidence": "14 L3 opening/member seed rows versus 45 distinct membership rows"
     },
     {
       "id": "l2.festival_classification",
