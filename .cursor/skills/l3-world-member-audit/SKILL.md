@@ -116,8 +116,18 @@ For member attribute EXP:
   direct L3 attribute-EXP sources.
 - all participating members receive eligible event base EXP; role assignment only
   controls the extra role-bonus pool.
-- career-stage buff tokens are consumed from a priority queue ordered by highest
-  multiplier first; milestone tokens are member-specific and one-time per threshold.
+- career-stage buff tokens use a priority queue ordered by highest multiplier
+  first.
+- only the active token consumes time; lower eligible tokens displaced by a
+  stronger buff remain pending / must be credited back if an implementation
+  advanced them.
+- when team tier drops below C- or an eligible A- environment, unused tokens from
+  that lost threshold become ineligible; an already-started one-year token runs
+  to completion.
+- downgrade must not delete a lower-threshold token merely because it was
+  postponed by a higher-priority buff.
+- member token history must prevent duplicate consumed years after tier
+  down/up, leave/rejoin, or replay.
 
 ### 5. Status / health
 
