@@ -205,7 +205,12 @@ function renderPalette(el, palette, opts = {}) {
     el.innerHTML = `<p class="muted">${opts.empty || "No palette this month."}</p>`;
     return;
   }
-  const parts = COLORS.map((c) => ({ c, v: Number(palette[c] || 0) }));
+  // Team palettes expose channels directly, while member developed palettes
+  // keep them under `colors`. Normalize both shapes before rendering.
+  const channels = palette.colors && typeof palette.colors === "object"
+    ? palette.colors
+    : palette;
+  const parts = COLORS.map((c) => ({ c, v: Number(channels[c] || 0) }));
   const sum = parts.reduce((a, b) => a + b.v, 0) || 1;
   const bar = parts
     .filter((p) => p.v > 0)
@@ -215,7 +220,7 @@ function renderPalette(el, palette, opts = {}) {
   const inputs = editable
     ? `<div class="palette-grid">${COLORS.map(
         (c) =>
-          `<label>${c}<input data-pal-color="${c}" type="number" min="0" max="1" step="0.001" value="${Number(palette[c] || 0)}" /></label>`
+          `<label>${c}<input data-pal-color="${c}" type="number" min="0" max="1" step="0.001" value="${Number(channels[c] || 0)}" /></label>`
       ).join("")}</div>`
     : "";
   const dynamics = opts.snapshot ? renderPaletteDynamics(opts.snapshot) : "";
