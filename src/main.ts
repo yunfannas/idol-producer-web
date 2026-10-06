@@ -2145,6 +2145,52 @@ function syncFestivalLivesIfPossible(): void {
   syncManagedTif2025Lives(save, festivals);
 }
 
+function mostRecentSlotForAccount(name: string): number | null {
+  const rows = listSlotSummaries(name);
+  if (!rows.length) return null;
+  rows.sort((a, b) => {
+    const at = a.savedAt ? Date.parse(a.savedAt) : 0;
+    const bt = b.savedAt ? Date.parse(b.savedAt) : 0;
+    if (bt !== at) return bt - at;
+    return b.slot - a.slot;
+  });
+  return rows[0]?.slot ?? null;
+}
+
+async function loadOpeningSlot(targetSlot: number): Promise<void> {
+  if (!accountName) return;
+  const loaded = await loadFromSlot(accountName, targetSlot);
+  if (loaded && assertHydratedSave(loaded)) {
+    save = loaded;
+    slot = targetSlot;
+    if (!save.tutorial) save.tutorial = { completed: true, disabled: false };
+    setAccountName(String(save.account_name ?? save.player_name ?? accountName));
+    save.account_name = accountName;
+    save.player_name = accountName;
+    ensureAutoBookedLivesThroughEndOfNextMonth(save);
+    maybeSeedMonthEndAutoBookPrompt(save);
+    scheduleCalendarMonthStart = null;
+    resetNewLiveFormDefaults();
+    if (loadedScenario) {
+      hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
+      hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
+      syncFestivalLivesIfPossible();
+    }
+    browseMode = false;
+    tutorialOverlayOpen = false;
+    openingScreen = "home";
+    currentView = "Inbox";
+    idolDetailUid = null;
+    groupDetailUid = null;
+    openingStatus = t(uiLang, "opening_loaded_slot", { slot: targetSlot });
+    resetNavigationHistory();
+    paintGame();
+  } else {
+    openingStatus = t(uiLang, "opening_slot_invalid", { slot: targetSlot });
+    paintOpening();
+  }
+}
+
 function paintOpening(): void {
   tutorialOverlayOpen = false;
   const focus = captureFocus(appRoot);
@@ -2152,7 +2198,7 @@ function paintOpening(): void {
   const dbReady = loadedScenario != null;
   appRoot.innerHTML =
     openingScreen === "login"
-      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang, preset)
+      ? renderOpeningLogin(dbReady, openingStatus, accountName, uiLang, preset, mostRecentSlotForAccount(accountName) != null)
       : openingScreen === "home"
         ? renderOpeningHome(
             preset,
@@ -2177,8 +2223,11 @@ function paintOpening(): void {
   if (openingScreen === "login") {
     const accountInput = document.getElementById("account-name") as HTMLInputElement | null;
     const loginBtn = document.getElementById("opening-login") as HTMLButtonElement | null;
+    const loadBtn = document.getElementById("opening-load-slot") as HTMLButtonElement | null;
     const syncLoginEnabled = () => {
-      if (loginBtn) loginBtn.disabled = !(loadedScenario != null && accountName.trim());
+      const hasRecentSave = mostRecentSlotForAccount(accountName) != null;
+      if (loginBtn) loginBtn.disabled = !(loadedScenario != null && accountName.trim() && hasRecentSave);
+      if (loadBtn) loadBtn.disabled = !(loadedScenario != null && accountName.trim());
     };
     accountInput?.addEventListener("input", (ev) => {
       setAccountName((ev.target as HTMLInputElement).value);
@@ -2195,8 +2244,32 @@ function paintOpening(): void {
 
     document.getElementById("opening-login")?.addEventListener("click", () => {
       if (!accountName.trim()) return;
-      openingScreen = "home";
+      const recentSlot = mostRecentSlotForAccount(accountName);
+      if (recentSlot == null) {
+        openingStatus = t(uiLang, "opening_slot_invalid", { slot });
+        paintOpening();
+        return;
+      }
+      void loadOpeningSlot(recentSlot);
+    });
+
+    document.getElementById("opening-new-game")?.addEventListener("click", async () => {
+      if (!loadedScenario) return;
+      openingStatus = t(uiLang, "opening_db_loading");
       paintOpening();
+      try {
+        loadedScenario = await loadDefaultScenario();
+      } catch (e) {
+        console.error("opening-new-game reload failed", e);
+      }
+      openingScreen = "new_game";
+      selectedNewGameGroupUid = null;
+      paintOpening();
+    });
+
+    document.getElementById("opening-load-slot")?.addEventListener("click", () => {
+      if (!accountName) return;
+      void loadOpeningSlot(slot);
     });
   } else if (openingScreen === "home") {
     document.getElementById("lang-select-opening")?.addEventListener("change", (ev) => {
@@ -2236,35 +2309,7 @@ function paintOpening(): void {
     });
     document.getElementById("opening-load-slot")?.addEventListener("click", async () => {
       if (!accountName) return;
-      const loaded = await loadFromSlot(accountName, slot);
-      if (loaded && assertHydratedSave(loaded)) {
-        save = loaded;
-        if (!save.tutorial) save.tutorial = { completed: true, disabled: false };
-        setAccountName(String(save.account_name ??  save.player_name ??  accountName));
-        save.account_name = accountName;
-        save.player_name = accountName;
-        ensureAutoBookedLivesThroughEndOfNextMonth(save);
-        maybeSeedMonthEndAutoBookPrompt(save);
-        scheduleCalendarMonthStart = null;
-        resetNewLiveFormDefaults();
-        if (loadedScenario) {
-          hydrateSnapshotGroupsFromScenario(save, loadedScenario.groups, loadedScenario.preset.data_subdir);
-          hydrateSnapshotSongsFromScenario(save, loadedScenario.songs, loadedScenario.preset.data_subdir);
-          syncFestivalLivesIfPossible();
-        }
-        browseMode = false;
-        tutorialOverlayOpen = false;
-        openingScreen = "home";
-        currentView = "Inbox";
-        idolDetailUid = null;
-        groupDetailUid = null;
-        openingStatus = t(uiLang, "opening_loaded_slot", { slot });
-        resetNavigationHistory();
-        paintGame();
-      } else {
-        openingStatus = t(uiLang, "opening_slot_invalid", { slot });
-        paintOpening();
-      }
+      await loadOpeningSlot(slot);
     });
     document.getElementById("opening-browse")?.addEventListener("click", () => {
       if (!loadedScenario) return;

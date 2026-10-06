@@ -22,6 +22,7 @@ const EN: Dict = {
   opening_tagline:
     "Choose how to enter the world: start a fresh scenario, load browser save slots, or browse the database first.",
   opening_default_scenario: "Default scenario preset: {name} (opening {date}).",
+  opening_continue: "Continue",
   opening_resume: "Resume",
   opening_new_game: "New Game",
   opening_load: "Load",
@@ -376,6 +377,7 @@ const ZH_CN: Dict = {
     "\u9009\u62e9\u8fdb\u5165\u8fd9\u4e2a\u4e16\u754c\u7684\u65b9\u5f0f\uff1a\u5f00\u59cb\u65b0\u5267\u672c\uff0c\u8bfb\u53d6\u6d4f\u89c8\u5668\u5b58\u6863\uff0c\u6216\u5148\u6d4f\u89c8\u6570\u636e\u5e93\u3002",
   opening_default_scenario:
     "\u9ed8\u8ba4\u5267\u672c\uff1a{name}\uff08\u5f00\u59cb\u65e5\u671f {date}\uff09\u3002",
+  opening_continue: "\u7ee7\u7eed",
   opening_resume: "\u7ee7\u7eed",
   opening_new_game: "\u65b0\u6e38\u620f",
   opening_load: "\u8bfb\u53d6",
