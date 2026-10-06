@@ -5366,6 +5366,130 @@ a.workspace-tab {
   margin-bottom: 0;
 }
 
+/* World UI v2 title screen: scope the rehearsal-room artwork and glass menu to
+   the launcher only, leaving the existing home/new-game screens unchanged. */
+.opening-main-menu {
+  position: relative;
+  z-index: 0;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(3.25rem, 8vh, 5.5rem) clamp(1rem, 5vw, 5.5rem) 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  background:
+    linear-gradient(90deg, rgb(12 12 15 / 0.64), rgb(12 12 15 / 0.2) 42%, rgb(12 12 15 / 0.12) 70%),
+    url("/assets/world-ui-v2/title-rehearsal-room-logo.png") center / cover no-repeat;
+  background-color: #181510;
+}
+
+.opening-main-menu::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: auto 0 0;
+  height: 18vh;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgb(15 20 30 / 0.62));
+}
+
+.opening-main-menu .opening-hero {
+  position: relative;
+  z-index: 1;
+  width: min(27rem, 100%);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff8f0;
+  text-shadow: 0 0.12rem 0.5rem rgb(0 0 0 / 0.74), 0 0.85rem 2rem rgb(0 0 0 / 0.42);
+}
+
+.opening-main-menu .opening-title {
+  max-width: 12ch;
+  margin-top: clamp(1rem, 8vh, 5rem);
+  margin-bottom: 0.55rem;
+  font-size: clamp(3rem, 7vw, 5.75rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.opening-main-menu .opening-preset {
+  width: fit-content;
+  margin: 0 0 1.15rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 0.22);
+  color: rgb(255 248 240 / 0.9);
+  font-weight: 650;
+}
+
+.opening-main-menu .opening-actions-footer {
+  width: min(26rem, 100%);
+  justify-content: flex-start;
+  gap: 0.55rem;
+}
+
+.opening-main-menu .opening-btn {
+  min-width: 7.2rem;
+  border-color: rgb(255 255 255 / 0.4);
+  background: rgb(20 18 18 / 0.32);
+  color: #fff8f0;
+  box-shadow: 0 0.45rem 1.25rem rgb(0 0 0 / 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.opening-main-menu .opening-btn-primary {
+  background: rgb(255 255 255 / 0.18);
+  border-color: rgb(255 255 255 / 0.36);
+}
+
+.opening-main-menu .opening-btn-green {
+  background: rgb(222 67 130 / 0.58);
+  border-color: rgb(255 186 216 / 0.7);
+}
+
+.opening-main-menu .opening-label {
+  color: rgb(255 248 240 / 0.92);
+}
+
+.opening-main-menu .opening-input {
+  max-width: 26rem;
+  border-color: rgb(255 255 255 / 0.44);
+  background: rgb(12 12 14 / 0.34);
+  color: #fff8f0;
+  box-shadow: inset 0 0 0.85rem rgb(0 0 0 / 0.16);
+  backdrop-filter: blur(7px);
+}
+
+.opening-main-menu .opening-input::placeholder {
+  color: rgb(255 248 240 / 0.62);
+}
+
+.opening-main-menu .opening-menu-account {
+  width: min(26rem, 100%);
+  margin: 0 0 0.85rem;
+}
+
+.opening-main-menu .opening-status-msg {
+  max-width: 26rem;
+  color: rgb(255 248 240 / 0.78);
+}
+
+.opening-main-menu .opening-manual-row {
+  max-width: 26rem;
+}
+
+.opening-main-menu .opening-manual-link {
+  color: rgb(255 248 240 / 0.82);
+}
+
+.opening-main-menu .opening-manual-link:hover {
+  color: #fff;
+}
+
 /* Loading / error */
 
 .fm-loading,
